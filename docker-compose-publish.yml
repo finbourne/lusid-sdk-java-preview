@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+
+  lusid-sdk-java-preview-publish:
+    container_name: lusid-sdk-java-preview-publish
+    build:
+      context: .
+      dockerfile: publish.Dockerfile
+    image: finbourne/lusid-sdk-java-preview-publish
+    volumes:
+      - .:/usr/src
+    command:
+      - ossrh

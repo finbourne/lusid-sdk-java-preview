@@ -1,0 +1,14 @@
+language: java
+services:
+- docker
+script:
+- cd sdk
+- docker build -t lusid-sdk-java-test .
+- docker run -e FBN_TOKEN_URL=$FBN_TOKEN_URL -e FBN_USERNAME=$FBN_USERNAME -e FBN_PASSWORD=$FBN_PASSWORD
+  -e FBN_CLIENT_ID=$FBN_CLIENT_ID -e FBN_CLIENT_SECRET=$FBN_CLIENT_SECRET -e FBN_LUSID_API_URL=$FBN_LUSID_API_URL
+  -v $(pwd):/usr/src/ lusid-sdk-java-test
+notifications:
+  slack:
+    rooms:
+      secure: "dtdpx/VDxKS5dL7BRdNN4l0QIUVpSXcaOR6n3eCi+cdGlcGjKpewywoWi1V/lKJyJ77p8lCec0jjgfRS5OgMPbtXJHaLQQbqZwZ9wUGeUwSvHJYbbrGzStW/ss+HpwNW8O0hbleFg3fD8BSPl4W9nOfpVqnv6KAl+mWaW0g4/d3DnxiZ2BtxF8dx+CgpXBDdebh7dYyKN41iTn13tBhsH0bo3sF8H5mfMtIhSqza9uc7yBLH70IdTcpHZkBoggMKE1DG2s3U+CYTMgV5WceSrSpkFo/xdbiAxfZ2Zv27CPWDL1rBQvXBFm+QYB08b/L7e/2uGn3G5UvJmLeTy0LXrA+cIXpmMEyHljmGZxaiUJqdZAjhbGJvevcPzoZ2rh2UATAuVQ1njECFLi/JQaAcpKlaHA4dvLSYZyp0JoLXufy9KMQ5PqGhrCmxcQWdo72HKnPQbal23nex5QVXncqtGo59Mb/QFsKnZOvsKpix0+arSD1MeRTJ1ik/hHGHFWx71mh0Ceya/HCp29LTc/f9KafUGfwUK9cfKmDo/PttNILDz2qxtbc/SlfnxRH3ZEMFbTphiZB3VzM0yu1Ys2g5y3HROFOmoPprvKcyCrax8l2qtTH/NAlETkQ0zLYp3yf9HBgUL+ZXsWYE9P7/pAshBGZ4gfZzVHukwy9O0Ps7kAE="
+    on_failure: always
