@@ -202,8 +202,8 @@ oauth2.setAccessToken("YOUR ACCESS TOKEN");
 CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi();
 String scope = "scope_example"; // String | The scope of the corporate action source
 String code = "code_example"; // String | The code of the corporate action source
-OffsetDateTime fromEffectiveAt = new OffsetDateTime(); // OffsetDateTime | Optional. The start effective date of the data range
-OffsetDateTime toEffectiveAt = new OffsetDateTime(); // OffsetDateTime | Optional. The end effective date of the data range
+String fromEffectiveAt = "fromEffectiveAt_example"; // String | Optional. The start effective date of the data range
+String toEffectiveAt = "toEffectiveAt_example"; // String | Optional. The end effective date of the data range
 OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The AsAt date of the data
 List<String> sortBy = Arrays.asList("sortBy_example"); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
 Integer start = 56; // Integer | Optional. When paginating, skip this number of results
@@ -224,8 +224,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the corporate action source |
  **code** | **String**| The code of the corporate action source |
- **fromEffectiveAt** | **OffsetDateTime**| Optional. The start effective date of the data range | [optional]
- **toEffectiveAt** | **OffsetDateTime**| Optional. The end effective date of the data range | [optional]
+ **fromEffectiveAt** | **String**| Optional. The start effective date of the data range | [optional]
+ **toEffectiveAt** | **String**| Optional. The end effective date of the data range | [optional]
  **asAt** | **OffsetDateTime**| Optional. The AsAt date of the data | [optional]
  **sortBy** | [**List&lt;String&gt;**](String.md)| Optional. Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName | [optional]
  **start** | **Integer**| Optional. When paginating, skip this number of results | [optional]

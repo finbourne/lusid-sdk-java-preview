@@ -32,7 +32,7 @@ oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
 EntitiesApi apiInstance = new EntitiesApi();
 String scope = "scope_example"; // String | The scope
-OffsetDateTime effectiveAt = new OffsetDateTime(); // OffsetDateTime | The effective date of the origin.
+String effectiveAt = "effectiveAt_example"; // String | The effective date of the origin.
 OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The as-at date of the origin.
 try {
     ResourceListOfChange result = apiInstance.getPortfolioChanges(scope, effectiveAt, asAt);
@@ -48,7 +48,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope |
- **effectiveAt** | **OffsetDateTime**| The effective date of the origin. |
+ **effectiveAt** | **String**| The effective date of the origin. |
  **asAt** | **OffsetDateTime**| The as-at date of the origin. | [optional]
 
 ### Return type
