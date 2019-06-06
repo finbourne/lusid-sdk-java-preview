@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 <a name="listDataTypes"></a>
 # **listDataTypes**
-> ResourceListOfDataType listDataTypes(scope, includeDefault, includeSystem, sortBy, start, limit, filter)
+> ResourceListOfDataType listDataTypes(scope, includeSystem, sortBy, start, limit, filter)
 
 List data types
 
@@ -203,14 +203,13 @@ oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
 DataTypesApi apiInstance = new DataTypesApi();
 String scope = "scope_example"; // String | The requested scope of the data types
-Boolean includeDefault = true; // Boolean | Whether to additionally include those data types in the \"default\" scope
 Boolean includeSystem = true; // Boolean | Whether to additionally include those data types in the \"system\" scope
 List<String> sortBy = Arrays.asList("sortBy_example"); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
 Integer start = 56; // Integer | Optional. When paginating, skip this number of results
 Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
 String filter = "filter_example"; // String | Optional. Expression to filter the result set
 try {
-    ResourceListOfDataType result = apiInstance.listDataTypes(scope, includeDefault, includeSystem, sortBy, start, limit, filter);
+    ResourceListOfDataType result = apiInstance.listDataTypes(scope, includeSystem, sortBy, start, limit, filter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DataTypesApi#listDataTypes");
@@ -223,7 +222,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The requested scope of the data types |
- **includeDefault** | **Boolean**| Whether to additionally include those data types in the \&quot;default\&quot; scope | [optional]
  **includeSystem** | **Boolean**| Whether to additionally include those data types in the \&quot;system\&quot; scope | [optional]
  **sortBy** | [**List&lt;String&gt;**](String.md)| Optional. Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName | [optional]
  **start** | **Integer**| Optional. When paginating, skip this number of results | [optional]

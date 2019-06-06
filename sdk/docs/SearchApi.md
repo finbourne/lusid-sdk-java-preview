@@ -35,7 +35,7 @@ oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
 SearchApi apiInstance = new SearchApi();
 List<InstrumentSearchProperty> symbols = Arrays.asList(new InstrumentSearchProperty()); // List<InstrumentSearchProperty> | A collection of instrument symbols to search for
-OffsetDateTime masteredEffectiveAt = new OffsetDateTime(); // OffsetDateTime | Optional. The effective date for searching mastered instruments. If this is not set, then the current date is taken.  This parameter has no effect on instruments that have not been mastered within LUSID.
+String masteredEffectiveAt = "masteredEffectiveAt_example"; // String | Optional. The effective date for searching mastered instruments. If this is not set, then the current date is taken.  This parameter has no effect on instruments that have not been mastered within LUSID.
 Boolean masteredOnly = false; // Boolean | Optional. If set to true, only search over instruments that have been mastered within LUSID. Default to false
 try {
     List<InstrumentMatch> result = apiInstance.instrumentsSearch(symbols, masteredEffectiveAt, masteredOnly);
@@ -51,7 +51,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbols** | [**List&lt;InstrumentSearchProperty&gt;**](InstrumentSearchProperty.md)| A collection of instrument symbols to search for | [optional]
- **masteredEffectiveAt** | **OffsetDateTime**| Optional. The effective date for searching mastered instruments. If this is not set, then the current date is taken.  This parameter has no effect on instruments that have not been mastered within LUSID. | [optional]
+ **masteredEffectiveAt** | **String**| Optional. The effective date for searching mastered instruments. If this is not set, then the current date is taken.  This parameter has no effect on instruments that have not been mastered within LUSID. | [optional]
  **masteredOnly** | **Boolean**| Optional. If set to true, only search over instruments that have been mastered within LUSID. Default to false | [optional] [default to false]
 
 ### Return type
