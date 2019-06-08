@@ -1,4 +1,7 @@
-[![Build Status](https://travis-ci.org/finbourne/lusid-sdk-java-preview.svg?branch=master)](https://travis-ci.org/finbourne/lusid-sdk-java-preview)
+| branch | status |
+| --- | --- |
+| `master` |  [![Build Status](https://travis-ci.org/finbourne/lusid-sdk-java-preview.svg?branch=master)](https://travis-ci.org/finbourne/lusid-sdk-java-preview) |
+| `develop` | [![Build Status](https://travis-ci.org/finbourne/lusid-sdk-java-preview.svg?branch=develop)](https://travis-ci.org/finbourne/lusid-sdk-java-preview) |
 
 # LUSID<sup>®</sup> Java SDK
 
