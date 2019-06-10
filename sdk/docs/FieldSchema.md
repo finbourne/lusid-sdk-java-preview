@@ -4,13 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**scope** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
+**id** | [**ResourceId**](ResourceId.md) |  |  [optional]
 **displayName** | **String** |  |  [optional]
+**description** | **String** |  |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) |  |  [optional]
 **isMetric** | **Boolean** |  |  [optional]
 **displayOrder** | **Integer** |  |  [optional]
-**propertySchema** | [**Map&lt;String, FieldSchema&gt;**](FieldSchema.md) |  |  [optional]
 
 
 <a name="TypeEnum"></a>
