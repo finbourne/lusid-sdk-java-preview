@@ -54,10 +54,10 @@
                 <version>2.19.1</version>
                 <configuration>
                     <includes>
-                        <incude>**/integration/*.java</incude>
+                        <include>**/tutorials/**</include>
                     </includes>
                     <excludes>
-                        <exclude>**/api/*.java</exclude>
+                        <exclude>**/api/**</exclude>
                     </excludes>
                     <systemProperties>
                         <property>
