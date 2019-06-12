@@ -1,4 +1,4 @@
-package com.finbourne.lusid.integration;
+package com.finbourne.lusid.tutorials.ibor;
 
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
@@ -7,7 +7,9 @@ import com.finbourne.lusid.api.AnalyticsStoresApi;
 import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.TransactionPortfoliosApi;
 import com.finbourne.lusid.model.*;
-import org.junit.AfterClass;
+import com.finbourne.lusid.utilities.ApiClientBuilder;
+import com.finbourne.lusid.utilities.InstrumentLoader;
+import com.finbourne.lusid.utilities.TestDataUtilities;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -17,16 +19,14 @@ import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+import static com.finbourne.lusid.utilities.TestDataUtilities.TutorialScope;
 import static org.junit.Assert.assertEquals;
 
-public class AggregationTests {
+public class Valuation {
 
     private static final String AGGREGATION_KEY = "Holding/default/PV";
     private static final String AGGREGATION_RESULT_KEY = "Sum(Holding/default/PV)";
     private static final String GROUPBY_KEY = "Instrument/default/Name";
-    private static final String INSTRUMENT_KEY = "instrumentId";
-    private static final String PRICE_KEY = "price";
-    private static final String DATE_KEY = "date";
 
     private final OffsetDateTime EFFECTIVE_DATE = OffsetDateTime.of(2018, 1, 1, 0, 0, 0, 0, ZoneOffset.UTC);
 
@@ -36,7 +36,6 @@ public class AggregationTests {
     private static List<String> instrumentIds;
 
     private static TestDataUtilities testDataUtilities;
-    private static InstrumentLoader instrumentLoader;
 
     @BeforeClass
     public static void setUp() throws Exception
@@ -51,12 +50,8 @@ public class AggregationTests {
 
         //  ensure instruments are created and exist in LUSID
         InstrumentsApi instrumentsApi = new InstrumentsApi(apiClient);
-        instrumentLoader = new InstrumentLoader(instrumentsApi);
+        InstrumentLoader instrumentLoader = new InstrumentLoader(instrumentsApi);
         instrumentIds = instrumentLoader.loadInstruments();
-    }
-
-    @AfterClass
-    public static void tearDown() throws ApiException {
     }
 
     @Test
@@ -87,13 +82,12 @@ public class AggregationTests {
                 });
     }
 
-    public void run_aggregation(
+    private void run_aggregation(
             Supplier<List<TransactionRequest>> createTransactionRequests,
             Consumer<List<Map<String, Object>>> validateResults
     ) throws ApiException
     {
         String uuid = UUID.randomUUID().toString();
-        String scope = "finbourne";
 
         //  build the create portfolio request
         String originalPortfolioId = String.format("Id-%s", uuid);
@@ -104,7 +98,7 @@ public class AggregationTests {
                 .created(EFFECTIVE_DATE);
 
         //  create portfolio
-        Portfolio portfolio = transactionPortfoliosApi.createPortfolio(scope, request);
+        Portfolio portfolio = transactionPortfoliosApi.createPortfolio(TutorialScope, request);
 
         assertEquals(portfolio.getId().getCode(), originalPortfolioId);
 
@@ -114,7 +108,7 @@ public class AggregationTests {
         List<TransactionRequest> transactionRequests = createTransactionRequests.get();
 
         //  upload the transactions to LUSID
-        transactionPortfoliosApi.upsertTransactions(scope, portfolioId, transactionRequests);
+        transactionPortfoliosApi.upsertTransactions(TutorialScope, portfolioId, transactionRequests);
 
         //  set up the prices used for the aggregation in the analytic stores
         ResourceListOfAnalyticStoreKey analyticsStores = analyticsStoresApi.listAnalyticStores(null, null, null, null, null);
@@ -126,7 +120,7 @@ public class AggregationTests {
 
         if (analyticStore == null) {
             //  create the analytic store
-            CreateAnalyticStoreRequest  createAnalyticStoreRequest = new CreateAnalyticStoreRequest().scope(scope).date(EFFECTIVE_DATE);
+            CreateAnalyticStoreRequest  createAnalyticStoreRequest = new CreateAnalyticStoreRequest().scope(TutorialScope).date(EFFECTIVE_DATE);
             analyticsStoresApi.createAnalyticStore(createAnalyticStoreRequest);
         }
 
@@ -137,21 +131,21 @@ public class AggregationTests {
         );
 
         //  add prices to the analytics store
-        analyticsStoresApi.setAnalytics(scope, EFFECTIVE_DATE.getYear(), EFFECTIVE_DATE.getMonthValue(), EFFECTIVE_DATE.getDayOfMonth(), prices);
+        analyticsStoresApi.setAnalytics(TutorialScope, EFFECTIVE_DATE.getYear(), EFFECTIVE_DATE.getMonthValue(), EFFECTIVE_DATE.getDayOfMonth(), prices);
 
         //    create the aggregation request, this example calculates the percentage of total portfolio value and value by instrument
         AggregationRequest  aggregationRequest = new AggregationRequest()
-                .recipeId(new ResourceId().scope(scope).code("default"))
+                .recipeId(new ResourceId().scope(TutorialScope).code("default"))
                 .metrics(Arrays.asList(
                         new AggregateSpec().key(GROUPBY_KEY).op(AggregateSpec.OpEnum.VALUE),
                         new AggregateSpec().key(AGGREGATION_KEY).op(AggregateSpec.OpEnum.PROPORTION),
                         new AggregateSpec().key(AGGREGATION_KEY).op(AggregateSpec.OpEnum.SUM)
                 ))
-                .groupBy(Arrays.asList(GROUPBY_KEY))
+                .groupBy(Collections.singletonList(GROUPBY_KEY))
                 .effectiveAt(EFFECTIVE_DATE);
 
         //  do the aggregation
-        ListAggregationResponse aggregationResponse = aggregationApi.getAggregationByPortfolio(scope, portfolioId, aggregationRequest, null, null, null);
+        ListAggregationResponse aggregationResponse = aggregationApi.getAggregationByPortfolio(TutorialScope, portfolioId, aggregationRequest, null, null, null);
 
         aggregationResponse.getData().sort((o1, o2) -> {
             String name1 = (String)o1.get(GROUPBY_KEY);
@@ -162,7 +156,7 @@ public class AggregationTests {
 
         validateResults.accept(aggregationResponse.getData());
 
-        /**
+        /*
          * The aggregation response contains a schema property which describes the data returned.
          * This includes the aggregated values and description of the types.
          */
