@@ -21,7 +21,7 @@ Maven artifacts can be downloaded from the Open Source Software Repository Hosti
   <dependencies>
     <dependency>
       <groupId>com.finbourne</groupId>
-      <artifactId>lusid-sdk</artifactId>
+      <artifactId>lusid-sdk-preview</artifactId>
       <version>{INSERT VERSION}</version>
     </dependency>
     ...
