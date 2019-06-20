@@ -11,171 +11,153 @@
  */
 
 
-package com.finbourne.lusid.api;
+package com.finbourne.lusid.model;
 
-import com.finbourne.lusid.ApiCallback;
-import com.finbourne.lusid.ApiClient;
-import com.finbourne.lusid.ApiException;
-import com.finbourne.lusid.ApiResponse;
-import com.finbourne.lusid.Configuration;
-import com.finbourne.lusid.Pair;
-import com.finbourne.lusid.ProgressRequestBody;
-import com.finbourne.lusid.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
+import java.util.Objects;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
+/**
+ * OrderBySpec
+ */
 
-import com.finbourne.lusid.model.LusidProblemDetails;
-import com.finbourne.lusid.model.LusidValidationProblemDetails;
+public class OrderBySpec {
+  @SerializedName("key")
+  private String key = null;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+  /**
+   * Gets or Sets sortOrder
+   */
+  @JsonAdapter(SortOrderEnum.Adapter.class)
+  public enum SortOrderEnum {
+    ASCENDING("Ascending"),
+    
+    DESCENDING("Descending");
 
-public class LoginApi {
-    private ApiClient apiClient;
+    private String value;
 
-    public LoginApi() {
-        this(Configuration.getDefaultApiClient());
+    SortOrderEnum(String value) {
+      this.value = value;
     }
 
-    public LoginApi(ApiClient apiClient) {
-        this.apiClient = apiClient;
+    public String getValue() {
+      return value;
     }
 
-    public ApiClient getApiClient() {
-        return apiClient;
+    @Override
+    public String toString() {
+      return String.valueOf(value);
     }
 
-    public void setApiClient(ApiClient apiClient) {
-        this.apiClient = apiClient;
-    }
-
-    /**
-     * Build call for getSamlIdentityProviderId
-     * @param domain The domain that the user will be logging in to (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call getSamlIdentityProviderIdCall(String domain, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/login/saml/{domain}"
-            .replaceAll("\\{" + "domain" + "\\}", apiClient.escapeString(domain.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "text/plain", "application/json", "text/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
+    public static SortOrderEnum fromValue(String text) {
+      for (SortOrderEnum b : SortOrderEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
         }
-
-        String[] localVarAuthNames = new String[] { "oauth2" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+      }
+      return null;
     }
 
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSamlIdentityProviderIdValidateBeforeCall(String domain, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'domain' is set
-        if (domain == null) {
-            throw new ApiException("Missing the required parameter 'domain' when calling getSamlIdentityProviderId(Async)");
-        }
-        
+    public static class Adapter extends TypeAdapter<SortOrderEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SortOrderEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
 
-        com.squareup.okhttp.Call call = getSamlIdentityProviderIdCall(domain, progressListener, progressRequestListener);
-        return call;
-
+      @Override
+      public SortOrderEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return SortOrderEnum.fromValue(String.valueOf(value));
+      }
     }
+  }
 
-    /**
-     * Get SAML Identity Provider
-     * Get the unique identifier for the SAML 2.0 Identity Provider to be used for domain.
-     * @param domain The domain that the user will be logging in to (required)
-     * @return String
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public String getSamlIdentityProviderId(String domain) throws ApiException {
-        ApiResponse<String> resp = getSamlIdentityProviderIdWithHttpInfo(domain);
-        return resp.getData();
+  @SerializedName("sortOrder")
+  private SortOrderEnum sortOrder = null;
+
+  public OrderBySpec key(String key) {
+    this.key = key;
+    return this;
+  }
+
+   /**
+   * Get key
+   * @return key
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getKey() {
+    return key;
+  }
+
+  public void setKey(String key) {
+    this.key = key;
+  }
+
+  public OrderBySpec sortOrder(SortOrderEnum sortOrder) {
+    this.sortOrder = sortOrder;
+    return this;
+  }
+
+   /**
+   * Get sortOrder
+   * @return sortOrder
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public SortOrderEnum getSortOrder() {
+    return sortOrder;
+  }
+
+  public void setSortOrder(SortOrderEnum sortOrder) {
+    this.sortOrder = sortOrder;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
     }
-
-    /**
-     * Get SAML Identity Provider
-     * Get the unique identifier for the SAML 2.0 Identity Provider to be used for domain.
-     * @param domain The domain that the user will be logging in to (required)
-     * @return ApiResponse&lt;String&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<String> getSamlIdentityProviderIdWithHttpInfo(String domain) throws ApiException {
-        com.squareup.okhttp.Call call = getSamlIdentityProviderIdValidateBeforeCall(domain, null, null);
-        Type localVarReturnType = new TypeToken<String>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+    if (o == null || getClass() != o.getClass()) {
+      return false;
     }
+    OrderBySpec orderBySpec = (OrderBySpec) o;
+    return Objects.equals(this.key, orderBySpec.key) &&
+        Objects.equals(this.sortOrder, orderBySpec.sortOrder);
+  }
 
-    /**
-     * Get SAML Identity Provider (asynchronously)
-     * Get the unique identifier for the SAML 2.0 Identity Provider to be used for domain.
-     * @param domain The domain that the user will be logging in to (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getSamlIdentityProviderIdAsync(String domain, final ApiCallback<String> callback) throws ApiException {
+  @Override
+  public int hashCode() {
+    return Objects.hash(key, sortOrder);
+  }
 
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class OrderBySpec {\n");
+    
+    sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    sortOrder: ").append(toIndentedString(sortOrder)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
 
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getSamlIdentityProviderIdValidateBeforeCall(domain, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<String>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
     }
+    return o.toString().replace("\n", "\n    ");
+  }
+
 }
+
