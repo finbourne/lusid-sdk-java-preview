@@ -3,8 +3,10 @@ package com.finbourne.lusid.tutorials.marketdata;
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.api.InstrumentsApi;
+import com.finbourne.lusid.api.PropertyDefinitionsApi;
 import com.finbourne.lusid.model.*;
 import com.finbourne.lusid.utilities.ApiClientBuilder;
+import com.finbourne.lusid.utilities.TestDataUtilities;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -12,10 +14,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static com.finbourne.lusid.utilities.TestDataUtilities.TutorialScope;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class InstrumentMaster {
+public class Instruments {
 
     private static final String FIGI_SCHEME = "Figi";
     private static final String CUSTOM_INTERNAL_SCHEME = "ClientInternal";
@@ -27,6 +30,7 @@ public class InstrumentMaster {
     private static final String FIGI_PROPERTY_KEY = "Instrument/default/Figi";
 
     private static InstrumentsApi instrumentsApi;
+    private static PropertyDefinitionsApi  propertyDefinitionsApi;
 
     @BeforeClass
     public static void setUp() throws Exception {
@@ -34,8 +38,31 @@ public class InstrumentMaster {
         ApiClient apiClient = new ApiClientBuilder("secrets.json").build();
 
         instrumentsApi = new InstrumentsApi(apiClient);
+        propertyDefinitionsApi = new PropertyDefinitionsApi(apiClient);
 
         seedInstrumentMaster();
+        ensurePropertyDefinition("CustomSector");
+    }
+
+    private static void ensurePropertyDefinition(String code) throws ApiException {
+        try {
+            propertyDefinitionsApi.getPropertyDefinition("Instrument", TestDataUtilities.TutorialScope, code, null);
+        } catch (ApiException e) {
+
+            //  Property definition doesn't exist (returns 404), so create one
+            //  Details of the property to be created
+            CreatePropertyDefinitionRequest propertyDefinition = new CreatePropertyDefinitionRequest()
+                    .domain(CreatePropertyDefinitionRequest.DomainEnum.INSTRUMENT)
+                    .scope(TutorialScope)
+                    .lifeTime(CreatePropertyDefinitionRequest.LifeTimeEnum.PERPETUAL)
+                    .code(code)
+                    .valueRequired(false)
+                    .displayName("Fund Style")
+                    .dataTypeId(new ResourceId().scope("system").code("string"));
+
+            //  Create property definition
+            propertyDefinitionsApi.createPropertyDefinition(propertyDefinition);
+        }
     }
     
     private static void seedInstrumentMaster() throws ApiException
@@ -135,6 +162,103 @@ public class InstrumentMaster {
         assertThat(identifiers.get(0).getValue(), equalTo("GB00BH4HKS39"));
         assertThat(identifiers.get(1).getKey(), equalTo(SEDOL_PROPERTY_KEY));
         assertThat(identifiers.get(1).getValue(), equalTo("BH4HKS3"));
+    }
+
+    @Test
+    public void list_available_identifiers() throws ApiException {
+
+        //    Get the list of identifier schemes
+        ResourceListOfInstrumentIdTypeDescriptor identifiers = instrumentsApi.getInstrumentIdentifiers();
+
+        //    Schemes are returned as descriptors containing the name, property key and uniqueness constraint
+
+        for (InstrumentIdTypeDescriptor scheme : identifiers.getValues())
+        {
+            System.out.println(String.format("name: %s\nproperty key: %s\nis unique: %s\n", scheme.getIdName(),
+                    scheme.getPropertyKeyValue(), scheme.isIsUniqueIdentifier()));
+        }
+    }
+
+    @Test
+    public void list_all_instruments() throws  ApiException {
+
+        final int pageSize = 5;
+
+        //    List the instruments restricting, the number that are returned
+        ResourceListOfInstrument instruments = instrumentsApi.listInstruments(null, null, null, null, null, pageSize, null, null);
+
+        assertThat(instruments.getValues().size(), is(equalTo(pageSize)));
+    }
+
+    @Test
+    public void list_instruments_by_Identifier_type() throws ApiException {
+
+        List<String>    figis = Arrays.asList("BBG00M1BQWX0", "BBG00D1PBRL9", "BBG00BW1V2M4");
+
+        //  Get a set of instruments querying by FIGIs
+        GetInstrumentsResponse instruments = instrumentsApi.getInstruments("Figi", figis, null, null, null);
+
+        for (String figi : figis) {
+            assertThat(instruments.getValues(), hasKey(figi));
+        }
+    }
+
+    @Test
+    public void edit_instrument_property() throws ApiException {
+
+        //  Create the property value
+        PropertyValue   propertyValue = new PropertyValue().labelValue("Telecoms");
+        String propertyKey = String.format("Instrument/%s/CustomSector", TutorialScope);
+
+        //  Get the LusidInstrumentId (LUID)
+        Instrument instrument = instrumentsApi.getInstrument("Figi", "BBG00M1BQWX0", null, null, null);
+
+        //    Add it to the instrument
+        instrumentsApi.upsertInstrumentsProperties(Collections.singletonList(new UpsertInstrumentPropertyRequest()
+                .lusidInstrumentId(instrument.getLusidInstrumentId())
+                .properties(Collections.singletonList(new InstrumentProperty().key(propertyKey).value(propertyValue)))));
+
+        instrument = instrumentsApi.getInstrument(
+                "LusidInstrumentId",
+                instrument.getLusidInstrumentId(),
+                null, null,
+                Collections.singletonList(propertyKey)
+        );
+
+        assertThat(instrument.getProperties(), hasSize(greaterThanOrEqualTo(1)));
+
+        Property property = instrument.getProperties().get(0);
+
+        assertThat(property.getValue(), equalTo("Telecoms"));
+    }
+
+    @Test
+    public void create_custom_instrument() throws ApiException {
+
+        //  swap definition, this is uploaded in a client custom format
+        InstrumentDefinition   swapDefinition = new InstrumentDefinition()
+                .name("10mm 5Y Fixed")
+
+                //  The set of identifiers used for identifying the instrument
+                //  e.g. for uploading transactions
+                .identifiers(Collections.singletonMap("ClientInternal", new InstrumentIdValue().value("SW-1")))
+
+                //  The details for valuing the instrument
+                .definition(
+
+                        new InstrumentEconomicDefinition()
+
+                                //  Identifies which valuation engine to use
+                                .instrumentFormat("CustomFormat")
+                                .content("<customFormat>upload in custom xml or JSON format</customFormat>")
+                );
+
+        //  create the swap
+        UpsertInstrumentsResponse instrumentsResponse = instrumentsApi.upsertInstruments(
+                Collections.singletonMap("request", swapDefinition)
+        );
+
+        assertThat(instrumentsResponse.getFailed().keySet(), is(empty()));
     }
 
 }
