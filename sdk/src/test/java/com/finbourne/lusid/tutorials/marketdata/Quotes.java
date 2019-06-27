@@ -35,7 +35,6 @@ public class Quotes {
         UpsertQuoteRequest  request = new UpsertQuoteRequest()
             .quoteId(new QuoteId()
                 .provider("DataScope")
-                .priceSource("USDRC")
                 .instrumentId("BBG000B9XRY4")
                 .instrumentIdType(QuoteId.InstrumentIdTypeEnum.FIGI)
                 .quoteType(QuoteId.QuoteTypeEnum.PRICE)
@@ -56,7 +55,6 @@ public class Quotes {
 
         QuoteId quoteId = new QuoteId()
             .provider("DataScope")
-            .priceSource("USDRC")
             .instrumentId("BBG000B9XRY4")
             .instrumentIdType(QuoteId.InstrumentIdTypeEnum.FIGI)
             .quoteType(QuoteId.QuoteTypeEnum.PRICE)
@@ -89,7 +87,6 @@ public class Quotes {
 
         QuoteId quoteId = new QuoteId()
             .provider("DataScope")
-            .priceSource("USDRC")
             .instrumentId("BBG000B9XRY4")
             .instrumentIdType(QuoteId.InstrumentIdTypeEnum.FIGI)
             .quoteType(QuoteId.QuoteTypeEnum.PRICE)
