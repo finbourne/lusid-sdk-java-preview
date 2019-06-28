@@ -1,7 +1,9 @@
 
+
 # CreateDataTypeRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **scope** | **String** |  | 
@@ -15,16 +17,18 @@ Name | Type | Description | Notes
 **acceptableUnits** | [**List&lt;CreateUnitDefinition&gt;**](CreateUnitDefinition.md) |  |  [optional]
 
 
-<a name="TypeValueRangeEnum"></a>
+
 ## Enum: TypeValueRangeEnum
+
 Name | Value
 ---- | -----
 OPEN | &quot;Open&quot;
 CLOSED | &quot;Closed&quot;
 
 
-<a name="ValueTypeEnum"></a>
+
 ## Enum: ValueTypeEnum
+
 Name | Value
 ---- | -----
 STRING | &quot;String&quot;
@@ -60,8 +64,9 @@ DATEORCUTLABEL | &quot;DateOrCutLabel&quot;
 TRANSITION | &quot;Transition&quot;
 
 
-<a name="UnitSchemaEnum"></a>
+
 ## Enum: UnitSchemaEnum
+
 Name | Value
 ---- | -----
 NOUNITS | &quot;NoUnits&quot;

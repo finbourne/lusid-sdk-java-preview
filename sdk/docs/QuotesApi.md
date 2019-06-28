@@ -1,6 +1,6 @@
 # QuotesApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,27 +20,36 @@ Delete the specified quotes. In order for a quote to be deleted the id and effec
 ### Example
 ```java
 // Import classes:
-//import com.finbourne.lusid.ApiClient;
-//import com.finbourne.lusid.ApiException;
-//import com.finbourne.lusid.Configuration;
-//import com.finbourne.lusid.auth.*;
-//import com.finbourne.lusid.api.QuotesApi;
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.QuotesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-// Configure OAuth2 access token for authorization: oauth2
-OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-QuotesApi apiInstance = new QuotesApi();
-String scope = "scope_example"; // String | The scope of the quote
-List<DeleteQuoteRequest> quotes = Arrays.asList(new DeleteQuoteRequest()); // List<DeleteQuoteRequest> | The quotes to delete
-try {
-    DeleteQuotesResponse result = apiInstance.deleteQuotes(scope, quotes);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling QuotesApi#deleteQuotes");
-    e.printStackTrace();
+    QuotesApi apiInstance = new QuotesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the quote
+    List<DeleteQuoteRequest> quotes = Arrays.asList(null); // List<DeleteQuoteRequest> | The quotes to delete
+    try {
+      DeleteQuotesResponse result = apiInstance.deleteQuotes(scope, quotes);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling QuotesApi#deleteQuotes");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -64,9 +73,16 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="getQuotes"></a>
 # **getQuotes**
-> GetQuotesResponse getQuotes(scope, quoteIds, effectiveAt, asAt, maxAge, page, limit)
+> GetQuotesResponse getQuotes(scope, effectiveAt, asAt, maxAge, page, limit, quoteIds)
 
 Get quotes
 
@@ -75,32 +91,41 @@ Get quotes effective at the specified date/time (if any). An optional maximum ag
 ### Example
 ```java
 // Import classes:
-//import com.finbourne.lusid.ApiClient;
-//import com.finbourne.lusid.ApiException;
-//import com.finbourne.lusid.Configuration;
-//import com.finbourne.lusid.auth.*;
-//import com.finbourne.lusid.api.QuotesApi;
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.QuotesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-// Configure OAuth2 access token for authorization: oauth2
-OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-QuotesApi apiInstance = new QuotesApi();
-String scope = "scope_example"; // String | The scope of the quotes
-List<QuoteId> quoteIds = Arrays.asList(new QuoteId()); // List<QuoteId> | The ids of the quotes
-OffsetDateTime effectiveAt = new OffsetDateTime(); // OffsetDateTime | Optional. The date/time from which the quotes are effective
-OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The 'AsAt' date/time
-String maxAge = "maxAge_example"; // String | Optional. The quote staleness tolerance
-Integer page = 56; // Integer | Optional. The page of results to return
-Integer limit = 56; // Integer | Optional. The number of results per page
-try {
-    GetQuotesResponse result = apiInstance.getQuotes(scope, quoteIds, effectiveAt, asAt, maxAge, page, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling QuotesApi#getQuotes");
-    e.printStackTrace();
+    QuotesApi apiInstance = new QuotesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the quotes
+    OffsetDateTime effectiveAt = new OffsetDateTime(); // OffsetDateTime | Optional. The date/time from which the quotes are effective
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The 'AsAt' date/time
+    String maxAge = "maxAge_example"; // String | Optional. The quote staleness tolerance
+    Integer page = 56; // Integer | Optional. The page of results to return
+    Integer limit = 56; // Integer | Optional. The number of results per page
+    List<QuoteId> quoteIds = Arrays.asList(null); // List<QuoteId> | The ids of the quotes
+    try {
+      GetQuotesResponse result = apiInstance.getQuotes(scope, effectiveAt, asAt, maxAge, page, limit, quoteIds);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling QuotesApi#getQuotes");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -109,12 +134,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the quotes |
- **quoteIds** | [**List&lt;QuoteId&gt;**](QuoteId.md)| The ids of the quotes | [optional]
  **effectiveAt** | **OffsetDateTime**| Optional. The date/time from which the quotes are effective | [optional]
  **asAt** | **OffsetDateTime**| Optional. The &#39;AsAt&#39; date/time | [optional]
  **maxAge** | **String**| Optional. The quote staleness tolerance | [optional]
  **page** | **Integer**| Optional. The page of results to return | [optional]
  **limit** | **Integer**| Optional. The number of results per page | [optional]
+ **quoteIds** | [**List&lt;QuoteId&gt;**](QuoteId.md)| The ids of the quotes | [optional]
 
 ### Return type
 
@@ -129,6 +154,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="upsertQuotes"></a>
 # **upsertQuotes**
 > UpsertQuotesResponse upsertQuotes(scope, quotes)
@@ -140,27 +172,36 @@ Upsert quotes effective at the specified time. If a quote is added with the same
 ### Example
 ```java
 // Import classes:
-//import com.finbourne.lusid.ApiClient;
-//import com.finbourne.lusid.ApiException;
-//import com.finbourne.lusid.Configuration;
-//import com.finbourne.lusid.auth.*;
-//import com.finbourne.lusid.api.QuotesApi;
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.QuotesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-// Configure OAuth2 access token for authorization: oauth2
-OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-QuotesApi apiInstance = new QuotesApi();
-String scope = "scope_example"; // String | The scope of the quotes
-List<UpsertQuoteRequest> quotes = Arrays.asList(new UpsertQuoteRequest()); // List<UpsertQuoteRequest> | The quotes to upsert
-try {
-    UpsertQuotesResponse result = apiInstance.upsertQuotes(scope, quotes);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling QuotesApi#upsertQuotes");
-    e.printStackTrace();
+    QuotesApi apiInstance = new QuotesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the quotes
+    List<UpsertQuoteRequest> quotes = Arrays.asList(null); // List<UpsertQuoteRequest> | The quotes to upsert
+    try {
+      UpsertQuotesResponse result = apiInstance.upsertQuotes(scope, quotes);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling QuotesApi#upsertQuotes");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -183,4 +224,11 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
 

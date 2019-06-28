@@ -1,7 +1,9 @@
 
+
 # CorporateAction
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **corporateActionCode** | **String** | The unique identifier of this corporate action | 

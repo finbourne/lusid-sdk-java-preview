@@ -1,7 +1,9 @@
 
+
 # ResourceListOfChange
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **values** | [**List&lt;Change&gt;**](Change.md) |  | 

@@ -1,7 +1,9 @@
 
+
 # GetQuotesResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **found** | [**List&lt;Quote&gt;**](Quote.md) |  |  [optional]

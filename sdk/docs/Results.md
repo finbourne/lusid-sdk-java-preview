@@ -1,7 +1,9 @@
 
+
 # Results
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **version** | [**Version**](Version.md) |  |  [optional]
@@ -11,8 +13,9 @@ Name | Type | Description | Notes
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
-<a name="FormatEnum"></a>
+
 ## Enum: FormatEnum
+
 Name | Value
 ---- | -----
 DATAREADER | &quot;DataReader&quot;

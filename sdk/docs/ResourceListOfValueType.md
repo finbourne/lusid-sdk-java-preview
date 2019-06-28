@@ -1,7 +1,9 @@
 
+
 # ResourceListOfValueType
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **values** | [**List&lt;ValuesEnum&gt;**](#List&lt;ValuesEnum&gt;) |  | 
@@ -9,8 +11,9 @@ Name | Type | Description | Notes
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
-<a name="List<ValuesEnum>"></a>
+
 ## Enum: List&lt;ValuesEnum&gt;
+
 Name | Value
 ---- | -----
 STRING | &quot;String&quot;

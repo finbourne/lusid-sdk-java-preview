@@ -175,7 +175,7 @@ public class Instruments {
         for (InstrumentIdTypeDescriptor scheme : identifiers.getValues())
         {
             System.out.println(String.format("name: %s\nproperty key: %s\nis unique: %s\n", scheme.getIdName(),
-                    scheme.getPropertyKeyValue(), scheme.isIsUniqueIdentifier()));
+                    scheme.getPropertyKeyValue(), scheme.getIsUniqueIdentifier()));
         }
     }
 

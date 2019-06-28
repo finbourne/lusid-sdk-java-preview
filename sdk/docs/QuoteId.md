@@ -1,7 +1,9 @@
 
+
 # QuoteId
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **provider** | **String** |  | 
@@ -12,8 +14,9 @@ Name | Type | Description | Notes
 **priceSide** | [**PriceSideEnum**](#PriceSideEnum) |  | 
 
 
-<a name="InstrumentIdTypeEnum"></a>
+
 ## Enum: InstrumentIdTypeEnum
+
 Name | Value
 ---- | -----
 LUSIDINSTRUMENTID | &quot;LusidInstrumentId&quot;
@@ -24,8 +27,9 @@ ISIN | &quot;Isin&quot;
 CURRENCYPAIR | &quot;CurrencyPair&quot;
 
 
-<a name="QuoteTypeEnum"></a>
+
 ## Enum: QuoteTypeEnum
+
 Name | Value
 ---- | -----
 PRICE | &quot;Price&quot;
@@ -33,8 +37,9 @@ SPREAD | &quot;Spread&quot;
 RATE | &quot;Rate&quot;
 
 
-<a name="PriceSideEnum"></a>
+
 ## Enum: PriceSideEnum
+
 Name | Value
 ---- | -----
 BID | &quot;Bid&quot;

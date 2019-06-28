@@ -1,15 +1,18 @@
 
+
 # AggregateSpec
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **key** | **String** |  |  [optional]
 **op** | [**OpEnum**](#OpEnum) |  |  [optional]
 
 
-<a name="OpEnum"></a>
+
 ## Enum: OpEnum
+
 Name | Value
 ---- | -----
 SUM | &quot;Sum&quot;

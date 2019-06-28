@@ -1,7 +1,9 @@
 
+
 # ResourceListOfPortfolioSearchResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **values** | [**List&lt;PortfolioSearchResult&gt;**](PortfolioSearchResult.md) |  | 

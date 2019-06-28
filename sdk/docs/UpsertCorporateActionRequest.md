@@ -1,7 +1,9 @@
 
+
 # UpsertCorporateActionRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **corporateActionCode** | **String** |  | 

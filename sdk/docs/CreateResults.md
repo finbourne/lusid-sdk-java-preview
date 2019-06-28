@@ -1,7 +1,9 @@
 
+
 # CreateResults
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **effectiveAt** | [**OffsetDateTime**](OffsetDateTime.md) | The effective market date for which results are calculated and are to be stored. | 
@@ -13,8 +15,9 @@ Name | Type | Description | Notes
 **data** | **String** | The data that should be stored in the results cube. |  [optional]
 
 
-<a name="FormatEnum"></a>
+
 ## Enum: FormatEnum
+
 Name | Value
 ---- | -----
 DATAREADER | &quot;DataReader&quot;

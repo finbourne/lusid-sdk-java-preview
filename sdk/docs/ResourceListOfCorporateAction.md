@@ -1,7 +1,9 @@
 
+
 # ResourceListOfCorporateAction
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **values** | [**List&lt;CorporateAction&gt;**](CorporateAction.md) |  | 
