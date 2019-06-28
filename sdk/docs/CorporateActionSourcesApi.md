@@ -1,6 +1,6 @@
 # CorporateActionSourcesApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,28 +22,37 @@ Attempt to create/update one or more corporate action in a specified corporate a
 ### Example
 ```java
 // Import classes:
-//import com.finbourne.lusid.ApiClient;
-//import com.finbourne.lusid.ApiException;
-//import com.finbourne.lusid.Configuration;
-//import com.finbourne.lusid.auth.*;
-//import com.finbourne.lusid.api.CorporateActionSourcesApi;
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CorporateActionSourcesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-// Configure OAuth2 access token for authorization: oauth2
-OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi();
-String scope = "scope_example"; // String | The scope of corporate action source
-String code = "code_example"; // String | The code of the corporate action source
-List<UpsertCorporateActionRequest> actions = Arrays.asList(new UpsertCorporateActionRequest()); // List<UpsertCorporateActionRequest> | The corporate action definitions
-try {
-    UpsertCorporateActionsResponse result = apiInstance.batchUpsertCorporateActions(scope, code, actions);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CorporateActionSourcesApi#batchUpsertCorporateActions");
-    e.printStackTrace();
+    CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of corporate action source
+    String code = "code_example"; // String | The code of the corporate action source
+    List<UpsertCorporateActionRequest> actions = Arrays.asList(null); // List<UpsertCorporateActionRequest> | The corporate action definitions
+    try {
+      UpsertCorporateActionsResponse result = apiInstance.batchUpsertCorporateActions(scope, code, actions);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CorporateActionSourcesApi#batchUpsertCorporateActions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -68,6 +77,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | The created corporate actions |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="createCorporateActionSource"></a>
 # **createCorporateActionSource**
 > CorporateActionSource createCorporateActionSource(request)
@@ -79,26 +95,35 @@ Attempt to create a corporate action source.
 ### Example
 ```java
 // Import classes:
-//import com.finbourne.lusid.ApiClient;
-//import com.finbourne.lusid.ApiException;
-//import com.finbourne.lusid.Configuration;
-//import com.finbourne.lusid.auth.*;
-//import com.finbourne.lusid.api.CorporateActionSourcesApi;
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CorporateActionSourcesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-// Configure OAuth2 access token for authorization: oauth2
-OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi();
-CreateCorporateActionSourceRequest request = new CreateCorporateActionSourceRequest(); // CreateCorporateActionSourceRequest | The corporate action source definition
-try {
-    CorporateActionSource result = apiInstance.createCorporateActionSource(request);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CorporateActionSourcesApi#createCorporateActionSource");
-    e.printStackTrace();
+    CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
+    CreateCorporateActionSourceRequest request = new CreateCorporateActionSourceRequest(); // CreateCorporateActionSourceRequest | The corporate action source definition
+    try {
+      CorporateActionSource result = apiInstance.createCorporateActionSource(request);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CorporateActionSourcesApi#createCorporateActionSource");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -121,6 +146,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | The created corporate action source |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="deleteCorporateActionSource"></a>
 # **deleteCorporateActionSource**
 > DeletedEntityResponse deleteCorporateActionSource(scope, code)
@@ -132,27 +164,36 @@ Deletes a single corporate action source
 ### Example
 ```java
 // Import classes:
-//import com.finbourne.lusid.ApiClient;
-//import com.finbourne.lusid.ApiException;
-//import com.finbourne.lusid.Configuration;
-//import com.finbourne.lusid.auth.*;
-//import com.finbourne.lusid.api.CorporateActionSourcesApi;
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CorporateActionSourcesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-// Configure OAuth2 access token for authorization: oauth2
-OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi();
-String scope = "scope_example"; // String | The Scope of the Corporate Action Source to be deleted
-String code = "code_example"; // String | The Code of the Corporate Action Source to be deleted
-try {
-    DeletedEntityResponse result = apiInstance.deleteCorporateActionSource(scope, code);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CorporateActionSourcesApi#deleteCorporateActionSource");
-    e.printStackTrace();
+    CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
+    String scope = "scope_example"; // String | The Scope of the Corporate Action Source to be deleted
+    String code = "code_example"; // String | The Code of the Corporate Action Source to be deleted
+    try {
+      DeletedEntityResponse result = apiInstance.deleteCorporateActionSource(scope, code);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CorporateActionSourcesApi#deleteCorporateActionSource");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -176,6 +217,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Corporate Action Source Deleted |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="getCorporateActions"></a>
 # **getCorporateActions**
 > ResourceListOfCorporateAction getCorporateActions(scope, code, fromEffectiveAt, toEffectiveAt, asAt, sortBy, start, limit, filter)
@@ -187,34 +235,43 @@ Gets corporate actions from a specific corporate action source
 ### Example
 ```java
 // Import classes:
-//import com.finbourne.lusid.ApiClient;
-//import com.finbourne.lusid.ApiException;
-//import com.finbourne.lusid.Configuration;
-//import com.finbourne.lusid.auth.*;
-//import com.finbourne.lusid.api.CorporateActionSourcesApi;
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CorporateActionSourcesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-// Configure OAuth2 access token for authorization: oauth2
-OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi();
-String scope = "scope_example"; // String | The scope of the corporate action source
-String code = "code_example"; // String | The code of the corporate action source
-String fromEffectiveAt = "fromEffectiveAt_example"; // String | Optional. The start effective date of the data range
-String toEffectiveAt = "toEffectiveAt_example"; // String | Optional. The end effective date of the data range
-OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The AsAt date of the data
-List<String> sortBy = Arrays.asList("sortBy_example"); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
-Integer start = 56; // Integer | Optional. When paginating, skip this number of results
-Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many
-String filter = "filter_example"; // String | Optional. Expression to filter the result set
-try {
-    ResourceListOfCorporateAction result = apiInstance.getCorporateActions(scope, code, fromEffectiveAt, toEffectiveAt, asAt, sortBy, start, limit, filter);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CorporateActionSourcesApi#getCorporateActions");
-    e.printStackTrace();
+    CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the corporate action source
+    String code = "code_example"; // String | The code of the corporate action source
+    String fromEffectiveAt = "fromEffectiveAt_example"; // String | Optional. The start effective date of the data range
+    String toEffectiveAt = "toEffectiveAt_example"; // String | Optional. The end effective date of the data range
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The AsAt date of the data
+    List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
+    Integer start = 56; // Integer | Optional. When paginating, skip this number of results
+    Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many
+    String filter = "filter_example"; // String | Optional. Expression to filter the result set
+    try {
+      ResourceListOfCorporateAction result = apiInstance.getCorporateActions(scope, code, fromEffectiveAt, toEffectiveAt, asAt, sortBy, start, limit, filter);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CorporateActionSourcesApi#getCorporateActions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -245,6 +302,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Corporate Actions |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="listCorporateActionSources"></a>
 # **listCorporateActionSources**
 > ResourceListOfCorporateActionSource listCorporateActionSources(asAt, sortBy, start, limit, filter)
@@ -256,30 +320,39 @@ Gets a list of all corporate action sources
 ### Example
 ```java
 // Import classes:
-//import com.finbourne.lusid.ApiClient;
-//import com.finbourne.lusid.ApiException;
-//import com.finbourne.lusid.Configuration;
-//import com.finbourne.lusid.auth.*;
-//import com.finbourne.lusid.api.CorporateActionSourcesApi;
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CorporateActionSourcesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-// Configure OAuth2 access token for authorization: oauth2
-OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi();
-OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The AsAt date of the data
-List<String> sortBy = Arrays.asList("sortBy_example"); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
-Integer start = 56; // Integer | Optional. When paginating, skip this number of results
-Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many
-String filter = "filter_example"; // String | Optional. Expression to filter the result set
-try {
-    ResourceListOfCorporateActionSource result = apiInstance.listCorporateActionSources(asAt, sortBy, start, limit, filter);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CorporateActionSourcesApi#listCorporateActionSources");
-    e.printStackTrace();
+    CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The AsAt date of the data
+    List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
+    Integer start = 56; // Integer | Optional. When paginating, skip this number of results
+    Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many
+    String filter = "filter_example"; // String | Optional. Expression to filter the result set
+    try {
+      ResourceListOfCorporateActionSource result = apiInstance.listCorporateActionSources(asAt, sortBy, start, limit, filter);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CorporateActionSourcesApi#listCorporateActionSources");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -305,4 +378,11 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | All Existing Corporate Action Sources |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
 

@@ -1,6 +1,6 @@
 # SchemasApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,26 +21,35 @@ Gets the schema and meta-data for a given entity
 ### Example
 ```java
 // Import classes:
-//import com.finbourne.lusid.ApiClient;
-//import com.finbourne.lusid.ApiException;
-//import com.finbourne.lusid.Configuration;
-//import com.finbourne.lusid.auth.*;
-//import com.finbourne.lusid.api.SchemasApi;
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.SchemasApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-// Configure OAuth2 access token for authorization: oauth2
-OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-SchemasApi apiInstance = new SchemasApi();
-String entity = "entity_example"; // String | The name of a valid entity
-try {
-    Schema result = apiInstance.getEntitySchema(entity);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SchemasApi#getEntitySchema");
-    e.printStackTrace();
+    SchemasApi apiInstance = new SchemasApi(defaultClient);
+    String entity = "entity_example"; // String | The name of a valid entity
+    try {
+      Schema result = apiInstance.getEntitySchema(entity);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SchemasApi#getEntitySchema");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -63,6 +72,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="getPropertySchema"></a>
 # **getPropertySchema**
 > PropertySchema getPropertySchema(propertyKeys, asAt)
@@ -74,27 +90,36 @@ Get the schemas for the provided list of property keys.
 ### Example
 ```java
 // Import classes:
-//import com.finbourne.lusid.ApiClient;
-//import com.finbourne.lusid.ApiException;
-//import com.finbourne.lusid.Configuration;
-//import com.finbourne.lusid.auth.*;
-//import com.finbourne.lusid.api.SchemasApi;
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.SchemasApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-// Configure OAuth2 access token for authorization: oauth2
-OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-SchemasApi apiInstance = new SchemasApi();
-List<String> propertyKeys = Arrays.asList("propertyKeys_example"); // List<String> | One or more property keys for which the schema is requested
-OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The AsAt date of the data
-try {
-    PropertySchema result = apiInstance.getPropertySchema(propertyKeys, asAt);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SchemasApi#getPropertySchema");
-    e.printStackTrace();
+    SchemasApi apiInstance = new SchemasApi(defaultClient);
+    List<String> propertyKeys = Arrays.asList(); // List<String> | One or more property keys for which the schema is requested
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The AsAt date of the data
+    try {
+      PropertySchema result = apiInstance.getPropertySchema(propertyKeys, asAt);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SchemasApi#getPropertySchema");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -118,6 +143,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="getValueTypes"></a>
 # **getValueTypes**
 > ResourceListOfValueType getValueTypes(sortBy, start, limit)
@@ -129,28 +161,37 @@ Gets the available value types for which a schema is available.
 ### Example
 ```java
 // Import classes:
-//import com.finbourne.lusid.ApiClient;
-//import com.finbourne.lusid.ApiException;
-//import com.finbourne.lusid.Configuration;
-//import com.finbourne.lusid.auth.*;
-//import com.finbourne.lusid.api.SchemasApi;
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.SchemasApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-// Configure OAuth2 access token for authorization: oauth2
-OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-SchemasApi apiInstance = new SchemasApi();
-List<String> sortBy = Arrays.asList("sortBy_example"); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
-Integer start = 56; // Integer | Optional. When paginating, skip this number of results
-Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
-try {
-    ResourceListOfValueType result = apiInstance.getValueTypes(sortBy, start, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SchemasApi#getValueTypes");
-    e.printStackTrace();
+    SchemasApi apiInstance = new SchemasApi(defaultClient);
+    List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
+    Integer start = 56; // Integer | Optional. When paginating, skip this number of results
+    Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
+    try {
+      ResourceListOfValueType result = apiInstance.getValueTypes(sortBy, start, limit);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SchemasApi#getValueTypes");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -175,6 +216,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="listEntities"></a>
 # **listEntities**
 > ResourceListOfString listEntities()
@@ -186,25 +234,34 @@ List all available entities for which schema information is available.
 ### Example
 ```java
 // Import classes:
-//import com.finbourne.lusid.ApiClient;
-//import com.finbourne.lusid.ApiException;
-//import com.finbourne.lusid.Configuration;
-//import com.finbourne.lusid.auth.*;
-//import com.finbourne.lusid.api.SchemasApi;
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.SchemasApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-// Configure OAuth2 access token for authorization: oauth2
-OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-SchemasApi apiInstance = new SchemasApi();
-try {
-    ResourceListOfString result = apiInstance.listEntities();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SchemasApi#listEntities");
-    e.printStackTrace();
+    SchemasApi apiInstance = new SchemasApi(defaultClient);
+    try {
+      ResourceListOfString result = apiInstance.listEntities();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SchemasApi#listEntities");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -223,4 +280,10 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**0** | Error response |  -  |
 

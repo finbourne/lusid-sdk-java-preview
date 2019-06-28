@@ -1,6 +1,6 @@
 # EntitiesApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,28 +18,37 @@ Gets the time of the next (earliest effective at) modification (correction and/o
 ### Example
 ```java
 // Import classes:
-//import com.finbourne.lusid.ApiClient;
-//import com.finbourne.lusid.ApiException;
-//import com.finbourne.lusid.Configuration;
-//import com.finbourne.lusid.auth.*;
-//import com.finbourne.lusid.api.EntitiesApi;
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.EntitiesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-// Configure OAuth2 access token for authorization: oauth2
-OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-EntitiesApi apiInstance = new EntitiesApi();
-String scope = "scope_example"; // String | The scope
-String effectiveAt = "effectiveAt_example"; // String | The effective date of the origin.
-OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The as-at date of the origin.
-try {
-    ResourceListOfChange result = apiInstance.getPortfolioChanges(scope, effectiveAt, asAt);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling EntitiesApi#getPortfolioChanges");
-    e.printStackTrace();
+    EntitiesApi apiInstance = new EntitiesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope
+    String effectiveAt = "effectiveAt_example"; // String | The effective date of the origin.
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The as-at date of the origin.
+    try {
+      ResourceListOfChange result = apiInstance.getPortfolioChanges(scope, effectiveAt, asAt);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EntitiesApi#getPortfolioChanges");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -63,4 +72,11 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of portfolio changes in the requested scope relative to the specified time. |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
 

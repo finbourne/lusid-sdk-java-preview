@@ -1,7 +1,9 @@
 
+
 # Quote
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **quoteId** | [**QuoteId**](QuoteId.md) |  | 

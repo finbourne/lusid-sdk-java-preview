@@ -1,17 +1,20 @@
 
+
 # PropertyFilter
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **left** | **String** |  |  [optional]
 **operator** | [**OperatorEnum**](#OperatorEnum) |  |  [optional]
-**right** | **Object** |  |  [optional]
+**right** | [**Object**](.md) |  |  [optional]
 **rightOperandType** | [**RightOperandTypeEnum**](#RightOperandTypeEnum) |  |  [optional]
 
 
-<a name="OperatorEnum"></a>
+
 ## Enum: OperatorEnum
+
 Name | Value
 ---- | -----
 EQUALS | &quot;Equals&quot;
@@ -23,8 +26,9 @@ LESSTHANOREQUALTO | &quot;LessThanOrEqualTo&quot;
 IN | &quot;In&quot;
 
 
-<a name="RightOperandTypeEnum"></a>
+
 ## Enum: RightOperandTypeEnum
+
 Name | Value
 ---- | -----
 ABSOLUTE | &quot;Absolute&quot;

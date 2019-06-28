@@ -1,7 +1,9 @@
 
+
 # FieldSchema
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**ResourceId**](ResourceId.md) |  |  [optional]
@@ -12,8 +14,9 @@ Name | Type | Description | Notes
 **displayOrder** | **Integer** |  |  [optional]
 
 
-<a name="TypeEnum"></a>
+
 ## Enum: TypeEnum
+
 Name | Value
 ---- | -----
 STRING | &quot;String&quot;

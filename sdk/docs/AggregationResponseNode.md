@@ -1,7 +1,9 @@
 
+
 # AggregationResponseNode
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **key** | [**AggregateSpec**](AggregateSpec.md) |  |  [optional]

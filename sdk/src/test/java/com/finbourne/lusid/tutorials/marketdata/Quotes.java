@@ -64,9 +64,9 @@ public class Quotes {
         //  Get the close quote for AAPL on 15-Apr-19
         GetQuotesResponse   quotesResponse = quotesApi.getQuotes(
             TestDataUtilities.TutorialScope,
-            Collections.singletonList(quoteId),
             effectiveDate,
-            null, null, null, null
+            null, null, null, null,
+            Collections.singletonList(quoteId)
         );
 
         assertThat(quotesResponse.getFound(), hasSize(equalTo(1)));
@@ -99,9 +99,9 @@ public class Quotes {
                 try {
                     return quotesApi.getQuotes(
                         TestDataUtilities.TutorialScope,
-                        Collections.singletonList(quoteId),
                         d,
-                        null, null, null, null);
+                        null, null, null, null,
+                        Collections.singletonList(quoteId));
                 } catch (ApiException e) {
                     throw new RuntimeException(e);
                 }

@@ -1,7 +1,9 @@
 
+
 # UpsertQuotesResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asAt** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
