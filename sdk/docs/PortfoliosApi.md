@@ -4,22 +4,22 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deletePortfolio**](PortfoliosApi.md#deletePortfolio) | **DELETE** /api/portfolios/{scope}/{code} | Delete portfolio
-[**deletePortfolioProperties**](PortfoliosApi.md#deletePortfolioProperties) | **DELETE** /api/portfolios/{scope}/{code}/properties | Delete portfolio properties
-[**getPortfolio**](PortfoliosApi.md#getPortfolio) | **GET** /api/portfolios/{scope}/{code} | Get portfolio definition
-[**getPortfolioCommands**](PortfoliosApi.md#getPortfolioCommands) | **GET** /api/portfolios/{scope}/{code}/commands | Get commands
-[**getPortfolioProperties**](PortfoliosApi.md#getPortfolioProperties) | **GET** /api/portfolios/{scope}/{code}/properties | Get portfolio properties
-[**listPortfolios**](PortfoliosApi.md#listPortfolios) | **GET** /api/portfolios | List portfolios
-[**listPortfoliosForScope**](PortfoliosApi.md#listPortfoliosForScope) | **GET** /api/portfolios/{scope} | List portfolios for scope
-[**updatePortfolio**](PortfoliosApi.md#updatePortfolio) | **PUT** /api/portfolios/{scope}/{code} | Update portfolio definition
-[**upsertPortfolioProperties**](PortfoliosApi.md#upsertPortfolioProperties) | **POST** /api/portfolios/{scope}/{code}/properties | Upsert portfolio properties
+[**deletePortfolio**](PortfoliosApi.md#deletePortfolio) | **DELETE** /api/portfolios/{scope}/{code} | [EARLY ACCESS] Delete portfolio
+[**deletePortfolioProperties**](PortfoliosApi.md#deletePortfolioProperties) | **DELETE** /api/portfolios/{scope}/{code}/properties | [EARLY ACCESS] Delete portfolio properties
+[**getPortfolio**](PortfoliosApi.md#getPortfolio) | **GET** /api/portfolios/{scope}/{code} | [EARLY ACCESS] Get portfolio definition
+[**getPortfolioCommands**](PortfoliosApi.md#getPortfolioCommands) | **GET** /api/portfolios/{scope}/{code}/commands | [EARLY ACCESS] Get commands
+[**getPortfolioProperties**](PortfoliosApi.md#getPortfolioProperties) | **GET** /api/portfolios/{scope}/{code}/properties | [EARLY ACCESS] Get portfolio properties
+[**listPortfolios**](PortfoliosApi.md#listPortfolios) | **GET** /api/portfolios | [EARLY ACCESS] List portfolios
+[**listPortfoliosForScope**](PortfoliosApi.md#listPortfoliosForScope) | **GET** /api/portfolios/{scope} | [EARLY ACCESS] List portfolios for scope
+[**updatePortfolio**](PortfoliosApi.md#updatePortfolio) | **PUT** /api/portfolios/{scope}/{code} | [EARLY ACCESS] Update portfolio definition
+[**upsertPortfolioProperties**](PortfoliosApi.md#upsertPortfolioProperties) | **POST** /api/portfolios/{scope}/{code}/properties | [EARLY ACCESS] Upsert portfolio properties
 
 
 <a name="deletePortfolio"></a>
 # **deletePortfolio**
 > DeletedEntityResponse deletePortfolio(scope, code, effectiveAt)
 
-Delete portfolio
+[EARLY ACCESS] Delete portfolio
 
 Delete a portfolio at the specified effectiveAt
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 # **deletePortfolioProperties**
 > DeletedEntityResponse deletePortfolioProperties(scope, code, effectiveAt, portfolioPropertyKeys)
 
-Delete portfolio properties
+[EARLY ACCESS] Delete portfolio properties
 
 Delete one, many or all property values from a portfolio for the specified effectiveAt                Specifying no effectiveAt will delete all properties
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 # **getPortfolio**
 > Portfolio getPortfolio(scope, code, effectiveAt, asAt)
 
-Get portfolio definition
+[EARLY ACCESS] Get portfolio definition
 
 Retrieves the basic set of information about a portfolio using the specified scope and code.
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 # **getPortfolioCommands**
 > ResourceListOfProcessedCommand getPortfolioCommands(scope, code, fromAsAt, toAsAt, sortBy, start, limit, filter)
 
-Get commands
+[EARLY ACCESS] Get commands
 
 Gets all commands that modified a specific portfolio, including any input transactions.
 
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 # **getPortfolioProperties**
 > PortfolioProperties getPortfolioProperties(scope, code, effectiveAt, asAt, sortBy, start, limit)
 
-Get portfolio properties
+[EARLY ACCESS] Get portfolio properties
 
 Get the properties of a portfolio
 
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 # **listPortfolios**
 > ResourceListOfPortfolio listPortfolios(effectiveAt, asAt, page, sortBy, start, limit, filter, query, portfolioPropertyKeys)
 
-List portfolios
+[EARLY ACCESS] List portfolios
 
 List all portfolios matching the specified criteria.                Example query syntax for the query parameter:                - To see which portfolios have holdings in the specified instruments:                    instrument.identifiers in ((&#39;LusidInstrumentId&#39;, &#39;LUID_PPA8HI6M&#39;), (&#39;Figi&#39;, &#39;BBG000BLNNH6&#39;))                * Note that copy/pasting above examples results in incorrect single quote character
 
@@ -491,7 +491,7 @@ Name | Type | Description  | Notes
 # **listPortfoliosForScope**
 > ResourceListOfPortfolio listPortfoliosForScope(scope, effectiveAt, asAt, sortBy, start, limit, filter, portfolioPropertyKeys)
 
-List portfolios for scope
+[EARLY ACCESS] List portfolios for scope
 
 List all the portfolios in the specified scope
 
@@ -574,7 +574,7 @@ Name | Type | Description  | Notes
 # **updatePortfolio**
 > Portfolio updatePortfolio(scope, code, effectiveAt, request)
 
-Update portfolio definition
+[EARLY ACCESS] Update portfolio definition
 
 Update the definition of a specific portfolio. Note, some parts of a portfolio definition are not available for modification after the initial creation.
 
@@ -649,7 +649,7 @@ Name | Type | Description  | Notes
 # **upsertPortfolioProperties**
 > PortfolioProperties upsertPortfolioProperties(scope, code, portfolioProperties)
 
-Upsert portfolio properties
+[EARLY ACCESS] Upsert portfolio properties
 
 Upsert one or more property values to a portfolio. All properties must be of the domain Portfolio.
 

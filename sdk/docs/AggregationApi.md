@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAggregationByGroup**](AggregationApi.md#getAggregationByGroup) | **POST** /api/portfoliogroups/{scope}/{code}/$aggregate | Aggregate data in a portfolio group
-[**getAggregationByPortfolio**](AggregationApi.md#getAggregationByPortfolio) | **POST** /api/portfolios/{scope}/{code}/$aggregate | Aggregate data in a portfolio
-[**getAggregationByResultSet**](AggregationApi.md#getAggregationByResultSet) | **POST** /api/results/{scope}/{resultsKey}/$aggregate | Aggregate using result data
-[**getNestedAggregationByGroup**](AggregationApi.md#getNestedAggregationByGroup) | **POST** /api/portfoliogroups/{scope}/{code}/$aggregatenested | Aggregate data in a portfolio group, as nested
+[**getAggregationByGroup**](AggregationApi.md#getAggregationByGroup) | **POST** /api/portfoliogroups/{scope}/{code}/$aggregate | [EXPERIMENTAL] Aggregate data in a portfolio group
+[**getAggregationByPortfolio**](AggregationApi.md#getAggregationByPortfolio) | **POST** /api/portfolios/{scope}/{code}/$aggregate | [EXPERIMENTAL] Aggregate data in a portfolio
+[**getAggregationByResultSet**](AggregationApi.md#getAggregationByResultSet) | **POST** /api/results/{scope}/{resultsKey}/$aggregate | [EXPERIMENTAL] Aggregate using result data
+[**getNestedAggregationByGroup**](AggregationApi.md#getNestedAggregationByGroup) | **POST** /api/portfoliogroups/{scope}/{code}/$aggregatenested | [EXPERIMENTAL] Aggregate data in a portfolio group, as nested
 
 
 <a name="getAggregationByGroup"></a>
 # **getAggregationByGroup**
 > ListAggregationResponse getAggregationByGroup(scope, code, sortBy, start, limit, request)
 
-Aggregate data in a portfolio group
+[EXPERIMENTAL] Aggregate data in a portfolio group
 
 Aggregate data sourced from the specified portfolio group
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 # **getAggregationByPortfolio**
 > ListAggregationResponse getAggregationByPortfolio(scope, code, sortBy, start, limit, request)
 
-Aggregate data in a portfolio
+[EXPERIMENTAL] Aggregate data in a portfolio
 
 Aggregate data sourced from the specified portfolio
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 # **getAggregationByResultSet**
 > ListAggregationResponse getAggregationByResultSet(scope, resultsKey, sortBy, start, limit, request)
 
-Aggregate using result data
+[EXPERIMENTAL] Aggregate using result data
 
 Aggregate data from a previously-run Result data set into a flat row of results
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 # **getNestedAggregationByGroup**
 > NestedAggregationResponse getNestedAggregationByGroup(scope, code, request)
 
-Aggregate data in a portfolio group, as nested
+[EXPERIMENTAL] Aggregate data in a portfolio group, as nested
 
 Obsolete - Aggregate data sourced from the specified portfolio group into a nested structure. Data is nested following the group-by specifications.
 

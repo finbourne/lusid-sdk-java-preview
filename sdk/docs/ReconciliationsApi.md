@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**reconcileHoldings**](ReconciliationsApi.md#reconcileHoldings) | **POST** /api/portfolios/$reconcileholdings | Reconcile portfolio holdings
-[**reconcileValuation**](ReconciliationsApi.md#reconcileValuation) | **POST** /api/portfolios/$reconcileValuation | Reconcile valuations performed on one or two sets of holdings using one or two configuration recipes.
+[**reconcileHoldings**](ReconciliationsApi.md#reconcileHoldings) | **POST** /api/portfolios/$reconcileholdings | [EARLY ACCESS] Reconcile portfolio holdings
+[**reconcileValuation**](ReconciliationsApi.md#reconcileValuation) | **POST** /api/portfolios/$reconcileValuation | [EXPERIMENTAL] Reconcile valuations performed on one or two sets of holdings using one or two configuration recipes.
 
 
 <a name="reconcileHoldings"></a>
 # **reconcileHoldings**
 > ResourceListOfReconciliationBreak reconcileHoldings(sortBy, start, limit, filter, request)
 
-Reconcile portfolio holdings
+[EARLY ACCESS] Reconcile portfolio holdings
 
 Reconcile the holdings of two portfolios.
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 # **reconcileValuation**
 > ResourceListOfReconciliationBreak reconcileValuation(sortBy, start, limit, filter, request)
 
-Reconcile valuations performed on one or two sets of holdings using one or two configuration recipes.
+[EXPERIMENTAL] Reconcile valuations performed on one or two sets of holdings using one or two configuration recipes.
 
 Perform valuation of one or two set of holdings using different one or two configuration recipes. Produce a breakdown of the resulting differences in valuation.
 

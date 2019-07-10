@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getResults**](ResultsApi.md#getResults) | **GET** /api/results/{entityScope}/{entityCode}/{calculationScope}/{calculationCode}/{effectiveAt} | Retrieve a page of results all keyed by the provided parameters. The result store is not bi-temporal; a single date  addressed the market effectiveAt.
-[**upsertResults**](ResultsApi.md#upsertResults) | **POST** /api/results | Upsert results
+[**getResults**](ResultsApi.md#getResults) | **GET** /api/results/{entityScope}/{entityCode}/{calculationScope}/{calculationCode}/{effectiveAt} | [EXPERIMENTAL] Retrieve a page of results all keyed by the provided parameters. The result store is not bi-temporal; a single date  addressed the market effectiveAt.
+[**upsertResults**](ResultsApi.md#upsertResults) | **POST** /api/results | [EXPERIMENTAL] Upsert results
 
 
 <a name="getResults"></a>
 # **getResults**
 > Results getResults(entityScope, entityCode, calculationScope, calculationCode, effectiveAt)
 
-Retrieve a page of results all keyed by the provided parameters. The result store is not bi-temporal; a single date  addressed the market effectiveAt.
+[EXPERIMENTAL] Retrieve a page of results all keyed by the provided parameters. The result store is not bi-temporal; a single date  addressed the market effectiveAt.
 
 Retrieve pre-calculated results that have been stored in LUSID.
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 # **upsertResults**
 > Results upsertResults(request)
 
-Upsert results
+[EXPERIMENTAL] Upsert results
 
 Upsert pre-calculated results against a specified combination of key parameters defined in the CreateResults request.
 

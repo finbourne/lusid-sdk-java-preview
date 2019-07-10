@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteQuotes**](QuotesApi.md#deleteQuotes) | **POST** /api/quotes/{scope}/$delete | Delete a quote
-[**getQuotes**](QuotesApi.md#getQuotes) | **POST** /api/quotes/{scope}/$get | Get quotes
-[**upsertQuotes**](QuotesApi.md#upsertQuotes) | **POST** /api/quotes/{scope} | Upsert quotes
+[**deleteQuotes**](QuotesApi.md#deleteQuotes) | **POST** /api/quotes/{scope}/$delete | [BETA] Delete a quote
+[**getQuotes**](QuotesApi.md#getQuotes) | **POST** /api/quotes/{scope}/$get | [BETA] Get quotes
+[**upsertQuotes**](QuotesApi.md#upsertQuotes) | **POST** /api/quotes/{scope} | [BETA] Upsert quotes
 
 
 <a name="deleteQuotes"></a>
 # **deleteQuotes**
 > DeleteQuotesResponse deleteQuotes(scope, quotes)
 
-Delete a quote
+[BETA] Delete a quote
 
 Delete the specified quotes. In order for a quote to be deleted the id and effectiveFrom date must exactly match.
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 # **getQuotes**
 > GetQuotesResponse getQuotes(scope, effectiveAt, asAt, maxAge, page, limit, quoteIds)
 
-Get quotes
+[BETA] Get quotes
 
 Get quotes effective at the specified date/time (if any). An optional maximum age of quotes can be specified, and is infinite by default.  Quotes which are older than this at the time of the effective date/time will not be returned.  MaxAge is a duration of time represented in an ISO8601 format, eg. P1Y2M3DT4H30M (1 year, 2 months, 3 days, 4 hours and 30 minutes).  The results are paged, and by default the 1st page of results is returned with a limit of 100 results per page
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 # **upsertQuotes**
 > UpsertQuotesResponse upsertQuotes(scope, quotes)
 
-Upsert quotes
+[BETA] Upsert quotes
 
 Upsert quotes effective at the specified time. If a quote is added with the same id (and is effective at the same time) as an existing quote, then the more recently added quote will be returned when queried
 

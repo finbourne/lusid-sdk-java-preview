@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createConfigurationTransactionType**](SystemConfigurationApi.md#createConfigurationTransactionType) | **POST** /api/systemconfiguration/transactiontypes | Create transaction type
-[**listConfigurationTransactionTypes**](SystemConfigurationApi.md#listConfigurationTransactionTypes) | **GET** /api/systemconfiguration/transactiontypes | List transaction types
-[**setConfigurationTransactionTypes**](SystemConfigurationApi.md#setConfigurationTransactionTypes) | **PUT** /api/systemconfiguration/transactiontypes | Set transaction types
+[**createConfigurationTransactionType**](SystemConfigurationApi.md#createConfigurationTransactionType) | **POST** /api/systemconfiguration/transactiontypes | [EARLY ACCESS] Create transaction type
+[**listConfigurationTransactionTypes**](SystemConfigurationApi.md#listConfigurationTransactionTypes) | **GET** /api/systemconfiguration/transactiontypes | [EARLY ACCESS] List transaction types
+[**setConfigurationTransactionTypes**](SystemConfigurationApi.md#setConfigurationTransactionTypes) | **PUT** /api/systemconfiguration/transactiontypes | [EXPERIMENTAL] Set transaction types
 
 
 <a name="createConfigurationTransactionType"></a>
 # **createConfigurationTransactionType**
 > ResourceListOfTransactionConfigurationData createConfigurationTransactionType(type)
 
-Create transaction type
+[EARLY ACCESS] Create transaction type
 
 Create a new transaction type by specifying a definition and the mappings to movements
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 # **listConfigurationTransactionTypes**
 > ResourceListOfTransactionConfigurationData listConfigurationTransactionTypes()
 
-List transaction types
+[EARLY ACCESS] List transaction types
 
 Get the list of persisted transaction types
 
@@ -146,7 +146,7 @@ This endpoint does not need any parameter.
 # **setConfigurationTransactionTypes**
 > ResourceListOfTransactionConfigurationData setConfigurationTransactionTypes(types)
 
-Set transaction types
+[EXPERIMENTAL] Set transaction types
 
 Set all transaction types to be used by the movements engine, for the organisation                WARNING! Changing these mappings will have a material impact on how data, new and old, is processed and aggregated by LUSID. This will affect your whole organisation. Only change if you are fully aware of the implications of the change.
 

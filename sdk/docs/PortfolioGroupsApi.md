@@ -4,24 +4,24 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addPortfolioToGroup**](PortfolioGroupsApi.md#addPortfolioToGroup) | **POST** /api/portfoliogroups/{scope}/{code}/portfolios | Add portfolio to group
-[**addSubGroupToGroup**](PortfolioGroupsApi.md#addSubGroupToGroup) | **POST** /api/portfoliogroups/{scope}/{code}/subgroups | Add group to group
-[**createPortfolioGroup**](PortfolioGroupsApi.md#createPortfolioGroup) | **POST** /api/portfoliogroups/{scope} | Create group
-[**deletePortfolioFromGroup**](PortfolioGroupsApi.md#deletePortfolioFromGroup) | **DELETE** /api/portfoliogroups/{scope}/{code}/portfolios/{portfolioScope}/{portfolioCode} | Remove portfolio from group
-[**deletePortfolioGroup**](PortfolioGroupsApi.md#deletePortfolioGroup) | **DELETE** /api/portfoliogroups/{scope}/{code} | Delete group
-[**deleteSubGroupFromGroup**](PortfolioGroupsApi.md#deleteSubGroupFromGroup) | **DELETE** /api/portfoliogroups/{scope}/{code}/subgroups/{subgroupScope}/{subgroupCode} | Remove group from group
-[**getPortfolioGroup**](PortfolioGroupsApi.md#getPortfolioGroup) | **GET** /api/portfoliogroups/{scope}/{code} | Get portfolio group
-[**getPortfolioGroupCommands**](PortfolioGroupsApi.md#getPortfolioGroupCommands) | **GET** /api/portfoliogroups/{scope}/{code}/commands | Get commands
-[**getPortfolioGroupExpansion**](PortfolioGroupsApi.md#getPortfolioGroupExpansion) | **GET** /api/portfoliogroups/{scope}/{code}/expansion | Get a full expansion of a portfolio group
-[**listPortfolioGroups**](PortfolioGroupsApi.md#listPortfolioGroups) | **GET** /api/portfoliogroups/{scope} | List groups in scope
-[**updatePortfolioGroup**](PortfolioGroupsApi.md#updatePortfolioGroup) | **PUT** /api/portfoliogroups/{scope}/{code} | Update group
+[**addPortfolioToGroup**](PortfolioGroupsApi.md#addPortfolioToGroup) | **POST** /api/portfoliogroups/{scope}/{code}/portfolios | [EARLY ACCESS] Add portfolio to group
+[**addSubGroupToGroup**](PortfolioGroupsApi.md#addSubGroupToGroup) | **POST** /api/portfoliogroups/{scope}/{code}/subgroups | [EARLY ACCESS] Add group to group
+[**createPortfolioGroup**](PortfolioGroupsApi.md#createPortfolioGroup) | **POST** /api/portfoliogroups/{scope} | [EARLY ACCESS] Create group
+[**deletePortfolioFromGroup**](PortfolioGroupsApi.md#deletePortfolioFromGroup) | **DELETE** /api/portfoliogroups/{scope}/{code}/portfolios/{portfolioScope}/{portfolioCode} | [EARLY ACCESS] Remove portfolio from group
+[**deletePortfolioGroup**](PortfolioGroupsApi.md#deletePortfolioGroup) | **DELETE** /api/portfoliogroups/{scope}/{code} | [EARLY ACCESS] Delete group
+[**deleteSubGroupFromGroup**](PortfolioGroupsApi.md#deleteSubGroupFromGroup) | **DELETE** /api/portfoliogroups/{scope}/{code}/subgroups/{subgroupScope}/{subgroupCode} | [EARLY ACCESS] Remove group from group
+[**getPortfolioGroup**](PortfolioGroupsApi.md#getPortfolioGroup) | **GET** /api/portfoliogroups/{scope}/{code} | [EARLY ACCESS] Get portfolio group
+[**getPortfolioGroupCommands**](PortfolioGroupsApi.md#getPortfolioGroupCommands) | **GET** /api/portfoliogroups/{scope}/{code}/commands | [EARLY ACCESS] Get commands
+[**getPortfolioGroupExpansion**](PortfolioGroupsApi.md#getPortfolioGroupExpansion) | **GET** /api/portfoliogroups/{scope}/{code}/expansion | [EARLY ACCESS] Get a full expansion of a portfolio group
+[**listPortfolioGroups**](PortfolioGroupsApi.md#listPortfolioGroups) | **GET** /api/portfoliogroups/{scope} | [EARLY ACCESS] List groups in scope
+[**updatePortfolioGroup**](PortfolioGroupsApi.md#updatePortfolioGroup) | **PUT** /api/portfoliogroups/{scope}/{code} | [EARLY ACCESS] Update group
 
 
 <a name="addPortfolioToGroup"></a>
 # **addPortfolioToGroup**
 > PortfolioGroup addPortfolioToGroup(scope, code, portfolioId)
 
-Add portfolio to group
+[EARLY ACCESS] Add portfolio to group
 
 Adds a portfolio to a previously defined portfolio group
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 # **addSubGroupToGroup**
 > PortfolioGroup addSubGroupToGroup(scope, code, portfolioGroupId)
 
-Add group to group
+[EARLY ACCESS] Add group to group
 
 Adds a portfolio group, as a sub-group, to an existing portfolio group
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 # **createPortfolioGroup**
 > PortfolioGroup createPortfolioGroup(scope, request)
 
-Create group
+[EARLY ACCESS] Create group
 
 Create a new portfolio group.
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 # **deletePortfolioFromGroup**
 > PortfolioGroup deletePortfolioFromGroup(scope, code, portfolioScope, portfolioCode)
 
-Remove portfolio from group
+[EARLY ACCESS] Remove portfolio from group
 
 Removes a portfolio from a portfolio group
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 # **deletePortfolioGroup**
 > DeletedEntityResponse deletePortfolioGroup(scope, code)
 
-Delete group
+[EARLY ACCESS] Delete group
 
 Deletes the definition of the specified portfolio group
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 # **deleteSubGroupFromGroup**
 > PortfolioGroup deleteSubGroupFromGroup(scope, code, subgroupScope, subgroupCode)
 
-Remove group from group
+[EARLY ACCESS] Remove group from group
 
 Remove a portfolio group (sub-group) from a parent portfolio group
 
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 # **getPortfolioGroup**
 > PortfolioGroup getPortfolioGroup(scope, code, asAt)
 
-Get portfolio group
+[EARLY ACCESS] Get portfolio group
 
 Get the definition of the specified portfolio group
 
@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 # **getPortfolioGroupCommands**
 > ResourceListOfProcessedCommand getPortfolioGroupCommands(scope, code, fromAsAt, toAsAt, sortBy, start, limit, filter)
 
-Get commands
+[EARLY ACCESS] Get commands
 
 Gets all commands that modified a specific portfolio group
 
@@ -615,7 +615,7 @@ Name | Type | Description  | Notes
 # **getPortfolioGroupExpansion**
 > ExpandedGroup getPortfolioGroupExpansion(scope, code, effectiveAt, asAt, propertyFilter)
 
-Get a full expansion of a portfolio group
+[EARLY ACCESS] Get a full expansion of a portfolio group
 
 Lists all portfolios in a group, and all sub groups. Portfolios are decorated with their properties.
 
@@ -692,7 +692,7 @@ Name | Type | Description  | Notes
 # **listPortfolioGroups**
 > ResourceListOfPortfolioGroup listPortfolioGroups(scope, asAt, sortBy, start, limit, filter)
 
-List groups in scope
+[EARLY ACCESS] List groups in scope
 
 Lists all portfolio groups in a specified scope
 
@@ -771,7 +771,7 @@ Name | Type | Description  | Notes
 # **updatePortfolioGroup**
 > PortfolioGroup updatePortfolioGroup(scope, code, request)
 
-Update group
+[EARLY ACCESS] Update group
 
 Update the definition of the specified existing portfolio group.    Not all elements within a portfolio group definition are modifiable after creation.
 

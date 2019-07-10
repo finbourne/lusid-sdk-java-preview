@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listScopes**](ScopesApi.md#listScopes) | **GET** /api/scopes | List scopes
+[**listScopes**](ScopesApi.md#listScopes) | **GET** /api/scopes | [EARLY ACCESS] List scopes
 
 
 <a name="listScopes"></a>
 # **listScopes**
 > ResourceListOfScopeDefinition listScopes(sortBy, start, limit, filter, query)
 
-List scopes
+[EARLY ACCESS] List scopes
 
 List all the scopes
 

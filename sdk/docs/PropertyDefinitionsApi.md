@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createPropertyDefinition**](PropertyDefinitionsApi.md#createPropertyDefinition) | **POST** /api/propertydefinitions | Create property definition
-[**deletePropertyDefinition**](PropertyDefinitionsApi.md#deletePropertyDefinition) | **DELETE** /api/propertydefinitions/{domain}/{scope}/{code} | Delete property definition
-[**getMultiplePropertyDefinitions**](PropertyDefinitionsApi.md#getMultiplePropertyDefinitions) | **GET** /api/propertydefinitions | Get multiple property definitions
-[**getPropertyDefinition**](PropertyDefinitionsApi.md#getPropertyDefinition) | **GET** /api/propertydefinitions/{domain}/{scope}/{code} | Get property definition
-[**updatePropertyDefinition**](PropertyDefinitionsApi.md#updatePropertyDefinition) | **PUT** /api/propertydefinitions/{domain}/{scope}/{code} | Update property definition
+[**createPropertyDefinition**](PropertyDefinitionsApi.md#createPropertyDefinition) | **POST** /api/propertydefinitions | [EARLY ACCESS] Create property definition
+[**deletePropertyDefinition**](PropertyDefinitionsApi.md#deletePropertyDefinition) | **DELETE** /api/propertydefinitions/{domain}/{scope}/{code} | [EARLY ACCESS] Delete property definition
+[**getMultiplePropertyDefinitions**](PropertyDefinitionsApi.md#getMultiplePropertyDefinitions) | **GET** /api/propertydefinitions | [EARLY ACCESS] Get multiple property definitions
+[**getPropertyDefinition**](PropertyDefinitionsApi.md#getPropertyDefinition) | **GET** /api/propertydefinitions/{domain}/{scope}/{code} | [EARLY ACCESS] Get property definition
+[**updatePropertyDefinition**](PropertyDefinitionsApi.md#updatePropertyDefinition) | **PUT** /api/propertydefinitions/{domain}/{scope}/{code} | [EARLY ACCESS] Update property definition
 
 
 <a name="createPropertyDefinition"></a>
 # **createPropertyDefinition**
 > PropertyDefinition createPropertyDefinition(definition)
 
-Create property definition
+[EARLY ACCESS] Create property definition
 
 Define a new property.
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 # **deletePropertyDefinition**
 > DeletedEntityResponse deletePropertyDefinition(domain, scope, code)
 
-Delete property definition
+[EARLY ACCESS] Delete property definition
 
 Delete the definition of the specified property.
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 # **getMultiplePropertyDefinitions**
 > ResourceListOfPropertyDefinition getMultiplePropertyDefinitions(propertyKeys, asAt, filter)
 
-Get multiple property definitions
+[EARLY ACCESS] Get multiple property definitions
 
 Retrieve the definition of one or more specified properties.
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 # **getPropertyDefinition**
 > PropertyDefinition getPropertyDefinition(domain, scope, code, asAt)
 
-Get property definition
+[EARLY ACCESS] Get property definition
 
 Retrieve the definition of the specified property.
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 # **updatePropertyDefinition**
 > PropertyDefinition updatePropertyDefinition(domain, scope, code, definition)
 
-Update property definition
+[EARLY ACCESS] Update property definition
 
 Update display name of specified existing property.
 

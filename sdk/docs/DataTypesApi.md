@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDataType**](DataTypesApi.md#createDataType) | **POST** /api/datatypes | Create data type definition
-[**getDataType**](DataTypesApi.md#getDataType) | **GET** /api/datatypes/{scope}/{code} | Get data type definition
-[**getUnitsFromDataType**](DataTypesApi.md#getUnitsFromDataType) | **GET** /api/datatypes/{scope}/{code}/units | Get units from data type
-[**listDataTypes**](DataTypesApi.md#listDataTypes) | **GET** /api/datatypes/{scope} | List data types
-[**updateDataType**](DataTypesApi.md#updateDataType) | **PUT** /api/datatypes/{scope}/{code} | Update data type definition
+[**createDataType**](DataTypesApi.md#createDataType) | **POST** /api/datatypes | [BETA] Create data type definition
+[**getDataType**](DataTypesApi.md#getDataType) | **GET** /api/datatypes/{scope}/{code} | [EARLY ACCESS] Get data type definition
+[**getUnitsFromDataType**](DataTypesApi.md#getUnitsFromDataType) | **GET** /api/datatypes/{scope}/{code}/units | [EARLY ACCESS] Get units from data type
+[**listDataTypes**](DataTypesApi.md#listDataTypes) | **GET** /api/datatypes/{scope} | [EARLY ACCESS] List data types
+[**updateDataType**](DataTypesApi.md#updateDataType) | **PUT** /api/datatypes/{scope}/{code} | [BETA] Update data type definition
 
 
 <a name="createDataType"></a>
 # **createDataType**
 > DataType createDataType(request)
 
-Create data type definition
+[BETA] Create data type definition
 
 Create a new data type definition    Data types cannot be created in either the \&quot;default\&quot; or \&quot;system\&quot; scopes.
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 # **getDataType**
 > DataType getDataType(scope, code)
 
-Get data type definition
+[EARLY ACCESS] Get data type definition
 
 Get the definition of a specified data type
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 # **getUnitsFromDataType**
 > ResourceListOfIUnitDefinitionDto getUnitsFromDataType(scope, code, units, filter)
 
-Get units from data type
+[EARLY ACCESS] Get units from data type
 
 Get the definitions of the specified units associated bound to a specific data type
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 # **listDataTypes**
 > ResourceListOfDataType listDataTypes(scope, includeSystem, sortBy, start, limit, filter)
 
-List data types
+[EARLY ACCESS] List data types
 
 List all data types in a specified scope
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 # **updateDataType**
 > DataType updateDataType(scope, code, request)
 
-Update data type definition
+[BETA] Update data type definition
 
 Update the definition of the specified existing data type    Not all elements within a data type definition are modifiable due to the potential implications for data  already stored against the types
 

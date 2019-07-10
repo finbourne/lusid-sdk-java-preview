@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**batchUpsertCorporateActions**](CorporateActionSourcesApi.md#batchUpsertCorporateActions) | **POST** /api/corporateactionsources/{scope}/{code}/corporateactions | Upsert corporate actions
-[**createCorporateActionSource**](CorporateActionSourcesApi.md#createCorporateActionSource) | **POST** /api/corporateactionsources | Create Corporate Action Source
-[**deleteCorporateActionSource**](CorporateActionSourcesApi.md#deleteCorporateActionSource) | **DELETE** /api/corporateactionsources/{scope}/{code} | Delete a corporate action source
-[**getCorporateActions**](CorporateActionSourcesApi.md#getCorporateActions) | **GET** /api/corporateactionsources/{scope}/{code}/corporateactions | Get corporate actions
-[**listCorporateActionSources**](CorporateActionSourcesApi.md#listCorporateActionSources) | **GET** /api/corporateactionsources | Get corporate action sources
+[**batchUpsertCorporateActions**](CorporateActionSourcesApi.md#batchUpsertCorporateActions) | **POST** /api/corporateactionsources/{scope}/{code}/corporateactions | [BETA] Upsert corporate actions
+[**createCorporateActionSource**](CorporateActionSourcesApi.md#createCorporateActionSource) | **POST** /api/corporateactionsources | [BETA] Create Corporate Action Source
+[**deleteCorporateActionSource**](CorporateActionSourcesApi.md#deleteCorporateActionSource) | **DELETE** /api/corporateactionsources/{scope}/{code} | [BETA] Delete a corporate action source
+[**getCorporateActions**](CorporateActionSourcesApi.md#getCorporateActions) | **GET** /api/corporateactionsources/{scope}/{code}/corporateactions | [BETA] Get corporate actions
+[**listCorporateActionSources**](CorporateActionSourcesApi.md#listCorporateActionSources) | **GET** /api/corporateactionsources | [BETA] Get corporate action sources
 
 
 <a name="batchUpsertCorporateActions"></a>
 # **batchUpsertCorporateActions**
 > UpsertCorporateActionsResponse batchUpsertCorporateActions(scope, code, actions)
 
-Upsert corporate actions
+[BETA] Upsert corporate actions
 
 Attempt to create/update one or more corporate action in a specified corporate action source. Failed actions will be identified in the body of the response.
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 # **createCorporateActionSource**
 > CorporateActionSource createCorporateActionSource(request)
 
-Create Corporate Action Source
+[BETA] Create Corporate Action Source
 
 Attempt to create a corporate action source.
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 # **deleteCorporateActionSource**
 > DeletedEntityResponse deleteCorporateActionSource(scope, code)
 
-Delete a corporate action source
+[BETA] Delete a corporate action source
 
 Deletes a single corporate action source
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 # **getCorporateActions**
 > ResourceListOfCorporateAction getCorporateActions(scope, code, fromEffectiveAt, toEffectiveAt, asAt, sortBy, start, limit, filter)
 
-Get corporate actions
+[BETA] Get corporate actions
 
 Gets corporate actions from a specific corporate action source
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 # **listCorporateActionSources**
 > ResourceListOfCorporateActionSource listCorporateActionSources(asAt, sortBy, start, limit, filter)
 
-Get corporate action sources
+[BETA] Get corporate action sources
 
 Gets a list of all corporate action sources
 

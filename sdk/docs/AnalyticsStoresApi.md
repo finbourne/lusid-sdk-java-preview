@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAnalyticStore**](AnalyticsStoresApi.md#createAnalyticStore) | **POST** /api/analytics | Create analytic store
-[**deleteAnalyticStore**](AnalyticsStoresApi.md#deleteAnalyticStore) | **DELETE** /api/analytics/{scope}/{year}/{month}/{day} | Delete analytic store
-[**getAnalyticStore**](AnalyticsStoresApi.md#getAnalyticStore) | **GET** /api/analytics/{scope}/{year}/{month}/{day} | Get analytic store
-[**listAnalyticStores**](AnalyticsStoresApi.md#listAnalyticStores) | **GET** /api/analytics | List analytic stores
-[**setAnalytics**](AnalyticsStoresApi.md#setAnalytics) | **PUT** /api/analytics/{scope}/{year}/{month}/{day}/prices | Set analytic data
+[**createAnalyticStore**](AnalyticsStoresApi.md#createAnalyticStore) | **POST** /api/analytics | [EXPERIMENTAL] Create analytic store
+[**deleteAnalyticStore**](AnalyticsStoresApi.md#deleteAnalyticStore) | **DELETE** /api/analytics/{scope}/{year}/{month}/{day} | [EXPERIMENTAL] Delete analytic store
+[**getAnalyticStore**](AnalyticsStoresApi.md#getAnalyticStore) | **GET** /api/analytics/{scope}/{year}/{month}/{day} | [EXPERIMENTAL] Get analytic store
+[**listAnalyticStores**](AnalyticsStoresApi.md#listAnalyticStores) | **GET** /api/analytics | [EXPERIMENTAL] List analytic stores
+[**setAnalytics**](AnalyticsStoresApi.md#setAnalytics) | **PUT** /api/analytics/{scope}/{year}/{month}/{day}/prices | [EXPERIMENTAL] Set analytic data
 
 
 <a name="createAnalyticStore"></a>
 # **createAnalyticStore**
 > AnalyticStore createAnalyticStore(request)
 
-Create analytic store
+[EXPERIMENTAL] Create analytic store
 
 Create a new analytic store for the specified scope and date
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 # **deleteAnalyticStore**
 > DeletedEntityResponse deleteAnalyticStore(scope, year, month, day)
 
-Delete analytic store
+[EXPERIMENTAL] Delete analytic store
 
 Delete stored analytic data in the specified scope for the specified date
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 # **getAnalyticStore**
 > AnalyticStore getAnalyticStore(scope, year, month, day, asAt)
 
-Get analytic store
+[EXPERIMENTAL] Get analytic store
 
 Get the meta data associated with a specified scope and date combination (analytic store)
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 # **listAnalyticStores**
 > ResourceListOfAnalyticStoreKey listAnalyticStores(asAt, sortBy, start, limit, filter)
 
-List analytic stores
+[EXPERIMENTAL] List analytic stores
 
 List all defined analytic stores
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 # **setAnalytics**
 > AnalyticStore setAnalytics(scope, year, month, day, data)
 
-Set analytic data
+[EXPERIMENTAL] Set analytic data
 
 Store the complete set of analytics for an existing analytic store for the specified scope and date
 

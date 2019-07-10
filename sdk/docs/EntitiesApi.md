@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPortfolioChanges**](EntitiesApi.md#getPortfolioChanges) | **GET** /api/entities/changes/portfolios | Get the next change to each portfolio in a scope.
+[**getPortfolioChanges**](EntitiesApi.md#getPortfolioChanges) | **GET** /api/entities/changes/portfolios | [BETA] Get the next change to each portfolio in a scope.
 
 
 <a name="getPortfolioChanges"></a>
 # **getPortfolioChanges**
 > ResourceListOfChange getPortfolioChanges(scope, effectiveAt, asAt)
 
-Get the next change to each portfolio in a scope.
+[BETA] Get the next change to each portfolio in a scope.
 
 Gets the time of the next (earliest effective at) modification (correction and/or amendment) to each portfolio in a scope relative to a point in bitemporal time.  Includes changes from parent portfolios in different scopes.  Excludes changes from subcriptions (e.g corporate actions).
 

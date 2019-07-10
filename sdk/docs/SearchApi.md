@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**instrumentsSearch**](SearchApi.md#instrumentsSearch) | **POST** /api/search/instruments | Search instruments
-[**portfolioGroupsSearch**](SearchApi.md#portfolioGroupsSearch) | **POST** /api/search/portfoliogroups | Search portfolio groups
-[**portfoliosSearch**](SearchApi.md#portfoliosSearch) | **POST** /api/search/portfolios | Search portfolios
-[**propertiesSearch**](SearchApi.md#propertiesSearch) | **POST** /api/search/propertydefinitions | Search property definitions
+[**instrumentsSearch**](SearchApi.md#instrumentsSearch) | **POST** /api/search/instruments | [EXPERIMENTAL] Search instruments
+[**portfolioGroupsSearch**](SearchApi.md#portfolioGroupsSearch) | **POST** /api/search/portfoliogroups | [EXPERIMENTAL] Search portfolio groups
+[**portfoliosSearch**](SearchApi.md#portfoliosSearch) | **POST** /api/search/portfolios | [EXPERIMENTAL] Search portfolios
+[**propertiesSearch**](SearchApi.md#propertiesSearch) | **POST** /api/search/propertydefinitions | [EXPERIMENTAL] Search property definitions
 
 
 <a name="instrumentsSearch"></a>
 # **instrumentsSearch**
 > List&lt;InstrumentMatch&gt; instrumentsSearch(masteredEffectiveAt, masteredOnly, symbols)
 
-Search instruments
+[EXPERIMENTAL] Search instruments
 
 Search through instruments that have been mastered in LUSID, and optionally augment results with instruments from a symbology service
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 # **portfolioGroupsSearch**
 > ResourceListOfPortfolioGroup portfolioGroupsSearch(sortBy, start, limit, filter, request)
 
-Search portfolio groups
+[EXPERIMENTAL] Search portfolio groups
 
 Search through all portfolio groups
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 # **portfoliosSearch**
 > ResourceListOfPortfolioSearchResult portfoliosSearch(sortBy, start, limit, filter, request)
 
-Search portfolios
+[EXPERIMENTAL] Search portfolios
 
 Search through all portfolios
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 # **propertiesSearch**
 > ResourceListOfPropertyDefinition propertiesSearch(sortBy, start, limit, filter, request)
 
-Search property definitions
+[EXPERIMENTAL] Search property definitions
 
 Search through all property definitions
 
