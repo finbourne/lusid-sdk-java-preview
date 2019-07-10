@@ -20,6 +20,7 @@ Name | Value
 ---- | -----
 DATASCOPE | &quot;DataScope&quot;
 LUSID | &quot;Lusid&quot;
+ISDA | &quot;Isda&quot;
 
 
 
@@ -29,6 +30,7 @@ Name | Value
 ---- | -----
 DATASCOPE | &quot;DataScope&quot;
 LUSID | &quot;Lusid&quot;
+ISDA | &quot;Isda&quot;
 
 
 
@@ -38,6 +40,7 @@ Name | Value
 ---- | -----
 DATASCOPE | &quot;DataScope&quot;
 LUSID | &quot;Lusid&quot;
+ISDA | &quot;Isda&quot;
 
 
 
@@ -47,6 +50,7 @@ Name | Value
 ---- | -----
 DATASCOPE | &quot;DataScope&quot;
 LUSID | &quot;Lusid&quot;
+ISDA | &quot;Isda&quot;
 
 
 
@@ -56,6 +60,7 @@ Name | Value
 ---- | -----
 DATASCOPE | &quot;DataScope&quot;
 LUSID | &quot;Lusid&quot;
+ISDA | &quot;Isda&quot;
 
 
 
