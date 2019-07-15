@@ -5,6 +5,7 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.api.QuotesApi;
 import com.finbourne.lusid.model.*;
 import com.finbourne.lusid.utilities.ApiClientBuilder;
+import com.finbourne.lusid.utilities.CredentialsSource;
 import com.finbourne.lusid.utilities.TestDataUtilities;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -26,7 +27,7 @@ public class Quotes {
 
     @BeforeClass
     public static void setUp() throws Exception {
-        ApiClient apiClient = new ApiClientBuilder("secrets.json").build();
+        ApiClient apiClient = new ApiClientBuilder(CredentialsSource.credentialsFile).build();
         quotesApi = new QuotesApi(apiClient);
     }
 

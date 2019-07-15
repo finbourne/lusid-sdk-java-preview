@@ -8,6 +8,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.TransactionPortfoliosApi;
 import com.finbourne.lusid.model.*;
 import com.finbourne.lusid.utilities.ApiClientBuilder;
+import com.finbourne.lusid.utilities.CredentialsSource;
 import com.finbourne.lusid.utilities.InstrumentLoader;
 import com.finbourne.lusid.utilities.TestDataUtilities;
 import org.junit.BeforeClass;
@@ -40,7 +41,7 @@ public class Valuation {
     @BeforeClass
     public static void setUp() throws Exception
     {
-        ApiClient apiClient = new ApiClientBuilder("secrets.json").build();
+        ApiClient apiClient = new ApiClientBuilder(CredentialsSource.credentialsFile).build();
 
         testDataUtilities = new TestDataUtilities(transactionPortfoliosApi);
 
