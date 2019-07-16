@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **provider** | **String** |  | 
-**priceSource** | **String** |  | 
+**priceSource** | **String** |  |  [optional]
 **instrumentId** | **String** |  | 
 **instrumentIdType** | [**InstrumentIdTypeEnum**](#InstrumentIdTypeEnum) |  | 
 **quoteType** | [**QuoteTypeEnum**](#QuoteTypeEnum) |  | 
