@@ -1,6 +1,6 @@
 
 
-# UpsertQuotesResponse
+# DeleteQuotesResponse
 
 ## Properties
 

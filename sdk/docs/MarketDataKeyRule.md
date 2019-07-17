@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **supplier** | [**SupplierEnum**](#SupplierEnum) | The market data supplier (where the data comes from) | 
 **dataScope** | **String** | The scope in which the data should be found when using this rule. | 
 **quoteType** | [**QuoteTypeEnum**](#QuoteTypeEnum) | Is the quote to be looked for a price, yield etc. |  [optional]
-**field** | **String** | The conceptual qualification for the field, such as bid, mid, or ask.   The field must be one of a defined set for the given supplier, in the same way as it  is for the Finbourne.WebApi.Interface.Dto.Quotes.QuoteSeriesId |  [optional]
+**priceSide** | [**PriceSideEnum**](#PriceSideEnum) | The conceptual qualification for the field. Something like Bid, Ask or Mid. |  [optional]
 
 
 
@@ -31,6 +31,16 @@ Name | Value
 PRICE | &quot;Price&quot;
 SPREAD | &quot;Spread&quot;
 RATE | &quot;Rate&quot;
+
+
+
+## Enum: PriceSideEnum
+
+Name | Value
+---- | -----
+BID | &quot;Bid&quot;
+MID | &quot;Mid&quot;
+ASK | &quot;Ask&quot;
 
 
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="deleteQuotes"></a>
 # **deleteQuotes**
-> AnnulQuotesResponse deleteQuotes(scope, quotes)
+> DeleteQuotesResponse deleteQuotes(scope, quotes)
 
 [BETA] Delete a quote
 
@@ -38,9 +38,9 @@ public class Example {
 
     QuotesApi apiInstance = new QuotesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the quote
-    List<QuoteId> quotes = Arrays.asList(null); // List<QuoteId> | The quotes to delete
+    List<DeleteQuoteRequest> quotes = Arrays.asList(null); // List<DeleteQuoteRequest> | The quotes to delete
     try {
-      AnnulQuotesResponse result = apiInstance.deleteQuotes(scope, quotes);
+      DeleteQuotesResponse result = apiInstance.deleteQuotes(scope, quotes);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling QuotesApi#deleteQuotes");
@@ -58,11 +58,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the quote |
- **quotes** | [**List&lt;QuoteId&gt;**](QuoteId.md)| The quotes to delete | [optional]
+ **quotes** | [**List&lt;DeleteQuoteRequest&gt;**](DeleteQuoteRequest.md)| The quotes to delete | [optional]
 
 ### Return type
 
-[**AnnulQuotesResponse**](AnnulQuotesResponse.md)
+[**DeleteQuotesResponse**](DeleteQuotesResponse.md)
 
 ### Authorization
 
@@ -82,11 +82,11 @@ Name | Type | Description  | Notes
 
 <a name="getQuotes"></a>
 # **getQuotes**
-> GetQuotesResponse getQuotes(scope, effectiveAt, asAt, maxAge, quoteIds)
+> GetQuotesResponse getQuotes(scope, effectiveAt, asAt, maxAge, page, limit, quoteIds)
 
 [BETA] Get quotes
 
-Get quotes effective at the specified date/time (if any). An optional maximum age of quotes can be specified, and is infinite by default.  Quotes which are older than this at the time of the effective date/time will not be returned.  MaxAge is a duration of time represented in an ISO8601 format, eg. P1Y2M3DT4H30M (1 year, 2 months, 3 days, 4 hours and 30 minutes).
+Get quotes effective at the specified date/time (if any). An optional maximum age of quotes can be specified, and is infinite by default.  Quotes which are older than this at the time of the effective date/time will not be returned.  MaxAge is a duration of time represented in an ISO8601 format, eg. P1Y2M3DT4H30M (1 year, 2 months, 3 days, 4 hours and 30 minutes).  The results are paged, and by default the 1st page of results is returned with a limit of 100 results per page
 
 ### Example
 ```java
@@ -109,12 +109,14 @@ public class Example {
 
     QuotesApi apiInstance = new QuotesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the quotes
-    String effectiveAt = "effectiveAt_example"; // String | Optional. The date/time from which the quotes are effective
+    OffsetDateTime effectiveAt = new OffsetDateTime(); // OffsetDateTime | Optional. The date/time from which the quotes are effective
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The 'AsAt' date/time
     String maxAge = "maxAge_example"; // String | Optional. The quote staleness tolerance
-    List<QuoteSeriesId> quoteIds = Arrays.asList(null); // List<QuoteSeriesId> | The ids of the quotes
+    Integer page = 56; // Integer | Optional. The page of results to return
+    Integer limit = 56; // Integer | Optional. The number of results per page
+    List<QuoteId> quoteIds = Arrays.asList(null); // List<QuoteId> | The ids of the quotes
     try {
-      GetQuotesResponse result = apiInstance.getQuotes(scope, effectiveAt, asAt, maxAge, quoteIds);
+      GetQuotesResponse result = apiInstance.getQuotes(scope, effectiveAt, asAt, maxAge, page, limit, quoteIds);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling QuotesApi#getQuotes");
@@ -132,10 +134,12 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the quotes |
- **effectiveAt** | **String**| Optional. The date/time from which the quotes are effective | [optional]
+ **effectiveAt** | **OffsetDateTime**| Optional. The date/time from which the quotes are effective | [optional]
  **asAt** | **OffsetDateTime**| Optional. The &#39;AsAt&#39; date/time | [optional]
  **maxAge** | **String**| Optional. The quote staleness tolerance | [optional]
- **quoteIds** | [**List&lt;QuoteSeriesId&gt;**](QuoteSeriesId.md)| The ids of the quotes | [optional]
+ **page** | **Integer**| Optional. The page of results to return | [optional]
+ **limit** | **Integer**| Optional. The number of results per page | [optional]
+ **quoteIds** | [**List&lt;QuoteId&gt;**](QuoteId.md)| The ids of the quotes | [optional]
 
 ### Return type
 
