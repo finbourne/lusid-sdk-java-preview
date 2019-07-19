@@ -38,7 +38,7 @@ public class Example {
 
     QuotesApi apiInstance = new QuotesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the quote
-    List<QuoteId> quotes = Arrays.asList(null); // List<QuoteId> | The quotes to delete
+    Map<String, QuoteId> quotes = new HashMap(); // Map<String, QuoteId> | The quotes to delete
     try {
       AnnulQuotesResponse result = apiInstance.deleteQuotes(scope, quotes);
       System.out.println(result);
@@ -58,7 +58,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the quote |
- **quotes** | [**List&lt;QuoteId&gt;**](QuoteId.md)| The quotes to delete | [optional]
+ **quotes** | [**Map&lt;String, QuoteId&gt;**](QuoteId.md)| The quotes to delete | [optional]
 
 ### Return type
 
@@ -112,7 +112,7 @@ public class Example {
     String effectiveAt = "effectiveAt_example"; // String | Optional. The date/time from which the quotes are effective
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The 'AsAt' date/time
     String maxAge = "maxAge_example"; // String | Optional. The quote staleness tolerance
-    List<QuoteSeriesId> quoteIds = Arrays.asList(null); // List<QuoteSeriesId> | The ids of the quotes
+    Map<String, QuoteSeriesId> quoteIds = new HashMap(); // Map<String, QuoteSeriesId> | The ids of the quotes
     try {
       GetQuotesResponse result = apiInstance.getQuotes(scope, effectiveAt, asAt, maxAge, quoteIds);
       System.out.println(result);
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
  **effectiveAt** | **String**| Optional. The date/time from which the quotes are effective | [optional]
  **asAt** | **OffsetDateTime**| Optional. The &#39;AsAt&#39; date/time | [optional]
  **maxAge** | **String**| Optional. The quote staleness tolerance | [optional]
- **quoteIds** | [**List&lt;QuoteSeriesId&gt;**](QuoteSeriesId.md)| The ids of the quotes | [optional]
+ **quoteIds** | [**Map&lt;String, QuoteSeriesId&gt;**](QuoteSeriesId.md)| The ids of the quotes | [optional]
 
 ### Return type
 
@@ -186,7 +186,7 @@ public class Example {
 
     QuotesApi apiInstance = new QuotesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the quotes
-    List<UpsertQuoteRequest> quotes = Arrays.asList(null); // List<UpsertQuoteRequest> | The quotes to upsert
+    Map<String, UpsertQuoteRequest> quotes = new HashMap(); // Map<String, UpsertQuoteRequest> | The quotes to upsert
     try {
       UpsertQuotesResponse result = apiInstance.upsertQuotes(scope, quotes);
       System.out.println(result);
@@ -206,7 +206,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the quotes |
- **quotes** | [**List&lt;UpsertQuoteRequest&gt;**](UpsertQuoteRequest.md)| The quotes to upsert | [optional]
+ **quotes** | [**Map&lt;String, UpsertQuoteRequest&gt;**](UpsertQuoteRequest.md)| The quotes to upsert | [optional]
 
 ### Return type
 
