@@ -6,6 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**produceSeparateResultForLinearOtcLegs** | **Boolean** | If true (default), when pricing an Fx-Forward or Interest Rate Swap, Future and other linearly separable products, product two results, one for each leg  rather than a single line result with the amalgamated/summed pv from both legs. |  [optional]
 **modelSelection** | [**ModelSelection**](ModelSelection.md) |  |  [optional]
 **useInstrumentTypeToDeterminePricer** | **Boolean** | If true then use the instrument type to set the default instrument pricer  This applies where no more specific set of overrides are provided on a per-vendor and instrument basis. |  [optional]
 **allowAnyInstrumentsWithSecUidToPriceOffLookup** | **Boolean** | By default, one would not expect to price and exotic instrument, i.e. an instrument with a complicated  instrument definition simply through looking up a price as there should be a better way of evaluating it.  To override that behaviour and allow lookup for a price from the instrument identifier(s), set this to true. |  [optional]
