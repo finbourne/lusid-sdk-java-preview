@@ -51,7 +51,7 @@ public class Quotes {
             )
             .lineage("InternalSystem");
 
-        UpsertQuotesResponse    result = quotesApi.upsertQuotes(TestDataUtilities.TutorialScope, Collections.singletonList(request));
+        UpsertQuotesResponse    result = quotesApi.upsertQuotes(TestDataUtilities.TutorialScope, Collections.singletonMap("correlationId1", request));
 
         assertThat(result.getFailed().size(), equalTo(0));
         assertThat(result.getValues().size(), equalTo(1));
@@ -75,7 +75,7 @@ public class Quotes {
             TestDataUtilities.TutorialScope,
             effectiveDate.toString(),
             null, null,
-            Collections.singletonList(quoteSeriesId)
+            Collections.singletonMap("correlationId1", quoteSeriesId)
         );
 
         assertThat(quotesResponse.getValues().values(), hasSize(equalTo(1)));
@@ -110,7 +110,7 @@ public class Quotes {
                         TestDataUtilities.TutorialScope,
                         d.toString(),
                         null, null,
-                        Collections.singletonList(quoteSeriesId));
+                        Collections.singletonMap("correlationId1", quoteSeriesId));
                 } catch (ApiException e) {
                     throw new RuntimeException(e);
                 }
