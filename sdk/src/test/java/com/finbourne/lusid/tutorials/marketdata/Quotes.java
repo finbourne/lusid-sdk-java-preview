@@ -35,44 +35,52 @@ public class Quotes {
     public void add_quote() throws ApiException {
         UpsertQuoteRequest  request = new UpsertQuoteRequest()
             .quoteId(new QuoteId()
-                .provider("DataScope")
-                .instrumentId("BBG000B9XRY4")
-                .instrumentIdType(QuoteId.InstrumentIdTypeEnum.FIGI)
-                .quoteType(QuoteId.QuoteTypeEnum.PRICE)
-                .priceSide(QuoteId.PriceSideEnum.MID)
+                    .quoteSeriesId(new QuoteSeriesId()
+                        .provider("DataScope")
+                        .priceSource("BankA")
+                        .instrumentId("BBG000B9XRY4")
+                        .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.FIGI)
+                        .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
+                        .field("Mid")
+                    )
+                    .effectiveAt(OffsetDateTime.of(2019, 4, 15, 0, 0, 0, 0, ZoneOffset.UTC).toString())
             )
             .metricValue(new MetricValue()
                 .value(199.23)
                 .unit("USD")
             )
-            .effectiveAt(OffsetDateTime.of(2019, 4, 15, 0, 0, 0, 0, ZoneOffset.UTC))
             .lineage("InternalSystem");
 
-        quotesApi.upsertQuotes(TestDataUtilities.TutorialScope, Collections.singletonList(request));
+        UpsertQuotesResponse    result = quotesApi.upsertQuotes(TestDataUtilities.TutorialScope, Collections.singletonList(request));
+
+        assertThat(result.getFailed().size(), equalTo(0));
+        assertThat(result.getValues().size(), equalTo(1));
     }
 
     @Test
     public void get_quote_for_instrument_for_single_day() throws ApiException {
 
-        QuoteId quoteId = new QuoteId()
-            .provider("DataScope")
-            .instrumentId("BBG000B9XRY4")
-            .instrumentIdType(QuoteId.InstrumentIdTypeEnum.FIGI)
-            .quoteType(QuoteId.QuoteTypeEnum.PRICE)
-            .priceSide(QuoteId.PriceSideEnum.MID);
+        QuoteSeriesId quoteSeriesId = new QuoteSeriesId()
+                .provider("DataScope")
+                .priceSource("BankA")
+                .instrumentId("BBG000B9XRY4")
+                .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.FIGI)
+                .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
+                .field("Mid");
+
         OffsetDateTime effectiveDate = OffsetDateTime.of(2019, 4, 15, 0, 0, 0, 0, ZoneOffset.UTC);
 
         //  Get the close quote for AAPL on 15-Apr-19
         GetQuotesResponse   quotesResponse = quotesApi.getQuotes(
             TestDataUtilities.TutorialScope,
-            effectiveDate,
-            null, null, null, null,
-            Collections.singletonList(quoteId)
+            effectiveDate.toString(),
+            null, null,
+            Collections.singletonList(quoteSeriesId)
         );
 
-        assertThat(quotesResponse.getFound(), hasSize(equalTo(1)));
+        assertThat(quotesResponse.getValues().values(), hasSize(equalTo(1)));
 
-        Quote   quote = quotesResponse.getFound().get(0);
+        Quote   quote = quotesResponse.getValues().values().stream().findFirst().get();
 
         assertThat(quote.getMetricValue().getValue(), equalTo(199.23));
     }
@@ -86,12 +94,12 @@ public class Quotes {
             .mapToObj(startDate::plusDays)
             .collect(Collectors.toList());
 
-        QuoteId quoteId = new QuoteId()
-            .provider("DataScope")
-            .instrumentId("BBG000B9XRY4")
-            .instrumentIdType(QuoteId.InstrumentIdTypeEnum.FIGI)
-            .quoteType(QuoteId.QuoteTypeEnum.PRICE)
-            .priceSide(QuoteId.PriceSideEnum.MID);
+        QuoteSeriesId quoteSeriesId = new QuoteSeriesId()
+                        .provider("DataScope")
+                        .instrumentId("BBG000B9XRY4")
+                        .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.FIGI)
+                        .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
+                        .field("Mid");
 
         //  Get the quotes for each day in the date range
         List<GetQuotesResponse>   quoteResponses = dates
@@ -100,9 +108,9 @@ public class Quotes {
                 try {
                     return quotesApi.getQuotes(
                         TestDataUtilities.TutorialScope,
-                        d,
-                        null, null, null, null,
-                        Collections.singletonList(quoteId));
+                        d.toString(),
+                        null, null,
+                        Collections.singletonList(quoteSeriesId));
                 } catch (ApiException e) {
                     throw new RuntimeException(e);
                 }
@@ -110,5 +118,9 @@ public class Quotes {
             .collect(Collectors.toList());
 
         assertThat(quoteResponses, hasSize(30));
+
+        for (GetQuotesResponse response : quoteResponses) {
+            assertThat(response.getValues().size(), equalTo(1));
+        }
     }
 }
