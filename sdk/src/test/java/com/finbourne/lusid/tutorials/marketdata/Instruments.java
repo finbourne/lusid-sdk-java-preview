@@ -217,7 +217,7 @@ public class Instruments {
         //    Add it to the instrument
         instrumentsApi.upsertInstrumentsProperties(Collections.singletonList(new UpsertInstrumentPropertyRequest()
                 .lusidInstrumentId(instrument.getLusidInstrumentId())
-                .properties(Collections.singletonList(new InstrumentProperty().key(propertyKey).value(propertyValue)))));
+                .properties(Collections.singletonList(new Property().key(propertyKey).value(propertyValue)))));
 
         instrument = instrumentsApi.getInstrument(
                 "LusidInstrumentId",
