@@ -20,6 +20,7 @@ import java.util.stream.IntStream;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
+import static org.junit.Assert.fail;
 
 public class Quotes {
 
@@ -51,7 +52,7 @@ public class Quotes {
             )
             .lineage("InternalSystem");
 
-        UpsertQuotesResponse    result = quotesApi.upsertQuotes(TestDataUtilities.TutorialScope, Collections.singletonMap("correlationId1", request));
+        UpsertQuotesResponse    result = quotesApi.upsertQuotes(TestDataUtilities.TutorialScope, Collections.singletonMap("correlationId", request));
 
         assertThat(result.getFailed().size(), equalTo(0));
         assertThat(result.getValues().size(), equalTo(1));
@@ -96,10 +97,10 @@ public class Quotes {
 
         QuoteSeriesId quoteSeriesId = new QuoteSeriesId()
                         .provider("DataScope")
-                        .instrumentId("BBG000B9XRY4")
+                        .instrumentId("BBG000DMBXR2")
                         .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.FIGI)
                         .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
-                        .field("Mid");
+                        .field("mid");
 
         //  Get the quotes for each day in the date range
         List<GetQuotesResponse>   quoteResponses = dates
@@ -110,7 +111,7 @@ public class Quotes {
                         TestDataUtilities.TutorialScope,
                         d.toString(),
                         null, null,
-                        Collections.singletonMap("correlationId1", quoteSeriesId));
+                        Collections.singletonMap("correlationId", quoteSeriesId));
                 } catch (ApiException e) {
                     throw new RuntimeException(e);
                 }
@@ -120,6 +121,9 @@ public class Quotes {
         assertThat(quoteResponses, hasSize(30));
 
         for (GetQuotesResponse response : quoteResponses) {
+            if (response.getNotFound().size() > 0) {
+                fail(String.format("%s %s", quoteSeriesId, response.getNotFound().values().toArray()[0]));
+            }
             assertThat(response.getValues().size(), equalTo(1));
         }
     }
