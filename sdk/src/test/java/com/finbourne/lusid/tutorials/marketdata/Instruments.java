@@ -160,9 +160,9 @@ public class Instruments {
         identifiers.sort(Comparator.comparing(Property::getKey));
 
         assertThat(identifiers.get(0).getKey(), equalTo(ISIN_PROPERTY_KEY));
-        assertThat(identifiers.get(0).getValue(), equalTo("GB00BH4HKS39"));
+        assertThat(identifiers.get(0).getValue().getLabelValue(), equalTo("GB00BH4HKS39"));
         assertThat(identifiers.get(1).getKey(), equalTo(SEDOL_PROPERTY_KEY));
-        assertThat(identifiers.get(1).getValue(), equalTo("BH4HKS3"));
+        assertThat(identifiers.get(1).getValue().getLabelValue(), equalTo("BH4HKS3"));
     }
 
     @Test
@@ -230,7 +230,7 @@ public class Instruments {
 
         Property property = instrument.getProperties().get(0);
 
-        assertThat(property.getValue(), equalTo("Telecoms"));
+        assertThat(property.getValue().getLabelValue(), equalTo("Telecoms"));
     }
 
     @Test
