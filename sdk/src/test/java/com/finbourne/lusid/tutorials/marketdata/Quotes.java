@@ -97,6 +97,7 @@ public class Quotes {
 
         QuoteSeriesId quoteSeriesId = new QuoteSeriesId()
                         .provider("DataScope")
+                        .priceSource("USDRC")
                         .instrumentId("BBG000DMBXR2")
                         .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.FIGI)
                         .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
