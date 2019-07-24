@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **displayName** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) |  |  [optional]
-**isMetric** | **Boolean** |  |  [optional]
 **displayOrder** | **Integer** |  |  [optional]
 
 
