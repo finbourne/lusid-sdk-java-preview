@@ -7,6 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **corporateActionCode** | **String** | The unique identifier of this corporate action | 
+**description** | **String** |  |  [optional]
 **announcementDate** | [**OffsetDateTime**](OffsetDateTime.md) | The announcement date of the corporate action |  [optional]
 **exDate** | [**OffsetDateTime**](OffsetDateTime.md) | The ex date of the corporate action |  [optional]
 **recordDate** | [**OffsetDateTime**](OffsetDateTime.md) | The record date of the corporate action |  [optional]

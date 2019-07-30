@@ -7,6 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **corporateActionCode** | **String** |  | 
+**description** | **String** |  |  [optional]
 **announcementDate** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 **exDate** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 **recordDate** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
