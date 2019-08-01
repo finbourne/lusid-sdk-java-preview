@@ -6,10 +6,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** |  |  [optional]
-**values** | [**Map&lt;String, Quote&gt;**](Quote.md) | The collection of requested quote series with their latest values |  [optional]
-**notFound** | [**Map&lt;String, ErrorDetail&gt;**](ErrorDetail.md) | If any quotes could not be retrieved, they will be listed in &#39;NotFound&#39;, along  with a reason why. |  [optional]
-**failed** | [**Map&lt;String, ErrorDetail&gt;**](ErrorDetail.md) | If any quotes could not be requested, due to errors in the structure of the   QuoteSeriesId, they will be listed in &#39;Failed&#39;, along with the reason(s) why. |  [optional]
+**href** | **String** | The specifc Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime. |  [optional]
+**values** | [**Map&lt;String, Quote&gt;**](Quote.md) | The quotes which have been successfully retrieved. |  [optional]
+**notFound** | [**Map&lt;String, ErrorDetail&gt;**](ErrorDetail.md) | The quotes that could not be found along with a reason why. |  [optional]
+**failed** | [**Map&lt;String, ErrorDetail&gt;**](ErrorDetail.md) | The quotes that could not be retrieved due to an error along with a reason for their failure. |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 

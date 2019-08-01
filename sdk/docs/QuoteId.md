@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **quoteSeriesId** | [**QuoteSeriesId**](QuoteSeriesId.md) |  | 
-**effectiveAt** | **String** |  | 
+**effectiveAt** | **String** | The effective datetime at which the quote is valid from. | 
 
 
 
