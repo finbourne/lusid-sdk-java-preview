@@ -1,6 +1,6 @@
 # PortfoliosApi
 
-All URIs are relative to *http://http:/api*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -36,7 +36,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 <a name="deletePortfolioProperties"></a>
 # **deletePortfolioProperties**
-> DeletedEntityResponse deletePortfolioProperties(scope, code, effectiveAt, portfolioPropertyKeys)
+> DeletedEntityResponse deletePortfolioProperties(scope, code, portfolioPropertyKeys, effectiveAt)
 
 [EARLY ACCESS] Delete portfolio properties
 
@@ -107,7 +107,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -116,10 +116,10 @@ public class Example {
     PortfoliosApi apiInstance = new PortfoliosApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the portfolio
     String code = "code_example"; // String | Code for the portfolio
+    List<String> portfolioPropertyKeys = Arrays.asList(); // List<String> | The keys of the properties to be deleted.
     String effectiveAt = "effectiveAt_example"; // String | Optional. The effective date of the deletion
-    List<String> portfolioPropertyKeys = Arrays.asList(); // List<String> | Optional. The keys of the properties to be deleted. None specified indicates the intention to delete all properties from the portfolio
     try {
-      DeletedEntityResponse result = apiInstance.deletePortfolioProperties(scope, code, effectiveAt, portfolioPropertyKeys);
+      DeletedEntityResponse result = apiInstance.deletePortfolioProperties(scope, code, portfolioPropertyKeys, effectiveAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PortfoliosApi#deletePortfolioProperties");
@@ -138,8 +138,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the portfolio |
  **code** | **String**| Code for the portfolio |
+ **portfolioPropertyKeys** | [**List&lt;String&gt;**](String.md)| The keys of the properties to be deleted. | [optional]
  **effectiveAt** | **String**| Optional. The effective date of the deletion | [optional]
- **portfolioPropertyKeys** | [**List&lt;String&gt;**](String.md)| Optional. The keys of the properties to be deleted. None specified indicates the intention to delete all properties from the portfolio | [optional]
 
 ### Return type
 
@@ -182,7 +182,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -257,7 +257,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -340,7 +340,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -421,7 +421,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -506,7 +506,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -589,7 +589,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -664,7 +664,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
