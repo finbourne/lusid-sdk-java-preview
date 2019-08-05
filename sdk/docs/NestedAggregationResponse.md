@@ -6,6 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**aggregationEffectiveAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**aggregationAsAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **href** | **String** |  |  [optional]
 **data** | [**AggregationResponseNode**](AggregationResponseNode.md) |  |  [optional]
 **aggregationCurrency** | **String** |  |  [optional]
