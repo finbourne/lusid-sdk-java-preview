@@ -1,6 +1,6 @@
 # SchemasApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://http:/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,13 +24,18 @@ Gets the schema and meta-data for a given entity
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.SchemasApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SchemasApi apiInstance = new SchemasApi(defaultClient);
     String entity = "entity_example"; // String | The name of a valid entity
@@ -60,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -88,13 +93,18 @@ Get the schemas for the provided list of property keys.
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.SchemasApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SchemasApi apiInstance = new SchemasApi(defaultClient);
     List<String> propertyKeys = Arrays.asList(); // List<String> | One or more property keys for which the schema is requested
@@ -126,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -154,13 +164,18 @@ Gets the available value types for which a schema is available.
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.SchemasApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SchemasApi apiInstance = new SchemasApi(defaultClient);
     List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
@@ -194,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -222,13 +237,18 @@ List all available entities for which schema information is available.
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.SchemasApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SchemasApi apiInstance = new SchemasApi(defaultClient);
     try {
@@ -254,7 +274,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 

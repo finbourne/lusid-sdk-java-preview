@@ -1,6 +1,6 @@
 # ReconciliationsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://http:/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,13 +22,18 @@ Reconcile the holdings of two portfolios.
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.ReconciliationsApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ReconciliationsApi apiInstance = new ReconciliationsApi(defaultClient);
     List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
@@ -66,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -94,13 +99,18 @@ Perform valuation of one or two set of holdings using different one or two confi
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.ReconciliationsApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ReconciliationsApi apiInstance = new ReconciliationsApi(defaultClient);
     List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
@@ -138,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 

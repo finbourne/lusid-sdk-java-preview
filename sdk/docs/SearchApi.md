@@ -1,6 +1,6 @@
 # SearchApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://http:/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,13 +24,18 @@ Search through instruments that have been mastered in LUSID, and optionally augm
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.SearchApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SearchApi apiInstance = new SearchApi(defaultClient);
     String masteredEffectiveAt = "masteredEffectiveAt_example"; // String | Optional. The effective date for searching mastered instruments. If this is not set, then the current date is taken.  This parameter has no effect on instruments that have not been mastered within LUSID.
@@ -64,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -92,13 +97,18 @@ Search through all portfolio groups
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.SearchApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SearchApi apiInstance = new SearchApi(defaultClient);
     List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
@@ -136,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -164,13 +174,18 @@ Search through all portfolios
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.SearchApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SearchApi apiInstance = new SearchApi(defaultClient);
     List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
@@ -208,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -236,13 +251,18 @@ Search through all property definitions
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.SearchApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SearchApi apiInstance = new SearchApi(defaultClient);
     List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
@@ -280,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 

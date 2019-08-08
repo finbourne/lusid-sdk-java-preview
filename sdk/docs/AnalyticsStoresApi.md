@@ -1,6 +1,6 @@
 # AnalyticsStoresApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://http:/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,13 +25,18 @@ Create a new analytic store for the specified scope and date
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.AnalyticsStoresApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     AnalyticsStoresApi apiInstance = new AnalyticsStoresApi(defaultClient);
     CreateAnalyticStoreRequest request = new CreateAnalyticStoreRequest(); // CreateAnalyticStoreRequest | A populated analytic store definition
@@ -61,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -89,13 +94,18 @@ Delete stored analytic data in the specified scope for the specified date
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.AnalyticsStoresApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     AnalyticsStoresApi apiInstance = new AnalyticsStoresApi(defaultClient);
     String scope = "scope_example"; // String | The analytics data scope
@@ -131,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -159,13 +169,18 @@ Get the meta data associated with a specified scope and date combination (analyt
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.AnalyticsStoresApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     AnalyticsStoresApi apiInstance = new AnalyticsStoresApi(defaultClient);
     String scope = "scope_example"; // String | The analytics data scope
@@ -203,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -231,13 +246,18 @@ List all defined analytic stores
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.AnalyticsStoresApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     AnalyticsStoresApi apiInstance = new AnalyticsStoresApi(defaultClient);
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The AsAt date of the data
@@ -275,7 +295,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -303,13 +323,18 @@ Store the complete set of analytics for an existing analytic store for the speci
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.AnalyticsStoresApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     AnalyticsStoresApi apiInstance = new AnalyticsStoresApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the data being stored
@@ -347,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
