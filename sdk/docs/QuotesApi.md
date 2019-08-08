@@ -109,9 +109,9 @@ public class Example {
 
     QuotesApi apiInstance = new QuotesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the quotes to retrieve.
-    String effectiveAt = "effectiveAt_example"; // String | The effective datetime at which to retrieve the quotes. Defaults to the current LUSID system datetime if not specified.
+    String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to retrieve the quotes. Defaults to the current LUSID system datetime if not specified.
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the quotes. Defaults to return the latest version of each quote if not specified.
-    String maxAge = "maxAge_example"; // String | The duration of the look back window in an ISO8601 time interval format e.g. P1Y2M3DT4H30M (1 year, 2 months, 3 days, 4 hours and 30 minutes).               This is subtracted from the provided effectiveAt datetime to generate a effective datetime window inside which a quote must exist to be retrieved.
+    String maxAge = "maxAge_example"; // String | The duration of the look back window in an ISO8601 time interval format e.g. P1Y2M3DT4H30M (1 year, 2 months, 3 days, 4 hours and 30 minutes).               This is subtracted from the provided effectiveAt datetime or cut label to generate a effective datetime window inside which a quote must exist to be retrieved.
     Map<String, QuoteSeriesId> quoteIds = new HashMap(); // Map<String, QuoteSeriesId> | The time invariant quote series ids of the quotes to retrieve. These need to be               keyed by a unique correlation id allowing the retrieved quote to be identified in the response.
     try {
       GetQuotesResponse result = apiInstance.getQuotes(scope, effectiveAt, asAt, maxAge, quoteIds);
@@ -132,9 +132,9 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the quotes to retrieve. |
- **effectiveAt** | **String**| The effective datetime at which to retrieve the quotes. Defaults to the current LUSID system datetime if not specified. | [optional]
+ **effectiveAt** | **String**| The effective datetime or cut label at which to retrieve the quotes. Defaults to the current LUSID system datetime if not specified. | [optional]
  **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the quotes. Defaults to return the latest version of each quote if not specified. | [optional]
- **maxAge** | **String**| The duration of the look back window in an ISO8601 time interval format e.g. P1Y2M3DT4H30M (1 year, 2 months, 3 days, 4 hours and 30 minutes).               This is subtracted from the provided effectiveAt datetime to generate a effective datetime window inside which a quote must exist to be retrieved. | [optional]
+ **maxAge** | **String**| The duration of the look back window in an ISO8601 time interval format e.g. P1Y2M3DT4H30M (1 year, 2 months, 3 days, 4 hours and 30 minutes).               This is subtracted from the provided effectiveAt datetime or cut label to generate a effective datetime window inside which a quote must exist to be retrieved. | [optional]
  **quoteIds** | [**Map&lt;String, QuoteSeriesId&gt;**](QuoteSeriesId.md)| The time invariant quote series ids of the quotes to retrieve. These need to be               keyed by a unique correlation id allowing the retrieved quote to be identified in the response. | [optional]
 
 ### Return type
