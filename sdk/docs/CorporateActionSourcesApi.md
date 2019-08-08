@@ -25,7 +25,6 @@ Attempt to create/update one or more corporate action in a specified corporate a
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
-import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.CorporateActionSourcesApi;
 
@@ -33,10 +32,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure OAuth2 access token for authorization: oauth2
-    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of corporate action source
@@ -70,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -98,7 +93,6 @@ Attempt to create a corporate action source.
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
-import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.CorporateActionSourcesApi;
 
@@ -106,10 +100,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure OAuth2 access token for authorization: oauth2
-    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
     CreateCorporateActionSourceRequest request = new CreateCorporateActionSourceRequest(); // CreateCorporateActionSourceRequest | The corporate action source definition
@@ -139,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -167,7 +157,6 @@ Deletes a single corporate action source
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
-import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.CorporateActionSourcesApi;
 
@@ -175,10 +164,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure OAuth2 access token for authorization: oauth2
-    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
     String scope = "scope_example"; // String | The Scope of the Corporate Action Source to be deleted
@@ -210,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -238,7 +223,6 @@ Gets corporate actions from a specific corporate action source
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
-import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.CorporateActionSourcesApi;
 
@@ -246,10 +230,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure OAuth2 access token for authorization: oauth2
-    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the corporate action source
@@ -295,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -323,7 +303,6 @@ Gets a list of all corporate action sources
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
-import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
 import com.finbourne.lusid.api.CorporateActionSourcesApi;
 
@@ -331,10 +310,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure OAuth2 access token for authorization: oauth2
-    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-    oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The AsAt date of the data
@@ -372,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
