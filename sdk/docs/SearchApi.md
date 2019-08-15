@@ -1,14 +1,13 @@
 # SearchApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://http:/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**instrumentsSearch**](SearchApi.md#instrumentsSearch) | **POST** /api/search/instruments | [EXPERIMENTAL] Instruments search
 [**portfolioGroupsSearch**](SearchApi.md#portfolioGroupsSearch) | **POST** /api/search/portfoliogroups | [EXPERIMENTAL] Portfolio groups search
 [**portfoliosSearch**](SearchApi.md#portfoliosSearch) | **POST** /api/search/portfolios | [EXPERIMENTAL] Portfolios search
-[**propertiesSearch**](SearchApi.md#propertiesSearch) | **POST** /api/search/propertydefinitions | [EXPERIMENTAL] Search property definitions
-[**searchPortfolios**](SearchApi.md#searchPortfolios) | **GET** /api/search/portfolios | [EXPERIMENTAL] Search Portfolios
+[**propertiesSearch**](SearchApi.md#propertiesSearch) | **POST** /api/search/propertydefinitions | [EXPERIMENTAL] Properties search
 
 
 <a name="instrumentsSearch"></a>
@@ -32,7 +31,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -105,7 +104,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -176,7 +175,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -230,7 +229,7 @@ Name | Type | Description  | Notes
 # **propertiesSearch**
 > ResourceListOfPropertyDefinition propertiesSearch(request, filter)
 
-[EXPERIMENTAL] Search property definitions
+[EXPERIMENTAL] Properties search
 
 Search across all user defined property definitions across all scopes.
 
@@ -247,7 +246,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("http://http:/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -294,75 +293,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The property definitions found by the search |  -  |
-**400** | The details of the input related failure |  -  |
-**0** | Error response |  -  |
-
-<a name="searchPortfolios"></a>
-# **searchPortfolios**
-> ResourceListOfPortfolioSearchResult searchPortfolios(filter)
-
-[EXPERIMENTAL] Search Portfolios
-
-Search through all portfolios
-
-### Example
-```java
-// Import classes:
-import com.finbourne.lusid.ApiClient;
-import com.finbourne.lusid.ApiException;
-import com.finbourne.lusid.Configuration;
-import com.finbourne.lusid.auth.*;
-import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.SearchApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
-    
-    // Configure OAuth2 access token for authorization: oauth2
-    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-    oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-    SearchApi apiInstance = new SearchApi(defaultClient);
-    String filter = "filter_example"; // String | Expression to filter the result set. Read more about <see href=\"https://support.lusid.com/filtering-results-from-lusid\"> filtering results from LUSID</see>.
-    try {
-      ResourceListOfPortfolioSearchResult result = apiInstance.searchPortfolios(filter);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling SearchApi#searchPortfolios");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **String**| Expression to filter the result set. Read more about &lt;see href&#x3D;\&quot;https://support.lusid.com/filtering-results-from-lusid\&quot;&gt; filtering results from LUSID&lt;/see&gt;. | [optional]
-
-### Return type
-
-[**ResourceListOfPortfolioSearchResult**](ResourceListOfPortfolioSearchResult.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
