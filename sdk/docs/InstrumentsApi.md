@@ -1,10 +1,11 @@
 # InstrumentsApi
 
-All URIs are relative to *http://http:/api*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteInstrument**](InstrumentsApi.md#deleteInstrument) | **DELETE** /api/instruments/{identifierType}/{identifier} | [EARLY ACCESS] Delete instrument
+[**deleteInstrumentProperties**](InstrumentsApi.md#deleteInstrumentProperties) | **POST** /api/instruments/{identifierType}/{identifier}/properties/$delete | [EXPERIMENTAL] Delete properties from an instrument
 [**getInstrument**](InstrumentsApi.md#getInstrument) | **GET** /api/instruments/{identifierType}/{identifier} | [EARLY ACCESS] Get instrument
 [**getInstrumentIdentifiers**](InstrumentsApi.md#getInstrumentIdentifiers) | **GET** /api/instruments/identifiers | [EARLY ACCESS] Get instrument identifiers
 [**getInstruments**](InstrumentsApi.md#getInstruments) | **POST** /api/instruments/$get | [EARLY ACCESS] Get instruments
@@ -35,7 +36,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -85,6 +86,81 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="deleteInstrumentProperties"></a>
+# **deleteInstrumentProperties**
+> DeleteInstrumentPropertiesResponse deleteInstrumentProperties(identifierType, identifier, propertyKeys, effectiveAt)
+
+[EXPERIMENTAL] Delete properties from an instrument
+
+Delete a collection of property values from an instrument, optionally, at the specified effective date, returning a  Finbourne.WebApi.Interface.Dto.Instruments.DeleteInstrumentPropertiesResponse value, containing the AsAtTime at which the operation was completed.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.InstrumentsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    InstrumentsApi apiInstance = new InstrumentsApi(defaultClient);
+    String identifierType = "identifierType_example"; // String | The identifier type of the instrument, e.g., \"Figi\"
+    String identifier = "identifier_example"; // String | The identifier of the instrument to delete properties from.
+    List<String> propertyKeys = Arrays.asList(); // List<String> | The property keys of the properties to be deleted from the instrument. Only properties in the  Finbourne.Entities.PropertyDomain.Instrument domain can be supplied.
+    String effectiveAt = "effectiveAt_example"; // String | The effective date to delete the properties from. Note that this is only valid to set if the properties being deleted  are defined to be Finbourne.Entities.PropertyLifeTime.TimeVariant, otherwise this value must not be set.
+    try {
+      DeleteInstrumentPropertiesResponse result = apiInstance.deleteInstrumentProperties(identifierType, identifier, propertyKeys, effectiveAt);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InstrumentsApi#deleteInstrumentProperties");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifierType** | **String**| The identifier type of the instrument, e.g., \&quot;Figi\&quot; |
+ **identifier** | **String**| The identifier of the instrument to delete properties from. |
+ **propertyKeys** | [**List&lt;String&gt;**](String.md)| The property keys of the properties to be deleted from the instrument. Only properties in the  Finbourne.Entities.PropertyDomain.Instrument domain can be supplied. |
+ **effectiveAt** | **String**| The effective date to delete the properties from. Note that this is only valid to set if the properties being deleted  are defined to be Finbourne.Entities.PropertyLifeTime.TimeVariant, otherwise this value must not be set. | [optional]
+
+### Return type
+
+[**DeleteInstrumentPropertiesResponse**](DeleteInstrumentPropertiesResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The AsAt time of at which the properties were deleted |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="getInstrument"></a>
 # **getInstrument**
 > Instrument getInstrument(identifierType, identifier, effectiveAt, asAt, instrumentPropertyKeys)
@@ -106,7 +182,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -183,7 +259,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -247,7 +323,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -324,7 +400,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -407,7 +483,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -465,7 +541,7 @@ Name | Type | Description  | Notes
 
 [EARLY ACCESS] Upsert instruments
 
-Update or insert one or more instruments into the LUSID instrument master. An instrument will be updated  if it already exists and inserted if it does not.                In the request each instrument definition should be keyed by a unique correlation id. This id is ephemeral  and is not stored by LUSID. It serves only as a way to easily identify each instrument in the response.    The response will return both the collection of successfully updated or inserted instruments, as well as those that failed.  For the failures a reason will be provided explaining why the instrument could not be updated or inserted.                It is important to always check the failed set for any unsuccessful results.  The maximum number of instruments that this method can upsert per request is 2,000.
+Update or insert one or more instruments into the LUSID instrument master. An instrument will be updated  if it already exists and inserted if it does not.                In the request each instrument definition should be keyed by a unique correlation id. This id is ephemeral  and is not stored by LUSID. It serves only as a way to easily identify each instrument in the response.                The response will return both the collection of successfully updated or inserted instruments, as well as those that failed.  For the failures a reason will be provided explaining why the instrument could not be updated or inserted.                It is important to always check the failed set for any unsuccessful results.  The maximum number of instruments that this method can upsert per request is 2,000.
 
 ### Example
 ```java
@@ -480,7 +556,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -549,7 +625,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://http:/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
