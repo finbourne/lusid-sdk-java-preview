@@ -41,22 +41,6 @@ public class MarketContextSuppliersTest {
     }
 
     /**
-     * Test the property 'fx'
-     */
-    @Test
-    public void fxTest() {
-        // TODO: test fx
-    }
-
-    /**
-     * Test the property 'rates'
-     */
-    @Test
-    public void ratesTest() {
-        // TODO: test rates
-    }
-
-    /**
      * Test the property 'commodity'
      */
     @Test
@@ -78,6 +62,22 @@ public class MarketContextSuppliersTest {
     @Test
     public void equityTest() {
         // TODO: test equity
+    }
+
+    /**
+     * Test the property 'fx'
+     */
+    @Test
+    public void fxTest() {
+        // TODO: test fx
+    }
+
+    /**
+     * Test the property 'rates'
+     */
+    @Test
+    public void ratesTest() {
+        // TODO: test rates
     }
 
 }
