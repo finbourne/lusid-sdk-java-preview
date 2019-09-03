@@ -211,9 +211,6 @@ public class Instruments {
         PropertyValue   propertyValue = new PropertyValue().labelValue("Telecoms");
         String propertyKey = String.format("Instrument/%s/CustomSector", TutorialScope);
 
-        //  Get the LusidInstrumentId (LUID)
-        Instrument instrument = instrumentsApi.getInstrument(FIGI_SCHEME, figi, null, null, null);
-
         //    Add it to the instrument
         instrumentsApi.upsertInstrumentsProperties(Collections.singletonList(new UpsertInstrumentPropertyRequest()
                 .identifierType(FIGI_SCHEME)
