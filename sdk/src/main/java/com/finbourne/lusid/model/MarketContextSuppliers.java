@@ -31,112 +31,6 @@ import java.io.IOException;
 
 public class MarketContextSuppliers {
   /**
-   * Gets or Sets fx
-   */
-  @JsonAdapter(FxEnum.Adapter.class)
-  public enum FxEnum {
-    DATASCOPE("DataScope"),
-    
-    LUSID("Lusid"),
-    
-    ISDA("Isda");
-
-    private String value;
-
-    FxEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static FxEnum fromValue(String value) {
-      for (FxEnum b : FxEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<FxEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final FxEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public FxEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return FxEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_FX = "Fx";
-  @SerializedName(SERIALIZED_NAME_FX)
-  private FxEnum fx;
-
-  /**
-   * Gets or Sets rates
-   */
-  @JsonAdapter(RatesEnum.Adapter.class)
-  public enum RatesEnum {
-    DATASCOPE("DataScope"),
-    
-    LUSID("Lusid"),
-    
-    ISDA("Isda");
-
-    private String value;
-
-    RatesEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static RatesEnum fromValue(String value) {
-      for (RatesEnum b : RatesEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<RatesEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final RatesEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public RatesEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return RatesEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_RATES = "Rates";
-  @SerializedName(SERIALIZED_NAME_RATES)
-  private RatesEnum rates;
-
-  /**
    * Gets or Sets commodity
    */
   @JsonAdapter(CommodityEnum.Adapter.class)
@@ -295,41 +189,111 @@ public class MarketContextSuppliers {
   @SerializedName(SERIALIZED_NAME_EQUITY)
   private EquityEnum equity;
 
-  public MarketContextSuppliers fx(FxEnum fx) {
-    this.fx = fx;
-    return this;
+  /**
+   * Gets or Sets fx
+   */
+  @JsonAdapter(FxEnum.Adapter.class)
+  public enum FxEnum {
+    DATASCOPE("DataScope"),
+    
+    LUSID("Lusid"),
+    
+    ISDA("Isda");
+
+    private String value;
+
+    FxEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static FxEnum fromValue(String value) {
+      for (FxEnum b : FxEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<FxEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final FxEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public FxEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return FxEnum.fromValue(value);
+      }
+    }
   }
 
-   /**
-   * Get fx
-   * @return fx
-  **/
-  @ApiModelProperty(value = "")
-  public FxEnum getFx() {
-    return fx;
+  public static final String SERIALIZED_NAME_FX = "Fx";
+  @SerializedName(SERIALIZED_NAME_FX)
+  private FxEnum fx;
+
+  /**
+   * Gets or Sets rates
+   */
+  @JsonAdapter(RatesEnum.Adapter.class)
+  public enum RatesEnum {
+    DATASCOPE("DataScope"),
+    
+    LUSID("Lusid"),
+    
+    ISDA("Isda");
+
+    private String value;
+
+    RatesEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static RatesEnum fromValue(String value) {
+      for (RatesEnum b : RatesEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<RatesEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final RatesEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public RatesEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return RatesEnum.fromValue(value);
+      }
+    }
   }
 
-  public void setFx(FxEnum fx) {
-    this.fx = fx;
-  }
-
-  public MarketContextSuppliers rates(RatesEnum rates) {
-    this.rates = rates;
-    return this;
-  }
-
-   /**
-   * Get rates
-   * @return rates
-  **/
-  @ApiModelProperty(value = "")
-  public RatesEnum getRates() {
-    return rates;
-  }
-
-  public void setRates(RatesEnum rates) {
-    this.rates = rates;
-  }
+  public static final String SERIALIZED_NAME_RATES = "Rates";
+  @SerializedName(SERIALIZED_NAME_RATES)
+  private RatesEnum rates;
 
   public MarketContextSuppliers commodity(CommodityEnum commodity) {
     this.commodity = commodity;
@@ -385,6 +349,42 @@ public class MarketContextSuppliers {
     this.equity = equity;
   }
 
+  public MarketContextSuppliers fx(FxEnum fx) {
+    this.fx = fx;
+    return this;
+  }
+
+   /**
+   * Get fx
+   * @return fx
+  **/
+  @ApiModelProperty(value = "")
+  public FxEnum getFx() {
+    return fx;
+  }
+
+  public void setFx(FxEnum fx) {
+    this.fx = fx;
+  }
+
+  public MarketContextSuppliers rates(RatesEnum rates) {
+    this.rates = rates;
+    return this;
+  }
+
+   /**
+   * Get rates
+   * @return rates
+  **/
+  @ApiModelProperty(value = "")
+  public RatesEnum getRates() {
+    return rates;
+  }
+
+  public void setRates(RatesEnum rates) {
+    this.rates = rates;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -395,16 +395,16 @@ public class MarketContextSuppliers {
       return false;
     }
     MarketContextSuppliers marketContextSuppliers = (MarketContextSuppliers) o;
-    return Objects.equals(this.fx, marketContextSuppliers.fx) &&
-        Objects.equals(this.rates, marketContextSuppliers.rates) &&
-        Objects.equals(this.commodity, marketContextSuppliers.commodity) &&
+    return Objects.equals(this.commodity, marketContextSuppliers.commodity) &&
         Objects.equals(this.credit, marketContextSuppliers.credit) &&
-        Objects.equals(this.equity, marketContextSuppliers.equity);
+        Objects.equals(this.equity, marketContextSuppliers.equity) &&
+        Objects.equals(this.fx, marketContextSuppliers.fx) &&
+        Objects.equals(this.rates, marketContextSuppliers.rates);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fx, rates, commodity, credit, equity);
+    return Objects.hash(commodity, credit, equity, fx, rates);
   }
 
 
@@ -412,11 +412,11 @@ public class MarketContextSuppliers {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MarketContextSuppliers {\n");
-    sb.append("    fx: ").append(toIndentedString(fx)).append("\n");
-    sb.append("    rates: ").append(toIndentedString(rates)).append("\n");
     sb.append("    commodity: ").append(toIndentedString(commodity)).append("\n");
     sb.append("    credit: ").append(toIndentedString(credit)).append("\n");
     sb.append("    equity: ").append(toIndentedString(equity)).append("\n");
+    sb.append("    fx: ").append(toIndentedString(fx)).append("\n");
+    sb.append("    rates: ").append(toIndentedString(rates)).append("\n");
     sb.append("}");
     return sb.toString();
   }
