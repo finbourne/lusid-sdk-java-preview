@@ -20,8 +20,6 @@ Name | Value
 DATASCOPE | &quot;DataScope&quot;
 LUSID | &quot;Lusid&quot;
 ISDA | &quot;Isda&quot;
-CLIENT | &quot;Client&quot;
-EDI | &quot;Edi&quot;
 
 
 
