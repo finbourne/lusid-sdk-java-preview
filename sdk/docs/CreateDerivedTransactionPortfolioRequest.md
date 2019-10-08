@@ -6,14 +6,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**displayName** | **String** |  | 
-**description** | **String** |  |  [optional]
+**displayName** | **String** | Portfolio display name | 
+**description** | **String** | A long form text description of  the portfolio |  [optional]
 **code** | **String** |  | 
 **parentPortfolioId** | [**ResourceId**](ResourceId.md) |  | 
-**created** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**created** | [**OffsetDateTime**](OffsetDateTime.md) | The original creation date, defaults to today if not specified when creating a portfolio |  [optional]
 **corporateActionSourceId** | [**ResourceId**](ResourceId.md) |  |  [optional]
-**accountingMethod** | [**AccountingMethodEnum**](#AccountingMethodEnum) |  |  [optional]
-**subHoldingKeys** | **List&lt;String&gt;** |  |  [optional]
+**accountingMethod** | [**AccountingMethodEnum**](#AccountingMethodEnum) | Default taxlot selection method for the portfolio |  [optional]
+**subHoldingKeys** | **List&lt;String&gt;** | Set of unique holding identifiers, e.g. trader, desk, strategy. |  [optional]
 
 
 

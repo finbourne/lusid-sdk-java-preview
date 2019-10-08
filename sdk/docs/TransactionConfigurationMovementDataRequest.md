@@ -6,9 +6,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**movementTypes** | [**MovementTypesEnum**](#MovementTypesEnum) | The Movement Types | 
-**side** | [**SideEnum**](#SideEnum) | The Movement Side | 
-**direction** | **Integer** | The Movement direction | 
+**movementTypes** | [**MovementTypesEnum**](#MovementTypesEnum) | The movement types | 
+**side** | [**SideEnum**](#SideEnum) | The Side | 
+**direction** | **Integer** |  | 
 **properties** | [**Map&lt;String, PerpetualProperty&gt;**](PerpetualProperty.md) |  |  [optional]
 **mappings** | [**List&lt;TransactionPropertyMappingRequest&gt;**](TransactionPropertyMappingRequest.md) |  |  [optional]
 

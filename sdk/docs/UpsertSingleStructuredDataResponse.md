@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** | The specifc Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime. |  [optional]
-**value** | [**OffsetDateTime**](OffsetDateTime.md) | The value that was successfully retrieved. |  [optional]
+**href** | **String** | reference to data location |  [optional]
+**value** | [**OffsetDateTime**](OffsetDateTime.md) | the time for the successfully inserted value. |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 

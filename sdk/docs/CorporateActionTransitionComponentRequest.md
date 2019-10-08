@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**instrumentIdentifiers** | **Map&lt;String, String&gt;** | Unique instrument identifiers | 
+**instrumentIdentifiers** | **Map&lt;String, String&gt;** |  | 
 **unitsFactor** | **Double** |  | 
 **costFactor** | **Double** |  | 
 
