@@ -6,9 +6,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** | reference to data location |  [optional]
-**values** | [**Map&lt;String, OffsetDateTime&gt;**](OffsetDateTime.md) | the times for the successfully inserted values. |  [optional]
-**failed** | [**Map&lt;String, ErrorDetail&gt;**](ErrorDetail.md) | The cases where the upsert failed for some reason. |  [optional]
+**href** | **String** | The specifc Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime. |  [optional]
+**values** | [**Map&lt;String, OffsetDateTime&gt;**](OffsetDateTime.md) | The set of values that were successfully retrieved. |  [optional]
+**failed** | [**Map&lt;String, ErrorDetail&gt;**](ErrorDetail.md) | The set of values that could not be retrieved due along with a reason for this, e.g badly formed request. |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 

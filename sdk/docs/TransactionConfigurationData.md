@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aliases** | [**List&lt;TransactionConfigurationTypeAlias&gt;**](TransactionConfigurationTypeAlias.md) | Aliases that can be used to refer to transaction type | 
-**movements** | [**List&lt;TransactionConfigurationMovementData&gt;**](TransactionConfigurationMovementData.md) | Representative movements for transaction type | 
+**aliases** | [**List&lt;TransactionConfigurationTypeAlias&gt;**](TransactionConfigurationTypeAlias.md) | List of transaction codes that map to this specific transaction model | 
+**movements** | [**List&lt;TransactionConfigurationMovementData&gt;**](TransactionConfigurationMovementData.md) | Movement data for the transaction code | 
 **properties** | [**Map&lt;String, PerpetualProperty&gt;**](PerpetualProperty.md) |  |  [optional]
 
 

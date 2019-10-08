@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**displayName** | **String** |  | 
-**description** | **String** |  |  [optional]
+**displayName** | **String** | The name of the transaction portfolio. | 
+**description** | **String** | A long form description of the transaction portfolio. |  [optional]
 
 
 

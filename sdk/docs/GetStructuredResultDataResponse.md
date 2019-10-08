@@ -6,9 +6,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** |  |  [optional]
-**values** | [**Map&lt;String, StructuredResultData&gt;**](StructuredResultData.md) |  |  [optional]
-**failed** | [**Map&lt;String, ErrorDetail&gt;**](ErrorDetail.md) |  |  [optional]
+**href** | **String** | The specifc Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime. |  [optional]
+**values** | [**Map&lt;String, StructuredResultData&gt;**](StructuredResultData.md) | The set of values that were successfully retrieved. |  [optional]
+**failed** | [**Map&lt;String, ErrorDetail&gt;**](ErrorDetail.md) | The set of values that could not be retrieved due along with a reason for this, e.g badly formed request. |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 

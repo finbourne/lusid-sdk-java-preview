@@ -6,9 +6,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**identifierType** | **String** |  | 
-**propertyKey** | **String** |  | 
-**isUniqueIdentifierType** | **Boolean** |  | 
+**identifierType** | **String** | The name of the identifier type. | 
+**propertyKey** | **String** | The property key that corresponds to the identifier type. | 
+**isUniqueIdentifierType** | **Boolean** | Whether or not the identifier type is enforced to be unique. | 
 
 
 

@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**scope** | **String** | Scope of Corporate Action Source | 
-**code** | **String** | Code of Corporate Action Source | 
+**scope** | **String** |  | 
+**code** | **String** |  | 
 **displayName** | **String** |  | 
 **description** | **String** |  |  [optional]
 

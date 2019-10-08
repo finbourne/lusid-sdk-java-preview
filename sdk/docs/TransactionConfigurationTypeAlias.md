@@ -6,11 +6,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** | Transaction Code | 
-**description** | **String** | Transaction Code description | 
-**transactionClass** | **String** | Transaction Class | 
-**transactionGroup** | **String** | Transaction Group | 
-**transactionRoles** | [**TransactionRolesEnum**](#TransactionRolesEnum) | Transaction Roles | 
+**type** | **String** | The transaction type | 
+**description** | **String** | Brief description of the transaction | 
+**transactionClass** | **String** | Relates types of a similar class. E.g. Buy/Sell, StockIn/StockOut | 
+**transactionGroup** | **String** | Group is a set of codes related to a source, or sync | 
+**transactionRoles** | [**TransactionRolesEnum**](#TransactionRolesEnum) | Transactions role within a class. E.g. Increase a long position | 
 
 
 

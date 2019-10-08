@@ -6,10 +6,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** |  |  [optional]
-**values** | [**Map&lt;String, Quote&gt;**](Quote.md) |  |  [optional]
-**notFound** | [**Map&lt;String, ErrorDetail&gt;**](ErrorDetail.md) |  |  [optional]
-**failed** | [**Map&lt;String, ErrorDetail&gt;**](ErrorDetail.md) |  |  [optional]
+**href** | **String** | The specifc Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime. |  [optional]
+**values** | [**Map&lt;String, Quote&gt;**](Quote.md) | The quotes which have been successfully retrieved. |  [optional]
+**notFound** | [**Map&lt;String, ErrorDetail&gt;**](ErrorDetail.md) | The quotes that could not be found along with a reason why. |  [optional]
+**failed** | [**Map&lt;String, ErrorDetail&gt;**](ErrorDetail.md) | The quotes that could not be retrieved due to an error along with a reason for their failure. |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 

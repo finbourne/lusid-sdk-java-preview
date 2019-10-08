@@ -6,10 +6,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDate** | **String** |  | 
-**endDate** | **String** |  | 
-**queryMode** | [**QueryModeEnum**](#QueryModeEnum) |  |  [optional]
-**showCancelledTransactions** | **Boolean** |  |  [optional]
+**startDate** | **String** | The lower bound effective datetime or cut label (inclusive) from which to build the transactions. | 
+**endDate** | **String** | The upper bound effective datetime or cut label (inclusive) from which to retrieve transactions. | 
+**queryMode** | [**QueryModeEnum**](#QueryModeEnum) | The date to compare against the upper and lower bounds for the effective datetime or cut label. Defaults to &#39;TradeDate&#39; if not specified. |  [optional]
+**showCancelledTransactions** | **Boolean** | Option to specify whether or not to include cancelled transactions in the output. Defaults to False if not specified. |  [optional]
 
 
 
