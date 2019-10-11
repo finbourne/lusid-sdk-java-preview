@@ -1,17 +1,17 @@
 # SystemConfigurationApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createConfigurationTransactionType**](SystemConfigurationApi.md#createConfigurationTransactionType) | **POST** /api/systemconfiguration/transactiontypes | [EARLY ACCESS] Create transaction type
-[**listConfigurationTransactionTypes**](SystemConfigurationApi.md#listConfigurationTransactionTypes) | **GET** /api/systemconfiguration/transactiontypes | [EARLY ACCESS] List transaction types
-[**setConfigurationTransactionTypes**](SystemConfigurationApi.md#setConfigurationTransactionTypes) | **PUT** /api/systemconfiguration/transactiontypes | [EXPERIMENTAL] Set transaction types
+[**createConfigurationTransactionType**](SystemConfigurationApi.md#createConfigurationTransactionType) | **POST** /api/systemconfiguration/transactions/type | [EARLY ACCESS] Create transaction type
+[**listConfigurationTransactionTypes**](SystemConfigurationApi.md#listConfigurationTransactionTypes) | **GET** /api/systemconfiguration/transactions | [EARLY ACCESS] List transaction types
+[**setConfigurationTransactionTypes**](SystemConfigurationApi.md#setConfigurationTransactionTypes) | **PUT** /api/systemconfiguration/transactions | [EXPERIMENTAL] Set transaction types
 
 
 <a name="createConfigurationTransactionType"></a>
 # **createConfigurationTransactionType**
-> ResourceListOfTransactionConfigurationData createConfigurationTransactionType(type)
+> TransactionSetConfigurationData createConfigurationTransactionType(type)
 
 [EARLY ACCESS] Create transaction type
 
@@ -30,7 +30,7 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -39,7 +39,7 @@ public class Example {
     SystemConfigurationApi apiInstance = new SystemConfigurationApi(defaultClient);
     TransactionConfigurationDataRequest type = new TransactionConfigurationDataRequest(); // TransactionConfigurationDataRequest | A transaction type definition
     try {
-      ResourceListOfTransactionConfigurationData result = apiInstance.createConfigurationTransactionType(type);
+      TransactionSetConfigurationData result = apiInstance.createConfigurationTransactionType(type);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SystemConfigurationApi#createConfigurationTransactionType");
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceListOfTransactionConfigurationData**](ResourceListOfTransactionConfigurationData.md)
+[**TransactionSetConfigurationData**](TransactionSetConfigurationData.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 <a name="listConfigurationTransactionTypes"></a>
 # **listConfigurationTransactionTypes**
-> ResourceListOfTransactionConfigurationData listConfigurationTransactionTypes()
+> TransactionSetConfigurationData listConfigurationTransactionTypes()
 
 [EARLY ACCESS] List transaction types
 
@@ -99,7 +99,7 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -107,7 +107,7 @@ public class Example {
 
     SystemConfigurationApi apiInstance = new SystemConfigurationApi(defaultClient);
     try {
-      ResourceListOfTransactionConfigurationData result = apiInstance.listConfigurationTransactionTypes();
+      TransactionSetConfigurationData result = apiInstance.listConfigurationTransactionTypes();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SystemConfigurationApi#listConfigurationTransactionTypes");
@@ -125,7 +125,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ResourceListOfTransactionConfigurationData**](ResourceListOfTransactionConfigurationData.md)
+[**TransactionSetConfigurationData**](TransactionSetConfigurationData.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ This endpoint does not need any parameter.
 
 <a name="setConfigurationTransactionTypes"></a>
 # **setConfigurationTransactionTypes**
-> ResourceListOfTransactionConfigurationData setConfigurationTransactionTypes(types)
+> TransactionSetConfigurationData setConfigurationTransactionTypes(types)
 
 [EXPERIMENTAL] Set transaction types
 
@@ -163,16 +163,16 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SystemConfigurationApi apiInstance = new SystemConfigurationApi(defaultClient);
-    List<TransactionConfigurationDataRequest> types = Arrays.asList(null); // List<TransactionConfigurationDataRequest> | The complete set of transaction type definitions
+    TransactionSetConfigurationDataRequest types = new TransactionSetConfigurationDataRequest(); // TransactionSetConfigurationDataRequest | The complete set of transaction type definitions
     try {
-      ResourceListOfTransactionConfigurationData result = apiInstance.setConfigurationTransactionTypes(types);
+      TransactionSetConfigurationData result = apiInstance.setConfigurationTransactionTypes(types);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SystemConfigurationApi#setConfigurationTransactionTypes");
@@ -189,11 +189,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **types** | [**List&lt;TransactionConfigurationDataRequest&gt;**](TransactionConfigurationDataRequest.md)| The complete set of transaction type definitions | [optional]
+ **types** | [**TransactionSetConfigurationDataRequest**](TransactionSetConfigurationDataRequest.md)| The complete set of transaction type definitions | [optional]
 
 ### Return type
 
-[**ResourceListOfTransactionConfigurationData**](ResourceListOfTransactionConfigurationData.md)
+[**TransactionSetConfigurationData**](TransactionSetConfigurationData.md)
 
 ### Authorization
 
