@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 <a name="getDataType"></a>
 # **getDataType**
-> DataType getDataType(scope, code)
+> DataType getDataType(scope, code, asAt)
 
 [EARLY ACCESS] Get data type definition
 
@@ -110,8 +110,9 @@ public class Example {
     DataTypesApi apiInstance = new DataTypesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the data type
     String code = "code_example"; // String | The code of the data type
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the data type definition. Defaults to              return the latest version of the instrument definition if not specified.
     try {
-      DataType result = apiInstance.getDataType(scope, code);
+      DataType result = apiInstance.getDataType(scope, code, asAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataTypesApi#getDataType");
@@ -130,6 +131,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the data type |
  **code** | **String**| The code of the data type |
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the data type definition. Defaults to              return the latest version of the instrument definition if not specified. | [optional]
 
 ### Return type
 
@@ -153,7 +155,7 @@ Name | Type | Description  | Notes
 
 <a name="getUnitsFromDataType"></a>
 # **getUnitsFromDataType**
-> ResourceListOfIUnitDefinitionDto getUnitsFromDataType(scope, code, units, filter)
+> ResourceListOfIUnitDefinitionDto getUnitsFromDataType(scope, code, units, filter, asAt)
 
 [EARLY ACCESS] Get units from data type
 
@@ -183,8 +185,9 @@ public class Example {
     String code = "code_example"; // String | The code of the data type
     List<String> units = Arrays.asList(); // List<String> | One or more unit identifiers for which the definition is being requested
     String filter = "filter_example"; // String | Optional. Expression to filter the result set
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The as at of the requested data type
     try {
-      ResourceListOfIUnitDefinitionDto result = apiInstance.getUnitsFromDataType(scope, code, units, filter);
+      ResourceListOfIUnitDefinitionDto result = apiInstance.getUnitsFromDataType(scope, code, units, filter, asAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataTypesApi#getUnitsFromDataType");
@@ -205,6 +208,7 @@ Name | Type | Description  | Notes
  **code** | **String**| The code of the data type |
  **units** | [**List&lt;String&gt;**](String.md)| One or more unit identifiers for which the definition is being requested | [optional]
  **filter** | **String**| Optional. Expression to filter the result set | [optional]
+ **asAt** | **OffsetDateTime**| Optional. The as at of the requested data type | [optional]
 
 ### Return type
 
@@ -228,7 +232,7 @@ Name | Type | Description  | Notes
 
 <a name="listDataTypes"></a>
 # **listDataTypes**
-> ResourceListOfDataType listDataTypes(scope, includeSystem, sortBy, start, limit, filter)
+> ResourceListOfDataType listDataTypes(scope, asAt, includeSystem, sortBy, start, limit, filter)
 
 [EARLY ACCESS] List data types
 
@@ -255,13 +259,14 @@ public class Example {
 
     DataTypesApi apiInstance = new DataTypesApi(defaultClient);
     String scope = "scope_example"; // String | The requested scope of the data types
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The as at of the requested data types
     Boolean includeSystem = true; // Boolean | Whether to additionally include those data types in the \"system\" scope
     List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
     Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
     String filter = "filter_example"; // String | Optional. Expression to filter the result set
     try {
-      ResourceListOfDataType result = apiInstance.listDataTypes(scope, includeSystem, sortBy, start, limit, filter);
+      ResourceListOfDataType result = apiInstance.listDataTypes(scope, asAt, includeSystem, sortBy, start, limit, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataTypesApi#listDataTypes");
@@ -279,6 +284,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The requested scope of the data types |
+ **asAt** | **OffsetDateTime**| The as at of the requested data types | [optional]
  **includeSystem** | **Boolean**| Whether to additionally include those data types in the \&quot;system\&quot; scope | [optional]
  **sortBy** | [**List&lt;String&gt;**](String.md)| Optional. Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName | [optional]
  **start** | **Integer**| Optional. When paginating, skip this number of results | [optional]
