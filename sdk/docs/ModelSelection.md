@@ -16,8 +16,9 @@ Name | Type | Description | Notes
 Name | Value
 ---- | -----
 LUSID | &quot;Lusid&quot;
-REUTERSEIKON | &quot;ReutersEikon&quot;
-REUTERSTRACSWEB | &quot;ReutersTracsWeb&quot;
+REFINITIVQPS | &quot;RefinitivQps&quot;
+REFINITIVTRACSWEB | &quot;RefinitivTracsWeb&quot;
+VOLMASTER | &quot;VolMaster&quot;
 
 
 
