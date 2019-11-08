@@ -14,7 +14,7 @@
       "backgroundColor": "#415464"
     }
   },
-  "basePath": "",
+  "basePath": "/api",
   "paths": {
     "/api/analytics": {
       "get": {
@@ -12115,8 +12115,8 @@
                 "Iso3LetterCode": "GBP"
               },
               "refSpotRate": 1.5,
-              "startDate": "2019-11-08T16:44:08.4441657+00:00",
-              "maturityDate": "2019-12-08T16:44:08.4441668+00:00",
+              "startDate": "2019-11-08T17:25:21.3064101+00:00",
+              "maturityDate": "2019-12-08T17:25:21.306412+00:00",
               "domCcy": {
                 "Iso3LetterCode": "USD"
               },
@@ -16067,7 +16067,7 @@
   "securityDefinitions": {
     "oauth2": {
       "flow": "implicit",
-      "authorizationUrl": "http://dummy.451.okta.com/v1/authorize",
+      "authorizationUrl": "https://lusid.okta.com/oauth2/aus5al5yopbHW2wJn2p6/v1/authorize",
       "type": "oauth2",
       "description": "OAuth2 Implicit Grant"
     }
