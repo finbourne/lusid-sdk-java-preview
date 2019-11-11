@@ -2,10 +2,7 @@ package com.finbourne.lusid.tutorials.ibor;
 
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
-import com.finbourne.lusid.api.AggregationApi;
-import com.finbourne.lusid.api.AnalyticsStoresApi;
-import com.finbourne.lusid.api.InstrumentsApi;
-import com.finbourne.lusid.api.TransactionPortfoliosApi;
+import com.finbourne.lusid.api.*;
 import com.finbourne.lusid.model.*;
 import com.finbourne.lusid.utilities.ApiClientBuilder;
 import com.finbourne.lusid.utilities.CredentialsSource;
@@ -18,7 +15,10 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static com.finbourne.lusid.utilities.TestDataUtilities.TutorialScope;
 import static org.junit.Assert.assertEquals;
@@ -31,8 +31,8 @@ public class Valuation {
 
     private final OffsetDateTime EFFECTIVE_DATE = OffsetDateTime.of(2018, 1, 1, 0, 0, 0, 0, ZoneOffset.UTC);
 
-    private static AnalyticsStoresApi analyticsStoresApi;
     private static TransactionPortfoliosApi transactionPortfoliosApi;
+    private static QuotesApi quotesApi;
     private static AggregationApi  aggregationApi;
     private static List<String> instrumentIds;
 
@@ -46,7 +46,7 @@ public class Valuation {
         testDataUtilities = new TestDataUtilities(transactionPortfoliosApi);
 
         transactionPortfoliosApi = new TransactionPortfoliosApi(apiClient);
-        analyticsStoresApi = new AnalyticsStoresApi(apiClient);
+        quotesApi = new QuotesApi(apiClient);
         aggregationApi = new AggregationApi(apiClient);
 
         //  ensure instruments are created and exist in LUSID
@@ -89,6 +89,7 @@ public class Valuation {
     ) throws ApiException
     {
         String uuid = UUID.randomUUID().toString();
+        String quotesScope = uuid;
 
         //  build the create portfolio request
         String originalPortfolioId = String.format("Id-%s", uuid);
@@ -111,32 +112,45 @@ public class Valuation {
         //  upload the transactions to LUSID
         transactionPortfoliosApi.upsertTransactions(TutorialScope, portfolioId, transactionRequests);
 
-        //  set up the prices used for the aggregation in the analytic stores
-        ResourceListOfAnalyticStoreKey analyticsStores = analyticsStoresApi.listAnalyticStores(null, null, null, null, null);
-        AnalyticStoreKey analyticStore = analyticsStores.getValues()
-                .stream()
-                .filter(ask -> ask.getDate().equals(EFFECTIVE_DATE))
-                .findAny()
-                .orElse(null);
+        //  create the quotes
+        Map<String, UpsertQuoteRequest> quotes = Stream.of(
+                        new AbstractMap.SimpleImmutableEntry<>(instrumentIds.get(0), 100.0),
+                        new AbstractMap.SimpleImmutableEntry<>(instrumentIds.get(1), 200.0),
+                        new AbstractMap.SimpleImmutableEntry<>(instrumentIds.get(2), 300.0)
+                )
+                .map(x -> new UpsertQuoteRequest()
+                        .quoteId(new QuoteId()
+                                .quoteSeriesId(new QuoteSeriesId()
+                                        .provider("DataScope")
+                                        .instrumentId(x.getKey())
+                                        .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.LUSIDINSTRUMENTID)
+                                        .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
+                                        .field("mid")
+                                )
+                                .effectiveAt(EFFECTIVE_DATE.toString())
+                        )
+                        .metricValue(new MetricValue().value(x.getValue()).unit("GBP"))
+                )
+                .collect(Collectors.toMap(x -> UUID.randomUUID().toString(), Function.identity()));
 
-        if (analyticStore == null) {
-            //  create the analytic store
-            CreateAnalyticStoreRequest  createAnalyticStoreRequest = new CreateAnalyticStoreRequest().scope(TutorialScope).date(EFFECTIVE_DATE);
-            analyticsStoresApi.createAnalyticStore(createAnalyticStoreRequest);
-        }
+        //  upload the quotes
+        quotesApi.upsertQuotes(quotesScope, quotes);
 
-        List<InstrumentAnalytic>    prices = Arrays.asList(
-                new InstrumentAnalytic().instrumentUid(instrumentIds.get(0)).value(100.0),
-                new InstrumentAnalytic().instrumentUid(instrumentIds.get(1)).value(200.0),
-                new InstrumentAnalytic().instrumentUid(instrumentIds.get(2)).value(300.0)
-        );
-
-        //  add prices to the analytics store
-        analyticsStoresApi.setAnalytics(TutorialScope, EFFECTIVE_DATE.getYear(), EFFECTIVE_DATE.getMonthValue(), EFFECTIVE_DATE.getDayOfMonth(), prices);
+        //  create the recipe to get the quotes
+        ConfigurationRecipe configurationRecipe = new ConfigurationRecipe()
+                .code("quotes_recipe")
+                .market(new MarketContext()
+                    .suppliers(new MarketContextSuppliers().equity(MarketContextSuppliers.EquityEnum.DATASCOPE))
+                    .options(new MarketOptions()
+                        .defaultSupplier(MarketOptions.DefaultSupplierEnum.DATASCOPE)
+                        .defaultInstrumentCodeType(MarketOptions.DefaultInstrumentCodeTypeEnum.LUSIDINSTRUMENTID)
+                        .defaultScope(quotesScope)
+                    )
+                );
 
         //    create the aggregation request, this example calculates the percentage of total portfolio value and value by instrument
         AggregationRequest  aggregationRequest = new AggregationRequest()
-                .recipeId(new ResourceId().scope(TutorialScope).code("default"))
+                .inlineRecipe(configurationRecipe)
                 .metrics(Arrays.asList(
                         new AggregateSpec().key(GROUPBY_KEY).op(AggregateSpec.OpEnum.VALUE),
                         new AggregateSpec().key(AGGREGATION_KEY).op(AggregateSpec.OpEnum.PROPORTION),
@@ -164,10 +178,7 @@ public class Valuation {
         ResultDataSchema    resultSchema = aggregationResponse.getDataSchema();
 
         for (Map<String, Object> aggregation : aggregationResponse.getData()) {
-            for (String column : resultSchema.getPropertySchema().keySet()) {
-                System.out.println(column + ":\t" + aggregation.get(column) + "\t");
-            }
-            System.out.println();
+            System.out.println(aggregation.get(GROUPBY_KEY) + ":\t" + aggregation.get(AGGREGATION_RESULT_KEY) + "\t");
         }
     }
 
