@@ -35,17 +35,19 @@ import java.util.List;
 public class ValuationsReconciliationRequest {
   public static final String SERIALIZED_NAME_LEFT = "left";
   @SerializedName(SERIALIZED_NAME_LEFT)
-  private ValuationReconciliationRequest left = null;
+  private ValuationReconciliationRequest left;
 
   public static final String SERIALIZED_NAME_RIGHT = "right";
   @SerializedName(SERIALIZED_NAME_RIGHT)
-  private ValuationReconciliationRequest right = null;
+  private ValuationReconciliationRequest right;
 
   public static final String SERIALIZED_NAME_INSTRUMENT_PROPERTY_KEYS = "instrumentPropertyKeys";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_PROPERTY_KEYS)
   private List<String> instrumentPropertyKeys = new ArrayList<>();
 
+
   public ValuationsReconciliationRequest left(ValuationReconciliationRequest left) {
+    
     this.left = left;
     return this;
   }
@@ -55,15 +57,19 @@ public class ValuationsReconciliationRequest {
    * @return left
   **/
   @ApiModelProperty(required = true, value = "")
+
   public ValuationReconciliationRequest getLeft() {
     return left;
   }
+
 
   public void setLeft(ValuationReconciliationRequest left) {
     this.left = left;
   }
 
+
   public ValuationsReconciliationRequest right(ValuationReconciliationRequest right) {
+    
     this.right = right;
     return this;
   }
@@ -73,15 +79,19 @@ public class ValuationsReconciliationRequest {
    * @return right
   **/
   @ApiModelProperty(required = true, value = "")
+
   public ValuationReconciliationRequest getRight() {
     return right;
   }
+
 
   public void setRight(ValuationReconciliationRequest right) {
     this.right = right;
   }
 
+
   public ValuationsReconciliationRequest instrumentPropertyKeys(List<String> instrumentPropertyKeys) {
+    
     this.instrumentPropertyKeys = instrumentPropertyKeys;
     return this;
   }
@@ -96,9 +106,11 @@ public class ValuationsReconciliationRequest {
    * @return instrumentPropertyKeys
   **/
   @ApiModelProperty(required = true, value = "Instrument properties to be included with any identified breaks. These properties will be in the effective and AsAt dates of the left portfolio")
+
   public List<String> getInstrumentPropertyKeys() {
     return instrumentPropertyKeys;
   }
+
 
   public void setInstrumentPropertyKeys(List<String> instrumentPropertyKeys) {
     this.instrumentPropertyKeys = instrumentPropertyKeys;

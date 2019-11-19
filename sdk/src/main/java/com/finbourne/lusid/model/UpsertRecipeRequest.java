@@ -38,13 +38,15 @@ public class UpsertRecipeRequest {
 
   public static final String SERIALIZED_NAME_CONFIGURATION_RECIPE = "configurationRecipe";
   @SerializedName(SERIALIZED_NAME_CONFIGURATION_RECIPE)
-  private ConfigurationRecipe configurationRecipe = null;
+  private ConfigurationRecipe configurationRecipe;
 
   public static final String SERIALIZED_NAME_CONFIGURATION_RECIPE_SNIPPET = "configurationRecipeSnippet";
   @SerializedName(SERIALIZED_NAME_CONFIGURATION_RECIPE_SNIPPET)
-  private ConfigurationRecipeSnippet configurationRecipeSnippet = null;
+  private ConfigurationRecipeSnippet configurationRecipeSnippet;
+
 
   public UpsertRecipeRequest code(String code) {
+    
     this.code = code;
     return this;
   }
@@ -54,15 +56,19 @@ public class UpsertRecipeRequest {
    * @return code
   **/
   @ApiModelProperty(required = true, value = "User given string name (code) to identify the recipe or snippet for storage in and retrieval from the data store.  Sensibly it would be expected to match the same code given inside the configuration recipe, if that is the element being stored,  though this is not enforced. In the case of a snippet for rules or options, again a sensible naming convention such as options_...  or marketrules_... is advocated to aid in ease of understanding when included elsewhere though not enforced.")
+
   public String getCode() {
     return code;
   }
+
 
   public void setCode(String code) {
     this.code = code;
   }
 
+
   public UpsertRecipeRequest configurationRecipe(ConfigurationRecipe configurationRecipe) {
+    
     this.configurationRecipe = configurationRecipe;
     return this;
   }
@@ -72,15 +78,19 @@ public class UpsertRecipeRequest {
    * @return configurationRecipe
   **/
   @ApiModelProperty(required = true, value = "")
+
   public ConfigurationRecipe getConfigurationRecipe() {
     return configurationRecipe;
   }
+
 
   public void setConfigurationRecipe(ConfigurationRecipe configurationRecipe) {
     this.configurationRecipe = configurationRecipe;
   }
 
+
   public UpsertRecipeRequest configurationRecipeSnippet(ConfigurationRecipeSnippet configurationRecipeSnippet) {
+    
     this.configurationRecipeSnippet = configurationRecipeSnippet;
     return this;
   }
@@ -90,9 +100,11 @@ public class UpsertRecipeRequest {
    * @return configurationRecipeSnippet
   **/
   @ApiModelProperty(required = true, value = "")
+
   public ConfigurationRecipeSnippet getConfigurationRecipeSnippet() {
     return configurationRecipeSnippet;
   }
+
 
   public void setConfigurationRecipeSnippet(ConfigurationRecipeSnippet configurationRecipeSnippet) {
     this.configurationRecipeSnippet = configurationRecipeSnippet;

@@ -49,7 +49,7 @@ public class NestedAggregationResponse {
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private AggregationResponseNodeOfDictionaryOfStringToObject data = null;
+  private AggregationResponseNodeOfDictionaryOfStringToObject data;
 
   public static final String SERIALIZED_NAME_AGGREGATION_CURRENCY = "aggregationCurrency";
   @SerializedName(SERIALIZED_NAME_AGGREGATION_CURRENCY)
@@ -57,13 +57,15 @@ public class NestedAggregationResponse {
 
   public static final String SERIALIZED_NAME_DATA_SCHEMA = "dataSchema";
   @SerializedName(SERIALIZED_NAME_DATA_SCHEMA)
-  private ResultDataSchema dataSchema = null;
+  private ResultDataSchema dataSchema;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public NestedAggregationResponse aggregationEffectiveAt(OffsetDateTime aggregationEffectiveAt) {
+    
     this.aggregationEffectiveAt = aggregationEffectiveAt;
     return this;
   }
@@ -72,16 +74,21 @@ public class NestedAggregationResponse {
    * Get aggregationEffectiveAt
    * @return aggregationEffectiveAt
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public OffsetDateTime getAggregationEffectiveAt() {
     return aggregationEffectiveAt;
   }
+
 
   public void setAggregationEffectiveAt(OffsetDateTime aggregationEffectiveAt) {
     this.aggregationEffectiveAt = aggregationEffectiveAt;
   }
 
+
   public NestedAggregationResponse aggregationAsAt(OffsetDateTime aggregationAsAt) {
+    
     this.aggregationAsAt = aggregationAsAt;
     return this;
   }
@@ -90,16 +97,21 @@ public class NestedAggregationResponse {
    * Get aggregationAsAt
    * @return aggregationAsAt
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public OffsetDateTime getAggregationAsAt() {
     return aggregationAsAt;
   }
+
 
   public void setAggregationAsAt(OffsetDateTime aggregationAsAt) {
     this.aggregationAsAt = aggregationAsAt;
   }
 
+
   public NestedAggregationResponse href(String href) {
+    
     this.href = href;
     return this;
   }
@@ -108,16 +120,21 @@ public class NestedAggregationResponse {
    * Get href
    * @return href
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getHref() {
     return href;
   }
+
 
   public void setHref(String href) {
     this.href = href;
   }
 
+
   public NestedAggregationResponse data(AggregationResponseNodeOfDictionaryOfStringToObject data) {
+    
     this.data = data;
     return this;
   }
@@ -126,16 +143,21 @@ public class NestedAggregationResponse {
    * Get data
    * @return data
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public AggregationResponseNodeOfDictionaryOfStringToObject getData() {
     return data;
   }
+
 
   public void setData(AggregationResponseNodeOfDictionaryOfStringToObject data) {
     this.data = data;
   }
 
+
   public NestedAggregationResponse aggregationCurrency(String aggregationCurrency) {
+    
     this.aggregationCurrency = aggregationCurrency;
     return this;
   }
@@ -144,16 +166,21 @@ public class NestedAggregationResponse {
    * Get aggregationCurrency
    * @return aggregationCurrency
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getAggregationCurrency() {
     return aggregationCurrency;
   }
+
 
   public void setAggregationCurrency(String aggregationCurrency) {
     this.aggregationCurrency = aggregationCurrency;
   }
 
+
   public NestedAggregationResponse dataSchema(ResultDataSchema dataSchema) {
+    
     this.dataSchema = dataSchema;
     return this;
   }
@@ -162,16 +189,21 @@ public class NestedAggregationResponse {
    * Get dataSchema
    * @return dataSchema
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public ResultDataSchema getDataSchema() {
     return dataSchema;
   }
+
 
   public void setDataSchema(ResultDataSchema dataSchema) {
     this.dataSchema = dataSchema;
   }
 
+
   public NestedAggregationResponse links(List<Link> links) {
+    
     this.links = links;
     return this;
   }
@@ -188,10 +220,13 @@ public class NestedAggregationResponse {
    * Get links
    * @return links
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<Link> getLinks() {
     return links;
   }
+
 
   public void setLinks(List<Link> links) {
     this.links = links;

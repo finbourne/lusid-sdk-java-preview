@@ -90,6 +90,7 @@ public class CorporateActionSourcesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
@@ -108,7 +109,7 @@ public class CorporateActionSourcesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.10.888");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -220,6 +221,7 @@ public class CorporateActionSourcesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
@@ -238,7 +240,7 @@ public class CorporateActionSourcesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.10.888");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -332,7 +334,7 @@ public class CorporateActionSourcesApi {
      </table>
      */
     public okhttp3.Call deleteCorporateActionSourceCall(String scope, String code, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/corporateactionsources/{scope}/{code}"
@@ -342,6 +344,7 @@ public class CorporateActionSourcesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
@@ -360,7 +363,7 @@ public class CorporateActionSourcesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.10.888");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -469,7 +472,7 @@ public class CorporateActionSourcesApi {
      </table>
      */
     public okhttp3.Call getCorporateActionsCall(String scope, String code, String fromEffectiveAt, String toEffectiveAt, OffsetDateTime asAt, List<String> sortBy, Integer start, Integer limit, String filter, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/corporateactionsources/{scope}/{code}/corporateactions"
@@ -507,6 +510,7 @@ public class CorporateActionSourcesApi {
         }
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
@@ -525,7 +529,7 @@ public class CorporateActionSourcesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.10.888");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -651,7 +655,7 @@ public class CorporateActionSourcesApi {
      </table>
      */
     public okhttp3.Call listCorporateActionSourcesCall(OffsetDateTime asAt, List<String> sortBy, Integer start, Integer limit, String filter, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/corporateactionsources";
@@ -679,6 +683,7 @@ public class CorporateActionSourcesApi {
         }
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
@@ -697,7 +702,7 @@ public class CorporateActionSourcesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.10.888");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")

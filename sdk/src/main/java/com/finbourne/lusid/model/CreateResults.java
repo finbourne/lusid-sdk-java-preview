@@ -93,7 +93,7 @@ public class CreateResults {
 
       @Override
       public FormatEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return FormatEnum.fromValue(value);
       }
     }
@@ -107,7 +107,9 @@ public class CreateResults {
   @SerializedName(SERIALIZED_NAME_DATA)
   private String data;
 
+
   public CreateResults effectiveAt(OffsetDateTime effectiveAt) {
+    
     this.effectiveAt = effectiveAt;
     return this;
   }
@@ -117,15 +119,19 @@ public class CreateResults {
    * @return effectiveAt
   **/
   @ApiModelProperty(required = true, value = "The effective market date for which results are calculated and are to be stored.")
+
   public OffsetDateTime getEffectiveAt() {
     return effectiveAt;
   }
+
 
   public void setEffectiveAt(OffsetDateTime effectiveAt) {
     this.effectiveAt = effectiveAt;
   }
 
+
   public CreateResults entityScope(String entityScope) {
+    
     this.entityScope = entityScope;
     return this;
   }
@@ -135,15 +141,19 @@ public class CreateResults {
    * @return entityScope
   **/
   @ApiModelProperty(required = true, value = "Scope of the entity code")
+
   public String getEntityScope() {
     return entityScope;
   }
+
 
   public void setEntityScope(String entityScope) {
     this.entityScope = entityScope;
   }
 
+
   public CreateResults entityCode(String entityCode) {
+    
     this.entityCode = entityCode;
     return this;
   }
@@ -153,15 +163,19 @@ public class CreateResults {
    * @return entityCode
   **/
   @ApiModelProperty(required = true, value = "The code of the entity for which the data has been calculated.")
+
   public String getEntityCode() {
     return entityCode;
   }
+
 
   public void setEntityCode(String entityCode) {
     this.entityCode = entityCode;
   }
 
+
   public CreateResults calculationScope(String calculationScope) {
+    
     this.calculationScope = calculationScope;
     return this;
   }
@@ -171,15 +185,19 @@ public class CreateResults {
    * @return calculationScope
   **/
   @ApiModelProperty(required = true, value = "Scope of the calculation code.")
+
   public String getCalculationScope() {
     return calculationScope;
   }
+
 
   public void setCalculationScope(String calculationScope) {
     this.calculationScope = calculationScope;
   }
 
+
   public CreateResults calculationCode(String calculationCode) {
+    
     this.calculationCode = calculationCode;
     return this;
   }
@@ -189,15 +207,19 @@ public class CreateResults {
    * @return calculationCode
   **/
   @ApiModelProperty(required = true, value = "This is the identifier which denotes some hash of, or recipe, that cumulatively represents the configuration through which  the results being stored are obtained. For example, the recipe denotes the pricing model, the market data and any other  settings. If the results were calculated externally it should be some repeatable hash or other Id that denotes the particular  configuration under which those results were obtained.")
+
   public String getCalculationCode() {
     return calculationCode;
   }
+
 
   public void setCalculationCode(String calculationCode) {
     this.calculationCode = calculationCode;
   }
 
+
   public CreateResults format(FormatEnum format) {
+    
     this.format = format;
     return this;
   }
@@ -206,16 +228,21 @@ public class CreateResults {
    * The format in which the results are stored/structured.
    * @return format
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The format in which the results are stored/structured.")
+
   public FormatEnum getFormat() {
     return format;
   }
+
 
   public void setFormat(FormatEnum format) {
     this.format = format;
   }
 
+
   public CreateResults data(String data) {
+    
     this.data = data;
     return this;
   }
@@ -224,10 +251,13 @@ public class CreateResults {
    * The data that should be stored in the results cube.
    * @return data
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The data that should be stored in the results cube.")
+
   public String getData() {
     return data;
   }
+
 
   public void setData(String data) {
     this.data = data;

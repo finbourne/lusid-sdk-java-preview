@@ -40,29 +40,31 @@ import java.util.List;
 public class ConfigurationRecipeSnippet {
   public static final String SERIALIZED_NAME_AGGREGATION_OPTIONS = "aggregationOptions";
   @SerializedName(SERIALIZED_NAME_AGGREGATION_OPTIONS)
-  private AggregationOptions aggregationOptions = null;
+  private AggregationOptions aggregationOptions;
 
   public static final String SERIALIZED_NAME_MODEL_RULES = "modelRules";
   @SerializedName(SERIALIZED_NAME_MODEL_RULES)
-  private List<VendorModelRule> modelRules = new ArrayList<>();
+  private List<VendorModelRule> modelRules = null;
 
   public static final String SERIALIZED_NAME_PRICING_OPTIONS = "pricingOptions";
   @SerializedName(SERIALIZED_NAME_PRICING_OPTIONS)
-  private PricingOptions pricingOptions = null;
+  private PricingOptions pricingOptions;
 
   public static final String SERIALIZED_NAME_MARKET_RULES = "marketRules";
   @SerializedName(SERIALIZED_NAME_MARKET_RULES)
-  private List<MarketDataKeyRule> marketRules = new ArrayList<>();
+  private List<MarketDataKeyRule> marketRules = null;
 
   public static final String SERIALIZED_NAME_MARKET_OPTIONS = "marketOptions";
   @SerializedName(SERIALIZED_NAME_MARKET_OPTIONS)
-  private MarketOptions marketOptions = null;
+  private MarketOptions marketOptions;
 
   public static final String SERIALIZED_NAME_RECIPE = "recipe";
   @SerializedName(SERIALIZED_NAME_RECIPE)
-  private ConfigurationRecipe recipe = null;
+  private ConfigurationRecipe recipe;
+
 
   public ConfigurationRecipeSnippet aggregationOptions(AggregationOptions aggregationOptions) {
+    
     this.aggregationOptions = aggregationOptions;
     return this;
   }
@@ -71,16 +73,21 @@ public class ConfigurationRecipeSnippet {
    * Get aggregationOptions
    * @return aggregationOptions
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public AggregationOptions getAggregationOptions() {
     return aggregationOptions;
   }
+
 
   public void setAggregationOptions(AggregationOptions aggregationOptions) {
     this.aggregationOptions = aggregationOptions;
   }
 
+
   public ConfigurationRecipeSnippet modelRules(List<VendorModelRule> modelRules) {
+    
     this.modelRules = modelRules;
     return this;
   }
@@ -97,16 +104,21 @@ public class ConfigurationRecipeSnippet {
    * The set of model rules that are available. There may be multiple rules for Vendors, but only one per model-instrument pair.  Which of these preference sets is used depends upon the model choice selection if specified, or failing that the global default model specification  in the options.
    * @return modelRules
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The set of model rules that are available. There may be multiple rules for Vendors, but only one per model-instrument pair.  Which of these preference sets is used depends upon the model choice selection if specified, or failing that the global default model specification  in the options.")
+
   public List<VendorModelRule> getModelRules() {
     return modelRules;
   }
+
 
   public void setModelRules(List<VendorModelRule> modelRules) {
     this.modelRules = modelRules;
   }
 
+
   public ConfigurationRecipeSnippet pricingOptions(PricingOptions pricingOptions) {
+    
     this.pricingOptions = pricingOptions;
     return this;
   }
@@ -115,16 +127,21 @@ public class ConfigurationRecipeSnippet {
    * Get pricingOptions
    * @return pricingOptions
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public PricingOptions getPricingOptions() {
     return pricingOptions;
   }
+
 
   public void setPricingOptions(PricingOptions pricingOptions) {
     this.pricingOptions = pricingOptions;
   }
 
+
   public ConfigurationRecipeSnippet marketRules(List<MarketDataKeyRule> marketRules) {
+    
     this.marketRules = marketRules;
     return this;
   }
@@ -141,16 +158,21 @@ public class ConfigurationRecipeSnippet {
    * The set of rules that define how to resolve particular use cases. These can be relatively general or specific in nature.  Nominally any number are possible and will be processed in order where applicable. However, there is evidently a potential  for increased computational cost where many rules must be applied to resolve data. Ensuring that portfolios are structured in  such a way as to reduce the number of rules required is therefore sensible.
    * @return marketRules
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The set of rules that define how to resolve particular use cases. These can be relatively general or specific in nature.  Nominally any number are possible and will be processed in order where applicable. However, there is evidently a potential  for increased computational cost where many rules must be applied to resolve data. Ensuring that portfolios are structured in  such a way as to reduce the number of rules required is therefore sensible.")
+
   public List<MarketDataKeyRule> getMarketRules() {
     return marketRules;
   }
+
 
   public void setMarketRules(List<MarketDataKeyRule> marketRules) {
     this.marketRules = marketRules;
   }
 
+
   public ConfigurationRecipeSnippet marketOptions(MarketOptions marketOptions) {
+    
     this.marketOptions = marketOptions;
     return this;
   }
@@ -159,16 +181,21 @@ public class ConfigurationRecipeSnippet {
    * Get marketOptions
    * @return marketOptions
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public MarketOptions getMarketOptions() {
     return marketOptions;
   }
+
 
   public void setMarketOptions(MarketOptions marketOptions) {
     this.marketOptions = marketOptions;
   }
 
+
   public ConfigurationRecipeSnippet recipe(ConfigurationRecipe recipe) {
+    
     this.recipe = recipe;
     return this;
   }
@@ -177,10 +204,13 @@ public class ConfigurationRecipeSnippet {
    * Get recipe
    * @return recipe
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public ConfigurationRecipe getRecipe() {
     return recipe;
   }
+
 
   public void setRecipe(ConfigurationRecipe recipe) {
     this.recipe = recipe;

@@ -46,7 +46,9 @@ public class StructuredMarketData {
   @SerializedName(SERIALIZED_NAME_DOCUMENT)
   private String document;
 
+
   public StructuredMarketData documentFormat(String documentFormat) {
+    
     this.documentFormat = documentFormat;
     return this;
   }
@@ -56,15 +58,19 @@ public class StructuredMarketData {
    * @return documentFormat
   **/
   @ApiModelProperty(required = true, value = "The format of the accompanying document.")
+
   public String getDocumentFormat() {
     return documentFormat;
   }
+
 
   public void setDocumentFormat(String documentFormat) {
     this.documentFormat = documentFormat;
   }
 
+
   public StructuredMarketData version(String version) {
+    
     this.version = version;
     return this;
   }
@@ -73,16 +79,21 @@ public class StructuredMarketData {
    * The semantic version of the document format; MAJOR.MINOR.PATCH
    * @return version
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The semantic version of the document format; MAJOR.MINOR.PATCH")
+
   public String getVersion() {
     return version;
   }
+
 
   public void setVersion(String version) {
     this.version = version;
   }
 
+
   public StructuredMarketData name(String name) {
+    
     this.name = name;
     return this;
   }
@@ -91,16 +102,21 @@ public class StructuredMarketData {
    * The name or description for the document
    * @return name
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The name or description for the document")
+
   public String getName() {
     return name;
   }
+
 
   public void setName(String name) {
     this.name = name;
   }
 
+
   public StructuredMarketData document(String document) {
+    
     this.document = document;
     return this;
   }
@@ -110,9 +126,11 @@ public class StructuredMarketData {
    * @return document
   **/
   @ApiModelProperty(required = true, value = "The document that will be stored (or retrieved) and which describes a structured market data entity such as a credit or interest rate curve")
+
   public String getDocument() {
     return document;
   }
+
 
   public void setDocument(String document) {
     this.document = document;

@@ -46,9 +46,11 @@ public class CreateUnitDefinition {
 
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
-  private Map<String, String> details = new HashMap<>();
+  private Map<String, String> details = null;
+
 
   public CreateUnitDefinition code(String code) {
+    
     this.code = code;
     return this;
   }
@@ -58,15 +60,19 @@ public class CreateUnitDefinition {
    * @return code
   **/
   @ApiModelProperty(required = true, value = "")
+
   public String getCode() {
     return code;
   }
+
 
   public void setCode(String code) {
     this.code = code;
   }
 
+
   public CreateUnitDefinition displayName(String displayName) {
+    
     this.displayName = displayName;
     return this;
   }
@@ -76,15 +82,19 @@ public class CreateUnitDefinition {
    * @return displayName
   **/
   @ApiModelProperty(required = true, value = "")
+
   public String getDisplayName() {
     return displayName;
   }
+
 
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
   }
 
+
   public CreateUnitDefinition description(String description) {
+    
     this.description = description;
     return this;
   }
@@ -94,15 +104,19 @@ public class CreateUnitDefinition {
    * @return description
   **/
   @ApiModelProperty(required = true, value = "")
+
   public String getDescription() {
     return description;
   }
+
 
   public void setDescription(String description) {
     this.description = description;
   }
 
+
   public CreateUnitDefinition details(Map<String, String> details) {
+    
     this.details = details;
     return this;
   }
@@ -119,10 +133,13 @@ public class CreateUnitDefinition {
    * Get details
    * @return details
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Map<String, String> getDetails() {
     return details;
   }
+
 
   public void setDetails(Map<String, String> details) {
     this.details = details;

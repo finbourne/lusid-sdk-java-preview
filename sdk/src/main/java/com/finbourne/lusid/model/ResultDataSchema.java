@@ -35,13 +35,15 @@ import java.util.Map;
 public class ResultDataSchema {
   public static final String SERIALIZED_NAME_NODE_VALUE_SCHEMA = "nodeValueSchema";
   @SerializedName(SERIALIZED_NAME_NODE_VALUE_SCHEMA)
-  private Map<String, FieldSchema> nodeValueSchema = new HashMap<>();
+  private Map<String, FieldSchema> nodeValueSchema = null;
 
   public static final String SERIALIZED_NAME_PROPERTY_SCHEMA = "propertySchema";
   @SerializedName(SERIALIZED_NAME_PROPERTY_SCHEMA)
-  private Map<String, FieldSchema> propertySchema = new HashMap<>();
+  private Map<String, FieldSchema> propertySchema = null;
+
 
   public ResultDataSchema nodeValueSchema(Map<String, FieldSchema> nodeValueSchema) {
+    
     this.nodeValueSchema = nodeValueSchema;
     return this;
   }
@@ -58,16 +60,21 @@ public class ResultDataSchema {
    * Get nodeValueSchema
    * @return nodeValueSchema
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Map<String, FieldSchema> getNodeValueSchema() {
     return nodeValueSchema;
   }
+
 
   public void setNodeValueSchema(Map<String, FieldSchema> nodeValueSchema) {
     this.nodeValueSchema = nodeValueSchema;
   }
 
+
   public ResultDataSchema propertySchema(Map<String, FieldSchema> propertySchema) {
+    
     this.propertySchema = propertySchema;
     return this;
   }
@@ -84,10 +91,13 @@ public class ResultDataSchema {
    * Get propertySchema
    * @return propertySchema
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Map<String, FieldSchema> getPropertySchema() {
     return propertySchema;
   }
+
 
   public void setPropertySchema(Map<String, FieldSchema> propertySchema) {
     this.propertySchema = propertySchema;

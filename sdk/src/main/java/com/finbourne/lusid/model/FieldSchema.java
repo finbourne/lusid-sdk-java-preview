@@ -32,7 +32,7 @@ import java.io.IOException;
 public class FieldSchema {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
 
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
@@ -159,7 +159,7 @@ public class FieldSchema {
 
       @Override
       public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return TypeEnum.fromValue(value);
       }
     }
@@ -173,7 +173,9 @@ public class FieldSchema {
   @SerializedName(SERIALIZED_NAME_DISPLAY_ORDER)
   private Integer displayOrder;
 
+
   public FieldSchema id(ResourceId id) {
+    
     this.id = id;
     return this;
   }
@@ -182,16 +184,21 @@ public class FieldSchema {
    * Get id
    * @return id
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public ResourceId getId() {
     return id;
   }
+
 
   public void setId(ResourceId id) {
     this.id = id;
   }
 
+
   public FieldSchema displayName(String displayName) {
+    
     this.displayName = displayName;
     return this;
   }
@@ -200,16 +207,21 @@ public class FieldSchema {
    * Get displayName
    * @return displayName
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getDisplayName() {
     return displayName;
   }
+
 
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
   }
 
+
   public FieldSchema description(String description) {
+    
     this.description = description;
     return this;
   }
@@ -218,16 +230,21 @@ public class FieldSchema {
    * Get description
    * @return description
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getDescription() {
     return description;
   }
+
 
   public void setDescription(String description) {
     this.description = description;
   }
 
+
   public FieldSchema type(TypeEnum type) {
+    
     this.type = type;
     return this;
   }
@@ -236,16 +253,21 @@ public class FieldSchema {
    * Get type
    * @return type
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public TypeEnum getType() {
     return type;
   }
+
 
   public void setType(TypeEnum type) {
     this.type = type;
   }
 
+
   public FieldSchema displayOrder(Integer displayOrder) {
+    
     this.displayOrder = displayOrder;
     return this;
   }
@@ -254,10 +276,13 @@ public class FieldSchema {
    * Get displayOrder
    * @return displayOrder
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Integer getDisplayOrder() {
     return displayOrder;
   }
+
 
   public void setDisplayOrder(Integer displayOrder) {
     this.displayOrder = displayOrder;

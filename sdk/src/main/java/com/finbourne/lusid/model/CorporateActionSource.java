@@ -40,11 +40,11 @@ public class CorporateActionSource {
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version = null;
+  private Version version;
 
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
@@ -56,9 +56,11 @@ public class CorporateActionSource {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public CorporateActionSource href(String href) {
+    
     this.href = href;
     return this;
   }
@@ -67,16 +69,21 @@ public class CorporateActionSource {
    * Get href
    * @return href
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getHref() {
     return href;
   }
+
 
   public void setHref(String href) {
     this.href = href;
   }
 
+
   public CorporateActionSource id(ResourceId id) {
+    
     this.id = id;
     return this;
   }
@@ -86,15 +93,19 @@ public class CorporateActionSource {
    * @return id
   **/
   @ApiModelProperty(required = true, value = "")
+
   public ResourceId getId() {
     return id;
   }
+
 
   public void setId(ResourceId id) {
     this.id = id;
   }
 
+
   public CorporateActionSource version(Version version) {
+    
     this.version = version;
     return this;
   }
@@ -104,15 +115,19 @@ public class CorporateActionSource {
    * @return version
   **/
   @ApiModelProperty(required = true, value = "")
+
   public Version getVersion() {
     return version;
   }
+
 
   public void setVersion(Version version) {
     this.version = version;
   }
 
+
   public CorporateActionSource displayName(String displayName) {
+    
     this.displayName = displayName;
     return this;
   }
@@ -121,16 +136,21 @@ public class CorporateActionSource {
    * Get displayName
    * @return displayName
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getDisplayName() {
     return displayName;
   }
+
 
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
   }
 
+
   public CorporateActionSource description(String description) {
+    
     this.description = description;
     return this;
   }
@@ -139,16 +159,21 @@ public class CorporateActionSource {
    * Get description
    * @return description
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getDescription() {
     return description;
   }
+
 
   public void setDescription(String description) {
     this.description = description;
   }
 
+
   public CorporateActionSource links(List<Link> links) {
+    
     this.links = links;
     return this;
   }
@@ -165,10 +190,13 @@ public class CorporateActionSource {
    * Get links
    * @return links
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<Link> getLinks() {
     return links;
   }
+
 
   public void setLinks(List<Link> links) {
     this.links = links;

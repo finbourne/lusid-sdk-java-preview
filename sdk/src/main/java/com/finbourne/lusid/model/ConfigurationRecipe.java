@@ -42,21 +42,23 @@ public class ConfigurationRecipe {
 
   public static final String SERIALIZED_NAME_MARKET = "market";
   @SerializedName(SERIALIZED_NAME_MARKET)
-  private MarketContext market = null;
+  private MarketContext market;
 
   public static final String SERIALIZED_NAME_PRICING = "pricing";
   @SerializedName(SERIALIZED_NAME_PRICING)
-  private PricingContext pricing = null;
+  private PricingContext pricing;
 
   public static final String SERIALIZED_NAME_AGGREGATION = "aggregation";
   @SerializedName(SERIALIZED_NAME_AGGREGATION)
-  private AggregationContext aggregation = null;
+  private AggregationContext aggregation;
 
   public static final String SERIALIZED_NAME_INHERITED_RECIPES = "inheritedRecipes";
   @SerializedName(SERIALIZED_NAME_INHERITED_RECIPES)
-  private List<ResourceId> inheritedRecipes = new ArrayList<>();
+  private List<ResourceId> inheritedRecipes = null;
+
 
   public ConfigurationRecipe code(String code) {
+    
     this.code = code;
     return this;
   }
@@ -66,15 +68,19 @@ public class ConfigurationRecipe {
    * @return code
   **/
   @ApiModelProperty(required = true, value = "User given string name (code) to identify the recipe.")
+
   public String getCode() {
     return code;
   }
+
 
   public void setCode(String code) {
     this.code = code;
   }
 
+
   public ConfigurationRecipe market(MarketContext market) {
+    
     this.market = market;
     return this;
   }
@@ -83,16 +89,21 @@ public class ConfigurationRecipe {
    * Get market
    * @return market
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public MarketContext getMarket() {
     return market;
   }
+
 
   public void setMarket(MarketContext market) {
     this.market = market;
   }
 
+
   public ConfigurationRecipe pricing(PricingContext pricing) {
+    
     this.pricing = pricing;
     return this;
   }
@@ -101,16 +112,21 @@ public class ConfigurationRecipe {
    * Get pricing
    * @return pricing
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public PricingContext getPricing() {
     return pricing;
   }
+
 
   public void setPricing(PricingContext pricing) {
     this.pricing = pricing;
   }
 
+
   public ConfigurationRecipe aggregation(AggregationContext aggregation) {
+    
     this.aggregation = aggregation;
     return this;
   }
@@ -119,16 +135,21 @@ public class ConfigurationRecipe {
    * Get aggregation
    * @return aggregation
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public AggregationContext getAggregation() {
     return aggregation;
   }
+
 
   public void setAggregation(AggregationContext aggregation) {
     this.aggregation = aggregation;
   }
 
+
   public ConfigurationRecipe inheritedRecipes(List<ResourceId> inheritedRecipes) {
+    
     this.inheritedRecipes = inheritedRecipes;
     return this;
   }
@@ -145,10 +166,13 @@ public class ConfigurationRecipe {
    * A list of parent recipes (scope,code) that can be used to share functionality between recipes. For instance one might use common recipes to set up  pricing for individual asset classes, e.g. rates or credit, and then combine them into a single recipe to be used by an exotics desk in conjunction with  some overrides that it requires for models or other pricing options.
    * @return inheritedRecipes
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "A list of parent recipes (scope,code) that can be used to share functionality between recipes. For instance one might use common recipes to set up  pricing for individual asset classes, e.g. rates or credit, and then combine them into a single recipe to be used by an exotics desk in conjunction with  some overrides that it requires for models or other pricing options.")
+
   public List<ResourceId> getInheritedRecipes() {
     return inheritedRecipes;
   }
+
 
   public void setInheritedRecipes(List<ResourceId> inheritedRecipes) {
     this.inheritedRecipes = inheritedRecipes;

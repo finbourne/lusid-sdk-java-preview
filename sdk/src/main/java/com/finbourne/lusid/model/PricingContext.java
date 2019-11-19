@@ -39,17 +39,19 @@ import java.util.Map;
 public class PricingContext {
   public static final String SERIALIZED_NAME_MODEL_RULES = "modelRules";
   @SerializedName(SERIALIZED_NAME_MODEL_RULES)
-  private List<VendorModelRule> modelRules = new ArrayList<>();
+  private List<VendorModelRule> modelRules = null;
 
   public static final String SERIALIZED_NAME_MODEL_CHOICE = "modelChoice";
   @SerializedName(SERIALIZED_NAME_MODEL_CHOICE)
-  private Map<String, ModelSelection> modelChoice = new HashMap<>();
+  private Map<String, ModelSelection> modelChoice = null;
 
   public static final String SERIALIZED_NAME_OPTIONS = "options";
   @SerializedName(SERIALIZED_NAME_OPTIONS)
-  private PricingOptions options = null;
+  private PricingOptions options;
+
 
   public PricingContext modelRules(List<VendorModelRule> modelRules) {
+    
     this.modelRules = modelRules;
     return this;
   }
@@ -66,16 +68,21 @@ public class PricingContext {
    * The set of model rules that are available. There may be multiple rules for Vendors, but only one per model-instrument pair.  Which of these preference sets is used depends upon the model choice selection if specified, or failing that the global default model specification  in the options.
    * @return modelRules
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The set of model rules that are available. There may be multiple rules for Vendors, but only one per model-instrument pair.  Which of these preference sets is used depends upon the model choice selection if specified, or failing that the global default model specification  in the options.")
+
   public List<VendorModelRule> getModelRules() {
     return modelRules;
   }
+
 
   public void setModelRules(List<VendorModelRule> modelRules) {
     this.modelRules = modelRules;
   }
 
+
   public PricingContext modelChoice(Map<String, ModelSelection> modelChoice) {
+    
     this.modelChoice = modelChoice;
     return this;
   }
@@ -92,16 +99,21 @@ public class PricingContext {
    * The choice of which model selection (vendor library, pricing model) to use in evaluation of a given instrument type.
    * @return modelChoice
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The choice of which model selection (vendor library, pricing model) to use in evaluation of a given instrument type.")
+
   public Map<String, ModelSelection> getModelChoice() {
     return modelChoice;
   }
+
 
   public void setModelChoice(Map<String, ModelSelection> modelChoice) {
     this.modelChoice = modelChoice;
   }
 
+
   public PricingContext options(PricingOptions options) {
+    
     this.options = options;
     return this;
   }
@@ -110,10 +122,13 @@ public class PricingContext {
    * Get options
    * @return options
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public PricingOptions getOptions() {
     return options;
   }
+
 
   public void setOptions(PricingOptions options) {
     this.options = options;

@@ -46,7 +46,9 @@ public class StructuredResultDataId {
   @SerializedName(SERIALIZED_NAME_RESULT_TYPE)
   private String resultType;
 
+
   public StructuredResultDataId source(String source) {
+    
     this.source = source;
     return this;
   }
@@ -56,15 +58,19 @@ public class StructuredResultDataId {
    * @return source
   **/
   @ApiModelProperty(required = true, value = "The platform or vendor that provided the structured result data, e.g. 'client'. This is primarily of interest when data could have been sourced from multiple sources")
+
   public String getSource() {
     return source;
   }
+
 
   public void setSource(String source) {
     this.source = source;
   }
 
+
   public StructuredResultDataId code(String code) {
+    
     this.code = code;
     return this;
   }
@@ -73,16 +79,21 @@ public class StructuredResultDataId {
    * The identifier for the entity that this id describes. It could be an index, instrument or other form of structured data
    * @return code
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The identifier for the entity that this id describes. It could be an index, instrument or other form of structured data")
+
   public String getCode() {
     return code;
   }
+
 
   public void setCode(String code) {
     this.code = code;
   }
 
+
   public StructuredResultDataId effectiveAt(String effectiveAt) {
+    
     this.effectiveAt = effectiveAt;
     return this;
   }
@@ -91,16 +102,21 @@ public class StructuredResultDataId {
    * The effectiveAt or cut label that this item of structured market data is/was updated/inserted with.
    * @return effectiveAt
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The effectiveAt or cut label that this item of structured market data is/was updated/inserted with.")
+
   public String getEffectiveAt() {
     return effectiveAt;
   }
+
 
   public void setEffectiveAt(String effectiveAt) {
     this.effectiveAt = effectiveAt;
   }
 
+
   public StructuredResultDataId resultType(String resultType) {
+    
     this.resultType = resultType;
     return this;
   }
@@ -109,10 +125,13 @@ public class StructuredResultDataId {
    * An identifier that denotes the class of data that the id points to. This is not the same as the format, but a more generic identifier such as &#39;risk result&#39;, &#39;cashflow&#39;, &#39;index&#39; or similar.
    * @return resultType
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "An identifier that denotes the class of data that the id points to. This is not the same as the format, but a more generic identifier such as 'risk result', 'cashflow', 'index' or similar.")
+
   public String getResultType() {
     return resultType;
   }
+
 
   public void setResultType(String resultType) {
     this.resultType = resultType;

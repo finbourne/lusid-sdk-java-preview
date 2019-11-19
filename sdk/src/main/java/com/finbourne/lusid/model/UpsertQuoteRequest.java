@@ -34,17 +34,19 @@ import java.io.IOException;
 public class UpsertQuoteRequest {
   public static final String SERIALIZED_NAME_QUOTE_ID = "quoteId";
   @SerializedName(SERIALIZED_NAME_QUOTE_ID)
-  private QuoteId quoteId = null;
+  private QuoteId quoteId;
 
   public static final String SERIALIZED_NAME_METRIC_VALUE = "metricValue";
   @SerializedName(SERIALIZED_NAME_METRIC_VALUE)
-  private MetricValue metricValue = null;
+  private MetricValue metricValue;
 
   public static final String SERIALIZED_NAME_LINEAGE = "lineage";
   @SerializedName(SERIALIZED_NAME_LINEAGE)
   private String lineage;
 
+
   public UpsertQuoteRequest quoteId(QuoteId quoteId) {
+    
     this.quoteId = quoteId;
     return this;
   }
@@ -54,15 +56,19 @@ public class UpsertQuoteRequest {
    * @return quoteId
   **/
   @ApiModelProperty(required = true, value = "")
+
   public QuoteId getQuoteId() {
     return quoteId;
   }
+
 
   public void setQuoteId(QuoteId quoteId) {
     this.quoteId = quoteId;
   }
 
+
   public UpsertQuoteRequest metricValue(MetricValue metricValue) {
+    
     this.metricValue = metricValue;
     return this;
   }
@@ -71,16 +77,21 @@ public class UpsertQuoteRequest {
    * Get metricValue
    * @return metricValue
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public MetricValue getMetricValue() {
     return metricValue;
   }
+
 
   public void setMetricValue(MetricValue metricValue) {
     this.metricValue = metricValue;
   }
 
+
   public UpsertQuoteRequest lineage(String lineage) {
+    
     this.lineage = lineage;
     return this;
   }
@@ -89,10 +100,13 @@ public class UpsertQuoteRequest {
    * Description of the quote&#39;s lineage e.g. &#39;FundAccountant_GreenQuality&#39;.
    * @return lineage
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "Description of the quote's lineage e.g. 'FundAccountant_GreenQuality'.")
+
   public String getLineage() {
     return lineage;
   }
+
 
   public void setLineage(String lineage) {
     this.lineage = lineage;

@@ -51,27 +51,39 @@ public class PagedResourceListOfPortfolioGroup {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
    /**
    * Get nextPage
    * @return nextPage
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getNextPage() {
     return nextPage;
   }
+
+
+
 
    /**
    * Get previousPage
    * @return previousPage
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getPreviousPage() {
     return previousPage;
   }
 
+
+
+
   public PagedResourceListOfPortfolioGroup values(List<PortfolioGroup> values) {
+    
     this.values = values;
     return this;
   }
@@ -86,15 +98,19 @@ public class PagedResourceListOfPortfolioGroup {
    * @return values
   **/
   @ApiModelProperty(required = true, value = "")
+
   public List<PortfolioGroup> getValues() {
     return values;
   }
+
 
   public void setValues(List<PortfolioGroup> values) {
     this.values = values;
   }
 
+
   public PagedResourceListOfPortfolioGroup href(String href) {
+    
     this.href = href;
     return this;
   }
@@ -103,16 +119,21 @@ public class PagedResourceListOfPortfolioGroup {
    * Get href
    * @return href
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getHref() {
     return href;
   }
+
 
   public void setHref(String href) {
     this.href = href;
   }
 
+
   public PagedResourceListOfPortfolioGroup links(List<Link> links) {
+    
     this.links = links;
     return this;
   }
@@ -129,10 +150,13 @@ public class PagedResourceListOfPortfolioGroup {
    * Get links
    * @return links
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<Link> getLinks() {
     return links;
   }
+
 
   public void setLinks(List<Link> links) {
     this.links = links;

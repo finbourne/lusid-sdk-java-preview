@@ -54,7 +54,9 @@ public class StructuredMarketDataId {
   @SerializedName(SERIALIZED_NAME_MARKET_ASSET)
   private String marketAsset;
 
+
   public StructuredMarketDataId provider(String provider) {
+    
     this.provider = provider;
     return this;
   }
@@ -64,15 +66,19 @@ public class StructuredMarketDataId {
    * @return provider
   **/
   @ApiModelProperty(required = true, value = "The platform or vendor that provided the structured market data, e.g. 'DataScope', 'LUSID', 'ISDA' etc.")
+
   public String getProvider() {
     return provider;
   }
+
 
   public void setProvider(String provider) {
     this.provider = provider;
   }
 
+
   public StructuredMarketDataId priceSource(String priceSource) {
+    
     this.priceSource = priceSource;
     return this;
   }
@@ -81,16 +87,21 @@ public class StructuredMarketDataId {
    * The source or originator of the structured market data, e.g. a bank or financial institution.
    * @return priceSource
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The source or originator of the structured market data, e.g. a bank or financial institution.")
+
   public String getPriceSource() {
     return priceSource;
   }
+
 
   public void setPriceSource(String priceSource) {
     this.priceSource = priceSource;
   }
 
+
   public StructuredMarketDataId lineage(String lineage) {
+    
     this.lineage = lineage;
     return this;
   }
@@ -99,16 +110,21 @@ public class StructuredMarketDataId {
    * Description of the structured market data&#39;s lineage e.g. &#39;FundAccountant_GreenQuality&#39;.
    * @return lineage
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "Description of the structured market data's lineage e.g. 'FundAccountant_GreenQuality'.")
+
   public String getLineage() {
     return lineage;
   }
+
 
   public void setLineage(String lineage) {
     this.lineage = lineage;
   }
 
+
   public StructuredMarketDataId effectiveAt(String effectiveAt) {
+    
     this.effectiveAt = effectiveAt;
     return this;
   }
@@ -117,16 +133,21 @@ public class StructuredMarketDataId {
    * The effectiveAt or cut label that this item of structured market data is/was updated/inserted with.
    * @return effectiveAt
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The effectiveAt or cut label that this item of structured market data is/was updated/inserted with.")
+
   public String getEffectiveAt() {
     return effectiveAt;
   }
+
 
   public void setEffectiveAt(String effectiveAt) {
     this.effectiveAt = effectiveAt;
   }
 
+
   public StructuredMarketDataId marketElementType(String marketElementType) {
+    
     this.marketElementType = marketElementType;
     return this;
   }
@@ -135,16 +156,21 @@ public class StructuredMarketDataId {
    * The type of the market element that the market entity represents, e.g. a vol surface or credit curve
    * @return marketElementType
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The type of the market element that the market entity represents, e.g. a vol surface or credit curve")
+
   public String getMarketElementType() {
     return marketElementType;
   }
+
 
   public void setMarketElementType(String marketElementType) {
     this.marketElementType = marketElementType;
   }
 
+
   public StructuredMarketDataId marketAsset(String marketAsset) {
+    
     this.marketAsset = marketAsset;
     return this;
   }
@@ -153,10 +179,13 @@ public class StructuredMarketDataId {
    * The name of the market entity that the document represents
    * @return marketAsset
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The name of the market entity that the document represents")
+
   public String getMarketAsset() {
     return marketAsset;
   }
+
 
   public void setMarketAsset(String marketAsset) {
     this.marketAsset = marketAsset;

@@ -35,7 +35,7 @@ import java.util.List;
 public class Results {
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version = null;
+  private Version version;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -88,7 +88,7 @@ public class Results {
 
       @Override
       public FormatEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return FormatEnum.fromValue(value);
       }
     }
@@ -100,9 +100,11 @@ public class Results {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public Results version(Version version) {
+    
     this.version = version;
     return this;
   }
@@ -111,16 +113,21 @@ public class Results {
    * Get version
    * @return version
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Version getVersion() {
     return version;
   }
+
 
   public void setVersion(Version version) {
     this.version = version;
   }
 
+
   public Results href(String href) {
+    
     this.href = href;
     return this;
   }
@@ -129,16 +136,21 @@ public class Results {
    * Get href
    * @return href
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getHref() {
     return href;
   }
+
 
   public void setHref(String href) {
     this.href = href;
   }
 
+
   public Results values(String values) {
+    
     this.values = values;
     return this;
   }
@@ -147,16 +159,21 @@ public class Results {
    * Get values
    * @return values
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getValues() {
     return values;
   }
+
 
   public void setValues(String values) {
     this.values = values;
   }
 
+
   public Results format(FormatEnum format) {
+    
     this.format = format;
     return this;
   }
@@ -165,16 +182,21 @@ public class Results {
    * Get format
    * @return format
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public FormatEnum getFormat() {
     return format;
   }
+
 
   public void setFormat(FormatEnum format) {
     this.format = format;
   }
 
+
   public Results links(List<Link> links) {
+    
     this.links = links;
     return this;
   }
@@ -191,10 +213,13 @@ public class Results {
    * Get links
    * @return links
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<Link> getLinks() {
     return links;
   }
+
 
   public void setLinks(List<Link> links) {
     this.links = links;

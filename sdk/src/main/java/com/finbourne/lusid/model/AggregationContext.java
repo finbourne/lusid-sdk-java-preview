@@ -33,9 +33,11 @@ import java.io.IOException;
 public class AggregationContext {
   public static final String SERIALIZED_NAME_OPTIONS = "options";
   @SerializedName(SERIALIZED_NAME_OPTIONS)
-  private AggregationOptions options = null;
+  private AggregationOptions options;
+
 
   public AggregationContext options(AggregationOptions options) {
+    
     this.options = options;
     return this;
   }
@@ -44,10 +46,13 @@ public class AggregationContext {
    * Get options
    * @return options
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public AggregationOptions getOptions() {
     return options;
   }
+
 
   public void setOptions(AggregationOptions options) {
     this.options = options;

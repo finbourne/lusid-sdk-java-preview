@@ -34,13 +34,15 @@ import java.io.IOException;
 public class UpsertStructuredResultDataRequest {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private StructuredResultDataId id = null;
+  private StructuredResultDataId id;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private StructuredResultData data = null;
+  private StructuredResultData data;
+
 
   public UpsertStructuredResultDataRequest id(StructuredResultDataId id) {
+    
     this.id = id;
     return this;
   }
@@ -50,15 +52,19 @@ public class UpsertStructuredResultDataRequest {
    * @return id
   **/
   @ApiModelProperty(required = true, value = "")
+
   public StructuredResultDataId getId() {
     return id;
   }
+
 
   public void setId(StructuredResultDataId id) {
     this.id = id;
   }
 
+
   public UpsertStructuredResultDataRequest data(StructuredResultData data) {
+    
     this.data = data;
     return this;
   }
@@ -67,10 +73,13 @@ public class UpsertStructuredResultDataRequest {
    * Get data
    * @return data
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public StructuredResultData getData() {
     return data;
   }
+
 
   public void setData(StructuredResultData data) {
     this.data = data;

@@ -91,7 +91,7 @@ public class QuoteSeriesId {
 
       @Override
       public InstrumentIdTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentIdTypeEnum.fromValue(value);
       }
     }
@@ -144,7 +144,7 @@ public class QuoteSeriesId {
 
       @Override
       public QuoteTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return QuoteTypeEnum.fromValue(value);
       }
     }
@@ -158,7 +158,9 @@ public class QuoteSeriesId {
   @SerializedName(SERIALIZED_NAME_FIELD)
   private String field;
 
+
   public QuoteSeriesId provider(String provider) {
+    
     this.provider = provider;
     return this;
   }
@@ -168,15 +170,19 @@ public class QuoteSeriesId {
    * @return provider
   **/
   @ApiModelProperty(required = true, value = "The platform or vendor that provided the quote, e.g. 'DataScope', 'LUSID' etc.")
+
   public String getProvider() {
     return provider;
   }
+
 
   public void setProvider(String provider) {
     this.provider = provider;
   }
 
+
   public QuoteSeriesId priceSource(String priceSource) {
+    
     this.priceSource = priceSource;
     return this;
   }
@@ -185,16 +191,21 @@ public class QuoteSeriesId {
    * The source or originator of the quote, e.g. a bank or financial institution.
    * @return priceSource
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The source or originator of the quote, e.g. a bank or financial institution.")
+
   public String getPriceSource() {
     return priceSource;
   }
+
 
   public void setPriceSource(String priceSource) {
     this.priceSource = priceSource;
   }
 
+
   public QuoteSeriesId instrumentId(String instrumentId) {
+    
     this.instrumentId = instrumentId;
     return this;
   }
@@ -204,15 +215,19 @@ public class QuoteSeriesId {
    * @return instrumentId
   **/
   @ApiModelProperty(required = true, value = "The value of the instrument identifier that uniquely identifies the instrument that the quote is for, e.g. 'BBG00JX0P539'.")
+
   public String getInstrumentId() {
     return instrumentId;
   }
+
 
   public void setInstrumentId(String instrumentId) {
     this.instrumentId = instrumentId;
   }
 
+
   public QuoteSeriesId instrumentIdType(InstrumentIdTypeEnum instrumentIdType) {
+    
     this.instrumentIdType = instrumentIdType;
     return this;
   }
@@ -222,15 +237,19 @@ public class QuoteSeriesId {
    * @return instrumentIdType
   **/
   @ApiModelProperty(required = true, value = "The type of instrument identifier used to uniquely identify the instrument that the quote is for, e.g. 'Figi'.")
+
   public InstrumentIdTypeEnum getInstrumentIdType() {
     return instrumentIdType;
   }
+
 
   public void setInstrumentIdType(InstrumentIdTypeEnum instrumentIdType) {
     this.instrumentIdType = instrumentIdType;
   }
 
+
   public QuoteSeriesId quoteType(QuoteTypeEnum quoteType) {
+    
     this.quoteType = quoteType;
     return this;
   }
@@ -240,15 +259,19 @@ public class QuoteSeriesId {
    * @return quoteType
   **/
   @ApiModelProperty(required = true, value = "The type of the quote. This allows for quotes other than prices e.g. rates or spreads to be used.")
+
   public QuoteTypeEnum getQuoteType() {
     return quoteType;
   }
+
 
   public void setQuoteType(QuoteTypeEnum quoteType) {
     this.quoteType = quoteType;
   }
 
+
   public QuoteSeriesId field(String field) {
+    
     this.field = field;
     return this;
   }
@@ -258,9 +281,11 @@ public class QuoteSeriesId {
    * @return field
   **/
   @ApiModelProperty(required = true, value = "The field of the quote e.g. bid, mid, ask etc. This should be consistent across a time series of quotes. The allowed values are dependant on the specified Provider.")
+
   public String getField() {
     return field;
   }
+
 
   public void setField(String field) {
     this.field = field;

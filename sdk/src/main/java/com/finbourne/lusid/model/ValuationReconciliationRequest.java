@@ -34,13 +34,15 @@ import java.io.IOException;
 public class ValuationReconciliationRequest {
   public static final String SERIALIZED_NAME_PORTFOLIO_ID = "portfolioId";
   @SerializedName(SERIALIZED_NAME_PORTFOLIO_ID)
-  private ResourceId portfolioId = null;
+  private ResourceId portfolioId;
 
   public static final String SERIALIZED_NAME_AGGREGATION = "aggregation";
   @SerializedName(SERIALIZED_NAME_AGGREGATION)
-  private AggregationRequest aggregation = null;
+  private AggregationRequest aggregation;
+
 
   public ValuationReconciliationRequest portfolioId(ResourceId portfolioId) {
+    
     this.portfolioId = portfolioId;
     return this;
   }
@@ -50,15 +52,19 @@ public class ValuationReconciliationRequest {
    * @return portfolioId
   **/
   @ApiModelProperty(required = true, value = "")
+
   public ResourceId getPortfolioId() {
     return portfolioId;
   }
+
 
   public void setPortfolioId(ResourceId portfolioId) {
     this.portfolioId = portfolioId;
   }
 
+
   public ValuationReconciliationRequest aggregation(AggregationRequest aggregation) {
+    
     this.aggregation = aggregation;
     return this;
   }
@@ -68,9 +74,11 @@ public class ValuationReconciliationRequest {
    * @return aggregation
   **/
   @ApiModelProperty(required = true, value = "")
+
   public AggregationRequest getAggregation() {
     return aggregation;
   }
+
 
   public void setAggregation(AggregationRequest aggregation) {
     this.aggregation = aggregation;

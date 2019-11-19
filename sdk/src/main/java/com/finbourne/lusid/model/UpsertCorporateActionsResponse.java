@@ -42,17 +42,19 @@ public class UpsertCorporateActionsResponse {
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  private Map<String, CorporateAction> values = new HashMap<>();
+  private Map<String, CorporateAction> values = null;
 
   public static final String SERIALIZED_NAME_FAILED = "failed";
   @SerializedName(SERIALIZED_NAME_FAILED)
-  private Map<String, ErrorDetail> failed = new HashMap<>();
+  private Map<String, ErrorDetail> failed = null;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public UpsertCorporateActionsResponse href(String href) {
+    
     this.href = href;
     return this;
   }
@@ -61,16 +63,21 @@ public class UpsertCorporateActionsResponse {
    * Get href
    * @return href
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getHref() {
     return href;
   }
+
 
   public void setHref(String href) {
     this.href = href;
   }
 
+
   public UpsertCorporateActionsResponse values(Map<String, CorporateAction> values) {
+    
     this.values = values;
     return this;
   }
@@ -87,16 +94,21 @@ public class UpsertCorporateActionsResponse {
    * Get values
    * @return values
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Map<String, CorporateAction> getValues() {
     return values;
   }
+
 
   public void setValues(Map<String, CorporateAction> values) {
     this.values = values;
   }
 
+
   public UpsertCorporateActionsResponse failed(Map<String, ErrorDetail> failed) {
+    
     this.failed = failed;
     return this;
   }
@@ -113,16 +125,21 @@ public class UpsertCorporateActionsResponse {
    * Get failed
    * @return failed
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Map<String, ErrorDetail> getFailed() {
     return failed;
   }
+
 
   public void setFailed(Map<String, ErrorDetail> failed) {
     this.failed = failed;
   }
 
+
   public UpsertCorporateActionsResponse links(List<Link> links) {
+    
     this.links = links;
     return this;
   }
@@ -139,10 +156,13 @@ public class UpsertCorporateActionsResponse {
    * Get links
    * @return links
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<Link> getLinks() {
     return links;
   }
+
 
   public void setLinks(List<Link> links) {
     this.links = links;

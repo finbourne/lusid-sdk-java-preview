@@ -49,9 +49,11 @@ public class StructuredResultData {
 
   public static final String SERIALIZED_NAME_DATA_MAP = "dataMap";
   @SerializedName(SERIALIZED_NAME_DATA_MAP)
-  private DataMapping dataMap = null;
+  private DataMapping dataMap;
+
 
   public StructuredResultData documentFormat(String documentFormat) {
+    
     this.documentFormat = documentFormat;
     return this;
   }
@@ -61,15 +63,19 @@ public class StructuredResultData {
    * @return documentFormat
   **/
   @ApiModelProperty(required = true, value = "The format of the accompanying document.")
+
   public String getDocumentFormat() {
     return documentFormat;
   }
+
 
   public void setDocumentFormat(String documentFormat) {
     this.documentFormat = documentFormat;
   }
 
+
   public StructuredResultData version(String version) {
+    
     this.version = version;
     return this;
   }
@@ -78,16 +84,21 @@ public class StructuredResultData {
    * The semantic version of the document format; MAJOR.MINOR.PATCH
    * @return version
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The semantic version of the document format; MAJOR.MINOR.PATCH")
+
   public String getVersion() {
     return version;
   }
+
 
   public void setVersion(String version) {
     this.version = version;
   }
 
+
   public StructuredResultData name(String name) {
+    
     this.name = name;
     return this;
   }
@@ -96,16 +107,21 @@ public class StructuredResultData {
    * The name or description for the document
    * @return name
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The name or description for the document")
+
   public String getName() {
     return name;
   }
+
 
   public void setName(String name) {
     this.name = name;
   }
 
+
   public StructuredResultData document(String document) {
+    
     this.document = document;
     return this;
   }
@@ -115,15 +131,19 @@ public class StructuredResultData {
    * @return document
   **/
   @ApiModelProperty(required = true, value = "The document that will be stored (or retrieved) and which describes a unit result data entity such as a set of prices or yields")
+
   public String getDocument() {
     return document;
   }
+
 
   public void setDocument(String document) {
     this.document = document;
   }
 
+
   public StructuredResultData dataMap(DataMapping dataMap) {
+    
     this.dataMap = dataMap;
     return this;
   }
@@ -132,10 +152,13 @@ public class StructuredResultData {
    * Get dataMap
    * @return dataMap
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public DataMapping getDataMap() {
     return dataMap;
   }
+
 
   public void setDataMap(DataMapping dataMap) {
     this.dataMap = dataMap;

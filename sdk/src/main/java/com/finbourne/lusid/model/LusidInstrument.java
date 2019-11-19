@@ -80,7 +80,7 @@ public class LusidInstrument {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -97,7 +97,9 @@ public class LusidInstrument {
   public LusidInstrument() {
     this.$type = this.getClass().getSimpleName();
   }
+
   public LusidInstrument instrumentType(InstrumentTypeEnum instrumentType) {
+    
     this.instrumentType = instrumentType;
     return this;
   }
@@ -106,16 +108,21 @@ public class LusidInstrument {
    * Instrument type, must be property for JSON.
    * @return instrumentType
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "Instrument type, must be property for JSON.")
+
   public InstrumentTypeEnum getInstrumentType() {
     return instrumentType;
   }
+
 
   public void setInstrumentType(InstrumentTypeEnum instrumentType) {
     this.instrumentType = instrumentType;
   }
 
+
   public LusidInstrument $type(String $type) {
+    
     this.$type = $type;
     return this;
   }
@@ -125,9 +132,11 @@ public class LusidInstrument {
    * @return $type
   **/
   @ApiModelProperty(required = true, value = "")
+
   public String get$Type() {
     return $type;
   }
+
 
   public void set$Type(String $type) {
     this.$type = $type;

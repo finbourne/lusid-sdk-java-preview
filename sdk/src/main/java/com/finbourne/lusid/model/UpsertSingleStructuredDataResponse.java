@@ -44,9 +44,11 @@ public class UpsertSingleStructuredDataResponse {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public UpsertSingleStructuredDataResponse href(String href) {
+    
     this.href = href;
     return this;
   }
@@ -55,16 +57,21 @@ public class UpsertSingleStructuredDataResponse {
    * The specifc Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.
    * @return href
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The specifc Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.")
+
   public String getHref() {
     return href;
   }
+
 
   public void setHref(String href) {
     this.href = href;
   }
 
+
   public UpsertSingleStructuredDataResponse value(OffsetDateTime value) {
+    
     this.value = value;
     return this;
   }
@@ -73,16 +80,21 @@ public class UpsertSingleStructuredDataResponse {
    * The value that was successfully retrieved.
    * @return value
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The value that was successfully retrieved.")
+
   public OffsetDateTime getValue() {
     return value;
   }
+
 
   public void setValue(OffsetDateTime value) {
     this.value = value;
   }
 
+
   public UpsertSingleStructuredDataResponse links(List<Link> links) {
+    
     this.links = links;
     return this;
   }
@@ -99,10 +111,13 @@ public class UpsertSingleStructuredDataResponse {
    * Get links
    * @return links
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<Link> getLinks() {
     return links;
   }
+
 
   public void setLinks(List<Link> links) {
     this.links = links;

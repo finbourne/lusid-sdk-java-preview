@@ -40,11 +40,11 @@ import java.util.List;
 public class AggregationRequest {
   public static final String SERIALIZED_NAME_RECIPE_ID = "recipeId";
   @SerializedName(SERIALIZED_NAME_RECIPE_ID)
-  private ResourceId recipeId = null;
+  private ResourceId recipeId;
 
   public static final String SERIALIZED_NAME_INLINE_RECIPE = "inlineRecipe";
   @SerializedName(SERIALIZED_NAME_INLINE_RECIPE)
-  private ConfigurationRecipe inlineRecipe = null;
+  private ConfigurationRecipe inlineRecipe;
 
   public static final String SERIALIZED_NAME_AS_AT = "asAt";
   @SerializedName(SERIALIZED_NAME_AS_AT)
@@ -64,11 +64,11 @@ public class AggregationRequest {
 
   public static final String SERIALIZED_NAME_GROUP_BY = "groupBy";
   @SerializedName(SERIALIZED_NAME_GROUP_BY)
-  private List<String> groupBy = new ArrayList<>();
+  private List<String> groupBy = null;
 
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
-  private List<PropertyFilter> filters = new ArrayList<>();
+  private List<PropertyFilter> filters = null;
 
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
@@ -76,9 +76,11 @@ public class AggregationRequest {
 
   public static final String SERIALIZED_NAME_SORT = "sort";
   @SerializedName(SERIALIZED_NAME_SORT)
-  private List<OrderBySpec> sort = new ArrayList<>();
+  private List<OrderBySpec> sort = null;
+
 
   public AggregationRequest recipeId(ResourceId recipeId) {
+    
     this.recipeId = recipeId;
     return this;
   }
@@ -87,16 +89,21 @@ public class AggregationRequest {
    * Get recipeId
    * @return recipeId
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public ResourceId getRecipeId() {
     return recipeId;
   }
+
 
   public void setRecipeId(ResourceId recipeId) {
     this.recipeId = recipeId;
   }
 
+
   public AggregationRequest inlineRecipe(ConfigurationRecipe inlineRecipe) {
+    
     this.inlineRecipe = inlineRecipe;
     return this;
   }
@@ -105,16 +112,21 @@ public class AggregationRequest {
    * Get inlineRecipe
    * @return inlineRecipe
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public ConfigurationRecipe getInlineRecipe() {
     return inlineRecipe;
   }
+
 
   public void setInlineRecipe(ConfigurationRecipe inlineRecipe) {
     this.inlineRecipe = inlineRecipe;
   }
 
+
   public AggregationRequest asAt(OffsetDateTime asAt) {
+    
     this.asAt = asAt;
     return this;
   }
@@ -123,16 +135,21 @@ public class AggregationRequest {
    * The asAt date to use
    * @return asAt
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The asAt date to use")
+
   public OffsetDateTime getAsAt() {
     return asAt;
   }
+
 
   public void setAsAt(OffsetDateTime asAt) {
     this.asAt = asAt;
   }
 
+
   public AggregationRequest effectiveFrom(OffsetDateTime effectiveFrom) {
+    
     this.effectiveFrom = effectiveFrom;
     return this;
   }
@@ -141,16 +158,21 @@ public class AggregationRequest {
    * If present, the EffectiveFrom and EffectiveAt dates are interpreted as a range of dates for which to perform a valuation.  In this case, valuation is calculated for the portfolio(s) for each date that is a business day in the given range.
    * @return effectiveFrom
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "If present, the EffectiveFrom and EffectiveAt dates are interpreted as a range of dates for which to perform a valuation.  In this case, valuation is calculated for the portfolio(s) for each date that is a business day in the given range.")
+
   public OffsetDateTime getEffectiveFrom() {
     return effectiveFrom;
   }
+
 
   public void setEffectiveFrom(OffsetDateTime effectiveFrom) {
     this.effectiveFrom = effectiveFrom;
   }
 
+
   public AggregationRequest effectiveAt(OffsetDateTime effectiveAt) {
+    
     this.effectiveAt = effectiveAt;
     return this;
   }
@@ -160,15 +182,19 @@ public class AggregationRequest {
    * @return effectiveAt
   **/
   @ApiModelProperty(required = true, value = "The market data time, i.e. the time to run the aggregation request effective of.")
+
   public OffsetDateTime getEffectiveAt() {
     return effectiveAt;
   }
+
 
   public void setEffectiveAt(OffsetDateTime effectiveAt) {
     this.effectiveAt = effectiveAt;
   }
 
+
   public AggregationRequest metrics(List<AggregateSpec> metrics) {
+    
     this.metrics = metrics;
     return this;
   }
@@ -183,15 +209,19 @@ public class AggregationRequest {
    * @return metrics
   **/
   @ApiModelProperty(required = true, value = "The set of specifications for items to calculate or retrieve during the aggregation and present in the results.  This is logically equivalent to the set of operations in a Sql select statement  select [operation1(field1), operation2(field2), ... ] from results")
+
   public List<AggregateSpec> getMetrics() {
     return metrics;
   }
+
 
   public void setMetrics(List<AggregateSpec> metrics) {
     this.metrics = metrics;
   }
 
+
   public AggregationRequest groupBy(List<String> groupBy) {
+    
     this.groupBy = groupBy;
     return this;
   }
@@ -208,16 +238,21 @@ public class AggregationRequest {
    * The set of items by which to perform grouping. This primarily matters when one or more of the metric operators is a mapping  that reduces set size, e.g. sum or proportion. The group-by statement determines the set of keys by which to break the results out.
    * @return groupBy
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The set of items by which to perform grouping. This primarily matters when one or more of the metric operators is a mapping  that reduces set size, e.g. sum or proportion. The group-by statement determines the set of keys by which to break the results out.")
+
   public List<String> getGroupBy() {
     return groupBy;
   }
+
 
   public void setGroupBy(List<String> groupBy) {
     this.groupBy = groupBy;
   }
 
+
   public AggregationRequest filters(List<PropertyFilter> filters) {
+    
     this.filters = filters;
     return this;
   }
@@ -234,16 +269,21 @@ public class AggregationRequest {
    * A set of filters to use to reduce the data found in a request. Equivalent to the &#39;where ...&#39; part of a Sql select statement.  For example, filter a set of values within a given range or matching a particular value.
    * @return filters
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "A set of filters to use to reduce the data found in a request. Equivalent to the 'where ...' part of a Sql select statement.  For example, filter a set of values within a given range or matching a particular value.")
+
   public List<PropertyFilter> getFilters() {
     return filters;
   }
+
 
   public void setFilters(List<PropertyFilter> filters) {
     this.filters = filters;
   }
 
+
   public AggregationRequest limit(Integer limit) {
+    
     this.limit = limit;
     return this;
   }
@@ -252,16 +292,21 @@ public class AggregationRequest {
    * limit the results to a particular number of values.
    * @return limit
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "limit the results to a particular number of values.")
+
   public Integer getLimit() {
     return limit;
   }
+
 
   public void setLimit(Integer limit) {
     this.limit = limit;
   }
 
+
   public AggregationRequest sort(List<OrderBySpec> sort) {
+    
     this.sort = sort;
     return this;
   }
@@ -278,10 +323,13 @@ public class AggregationRequest {
    * A (possibly empty/null) set of specifications for how to order the results.
    * @return sort
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "A (possibly empty/null) set of specifications for how to order the results.")
+
   public List<OrderBySpec> getSort() {
     return sort;
   }
+
 
   public void setSort(List<OrderBySpec> sort) {
     this.sort = sort;

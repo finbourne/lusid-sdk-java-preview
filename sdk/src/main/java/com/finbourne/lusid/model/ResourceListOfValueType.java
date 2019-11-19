@@ -149,7 +149,7 @@ public class ResourceListOfValueType {
 
       @Override
       public ValuesEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return ValuesEnum.fromValue(value);
       }
     }
@@ -165,9 +165,11 @@ public class ResourceListOfValueType {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public ResourceListOfValueType values(List<ValuesEnum> values) {
+    
     this.values = values;
     return this;
   }
@@ -182,15 +184,19 @@ public class ResourceListOfValueType {
    * @return values
   **/
   @ApiModelProperty(required = true, value = "")
+
   public List<ValuesEnum> getValues() {
     return values;
   }
+
 
   public void setValues(List<ValuesEnum> values) {
     this.values = values;
   }
 
+
   public ResourceListOfValueType href(String href) {
+    
     this.href = href;
     return this;
   }
@@ -199,16 +205,21 @@ public class ResourceListOfValueType {
    * Get href
    * @return href
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getHref() {
     return href;
   }
+
 
   public void setHref(String href) {
     this.href = href;
   }
 
+
   public ResourceListOfValueType links(List<Link> links) {
+    
     this.links = links;
     return this;
   }
@@ -225,10 +236,13 @@ public class ResourceListOfValueType {
    * Get links
    * @return links
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<Link> getLinks() {
     return links;
   }
+
 
   public void setLinks(List<Link> links) {
     this.links = links;

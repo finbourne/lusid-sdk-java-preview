@@ -45,13 +45,15 @@ public class Schema {
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  private Map<String, FieldSchema> values = new HashMap<>();
+  private Map<String, FieldSchema> values = null;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public Schema entity(String entity) {
+    
     this.entity = entity;
     return this;
   }
@@ -60,16 +62,21 @@ public class Schema {
    * Get entity
    * @return entity
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getEntity() {
     return entity;
   }
+
 
   public void setEntity(String entity) {
     this.entity = entity;
   }
 
+
   public Schema href(String href) {
+    
     this.href = href;
     return this;
   }
@@ -78,16 +85,21 @@ public class Schema {
    * Get href
    * @return href
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getHref() {
     return href;
   }
+
 
   public void setHref(String href) {
     this.href = href;
   }
 
+
   public Schema values(Map<String, FieldSchema> values) {
+    
     this.values = values;
     return this;
   }
@@ -104,16 +116,21 @@ public class Schema {
    * Get values
    * @return values
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Map<String, FieldSchema> getValues() {
     return values;
   }
+
 
   public void setValues(Map<String, FieldSchema> values) {
     this.values = values;
   }
 
+
   public Schema links(List<Link> links) {
+    
     this.links = links;
     return this;
   }
@@ -130,10 +147,13 @@ public class Schema {
    * Get links
    * @return links
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<Link> getLinks() {
     return links;
   }
+
 
   public void setLinks(List<Link> links) {
     this.links = links;

@@ -116,7 +116,7 @@ public class FxForwardInstrument {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -126,7 +126,9 @@ public class FxForwardInstrument {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public FxForwardInstrument domAmount(Double domAmount) {
+    
     this.domAmount = domAmount;
     return this;
   }
@@ -136,15 +138,19 @@ public class FxForwardInstrument {
    * @return domAmount
   **/
   @ApiModelProperty(required = true, value = "The amount that is to be paid in the domestic currency on the maturity date.")
+
   public Double getDomAmount() {
     return domAmount;
   }
+
 
   public void setDomAmount(Double domAmount) {
     this.domAmount = domAmount;
   }
 
+
   public FxForwardInstrument fgnAmount(Double fgnAmount) {
+    
     this.fgnAmount = fgnAmount;
     return this;
   }
@@ -154,15 +160,19 @@ public class FxForwardInstrument {
    * @return fgnAmount
   **/
   @ApiModelProperty(required = true, value = "The amount that is to be paid in the foreign currency on the maturity date")
+
   public Double getFgnAmount() {
     return fgnAmount;
   }
+
 
   public void setFgnAmount(Double fgnAmount) {
     this.fgnAmount = fgnAmount;
   }
 
+
   public FxForwardInstrument isNdf(Boolean isNdf) {
+    
     this.isNdf = isNdf;
     return this;
   }
@@ -171,16 +181,21 @@ public class FxForwardInstrument {
    * Is the contract an Fx-Forward of \&quot;Non-Deliverable\&quot; type, meaning a single payment in the domestic currency based on  the change in fx-rate vs  a reference rate is used.
    * @return isNdf
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "Is the contract an Fx-Forward of \"Non-Deliverable\" type, meaning a single payment in the domestic currency based on  the change in fx-rate vs  a reference rate is used.")
+
   public Boolean getIsNdf() {
     return isNdf;
   }
+
 
   public void setIsNdf(Boolean isNdf) {
     this.isNdf = isNdf;
   }
 
+
   public FxForwardInstrument fixingDate(OffsetDateTime fixingDate) {
+    
     this.fixingDate = fixingDate;
     return this;
   }
@@ -189,16 +204,21 @@ public class FxForwardInstrument {
    * The fixing date. Its presence determines the NDF status of the instrument.
    * @return fixingDate
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The fixing date. Its presence determines the NDF status of the instrument.")
+
   public OffsetDateTime getFixingDate() {
     return fixingDate;
   }
+
 
   public void setFixingDate(OffsetDateTime fixingDate) {
     this.fixingDate = fixingDate;
   }
 
+
   public FxForwardInstrument fgnCcy(String fgnCcy) {
+    
     this.fgnCcy = fgnCcy;
     return this;
   }
@@ -208,15 +228,19 @@ public class FxForwardInstrument {
    * @return fgnCcy
   **/
   @ApiModelProperty(required = true, value = "The foreign (other) currency of the instrument. In the NDF case, only payments are made in the domestic currency.  For the outright forward, currencies are exchanged. By domestic is then that of the portfolio.")
+
   public String getFgnCcy() {
     return fgnCcy;
   }
+
 
   public void setFgnCcy(String fgnCcy) {
     this.fgnCcy = fgnCcy;
   }
 
+
   public FxForwardInstrument refSpotRate(Double refSpotRate) {
+    
     this.refSpotRate = refSpotRate;
     return this;
   }
@@ -225,16 +249,21 @@ public class FxForwardInstrument {
    * The reference Fx Spot rate for currency pair Foreign-Domestic that was seen on the trade start date (time).
    * @return refSpotRate
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "The reference Fx Spot rate for currency pair Foreign-Domestic that was seen on the trade start date (time).")
+
   public Double getRefSpotRate() {
     return refSpotRate;
   }
+
 
   public void setRefSpotRate(Double refSpotRate) {
     this.refSpotRate = refSpotRate;
   }
 
+
   public FxForwardInstrument startDate(OffsetDateTime startDate) {
+    
     this.startDate = startDate;
     return this;
   }
@@ -244,15 +273,19 @@ public class FxForwardInstrument {
    * @return startDate
   **/
   @ApiModelProperty(required = true, value = "The start date of the instrument. This is normally synonymous with the trade-date.")
+
   public OffsetDateTime getStartDate() {
     return startDate;
   }
+
 
   public void setStartDate(OffsetDateTime startDate) {
     this.startDate = startDate;
   }
 
+
   public FxForwardInstrument maturityDate(OffsetDateTime maturityDate) {
+    
     this.maturityDate = maturityDate;
     return this;
   }
@@ -262,15 +295,19 @@ public class FxForwardInstrument {
    * @return maturityDate
   **/
   @ApiModelProperty(required = true, value = "The final maturity date of the instrument. This means the last date on which the instruments makes a payment of any amount.  For the avoidance of doubt, that is not necessarily prior to its last sensitivity date for the purposes of risk; e.g. instruments such as  Constant Maturity Swaps (CMS) often have sensitivities to rates beyond their last payment date")
+
   public OffsetDateTime getMaturityDate() {
     return maturityDate;
   }
+
 
   public void setMaturityDate(OffsetDateTime maturityDate) {
     this.maturityDate = maturityDate;
   }
 
+
   public FxForwardInstrument domCcy(String domCcy) {
+    
     this.domCcy = domCcy;
     return this;
   }
@@ -280,15 +317,19 @@ public class FxForwardInstrument {
    * @return domCcy
   **/
   @ApiModelProperty(required = true, value = "The domestic currency of the instrument.")
+
   public String getDomCcy() {
     return domCcy;
   }
+
 
   public void setDomCcy(String domCcy) {
     this.domCcy = domCcy;
   }
 
+
   public FxForwardInstrument instrumentType(InstrumentTypeEnum instrumentType) {
+    
     this.instrumentType = instrumentType;
     return this;
   }
@@ -298,9 +339,11 @@ public class FxForwardInstrument {
    * @return instrumentType
   **/
   @ApiModelProperty(required = true, value = "Instrument type, must be property for JSON.")
+
   public InstrumentTypeEnum getInstrumentType() {
     return instrumentType;
   }
+
 
   public void setInstrumentType(InstrumentTypeEnum instrumentType) {
     this.instrumentType = instrumentType;

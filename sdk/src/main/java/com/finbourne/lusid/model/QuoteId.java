@@ -33,13 +33,15 @@ import java.io.IOException;
 public class QuoteId {
   public static final String SERIALIZED_NAME_QUOTE_SERIES_ID = "quoteSeriesId";
   @SerializedName(SERIALIZED_NAME_QUOTE_SERIES_ID)
-  private QuoteSeriesId quoteSeriesId = null;
+  private QuoteSeriesId quoteSeriesId;
 
   public static final String SERIALIZED_NAME_EFFECTIVE_AT = "effectiveAt";
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_AT)
   private String effectiveAt;
 
+
   public QuoteId quoteSeriesId(QuoteSeriesId quoteSeriesId) {
+    
     this.quoteSeriesId = quoteSeriesId;
     return this;
   }
@@ -49,15 +51,19 @@ public class QuoteId {
    * @return quoteSeriesId
   **/
   @ApiModelProperty(required = true, value = "")
+
   public QuoteSeriesId getQuoteSeriesId() {
     return quoteSeriesId;
   }
+
 
   public void setQuoteSeriesId(QuoteSeriesId quoteSeriesId) {
     this.quoteSeriesId = quoteSeriesId;
   }
 
+
   public QuoteId effectiveAt(String effectiveAt) {
+    
     this.effectiveAt = effectiveAt;
     return this;
   }
@@ -67,9 +73,11 @@ public class QuoteId {
    * @return effectiveAt
   **/
   @ApiModelProperty(required = true, value = "The effective datetime or cut label at which the quote is valid from.")
+
   public String getEffectiveAt() {
     return effectiveAt;
   }
+
 
   public void setEffectiveAt(String effectiveAt) {
     this.effectiveAt = effectiveAt;

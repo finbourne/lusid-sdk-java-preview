@@ -41,7 +41,7 @@ public class Example {
     CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of corporate action source
     String code = "code_example"; // String | The code of the corporate action source
-    List<UpsertCorporateActionRequest> actions = Arrays.asList(null); // List<UpsertCorporateActionRequest> | The corporate action definitions
+    List<UpsertCorporateActionRequest> actions = Arrays.asList(); // List<UpsertCorporateActionRequest> | The corporate action definitions
     try {
       UpsertCorporateActionsResponse result = apiInstance.batchUpsertCorporateActions(scope, code, actions);
       System.out.println(result);

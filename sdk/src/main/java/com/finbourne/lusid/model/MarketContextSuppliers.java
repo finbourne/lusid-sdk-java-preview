@@ -77,7 +77,7 @@ public class MarketContextSuppliers {
 
       @Override
       public CommodityEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return CommodityEnum.fromValue(value);
       }
     }
@@ -134,7 +134,7 @@ public class MarketContextSuppliers {
 
       @Override
       public CreditEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return CreditEnum.fromValue(value);
       }
     }
@@ -191,7 +191,7 @@ public class MarketContextSuppliers {
 
       @Override
       public EquityEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return EquityEnum.fromValue(value);
       }
     }
@@ -248,7 +248,7 @@ public class MarketContextSuppliers {
 
       @Override
       public FxEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return FxEnum.fromValue(value);
       }
     }
@@ -305,7 +305,7 @@ public class MarketContextSuppliers {
 
       @Override
       public RatesEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return RatesEnum.fromValue(value);
       }
     }
@@ -315,7 +315,9 @@ public class MarketContextSuppliers {
   @SerializedName(SERIALIZED_NAME_RATES)
   private RatesEnum rates;
 
+
   public MarketContextSuppliers commodity(CommodityEnum commodity) {
+    
     this.commodity = commodity;
     return this;
   }
@@ -324,16 +326,21 @@ public class MarketContextSuppliers {
    * Get commodity
    * @return commodity
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public CommodityEnum getCommodity() {
     return commodity;
   }
+
 
   public void setCommodity(CommodityEnum commodity) {
     this.commodity = commodity;
   }
 
+
   public MarketContextSuppliers credit(CreditEnum credit) {
+    
     this.credit = credit;
     return this;
   }
@@ -342,16 +349,21 @@ public class MarketContextSuppliers {
    * Get credit
    * @return credit
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public CreditEnum getCredit() {
     return credit;
   }
+
 
   public void setCredit(CreditEnum credit) {
     this.credit = credit;
   }
 
+
   public MarketContextSuppliers equity(EquityEnum equity) {
+    
     this.equity = equity;
     return this;
   }
@@ -360,16 +372,21 @@ public class MarketContextSuppliers {
    * Get equity
    * @return equity
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public EquityEnum getEquity() {
     return equity;
   }
+
 
   public void setEquity(EquityEnum equity) {
     this.equity = equity;
   }
 
+
   public MarketContextSuppliers fx(FxEnum fx) {
+    
     this.fx = fx;
     return this;
   }
@@ -378,16 +395,21 @@ public class MarketContextSuppliers {
    * Get fx
    * @return fx
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public FxEnum getFx() {
     return fx;
   }
+
 
   public void setFx(FxEnum fx) {
     this.fx = fx;
   }
 
+
   public MarketContextSuppliers rates(RatesEnum rates) {
+    
     this.rates = rates;
     return this;
   }
@@ -396,10 +418,13 @@ public class MarketContextSuppliers {
    * Get rates
    * @return rates
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public RatesEnum getRates() {
     return rates;
   }
+
 
   public void setRates(RatesEnum rates) {
     this.rates = rates;

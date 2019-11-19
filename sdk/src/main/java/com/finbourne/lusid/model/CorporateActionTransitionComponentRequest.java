@@ -44,7 +44,9 @@ public class CorporateActionTransitionComponentRequest {
   @SerializedName(SERIALIZED_NAME_COST_FACTOR)
   private Double costFactor;
 
+
   public CorporateActionTransitionComponentRequest instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
+    
     this.instrumentIdentifiers = instrumentIdentifiers;
     return this;
   }
@@ -59,15 +61,19 @@ public class CorporateActionTransitionComponentRequest {
    * @return instrumentIdentifiers
   **/
   @ApiModelProperty(required = true, value = "Unique instrument identifiers")
+
   public Map<String, String> getInstrumentIdentifiers() {
     return instrumentIdentifiers;
   }
+
 
   public void setInstrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
     this.instrumentIdentifiers = instrumentIdentifiers;
   }
 
+
   public CorporateActionTransitionComponentRequest unitsFactor(Double unitsFactor) {
+    
     this.unitsFactor = unitsFactor;
     return this;
   }
@@ -77,15 +83,19 @@ public class CorporateActionTransitionComponentRequest {
    * @return unitsFactor
   **/
   @ApiModelProperty(required = true, value = "")
+
   public Double getUnitsFactor() {
     return unitsFactor;
   }
+
 
   public void setUnitsFactor(Double unitsFactor) {
     this.unitsFactor = unitsFactor;
   }
 
+
   public CorporateActionTransitionComponentRequest costFactor(Double costFactor) {
+    
     this.costFactor = costFactor;
     return this;
   }
@@ -95,9 +105,11 @@ public class CorporateActionTransitionComponentRequest {
    * @return costFactor
   **/
   @ApiModelProperty(required = true, value = "")
+
   public Double getCostFactor() {
     return costFactor;
   }
+
 
   public void setCostFactor(Double costFactor) {
     this.costFactor = costFactor;

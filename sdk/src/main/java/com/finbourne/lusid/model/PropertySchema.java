@@ -41,13 +41,15 @@ public class PropertySchema {
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  private Map<String, FieldSchema> values = new HashMap<>();
+  private Map<String, FieldSchema> values = null;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public PropertySchema href(String href) {
+    
     this.href = href;
     return this;
   }
@@ -56,16 +58,21 @@ public class PropertySchema {
    * Get href
    * @return href
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getHref() {
     return href;
   }
+
 
   public void setHref(String href) {
     this.href = href;
   }
 
+
   public PropertySchema values(Map<String, FieldSchema> values) {
+    
     this.values = values;
     return this;
   }
@@ -82,16 +89,21 @@ public class PropertySchema {
    * Get values
    * @return values
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Map<String, FieldSchema> getValues() {
     return values;
   }
+
 
   public void setValues(Map<String, FieldSchema> values) {
     this.values = values;
   }
 
+
   public PropertySchema links(List<Link> links) {
+    
     this.links = links;
     return this;
   }
@@ -108,10 +120,13 @@ public class PropertySchema {
    * Get links
    * @return links
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<Link> getLinks() {
     return links;
   }
+
 
   public void setLinks(List<Link> links) {
     this.links = links;

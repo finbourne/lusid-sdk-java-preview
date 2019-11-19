@@ -33,7 +33,7 @@ import java.io.IOException;
 public class PricingOptions {
   public static final String SERIALIZED_NAME_MODEL_SELECTION = "modelSelection";
   @SerializedName(SERIALIZED_NAME_MODEL_SELECTION)
-  private ModelSelection modelSelection = null;
+  private ModelSelection modelSelection;
 
   public static final String SERIALIZED_NAME_USE_INSTRUMENT_TYPE_TO_DETERMINE_PRICER = "useInstrumentTypeToDeterminePricer";
   @SerializedName(SERIALIZED_NAME_USE_INSTRUMENT_TYPE_TO_DETERMINE_PRICER)
@@ -51,7 +51,9 @@ public class PricingOptions {
   @SerializedName(SERIALIZED_NAME_PRODUCE_SEPARATE_RESULT_FOR_LINEAR_OTC_LEGS)
   private Boolean produceSeparateResultForLinearOtcLegs;
 
+
   public PricingOptions modelSelection(ModelSelection modelSelection) {
+    
     this.modelSelection = modelSelection;
     return this;
   }
@@ -60,16 +62,21 @@ public class PricingOptions {
    * Get modelSelection
    * @return modelSelection
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public ModelSelection getModelSelection() {
     return modelSelection;
   }
+
 
   public void setModelSelection(ModelSelection modelSelection) {
     this.modelSelection = modelSelection;
   }
 
+
   public PricingOptions useInstrumentTypeToDeterminePricer(Boolean useInstrumentTypeToDeterminePricer) {
+    
     this.useInstrumentTypeToDeterminePricer = useInstrumentTypeToDeterminePricer;
     return this;
   }
@@ -78,16 +85,21 @@ public class PricingOptions {
    * If true then use the instrument type to set the default instrument pricer  This applies where no more specific set of overrides are provided on a per-vendor and instrument basis.
    * @return useInstrumentTypeToDeterminePricer
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "If true then use the instrument type to set the default instrument pricer  This applies where no more specific set of overrides are provided on a per-vendor and instrument basis.")
+
   public Boolean getUseInstrumentTypeToDeterminePricer() {
     return useInstrumentTypeToDeterminePricer;
   }
+
 
   public void setUseInstrumentTypeToDeterminePricer(Boolean useInstrumentTypeToDeterminePricer) {
     this.useInstrumentTypeToDeterminePricer = useInstrumentTypeToDeterminePricer;
   }
 
+
   public PricingOptions allowAnyInstrumentsWithSecUidToPriceOffLookup(Boolean allowAnyInstrumentsWithSecUidToPriceOffLookup) {
+    
     this.allowAnyInstrumentsWithSecUidToPriceOffLookup = allowAnyInstrumentsWithSecUidToPriceOffLookup;
     return this;
   }
@@ -96,16 +108,21 @@ public class PricingOptions {
    * By default, one would not expect to price and exotic instrument, i.e. an instrument with a complicated  instrument definition simply through looking up a price as there should be a better way of evaluating it.  To override that behaviour and allow lookup for a price from the instrument identifier(s), set this to true.
    * @return allowAnyInstrumentsWithSecUidToPriceOffLookup
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "By default, one would not expect to price and exotic instrument, i.e. an instrument with a complicated  instrument definition simply through looking up a price as there should be a better way of evaluating it.  To override that behaviour and allow lookup for a price from the instrument identifier(s), set this to true.")
+
   public Boolean getAllowAnyInstrumentsWithSecUidToPriceOffLookup() {
     return allowAnyInstrumentsWithSecUidToPriceOffLookup;
   }
+
 
   public void setAllowAnyInstrumentsWithSecUidToPriceOffLookup(Boolean allowAnyInstrumentsWithSecUidToPriceOffLookup) {
     this.allowAnyInstrumentsWithSecUidToPriceOffLookup = allowAnyInstrumentsWithSecUidToPriceOffLookup;
   }
 
+
   public PricingOptions allowPartiallySuccessfulEvaluation(Boolean allowPartiallySuccessfulEvaluation) {
+    
     this.allowPartiallySuccessfulEvaluation = allowPartiallySuccessfulEvaluation;
     return this;
   }
@@ -114,16 +131,21 @@ public class PricingOptions {
    * If true then a failure in task evaluation doesn&#39;t cause overall failure.  results will be returned where they succeeded and annotation elsewhere
    * @return allowPartiallySuccessfulEvaluation
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "If true then a failure in task evaluation doesn't cause overall failure.  results will be returned where they succeeded and annotation elsewhere")
+
   public Boolean getAllowPartiallySuccessfulEvaluation() {
     return allowPartiallySuccessfulEvaluation;
   }
+
 
   public void setAllowPartiallySuccessfulEvaluation(Boolean allowPartiallySuccessfulEvaluation) {
     this.allowPartiallySuccessfulEvaluation = allowPartiallySuccessfulEvaluation;
   }
 
+
   public PricingOptions produceSeparateResultForLinearOtcLegs(Boolean produceSeparateResultForLinearOtcLegs) {
+    
     this.produceSeparateResultForLinearOtcLegs = produceSeparateResultForLinearOtcLegs;
     return this;
   }
@@ -132,10 +154,13 @@ public class PricingOptions {
    * If true (default), when pricing an Fx-Forward or Interest Rate Swap, Future and other linearly separable products, product two results, one for each leg  rather than a single line result with the amalgamated/summed pv from both legs.
    * @return produceSeparateResultForLinearOtcLegs
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "If true (default), when pricing an Fx-Forward or Interest Rate Swap, Future and other linearly separable products, product two results, one for each leg  rather than a single line result with the amalgamated/summed pv from both legs.")
+
   public Boolean getProduceSeparateResultForLinearOtcLegs() {
     return produceSeparateResultForLinearOtcLegs;
   }
+
 
   public void setProduceSeparateResultForLinearOtcLegs(Boolean produceSeparateResultForLinearOtcLegs) {
     this.produceSeparateResultForLinearOtcLegs = produceSeparateResultForLinearOtcLegs;

@@ -49,7 +49,7 @@ public class ListAggregationResponse {
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private List<Map<String, Object>> data = new ArrayList<>();
+  private List<Map<String, Object>> data = null;
 
   public static final String SERIALIZED_NAME_AGGREGATION_CURRENCY = "aggregationCurrency";
   @SerializedName(SERIALIZED_NAME_AGGREGATION_CURRENCY)
@@ -57,13 +57,15 @@ public class ListAggregationResponse {
 
   public static final String SERIALIZED_NAME_DATA_SCHEMA = "dataSchema";
   @SerializedName(SERIALIZED_NAME_DATA_SCHEMA)
-  private ResultDataSchema dataSchema = null;
+  private ResultDataSchema dataSchema;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public ListAggregationResponse aggregationEffectiveAt(OffsetDateTime aggregationEffectiveAt) {
+    
     this.aggregationEffectiveAt = aggregationEffectiveAt;
     return this;
   }
@@ -72,16 +74,21 @@ public class ListAggregationResponse {
    * Get aggregationEffectiveAt
    * @return aggregationEffectiveAt
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public OffsetDateTime getAggregationEffectiveAt() {
     return aggregationEffectiveAt;
   }
+
 
   public void setAggregationEffectiveAt(OffsetDateTime aggregationEffectiveAt) {
     this.aggregationEffectiveAt = aggregationEffectiveAt;
   }
 
+
   public ListAggregationResponse aggregationAsAt(OffsetDateTime aggregationAsAt) {
+    
     this.aggregationAsAt = aggregationAsAt;
     return this;
   }
@@ -90,16 +97,21 @@ public class ListAggregationResponse {
    * Get aggregationAsAt
    * @return aggregationAsAt
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public OffsetDateTime getAggregationAsAt() {
     return aggregationAsAt;
   }
+
 
   public void setAggregationAsAt(OffsetDateTime aggregationAsAt) {
     this.aggregationAsAt = aggregationAsAt;
   }
 
+
   public ListAggregationResponse href(String href) {
+    
     this.href = href;
     return this;
   }
@@ -108,16 +120,21 @@ public class ListAggregationResponse {
    * Get href
    * @return href
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getHref() {
     return href;
   }
+
 
   public void setHref(String href) {
     this.href = href;
   }
 
+
   public ListAggregationResponse data(List<Map<String, Object>> data) {
+    
     this.data = data;
     return this;
   }
@@ -134,16 +151,21 @@ public class ListAggregationResponse {
    * Get data
    * @return data
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<Map<String, Object>> getData() {
     return data;
   }
+
 
   public void setData(List<Map<String, Object>> data) {
     this.data = data;
   }
 
+
   public ListAggregationResponse aggregationCurrency(String aggregationCurrency) {
+    
     this.aggregationCurrency = aggregationCurrency;
     return this;
   }
@@ -152,16 +174,21 @@ public class ListAggregationResponse {
    * Get aggregationCurrency
    * @return aggregationCurrency
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getAggregationCurrency() {
     return aggregationCurrency;
   }
+
 
   public void setAggregationCurrency(String aggregationCurrency) {
     this.aggregationCurrency = aggregationCurrency;
   }
 
+
   public ListAggregationResponse dataSchema(ResultDataSchema dataSchema) {
+    
     this.dataSchema = dataSchema;
     return this;
   }
@@ -170,16 +197,21 @@ public class ListAggregationResponse {
    * Get dataSchema
    * @return dataSchema
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public ResultDataSchema getDataSchema() {
     return dataSchema;
   }
+
 
   public void setDataSchema(ResultDataSchema dataSchema) {
     this.dataSchema = dataSchema;
   }
 
+
   public ListAggregationResponse links(List<Link> links) {
+    
     this.links = links;
     return this;
   }
@@ -196,10 +228,13 @@ public class ListAggregationResponse {
    * Get links
    * @return links
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<Link> getLinks() {
     return links;
   }
+
 
   public void setLinks(List<Link> links) {
     this.links = links;

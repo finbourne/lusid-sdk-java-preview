@@ -84,7 +84,7 @@ public class AggregateSpec {
 
       @Override
       public OpEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return OpEnum.fromValue(value);
       }
     }
@@ -94,7 +94,9 @@ public class AggregateSpec {
   @SerializedName(SERIALIZED_NAME_OP)
   private OpEnum op;
 
+
   public AggregateSpec key(String key) {
+    
     this.key = key;
     return this;
   }
@@ -103,16 +105,21 @@ public class AggregateSpec {
    * Get key
    * @return key
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getKey() {
     return key;
   }
+
 
   public void setKey(String key) {
     this.key = key;
   }
 
+
   public AggregateSpec op(OpEnum op) {
+    
     this.op = op;
     return this;
   }
@@ -121,10 +128,13 @@ public class AggregateSpec {
    * Get op
    * @return op
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public OpEnum getOp() {
     return op;
   }
+
 
   public void setOp(OpEnum op) {
     this.op = op;
