@@ -117,7 +117,7 @@ public class Example {
     String identifierType = "identifierType_example"; // String | The identifier type of the instrument, e.g., \"Figi\"
     String identifier = "identifier_example"; // String | The identifier of the instrument to delete properties from.
     List<String> propertyKeys = Arrays.asList(); // List<String> | The property keys of the properties to be deleted from the instrument. Only properties in the  Finbourne.Entities.PropertyDomain.Instrument domain can be supplied.
-    String effectiveAt = "effectiveAt_example"; // String | The effective date to delete the properties from. Note that this is only valid to set if the properties being deleted  are defined to be Finbourne.Entities.PropertyLifeTime.TimeVariant, otherwise this value must not be set.
+    String effectiveAt = "effectiveAt_example"; // String | The effective date to delete the properties from. Note that this is only valid to set if the properties being deleted  are defined to be Finbourne.WebApi.Interface.Dto.PropertyLifeTime.TimeVariant, otherwise this value must not be set.
     try {
       DeleteInstrumentPropertiesResponse result = apiInstance.deleteInstrumentProperties(identifierType, identifier, propertyKeys, effectiveAt);
       System.out.println(result);
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
  **identifierType** | **String**| The identifier type of the instrument, e.g., \&quot;Figi\&quot; |
  **identifier** | **String**| The identifier of the instrument to delete properties from. |
  **propertyKeys** | [**List&lt;String&gt;**](String.md)| The property keys of the properties to be deleted from the instrument. Only properties in the  Finbourne.Entities.PropertyDomain.Instrument domain can be supplied. |
- **effectiveAt** | **String**| The effective date to delete the properties from. Note that this is only valid to set if the properties being deleted  are defined to be Finbourne.Entities.PropertyLifeTime.TimeVariant, otherwise this value must not be set. | [optional]
+ **effectiveAt** | **String**| The effective date to delete the properties from. Note that this is only valid to set if the properties being deleted  are defined to be Finbourne.WebApi.Interface.Dto.PropertyLifeTime.TimeVariant, otherwise this value must not be set. | [optional]
 
 ### Return type
 
