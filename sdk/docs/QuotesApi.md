@@ -6,7 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteQuotes**](QuotesApi.md#deleteQuotes) | **POST** /api/quotes/{scope}/$delete | [BETA] Delete quotes
 [**getQuotes**](QuotesApi.md#getQuotes) | **POST** /api/quotes/{scope}/$get | [BETA] Get quotes
+[**getQuotesAccessMetadataRule**](QuotesApi.md#getQuotesAccessMetadataRule) | **GET** /api/metadata/quotes/rules | [EXPERIMENTAL] Get a quote access metadata rule
 [**listQuotes**](QuotesApi.md#listQuotes) | **GET** /api/quotes/{scope} | [BETA] List quotes
+[**listQuotesAccessMetadataRules**](QuotesApi.md#listQuotesAccessMetadataRules) | **GET** /api/metadata/quotes/rules/{scope} | [EXPERIMENTAL] List all quote access metadata rules in a scope
+[**upsertQuoteAccessMetadataRule**](QuotesApi.md#upsertQuoteAccessMetadataRule) | **POST** /api/metadata/quotes/rules/{scope} | [EXPERIMENTAL] Upsert a Quote Access Metadata Rule. This creates or updates the data in LUSID.
 [**upsertQuotes**](QuotesApi.md#upsertQuotes) | **POST** /api/quotes/{scope} | [BETA] Upsert quotes
 
 
@@ -158,6 +161,91 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="getQuotesAccessMetadataRule"></a>
+# **getQuotesAccessMetadataRule**
+> QuoteAccessMetadataRule getQuotesAccessMetadataRule(scope, provider, priceSource, instrumentIdType, instrumentId, quoteType, field, effectiveAt, asAt)
+
+[EXPERIMENTAL] Get a quote access metadata rule
+
+Get a specific quote access metadata rule by specifying the corresponding identifier parts                No matching will be performed through this endpoint. To retrieve a rule, it is necessary to specify, exactly, the identifier of the rule
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.QuotesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    QuotesApi apiInstance = new QuotesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the Quote Access Metadata Rule to retrieve.
+    String provider = "provider_example"; // String | The Provider of the rule
+    String priceSource = "priceSource_example"; // String | The PriceSource of the rule
+    String instrumentIdType = "instrumentIdType_example"; // String | The InstrumentIdType of the rule
+    String instrumentId = "instrumentId_example"; // String | The InstrumentId of the rule
+    String quoteType = "quoteType_example"; // String | The QuoteType of the rule
+    String field = "field_example"; // String | The Field of the rule
+    String effectiveAt = "effectiveAt_example"; // String | The effective date of the rule
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the access metadata rule. Defaults to return the latest version if not specified.
+    try {
+      QuoteAccessMetadataRule result = apiInstance.getQuotesAccessMetadataRule(scope, provider, priceSource, instrumentIdType, instrumentId, quoteType, field, effectiveAt, asAt);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling QuotesApi#getQuotesAccessMetadataRule");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope of the Quote Access Metadata Rule to retrieve. |
+ **provider** | **String**| The Provider of the rule | [optional]
+ **priceSource** | **String**| The PriceSource of the rule | [optional]
+ **instrumentIdType** | **String**| The InstrumentIdType of the rule | [optional]
+ **instrumentId** | **String**| The InstrumentId of the rule | [optional]
+ **quoteType** | **String**| The QuoteType of the rule | [optional]
+ **field** | **String**| The Field of the rule | [optional]
+ **effectiveAt** | **String**| The effective date of the rule | [optional]
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the access metadata rule. Defaults to return the latest version if not specified. | [optional]
+
+### Return type
+
+[**QuoteAccessMetadataRule**](QuoteAccessMetadataRule.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The successfully retrieved Quote Access Metadata Rule or any failure |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="listQuotes"></a>
 # **listQuotes**
 > ResourceListOfQuote listQuotes(scope, asAt, page, start, limit, filter)
@@ -234,6 +322,150 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The requested quotes |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="listQuotesAccessMetadataRules"></a>
+# **listQuotesAccessMetadataRules**
+> ResourceListOfQuoteAccessMetadataRule listQuotesAccessMetadataRules(scope, asAt)
+
+[EXPERIMENTAL] List all quote access metadata rules in a scope
+
+Get all the quote access metadata rules in the specified scope
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.QuotesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    QuotesApi apiInstance = new QuotesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the Quote Access Metadata Rule to retrieve.
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the access metadata rule. Defaults to return the latest version if not specified.
+    try {
+      ResourceListOfQuoteAccessMetadataRule result = apiInstance.listQuotesAccessMetadataRules(scope, asAt);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling QuotesApi#listQuotesAccessMetadataRules");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope of the Quote Access Metadata Rule to retrieve. |
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the access metadata rule. Defaults to return the latest version if not specified. | [optional]
+
+### Return type
+
+[**ResourceListOfQuoteAccessMetadataRule**](ResourceListOfQuoteAccessMetadataRule.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The filtered list of results |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="upsertQuoteAccessMetadataRule"></a>
+# **upsertQuoteAccessMetadataRule**
+> QuoteAccessMetadataRule upsertQuoteAccessMetadataRule(scope, request, effectiveAt)
+
+[EXPERIMENTAL] Upsert a Quote Access Metadata Rule. This creates or updates the data in LUSID.
+
+Update or insert one Quote Access Metadata Rule in a single scope. An item will be updated if it already exists  and inserted if it does not.    The response will return the successfully updated or inserted Quote Access Metadata Rule or failure message if unsuccessful    It is important to always check to verify success (or failure).                Multiple rules for a key can exists with different effective at dates, when resources are accessed the rule that is active for the current time will be fetched
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.QuotesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    QuotesApi apiInstance = new QuotesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope to use when updating or inserting the Quote Access Metadata Rule.
+    UpsertQuoteAccessMetadataRuleRequest request = new UpsertQuoteAccessMetadataRuleRequest(); // UpsertQuoteAccessMetadataRuleRequest | The Quote Access Metadata Rule to update or insert
+    String effectiveAt = "effectiveAt_example"; // String | The date this rule will effective from
+    try {
+      QuoteAccessMetadataRule result = apiInstance.upsertQuoteAccessMetadataRule(scope, request, effectiveAt);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling QuotesApi#upsertQuoteAccessMetadataRule");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope to use when updating or inserting the Quote Access Metadata Rule. |
+ **request** | [**UpsertQuoteAccessMetadataRuleRequest**](UpsertQuoteAccessMetadataRuleRequest.md)| The Quote Access Metadata Rule to update or insert |
+ **effectiveAt** | **String**| The date this rule will effective from | [optional]
+
+### Return type
+
+[**QuoteAccessMetadataRule**](QuoteAccessMetadataRule.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The successfully updated or inserted item or any failure |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
