@@ -1,6 +1,6 @@
 # InstrumentsApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -36,7 +36,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -107,7 +107,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -116,7 +116,7 @@ public class Example {
     InstrumentsApi apiInstance = new InstrumentsApi(defaultClient);
     String identifierType = "identifierType_example"; // String | The identifier type of the instrument, e.g., \"Figi\"
     String identifier = "identifier_example"; // String | The identifier of the instrument to delete properties from.
-    List<String> propertyKeys = Arrays.asList(); // List<String> | The property keys of the properties to be deleted from the instrument. Only properties in the  Finbourne.Entities.PropertyDomain.Instrument domain can be supplied.
+    List<String> propertyKeys = Arrays.asList(); // List<String> | The property keys of the properties to be deleted from the instrument. Only properties in the  Finbourne.WebApi.Interface.Dto.PropertyDomain.Instrument domain can be supplied.
     String effectiveAt = "effectiveAt_example"; // String | The effective date to delete the properties from. Note that this is only valid to set if the properties being deleted  are defined to be Finbourne.WebApi.Interface.Dto.PropertyLifeTime.TimeVariant, otherwise this value must not be set.
     try {
       DeleteInstrumentPropertiesResponse result = apiInstance.deleteInstrumentProperties(identifierType, identifier, propertyKeys, effectiveAt);
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifierType** | **String**| The identifier type of the instrument, e.g., \&quot;Figi\&quot; |
  **identifier** | **String**| The identifier of the instrument to delete properties from. |
- **propertyKeys** | [**List&lt;String&gt;**](String.md)| The property keys of the properties to be deleted from the instrument. Only properties in the  Finbourne.Entities.PropertyDomain.Instrument domain can be supplied. |
+ **propertyKeys** | [**List&lt;String&gt;**](String.md)| The property keys of the properties to be deleted from the instrument. Only properties in the  Finbourne.WebApi.Interface.Dto.PropertyDomain.Instrument domain can be supplied. |
  **effectiveAt** | **String**| The effective date to delete the properties from. Note that this is only valid to set if the properties being deleted  are defined to be Finbourne.WebApi.Interface.Dto.PropertyLifeTime.TimeVariant, otherwise this value must not be set. | [optional]
 
 ### Return type
@@ -182,7 +182,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -259,7 +259,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -323,7 +323,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -400,7 +400,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -483,7 +483,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -556,7 +556,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -625,7 +625,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
