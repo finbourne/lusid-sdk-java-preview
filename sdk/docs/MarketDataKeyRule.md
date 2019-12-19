@@ -25,6 +25,7 @@ LUSID | &quot;Lusid&quot;
 ISDA | &quot;Isda&quot;
 CLIENT | &quot;Client&quot;
 EDI | &quot;Edi&quot;
+TRADERMADE | &quot;TraderMade&quot;
 
 
 
