@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**values** | [**List&lt;CorporateAction&gt;**](CorporateAction.md) |  | 
+**values** | [**List&lt;CorporateAction&gt;**](CorporateAction.md) |  |  [optional]
 **href** | **String** |  |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 

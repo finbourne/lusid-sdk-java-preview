@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**values** | [**List&lt;Quote&gt;**](Quote.md) |  | 
+**values** | [**List&lt;Quote&gt;**](Quote.md) |  |  [optional]
 **href** | **String** |  |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
