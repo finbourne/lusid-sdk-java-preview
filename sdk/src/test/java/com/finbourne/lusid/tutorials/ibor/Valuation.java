@@ -157,7 +157,7 @@ public class Valuation {
                         new AggregateSpec().key(AGGREGATION_KEY).op(AggregateSpec.OpEnum.SUM)
                 ))
                 .groupBy(Collections.singletonList(GROUPBY_KEY))
-                .effectiveAt(EFFECTIVE_DATE);
+                .effectiveAt(EFFECTIVE_DATE.toString());
 
         //  do the aggregation
         ListAggregationResponse aggregationResponse = aggregationApi.getAggregationByPortfolio(TutorialScope, portfolioId,null, null, null, aggregationRequest);
