@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **allowPartiallySuccessfulEvaluation** | **Boolean** | If true then a failure in task evaluation doesn&#39;t cause overall failure.  results will be returned where they succeeded and annotation elsewhere |  [optional]
 **produceSeparateResultForLinearOtcLegs** | **Boolean** | If true (default), when pricing an Fx-Forward or Interest Rate Swap, Future and other linearly separable products, product two results, one for each leg  rather than a single line result with the amalgamated/summed pv from both legs. |  [optional]
 **enableUseOfCachedUnitResults** | **Boolean** | If true, when pricing using a model or for an instrument that supports use of intermediate cached-results, use them.  Default is that this caching is turned off. |  [optional]
+**windowValuationOnInstrumentStartEnd** | **Boolean** | If true, when valuing an instrument outside the period where it is &#39;alive&#39; (the start-maturity window) it will return a valuation of zero |  [optional]
 
 
 
