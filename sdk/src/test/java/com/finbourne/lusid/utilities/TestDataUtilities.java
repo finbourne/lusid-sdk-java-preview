@@ -14,6 +14,7 @@ import static junit.framework.TestCase.assertEquals;
 public class TestDataUtilities {
 
     public static String TutorialScope = "Testdemo";
+    public static String MarketDataScope = "FinbourneMarketData";
 
     public static final String LUSID_INSTRUMENT_IDENTIFIER = "Instrument/default/LusidInstrumentId";
     public static final String LUSID_CASH_IDENTIFIER = "Instrument/default/Currency";
