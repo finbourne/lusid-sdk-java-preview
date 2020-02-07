@@ -96,8 +96,7 @@ public class Quotes {
             .collect(Collectors.toList());
 
         QuoteSeriesId quoteSeriesId = new QuoteSeriesId()
-                        .provider("DataScope")
-                        .priceSource("USDRC")
+                        .provider("Client")
                         .instrumentId("BBG000DMBXR2")
                         .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.FIGI)
                         .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
@@ -109,7 +108,7 @@ public class Quotes {
             .map(d -> {
                 try {
                     return quotesApi.getQuotes(
-                        TestDataUtilities.TutorialScope,
+                        TestDataUtilities.MarketDataScope,
                         d.toString(),
                         null, null,
                         Collections.singletonMap("correlationId", quoteSeriesId));
