@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency** | **String** | Currency of the flow convention. | 
 **paymentFrequency** | [**Tenor**](Tenor.md) |  | 
-**dayCountBasis** | [**DayCountBasisEnum**](#DayCountBasisEnum) | When calculating the fraction of a year between two dates, what convention is used to represent the number of days in a year  and difference between them. | 
-**rollConvention** | [**RollConventionEnum**](#RollConventionEnum) | When generating a set of dates, what convention should be used for adjusting dates that coincide with a non-business day. | 
-**holidayCalendars** | **String** | A comma separated string denoting holiday calendars that apply to generation and payment. | 
+**dayCountConvention** | [**DayCountConventionEnum**](#DayCountConventionEnum) | when calculating the fraction of a year between two dates, what convention is used to represent the number of days in a year  and difference between them. | 
+**rollConvention** | [**RollConventionEnum**](#RollConventionEnum) | when generating a set of dates, what convention should be used for adjusting dates that coincide with a non-business day. | 
+**holidayCalendars** | **List&lt;String&gt;** | An array of strings denoting holiday calendars that apply to generation and payment. | 
 
 
 
-## Enum: DayCountBasisEnum
+## Enum: DayCountConventionEnum
 
 Name | Value
 ---- | -----

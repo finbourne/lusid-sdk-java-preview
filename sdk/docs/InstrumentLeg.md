@@ -1,6 +1,6 @@
 
 
-# Leg
+# InstrumentLeg
 
 ## Properties
 
