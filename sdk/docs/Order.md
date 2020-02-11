@@ -11,7 +11,8 @@ Name | Type | Description | Notes
 **instrumentIdentifiers** | **Map&lt;String, String&gt;** | The instrument ordered. | 
 **quantity** | **Integer** | The quantity of given instrument ordered. | 
 **portfolio** | [**ResourceId**](ResourceId.md) |  | 
-**id** | **String** | Uniquely identifies this order. | 
+**id** | [**OrderId**](OrderId.md) |  | 
+**lusidInstrument** | **String** | The LUSID instrument id for the instrument ordered. | 
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
