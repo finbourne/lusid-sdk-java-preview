@@ -26,6 +26,11 @@ ACT365 | &quot;Act365&quot;
 THIRTY360 | &quot;Thirty360&quot;
 THIRTYU360 | &quot;ThirtyU360&quot;
 BOND | &quot;Bond&quot;
+THIRTYE360 | &quot;ThirtyE360&quot;
+EUROBOND | &quot;EuroBond&quot;
+ACTACT | &quot;ActAct&quot;
+ACTUALACTUAL | &quot;ActualActual&quot;
+ACTACTISDA | &quot;ActActIsda&quot;
 INVALID | &quot;Invalid&quot;
 
 
