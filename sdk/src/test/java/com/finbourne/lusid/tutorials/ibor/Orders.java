@@ -8,7 +8,6 @@ import com.finbourne.lusid.model.*;
 import com.finbourne.lusid.utilities.ApiClientBuilder;
 import com.finbourne.lusid.utilities.CredentialsSource;
 import com.finbourne.lusid.utilities.InstrumentLoader;
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -18,8 +17,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
@@ -71,7 +68,6 @@ public class Orders
 
         OrderRequest request = new OrderRequest()
                 .code(orderId)
-                .lusidInstrument("CCY_ZZZ")
                 .quantity(100)
                 .portfolio(portfolio)
                 .properties(properties)
@@ -86,8 +82,8 @@ public class Orders
         // The return gives us a list of orders upserted. The LUID for each has been mapped from the
         // instrument identifiers passed
         assertEquals(1, upsertResult.stream().count());
-        assertTrue(upsertResult.stream().allMatch(order -> order.getId().getId().equals(orderId)));
-        assertTrue(upsertResult.stream().allMatch(order -> order.getLusidInstrument().equals(instrumentIds.get(0))));
+        assertTrue(upsertResult.stream().allMatch(order -> order.getId().getCode().equals(orderId)));
+        assertTrue(upsertResult.stream().allMatch(order -> order.getInstrumentUid().equals(instrumentIds.get(0))));
     }
 
     // We want to make a request for a single order. The LUID will be mapped to an
@@ -119,7 +115,6 @@ public class Orders
 
         OrderRequest request = new OrderRequest()
                 .code(orderId)
-                .lusidInstrument("")
                 .quantity(100)
                 .portfolio(portfolio)
                 .properties(properties)
@@ -134,7 +129,7 @@ public class Orders
         // The return gives us a list of orders upserted, and the LUID for each has been mapped from the
         // instrument identifiers passed
         assertEquals(1, upsertResult.stream().count());
-        assertTrue(upsertResult.stream().allMatch(order -> order.getLusidInstrument().equals("LUID_ZZZZZZZZ")));
+        assertTrue(upsertResult.stream().allMatch(order -> order.getInstrumentUid().equals("LUID_ZZZZZZZZ")));
     }
 
     // We want to make a request for a single order. The internal security id will be mapped on upsert
@@ -166,7 +161,6 @@ public class Orders
 
         OrderRequest request = new OrderRequest()
                 .code(orderId)
-                .lusidInstrument("")
                 .quantity(100)
                 .portfolio(portfolio)
                 .properties(properties)
@@ -181,15 +175,14 @@ public class Orders
         // The return gives us a list of orders upserted, and the lusidinstrument for each has been mapped from the
         // instrument identifiers passed
         assertEquals(1, upsertResult.stream().count());
-        assertTrue(upsertResult.stream().allMatch(order -> order.getId().getId().equals(orderId)));
-        assertTrue(upsertResult.stream().allMatch(order -> order.getLusidInstrument().equals(instrumentIds.get(0))));
+        assertTrue(upsertResult.stream().allMatch(order -> order.getId().getCode().equals(orderId)));
+        assertTrue(upsertResult.stream().allMatch(order -> order.getInstrumentUid().equals(instrumentIds.get(0))));
         assertTrue(upsertResult.stream().allMatch(order -> order.getQuantity().equals(100)));
         assertTrue(upsertResult.stream().allMatch(order -> order.getProperties().size() == 5));
 
         // We can update that Order with a new Quantity, and some extra parameters
         OrderRequest updateRequest = new OrderRequest()
                 .code(orderId)
-                .lusidInstrument("")
                 .quantity(500)
                 .portfolio(portfolio)
                 .properties(properties)
@@ -245,7 +238,6 @@ public class Orders
 
         OrderRequest request1 = new OrderRequest()
                 .code(orderId1)
-                .lusidInstrument("")
                 .quantity(100)
                 .portfolio(portfolio)
                 .properties(properties)
@@ -253,7 +245,6 @@ public class Orders
 
         OrderRequest request2 = new OrderRequest()
             .code(orderId2)
-            .lusidInstrument("")
             .quantity(200)
             .portfolio(portfolio)
             .properties(properties)
@@ -261,7 +252,6 @@ public class Orders
 
         OrderRequest request3 = new OrderRequest()
                 .code(orderId3)
-                .lusidInstrument("")
                 .quantity(300)
                 .portfolio(portfolio)
                 .properties(altProperties)
@@ -289,6 +279,6 @@ public class Orders
 
         List<Order> instrumentFilter = ordersApi.listOrders(testScope, OffsetDateTime.now().plusHours(1), null, null, null, null,"InstrumentUid eq '" + instrumentIds.get(0) + "'", null).getValues();
         assertEquals(2, instrumentFilter.size());
-        assertTrue(instrumentFilter.stream().allMatch(order -> order.getLusidInstrument().equals(instrumentIds.get(0))));
+        assertTrue(instrumentFilter.stream().allMatch(order -> order.getInstrumentUid().equals(instrumentIds.get(0))));
     }
 }
