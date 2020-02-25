@@ -83,7 +83,7 @@ public class Orders
         // instrument identifiers passed
         assertEquals(1, upsertResult.stream().count());
         assertTrue(upsertResult.stream().allMatch(order -> order.getId().getCode().equals(orderId)));
-        assertTrue(upsertResult.stream().allMatch(order -> order.getInstrumentUid().equals(instrumentIds.get(0))));
+        assertTrue(upsertResult.stream().allMatch(order -> order.getLusidInstrumentId().equals(instrumentIds.get(0))));
     }
 
     // We want to make a request for a single order. The LUID will be mapped to an
@@ -129,7 +129,7 @@ public class Orders
         // The return gives us a list of orders upserted, and the LUID for each has been mapped from the
         // instrument identifiers passed
         assertEquals(1, upsertResult.stream().count());
-        assertTrue(upsertResult.stream().allMatch(order -> order.getInstrumentUid().equals("LUID_ZZZZZZZZ")));
+        assertTrue(upsertResult.stream().allMatch(order -> order.getLusidInstrumentId().equals("LUID_ZZZZZZZZ")));
     }
 
     // We want to make a request for a single order. The internal security id will be mapped on upsert
@@ -176,7 +176,7 @@ public class Orders
         // instrument identifiers passed
         assertEquals(1, upsertResult.stream().count());
         assertTrue(upsertResult.stream().allMatch(order -> order.getId().getCode().equals(orderId)));
-        assertTrue(upsertResult.stream().allMatch(order -> order.getInstrumentUid().equals(instrumentIds.get(0))));
+        assertTrue(upsertResult.stream().allMatch(order -> order.getLusidInstrumentId().equals(instrumentIds.get(0))));
         assertTrue(upsertResult.stream().allMatch(order -> order.getQuantity().equals(100)));
         assertTrue(upsertResult.stream().allMatch(order -> order.getProperties().size() == 5));
 
@@ -277,8 +277,8 @@ public class Orders
         assertEquals(1, orderBookFilter.size());
         assertTrue(orderBookFilter.stream().allMatch(order -> order.getProperties().get("Order/" + testScope + "/OrderBook").getValue().getLabelValue().equals("UK Test Orders 2")));
 
-        List<Order> instrumentFilter = ordersApi.listOrders(testScope, OffsetDateTime.now().plusHours(1), null, null, null, null,"InstrumentUid eq '" + instrumentIds.get(0) + "'", null).getValues();
+        List<Order> instrumentFilter = ordersApi.listOrders(testScope, OffsetDateTime.now().plusHours(1), null, null, null, null,"LusidInstrumentId eq '" + instrumentIds.get(0) + "'", null).getValues();
         assertEquals(2, instrumentFilter.size());
-        assertTrue(instrumentFilter.stream().allMatch(order -> order.getInstrumentUid().equals(instrumentIds.get(0))));
+        assertTrue(instrumentFilter.stream().allMatch(order -> order.getLusidInstrumentId().equals(instrumentIds.get(0))));
     }
 }
