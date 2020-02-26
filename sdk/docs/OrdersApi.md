@@ -115,7 +115,7 @@ public class Example {
     List<String> sortBy = Arrays.asList(); // List<String> | Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName.
     Integer start = 56; // Integer | When paginating, skip this number of results.
     Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many.
-    String filter = "\"Quantity gt 0\""; // String | Expression to filter the result set.  Currently Orders can be filtered by Id (e.g.              \"Id eq 'ORD001'), Quantity (e.g. \"Quantity lt 100\"), Portfolio (e.g. \"Portfolio eq 'TestScope/UKEquities'\"),              LUSID Instrument Id (e.g. \"InstrumentUid eq 'LUID_12345678'\") or by Property (Read more about filtering results from LUSID here:              https://support.lusid.com/filtering-results-from-lusid.).
+    String filter = "\"Quantity gt 0\""; // String | Expression to filter the result set.  Currently Orders can be filtered by Code (e.g.              \"Code eq 'ORD001'), Quantity (e.g. \"Quantity lt 100\"), Portfolio (e.g. \"Portfolio eq 'TestScope/UKEquities'\"),              LUSID Instrument Id (e.g. \"LusidInstrumentId eq 'LUID_12345678'\") or by Property (Read more about filtering results from LUSID here:              https://support.lusid.com/filtering-results-from-lusid).
     List<String> propertyKeys = Arrays.asList(); // List<String> | A list of property keys from the \"Orders\" domain to decorate onto each order.                  These take the format {domain}/{scope}/{code} e.g. \"Orders/system/Name\".
     try {
       PagedResourceListOfOrder result = apiInstance.listOrders(scope, asAt, page, sortBy, start, limit, filter, propertyKeys);
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
  **sortBy** | [**List&lt;String&gt;**](String.md)| Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName. | [optional]
  **start** | **Integer**| When paginating, skip this number of results. | [optional]
  **limit** | **Integer**| When paginating, limit the number of returned results to this many. | [optional]
- **filter** | **String**| Expression to filter the result set.  Currently Orders can be filtered by Id (e.g.              \&quot;Id eq &#39;ORD001&#39;), Quantity (e.g. \&quot;Quantity lt 100\&quot;), Portfolio (e.g. \&quot;Portfolio eq &#39;TestScope/UKEquities&#39;\&quot;),              LUSID Instrument Id (e.g. \&quot;InstrumentUid eq &#39;LUID_12345678&#39;\&quot;) or by Property (Read more about filtering results from LUSID here:              https://support.lusid.com/filtering-results-from-lusid.). | [optional] [default to &quot;Quantity gt 0&quot;]
+ **filter** | **String**| Expression to filter the result set.  Currently Orders can be filtered by Code (e.g.              \&quot;Code eq &#39;ORD001&#39;), Quantity (e.g. \&quot;Quantity lt 100\&quot;), Portfolio (e.g. \&quot;Portfolio eq &#39;TestScope/UKEquities&#39;\&quot;),              LUSID Instrument Id (e.g. \&quot;LusidInstrumentId eq &#39;LUID_12345678&#39;\&quot;) or by Property (Read more about filtering results from LUSID here:              https://support.lusid.com/filtering-results-from-lusid). | [optional] [default to &quot;Quantity gt 0&quot;]
  **propertyKeys** | [**List&lt;String&gt;**](String.md)| A list of property keys from the \&quot;Orders\&quot; domain to decorate onto each order.                  These take the format {domain}/{scope}/{code} e.g. \&quot;Orders/system/Name\&quot;. | [optional]
 
 ### Return type
