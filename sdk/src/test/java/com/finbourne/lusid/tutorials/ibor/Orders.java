@@ -13,9 +13,9 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import static junit.framework.TestCase.assertTrue;
@@ -59,12 +59,12 @@ public class Orders
                 .code("OrdersTestPortfolio")
                 .scope(testScope);
 
-        ArrayList<PerpetualProperty> properties = new ArrayList<>();
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/TIF").value(new PropertyValue().labelValue("GTC")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/PortfolioManager").value(new PropertyValue().labelValue("F Bar")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/Account").value(new PropertyValue().labelValue("J Wilson")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/Strategy").value(new PropertyValue().labelValue("RiskArb")));
+        Map<String, PerpetualProperty> properties = new HashMap<String, PerpetualProperty>();
+        properties.put("Order/" + testScope + "/TIF", new PerpetualProperty().key("Order/" + testScope + "/TIF").value(new PropertyValue().labelValue("GTC")));
+        properties.put("Order/" + testScope + "/OrderBook", new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders")));
+        properties.put("Order/" + testScope + "/PortfolioManager", new PerpetualProperty().key("Order/" + testScope + "/PortfolioManager").value(new PropertyValue().labelValue("F Bar")));
+        properties.put("Order/" + testScope + "/Account", new PerpetualProperty().key("Order/" + testScope + "/Account").value(new PropertyValue().labelValue("J Wilson")));
+        properties.put("Order/" + testScope + "/Strategy", new PerpetualProperty().key("Order/" + testScope + "/Strategy").value(new PropertyValue().labelValue("RiskArb")));
 
         OrderRequest request = new OrderRequest()
                 .code(orderId)
@@ -106,12 +106,12 @@ public class Orders
                 .code("OrdersTestPortfolio")
                 .scope(testScope);
 
-        ArrayList<PerpetualProperty> properties = new ArrayList<>();
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/TIF").value(new PropertyValue().labelValue("GTC")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/PortfolioManager").value(new PropertyValue().labelValue("F Bar")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/Account").value(new PropertyValue().labelValue("J Wilson")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/Strategy").value(new PropertyValue().labelValue("RiskArb")));
+        Map<String, PerpetualProperty> properties = new HashMap<>();
+        properties.put("Order/" + testScope + "/TIF", new PerpetualProperty().key("Order/" + testScope + "/TIF").value(new PropertyValue().labelValue("GTC")));
+        properties.put("Order/" + testScope + "/OrderBook", new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders")));
+        properties.put("Order/" + testScope + "/PortfolioManager", new PerpetualProperty().key("Order/" + testScope + "/PortfolioManager").value(new PropertyValue().labelValue("F Bar")));
+        properties.put("Order/" + testScope + "/Account", new PerpetualProperty().key("Order/" + testScope + "/Account").value(new PropertyValue().labelValue("J Wilson")));
+        properties.put("Order/" + testScope + "/Strategy", new PerpetualProperty().key("Order/" + testScope + "/Strategy").value(new PropertyValue().labelValue("RiskArb")));
 
         OrderRequest request = new OrderRequest()
                 .code(orderId)
@@ -152,12 +152,12 @@ public class Orders
                 .code("OrdersTestPortfolio")
                 .scope(testScope);
 
-        ArrayList<PerpetualProperty> properties = new ArrayList<>();
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/TIF").value(new PropertyValue().labelValue("GTC")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/PortfolioManager").value(new PropertyValue().labelValue("F Bar")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/Account").value(new PropertyValue().labelValue("J Wilson")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/Strategy").value(new PropertyValue().labelValue("RiskArb")));
+        Map<String, PerpetualProperty> properties = new HashMap<>();
+        properties.put("Order/" + testScope + "/TIF", new PerpetualProperty().key("Order/" + testScope + "/TIF").value(new PropertyValue().labelValue("GTC")));
+        properties.put("Order/" + testScope + "/OrderBook", new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders")));
+        properties.put("Order/" + testScope + "/PortfolioManager", new PerpetualProperty().key("Order/" + testScope + "/PortfolioManager").value(new PropertyValue().labelValue("F Bar")));
+        properties.put("Order/" + testScope + "/Account", new PerpetualProperty().key("Order/" + testScope + "/Account").value(new PropertyValue().labelValue("J Wilson")));
+        properties.put("Order/" + testScope + "/Strategy", new PerpetualProperty().key("Order/" + testScope + "/Strategy").value(new PropertyValue().labelValue("RiskArb")));
 
         OrderRequest request = new OrderRequest()
                 .code(orderId)
@@ -226,15 +226,15 @@ public class Orders
                 .code("OrdersTestPortfolio")
                 .scope(testScope);
 
-        ArrayList<PerpetualProperty> properties = new ArrayList<>();
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/TIF").value(new PropertyValue().labelValue("GTC")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/PortfolioManager").value(new PropertyValue().labelValue("F Bar")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/Account").value(new PropertyValue().labelValue("J Wilson")));
-        properties.add(new PerpetualProperty().key("Order/" + testScope + "/Strategy").value(new PropertyValue().labelValue("RiskArb")));
+        Map<String, PerpetualProperty> properties = new HashMap<>();
+        properties.put("Order/" + testScope + "/TIF", new PerpetualProperty().key("Order/" + testScope + "/TIF").value(new PropertyValue().labelValue("GTC")));
+        properties.put("Order/" + testScope + "/OrderBook", new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders")));
+        properties.put("Order/" + testScope + "/PortfolioManager", new PerpetualProperty().key("Order/" + testScope + "/PortfolioManager").value(new PropertyValue().labelValue("F Bar")));
+        properties.put("Order/" + testScope + "/Account", new PerpetualProperty().key("Order/" + testScope + "/Account").value(new PropertyValue().labelValue("J Wilson")));
+        properties.put("Order/" + testScope + "/Strategy", new PerpetualProperty().key("Order/" + testScope + "/Strategy").value(new PropertyValue().labelValue("RiskArb")));
 
-        ArrayList<PerpetualProperty> altProperties = new ArrayList<>();
-        altProperties.add(new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders 2")));
+        Map<String, PerpetualProperty> altProperties = new HashMap<>();
+        altProperties.put("Order/" + testScope + "/OrderBook", new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders 2")));
 
         OrderRequest request1 = new OrderRequest()
                 .code(orderId1)
