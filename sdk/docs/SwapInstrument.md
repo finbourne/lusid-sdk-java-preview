@@ -37,6 +37,7 @@ FXFORWARD | &quot;FxForward&quot;
 EXOTIC | &quot;Exotic&quot;
 FXOPTION | &quot;FxOption&quot;
 CREDITDEFAULTSWAP | &quot;CreditDefaultSwap&quot;
+INTERESTRATESWAPTION | &quot;InterestRateSwaption&quot;
 UNKNOWN | &quot;Unknown&quot;
 
 
