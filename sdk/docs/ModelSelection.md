@@ -30,6 +30,7 @@ Name | Value
 SIMPLESTATIC | &quot;SimpleStatic&quot;
 DISCOUNTING | &quot;Discounting&quot;
 VENDORDEFAULT | &quot;VendorDefault&quot;
+BLACKSCHOLES | &quot;BlackScholes&quot;
 
 
 
