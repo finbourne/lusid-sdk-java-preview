@@ -22,6 +22,7 @@ EXOTIC | &quot;Exotic&quot;
 FXOPTION | &quot;FxOption&quot;
 CREDITDEFAULTSWAP | &quot;CreditDefaultSwap&quot;
 INTERESTRATESWAPTION | &quot;InterestRateSwaption&quot;
+BOND | &quot;Bond&quot;
 UNKNOWN | &quot;Unknown&quot;
 
 
