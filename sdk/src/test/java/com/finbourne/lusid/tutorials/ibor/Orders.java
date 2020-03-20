@@ -59,6 +59,10 @@ public class Orders
                 .code("OrdersTestPortfolio")
                 .scope(testScope);
 
+        ResourceId orderBook = new ResourceId()
+                .code("OrdersTestBook")
+                .scope(testScope);
+
         Map<String, PerpetualProperty> properties = new HashMap<String, PerpetualProperty>();
         properties.put("Order/" + testScope + "/TIF", new PerpetualProperty().key("Order/" + testScope + "/TIF").value(new PropertyValue().labelValue("GTC")));
         properties.put("Order/" + testScope + "/OrderBook", new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders")));
@@ -71,7 +75,9 @@ public class Orders
                 .quantity(100)
                 .portfolio(portfolio)
                 .properties(properties)
-                .instrumentIdentifiers(instruments);
+                .instrumentIdentifiers(instruments)
+                .side("Buy")
+                .orderBook(orderBook);
 
         OrderSetRequest requestSet = new OrderSetRequest()
                 .addOrderRequestsItem(request);
@@ -106,6 +112,10 @@ public class Orders
                 .code("OrdersTestPortfolio")
                 .scope(testScope);
 
+        ResourceId orderBook = new ResourceId()
+                .code("OrdersTestBook")
+                .scope(testScope);
+
         Map<String, PerpetualProperty> properties = new HashMap<>();
         properties.put("Order/" + testScope + "/TIF", new PerpetualProperty().key("Order/" + testScope + "/TIF").value(new PropertyValue().labelValue("GTC")));
         properties.put("Order/" + testScope + "/OrderBook", new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders")));
@@ -118,7 +128,9 @@ public class Orders
                 .quantity(100)
                 .portfolio(portfolio)
                 .properties(properties)
-                .instrumentIdentifiers(instruments);
+                .instrumentIdentifiers(instruments)
+                .side("Buy")
+                .orderBook(orderBook);
 
         OrderSetRequest requestSet = new OrderSetRequest()
                 .addOrderRequestsItem(request);
@@ -152,6 +164,10 @@ public class Orders
                 .code("OrdersTestPortfolio")
                 .scope(testScope);
 
+        ResourceId orderBook = new ResourceId()
+                .code("OrdersTestBook")
+                .scope(testScope);
+
         Map<String, PerpetualProperty> properties = new HashMap<>();
         properties.put("Order/" + testScope + "/TIF", new PerpetualProperty().key("Order/" + testScope + "/TIF").value(new PropertyValue().labelValue("GTC")));
         properties.put("Order/" + testScope + "/OrderBook", new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders")));
@@ -164,7 +180,9 @@ public class Orders
                 .quantity(100)
                 .portfolio(portfolio)
                 .properties(properties)
-                .instrumentIdentifiers(instruments);
+                .instrumentIdentifiers(instruments)
+                .side("Buy")
+                .orderBook(orderBook);
 
         OrderSetRequest requestSet = new OrderSetRequest()
                 .addOrderRequestsItem(request);
@@ -186,7 +204,9 @@ public class Orders
                 .quantity(500)
                 .portfolio(portfolio)
                 .properties(properties)
-                .instrumentIdentifiers(instruments);
+                .instrumentIdentifiers(instruments)
+                .side("Buy")
+                .orderBook(orderBook);
 
         OrderSetRequest updateRequestSet = new OrderSetRequest()
                 .addOrderRequestsItem(updateRequest);
@@ -226,36 +246,50 @@ public class Orders
                 .code("OrdersTestPortfolio")
                 .scope(testScope);
 
+        ResourceId orderBook = new ResourceId()
+                .code("OrdersTestBook")
+                .scope(testScope);
+
+        ResourceId anotherOrderBook = new ResourceId()
+                .code("AnotherOrdersTestBook")
+                .scope(testScope);
+
         Map<String, PerpetualProperty> properties = new HashMap<>();
         properties.put("Order/" + testScope + "/TIF", new PerpetualProperty().key("Order/" + testScope + "/TIF").value(new PropertyValue().labelValue("GTC")));
-        properties.put("Order/" + testScope + "/OrderBook", new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders")));
+        properties.put("Order/" + testScope + "/OrderGroup", new PerpetualProperty().key("Order/" + testScope + "/OrderGroup").value(new PropertyValue().labelValue("UK Test Orders")));
         properties.put("Order/" + testScope + "/PortfolioManager", new PerpetualProperty().key("Order/" + testScope + "/PortfolioManager").value(new PropertyValue().labelValue("F Bar")));
         properties.put("Order/" + testScope + "/Account", new PerpetualProperty().key("Order/" + testScope + "/Account").value(new PropertyValue().labelValue("J Wilson")));
         properties.put("Order/" + testScope + "/Strategy", new PerpetualProperty().key("Order/" + testScope + "/Strategy").value(new PropertyValue().labelValue("RiskArb")));
 
         Map<String, PerpetualProperty> altProperties = new HashMap<>();
-        altProperties.put("Order/" + testScope + "/OrderBook", new PerpetualProperty().key("Order/" + testScope + "/OrderBook").value(new PropertyValue().labelValue("UK Test Orders 2")));
+        altProperties.put("Order/" + testScope + "/OrderGroup", new PerpetualProperty().key("Order/" + testScope + "/OrderGroup").value(new PropertyValue().labelValue("UK Test Orders 2")));
 
         OrderRequest request1 = new OrderRequest()
                 .code(orderId1)
                 .quantity(100)
                 .portfolio(portfolio)
                 .properties(properties)
-                .instrumentIdentifiers(instruments);
+                .instrumentIdentifiers(instruments)
+                .side("Sell")
+                .orderBook(orderBook);
 
         OrderRequest request2 = new OrderRequest()
             .code(orderId2)
             .quantity(200)
             .portfolio(portfolio)
             .properties(properties)
-            .instrumentIdentifiers(instruments);
+            .instrumentIdentifiers(instruments)
+                .side("Buy")
+                .orderBook(orderBook);
 
         OrderRequest request3 = new OrderRequest()
                 .code(orderId3)
                 .quantity(300)
                 .portfolio(portfolio)
                 .properties(altProperties)
-                .instrumentIdentifiers(altInstruments);
+                .instrumentIdentifiers(altInstruments)
+                .side("Buy")
+                .orderBook(anotherOrderBook);
 
         OrderSetRequest request = new OrderSetRequest()
                 .addOrderRequestsItem(request1)
@@ -269,16 +303,26 @@ public class Orders
         // instrument identifiers passed
         assertEquals(3, upsertResult.getValues().size());
 
-        List<Order> quantityFilter = ordersApi.listOrders(testScope, OffsetDateTime.now().plusHours(1), null, null, null, null,"Quantity gt 100", null).getValues();
+        OffsetDateTime t = upsertResult.getValues().get(0).getVersion().getAsAtDate();
+
+        List<Order> quantityFilter = ordersApi.listOrders(testScope, t, null, null, null, null,"Quantity gt 100", null).getValues();
         assertEquals(2, quantityFilter.size());
         assertTrue(quantityFilter.stream().allMatch(order -> order.getQuantity() > 100));
 
-        List<Order> orderBookFilter = ordersApi.listOrders(testScope, OffsetDateTime.now().plusHours(1), null, null, null, null,"Properties[" + testScope + "/OrderBook] eq 'UK Test Orders 2'", null).getValues();
-        assertEquals(1, orderBookFilter.size());
-        assertTrue(orderBookFilter.stream().allMatch(order -> order.getProperties().get("Order/" + testScope + "/OrderBook").getValue().getLabelValue().equals("UK Test Orders 2")));
+        List<Order> orderGroupFilter = ordersApi.listOrders(testScope, t, null, null, null, null,"Properties[" + testScope + "/OrderGroup] eq 'UK Test Orders 2'", null).getValues();
+        assertEquals(1, orderGroupFilter.size());
+        assertTrue(orderGroupFilter.stream().allMatch(order -> order.getProperties().get("Order/" + testScope + "/OrderGroup").getValue().getLabelValue().equals("UK Test Orders 2")));
 
-        List<Order> instrumentFilter = ordersApi.listOrders(testScope, OffsetDateTime.now().plusHours(1), null, null, null, null,"LusidInstrumentId eq '" + instrumentIds.get(0) + "'", null).getValues();
+        List<Order> instrumentFilter = ordersApi.listOrders(testScope, t, null, null, null, null,"LusidInstrumentId eq '" + instrumentIds.get(0) + "'", null).getValues();
         assertEquals(2, instrumentFilter.size());
         assertTrue(instrumentFilter.stream().allMatch(order -> order.getLusidInstrumentId().equals(instrumentIds.get(0))));
+
+        List<Order> sideFilter = ordersApi.listOrders(testScope, t, null, null, null, null,"Side eq 'Sell'", null).getValues();
+        assertEquals(1, sideFilter.size());
+        assertTrue(sideFilter.stream().allMatch(order -> order.getSide().equals("Sell")));
+
+        List<Order> orderBookFilter = ordersApi.listOrders(testScope, t, null, null, null, null,"OrderBook eq '" + testScope + "/AnotherOrdersTestBook'", null).getValues();
+        assertEquals(1, orderBookFilter.size());
+        assertTrue(orderBookFilter.stream().allMatch(order -> order.getOrderBook().getCode().equals("AnotherOrdersTestBook")));
     }
 }
