@@ -19,6 +19,7 @@ LUSID | &quot;Lusid&quot;
 REFINITIVQPS | &quot;RefinitivQps&quot;
 REFINITIVTRACSWEB | &quot;RefinitivTracsWeb&quot;
 VOLMASTER | &quot;VolMaster&quot;
+ISDACDS | &quot;IsdaCds&quot;
 
 
 
@@ -29,6 +30,7 @@ Name | Value
 SIMPLESTATIC | &quot;SimpleStatic&quot;
 DISCOUNTING | &quot;Discounting&quot;
 VENDORDEFAULT | &quot;VendorDefault&quot;
+BLACKSCHOLES | &quot;BlackScholes&quot;
 
 
 
