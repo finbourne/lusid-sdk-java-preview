@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** | The specifc Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime. |  [optional]
+**href** | **String** | The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime. |  [optional]
 **value** | [**OffsetDateTime**](OffsetDateTime.md) | The time at which the identifier was annulled |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 

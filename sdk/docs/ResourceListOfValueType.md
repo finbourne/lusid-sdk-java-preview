@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**values** | [**List&lt;ValuesEnum&gt;**](#List&lt;ValuesEnum&gt;) |  |  [optional]
+**values** | [**List&lt;ValuesEnum&gt;**](#List&lt;ValuesEnum&gt;) |  | 
 **href** | **String** |  |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 

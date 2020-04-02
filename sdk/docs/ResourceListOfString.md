@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**values** | **List&lt;String&gt;** |  |  [optional]
+**values** | **List&lt;String&gt;** |  | 
 **href** | **String** |  |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
