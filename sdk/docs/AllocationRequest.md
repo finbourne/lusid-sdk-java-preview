@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **quantity** | **Integer** | The quantity of given instrument allocated. | 
 **portfolioId** | [**ResourceId**](ResourceId.md) |  | 
 **allocatedOrderId** | [**ResourceId**](ResourceId.md) |  | 
-**code** | **String** | Uniquely identifies this allocation. | 
+**id** | [**ResourceId**](ResourceId.md) |  | 
 
 
 

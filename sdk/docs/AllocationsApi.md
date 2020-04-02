@@ -5,8 +5,8 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getAllocation**](AllocationsApi.md#getAllocation) | **GET** /api/allocations/{scope}/{code} | [EXPERIMENTAL] Fetch a given allocation.
-[**listAllocations**](AllocationsApi.md#listAllocations) | **GET** /api/allocations/{scope} | [EXPERIMENTAL] Fetch the last pre-AsAt date version of each allocation in scope (does not fetch the entire history).
-[**upsertAllocations**](AllocationsApi.md#upsertAllocations) | **POST** /api/allocations/{scope} | [EXPERIMENTAL] Upsert; update existing allocations with given ids, or create new allocations otherwise.
+[**listAllocations**](AllocationsApi.md#listAllocations) | **GET** /api/allocations | [EXPERIMENTAL] Fetch the last pre-AsAt date version of each allocation in scope (does not fetch the entire history).
+[**upsertAllocations**](AllocationsApi.md#upsertAllocations) | **POST** /api/allocations | [EXPERIMENTAL] Upsert; update existing allocations with given ids, or create new allocations otherwise.
 
 
 <a name="getAllocation"></a>
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllocations"></a>
 # **listAllocations**
-> PagedResourceListOfAllocation listAllocations(scope, asAt, page, sortBy, start, limit, filter, propertyKeys)
+> PagedResourceListOfAllocation listAllocations(asAt, page, sortBy, start, limit, filter, propertyKeys)
 
 [EXPERIMENTAL] Fetch the last pre-AsAt date version of each allocation in scope (does not fetch the entire history).
 
@@ -108,7 +108,6 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     AllocationsApi apiInstance = new AllocationsApi(defaultClient);
-    String scope = "scope_example"; // String | The scope to which the allocations belong.
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the allocation. Defaults to return the latest version of the allocation if not specified.
     String page = "page_example"; // String | The pagination token to use to continue listing allocations from a previous call to list allocations.              This value is returned from the previous call. If a pagination token is provided the sortBy, filter, effectiveAt, and asAt fields              must not have changed since the original request. Also, if set, a start value cannot be provided.
     List<String> sortBy = Arrays.asList(); // List<String> | Allocation the results by these fields. Use use the '-' sign to denote descending allocation e.g. -MyFieldName.
@@ -117,7 +116,7 @@ public class Example {
     String filter = "filter_example"; // String | Expression to filter the result set.  Currently Allocations can be filtered by Code (e.g.              \"Id eq 'ALLOC001'), Allocated Order Id (e.g. AllocatedOrderId eq 'ORD001'), Quantity (e.g. \"Quantity lt 100\"),              LUSID Instrument Id (e.g. \"LusidInstrumentId eq 'LUID_12345678'\") or by Property (Read more about filtering results from LUSID here:              https://support.lusid.com/filtering-results-from-lusid).
     List<String> propertyKeys = Arrays.asList(); // List<String> | A list of property keys from the \"Allocations\" domain to decorate onto each allocation.                  These take the format {domain}/{scope}/{code} e.g. \"Allocations/system/Name\".
     try {
-      PagedResourceListOfAllocation result = apiInstance.listAllocations(scope, asAt, page, sortBy, start, limit, filter, propertyKeys);
+      PagedResourceListOfAllocation result = apiInstance.listAllocations(asAt, page, sortBy, start, limit, filter, propertyKeys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AllocationsApi#listAllocations");
@@ -134,7 +133,6 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| The scope to which the allocations belong. |
  **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the allocation. Defaults to return the latest version of the allocation if not specified. | [optional]
  **page** | **String**| The pagination token to use to continue listing allocations from a previous call to list allocations.              This value is returned from the previous call. If a pagination token is provided the sortBy, filter, effectiveAt, and asAt fields              must not have changed since the original request. Also, if set, a start value cannot be provided. | [optional]
  **sortBy** | [**List&lt;String&gt;**](String.md)| Allocation the results by these fields. Use use the &#39;-&#39; sign to denote descending allocation e.g. -MyFieldName. | [optional]
@@ -165,7 +163,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertAllocations"></a>
 # **upsertAllocations**
-> ResourceListOfAllocation upsertAllocations(scope, request)
+> ResourceListOfAllocation upsertAllocations(request)
 
 [EXPERIMENTAL] Upsert; update existing allocations with given ids, or create new allocations otherwise.
 
@@ -189,10 +187,9 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     AllocationsApi apiInstance = new AllocationsApi(defaultClient);
-    String scope = "scope_example"; // String | The scope to which the allocations belong.
     AllocationSetRequest request = new AllocationSetRequest(); // AllocationSetRequest | The collection of allocation requests.
     try {
-      ResourceListOfAllocation result = apiInstance.upsertAllocations(scope, request);
+      ResourceListOfAllocation result = apiInstance.upsertAllocations(request);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AllocationsApi#upsertAllocations");
@@ -209,7 +206,6 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| The scope to which the allocations belong. |
  **request** | [**AllocationSetRequest**](AllocationSetRequest.md)| The collection of allocation requests. | [optional]
 
 ### Return type
