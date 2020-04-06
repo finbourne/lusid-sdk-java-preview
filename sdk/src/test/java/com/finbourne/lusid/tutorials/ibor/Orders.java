@@ -322,7 +322,7 @@ public class Orders
 
         OffsetDateTime t = upsertResult.getValues().get(0).getVersion().getAsAtDate();
 
-        List<Order> quantityFilter = ordersApi.listOrders(t, null, null, null, null,"Quantity gt 100", null).getValues();
+        List<Order> quantityFilter = ordersApi.listOrders(t, null, null, null, null,"Quantity gt 100 and Scope eq '" + testScope + "'", null).getValues();
         assertEquals(2, quantityFilter.size());
         assertTrue(quantityFilter.stream().allMatch(order -> order.getQuantity() > 100));
 
@@ -330,11 +330,11 @@ public class Orders
         assertEquals(1, orderGroupFilter.size());
         assertTrue(orderGroupFilter.stream().allMatch(order -> order.getProperties().get("Order/" + testScope + "/OrderGroup").getValue().getLabelValue().equals("UK Test Orders 2")));
 
-        List<Order> instrumentFilter = ordersApi.listOrders(t, null, null, null, null,"LusidInstrumentId eq '" + instrumentIds.get(0) + "'", null).getValues();
+        List<Order> instrumentFilter = ordersApi.listOrders(t, null, null, null, null,"LusidInstrumentId eq '" + instrumentIds.get(0) + "' and Scope eq '" + testScope + "'", null).getValues();
         assertEquals(2, instrumentFilter.size());
         assertTrue(instrumentFilter.stream().allMatch(order -> order.getLusidInstrumentId().equals(instrumentIds.get(0))));
 
-        List<Order> sideFilter = ordersApi.listOrders(t, null, null, null, null,"Side eq 'Sell'", null).getValues();
+        List<Order> sideFilter = ordersApi.listOrders(t, null, null, null, null,"Side eq 'Sell' and Scope eq '" + testScope + "'", null).getValues();
         assertEquals(1, sideFilter.size());
         assertTrue(sideFilter.stream().allMatch(order -> order.getSide().equals("Sell")));
 
