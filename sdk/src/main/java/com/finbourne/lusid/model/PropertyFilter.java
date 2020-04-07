@@ -84,7 +84,7 @@ public class PropertyFilter {
 
       @Override
       public OperatorEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return OperatorEnum.fromValue(value);
       }
     }
@@ -96,7 +96,7 @@ public class PropertyFilter {
 
   public static final String SERIALIZED_NAME_RIGHT = "right";
   @SerializedName(SERIALIZED_NAME_RIGHT)
-  private Object right;
+  private Object right = null;
 
   /**
    * Gets or Sets rightOperandType
@@ -139,7 +139,7 @@ public class PropertyFilter {
 
       @Override
       public RightOperandTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return RightOperandTypeEnum.fromValue(value);
       }
     }
@@ -149,9 +149,7 @@ public class PropertyFilter {
   @SerializedName(SERIALIZED_NAME_RIGHT_OPERAND_TYPE)
   private RightOperandTypeEnum rightOperandType;
 
-
   public PropertyFilter left(String left) {
-    
     this.left = left;
     return this;
   }
@@ -160,21 +158,16 @@ public class PropertyFilter {
    * Get left
    * @return left
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getLeft() {
     return left;
   }
-
 
   public void setLeft(String left) {
     this.left = left;
   }
 
-
   public PropertyFilter operator(OperatorEnum operator) {
-    
     this.operator = operator;
     return this;
   }
@@ -183,21 +176,16 @@ public class PropertyFilter {
    * Get operator
    * @return operator
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public OperatorEnum getOperator() {
     return operator;
   }
-
 
   public void setOperator(OperatorEnum operator) {
     this.operator = operator;
   }
 
-
   public PropertyFilter right(Object right) {
-    
     this.right = right;
     return this;
   }
@@ -206,21 +194,16 @@ public class PropertyFilter {
    * Get right
    * @return right
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Object getRight() {
     return right;
   }
-
 
   public void setRight(Object right) {
     this.right = right;
   }
 
-
   public PropertyFilter rightOperandType(RightOperandTypeEnum rightOperandType) {
-    
     this.rightOperandType = rightOperandType;
     return this;
   }
@@ -229,13 +212,10 @@ public class PropertyFilter {
    * Get rightOperandType
    * @return rightOperandType
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public RightOperandTypeEnum getRightOperandType() {
     return rightOperandType;
   }
-
 
   public void setRightOperandType(RightOperandTypeEnum rightOperandType) {
     this.rightOperandType = rightOperandType;

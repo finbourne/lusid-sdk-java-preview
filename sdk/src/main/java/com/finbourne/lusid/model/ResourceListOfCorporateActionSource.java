@@ -43,11 +43,9 @@ public class ResourceListOfCorporateActionSource {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public ResourceListOfCorporateActionSource values(List<CorporateActionSource> values) {
-    
     this.values = values;
     return this;
   }
@@ -62,19 +60,15 @@ public class ResourceListOfCorporateActionSource {
    * @return values
   **/
   @ApiModelProperty(required = true, value = "")
-
   public List<CorporateActionSource> getValues() {
     return values;
   }
-
 
   public void setValues(List<CorporateActionSource> values) {
     this.values = values;
   }
 
-
   public ResourceListOfCorporateActionSource href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -83,21 +77,16 @@ public class ResourceListOfCorporateActionSource {
    * Get href
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public ResourceListOfCorporateActionSource links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -114,13 +103,10 @@ public class ResourceListOfCorporateActionSource {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

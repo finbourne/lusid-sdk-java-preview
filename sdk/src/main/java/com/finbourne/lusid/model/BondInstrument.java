@@ -54,7 +54,7 @@ public class BondInstrument {
 
   public static final String SERIALIZED_NAME_FLOW_CONVENTIONS = "flowConventions";
   @SerializedName(SERIALIZED_NAME_FLOW_CONVENTIONS)
-  private FlowConventions flowConventions;
+  private FlowConventions flowConventions = null;
 
   /**
    * Instrument type, must be property for JSON.
@@ -111,7 +111,7 @@ public class BondInstrument {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -121,9 +121,7 @@ public class BondInstrument {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
-
   public BondInstrument startDate(OffsetDateTime startDate) {
-    
     this.startDate = startDate;
     return this;
   }
@@ -133,19 +131,15 @@ public class BondInstrument {
    * @return startDate
   **/
   @ApiModelProperty(required = true, value = "")
-
   public OffsetDateTime getStartDate() {
     return startDate;
   }
-
 
   public void setStartDate(OffsetDateTime startDate) {
     this.startDate = startDate;
   }
 
-
   public BondInstrument maturityDate(OffsetDateTime maturityDate) {
-    
     this.maturityDate = maturityDate;
     return this;
   }
@@ -155,19 +149,15 @@ public class BondInstrument {
    * @return maturityDate
   **/
   @ApiModelProperty(required = true, value = "")
-
   public OffsetDateTime getMaturityDate() {
     return maturityDate;
   }
-
 
   public void setMaturityDate(OffsetDateTime maturityDate) {
     this.maturityDate = maturityDate;
   }
 
-
   public BondInstrument domCcy(String domCcy) {
-    
     this.domCcy = domCcy;
     return this;
   }
@@ -177,19 +167,15 @@ public class BondInstrument {
    * @return domCcy
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getDomCcy() {
     return domCcy;
   }
-
 
   public void setDomCcy(String domCcy) {
     this.domCcy = domCcy;
   }
 
-
   public BondInstrument couponRate(Double couponRate) {
-    
     this.couponRate = couponRate;
     return this;
   }
@@ -199,19 +185,15 @@ public class BondInstrument {
    * @return couponRate
   **/
   @ApiModelProperty(required = true, value = "simple coupon rate.")
-
   public Double getCouponRate() {
     return couponRate;
   }
-
 
   public void setCouponRate(Double couponRate) {
     this.couponRate = couponRate;
   }
 
-
   public BondInstrument principal(Double principal) {
-    
     this.principal = principal;
     return this;
   }
@@ -221,19 +203,15 @@ public class BondInstrument {
    * @return principal
   **/
   @ApiModelProperty(required = true, value = "The face-value or principal for the bond at outset.              This might be reduced through its lifetime in the event of amortization or similar.")
-
   public Double getPrincipal() {
     return principal;
   }
-
 
   public void setPrincipal(Double principal) {
     this.principal = principal;
   }
 
-
   public BondInstrument flowConventions(FlowConventions flowConventions) {
-    
     this.flowConventions = flowConventions;
     return this;
   }
@@ -243,19 +221,15 @@ public class BondInstrument {
    * @return flowConventions
   **/
   @ApiModelProperty(required = true, value = "")
-
   public FlowConventions getFlowConventions() {
     return flowConventions;
   }
-
 
   public void setFlowConventions(FlowConventions flowConventions) {
     this.flowConventions = flowConventions;
   }
 
-
   public BondInstrument instrumentType(InstrumentTypeEnum instrumentType) {
-    
     this.instrumentType = instrumentType;
     return this;
   }
@@ -265,11 +239,9 @@ public class BondInstrument {
    * @return instrumentType
   **/
   @ApiModelProperty(required = true, value = "Instrument type, must be property for JSON.")
-
   public InstrumentTypeEnum getInstrumentType() {
     return instrumentType;
   }
-
 
   public void setInstrumentType(InstrumentTypeEnum instrumentType) {
     this.instrumentType = instrumentType;

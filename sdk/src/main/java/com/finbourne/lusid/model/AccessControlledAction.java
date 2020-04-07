@@ -40,19 +40,17 @@ public class AccessControlledAction {
 
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
-  private ActionId action;
+  private ActionId action = null;
 
   public static final String SERIALIZED_NAME_LIMITED_SET = "limitedSet";
   @SerializedName(SERIALIZED_NAME_LIMITED_SET)
-  private List<IdSelectorDefinition> limitedSet = null;
+  private List<IdSelectorDefinition> limitedSet = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public AccessControlledAction description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -62,19 +60,15 @@ public class AccessControlledAction {
    * @return description
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getDescription() {
     return description;
   }
-
 
   public void setDescription(String description) {
     this.description = description;
   }
 
-
   public AccessControlledAction action(ActionId action) {
-    
     this.action = action;
     return this;
   }
@@ -84,19 +78,15 @@ public class AccessControlledAction {
    * @return action
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ActionId getAction() {
     return action;
   }
-
 
   public void setAction(ActionId action) {
     this.action = action;
   }
 
-
   public AccessControlledAction limitedSet(List<IdSelectorDefinition> limitedSet) {
-    
     this.limitedSet = limitedSet;
     return this;
   }
@@ -113,21 +103,16 @@ public class AccessControlledAction {
    * Get limitedSet
    * @return limitedSet
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<IdSelectorDefinition> getLimitedSet() {
     return limitedSet;
   }
-
 
   public void setLimitedSet(List<IdSelectorDefinition> limitedSet) {
     this.limitedSet = limitedSet;
   }
 
-
   public AccessControlledAction links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -144,13 +129,10 @@ public class AccessControlledAction {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

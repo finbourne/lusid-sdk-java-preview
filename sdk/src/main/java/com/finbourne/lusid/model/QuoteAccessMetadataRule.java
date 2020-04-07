@@ -36,15 +36,13 @@ import java.util.Map;
 public class QuoteAccessMetadataRule {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private QuoteAccessMetadataRuleId id;
+  private QuoteAccessMetadataRuleId id = null;
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
   private Map<String, List<AccessMetadataValue>> metadata = new HashMap<>();
 
-
   public QuoteAccessMetadataRule id(QuoteAccessMetadataRuleId id) {
-    
     this.id = id;
     return this;
   }
@@ -54,19 +52,15 @@ public class QuoteAccessMetadataRule {
    * @return id
   **/
   @ApiModelProperty(required = true, value = "")
-
   public QuoteAccessMetadataRuleId getId() {
     return id;
   }
-
 
   public void setId(QuoteAccessMetadataRuleId id) {
     this.id = id;
   }
 
-
   public QuoteAccessMetadataRule metadata(Map<String, List<AccessMetadataValue>> metadata) {
-    
     this.metadata = metadata;
     return this;
   }
@@ -81,11 +75,9 @@ public class QuoteAccessMetadataRule {
    * @return metadata
   **/
   @ApiModelProperty(required = true, value = "The access control metadata to assign to quotes that match the identifier")
-
   public Map<String, List<AccessMetadataValue>> getMetadata() {
     return metadata;
   }
-
 
   public void setMetadata(Map<String, List<AccessMetadataValue>> metadata) {
     this.metadata = metadata;

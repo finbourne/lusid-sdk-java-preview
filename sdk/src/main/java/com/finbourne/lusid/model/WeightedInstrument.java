@@ -41,11 +41,9 @@ public class WeightedInstrument {
 
   public static final String SERIALIZED_NAME_INSTRUMENT = "instrument";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT)
-  private LusidInstrument instrument;
-
+  private LusidInstrument instrument = null;
 
   public WeightedInstrument quantity(Double quantity) {
-    
     this.quantity = quantity;
     return this;
   }
@@ -54,21 +52,16 @@ public class WeightedInstrument {
    * The quantity of the instrument that is owned.
    * @return quantity
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The quantity of the instrument that is owned.")
-
   public Double getQuantity() {
     return quantity;
   }
-
 
   public void setQuantity(Double quantity) {
     this.quantity = quantity;
   }
 
-
   public WeightedInstrument holdingIdentifier(String holdingIdentifier) {
-    
     this.holdingIdentifier = holdingIdentifier;
     return this;
   }
@@ -77,21 +70,16 @@ public class WeightedInstrument {
    * Identifier for the instrument.  For a single, unique trade or transaction this can be thought of as equivalent to the transaction identifier, or  a composite of the sub-holding keys for a regular sub-holding. When there are multiple transactions sharing the same underlying instrument  such as purchase of shares on multiple dates where tax implications are different this would not be the case.    In an inlined aggregation request if this is wanted to identify a line item, it can be specified in the set of aggregation keys given on the aggregation  request that accompanies the set of weighted instruments.
    * @return holdingIdentifier
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Identifier for the instrument.  For a single, unique trade or transaction this can be thought of as equivalent to the transaction identifier, or  a composite of the sub-holding keys for a regular sub-holding. When there are multiple transactions sharing the same underlying instrument  such as purchase of shares on multiple dates where tax implications are different this would not be the case.    In an inlined aggregation request if this is wanted to identify a line item, it can be specified in the set of aggregation keys given on the aggregation  request that accompanies the set of weighted instruments.")
-
   public String getHoldingIdentifier() {
     return holdingIdentifier;
   }
-
 
   public void setHoldingIdentifier(String holdingIdentifier) {
     this.holdingIdentifier = holdingIdentifier;
   }
 
-
   public WeightedInstrument instrument(LusidInstrument instrument) {
-    
     this.instrument = instrument;
     return this;
   }
@@ -100,13 +88,10 @@ public class WeightedInstrument {
    * Get instrument
    * @return instrument
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public LusidInstrument getInstrument() {
     return instrument;
   }
-
 
   public void setInstrument(LusidInstrument instrument) {
     this.instrument = instrument;

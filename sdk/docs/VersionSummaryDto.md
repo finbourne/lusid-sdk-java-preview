@@ -6,9 +6,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**apiVersion** | **String** |  |  [optional] [readonly]
-**buildVersion** | **String** |  |  [optional] [readonly]
-**excelVersion** | **String** |  |  [optional] [readonly]
+**apiVersion** | **String** |  |  [optional]
+**buildVersion** | **String** |  |  [optional]
+**excelVersion** | **String** |  |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 

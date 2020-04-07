@@ -104,7 +104,7 @@ public class Tenor {
 
       @Override
       public UnitEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return UnitEnum.fromValue(value);
       }
     }
@@ -114,33 +114,23 @@ public class Tenor {
   @SerializedName(SERIALIZED_NAME_UNIT)
   private UnitEnum unit;
 
-
    /**
    * Get value
    * @return value
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Double getValue() {
     return value;
   }
-
-
-
 
    /**
    * Get unit
    * @return unit
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public UnitEnum getUnit() {
     return unit;
   }
-
-
 
 
   @Override

@@ -38,15 +38,13 @@ import java.util.Map;
 public class DataMapping {
   public static final String SERIALIZED_NAME_DATA_FIELD_NAME_MAPPINGS = "dataFieldNameMappings";
   @SerializedName(SERIALIZED_NAME_DATA_FIELD_NAME_MAPPINGS)
-  private Map<String, DataDefinition> dataFieldNameMappings = null;
+  private Map<String, DataDefinition> dataFieldNameMappings = new HashMap<>();
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public DataMapping dataFieldNameMappings(Map<String, DataDefinition> dataFieldNameMappings) {
-    
     this.dataFieldNameMappings = dataFieldNameMappings;
     return this;
   }
@@ -63,21 +61,16 @@ public class DataMapping {
    * A map from LUSID item keys to data definitions that define the names, types and degree of uniqueness of data provided to LUSID in structured data stores.
    * @return dataFieldNameMappings
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "A map from LUSID item keys to data definitions that define the names, types and degree of uniqueness of data provided to LUSID in structured data stores.")
-
   public Map<String, DataDefinition> getDataFieldNameMappings() {
     return dataFieldNameMappings;
   }
-
 
   public void setDataFieldNameMappings(Map<String, DataDefinition> dataFieldNameMappings) {
     this.dataFieldNameMappings = dataFieldNameMappings;
   }
 
-
   public DataMapping links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -94,13 +87,10 @@ public class DataMapping {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

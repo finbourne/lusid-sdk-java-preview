@@ -35,11 +35,9 @@ import java.util.List;
 public class OrderSetRequest {
   public static final String SERIALIZED_NAME_ORDER_REQUESTS = "orderRequests";
   @SerializedName(SERIALIZED_NAME_ORDER_REQUESTS)
-  private List<OrderRequest> orderRequests = null;
-
+  private List<OrderRequest> orderRequests = new ArrayList<>();
 
   public OrderSetRequest orderRequests(List<OrderRequest> orderRequests) {
-    
     this.orderRequests = orderRequests;
     return this;
   }
@@ -56,13 +54,10 @@ public class OrderSetRequest {
    * A collection of OrderRequests.
    * @return orderRequests
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "A collection of OrderRequests.")
-
   public List<OrderRequest> getOrderRequests() {
     return orderRequests;
   }
-
 
   public void setOrderRequests(List<OrderRequest> orderRequests) {
     this.orderRequests = orderRequests;

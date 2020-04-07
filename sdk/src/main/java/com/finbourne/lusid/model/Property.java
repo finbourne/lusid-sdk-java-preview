@@ -37,15 +37,13 @@ public class Property {
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private PropertyValue value;
+  private PropertyValue value = null;
 
   public static final String SERIALIZED_NAME_EFFECTIVE_FROM = "effectiveFrom";
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_FROM)
   private OffsetDateTime effectiveFrom;
 
-
   public Property key(String key) {
-    
     this.key = key;
     return this;
   }
@@ -55,19 +53,15 @@ public class Property {
    * @return key
   **/
   @ApiModelProperty(required = true, value = "The key of the property. This takes the format {domain}/{scope}/{code} e.g. 'Instrument/system/Name' or 'Transaction/strategy/quantsignal'.")
-
   public String getKey() {
     return key;
   }
-
 
   public void setKey(String key) {
     this.key = key;
   }
 
-
   public Property value(PropertyValue value) {
-    
     this.value = value;
     return this;
   }
@@ -77,19 +71,15 @@ public class Property {
    * @return value
   **/
   @ApiModelProperty(required = true, value = "")
-
   public PropertyValue getValue() {
     return value;
   }
-
 
   public void setValue(PropertyValue value) {
     this.value = value;
   }
 
-
   public Property effectiveFrom(OffsetDateTime effectiveFrom) {
-    
     this.effectiveFrom = effectiveFrom;
     return this;
   }
@@ -98,13 +88,10 @@ public class Property {
    * The effective datetime from which the property is valid.
    * @return effectiveFrom
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The effective datetime from which the property is valid.")
-
   public OffsetDateTime getEffectiveFrom() {
     return effectiveFrom;
   }
-
 
   public void setEffectiveFrom(OffsetDateTime effectiveFrom) {
     this.effectiveFrom = effectiveFrom;

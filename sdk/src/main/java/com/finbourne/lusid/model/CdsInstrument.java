@@ -49,7 +49,7 @@ public class CdsInstrument {
 
   public static final String SERIALIZED_NAME_DETAIL_SPECIFICATION = "detailSpecification";
   @SerializedName(SERIALIZED_NAME_DETAIL_SPECIFICATION)
-  private CdsDetailSpecification detailSpecification;
+  private CdsDetailSpecification detailSpecification = null;
 
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -118,7 +118,7 @@ public class CdsInstrument {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -128,9 +128,7 @@ public class CdsInstrument {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
-
   public CdsInstrument ticker(String ticker) {
-    
     this.ticker = ticker;
     return this;
   }
@@ -140,19 +138,15 @@ public class CdsInstrument {
    * @return ticker
   **/
   @ApiModelProperty(required = true, value = "A ticker to uniquely specify then entity against which the cds is written")
-
   public String getTicker() {
     return ticker;
   }
-
 
   public void setTicker(String ticker) {
     this.ticker = ticker;
   }
 
-
   public CdsInstrument flowConventions(List<FlowConventions> flowConventions) {
-    
     this.flowConventions = flowConventions;
     return this;
   }
@@ -167,19 +161,15 @@ public class CdsInstrument {
    * @return flowConventions
   **/
   @ApiModelProperty(required = true, value = "Flow Convention details for the legs of the CDS (in practice the conventions for the protection leg are limited/based on premium leg)")
-
   public List<FlowConventions> getFlowConventions() {
     return flowConventions;
   }
-
 
   public void setFlowConventions(List<FlowConventions> flowConventions) {
     this.flowConventions = flowConventions;
   }
 
-
   public CdsInstrument couponRate(Double couponRate) {
-    
     this.couponRate = couponRate;
     return this;
   }
@@ -189,19 +179,15 @@ public class CdsInstrument {
    * @return couponRate
   **/
   @ApiModelProperty(required = true, value = "The coupon rate paid on each payment date of the premium leg as a fraction of 100 percent, e.g. \"0.05\" meaning 500 basis points or 5%.  For a standard corporate CDS (North American) this must be either 100bps or 500bps.")
-
   public Double getCouponRate() {
     return couponRate;
   }
-
 
   public void setCouponRate(Double couponRate) {
     this.couponRate = couponRate;
   }
 
-
   public CdsInstrument detailSpecification(CdsDetailSpecification detailSpecification) {
-    
     this.detailSpecification = detailSpecification;
     return this;
   }
@@ -211,19 +197,15 @@ public class CdsInstrument {
    * @return detailSpecification
   **/
   @ApiModelProperty(required = true, value = "")
-
   public CdsDetailSpecification getDetailSpecification() {
     return detailSpecification;
   }
-
 
   public void setDetailSpecification(CdsDetailSpecification detailSpecification) {
     this.detailSpecification = detailSpecification;
   }
 
-
   public CdsInstrument startDate(OffsetDateTime startDate) {
-    
     this.startDate = startDate;
     return this;
   }
@@ -233,19 +215,15 @@ public class CdsInstrument {
    * @return startDate
   **/
   @ApiModelProperty(required = true, value = "Starting date of the credit default swap")
-
   public OffsetDateTime getStartDate() {
     return startDate;
   }
-
 
   public void setStartDate(OffsetDateTime startDate) {
     this.startDate = startDate;
   }
 
-
   public CdsInstrument maturityDate(OffsetDateTime maturityDate) {
-    
     this.maturityDate = maturityDate;
     return this;
   }
@@ -255,19 +233,15 @@ public class CdsInstrument {
    * @return maturityDate
   **/
   @ApiModelProperty(required = true, value = "Maturity date of the credit default swap")
-
   public OffsetDateTime getMaturityDate() {
     return maturityDate;
   }
-
 
   public void setMaturityDate(OffsetDateTime maturityDate) {
     this.maturityDate = maturityDate;
   }
 
-
   public CdsInstrument domCcy(String domCcy) {
-    
     this.domCcy = domCcy;
     return this;
   }
@@ -277,19 +251,15 @@ public class CdsInstrument {
    * @return domCcy
   **/
   @ApiModelProperty(required = true, value = "Domestic currency of the credit default swap")
-
   public String getDomCcy() {
     return domCcy;
   }
-
 
   public void setDomCcy(String domCcy) {
     this.domCcy = domCcy;
   }
 
-
   public CdsInstrument instrumentType(InstrumentTypeEnum instrumentType) {
-    
     this.instrumentType = instrumentType;
     return this;
   }
@@ -299,11 +269,9 @@ public class CdsInstrument {
    * @return instrumentType
   **/
   @ApiModelProperty(required = true, value = "Instrument type, must be property for JSON.")
-
   public InstrumentTypeEnum getInstrumentType() {
     return instrumentType;
   }
-
 
   public void setInstrumentType(InstrumentTypeEnum instrumentType) {
     this.instrumentType = instrumentType;

@@ -40,11 +40,11 @@ import java.util.Map;
 public class Order {
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = null;
+  private Map<String, PerpetualProperty> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version;
+  private Version version = null;
 
   public static final String SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS = "instrumentIdentifiers";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS)
@@ -60,15 +60,15 @@ public class Order {
 
   public static final String SERIALIZED_NAME_ORDER_BOOK = "orderBook";
   @SerializedName(SERIALIZED_NAME_ORDER_BOOK)
-  private ResourceId orderBook;
+  private ResourceId orderBook = null;
 
   public static final String SERIALIZED_NAME_PORTFOLIO = "portfolio";
   @SerializedName(SERIALIZED_NAME_PORTFOLIO)
-  private ResourceId portfolio;
+  private ResourceId portfolio = null;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id;
+  private ResourceId id = null;
 
   public static final String SERIALIZED_NAME_LUSID_INSTRUMENT_ID = "lusidInstrumentId";
   @SerializedName(SERIALIZED_NAME_LUSID_INSTRUMENT_ID)
@@ -76,11 +76,9 @@ public class Order {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public Order properties(Map<String, PerpetualProperty> properties) {
-    
     this.properties = properties;
     return this;
   }
@@ -97,21 +95,16 @@ public class Order {
    * Client-defined properties associated with this order.
    * @return properties
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Client-defined properties associated with this order.")
-
   public Map<String, PerpetualProperty> getProperties() {
     return properties;
   }
-
 
   public void setProperties(Map<String, PerpetualProperty> properties) {
     this.properties = properties;
   }
 
-
   public Order version(Version version) {
-    
     this.version = version;
     return this;
   }
@@ -120,21 +113,16 @@ public class Order {
    * Get version
    * @return version
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Version getVersion() {
     return version;
   }
-
 
   public void setVersion(Version version) {
     this.version = version;
   }
 
-
   public Order instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
-    
     this.instrumentIdentifiers = instrumentIdentifiers;
     return this;
   }
@@ -149,19 +137,15 @@ public class Order {
    * @return instrumentIdentifiers
   **/
   @ApiModelProperty(required = true, value = "The instrument ordered.")
-
   public Map<String, String> getInstrumentIdentifiers() {
     return instrumentIdentifiers;
   }
-
 
   public void setInstrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
     this.instrumentIdentifiers = instrumentIdentifiers;
   }
 
-
   public Order quantity(Integer quantity) {
-    
     this.quantity = quantity;
     return this;
   }
@@ -171,19 +155,15 @@ public class Order {
    * @return quantity
   **/
   @ApiModelProperty(required = true, value = "The quantity of given instrument ordered.")
-
   public Integer getQuantity() {
     return quantity;
   }
-
 
   public void setQuantity(Integer quantity) {
     this.quantity = quantity;
   }
 
-
   public Order side(String side) {
-    
     this.side = side;
     return this;
   }
@@ -193,19 +173,15 @@ public class Order {
    * @return side
   **/
   @ApiModelProperty(required = true, value = "The client's representation of the order's side (buy, sell, short, etc)")
-
   public String getSide() {
     return side;
   }
-
 
   public void setSide(String side) {
     this.side = side;
   }
 
-
   public Order orderBook(ResourceId orderBook) {
-    
     this.orderBook = orderBook;
     return this;
   }
@@ -215,19 +191,15 @@ public class Order {
    * @return orderBook
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ResourceId getOrderBook() {
     return orderBook;
   }
-
 
   public void setOrderBook(ResourceId orderBook) {
     this.orderBook = orderBook;
   }
 
-
   public Order portfolio(ResourceId portfolio) {
-    
     this.portfolio = portfolio;
     return this;
   }
@@ -237,19 +209,15 @@ public class Order {
    * @return portfolio
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ResourceId getPortfolio() {
     return portfolio;
   }
-
 
   public void setPortfolio(ResourceId portfolio) {
     this.portfolio = portfolio;
   }
 
-
   public Order id(ResourceId id) {
-    
     this.id = id;
     return this;
   }
@@ -259,19 +227,15 @@ public class Order {
    * @return id
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ResourceId getId() {
     return id;
   }
-
 
   public void setId(ResourceId id) {
     this.id = id;
   }
 
-
   public Order lusidInstrumentId(String lusidInstrumentId) {
-    
     this.lusidInstrumentId = lusidInstrumentId;
     return this;
   }
@@ -281,19 +245,15 @@ public class Order {
    * @return lusidInstrumentId
   **/
   @ApiModelProperty(required = true, value = "The LUSID instrument id for the instrument ordered.")
-
   public String getLusidInstrumentId() {
     return lusidInstrumentId;
   }
-
 
   public void setLusidInstrumentId(String lusidInstrumentId) {
     this.lusidInstrumentId = lusidInstrumentId;
   }
 
-
   public Order links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -310,13 +270,10 @@ public class Order {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

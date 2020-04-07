@@ -35,11 +35,9 @@ import java.util.List;
 public class DataDefinition {
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public DataDefinition links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -56,13 +54,10 @@ public class DataDefinition {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

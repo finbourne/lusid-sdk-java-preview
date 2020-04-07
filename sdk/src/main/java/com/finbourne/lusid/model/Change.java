@@ -41,7 +41,7 @@ public class Change {
 
   public static final String SERIALIZED_NAME_ENTITY_ID = "entityId";
   @SerializedName(SERIALIZED_NAME_ENTITY_ID)
-  private ResourceId entityId;
+  private ResourceId entityId = null;
 
   public static final String SERIALIZED_NAME_CORRECTED = "corrected";
   @SerializedName(SERIALIZED_NAME_CORRECTED)
@@ -69,11 +69,9 @@ public class Change {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public Change href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -82,21 +80,16 @@ public class Change {
    * Get href
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public Change entityId(ResourceId entityId) {
-    
     this.entityId = entityId;
     return this;
   }
@@ -106,19 +99,15 @@ public class Change {
    * @return entityId
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ResourceId getEntityId() {
     return entityId;
   }
-
 
   public void setEntityId(ResourceId entityId) {
     this.entityId = entityId;
   }
 
-
   public Change corrected(Boolean corrected) {
-    
     this.corrected = corrected;
     return this;
   }
@@ -128,19 +117,15 @@ public class Change {
    * @return corrected
   **/
   @ApiModelProperty(required = true, value = "")
-
   public Boolean getCorrected() {
     return corrected;
   }
-
 
   public void setCorrected(Boolean corrected) {
     this.corrected = corrected;
   }
 
-
   public Change correctionEffectiveAt(OffsetDateTime correctionEffectiveAt) {
-    
     this.correctionEffectiveAt = correctionEffectiveAt;
     return this;
   }
@@ -149,21 +134,16 @@ public class Change {
    * 
    * @return correctionEffectiveAt
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public OffsetDateTime getCorrectionEffectiveAt() {
     return correctionEffectiveAt;
   }
-
 
   public void setCorrectionEffectiveAt(OffsetDateTime correctionEffectiveAt) {
     this.correctionEffectiveAt = correctionEffectiveAt;
   }
 
-
   public Change correctionAsAt(OffsetDateTime correctionAsAt) {
-    
     this.correctionAsAt = correctionAsAt;
     return this;
   }
@@ -172,21 +152,16 @@ public class Change {
    * 
    * @return correctionAsAt
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public OffsetDateTime getCorrectionAsAt() {
     return correctionAsAt;
   }
-
 
   public void setCorrectionAsAt(OffsetDateTime correctionAsAt) {
     this.correctionAsAt = correctionAsAt;
   }
 
-
   public Change amended(Boolean amended) {
-    
     this.amended = amended;
     return this;
   }
@@ -196,19 +171,15 @@ public class Change {
    * @return amended
   **/
   @ApiModelProperty(required = true, value = "")
-
   public Boolean getAmended() {
     return amended;
   }
-
 
   public void setAmended(Boolean amended) {
     this.amended = amended;
   }
 
-
   public Change amendmentEffectiveAt(OffsetDateTime amendmentEffectiveAt) {
-    
     this.amendmentEffectiveAt = amendmentEffectiveAt;
     return this;
   }
@@ -217,21 +188,16 @@ public class Change {
    * 
    * @return amendmentEffectiveAt
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public OffsetDateTime getAmendmentEffectiveAt() {
     return amendmentEffectiveAt;
   }
-
 
   public void setAmendmentEffectiveAt(OffsetDateTime amendmentEffectiveAt) {
     this.amendmentEffectiveAt = amendmentEffectiveAt;
   }
 
-
   public Change amendmentAsAt(OffsetDateTime amendmentAsAt) {
-    
     this.amendmentAsAt = amendmentAsAt;
     return this;
   }
@@ -240,21 +206,16 @@ public class Change {
    * 
    * @return amendmentAsAt
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public OffsetDateTime getAmendmentAsAt() {
     return amendmentAsAt;
   }
-
 
   public void setAmendmentAsAt(OffsetDateTime amendmentAsAt) {
     this.amendmentAsAt = amendmentAsAt;
   }
 
-
   public Change links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -271,13 +232,10 @@ public class Change {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

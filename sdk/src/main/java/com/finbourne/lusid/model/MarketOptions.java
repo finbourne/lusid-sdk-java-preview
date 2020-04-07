@@ -81,7 +81,7 @@ public class MarketOptions {
 
       @Override
       public DefaultSupplierEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return DefaultSupplierEnum.fromValue(value);
       }
     }
@@ -140,7 +140,7 @@ public class MarketOptions {
 
       @Override
       public DefaultInstrumentCodeTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return DefaultInstrumentCodeTypeEnum.fromValue(value);
       }
     }
@@ -199,7 +199,7 @@ public class MarketOptions {
 
       @Override
       public ManifestLevelOfDetailEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return ManifestLevelOfDetailEnum.fromValue(value);
       }
     }
@@ -209,9 +209,7 @@ public class MarketOptions {
   @SerializedName(SERIALIZED_NAME_MANIFEST_LEVEL_OF_DETAIL)
   private ManifestLevelOfDetailEnum manifestLevelOfDetail;
 
-
   public MarketOptions defaultSupplier(DefaultSupplierEnum defaultSupplier) {
-    
     this.defaultSupplier = defaultSupplier;
     return this;
   }
@@ -220,21 +218,16 @@ public class MarketOptions {
    * The default supplier of data. This controls which &#39;dialect&#39; is used to find particular market data. e.g. one supplier might address data by RIC, another by PermId
    * @return defaultSupplier
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The default supplier of data. This controls which 'dialect' is used to find particular market data. e.g. one supplier might address data by RIC, another by PermId")
-
   public DefaultSupplierEnum getDefaultSupplier() {
     return defaultSupplier;
   }
-
 
   public void setDefaultSupplier(DefaultSupplierEnum defaultSupplier) {
     this.defaultSupplier = defaultSupplier;
   }
 
-
   public MarketOptions defaultInstrumentCodeType(DefaultInstrumentCodeTypeEnum defaultInstrumentCodeType) {
-    
     this.defaultInstrumentCodeType = defaultInstrumentCodeType;
     return this;
   }
@@ -243,21 +236,16 @@ public class MarketOptions {
    * When instrument quotes are searched for, what identifier should be used by default
    * @return defaultInstrumentCodeType
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "When instrument quotes are searched for, what identifier should be used by default")
-
   public DefaultInstrumentCodeTypeEnum getDefaultInstrumentCodeType() {
     return defaultInstrumentCodeType;
   }
-
 
   public void setDefaultInstrumentCodeType(DefaultInstrumentCodeTypeEnum defaultInstrumentCodeType) {
     this.defaultInstrumentCodeType = defaultInstrumentCodeType;
   }
 
-
   public MarketOptions defaultScope(String defaultScope) {
-    
     this.defaultScope = defaultScope;
     return this;
   }
@@ -266,21 +254,16 @@ public class MarketOptions {
    * For default rules, which scope should data be searched for in
    * @return defaultScope
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "For default rules, which scope should data be searched for in")
-
   public String getDefaultScope() {
     return defaultScope;
   }
-
 
   public void setDefaultScope(String defaultScope) {
     this.defaultScope = defaultScope;
   }
 
-
   public MarketOptions attemptToInferMissingFx(Boolean attemptToInferMissingFx) {
-    
     this.attemptToInferMissingFx = attemptToInferMissingFx;
     return this;
   }
@@ -289,21 +272,16 @@ public class MarketOptions {
    * if true will calculate a missing Fx pair (e.g. THBJPY) from the inverse JPYTHB or from standardised pairs against USD, e.g. THBUSD and JPYUSD
    * @return attemptToInferMissingFx
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "if true will calculate a missing Fx pair (e.g. THBJPY) from the inverse JPYTHB or from standardised pairs against USD, e.g. THBUSD and JPYUSD")
-
   public Boolean getAttemptToInferMissingFx() {
     return attemptToInferMissingFx;
   }
-
 
   public void setAttemptToInferMissingFx(Boolean attemptToInferMissingFx) {
     this.attemptToInferMissingFx = attemptToInferMissingFx;
   }
 
-
   public MarketOptions manifestLevelOfDetail(ManifestLevelOfDetailEnum manifestLevelOfDetail) {
-    
     this.manifestLevelOfDetail = manifestLevelOfDetail;
     return this;
   }
@@ -312,13 +290,10 @@ public class MarketOptions {
    * Get manifestLevelOfDetail
    * @return manifestLevelOfDetail
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public ManifestLevelOfDetailEnum getManifestLevelOfDetail() {
     return manifestLevelOfDetail;
   }
-
 
   public void setManifestLevelOfDetail(ManifestLevelOfDetailEnum manifestLevelOfDetail) {
     this.manifestLevelOfDetail = manifestLevelOfDetail;

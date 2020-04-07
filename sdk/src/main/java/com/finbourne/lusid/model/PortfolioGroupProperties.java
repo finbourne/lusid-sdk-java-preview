@@ -42,19 +42,17 @@ public class PortfolioGroupProperties {
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, Property> properties = null;
+  private Map<String, Property> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version;
+  private Version version = null;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public PortfolioGroupProperties href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -63,21 +61,16 @@ public class PortfolioGroupProperties {
    * The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public PortfolioGroupProperties properties(Map<String, Property> properties) {
-    
     this.properties = properties;
     return this;
   }
@@ -94,21 +87,16 @@ public class PortfolioGroupProperties {
    * The portfolio group properties. These will be from the &#39;PortfolioGroup&#39; domain.
    * @return properties
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The portfolio group properties. These will be from the 'PortfolioGroup' domain.")
-
   public Map<String, Property> getProperties() {
     return properties;
   }
-
 
   public void setProperties(Map<String, Property> properties) {
     this.properties = properties;
   }
 
-
   public PortfolioGroupProperties version(Version version) {
-    
     this.version = version;
     return this;
   }
@@ -117,21 +105,16 @@ public class PortfolioGroupProperties {
    * Get version
    * @return version
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Version getVersion() {
     return version;
   }
-
 
   public void setVersion(Version version) {
     this.version = version;
   }
 
-
   public PortfolioGroupProperties links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -148,13 +131,10 @@ public class PortfolioGroupProperties {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

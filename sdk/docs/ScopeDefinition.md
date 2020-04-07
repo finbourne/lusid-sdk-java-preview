@@ -2,7 +2,6 @@
 
 # ScopeDefinition
 
-A list of scopes.
 ## Properties
 
 Name | Type | Description | Notes

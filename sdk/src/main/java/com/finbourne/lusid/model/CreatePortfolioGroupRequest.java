@@ -46,15 +46,15 @@ public class CreatePortfolioGroupRequest {
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  private List<ResourceId> values = null;
+  private List<ResourceId> values = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SUB_GROUPS = "subGroups";
   @SerializedName(SERIALIZED_NAME_SUB_GROUPS)
-  private List<ResourceId> subGroups = null;
+  private List<ResourceId> subGroups = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, Property> properties = null;
+  private Map<String, Property> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
@@ -64,9 +64,7 @@ public class CreatePortfolioGroupRequest {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
-
   public CreatePortfolioGroupRequest code(String code) {
-    
     this.code = code;
     return this;
   }
@@ -76,19 +74,15 @@ public class CreatePortfolioGroupRequest {
    * @return code
   **/
   @ApiModelProperty(required = true, value = "The code that the portfolio group will be created with. Together with the scope this uniquely identifies the portfolio group.")
-
   public String getCode() {
     return code;
   }
-
 
   public void setCode(String code) {
     this.code = code;
   }
 
-
   public CreatePortfolioGroupRequest created(OffsetDateTime created) {
-    
     this.created = created;
     return this;
   }
@@ -97,21 +91,16 @@ public class CreatePortfolioGroupRequest {
    * The effective datetime at which the portfolio group was created. Defaults to the current LUSID system datetime if not specified.
    * @return created
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The effective datetime at which the portfolio group was created. Defaults to the current LUSID system datetime if not specified.")
-
   public OffsetDateTime getCreated() {
     return created;
   }
-
 
   public void setCreated(OffsetDateTime created) {
     this.created = created;
   }
 
-
   public CreatePortfolioGroupRequest values(List<ResourceId> values) {
-    
     this.values = values;
     return this;
   }
@@ -128,21 +117,16 @@ public class CreatePortfolioGroupRequest {
    * The resource identifiers of the portfolios to be contained within the portfolio group.
    * @return values
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The resource identifiers of the portfolios to be contained within the portfolio group.")
-
   public List<ResourceId> getValues() {
     return values;
   }
-
 
   public void setValues(List<ResourceId> values) {
     this.values = values;
   }
 
-
   public CreatePortfolioGroupRequest subGroups(List<ResourceId> subGroups) {
-    
     this.subGroups = subGroups;
     return this;
   }
@@ -159,21 +143,16 @@ public class CreatePortfolioGroupRequest {
    * The resource identifiers of the portfolio groups to be contained within the portfolio group as sub groups.
    * @return subGroups
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The resource identifiers of the portfolio groups to be contained within the portfolio group as sub groups.")
-
   public List<ResourceId> getSubGroups() {
     return subGroups;
   }
-
 
   public void setSubGroups(List<ResourceId> subGroups) {
     this.subGroups = subGroups;
   }
 
-
   public CreatePortfolioGroupRequest properties(Map<String, Property> properties) {
-    
     this.properties = properties;
     return this;
   }
@@ -190,21 +169,16 @@ public class CreatePortfolioGroupRequest {
    * A set of unique group properties to add to the portfolio group. Each property must be from the &#39;PortfolioGroup&#39; domain and should be identified by its key which has the format {domain}/{scope}/{code}, e.g. &#39;PortfolioGroup/Manager/Id&#39;. These properties must be pre-defined.
    * @return properties
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "A set of unique group properties to add to the portfolio group. Each property must be from the 'PortfolioGroup' domain and should be identified by its key which has the format {domain}/{scope}/{code}, e.g. 'PortfolioGroup/Manager/Id'. These properties must be pre-defined.")
-
   public Map<String, Property> getProperties() {
     return properties;
   }
-
 
   public void setProperties(Map<String, Property> properties) {
     this.properties = properties;
   }
 
-
   public CreatePortfolioGroupRequest displayName(String displayName) {
-    
     this.displayName = displayName;
     return this;
   }
@@ -214,19 +188,15 @@ public class CreatePortfolioGroupRequest {
    * @return displayName
   **/
   @ApiModelProperty(required = true, value = "The name of the portfolio group.")
-
   public String getDisplayName() {
     return displayName;
   }
-
 
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
   }
 
-
   public CreatePortfolioGroupRequest description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -235,13 +205,10 @@ public class CreatePortfolioGroupRequest {
    * A long form description of the portfolio group.
    * @return description
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "A long form description of the portfolio group.")
-
   public String getDescription() {
     return description;
   }
-
 
   public void setDescription(String description) {
     this.description = description;

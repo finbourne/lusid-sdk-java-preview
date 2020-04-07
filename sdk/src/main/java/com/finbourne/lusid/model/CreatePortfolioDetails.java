@@ -32,11 +32,9 @@ import java.io.IOException;
 public class CreatePortfolioDetails {
   public static final String SERIALIZED_NAME_CORPORATE_ACTION_SOURCE_ID = "corporateActionSourceId";
   @SerializedName(SERIALIZED_NAME_CORPORATE_ACTION_SOURCE_ID)
-  private ResourceId corporateActionSourceId;
-
+  private ResourceId corporateActionSourceId = null;
 
   public CreatePortfolioDetails corporateActionSourceId(ResourceId corporateActionSourceId) {
-    
     this.corporateActionSourceId = corporateActionSourceId;
     return this;
   }
@@ -45,13 +43,10 @@ public class CreatePortfolioDetails {
    * Get corporateActionSourceId
    * @return corporateActionSourceId
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public ResourceId getCorporateActionSourceId() {
     return corporateActionSourceId;
   }
-
 
   public void setCorporateActionSourceId(ResourceId corporateActionSourceId) {
     this.corporateActionSourceId = corporateActionSourceId;

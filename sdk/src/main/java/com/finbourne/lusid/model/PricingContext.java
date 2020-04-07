@@ -40,23 +40,21 @@ import java.util.Map;
 public class PricingContext {
   public static final String SERIALIZED_NAME_MODEL_RULES = "modelRules";
   @SerializedName(SERIALIZED_NAME_MODEL_RULES)
-  private List<VendorModelRule> modelRules = null;
+  private List<VendorModelRule> modelRules = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MODEL_CHOICE = "modelChoice";
   @SerializedName(SERIALIZED_NAME_MODEL_CHOICE)
-  private Map<String, ModelSelection> modelChoice = null;
+  private Map<String, ModelSelection> modelChoice = new HashMap<>();
 
   public static final String SERIALIZED_NAME_OPTIONS = "options";
   @SerializedName(SERIALIZED_NAME_OPTIONS)
-  private PricingOptions options;
+  private PricingOptions options = null;
 
   public static final String SERIALIZED_NAME_RESULT_DATA_RULES = "resultDataRules";
   @SerializedName(SERIALIZED_NAME_RESULT_DATA_RULES)
-  private List<ResultDataKeyRule> resultDataRules = null;
-
+  private List<ResultDataKeyRule> resultDataRules = new ArrayList<>();
 
   public PricingContext modelRules(List<VendorModelRule> modelRules) {
-    
     this.modelRules = modelRules;
     return this;
   }
@@ -73,21 +71,16 @@ public class PricingContext {
    * The set of model rules that are available. There may be multiple rules for Vendors, but only one per model-instrument pair.  Which of these preference sets is used depends upon the model choice selection if specified, or failing that the global default model specification  in the options.
    * @return modelRules
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The set of model rules that are available. There may be multiple rules for Vendors, but only one per model-instrument pair.  Which of these preference sets is used depends upon the model choice selection if specified, or failing that the global default model specification  in the options.")
-
   public List<VendorModelRule> getModelRules() {
     return modelRules;
   }
-
 
   public void setModelRules(List<VendorModelRule> modelRules) {
     this.modelRules = modelRules;
   }
 
-
   public PricingContext modelChoice(Map<String, ModelSelection> modelChoice) {
-    
     this.modelChoice = modelChoice;
     return this;
   }
@@ -104,21 +97,16 @@ public class PricingContext {
    * The choice of which model selection (vendor library, pricing model) to use in evaluation of a given instrument type.
    * @return modelChoice
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The choice of which model selection (vendor library, pricing model) to use in evaluation of a given instrument type.")
-
   public Map<String, ModelSelection> getModelChoice() {
     return modelChoice;
   }
-
 
   public void setModelChoice(Map<String, ModelSelection> modelChoice) {
     this.modelChoice = modelChoice;
   }
 
-
   public PricingContext options(PricingOptions options) {
-    
     this.options = options;
     return this;
   }
@@ -127,21 +115,16 @@ public class PricingContext {
    * Get options
    * @return options
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public PricingOptions getOptions() {
     return options;
   }
-
 
   public void setOptions(PricingOptions options) {
     this.options = options;
   }
 
-
   public PricingContext resultDataRules(List<ResultDataKeyRule> resultDataRules) {
-    
     this.resultDataRules = resultDataRules;
     return this;
   }
@@ -158,13 +141,10 @@ public class PricingContext {
    * Set of rules that control querying of unit results either for direct queries into aggregation or for  overriding intermediate calculations. For example, a dirty price is made up from a clean price and the accrued interest.  One might consider overriding the accrued interest calculated by a model (perhaps one wants to match an external value or simply disagrees with the  calculated result) and use that in calculation of the dirty price.
    * @return resultDataRules
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Set of rules that control querying of unit results either for direct queries into aggregation or for  overriding intermediate calculations. For example, a dirty price is made up from a clean price and the accrued interest.  One might consider overriding the accrued interest calculated by a model (perhaps one wants to match an external value or simply disagrees with the  calculated result) and use that in calculation of the dirty price.")
-
   public List<ResultDataKeyRule> getResultDataRules() {
     return resultDataRules;
   }
-
 
   public void setResultDataRules(List<ResultDataKeyRule> resultDataRules) {
     this.resultDataRules = resultDataRules;

@@ -40,11 +40,9 @@ public class TransactionSetConfigurationDataRequest {
 
   public static final String SERIALIZED_NAME_SIDE_CONFIG_REQUESTS = "sideConfigRequests";
   @SerializedName(SERIALIZED_NAME_SIDE_CONFIG_REQUESTS)
-  private List<SideConfigurationDataRequest> sideConfigRequests = null;
-
+  private List<SideConfigurationDataRequest> sideConfigRequests = new ArrayList<>();
 
   public TransactionSetConfigurationDataRequest transactionConfigRequests(List<TransactionConfigurationDataRequest> transactionConfigRequests) {
-    
     this.transactionConfigRequests = transactionConfigRequests;
     return this;
   }
@@ -59,19 +57,15 @@ public class TransactionSetConfigurationDataRequest {
    * @return transactionConfigRequests
   **/
   @ApiModelProperty(required = true, value = "Collection of transaction type models")
-
   public List<TransactionConfigurationDataRequest> getTransactionConfigRequests() {
     return transactionConfigRequests;
   }
-
 
   public void setTransactionConfigRequests(List<TransactionConfigurationDataRequest> transactionConfigRequests) {
     this.transactionConfigRequests = transactionConfigRequests;
   }
 
-
   public TransactionSetConfigurationDataRequest sideConfigRequests(List<SideConfigurationDataRequest> sideConfigRequests) {
-    
     this.sideConfigRequests = sideConfigRequests;
     return this;
   }
@@ -88,13 +82,10 @@ public class TransactionSetConfigurationDataRequest {
    * Collection of side definition requests.
    * @return sideConfigRequests
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Collection of side definition requests.")
-
   public List<SideConfigurationDataRequest> getSideConfigRequests() {
     return sideConfigRequests;
   }
-
 
   public void setSideConfigRequests(List<SideConfigurationDataRequest> sideConfigRequests) {
     this.sideConfigRequests = sideConfigRequests;

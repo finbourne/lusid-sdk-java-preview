@@ -60,11 +60,9 @@ public class CorporateAction {
 
   public static final String SERIALIZED_NAME_TRANSITIONS = "transitions";
   @SerializedName(SERIALIZED_NAME_TRANSITIONS)
-  private List<CorporateActionTransition> transitions = null;
-
+  private List<CorporateActionTransition> transitions = new ArrayList<>();
 
   public CorporateAction corporateActionCode(String corporateActionCode) {
-    
     this.corporateActionCode = corporateActionCode;
     return this;
   }
@@ -74,19 +72,15 @@ public class CorporateAction {
    * @return corporateActionCode
   **/
   @ApiModelProperty(required = true, value = "The unique identifier of this corporate action")
-
   public String getCorporateActionCode() {
     return corporateActionCode;
   }
-
 
   public void setCorporateActionCode(String corporateActionCode) {
     this.corporateActionCode = corporateActionCode;
   }
 
-
   public CorporateAction description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -95,21 +89,16 @@ public class CorporateAction {
    * 
    * @return description
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getDescription() {
     return description;
   }
-
 
   public void setDescription(String description) {
     this.description = description;
   }
 
-
   public CorporateAction announcementDate(OffsetDateTime announcementDate) {
-    
     this.announcementDate = announcementDate;
     return this;
   }
@@ -118,21 +107,16 @@ public class CorporateAction {
    * The announcement date of the corporate action
    * @return announcementDate
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The announcement date of the corporate action")
-
   public OffsetDateTime getAnnouncementDate() {
     return announcementDate;
   }
-
 
   public void setAnnouncementDate(OffsetDateTime announcementDate) {
     this.announcementDate = announcementDate;
   }
 
-
   public CorporateAction exDate(OffsetDateTime exDate) {
-    
     this.exDate = exDate;
     return this;
   }
@@ -141,21 +125,16 @@ public class CorporateAction {
    * The ex date of the corporate action
    * @return exDate
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The ex date of the corporate action")
-
   public OffsetDateTime getExDate() {
     return exDate;
   }
-
 
   public void setExDate(OffsetDateTime exDate) {
     this.exDate = exDate;
   }
 
-
   public CorporateAction recordDate(OffsetDateTime recordDate) {
-    
     this.recordDate = recordDate;
     return this;
   }
@@ -164,21 +143,16 @@ public class CorporateAction {
    * The record date of the corporate action
    * @return recordDate
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The record date of the corporate action")
-
   public OffsetDateTime getRecordDate() {
     return recordDate;
   }
-
 
   public void setRecordDate(OffsetDateTime recordDate) {
     this.recordDate = recordDate;
   }
 
-
   public CorporateAction paymentDate(OffsetDateTime paymentDate) {
-    
     this.paymentDate = paymentDate;
     return this;
   }
@@ -187,21 +161,16 @@ public class CorporateAction {
    * The payment date of the corporate action
    * @return paymentDate
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The payment date of the corporate action")
-
   public OffsetDateTime getPaymentDate() {
     return paymentDate;
   }
-
 
   public void setPaymentDate(OffsetDateTime paymentDate) {
     this.paymentDate = paymentDate;
   }
 
-
   public CorporateAction transitions(List<CorporateActionTransition> transitions) {
-    
     this.transitions = transitions;
     return this;
   }
@@ -218,13 +187,10 @@ public class CorporateAction {
    * The transitions that result from this corporate action
    * @return transitions
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The transitions that result from this corporate action")
-
   public List<CorporateActionTransition> getTransitions() {
     return transitions;
   }
-
 
   public void setTransitions(List<CorporateActionTransition> transitions) {
     this.transitions = transitions;

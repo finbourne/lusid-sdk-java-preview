@@ -77,7 +77,7 @@ public class ModelSelection {
 
       @Override
       public LibraryEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return LibraryEnum.fromValue(value);
       }
     }
@@ -132,7 +132,7 @@ public class ModelSelection {
 
       @Override
       public ModelEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return ModelEnum.fromValue(value);
       }
     }
@@ -142,9 +142,7 @@ public class ModelSelection {
   @SerializedName(SERIALIZED_NAME_MODEL)
   private ModelEnum model;
 
-
   public ModelSelection library(LibraryEnum library) {
-    
     this.library = library;
     return this;
   }
@@ -154,19 +152,15 @@ public class ModelSelection {
    * @return library
   **/
   @ApiModelProperty(required = true, value = "Which library is used for pricing requests")
-
   public LibraryEnum getLibrary() {
     return library;
   }
-
 
   public void setLibrary(LibraryEnum library) {
     this.library = library;
   }
 
-
   public ModelSelection model(ModelEnum model) {
-    
     this.model = model;
     return this;
   }
@@ -176,11 +170,9 @@ public class ModelSelection {
    * @return model
   **/
   @ApiModelProperty(required = true, value = "Which model should be used for pricing requests")
-
   public ModelEnum getModel() {
     return model;
   }
-
 
   public void setModel(ModelEnum model) {
     this.model = model;

@@ -54,9 +54,7 @@ public class QuoteAccessMetadataRuleId {
   @SerializedName(SERIALIZED_NAME_FIELD)
   private String field;
 
-
   public QuoteAccessMetadataRuleId provider(String provider) {
-    
     this.provider = provider;
     return this;
   }
@@ -65,21 +63,16 @@ public class QuoteAccessMetadataRuleId {
    * The platform or vendor that provided the quote, e.g. &#39;DataScope&#39;, &#39;LUSID&#39; etc.
    * @return provider
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The platform or vendor that provided the quote, e.g. 'DataScope', 'LUSID' etc.")
-
   public String getProvider() {
     return provider;
   }
-
 
   public void setProvider(String provider) {
     this.provider = provider;
   }
 
-
   public QuoteAccessMetadataRuleId priceSource(String priceSource) {
-    
     this.priceSource = priceSource;
     return this;
   }
@@ -88,21 +81,16 @@ public class QuoteAccessMetadataRuleId {
    * The source or originator of the quote, e.g. a bank or financial institution.
    * @return priceSource
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The source or originator of the quote, e.g. a bank or financial institution.")
-
   public String getPriceSource() {
     return priceSource;
   }
-
 
   public void setPriceSource(String priceSource) {
     this.priceSource = priceSource;
   }
 
-
   public QuoteAccessMetadataRuleId instrumentId(String instrumentId) {
-    
     this.instrumentId = instrumentId;
     return this;
   }
@@ -111,21 +99,16 @@ public class QuoteAccessMetadataRuleId {
    * The value of the instrument identifier that uniquely identifies the instrument that the quote is for, e.g. &#39;BBG00JX0P539&#39;.
    * @return instrumentId
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The value of the instrument identifier that uniquely identifies the instrument that the quote is for, e.g. 'BBG00JX0P539'.")
-
   public String getInstrumentId() {
     return instrumentId;
   }
-
 
   public void setInstrumentId(String instrumentId) {
     this.instrumentId = instrumentId;
   }
 
-
   public QuoteAccessMetadataRuleId instrumentIdType(String instrumentIdType) {
-    
     this.instrumentIdType = instrumentIdType;
     return this;
   }
@@ -134,21 +117,16 @@ public class QuoteAccessMetadataRuleId {
    * The type of instrument identifier used to uniquely identify the instrument that the quote is for, e.g. &#39;Figi&#39;.
    * @return instrumentIdType
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The type of instrument identifier used to uniquely identify the instrument that the quote is for, e.g. 'Figi'.")
-
   public String getInstrumentIdType() {
     return instrumentIdType;
   }
-
 
   public void setInstrumentIdType(String instrumentIdType) {
     this.instrumentIdType = instrumentIdType;
   }
 
-
   public QuoteAccessMetadataRuleId quoteType(String quoteType) {
-    
     this.quoteType = quoteType;
     return this;
   }
@@ -157,21 +135,16 @@ public class QuoteAccessMetadataRuleId {
    * The type of the quote. This allows for quotes other than prices e.g. rates or spreads to be used.
    * @return quoteType
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The type of the quote. This allows for quotes other than prices e.g. rates or spreads to be used.")
-
   public String getQuoteType() {
     return quoteType;
   }
-
 
   public void setQuoteType(String quoteType) {
     this.quoteType = quoteType;
   }
 
-
   public QuoteAccessMetadataRuleId field(String field) {
-    
     this.field = field;
     return this;
   }
@@ -180,13 +153,10 @@ public class QuoteAccessMetadataRuleId {
    * The field of the quote e.g. bid, mid, ask etc. This should be consistent across a time series of quotes. The allowed values are dependant on the specified Provider.
    * @return field
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The field of the quote e.g. bid, mid, ask etc. This should be consistent across a time series of quotes. The allowed values are dependant on the specified Provider.")
-
   public String getField() {
     return field;
   }
-
 
   public void setField(String field) {
     this.field = field;

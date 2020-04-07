@@ -61,9 +61,7 @@ public class UpsertCorporateActionRequest {
   @SerializedName(SERIALIZED_NAME_TRANSITIONS)
   private List<CorporateActionTransitionRequest> transitions = new ArrayList<>();
 
-
   public UpsertCorporateActionRequest corporateActionCode(String corporateActionCode) {
-    
     this.corporateActionCode = corporateActionCode;
     return this;
   }
@@ -73,19 +71,15 @@ public class UpsertCorporateActionRequest {
    * @return corporateActionCode
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getCorporateActionCode() {
     return corporateActionCode;
   }
-
 
   public void setCorporateActionCode(String corporateActionCode) {
     this.corporateActionCode = corporateActionCode;
   }
 
-
   public UpsertCorporateActionRequest description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -94,21 +88,16 @@ public class UpsertCorporateActionRequest {
    * 
    * @return description
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getDescription() {
     return description;
   }
-
 
   public void setDescription(String description) {
     this.description = description;
   }
 
-
   public UpsertCorporateActionRequest announcementDate(OffsetDateTime announcementDate) {
-    
     this.announcementDate = announcementDate;
     return this;
   }
@@ -118,19 +107,15 @@ public class UpsertCorporateActionRequest {
    * @return announcementDate
   **/
   @ApiModelProperty(required = true, value = "")
-
   public OffsetDateTime getAnnouncementDate() {
     return announcementDate;
   }
-
 
   public void setAnnouncementDate(OffsetDateTime announcementDate) {
     this.announcementDate = announcementDate;
   }
 
-
   public UpsertCorporateActionRequest exDate(OffsetDateTime exDate) {
-    
     this.exDate = exDate;
     return this;
   }
@@ -140,19 +125,15 @@ public class UpsertCorporateActionRequest {
    * @return exDate
   **/
   @ApiModelProperty(required = true, value = "")
-
   public OffsetDateTime getExDate() {
     return exDate;
   }
-
 
   public void setExDate(OffsetDateTime exDate) {
     this.exDate = exDate;
   }
 
-
   public UpsertCorporateActionRequest recordDate(OffsetDateTime recordDate) {
-    
     this.recordDate = recordDate;
     return this;
   }
@@ -162,19 +143,15 @@ public class UpsertCorporateActionRequest {
    * @return recordDate
   **/
   @ApiModelProperty(required = true, value = "")
-
   public OffsetDateTime getRecordDate() {
     return recordDate;
   }
-
 
   public void setRecordDate(OffsetDateTime recordDate) {
     this.recordDate = recordDate;
   }
 
-
   public UpsertCorporateActionRequest paymentDate(OffsetDateTime paymentDate) {
-    
     this.paymentDate = paymentDate;
     return this;
   }
@@ -184,19 +161,15 @@ public class UpsertCorporateActionRequest {
    * @return paymentDate
   **/
   @ApiModelProperty(required = true, value = "")
-
   public OffsetDateTime getPaymentDate() {
     return paymentDate;
   }
-
 
   public void setPaymentDate(OffsetDateTime paymentDate) {
     this.paymentDate = paymentDate;
   }
 
-
   public UpsertCorporateActionRequest transitions(List<CorporateActionTransitionRequest> transitions) {
-    
     this.transitions = transitions;
     return this;
   }
@@ -211,11 +184,9 @@ public class UpsertCorporateActionRequest {
    * @return transitions
   **/
   @ApiModelProperty(required = true, value = "")
-
   public List<CorporateActionTransitionRequest> getTransitions() {
     return transitions;
   }
-
 
   public void setTransitions(List<CorporateActionTransitionRequest> transitions) {
     this.transitions = transitions;

@@ -79,7 +79,7 @@ public class DataType {
 
       @Override
       public TypeValueRangeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return TypeValueRangeEnum.fromValue(value);
       }
     }
@@ -91,7 +91,7 @@ public class DataType {
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id;
+  private ResourceId id = null;
 
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
@@ -226,7 +226,7 @@ public class DataType {
 
       @Override
       public ValueTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return ValueTypeEnum.fromValue(value);
       }
     }
@@ -238,7 +238,7 @@ public class DataType {
 
   public static final String SERIALIZED_NAME_ACCEPTABLE_VALUES = "acceptableValues";
   @SerializedName(SERIALIZED_NAME_ACCEPTABLE_VALUES)
-  private List<String> acceptableValues = null;
+  private List<String> acceptableValues = new ArrayList<>();
 
   /**
    * Gets or Sets unitSchema
@@ -283,7 +283,7 @@ public class DataType {
 
       @Override
       public UnitSchemaEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return UnitSchemaEnum.fromValue(value);
       }
     }
@@ -295,15 +295,13 @@ public class DataType {
 
   public static final String SERIALIZED_NAME_ACCEPTABLE_UNITS = "acceptableUnits";
   @SerializedName(SERIALIZED_NAME_ACCEPTABLE_UNITS)
-  private List<IUnitDefinitionDto> acceptableUnits = null;
+  private List<IUnitDefinitionDto> acceptableUnits = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public DataType href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -312,21 +310,16 @@ public class DataType {
    * Get href
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public DataType typeValueRange(TypeValueRangeEnum typeValueRange) {
-    
     this.typeValueRange = typeValueRange;
     return this;
   }
@@ -336,19 +329,15 @@ public class DataType {
    * @return typeValueRange
   **/
   @ApiModelProperty(required = true, value = "")
-
   public TypeValueRangeEnum getTypeValueRange() {
     return typeValueRange;
   }
-
 
   public void setTypeValueRange(TypeValueRangeEnum typeValueRange) {
     this.typeValueRange = typeValueRange;
   }
 
-
   public DataType id(ResourceId id) {
-    
     this.id = id;
     return this;
   }
@@ -358,19 +347,15 @@ public class DataType {
    * @return id
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ResourceId getId() {
     return id;
   }
-
 
   public void setId(ResourceId id) {
     this.id = id;
   }
 
-
   public DataType displayName(String displayName) {
-    
     this.displayName = displayName;
     return this;
   }
@@ -380,19 +365,15 @@ public class DataType {
    * @return displayName
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getDisplayName() {
     return displayName;
   }
-
 
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
   }
 
-
   public DataType description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -402,19 +383,15 @@ public class DataType {
    * @return description
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getDescription() {
     return description;
   }
-
 
   public void setDescription(String description) {
     this.description = description;
   }
 
-
   public DataType valueType(ValueTypeEnum valueType) {
-    
     this.valueType = valueType;
     return this;
   }
@@ -424,19 +401,15 @@ public class DataType {
    * @return valueType
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ValueTypeEnum getValueType() {
     return valueType;
   }
-
 
   public void setValueType(ValueTypeEnum valueType) {
     this.valueType = valueType;
   }
 
-
   public DataType acceptableValues(List<String> acceptableValues) {
-    
     this.acceptableValues = acceptableValues;
     return this;
   }
@@ -453,21 +426,16 @@ public class DataType {
    * Get acceptableValues
    * @return acceptableValues
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<String> getAcceptableValues() {
     return acceptableValues;
   }
-
 
   public void setAcceptableValues(List<String> acceptableValues) {
     this.acceptableValues = acceptableValues;
   }
 
-
   public DataType unitSchema(UnitSchemaEnum unitSchema) {
-    
     this.unitSchema = unitSchema;
     return this;
   }
@@ -476,21 +444,16 @@ public class DataType {
    * Get unitSchema
    * @return unitSchema
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public UnitSchemaEnum getUnitSchema() {
     return unitSchema;
   }
-
 
   public void setUnitSchema(UnitSchemaEnum unitSchema) {
     this.unitSchema = unitSchema;
   }
 
-
   public DataType acceptableUnits(List<IUnitDefinitionDto> acceptableUnits) {
-    
     this.acceptableUnits = acceptableUnits;
     return this;
   }
@@ -507,21 +470,16 @@ public class DataType {
    * Get acceptableUnits
    * @return acceptableUnits
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<IUnitDefinitionDto> getAcceptableUnits() {
     return acceptableUnits;
   }
-
 
   public void setAcceptableUnits(List<IUnitDefinitionDto> acceptableUnits) {
     this.acceptableUnits = acceptableUnits;
   }
 
-
   public DataType links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -538,13 +496,10 @@ public class DataType {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

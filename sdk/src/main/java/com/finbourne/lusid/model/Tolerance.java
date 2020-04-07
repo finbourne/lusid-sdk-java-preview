@@ -74,7 +74,7 @@ public class Tolerance {
 
       @Override
       public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return TypeEnum.fromValue(value);
       }
     }
@@ -84,9 +84,7 @@ public class Tolerance {
   @SerializedName(SERIALIZED_NAME_TYPE)
   private TypeEnum type;
 
-
   public Tolerance value(Double value) {
-    
     this.value = value;
     return this;
   }
@@ -95,21 +93,16 @@ public class Tolerance {
    * The numerical value of the property.
    * @return value
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The numerical value of the property.")
-
   public Double getValue() {
     return value;
   }
-
 
   public void setValue(Double value) {
     this.value = value;
   }
 
-
   public Tolerance type(TypeEnum type) {
-    
     this.type = type;
     return this;
   }
@@ -118,13 +111,10 @@ public class Tolerance {
    * Get type
    * @return type
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public TypeEnum getType() {
     return type;
   }
-
 
   public void setType(TypeEnum type) {
     this.type = type;

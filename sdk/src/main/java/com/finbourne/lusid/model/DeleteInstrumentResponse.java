@@ -43,11 +43,9 @@ public class DeleteInstrumentResponse {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public DeleteInstrumentResponse href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -56,21 +54,16 @@ public class DeleteInstrumentResponse {
    * The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public DeleteInstrumentResponse asAt(OffsetDateTime asAt) {
-    
     this.asAt = asAt;
     return this;
   }
@@ -80,19 +73,15 @@ public class DeleteInstrumentResponse {
    * @return asAt
   **/
   @ApiModelProperty(required = true, value = "The asAt datetime at which the instrument was deleted.")
-
   public OffsetDateTime getAsAt() {
     return asAt;
   }
-
 
   public void setAsAt(OffsetDateTime asAt) {
     this.asAt = asAt;
   }
 
-
   public DeleteInstrumentResponse links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -109,13 +98,10 @@ public class DeleteInstrumentResponse {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

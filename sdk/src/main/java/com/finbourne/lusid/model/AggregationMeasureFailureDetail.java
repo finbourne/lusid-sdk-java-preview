@@ -50,9 +50,7 @@ public class AggregationMeasureFailureDetail {
   @SerializedName(SERIALIZED_NAME_DETAIL)
   private String detail;
 
-
   public AggregationMeasureFailureDetail id(String id) {
-    
     this.id = id;
     return this;
   }
@@ -61,21 +59,16 @@ public class AggregationMeasureFailureDetail {
    * Get id
    * @return id
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getId() {
     return id;
   }
-
 
   public void setId(String id) {
     this.id = id;
   }
 
-
   public AggregationMeasureFailureDetail effectiveAt(OffsetDateTime effectiveAt) {
-    
     this.effectiveAt = effectiveAt;
     return this;
   }
@@ -84,21 +77,16 @@ public class AggregationMeasureFailureDetail {
    * Get effectiveAt
    * @return effectiveAt
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public OffsetDateTime getEffectiveAt() {
     return effectiveAt;
   }
-
 
   public void setEffectiveAt(OffsetDateTime effectiveAt) {
     this.effectiveAt = effectiveAt;
   }
 
-
   public AggregationMeasureFailureDetail measure(String measure) {
-    
     this.measure = measure;
     return this;
   }
@@ -107,21 +95,16 @@ public class AggregationMeasureFailureDetail {
    * Get measure
    * @return measure
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getMeasure() {
     return measure;
   }
-
 
   public void setMeasure(String measure) {
     this.measure = measure;
   }
 
-
   public AggregationMeasureFailureDetail reason(String reason) {
-    
     this.reason = reason;
     return this;
   }
@@ -130,21 +113,16 @@ public class AggregationMeasureFailureDetail {
    * Get reason
    * @return reason
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getReason() {
     return reason;
   }
-
 
   public void setReason(String reason) {
     this.reason = reason;
   }
 
-
   public AggregationMeasureFailureDetail detail(String detail) {
-    
     this.detail = detail;
     return this;
   }
@@ -153,13 +131,10 @@ public class AggregationMeasureFailureDetail {
    * Get detail
    * @return detail
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getDetail() {
     return detail;
   }
-
 
   public void setDetail(String detail) {
     this.detail = detail;

@@ -47,7 +47,7 @@ public class Transaction {
 
   public static final String SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS = "instrumentIdentifiers";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS)
-  private Map<String, String> instrumentIdentifiers = null;
+  private Map<String, String> instrumentIdentifiers = new HashMap<>();
 
   public static final String SERIALIZED_NAME_INSTRUMENT_UID = "instrumentUid";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_UID)
@@ -67,11 +67,11 @@ public class Transaction {
 
   public static final String SERIALIZED_NAME_TRANSACTION_PRICE = "transactionPrice";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_PRICE)
-  private TransactionPrice transactionPrice;
+  private TransactionPrice transactionPrice = null;
 
   public static final String SERIALIZED_NAME_TOTAL_CONSIDERATION = "totalConsideration";
   @SerializedName(SERIALIZED_NAME_TOTAL_CONSIDERATION)
-  private CurrencyAndAmount totalConsideration;
+  private CurrencyAndAmount totalConsideration = null;
 
   public static final String SERIALIZED_NAME_EXCHANGE_RATE = "exchangeRate";
   @SerializedName(SERIALIZED_NAME_EXCHANGE_RATE)
@@ -83,7 +83,7 @@ public class Transaction {
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = null;
+  private Map<String, PerpetualProperty> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_COUNTERPARTY_ID = "counterpartyId";
   @SerializedName(SERIALIZED_NAME_COUNTERPARTY_ID)
@@ -93,9 +93,7 @@ public class Transaction {
   @SerializedName(SERIALIZED_NAME_SOURCE)
   private String source;
 
-
   public Transaction transactionId(String transactionId) {
-    
     this.transactionId = transactionId;
     return this;
   }
@@ -105,19 +103,15 @@ public class Transaction {
    * @return transactionId
   **/
   @ApiModelProperty(required = true, value = "The unique identifier for the transaction.")
-
   public String getTransactionId() {
     return transactionId;
   }
-
 
   public void setTransactionId(String transactionId) {
     this.transactionId = transactionId;
   }
 
-
   public Transaction type(String type) {
-    
     this.type = type;
     return this;
   }
@@ -127,19 +121,15 @@ public class Transaction {
    * @return type
   **/
   @ApiModelProperty(required = true, value = "The type of the transaction e.g. 'Buy', 'Sell'. The transaction type should have been pre-configured via the System Configuration API endpoint.")
-
   public String getType() {
     return type;
   }
-
 
   public void setType(String type) {
     this.type = type;
   }
 
-
   public Transaction instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
-    
     this.instrumentIdentifiers = instrumentIdentifiers;
     return this;
   }
@@ -156,21 +146,16 @@ public class Transaction {
    * The set of instrument identifiers that can be used to resolve the transaction to a unique instrument.
    * @return instrumentIdentifiers
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The set of instrument identifiers that can be used to resolve the transaction to a unique instrument.")
-
   public Map<String, String> getInstrumentIdentifiers() {
     return instrumentIdentifiers;
   }
-
 
   public void setInstrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
     this.instrumentIdentifiers = instrumentIdentifiers;
   }
 
-
   public Transaction instrumentUid(String instrumentUid) {
-    
     this.instrumentUid = instrumentUid;
     return this;
   }
@@ -180,19 +165,15 @@ public class Transaction {
    * @return instrumentUid
   **/
   @ApiModelProperty(required = true, value = "The unqiue Lusid Instrument Id (LUID) of the instrument that the transaction is in.")
-
   public String getInstrumentUid() {
     return instrumentUid;
   }
-
 
   public void setInstrumentUid(String instrumentUid) {
     this.instrumentUid = instrumentUid;
   }
 
-
   public Transaction transactionDate(OffsetDateTime transactionDate) {
-    
     this.transactionDate = transactionDate;
     return this;
   }
@@ -202,19 +183,15 @@ public class Transaction {
    * @return transactionDate
   **/
   @ApiModelProperty(required = true, value = "The date of the transaction.")
-
   public OffsetDateTime getTransactionDate() {
     return transactionDate;
   }
-
 
   public void setTransactionDate(OffsetDateTime transactionDate) {
     this.transactionDate = transactionDate;
   }
 
-
   public Transaction settlementDate(OffsetDateTime settlementDate) {
-    
     this.settlementDate = settlementDate;
     return this;
   }
@@ -224,19 +201,15 @@ public class Transaction {
    * @return settlementDate
   **/
   @ApiModelProperty(required = true, value = "The settlement date of the transaction.")
-
   public OffsetDateTime getSettlementDate() {
     return settlementDate;
   }
-
 
   public void setSettlementDate(OffsetDateTime settlementDate) {
     this.settlementDate = settlementDate;
   }
 
-
   public Transaction units(Double units) {
-    
     this.units = units;
     return this;
   }
@@ -246,19 +219,15 @@ public class Transaction {
    * @return units
   **/
   @ApiModelProperty(required = true, value = "The number of units transacted in the associated instrument.")
-
   public Double getUnits() {
     return units;
   }
-
 
   public void setUnits(Double units) {
     this.units = units;
   }
 
-
   public Transaction transactionPrice(TransactionPrice transactionPrice) {
-    
     this.transactionPrice = transactionPrice;
     return this;
   }
@@ -267,21 +236,16 @@ public class Transaction {
    * Get transactionPrice
    * @return transactionPrice
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public TransactionPrice getTransactionPrice() {
     return transactionPrice;
   }
-
 
   public void setTransactionPrice(TransactionPrice transactionPrice) {
     this.transactionPrice = transactionPrice;
   }
 
-
   public Transaction totalConsideration(CurrencyAndAmount totalConsideration) {
-    
     this.totalConsideration = totalConsideration;
     return this;
   }
@@ -291,19 +255,15 @@ public class Transaction {
    * @return totalConsideration
   **/
   @ApiModelProperty(required = true, value = "")
-
   public CurrencyAndAmount getTotalConsideration() {
     return totalConsideration;
   }
-
 
   public void setTotalConsideration(CurrencyAndAmount totalConsideration) {
     this.totalConsideration = totalConsideration;
   }
 
-
   public Transaction exchangeRate(Double exchangeRate) {
-    
     this.exchangeRate = exchangeRate;
     return this;
   }
@@ -312,21 +272,16 @@ public class Transaction {
    * The exchange rate between the transaction and settlement currency. For example if the transaction currency is in USD and the settlement currency is in GBP this this the USD/GBP rate.
    * @return exchangeRate
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The exchange rate between the transaction and settlement currency. For example if the transaction currency is in USD and the settlement currency is in GBP this this the USD/GBP rate.")
-
   public Double getExchangeRate() {
     return exchangeRate;
   }
-
 
   public void setExchangeRate(Double exchangeRate) {
     this.exchangeRate = exchangeRate;
   }
 
-
   public Transaction transactionCurrency(String transactionCurrency) {
-    
     this.transactionCurrency = transactionCurrency;
     return this;
   }
@@ -335,21 +290,16 @@ public class Transaction {
    * The transaction currency.
    * @return transactionCurrency
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The transaction currency.")
-
   public String getTransactionCurrency() {
     return transactionCurrency;
   }
-
 
   public void setTransactionCurrency(String transactionCurrency) {
     this.transactionCurrency = transactionCurrency;
   }
 
-
   public Transaction properties(Map<String, PerpetualProperty> properties) {
-    
     this.properties = properties;
     return this;
   }
@@ -366,21 +316,16 @@ public class Transaction {
    * Set of unique transaction properties and associated values to stored with the transaction. Each property will be from the &#39;Transaction&#39; domain.
    * @return properties
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Set of unique transaction properties and associated values to stored with the transaction. Each property will be from the 'Transaction' domain.")
-
   public Map<String, PerpetualProperty> getProperties() {
     return properties;
   }
-
 
   public void setProperties(Map<String, PerpetualProperty> properties) {
     this.properties = properties;
   }
 
-
   public Transaction counterpartyId(String counterpartyId) {
-    
     this.counterpartyId = counterpartyId;
     return this;
   }
@@ -389,21 +334,16 @@ public class Transaction {
    * The identifier for the counterparty of the transaction.
    * @return counterpartyId
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The identifier for the counterparty of the transaction.")
-
   public String getCounterpartyId() {
     return counterpartyId;
   }
-
 
   public void setCounterpartyId(String counterpartyId) {
     this.counterpartyId = counterpartyId;
   }
 
-
   public Transaction source(String source) {
-    
     this.source = source;
     return this;
   }
@@ -412,13 +352,10 @@ public class Transaction {
    * The source of the transaction. This is used to look up the appropriate transaction group set in the transaction type configuration.
    * @return source
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The source of the transaction. This is used to look up the appropriate transaction group set in the transaction type configuration.")
-
   public String getSource() {
     return source;
   }
-
 
   public void setSource(String source) {
     this.source = source;

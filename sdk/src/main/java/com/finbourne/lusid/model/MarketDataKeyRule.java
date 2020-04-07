@@ -86,7 +86,7 @@ public class MarketDataKeyRule {
 
       @Override
       public SupplierEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return SupplierEnum.fromValue(value);
       }
     }
@@ -153,7 +153,7 @@ public class MarketDataKeyRule {
 
       @Override
       public QuoteTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return QuoteTypeEnum.fromValue(value);
       }
     }
@@ -175,9 +175,7 @@ public class MarketDataKeyRule {
   @SerializedName(SERIALIZED_NAME_AS_AT)
   private OffsetDateTime asAt;
 
-
   public MarketDataKeyRule key(String key) {
-    
     this.key = key;
     return this;
   }
@@ -187,19 +185,15 @@ public class MarketDataKeyRule {
    * @return key
   **/
   @ApiModelProperty(required = true, value = "The market data key pattern which this is a rule for. A dot separated string (A.B.C.D.*)")
-
   public String getKey() {
     return key;
   }
-
 
   public void setKey(String key) {
     this.key = key;
   }
 
-
   public MarketDataKeyRule supplier(SupplierEnum supplier) {
-    
     this.supplier = supplier;
     return this;
   }
@@ -209,19 +203,15 @@ public class MarketDataKeyRule {
    * @return supplier
   **/
   @ApiModelProperty(required = true, value = "The market data supplier (where the data comes from)")
-
   public SupplierEnum getSupplier() {
     return supplier;
   }
-
 
   public void setSupplier(SupplierEnum supplier) {
     this.supplier = supplier;
   }
 
-
   public MarketDataKeyRule dataScope(String dataScope) {
-    
     this.dataScope = dataScope;
     return this;
   }
@@ -231,19 +221,15 @@ public class MarketDataKeyRule {
    * @return dataScope
   **/
   @ApiModelProperty(required = true, value = "The scope in which the data should be found when using this rule.")
-
   public String getDataScope() {
     return dataScope;
   }
-
 
   public void setDataScope(String dataScope) {
     this.dataScope = dataScope;
   }
 
-
   public MarketDataKeyRule quoteType(QuoteTypeEnum quoteType) {
-    
     this.quoteType = quoteType;
     return this;
   }
@@ -253,19 +239,15 @@ public class MarketDataKeyRule {
    * @return quoteType
   **/
   @ApiModelProperty(required = true, value = "Is the quote to be looked for a price, yield etc.")
-
   public QuoteTypeEnum getQuoteType() {
     return quoteType;
   }
-
 
   public void setQuoteType(QuoteTypeEnum quoteType) {
     this.quoteType = quoteType;
   }
 
-
   public MarketDataKeyRule field(String field) {
-    
     this.field = field;
     return this;
   }
@@ -275,19 +257,15 @@ public class MarketDataKeyRule {
    * @return field
   **/
   @ApiModelProperty(required = true, value = "The conceptual qualification for the field, such as bid, mid, or ask.   The field must be one of a defined set for the given supplier, in the same way as it  is for the Finbourne.WebApi.Interface.Dto.Quotes.QuoteSeriesId")
-
   public String getField() {
     return field;
   }
-
 
   public void setField(String field) {
     this.field = field;
   }
 
-
   public MarketDataKeyRule quoteInterval(String quoteInterval) {
-    
     this.quoteInterval = quoteInterval;
     return this;
   }
@@ -296,21 +274,16 @@ public class MarketDataKeyRule {
    * Shorthand for the time interval used to select market data.
    * @return quoteInterval
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Shorthand for the time interval used to select market data.")
-
   public String getQuoteInterval() {
     return quoteInterval;
   }
-
 
   public void setQuoteInterval(String quoteInterval) {
     this.quoteInterval = quoteInterval;
   }
 
-
   public MarketDataKeyRule asAt(OffsetDateTime asAt) {
-    
     this.asAt = asAt;
     return this;
   }
@@ -319,13 +292,10 @@ public class MarketDataKeyRule {
    * The AsAt predicate specification.
    * @return asAt
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The AsAt predicate specification.")
-
   public OffsetDateTime getAsAt() {
     return asAt;
   }
-
 
   public void setAsAt(OffsetDateTime asAt) {
     this.asAt = asAt;

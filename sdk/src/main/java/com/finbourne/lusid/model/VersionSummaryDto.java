@@ -46,53 +46,36 @@ public class VersionSummaryDto {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
    /**
    * Get apiVersion
    * @return apiVersion
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getApiVersion() {
     return apiVersion;
   }
-
-
-
 
    /**
    * Get buildVersion
    * @return buildVersion
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getBuildVersion() {
     return buildVersion;
   }
-
-
-
 
    /**
    * Get excelVersion
    * @return excelVersion
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getExcelVersion() {
     return excelVersion;
   }
 
-
-
-
   public VersionSummaryDto links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -109,13 +92,10 @@ public class VersionSummaryDto {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

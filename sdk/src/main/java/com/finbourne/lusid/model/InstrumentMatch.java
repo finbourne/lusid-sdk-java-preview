@@ -35,15 +35,13 @@ import java.util.List;
 public class InstrumentMatch {
   public static final String SERIALIZED_NAME_MASTERED_INSTRUMENTS = "masteredInstruments";
   @SerializedName(SERIALIZED_NAME_MASTERED_INSTRUMENTS)
-  private List<InstrumentDefinition> masteredInstruments = null;
+  private List<InstrumentDefinition> masteredInstruments = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EXTERNAL_INSTRUMENTS = "externalInstruments";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_INSTRUMENTS)
-  private List<InstrumentDefinition> externalInstruments = null;
-
+  private List<InstrumentDefinition> externalInstruments = new ArrayList<>();
 
   public InstrumentMatch masteredInstruments(List<InstrumentDefinition> masteredInstruments) {
-    
     this.masteredInstruments = masteredInstruments;
     return this;
   }
@@ -60,21 +58,16 @@ public class InstrumentMatch {
    * The collection of instruments found by the search which have been mastered within LUSID.
    * @return masteredInstruments
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The collection of instruments found by the search which have been mastered within LUSID.")
-
   public List<InstrumentDefinition> getMasteredInstruments() {
     return masteredInstruments;
   }
-
 
   public void setMasteredInstruments(List<InstrumentDefinition> masteredInstruments) {
     this.masteredInstruments = masteredInstruments;
   }
 
-
   public InstrumentMatch externalInstruments(List<InstrumentDefinition> externalInstruments) {
-    
     this.externalInstruments = externalInstruments;
     return this;
   }
@@ -91,13 +84,10 @@ public class InstrumentMatch {
    * The collection of instruments found by the search which have not been mastered within LUSID and instead found via OpenFIGI.
    * @return externalInstruments
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The collection of instruments found by the search which have not been mastered within LUSID and instead found via OpenFIGI.")
-
   public List<InstrumentDefinition> getExternalInstruments() {
     return externalInstruments;
   }
-
 
   public void setExternalInstruments(List<InstrumentDefinition> externalInstruments) {
     this.externalInstruments = externalInstruments;

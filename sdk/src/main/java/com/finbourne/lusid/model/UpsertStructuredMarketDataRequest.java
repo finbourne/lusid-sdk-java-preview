@@ -34,15 +34,13 @@ import java.io.IOException;
 public class UpsertStructuredMarketDataRequest {
   public static final String SERIALIZED_NAME_MARKET_DATA_ID = "marketDataId";
   @SerializedName(SERIALIZED_NAME_MARKET_DATA_ID)
-  private StructuredMarketDataId marketDataId;
+  private StructuredMarketDataId marketDataId = null;
 
   public static final String SERIALIZED_NAME_MARKET_DATA = "marketData";
   @SerializedName(SERIALIZED_NAME_MARKET_DATA)
-  private StructuredMarketData marketData;
-
+  private StructuredMarketData marketData = null;
 
   public UpsertStructuredMarketDataRequest marketDataId(StructuredMarketDataId marketDataId) {
-    
     this.marketDataId = marketDataId;
     return this;
   }
@@ -52,19 +50,15 @@ public class UpsertStructuredMarketDataRequest {
    * @return marketDataId
   **/
   @ApiModelProperty(required = true, value = "")
-
   public StructuredMarketDataId getMarketDataId() {
     return marketDataId;
   }
-
 
   public void setMarketDataId(StructuredMarketDataId marketDataId) {
     this.marketDataId = marketDataId;
   }
 
-
   public UpsertStructuredMarketDataRequest marketData(StructuredMarketData marketData) {
-    
     this.marketData = marketData;
     return this;
   }
@@ -73,13 +67,10 @@ public class UpsertStructuredMarketDataRequest {
    * Get marketData
    * @return marketData
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public StructuredMarketData getMarketData() {
     return marketData;
   }
-
 
   public void setMarketData(StructuredMarketData marketData) {
     this.marketData = marketData;

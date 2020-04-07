@@ -35,11 +35,11 @@ import java.time.OffsetDateTime;
 public class Quote {
   public static final String SERIALIZED_NAME_QUOTE_ID = "quoteId";
   @SerializedName(SERIALIZED_NAME_QUOTE_ID)
-  private QuoteId quoteId;
+  private QuoteId quoteId = null;
 
   public static final String SERIALIZED_NAME_METRIC_VALUE = "metricValue";
   @SerializedName(SERIALIZED_NAME_METRIC_VALUE)
-  private MetricValue metricValue;
+  private MetricValue metricValue = null;
 
   public static final String SERIALIZED_NAME_LINEAGE = "lineage";
   @SerializedName(SERIALIZED_NAME_LINEAGE)
@@ -57,9 +57,7 @@ public class Quote {
   @SerializedName(SERIALIZED_NAME_AS_AT)
   private OffsetDateTime asAt;
 
-
   public Quote quoteId(QuoteId quoteId) {
-    
     this.quoteId = quoteId;
     return this;
   }
@@ -69,19 +67,15 @@ public class Quote {
    * @return quoteId
   **/
   @ApiModelProperty(required = true, value = "")
-
   public QuoteId getQuoteId() {
     return quoteId;
   }
-
 
   public void setQuoteId(QuoteId quoteId) {
     this.quoteId = quoteId;
   }
 
-
   public Quote metricValue(MetricValue metricValue) {
-    
     this.metricValue = metricValue;
     return this;
   }
@@ -90,21 +84,16 @@ public class Quote {
    * Get metricValue
    * @return metricValue
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public MetricValue getMetricValue() {
     return metricValue;
   }
-
 
   public void setMetricValue(MetricValue metricValue) {
     this.metricValue = metricValue;
   }
 
-
   public Quote lineage(String lineage) {
-    
     this.lineage = lineage;
     return this;
   }
@@ -113,21 +102,16 @@ public class Quote {
    * Description of the quote&#39;s lineage e.g. &#39;FundAccountant_GreenQuality&#39;.
    * @return lineage
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Description of the quote's lineage e.g. 'FundAccountant_GreenQuality'.")
-
   public String getLineage() {
     return lineage;
   }
-
 
   public void setLineage(String lineage) {
     this.lineage = lineage;
   }
 
-
   public Quote cutLabel(String cutLabel) {
-    
     this.cutLabel = cutLabel;
     return this;
   }
@@ -136,21 +120,16 @@ public class Quote {
    * The cut label that this quote was updated or inserted with.
    * @return cutLabel
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The cut label that this quote was updated or inserted with.")
-
   public String getCutLabel() {
     return cutLabel;
   }
-
 
   public void setCutLabel(String cutLabel) {
     this.cutLabel = cutLabel;
   }
 
-
   public Quote uploadedBy(String uploadedBy) {
-    
     this.uploadedBy = uploadedBy;
     return this;
   }
@@ -160,19 +139,15 @@ public class Quote {
    * @return uploadedBy
   **/
   @ApiModelProperty(required = true, value = "The unique id of the user that updated or inserted the quote.")
-
   public String getUploadedBy() {
     return uploadedBy;
   }
-
 
   public void setUploadedBy(String uploadedBy) {
     this.uploadedBy = uploadedBy;
   }
 
-
   public Quote asAt(OffsetDateTime asAt) {
-    
     this.asAt = asAt;
     return this;
   }
@@ -182,11 +157,9 @@ public class Quote {
    * @return asAt
   **/
   @ApiModelProperty(required = true, value = "The asAt datetime at which the quote was committed to LUSID.")
-
   public OffsetDateTime getAsAt() {
     return asAt;
   }
-
 
   public void setAsAt(OffsetDateTime asAt) {
     this.asAt = asAt;

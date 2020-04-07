@@ -39,7 +39,7 @@ public class ReferencePortfolioConstituentRequest {
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = null;
+  private Map<String, PerpetualProperty> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_WEIGHT = "weight";
   @SerializedName(SERIALIZED_NAME_WEIGHT)
@@ -49,9 +49,7 @@ public class ReferencePortfolioConstituentRequest {
   @SerializedName(SERIALIZED_NAME_CURRENCY)
   private String currency;
 
-
   public ReferencePortfolioConstituentRequest instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
-    
     this.instrumentIdentifiers = instrumentIdentifiers;
     return this;
   }
@@ -66,19 +64,15 @@ public class ReferencePortfolioConstituentRequest {
    * @return instrumentIdentifiers
   **/
   @ApiModelProperty(required = true, value = "Unique instrument identifiers")
-
   public Map<String, String> getInstrumentIdentifiers() {
     return instrumentIdentifiers;
   }
-
 
   public void setInstrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
     this.instrumentIdentifiers = instrumentIdentifiers;
   }
 
-
   public ReferencePortfolioConstituentRequest properties(Map<String, PerpetualProperty> properties) {
-    
     this.properties = properties;
     return this;
   }
@@ -95,21 +89,16 @@ public class ReferencePortfolioConstituentRequest {
    * Get properties
    * @return properties
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Map<String, PerpetualProperty> getProperties() {
     return properties;
   }
-
 
   public void setProperties(Map<String, PerpetualProperty> properties) {
     this.properties = properties;
   }
 
-
   public ReferencePortfolioConstituentRequest weight(Double weight) {
-    
     this.weight = weight;
     return this;
   }
@@ -119,19 +108,15 @@ public class ReferencePortfolioConstituentRequest {
    * @return weight
   **/
   @ApiModelProperty(required = true, value = "")
-
   public Double getWeight() {
     return weight;
   }
-
 
   public void setWeight(Double weight) {
     this.weight = weight;
   }
 
-
   public ReferencePortfolioConstituentRequest currency(String currency) {
-    
     this.currency = currency;
     return this;
   }
@@ -140,13 +125,10 @@ public class ReferencePortfolioConstituentRequest {
    * 
    * @return currency
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getCurrency() {
     return currency;
   }
-
 
   public void setCurrency(String currency) {
     this.currency = currency;

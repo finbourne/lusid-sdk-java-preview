@@ -42,19 +42,17 @@ public class AdjustHoldingRequest {
 
   public static final String SERIALIZED_NAME_SUB_HOLDING_KEYS = "subHoldingKeys";
   @SerializedName(SERIALIZED_NAME_SUB_HOLDING_KEYS)
-  private Map<String, PerpetualProperty> subHoldingKeys = null;
+  private Map<String, PerpetualProperty> subHoldingKeys = new HashMap<>();
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = null;
+  private Map<String, PerpetualProperty> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_TAX_LOTS = "taxLots";
   @SerializedName(SERIALIZED_NAME_TAX_LOTS)
   private List<TargetTaxLotRequest> taxLots = new ArrayList<>();
 
-
   public AdjustHoldingRequest instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
-    
     this.instrumentIdentifiers = instrumentIdentifiers;
     return this;
   }
@@ -69,19 +67,15 @@ public class AdjustHoldingRequest {
    * @return instrumentIdentifiers
   **/
   @ApiModelProperty(required = true, value = "A set of instrument identifiers to use to resolve the holding adjustment to a unique instrument.")
-
   public Map<String, String> getInstrumentIdentifiers() {
     return instrumentIdentifiers;
   }
-
 
   public void setInstrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
     this.instrumentIdentifiers = instrumentIdentifiers;
   }
 
-
   public AdjustHoldingRequest subHoldingKeys(Map<String, PerpetualProperty> subHoldingKeys) {
-    
     this.subHoldingKeys = subHoldingKeys;
     return this;
   }
@@ -98,21 +92,16 @@ public class AdjustHoldingRequest {
    * Set of unique transaction properties and associated values to store with the holding adjustment transaction automatically created by LUSID. Each property must be from the &#39;Transaction&#39; domain.
    * @return subHoldingKeys
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Set of unique transaction properties and associated values to store with the holding adjustment transaction automatically created by LUSID. Each property must be from the 'Transaction' domain.")
-
   public Map<String, PerpetualProperty> getSubHoldingKeys() {
     return subHoldingKeys;
   }
-
 
   public void setSubHoldingKeys(Map<String, PerpetualProperty> subHoldingKeys) {
     this.subHoldingKeys = subHoldingKeys;
   }
 
-
   public AdjustHoldingRequest properties(Map<String, PerpetualProperty> properties) {
-    
     this.properties = properties;
     return this;
   }
@@ -129,21 +118,16 @@ public class AdjustHoldingRequest {
    * Set of unique holding properties and associated values to store with the target holding. Each property must be from the &#39;Holding&#39; domain.
    * @return properties
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Set of unique holding properties and associated values to store with the target holding. Each property must be from the 'Holding' domain.")
-
   public Map<String, PerpetualProperty> getProperties() {
     return properties;
   }
-
 
   public void setProperties(Map<String, PerpetualProperty> properties) {
     this.properties = properties;
   }
 
-
   public AdjustHoldingRequest taxLots(List<TargetTaxLotRequest> taxLots) {
-    
     this.taxLots = taxLots;
     return this;
   }
@@ -158,11 +142,9 @@ public class AdjustHoldingRequest {
    * @return taxLots
   **/
   @ApiModelProperty(required = true, value = "The tax-lots that together make up the target holding.")
-
   public List<TargetTaxLotRequest> getTaxLots() {
     return taxLots;
   }
-
 
   public void setTaxLots(List<TargetTaxLotRequest> taxLots) {
     this.taxLots = taxLots;

@@ -43,11 +43,9 @@ public class ResourceListOfScopeDefinition {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public ResourceListOfScopeDefinition values(List<ScopeDefinition> values) {
-    
     this.values = values;
     return this;
   }
@@ -62,19 +60,15 @@ public class ResourceListOfScopeDefinition {
    * @return values
   **/
   @ApiModelProperty(required = true, value = "")
-
   public List<ScopeDefinition> getValues() {
     return values;
   }
-
 
   public void setValues(List<ScopeDefinition> values) {
     this.values = values;
   }
 
-
   public ResourceListOfScopeDefinition href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -83,21 +77,16 @@ public class ResourceListOfScopeDefinition {
    * Get href
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public ResourceListOfScopeDefinition links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -114,13 +103,10 @@ public class ResourceListOfScopeDefinition {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

@@ -33,7 +33,7 @@ import java.io.IOException;
 public class InstrumentLeg {
   public static final String SERIALIZED_NAME_CONVENTIONS = "conventions";
   @SerializedName(SERIALIZED_NAME_CONVENTIONS)
-  private FlowConventions conventions;
+  private FlowConventions conventions = null;
 
   public static final String SERIALIZED_NAME_IS_PAY_NOT_RECEIVE = "isPayNotReceive";
   @SerializedName(SERIALIZED_NAME_IS_PAY_NOT_RECEIVE)
@@ -47,9 +47,7 @@ public class InstrumentLeg {
   @SerializedName(SERIALIZED_NAME_FIXED_RATE)
   private Double fixedRate;
 
-
   public InstrumentLeg conventions(FlowConventions conventions) {
-    
     this.conventions = conventions;
     return this;
   }
@@ -59,19 +57,15 @@ public class InstrumentLeg {
    * @return conventions
   **/
   @ApiModelProperty(required = true, value = "")
-
   public FlowConventions getConventions() {
     return conventions;
   }
-
 
   public void setConventions(FlowConventions conventions) {
     this.conventions = conventions;
   }
 
-
   public InstrumentLeg isPayNotReceive(Boolean isPayNotReceive) {
-    
     this.isPayNotReceive = isPayNotReceive;
     return this;
   }
@@ -81,19 +75,15 @@ public class InstrumentLeg {
    * @return isPayNotReceive
   **/
   @ApiModelProperty(required = true, value = "True if the holder of the swap pays, false if they receive the flows on this leg.")
-
   public Boolean getIsPayNotReceive() {
     return isPayNotReceive;
   }
-
 
   public void setIsPayNotReceive(Boolean isPayNotReceive) {
     this.isPayNotReceive = isPayNotReceive;
   }
 
-
   public InstrumentLeg isFloatNotFixed(Boolean isFloatNotFixed) {
-    
     this.isFloatNotFixed = isFloatNotFixed;
     return this;
   }
@@ -103,19 +93,15 @@ public class InstrumentLeg {
    * @return isFloatNotFixed
   **/
   @ApiModelProperty(required = true, value = "True if the payments float or are fixed.")
-
   public Boolean getIsFloatNotFixed() {
     return isFloatNotFixed;
   }
-
 
   public void setIsFloatNotFixed(Boolean isFloatNotFixed) {
     this.isFloatNotFixed = isFloatNotFixed;
   }
 
-
   public InstrumentLeg fixedRate(Double fixedRate) {
-    
     this.fixedRate = fixedRate;
     return this;
   }
@@ -125,11 +111,9 @@ public class InstrumentLeg {
    * @return fixedRate
   **/
   @ApiModelProperty(required = true, value = "If the leg is fixed, the fixed rate.")
-
   public Double getFixedRate() {
     return fixedRate;
   }
-
 
   public void setFixedRate(Double fixedRate) {
     this.fixedRate = fixedRate;

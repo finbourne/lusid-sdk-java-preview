@@ -40,9 +40,7 @@ public class UpsertOrderPropertiesRequest {
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
 
-
   public UpsertOrderPropertiesRequest properties(List<Property> properties) {
-    
     this.properties = properties;
     return this;
   }
@@ -57,19 +55,15 @@ public class UpsertOrderPropertiesRequest {
    * @return properties
   **/
   @ApiModelProperty(required = true, value = "Client-defined properties associated with this order.")
-
   public List<Property> getProperties() {
     return properties;
   }
-
 
   public void setProperties(List<Property> properties) {
     this.properties = properties;
   }
 
-
   public UpsertOrderPropertiesRequest id(String id) {
-    
     this.id = id;
     return this;
   }
@@ -79,11 +73,9 @@ public class UpsertOrderPropertiesRequest {
    * @return id
   **/
   @ApiModelProperty(required = true, value = "Uniquely identifies this order.")
-
   public String getId() {
     return id;
   }
-
 
   public void setId(String id) {
     this.id = id;

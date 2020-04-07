@@ -51,7 +51,7 @@ public class NestedAggregationResponse {
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private AggregationResponseNodeOfDictionaryOfStringToObject data;
+  private AggregationResponseNodeOfDictionaryOfStringToObject data = null;
 
   public static final String SERIALIZED_NAME_AGGREGATION_CURRENCY = "aggregationCurrency";
   @SerializedName(SERIALIZED_NAME_AGGREGATION_CURRENCY)
@@ -59,23 +59,21 @@ public class NestedAggregationResponse {
 
   public static final String SERIALIZED_NAME_DATA_SCHEMA = "dataSchema";
   @SerializedName(SERIALIZED_NAME_DATA_SCHEMA)
-  private ResultDataSchema dataSchema;
+  private ResultDataSchema dataSchema = null;
 
   public static final String SERIALIZED_NAME_AGGREGATION_FAILURES = "aggregationFailures";
   @SerializedName(SERIALIZED_NAME_AGGREGATION_FAILURES)
-  private List<AggregationMeasureFailureDetail> aggregationFailures = null;
+  private List<AggregationMeasureFailureDetail> aggregationFailures = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MANIFEST = "manifest";
   @SerializedName(SERIALIZED_NAME_MANIFEST)
-  private MarketDataManifest manifest;
+  private MarketDataManifest manifest = null;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public NestedAggregationResponse aggregationEffectiveAt(OffsetDateTime aggregationEffectiveAt) {
-    
     this.aggregationEffectiveAt = aggregationEffectiveAt;
     return this;
   }
@@ -84,21 +82,16 @@ public class NestedAggregationResponse {
    * Get aggregationEffectiveAt
    * @return aggregationEffectiveAt
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public OffsetDateTime getAggregationEffectiveAt() {
     return aggregationEffectiveAt;
   }
-
 
   public void setAggregationEffectiveAt(OffsetDateTime aggregationEffectiveAt) {
     this.aggregationEffectiveAt = aggregationEffectiveAt;
   }
 
-
   public NestedAggregationResponse aggregationAsAt(OffsetDateTime aggregationAsAt) {
-    
     this.aggregationAsAt = aggregationAsAt;
     return this;
   }
@@ -107,21 +100,16 @@ public class NestedAggregationResponse {
    * Get aggregationAsAt
    * @return aggregationAsAt
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public OffsetDateTime getAggregationAsAt() {
     return aggregationAsAt;
   }
-
 
   public void setAggregationAsAt(OffsetDateTime aggregationAsAt) {
     this.aggregationAsAt = aggregationAsAt;
   }
 
-
   public NestedAggregationResponse href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -130,21 +118,16 @@ public class NestedAggregationResponse {
    * Get href
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public NestedAggregationResponse data(AggregationResponseNodeOfDictionaryOfStringToObject data) {
-    
     this.data = data;
     return this;
   }
@@ -153,21 +136,16 @@ public class NestedAggregationResponse {
    * Get data
    * @return data
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public AggregationResponseNodeOfDictionaryOfStringToObject getData() {
     return data;
   }
-
 
   public void setData(AggregationResponseNodeOfDictionaryOfStringToObject data) {
     this.data = data;
   }
 
-
   public NestedAggregationResponse aggregationCurrency(String aggregationCurrency) {
-    
     this.aggregationCurrency = aggregationCurrency;
     return this;
   }
@@ -176,21 +154,16 @@ public class NestedAggregationResponse {
    * Get aggregationCurrency
    * @return aggregationCurrency
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getAggregationCurrency() {
     return aggregationCurrency;
   }
-
 
   public void setAggregationCurrency(String aggregationCurrency) {
     this.aggregationCurrency = aggregationCurrency;
   }
 
-
   public NestedAggregationResponse dataSchema(ResultDataSchema dataSchema) {
-    
     this.dataSchema = dataSchema;
     return this;
   }
@@ -199,21 +172,16 @@ public class NestedAggregationResponse {
    * Get dataSchema
    * @return dataSchema
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public ResultDataSchema getDataSchema() {
     return dataSchema;
   }
-
 
   public void setDataSchema(ResultDataSchema dataSchema) {
     this.dataSchema = dataSchema;
   }
 
-
   public NestedAggregationResponse aggregationFailures(List<AggregationMeasureFailureDetail> aggregationFailures) {
-    
     this.aggregationFailures = aggregationFailures;
     return this;
   }
@@ -230,21 +198,16 @@ public class NestedAggregationResponse {
    * Get aggregationFailures
    * @return aggregationFailures
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<AggregationMeasureFailureDetail> getAggregationFailures() {
     return aggregationFailures;
   }
-
 
   public void setAggregationFailures(List<AggregationMeasureFailureDetail> aggregationFailures) {
     this.aggregationFailures = aggregationFailures;
   }
 
-
   public NestedAggregationResponse manifest(MarketDataManifest manifest) {
-    
     this.manifest = manifest;
     return this;
   }
@@ -253,21 +216,16 @@ public class NestedAggregationResponse {
    * Get manifest
    * @return manifest
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public MarketDataManifest getManifest() {
     return manifest;
   }
-
 
   public void setManifest(MarketDataManifest manifest) {
     this.manifest = manifest;
   }
 
-
   public NestedAggregationResponse links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -284,13 +242,10 @@ public class NestedAggregationResponse {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

@@ -46,7 +46,7 @@ public class Swaption {
 
   public static final String SERIALIZED_NAME_SWAP = "swap";
   @SerializedName(SERIALIZED_NAME_SWAP)
-  private LusidInstrument swap;
+  private LusidInstrument swap = null;
 
   /**
    * Instrument type, must be property for JSON.
@@ -103,7 +103,7 @@ public class Swaption {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -113,9 +113,7 @@ public class Swaption {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
-
   public Swaption startDate(OffsetDateTime startDate) {
-    
     this.startDate = startDate;
     return this;
   }
@@ -125,19 +123,15 @@ public class Swaption {
    * @return startDate
   **/
   @ApiModelProperty(required = true, value = "")
-
   public OffsetDateTime getStartDate() {
     return startDate;
   }
-
 
   public void setStartDate(OffsetDateTime startDate) {
     this.startDate = startDate;
   }
 
-
   public Swaption isPayerNotReceiver(Boolean isPayerNotReceiver) {
-    
     this.isPayerNotReceiver = isPayerNotReceiver;
     return this;
   }
@@ -147,19 +141,15 @@ public class Swaption {
    * @return isPayerNotReceiver
   **/
   @ApiModelProperty(required = true, value = "True if on exercise the holder of the option enters the swap paying fixed, false if floating.")
-
   public Boolean getIsPayerNotReceiver() {
     return isPayerNotReceiver;
   }
-
 
   public void setIsPayerNotReceiver(Boolean isPayerNotReceiver) {
     this.isPayerNotReceiver = isPayerNotReceiver;
   }
 
-
   public Swaption isDeliveryNotCash(Boolean isDeliveryNotCash) {
-    
     this.isDeliveryNotCash = isDeliveryNotCash;
     return this;
   }
@@ -169,19 +159,15 @@ public class Swaption {
    * @return isDeliveryNotCash
   **/
   @ApiModelProperty(required = true, value = "True of the option is settled in cash false if by delivery of the swap.")
-
   public Boolean getIsDeliveryNotCash() {
     return isDeliveryNotCash;
   }
-
 
   public void setIsDeliveryNotCash(Boolean isDeliveryNotCash) {
     this.isDeliveryNotCash = isDeliveryNotCash;
   }
 
-
   public Swaption swap(LusidInstrument swap) {
-    
     this.swap = swap;
     return this;
   }
@@ -191,19 +177,15 @@ public class Swaption {
    * @return swap
   **/
   @ApiModelProperty(required = true, value = "")
-
   public LusidInstrument getSwap() {
     return swap;
   }
-
 
   public void setSwap(LusidInstrument swap) {
     this.swap = swap;
   }
 
-
   public Swaption instrumentType(InstrumentTypeEnum instrumentType) {
-    
     this.instrumentType = instrumentType;
     return this;
   }
@@ -213,11 +195,9 @@ public class Swaption {
    * @return instrumentType
   **/
   @ApiModelProperty(required = true, value = "Instrument type, must be property for JSON.")
-
   public InstrumentTypeEnum getInstrumentType() {
     return instrumentType;
   }
-
 
   public void setInstrumentType(InstrumentTypeEnum instrumentType) {
     this.instrumentType = instrumentType;

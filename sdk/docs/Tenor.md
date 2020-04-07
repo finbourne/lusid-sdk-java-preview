@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **Double** |  |  [optional] [readonly]
-**unit** | [**UnitEnum**](#UnitEnum) |  |  [optional] [readonly]
+**value** | **Double** |  |  [optional]
+**unit** | [**UnitEnum**](#UnitEnum) |  |  [optional]
 
 
 

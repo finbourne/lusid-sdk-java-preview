@@ -36,7 +36,7 @@ import java.util.List;
 public class VersionedResourceListOfOutputTransaction {
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version;
+  private Version version = null;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
@@ -48,11 +48,9 @@ public class VersionedResourceListOfOutputTransaction {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public VersionedResourceListOfOutputTransaction version(Version version) {
-    
     this.version = version;
     return this;
   }
@@ -62,19 +60,15 @@ public class VersionedResourceListOfOutputTransaction {
    * @return version
   **/
   @ApiModelProperty(required = true, value = "")
-
   public Version getVersion() {
     return version;
   }
-
 
   public void setVersion(Version version) {
     this.version = version;
   }
 
-
   public VersionedResourceListOfOutputTransaction values(List<OutputTransaction> values) {
-    
     this.values = values;
     return this;
   }
@@ -89,19 +83,15 @@ public class VersionedResourceListOfOutputTransaction {
    * @return values
   **/
   @ApiModelProperty(required = true, value = "")
-
   public List<OutputTransaction> getValues() {
     return values;
   }
-
 
   public void setValues(List<OutputTransaction> values) {
     this.values = values;
   }
 
-
   public VersionedResourceListOfOutputTransaction href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -110,21 +100,16 @@ public class VersionedResourceListOfOutputTransaction {
    * Get href
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public VersionedResourceListOfOutputTransaction links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -141,13 +126,10 @@ public class VersionedResourceListOfOutputTransaction {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

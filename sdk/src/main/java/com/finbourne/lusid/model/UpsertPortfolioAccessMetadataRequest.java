@@ -36,9 +36,7 @@ public class UpsertPortfolioAccessMetadataRequest {
   @SerializedName(SERIALIZED_NAME_METADATA)
   private List<AccessMetadataValue> metadata = new ArrayList<>();
 
-
   public UpsertPortfolioAccessMetadataRequest metadata(List<AccessMetadataValue> metadata) {
-    
     this.metadata = metadata;
     return this;
   }
@@ -53,11 +51,9 @@ public class UpsertPortfolioAccessMetadataRequest {
    * @return metadata
   **/
   @ApiModelProperty(required = true, value = "The access control metadata to assign to portfolios that match the identifier")
-
   public List<AccessMetadataValue> getMetadata() {
     return metadata;
   }
-
 
   public void setMetadata(List<AccessMetadataValue> metadata) {
     this.metadata = metadata;

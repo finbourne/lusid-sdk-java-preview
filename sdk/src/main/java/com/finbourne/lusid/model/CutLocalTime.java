@@ -37,9 +37,7 @@ public class CutLocalTime {
   @SerializedName(SERIALIZED_NAME_MINUTES)
   private Integer minutes;
 
-
   public CutLocalTime hours(Integer hours) {
-    
     this.hours = hours;
     return this;
   }
@@ -48,21 +46,16 @@ public class CutLocalTime {
    * Get hours
    * @return hours
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Integer getHours() {
     return hours;
   }
-
 
   public void setHours(Integer hours) {
     this.hours = hours;
   }
 
-
   public CutLocalTime minutes(Integer minutes) {
-    
     this.minutes = minutes;
     return this;
   }
@@ -71,13 +64,10 @@ public class CutLocalTime {
    * Get minutes
    * @return minutes
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Integer getMinutes() {
     return minutes;
   }
-
 
   public void setMinutes(Integer minutes) {
     this.minutes = minutes;

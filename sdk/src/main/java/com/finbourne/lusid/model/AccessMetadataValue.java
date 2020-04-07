@@ -38,9 +38,7 @@ public class AccessMetadataValue {
   @SerializedName(SERIALIZED_NAME_PROVIDER)
   private String provider;
 
-
   public AccessMetadataValue value(String value) {
-    
     this.value = value;
     return this;
   }
@@ -50,19 +48,15 @@ public class AccessMetadataValue {
    * @return value
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getValue() {
     return value;
   }
-
 
   public void setValue(String value) {
     this.value = value;
   }
 
-
   public AccessMetadataValue provider(String provider) {
-    
     this.provider = provider;
     return this;
   }
@@ -71,13 +65,10 @@ public class AccessMetadataValue {
    * Get provider
    * @return provider
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getProvider() {
     return provider;
   }
-
 
   public void setProvider(String provider) {
     this.provider = provider;

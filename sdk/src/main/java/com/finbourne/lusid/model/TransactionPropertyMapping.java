@@ -39,11 +39,9 @@ public class TransactionPropertyMapping {
 
   public static final String SERIALIZED_NAME_SET_TO = "setTo";
   @SerializedName(SERIALIZED_NAME_SET_TO)
-  private Object setTo;
-
+  private Object setTo = null;
 
   public TransactionPropertyMapping propertyKey(String propertyKey) {
-    
     this.propertyKey = propertyKey;
     return this;
   }
@@ -53,19 +51,15 @@ public class TransactionPropertyMapping {
    * @return propertyKey
   **/
   @ApiModelProperty(required = true, value = "The Side")
-
   public String getPropertyKey() {
     return propertyKey;
   }
-
 
   public void setPropertyKey(String propertyKey) {
     this.propertyKey = propertyKey;
   }
 
-
   public TransactionPropertyMapping mapFrom(String mapFrom) {
-    
     this.mapFrom = mapFrom;
     return this;
   }
@@ -74,21 +68,16 @@ public class TransactionPropertyMapping {
    * The Side
    * @return mapFrom
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The Side")
-
   public String getMapFrom() {
     return mapFrom;
   }
-
 
   public void setMapFrom(String mapFrom) {
     this.mapFrom = mapFrom;
   }
 
-
   public TransactionPropertyMapping setTo(Object setTo) {
-    
     this.setTo = setTo;
     return this;
   }
@@ -97,13 +86,10 @@ public class TransactionPropertyMapping {
    * The Side
    * @return setTo
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The Side")
-
   public Object getSetTo() {
     return setTo;
   }
-
 
   public void setSetTo(Object setTo) {
     this.setTo = setTo;

@@ -2,7 +2,6 @@
 
 # Portfolio
 
-A list of portfolios.
 ## Properties
 
 Name | Type | Description | Notes

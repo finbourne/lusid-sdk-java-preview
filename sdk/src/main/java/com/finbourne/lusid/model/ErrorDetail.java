@@ -41,9 +41,7 @@ public class ErrorDetail {
   @SerializedName(SERIALIZED_NAME_DETAIL)
   private String detail;
 
-
   public ErrorDetail id(String id) {
-    
     this.id = id;
     return this;
   }
@@ -52,21 +50,16 @@ public class ErrorDetail {
    * Get id
    * @return id
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getId() {
     return id;
   }
-
 
   public void setId(String id) {
     this.id = id;
   }
 
-
   public ErrorDetail type(String type) {
-    
     this.type = type;
     return this;
   }
@@ -75,21 +68,16 @@ public class ErrorDetail {
    * Get type
    * @return type
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getType() {
     return type;
   }
-
 
   public void setType(String type) {
     this.type = type;
   }
 
-
   public ErrorDetail detail(String detail) {
-    
     this.detail = detail;
     return this;
   }
@@ -98,13 +86,10 @@ public class ErrorDetail {
    * Get detail
    * @return detail
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getDetail() {
     return detail;
   }
-
 
   public void setDetail(String detail) {
     this.detail = detail;

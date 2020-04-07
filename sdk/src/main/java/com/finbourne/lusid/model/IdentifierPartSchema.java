@@ -54,76 +54,54 @@ public class IdentifierPartSchema {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
    /**
    * Get index
    * @return index
   **/
   @ApiModelProperty(required = true, value = "")
-
   public Integer getIndex() {
     return index;
   }
-
-
-
 
    /**
    * Get name
    * @return name
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getName() {
     return name;
   }
-
-
-
 
    /**
    * Get displayName
    * @return displayName
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getDisplayName() {
     return displayName;
   }
-
-
-
 
    /**
    * Get description
    * @return description
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getDescription() {
     return description;
   }
-
-
-
 
    /**
    * Get required
    * @return required
   **/
   @ApiModelProperty(required = true, value = "")
-
   public Boolean getRequired() {
     return required;
   }
 
-
-
-
   public IdentifierPartSchema links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -140,13 +118,10 @@ public class IdentifierPartSchema {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

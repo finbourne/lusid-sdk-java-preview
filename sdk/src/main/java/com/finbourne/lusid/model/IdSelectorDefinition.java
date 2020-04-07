@@ -36,11 +36,11 @@ import java.util.Map;
 public class IdSelectorDefinition {
   public static final String SERIALIZED_NAME_IDENTIFIER = "identifier";
   @SerializedName(SERIALIZED_NAME_IDENTIFIER)
-  private Map<String, String> identifier = null;
+  private Map<String, String> identifier = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ACTIONS = "actions";
   @SerializedName(SERIALIZED_NAME_ACTIONS)
-  private List<ActionId> actions = null;
+  private List<ActionId> actions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -50,9 +50,7 @@ public class IdSelectorDefinition {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
-
   public IdSelectorDefinition identifier(Map<String, String> identifier) {
-    
     this.identifier = identifier;
     return this;
   }
@@ -69,21 +67,16 @@ public class IdSelectorDefinition {
    * Get identifier
    * @return identifier
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Map<String, String> getIdentifier() {
     return identifier;
   }
-
 
   public void setIdentifier(Map<String, String> identifier) {
     this.identifier = identifier;
   }
 
-
   public IdSelectorDefinition actions(List<ActionId> actions) {
-    
     this.actions = actions;
     return this;
   }
@@ -100,21 +93,16 @@ public class IdSelectorDefinition {
    * Get actions
    * @return actions
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<ActionId> getActions() {
     return actions;
   }
-
 
   public void setActions(List<ActionId> actions) {
     this.actions = actions;
   }
 
-
   public IdSelectorDefinition name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -123,21 +111,16 @@ public class IdSelectorDefinition {
    * Get name
    * @return name
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getName() {
     return name;
   }
-
 
   public void setName(String name) {
     this.name = name;
   }
 
-
   public IdSelectorDefinition description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -146,13 +129,10 @@ public class IdSelectorDefinition {
    * Get description
    * @return description
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getDescription() {
     return description;
   }
-
 
   public void setDescription(String description) {
     this.description = description;

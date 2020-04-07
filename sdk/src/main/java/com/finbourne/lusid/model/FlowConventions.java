@@ -39,7 +39,7 @@ public class FlowConventions {
 
   public static final String SERIALIZED_NAME_PAYMENT_FREQUENCY = "paymentFrequency";
   @SerializedName(SERIALIZED_NAME_PAYMENT_FREQUENCY)
-  private Tenor paymentFrequency;
+  private Tenor paymentFrequency = null;
 
   /**
    * when calculating the fraction of a year between two dates, what convention is used to represent the number of days in a year  and difference between them.
@@ -106,7 +106,7 @@ public class FlowConventions {
 
       @Override
       public DayCountConventionEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return DayCountConventionEnum.fromValue(value);
       }
     }
@@ -187,7 +187,7 @@ public class FlowConventions {
 
       @Override
       public RollConventionEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return RollConventionEnum.fromValue(value);
       }
     }
@@ -201,9 +201,7 @@ public class FlowConventions {
   @SerializedName(SERIALIZED_NAME_HOLIDAY_CALENDARS)
   private List<String> holidayCalendars = new ArrayList<>();
 
-
   public FlowConventions currency(String currency) {
-    
     this.currency = currency;
     return this;
   }
@@ -213,19 +211,15 @@ public class FlowConventions {
    * @return currency
   **/
   @ApiModelProperty(required = true, value = "Currency of the flow convention.")
-
   public String getCurrency() {
     return currency;
   }
-
 
   public void setCurrency(String currency) {
     this.currency = currency;
   }
 
-
   public FlowConventions paymentFrequency(Tenor paymentFrequency) {
-    
     this.paymentFrequency = paymentFrequency;
     return this;
   }
@@ -235,19 +229,15 @@ public class FlowConventions {
    * @return paymentFrequency
   **/
   @ApiModelProperty(required = true, value = "")
-
   public Tenor getPaymentFrequency() {
     return paymentFrequency;
   }
-
 
   public void setPaymentFrequency(Tenor paymentFrequency) {
     this.paymentFrequency = paymentFrequency;
   }
 
-
   public FlowConventions dayCountConvention(DayCountConventionEnum dayCountConvention) {
-    
     this.dayCountConvention = dayCountConvention;
     return this;
   }
@@ -257,19 +247,15 @@ public class FlowConventions {
    * @return dayCountConvention
   **/
   @ApiModelProperty(required = true, value = "when calculating the fraction of a year between two dates, what convention is used to represent the number of days in a year  and difference between them.")
-
   public DayCountConventionEnum getDayCountConvention() {
     return dayCountConvention;
   }
-
 
   public void setDayCountConvention(DayCountConventionEnum dayCountConvention) {
     this.dayCountConvention = dayCountConvention;
   }
 
-
   public FlowConventions rollConvention(RollConventionEnum rollConvention) {
-    
     this.rollConvention = rollConvention;
     return this;
   }
@@ -279,19 +265,15 @@ public class FlowConventions {
    * @return rollConvention
   **/
   @ApiModelProperty(required = true, value = "when generating a set of dates, what convention should be used for adjusting dates that coincide with a non-business day.")
-
   public RollConventionEnum getRollConvention() {
     return rollConvention;
   }
-
 
   public void setRollConvention(RollConventionEnum rollConvention) {
     this.rollConvention = rollConvention;
   }
 
-
   public FlowConventions holidayCalendars(List<String> holidayCalendars) {
-    
     this.holidayCalendars = holidayCalendars;
     return this;
   }
@@ -306,11 +288,9 @@ public class FlowConventions {
    * @return holidayCalendars
   **/
   @ApiModelProperty(required = true, value = "An array of strings denoting holiday calendars that apply to generation and payment.")
-
   public List<String> getHolidayCalendars() {
     return holidayCalendars;
   }
-
 
   public void setHolidayCalendars(List<String> holidayCalendars) {
     this.holidayCalendars = holidayCalendars;

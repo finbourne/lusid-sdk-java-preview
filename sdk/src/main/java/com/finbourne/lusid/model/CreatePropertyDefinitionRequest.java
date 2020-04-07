@@ -101,7 +101,7 @@ public class CreatePropertyDefinitionRequest {
 
       @Override
       public DomainEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return DomainEnum.fromValue(value);
       }
     }
@@ -129,7 +129,7 @@ public class CreatePropertyDefinitionRequest {
 
   public static final String SERIALIZED_NAME_DATA_TYPE_ID = "dataTypeId";
   @SerializedName(SERIALIZED_NAME_DATA_TYPE_ID)
-  private ResourceId dataTypeId;
+  private ResourceId dataTypeId = null;
 
   /**
    * Describes how the property&#39;s values can change over time.
@@ -172,7 +172,7 @@ public class CreatePropertyDefinitionRequest {
 
       @Override
       public LifeTimeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return LifeTimeEnum.fromValue(value);
       }
     }
@@ -186,9 +186,7 @@ public class CreatePropertyDefinitionRequest {
   @SerializedName(SERIALIZED_NAME_CONSTRAINT_STYLE)
   private String constraintStyle;
 
-
   public CreatePropertyDefinitionRequest domain(DomainEnum domain) {
-    
     this.domain = domain;
     return this;
   }
@@ -198,19 +196,15 @@ public class CreatePropertyDefinitionRequest {
    * @return domain
   **/
   @ApiModelProperty(required = true, value = "The domain that the property exists in.")
-
   public DomainEnum getDomain() {
     return domain;
   }
-
 
   public void setDomain(DomainEnum domain) {
     this.domain = domain;
   }
 
-
   public CreatePropertyDefinitionRequest scope(String scope) {
-    
     this.scope = scope;
     return this;
   }
@@ -220,19 +214,15 @@ public class CreatePropertyDefinitionRequest {
    * @return scope
   **/
   @ApiModelProperty(required = true, value = "The scope that the property exists in.")
-
   public String getScope() {
     return scope;
   }
-
 
   public void setScope(String scope) {
     this.scope = scope;
   }
 
-
   public CreatePropertyDefinitionRequest code(String code) {
-    
     this.code = code;
     return this;
   }
@@ -242,19 +232,15 @@ public class CreatePropertyDefinitionRequest {
    * @return code
   **/
   @ApiModelProperty(required = true, value = "The code of the property. Together with the domain and scope this uniquely identifies the property.")
-
   public String getCode() {
     return code;
   }
-
 
   public void setCode(String code) {
     this.code = code;
   }
 
-
   public CreatePropertyDefinitionRequest valueRequired(Boolean valueRequired) {
-    
     this.valueRequired = valueRequired;
     return this;
   }
@@ -263,21 +249,16 @@ public class CreatePropertyDefinitionRequest {
    * Whether or not a value is always required for this property.
    * @return valueRequired
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Whether or not a value is always required for this property.")
-
   public Boolean getValueRequired() {
     return valueRequired;
   }
-
 
   public void setValueRequired(Boolean valueRequired) {
     this.valueRequired = valueRequired;
   }
 
-
   public CreatePropertyDefinitionRequest displayName(String displayName) {
-    
     this.displayName = displayName;
     return this;
   }
@@ -287,19 +268,15 @@ public class CreatePropertyDefinitionRequest {
    * @return displayName
   **/
   @ApiModelProperty(required = true, value = "The display name of the property.")
-
   public String getDisplayName() {
     return displayName;
   }
-
 
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
   }
 
-
   public CreatePropertyDefinitionRequest dataTypeId(ResourceId dataTypeId) {
-    
     this.dataTypeId = dataTypeId;
     return this;
   }
@@ -309,19 +286,15 @@ public class CreatePropertyDefinitionRequest {
    * @return dataTypeId
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ResourceId getDataTypeId() {
     return dataTypeId;
   }
-
 
   public void setDataTypeId(ResourceId dataTypeId) {
     this.dataTypeId = dataTypeId;
   }
 
-
   public CreatePropertyDefinitionRequest lifeTime(LifeTimeEnum lifeTime) {
-    
     this.lifeTime = lifeTime;
     return this;
   }
@@ -330,21 +303,16 @@ public class CreatePropertyDefinitionRequest {
    * Describes how the property&#39;s values can change over time.
    * @return lifeTime
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Describes how the property's values can change over time.")
-
   public LifeTimeEnum getLifeTime() {
     return lifeTime;
   }
-
 
   public void setLifeTime(LifeTimeEnum lifeTime) {
     this.lifeTime = lifeTime;
   }
 
-
   public CreatePropertyDefinitionRequest constraintStyle(String constraintStyle) {
-    
     this.constraintStyle = constraintStyle;
     return this;
   }
@@ -353,13 +321,10 @@ public class CreatePropertyDefinitionRequest {
    * Describes the uniqueness and cardinality of the property for entity objects under the property domain specified in Key. Defaults to \&quot;Property\&quot; if not specified.
    * @return constraintStyle
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Describes the uniqueness and cardinality of the property for entity objects under the property domain specified in Key. Defaults to \"Property\" if not specified.")
-
   public String getConstraintStyle() {
     return constraintStyle;
   }
-
 
   public void setConstraintStyle(String constraintStyle) {
     this.constraintStyle = constraintStyle;

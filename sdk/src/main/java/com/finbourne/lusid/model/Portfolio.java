@@ -45,7 +45,7 @@ public class Portfolio {
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id;
+  private ResourceId id = null;
 
   /**
    * The type of the portfolio.
@@ -90,7 +90,7 @@ public class Portfolio {
 
       @Override
       public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return TypeEnum.fromValue(value);
       }
     }
@@ -114,11 +114,11 @@ public class Portfolio {
 
   public static final String SERIALIZED_NAME_PARENT_PORTFOLIO_ID = "parentPortfolioId";
   @SerializedName(SERIALIZED_NAME_PARENT_PORTFOLIO_ID)
-  private ResourceId parentPortfolioId;
+  private ResourceId parentPortfolioId = null;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version;
+  private Version version = null;
 
   public static final String SERIALIZED_NAME_IS_DERIVED = "isDerived";
   @SerializedName(SERIALIZED_NAME_IS_DERIVED)
@@ -130,15 +130,13 @@ public class Portfolio {
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, Property> properties = null;
+  private Map<String, Property> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public Portfolio href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -147,21 +145,16 @@ public class Portfolio {
    * The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public Portfolio id(ResourceId id) {
-    
     this.id = id;
     return this;
   }
@@ -171,19 +164,15 @@ public class Portfolio {
    * @return id
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ResourceId getId() {
     return id;
   }
-
 
   public void setId(ResourceId id) {
     this.id = id;
   }
 
-
   public Portfolio type(TypeEnum type) {
-    
     this.type = type;
     return this;
   }
@@ -193,19 +182,15 @@ public class Portfolio {
    * @return type
   **/
   @ApiModelProperty(required = true, value = "The type of the portfolio.")
-
   public TypeEnum getType() {
     return type;
   }
-
 
   public void setType(TypeEnum type) {
     this.type = type;
   }
 
-
   public Portfolio displayName(String displayName) {
-    
     this.displayName = displayName;
     return this;
   }
@@ -215,19 +200,15 @@ public class Portfolio {
    * @return displayName
   **/
   @ApiModelProperty(required = true, value = "The name of the portfolio.")
-
   public String getDisplayName() {
     return displayName;
   }
-
 
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
   }
 
-
   public Portfolio description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -236,21 +217,16 @@ public class Portfolio {
    * The long form description of the portfolio.
    * @return description
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The long form description of the portfolio.")
-
   public String getDescription() {
     return description;
   }
-
 
   public void setDescription(String description) {
     this.description = description;
   }
 
-
   public Portfolio created(OffsetDateTime created) {
-    
     this.created = created;
     return this;
   }
@@ -260,19 +236,15 @@ public class Portfolio {
    * @return created
   **/
   @ApiModelProperty(required = true, value = "The effective datetime at which the portfolio was created. No transactions or constituents can be added to the portfolio before this date.")
-
   public OffsetDateTime getCreated() {
     return created;
   }
-
 
   public void setCreated(OffsetDateTime created) {
     this.created = created;
   }
 
-
   public Portfolio parentPortfolioId(ResourceId parentPortfolioId) {
-    
     this.parentPortfolioId = parentPortfolioId;
     return this;
   }
@@ -281,21 +253,16 @@ public class Portfolio {
    * Get parentPortfolioId
    * @return parentPortfolioId
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public ResourceId getParentPortfolioId() {
     return parentPortfolioId;
   }
-
 
   public void setParentPortfolioId(ResourceId parentPortfolioId) {
     this.parentPortfolioId = parentPortfolioId;
   }
 
-
   public Portfolio version(Version version) {
-    
     this.version = version;
     return this;
   }
@@ -304,21 +271,16 @@ public class Portfolio {
    * Get version
    * @return version
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Version getVersion() {
     return version;
   }
-
 
   public void setVersion(Version version) {
     this.version = version;
   }
 
-
   public Portfolio isDerived(Boolean isDerived) {
-    
     this.isDerived = isDerived;
     return this;
   }
@@ -327,21 +289,16 @@ public class Portfolio {
    * Whether or not this is a derived portfolio.
    * @return isDerived
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Whether or not this is a derived portfolio.")
-
   public Boolean getIsDerived() {
     return isDerived;
   }
-
 
   public void setIsDerived(Boolean isDerived) {
     this.isDerived = isDerived;
   }
 
-
   public Portfolio baseCurrency(String baseCurrency) {
-    
     this.baseCurrency = baseCurrency;
     return this;
   }
@@ -350,21 +307,16 @@ public class Portfolio {
    * The base currency of the portfolio. This will be an empty string for reference portfolios.
    * @return baseCurrency
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The base currency of the portfolio. This will be an empty string for reference portfolios.")
-
   public String getBaseCurrency() {
     return baseCurrency;
   }
-
 
   public void setBaseCurrency(String baseCurrency) {
     this.baseCurrency = baseCurrency;
   }
 
-
   public Portfolio properties(Map<String, Property> properties) {
-    
     this.properties = properties;
     return this;
   }
@@ -381,21 +333,16 @@ public class Portfolio {
    * The requested portfolio properties. These will be from the &#39;Portfolio&#39; domain.
    * @return properties
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The requested portfolio properties. These will be from the 'Portfolio' domain.")
-
   public Map<String, Property> getProperties() {
     return properties;
   }
-
 
   public void setProperties(Map<String, Property> properties) {
     this.properties = properties;
   }
 
-
   public Portfolio links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -412,13 +359,10 @@ public class Portfolio {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

@@ -38,9 +38,7 @@ public class InstrumentIdValue {
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_AT)
   private OffsetDateTime effectiveAt;
 
-
   public InstrumentIdValue value(String value) {
-    
     this.value = value;
     return this;
   }
@@ -50,19 +48,15 @@ public class InstrumentIdValue {
    * @return value
   **/
   @ApiModelProperty(required = true, value = "The value of the identifier.")
-
   public String getValue() {
     return value;
   }
-
 
   public void setValue(String value) {
     this.value = value;
   }
 
-
   public InstrumentIdValue effectiveAt(OffsetDateTime effectiveAt) {
-    
     this.effectiveAt = effectiveAt;
     return this;
   }
@@ -71,13 +65,10 @@ public class InstrumentIdValue {
    * The effective datetime from which the identifier will be valid. If left unspecified the default value is the beginning of time.
    * @return effectiveAt
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The effective datetime from which the identifier will be valid. If left unspecified the default value is the beginning of time.")
-
   public OffsetDateTime getEffectiveAt() {
     return effectiveAt;
   }
-
 
   public void setEffectiveAt(OffsetDateTime effectiveAt) {
     this.effectiveAt = effectiveAt;

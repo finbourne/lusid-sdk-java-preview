@@ -84,7 +84,7 @@ public class CdsDetailSpecification {
 
       @Override
       public SeniorityEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return SeniorityEnum.fromValue(value);
       }
     }
@@ -141,7 +141,7 @@ public class CdsDetailSpecification {
 
       @Override
       public RestructuringTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return RestructuringTypeEnum.fromValue(value);
       }
     }
@@ -161,11 +161,9 @@ public class CdsDetailSpecification {
 
   public static final String SERIALIZED_NAME_ROLL_FREQUENCY = "rollFrequency";
   @SerializedName(SERIALIZED_NAME_ROLL_FREQUENCY)
-  private Tenor rollFrequency;
-
+  private Tenor rollFrequency = null;
 
   public CdsDetailSpecification seniority(SeniorityEnum seniority) {
-    
     this.seniority = seniority;
     return this;
   }
@@ -175,19 +173,15 @@ public class CdsDetailSpecification {
    * @return seniority
   **/
   @ApiModelProperty(required = true, value = "The seniority level of the CDS")
-
   public SeniorityEnum getSeniority() {
     return seniority;
   }
-
 
   public void setSeniority(SeniorityEnum seniority) {
     this.seniority = seniority;
   }
 
-
   public CdsDetailSpecification restructuringType(RestructuringTypeEnum restructuringType) {
-    
     this.restructuringType = restructuringType;
     return this;
   }
@@ -197,19 +191,15 @@ public class CdsDetailSpecification {
    * @return restructuringType
   **/
   @ApiModelProperty(required = true, value = "The restructuring clause")
-
   public RestructuringTypeEnum getRestructuringType() {
     return restructuringType;
   }
-
 
   public void setRestructuringType(RestructuringTypeEnum restructuringType) {
     this.restructuringType = restructuringType;
   }
 
-
   public CdsDetailSpecification protectStartDay(Boolean protectStartDay) {
-    
     this.protectStartDay = protectStartDay;
     return this;
   }
@@ -219,19 +209,15 @@ public class CdsDetailSpecification {
    * @return protectStartDay
   **/
   @ApiModelProperty(required = true, value = "Does the protection leg pay out in the case of default on the start date")
-
   public Boolean getProtectStartDay() {
     return protectStartDay;
   }
-
 
   public void setProtectStartDay(Boolean protectStartDay) {
     this.protectStartDay = protectStartDay;
   }
 
-
   public CdsDetailSpecification payAccruedInterestOnDefault(Boolean payAccruedInterestOnDefault) {
-    
     this.payAccruedInterestOnDefault = payAccruedInterestOnDefault;
     return this;
   }
@@ -241,19 +227,15 @@ public class CdsDetailSpecification {
    * @return payAccruedInterestOnDefault
   **/
   @ApiModelProperty(required = true, value = "Should accrued interest on the premium leg be paid if a credit event occurs")
-
   public Boolean getPayAccruedInterestOnDefault() {
     return payAccruedInterestOnDefault;
   }
-
 
   public void setPayAccruedInterestOnDefault(Boolean payAccruedInterestOnDefault) {
     this.payAccruedInterestOnDefault = payAccruedInterestOnDefault;
   }
 
-
   public CdsDetailSpecification rollFrequency(Tenor rollFrequency) {
-    
     this.rollFrequency = rollFrequency;
     return this;
   }
@@ -263,11 +245,9 @@ public class CdsDetailSpecification {
    * @return rollFrequency
   **/
   @ApiModelProperty(required = true, value = "")
-
   public Tenor getRollFrequency() {
     return rollFrequency;
   }
-
 
   public void setRollFrequency(Tenor rollFrequency) {
     this.rollFrequency = rollFrequency;

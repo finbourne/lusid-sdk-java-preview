@@ -45,9 +45,7 @@ public class CreateCorporateActionSourceRequest {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
-
   public CreateCorporateActionSourceRequest scope(String scope) {
-    
     this.scope = scope;
     return this;
   }
@@ -57,19 +55,15 @@ public class CreateCorporateActionSourceRequest {
    * @return scope
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getScope() {
     return scope;
   }
-
 
   public void setScope(String scope) {
     this.scope = scope;
   }
 
-
   public CreateCorporateActionSourceRequest code(String code) {
-    
     this.code = code;
     return this;
   }
@@ -79,19 +73,15 @@ public class CreateCorporateActionSourceRequest {
    * @return code
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getCode() {
     return code;
   }
-
 
   public void setCode(String code) {
     this.code = code;
   }
 
-
   public CreateCorporateActionSourceRequest displayName(String displayName) {
-    
     this.displayName = displayName;
     return this;
   }
@@ -101,19 +91,15 @@ public class CreateCorporateActionSourceRequest {
    * @return displayName
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getDisplayName() {
     return displayName;
   }
-
 
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
   }
 
-
   public CreateCorporateActionSourceRequest description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -122,13 +108,10 @@ public class CreateCorporateActionSourceRequest {
    * 
    * @return description
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getDescription() {
     return description;
   }
-
 
   public void setDescription(String description) {
     this.description = description;

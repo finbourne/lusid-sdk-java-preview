@@ -34,11 +34,9 @@ import java.util.List;
 public class UpsertPersonAccessMetadataRequest {
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
-  private List<AccessMetadataValue> metadata = null;
-
+  private List<AccessMetadataValue> metadata = new ArrayList<>();
 
   public UpsertPersonAccessMetadataRequest metadata(List<AccessMetadataValue> metadata) {
-    
     this.metadata = metadata;
     return this;
   }
@@ -55,13 +53,10 @@ public class UpsertPersonAccessMetadataRequest {
    * The access control metadata to assign to a Person that matches the identifier
    * @return metadata
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The access control metadata to assign to a Person that matches the identifier")
-
   public List<AccessMetadataValue> getMetadata() {
     return metadata;
   }
-
 
   public void setMetadata(List<AccessMetadataValue> metadata) {
     this.metadata = metadata;

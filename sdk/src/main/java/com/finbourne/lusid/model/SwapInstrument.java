@@ -99,7 +99,7 @@ public class SwapInstrument {
 
       @Override
       public NotionalExchangeTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return NotionalExchangeTypeEnum.fromValue(value);
       }
     }
@@ -164,7 +164,7 @@ public class SwapInstrument {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -174,9 +174,7 @@ public class SwapInstrument {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
-
   public SwapInstrument startDate(OffsetDateTime startDate) {
-    
     this.startDate = startDate;
     return this;
   }
@@ -186,19 +184,15 @@ public class SwapInstrument {
    * @return startDate
   **/
   @ApiModelProperty(required = true, value = "Starting date of the swap")
-
   public OffsetDateTime getStartDate() {
     return startDate;
   }
-
 
   public void setStartDate(OffsetDateTime startDate) {
     this.startDate = startDate;
   }
 
-
   public SwapInstrument maturityDate(OffsetDateTime maturityDate) {
-    
     this.maturityDate = maturityDate;
     return this;
   }
@@ -208,19 +202,15 @@ public class SwapInstrument {
    * @return maturityDate
   **/
   @ApiModelProperty(required = true, value = "Maturity date of the swap")
-
   public OffsetDateTime getMaturityDate() {
     return maturityDate;
   }
-
 
   public void setMaturityDate(OffsetDateTime maturityDate) {
     this.maturityDate = maturityDate;
   }
 
-
   public SwapInstrument legs(List<InstrumentLeg> legs) {
-    
     this.legs = legs;
     return this;
   }
@@ -235,19 +225,15 @@ public class SwapInstrument {
    * @return legs
   **/
   @ApiModelProperty(required = true, value = "True if the swap is amortizing")
-
   public List<InstrumentLeg> getLegs() {
     return legs;
   }
-
 
   public void setLegs(List<InstrumentLeg> legs) {
     this.legs = legs;
   }
 
-
   public SwapInstrument notional(Double notional) {
-    
     this.notional = notional;
     return this;
   }
@@ -257,19 +243,15 @@ public class SwapInstrument {
    * @return notional
   **/
   @ApiModelProperty(required = true, value = "The notional.")
-
   public Double getNotional() {
     return notional;
   }
-
 
   public void setNotional(Double notional) {
     this.notional = notional;
   }
 
-
   public SwapInstrument isAmortizing(Boolean isAmortizing) {
-    
     this.isAmortizing = isAmortizing;
     return this;
   }
@@ -279,19 +261,15 @@ public class SwapInstrument {
    * @return isAmortizing
   **/
   @ApiModelProperty(required = true, value = "True if the swap is amortizing")
-
   public Boolean getIsAmortizing() {
     return isAmortizing;
   }
-
 
   public void setIsAmortizing(Boolean isAmortizing) {
     this.isAmortizing = isAmortizing;
   }
 
-
   public SwapInstrument notionalExchangeType(NotionalExchangeTypeEnum notionalExchangeType) {
-    
     this.notionalExchangeType = notionalExchangeType;
     return this;
   }
@@ -301,19 +279,15 @@ public class SwapInstrument {
    * @return notionalExchangeType
   **/
   @ApiModelProperty(required = true, value = "True notional exchange type.")
-
   public NotionalExchangeTypeEnum getNotionalExchangeType() {
     return notionalExchangeType;
   }
-
 
   public void setNotionalExchangeType(NotionalExchangeTypeEnum notionalExchangeType) {
     this.notionalExchangeType = notionalExchangeType;
   }
 
-
   public SwapInstrument instrumentType(InstrumentTypeEnum instrumentType) {
-    
     this.instrumentType = instrumentType;
     return this;
   }
@@ -323,11 +297,9 @@ public class SwapInstrument {
    * @return instrumentType
   **/
   @ApiModelProperty(required = true, value = "Instrument type, must be property for JSON.")
-
   public InstrumentTypeEnum getInstrumentType() {
     return instrumentType;
   }
-
 
   public void setInstrumentType(InstrumentTypeEnum instrumentType) {
     this.instrumentType = instrumentType;

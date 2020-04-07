@@ -35,15 +35,13 @@ import java.util.Map;
 public class UpsertPersonRequest {
   public static final String SERIALIZED_NAME_IDENTIFIERS = "identifiers";
   @SerializedName(SERIALIZED_NAME_IDENTIFIERS)
-  private Map<String, Property> identifiers = null;
+  private Map<String, Property> identifiers = new HashMap<>();
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, List<Property>> properties = null;
-
+  private Map<String, List<Property>> properties = new HashMap<>();
 
   public UpsertPersonRequest identifiers(Map<String, Property> identifiers) {
-    
     this.identifiers = identifiers;
     return this;
   }
@@ -60,21 +58,16 @@ public class UpsertPersonRequest {
    * The identifiers the person will be created with.
    * @return identifiers
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The identifiers the person will be created with.")
-
   public Map<String, Property> getIdentifiers() {
     return identifiers;
   }
-
 
   public void setIdentifiers(Map<String, Property> identifiers) {
     this.identifiers = identifiers;
   }
 
-
   public UpsertPersonRequest properties(Map<String, List<Property>> properties) {
-    
     this.properties = properties;
     return this;
   }
@@ -91,13 +84,10 @@ public class UpsertPersonRequest {
    * A set of properties associated to the Person. There can be multiple properties associated with a property key.
    * @return properties
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "A set of properties associated to the Person. There can be multiple properties associated with a property key.")
-
   public Map<String, List<Property>> getProperties() {
     return properties;
   }
-
 
   public void setProperties(Map<String, List<Property>> properties) {
     this.properties = properties;

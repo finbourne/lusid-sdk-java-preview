@@ -53,99 +53,74 @@ public class RealisedGainLoss {
 
   public static final String SERIALIZED_NAME_COST_TRADE_CCY = "costTradeCcy";
   @SerializedName(SERIALIZED_NAME_COST_TRADE_CCY)
-  private CurrencyAndAmount costTradeCcy;
+  private CurrencyAndAmount costTradeCcy = null;
 
   public static final String SERIALIZED_NAME_COST_PORTFOLIO_CCY = "costPortfolioCcy";
   @SerializedName(SERIALIZED_NAME_COST_PORTFOLIO_CCY)
-  private CurrencyAndAmount costPortfolioCcy;
+  private CurrencyAndAmount costPortfolioCcy = null;
 
   public static final String SERIALIZED_NAME_REALISED_TRADE_CCY = "realisedTradeCcy";
   @SerializedName(SERIALIZED_NAME_REALISED_TRADE_CCY)
-  private CurrencyAndAmount realisedTradeCcy;
+  private CurrencyAndAmount realisedTradeCcy = null;
 
   public static final String SERIALIZED_NAME_REALISED_TOTAL = "realisedTotal";
   @SerializedName(SERIALIZED_NAME_REALISED_TOTAL)
-  private CurrencyAndAmount realisedTotal;
+  private CurrencyAndAmount realisedTotal = null;
 
   public static final String SERIALIZED_NAME_REALISED_MARKET = "realisedMarket";
   @SerializedName(SERIALIZED_NAME_REALISED_MARKET)
-  private CurrencyAndAmount realisedMarket;
+  private CurrencyAndAmount realisedMarket = null;
 
   public static final String SERIALIZED_NAME_REALISED_CURRENCY = "realisedCurrency";
   @SerializedName(SERIALIZED_NAME_REALISED_CURRENCY)
-  private CurrencyAndAmount realisedCurrency;
-
+  private CurrencyAndAmount realisedCurrency = null;
 
    /**
    * The unqiue Lusid Instrument Id (LUID) of the instrument that this gain or loss is associated with.
    * @return instrumentUid
   **/
   @ApiModelProperty(required = true, value = "The unqiue Lusid Instrument Id (LUID) of the instrument that this gain or loss is associated with.")
-
   public String getInstrumentUid() {
     return instrumentUid;
   }
-
-
-
 
    /**
    * The number of units of the associated instrument against which the gain or loss has been realised.
    * @return units
   **/
   @ApiModelProperty(required = true, value = "The number of units of the associated instrument against which the gain or loss has been realised.")
-
   public Double getUnits() {
     return units;
   }
-
-
-
 
    /**
    * The effective datetime that the units associated with this gain or loss where originally purchased.
    * @return purchaseTradeDate
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The effective datetime that the units associated with this gain or loss where originally purchased.")
-
   public OffsetDateTime getPurchaseTradeDate() {
     return purchaseTradeDate;
   }
-
-
-
 
    /**
    * The effective datetime that the units associated with this gain or loss where originally settled.
    * @return purchaseSettlementDate
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The effective datetime that the units associated with this gain or loss where originally settled.")
-
   public OffsetDateTime getPurchaseSettlementDate() {
     return purchaseSettlementDate;
   }
-
-
-
 
    /**
    * The purchase price of each unit associated with this gain or loss.
    * @return purchasePrice
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The purchase price of each unit associated with this gain or loss.")
-
   public Double getPurchasePrice() {
     return purchasePrice;
   }
 
-
-
-
   public RealisedGainLoss costTradeCcy(CurrencyAndAmount costTradeCcy) {
-    
     this.costTradeCcy = costTradeCcy;
     return this;
   }
@@ -155,19 +130,15 @@ public class RealisedGainLoss {
    * @return costTradeCcy
   **/
   @ApiModelProperty(required = true, value = "")
-
   public CurrencyAndAmount getCostTradeCcy() {
     return costTradeCcy;
   }
-
 
   public void setCostTradeCcy(CurrencyAndAmount costTradeCcy) {
     this.costTradeCcy = costTradeCcy;
   }
 
-
   public RealisedGainLoss costPortfolioCcy(CurrencyAndAmount costPortfolioCcy) {
-    
     this.costPortfolioCcy = costPortfolioCcy;
     return this;
   }
@@ -177,19 +148,15 @@ public class RealisedGainLoss {
    * @return costPortfolioCcy
   **/
   @ApiModelProperty(required = true, value = "")
-
   public CurrencyAndAmount getCostPortfolioCcy() {
     return costPortfolioCcy;
   }
-
 
   public void setCostPortfolioCcy(CurrencyAndAmount costPortfolioCcy) {
     this.costPortfolioCcy = costPortfolioCcy;
   }
 
-
   public RealisedGainLoss realisedTradeCcy(CurrencyAndAmount realisedTradeCcy) {
-    
     this.realisedTradeCcy = realisedTradeCcy;
     return this;
   }
@@ -199,19 +166,15 @@ public class RealisedGainLoss {
    * @return realisedTradeCcy
   **/
   @ApiModelProperty(required = true, value = "")
-
   public CurrencyAndAmount getRealisedTradeCcy() {
     return realisedTradeCcy;
   }
-
 
   public void setRealisedTradeCcy(CurrencyAndAmount realisedTradeCcy) {
     this.realisedTradeCcy = realisedTradeCcy;
   }
 
-
   public RealisedGainLoss realisedTotal(CurrencyAndAmount realisedTotal) {
-    
     this.realisedTotal = realisedTotal;
     return this;
   }
@@ -221,19 +184,15 @@ public class RealisedGainLoss {
    * @return realisedTotal
   **/
   @ApiModelProperty(required = true, value = "")
-
   public CurrencyAndAmount getRealisedTotal() {
     return realisedTotal;
   }
-
 
   public void setRealisedTotal(CurrencyAndAmount realisedTotal) {
     this.realisedTotal = realisedTotal;
   }
 
-
   public RealisedGainLoss realisedMarket(CurrencyAndAmount realisedMarket) {
-    
     this.realisedMarket = realisedMarket;
     return this;
   }
@@ -242,21 +201,16 @@ public class RealisedGainLoss {
    * Get realisedMarket
    * @return realisedMarket
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public CurrencyAndAmount getRealisedMarket() {
     return realisedMarket;
   }
-
 
   public void setRealisedMarket(CurrencyAndAmount realisedMarket) {
     this.realisedMarket = realisedMarket;
   }
 
-
   public RealisedGainLoss realisedCurrency(CurrencyAndAmount realisedCurrency) {
-    
     this.realisedCurrency = realisedCurrency;
     return this;
   }
@@ -265,13 +219,10 @@ public class RealisedGainLoss {
    * Get realisedCurrency
    * @return realisedCurrency
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public CurrencyAndAmount getRealisedCurrency() {
     return realisedCurrency;
   }
-
 
   public void setRealisedCurrency(CurrencyAndAmount realisedCurrency) {
     this.realisedCurrency = realisedCurrency;

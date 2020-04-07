@@ -45,15 +45,13 @@ public class CreateCutLabelDefinitionRequest {
 
   public static final String SERIALIZED_NAME_CUT_LOCAL_TIME = "cutLocalTime";
   @SerializedName(SERIALIZED_NAME_CUT_LOCAL_TIME)
-  private CutLocalTime cutLocalTime;
+  private CutLocalTime cutLocalTime = null;
 
   public static final String SERIALIZED_NAME_TIME_ZONE = "timeZone";
   @SerializedName(SERIALIZED_NAME_TIME_ZONE)
   private String timeZone;
 
-
   public CreateCutLabelDefinitionRequest code(String code) {
-    
     this.code = code;
     return this;
   }
@@ -63,19 +61,15 @@ public class CreateCutLabelDefinitionRequest {
    * @return code
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getCode() {
     return code;
   }
-
 
   public void setCode(String code) {
     this.code = code;
   }
 
-
   public CreateCutLabelDefinitionRequest displayName(String displayName) {
-    
     this.displayName = displayName;
     return this;
   }
@@ -85,19 +79,15 @@ public class CreateCutLabelDefinitionRequest {
    * @return displayName
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getDisplayName() {
     return displayName;
   }
-
 
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
   }
 
-
   public CreateCutLabelDefinitionRequest description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -106,21 +96,16 @@ public class CreateCutLabelDefinitionRequest {
    * Get description
    * @return description
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getDescription() {
     return description;
   }
-
 
   public void setDescription(String description) {
     this.description = description;
   }
 
-
   public CreateCutLabelDefinitionRequest cutLocalTime(CutLocalTime cutLocalTime) {
-    
     this.cutLocalTime = cutLocalTime;
     return this;
   }
@@ -130,19 +115,15 @@ public class CreateCutLabelDefinitionRequest {
    * @return cutLocalTime
   **/
   @ApiModelProperty(required = true, value = "")
-
   public CutLocalTime getCutLocalTime() {
     return cutLocalTime;
   }
-
 
   public void setCutLocalTime(CutLocalTime cutLocalTime) {
     this.cutLocalTime = cutLocalTime;
   }
 
-
   public CreateCutLabelDefinitionRequest timeZone(String timeZone) {
-    
     this.timeZone = timeZone;
     return this;
   }
@@ -152,11 +133,9 @@ public class CreateCutLabelDefinitionRequest {
    * @return timeZone
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getTimeZone() {
     return timeZone;
   }
-
 
   public void setTimeZone(String timeZone) {
     this.timeZone = timeZone;

@@ -40,15 +40,13 @@ public class ConstituentsAdjustmentHeader {
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version;
+  private Version version = null;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public ConstituentsAdjustmentHeader effectiveAt(OffsetDateTime effectiveAt) {
-    
     this.effectiveAt = effectiveAt;
     return this;
   }
@@ -57,21 +55,16 @@ public class ConstituentsAdjustmentHeader {
    * There can be at most one holdings adjustment for a portfolio at a  specific effective time so this uniquely identifies the adjustment.
    * @return effectiveAt
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "There can be at most one holdings adjustment for a portfolio at a  specific effective time so this uniquely identifies the adjustment.")
-
   public OffsetDateTime getEffectiveAt() {
     return effectiveAt;
   }
-
 
   public void setEffectiveAt(OffsetDateTime effectiveAt) {
     this.effectiveAt = effectiveAt;
   }
 
-
   public ConstituentsAdjustmentHeader version(Version version) {
-    
     this.version = version;
     return this;
   }
@@ -80,21 +73,16 @@ public class ConstituentsAdjustmentHeader {
    * Get version
    * @return version
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Version getVersion() {
     return version;
   }
-
 
   public void setVersion(Version version) {
     this.version = version;
   }
 
-
   public ConstituentsAdjustmentHeader links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -111,13 +99,10 @@ public class ConstituentsAdjustmentHeader {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

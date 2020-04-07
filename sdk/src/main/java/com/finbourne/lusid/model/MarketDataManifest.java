@@ -36,15 +36,13 @@ import java.util.Map;
 public class MarketDataManifest {
   public static final String SERIALIZED_NAME_QUOTES = "quotes";
   @SerializedName(SERIALIZED_NAME_QUOTES)
-  private Map<String, ValueTupleOfMarketDataKeyRuleToQuote> quotes = null;
+  private Map<String, ValueTupleOfMarketDataKeyRuleToQuote> quotes = new HashMap<>();
 
   public static final String SERIALIZED_NAME_STRUCTURED_MARKET_DATA = "structuredMarketData";
   @SerializedName(SERIALIZED_NAME_STRUCTURED_MARKET_DATA)
-  private Map<String, ValueTupleOfMarketDataKeyRuleToStructuredMarketData> structuredMarketData = null;
-
+  private Map<String, ValueTupleOfMarketDataKeyRuleToStructuredMarketData> structuredMarketData = new HashMap<>();
 
   public MarketDataManifest quotes(Map<String, ValueTupleOfMarketDataKeyRuleToQuote> quotes) {
-    
     this.quotes = quotes;
     return this;
   }
@@ -61,21 +59,16 @@ public class MarketDataManifest {
    * Get quotes
    * @return quotes
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Map<String, ValueTupleOfMarketDataKeyRuleToQuote> getQuotes() {
     return quotes;
   }
-
 
   public void setQuotes(Map<String, ValueTupleOfMarketDataKeyRuleToQuote> quotes) {
     this.quotes = quotes;
   }
 
-
   public MarketDataManifest structuredMarketData(Map<String, ValueTupleOfMarketDataKeyRuleToStructuredMarketData> structuredMarketData) {
-    
     this.structuredMarketData = structuredMarketData;
     return this;
   }
@@ -92,13 +85,10 @@ public class MarketDataManifest {
    * Get structuredMarketData
    * @return structuredMarketData
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Map<String, ValueTupleOfMarketDataKeyRuleToStructuredMarketData> getStructuredMarketData() {
     return structuredMarketData;
   }
-
 
   public void setStructuredMarketData(Map<String, ValueTupleOfMarketDataKeyRuleToStructuredMarketData> structuredMarketData) {
     this.structuredMarketData = structuredMarketData;

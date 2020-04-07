@@ -48,9 +48,7 @@ public class CorporateActionTransitionComponent {
   @SerializedName(SERIALIZED_NAME_COST_FACTOR)
   private Double costFactor;
 
-
   public CorporateActionTransitionComponent instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
-    
     this.instrumentIdentifiers = instrumentIdentifiers;
     return this;
   }
@@ -65,19 +63,15 @@ public class CorporateActionTransitionComponent {
    * @return instrumentIdentifiers
   **/
   @ApiModelProperty(required = true, value = "Unique instrument identifiers")
-
   public Map<String, String> getInstrumentIdentifiers() {
     return instrumentIdentifiers;
   }
-
 
   public void setInstrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
     this.instrumentIdentifiers = instrumentIdentifiers;
   }
 
-
   public CorporateActionTransitionComponent instrumentUid(String instrumentUid) {
-    
     this.instrumentUid = instrumentUid;
     return this;
   }
@@ -87,19 +81,15 @@ public class CorporateActionTransitionComponent {
    * @return instrumentUid
   **/
   @ApiModelProperty(required = true, value = "LUSID's internal unique instrument identifier, resolved from the instrument identifiers")
-
   public String getInstrumentUid() {
     return instrumentUid;
   }
-
 
   public void setInstrumentUid(String instrumentUid) {
     this.instrumentUid = instrumentUid;
   }
 
-
   public CorporateActionTransitionComponent unitsFactor(Double unitsFactor) {
-    
     this.unitsFactor = unitsFactor;
     return this;
   }
@@ -109,19 +99,15 @@ public class CorporateActionTransitionComponent {
    * @return unitsFactor
   **/
   @ApiModelProperty(required = true, value = "")
-
   public Double getUnitsFactor() {
     return unitsFactor;
   }
-
 
   public void setUnitsFactor(Double unitsFactor) {
     this.unitsFactor = unitsFactor;
   }
 
-
   public CorporateActionTransitionComponent costFactor(Double costFactor) {
-    
     this.costFactor = costFactor;
     return this;
   }
@@ -131,11 +117,9 @@ public class CorporateActionTransitionComponent {
    * @return costFactor
   **/
   @ApiModelProperty(required = true, value = "")
-
   public Double getCostFactor() {
     return costFactor;
   }
-
 
   public void setCostFactor(Double costFactor) {
     this.costFactor = costFactor;

@@ -81,7 +81,7 @@ public class CreateDataTypeRequest {
 
       @Override
       public TypeValueRangeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return TypeValueRangeEnum.fromValue(value);
       }
     }
@@ -224,7 +224,7 @@ public class CreateDataTypeRequest {
 
       @Override
       public ValueTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return ValueTypeEnum.fromValue(value);
       }
     }
@@ -236,7 +236,7 @@ public class CreateDataTypeRequest {
 
   public static final String SERIALIZED_NAME_ACCEPTABLE_VALUES = "acceptableValues";
   @SerializedName(SERIALIZED_NAME_ACCEPTABLE_VALUES)
-  private List<String> acceptableValues = null;
+  private List<String> acceptableValues = new ArrayList<>();
 
   /**
    * Gets or Sets unitSchema
@@ -281,7 +281,7 @@ public class CreateDataTypeRequest {
 
       @Override
       public UnitSchemaEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return UnitSchemaEnum.fromValue(value);
       }
     }
@@ -293,11 +293,9 @@ public class CreateDataTypeRequest {
 
   public static final String SERIALIZED_NAME_ACCEPTABLE_UNITS = "acceptableUnits";
   @SerializedName(SERIALIZED_NAME_ACCEPTABLE_UNITS)
-  private List<CreateUnitDefinition> acceptableUnits = null;
-
+  private List<CreateUnitDefinition> acceptableUnits = new ArrayList<>();
 
   public CreateDataTypeRequest scope(String scope) {
-    
     this.scope = scope;
     return this;
   }
@@ -307,19 +305,15 @@ public class CreateDataTypeRequest {
    * @return scope
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getScope() {
     return scope;
   }
-
 
   public void setScope(String scope) {
     this.scope = scope;
   }
 
-
   public CreateDataTypeRequest code(String code) {
-    
     this.code = code;
     return this;
   }
@@ -329,19 +323,15 @@ public class CreateDataTypeRequest {
    * @return code
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getCode() {
     return code;
   }
-
 
   public void setCode(String code) {
     this.code = code;
   }
 
-
   public CreateDataTypeRequest typeValueRange(TypeValueRangeEnum typeValueRange) {
-    
     this.typeValueRange = typeValueRange;
     return this;
   }
@@ -351,19 +341,15 @@ public class CreateDataTypeRequest {
    * @return typeValueRange
   **/
   @ApiModelProperty(required = true, value = "")
-
   public TypeValueRangeEnum getTypeValueRange() {
     return typeValueRange;
   }
-
 
   public void setTypeValueRange(TypeValueRangeEnum typeValueRange) {
     this.typeValueRange = typeValueRange;
   }
 
-
   public CreateDataTypeRequest displayName(String displayName) {
-    
     this.displayName = displayName;
     return this;
   }
@@ -373,19 +359,15 @@ public class CreateDataTypeRequest {
    * @return displayName
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getDisplayName() {
     return displayName;
   }
-
 
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
   }
 
-
   public CreateDataTypeRequest description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -395,19 +377,15 @@ public class CreateDataTypeRequest {
    * @return description
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getDescription() {
     return description;
   }
-
 
   public void setDescription(String description) {
     this.description = description;
   }
 
-
   public CreateDataTypeRequest valueType(ValueTypeEnum valueType) {
-    
     this.valueType = valueType;
     return this;
   }
@@ -417,19 +395,15 @@ public class CreateDataTypeRequest {
    * @return valueType
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ValueTypeEnum getValueType() {
     return valueType;
   }
-
 
   public void setValueType(ValueTypeEnum valueType) {
     this.valueType = valueType;
   }
 
-
   public CreateDataTypeRequest acceptableValues(List<String> acceptableValues) {
-    
     this.acceptableValues = acceptableValues;
     return this;
   }
@@ -446,21 +420,16 @@ public class CreateDataTypeRequest {
    * Get acceptableValues
    * @return acceptableValues
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<String> getAcceptableValues() {
     return acceptableValues;
   }
-
 
   public void setAcceptableValues(List<String> acceptableValues) {
     this.acceptableValues = acceptableValues;
   }
 
-
   public CreateDataTypeRequest unitSchema(UnitSchemaEnum unitSchema) {
-    
     this.unitSchema = unitSchema;
     return this;
   }
@@ -469,21 +438,16 @@ public class CreateDataTypeRequest {
    * Get unitSchema
    * @return unitSchema
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public UnitSchemaEnum getUnitSchema() {
     return unitSchema;
   }
-
 
   public void setUnitSchema(UnitSchemaEnum unitSchema) {
     this.unitSchema = unitSchema;
   }
 
-
   public CreateDataTypeRequest acceptableUnits(List<CreateUnitDefinition> acceptableUnits) {
-    
     this.acceptableUnits = acceptableUnits;
     return this;
   }
@@ -500,13 +464,10 @@ public class CreateDataTypeRequest {
    * Get acceptableUnits
    * @return acceptableUnits
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<CreateUnitDefinition> getAcceptableUnits() {
     return acceptableUnits;
   }
-
 
   public void setAcceptableUnits(List<CreateUnitDefinition> acceptableUnits) {
     this.acceptableUnits = acceptableUnits;

@@ -44,47 +44,35 @@ public class Person {
 
   public static final String SERIALIZED_NAME_IDENTIFIERS = "identifiers";
   @SerializedName(SERIALIZED_NAME_IDENTIFIERS)
-  private Map<String, Property> identifiers = null;
+  private Map<String, Property> identifiers = new HashMap<>();
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, List<Property>> properties = null;
+  private Map<String, List<Property>> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version;
-
+  private Version version = null;
 
    /**
    * The specifc Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The specifc Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.")
-
   public String getHref() {
     return href;
   }
-
-
-
 
    /**
    * The unique LUSID Person Identifier (LUPID) of the Person.
    * @return lusidPersonId
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The unique LUSID Person Identifier (LUPID) of the Person.")
-
   public String getLusidPersonId() {
     return lusidPersonId;
   }
 
-
-
-
   public Person identifiers(Map<String, Property> identifiers) {
-    
     this.identifiers = identifiers;
     return this;
   }
@@ -101,21 +89,16 @@ public class Person {
    * Unique client-defined identifiers of the Person.
    * @return identifiers
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Unique client-defined identifiers of the Person.")
-
   public Map<String, Property> getIdentifiers() {
     return identifiers;
   }
-
 
   public void setIdentifiers(Map<String, Property> identifiers) {
     this.identifiers = identifiers;
   }
 
-
   public Person properties(Map<String, List<Property>> properties) {
-    
     this.properties = properties;
     return this;
   }
@@ -132,21 +115,16 @@ public class Person {
    * A set of properties associated to the Person. There can be multiple properties associated with a property key.
    * @return properties
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "A set of properties associated to the Person. There can be multiple properties associated with a property key.")
-
   public Map<String, List<Property>> getProperties() {
     return properties;
   }
-
 
   public void setProperties(Map<String, List<Property>> properties) {
     this.properties = properties;
   }
 
-
   public Person version(Version version) {
-    
     this.version = version;
     return this;
   }
@@ -155,13 +133,10 @@ public class Person {
    * Get version
    * @return version
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Version getVersion() {
     return version;
   }
-
 
   public void setVersion(Version version) {
     this.version = version;

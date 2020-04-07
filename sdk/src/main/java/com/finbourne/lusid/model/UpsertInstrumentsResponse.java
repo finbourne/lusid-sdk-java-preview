@@ -42,19 +42,17 @@ public class UpsertInstrumentsResponse {
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  private Map<String, Instrument> values = null;
+  private Map<String, Instrument> values = new HashMap<>();
 
   public static final String SERIALIZED_NAME_FAILED = "failed";
   @SerializedName(SERIALIZED_NAME_FAILED)
-  private Map<String, ErrorDetail> failed = null;
+  private Map<String, ErrorDetail> failed = new HashMap<>();
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public UpsertInstrumentsResponse href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -63,21 +61,16 @@ public class UpsertInstrumentsResponse {
    * The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public UpsertInstrumentsResponse values(Map<String, Instrument> values) {
-    
     this.values = values;
     return this;
   }
@@ -94,21 +87,16 @@ public class UpsertInstrumentsResponse {
    * The instruments which have been successfully updated or inserted.
    * @return values
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The instruments which have been successfully updated or inserted.")
-
   public Map<String, Instrument> getValues() {
     return values;
   }
-
 
   public void setValues(Map<String, Instrument> values) {
     this.values = values;
   }
 
-
   public UpsertInstrumentsResponse failed(Map<String, ErrorDetail> failed) {
-    
     this.failed = failed;
     return this;
   }
@@ -125,21 +113,16 @@ public class UpsertInstrumentsResponse {
    * The instruments that could not be updated or inserted along with a reason for their failure.
    * @return failed
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The instruments that could not be updated or inserted along with a reason for their failure.")
-
   public Map<String, ErrorDetail> getFailed() {
     return failed;
   }
-
 
   public void setFailed(Map<String, ErrorDetail> failed) {
     this.failed = failed;
   }
 
-
   public UpsertInstrumentsResponse links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -156,13 +139,10 @@ public class UpsertInstrumentsResponse {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

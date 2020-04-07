@@ -36,7 +36,7 @@ import java.util.Map;
 public class AggregationResponseNodeOfDictionaryOfStringToObject {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
-  private AggregateSpec key;
+  private AggregateSpec key = null;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
@@ -48,15 +48,13 @@ public class AggregationResponseNodeOfDictionaryOfStringToObject {
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, Object> properties = null;
+  private Map<String, Object> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_CHILDREN = "children";
   @SerializedName(SERIALIZED_NAME_CHILDREN)
-  private List<AggregationResponseNodeOfDictionaryOfStringToObject> children = null;
-
+  private List<AggregationResponseNodeOfDictionaryOfStringToObject> children = new ArrayList<>();
 
   public AggregationResponseNodeOfDictionaryOfStringToObject key(AggregateSpec key) {
-    
     this.key = key;
     return this;
   }
@@ -65,21 +63,16 @@ public class AggregationResponseNodeOfDictionaryOfStringToObject {
    * Get key
    * @return key
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public AggregateSpec getKey() {
     return key;
   }
-
 
   public void setKey(AggregateSpec key) {
     this.key = key;
   }
 
-
   public AggregationResponseNodeOfDictionaryOfStringToObject value(String value) {
-    
     this.value = value;
     return this;
   }
@@ -88,21 +81,16 @@ public class AggregationResponseNodeOfDictionaryOfStringToObject {
    * Get value
    * @return value
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getValue() {
     return value;
   }
-
 
   public void setValue(String value) {
     this.value = value;
   }
 
-
   public AggregationResponseNodeOfDictionaryOfStringToObject depth(Integer depth) {
-    
     this.depth = depth;
     return this;
   }
@@ -111,21 +99,16 @@ public class AggregationResponseNodeOfDictionaryOfStringToObject {
    * Get depth
    * @return depth
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Integer getDepth() {
     return depth;
   }
-
 
   public void setDepth(Integer depth) {
     this.depth = depth;
   }
 
-
   public AggregationResponseNodeOfDictionaryOfStringToObject properties(Map<String, Object> properties) {
-    
     this.properties = properties;
     return this;
   }
@@ -142,21 +125,16 @@ public class AggregationResponseNodeOfDictionaryOfStringToObject {
    * Get properties
    * @return properties
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Map<String, Object> getProperties() {
     return properties;
   }
-
 
   public void setProperties(Map<String, Object> properties) {
     this.properties = properties;
   }
 
-
   public AggregationResponseNodeOfDictionaryOfStringToObject children(List<AggregationResponseNodeOfDictionaryOfStringToObject> children) {
-    
     this.children = children;
     return this;
   }
@@ -173,13 +151,10 @@ public class AggregationResponseNodeOfDictionaryOfStringToObject {
    * Get children
    * @return children
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<AggregationResponseNodeOfDictionaryOfStringToObject> getChildren() {
     return children;
   }
-
 
   public void setChildren(List<AggregationResponseNodeOfDictionaryOfStringToObject> children) {
     this.children = children;

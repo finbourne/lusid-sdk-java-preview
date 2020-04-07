@@ -33,15 +33,13 @@ import java.io.IOException;
 public class ValueTupleOfMarketDataKeyRuleToStructuredMarketData {
   public static final String SERIALIZED_NAME_ITEM1 = "item1";
   @SerializedName(SERIALIZED_NAME_ITEM1)
-  private MarketDataKeyRule item1;
+  private MarketDataKeyRule item1 = null;
 
   public static final String SERIALIZED_NAME_ITEM2 = "item2";
   @SerializedName(SERIALIZED_NAME_ITEM2)
-  private StructuredMarketData item2;
-
+  private StructuredMarketData item2 = null;
 
   public ValueTupleOfMarketDataKeyRuleToStructuredMarketData item1(MarketDataKeyRule item1) {
-    
     this.item1 = item1;
     return this;
   }
@@ -50,21 +48,16 @@ public class ValueTupleOfMarketDataKeyRuleToStructuredMarketData {
    * Get item1
    * @return item1
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public MarketDataKeyRule getItem1() {
     return item1;
   }
-
 
   public void setItem1(MarketDataKeyRule item1) {
     this.item1 = item1;
   }
 
-
   public ValueTupleOfMarketDataKeyRuleToStructuredMarketData item2(StructuredMarketData item2) {
-    
     this.item2 = item2;
     return this;
   }
@@ -73,13 +66,10 @@ public class ValueTupleOfMarketDataKeyRuleToStructuredMarketData {
    * Get item2
    * @return item2
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public StructuredMarketData getItem2() {
     return item2;
   }
-
 
   public void setItem2(StructuredMarketData item2) {
     this.item2 = item2;

@@ -35,11 +35,9 @@ import java.util.List;
 public class AllocationSetRequest {
   public static final String SERIALIZED_NAME_ALLOCATION_REQUESTS = "allocationRequests";
   @SerializedName(SERIALIZED_NAME_ALLOCATION_REQUESTS)
-  private List<AllocationRequest> allocationRequests = null;
-
+  private List<AllocationRequest> allocationRequests = new ArrayList<>();
 
   public AllocationSetRequest allocationRequests(List<AllocationRequest> allocationRequests) {
-    
     this.allocationRequests = allocationRequests;
     return this;
   }
@@ -56,13 +54,10 @@ public class AllocationSetRequest {
    * A collection of AllocationRequests.
    * @return allocationRequests
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "A collection of AllocationRequests.")
-
   public List<AllocationRequest> getAllocationRequests() {
     return allocationRequests;
   }
-
 
   public void setAllocationRequests(List<AllocationRequest> allocationRequests) {
     this.allocationRequests = allocationRequests;

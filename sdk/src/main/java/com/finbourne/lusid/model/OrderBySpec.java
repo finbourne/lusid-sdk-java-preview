@@ -74,7 +74,7 @@ public class OrderBySpec {
 
       @Override
       public SortOrderEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return SortOrderEnum.fromValue(value);
       }
     }
@@ -84,9 +84,7 @@ public class OrderBySpec {
   @SerializedName(SERIALIZED_NAME_SORT_ORDER)
   private SortOrderEnum sortOrder;
 
-
   public OrderBySpec key(String key) {
-    
     this.key = key;
     return this;
   }
@@ -96,19 +94,15 @@ public class OrderBySpec {
    * @return key
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getKey() {
     return key;
   }
-
 
   public void setKey(String key) {
     this.key = key;
   }
 
-
   public OrderBySpec sortOrder(SortOrderEnum sortOrder) {
-    
     this.sortOrder = sortOrder;
     return this;
   }
@@ -118,11 +112,9 @@ public class OrderBySpec {
    * @return sortOrder
   **/
   @ApiModelProperty(required = true, value = "")
-
   public SortOrderEnum getSortOrder() {
     return sortOrder;
   }
-
 
   public void setSortOrder(SortOrderEnum sortOrder) {
     this.sortOrder = sortOrder;

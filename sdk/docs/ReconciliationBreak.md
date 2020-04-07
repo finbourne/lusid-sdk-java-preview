@@ -2,7 +2,6 @@
 
 # ReconciliationBreak
 
-A reconciliation break
 ## Properties
 
 Name | Type | Description | Notes

@@ -51,39 +51,27 @@ public class PagedResourceListOfAllocation {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
    /**
    * Get nextPage
    * @return nextPage
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getNextPage() {
     return nextPage;
   }
-
-
-
 
    /**
    * Get previousPage
    * @return previousPage
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getPreviousPage() {
     return previousPage;
   }
 
-
-
-
   public PagedResourceListOfAllocation values(List<Allocation> values) {
-    
     this.values = values;
     return this;
   }
@@ -98,19 +86,15 @@ public class PagedResourceListOfAllocation {
    * @return values
   **/
   @ApiModelProperty(required = true, value = "")
-
   public List<Allocation> getValues() {
     return values;
   }
-
 
   public void setValues(List<Allocation> values) {
     this.values = values;
   }
 
-
   public PagedResourceListOfAllocation href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -119,21 +103,16 @@ public class PagedResourceListOfAllocation {
    * Get href
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public PagedResourceListOfAllocation links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -150,13 +129,10 @@ public class PagedResourceListOfAllocation {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

@@ -37,9 +37,7 @@ public class InstrumentSearchProperty {
   @SerializedName(SERIALIZED_NAME_VALUE)
   private String value;
 
-
   public InstrumentSearchProperty key(String key) {
-    
     this.key = key;
     return this;
   }
@@ -49,19 +47,15 @@ public class InstrumentSearchProperty {
    * @return key
   **/
   @ApiModelProperty(required = true, value = "The property key of instrument property to search for. This will be from the 'Instrument' domain and will take the format {domain}/{scope}/{code} e.g. 'Instrument/system/Isin' or 'Instrument/MyScope/AssetClass'.")
-
   public String getKey() {
     return key;
   }
-
 
   public void setKey(String key) {
     this.key = key;
   }
 
-
   public InstrumentSearchProperty value(String value) {
-    
     this.value = value;
     return this;
   }
@@ -71,11 +65,9 @@ public class InstrumentSearchProperty {
    * @return value
   **/
   @ApiModelProperty(required = true, value = "The value of the property e.g. 'US0378331005' or 'Equity'.")
-
   public String getValue() {
     return value;
   }
-
 
   public void setValue(String value) {
     this.value = value;

@@ -39,11 +39,9 @@ public class DeleteInstrumentPropertiesResponse {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public DeleteInstrumentPropertiesResponse asAt(OffsetDateTime asAt) {
-    
     this.asAt = asAt;
     return this;
   }
@@ -53,19 +51,15 @@ public class DeleteInstrumentPropertiesResponse {
    * @return asAt
   **/
   @ApiModelProperty(required = true, value = "The asAt datetime at which the properties were removed from the specified instruments.")
-
   public OffsetDateTime getAsAt() {
     return asAt;
   }
-
 
   public void setAsAt(OffsetDateTime asAt) {
     this.asAt = asAt;
   }
 
-
   public DeleteInstrumentPropertiesResponse links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -82,13 +76,10 @@ public class DeleteInstrumentPropertiesResponse {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

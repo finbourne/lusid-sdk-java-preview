@@ -35,15 +35,13 @@ import java.util.List;
 public class CorporateActionTransitionRequest {
   public static final String SERIALIZED_NAME_INPUT_TRANSITION = "inputTransition";
   @SerializedName(SERIALIZED_NAME_INPUT_TRANSITION)
-  private CorporateActionTransitionComponentRequest inputTransition;
+  private CorporateActionTransitionComponentRequest inputTransition = null;
 
   public static final String SERIALIZED_NAME_OUTPUT_TRANSITIONS = "outputTransitions";
   @SerializedName(SERIALIZED_NAME_OUTPUT_TRANSITIONS)
-  private List<CorporateActionTransitionComponentRequest> outputTransitions = null;
-
+  private List<CorporateActionTransitionComponentRequest> outputTransitions = new ArrayList<>();
 
   public CorporateActionTransitionRequest inputTransition(CorporateActionTransitionComponentRequest inputTransition) {
-    
     this.inputTransition = inputTransition;
     return this;
   }
@@ -52,21 +50,16 @@ public class CorporateActionTransitionRequest {
    * Get inputTransition
    * @return inputTransition
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public CorporateActionTransitionComponentRequest getInputTransition() {
     return inputTransition;
   }
-
 
   public void setInputTransition(CorporateActionTransitionComponentRequest inputTransition) {
     this.inputTransition = inputTransition;
   }
 
-
   public CorporateActionTransitionRequest outputTransitions(List<CorporateActionTransitionComponentRequest> outputTransitions) {
-    
     this.outputTransitions = outputTransitions;
     return this;
   }
@@ -83,13 +76,10 @@ public class CorporateActionTransitionRequest {
    * Get outputTransitions
    * @return outputTransitions
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<CorporateActionTransitionComponentRequest> getOutputTransitions() {
     return outputTransitions;
   }
-
 
   public void setOutputTransitions(List<CorporateActionTransitionComponentRequest> outputTransitions) {
     this.outputTransitions = outputTransitions;

@@ -37,7 +37,7 @@ import java.util.Map;
 public class AllocationRequest {
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = null;
+  private Map<String, PerpetualProperty> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS = "instrumentIdentifiers";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS)
@@ -49,19 +49,17 @@ public class AllocationRequest {
 
   public static final String SERIALIZED_NAME_PORTFOLIO_ID = "portfolioId";
   @SerializedName(SERIALIZED_NAME_PORTFOLIO_ID)
-  private ResourceId portfolioId;
+  private ResourceId portfolioId = null;
 
   public static final String SERIALIZED_NAME_ALLOCATED_ORDER_ID = "allocatedOrderId";
   @SerializedName(SERIALIZED_NAME_ALLOCATED_ORDER_ID)
-  private ResourceId allocatedOrderId;
+  private ResourceId allocatedOrderId = null;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id;
-
+  private ResourceId id = null;
 
   public AllocationRequest properties(Map<String, PerpetualProperty> properties) {
-    
     this.properties = properties;
     return this;
   }
@@ -78,21 +76,16 @@ public class AllocationRequest {
    * Client-defined properties associated with this allocation.
    * @return properties
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Client-defined properties associated with this allocation.")
-
   public Map<String, PerpetualProperty> getProperties() {
     return properties;
   }
-
 
   public void setProperties(Map<String, PerpetualProperty> properties) {
     this.properties = properties;
   }
 
-
   public AllocationRequest instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
-    
     this.instrumentIdentifiers = instrumentIdentifiers;
     return this;
   }
@@ -107,19 +100,15 @@ public class AllocationRequest {
    * @return instrumentIdentifiers
   **/
   @ApiModelProperty(required = true, value = "The instrument allocated.")
-
   public Map<String, String> getInstrumentIdentifiers() {
     return instrumentIdentifiers;
   }
-
 
   public void setInstrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
     this.instrumentIdentifiers = instrumentIdentifiers;
   }
 
-
   public AllocationRequest quantity(Integer quantity) {
-    
     this.quantity = quantity;
     return this;
   }
@@ -129,19 +118,15 @@ public class AllocationRequest {
    * @return quantity
   **/
   @ApiModelProperty(required = true, value = "The quantity of given instrument allocated.")
-
   public Integer getQuantity() {
     return quantity;
   }
-
 
   public void setQuantity(Integer quantity) {
     this.quantity = quantity;
   }
 
-
   public AllocationRequest portfolioId(ResourceId portfolioId) {
-    
     this.portfolioId = portfolioId;
     return this;
   }
@@ -151,19 +136,15 @@ public class AllocationRequest {
    * @return portfolioId
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ResourceId getPortfolioId() {
     return portfolioId;
   }
-
 
   public void setPortfolioId(ResourceId portfolioId) {
     this.portfolioId = portfolioId;
   }
 
-
   public AllocationRequest allocatedOrderId(ResourceId allocatedOrderId) {
-    
     this.allocatedOrderId = allocatedOrderId;
     return this;
   }
@@ -173,19 +154,15 @@ public class AllocationRequest {
    * @return allocatedOrderId
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ResourceId getAllocatedOrderId() {
     return allocatedOrderId;
   }
-
 
   public void setAllocatedOrderId(ResourceId allocatedOrderId) {
     this.allocatedOrderId = allocatedOrderId;
   }
 
-
   public AllocationRequest id(ResourceId id) {
-    
     this.id = id;
     return this;
   }
@@ -195,11 +172,9 @@ public class AllocationRequest {
    * @return id
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ResourceId getId() {
     return id;
   }
-
 
   public void setId(ResourceId id) {
     this.id = id;

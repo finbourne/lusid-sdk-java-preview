@@ -2,7 +2,6 @@
 
 # TargetTaxLot
 
-Used to specify holdings target amounts at the tax-lot level
 ## Properties
 
 Name | Type | Description | Notes

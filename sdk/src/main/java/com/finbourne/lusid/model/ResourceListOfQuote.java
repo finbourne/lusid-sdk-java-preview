@@ -43,11 +43,9 @@ public class ResourceListOfQuote {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public ResourceListOfQuote values(List<Quote> values) {
-    
     this.values = values;
     return this;
   }
@@ -62,19 +60,15 @@ public class ResourceListOfQuote {
    * @return values
   **/
   @ApiModelProperty(required = true, value = "")
-
   public List<Quote> getValues() {
     return values;
   }
-
 
   public void setValues(List<Quote> values) {
     this.values = values;
   }
 
-
   public ResourceListOfQuote href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -83,21 +77,16 @@ public class ResourceListOfQuote {
    * Get href
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public ResourceListOfQuote links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -114,13 +103,10 @@ public class ResourceListOfQuote {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

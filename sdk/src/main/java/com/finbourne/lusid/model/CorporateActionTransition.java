@@ -35,15 +35,13 @@ import java.util.List;
 public class CorporateActionTransition {
   public static final String SERIALIZED_NAME_INPUT_TRANSITION = "inputTransition";
   @SerializedName(SERIALIZED_NAME_INPUT_TRANSITION)
-  private CorporateActionTransitionComponent inputTransition;
+  private CorporateActionTransitionComponent inputTransition = null;
 
   public static final String SERIALIZED_NAME_OUTPUT_TRANSITIONS = "outputTransitions";
   @SerializedName(SERIALIZED_NAME_OUTPUT_TRANSITIONS)
-  private List<CorporateActionTransitionComponent> outputTransitions = null;
-
+  private List<CorporateActionTransitionComponent> outputTransitions = new ArrayList<>();
 
   public CorporateActionTransition inputTransition(CorporateActionTransitionComponent inputTransition) {
-    
     this.inputTransition = inputTransition;
     return this;
   }
@@ -52,21 +50,16 @@ public class CorporateActionTransition {
    * Get inputTransition
    * @return inputTransition
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public CorporateActionTransitionComponent getInputTransition() {
     return inputTransition;
   }
-
 
   public void setInputTransition(CorporateActionTransitionComponent inputTransition) {
     this.inputTransition = inputTransition;
   }
 
-
   public CorporateActionTransition outputTransitions(List<CorporateActionTransitionComponent> outputTransitions) {
-    
     this.outputTransitions = outputTransitions;
     return this;
   }
@@ -83,13 +76,10 @@ public class CorporateActionTransition {
    * What will be generated relative to the input transition
    * @return outputTransitions
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "What will be generated relative to the input transition")
-
   public List<CorporateActionTransitionComponent> getOutputTransitions() {
     return outputTransitions;
   }
-
 
   public void setOutputTransitions(List<CorporateActionTransitionComponent> outputTransitions) {
     this.outputTransitions = outputTransitions;

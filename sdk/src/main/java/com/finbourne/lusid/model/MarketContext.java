@@ -37,19 +37,17 @@ import java.util.List;
 public class MarketContext {
   public static final String SERIALIZED_NAME_MARKET_RULES = "marketRules";
   @SerializedName(SERIALIZED_NAME_MARKET_RULES)
-  private List<MarketDataKeyRule> marketRules = null;
+  private List<MarketDataKeyRule> marketRules = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SUPPLIERS = "suppliers";
   @SerializedName(SERIALIZED_NAME_SUPPLIERS)
-  private MarketContextSuppliers suppliers;
+  private MarketContextSuppliers suppliers = null;
 
   public static final String SERIALIZED_NAME_OPTIONS = "options";
   @SerializedName(SERIALIZED_NAME_OPTIONS)
-  private MarketOptions options;
-
+  private MarketOptions options = null;
 
   public MarketContext marketRules(List<MarketDataKeyRule> marketRules) {
-    
     this.marketRules = marketRules;
     return this;
   }
@@ -66,21 +64,16 @@ public class MarketContext {
    * The set of rules that define how to resolve particular use cases. These can be relatively general or specific in nature.  Nominally any number are possible and will be processed in order where applicable. However, there is evidently a potential  for increased computational cost where many rules must be applied to resolve data. Ensuring that portfolios are structured in  such a way as to reduce the number of rules required is therefore sensible.
    * @return marketRules
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The set of rules that define how to resolve particular use cases. These can be relatively general or specific in nature.  Nominally any number are possible and will be processed in order where applicable. However, there is evidently a potential  for increased computational cost where many rules must be applied to resolve data. Ensuring that portfolios are structured in  such a way as to reduce the number of rules required is therefore sensible.")
-
   public List<MarketDataKeyRule> getMarketRules() {
     return marketRules;
   }
-
 
   public void setMarketRules(List<MarketDataKeyRule> marketRules) {
     this.marketRules = marketRules;
   }
 
-
   public MarketContext suppliers(MarketContextSuppliers suppliers) {
-    
     this.suppliers = suppliers;
     return this;
   }
@@ -89,21 +82,16 @@ public class MarketContext {
    * Get suppliers
    * @return suppliers
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public MarketContextSuppliers getSuppliers() {
     return suppliers;
   }
-
 
   public void setSuppliers(MarketContextSuppliers suppliers) {
     this.suppliers = suppliers;
   }
 
-
   public MarketContext options(MarketOptions options) {
-    
     this.options = options;
     return this;
   }
@@ -112,13 +100,10 @@ public class MarketContext {
    * Get options
    * @return options
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public MarketOptions getOptions() {
     return options;
   }
-
 
   public void setOptions(MarketOptions options) {
     this.options = options;

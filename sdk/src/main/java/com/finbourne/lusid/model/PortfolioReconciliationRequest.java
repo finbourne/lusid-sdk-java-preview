@@ -33,7 +33,7 @@ import java.time.OffsetDateTime;
 public class PortfolioReconciliationRequest {
   public static final String SERIALIZED_NAME_PORTFOLIO_ID = "portfolioId";
   @SerializedName(SERIALIZED_NAME_PORTFOLIO_ID)
-  private ResourceId portfolioId;
+  private ResourceId portfolioId = null;
 
   public static final String SERIALIZED_NAME_EFFECTIVE_AT = "effectiveAt";
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_AT)
@@ -43,9 +43,7 @@ public class PortfolioReconciliationRequest {
   @SerializedName(SERIALIZED_NAME_AS_AT)
   private OffsetDateTime asAt;
 
-
   public PortfolioReconciliationRequest portfolioId(ResourceId portfolioId) {
-    
     this.portfolioId = portfolioId;
     return this;
   }
@@ -55,19 +53,15 @@ public class PortfolioReconciliationRequest {
    * @return portfolioId
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ResourceId getPortfolioId() {
     return portfolioId;
   }
-
 
   public void setPortfolioId(ResourceId portfolioId) {
     this.portfolioId = portfolioId;
   }
 
-
   public PortfolioReconciliationRequest effectiveAt(String effectiveAt) {
-    
     this.effectiveAt = effectiveAt;
     return this;
   }
@@ -77,19 +71,15 @@ public class PortfolioReconciliationRequest {
    * @return effectiveAt
   **/
   @ApiModelProperty(required = true, value = "The effective date of the portfolio")
-
   public String getEffectiveAt() {
     return effectiveAt;
   }
-
 
   public void setEffectiveAt(String effectiveAt) {
     this.effectiveAt = effectiveAt;
   }
 
-
   public PortfolioReconciliationRequest asAt(OffsetDateTime asAt) {
-    
     this.asAt = asAt;
     return this;
   }
@@ -98,13 +88,10 @@ public class PortfolioReconciliationRequest {
    * Optional. The AsAt date of the portfolio
    * @return asAt
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Optional. The AsAt date of the portfolio")
-
   public OffsetDateTime getAsAt() {
     return asAt;
   }
-
 
   public void setAsAt(OffsetDateTime asAt) {
     this.asAt = asAt;

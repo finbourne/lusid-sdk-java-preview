@@ -51,7 +51,7 @@ public class ListAggregationResponse {
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private List<Map<String, Object>> data = null;
+  private List<Map<String, Object>> data = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_AGGREGATION_CURRENCY = "aggregationCurrency";
   @SerializedName(SERIALIZED_NAME_AGGREGATION_CURRENCY)
@@ -59,23 +59,21 @@ public class ListAggregationResponse {
 
   public static final String SERIALIZED_NAME_DATA_SCHEMA = "dataSchema";
   @SerializedName(SERIALIZED_NAME_DATA_SCHEMA)
-  private ResultDataSchema dataSchema;
+  private ResultDataSchema dataSchema = null;
 
   public static final String SERIALIZED_NAME_AGGREGATION_FAILURES = "aggregationFailures";
   @SerializedName(SERIALIZED_NAME_AGGREGATION_FAILURES)
-  private List<AggregationMeasureFailureDetail> aggregationFailures = null;
+  private List<AggregationMeasureFailureDetail> aggregationFailures = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MANIFEST = "manifest";
   @SerializedName(SERIALIZED_NAME_MANIFEST)
-  private MarketDataManifest manifest;
+  private MarketDataManifest manifest = null;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public ListAggregationResponse aggregationEffectiveAt(OffsetDateTime aggregationEffectiveAt) {
-    
     this.aggregationEffectiveAt = aggregationEffectiveAt;
     return this;
   }
@@ -84,21 +82,16 @@ public class ListAggregationResponse {
    * Get aggregationEffectiveAt
    * @return aggregationEffectiveAt
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public OffsetDateTime getAggregationEffectiveAt() {
     return aggregationEffectiveAt;
   }
-
 
   public void setAggregationEffectiveAt(OffsetDateTime aggregationEffectiveAt) {
     this.aggregationEffectiveAt = aggregationEffectiveAt;
   }
 
-
   public ListAggregationResponse aggregationAsAt(OffsetDateTime aggregationAsAt) {
-    
     this.aggregationAsAt = aggregationAsAt;
     return this;
   }
@@ -107,21 +100,16 @@ public class ListAggregationResponse {
    * Get aggregationAsAt
    * @return aggregationAsAt
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public OffsetDateTime getAggregationAsAt() {
     return aggregationAsAt;
   }
-
 
   public void setAggregationAsAt(OffsetDateTime aggregationAsAt) {
     this.aggregationAsAt = aggregationAsAt;
   }
 
-
   public ListAggregationResponse href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -130,21 +118,16 @@ public class ListAggregationResponse {
    * Get href
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public ListAggregationResponse data(List<Map<String, Object>> data) {
-    
     this.data = data;
     return this;
   }
@@ -161,21 +144,16 @@ public class ListAggregationResponse {
    * Get data
    * @return data
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Map<String, Object>> getData() {
     return data;
   }
-
 
   public void setData(List<Map<String, Object>> data) {
     this.data = data;
   }
 
-
   public ListAggregationResponse aggregationCurrency(String aggregationCurrency) {
-    
     this.aggregationCurrency = aggregationCurrency;
     return this;
   }
@@ -184,21 +162,16 @@ public class ListAggregationResponse {
    * Get aggregationCurrency
    * @return aggregationCurrency
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getAggregationCurrency() {
     return aggregationCurrency;
   }
-
 
   public void setAggregationCurrency(String aggregationCurrency) {
     this.aggregationCurrency = aggregationCurrency;
   }
 
-
   public ListAggregationResponse dataSchema(ResultDataSchema dataSchema) {
-    
     this.dataSchema = dataSchema;
     return this;
   }
@@ -207,21 +180,16 @@ public class ListAggregationResponse {
    * Get dataSchema
    * @return dataSchema
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public ResultDataSchema getDataSchema() {
     return dataSchema;
   }
-
 
   public void setDataSchema(ResultDataSchema dataSchema) {
     this.dataSchema = dataSchema;
   }
 
-
   public ListAggregationResponse aggregationFailures(List<AggregationMeasureFailureDetail> aggregationFailures) {
-    
     this.aggregationFailures = aggregationFailures;
     return this;
   }
@@ -238,21 +206,16 @@ public class ListAggregationResponse {
    * Get aggregationFailures
    * @return aggregationFailures
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<AggregationMeasureFailureDetail> getAggregationFailures() {
     return aggregationFailures;
   }
-
 
   public void setAggregationFailures(List<AggregationMeasureFailureDetail> aggregationFailures) {
     this.aggregationFailures = aggregationFailures;
   }
 
-
   public ListAggregationResponse manifest(MarketDataManifest manifest) {
-    
     this.manifest = manifest;
     return this;
   }
@@ -261,21 +224,16 @@ public class ListAggregationResponse {
    * Get manifest
    * @return manifest
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public MarketDataManifest getManifest() {
     return manifest;
   }
-
 
   public void setManifest(MarketDataManifest manifest) {
     this.manifest = manifest;
   }
 
-
   public ListAggregationResponse links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -292,13 +250,10 @@ public class ListAggregationResponse {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

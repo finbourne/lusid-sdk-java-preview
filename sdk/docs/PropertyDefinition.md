@@ -2,7 +2,6 @@
 
 # PropertyDefinition
 
-A list of property definitions.
 ## Properties
 
 Name | Type | Description | Notes
@@ -16,9 +15,9 @@ Name | Type | Description | Notes
 **lifeTime** | [**LifeTimeEnum**](#LifeTimeEnum) | Describes how the property&#39;s values can change over time. |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) | The type of the property. |  [optional]
 **unitSchema** | [**UnitSchemaEnum**](#UnitSchemaEnum) | The units that can be associated with the property&#39;s values. This is defined by the property&#39;s data type. |  [optional]
-**domain** | [**DomainEnum**](#DomainEnum) | The domain that the property exists in. |  [optional] [readonly]
-**scope** | **String** | The scope that the property exists in. |  [optional] [readonly]
-**code** | **String** | The code of the property. Together with the domain and scope this uniquely identifies the property. |  [optional] [readonly]
+**domain** | [**DomainEnum**](#DomainEnum) | The domain that the property exists in. |  [optional]
+**scope** | **String** | The scope that the property exists in. |  [optional]
+**code** | **String** | The code of the property. Together with the domain and scope this uniquely identifies the property. |  [optional]
 **constraintStyle** | **String** | Describes the uniqueness and cardinality of the property for entity objects under the property domain specified in Key. |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 

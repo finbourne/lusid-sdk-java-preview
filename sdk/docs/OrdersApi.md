@@ -191,7 +191,7 @@ public class Example {
 
     OrdersApi apiInstance = new OrdersApi(defaultClient);
     String scope = "scope_example"; // String | The scope to which the orders belong.
-    List<UpsertOrderPropertiesRequest> request = Arrays.asList(); // List<UpsertOrderPropertiesRequest> | A collection of order property upsert requests.
+    List<UpsertOrderPropertiesRequest> request = Arrays.asList(null); // List<UpsertOrderPropertiesRequest> | A collection of order property upsert requests.
     try {
       UpsertOrderPropertiesResponse result = apiInstance.upsertOrderProperties(scope, request);
       System.out.println(result);

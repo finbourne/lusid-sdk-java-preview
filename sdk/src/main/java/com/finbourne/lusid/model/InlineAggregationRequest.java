@@ -36,15 +36,13 @@ import java.util.List;
 public class InlineAggregationRequest {
   public static final String SERIALIZED_NAME_REQUEST = "request";
   @SerializedName(SERIALIZED_NAME_REQUEST)
-  private AggregationRequest request;
+  private AggregationRequest request = null;
 
   public static final String SERIALIZED_NAME_INSTRUMENTS = "instruments";
   @SerializedName(SERIALIZED_NAME_INSTRUMENTS)
   private List<WeightedInstrument> instruments = new ArrayList<>();
 
-
   public InlineAggregationRequest request(AggregationRequest request) {
-    
     this.request = request;
     return this;
   }
@@ -54,19 +52,15 @@ public class InlineAggregationRequest {
    * @return request
   **/
   @ApiModelProperty(required = true, value = "")
-
   public AggregationRequest getRequest() {
     return request;
   }
-
 
   public void setRequest(AggregationRequest request) {
     this.request = request;
   }
 
-
   public InlineAggregationRequest instruments(List<WeightedInstrument> instruments) {
-    
     this.instruments = instruments;
     return this;
   }
@@ -81,11 +75,9 @@ public class InlineAggregationRequest {
    * @return instruments
   **/
   @ApiModelProperty(required = true, value = "The set of instruments, weighted by the quantities held that are required.  It is identified by an identifier tag that can be used to identify it externally.  For a single, unique trade or transaction this can be thought of as equivalent to the transaction identifier, or  a composite of the sub-holding keys for a regular sub-holding. When there are multiple transactions sharing the same underlying instrument  such as purchase of shares on multiple dates where tax implications are different this would not be the case.")
-
   public List<WeightedInstrument> getInstruments() {
     return instruments;
   }
-
 
   public void setInstruments(List<WeightedInstrument> instruments) {
     this.instruments = instruments;

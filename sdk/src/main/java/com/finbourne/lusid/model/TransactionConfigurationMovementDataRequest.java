@@ -102,7 +102,7 @@ public class TransactionConfigurationMovementDataRequest {
 
       @Override
       public MovementTypesEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return MovementTypesEnum.fromValue(value);
       }
     }
@@ -122,15 +122,13 @@ public class TransactionConfigurationMovementDataRequest {
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = null;
+  private Map<String, PerpetualProperty> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_MAPPINGS = "mappings";
   @SerializedName(SERIALIZED_NAME_MAPPINGS)
-  private List<TransactionPropertyMappingRequest> mappings = null;
-
+  private List<TransactionPropertyMappingRequest> mappings = new ArrayList<>();
 
   public TransactionConfigurationMovementDataRequest movementTypes(MovementTypesEnum movementTypes) {
-    
     this.movementTypes = movementTypes;
     return this;
   }
@@ -140,19 +138,15 @@ public class TransactionConfigurationMovementDataRequest {
    * @return movementTypes
   **/
   @ApiModelProperty(required = true, value = "The Movement Types")
-
   public MovementTypesEnum getMovementTypes() {
     return movementTypes;
   }
-
 
   public void setMovementTypes(MovementTypesEnum movementTypes) {
     this.movementTypes = movementTypes;
   }
 
-
   public TransactionConfigurationMovementDataRequest side(String side) {
-    
     this.side = side;
     return this;
   }
@@ -162,19 +156,15 @@ public class TransactionConfigurationMovementDataRequest {
    * @return side
   **/
   @ApiModelProperty(required = true, value = "The Movement Side")
-
   public String getSide() {
     return side;
   }
-
 
   public void setSide(String side) {
     this.side = side;
   }
 
-
   public TransactionConfigurationMovementDataRequest direction(Integer direction) {
-    
     this.direction = direction;
     return this;
   }
@@ -184,19 +174,15 @@ public class TransactionConfigurationMovementDataRequest {
    * @return direction
   **/
   @ApiModelProperty(required = true, value = "The Movement direction")
-
   public Integer getDirection() {
     return direction;
   }
-
 
   public void setDirection(Integer direction) {
     this.direction = direction;
   }
 
-
   public TransactionConfigurationMovementDataRequest properties(Map<String, PerpetualProperty> properties) {
-    
     this.properties = properties;
     return this;
   }
@@ -213,21 +199,16 @@ public class TransactionConfigurationMovementDataRequest {
    * Get properties
    * @return properties
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Map<String, PerpetualProperty> getProperties() {
     return properties;
   }
-
 
   public void setProperties(Map<String, PerpetualProperty> properties) {
     this.properties = properties;
   }
 
-
   public TransactionConfigurationMovementDataRequest mappings(List<TransactionPropertyMappingRequest> mappings) {
-    
     this.mappings = mappings;
     return this;
   }
@@ -244,13 +225,10 @@ public class TransactionConfigurationMovementDataRequest {
    * Get mappings
    * @return mappings
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<TransactionPropertyMappingRequest> getMappings() {
     return mappings;
   }
-
 
   public void setMappings(List<TransactionPropertyMappingRequest> mappings) {
     this.mappings = mappings;

@@ -118,7 +118,7 @@ public class FxOption {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -128,9 +128,7 @@ public class FxOption {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
-
   public FxOption startDate(OffsetDateTime startDate) {
-    
     this.startDate = startDate;
     return this;
   }
@@ -140,19 +138,15 @@ public class FxOption {
    * @return startDate
   **/
   @ApiModelProperty(required = true, value = "The start date of the option.")
-
   public OffsetDateTime getStartDate() {
     return startDate;
   }
-
 
   public void setStartDate(OffsetDateTime startDate) {
     this.startDate = startDate;
   }
 
-
   public FxOption optionMaturityDate(OffsetDateTime optionMaturityDate) {
-    
     this.optionMaturityDate = optionMaturityDate;
     return this;
   }
@@ -162,19 +156,15 @@ public class FxOption {
    * @return optionMaturityDate
   **/
   @ApiModelProperty(required = true, value = "The maturity date of the option.")
-
   public OffsetDateTime getOptionMaturityDate() {
     return optionMaturityDate;
   }
-
 
   public void setOptionMaturityDate(OffsetDateTime optionMaturityDate) {
     this.optionMaturityDate = optionMaturityDate;
   }
 
-
   public FxOption optionSettlementDate(OffsetDateTime optionSettlementDate) {
-    
     this.optionSettlementDate = optionSettlementDate;
     return this;
   }
@@ -184,19 +174,15 @@ public class FxOption {
    * @return optionSettlementDate
   **/
   @ApiModelProperty(required = true, value = "The settlement date of the option.")
-
   public OffsetDateTime getOptionSettlementDate() {
     return optionSettlementDate;
   }
-
 
   public void setOptionSettlementDate(OffsetDateTime optionSettlementDate) {
     this.optionSettlementDate = optionSettlementDate;
   }
 
-
   public FxOption isDeliveryNotCash(Boolean isDeliveryNotCash) {
-    
     this.isDeliveryNotCash = isDeliveryNotCash;
     return this;
   }
@@ -206,19 +192,15 @@ public class FxOption {
    * @return isDeliveryNotCash
   **/
   @ApiModelProperty(required = true, value = "True of the option is settled in cash false if delivery.")
-
   public Boolean getIsDeliveryNotCash() {
     return isDeliveryNotCash;
   }
-
 
   public void setIsDeliveryNotCash(Boolean isDeliveryNotCash) {
     this.isDeliveryNotCash = isDeliveryNotCash;
   }
 
-
   public FxOption isCallNotPut(Boolean isCallNotPut) {
-    
     this.isCallNotPut = isCallNotPut;
     return this;
   }
@@ -228,19 +210,15 @@ public class FxOption {
    * @return isCallNotPut
   **/
   @ApiModelProperty(required = true, value = "True if the option is a call, false if the option is a put.")
-
   public Boolean getIsCallNotPut() {
     return isCallNotPut;
   }
-
 
   public void setIsCallNotPut(Boolean isCallNotPut) {
     this.isCallNotPut = isCallNotPut;
   }
 
-
   public FxOption strike(Double strike) {
-    
     this.strike = strike;
     return this;
   }
@@ -250,19 +228,15 @@ public class FxOption {
    * @return strike
   **/
   @ApiModelProperty(required = true, value = "The strike of the option.")
-
   public Double getStrike() {
     return strike;
   }
-
 
   public void setStrike(Double strike) {
     this.strike = strike;
   }
 
-
   public FxOption domCcy(String domCcy) {
-    
     this.domCcy = domCcy;
     return this;
   }
@@ -272,19 +246,15 @@ public class FxOption {
    * @return domCcy
   **/
   @ApiModelProperty(required = true, value = "The domestic currency of the FX.")
-
   public String getDomCcy() {
     return domCcy;
   }
-
 
   public void setDomCcy(String domCcy) {
     this.domCcy = domCcy;
   }
 
-
   public FxOption fgnCcy(String fgnCcy) {
-    
     this.fgnCcy = fgnCcy;
     return this;
   }
@@ -294,19 +264,15 @@ public class FxOption {
    * @return fgnCcy
   **/
   @ApiModelProperty(required = true, value = "The foreign currency of the FX.")
-
   public String getFgnCcy() {
     return fgnCcy;
   }
-
 
   public void setFgnCcy(String fgnCcy) {
     this.fgnCcy = fgnCcy;
   }
 
-
   public FxOption instrumentType(InstrumentTypeEnum instrumentType) {
-    
     this.instrumentType = instrumentType;
     return this;
   }
@@ -316,11 +282,9 @@ public class FxOption {
    * @return instrumentType
   **/
   @ApiModelProperty(required = true, value = "Instrument type, must be property for JSON.")
-
   public InstrumentTypeEnum getInstrumentType() {
     return instrumentType;
   }
-
 
   public void setInstrumentType(InstrumentTypeEnum instrumentType) {
     this.instrumentType = instrumentType;

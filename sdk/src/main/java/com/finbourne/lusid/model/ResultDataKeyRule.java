@@ -86,7 +86,7 @@ public class ResultDataKeyRule {
 
       @Override
       public SupplierEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return SupplierEnum.fromValue(value);
       }
     }
@@ -112,9 +112,7 @@ public class ResultDataKeyRule {
   @SerializedName(SERIALIZED_NAME_AS_AT)
   private OffsetDateTime asAt;
 
-
   public ResultDataKeyRule resourceKey(String resourceKey) {
-    
     this.resourceKey = resourceKey;
     return this;
   }
@@ -124,19 +122,15 @@ public class ResultDataKeyRule {
    * @return resourceKey
   **/
   @ApiModelProperty(required = true, value = "The result data key that identifies the address pattern that this is a rule for")
-
   public String getResourceKey() {
     return resourceKey;
   }
-
 
   public void setResourceKey(String resourceKey) {
     this.resourceKey = resourceKey;
   }
 
-
   public ResultDataKeyRule supplier(SupplierEnum supplier) {
-    
     this.supplier = supplier;
     return this;
   }
@@ -146,19 +140,15 @@ public class ResultDataKeyRule {
    * @return supplier
   **/
   @ApiModelProperty(required = true, value = "the result resource supplier (where the data comes from)")
-
   public SupplierEnum getSupplier() {
     return supplier;
   }
-
 
   public void setSupplier(SupplierEnum supplier) {
     this.supplier = supplier;
   }
 
-
   public ResultDataKeyRule dataScope(String dataScope) {
-    
     this.dataScope = dataScope;
     return this;
   }
@@ -168,19 +158,15 @@ public class ResultDataKeyRule {
    * @return dataScope
   **/
   @ApiModelProperty(required = true, value = "which is the scope in which the data should be found")
-
   public String getDataScope() {
     return dataScope;
   }
-
 
   public void setDataScope(String dataScope) {
     this.dataScope = dataScope;
   }
 
-
   public ResultDataKeyRule documentCode(String documentCode) {
-    
     this.documentCode = documentCode;
     return this;
   }
@@ -190,19 +176,15 @@ public class ResultDataKeyRule {
    * @return documentCode
   **/
   @ApiModelProperty(required = true, value = "document code that defines which document is desired")
-
   public String getDocumentCode() {
     return documentCode;
   }
-
 
   public void setDocumentCode(String documentCode) {
     this.documentCode = documentCode;
   }
 
-
   public ResultDataKeyRule quoteInterval(String quoteInterval) {
-    
     this.quoteInterval = quoteInterval;
     return this;
   }
@@ -211,21 +193,16 @@ public class ResultDataKeyRule {
    * Shorthand for the time interval used to select result data.
    * @return quoteInterval
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Shorthand for the time interval used to select result data.")
-
   public String getQuoteInterval() {
     return quoteInterval;
   }
-
 
   public void setQuoteInterval(String quoteInterval) {
     this.quoteInterval = quoteInterval;
   }
 
-
   public ResultDataKeyRule asAt(OffsetDateTime asAt) {
-    
     this.asAt = asAt;
     return this;
   }
@@ -234,13 +211,10 @@ public class ResultDataKeyRule {
    * The AsAt predicate specification.
    * @return asAt
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The AsAt predicate specification.")
-
   public OffsetDateTime getAsAt() {
     return asAt;
   }
-
 
   public void setAsAt(OffsetDateTime asAt) {
     this.asAt = asAt;

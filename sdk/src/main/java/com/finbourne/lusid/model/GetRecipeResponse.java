@@ -39,15 +39,13 @@ public class GetRecipeResponse {
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private ConfigurationRecipe value;
+  private ConfigurationRecipe value = null;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public GetRecipeResponse href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -56,21 +54,16 @@ public class GetRecipeResponse {
    * The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public GetRecipeResponse value(ConfigurationRecipe value) {
-    
     this.value = value;
     return this;
   }
@@ -79,21 +72,16 @@ public class GetRecipeResponse {
    * Get value
    * @return value
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public ConfigurationRecipe getValue() {
     return value;
   }
-
 
   public void setValue(ConfigurationRecipe value) {
     this.value = value;
   }
 
-
   public GetRecipeResponse links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -110,13 +98,10 @@ public class GetRecipeResponse {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

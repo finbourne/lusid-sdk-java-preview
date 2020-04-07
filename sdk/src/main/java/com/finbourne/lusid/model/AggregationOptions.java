@@ -34,9 +34,7 @@ public class AggregationOptions {
   @SerializedName(SERIALIZED_NAME_USE_ANSI_LIKE_SYNTAX)
   private Boolean useAnsiLikeSyntax;
 
-
   public AggregationOptions useAnsiLikeSyntax(Boolean useAnsiLikeSyntax) {
-    
     this.useAnsiLikeSyntax = useAnsiLikeSyntax;
     return this;
   }
@@ -45,13 +43,10 @@ public class AggregationOptions {
    * Should the aggregation behave like ANSI Sql or MySql with respect to a conceptual request which is equivalent to \&quot;select a,sum(a) from results\&quot;;  ANSI Sql would report an error if a was not unique where MySql would simply view a,suma(a) as equivalent to firstof(a),sum(a).
    * @return useAnsiLikeSyntax
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Should the aggregation behave like ANSI Sql or MySql with respect to a conceptual request which is equivalent to \"select a,sum(a) from results\";  ANSI Sql would report an error if a was not unique where MySql would simply view a,suma(a) as equivalent to firstof(a),sum(a).")
-
   public Boolean getUseAnsiLikeSyntax() {
     return useAnsiLikeSyntax;
   }
-
 
   public void setUseAnsiLikeSyntax(Boolean useAnsiLikeSyntax) {
     this.useAnsiLikeSyntax = useAnsiLikeSyntax;

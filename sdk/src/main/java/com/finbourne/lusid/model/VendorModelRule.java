@@ -77,7 +77,7 @@ public class VendorModelRule {
 
       @Override
       public SupplierEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
+        String value = jsonReader.nextString();
         return SupplierEnum.fromValue(value);
       }
     }
@@ -99,9 +99,7 @@ public class VendorModelRule {
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
   private String parameters;
 
-
   public VendorModelRule supplier(SupplierEnum supplier) {
-    
     this.supplier = supplier;
     return this;
   }
@@ -111,19 +109,15 @@ public class VendorModelRule {
    * @return supplier
   **/
   @ApiModelProperty(required = true, value = "The vendor library supplier")
-
   public SupplierEnum getSupplier() {
     return supplier;
   }
-
 
   public void setSupplier(SupplierEnum supplier) {
     this.supplier = supplier;
   }
 
-
   public VendorModelRule modelName(String modelName) {
-    
     this.modelName = modelName;
     return this;
   }
@@ -133,19 +127,15 @@ public class VendorModelRule {
    * @return modelName
   **/
   @ApiModelProperty(required = true, value = "The vendor library model name")
-
   public String getModelName() {
     return modelName;
   }
-
 
   public void setModelName(String modelName) {
     this.modelName = modelName;
   }
 
-
   public VendorModelRule instrumentType(String instrumentType) {
-    
     this.instrumentType = instrumentType;
     return this;
   }
@@ -155,19 +145,15 @@ public class VendorModelRule {
    * @return instrumentType
   **/
   @ApiModelProperty(required = true, value = "The vendor library instrument type")
-
   public String getInstrumentType() {
     return instrumentType;
   }
-
 
   public void setInstrumentType(String instrumentType) {
     this.instrumentType = instrumentType;
   }
 
-
   public VendorModelRule parameters(String parameters) {
-    
     this.parameters = parameters;
     return this;
   }
@@ -177,11 +163,9 @@ public class VendorModelRule {
    * @return parameters
   **/
   @ApiModelProperty(required = true, value = "The set of opaque model parameters, provided as a Json object, that is a string object which will internally be converted to a dictionary of string to object.  Note that this is not intended as the final form of this object. It will be replaced with a more structured object as the set of parameters that are possible is  better understood.")
-
   public String getParameters() {
     return parameters;
   }
-
 
   public void setParameters(String parameters) {
     this.parameters = parameters;

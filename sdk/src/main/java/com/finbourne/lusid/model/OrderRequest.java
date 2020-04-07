@@ -37,7 +37,7 @@ import java.util.Map;
 public class OrderRequest {
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = null;
+  private Map<String, PerpetualProperty> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS = "instrumentIdentifiers";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS)
@@ -53,19 +53,17 @@ public class OrderRequest {
 
   public static final String SERIALIZED_NAME_ORDER_BOOK = "orderBook";
   @SerializedName(SERIALIZED_NAME_ORDER_BOOK)
-  private ResourceId orderBook;
+  private ResourceId orderBook = null;
 
   public static final String SERIALIZED_NAME_PORTFOLIO = "portfolio";
   @SerializedName(SERIALIZED_NAME_PORTFOLIO)
-  private ResourceId portfolio;
+  private ResourceId portfolio = null;
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
   private String code;
 
-
   public OrderRequest properties(Map<String, PerpetualProperty> properties) {
-    
     this.properties = properties;
     return this;
   }
@@ -82,21 +80,16 @@ public class OrderRequest {
    * Client-defined properties associated with this order.
    * @return properties
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Client-defined properties associated with this order.")
-
   public Map<String, PerpetualProperty> getProperties() {
     return properties;
   }
-
 
   public void setProperties(Map<String, PerpetualProperty> properties) {
     this.properties = properties;
   }
 
-
   public OrderRequest instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
-    
     this.instrumentIdentifiers = instrumentIdentifiers;
     return this;
   }
@@ -111,19 +104,15 @@ public class OrderRequest {
    * @return instrumentIdentifiers
   **/
   @ApiModelProperty(required = true, value = "The instrument ordered.")
-
   public Map<String, String> getInstrumentIdentifiers() {
     return instrumentIdentifiers;
   }
-
 
   public void setInstrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
     this.instrumentIdentifiers = instrumentIdentifiers;
   }
 
-
   public OrderRequest quantity(Integer quantity) {
-    
     this.quantity = quantity;
     return this;
   }
@@ -133,19 +122,15 @@ public class OrderRequest {
    * @return quantity
   **/
   @ApiModelProperty(required = true, value = "The quantity of given instrument ordered.")
-
   public Integer getQuantity() {
     return quantity;
   }
-
 
   public void setQuantity(Integer quantity) {
     this.quantity = quantity;
   }
 
-
   public OrderRequest side(String side) {
-    
     this.side = side;
     return this;
   }
@@ -155,19 +140,15 @@ public class OrderRequest {
    * @return side
   **/
   @ApiModelProperty(required = true, value = "The client's representation of the order's side (buy, sell, short, etc)")
-
   public String getSide() {
     return side;
   }
-
 
   public void setSide(String side) {
     this.side = side;
   }
 
-
   public OrderRequest orderBook(ResourceId orderBook) {
-    
     this.orderBook = orderBook;
     return this;
   }
@@ -177,19 +158,15 @@ public class OrderRequest {
    * @return orderBook
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ResourceId getOrderBook() {
     return orderBook;
   }
-
 
   public void setOrderBook(ResourceId orderBook) {
     this.orderBook = orderBook;
   }
 
-
   public OrderRequest portfolio(ResourceId portfolio) {
-    
     this.portfolio = portfolio;
     return this;
   }
@@ -199,19 +176,15 @@ public class OrderRequest {
    * @return portfolio
   **/
   @ApiModelProperty(required = true, value = "")
-
   public ResourceId getPortfolio() {
     return portfolio;
   }
-
 
   public void setPortfolio(ResourceId portfolio) {
     this.portfolio = portfolio;
   }
 
-
   public OrderRequest code(String code) {
-    
     this.code = code;
     return this;
   }
@@ -221,11 +194,9 @@ public class OrderRequest {
    * @return code
   **/
   @ApiModelProperty(required = true, value = "Uniquely identifies this order.")
-
   public String getCode() {
     return code;
   }
-
 
   public void setCode(String code) {
     this.code = code;

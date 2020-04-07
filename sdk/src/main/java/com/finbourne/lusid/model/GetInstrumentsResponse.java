@@ -42,19 +42,17 @@ public class GetInstrumentsResponse {
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  private Map<String, Instrument> values = null;
+  private Map<String, Instrument> values = new HashMap<>();
 
   public static final String SERIALIZED_NAME_FAILED = "failed";
   @SerializedName(SERIALIZED_NAME_FAILED)
-  private Map<String, ErrorDetail> failed = null;
+  private Map<String, ErrorDetail> failed = new HashMap<>();
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public GetInstrumentsResponse href(String href) {
-    
     this.href = href;
     return this;
   }
@@ -63,21 +61,16 @@ public class GetInstrumentsResponse {
    * The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.
    * @return href
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.")
-
   public String getHref() {
     return href;
   }
-
 
   public void setHref(String href) {
     this.href = href;
   }
 
-
   public GetInstrumentsResponse values(Map<String, Instrument> values) {
-    
     this.values = values;
     return this;
   }
@@ -94,21 +87,16 @@ public class GetInstrumentsResponse {
    * The instrument definitions, keyed by the identifier used to retrieve them. Only instruments that were found will be contained in this collection.
    * @return values
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The instrument definitions, keyed by the identifier used to retrieve them. Only instruments that were found will be contained in this collection.")
-
   public Map<String, Instrument> getValues() {
     return values;
   }
-
 
   public void setValues(Map<String, Instrument> values) {
     this.values = values;
   }
 
-
   public GetInstrumentsResponse failed(Map<String, ErrorDetail> failed) {
-    
     this.failed = failed;
     return this;
   }
@@ -125,21 +113,16 @@ public class GetInstrumentsResponse {
    * The identifiers which did not resolve to an instrument along with the nature of the failure.
    * @return failed
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The identifiers which did not resolve to an instrument along with the nature of the failure.")
-
   public Map<String, ErrorDetail> getFailed() {
     return failed;
   }
-
 
   public void setFailed(Map<String, ErrorDetail> failed) {
     this.failed = failed;
   }
 
-
   public GetInstrumentsResponse links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -156,13 +139,10 @@ public class GetInstrumentsResponse {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

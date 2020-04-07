@@ -39,7 +39,7 @@ public class LusidValidationProblemDetails extends HashMap<String, Object> {
 
   public static final String SERIALIZED_NAME_ERROR_DETAILS = "errorDetails";
   @SerializedName(SERIALIZED_NAME_ERROR_DETAILS)
-  private List<Map<String, String>> errorDetails = null;
+  private List<Map<String, String>> errorDetails = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
@@ -47,7 +47,7 @@ public class LusidValidationProblemDetails extends HashMap<String, Object> {
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
-  private Map<String, List<String>> errors = null;
+  private Map<String, List<String>> errors = new HashMap<>();
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -69,9 +69,7 @@ public class LusidValidationProblemDetails extends HashMap<String, Object> {
   @SerializedName(SERIALIZED_NAME_INSTANCE)
   private String instance;
 
-
   public LusidValidationProblemDetails name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -81,19 +79,15 @@ public class LusidValidationProblemDetails extends HashMap<String, Object> {
    * @return name
   **/
   @ApiModelProperty(required = true, value = "")
-
   public String getName() {
     return name;
   }
-
 
   public void setName(String name) {
     this.name = name;
   }
 
-
   public LusidValidationProblemDetails errorDetails(List<Map<String, String>> errorDetails) {
-    
     this.errorDetails = errorDetails;
     return this;
   }
@@ -110,21 +104,16 @@ public class LusidValidationProblemDetails extends HashMap<String, Object> {
    * Get errorDetails
    * @return errorDetails
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Map<String, String>> getErrorDetails() {
     return errorDetails;
   }
-
 
   public void setErrorDetails(List<Map<String, String>> errorDetails) {
     this.errorDetails = errorDetails;
   }
 
-
   public LusidValidationProblemDetails code(Integer code) {
-    
     this.code = code;
     return this;
   }
@@ -134,33 +123,24 @@ public class LusidValidationProblemDetails extends HashMap<String, Object> {
    * @return code
   **/
   @ApiModelProperty(required = true, value = "")
-
   public Integer getCode() {
     return code;
   }
-
 
   public void setCode(Integer code) {
     this.code = code;
   }
 
-
    /**
    * Get errors
    * @return errors
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Map<String, List<String>> getErrors() {
     return errors;
   }
 
-
-
-
   public LusidValidationProblemDetails type(String type) {
-    
     this.type = type;
     return this;
   }
@@ -169,21 +149,16 @@ public class LusidValidationProblemDetails extends HashMap<String, Object> {
    * Get type
    * @return type
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getType() {
     return type;
   }
-
 
   public void setType(String type) {
     this.type = type;
   }
 
-
   public LusidValidationProblemDetails title(String title) {
-    
     this.title = title;
     return this;
   }
@@ -192,21 +167,16 @@ public class LusidValidationProblemDetails extends HashMap<String, Object> {
    * Get title
    * @return title
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getTitle() {
     return title;
   }
-
 
   public void setTitle(String title) {
     this.title = title;
   }
 
-
   public LusidValidationProblemDetails status(Integer status) {
-    
     this.status = status;
     return this;
   }
@@ -215,21 +185,16 @@ public class LusidValidationProblemDetails extends HashMap<String, Object> {
    * Get status
    * @return status
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Integer getStatus() {
     return status;
   }
-
 
   public void setStatus(Integer status) {
     this.status = status;
   }
 
-
   public LusidValidationProblemDetails detail(String detail) {
-    
     this.detail = detail;
     return this;
   }
@@ -238,21 +203,16 @@ public class LusidValidationProblemDetails extends HashMap<String, Object> {
    * Get detail
    * @return detail
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getDetail() {
     return detail;
   }
-
 
   public void setDetail(String detail) {
     this.detail = detail;
   }
 
-
   public LusidValidationProblemDetails instance(String instance) {
-    
     this.instance = instance;
     return this;
   }
@@ -261,13 +221,10 @@ public class LusidValidationProblemDetails extends HashMap<String, Object> {
    * Get instance
    * @return instance
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public String getInstance() {
     return instance;
   }
-
 
   public void setInstance(String instance) {
     this.instance = instance;

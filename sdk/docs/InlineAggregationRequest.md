@@ -2,7 +2,6 @@
 
 # InlineAggregationRequest
 
-Specification for an inline aggregation request consisting of an aggregation request and an inlined portfolio on which it is to be performed
 ## Properties
 
 Name | Type | Description | Notes

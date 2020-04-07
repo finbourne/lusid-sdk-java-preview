@@ -2,7 +2,6 @@
 
 # AllocationSetRequest
 
-A request to create or update multiple Allocations.
 ## Properties
 
 Name | Type | Description | Notes

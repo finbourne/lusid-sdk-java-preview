@@ -37,23 +37,21 @@ import java.util.Map;
 public class PortfoliosReconciliationRequestPreview {
   public static final String SERIALIZED_NAME_TOLERANCE = "tolerance";
   @SerializedName(SERIALIZED_NAME_TOLERANCE)
-  private Map<String, Tolerance> tolerance = null;
+  private Map<String, Tolerance> tolerance = new HashMap<>();
 
   public static final String SERIALIZED_NAME_LEFT = "left";
   @SerializedName(SERIALIZED_NAME_LEFT)
-  private PortfolioReconciliationRequest left;
+  private PortfolioReconciliationRequest left = null;
 
   public static final String SERIALIZED_NAME_RIGHT = "right";
   @SerializedName(SERIALIZED_NAME_RIGHT)
-  private PortfolioReconciliationRequest right;
+  private PortfolioReconciliationRequest right = null;
 
   public static final String SERIALIZED_NAME_INSTRUMENT_PROPERTY_KEYS = "instrumentPropertyKeys";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_PROPERTY_KEYS)
   private List<String> instrumentPropertyKeys = new ArrayList<>();
 
-
   public PortfoliosReconciliationRequestPreview tolerance(Map<String, Tolerance> tolerance) {
-    
     this.tolerance = tolerance;
     return this;
   }
@@ -70,21 +68,16 @@ public class PortfoliosReconciliationRequestPreview {
    * Tolerance to be included for the units and cost.
    * @return tolerance
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "Tolerance to be included for the units and cost.")
-
   public Map<String, Tolerance> getTolerance() {
     return tolerance;
   }
-
 
   public void setTolerance(Map<String, Tolerance> tolerance) {
     this.tolerance = tolerance;
   }
 
-
   public PortfoliosReconciliationRequestPreview left(PortfolioReconciliationRequest left) {
-    
     this.left = left;
     return this;
   }
@@ -94,19 +87,15 @@ public class PortfoliosReconciliationRequestPreview {
    * @return left
   **/
   @ApiModelProperty(required = true, value = "")
-
   public PortfolioReconciliationRequest getLeft() {
     return left;
   }
-
 
   public void setLeft(PortfolioReconciliationRequest left) {
     this.left = left;
   }
 
-
   public PortfoliosReconciliationRequestPreview right(PortfolioReconciliationRequest right) {
-    
     this.right = right;
     return this;
   }
@@ -116,19 +105,15 @@ public class PortfoliosReconciliationRequestPreview {
    * @return right
   **/
   @ApiModelProperty(required = true, value = "")
-
   public PortfolioReconciliationRequest getRight() {
     return right;
   }
-
 
   public void setRight(PortfolioReconciliationRequest right) {
     this.right = right;
   }
 
-
   public PortfoliosReconciliationRequestPreview instrumentPropertyKeys(List<String> instrumentPropertyKeys) {
-    
     this.instrumentPropertyKeys = instrumentPropertyKeys;
     return this;
   }
@@ -143,11 +128,9 @@ public class PortfoliosReconciliationRequestPreview {
    * @return instrumentPropertyKeys
   **/
   @ApiModelProperty(required = true, value = "Instrument properties to be included with any identified breaks. These properties will be in the effective and AsAt dates of the left portfolio")
-
   public List<String> getInstrumentPropertyKeys() {
     return instrumentPropertyKeys;
   }
-
 
   public void setInstrumentPropertyKeys(List<String> instrumentPropertyKeys) {
     this.instrumentPropertyKeys = instrumentPropertyKeys;

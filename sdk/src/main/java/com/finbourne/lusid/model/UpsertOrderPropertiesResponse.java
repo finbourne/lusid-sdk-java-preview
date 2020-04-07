@@ -39,11 +39,9 @@ public class UpsertOrderPropertiesResponse {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = null;
-
+  private List<Link> links = new ArrayList<>();
 
   public UpsertOrderPropertiesResponse asAtDate(OffsetDateTime asAtDate) {
-    
     this.asAtDate = asAtDate;
     return this;
   }
@@ -53,19 +51,15 @@ public class UpsertOrderPropertiesResponse {
    * @return asAtDate
   **/
   @ApiModelProperty(required = true, value = "The asAt datetime that the order was added to LUSID.")
-
   public OffsetDateTime getAsAtDate() {
     return asAtDate;
   }
-
 
   public void setAsAtDate(OffsetDateTime asAtDate) {
     this.asAtDate = asAtDate;
   }
 
-
   public UpsertOrderPropertiesResponse links(List<Link> links) {
-    
     this.links = links;
     return this;
   }
@@ -82,13 +76,10 @@ public class UpsertOrderPropertiesResponse {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Link> getLinks() {
     return links;
   }
-
 
   public void setLinks(List<Link> links) {
     this.links = links;

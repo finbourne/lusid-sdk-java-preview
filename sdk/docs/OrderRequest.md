@@ -2,7 +2,6 @@
 
 # OrderRequest
 
-A request to create or update an Order.
 ## Properties
 
 Name | Type | Description | Notes

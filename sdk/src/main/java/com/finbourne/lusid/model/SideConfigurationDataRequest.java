@@ -54,9 +54,7 @@ public class SideConfigurationDataRequest {
   @SerializedName(SERIALIZED_NAME_AMOUNT)
   private String amount;
 
-
   public SideConfigurationDataRequest side(String side) {
-    
     this.side = side;
     return this;
   }
@@ -66,19 +64,15 @@ public class SideConfigurationDataRequest {
    * @return side
   **/
   @ApiModelProperty(required = true, value = "The side's label.")
-
   public String getSide() {
     return side;
   }
-
 
   public void setSide(String side) {
     this.side = side;
   }
 
-
   public SideConfigurationDataRequest security(String security) {
-    
     this.security = security;
     return this;
   }
@@ -88,19 +82,15 @@ public class SideConfigurationDataRequest {
    * @return security
   **/
   @ApiModelProperty(required = true, value = "The security, or instrument.")
-
   public String getSecurity() {
     return security;
   }
-
 
   public void setSecurity(String security) {
     this.security = security;
   }
 
-
   public SideConfigurationDataRequest currency(String currency) {
-    
     this.currency = currency;
     return this;
   }
@@ -110,19 +100,15 @@ public class SideConfigurationDataRequest {
    * @return currency
   **/
   @ApiModelProperty(required = true, value = "The currency.")
-
   public String getCurrency() {
     return currency;
   }
-
 
   public void setCurrency(String currency) {
     this.currency = currency;
   }
 
-
   public SideConfigurationDataRequest rate(String rate) {
-    
     this.rate = rate;
     return this;
   }
@@ -132,19 +118,15 @@ public class SideConfigurationDataRequest {
    * @return rate
   **/
   @ApiModelProperty(required = true, value = "The rate.")
-
   public String getRate() {
     return rate;
   }
-
 
   public void setRate(String rate) {
     this.rate = rate;
   }
 
-
   public SideConfigurationDataRequest units(String units) {
-    
     this.units = units;
     return this;
   }
@@ -154,19 +136,15 @@ public class SideConfigurationDataRequest {
    * @return units
   **/
   @ApiModelProperty(required = true, value = "The units.")
-
   public String getUnits() {
     return units;
   }
-
 
   public void setUnits(String units) {
     this.units = units;
   }
 
-
   public SideConfigurationDataRequest amount(String amount) {
-    
     this.amount = amount;
     return this;
   }
@@ -176,11 +154,9 @@ public class SideConfigurationDataRequest {
    * @return amount
   **/
   @ApiModelProperty(required = true, value = "The amount.")
-
   public String getAmount() {
     return amount;
   }
-
 
   public void setAmount(String amount) {
     this.amount = amount;

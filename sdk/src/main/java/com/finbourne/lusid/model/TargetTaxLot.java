@@ -38,7 +38,7 @@ public class TargetTaxLot {
 
   public static final String SERIALIZED_NAME_COST = "cost";
   @SerializedName(SERIALIZED_NAME_COST)
-  private CurrencyAndAmount cost;
+  private CurrencyAndAmount cost = null;
 
   public static final String SERIALIZED_NAME_PORTFOLIO_COST = "portfolioCost";
   @SerializedName(SERIALIZED_NAME_PORTFOLIO_COST)
@@ -56,9 +56,7 @@ public class TargetTaxLot {
   @SerializedName(SERIALIZED_NAME_SETTLEMENT_DATE)
   private OffsetDateTime settlementDate;
 
-
   public TargetTaxLot units(Double units) {
-    
     this.units = units;
     return this;
   }
@@ -68,19 +66,15 @@ public class TargetTaxLot {
    * @return units
   **/
   @ApiModelProperty(required = true, value = "The number of units of the instrument in this tax-lot.")
-
   public Double getUnits() {
     return units;
   }
-
 
   public void setUnits(Double units) {
     this.units = units;
   }
 
-
   public TargetTaxLot cost(CurrencyAndAmount cost) {
-    
     this.cost = cost;
     return this;
   }
@@ -89,21 +83,16 @@ public class TargetTaxLot {
    * Get cost
    * @return cost
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public CurrencyAndAmount getCost() {
     return cost;
   }
-
 
   public void setCost(CurrencyAndAmount cost) {
     this.cost = cost;
   }
 
-
   public TargetTaxLot portfolioCost(Double portfolioCost) {
-    
     this.portfolioCost = portfolioCost;
     return this;
   }
@@ -112,21 +101,16 @@ public class TargetTaxLot {
    * The total cost of the tax-lot in the transaction portfolio&#39;s base currency.
    * @return portfolioCost
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The total cost of the tax-lot in the transaction portfolio's base currency.")
-
   public Double getPortfolioCost() {
     return portfolioCost;
   }
-
 
   public void setPortfolioCost(Double portfolioCost) {
     this.portfolioCost = portfolioCost;
   }
 
-
   public TargetTaxLot price(Double price) {
-    
     this.price = price;
     return this;
   }
@@ -135,21 +119,16 @@ public class TargetTaxLot {
    * The purchase price of each unit of the instrument held in this tax-lot. This forms part of the unique key required for multiple tax-lots.
    * @return price
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The purchase price of each unit of the instrument held in this tax-lot. This forms part of the unique key required for multiple tax-lots.")
-
   public Double getPrice() {
     return price;
   }
-
 
   public void setPrice(Double price) {
     this.price = price;
   }
 
-
   public TargetTaxLot purchaseDate(OffsetDateTime purchaseDate) {
-    
     this.purchaseDate = purchaseDate;
     return this;
   }
@@ -158,21 +137,16 @@ public class TargetTaxLot {
    * The purchase date of this tax-lot. This forms part of the unique key required for multiple tax-lots.
    * @return purchaseDate
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The purchase date of this tax-lot. This forms part of the unique key required for multiple tax-lots.")
-
   public OffsetDateTime getPurchaseDate() {
     return purchaseDate;
   }
-
 
   public void setPurchaseDate(OffsetDateTime purchaseDate) {
     this.purchaseDate = purchaseDate;
   }
 
-
   public TargetTaxLot settlementDate(OffsetDateTime settlementDate) {
-    
     this.settlementDate = settlementDate;
     return this;
   }
@@ -181,13 +155,10 @@ public class TargetTaxLot {
    * The settlement date of the tax-lot&#39;s opening transaction.
    * @return settlementDate
   **/
-  @javax.annotation.Nullable
   @ApiModelProperty(value = "The settlement date of the tax-lot's opening transaction.")
-
   public OffsetDateTime getSettlementDate() {
     return settlementDate;
   }
-
 
   public void setSettlementDate(OffsetDateTime settlementDate) {
     this.settlementDate = settlementDate;
