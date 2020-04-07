@@ -2,6 +2,7 @@
 
 # QuoteId
 
+The unique identifier of the quote.
 ## Properties
 
 Name | Type | Description | Notes

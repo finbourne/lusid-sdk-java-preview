@@ -6,11 +6,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**index** | **Integer** |  | 
-**name** | **String** |  | 
-**displayName** | **String** |  | 
-**description** | **String** |  | 
-**required** | **Boolean** |  | 
+**index** | **Integer** |  |  [readonly]
+**name** | **String** |  |  [readonly]
+**displayName** | **String** |  |  [readonly]
+**description** | **String** |  |  [readonly]
+**required** | **Boolean** |  |  [readonly]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
