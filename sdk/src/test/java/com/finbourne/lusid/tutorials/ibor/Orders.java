@@ -44,11 +44,8 @@ public class Orders
     @Test
     public void Upsert_Simple_Order() throws ApiException {
         String testScope = "TestScope-" +  UUID.randomUUID().toString();
-        String orderCode = "Order-" +  UUID.randomUUID().toString();
-        ResourceId orderId = new ResourceId()
-                .code(orderCode)
-                .scope(testScope);
-        
+        String orderId = "Order-" +  UUID.randomUUID().toString();
+
         // These instrument identifiers should all map to the same instrument. If the instance of
         // LUSID has the specified instruments registered these identifiers will get resolved to
         // an actual internal instrument on upsert; otherwise, they'll be resolved to instrument or
@@ -74,24 +71,24 @@ public class Orders
         properties.put("Order/" + testScope + "/Strategy", new PerpetualProperty().key("Order/" + testScope + "/Strategy").value(new PropertyValue().labelValue("RiskArb")));
 
         OrderRequest request = new OrderRequest()
-                .id(orderId)
+                .code(orderId)
                 .quantity(100)
-                .portfolioId(portfolio)
+                .portfolio(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
                 .side("Buy")
-                .orderBookId(orderBook);
+                .orderBook(orderBook);
 
         OrderSetRequest requestSet = new OrderSetRequest()
                 .addOrderRequestsItem(request);
 
         // We can ask the Orders API to upsert this order for us
-        List<Order> upsertResult = ordersApi.upsertOrders(requestSet).getValues();
+        List<Order> upsertResult = ordersApi.upsertOrders(testScope, requestSet).getValues();
 
         // The return gives us a list of orders upserted. The LUID for each has been mapped from the
         // instrument identifiers passed
         assertEquals(1, upsertResult.stream().count());
-        assertTrue(upsertResult.stream().allMatch(order -> order.getId().getCode().equals(orderCode)));
+        assertTrue(upsertResult.stream().allMatch(order -> order.getId().getCode().equals(orderId)));
         assertTrue(upsertResult.stream().allMatch(order -> order.getLusidInstrumentId().equals(instrumentIds.get(0))));
     }
 
@@ -100,10 +97,7 @@ public class Orders
     @Test
     public void Upsert_Simple_Order_With_Unknown_Instrument() throws ApiException {
         String testScope = "TestScope-" +  UUID.randomUUID().toString();
-        String orderCode = "Order-" +  UUID.randomUUID().toString();
-        ResourceId orderId = new ResourceId()
-                .code(orderCode)
-                .scope(testScope);
+        String orderId = "Order-" +  UUID.randomUUID().toString();
 
         // These instrument identifiers should all map to the same instrument. If the instance of
         // LUSID has the specified instruments registered these identifiers will get resolved to
@@ -130,19 +124,19 @@ public class Orders
         properties.put("Order/" + testScope + "/Strategy", new PerpetualProperty().key("Order/" + testScope + "/Strategy").value(new PropertyValue().labelValue("RiskArb")));
 
         OrderRequest request = new OrderRequest()
-                .id(orderId)
+                .code(orderId)
                 .quantity(100)
-                .portfolioId(portfolio)
+                .portfolio(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
                 .side("Buy")
-                .orderBookId(orderBook);
+                .orderBook(orderBook);
 
         OrderSetRequest requestSet = new OrderSetRequest()
                 .addOrderRequestsItem(request);
 
         // We can ask the Orders API to upsert this order for us
-        List<Order> upsertResult = ordersApi.upsertOrders(requestSet).getValues();
+        List<Order> upsertResult = ordersApi.upsertOrders(testScope, requestSet).getValues();
 
         // The return gives us a list of orders upserted, and the LUID for each has been mapped from the
         // instrument identifiers passed
@@ -155,10 +149,7 @@ public class Orders
     @Test
     public void Update_Simple_Order() throws ApiException {
         String testScope = "TestScope-" +  UUID.randomUUID().toString();
-        String orderCode = "Order-" +  UUID.randomUUID().toString();
-        ResourceId orderId = new ResourceId()
-                .code(orderCode)
-                .scope(testScope);
+        String orderId = "Order-" +  UUID.randomUUID().toString();
 
         // These instrument identifiers should all map to the same instrument. If the instance of
         // LUSID has the specified instruments registered these identifiers will get resolved to
@@ -185,43 +176,43 @@ public class Orders
         properties.put("Order/" + testScope + "/Strategy", new PerpetualProperty().key("Order/" + testScope + "/Strategy").value(new PropertyValue().labelValue("RiskArb")));
 
         OrderRequest request = new OrderRequest()
-                .id(orderId)
+                .code(orderId)
                 .quantity(100)
-                .portfolioId(portfolio)
+                .portfolio(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
                 .side("Buy")
-                .orderBookId(orderBook);
+                .orderBook(orderBook);
 
         OrderSetRequest requestSet = new OrderSetRequest()
                 .addOrderRequestsItem(request);
 
         // We can ask the Orders API to upsert this order for us
-        List<Order> upsertResult = ordersApi.upsertOrders(requestSet).getValues();
+        List<Order> upsertResult = ordersApi.upsertOrders(testScope, requestSet).getValues();
 
         // The return gives us a list of orders upserted, and the lusidinstrument for each has been mapped from the
         // instrument identifiers passed
         assertEquals(1, upsertResult.stream().count());
-        assertTrue(upsertResult.stream().allMatch(order -> order.getId().getCode().equals(orderCode)));
+        assertTrue(upsertResult.stream().allMatch(order -> order.getId().getCode().equals(orderId)));
         assertTrue(upsertResult.stream().allMatch(order -> order.getLusidInstrumentId().equals(instrumentIds.get(0))));
         assertTrue(upsertResult.stream().allMatch(order -> order.getQuantity().equals(100)));
         assertTrue(upsertResult.stream().allMatch(order -> order.getProperties().size() == 5));
 
         // We can update that Order with a new Quantity, and some extra parameters
         OrderRequest updateRequest = new OrderRequest()
-                .id(orderId)
+                .code(orderId)
                 .quantity(500)
-                .portfolioId(portfolio)
+                .portfolio(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
                 .side("Buy")
-                .orderBookId(orderBook);
+                .orderBook(orderBook);
 
         OrderSetRequest updateRequestSet = new OrderSetRequest()
                 .addOrderRequestsItem(updateRequest);
 
         // We can ask the Orders API to upsert this order for us
-        List<Order> updateResult = ordersApi.upsertOrders(updateRequestSet).getValues();
+        List<Order> updateResult = ordersApi.upsertOrders(testScope, updateRequestSet).getValues();
 
         // The return gives us a list of orders upserted, and the lusidinstrument for each has been mapped from the
         // instrument identifiers passed. We can see that the quantity has been udpated, and properties added
@@ -234,18 +225,10 @@ public class Orders
     @Test
     public void Upsert_And_Retrieve_Simple_Orders() throws ApiException {
         String testScope = "TestScope-" +  UUID.randomUUID().toString();
-        String orderCode1 = "Order-" +  UUID.randomUUID().toString();
-        String orderCode2 = "Order-" +  UUID.randomUUID().toString();
-        String orderCode3 = "Order-" +  UUID.randomUUID().toString();
-        ResourceId orderId1 = new ResourceId()
-                .code(orderCode1)
-                .scope(testScope);
-        ResourceId orderId2 = new ResourceId()
-                .code(orderCode2)
-                .scope(testScope);
-        ResourceId orderId3 = new ResourceId()
-                .code(orderCode3)
-                .scope(testScope);
+        String orderId1 = "Order-" +  UUID.randomUUID().toString();
+        String orderId2 = "Order-" +  UUID.randomUUID().toString();
+        String orderId3 = "Order-" +  UUID.randomUUID().toString();
+
 
         // These instrument identifiers should all map to the same instrument. If the instance of
         // LUSID has the specified instruments registered these identifiers will get resolved to
@@ -282,31 +265,31 @@ public class Orders
         altProperties.put("Order/" + testScope + "/OrderGroup", new PerpetualProperty().key("Order/" + testScope + "/OrderGroup").value(new PropertyValue().labelValue("UK Test Orders 2")));
 
         OrderRequest request1 = new OrderRequest()
-                .id(orderId1)
+                .code(orderId1)
                 .quantity(100)
-                .portfolioId(portfolio)
+                .portfolio(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
                 .side("Sell")
-                .orderBookId(orderBook);
+                .orderBook(orderBook);
 
         OrderRequest request2 = new OrderRequest()
-            .id(orderId2)
+            .code(orderId2)
             .quantity(200)
-            .portfolioId(portfolio)
+            .portfolio(portfolio)
             .properties(properties)
             .instrumentIdentifiers(instruments)
                 .side("Buy")
-                .orderBookId(orderBook);
+                .orderBook(orderBook);
 
         OrderRequest request3 = new OrderRequest()
-                .id(orderId3)
+                .code(orderId3)
                 .quantity(300)
-                .portfolioId(portfolio)
+                .portfolio(portfolio)
                 .properties(altProperties)
                 .instrumentIdentifiers(altInstruments)
                 .side("Buy")
-                .orderBookId(anotherOrderBook);
+                .orderBook(anotherOrderBook);
 
         OrderSetRequest request = new OrderSetRequest()
                 .addOrderRequestsItem(request1)
@@ -314,7 +297,7 @@ public class Orders
                 .addOrderRequestsItem(request3);
 
         // We can ask the Orders API to upsert this order for us
-        ResourceListOfOrder upsertResult = ordersApi.upsertOrders(request);
+        ResourceListOfOrder upsertResult = ordersApi.upsertOrders(testScope, request);
 
         // The return gives us a list of orders upserted, and the lusidinstrument for each has been mapped from the
         // instrument identifiers passed
@@ -322,24 +305,24 @@ public class Orders
 
         OffsetDateTime t = upsertResult.getValues().get(0).getVersion().getAsAtDate();
 
-        List<Order> quantityFilter = ordersApi.listOrders(t, null, null, null, null,"Quantity gt 100 and Scope eq '" + testScope + "'", null).getValues();
+        List<Order> quantityFilter = ordersApi.listOrders(testScope, t, null, null, null, null,"Quantity gt 100", null).getValues();
         assertEquals(2, quantityFilter.size());
         assertTrue(quantityFilter.stream().allMatch(order -> order.getQuantity() > 100));
 
-        List<Order> orderGroupFilter = ordersApi.listOrders(t, null, null, null, null,"Properties[" + testScope + "/OrderGroup] eq 'UK Test Orders 2'", null).getValues();
+        List<Order> orderGroupFilter = ordersApi.listOrders(testScope, t, null, null, null, null,"Properties[" + testScope + "/OrderGroup] eq 'UK Test Orders 2'", null).getValues();
         assertEquals(1, orderGroupFilter.size());
         assertTrue(orderGroupFilter.stream().allMatch(order -> order.getProperties().get("Order/" + testScope + "/OrderGroup").getValue().getLabelValue().equals("UK Test Orders 2")));
 
-        List<Order> instrumentFilter = ordersApi.listOrders(t, null, null, null, null,"LusidInstrumentId eq '" + instrumentIds.get(0) + "' and Scope eq '" + testScope + "'", null).getValues();
+        List<Order> instrumentFilter = ordersApi.listOrders(testScope, t, null, null, null, null,"LusidInstrumentId eq '" + instrumentIds.get(0) + "'", null).getValues();
         assertEquals(2, instrumentFilter.size());
         assertTrue(instrumentFilter.stream().allMatch(order -> order.getLusidInstrumentId().equals(instrumentIds.get(0))));
 
-        List<Order> sideFilter = ordersApi.listOrders(t, null, null, null, null,"Side eq 'Sell' and Scope eq '" + testScope + "'", null).getValues();
+        List<Order> sideFilter = ordersApi.listOrders(testScope, t, null, null, null, null,"Side eq 'Sell'", null).getValues();
         assertEquals(1, sideFilter.size());
         assertTrue(sideFilter.stream().allMatch(order -> order.getSide().equals("Sell")));
 
-        List<Order> orderBookFilter = ordersApi.listOrders(t, null, null, null, null,"OrderBook eq '" + testScope + "/AnotherOrdersTestBook'", null).getValues();
+        List<Order> orderBookFilter = ordersApi.listOrders(testScope, t, null, null, null, null,"OrderBook eq '" + testScope + "/AnotherOrdersTestBook'", null).getValues();
         assertEquals(1, orderBookFilter.size());
-        assertTrue(orderBookFilter.stream().allMatch(order -> order.getOrderBookId().getCode().equals("AnotherOrdersTestBook")));
+        assertTrue(orderBookFilter.stream().allMatch(order -> order.getOrderBook().getCode().equals("AnotherOrdersTestBook")));
     }
 }
