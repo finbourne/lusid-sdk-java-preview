@@ -6,8 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | Instrument type, must be property for JSON. |  [optional]
-**$type** | **String** |  | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | Instrument type, must be property for JSON. | 
 
 
 

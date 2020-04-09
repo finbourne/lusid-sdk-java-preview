@@ -1,6 +1,6 @@
 # InstrumentsApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**updateInstrumentIdentifier**](InstrumentsApi.md#updateInstrumentIdentifier) | **POST** /api/instruments/{identifierType}/{identifier} | [EARLY ACCESS] Update instrument identifier
 [**upsertInstruments**](InstrumentsApi.md#upsertInstruments) | **POST** /api/instruments | Upsert instruments
 [**upsertInstrumentsProperties**](InstrumentsApi.md#upsertInstrumentsProperties) | **POST** /api/instruments/$upsertproperties | Upsert instruments properties
+[**upsertLusidInstruments**](InstrumentsApi.md#upsertLusidInstruments) | **POST** /api/instruments/otc | [EXPERIMENTAL] Upsert instruments
 
 
 <a name="deleteInstrument"></a>
@@ -36,7 +37,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -107,7 +108,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -182,7 +183,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -259,7 +260,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -323,7 +324,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -400,7 +401,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -483,7 +484,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -556,7 +557,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -625,7 +626,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -670,6 +671,75 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The asAt time at which the properties were updated, inserted or deleted |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="upsertLusidInstruments"></a>
+# **upsertLusidInstruments**
+> UpsertInstrumentsResponse upsertLusidInstruments(instruments)
+
+[EXPERIMENTAL] Upsert instruments
+
+Update or insert one or more instruments into the LUSID instrument master. An instrument will be updated  if it already exists and inserted if it does not.                In the request each instrument definition should be keyed by a unique correlation id. This id is ephemeral  and is not stored by LUSID. It serves only as a way to easily identify each instrument in the response.                The response will return both the collection of successfully updated or inserted instruments, as well as those that failed.  For the failures a reason will be provided explaining why the instrument could not be updated or inserted.                It is important to always check the failed set for any unsuccessful results.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.InstrumentsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    InstrumentsApi apiInstance = new InstrumentsApi(defaultClient);
+    Map<String, LusidInstrumentDefinition> instruments = new HashMap(); // Map<String, LusidInstrumentDefinition> | The definitions of the instruments to update or insert.
+    try {
+      UpsertInstrumentsResponse result = apiInstance.upsertLusidInstruments(instruments);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InstrumentsApi#upsertLusidInstruments");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instruments** | [**Map&lt;String, LusidInstrumentDefinition&gt;**](LusidInstrumentDefinition.md)| The definitions of the instruments to update or insert. |
+
+### Return type
+
+[**UpsertInstrumentsResponse**](UpsertInstrumentsResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | The successfully updated or inserted instruments along with any failures |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 

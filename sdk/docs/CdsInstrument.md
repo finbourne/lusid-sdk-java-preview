@@ -13,23 +13,6 @@ Name | Type | Description | Notes
 **startDate** | [**OffsetDateTime**](OffsetDateTime.md) | Starting date of the credit default swap | 
 **maturityDate** | [**OffsetDateTime**](OffsetDateTime.md) | Maturity date of the credit default swap | 
 **domCcy** | **String** | Domestic currency of the credit default swap | 
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | Instrument type, must be property for JSON. | 
-
-
-
-## Enum: InstrumentTypeEnum
-
-Name | Value
----- | -----
-QUOTEDSECURITY | &quot;QuotedSecurity&quot;
-INTERESTRATESWAP | &quot;InterestRateSwap&quot;
-FXFORWARD | &quot;FxForward&quot;
-EXOTIC | &quot;Exotic&quot;
-FXOPTION | &quot;FxOption&quot;
-CREDITDEFAULTSWAP | &quot;CreditDefaultSwap&quot;
-INTERESTRATESWAPTION | &quot;InterestRateSwaption&quot;
-BOND | &quot;Bond&quot;
-UNKNOWN | &quot;Unknown&quot;
 
 
 
