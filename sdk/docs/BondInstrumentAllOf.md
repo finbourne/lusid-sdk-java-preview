@@ -28,6 +28,7 @@ FXOPTION | &quot;FxOption&quot;
 CREDITDEFAULTSWAP | &quot;CreditDefaultSwap&quot;
 INTERESTRATESWAPTION | &quot;InterestRateSwaption&quot;
 BOND | &quot;Bond&quot;
+EQUITYOPTION | &quot;EquityOption&quot;
 UNKNOWN | &quot;Unknown&quot;
 
 
