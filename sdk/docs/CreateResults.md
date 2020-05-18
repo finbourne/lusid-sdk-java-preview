@@ -22,6 +22,7 @@ Name | Value
 ---- | -----
 DATAREADER | &quot;DataReader&quot;
 PORTFOLIO | &quot;Portfolio&quot;
+CSV | &quot;Csv&quot;
 UNKNOWN | &quot;Unknown&quot;
 
 
