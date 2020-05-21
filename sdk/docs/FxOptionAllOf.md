@@ -31,6 +31,9 @@ CREDITDEFAULTSWAP | &quot;CreditDefaultSwap&quot;
 INTERESTRATESWAPTION | &quot;InterestRateSwaption&quot;
 BOND | &quot;Bond&quot;
 EQUITYOPTION | &quot;EquityOption&quot;
+FIXEDRATELEG | &quot;FixedRateLeg&quot;
+FLOATINGRATELEG | &quot;FloatingRateLeg&quot;
+BESPOKECASHFLOWLEG | &quot;BespokeCashflowLeg&quot;
 UNKNOWN | &quot;Unknown&quot;
 
 

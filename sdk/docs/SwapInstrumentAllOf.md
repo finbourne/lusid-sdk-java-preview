@@ -6,24 +6,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDate** | [**OffsetDateTime**](OffsetDateTime.md) | Starting date of the swap | 
-**maturityDate** | [**OffsetDateTime**](OffsetDateTime.md) | Maturity date of the swap | 
-**legs** | [**List&lt;InstrumentLeg&gt;**](InstrumentLeg.md) | True if the swap is amortizing | 
-**notional** | **Double** | The notional. | 
-**isAmortizing** | **Boolean** | True if the swap is amortizing | 
-**notionalExchangeType** | [**NotionalExchangeTypeEnum**](#NotionalExchangeTypeEnum) | True notional exchange type. | 
+**maturityDate** | [**OffsetDateTime**](OffsetDateTime.md) | The final maturity date of the instrument. This means the last date on which the instruments makes a payment of any amount.              For the avoidance of doubt, that is not necessarily prior to its last sensitivity date for the purposes of risk; e.g. instruments such as              Constant Maturity Swaps (CMS) often have sensitivities to rates beyond their last payment date | 
+**startDate** | [**OffsetDateTime**](OffsetDateTime.md) | The start date of the instrument. This is normally synonymous with the trade-date. | 
+**legs** | [**List&lt;InstrumentLeg&gt;**](InstrumentLeg.md) | The set of instrument legs that define the swap instrument. | 
 **instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | Instrument type, must be property for JSON. | 
-
-
-
-## Enum: NotionalExchangeTypeEnum
-
-Name | Value
----- | -----
-NONE | &quot;None&quot;
-INITIAL | &quot;Initial&quot;
-FINAL | &quot;Final&quot;
-BOTH | &quot;Both&quot;
 
 
 
@@ -40,6 +26,9 @@ CREDITDEFAULTSWAP | &quot;CreditDefaultSwap&quot;
 INTERESTRATESWAPTION | &quot;InterestRateSwaption&quot;
 BOND | &quot;Bond&quot;
 EQUITYOPTION | &quot;EquityOption&quot;
+FIXEDRATELEG | &quot;FixedRateLeg&quot;
+FLOATINGRATELEG | &quot;FloatingRateLeg&quot;
+BESPOKECASHFLOWLEG | &quot;BespokeCashflowLeg&quot;
 UNKNOWN | &quot;Unknown&quot;
 
 
