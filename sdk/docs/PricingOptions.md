@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **enableUseOfCachedUnitResults** | **Boolean** | If true, when pricing using a model or for an instrument that supports use of intermediate cached-results, use them.  Default is that this caching is turned off. |  [optional]
 **windowValuationOnInstrumentStartEnd** | **Boolean** | If true, when valuing an instrument outside the period where it is &#39;alive&#39; (the start-maturity window) it will return a valuation of zero |  [optional]
 **removeContingentCashflowsInPaymentDiary** | **Boolean** | When creating a payment diary, should contingent cash payments (e.g. from exercise of a swaption into a swap) be included or not.  i.e. Is exercise or default being assumed to happen or not. |  [optional]
+**useChildSubHoldingKeysForPortfolioExpansion** | **Boolean** | Should fund constituents inherit subholding keys from the parent subholding keyb |  [optional]
 
 
 
