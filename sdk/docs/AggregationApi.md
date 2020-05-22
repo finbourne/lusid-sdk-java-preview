@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**generateConfigurationRecipe**](AggregationApi.md#generateConfigurationRecipe) | **POST** /api/{scope}/{code} | [EXPERIMENTAL] Generates a recipe sufficient to perform valuations for the given portfolio.
 [**getAggregationByGroup**](AggregationApi.md#getAggregationByGroup) | **POST** /api/portfoliogroups/{scope}/{code}/$aggregate | [EXPERIMENTAL] Aggregate data in a portfolio group
 [**getAggregationByPortfolio**](AggregationApi.md#getAggregationByPortfolio) | **POST** /api/portfolios/{scope}/{code}/$aggregate | [EXPERIMENTAL] Aggregate data in a portfolio
 [**getAggregationByResultSet**](AggregationApi.md#getAggregationByResultSet) | **POST** /api/results/{scope}/{resultsKey}/$aggregate | [EXPERIMENTAL] Aggregate using result data
@@ -12,6 +13,79 @@ Method | HTTP request | Description
 [**getNestedAggregationByPortfolio**](AggregationApi.md#getNestedAggregationByPortfolio) | **POST** /api/portfolios/{scope}/{code}/$aggregatenested | [EXPERIMENTAL] 
 [**getQueryableKeys**](AggregationApi.md#getQueryableKeys) | **GET** /api/results/queryable/keys | [EXPERIMENTAL] Query the set of supported \&quot;addresses\&quot; that can be queried from the aggregation endpoint.
 
+
+<a name="generateConfigurationRecipe"></a>
+# **generateConfigurationRecipe**
+> ConfigurationRecipe generateConfigurationRecipe(scope, code, request)
+
+[EXPERIMENTAL] Generates a recipe sufficient to perform valuations for the given portfolio.
+
+Given a set of scopes, a portfolio Id and a basic recipe, this endpoint generates a configuration recipe with relevant rules that can value the instruments in the portfolio.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.AggregationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    AggregationApi apiInstance = new AggregationApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the portfolio
+    String code = "code_example"; // String | The code of the portfolio
+    CreateRecipeRequest request = new CreateRecipeRequest(); // CreateRecipeRequest | The request specifying the parameters of the aggregation
+    try {
+      ConfigurationRecipe result = apiInstance.generateConfigurationRecipe(scope, code, request);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AggregationApi#generateConfigurationRecipe");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope of the portfolio |
+ **code** | **String**| The code of the portfolio |
+ **request** | [**CreateRecipeRequest**](CreateRecipeRequest.md)| The request specifying the parameters of the aggregation | [optional]
+
+### Return type
+
+[**ConfigurationRecipe**](ConfigurationRecipe.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
 
 <a name="getAggregationByGroup"></a>
 # **getAggregationByGroup**
