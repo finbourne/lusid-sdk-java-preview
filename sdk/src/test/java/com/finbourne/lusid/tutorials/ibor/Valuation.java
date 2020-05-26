@@ -100,7 +100,7 @@ public class Valuation {
         String portfolioDisplayName = String.format("Portfolio-%s", uuid);
         CreateTransactionPortfolioRequest transactionPortfolioRequest = createTransactionPortfolioRequest(portfolioId, portfolioDisplayName, "GBP");
 
-        //  prepare transactions  across GBP and USD. transactions are cash funding and stock fundings
+        //  prepare transactions across GBP and USD, transactions are transfer in of cash and stock
         List<TransactionRequest> transactionRequests = new ArrayList<>();
         transactionRequests.add(testDataUtilities.buildCashFundsInTransactionRequest(10000.0, "GBP", EFFECTIVE_DATE));
         transactionRequests.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(0), 100.0, 100.0, "USD", EFFECTIVE_DATE, "StockIn"));
@@ -281,7 +281,12 @@ public class Valuation {
         ConfigurationRecipe configurationRecipe = new ConfigurationRecipe()
                 .code("quotes_recipe")
                 .market(new MarketContext()
-                        .suppliers(new MarketContextSuppliers().equity(MarketContextSuppliers.EquityEnum.DATASCOPE))
+                        // equity data and fx data are sourced from different data providers, reference the createUpsertQuote... methods
+                        // to view how the quote requests are mapped to providers.
+                        .suppliers(new MarketContextSuppliers()
+                                .equity(MarketContextSuppliers.EquityEnum.DATASCOPE)
+                                .fx(MarketContextSuppliers.FxEnum.LUSID)
+                        )
                         .options(new MarketOptions()
                                 .defaultSupplier(MarketOptions.DefaultSupplierEnum.DATASCOPE)
                                 .defaultInstrumentCodeType(MarketOptions.DefaultInstrumentCodeTypeEnum.LUSIDINSTRUMENTID)
@@ -363,16 +368,17 @@ public class Valuation {
      * Creates an fx entry quote request.
      *
      * @param baseCcy - base currency of the quote
-     * @param counterCcy - counter currency of the quote
+     * @param foreignCcy - foreign currency of the quote
      * @param rate - the exchange rate
      * @return
      */
-    private UpsertQuoteRequest createFxUpsertQuoteRequest(String baseCcy, String counterCcy, double rate){
+    private UpsertQuoteRequest createFxUpsertQuoteRequest(String baseCcy, String foreignCcy, double rate){
         return new UpsertQuoteRequest()
                 .quoteId(new QuoteId()
                         .quoteSeriesId(new QuoteSeriesId()
-                                .provider("DataScope")
-                                .instrumentId(baseCcy + "/" + counterCcy)
+                                .provider("Lusid")
+                                // base and foreign currencies must be split by "/" (e.g. USD/GBP).
+                                .instrumentId(baseCcy + "/" + foreignCcy)
                                 .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.CURRENCYPAIR)
                                 .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
                                 .field("mid")
