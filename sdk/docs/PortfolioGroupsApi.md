@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addPortfolioToGroup**](PortfolioGroupsApi.md#addPortfolioToGroup) | **POST** /api/portfoliogroups/{scope}/{code}/portfolios | [EARLY ACCESS] Add portfolio to group
 [**addSubGroupToGroup**](PortfolioGroupsApi.md#addSubGroupToGroup) | **POST** /api/portfoliogroups/{scope}/{code}/subgroups | [EARLY ACCESS] Add sub group to group
+[**buildTransactionsForPortfolioGroup**](PortfolioGroupsApi.md#buildTransactionsForPortfolioGroup) | **POST** /api/portfoliogroups/{scope}/{code}/transactions/$build | [EXPERIMENTAL] Build transactions for transaction portfolios in a portfolio group
 [**createPortfolioGroup**](PortfolioGroupsApi.md#createPortfolioGroup) | **POST** /api/portfoliogroups/{scope} | [EARLY ACCESS] Create portfolio group
 [**deleteGroupProperties**](PortfolioGroupsApi.md#deleteGroupProperties) | **POST** /api/portfoliogroups/{scope}/{code}/properties/$delete | [EARLY ACCESS] Delete group properties
 [**deleteKeyFromPortfolioGroupAccessMetadata**](PortfolioGroupsApi.md#deleteKeyFromPortfolioGroupAccessMetadata) | **DELETE** /api/portfoliogroups/{scope}/{code}/metadata/{metadataKey} | [EXPERIMENTAL] Delete a Portfolio Group Access Metadata entry
@@ -173,6 +174,85 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The portfolio group containing the newly added portfolio group as a sub group |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="buildTransactionsForPortfolioGroup"></a>
+# **buildTransactionsForPortfolioGroup**
+> VersionedResourceListOfOutputTransaction buildTransactionsForPortfolioGroup(scope, code, queryParameters, asAt, filter, propertyKeys)
+
+[EXPERIMENTAL] Build transactions for transaction portfolios in a portfolio group
+
+Build transactions for transaction portfolios in a portfolio group over a given interval of effective time.     When the specified portfolio in a portfolio group is a derived transaction portfolio, the returned set of transactions is the  union set of all transactions of the parent (and any grandparents etc.) and the specified derived transaction portfolio itself.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.PortfolioGroupsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    PortfolioGroupsApi apiInstance = new PortfolioGroupsApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the portfolio group.
+    String code = "code_example"; // String | The code of the portfolio group. Together with the scope this uniquely identifies              the portfolio group.
+    TransactionQueryParameters queryParameters = new TransactionQueryParameters(); // TransactionQueryParameters | The query queryParameters which control how the output transactions are built.
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to build the transactions. Defaults to return the latest              version of each transaction if not specified.
+    String filter = "filter_example"; // String | Expression to filter the result set.              For example, to filter on the Transaction Type, use \"type eq 'Buy'\"              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
+    List<String> propertyKeys = Arrays.asList(); // List<String> | A list of property keys from the \"Instrument\" or \"Transaction\" domain to decorate onto              the transactions. These take the format {domain}/{scope}/{code} e.g. \"Instrument/system/Name\" or              \"Transaction/strategy/quantsignal\".
+    try {
+      VersionedResourceListOfOutputTransaction result = apiInstance.buildTransactionsForPortfolioGroup(scope, code, queryParameters, asAt, filter, propertyKeys);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PortfolioGroupsApi#buildTransactionsForPortfolioGroup");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope of the portfolio group. |
+ **code** | **String**| The code of the portfolio group. Together with the scope this uniquely identifies              the portfolio group. |
+ **queryParameters** | [**TransactionQueryParameters**](TransactionQueryParameters.md)| The query queryParameters which control how the output transactions are built. |
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to build the transactions. Defaults to return the latest              version of each transaction if not specified. | [optional]
+ **filter** | **String**| Expression to filter the result set.              For example, to filter on the Transaction Type, use \&quot;type eq &#39;Buy&#39;\&quot;              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
+ **propertyKeys** | [**List&lt;String&gt;**](String.md)| A list of property keys from the \&quot;Instrument\&quot; or \&quot;Transaction\&quot; domain to decorate onto              the transactions. These take the format {domain}/{scope}/{code} e.g. \&quot;Instrument/system/Name\&quot; or              \&quot;Transaction/strategy/quantsignal\&quot;. | [optional]
+
+### Return type
+
+[**VersionedResourceListOfOutputTransaction**](VersionedResourceListOfOutputTransaction.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested transactions from transaction portfolios in the specified portfolio group |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
