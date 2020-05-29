@@ -1,13 +1,12 @@
 package com.finbourne.lusid.tutorials.ibor;
 
-import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
-import com.finbourne.lusid.api.*;
+import com.finbourne.lusid.api.AggregationApi;
+import com.finbourne.lusid.api.InstrumentsApi;
+import com.finbourne.lusid.api.QuotesApi;
+import com.finbourne.lusid.api.TransactionPortfoliosApi;
 import com.finbourne.lusid.model.*;
-import com.finbourne.lusid.utilities.ApiClientBuilder;
-import com.finbourne.lusid.utilities.CredentialsSource;
-import com.finbourne.lusid.utilities.InstrumentLoader;
-import com.finbourne.lusid.utilities.TestDataUtilities;
+import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -45,18 +44,19 @@ public class Valuation {
     @BeforeClass
     public static void setUp() throws Exception
     {
-        ApiClient apiClient = new ApiClientBuilder().build(CredentialsSource.credentialsFile);
+        LusidApiFactory apiFactory = LusidApiFactoryBuilder.build(CredentialsSource.credentialsFile);
 
-        testDataUtilities = new TestDataUtilities(transactionPortfoliosApi);
-
-        transactionPortfoliosApi = new TransactionPortfoliosApi(apiClient);
-        quotesApi = new QuotesApi(apiClient);
-        aggregationApi = new AggregationApi(apiClient);
+        // setup lusid apis
+        transactionPortfoliosApi = apiFactory.build(TransactionPortfoliosApi.class);
+        quotesApi = apiFactory.build(QuotesApi.class);
+        aggregationApi = apiFactory.build(AggregationApi.class);
 
         //  ensure instruments are created and exist in LUSID
-        InstrumentsApi instrumentsApi = new InstrumentsApi(apiClient);
+        InstrumentsApi instrumentsApi = apiFactory.build(InstrumentsApi.class);
         InstrumentLoader instrumentLoader = new InstrumentLoader(instrumentsApi);
         instrumentIds = instrumentLoader.loadInstruments();
+
+        testDataUtilities = new TestDataUtilities(transactionPortfoliosApi);
     }
 
     @Test
