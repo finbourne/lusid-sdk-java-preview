@@ -1,8 +1,7 @@
 package com.finbourne.lusid.utilities;
 
 import com.finbourne.lusid.ApiClient;
-
-import java.io.IOException;
+import com.finbourne.lusid.utilities.auth.LusidTokenException;
 
 public class LusidApiFactoryBuilder {
 
@@ -11,9 +10,9 @@ public class LusidApiFactoryBuilder {
      *
      * @return
      */
-    public static LusidApiFactory build() throws IOException {
+    public static LusidApiFactory build() throws ApiConfigurationException, LusidTokenException {
         if (!areRequiredEnvironmentVariablesSet()) {
-            throw new IllegalStateException("Environment variables to configure LUSID API client have not been set. See " +
+            throw new ApiConfigurationException("Environment variables to configure LUSID API client have not been set. See " +
                     " see https://support.lusid.com/getting-started-with-apis-sdks for details.");
         }
         return createLusidApiFactory("");
@@ -22,19 +21,13 @@ public class LusidApiFactoryBuilder {
     /**
      * Build a {@link LusidApiFactory} using the specified configuration file. For details on the format of the configuration file see https://support.lusid.com/getting-started-with-apis-sdks.
      */
-    public static LusidApiFactory build(String configurationFile) throws IOException {
+    public static LusidApiFactory build(String configurationFile) throws ApiConfigurationException, LusidTokenException {
         return createLusidApiFactory(configurationFile);
     }
 
-    /**
-     * Build a {@link LusidApiFactory} using constant personal access tokens is not currently supported in the lusid java sdk
-     */
-    public static LusidApiFactory build(Object accessToken){
-        throw new UnsupportedOperationException("Connecting to LUSID via flat access tokens is not yet supported in the LUSID java sdk.");
-    }
-
-    private static LusidApiFactory createLusidApiFactory(String configurationFile) throws IOException {
-        ApiClient apiClient = new ApiClientBuilder().build(configurationFile);
+    private static LusidApiFactory createLusidApiFactory(String configurationFile) throws ApiConfigurationException, LusidTokenException {
+        ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(configurationFile);
+        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
         return new LusidApiFactory(apiClient);
     }
 
