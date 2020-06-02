@@ -1,8 +1,7 @@
 package com.finbourne.lusid.utilities;
 
 import com.finbourne.lusid.ApiClient;
-
-import java.io.IOException;
+import com.finbourne.lusid.utilities.auth.LusidTokenException;
 
 public class LusidApiFactoryBuilder {
 
@@ -11,9 +10,9 @@ public class LusidApiFactoryBuilder {
      *
      * @return
      */
-    public static LusidApiFactory build() throws IOException {
+    public static LusidApiFactory build() throws ApiConfigurationException, LusidTokenException {
         if (!areRequiredEnvironmentVariablesSet()) {
-            throw new IllegalStateException("Environment variables to configure LUSID API client have not been set. See " +
+            throw new ApiConfigurationException("Environment variables to configure LUSID API client have not been set. See " +
                     " see https://support.lusid.com/getting-started-with-apis-sdks for details.");
         }
         return createLusidApiFactory("");
@@ -22,7 +21,7 @@ public class LusidApiFactoryBuilder {
     /**
      * Build a {@link LusidApiFactory} using the specified configuration file. For details on the format of the configuration file see https://support.lusid.com/getting-started-with-apis-sdks.
      */
-    public static LusidApiFactory build(String configurationFile) throws IOException {
+    public static LusidApiFactory build(String configurationFile) throws ApiConfigurationException, LusidTokenException {
         return createLusidApiFactory(configurationFile);
     }
 
@@ -33,7 +32,7 @@ public class LusidApiFactoryBuilder {
         throw new UnsupportedOperationException("Connecting to LUSID via flat access tokens is not yet supported in the LUSID java sdk.");
     }
 
-    private static LusidApiFactory createLusidApiFactory(String configurationFile) throws IOException {
+    private static LusidApiFactory createLusidApiFactory(String configurationFile) throws ApiConfigurationException, LusidTokenException {
         ApiClient apiClient = new ApiClientBuilder().build(configurationFile);
         return new LusidApiFactory(apiClient);
     }

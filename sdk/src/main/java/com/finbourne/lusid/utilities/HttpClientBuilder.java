@@ -6,8 +6,19 @@ import okhttp3.OkHttpClient;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 
+/**
+ * Builds http client to communicate to LUSID API instances.
+ *
+ */
 public class HttpClientBuilder {
 
+    /**
+     *  Builds a {@link OkHttpClient} from a {@link ApiConfiguration} to make
+     *  calls to the LUSID API.
+     *
+     * @param apiConfiguration configuration to connect to LUSID API
+     * @return an client for http calls to LUSID API
+     */
     public OkHttpClient build(ApiConfiguration apiConfiguration){
         final OkHttpClient httpClient;
 

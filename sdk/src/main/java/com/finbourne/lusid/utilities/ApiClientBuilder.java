@@ -4,6 +4,7 @@ import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.utilities.auth.HttpLusidTokenProvider;
 import com.finbourne.lusid.utilities.auth.KeepAuthTokenProvider;
 import com.finbourne.lusid.utilities.auth.LusidToken;
+import com.finbourne.lusid.utilities.auth.LusidTokenException;
 import okhttp3.OkHttpClient;
 
 import java.io.IOException;
@@ -22,8 +23,12 @@ public class ApiClientBuilder {
      *
      * @param apiSecretsFilename
      * @return
+     *
+     * @throws ApiConfigurationException on failing to create a valid {@link ApiConfiguration} from the provided
+     * secrets file or system environment variables
+     * @throws LusidTokenException on failing to authenticate and retrieve an initial {@link LusidToken}
      */
-    public ApiClient build(String apiSecretsFilename){
+    public ApiClient build(String apiSecretsFilename) throws ApiConfigurationException, LusidTokenException {
         // setup configuration from secrets file
         ApiConfiguration apiConfiguration = createApiConfiguration(apiSecretsFilename);
         // http client to use for api and auth calls
@@ -52,12 +57,8 @@ public class ApiClientBuilder {
         return  apiClient;
     }
 
-    private ApiConfiguration createApiConfiguration(String apiSecretsFilename){
-        try {
-            return new ApiConfigurationBuilder().build(apiSecretsFilename);
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to build API Configuration. Ensure secrets files is properly setup.", e);
-        }
+    private ApiConfiguration createApiConfiguration(String apiSecretsFilename) throws ApiConfigurationException {
+        return new ApiConfigurationBuilder().build(apiSecretsFilename);
     }
 
     private OkHttpClient createHttpClient(ApiConfiguration apiConfiguration){
