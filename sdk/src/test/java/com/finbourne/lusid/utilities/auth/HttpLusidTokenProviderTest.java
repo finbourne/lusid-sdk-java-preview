@@ -1,20 +1,15 @@
 package com.finbourne.lusid.utilities.auth;
 
 import com.finbourne.lusid.utilities.ApiConfiguration;
-import com.finbourne.lusid.utilities.ApiConfigurationBuilder;
-import com.finbourne.lusid.utilities.CredentialsSource;
-import com.finbourne.lusid.utilities.HttpClientBuilder;
 import okhttp3.OkHttpClient;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.Optional;
 
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.isEmptyOrNullString;
 import static org.mockito.Mockito.mock;
 
 public class HttpLusidTokenProviderTest {
