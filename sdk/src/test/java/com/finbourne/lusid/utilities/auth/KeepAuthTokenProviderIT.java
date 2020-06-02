@@ -1,9 +1,6 @@
 package com.finbourne.lusid.utilities.auth;
 
-import com.finbourne.lusid.utilities.ApiConfiguration;
-import com.finbourne.lusid.utilities.ApiConfigurationBuilder;
-import com.finbourne.lusid.utilities.CredentialsSource;
-import com.finbourne.lusid.utilities.HttpClientBuilder;
+import com.finbourne.lusid.utilities.*;
 import okhttp3.OkHttpClient;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +19,7 @@ public class KeepAuthTokenProviderIT {
     private HttpLusidTokenProvider httpLusidTokenProvider;
 
     @Before
-    public void setUp() throws IOException {
+    public void setUp() throws ApiConfigurationException {
         ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(CredentialsSource.credentialsFile);
         OkHttpClient httpClient = new HttpClientBuilder().build(apiConfiguration);
         httpLusidTokenProvider = new HttpLusidTokenProvider(apiConfiguration, httpClient);
@@ -31,7 +28,7 @@ public class KeepAuthTokenProviderIT {
     }
 
     @Test
-    public void get_OnNoCurrentToken_ShouldReturnNewToken(){
+    public void get_OnNoCurrentToken_ShouldReturnNewToken() throws LusidTokenException {
         LusidToken lusidToken = tokenProvider.get();
         assertThat(lusidToken.getAccessToken(), not(isEmptyOrNullString()));
         assertThat(lusidToken.getRefreshToken(), not(isEmptyOrNullString()));
@@ -39,7 +36,7 @@ public class KeepAuthTokenProviderIT {
     }
 
     @Test
-    public void get_OnNonExpiredCurrentToken_ShouldReturnSameToken(){
+    public void get_OnNonExpiredCurrentToken_ShouldReturnSameToken() throws LusidTokenException {
         // first call should create a token
         LusidToken lusidToken = tokenProvider.get();
 
@@ -49,11 +46,11 @@ public class KeepAuthTokenProviderIT {
         // second call should check for expiry
         LusidToken nextLusidToken = tokenProvider.get();
 
-        assertThat(nextLusidToken, equalTo(lusidToken));
+        assertThat(nextLusidToken, sameInstance(lusidToken));
     }
 
     @Test
-    public void get_OnExpiredCurrentToken_ShouldReturnNewToken(){
+    public void get_OnExpiredCurrentToken_ShouldReturnNewToken() throws LusidTokenException {
         // first call should create a token
         LusidToken lusidToken = tokenProvider.get();
 
@@ -66,7 +63,11 @@ public class KeepAuthTokenProviderIT {
         assertThat(nextLusidToken.getAccessToken(), not(isEmptyOrNullString()));
         assertThat(nextLusidToken.getRefreshToken(), not(isEmptyOrNullString()));
         assertThat(nextLusidToken.getExpiresAt(), not(nullValue()));
+
         assertThat(nextLusidToken, not(equalTo(lusidToken)));
+        assertThat(nextLusidToken.getAccessToken(), not(equalTo(lusidToken.getAccessToken())));
+        assertThat(nextLusidToken.getExpiresAt(), not(equalTo(lusidToken.getExpiresAt())));
+        assertThat(nextLusidToken.getRefreshToken(), equalTo(lusidToken.getRefreshToken()));
     }
 
 
