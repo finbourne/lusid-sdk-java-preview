@@ -1,8 +1,9 @@
 package com.finbourne.lusid.utilities.auth;
 
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Provides {@link LusidToken} used for API authentication and manages
@@ -11,6 +12,8 @@ import java.util.Optional;
  *
  */
 public class KeepAuthTokenProvider {
+
+    private final Logger logger = Logger.getLogger(getClass().getName());
 
     /** Underlying token provider that authenticates against LUSID*/
     private final HttpLusidTokenProvider httpLusidTokenProvider;
@@ -30,7 +33,7 @@ public class KeepAuthTokenProvider {
 
     /**
      * Stores an initial {@link LusidToken} on complete authentication (with username and password) and
-     * will subsequently manage refreshing the token after expiry
+     * will subsequently manage refreshing the token after expiry.
      *
      * @return a live and valid {@link LusidToken}
      *
@@ -40,7 +43,13 @@ public class KeepAuthTokenProvider {
         if (currentToken == null) {
             currentToken = httpLusidTokenProvider.get(Optional.empty());
         } else if (isTokenExpired(currentToken)) {
-            currentToken = httpLusidTokenProvider.get(Optional.of(currentToken.getRefreshToken()));
+            try {
+                currentToken = httpLusidTokenProvider.get(Optional.of(currentToken.getRefreshToken()));
+            } catch (LusidTokenException e){
+                logger.log(Level.WARNING, "Authentication call to refresh token has failed. Attempting to reauthenticate " +
+                        " fully with credentials. See details for refresh failure:", e);
+                currentToken = httpLusidTokenProvider.get(Optional.empty());
+            }
         }
         return currentToken;
     }

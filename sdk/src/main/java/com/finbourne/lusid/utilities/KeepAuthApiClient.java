@@ -18,7 +18,7 @@ import java.util.Map;
  * API.
  *
  */
-public class KeepLiveApiClient extends ApiClient {
+public class KeepAuthApiClient extends ApiClient {
 
     /** Default api client to delegate actual request execution*/
     private final ApiClient apiClient;
@@ -26,7 +26,7 @@ public class KeepLiveApiClient extends ApiClient {
     /** Token provider to retrieve valid {@link LusidToken} */
     private final KeepAuthTokenProvider tokenProvider;
 
-    public KeepLiveApiClient(ApiClient apiClient, KeepAuthTokenProvider tokenProvider) {
+    public KeepAuthApiClient(ApiClient apiClient, KeepAuthTokenProvider tokenProvider) {
         this.apiClient = apiClient;
         this.tokenProvider = tokenProvider;
     }
