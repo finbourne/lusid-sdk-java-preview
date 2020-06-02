@@ -26,14 +26,14 @@ public class KeepAuthTokenProviderTest {
     @Test
     public void get_OnNoCurrentToken_ShouldCallLusidProviderForFullAuthentication(){
         tokenProvider.get();
-        verify(httpLusidTokenProvider, times(1)).getToken(Optional.empty());
+        verify(httpLusidTokenProvider, times(1)).get(Optional.empty());
     }
 
     @Test
-    public void get_OnExistingTokenThatIsNotExpired_ShouldDoNothing(){
+    public void get_OnNonExpiredCurrentToken_ShouldDoNothing(){
         LusidToken nonExpiredToken = mock(LusidToken.class);
         doReturn(LocalDateTime.MAX).when(nonExpiredToken).getExpiresAt();
-        doReturn(nonExpiredToken).when(httpLusidTokenProvider).getToken(Optional.empty());
+        doReturn(nonExpiredToken).when(httpLusidTokenProvider).get(Optional.empty());
 
         // setup first time
         LusidToken existingToken = tokenProvider.get();
@@ -42,19 +42,19 @@ public class KeepAuthTokenProviderTest {
         LusidToken nextToken = tokenProvider.get();
 
         assertThat(nextToken, equalTo(existingToken));
-        verify(httpLusidTokenProvider, times(1)).getToken(Optional.empty());
-        verify(httpLusidTokenProvider, times(0)).getToken(Optional.of(anyString()));
+        verify(httpLusidTokenProvider, times(1)).get(Optional.empty());
+        verify(httpLusidTokenProvider, times(0)).get(Optional.of(anyString()));
     }
 
     @Test
-    public void get_OnExistingTokenThatIsExpired_ShouldCallLusidForNewRefreshedToken(){
+    public void get_OnExpiredCurrentToken_ShouldCallLusidForNewRefreshedToken(){
         LusidToken expiredToken = mock(LusidToken.class);
         doReturn(LocalDateTime.MIN).when(expiredToken).getExpiresAt();
         doReturn("refreshToken1").when(expiredToken).getRefreshToken();
-        doReturn(expiredToken).when(httpLusidTokenProvider).getToken(Optional.empty());
+        doReturn(expiredToken).when(httpLusidTokenProvider).get(Optional.empty());
 
         LusidToken refreshedToken = mock(LusidToken.class);
-        doReturn(refreshedToken).when(httpLusidTokenProvider).getToken(Optional.of("refreshToken1"));
+        doReturn(refreshedToken).when(httpLusidTokenProvider).get(Optional.of("refreshToken1"));
 
         // setup first time
         LusidToken existingToken = tokenProvider.get();
@@ -64,10 +64,8 @@ public class KeepAuthTokenProviderTest {
 
         assertThat(nextToken, not(equalTo(existingToken)));
         assertThat(nextToken, equalTo(refreshedToken));
-        verify(httpLusidTokenProvider, times(1)).getToken(Optional.empty());
-        verify(httpLusidTokenProvider, times(1)).getToken(Optional.of("refreshToken1"));
+        verify(httpLusidTokenProvider, times(1)).get(Optional.empty());
+        verify(httpLusidTokenProvider, times(1)).get(Optional.of("refreshToken1"));
     }
-
-    // Error Cases : //TODO Discuss exception cases Riz : Can refresh tokens expire
 
 }

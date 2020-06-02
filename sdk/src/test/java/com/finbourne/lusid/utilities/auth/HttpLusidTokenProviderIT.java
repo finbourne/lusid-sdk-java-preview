@@ -14,8 +14,6 @@ import java.util.Optional;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.isEmptyOrNullString;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.spy;
 
 public class HttpLusidTokenProviderIT {
 
@@ -29,8 +27,8 @@ public class HttpLusidTokenProviderIT {
     }
 
     @Test
-    public void getToken_OnNoRefreshToken_ShouldReturnNewToken(){
-        LusidToken lusidToken = httpLusidTokenProvider.getToken(Optional.empty());
+    public void get_OnRequestingAnInitialToken_ShouldReturnNewToken(){
+        LusidToken lusidToken = httpLusidTokenProvider.get(Optional.empty());
 
         assertThat(lusidToken.getAccessToken(), not(isEmptyOrNullString()));
         assertThat(lusidToken.getRefreshToken(), not(isEmptyOrNullString()));
@@ -38,9 +36,20 @@ public class HttpLusidTokenProviderIT {
     }
 
     @Test
-    public void getToken_OnRefreshToken_ShouldReturnNewRefreshedToken(){
-        LusidToken initialToken = httpLusidTokenProvider.getToken(Optional.empty());
-        LusidToken refreshedToken = httpLusidTokenProvider.getToken(Optional.of(initialToken.getRefreshToken()));
+    public void get_OnRequestingANewTokenWithRefreshing_ShouldReturnNewRefreshedToken(){
+        LusidToken initialToken = httpLusidTokenProvider.get(Optional.empty());
+        LusidToken refreshedToken = httpLusidTokenProvider.get(Optional.of(initialToken.getRefreshToken()));
+
+        assertThat(refreshedToken.getAccessToken(), not(isEmptyOrNullString()));
+        assertThat(refreshedToken.getRefreshToken(), not(isEmptyOrNullString()));
+        assertThat(refreshedToken.getExpiresAt(), not(nullValue()));
+        assertThat(refreshedToken, not(equalTo(initialToken)));
+    }
+
+    @Test
+    public void get_OnRequestingANewTokenWithoutRefreshing_ShouldReturnNewToken(){
+        LusidToken initialToken = httpLusidTokenProvider.get(Optional.empty());
+        LusidToken refreshedToken = httpLusidTokenProvider.get(Optional.empty());
 
         assertThat(refreshedToken.getAccessToken(), not(isEmptyOrNullString()));
         assertThat(refreshedToken.getRefreshToken(), not(isEmptyOrNullString()));
@@ -56,6 +65,6 @@ public class HttpLusidTokenProviderIT {
         apiConfiguration.setTokenUrl("invalidTokenUrl");
 
         HttpLusidTokenProvider httpLusidTokenProvider = new HttpLusidTokenProvider(apiConfiguration, httpClient);
-        LusidToken lusidToken = httpLusidTokenProvider.getToken(Optional.empty());
+        LusidToken lusidToken = httpLusidTokenProvider.get(Optional.empty());
     }
 }
