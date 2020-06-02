@@ -1,10 +1,7 @@
 package com.finbourne.lusid.utilities;
 
 import com.finbourne.lusid.ApiClient;
-import com.finbourne.lusid.utilities.auth.HttpLusidTokenProvider;
-import com.finbourne.lusid.utilities.auth.KeepAuthTokenProvider;
 import com.finbourne.lusid.utilities.auth.LusidTokenException;
-import okhttp3.OkHttpClient;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -34,7 +31,7 @@ public class ApiClientBuilderIT {
         ApiClient apiClient = apiClientBuilder.build(CredentialsSource.credentialsFile);
         // running with no exceptions ensures client built correctly with no configuration or token creation exceptions
         assertThat("Unexpected extended implementation of ApiClient for default build." ,
-                apiClient, instanceOf(KeepLiveApiClient.class));
+                apiClient, instanceOf(KeepAuthApiClient.class));
     }
 
     @Test
