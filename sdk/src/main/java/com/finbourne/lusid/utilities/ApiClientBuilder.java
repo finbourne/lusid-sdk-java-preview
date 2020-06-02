@@ -7,8 +7,6 @@ import com.finbourne.lusid.utilities.auth.LusidToken;
 import com.finbourne.lusid.utilities.auth.LusidTokenException;
 import okhttp3.OkHttpClient;
 
-import java.io.IOException;
-
 /**
  * Utility class to build an ApiClient from a set of configuration
  */
@@ -40,7 +38,7 @@ public class ApiClientBuilder {
 
         // setup api client that managed submissions with latest token
         ApiClient defaultApiClient = createDefaultApiClient(apiConfiguration, httpClient, lusidToken);
-        return new KeepLiveApiClient(defaultApiClient, keepAuthTokenProvider);
+        return new KeepAuthApiClient(defaultApiClient, keepAuthTokenProvider);
     }
 
     private ApiClient createDefaultApiClient(ApiConfiguration apiConfiguration, OkHttpClient httpClient, LusidToken lusidToken){
