@@ -1,5 +1,6 @@
 package com.finbourne.lusid.utilities.auth;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.finbourne.lusid.utilities.ApiConfiguration;
 import okhttp3.*;
@@ -45,52 +46,61 @@ public class HttpLusidTokenProvider {
      *
      * @param refreshToken - to attempt token refresh with it is available.
      * @return an authenticated LUSID token
+     *
+     * @throws LusidTokenException on failing to authenticate and retrieve a token
      */
-    public LusidToken get(Optional<String> refreshToken) {
+    public LusidToken get(Optional<String> refreshToken) throws LusidTokenException {
         final Request request = createAccessTokenRequest(refreshToken);
         final LusidToken lusidToken = callAndMapResponseToToken(httpClient, request);
         return lusidToken;
     }
 
-    private LusidToken callAndMapResponseToToken(OkHttpClient httpClient, Request request){
+    private LusidToken callAndMapResponseToToken(OkHttpClient httpClient, Request request) throws LusidTokenException{
         //  map json response
+        Response response = null;
         try {
-            Response response = httpClient.newCall(request).execute();
-
-            if (response.code() != 200) {
-                throw new RuntimeException("Authentication call to LUSID failed. See response :" + response.toString());
-            }
-
-            final String content = response.body().string();
-            final ObjectMapper mapper = new ObjectMapper();
-            final Map bodyValues = mapper.readValue(content, Map.class);
-
-
-            if (!bodyValues.containsKey("access_token")) {
-                throw new IOException("missing access_token");
-            }
-
-            if (!bodyValues.containsKey("refresh_token")) {
-                throw new IOException("missing refresh_token");
-            }
-
-            if (!bodyValues.containsKey("expires_in")) {
-                throw new IOException("missing expires_in");
-            }
-
-            //  get access token, refresh token and token expiry
-            final String apiToken = (String)bodyValues.get("access_token");
-            final String refreshToken = (String)bodyValues.get("refresh_token");
-            final int expires_in = (int)bodyValues.get("expires_in");
-
-            LusidToken lusidToken = new LusidToken(apiToken, refreshToken, calculateExpiryAtTime(LocalDateTime.now(), expires_in));
-            return lusidToken;
-        } catch (IOException e){
-            throw new RuntimeException("Authentication response does not appear to valid. See details:", e);
+            response = httpClient.newCall(request).execute();
+        } catch (IOException e) {
+            throw new LusidTokenException("Authentication request call could not complete. See details:", e);
         }
+
+        if (response.code() != 200) {
+            throw new LusidTokenException("Authentication call to LUSID failed. See response :" + response.toString());
+        }
+
+        final String content;
+        final ObjectMapper mapper;
+        final Map bodyValues;
+        try {
+            content = response.body().string();
+            mapper = new ObjectMapper();
+            bodyValues = mapper.readValue(content, Map.class);
+        } catch (IOException e) {
+            throw new LusidTokenException("Failed to correctly map the authentication response from LUSID. See details : ", e);
+        }
+
+        if (!bodyValues.containsKey("access_token")) {
+            throw new LusidTokenException("Response from LUSID authentication is missing an access_token entry");
+        }
+
+        if (!bodyValues.containsKey("refresh_token")) {
+            throw new LusidTokenException("Response from LUSID authentication is missing an refresh_token entry");
+        }
+
+        if (!bodyValues.containsKey("expires_in")) {
+            throw new LusidTokenException("Response from LUSID authentication is missing an expires_in entry");
+        }
+
+        //  get access token, refresh token and token expiry
+        final String apiToken = (String)bodyValues.get("access_token");
+        final String refreshToken = (String)bodyValues.get("refresh_token");
+        final int expires_in = (int)bodyValues.get("expires_in");
+
+        LusidToken lusidToken = new LusidToken(apiToken, refreshToken, calculateExpiryAtTime(LocalDateTime.now(), expires_in));
+        return lusidToken;
     }
 
-    private Request createAccessTokenRequest(Optional<String> refreshStringOpt){
+    private Request createAccessTokenRequest(Optional<String> refreshStringOpt) throws LusidTokenException {
         //  request body
         final String tokenRequestBody;
         try {
@@ -109,7 +119,7 @@ public class HttpLusidTokenProvider {
                         refreshStringOpt.get());
             }
         } catch (UnsupportedEncodingException e) {
-            throw new RuntimeException("Failed to encode parameters from the API Configuration. Ensure your secrets files is properly setup.", e);
+            throw new LusidTokenException("Failed to encode parameters from the API Configuration. Ensure your secrets files is properly setup.", e);
         }
 
         final RequestBody body = RequestBody.create(FORM, tokenRequestBody);

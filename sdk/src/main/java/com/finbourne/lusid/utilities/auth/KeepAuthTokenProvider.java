@@ -1,5 +1,6 @@
 package com.finbourne.lusid.utilities.auth;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -32,8 +33,10 @@ public class KeepAuthTokenProvider {
      * will subsequently manage refreshing the token after expiry
      *
      * @return a live and valid {@link LusidToken}
+     *
+     * @throws LusidTokenException on failing to authenticate and retrieve a token
      */
-    public synchronized LusidToken get(){
+    public synchronized LusidToken get() throws LusidTokenException {
         if (currentToken == null) {
             currentToken = httpLusidTokenProvider.get(Optional.empty());
         } else if (isTokenExpired(currentToken)) {

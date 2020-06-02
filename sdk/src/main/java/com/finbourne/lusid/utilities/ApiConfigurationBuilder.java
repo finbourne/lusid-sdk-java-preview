@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ApiConfigurationBuilder {
 
-    public ApiConfiguration build(String apiSecretsFilename) throws IOException {
+    public ApiConfiguration build(String apiSecretsFilename) throws ApiConfigurationException {
 
         //  firstly try and get the values from environment variables
         String tokenUrl = System.getenv("FBN_TOKEN_URL");
@@ -29,28 +29,33 @@ public class ApiConfigurationBuilder {
 
         if (tokenUrl == null || username == null || password == null || clientId == null || clientSecret == null || apiUrl == null) {
 
-            File configJson = new ConfigurationLoader().loadConfiguration(apiSecretsFilename);
+            try {
+                File configJson = new ConfigurationLoader().loadConfiguration(apiSecretsFilename);
 
-            //  load configuration from secrets.json if any of the environment variables are missing
-            ObjectMapper configMapper = new ObjectMapper();
-            Map apiConfigValues = configMapper.readValue(configJson, Map.class);
-            Map apiConfig = (Map)apiConfigValues.get("api");
+                //  load configuration from secrets.json if any of the environment variables are missing
+                ObjectMapper configMapper = new ObjectMapper();
+                Map apiConfigValues = configMapper.readValue(configJson, Map.class);
+                Map apiConfig = (Map) apiConfigValues.get("api");
 
-            tokenUrl = (String)apiConfig.get("tokenUrl");
-            username = (String)apiConfig.get("username");
-            password = (String)apiConfig.get("password");
-            clientId = (String)apiConfig.get("clientId");
-            clientSecret = (String)apiConfig.get("clientSecret");
-            apiUrl = (String)apiConfig.get("apiUrl");
-            applicationName = apiConfig.containsKey("applicationName") ? (String)apiConfig.get("applicationName") : null;
+                tokenUrl = (String) apiConfig.get("tokenUrl");
+                username = (String) apiConfig.get("username");
+                password = (String) apiConfig.get("password");
+                clientId = (String) apiConfig.get("clientId");
+                clientSecret = (String) apiConfig.get("clientSecret");
+                apiUrl = (String) apiConfig.get("apiUrl");
+                applicationName = apiConfig.containsKey("applicationName") ? (String) apiConfig.get("applicationName") : null;
 
-            if (apiConfigValues.containsKey("proxy")) {
-                Map proxyConfig = (Map)apiConfigValues.get("proxy");
+                if (apiConfigValues.containsKey("proxy")) {
+                    Map proxyConfig = (Map) apiConfigValues.get("proxy");
 
-                proxyAddress = (String)proxyConfig.get("proxyAddress");
-                proxyPort = (Integer)proxyConfig.get("proxyPort");
-                proxyUsername = (String)proxyConfig.get("username");
-                proxyPassword = (String)proxyConfig.get("password");
+                    proxyAddress = (String) proxyConfig.get("proxyAddress");
+                    proxyPort = (Integer) proxyConfig.get("proxyPort");
+                    proxyUsername = (String) proxyConfig.get("username");
+                    proxyPassword = (String) proxyConfig.get("password");
+                }
+
+            } catch (IOException e){
+                throw new ApiConfigurationException("Error when loading details from configuration file. See details : ", e);
             }
 
         }
