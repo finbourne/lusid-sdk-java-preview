@@ -72,8 +72,11 @@ public class KeepAuthApiClientTest {
         verify(defaultApiClient).addDefaultHeader("Authorization", "Bearer access_01");
         verify(defaultApiClient).buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
 
+        // mock our token expiring and we now have an updated token to call api with
         doReturn(anotherLusidToken).when(tokenProvider).get();
 
+        // ensure that before delegating to buildCall in the default api client we firstly update it's header to use
+        // the new token
         keepAuthApiClient.buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
         verify(defaultApiClient).addDefaultHeader("Authorization", "Bearer access_02");
         verify(defaultApiClient, times(2)).buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
@@ -81,21 +84,25 @@ public class KeepAuthApiClientTest {
 
     @Test
     public void buildCall_OnExceptionRetrievingToken_ShouldThrowApiException() throws LusidTokenException, ApiException {
+        // mocking behaviour of an exception being thrown when attempting to retrieve an access token
         LusidTokenException lusidTokenException = new LusidTokenException("Failed to create token for some reason");
         doThrow(lusidTokenException).when(tokenProvider).get();
+
         thrown.expect(ApiException.class);
         thrown.expectCause(equalTo(lusidTokenException));
-
         keepAuthApiClient.buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
     }
 
     @Test
     public void buidCall_OnUnderlyingApiClientException_ShouldRethrowExactException() throws ApiException {
+        // mocking behaviour of an exception when making a remote api call
         ApiException apiException = new ApiException("An API call failure");
         doThrow(apiException).when(defaultApiClient).buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
         try {
             keepAuthApiClient.buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
         } catch (ApiException e){
+            // ensure that the exception rethrown is the exact instance of the exception thrown by the API call and
+            // is unchanged
             assertThat(e, sameInstance(apiException));
         }
     }
