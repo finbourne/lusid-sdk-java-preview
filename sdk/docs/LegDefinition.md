@@ -29,6 +29,7 @@ BOTH | &quot;Both&quot;
 
 Name | Value
 ---- | -----
+NOTDEFINED | &quot;NotDefined&quot;
 PAY | &quot;Pay&quot;
 RECEIVE | &quot;Receive&quot;
 

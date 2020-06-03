@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 
 Name | Value
 ---- | -----
+NOTDEFINED | &quot;NotDefined&quot;
 PAY | &quot;Pay&quot;
 RECEIVE | &quot;Receive&quot;
 

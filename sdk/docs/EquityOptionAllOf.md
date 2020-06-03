@@ -7,14 +7,49 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **String** | The reset code of the option. | 
-**startDate** | [**OffsetDateTime**](OffsetDateTime.md) | The start date of the option. | 
+**strike** | **Double** | The strike of the option. | 
 **optionMaturityDate** | [**OffsetDateTime**](OffsetDateTime.md) | The maturity date of the option. | 
 **optionSettlementDate** | [**OffsetDateTime**](OffsetDateTime.md) | The settlement date of the option. | 
-**isDeliveryNotCash** | **Boolean** | True of the option is settled in cash false if delivery. | 
-**isCallNotPut** | **Boolean** | True if the option is a call, false if the option is a put. | 
-**strike** | **Double** | The strike of the option. | 
-**domCcy** | **String** | The domestic currency. | 
+**startDate** | [**OffsetDateTime**](OffsetDateTime.md) | The start date of the instrument. This is normally synonymous with the trade-date. | 
+**optionType** | [**OptionTypeEnum**](#OptionTypeEnum) | Type of optionality for the option | 
+**deliveryType** | [**DeliveryTypeEnum**](#DeliveryTypeEnum) | is the option cash settled or physical delivery of option | 
+**underlyingIdentifier** | [**UnderlyingIdentifierEnum**](#UnderlyingIdentifierEnum) | external market codes and identifiers for the option, e.g. RIC. | 
+**domCcy** | **String** | The domestic currency of the instrument. | 
 **instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | Instrument type, must be property for JSON. | 
+
+
+
+## Enum: OptionTypeEnum
+
+Name | Value
+---- | -----
+NONE | &quot;None&quot;
+CALL | &quot;Call&quot;
+PUT | &quot;Put&quot;
+
+
+
+## Enum: DeliveryTypeEnum
+
+Name | Value
+---- | -----
+CASH | &quot;Cash&quot;
+PHYSICAL | &quot;Physical&quot;
+
+
+
+## Enum: UnderlyingIdentifierEnum
+
+Name | Value
+---- | -----
+LUSIDINSTRUMENTID | &quot;LusidInstrumentId&quot;
+ISIN | &quot;Isin&quot;
+SEDOL | &quot;Sedol&quot;
+CUSIP | &quot;Cusip&quot;
+CLIENTINTERNAL | &quot;ClientInternal&quot;
+FIGI | &quot;Figi&quot;
+RIC | &quot;RIC&quot;
+QUOTEPERMID | &quot;QuotePermId&quot;
 
 
 
