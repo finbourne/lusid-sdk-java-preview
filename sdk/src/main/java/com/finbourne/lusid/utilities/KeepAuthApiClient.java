@@ -14,8 +14,7 @@ import java.util.Map;
 
 /**
  * An extension of the {@link ApiClient} that always updates the clients authorisation
- * header to use a valid {@link LusidToken} access tokens before any calls to LUSID
- * API.
+ * header to use a valid {@link LusidToken} before any calls to the LUSID API.
  *
  */
 public class KeepAuthApiClient extends ApiClient {

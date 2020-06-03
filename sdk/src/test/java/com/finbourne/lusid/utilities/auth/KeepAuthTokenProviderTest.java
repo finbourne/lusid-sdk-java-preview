@@ -30,12 +30,14 @@ public class KeepAuthTokenProviderTest {
 
     @Test
     public void get_OnNoCurrentToken_ShouldCallLusidProviderForFullAuthentication() throws LusidTokenException {
+        // mock retrieving initial token when calling lusid API
         LusidToken authenticatedToken = new LusidToken("access_01", "refresh_01", LocalDateTime.MAX);
         doReturn(authenticatedToken).when(httpLusidTokenProvider).get(Optional.empty());
 
         LusidToken currentToken = tokenProvider.get();
 
         assertThat(currentToken, equalTo(authenticatedToken));
+        // ensure retrieved token using api call and did so via full authentication route
         verify(httpLusidTokenProvider, times(1)).get(Optional.empty());
     }
 
@@ -44,44 +46,50 @@ public class KeepAuthTokenProviderTest {
         LusidToken nonExpiredToken = new LusidToken("access_01", "refresh_01", LocalDateTime.MAX);
         doReturn(nonExpiredToken).when(httpLusidTokenProvider).get(Optional.empty());
 
-        // get the first token
+        // first call should create a token (not expired)
         LusidToken currentToken = tokenProvider.get();
 
-        // get the next token
+        // second call return same token as it has not expired
         LusidToken nextToken = tokenProvider.get();
 
         assertThat(nextToken, sameInstance(currentToken));
+        // ensure only ever made one remote call via full authentication
         verify(httpLusidTokenProvider, times(1)).get(Optional.empty());
         verify(httpLusidTokenProvider, times(0)).get(Optional.of(anyString()));
     }
 
     @Test
     public void get_OnExpiredCurrentToken_ShouldCallLusidForNewRefreshedToken() throws LusidTokenException {
+        // mock retrieving initial token that then expires
         LusidToken expiredToken = new LusidToken("access_01", "refresh_01", LocalDateTime.MIN);
         doReturn(expiredToken).when(httpLusidTokenProvider).get(Optional.empty());
 
+        // mock retrieving a refreshed token when we attempt to call api with a valid refresh parameter
         LusidToken refreshedToken = new LusidToken("access_02", "refresh_01", LocalDateTime.MAX);
         doReturn(refreshedToken).when(httpLusidTokenProvider).get(Optional.of("refresh_01"));
 
-        // get the first token
+        // first call should create a token (expired)
         LusidToken currentToken = tokenProvider.get();
 
-        // get the next token
+        // second call should return a new token as the current one has expired
         LusidToken nextToken = tokenProvider.get();
 
         assertThat(nextToken, not(equalTo(currentToken)));
         assertThat(nextToken, equalTo(refreshedToken));
+        // ensure make one call for full authentication and subsequent call via refresh
         verify(httpLusidTokenProvider, times(1)).get(Optional.empty());
         verify(httpLusidTokenProvider, times(1)).get(Optional.of("refresh_01"));
     }
 
     @Test
     public void get_OnExpiredRefreshToken_ShouldCallLusidProviderForFullReauthentication() throws LusidTokenException {
-        // the case where the REFRESH token itself has expired
+        // Test the less often case where the REFRESH token itself has expired and attempting to refresh is not
+        // possible. A full authentication is required
 
         // setup initial expired access token
         LusidToken expiredToken = new LusidToken("access_01", "refresh_01", LocalDateTime.MIN);
         doReturn(expiredToken).when(httpLusidTokenProvider).get(Optional.empty());
+        // first call should create a token (expired)
         LusidToken currentToken = tokenProvider.get();
 
         // throw exception on attempting to refresh with an expired REFRESH token
@@ -96,6 +104,7 @@ public class KeepAuthTokenProviderTest {
 
         assertThat(nextToken, not(equalTo(currentToken)));
         assertThat(nextToken, equalTo(newTokenWithNewRefresh));
+        // ensure make initial full auth call, a refresh attempt and another full auth call
         verify(httpLusidTokenProvider, times(2)).get(Optional.empty());
         verify(httpLusidTokenProvider, times(1)).get(Optional.of("refresh_01"));
     }
@@ -116,10 +125,12 @@ public class KeepAuthTokenProviderTest {
         LusidToken expiredToken = new LusidToken("access_01", "refresh_01", LocalDateTime.MIN);
         doReturn(expiredToken).when(httpLusidTokenProvider).get(Optional.empty());
 
-        // get the first token
+        // get the first token (expired)
         LusidToken currentToken = tokenProvider.get();
 
+        // mock the refresh token expiring
         doThrow(new LusidTokenException("Refresh token has expired")).when(httpLusidTokenProvider).get(Optional.of("refresh_01"));
+        // mock full authentication failing on a retry
         doThrow(new LusidTokenException("Reauthentication attempt has failed")).when(httpLusidTokenProvider).get(Optional.empty());
 
         thrown.expect(LusidTokenException.class);
