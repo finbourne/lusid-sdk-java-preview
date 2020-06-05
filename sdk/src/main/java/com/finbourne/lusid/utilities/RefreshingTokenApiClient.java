@@ -5,7 +5,7 @@ import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Pair;
 import com.finbourne.lusid.utilities.auth.LusidToken;
-import com.finbourne.lusid.utilities.auth.KeepAuthTokenProvider;
+import com.finbourne.lusid.utilities.auth.RefreshingTokenProvider;
 import com.finbourne.lusid.utilities.auth.LusidTokenException;
 import okhttp3.Call;
 
@@ -17,15 +17,15 @@ import java.util.Map;
  * header to use a valid {@link LusidToken} before any calls to the LUSID API.
  *
  */
-public class KeepAuthApiClient extends ApiClient {
+public class RefreshingTokenApiClient extends ApiClient {
 
     /** Default api client to delegate actual request execution*/
     private final ApiClient apiClient;
 
     /** Token provider to retrieve valid {@link LusidToken} */
-    private final KeepAuthTokenProvider tokenProvider;
+    private final RefreshingTokenProvider tokenProvider;
 
-    public KeepAuthApiClient(ApiClient apiClient, KeepAuthTokenProvider tokenProvider) {
+    public RefreshingTokenApiClient(ApiClient apiClient, RefreshingTokenProvider tokenProvider) {
         this.apiClient = apiClient;
         this.tokenProvider = tokenProvider;
     }

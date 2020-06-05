@@ -13,7 +13,7 @@ import static org.junit.Assert.fail;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
-public class ApiClientBuilderIT {
+public class ApiClientBuilderTests {
 
     private ApiClientBuilder apiClientBuilder;
 
@@ -28,22 +28,25 @@ public class ApiClientBuilderIT {
     @Test
     public void build_OnValidConfigurationFile_ShouldBuildKeepLiveApiClient() throws ApiConfigurationException, LusidTokenException {
         // This test assumes default secrets file is valid. Same assertion as all other integration tests.
-        ApiClient apiClient = apiClientBuilder.build(CredentialsSource.credentialsFile);
+        ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(CredentialsSource.credentialsFile);
+        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
         // running with no exceptions ensures client built correctly with no configuration or token creation exceptions
         assertThat("Unexpected extended implementation of ApiClient for default build." ,
-                apiClient, instanceOf(KeepAuthApiClient.class));
+                apiClient, instanceOf(RefreshingTokenApiClient.class));
     }
 
     @Test
     public void build_OnNonExistingConfigurationFile_ShouldThrowException() throws ApiConfigurationException, LusidTokenException {
         thrown.expect(ApiConfigurationException.class);
-        ApiClient apiClient = apiClientBuilder.build("doesNotExist");
+        ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build("doesNotExist");
+        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
     }
 
     @Test
     public void build_BadTokenConfigurationFile_ShouldThrowException() throws ApiConfigurationException, LusidTokenException {
         thrown.expect(LusidTokenException.class);
-        ApiClient apiClient = apiClientBuilder.build("bad_token_credentials.json");
+        ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build("bad_token_credentials.json");
+        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
     }
 
 

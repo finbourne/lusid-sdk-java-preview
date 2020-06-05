@@ -25,15 +25,9 @@ public class LusidApiFactoryBuilder {
         return createLusidApiFactory(configurationFile);
     }
 
-    /**
-     * Build a {@link LusidApiFactory} using constant personal access tokens is not currently supported in the lusid java sdk
-     */
-    public static LusidApiFactory build(Object accessToken){
-        throw new UnsupportedOperationException("Connecting to LUSID via flat access tokens is not yet supported in the LUSID java sdk.");
-    }
-
     private static LusidApiFactory createLusidApiFactory(String configurationFile) throws ApiConfigurationException, LusidTokenException {
-        ApiClient apiClient = new ApiClientBuilder().build(configurationFile);
+        ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(configurationFile);
+        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
         return new LusidApiFactory(apiClient);
     }
 

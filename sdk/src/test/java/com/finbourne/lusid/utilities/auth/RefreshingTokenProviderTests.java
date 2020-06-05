@@ -5,25 +5,23 @@ import okhttp3.OkHttpClient;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
-
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.isEmptyOrNullString;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.spy;
 
-public class KeepAuthTokenProviderIT {
+public class RefreshingTokenProviderTests {
 
-    private KeepAuthTokenProvider tokenProvider;
+    private RefreshingTokenProvider tokenProvider;
     private HttpLusidTokenProvider httpLusidTokenProvider;
 
     @Before
     public void setUp() throws ApiConfigurationException {
         ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(CredentialsSource.credentialsFile);
-        OkHttpClient httpClient = new HttpClientBuilder().build(apiConfiguration);
+        OkHttpClient httpClient = new HttpClientFactory().build(apiConfiguration);
         httpLusidTokenProvider = new HttpLusidTokenProvider(apiConfiguration, httpClient);
-        KeepAuthTokenProvider instanceToSpy = new KeepAuthTokenProvider(httpLusidTokenProvider);
+        RefreshingTokenProvider instanceToSpy = new RefreshingTokenProvider(httpLusidTokenProvider);
         tokenProvider = spy(instanceToSpy);
     }
 

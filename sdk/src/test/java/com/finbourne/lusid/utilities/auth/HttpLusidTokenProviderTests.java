@@ -5,21 +5,20 @@ import okhttp3.OkHttpClient;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.util.Optional;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.isEmptyOrNullString;
 
-public class HttpLusidTokenProviderIT {
+public class HttpLusidTokenProviderTests {
 
     private HttpLusidTokenProvider httpLusidTokenProvider;
 
     @Before
     public void setUp() throws ApiConfigurationException {
         ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(CredentialsSource.credentialsFile);
-        OkHttpClient httpClient = new HttpClientBuilder().build(apiConfiguration);
+        OkHttpClient httpClient = new HttpClientFactory().build(apiConfiguration);
         httpLusidTokenProvider = new HttpLusidTokenProvider(apiConfiguration, httpClient);
     }
 
@@ -62,7 +61,7 @@ public class HttpLusidTokenProviderIT {
     @Test(expected = IllegalArgumentException.class)
     public void get_OnBadTokenUrl_ShouldThrowException() throws LusidTokenException, ApiConfigurationException {
         ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(CredentialsSource.credentialsFile);
-        OkHttpClient httpClient = new HttpClientBuilder().build(apiConfiguration);
+        OkHttpClient httpClient = new HttpClientFactory().build(apiConfiguration);
         apiConfiguration.setTokenUrl("invalidTokenUrl");
 
         HttpLusidTokenProvider httpLusidTokenProvider = new HttpLusidTokenProvider(apiConfiguration, httpClient);

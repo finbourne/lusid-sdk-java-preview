@@ -7,10 +7,7 @@ import com.finbourne.lusid.model.Transaction;
 import com.finbourne.lusid.model.TransactionRequest;
 import com.finbourne.lusid.model.UpsertPortfolioTransactionsResponse;
 import com.finbourne.lusid.model.VersionedResourceListOfTransaction;
-import com.finbourne.lusid.utilities.ApiClientBuilder;
-import com.finbourne.lusid.utilities.CredentialsSource;
-import com.finbourne.lusid.utilities.InstrumentLoader;
-import com.finbourne.lusid.utilities.TestDataUtilities;
+import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -34,8 +31,8 @@ public class Bitemporal {
 
     @BeforeClass
     public static void setUp() throws Exception {
-
-        ApiClient apiClient = new ApiClientBuilder().build(CredentialsSource.credentialsFile);
+        ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(CredentialsSource.credentialsFile);
+        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
 
         transactionPortfoliosApi = new TransactionPortfoliosApi(apiClient);
 

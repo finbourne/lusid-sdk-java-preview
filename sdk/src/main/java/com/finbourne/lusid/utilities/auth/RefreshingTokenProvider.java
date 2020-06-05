@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  * for explicit reauthentication by the caller.
  *
  */
-public class KeepAuthTokenProvider {
+public class RefreshingTokenProvider {
 
     private final Logger logger = Logger.getLogger(getClass().getName());
 
@@ -27,7 +27,7 @@ public class KeepAuthTokenProvider {
      *
      * @param httpLusidTokenProvider underlying provider that manages explicit authentication calls to LUSID
      */
-    public KeepAuthTokenProvider(HttpLusidTokenProvider httpLusidTokenProvider) {
+    public RefreshingTokenProvider(HttpLusidTokenProvider httpLusidTokenProvider) {
         this.httpLusidTokenProvider = httpLusidTokenProvider;
     }
 
