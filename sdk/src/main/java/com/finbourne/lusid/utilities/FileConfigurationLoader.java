@@ -3,31 +3,51 @@ package com.finbourne.lusid.utilities;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 
 public class FileConfigurationLoader {
 
     /**
-     * Loads the API configuration from a resource in the classpath
+     * Loads the API configuration either from the resources in the classpath or directly from
+     * the file system.
      *
-     * @param apiConfig name of the resource
+     * @param apiConfigurationFile name of the resource or absolute path of the configuration file
      * @return API configuration file
-     * @throws IOException
+     * @throws IOException if config cannot be found
      */
-    public File loadConfiguration(String apiConfig) throws IOException {
+    public File loadConfiguration(String apiConfigurationFile) throws IOException {
 
-        ClassLoader classLoader = getClass().getClassLoader();
+        Optional<File> configFileFromResource = getConfigFileFromResources(apiConfigurationFile);
+        if (configFileFromResource.isPresent()) {
+            return configFileFromResource.get();
+        }
+
+        Optional<File> configFileFromPath = getConfigFileFromPath(apiConfigurationFile);
+        if (configFileFromPath.isPresent()) {
+            return configFileFromPath.get();
+        }
+
+        throw new IOException("Cannot find " + apiConfigurationFile + "in either classpath resources or as an absolute path.");
+    }
+
+    private Optional<File> getConfigFileFromResources(String apiConfig){
+        ClassLoader classLoader = getClassLoader();
         URL configUrl = classLoader.getResource(apiConfig);
-        // classLoader will return null on failing to locate a resource so wrap
-        // in an IOException to avoid unchecked NPE.
-        if (configUrl == null) {
-            throw new IOException("cannot find " + apiConfig + "in classpath");
-        }
-        File configFile = new File(configUrl.getFile());
-        if (configFile == null || !configFile.exists()) {
-            throw new IOException("cannot find " + apiConfig + "in classpath");
-        }
+        return (configUrl != null) ? Optional.of(new File(configUrl.getFile())) : Optional.empty();
+    }
 
-        return new File(configFile.toURI());
+    private Optional<File> getConfigFileFromPath(String apiConfig){
+        File configFile = getFile(apiConfig);
+        return (configFile.exists()) ? Optional.of(configFile) : Optional.empty();
+    }
+
+    // Created in own methods for test mocking purposes.
+    ClassLoader getClassLoader(){
+        return getClass().getClassLoader();
+    }
+
+    File getFile(String path){
+        return new File(path);
     }
 
 }
