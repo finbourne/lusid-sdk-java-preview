@@ -2,7 +2,7 @@ package com.finbourne.lusid.utilities;
 
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.utilities.auth.HttpLusidTokenProvider;
-import com.finbourne.lusid.utilities.auth.KeepAuthTokenProvider;
+import com.finbourne.lusid.utilities.auth.RefreshingTokenProvider;
 import com.finbourne.lusid.utilities.auth.LusidToken;
 import com.finbourne.lusid.utilities.auth.LusidTokenException;
 import okhttp3.OkHttpClient;
@@ -19,47 +19,52 @@ public class ApiClientBuilder {
      * ApiClient implementation enables use of REFRESH tokens (see https://support.finbourne.com/using-a-refresh-token)
      * and automatically handles token refreshing on expiry.
      *
-     * @param apiSecretsFilename
+     * @param apiConfiguration configuration to connect to LUSID API
      * @return
      *
-     * @throws ApiConfigurationException on failing to create a valid {@link ApiConfiguration} from the provided
-     * secrets file or system environment variables
      * @throws LusidTokenException on failing to authenticate and retrieve an initial {@link LusidToken}
      */
-    public ApiClient build(String apiSecretsFilename) throws ApiConfigurationException, LusidTokenException {
-        // setup configuration from secrets file
-        ApiConfiguration apiConfiguration = createApiConfiguration(apiSecretsFilename);
+    public ApiClient build(ApiConfiguration apiConfiguration) throws LusidTokenException {
         // http client to use for api and auth calls
         OkHttpClient httpClient = createHttpClient(apiConfiguration);
 
         // token provider to keep client authenticated with automated token refreshing
-        KeepAuthTokenProvider keepAuthTokenProvider = new KeepAuthTokenProvider(new HttpLusidTokenProvider(apiConfiguration, httpClient));
-        LusidToken lusidToken = keepAuthTokenProvider.get();
+        RefreshingTokenProvider refreshingTokenProvider = new RefreshingTokenProvider(new HttpLusidTokenProvider(apiConfiguration, httpClient));
+        LusidToken lusidToken = refreshingTokenProvider.get();
 
         // setup api client that managed submissions with latest token
         ApiClient defaultApiClient = createDefaultApiClient(apiConfiguration, httpClient, lusidToken);
-        return new KeepAuthApiClient(defaultApiClient, keepAuthTokenProvider);
+        return new RefreshingTokenApiClient(defaultApiClient, refreshingTokenProvider);
     }
 
-    private ApiClient createDefaultApiClient(ApiConfiguration apiConfiguration, OkHttpClient httpClient, LusidToken lusidToken){
-        ApiClient apiClient = new ApiClient();
+    ApiClient createDefaultApiClient(ApiConfiguration apiConfiguration, OkHttpClient httpClient, LusidToken lusidToken) throws LusidTokenException {
+        ApiClient apiClient = createApiClient();
 
         if (apiConfiguration.getProxyAddress() != null) {
             apiClient.setHttpClient(httpClient);
         }
 
-        apiClient.addDefaultHeader("Authorization", "Bearer " + lusidToken.getAccessToken());
-        apiClient.addDefaultHeader("X-LUSID-Application", apiConfiguration.getApplicationName());
+        if (lusidToken.getAccessToken() == null) {
+            throw new LusidTokenException("Cannot construct an API client with a null authorisation header. Ensure " +
+                    "lusid token generated is valid");
+        } else {
+            apiClient.addDefaultHeader("Authorization", "Bearer " + lusidToken.getAccessToken());
+        }
+
+        if (apiConfiguration.getApplicationName() != null) {
+            apiClient.addDefaultHeader("X-LUSID-Application", apiConfiguration.getApplicationName());
+        }
         apiClient.setBasePath(apiConfiguration.getApiUrl());
 
         return  apiClient;
     }
 
-    private ApiConfiguration createApiConfiguration(String apiSecretsFilename) throws ApiConfigurationException {
-        return new ApiConfigurationBuilder().build(apiSecretsFilename);
+    private OkHttpClient createHttpClient(ApiConfiguration apiConfiguration){
+        return new HttpClientFactory().build(apiConfiguration);
     }
 
-    private OkHttpClient createHttpClient(ApiConfiguration apiConfiguration){
-        return new HttpClientBuilder().build(apiConfiguration);
+    // allows us to mock out api client for testing purposes
+    ApiClient createApiClient(){
+        return new ApiClient();
     }
 }

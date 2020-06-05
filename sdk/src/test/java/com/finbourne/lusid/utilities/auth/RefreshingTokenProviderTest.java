@@ -12,9 +12,9 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.*;
 
-public class KeepAuthTokenProviderTest {
+public class RefreshingTokenProviderTest {
 
-    private KeepAuthTokenProvider tokenProvider;
+    private RefreshingTokenProvider tokenProvider;
 
     // dependency mocks
     private HttpLusidTokenProvider httpLusidTokenProvider;
@@ -25,7 +25,7 @@ public class KeepAuthTokenProviderTest {
     @Before
     public void setUp(){
         httpLusidTokenProvider = mock(HttpLusidTokenProvider.class);
-        tokenProvider = new KeepAuthTokenProvider(httpLusidTokenProvider);
+        tokenProvider = new RefreshingTokenProvider(httpLusidTokenProvider);
     }
 
     @Test
