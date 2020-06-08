@@ -13,16 +13,6 @@ import java.io.IOException;
  */
 public class ApiClientBuilder {
 
-    /**
-     * Builds an ApiClient implementation configured against a secrets file. Typically used
-     * for communicating with LUSID via the APIs (e.g. {@link com.finbourne.lusid.api.TransactionPortfoliosApi}, {@link com.finbourne.lusid.api.QuotesApi}.
-     *
-     * ApiClient implementation enables use of REFRESH tokens (see https://support.finbourne.com/using-a-refresh-token)
-     * and automatically handles token refreshing on expiry.
-     *
-     * @param apiSecretsFilename
-     * @return
-     */
     public ApiClient build(String apiSecretsFilename){
         // setup configuration from secrets file
         ApiConfiguration apiConfiguration = createApiConfiguration(apiSecretsFilename);

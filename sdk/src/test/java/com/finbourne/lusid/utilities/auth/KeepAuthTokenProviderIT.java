@@ -13,8 +13,7 @@ import java.io.IOException;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.isEmptyOrNullString;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.*;
 
 public class KeepAuthTokenProviderIT {
 
@@ -31,7 +30,7 @@ public class KeepAuthTokenProviderIT {
     }
 
     @Test
-    public void get_OnNoCurrentToken_ShouldReturnNewToken(){
+    public void get_OnNoToken_ShouldReturnNewToken(){
         LusidToken lusidToken = tokenProvider.get();
         assertThat(lusidToken.getAccessToken(), not(isEmptyOrNullString()));
         assertThat(lusidToken.getRefreshToken(), not(isEmptyOrNullString()));
@@ -39,7 +38,7 @@ public class KeepAuthTokenProviderIT {
     }
 
     @Test
-    public void get_OnNonExpiredCurrentToken_ShouldReturnSameToken(){
+    public void get_OnExistingAndNonExpiredToken_ShouldReturnSameToken(){
         // first call should create a token
         LusidToken lusidToken = tokenProvider.get();
 
@@ -53,11 +52,11 @@ public class KeepAuthTokenProviderIT {
     }
 
     @Test
-    public void get_OnExpiredCurrentToken_ShouldReturnNewToken(){
+    public void get_OnExistingAndExpiredToken_ShouldReturnNewToken(){
         // first call should create a token
         LusidToken lusidToken = tokenProvider.get();
 
-        // mock token expired
+        // mock token expiry
         doReturn(true).when(tokenProvider).isTokenExpired(lusidToken);
 
         // second call should check for expiry
