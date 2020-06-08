@@ -23,9 +23,9 @@ import static org.hamcrest.CoreMatchers.sameInstance;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.*;
 
-public class KeepAuthApiClientTest {
+public class KeepLiveApiClientTest {
 
-    private KeepAuthApiClient keepAuthApiClient;
+    private KeepLiveApiClient keepLiveApiClient;
 
     // mock dependencies
     private ApiClient defaultApiClient;
@@ -56,25 +56,25 @@ public class KeepAuthApiClientTest {
 
         doReturn(lusidToken).when(tokenProvider).get();
 
-        keepAuthApiClient = new KeepAuthApiClient(defaultApiClient, tokenProvider);
+        keepLiveApiClient = new KeepLiveApiClient(defaultApiClient, tokenProvider);
     }
 
     @Test
     public void buildCall_ShouldUpdateAuthHeaderAndDelegateBuildCall() throws ApiException {
-        keepAuthApiClient.buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
+        keepLiveApiClient.buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
         verify(defaultApiClient).addDefaultHeader("Authorization", "Bearer access_01");
         verify(defaultApiClient).buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
     }
 
     @Test
     public void buildCall_ShouldUpdateAuthHeaderOnEveryCall() throws ApiException, LusidTokenException {
-        keepAuthApiClient.buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
+        keepLiveApiClient.buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
         verify(defaultApiClient).addDefaultHeader("Authorization", "Bearer access_01");
         verify(defaultApiClient).buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
 
         doReturn(anotherLusidToken).when(tokenProvider).get();
 
-        keepAuthApiClient.buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
+        keepLiveApiClient.buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
         verify(defaultApiClient).addDefaultHeader("Authorization", "Bearer access_02");
         verify(defaultApiClient, times(2)).buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
     }
@@ -86,7 +86,7 @@ public class KeepAuthApiClientTest {
         thrown.expect(ApiException.class);
         thrown.expectCause(equalTo(lusidTokenException));
 
-        keepAuthApiClient.buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
+        keepLiveApiClient.buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
     }
 
     @Test
@@ -94,7 +94,7 @@ public class KeepAuthApiClientTest {
         ApiException apiException = new ApiException("An API call failure");
         doThrow(apiException).when(defaultApiClient).buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
         try {
-            keepAuthApiClient.buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
+            keepLiveApiClient.buildCall(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, apiCallback);
         } catch (ApiException e){
             assertThat(e, sameInstance(apiException));
         }
