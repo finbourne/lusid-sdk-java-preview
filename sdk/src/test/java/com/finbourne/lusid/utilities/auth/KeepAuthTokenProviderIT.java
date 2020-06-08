@@ -43,7 +43,7 @@ public class KeepAuthTokenProviderIT {
         // mock token not expired
         doReturn(false).when(tokenProvider).isTokenExpired(lusidToken);
 
-        // second call return same token as it has not expired
+        // second call should check for expiry
         LusidToken nextLusidToken = tokenProvider.get();
 
         assertThat(nextLusidToken, sameInstance(lusidToken));
@@ -57,7 +57,7 @@ public class KeepAuthTokenProviderIT {
         // mock token expired
         doReturn(true).when(tokenProvider).isTokenExpired(lusidToken);
 
-        // second call should return a new token as the current one has expired
+        // second call should check for expiry
         LusidToken nextLusidToken = tokenProvider.get();
 
         assertThat(nextLusidToken.getAccessToken(), not(isEmptyOrNullString()));
@@ -67,7 +67,6 @@ public class KeepAuthTokenProviderIT {
         assertThat(nextLusidToken, not(equalTo(lusidToken)));
         assertThat(nextLusidToken.getAccessToken(), not(equalTo(lusidToken.getAccessToken())));
         assertThat(nextLusidToken.getExpiresAt(), not(equalTo(lusidToken.getExpiresAt())));
-        // although a new token the refresh token parameter should remain constant
         assertThat(nextLusidToken.getRefreshToken(), equalTo(lusidToken.getRefreshToken()));
     }
 
