@@ -3,7 +3,6 @@ package com.finbourne.lusid.utilities;
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.api.PortfoliosApi;
-import com.finbourne.lusid.utilities.auth.LusidTokenException;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -14,7 +13,7 @@ import static org.junit.Assert.*;
 public class ApiExceptionTests {
 
     @Test
-    public void thrown_exception_tostring_contains_requestid() throws ApiConfigurationException, LusidTokenException {
+    public void thrown_exception_tostring_contains_requestid() throws IOException, ApiException {
 
         ApiClient apiClient = new ApiClientBuilder().build(CredentialsSource.credentialsFile);
 
