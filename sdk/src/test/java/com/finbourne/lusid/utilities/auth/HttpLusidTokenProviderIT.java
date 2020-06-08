@@ -1,6 +1,9 @@
 package com.finbourne.lusid.utilities.auth;
 
-import com.finbourne.lusid.utilities.*;
+import com.finbourne.lusid.utilities.ApiConfiguration;
+import com.finbourne.lusid.utilities.ApiConfigurationBuilder;
+import com.finbourne.lusid.utilities.CredentialsSource;
+import com.finbourne.lusid.utilities.HttpClientBuilder;
 import okhttp3.OkHttpClient;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,14 +20,14 @@ public class HttpLusidTokenProviderIT {
     private HttpLusidTokenProvider httpLusidTokenProvider;
 
     @Before
-    public void setUp() throws ApiConfigurationException {
+    public void setUp() throws IOException {
         ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(CredentialsSource.credentialsFile);
         OkHttpClient httpClient = new HttpClientBuilder().build(apiConfiguration);
         httpLusidTokenProvider = new HttpLusidTokenProvider(apiConfiguration, httpClient);
     }
 
     @Test
-    public void get_OnRequestingAnInitialToken_ShouldReturnNewToken() throws LusidTokenException {
+    public void get_OnRequestingAnInitialToken_ShouldReturnNewToken(){
         LusidToken lusidToken = httpLusidTokenProvider.get(Optional.empty());
 
         assertThat(lusidToken.getAccessToken(), not(isEmptyOrNullString()));
@@ -33,7 +36,7 @@ public class HttpLusidTokenProviderIT {
     }
 
     @Test
-    public void get_OnRequestingANewTokenWithRefreshing_ShouldReturnNewRefreshedToken() throws LusidTokenException {
+    public void get_OnRequestingANewTokenWithRefreshing_ShouldReturnNewRefreshedToken(){
         LusidToken initialToken = httpLusidTokenProvider.get(Optional.empty());
         LusidToken refreshedToken = httpLusidTokenProvider.get(Optional.of(initialToken.getRefreshToken()));
 
@@ -44,7 +47,7 @@ public class HttpLusidTokenProviderIT {
     }
 
     @Test
-    public void get_OnRequestingANewTokenWithoutRefreshing_ShouldReturnNewToken() throws LusidTokenException {
+    public void get_OnRequestingANewTokenWithoutRefreshing_ShouldReturnNewToken(){
         LusidToken initialToken = httpLusidTokenProvider.get(Optional.empty());
         LusidToken refreshedToken = httpLusidTokenProvider.get(Optional.empty());
 
@@ -56,7 +59,7 @@ public class HttpLusidTokenProviderIT {
 
     // Error cases
     @Test(expected = IllegalArgumentException.class)
-    public void getToken_OnBadTokenUrl() throws LusidTokenException, ApiConfigurationException {
+    public void getToken_OnBadTokenUrl() throws IOException {
         ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(CredentialsSource.credentialsFile);
         OkHttpClient httpClient = new HttpClientBuilder().build(apiConfiguration);
         apiConfiguration.setTokenUrl("invalidTokenUrl");

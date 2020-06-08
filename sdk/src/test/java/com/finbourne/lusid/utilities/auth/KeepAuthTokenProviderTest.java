@@ -24,13 +24,13 @@ public class KeepAuthTokenProviderTest {
     }
 
     @Test
-    public void get_OnNoCurrentToken_ShouldCallLusidProviderForFullAuthentication() throws LusidTokenException {
+    public void get_OnNoCurrentToken_ShouldCallLusidProviderForFullAuthentication(){
         tokenProvider.get();
         verify(httpLusidTokenProvider, times(1)).get(Optional.empty());
     }
 
     @Test
-    public void get_OnNonExpiredCurrentToken_ShouldDoNothing() throws LusidTokenException {
+    public void get_OnNonExpiredCurrentToken_ShouldDoNothing(){
         LusidToken nonExpiredToken = mock(LusidToken.class);
         doReturn(LocalDateTime.MAX).when(nonExpiredToken).getExpiresAt();
         doReturn(nonExpiredToken).when(httpLusidTokenProvider).get(Optional.empty());
@@ -47,7 +47,7 @@ public class KeepAuthTokenProviderTest {
     }
 
     @Test
-    public void get_OnExpiredCurrentToken_ShouldCallLusidForNewRefreshedToken() throws LusidTokenException {
+    public void get_OnExpiredCurrentToken_ShouldCallLusidForNewRefreshedToken(){
         LusidToken expiredToken = mock(LusidToken.class);
         doReturn(LocalDateTime.MIN).when(expiredToken).getExpiresAt();
         doReturn("refreshToken1").when(expiredToken).getRefreshToken();

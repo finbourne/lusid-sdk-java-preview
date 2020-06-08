@@ -5,10 +5,11 @@ import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.ScopesApi;
 import com.finbourne.lusid.model.ResourceListOfInstrumentIdTypeDescriptor;
 import com.finbourne.lusid.model.ResourceListOfScopeDefinition;
-import com.finbourne.lusid.utilities.auth.LusidTokenException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
+import java.io.IOException;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.Matchers.empty;
@@ -20,27 +21,21 @@ public class LusidApiFactoryBuilderIT {
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
-    public void build_WithExistingConfigurationFile_ShouldReturnFactory() throws ApiException, ApiConfigurationException, LusidTokenException {
+    public void build_WithExistingConfigurationFile_ShouldReturnFactory() throws IOException, ApiException {
         LusidApiFactory lusidApiFactory = LusidApiFactoryBuilder.build(CredentialsSource.credentialsFile);
         assertThat(lusidApiFactory, is(notNullValue()));
         assertThatFactoryBuiltApiCanMakeLUSIDCalls(lusidApiFactory);
     }
 
     @Test
-    public void build_WithNonExistingConfigurationFile_ShouldThrowException() throws ApiConfigurationException, LusidTokenException {
-        thrown.expect(ApiConfigurationException.class);
+    public void build_WithNonExistingConfigurationFile_ShouldThrowException() throws IOException {
+        thrown.expect(RuntimeException.class);
         LusidApiFactoryBuilder.build("doesNotExist");
     }
 
     @Test
-    public void build_BadTokenConfigurationFile_ShouldThrowException() throws ApiConfigurationException, LusidTokenException {
-        thrown.expect(LusidTokenException.class);
-        LusidApiFactoryBuilder.build("bad_token_credentials.json");
-    }
-
-    @Test
-    public void build_WithUnsetEnvironmentVariablesConfig_ShouldThrowException() throws ApiConfigurationException, LusidTokenException {
-        thrown.expect(ApiConfigurationException.class);
+    public void build_WithUnsetEnvironmentVariablesConfig_ShouldThrowException() throws IOException {
+        thrown.expect(IllegalStateException.class);
         thrown.expectMessage("Environment variables to configure LUSID API client have not been set. See " +
                 " see https://support.lusid.com/getting-started-with-apis-sdks for details.");
         LusidApiFactoryBuilder.build();
