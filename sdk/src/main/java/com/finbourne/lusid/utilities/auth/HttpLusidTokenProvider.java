@@ -13,23 +13,14 @@ import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.Optional;
 
-/**
- * Provides {@link LusidToken} used for API authentication by directly querying the authentication
- * token urls on the target LUSID instance. Always provides REFRESHable tokens (see
- * https://support.finbourne.com/using-a-refresh-token).
- *
- */
 public class HttpLusidTokenProvider {
-
-    /** Scope to ensure refresh token is enabled */
-    private static final String SCOPE = "openid client groups offline_access";
 
     private static final MediaType FORM = MediaType.parse("application/x-www-form-urlencoded");
 
-    /** configuration parameters to connect to LUSID */
-    private final ApiConfiguration apiConfiguration;
+    /** Scope to ensure refresh token included in auth request (for details see https://support.finbourne.com/using-a-refresh-token)*/
+    private static final String SCOPE = "openid client groups offline_access";
 
-    /** client to make http calls to LUSID */
+    private final ApiConfiguration apiConfiguration;
     private final OkHttpClient httpClient;
 
     public HttpLusidTokenProvider(ApiConfiguration apiConfiguration, OkHttpClient httpClient) {
@@ -37,16 +28,7 @@ public class HttpLusidTokenProvider {
         this.httpClient = httpClient;
     }
 
-    /**
-     * Retrieves a {@link LusidToken} via an authentication call to LUSID.
-     *
-     * Will make a complete authentication call (with username and password) if no refresh token
-     * is available. Otherwise will attempt to refresh the token.
-     *
-     * @param refreshToken - to attempt token refresh with it is available.
-     * @return an authenticated LUSID token
-     */
-    public LusidToken get(Optional<String> refreshToken) {
+    public LusidToken getToken(Optional<String> refreshToken) {
         final Request request = createAccessTokenRequest(refreshToken);
         final LusidToken lusidToken = callAndMapResponseToToken(httpClient, request);
         return lusidToken;
@@ -127,8 +109,8 @@ public class HttpLusidTokenProvider {
     }
 
     LocalDateTime calculateExpiryAtTime(LocalDateTime now, int expires_in){
-        // expiration is shortened to overcome a race condition where the token is still valid when retrieved from cache but expired when
-        // used in an api call
+        // expiration is shortened to overcome a race condition where the token is still valid when retrieved from cache but expired when used
+        // replicate behaviour in c# sdk
         return now.plusSeconds(expires_in - 30);
     }
 

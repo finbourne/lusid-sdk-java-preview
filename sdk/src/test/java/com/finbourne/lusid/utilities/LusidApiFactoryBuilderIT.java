@@ -29,7 +29,7 @@ public class LusidApiFactoryBuilderIT {
 
     @Test
     public void build_WithNonExistingConfigurationFile_ShouldThrowException() throws IOException {
-        thrown.expect(RuntimeException.class);
+        thrown.expect(IOException.class);
         LusidApiFactoryBuilder.build("doesNotExist");
     }
 
