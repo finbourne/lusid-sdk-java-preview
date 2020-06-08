@@ -12,10 +12,6 @@ public class LusidApiFactoryBuilder {
      * @return
      */
     public static LusidApiFactory build() throws IOException {
-        if (!areRequiredEnvironmentVariablesSet()) {
-            throw new IllegalStateException("Environment variables to configure LUSID API client have not been set. See " +
-                    " see https://support.lusid.com/getting-started-with-apis-sdks for details.");
-        }
         return createLusidApiFactory("");
     }
 
@@ -36,14 +32,5 @@ public class LusidApiFactoryBuilder {
     private static LusidApiFactory createLusidApiFactory(String configurationFile) throws IOException {
         ApiClient apiClient = new ApiClientBuilder().build(configurationFile);
         return new LusidApiFactory(apiClient);
-    }
-
-    private static boolean areRequiredEnvironmentVariablesSet(){
-        return (System.getenv("FBN_TOKEN_URL") != null &&
-                System.getenv("FBN_USERNAME") != null &&
-                System.getenv("FBN_PASSWORD") != null &&
-                System.getenv("FBN_CLIENT_ID") != null &&
-                System.getenv("FBN_CLIENT_SECRET") != null &&
-                System.getenv("FBN_LUSID_API_URL") != null);
     }
 }
