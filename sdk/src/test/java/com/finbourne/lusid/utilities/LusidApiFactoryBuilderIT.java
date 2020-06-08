@@ -1,9 +1,7 @@
 package com.finbourne.lusid.utilities;
 
 import com.finbourne.lusid.ApiException;
-import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.ScopesApi;
-import com.finbourne.lusid.model.ResourceListOfInstrumentIdTypeDescriptor;
 import com.finbourne.lusid.model.ResourceListOfScopeDefinition;
 import org.junit.Rule;
 import org.junit.Test;
@@ -11,8 +9,8 @@ import org.junit.rules.ExpectedException;
 
 import java.io.IOException;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.Matchers.empty;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
 public class LusidApiFactoryBuilderIT {
@@ -44,15 +42,8 @@ public class LusidApiFactoryBuilderIT {
     private static void assertThatFactoryBuiltApiCanMakeLUSIDCalls(LusidApiFactory lusidApiFactory) throws ApiException {
         ScopesApi scopesApi = lusidApiFactory.build(ScopesApi.class);
         ResourceListOfScopeDefinition scopeDefinitions = scopesApi.listScopes("");
-        assertThat("Scopes API created by factory should have returned scope definitions"
+        assertThat("Scopes API created by factory should have produced scope definition"
                 , scopeDefinitions, is(notNullValue()));
-
-        InstrumentsApi instrumentsApi = lusidApiFactory.build(InstrumentsApi.class);
-        ResourceListOfInstrumentIdTypeDescriptor instrumentIdTypeDescriptor = instrumentsApi.getInstrumentIdentifierTypes();
-        assertThat("Instruments API created by factory should have returned instrument identifier types"
-                , instrumentIdTypeDescriptor, is(notNullValue()));
-        assertThat("Instrument identifier types returned by the Instrument API should not be empty",
-                instrumentIdTypeDescriptor.getValues(), not(empty()));
     }
 
 }
