@@ -30,7 +30,7 @@ public class ApiConfigurationBuilder {
         if (tokenUrl == null || username == null || password == null || clientId == null || clientSecret == null || apiUrl == null) {
 
             try {
-                File configJson = new FileConfigurationLoader().loadConfiguration(apiSecretsFilename);
+                File configJson = new ConfigurationLoader().loadConfiguration(apiSecretsFilename);
 
                 //  load configuration from secrets.json if any of the environment variables are missing
                 ObjectMapper configMapper = new ObjectMapper();

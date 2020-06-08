@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-public class FileConfigurationLoader {
+public class ConfigurationLoader {
 
     /**
      * Loads the API configuration from a resource in the classpath

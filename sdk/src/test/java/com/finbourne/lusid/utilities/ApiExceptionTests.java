@@ -16,8 +16,7 @@ public class ApiExceptionTests {
     @Test
     public void thrown_exception_tostring_contains_requestid() throws ApiConfigurationException, LusidTokenException {
 
-        ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(CredentialsSource.credentialsFile);
-        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
+        ApiClient apiClient = new ApiClientBuilder().build(CredentialsSource.credentialsFile);
 
         PortfoliosApi portfoliosApi = new PortfoliosApi(apiClient);
 

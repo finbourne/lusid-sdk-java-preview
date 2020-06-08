@@ -5,7 +5,10 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.OrdersApi;
 import com.finbourne.lusid.model.*;
-import com.finbourne.lusid.utilities.*;
+import com.finbourne.lusid.utilities.ApiClientBuilder;
+import com.finbourne.lusid.utilities.ApiConfigurationException;
+import com.finbourne.lusid.utilities.CredentialsSource;
+import com.finbourne.lusid.utilities.InstrumentLoader;
 import com.finbourne.lusid.utilities.auth.LusidTokenException;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -29,8 +32,7 @@ public class Orders
 
     @BeforeClass
     public static void setUp() throws Exception {
-        ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(CredentialsSource.credentialsFile);
-        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
+        ApiClient apiClient = new ApiClientBuilder().build(CredentialsSource.credentialsFile);
 
         InstrumentsApi instrumentsApi = new InstrumentsApi(apiClient);
         InstrumentLoader instrumentLoader = new InstrumentLoader(instrumentsApi);
