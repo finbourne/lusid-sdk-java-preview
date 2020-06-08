@@ -10,7 +10,7 @@ import java.net.Proxy;
  * Builds http client to communicate to LUSID API instances.
  *
  */
-public class HttpClientFactory {
+public class HttpClientBuilder {
 
     /**
      *  Builds a {@link OkHttpClient} from a {@link ApiConfiguration} to make

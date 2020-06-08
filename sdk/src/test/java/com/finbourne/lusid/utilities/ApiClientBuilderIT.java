@@ -13,7 +13,7 @@ import static org.junit.Assert.fail;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
-public class ApiClientBuilderTests {
+public class ApiClientBuilderIT {
 
     private ApiClientBuilder apiClientBuilder;
 
@@ -28,25 +28,22 @@ public class ApiClientBuilderTests {
     @Test
     public void build_OnValidConfigurationFile_ShouldBuildKeepLiveApiClient() throws ApiConfigurationException, LusidTokenException {
         // This test assumes default secrets file is valid. Same assertion as all other integration tests.
-        ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(CredentialsSource.credentialsFile);
-        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
+        ApiClient apiClient = apiClientBuilder.build(CredentialsSource.credentialsFile);
         // running with no exceptions ensures client built correctly with no configuration or token creation exceptions
         assertThat("Unexpected extended implementation of ApiClient for default build." ,
-                apiClient, instanceOf(RefreshingTokenApiClient.class));
+                apiClient, instanceOf(KeepAuthApiClient.class));
     }
 
     @Test
     public void build_OnNonExistingConfigurationFile_ShouldThrowException() throws ApiConfigurationException, LusidTokenException {
         thrown.expect(ApiConfigurationException.class);
-        ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build("doesNotExist");
-        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
+        ApiClient apiClient = apiClientBuilder.build("doesNotExist");
     }
 
     @Test
     public void build_BadTokenConfigurationFile_ShouldThrowException() throws ApiConfigurationException, LusidTokenException {
         thrown.expect(LusidTokenException.class);
-        ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build("bad_token_credentials.json");
-        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
+        ApiClient apiClient = apiClientBuilder.build("bad_token_credentials.json");
     }
 
 

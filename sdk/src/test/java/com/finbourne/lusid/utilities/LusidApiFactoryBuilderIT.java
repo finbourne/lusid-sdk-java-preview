@@ -14,7 +14,7 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.Matchers.empty;
 import static org.junit.Assert.assertThat;
 
-public class LusidApiFactoryBuilderTests {
+public class LusidApiFactoryBuilderIT {
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
