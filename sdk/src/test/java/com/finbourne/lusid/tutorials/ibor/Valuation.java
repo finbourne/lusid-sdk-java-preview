@@ -207,8 +207,8 @@ public class Valuation {
                                 .quoteSeriesId(new QuoteSeriesId()
                                         .provider("Lusid")
                                         .instrumentId(x.getKey())
-                                        .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.LUSIDINSTRUMENTID)
-                                        .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
+                                        .instrumentIdType(QuoteInstrumentIdType.LUSIDINSTRUMENTID)
+                                        .quoteType(QuoteType.PRICE)
                                         .field("mid")
                                 )
                                 .effectiveAt(EFFECTIVE_DATE.toString())
@@ -224,10 +224,10 @@ public class Valuation {
         ConfigurationRecipe configurationRecipe = new ConfigurationRecipe()
                 .code("quotes_recipe")
                 .market(new MarketContext()
-                    .suppliers(new MarketContextSuppliers().equity(MarketContextSuppliers.EquityEnum.LUSID))
+                    .suppliers(new MarketContextSuppliers().equity(ResourceSupplier.LUSID))
                     .options(new MarketOptions()
-                        .defaultSupplier(MarketOptions.DefaultSupplierEnum.LUSID)
-                        .defaultInstrumentCodeType(MarketOptions.DefaultInstrumentCodeTypeEnum.LUSIDINSTRUMENTID)
+                        .defaultSupplier(ResourceSupplier.LUSID)
+                        .defaultInstrumentCodeType(QuoteInstrumentIdType.LUSIDINSTRUMENTID)
                         .defaultScope(quotesScope)
                     )
                 );
@@ -236,9 +236,9 @@ public class Valuation {
         AggregationRequest  aggregationRequest = new AggregationRequest()
                 .inlineRecipe(configurationRecipe)
                 .metrics(asList(
-                        new AggregateSpec().key(GROUPBY_INSTRUMENT_NAME_KEY).op(AggregateSpec.OpEnum.VALUE),
-                        new AggregateSpec().key(AGGREGATION_KEY).op(AggregateSpec.OpEnum.PROPORTION),
-                        new AggregateSpec().key(AGGREGATION_KEY).op(AggregateSpec.OpEnum.SUM)
+                        new AggregateSpec().key(GROUPBY_INSTRUMENT_NAME_KEY).op(AggregationOp.VALUE),
+                        new AggregateSpec().key(AGGREGATION_KEY).op(AggregationOp.PROPORTION),
+                        new AggregateSpec().key(AGGREGATION_KEY).op(AggregationOp.SUM)
                 ))
                 .groupBy(Collections.singletonList(GROUPBY_INSTRUMENT_NAME_KEY))
                 .effectiveAt(EFFECTIVE_DATE.toString());
@@ -284,12 +284,12 @@ public class Valuation {
                         // equity and fx data both sourced from Lusid provider, reference the createUpsertQuote... methods
                         // to view how the quote requests are mapped to providers.
                         .suppliers(new MarketContextSuppliers()
-                                .equity(MarketContextSuppliers.EquityEnum.LUSID)
-                                .fx(MarketContextSuppliers.FxEnum.LUSID)
+                                .equity(ResourceSupplier.LUSID)
+                                .fx(ResourceSupplier.LUSID)
                         )
                         .options(new MarketOptions()
-                                .defaultSupplier(MarketOptions.DefaultSupplierEnum.LUSID)
-                                .defaultInstrumentCodeType(MarketOptions.DefaultInstrumentCodeTypeEnum.LUSIDINSTRUMENTID)
+                                .defaultSupplier(ResourceSupplier.LUSID)
+                                .defaultInstrumentCodeType(QuoteInstrumentIdType.LUSIDINSTRUMENTID)
                                 .defaultScope(quotesScope)
                         )
                 );
@@ -298,9 +298,9 @@ public class Valuation {
         AggregationRequest  aggregationRequest = new AggregationRequest()
                 .inlineRecipe(configurationRecipe)
                 .metrics(asList(
-                        new AggregateSpec().key(groupingKey).op(AggregateSpec.OpEnum.VALUE),
-                        new AggregateSpec().key(AGGREGATION_KEY).op(AggregateSpec.OpEnum.PROPORTION),
-                        new AggregateSpec().key(AGGREGATION_KEY).op(AggregateSpec.OpEnum.SUM)
+                        new AggregateSpec().key(groupingKey).op(AggregationOp.VALUE),
+                        new AggregateSpec().key(AGGREGATION_KEY).op(AggregationOp.PROPORTION),
+                        new AggregateSpec().key(AGGREGATION_KEY).op(AggregationOp.SUM)
                 ))
                 .groupBy(Collections.singletonList(groupingKey))
                 .effectiveAt(EFFECTIVE_DATE.toString());
@@ -355,8 +355,8 @@ public class Valuation {
                         .quoteSeriesId(new QuoteSeriesId()
                                 .provider("Lusid")
                                 .instrumentId(instrument)
-                                .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.LUSIDINSTRUMENTID)
-                                .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
+                                .instrumentIdType(QuoteInstrumentIdType.LUSIDINSTRUMENTID)
+                                .quoteType(QuoteType.PRICE)
                                 .field("mid")
                         )
                         .effectiveAt(EFFECTIVE_DATE.toString())
@@ -379,8 +379,8 @@ public class Valuation {
                                 .provider("Lusid")
                                 // base and foreign currencies must be split by "/" (e.g. USD/GBP).
                                 .instrumentId(baseCcy + "/" + foreignCcy)
-                                .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.CURRENCYPAIR)
-                                .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
+                                .instrumentIdType(QuoteInstrumentIdType.CURRENCYPAIR)
+                                .quoteType(QuoteType.PRICE)
                                 .field("mid")
                         )
                         .effectiveAt(EFFECTIVE_DATE.toString())

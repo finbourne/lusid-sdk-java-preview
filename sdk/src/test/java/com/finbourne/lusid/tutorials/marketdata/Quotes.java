@@ -40,8 +40,8 @@ public class Quotes {
                         .provider("DataScope")
                         .priceSource("BankA")
                         .instrumentId("BBG000B9XRY4")
-                        .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.FIGI)
-                        .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
+                        .instrumentIdType(QuoteInstrumentIdType.FIGI)
+                        .quoteType(QuoteType.PRICE)
                         .field("Mid")
                     )
                     .effectiveAt(OffsetDateTime.of(2019, 4, 15, 0, 0, 0, 0, ZoneOffset.UTC).toString())
@@ -65,8 +65,8 @@ public class Quotes {
                 .provider("DataScope")
                 .priceSource("BankA")
                 .instrumentId("BBG000B9XRY4")
-                .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.FIGI)
-                .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
+                .instrumentIdType(QuoteInstrumentIdType.FIGI)
+                .quoteType(QuoteType.PRICE)
                 .field("Mid");
 
         OffsetDateTime effectiveDate = OffsetDateTime.of(2019, 4, 15, 0, 0, 0, 0, ZoneOffset.UTC);
@@ -98,8 +98,8 @@ public class Quotes {
         QuoteSeriesId quoteSeriesId = new QuoteSeriesId()
                         .provider("Client")
                         .instrumentId("BBG000DMBXR2")
-                        .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.FIGI)
-                        .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
+                        .instrumentIdType(QuoteInstrumentIdType.FIGI)
+                        .quoteType(QuoteType.PRICE)
                         .field("mid");
 
         //  Get the quotes for each day in the date range
