@@ -1,6 +1,6 @@
 
 
-# CdsDetailSpecification
+# CdsProtectionDetailSpecification
 
 ## Properties
 
@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **restructuringType** | [**RestructuringTypeEnum**](#RestructuringTypeEnum) | The restructuring clause | 
 **protectStartDay** | **Boolean** | Does the protection leg pay out in the case of default on the start date | 
 **payAccruedInterestOnDefault** | **Boolean** | Should accrued interest on the premium leg be paid if a credit event occurs | 
-**rollFrequency** | [**Tenor**](Tenor.md) |  | 
 
 
 
