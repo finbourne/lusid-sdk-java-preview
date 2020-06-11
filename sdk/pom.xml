@@ -54,10 +54,13 @@
                 <version>2.19.1</version>
                 <configuration>
                     <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*Tests.java</include>
                         <include>**/tutorials/**</include>
                     </includes>
                     <excludes>
                         <exclude>**/api/**</exclude>
+                        <exclude>**/model/**</exclude>
                     </excludes>
                     <systemProperties>
                         <property>
@@ -149,6 +152,10 @@
                             <sources>
                                 <source>
                                 src/test/java</source>
+                                <source>
+                                    src/integration-test/java</source>
+                                <source>
+                                    src/tutorial/java</source>
                             </sources>
                         </configuration>
                     </execution>
