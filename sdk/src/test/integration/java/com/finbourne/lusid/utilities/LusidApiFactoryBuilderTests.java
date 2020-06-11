@@ -26,26 +26,6 @@ public class LusidApiFactoryBuilderTests {
         assertThatFactoryBuiltApiCanMakeLUSIDCalls(lusidApiFactory);
     }
 
-    @Test
-    public void build_WithNonExistingConfigurationFile_ShouldThrowException() throws ApiConfigurationException, LusidTokenException {
-        thrown.expect(ApiConfigurationException.class);
-        LusidApiFactoryBuilder.build("doesNotExist");
-    }
-
-    @Test
-    public void build_BadTokenConfigurationFile_ShouldThrowException() throws ApiConfigurationException, LusidTokenException {
-        thrown.expect(LusidTokenException.class);
-        LusidApiFactoryBuilder.build("bad_token_credentials.json");
-    }
-
-    @Test
-    public void build_WithUnsetEnvironmentVariablesConfig_ShouldThrowException() throws ApiConfigurationException, LusidTokenException {
-        thrown.expect(ApiConfigurationException.class);
-        thrown.expectMessage("Environment variables to configure LUSID API client have not been set. See " +
-                " see https://support.lusid.com/getting-started-with-apis-sdks for details.");
-        LusidApiFactoryBuilder.build();
-    }
-
     private static void assertThatFactoryBuiltApiCanMakeLUSIDCalls(LusidApiFactory lusidApiFactory) throws ApiException {
         ScopesApi scopesApi = lusidApiFactory.build(ScopesApi.class);
         ResourceListOfScopeDefinition scopeDefinitions = scopesApi.listScopes("");
