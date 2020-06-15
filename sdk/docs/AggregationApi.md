@@ -1,6 +1,6 @@
 # AggregationApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -35,7 +35,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -108,7 +108,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -187,7 +187,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -266,7 +266,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -345,7 +345,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -422,7 +422,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -495,7 +495,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -549,7 +549,7 @@ Name | Type | Description  | Notes
 
 <a name="getQueryableKeys"></a>
 # **getQueryableKeys**
-> QueryableEntitiesResponse getQueryableKeys(pagination, start, limit, filter)
+> ResourceListOfAggregationQuery getQueryableKeys(page, start, limit, filter)
 
 [EXPERIMENTAL] Query the set of supported \&quot;addresses\&quot; that can be queried from the aggregation endpoint.
 
@@ -568,19 +568,19 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     AggregationApi apiInstance = new AggregationApi(defaultClient);
-    String pagination = "pagination_example"; // String | The pagination token to use to continue listing quotes from a previous call to list quotes.              This value is returned from the previous call.
+    String page = "page_example"; // String | The pagination token to use to continue listing queryable keys from a previous call to list queryable keys.              This value is returned from the previous call.
     Integer start = 56; // Integer | When paginating, skip this number of results.
     Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many.
     String filter = "filter_example"; // String | Expression to filter the result set.              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
     try {
-      QueryableEntitiesResponse result = apiInstance.getQueryableKeys(pagination, start, limit, filter);
+      ResourceListOfAggregationQuery result = apiInstance.getQueryableKeys(page, start, limit, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AggregationApi#getQueryableKeys");
@@ -597,14 +597,14 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pagination** | **String**| The pagination token to use to continue listing quotes from a previous call to list quotes.              This value is returned from the previous call. | [optional]
+ **page** | **String**| The pagination token to use to continue listing queryable keys from a previous call to list queryable keys.              This value is returned from the previous call. | [optional]
  **start** | **Integer**| When paginating, skip this number of results. | [optional]
  **limit** | **Integer**| When paginating, limit the number of returned results to this many. | [optional]
  **filter** | **String**| Expression to filter the result set.              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
 
 ### Return type
 
-[**QueryableEntitiesResponse**](QueryableEntitiesResponse.md)
+[**ResourceListOfAggregationQuery**](ResourceListOfAggregationQuery.md)
 
 ### Authorization
 
