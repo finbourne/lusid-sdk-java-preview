@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **rateOrSpread** | **Double** | Is there either a fixed rate (non-zero) or spread to be paid over the value of the leg. |  [optional]
 **indexConvention** | [**IndexConvention**](IndexConvention.md) |  |  [optional]
-**stubType** | [**StubTypeEnum**](#StubTypeEnum) | If a stub is required should it be at the front or back of the leg. | 
-**payReceive** | [**PayReceiveEnum**](#PayReceiveEnum) | Is the leg to be paid or received | 
-**notionalExchangeType** | [**NotionalExchangeTypeEnum**](#NotionalExchangeTypeEnum) | what type of notional exchange does the leg have | 
+**stubType** | [**StubTypeEnum**](#StubTypeEnum) | The available values are: Front, Back, Both | 
+**payReceive** | [**PayReceiveEnum**](#PayReceiveEnum) | The available values are: NotDefined, Pay, Receive | 
+**notionalExchangeType** | [**NotionalExchangeTypeEnum**](#NotionalExchangeTypeEnum) | The available values are: None, Initial, Final, Both | 
 **conventions** | [**FlowConventions**](FlowConventions.md) |  | 
 
 

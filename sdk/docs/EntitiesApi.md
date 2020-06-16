@@ -1,6 +1,6 @@
 # EntitiesApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,7 +28,7 @@ import com.finbourne.lusid.api.EntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | A list of portfolio changes in the requested scope relative to the specified time. |  -  |
 **400** | The details of the input related failure |  -  |
+**200** | A list of portfolio changes in the requested scope relative to the specified time. |  -  |
 **0** | Error response |  -  |
 

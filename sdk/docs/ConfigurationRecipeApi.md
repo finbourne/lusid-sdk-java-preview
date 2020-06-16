@@ -1,6 +1,6 @@
 # ConfigurationRecipeApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,7 +32,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -103,7 +103,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -176,7 +176,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -249,7 +249,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertConfigurationRecipe"></a>
 # **upsertConfigurationRecipe**
-> UpsertSingleStructuredDataResponse upsertConfigurationRecipe(scope, structuredData)
+> UpsertSingleStructuredDataResponse upsertConfigurationRecipe(scope, upsertRecipeRequest)
 
 [EXPERIMENTAL] Upsert a Configuration Recipe. This creates or updates the data in Lusid.
 
@@ -320,7 +320,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -328,9 +328,9 @@ public class Example {
 
     ConfigurationRecipeApi apiInstance = new ConfigurationRecipeApi(defaultClient);
     String scope = "scope_example"; // String | The scope to use when updating or inserting the Configuration Recipe.
-    UpsertRecipeRequest structuredData = new UpsertRecipeRequest(); // UpsertRecipeRequest | The Configuration Recipe to update or insert
+    UpsertRecipeRequest upsertRecipeRequest = {"code":"MyNamedRecipe12345","configurationRecipe":{"code":"MyNamedRecipe12345","market":{"marketRules":[{"key":"Fx.CurrencyPair.*","supplier":"DataScope","dataScope":"SomeScopeToLookAt","quoteType":"Rate","field":"Mid","priceSource":""}],"suppliers":{},"options":{"defaultSupplier":"Lusid","defaultInstrumentCodeType":"LusidInstrumentId","defaultScope":"default","attemptToInferMissingFx":false,"manifestLevelOfDetail":"None"}},"pricing":{"modelRules":[],"modelChoice":{},"options":{"modelSelection":{"library":"Lusid","model":"SimpleStatic"},"useInstrumentTypeToDeterminePricer":false,"allowAnyInstrumentsWithSecUidToPriceOffLookup":false,"allowPartiallySuccessfulEvaluation":false,"produceSeparateResultForLinearOtcLegs":false,"enableUseOfCachedUnitResults":false,"windowValuationOnInstrumentStartEnd":false,"removeContingentCashflowsInPaymentDiary":false,"useChildSubHoldingKeysForPortfolioExpansion":false},"resultDataRules":[]},"aggregation":{"options":{"useAnsiLikeSyntax":false}},"inheritedRecipes":[],"description":""}}; // UpsertRecipeRequest | The Configuration Recipe to update or insert
     try {
-      UpsertSingleStructuredDataResponse result = apiInstance.upsertConfigurationRecipe(scope, structuredData);
+      UpsertSingleStructuredDataResponse result = apiInstance.upsertConfigurationRecipe(scope, upsertRecipeRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConfigurationRecipeApi#upsertConfigurationRecipe");
@@ -348,7 +348,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope to use when updating or inserting the Configuration Recipe. |
- **structuredData** | [**UpsertRecipeRequest**](UpsertRecipeRequest.md)| The Configuration Recipe to update or insert |
+ **upsertRecipeRequest** | [**UpsertRecipeRequest**](UpsertRecipeRequest.md)| The Configuration Recipe to update or insert |
 
 ### Return type
 
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details

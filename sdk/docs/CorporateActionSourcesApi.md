@@ -1,6 +1,6 @@
 # CorporateActionSourcesApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="batchUpsertCorporateActions"></a>
 # **batchUpsertCorporateActions**
-> UpsertCorporateActionsResponse batchUpsertCorporateActions(scope, code, actions)
+> UpsertCorporateActionsResponse batchUpsertCorporateActions(scope, code, upsertCorporateActionRequest)
 
 [BETA] Upsert corporate actions
 
@@ -32,7 +32,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -41,9 +41,9 @@ public class Example {
     CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of corporate action source
     String code = "code_example"; // String | The code of the corporate action source
-    List<UpsertCorporateActionRequest> actions = Arrays.asList(null); // List<UpsertCorporateActionRequest> | The corporate action definitions
+    List<UpsertCorporateActionRequest> upsertCorporateActionRequest = {"corporateActionCode":"MyStockSplitId","description":"2-for-1 stock split of instrument BBG001S6PJ31","announcementDate":"2018-03-01T00:00:00+00:00","exDate":"2018-06-01T00:00:00+00:00","recordDate":"2018-06-02T00:00:00+00:00","paymentDate":"2018-08-02T00:00:00+00:00","transitions":[{"inputTransition":{"instrumentIdentifiers":{"instrument/default/Figi":"BBG001S6PJ31"},"unitsFactor":1,"costFactor":1},"outputTransitions":[{"instrumentIdentifiers":{"instrument/default/Figi":"BBG001S6PJ31"},"unitsFactor":2,"costFactor":1}]}]}; // List<UpsertCorporateActionRequest> | The corporate action definitions
     try {
-      UpsertCorporateActionsResponse result = apiInstance.batchUpsertCorporateActions(scope, code, actions);
+      UpsertCorporateActionsResponse result = apiInstance.batchUpsertCorporateActions(scope, code, upsertCorporateActionRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CorporateActionSourcesApi#batchUpsertCorporateActions");
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of corporate action source |
  **code** | **String**| The code of the corporate action source |
- **actions** | [**List&lt;UpsertCorporateActionRequest&gt;**](UpsertCorporateActionRequest.md)| The corporate action definitions | [optional]
+ **upsertCorporateActionRequest** | [**List&lt;UpsertCorporateActionRequest&gt;**](UpsertCorporateActionRequest.md)| The corporate action definitions | [optional]
 
 ### Return type
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 <a name="createCorporateActionSource"></a>
 # **createCorporateActionSource**
-> CorporateActionSource createCorporateActionSource(request)
+> CorporateActionSource createCorporateActionSource(createCorporateActionSourceRequest)
 
 [BETA] Create Corporate Action Source
 
@@ -105,16 +105,16 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
-    CreateCorporateActionSourceRequest request = new CreateCorporateActionSourceRequest(); // CreateCorporateActionSourceRequest | The corporate action source definition
+    CreateCorporateActionSourceRequest createCorporateActionSourceRequest = {"scope":"ExampleScope","code":"ExampleCode","displayName":"ExampleDisplayName","description":"Example Description"}; // CreateCorporateActionSourceRequest | The corporate action source definition
     try {
-      CorporateActionSource result = apiInstance.createCorporateActionSource(request);
+      CorporateActionSource result = apiInstance.createCorporateActionSource(createCorporateActionSourceRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CorporateActionSourcesApi#createCorporateActionSource");
@@ -131,7 +131,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**CreateCorporateActionSourceRequest**](CreateCorporateActionSourceRequest.md)| The corporate action source definition |
+ **createCorporateActionSourceRequest** | [**CreateCorporateActionSourceRequest**](CreateCorporateActionSourceRequest.md)| The corporate action source definition |
 
 ### Return type
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -174,7 +174,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -245,7 +245,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -330,7 +330,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

@@ -1,6 +1,6 @@
 # OrdersApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,7 +29,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -102,7 +102,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -114,7 +114,7 @@ public class Example {
     List<String> sortBy = Arrays.asList(); // List<String> | Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName.
     Integer start = 56; // Integer | When paginating, skip this number of results.
     Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many.
-    String filter = "filter_example"; // String | Expression to filter the result set. Read more about filtering results from LUSID here:              https://support.lusid.com/filtering-results-from-lusid.
+    String filter = "\"\""; // String | Expression to filter the result set. Read more about filtering results from LUSID here:              https://support.lusid.com/filtering-results-from-lusid.
     List<String> propertyKeys = Arrays.asList(); // List<String> | A list of property keys from the \"Orders\" domain to decorate onto each order.                  These take the format {domain}/{scope}/{code} e.g. \"Orders/system/Name\".
     try {
       PagedResourceListOfOrder result = apiInstance.listOrders(asAt, page, sortBy, start, limit, filter, propertyKeys);
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
  **sortBy** | [**List&lt;String&gt;**](String.md)| Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName. | [optional]
  **start** | **Integer**| When paginating, skip this number of results. | [optional]
  **limit** | **Integer**| When paginating, limit the number of returned results to this many. | [optional]
- **filter** | **String**| Expression to filter the result set. Read more about filtering results from LUSID here:              https://support.lusid.com/filtering-results-from-lusid. | [optional]
+ **filter** | **String**| Expression to filter the result set. Read more about filtering results from LUSID here:              https://support.lusid.com/filtering-results-from-lusid. | [optional] [default to &quot;&quot;]
  **propertyKeys** | [**List&lt;String&gt;**](String.md)| A list of property keys from the \&quot;Orders\&quot; domain to decorate onto each order.                  These take the format {domain}/{scope}/{code} e.g. \&quot;Orders/system/Name\&quot;. | [optional]
 
 ### Return type
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertOrderProperties"></a>
 # **upsertOrderProperties**
-> UpsertOrderPropertiesResponse upsertOrderProperties(scope, request)
+> UpsertOrderPropertiesResponse upsertOrderProperties(scope, upsertOrderPropertiesRequest)
 
 [EXPERIMENTAL] Upsert; update properties on existing Orders with given ids.
 
@@ -181,7 +181,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -189,9 +189,9 @@ public class Example {
 
     OrdersApi apiInstance = new OrdersApi(defaultClient);
     String scope = "scope_example"; // String | The scope to which the orders belong.
-    List<UpsertOrderPropertiesRequest> request = Arrays.asList(null); // List<UpsertOrderPropertiesRequest> | A collection of order property upsert requests.
+    List<UpsertOrderPropertiesRequest> upsertOrderPropertiesRequest = {"properties":[{"key":"Order/MyScope/SomeOrderProperty","value":{"labelValue":"XYZ000034567"}}],"id":"ORD00000123"}; // List<UpsertOrderPropertiesRequest> | A collection of order property upsert requests.
     try {
-      UpsertOrderPropertiesResponse result = apiInstance.upsertOrderProperties(scope, request);
+      UpsertOrderPropertiesResponse result = apiInstance.upsertOrderProperties(scope, upsertOrderPropertiesRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrdersApi#upsertOrderProperties");
@@ -209,7 +209,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope to which the orders belong. |
- **request** | [**List&lt;UpsertOrderPropertiesRequest&gt;**](UpsertOrderPropertiesRequest.md)| A collection of order property upsert requests. | [optional]
+ **upsertOrderPropertiesRequest** | [**List&lt;UpsertOrderPropertiesRequest&gt;**](UpsertOrderPropertiesRequest.md)| A collection of order property upsert requests. | [optional]
 
 ### Return type
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertOrders"></a>
 # **upsertOrders**
-> ResourceListOfOrder upsertOrders(request)
+> ResourceListOfOrder upsertOrders(orderSetRequest)
 
 [EXPERIMENTAL] Upsert; update existing orders with given ids, or create new orders otherwise.
 
@@ -250,16 +250,16 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     OrdersApi apiInstance = new OrdersApi(defaultClient);
-    OrderSetRequest request = new OrderSetRequest(); // OrderSetRequest | The collection of order requests.
+    OrderSetRequest orderSetRequest = {"orderRequests":[{"properties":{"order/MyScope/SomeOrderProperty":{"key":"Order/MyScope/SomeOrderProperty","value":{"labelValue":"XYZ000034567"}}},"instrumentIdentifiers":{"instrument/default/Currency":"GBP"},"quantity":100,"side":"Buy","orderBookId":{"scope":"MyScope","code":"UKEQ Orders"},"portfolioId":{"scope":"MyScope","code":"UK Equity"},"id":{"scope":"MyScope","code":"ORD00000123"}}]}; // OrderSetRequest | The collection of order requests.
     try {
-      ResourceListOfOrder result = apiInstance.upsertOrders(request);
+      ResourceListOfOrder result = apiInstance.upsertOrders(orderSetRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrdersApi#upsertOrders");
@@ -276,7 +276,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**OrderSetRequest**](OrderSetRequest.md)| The collection of order requests. | [optional]
+ **orderSetRequest** | [**OrderSetRequest**](OrderSetRequest.md)| The collection of order requests. | [optional]
 
 ### Return type
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details

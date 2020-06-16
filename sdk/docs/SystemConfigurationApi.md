@@ -1,6 +1,6 @@
 # SystemConfigurationApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createConfigurationTransactionType"></a>
 # **createConfigurationTransactionType**
-> TransactionSetConfigurationData createConfigurationTransactionType(type)
+> TransactionSetConfigurationData createConfigurationTransactionType(transactionConfigurationDataRequest)
 
 [EARLY ACCESS] Create transaction type
 
@@ -31,16 +31,16 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SystemConfigurationApi apiInstance = new SystemConfigurationApi(defaultClient);
-    TransactionConfigurationDataRequest type = new TransactionConfigurationDataRequest(); // TransactionConfigurationDataRequest | A transaction type definition
+    TransactionConfigurationDataRequest transactionConfigurationDataRequest = {"aliases":[{"type":"Another-Sell","description":"Sale","transactionClass":"MyDefault","transactionGroup":"MyGroup","transactionRoles":"LongShorter"}],"movements":[{"movementTypes":"StockMovement","side":"Side1","direction":-1,"properties":{},"mappings":[]},{"movementTypes":"CashCommitment","side":"Side2","direction":1,"properties":{},"mappings":[]}],"properties":{}}; // TransactionConfigurationDataRequest | A transaction type definition
     try {
-      TransactionSetConfigurationData result = apiInstance.createConfigurationTransactionType(type);
+      TransactionSetConfigurationData result = apiInstance.createConfigurationTransactionType(transactionConfigurationDataRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SystemConfigurationApi#createConfigurationTransactionType");
@@ -57,7 +57,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | [**TransactionConfigurationDataRequest**](TransactionConfigurationDataRequest.md)| A transaction type definition | [optional]
+ **transactionConfigurationDataRequest** | [**TransactionConfigurationDataRequest**](TransactionConfigurationDataRequest.md)| A transaction type definition | [optional]
 
 ### Return type
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 <a name="createSideDefinition"></a>
 # **createSideDefinition**
-> TransactionSetConfigurationData createSideDefinition(side)
+> TransactionSetConfigurationData createSideDefinition(sideConfigurationDataRequest)
 
 [EXPERIMENTAL] Create side definition
 
@@ -100,16 +100,16 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SystemConfigurationApi apiInstance = new SystemConfigurationApi(defaultClient);
-    SideConfigurationDataRequest side = new SideConfigurationDataRequest(); // SideConfigurationDataRequest | The definition of the side to be created.
+    SideConfigurationDataRequest sideConfigurationDataRequest = {"side":"Side1","security":"security","currency":"currency","rate":"0.5","units":"500","amount":"1000"}; // SideConfigurationDataRequest | The definition of the side to be created.
     try {
-      TransactionSetConfigurationData result = apiInstance.createSideDefinition(side);
+      TransactionSetConfigurationData result = apiInstance.createSideDefinition(sideConfigurationDataRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SystemConfigurationApi#createSideDefinition");
@@ -126,7 +126,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **side** | [**SideConfigurationDataRequest**](SideConfigurationDataRequest.md)| The definition of the side to be created. | [optional]
+ **sideConfigurationDataRequest** | [**SideConfigurationDataRequest**](SideConfigurationDataRequest.md)| The definition of the side to be created. | [optional]
 
 ### Return type
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -169,7 +169,7 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -214,7 +214,7 @@ This endpoint does not need any parameter.
 
 <a name="setConfigurationTransactionTypes"></a>
 # **setConfigurationTransactionTypes**
-> TransactionSetConfigurationData setConfigurationTransactionTypes(types)
+> TransactionSetConfigurationData setConfigurationTransactionTypes(transactionSetConfigurationDataRequest)
 
 [EXPERIMENTAL] Set transaction types
 
@@ -233,16 +233,16 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SystemConfigurationApi apiInstance = new SystemConfigurationApi(defaultClient);
-    TransactionSetConfigurationDataRequest types = new TransactionSetConfigurationDataRequest(); // TransactionSetConfigurationDataRequest | The complete set of transaction type definitions
+    TransactionSetConfigurationDataRequest transactionSetConfigurationDataRequest = {"transactionConfigRequests":[{"aliases":[{"type":"Simple-Sell","description":"Sale","transactionClass":"MyDefault","transactionGroup":"MyGroup","transactionRoles":"LongShorter"}],"movements":[{"movementTypes":"StockMovement","side":"Side1","direction":-1,"properties":{},"mappings":[]},{"movementTypes":"CashCommitment","side":"Side2","direction":1,"properties":{},"mappings":[]}],"properties":{}},{"aliases":[{"type":"Sell-FIFO","description":"Sale using FIFO logic","transactionClass":"FIFO","transactionGroup":"MyGroup","transactionRoles":"LongShorter"}],"movements":[{"movementTypes":"StockMovement","side":"Side1","direction":-1,"properties":{"transactionConfiguration/default/TaxLotSelectionMethod":{"key":"TransactionConfiguration/default/TaxLotSelectionMethod","value":{"labelValue":"FirstInFirstOut"}}},"mappings":[]},{"movementTypes":"CashCommitment","side":"Side2","direction":1,"properties":{},"mappings":[]}],"properties":{"transactionConfiguration/default/Example":{"key":"TransactionConfiguration/default/Example","value":{"labelValue":"Value"}}}}],"sideConfigRequests":[{"side":"Side1","security":"security","currency":"currency","rate":"0.5","units":"500","amount":"1000"},{"side":"Side2","security":"security","currency":"currency","rate":"0.75","units":"250","amount":"2000"}]}; // TransactionSetConfigurationDataRequest | The complete set of transaction type definitions
     try {
-      TransactionSetConfigurationData result = apiInstance.setConfigurationTransactionTypes(types);
+      TransactionSetConfigurationData result = apiInstance.setConfigurationTransactionTypes(transactionSetConfigurationDataRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SystemConfigurationApi#setConfigurationTransactionTypes");
@@ -259,7 +259,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **types** | [**TransactionSetConfigurationDataRequest**](TransactionSetConfigurationDataRequest.md)| The complete set of transaction type definitions | [optional]
+ **transactionSetConfigurationDataRequest** | [**TransactionSetConfigurationDataRequest**](TransactionSetConfigurationDataRequest.md)| The complete set of transaction type definitions | [optional]
 
 ### Return type
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details

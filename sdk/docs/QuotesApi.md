@@ -1,6 +1,6 @@
 # QuotesApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -36,7 +36,7 @@ import com.finbourne.lusid.api.QuotesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteQuotes"></a>
 # **deleteQuotes**
-> AnnulQuotesResponse deleteQuotes(scope, quotes)
+> AnnulQuotesResponse deleteQuotes(scope, requestBody)
 
 [BETA] Delete quotes
 
@@ -119,7 +119,7 @@ import com.finbourne.lusid.api.QuotesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -127,9 +127,9 @@ public class Example {
 
     QuotesApi apiInstance = new QuotesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the quotes to delete.
-    Map<String, QuoteId> quotes = new HashMap(); // Map<String, QuoteId> | The quotes to delete keyed by a unique correlation id.
+    Map<String, QuoteId> requestBody = {"dS-VOD-PRICE-MID":{"quoteSeriesId":{"provider":"DataScope","priceSource":"","instrumentId":"GB00BH4HKS39","instrumentIdType":"Isin","quoteType":"Price","field":"mid"},"effectiveAt":"2018-03-05T00:00:00+00:00"}}; // Map<String, QuoteId> | The quotes to delete keyed by a unique correlation id.
     try {
-      AnnulQuotesResponse result = apiInstance.deleteQuotes(scope, quotes);
+      AnnulQuotesResponse result = apiInstance.deleteQuotes(scope, requestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling QuotesApi#deleteQuotes");
@@ -147,7 +147,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the quotes to delete. |
- **quotes** | [**Map&lt;String, QuoteId&gt;**](QuoteId.md)| The quotes to delete keyed by a unique correlation id. | [optional]
+ **requestBody** | [**Map&lt;String, QuoteId&gt;**](QuoteId.md)| The quotes to delete keyed by a unique correlation id. | [optional]
 
 ### Return type
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 <a name="getQuotes"></a>
 # **getQuotes**
-> GetQuotesResponse getQuotes(scope, effectiveAt, asAt, maxAge, quoteIds)
+> GetQuotesResponse getQuotes(scope, effectiveAt, asAt, maxAge, requestBody)
 
 [BETA] Get quotes
 
@@ -190,7 +190,7 @@ import com.finbourne.lusid.api.QuotesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -201,9 +201,9 @@ public class Example {
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to retrieve the quotes. Defaults to the current LUSID system datetime if not specified.
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the quotes. Defaults to return the latest version of each quote if not specified.
     String maxAge = "maxAge_example"; // String | The duration of the look back window in an ISO8601 time interval format e.g. P1Y2M3DT4H30M (1 year, 2 months, 3 days, 4 hours and 30 minutes).               This is subtracted from the provided effectiveAt datetime or cut label to generate a effective datetime window inside which a quote must exist to be retrieved.
-    Map<String, QuoteSeriesId> quoteIds = new HashMap(); // Map<String, QuoteSeriesId> | The time invariant quote series ids of the quotes to retrieve. These need to be               keyed by a unique correlation id allowing the retrieved quote to be identified in the response.
+    Map<String, QuoteSeriesId> requestBody = {"dS-VOD-PRICE-MID":{"provider":"DataScope","priceSource":"","instrumentId":"GB00BH4HKS39","instrumentIdType":"Isin","quoteType":"Price","field":"mid"}}; // Map<String, QuoteSeriesId> | The time invariant quote series ids of the quotes to retrieve. These need to be               keyed by a unique correlation id allowing the retrieved quote to be identified in the response.
     try {
-      GetQuotesResponse result = apiInstance.getQuotes(scope, effectiveAt, asAt, maxAge, quoteIds);
+      GetQuotesResponse result = apiInstance.getQuotes(scope, effectiveAt, asAt, maxAge, requestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling QuotesApi#getQuotes");
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
  **effectiveAt** | **String**| The effective datetime or cut label at which to retrieve the quotes. Defaults to the current LUSID system datetime if not specified. | [optional]
  **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the quotes. Defaults to return the latest version of each quote if not specified. | [optional]
  **maxAge** | **String**| The duration of the look back window in an ISO8601 time interval format e.g. P1Y2M3DT4H30M (1 year, 2 months, 3 days, 4 hours and 30 minutes).               This is subtracted from the provided effectiveAt datetime or cut label to generate a effective datetime window inside which a quote must exist to be retrieved. | [optional]
- **quoteIds** | [**Map&lt;String, QuoteSeriesId&gt;**](QuoteSeriesId.md)| The time invariant quote series ids of the quotes to retrieve. These need to be               keyed by a unique correlation id allowing the retrieved quote to be identified in the response. | [optional]
+ **requestBody** | [**Map&lt;String, QuoteSeriesId&gt;**](QuoteSeriesId.md)| The time invariant quote series ids of the quotes to retrieve. These need to be               keyed by a unique correlation id allowing the retrieved quote to be identified in the response. | [optional]
 
 ### Return type
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -267,7 +267,7 @@ import com.finbourne.lusid.api.QuotesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -352,7 +352,7 @@ import com.finbourne.lusid.api.QuotesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -431,7 +431,7 @@ import com.finbourne.lusid.api.QuotesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -502,7 +502,7 @@ import com.finbourne.lusid.api.QuotesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertQuoteAccessMetadataRule"></a>
 # **upsertQuoteAccessMetadataRule**
-> QuoteAccessMetadataRule upsertQuoteAccessMetadataRule(scope, request, effectiveAt)
+> QuoteAccessMetadataRule upsertQuoteAccessMetadataRule(scope, upsertQuoteAccessMetadataRuleRequest, effectiveAt)
 
 [EXPERIMENTAL] Upsert a Quote Access Metadata Rule. This creates or updates the data in LUSID.
 
@@ -581,7 +581,7 @@ import com.finbourne.lusid.api.QuotesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -589,10 +589,10 @@ public class Example {
 
     QuotesApi apiInstance = new QuotesApi(defaultClient);
     String scope = "scope_example"; // String | The scope to use when updating or inserting the Quote Access Metadata Rule.
-    UpsertQuoteAccessMetadataRuleRequest request = new UpsertQuoteAccessMetadataRuleRequest(); // UpsertQuoteAccessMetadataRuleRequest | The Quote Access Metadata Rule to update or insert
+    UpsertQuoteAccessMetadataRuleRequest upsertQuoteAccessMetadataRuleRequest = {"id":{"provider":"ExampleDataProvider","field":"ExampleQuoteField"},"metadata":{"informationClassification":[{"value":"Public"}],"region":[{"value":"EMEA"}]}}; // UpsertQuoteAccessMetadataRuleRequest | The Quote Access Metadata Rule to update or insert
     String effectiveAt = "effectiveAt_example"; // String | The date this rule will effective from
     try {
-      QuoteAccessMetadataRule result = apiInstance.upsertQuoteAccessMetadataRule(scope, request, effectiveAt);
+      QuoteAccessMetadataRule result = apiInstance.upsertQuoteAccessMetadataRule(scope, upsertQuoteAccessMetadataRuleRequest, effectiveAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling QuotesApi#upsertQuoteAccessMetadataRule");
@@ -610,7 +610,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope to use when updating or inserting the Quote Access Metadata Rule. |
- **request** | [**UpsertQuoteAccessMetadataRuleRequest**](UpsertQuoteAccessMetadataRuleRequest.md)| The Quote Access Metadata Rule to update or insert |
+ **upsertQuoteAccessMetadataRuleRequest** | [**UpsertQuoteAccessMetadataRuleRequest**](UpsertQuoteAccessMetadataRuleRequest.md)| The Quote Access Metadata Rule to update or insert |
  **effectiveAt** | **String**| The date this rule will effective from | [optional]
 
 ### Return type
@@ -623,7 +623,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -635,7 +635,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertQuotes"></a>
 # **upsertQuotes**
-> UpsertQuotesResponse upsertQuotes(scope, quotes)
+> UpsertQuotesResponse upsertQuotes(scope, requestBody)
 
 [BETA] Upsert quotes
 
@@ -654,7 +654,7 @@ import com.finbourne.lusid.api.QuotesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -662,9 +662,9 @@ public class Example {
 
     QuotesApi apiInstance = new QuotesApi(defaultClient);
     String scope = "scope_example"; // String | The scope to use when updating or inserting the quotes.
-    Map<String, UpsertQuoteRequest> quotes = new HashMap(); // Map<String, UpsertQuoteRequest> | The quotes to update or insert keyed by a unique correlation id.
+    Map<String, UpsertQuoteRequest> requestBody = {"dS-VOD-PRICE-MID":{"quoteId":{"quoteSeriesId":{"provider":"DataScope","priceSource":"","instrumentId":"GB00BH4HKS39","instrumentIdType":"Isin","quoteType":"Price","field":"mid"},"effectiveAt":"2018-03-05T00:00:00+00:00"},"metricValue":{"value":1460,"unit":"CNY"}},"o-C-EURUSD-PRICE-BID":{"quoteId":{"quoteSeriesId":{"provider":"Oanda","priceSource":"Citi","instrumentId":"EUR/USD","instrumentIdType":"CurrencyPair","quoteType":"Price","field":"bid"},"effectiveAt":"2018-03-05T00:00:00+00:00"},"metricValue":{"value":1.367,"unit":"EUR/USD"},"lineage":"Oanda/FxRates_2018-10-22T00:00:00.0000000+00:00.csv"}}; // Map<String, UpsertQuoteRequest> | The quotes to update or insert keyed by a unique correlation id.
     try {
-      UpsertQuotesResponse result = apiInstance.upsertQuotes(scope, quotes);
+      UpsertQuotesResponse result = apiInstance.upsertQuotes(scope, requestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling QuotesApi#upsertQuotes");
@@ -682,7 +682,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope to use when updating or inserting the quotes. |
- **quotes** | [**Map&lt;String, UpsertQuoteRequest&gt;**](UpsertQuoteRequest.md)| The quotes to update or insert keyed by a unique correlation id. | [optional]
+ **requestBody** | [**Map&lt;String, UpsertQuoteRequest&gt;**](UpsertQuoteRequest.md)| The quotes to update or insert keyed by a unique correlation id. | [optional]
 
 ### Return type
 
@@ -694,7 +694,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details

@@ -6,81 +6,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**commodity** | [**CommodityEnum**](#CommodityEnum) |  |  [optional]
-**credit** | [**CreditEnum**](#CreditEnum) |  |  [optional]
-**equity** | [**EquityEnum**](#EquityEnum) |  |  [optional]
-**fx** | [**FxEnum**](#FxEnum) |  |  [optional]
-**rates** | [**RatesEnum**](#RatesEnum) |  |  [optional]
-
-
-
-## Enum: CommodityEnum
-
-Name | Value
----- | -----
-DATASCOPE | &quot;DataScope&quot;
-LUSID | &quot;Lusid&quot;
-ISDA | &quot;Isda&quot;
-CLIENT | &quot;Client&quot;
-EDI | &quot;Edi&quot;
-TRADERMADE | &quot;TraderMade&quot;
-FACTSET | &quot;FactSet&quot;
-
-
-
-## Enum: CreditEnum
-
-Name | Value
----- | -----
-DATASCOPE | &quot;DataScope&quot;
-LUSID | &quot;Lusid&quot;
-ISDA | &quot;Isda&quot;
-CLIENT | &quot;Client&quot;
-EDI | &quot;Edi&quot;
-TRADERMADE | &quot;TraderMade&quot;
-FACTSET | &quot;FactSet&quot;
-
-
-
-## Enum: EquityEnum
-
-Name | Value
----- | -----
-DATASCOPE | &quot;DataScope&quot;
-LUSID | &quot;Lusid&quot;
-ISDA | &quot;Isda&quot;
-CLIENT | &quot;Client&quot;
-EDI | &quot;Edi&quot;
-TRADERMADE | &quot;TraderMade&quot;
-FACTSET | &quot;FactSet&quot;
-
-
-
-## Enum: FxEnum
-
-Name | Value
----- | -----
-DATASCOPE | &quot;DataScope&quot;
-LUSID | &quot;Lusid&quot;
-ISDA | &quot;Isda&quot;
-CLIENT | &quot;Client&quot;
-EDI | &quot;Edi&quot;
-TRADERMADE | &quot;TraderMade&quot;
-FACTSET | &quot;FactSet&quot;
-
-
-
-## Enum: RatesEnum
-
-Name | Value
----- | -----
-DATASCOPE | &quot;DataScope&quot;
-LUSID | &quot;Lusid&quot;
-ISDA | &quot;Isda&quot;
-CLIENT | &quot;Client&quot;
-EDI | &quot;Edi&quot;
-TRADERMADE | &quot;TraderMade&quot;
-FACTSET | &quot;FactSet&quot;
+**commodity** | [**ResourceSupplier**](ResourceSupplier.md) |  |  [optional]
+**credit** | [**ResourceSupplier**](ResourceSupplier.md) |  |  [optional]
+**equity** | [**ResourceSupplier**](ResourceSupplier.md) |  |  [optional]
+**fx** | [**ResourceSupplier**](ResourceSupplier.md) |  |  [optional]
+**rates** | [**ResourceSupplier**](ResourceSupplier.md) |  |  [optional]
 
 
 

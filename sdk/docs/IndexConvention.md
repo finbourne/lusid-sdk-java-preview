@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **name** | **String** | The name of the index convention | 
 **publicationDayLag** | **Integer** | Number of days between spot and publication of the rate. | 
 **paymentTenor** | [**Tenor**](Tenor.md) |  | 
-**dayCountConvention** | [**DayCountConventionEnum**](#DayCountConventionEnum) | when calculating the fraction of a year between two dates, what convention is used to represent the number of days in a year              and difference between them. | 
+**dayCountConvention** | [**DayCountConventionEnum**](#DayCountConventionEnum) | The available values are: Actual360, Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360, EuroBond, ActAct, ActualActual, ActActIsda, Invalid | 
 **currency** | **String** | Currency of the index convention. | 
 
 

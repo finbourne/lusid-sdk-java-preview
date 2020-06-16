@@ -1,6 +1,6 @@
 # StructuredMarketDataApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="deleteStructuredMarketData"></a>
 # **deleteStructuredMarketData**
-> AnnulStructuredDataResponse deleteStructuredMarketData(scope, structuredDataIds)
+> AnnulStructuredDataResponse deleteStructuredMarketData(scope, requestBody)
 
 [EXPERIMENTAL] Delete one or more items of structured market data, assuming they are present.
 
@@ -30,7 +30,7 @@ import com.finbourne.lusid.api.StructuredMarketDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -38,9 +38,9 @@ public class Example {
 
     StructuredMarketDataApi apiInstance = new StructuredMarketDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the structured market data to delete.
-    Map<String, StructuredMarketDataId> structuredDataIds = new HashMap(); // Map<String, StructuredMarketDataId> | The structured market data Ids to delete, each keyed by a unique correlation id.
+    Map<String, StructuredMarketDataId> requestBody = {"someCorrelationId1":{"provider":"DataScope","priceSource":"Some Bank Plc","lineage":"Swaps Desk Trader A","effectiveAt":"2018-03-05T00:00:00+00:00","marketElementType":"FxVol","marketAsset":"USDJPY"}}; // Map<String, StructuredMarketDataId> | The structured market data Ids to delete, each keyed by a unique correlation id.
     try {
-      AnnulStructuredDataResponse result = apiInstance.deleteStructuredMarketData(scope, structuredDataIds);
+      AnnulStructuredDataResponse result = apiInstance.deleteStructuredMarketData(scope, requestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StructuredMarketDataApi#deleteStructuredMarketData");
@@ -58,7 +58,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the structured market data to delete. |
- **structuredDataIds** | [**Map&lt;String, StructuredMarketDataId&gt;**](StructuredMarketDataId.md)| The structured market data Ids to delete, each keyed by a unique correlation id. |
+ **requestBody** | [**Map&lt;String, StructuredMarketDataId&gt;**](StructuredMarketDataId.md)| The structured market data Ids to delete, each keyed by a unique correlation id. |
 
 ### Return type
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 <a name="getStructuredMarketData"></a>
 # **getStructuredMarketData**
-> GetStructuredMarketDataResponse getStructuredMarketData(scope, structuredDataIds, effectiveAt, asAt, maxAge)
+> GetStructuredMarketDataResponse getStructuredMarketData(scope, requestBody, effectiveAt, asAt, maxAge)
 
 [EXPERIMENTAL] Get structured market data
 
@@ -101,7 +101,7 @@ import com.finbourne.lusid.api.StructuredMarketDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -109,12 +109,12 @@ public class Example {
 
     StructuredMarketDataApi apiInstance = new StructuredMarketDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the structured market data to retrieve.
-    Map<String, StructuredMarketDataId> structuredDataIds = new HashMap(); // Map<String, StructuredMarketDataId> | The time invariant set of structured data identifiers to retrieve the data for. These need to be               keyed by a unique correlation id allowing the retrieved item to be identified in the response.
+    Map<String, StructuredMarketDataId> requestBody = {"someCorrelationId1":{"provider":"DataScope","priceSource":"Some Bank Plc","lineage":"Swaps Desk Trader A","effectiveAt":"2018-03-05T00:00:00+00:00","marketElementType":"FxVol","marketAsset":"USDJPY"}}; // Map<String, StructuredMarketDataId> | The time invariant set of structured data identifiers to retrieve the data for. These need to be               keyed by a unique correlation id allowing the retrieved item to be identified in the response.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime at which to retrieve the structured market data. Defaults to the current LUSID system datetime if not specified.
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the structured market data. Defaults to return the latest version if not specified.
     String maxAge = "maxAge_example"; // String | The duration of the look back window in an ISO8601 time interval format e.g. P1Y2M3DT4H30M (1 year, 2 months, 3 days, 4 hours and 30 minutes).               This is subtracted from the provided effectiveAt datetime to generate a effective datetime window inside which a structured market data item must exist to be retrieved.
     try {
-      GetStructuredMarketDataResponse result = apiInstance.getStructuredMarketData(scope, structuredDataIds, effectiveAt, asAt, maxAge);
+      GetStructuredMarketDataResponse result = apiInstance.getStructuredMarketData(scope, requestBody, effectiveAt, asAt, maxAge);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StructuredMarketDataApi#getStructuredMarketData");
@@ -132,7 +132,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the structured market data to retrieve. |
- **structuredDataIds** | [**Map&lt;String, StructuredMarketDataId&gt;**](StructuredMarketDataId.md)| The time invariant set of structured data identifiers to retrieve the data for. These need to be               keyed by a unique correlation id allowing the retrieved item to be identified in the response. |
+ **requestBody** | [**Map&lt;String, StructuredMarketDataId&gt;**](StructuredMarketDataId.md)| The time invariant set of structured data identifiers to retrieve the data for. These need to be               keyed by a unique correlation id allowing the retrieved item to be identified in the response. |
  **effectiveAt** | **String**| The effective datetime at which to retrieve the structured market data. Defaults to the current LUSID system datetime if not specified. | [optional]
  **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the structured market data. Defaults to return the latest version if not specified. | [optional]
  **maxAge** | **String**| The duration of the look back window in an ISO8601 time interval format e.g. P1Y2M3DT4H30M (1 year, 2 months, 3 days, 4 hours and 30 minutes).               This is subtracted from the provided effectiveAt datetime to generate a effective datetime window inside which a structured market data item must exist to be retrieved. | [optional]
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertStructuredMarketData"></a>
 # **upsertStructuredMarketData**
-> UpsertStructuredDataResponse upsertStructuredMarketData(scope, structuredData)
+> UpsertStructuredDataResponse upsertStructuredMarketData(scope, requestBody)
 
 [EXPERIMENTAL] Upsert a set of structured market data items. This creates or updates the data in Lusid.
 
@@ -178,7 +178,7 @@ import com.finbourne.lusid.api.StructuredMarketDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -186,9 +186,9 @@ public class Example {
 
     StructuredMarketDataApi apiInstance = new StructuredMarketDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope to use when updating or inserting the structured market data.
-    Map<String, UpsertStructuredMarketDataRequest> structuredData = new HashMap(); // Map<String, UpsertStructuredMarketDataRequest> | The set of structured market data items to update or insert keyed by a unique correlation id.
+    Map<String, UpsertStructuredMarketDataRequest> requestBody = {"first-item":{"marketDataId":{"provider":"DataScope","priceSource":"Some Bank Plc","lineage":"Swaps Desk Trader A","effectiveAt":"2018-03-05T00:00:00+00:00","marketElementType":"FxVolSurface","marketAsset":"USDJPY"},"marketData":{"documentFormat":"Xml","version":"1.0.0","name":"free text identifier of document 1","document":"<xml>data</xml>"}},"second-item":{"marketDataId":{"provider":"DataScope","priceSource":"AN.Other Bank Plc","lineage":"Swaps Desk Trader B","effectiveAt":"2018-03-05T00:00:00+00:00","marketElementType":"IrVolCube","marketAsset":"RBS"},"marketData":{"documentFormat":"Json","version":"1.0.0","name":"free text identifier of document 1","document":"{ \"some\":\"valid json\"}"}}}; // Map<String, UpsertStructuredMarketDataRequest> | The set of structured market data items to update or insert keyed by a unique correlation id.
     try {
-      UpsertStructuredDataResponse result = apiInstance.upsertStructuredMarketData(scope, structuredData);
+      UpsertStructuredDataResponse result = apiInstance.upsertStructuredMarketData(scope, requestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StructuredMarketDataApi#upsertStructuredMarketData");
@@ -206,7 +206,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope to use when updating or inserting the structured market data. |
- **structuredData** | [**Map&lt;String, UpsertStructuredMarketDataRequest&gt;**](UpsertStructuredMarketDataRequest.md)| The set of structured market data items to update or insert keyed by a unique correlation id. |
+ **requestBody** | [**Map&lt;String, UpsertStructuredMarketDataRequest&gt;**](UpsertStructuredMarketDataRequest.md)| The set of structured market data items to update or insert keyed by a unique correlation id. |
 
 ### Return type
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details

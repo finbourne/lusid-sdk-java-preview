@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency** | **String** | Currency of the flow convention. | 
 **paymentFrequency** | [**Tenor**](Tenor.md) |  | 
-**dayCountConvention** | [**DayCountConventionEnum**](#DayCountConventionEnum) | when calculating the fraction of a year between two dates, what convention is used to represent the number of days in a year  and difference between them. | 
-**rollConvention** | [**RollConventionEnum**](#RollConventionEnum) | when generating a set of dates, what convention should be used for adjusting dates that coincide with a non-business day. | 
+**dayCountConvention** | [**DayCountConventionEnum**](#DayCountConventionEnum) | The available values are: Actual360, Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360, EuroBond, ActAct, ActualActual, ActActIsda, Invalid | 
+**rollConvention** | [**RollConventionEnum**](#RollConventionEnum) | The available values are: NoAdjustment, None, Previous, P, Following, F, ModifiedPrevious, MP, ModifiedFollowing, MF, EndOfMonth, EOM, EndOfMonthPrevious, EOMP, EndOfMonthFollowing, EOMF, Invalid | 
 **holidayCalendars** | **List&lt;String&gt;** | An array of strings denoting holiday calendars that apply to generation and payment. | 
 
 

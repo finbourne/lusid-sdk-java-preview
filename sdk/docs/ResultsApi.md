@@ -1,6 +1,6 @@
 # ResultsApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,7 +29,7 @@ import com.finbourne.lusid.api.ResultsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertResults"></a>
 # **upsertResults**
-> Results upsertResults(request)
+> Results upsertResults(createResults)
 
 [EXPERIMENTAL] Upsert results
 
@@ -106,16 +106,16 @@ import com.finbourne.lusid.api.ResultsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ResultsApi apiInstance = new ResultsApi(defaultClient);
-    CreateResults request = new CreateResults(); // CreateResults | The details of what to upsert
+    CreateResults createResults = {"effectiveAt":"2018-03-05T00:00:00+00:00","entityScope":"MyEntityScope","entityCode":"MyEntityCode","calculationScope":"MyCalculationScope","calculationCode":"MyCalculationCode","format":"DataReader","data":"[]"}; // CreateResults | The details of what to upsert
     try {
-      Results result = apiInstance.upsertResults(request);
+      Results result = apiInstance.upsertResults(createResults);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResultsApi#upsertResults");
@@ -132,7 +132,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**CreateResults**](CreateResults.md)| The details of what to upsert | [optional]
+ **createResults** | [**CreateResults**](CreateResults.md)| The details of what to upsert | [optional]
 
 ### Return type
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details

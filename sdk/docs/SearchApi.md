@@ -1,6 +1,6 @@
 # SearchApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="instrumentsSearch"></a>
 # **instrumentsSearch**
-> List&lt;InstrumentMatch&gt; instrumentsSearch(symbols, masteredEffectiveAt, masteredOnly)
+> List&lt;InstrumentMatch&gt; instrumentsSearch(instrumentSearchProperty, masteredEffectiveAt, masteredOnly)
 
 [EXPERIMENTAL] Instruments search
 
@@ -34,18 +34,18 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SearchApi apiInstance = new SearchApi(defaultClient);
-    List<InstrumentSearchProperty> symbols = Arrays.asList(null); // List<InstrumentSearchProperty> | A collection of instrument properties to search for. LUSID will return instruments for any matched              properties.
+    List<InstrumentSearchProperty> instrumentSearchProperty = {"key":"Instrument/default/Isin","value":"US0378331005"}; // List<InstrumentSearchProperty> | A collection of instrument properties to search for. LUSID will return instruments for any matched              properties.
     String masteredEffectiveAt = "masteredEffectiveAt_example"; // String | The effective datetime or cut label to use when searching mastered instruments. This parameter has no effect on instruments that  have not been mastered within LUSID. Defaults to the current LUSID system datetime if not specified.
     Boolean masteredOnly = false; // Boolean | If set to true, only search over instruments that have been mastered within LUSID. Defaults to false.
     try {
-      List<InstrumentMatch> result = apiInstance.instrumentsSearch(symbols, masteredEffectiveAt, masteredOnly);
+      List<InstrumentMatch> result = apiInstance.instrumentsSearch(instrumentSearchProperty, masteredEffectiveAt, masteredOnly);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SearchApi#instrumentsSearch");
@@ -62,7 +62,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **symbols** | [**List&lt;InstrumentSearchProperty&gt;**](InstrumentSearchProperty.md)| A collection of instrument properties to search for. LUSID will return instruments for any matched              properties. |
+ **instrumentSearchProperty** | [**List&lt;InstrumentSearchProperty&gt;**](InstrumentSearchProperty.md)| A collection of instrument properties to search for. LUSID will return instruments for any matched              properties. |
  **masteredEffectiveAt** | **String**| The effective datetime or cut label to use when searching mastered instruments. This parameter has no effect on instruments that  have not been mastered within LUSID. Defaults to the current LUSID system datetime if not specified. | [optional]
  **masteredOnly** | **Boolean**| If set to true, only search over instruments that have been mastered within LUSID. Defaults to false. | [optional] [default to false]
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 <a name="portfolioGroupsSearch"></a>
 # **portfolioGroupsSearch**
-> ResourceListOfPortfolioGroup portfolioGroupsSearch(request, filter)
+> ResourceListOfPortfolioGroup portfolioGroupsSearch(body, filter)
 
 [DEPRECATED] Portfolio groups search
 
@@ -107,17 +107,17 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SearchApi apiInstance = new SearchApi(defaultClient);
-    Object request = null; // Object | The search query to use. Read more about search queries in LUSID here https://support.lusid.com/constructing-a-search-request.
+    Object body = null; // Object | The search query to use. Read more about search queries in LUSID here https://support.lusid.com/constructing-a-search-request.
     String filter = "filter_example"; // String | Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
     try {
-      ResourceListOfPortfolioGroup result = apiInstance.portfolioGroupsSearch(request, filter);
+      ResourceListOfPortfolioGroup result = apiInstance.portfolioGroupsSearch(body, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SearchApi#portfolioGroupsSearch");
@@ -134,7 +134,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | **Object**| The search query to use. Read more about search queries in LUSID here https://support.lusid.com/constructing-a-search-request. |
+ **body** | **Object**| The search query to use. Read more about search queries in LUSID here https://support.lusid.com/constructing-a-search-request. |
  **filter** | **String**| Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
 
 ### Return type
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 <a name="portfoliosSearch"></a>
 # **portfoliosSearch**
-> ResourceListOfPortfolioSearchResult portfoliosSearch(request, filter)
+> ResourceListOfPortfolioSearchResult portfoliosSearch(body, filter)
 
 [DEPRECATED] Portfolios search
 
@@ -178,17 +178,17 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SearchApi apiInstance = new SearchApi(defaultClient);
-    Object request = null; // Object | The search query to use. Read more about search queries in LUSID here https://support.lusid.com/constructing-a-search-request.
+    Object body = null; // Object | The search query to use. Read more about search queries in LUSID here https://support.lusid.com/constructing-a-search-request.
     String filter = "filter_example"; // String | Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
     try {
-      ResourceListOfPortfolioSearchResult result = apiInstance.portfoliosSearch(request, filter);
+      ResourceListOfPortfolioSearchResult result = apiInstance.portfoliosSearch(body, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SearchApi#portfoliosSearch");
@@ -205,7 +205,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | **Object**| The search query to use. Read more about search queries in LUSID here https://support.lusid.com/constructing-a-search-request. |
+ **body** | **Object**| The search query to use. Read more about search queries in LUSID here https://support.lusid.com/constructing-a-search-request. |
  **filter** | **String**| Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
 
 ### Return type
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 <a name="propertiesSearch"></a>
 # **propertiesSearch**
-> ResourceListOfPropertyDefinition propertiesSearch(request, filter)
+> ResourceListOfPropertyDefinition propertiesSearch(body, filter)
 
 [DEPRECATED] Search property definitions
 
@@ -249,17 +249,17 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SearchApi apiInstance = new SearchApi(defaultClient);
-    Object request = null; // Object | The search query to use. Read more about search queries in LUSID here https://support.lusid.com/constructing-a-search-request.
+    Object body = null; // Object | The search query to use. Read more about search queries in LUSID here https://support.lusid.com/constructing-a-search-request.
     String filter = "filter_example"; // String | Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
     try {
-      ResourceListOfPropertyDefinition result = apiInstance.propertiesSearch(request, filter);
+      ResourceListOfPropertyDefinition result = apiInstance.propertiesSearch(body, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SearchApi#propertiesSearch");
@@ -276,7 +276,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | **Object**| The search query to use. Read more about search queries in LUSID here https://support.lusid.com/constructing-a-search-request. |
+ **body** | **Object**| The search query to use. Read more about search queries in LUSID here https://support.lusid.com/constructing-a-search-request. |
  **filter** | **String**| Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
 
 ### Return type
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -320,7 +320,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -397,7 +397,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -474,7 +474,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

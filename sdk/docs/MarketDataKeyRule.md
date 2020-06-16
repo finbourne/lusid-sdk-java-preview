@@ -7,9 +7,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **key** | **String** | The market data key pattern which this is a rule for. A dot separated string (A.B.C.D.*) | 
-**supplier** | [**SupplierEnum**](#SupplierEnum) | The market data supplier (where the data comes from) | 
+**supplier** | [**SupplierEnum**](#SupplierEnum) | The available values are: DataScope, Lusid, Isda, Client, Edi, TraderMade, FactSet | 
 **dataScope** | **String** | The scope in which the data should be found when using this rule. | 
-**quoteType** | [**QuoteTypeEnum**](#QuoteTypeEnum) | Is the quote to be looked for a price, yield etc. | 
+**quoteType** | [**QuoteTypeEnum**](#QuoteTypeEnum) | The available values are: Price, Spread, Rate, LogNormalVol, NormalVol, ParSpread, IsdaSpread, Upfront | 
 **field** | **String** | The conceptual qualification for the field, such as bid, mid, or ask.   The field must be one of a defined set for the given supplier, in the same way as it  is for the Finbourne.WebApi.Interface.Dto.Quotes.QuoteSeriesId | 
 **quoteInterval** | **String** | Shorthand for the time interval used to select market data. |  [optional]
 **asAt** | [**OffsetDateTime**](OffsetDateTime.md) | The AsAt predicate specification. |  [optional]

@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **value** | **Double** |  |  [optional]
-**unit** | [**UnitEnum**](#UnitEnum) |  |  [optional]
+**unit** | [**UnitEnum**](#UnitEnum) | The available values are: Invalid, BusinessDay, Bd, Day, D, Week, W, Month, M, Quarter, Q, Qtr, SemiAnnual, SA, Year, Y, Annual |  [optional]
 
 
 

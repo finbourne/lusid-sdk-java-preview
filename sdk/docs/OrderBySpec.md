@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **String** |  | 
-**sortOrder** | [**SortOrderEnum**](#SortOrderEnum) |  | 
+**key** | **String** | The key that uniquely identifies the property. It has the format {domain}/{scope}/{code}. | 
+**sortOrder** | [**SortOrderEnum**](#SortOrderEnum) | The available values are: Ascending, Descending | 
 
 
 

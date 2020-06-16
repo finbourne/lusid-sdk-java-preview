@@ -1,6 +1,6 @@
 # DataTypesApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createDataType"></a>
 # **createDataType**
-> DataType createDataType(request)
+> DataType createDataType(createDataTypeRequest)
 
 [BETA] Create data type definition
 
@@ -32,16 +32,16 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     DataTypesApi apiInstance = new DataTypesApi(defaultClient);
-    CreateDataTypeRequest request = new CreateDataTypeRequest(); // CreateDataTypeRequest | The definition of the new data type
+    CreateDataTypeRequest createDataTypeRequest = {"scope":"TestScope","code":"MyType","typeValueRange":"Open","displayName":"My data format","description":"Data type description","valueType":"Decimal","unitSchema":"Basic","acceptableUnits":[{"code":"Ap","displayName":"Apples","description":"A quantity of apples"},{"code":"Bn","displayName":"Bananas","description":"A quantity of bananas"},{"code":"Ch","displayName":"Cherry","description":"A quantity of cherries"}]}; // CreateDataTypeRequest | The definition of the new data type
     try {
-      DataType result = apiInstance.createDataType(request);
+      DataType result = apiInstance.createDataType(createDataTypeRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataTypesApi#createDataType");
@@ -58,7 +58,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**CreateDataTypeRequest**](CreateDataTypeRequest.md)| The definition of the new data type | [optional]
+ **createDataTypeRequest** | [**CreateDataTypeRequest**](CreateDataTypeRequest.md)| The definition of the new data type | [optional]
 
 ### Return type
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -101,7 +101,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -174,7 +174,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -251,7 +251,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 <a name="updateDataType"></a>
 # **updateDataType**
-> DataType updateDataType(scope, code, request)
+> DataType updateDataType(scope, code, updateDataTypeRequest)
 
 [BETA] Update data type definition
 
@@ -332,7 +332,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -341,9 +341,9 @@ public class Example {
     DataTypesApi apiInstance = new DataTypesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the data type
     String code = "code_example"; // String | The code of the data type
-    UpdateDataTypeRequest request = new UpdateDataTypeRequest(); // UpdateDataTypeRequest | The updated definition of the data type
+    UpdateDataTypeRequest updateDataTypeRequest = {"typeValueRange":"Open","displayName":"My data format","description":"Data type description","valueType":"Decimal","unitSchema":"Basic","acceptableUnits":[{"code":"Ap","displayName":"Apples","description":"A quantity of apples"},{"code":"Bn","displayName":"Bananas","description":"A quantity of bananas"},{"code":"Ch","displayName":"Cherry","description":"A quantity of cherries"}]}; // UpdateDataTypeRequest | The updated definition of the data type
     try {
-      DataType result = apiInstance.updateDataType(scope, code, request);
+      DataType result = apiInstance.updateDataType(scope, code, updateDataTypeRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataTypesApi#updateDataType");
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the data type |
  **code** | **String**| The code of the data type |
- **request** | [**UpdateDataTypeRequest**](UpdateDataTypeRequest.md)| The updated definition of the data type | [optional]
+ **updateDataTypeRequest** | [**UpdateDataTypeRequest**](UpdateDataTypeRequest.md)| The updated definition of the data type | [optional]
 
 ### Return type
 
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details

@@ -7,9 +7,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **version** | [**Version**](Version.md) |  |  [optional]
-**href** | **String** |  |  [optional]
+**href** | [**URI**](URI.md) |  |  [optional]
 **values** | **String** |  |  [optional]
-**format** | [**FormatEnum**](#FormatEnum) |  |  [optional]
+**format** | [**FormatEnum**](#FormatEnum) | The available values are: DataReader, Portfolio, Csv, Unknown |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 

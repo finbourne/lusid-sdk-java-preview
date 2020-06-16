@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** |  |  [optional]
+**href** | [**URI**](URI.md) |  |  [optional]
 **entityId** | [**ResourceId**](ResourceId.md) |  | 
 **corrected** | **Boolean** |  | 
 **correctionEffectiveAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]

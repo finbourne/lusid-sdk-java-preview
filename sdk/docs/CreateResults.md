@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **entityCode** | **String** | The code of the entity for which the data has been calculated. | 
 **calculationScope** | **String** | Scope of the calculation code. | 
 **calculationCode** | **String** | This is the identifier which denotes some hash of, or recipe, that cumulatively represents the configuration through which  the results being stored are obtained. For example, the recipe denotes the pricing model, the market data and any other  settings. If the results were calculated externally it should be some repeatable hash or other Id that denotes the particular  configuration under which those results were obtained. | 
-**format** | [**FormatEnum**](#FormatEnum) | The format in which the results are stored/structured. |  [optional]
+**format** | [**FormatEnum**](#FormatEnum) | The available values are: DataReader, Portfolio, Csv, Unknown |  [optional]
 **data** | **String** | The data that should be stored in the results cube. |  [optional]
 
 

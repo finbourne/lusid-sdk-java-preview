@@ -1,6 +1,6 @@
 # ReconciliationsApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="reconcileHoldings"></a>
 # **reconcileHoldings**
-> ResourceListOfReconciliationBreak reconcileHoldings(sortBy, start, limit, filter, request)
+> ResourceListOfReconciliationBreak reconcileHoldings(sortBy, start, limit, filter, portfoliosReconciliationRequest)
 
 [EARLY ACCESS] Reconcile portfolio holdings
 
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -42,9 +42,9 @@ public class Example {
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
     Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
     String filter = "filter_example"; // String | Optional. Expression to filter the result set.              For example, to filter on the left portfolio Code, use \"left.portfolioId.code eq 'string'\"              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
-    PortfoliosReconciliationRequest request = new PortfoliosReconciliationRequest(); // PortfoliosReconciliationRequest | The specifications of the inputs to the reconciliation
+    PortfoliosReconciliationRequest portfoliosReconciliationRequest = ["instrument-identifier-1","instrument-identifier-2"]; // PortfoliosReconciliationRequest | The specifications of the inputs to the reconciliation
     try {
-      ResourceListOfReconciliationBreak result = apiInstance.reconcileHoldings(sortBy, start, limit, filter, request);
+      ResourceListOfReconciliationBreak result = apiInstance.reconcileHoldings(sortBy, start, limit, filter, portfoliosReconciliationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReconciliationsApi#reconcileHoldings");
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
  **start** | **Integer**| Optional. When paginating, skip this number of results | [optional]
  **limit** | **Integer**| Optional. When paginating, limit the number of returned results to this many. | [optional]
  **filter** | **String**| Optional. Expression to filter the result set.              For example, to filter on the left portfolio Code, use \&quot;left.portfolioId.code eq &#39;string&#39;\&quot;              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
- **request** | [**PortfoliosReconciliationRequest**](PortfoliosReconciliationRequest.md)| The specifications of the inputs to the reconciliation | [optional]
+ **portfoliosReconciliationRequest** | [**PortfoliosReconciliationRequest**](PortfoliosReconciliationRequest.md)| The specifications of the inputs to the reconciliation | [optional]
 
 ### Return type
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 <a name="reconcileHoldingsPreview"></a>
 # **reconcileHoldingsPreview**
-> ResourceListOfReconciliationBreak reconcileHoldingsPreview(sortBy, start, limit, filter, request)
+> ResourceListOfReconciliationBreak reconcileHoldingsPreview(sortBy, start, limit, filter, portfoliosReconciliationRequestPreview)
 
 [EXPERIMENTAL] Reconcile portfolio holdings with given tolerance
 
@@ -108,7 +108,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -119,9 +119,9 @@ public class Example {
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
     Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
     String filter = "filter_example"; // String | Optional. Expression to filter the result set
-    PortfoliosReconciliationRequestPreview request = new PortfoliosReconciliationRequestPreview(); // PortfoliosReconciliationRequestPreview | The specifications of the inputs to the reconciliation. This request can take tolerance for units and cost.
+    PortfoliosReconciliationRequestPreview portfoliosReconciliationRequestPreview = ["instrument-identifier-1","instrument-identifier-2"]; // PortfoliosReconciliationRequestPreview | The specifications of the inputs to the reconciliation. This request can take tolerance for units and cost.
     try {
-      ResourceListOfReconciliationBreak result = apiInstance.reconcileHoldingsPreview(sortBy, start, limit, filter, request);
+      ResourceListOfReconciliationBreak result = apiInstance.reconcileHoldingsPreview(sortBy, start, limit, filter, portfoliosReconciliationRequestPreview);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReconciliationsApi#reconcileHoldingsPreview");
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
  **start** | **Integer**| Optional. When paginating, skip this number of results | [optional]
  **limit** | **Integer**| Optional. When paginating, limit the number of returned results to this many. | [optional]
  **filter** | **String**| Optional. Expression to filter the result set | [optional]
- **request** | [**PortfoliosReconciliationRequestPreview**](PortfoliosReconciliationRequestPreview.md)| The specifications of the inputs to the reconciliation. This request can take tolerance for units and cost. | [optional]
+ **portfoliosReconciliationRequestPreview** | [**PortfoliosReconciliationRequestPreview**](PortfoliosReconciliationRequestPreview.md)| The specifications of the inputs to the reconciliation. This request can take tolerance for units and cost. | [optional]
 
 ### Return type
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 <a name="reconcileInline"></a>
 # **reconcileInline**
-> ResourceListOfReconciliationBreak reconcileInline(sortBy, start, limit, filter, request)
+> ResourceListOfReconciliationBreak reconcileInline(sortBy, start, limit, filter, inlineValuationsReconciliationRequest)
 
 [EXPERIMENTAL] Reconcile valuations performed on one or two sets of inline instruments using one or two configuration recipes.
 
@@ -185,7 +185,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -196,9 +196,9 @@ public class Example {
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
     Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
     String filter = "filter_example"; // String | Optional. Expression to filter the result set.              For example, to filter on the left portfolio Code, use \"left.portfolioId.code eq 'string'\"              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
-    InlineValuationsReconciliationRequest request = new InlineValuationsReconciliationRequest(); // InlineValuationsReconciliationRequest | The specifications of the inputs to the reconciliation
+    InlineValuationsReconciliationRequest inlineValuationsReconciliationRequest = ["instrument-identifier-1","instrument-identifier-2"]; // InlineValuationsReconciliationRequest | The specifications of the inputs to the reconciliation
     try {
-      ResourceListOfReconciliationBreak result = apiInstance.reconcileInline(sortBy, start, limit, filter, request);
+      ResourceListOfReconciliationBreak result = apiInstance.reconcileInline(sortBy, start, limit, filter, inlineValuationsReconciliationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReconciliationsApi#reconcileInline");
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
  **start** | **Integer**| Optional. When paginating, skip this number of results | [optional]
  **limit** | **Integer**| Optional. When paginating, limit the number of returned results to this many. | [optional]
  **filter** | **String**| Optional. Expression to filter the result set.              For example, to filter on the left portfolio Code, use \&quot;left.portfolioId.code eq &#39;string&#39;\&quot;              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
- **request** | [**InlineValuationsReconciliationRequest**](InlineValuationsReconciliationRequest.md)| The specifications of the inputs to the reconciliation | [optional]
+ **inlineValuationsReconciliationRequest** | [**InlineValuationsReconciliationRequest**](InlineValuationsReconciliationRequest.md)| The specifications of the inputs to the reconciliation | [optional]
 
 ### Return type
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 <a name="reconcileValuation"></a>
 # **reconcileValuation**
-> ResourceListOfReconciliationBreak reconcileValuation(sortBy, start, limit, filter, request)
+> ResourceListOfReconciliationBreak reconcileValuation(sortBy, start, limit, filter, valuationsReconciliationRequest)
 
 [EXPERIMENTAL] Reconcile valuations performed on one or two sets of holdings using one or two configuration recipes.
 
@@ -262,7 +262,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -273,9 +273,9 @@ public class Example {
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
     Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
     String filter = "filter_example"; // String | Optional. Expression to filter the result set.               For example, to filter on the left portfolio Code, use \"left.portfolioId.code eq 'string'\"              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
-    ValuationsReconciliationRequest request = new ValuationsReconciliationRequest(); // ValuationsReconciliationRequest | The specifications of the inputs to the reconciliation
+    ValuationsReconciliationRequest valuationsReconciliationRequest = ["instrument-identifier-1","instrument-identifier-2"]; // ValuationsReconciliationRequest | The specifications of the inputs to the reconciliation
     try {
-      ResourceListOfReconciliationBreak result = apiInstance.reconcileValuation(sortBy, start, limit, filter, request);
+      ResourceListOfReconciliationBreak result = apiInstance.reconcileValuation(sortBy, start, limit, filter, valuationsReconciliationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReconciliationsApi#reconcileValuation");
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
  **start** | **Integer**| Optional. When paginating, skip this number of results | [optional]
  **limit** | **Integer**| Optional. When paginating, limit the number of returned results to this many. | [optional]
  **filter** | **String**| Optional. Expression to filter the result set.               For example, to filter on the left portfolio Code, use \&quot;left.portfolioId.code eq &#39;string&#39;\&quot;              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
- **request** | [**ValuationsReconciliationRequest**](ValuationsReconciliationRequest.md)| The specifications of the inputs to the reconciliation | [optional]
+ **valuationsReconciliationRequest** | [**ValuationsReconciliationRequest**](ValuationsReconciliationRequest.md)| The specifications of the inputs to the reconciliation | [optional]
 
 ### Return type
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details

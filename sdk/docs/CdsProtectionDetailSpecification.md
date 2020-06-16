@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**seniority** | [**SeniorityEnum**](#SeniorityEnum) | The seniority level of the CDS | 
-**restructuringType** | [**RestructuringTypeEnum**](#RestructuringTypeEnum) | The restructuring clause | 
+**seniority** | [**SeniorityEnum**](#SeniorityEnum) | The available values are: Unknown, SNR, SUB, JRSUBUT2, PREFT1, SECDOM, SNRFOR, SUBLT2 | 
+**restructuringType** | [**RestructuringTypeEnum**](#RestructuringTypeEnum) | The available values are: Unknown, CR, MR, MM, XR | 
 **protectStartDay** | **Boolean** | Does the protection leg pay out in the case of default on the start date | 
 **payAccruedInterestOnDefault** | **Boolean** | Should accrued interest on the premium leg be paid if a credit event occurs | 
 

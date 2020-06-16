@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **String** |  |  [optional]
-**op** | [**OpEnum**](#OpEnum) |  |  [optional]
+**key** | **String** | The key that uniquely identifies the property. It has the format {domain}/{scope}/{code}. |  [optional]
+**op** | [**OpEnum**](#OpEnum) | The available values are: Sum, Proportion, Average, Count, Min, Max, Value |  [optional]
 
 
 

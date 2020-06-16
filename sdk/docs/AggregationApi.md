@@ -1,6 +1,6 @@
 # AggregationApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="generateConfigurationRecipe"></a>
 # **generateConfigurationRecipe**
-> ConfigurationRecipe generateConfigurationRecipe(scope, code, request)
+> ConfigurationRecipe generateConfigurationRecipe(scope, code, createRecipeRequest)
 
 [EXPERIMENTAL] Generates a recipe sufficient to perform valuations for the given portfolio.
 
@@ -35,7 +35,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -44,9 +44,9 @@ public class Example {
     AggregationApi apiInstance = new AggregationApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the portfolio
     String code = "code_example"; // String | The code of the portfolio
-    CreateRecipeRequest request = new CreateRecipeRequest(); // CreateRecipeRequest | The request specifying the parameters to generating the recipe
+    CreateRecipeRequest createRecipeRequest = {"recipeCreationMarketDataScopes":["MyScope"],"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00"}; // CreateRecipeRequest | The request specifying the parameters to generating the recipe
     try {
-      ConfigurationRecipe result = apiInstance.generateConfigurationRecipe(scope, code, request);
+      ConfigurationRecipe result = apiInstance.generateConfigurationRecipe(scope, code, createRecipeRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AggregationApi#generateConfigurationRecipe");
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the portfolio |
  **code** | **String**| The code of the portfolio |
- **request** | [**CreateRecipeRequest**](CreateRecipeRequest.md)| The request specifying the parameters to generating the recipe | [optional]
+ **createRecipeRequest** | [**CreateRecipeRequest**](CreateRecipeRequest.md)| The request specifying the parameters to generating the recipe | [optional]
 
 ### Return type
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 <a name="getAggregationByGroup"></a>
 # **getAggregationByGroup**
-> ListAggregationResponse getAggregationByGroup(scope, code, sortBy, start, limit, request)
+> ListAggregationResponse getAggregationByGroup(scope, code, sortBy, start, limit, aggregationRequest)
 
 [EXPERIMENTAL] Aggregate data in a portfolio group
 
@@ -108,7 +108,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -120,9 +120,9 @@ public class Example {
     List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
     Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
-    AggregationRequest request = new AggregationRequest(); // AggregationRequest | The request specifying the parameters of the aggregation
+    AggregationRequest aggregationRequest = ["instrument-identifier-1","instrument-identifier-2"]; // AggregationRequest | The request specifying the parameters of the aggregation
     try {
-      ListAggregationResponse result = apiInstance.getAggregationByGroup(scope, code, sortBy, start, limit, request);
+      ListAggregationResponse result = apiInstance.getAggregationByGroup(scope, code, sortBy, start, limit, aggregationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AggregationApi#getAggregationByGroup");
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
  **sortBy** | [**List&lt;String&gt;**](String.md)| Optional. Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName | [optional]
  **start** | **Integer**| Optional. When paginating, skip this number of results | [optional]
  **limit** | **Integer**| Optional. When paginating, limit the number of returned results to this many. | [optional]
- **request** | [**AggregationRequest**](AggregationRequest.md)| The request specifying the parameters of the aggregation | [optional]
+ **aggregationRequest** | [**AggregationRequest**](AggregationRequest.md)| The request specifying the parameters of the aggregation | [optional]
 
 ### Return type
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 <a name="getAggregationByPortfolio"></a>
 # **getAggregationByPortfolio**
-> ListAggregationResponse getAggregationByPortfolio(scope, code, sortBy, start, limit, request)
+> ListAggregationResponse getAggregationByPortfolio(scope, code, sortBy, start, limit, aggregationRequest)
 
 [EXPERIMENTAL] Aggregate data in a portfolio
 
@@ -187,7 +187,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -199,9 +199,9 @@ public class Example {
     List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
     Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
-    AggregationRequest request = new AggregationRequest(); // AggregationRequest | The request specifying the parameters of the aggregation
+    AggregationRequest aggregationRequest = ["instrument-identifier-1","instrument-identifier-2"]; // AggregationRequest | The request specifying the parameters of the aggregation
     try {
-      ListAggregationResponse result = apiInstance.getAggregationByPortfolio(scope, code, sortBy, start, limit, request);
+      ListAggregationResponse result = apiInstance.getAggregationByPortfolio(scope, code, sortBy, start, limit, aggregationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AggregationApi#getAggregationByPortfolio");
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
  **sortBy** | [**List&lt;String&gt;**](String.md)| Optional. Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName | [optional]
  **start** | **Integer**| Optional. When paginating, skip this number of results | [optional]
  **limit** | **Integer**| Optional. When paginating, limit the number of returned results to this many. | [optional]
- **request** | [**AggregationRequest**](AggregationRequest.md)| The request specifying the parameters of the aggregation | [optional]
+ **aggregationRequest** | [**AggregationRequest**](AggregationRequest.md)| The request specifying the parameters of the aggregation | [optional]
 
 ### Return type
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 <a name="getAggregationByResultSet"></a>
 # **getAggregationByResultSet**
-> ListAggregationResponse getAggregationByResultSet(scope, resultsKey, sortBy, start, limit, request)
+> ListAggregationResponse getAggregationByResultSet(scope, resultsKey, sortBy, start, limit, aggregationRequest)
 
 [EXPERIMENTAL] Aggregate using result data
 
@@ -266,7 +266,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -278,9 +278,9 @@ public class Example {
     List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
     Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
-    AggregationRequest request = new AggregationRequest(); // AggregationRequest | The request specifying the parameters of the aggregation
+    AggregationRequest aggregationRequest = ["instrument-identifier-1","instrument-identifier-2"]; // AggregationRequest | The request specifying the parameters of the aggregation
     try {
-      ListAggregationResponse result = apiInstance.getAggregationByResultSet(scope, resultsKey, sortBy, start, limit, request);
+      ListAggregationResponse result = apiInstance.getAggregationByResultSet(scope, resultsKey, sortBy, start, limit, aggregationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AggregationApi#getAggregationByResultSet");
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
  **sortBy** | [**List&lt;String&gt;**](String.md)| Optional. Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName | [optional]
  **start** | **Integer**| Optional. When paginating, skip this number of results | [optional]
  **limit** | **Integer**| Optional. When paginating, limit the number of returned results to this many. | [optional]
- **request** | [**AggregationRequest**](AggregationRequest.md)| The request specifying the parameters of the aggregation | [optional]
+ **aggregationRequest** | [**AggregationRequest**](AggregationRequest.md)| The request specifying the parameters of the aggregation | [optional]
 
 ### Return type
 
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 <a name="getAggregationOfWeightedInstruments"></a>
 # **getAggregationOfWeightedInstruments**
-> ListAggregationResponse getAggregationOfWeightedInstruments(scope, sortBy, start, limit, inlineRequest)
+> ListAggregationResponse getAggregationOfWeightedInstruments(scope, sortBy, start, limit, inlineAggregationRequest)
 
 [EXPERIMENTAL] Aggregate data in an inlined portfolio
 
@@ -345,7 +345,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -356,9 +356,9 @@ public class Example {
     List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
     Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
-    InlineAggregationRequest inlineRequest = new InlineAggregationRequest(); // InlineAggregationRequest | The request specifying the parameters of the aggregation and the inlined set of instruments to aggregate over.
+    InlineAggregationRequest inlineAggregationRequest = ["instrument-identifier-1","instrument-identifier-2"]; // InlineAggregationRequest | The request specifying the parameters of the aggregation and the inlined set of instruments to aggregate over.
     try {
-      ListAggregationResponse result = apiInstance.getAggregationOfWeightedInstruments(scope, sortBy, start, limit, inlineRequest);
+      ListAggregationResponse result = apiInstance.getAggregationOfWeightedInstruments(scope, sortBy, start, limit, inlineAggregationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AggregationApi#getAggregationOfWeightedInstruments");
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
  **sortBy** | [**List&lt;String&gt;**](String.md)| Optional. Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName | [optional]
  **start** | **Integer**| Optional. When paginating, skip this number of results | [optional]
  **limit** | **Integer**| Optional. When paginating, limit the number of returned results to this many. | [optional]
- **inlineRequest** | [**InlineAggregationRequest**](InlineAggregationRequest.md)| The request specifying the parameters of the aggregation and the inlined set of instruments to aggregate over. | [optional]
+ **inlineAggregationRequest** | [**InlineAggregationRequest**](InlineAggregationRequest.md)| The request specifying the parameters of the aggregation and the inlined set of instruments to aggregate over. | [optional]
 
 ### Return type
 
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 <a name="getNestedAggregationByGroup"></a>
 # **getNestedAggregationByGroup**
-> NestedAggregationResponse getNestedAggregationByGroup(scope, code, request)
+> NestedAggregationResponse getNestedAggregationByGroup(scope, code, aggregationRequest)
 
 [EXPERIMENTAL] Aggregate data in a portfolio group, as nested
 
@@ -422,7 +422,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -431,9 +431,9 @@ public class Example {
     AggregationApi apiInstance = new AggregationApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the portfolio group
     String code = "code_example"; // String | The code of the portfolio group
-    AggregationRequest request = new AggregationRequest(); // AggregationRequest | The request specifying the parameters of the aggregation
+    AggregationRequest aggregationRequest = {"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"]}; // AggregationRequest | The request specifying the parameters of the aggregation
     try {
-      NestedAggregationResponse result = apiInstance.getNestedAggregationByGroup(scope, code, request);
+      NestedAggregationResponse result = apiInstance.getNestedAggregationByGroup(scope, code, aggregationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AggregationApi#getNestedAggregationByGroup");
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the portfolio group |
  **code** | **String**| The code of the portfolio group |
- **request** | [**AggregationRequest**](AggregationRequest.md)| The request specifying the parameters of the aggregation | [optional]
+ **aggregationRequest** | [**AggregationRequest**](AggregationRequest.md)| The request specifying the parameters of the aggregation | [optional]
 
 ### Return type
 
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 
 <a name="getNestedAggregationByPortfolio"></a>
 # **getNestedAggregationByPortfolio**
-> NestedAggregationResponse getNestedAggregationByPortfolio(scope, code, request)
+> NestedAggregationResponse getNestedAggregationByPortfolio(scope, code, aggregationRequest)
 
 [EXPERIMENTAL] 
 
@@ -495,7 +495,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -504,9 +504,9 @@ public class Example {
     AggregationApi apiInstance = new AggregationApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the portfolio
     String code = "code_example"; // String | The code of the portfolio
-    AggregationRequest request = new AggregationRequest(); // AggregationRequest | The request specifying the parameters of the aggregation
+    AggregationRequest aggregationRequest = {"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"]}; // AggregationRequest | The request specifying the parameters of the aggregation
     try {
-      NestedAggregationResponse result = apiInstance.getNestedAggregationByPortfolio(scope, code, request);
+      NestedAggregationResponse result = apiInstance.getNestedAggregationByPortfolio(scope, code, aggregationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AggregationApi#getNestedAggregationByPortfolio");
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the portfolio |
  **code** | **String**| The code of the portfolio |
- **request** | [**AggregationRequest**](AggregationRequest.md)| The request specifying the parameters of the aggregation | [optional]
+ **aggregationRequest** | [**AggregationRequest**](AggregationRequest.md)| The request specifying the parameters of the aggregation | [optional]
 
 ### Return type
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -568,7 +568,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

@@ -1,6 +1,6 @@
 # InstrumentsApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -37,7 +37,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteInstrumentProperties"></a>
 # **deleteInstrumentProperties**
-> DeleteInstrumentPropertiesResponse deleteInstrumentProperties(identifierType, identifier, propertyKeys, effectiveAt)
+> DeleteInstrumentPropertiesResponse deleteInstrumentProperties(identifierType, identifier, requestBody, effectiveAt)
 
 [EXPERIMENTAL] Delete properties from an instrument
 
@@ -108,7 +108,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -117,10 +117,10 @@ public class Example {
     InstrumentsApi apiInstance = new InstrumentsApi(defaultClient);
     String identifierType = "identifierType_example"; // String | The identifier type of the instrument, e.g., \"Figi\"
     String identifier = "identifier_example"; // String | The identifier of the instrument to delete properties from.
-    List<String> propertyKeys = Arrays.asList(); // List<String> | The property keys of the properties to be deleted from the instrument. Only properties in the  Finbourne.WebApi.Interface.Dto.PropertyDomain.Instrument domain can be supplied.
+    List<String> requestBody = ["Instrument/scope/market-sector","Instrument/scope/tenor"]; // List<String> | The property keys of the properties to be deleted from the instrument. Only properties in the  Finbourne.WebApi.Interface.Dto.PropertyDomain.Instrument domain can be supplied.
     String effectiveAt = "effectiveAt_example"; // String | The effective date to delete the properties from. Note that this is only valid to set if the properties being deleted  are defined to be Finbourne.WebApi.Interface.Dto.PropertyLifeTime.TimeVariant, otherwise this value must not be set.
     try {
-      DeleteInstrumentPropertiesResponse result = apiInstance.deleteInstrumentProperties(identifierType, identifier, propertyKeys, effectiveAt);
+      DeleteInstrumentPropertiesResponse result = apiInstance.deleteInstrumentProperties(identifierType, identifier, requestBody, effectiveAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstrumentsApi#deleteInstrumentProperties");
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifierType** | **String**| The identifier type of the instrument, e.g., \&quot;Figi\&quot; |
  **identifier** | **String**| The identifier of the instrument to delete properties from. |
- **propertyKeys** | [**List&lt;String&gt;**](String.md)| The property keys of the properties to be deleted from the instrument. Only properties in the  Finbourne.WebApi.Interface.Dto.PropertyDomain.Instrument domain can be supplied. |
+ **requestBody** | [**List&lt;String&gt;**](String.md)| The property keys of the properties to be deleted from the instrument. Only properties in the  Finbourne.WebApi.Interface.Dto.PropertyDomain.Instrument domain can be supplied. |
  **effectiveAt** | **String**| The effective date to delete the properties from. Note that this is only valid to set if the properties being deleted  are defined to be Finbourne.WebApi.Interface.Dto.PropertyLifeTime.TimeVariant, otherwise this value must not be set. | [optional]
 
 ### Return type
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -183,7 +183,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -260,7 +260,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -305,7 +305,7 @@ This endpoint does not need any parameter.
 
 <a name="getInstruments"></a>
 # **getInstruments**
-> GetInstrumentsResponse getInstruments(identifierType, identifiers, effectiveAt, asAt, propertyKeys)
+> GetInstrumentsResponse getInstruments(identifierType, requestBody, effectiveAt, asAt, propertyKeys)
 
 Get instruments
 
@@ -324,7 +324,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -332,12 +332,12 @@ public class Example {
 
     InstrumentsApi apiInstance = new InstrumentsApi(defaultClient);
     String identifierType = "identifierType_example"; // String | The identifier being supplied e.g. \"Figi\".
-    List<String> identifiers = Arrays.asList(); // List<String> | The values of the identifier for the requested instruments.
+    List<String> requestBody = ["Instrument/scope/market-sector","Instrument/scope/tenor"]; // List<String> | The values of the identifier for the requested instruments.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to retrieve the instrument definitions.              Defaults to the current LUSID system datetime if not specified.
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the instrument definitions.              Defaults to return the latest version of each instrument definition if not specified.
     List<String> propertyKeys = Arrays.asList(); // List<String> | A list of property keys from the \"Instrument\" domain to decorate onto the instrument.              These take the format {domain}/{scope}/{code} e.g. \"Instrument/system/Name\".
     try {
-      GetInstrumentsResponse result = apiInstance.getInstruments(identifierType, identifiers, effectiveAt, asAt, propertyKeys);
+      GetInstrumentsResponse result = apiInstance.getInstruments(identifierType, requestBody, effectiveAt, asAt, propertyKeys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstrumentsApi#getInstruments");
@@ -355,7 +355,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifierType** | **String**| The identifier being supplied e.g. \&quot;Figi\&quot;. |
- **identifiers** | [**List&lt;String&gt;**](String.md)| The values of the identifier for the requested instruments. |
+ **requestBody** | [**List&lt;String&gt;**](String.md)| The values of the identifier for the requested instruments. |
  **effectiveAt** | **String**| The effective datetime or cut label at which to retrieve the instrument definitions.              Defaults to the current LUSID system datetime if not specified. | [optional]
  **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the instrument definitions.              Defaults to return the latest version of each instrument definition if not specified. | [optional]
  **propertyKeys** | [**List&lt;String&gt;**](String.md)| A list of property keys from the \&quot;Instrument\&quot; domain to decorate onto the instrument.              These take the format {domain}/{scope}/{code} e.g. \&quot;Instrument/system/Name\&quot;. | [optional]
@@ -370,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -401,7 +401,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 <a name="updateInstrumentIdentifier"></a>
 # **updateInstrumentIdentifier**
-> Instrument updateInstrumentIdentifier(identifierType, identifier, request)
+> Instrument updateInstrumentIdentifier(identifierType, identifier, updateInstrumentIdentifierRequest)
 
 [EARLY ACCESS] Update instrument identifier
 
@@ -484,7 +484,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -493,9 +493,9 @@ public class Example {
     InstrumentsApi apiInstance = new InstrumentsApi(defaultClient);
     String identifierType = "identifierType_example"; // String | The identifier to use to resolve the instrument e.g. \"Figi\".
     String identifier = "identifier_example"; // String | The original value of the identifier for the requested instrument.
-    UpdateInstrumentIdentifierRequest request = new UpdateInstrumentIdentifierRequest(); // UpdateInstrumentIdentifierRequest | The identifier to update or remove. This may or may not be the same identifier used              to resolve the instrument.
+    UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest = {"type":"Figi","value":"updated-figi","effectiveAt":"2018-02-01T10:00:00+00:00"}; // UpdateInstrumentIdentifierRequest | The identifier to update or remove. This may or may not be the same identifier used              to resolve the instrument.
     try {
-      Instrument result = apiInstance.updateInstrumentIdentifier(identifierType, identifier, request);
+      Instrument result = apiInstance.updateInstrumentIdentifier(identifierType, identifier, updateInstrumentIdentifierRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstrumentsApi#updateInstrumentIdentifier");
@@ -514,7 +514,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifierType** | **String**| The identifier to use to resolve the instrument e.g. \&quot;Figi\&quot;. |
  **identifier** | **String**| The original value of the identifier for the requested instrument. |
- **request** | [**UpdateInstrumentIdentifierRequest**](UpdateInstrumentIdentifierRequest.md)| The identifier to update or remove. This may or may not be the same identifier used              to resolve the instrument. |
+ **updateInstrumentIdentifierRequest** | [**UpdateInstrumentIdentifierRequest**](UpdateInstrumentIdentifierRequest.md)| The identifier to update or remove. This may or may not be the same identifier used              to resolve the instrument. |
 
 ### Return type
 
@@ -526,7 +526,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -538,7 +538,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertInstruments"></a>
 # **upsertInstruments**
-> UpsertInstrumentsResponse upsertInstruments(instruments)
+> UpsertInstrumentsResponse upsertInstruments(requestBody)
 
 Upsert instruments
 
@@ -557,16 +557,16 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     InstrumentsApi apiInstance = new InstrumentsApi(defaultClient);
-    Map<String, InstrumentDefinition> instruments = new HashMap(); // Map<String, InstrumentDefinition> | The definitions of the instruments to update or insert.
+    Map<String, InstrumentDefinition> requestBody = {"request_id_1":{"name":"Instrument name","identifiers":{"clientInternal":{"value":"some-identifier","effectiveAt":"0001-01-01T00:00:00+00:00"},"figi":{"value":"some-figi-code","effectiveAt":"0001-01-01T00:00:00+00:00"}},"properties":[{"key":"Instrument/default/Isin","value":{"labelValue":"US0378331005"},"effectiveFrom":"2018-06-18T09:00:00+00:00"}],"lookThroughPortfolioId":{"scope":"MyScope","code":"portfolio-code"},"definition":{"instrumentFormat":"some-format","content":"{\"some-key\": \"some-value\"}"}},"request_id_2":{"name":"Instrument name","identifiers":{"clientInternal":{"value":"some-identifier-2","effectiveAt":"0001-01-01T00:00:00+00:00"},"figi":{"value":"some-figi-code-2","effectiveAt":"0001-01-01T00:00:00+00:00"}},"properties":[],"lookThroughPortfolioId":{"scope":"MyScope","code":"portfolio-code"},"definition":{"instrumentFormat":"some-format","content":"{\"some-key\": \"some-value\"}"}}}; // Map<String, InstrumentDefinition> | The definitions of the instruments to update or insert.
     try {
-      UpsertInstrumentsResponse result = apiInstance.upsertInstruments(instruments);
+      UpsertInstrumentsResponse result = apiInstance.upsertInstruments(requestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstrumentsApi#upsertInstruments");
@@ -583,7 +583,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **instruments** | [**Map&lt;String, InstrumentDefinition&gt;**](InstrumentDefinition.md)| The definitions of the instruments to update or insert. |
+ **requestBody** | [**Map&lt;String, InstrumentDefinition&gt;**](InstrumentDefinition.md)| The definitions of the instruments to update or insert. |
 
 ### Return type
 
@@ -595,7 +595,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertInstrumentsProperties"></a>
 # **upsertInstrumentsProperties**
-> UpsertInstrumentPropertiesResponse upsertInstrumentsProperties(instrumentProperties)
+> UpsertInstrumentPropertiesResponse upsertInstrumentsProperties(upsertInstrumentPropertyRequest)
 
 Upsert instruments properties
 
@@ -626,16 +626,16 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     InstrumentsApi apiInstance = new InstrumentsApi(defaultClient);
-    List<UpsertInstrumentPropertyRequest> instrumentProperties = Arrays.asList(null); // List<UpsertInstrumentPropertyRequest> | A collection of instruments and associated instrument properties to update or insert.
+    List<UpsertInstrumentPropertyRequest> upsertInstrumentPropertyRequest = [{"identifierType":"LusidInstrumentId","identifier":"LUID_00000000","properties":[{"key":"Instrument/MyScope/MyPropertyName","value":{"labelValue":"MyValue"},"effectiveFrom":"2018-03-05T12:00:00+00:00"}]}]; // List<UpsertInstrumentPropertyRequest> | A collection of instruments and associated instrument properties to update or insert.
     try {
-      UpsertInstrumentPropertiesResponse result = apiInstance.upsertInstrumentsProperties(instrumentProperties);
+      UpsertInstrumentPropertiesResponse result = apiInstance.upsertInstrumentsProperties(upsertInstrumentPropertyRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstrumentsApi#upsertInstrumentsProperties");
@@ -652,7 +652,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **instrumentProperties** | [**List&lt;UpsertInstrumentPropertyRequest&gt;**](UpsertInstrumentPropertyRequest.md)| A collection of instruments and associated instrument properties to update or insert. |
+ **upsertInstrumentPropertyRequest** | [**List&lt;UpsertInstrumentPropertyRequest&gt;**](UpsertInstrumentPropertyRequest.md)| A collection of instruments and associated instrument properties to update or insert. |
 
 ### Return type
 
@@ -664,7 +664,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -676,7 +676,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertLusidInstruments"></a>
 # **upsertLusidInstruments**
-> UpsertInstrumentsResponse upsertLusidInstruments(instruments)
+> UpsertInstrumentsResponse upsertLusidInstruments(requestBody)
 
 [EXPERIMENTAL] Upsert instruments
 
@@ -695,16 +695,16 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     InstrumentsApi apiInstance = new InstrumentsApi(defaultClient);
-    Map<String, LusidInstrumentDefinition> instruments = new HashMap(); // Map<String, LusidInstrumentDefinition> | The definitions of the instruments to update or insert.
+    Map<String, LusidInstrumentDefinition> requestBody = {"request_id_1":{"name":"Instrument name","identifiers":{"clientInternal":{"value":"some-identifier","effectiveAt":"0001-01-01T00:00:00+00:00"},"figi":{"value":"some-figi-code","effectiveAt":"0001-01-01T00:00:00+00:00"}},"properties":[{"key":"Instrument/default/Isin","value":{"labelValue":"US0378331005"},"effectiveFrom":"2018-06-18T09:00:00+00:00"}],"lookThroughPortfolioId":{"scope":"MyScope","code":"portfolio-code"},"definition":{"instrumentFormat":"some-format","content":"{\"some-key\": \"some-value\"}"}},"request_id_2":{"name":"Instrument name","identifiers":{"clientInternal":{"value":"some-identifier-2","effectiveAt":"0001-01-01T00:00:00+00:00"},"figi":{"value":"some-figi-code-2","effectiveAt":"0001-01-01T00:00:00+00:00"}},"properties":[],"lookThroughPortfolioId":{"scope":"MyScope","code":"portfolio-code"},"definition":{"instrumentFormat":"some-format","content":"{\"some-key\": \"some-value\"}"}}}; // Map<String, LusidInstrumentDefinition> | The definitions of the instruments to update or insert.
     try {
-      UpsertInstrumentsResponse result = apiInstance.upsertLusidInstruments(instruments);
+      UpsertInstrumentsResponse result = apiInstance.upsertLusidInstruments(requestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstrumentsApi#upsertLusidInstruments");
@@ -721,7 +721,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **instruments** | [**Map&lt;String, LusidInstrumentDefinition&gt;**](LusidInstrumentDefinition.md)| The definitions of the instruments to update or insert. |
+ **requestBody** | [**Map&lt;String, LusidInstrumentDefinition&gt;**](LusidInstrumentDefinition.md)| The definitions of the instruments to update or insert. |
 
 ### Return type
 
@@ -733,7 +733,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details

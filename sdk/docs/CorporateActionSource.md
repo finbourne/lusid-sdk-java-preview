@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** |  |  [optional]
+**href** | [**URI**](URI.md) |  |  [optional]
 **id** | [**ResourceId**](ResourceId.md) |  | 
 **version** | [**Version**](Version.md) |  | 
 **displayName** | **String** |  |  [optional]

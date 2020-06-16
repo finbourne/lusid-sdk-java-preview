@@ -1,6 +1,6 @@
 # PersonsApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -39,7 +39,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -112,7 +112,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -189,7 +189,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -266,7 +266,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -343,7 +343,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -420,7 +420,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -499,7 +499,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -578,7 +578,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -644,7 +644,7 @@ Name | Type | Description  | Notes
 
 <a name="setPersonIdentifiers"></a>
 # **setPersonIdentifiers**
-> Person setPersonIdentifiers(idTypeScope, idTypeCode, code, identifiers)
+> Person setPersonIdentifiers(idTypeScope, idTypeCode, code, setPersonIdentifiersRequest)
 
 [EXPERIMENTAL] Set Person Identifiers
 
@@ -663,7 +663,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -673,9 +673,9 @@ public class Example {
     String idTypeScope = "idTypeScope_example"; // String | Scope of the person identifier type.
     String idTypeCode = "idTypeCode_example"; // String | Code of the person identifier type.
     String code = "code_example"; // String | Code of the person under specified identifier type's scope and code. This together with stated identifier type uniquely              identifies the person.
-    SetPersonIdentifiersRequest identifiers = new SetPersonIdentifiersRequest(); // SetPersonIdentifiersRequest | Request containing identifiers to set for the person. Identifiers not specified in request will not be changed.
+    SetPersonIdentifiersRequest setPersonIdentifiersRequest = {"identifiers":{"person/PayrollSystem1/Id":{"key":"Person/PayrollSystem1/Id","value":{"labelValue":"HSI3453333"}}}}; // SetPersonIdentifiersRequest | Request containing identifiers to set for the person. Identifiers not specified in request will not be changed.
     try {
-      Person result = apiInstance.setPersonIdentifiers(idTypeScope, idTypeCode, code, identifiers);
+      Person result = apiInstance.setPersonIdentifiers(idTypeScope, idTypeCode, code, setPersonIdentifiersRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PersonsApi#setPersonIdentifiers");
@@ -695,7 +695,7 @@ Name | Type | Description  | Notes
  **idTypeScope** | **String**| Scope of the person identifier type. |
  **idTypeCode** | **String**| Code of the person identifier type. |
  **code** | **String**| Code of the person under specified identifier type&#39;s scope and code. This together with stated identifier type uniquely              identifies the person. |
- **identifiers** | [**SetPersonIdentifiersRequest**](SetPersonIdentifiersRequest.md)| Request containing identifiers to set for the person. Identifiers not specified in request will not be changed. |
+ **setPersonIdentifiersRequest** | [**SetPersonIdentifiersRequest**](SetPersonIdentifiersRequest.md)| Request containing identifiers to set for the person. Identifiers not specified in request will not be changed. |
 
 ### Return type
 
@@ -707,7 +707,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -719,7 +719,7 @@ Name | Type | Description  | Notes
 
 <a name="setPersonProperties"></a>
 # **setPersonProperties**
-> Person setPersonProperties(idTypeScope, idTypeCode, code, properties)
+> Person setPersonProperties(idTypeScope, idTypeCode, code, setPersonPropertiesRequest)
 
 [EXPERIMENTAL] Set Person Properties
 
@@ -738,7 +738,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -748,9 +748,9 @@ public class Example {
     String idTypeScope = "idTypeScope_example"; // String | Scope of the person identifier type.
     String idTypeCode = "idTypeCode_example"; // String | Code of the person identifier type.
     String code = "code_example"; // String | Code of the person under specified identifier type's scope and code. This together with stated identifier type uniquely              identifies the person.
-    SetPersonPropertiesRequest properties = new SetPersonPropertiesRequest(); // SetPersonPropertiesRequest | Request containing properties to set for the person. Properties not specified in request will not be changed.
+    SetPersonPropertiesRequest setPersonPropertiesRequest = {"properties":{"person/ContactDetails/Phone":[{"key":"Person/ContactDetails/Phone","value":{"labelValue":"01156786789"},"effectiveFrom":"2019-07-01T00:00:00+00:00"}]}}; // SetPersonPropertiesRequest | Request containing properties to set for the person. Properties not specified in request will not be changed.
     try {
-      Person result = apiInstance.setPersonProperties(idTypeScope, idTypeCode, code, properties);
+      Person result = apiInstance.setPersonProperties(idTypeScope, idTypeCode, code, setPersonPropertiesRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PersonsApi#setPersonProperties");
@@ -770,7 +770,7 @@ Name | Type | Description  | Notes
  **idTypeScope** | **String**| Scope of the person identifier type. |
  **idTypeCode** | **String**| Code of the person identifier type. |
  **code** | **String**| Code of the person under specified identifier type&#39;s scope and code. This together with stated identifier type uniquely              identifies the person. |
- **properties** | [**SetPersonPropertiesRequest**](SetPersonPropertiesRequest.md)| Request containing properties to set for the person. Properties not specified in request will not be changed. |
+ **setPersonPropertiesRequest** | [**SetPersonPropertiesRequest**](SetPersonPropertiesRequest.md)| Request containing properties to set for the person. Properties not specified in request will not be changed. |
 
 ### Return type
 
@@ -782,7 +782,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -794,7 +794,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertPerson"></a>
 # **upsertPerson**
-> Person upsertPerson(request)
+> Person upsertPerson(upsertPersonRequest)
 
 [EXPERIMENTAL] Upsert Person
 
@@ -813,16 +813,16 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     PersonsApi apiInstance = new PersonsApi(defaultClient);
-    UpsertPersonRequest request = new UpsertPersonRequest(); // UpsertPersonRequest | Request to create or update a person.
+    UpsertPersonRequest upsertPersonRequest = {"identifiers":{"person/HrSystem1/InternalId":{"key":"Person/HrSystem1/InternalId","value":{"labelValue":"XY10001111"}},"person/PayrollSystem1/Id":{"key":"Person/PayrollSystem1/Id","value":{"labelValue":"HSI3453456"}},"person/CompanyIntranet/LoginId":{"key":"Person/CompanyIntranet/LoginId","value":{"labelValue":"johnsmith001"}}},"properties":{"person/PersonalDetails/Name":[{"key":"Person/PersonalDetails/Name","value":{"labelValue":"John Smith"}}],"person/CompanyDetails/Role":[{"key":"Person/CompanyDetails/Role","value":{"labelValue":"SalesRepresentative"},"effectiveFrom":"2016-01-01T00:00:00+00:00"},{"key":"Person/CompanyDetails/Role","value":{"labelValue":"CustomerServiceRepresentative"},"effectiveFrom":"2016-07-01T00:00:00+00:00"}]}}; // UpsertPersonRequest | Request to create or update a person.
     try {
-      Person result = apiInstance.upsertPerson(request);
+      Person result = apiInstance.upsertPerson(upsertPersonRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PersonsApi#upsertPerson");
@@ -839,7 +839,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**UpsertPersonRequest**](UpsertPersonRequest.md)| Request to create or update a person. |
+ **upsertPersonRequest** | [**UpsertPersonRequest**](UpsertPersonRequest.md)| Request to create or update a person. |
 
 ### Return type
 
@@ -851,7 +851,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -863,7 +863,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertPersonAccessMetadata"></a>
 # **upsertPersonAccessMetadata**
-> ResourceListOfAccessMetadataValueOf upsertPersonAccessMetadata(idTypeScope, idTypeCode, code, metadataKey, request, effectiveAt)
+> ResourceListOfAccessMetadataValueOf upsertPersonAccessMetadata(idTypeScope, idTypeCode, code, metadataKey, upsertPersonAccessMetadataRequest, effectiveAt)
 
 [EXPERIMENTAL] Upsert a Person Access Metadata entry associated with a specific metadataKey. This creates or updates the data in LUSID.
 
@@ -882,7 +882,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -893,10 +893,10 @@ public class Example {
     String idTypeCode = "idTypeCode_example"; // String | Code of the person identifier.
     String code = "code_example"; // String | Code of the person under specified identifier type's scope and code.
     String metadataKey = "metadataKey_example"; // String | Key of the metadata entry to retrieve
-    UpsertPersonAccessMetadataRequest request = new UpsertPersonAccessMetadataRequest(); // UpsertPersonAccessMetadataRequest | The Person Access Metadata entry to upsert
+    UpsertPersonAccessMetadataRequest upsertPersonAccessMetadataRequest = {"metadata":[{"value":"SilverLicence","provider":"TestDataProvider"}]}; // UpsertPersonAccessMetadataRequest | The Person Access Metadata entry to upsert
     String effectiveAt = "effectiveAt_example"; // String | The effectiveAt datetime at which to upsert the Access Metadata
     try {
-      ResourceListOfAccessMetadataValueOf result = apiInstance.upsertPersonAccessMetadata(idTypeScope, idTypeCode, code, metadataKey, request, effectiveAt);
+      ResourceListOfAccessMetadataValueOf result = apiInstance.upsertPersonAccessMetadata(idTypeScope, idTypeCode, code, metadataKey, upsertPersonAccessMetadataRequest, effectiveAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PersonsApi#upsertPersonAccessMetadata");
@@ -917,7 +917,7 @@ Name | Type | Description  | Notes
  **idTypeCode** | **String**| Code of the person identifier. |
  **code** | **String**| Code of the person under specified identifier type&#39;s scope and code. |
  **metadataKey** | **String**| Key of the metadata entry to retrieve |
- **request** | [**UpsertPersonAccessMetadataRequest**](UpsertPersonAccessMetadataRequest.md)| The Person Access Metadata entry to upsert |
+ **upsertPersonAccessMetadataRequest** | [**UpsertPersonAccessMetadataRequest**](UpsertPersonAccessMetadataRequest.md)| The Person Access Metadata entry to upsert |
  **effectiveAt** | **String**| The effectiveAt datetime at which to upsert the Access Metadata | [optional]
 
 ### Return type
@@ -930,7 +930,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details

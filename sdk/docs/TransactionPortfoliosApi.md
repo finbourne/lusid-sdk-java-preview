@@ -1,6 +1,6 @@
 # TransactionPortfoliosApi
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *http://localhost:46312*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 <a name="adjustHoldings"></a>
 # **adjustHoldings**
-> AdjustHolding adjustHoldings(scope, code, effectiveAt, holdingAdjustments, reconciliationMethods)
+> AdjustHolding adjustHoldings(scope, code, effectiveAt, adjustHoldingRequest, reconciliationMethods)
 
 Adjust holdings
 
@@ -46,7 +46,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -56,10 +56,10 @@ public class Example {
     String scope = "scope_example"; // String | The scope of the transaction portfolio.
     String code = "code_example"; // String | The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which the holdings should be set to the provided targets.
-    List<AdjustHoldingRequest> holdingAdjustments = Arrays.asList(null); // List<AdjustHoldingRequest> | The selected set of holdings to adjust to the provided targets for the              transaction portfolio.
+    List<AdjustHoldingRequest> adjustHoldingRequest = ["instrument-identifier-1","instrument-identifier-2"]; // List<AdjustHoldingRequest> | The selected set of holdings to adjust to the provided targets for the              transaction portfolio.
     List<String> reconciliationMethods = Arrays.asList(); // List<String> | Optional parameter for specifying a reconciliation method: e.g. FxForward.
     try {
-      AdjustHolding result = apiInstance.adjustHoldings(scope, code, effectiveAt, holdingAdjustments, reconciliationMethods);
+      AdjustHolding result = apiInstance.adjustHoldings(scope, code, effectiveAt, adjustHoldingRequest, reconciliationMethods);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#adjustHoldings");
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
  **scope** | **String**| The scope of the transaction portfolio. |
  **code** | **String**| The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio. |
  **effectiveAt** | **String**| The effective datetime or cut label at which the holdings should be set to the provided targets. |
- **holdingAdjustments** | [**List&lt;AdjustHoldingRequest&gt;**](AdjustHoldingRequest.md)| The selected set of holdings to adjust to the provided targets for the              transaction portfolio. |
+ **adjustHoldingRequest** | [**List&lt;AdjustHoldingRequest&gt;**](AdjustHoldingRequest.md)| The selected set of holdings to adjust to the provided targets for the              transaction portfolio. |
  **reconciliationMethods** | [**List&lt;String&gt;**](String.md)| Optional parameter for specifying a reconciliation method: e.g. FxForward. | [optional]
 
 ### Return type
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 <a name="buildTransactions"></a>
 # **buildTransactions**
-> VersionedResourceListOfOutputTransaction buildTransactions(scope, code, queryParameters, asAt, filter, propertyKeys)
+> VersionedResourceListOfOutputTransaction buildTransactions(scope, code, transactionQueryParameters, asAt, filter, propertyKeys)
 
 Build transactions
 
@@ -123,7 +123,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -132,12 +132,12 @@ public class Example {
     TransactionPortfoliosApi apiInstance = new TransactionPortfoliosApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the transaction portfolio.
     String code = "code_example"; // String | The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio.
-    TransactionQueryParameters queryParameters = new TransactionQueryParameters(); // TransactionQueryParameters | The query queryParameters which control how the output transactions are built.
+    TransactionQueryParameters transactionQueryParameters = ["Instrument/scope/market-sector","Instrument/scope/tenor"]; // TransactionQueryParameters | The query queryParameters which control how the output transactions are built.
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to build the transactions. Defaults to return the latest              version of each transaction if not specified.
     String filter = "filter_example"; // String | Expression to filter the result set.              For example, to filter on the Transaction Type, use \"type eq 'Buy'\"              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
     List<String> propertyKeys = Arrays.asList(); // List<String> | A list of property keys from the \"Instrument\" or \"Transaction\" domain to decorate onto              the transactions. These take the format {domain}/{scope}/{code} e.g. \"Instrument/system/Name\" or              \"Transaction/strategy/quantsignal\".
     try {
-      VersionedResourceListOfOutputTransaction result = apiInstance.buildTransactions(scope, code, queryParameters, asAt, filter, propertyKeys);
+      VersionedResourceListOfOutputTransaction result = apiInstance.buildTransactions(scope, code, transactionQueryParameters, asAt, filter, propertyKeys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#buildTransactions");
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the transaction portfolio. |
  **code** | **String**| The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio. |
- **queryParameters** | [**TransactionQueryParameters**](TransactionQueryParameters.md)| The query queryParameters which control how the output transactions are built. |
+ **transactionQueryParameters** | [**TransactionQueryParameters**](TransactionQueryParameters.md)| The query queryParameters which control how the output transactions are built. |
  **asAt** | **OffsetDateTime**| The asAt datetime at which to build the transactions. Defaults to return the latest              version of each transaction if not specified. | [optional]
  **filter** | **String**| Expression to filter the result set.              For example, to filter on the Transaction Type, use \&quot;type eq &#39;Buy&#39;\&quot;              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
  **propertyKeys** | [**List&lt;String&gt;**](String.md)| A list of property keys from the \&quot;Instrument\&quot; or \&quot;Transaction\&quot; domain to decorate onto              the transactions. These take the format {domain}/{scope}/{code} e.g. \&quot;Instrument/system/Name\&quot; or              \&quot;Transaction/strategy/quantsignal\&quot;. | [optional]
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -202,7 +202,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -275,7 +275,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -348,7 +348,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 <a name="createPortfolio"></a>
 # **createPortfolio**
-> Portfolio createPortfolio(scope, transactionPortfolio)
+> Portfolio createPortfolio(scope, createTransactionPortfolioRequest)
 
 Create portfolio
 
@@ -421,7 +421,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -429,9 +429,9 @@ public class Example {
 
     TransactionPortfoliosApi apiInstance = new TransactionPortfoliosApi(defaultClient);
     String scope = "scope_example"; // String | The scope that the transaction portfolio will be created in.
-    CreateTransactionPortfolioRequest transactionPortfolio = new CreateTransactionPortfolioRequest(); // CreateTransactionPortfolioRequest | The definition and details of the transaction portfolio.
+    CreateTransactionPortfolioRequest createTransactionPortfolioRequest = {"displayName":"Portfolio UK","description":"Portfolio for UK market","code":"PortfolioUk","created":"2018-03-05T12:00:00+00:00","baseCurrency":"GBP","corporateActionSourceId":{"scope":"Sources","code":"Vendor1"},"accountingMethod":"Default","subHoldingKeys":[],"properties":{"portfolio/Manager/Name":{"key":"Portfolio/Manager/Name","value":{"labelValue":"Matt Smith"},"effectiveFrom":"2018-03-05T12:00:00+00:00"},"portfolio/Manager/Id":{"key":"Portfolio/Manager/Id","value":{"metricValue":{"value":1628483,"unit":"NoUnits"}},"effectiveFrom":"2018-03-05T12:00:00+00:00"}}}; // CreateTransactionPortfolioRequest | The definition and details of the transaction portfolio.
     try {
-      Portfolio result = apiInstance.createPortfolio(scope, transactionPortfolio);
+      Portfolio result = apiInstance.createPortfolio(scope, createTransactionPortfolioRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#createPortfolio");
@@ -449,7 +449,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope that the transaction portfolio will be created in. |
- **transactionPortfolio** | [**CreateTransactionPortfolioRequest**](CreateTransactionPortfolioRequest.md)| The definition and details of the transaction portfolio. |
+ **createTransactionPortfolioRequest** | [**CreateTransactionPortfolioRequest**](CreateTransactionPortfolioRequest.md)| The definition and details of the transaction portfolio. |
 
 ### Return type
 
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -492,7 +492,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -567,7 +567,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -642,7 +642,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -723,7 +723,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -798,7 +798,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -879,7 +879,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -960,7 +960,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1018,7 +1018,7 @@ Name | Type | Description  | Notes
 
 <a name="resolveInstrument"></a>
 # **resolveInstrument**
-> UpsertPortfolioTransactionsResponse resolveInstrument(scope, code, instrumentIdentifierType, instrumentIdentifierValue, fromEffectiveAt, instrumentIdentifierCollection)
+> UpsertPortfolioTransactionsResponse resolveInstrument(scope, code, instrumentIdentifierType, instrumentIdentifierValue, fromEffectiveAt, requestBody)
 
 [EXPERIMENTAL] Resolve Instrument
 
@@ -1037,7 +1037,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1049,9 +1049,9 @@ public class Example {
     String instrumentIdentifierType = "instrumentIdentifierType_example"; // String | The instrument identifier type.
     String instrumentIdentifierValue = "instrumentIdentifierValue_example"; // String | The value for the given instrument identifier.
     String fromEffectiveAt = "fromEffectiveAt_example"; // String | The lower bound effective datetime or cut label (inclusive) from which to retrieve the data.              There is no lower bound if this is not specified.
-    Map<String, String> instrumentIdentifierCollection = new HashMap(); // Map<String, String> | The dictionary with the instrument identifiers to be updated on the              transaction and holdings.
+    Map<String, String> requestBody = {"instrument/default/Figi":"BBG000C6K6G9","instrument/default/Isin":"GB00BH4HKS39"}; // Map<String, String> | The dictionary with the instrument identifiers to be updated on the              transaction and holdings.
     try {
-      UpsertPortfolioTransactionsResponse result = apiInstance.resolveInstrument(scope, code, instrumentIdentifierType, instrumentIdentifierValue, fromEffectiveAt, instrumentIdentifierCollection);
+      UpsertPortfolioTransactionsResponse result = apiInstance.resolveInstrument(scope, code, instrumentIdentifierType, instrumentIdentifierValue, fromEffectiveAt, requestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#resolveInstrument");
@@ -1073,7 +1073,7 @@ Name | Type | Description  | Notes
  **instrumentIdentifierType** | **String**| The instrument identifier type. |
  **instrumentIdentifierValue** | **String**| The value for the given instrument identifier. |
  **fromEffectiveAt** | **String**| The lower bound effective datetime or cut label (inclusive) from which to retrieve the data.              There is no lower bound if this is not specified. | [optional]
- **instrumentIdentifierCollection** | [**Map&lt;String, String&gt;**](String.md)| The dictionary with the instrument identifiers to be updated on the              transaction and holdings. | [optional]
+ **requestBody** | [**Map&lt;String, String&gt;**](String.md)| The dictionary with the instrument identifiers to be updated on the              transaction and holdings. | [optional]
 
 ### Return type
 
@@ -1085,7 +1085,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -1097,7 +1097,7 @@ Name | Type | Description  | Notes
 
 <a name="setHoldings"></a>
 # **setHoldings**
-> AdjustHolding setHoldings(scope, code, effectiveAt, holdingAdjustments, reconciliationMethods)
+> AdjustHolding setHoldings(scope, code, effectiveAt, adjustHoldingRequest, reconciliationMethods)
 
 Set holdings
 
@@ -1116,7 +1116,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1126,10 +1126,10 @@ public class Example {
     String scope = "scope_example"; // String | The scope of the transaction portfolio.
     String code = "code_example"; // String | The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which the holdings should be set to the provided targets.
-    List<AdjustHoldingRequest> holdingAdjustments = Arrays.asList(null); // List<AdjustHoldingRequest> | The complete set of target holdings for the transaction portfolio.
+    List<AdjustHoldingRequest> adjustHoldingRequest = ["instrument-identifier-1","instrument-identifier-2"]; // List<AdjustHoldingRequest> | The complete set of target holdings for the transaction portfolio.
     List<String> reconciliationMethods = Arrays.asList(); // List<String> | Optional parameter for specifying a reconciliation method: e.g. FxForward.
     try {
-      AdjustHolding result = apiInstance.setHoldings(scope, code, effectiveAt, holdingAdjustments, reconciliationMethods);
+      AdjustHolding result = apiInstance.setHoldings(scope, code, effectiveAt, adjustHoldingRequest, reconciliationMethods);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#setHoldings");
@@ -1149,7 +1149,7 @@ Name | Type | Description  | Notes
  **scope** | **String**| The scope of the transaction portfolio. |
  **code** | **String**| The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio. |
  **effectiveAt** | **String**| The effective datetime or cut label at which the holdings should be set to the provided targets. |
- **holdingAdjustments** | [**List&lt;AdjustHoldingRequest&gt;**](AdjustHoldingRequest.md)| The complete set of target holdings for the transaction portfolio. |
+ **adjustHoldingRequest** | [**List&lt;AdjustHoldingRequest&gt;**](AdjustHoldingRequest.md)| The complete set of target holdings for the transaction portfolio. |
  **reconciliationMethods** | [**List&lt;String&gt;**](String.md)| Optional parameter for specifying a reconciliation method: e.g. FxForward. | [optional]
 
 ### Return type
@@ -1162,7 +1162,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -1174,7 +1174,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertExecutions"></a>
 # **upsertExecutions**
-> UpsertPortfolioExecutionsResponse upsertExecutions(scope, code, executions)
+> UpsertPortfolioExecutionsResponse upsertExecutions(scope, code, executionRequest)
 
 [EARLY ACCESS] Upsert executions
 
@@ -1193,7 +1193,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1202,9 +1202,9 @@ public class Example {
     TransactionPortfoliosApi apiInstance = new TransactionPortfoliosApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the transaction portfolio.
     String code = "code_example"; // String | The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio.
-    List<ExecutionRequest> executions = Arrays.asList(null); // List<ExecutionRequest> | The executions to update or insert.
+    List<ExecutionRequest> executionRequest = {"executionId":"ExecutionId-11111","side":"SellShort","instrumentIdentifiers":{"clientInternal":"CLI-183461"},"transactionTime":"2018-03-05T12:00:00+00:00","lastShares":1000,"lastPx":1.23,"currency":"USD"}; // List<ExecutionRequest> | The executions to update or insert.
     try {
-      UpsertPortfolioExecutionsResponse result = apiInstance.upsertExecutions(scope, code, executions);
+      UpsertPortfolioExecutionsResponse result = apiInstance.upsertExecutions(scope, code, executionRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#upsertExecutions");
@@ -1223,7 +1223,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the transaction portfolio. |
  **code** | **String**| The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio. |
- **executions** | [**List&lt;ExecutionRequest&gt;**](ExecutionRequest.md)| The executions to update or insert. | [optional]
+ **executionRequest** | [**List&lt;ExecutionRequest&gt;**](ExecutionRequest.md)| The executions to update or insert. | [optional]
 
 ### Return type
 
@@ -1235,7 +1235,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -1247,7 +1247,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertPortfolioDetails"></a>
 # **upsertPortfolioDetails**
-> PortfolioDetails upsertPortfolioDetails(scope, code, portfolioDetails, effectiveAt)
+> PortfolioDetails upsertPortfolioDetails(scope, code, createPortfolioDetails, effectiveAt)
 
 Upsert portfolio details
 
@@ -1266,7 +1266,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1275,10 +1275,10 @@ public class Example {
     TransactionPortfoliosApi apiInstance = new TransactionPortfoliosApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the transaction portfolio to update or insert details for.
     String code = "code_example"; // String | The code of the transaction portfolio to update or insert details for. Together with the              scope this uniquely identifies the transaction portfolio.
-    CreatePortfolioDetails portfolioDetails = new CreatePortfolioDetails(); // CreatePortfolioDetails | The details to update or insert for the specified transaction portfolio.
+    CreatePortfolioDetails createPortfolioDetails = {"corporateActionSourceId":{"scope":"Sources","code":"Vendor1"}}; // CreatePortfolioDetails | The details to update or insert for the specified transaction portfolio.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which the updated or inserted details should become valid.              Defaults to the current LUSID system datetime if not specified.
     try {
-      PortfolioDetails result = apiInstance.upsertPortfolioDetails(scope, code, portfolioDetails, effectiveAt);
+      PortfolioDetails result = apiInstance.upsertPortfolioDetails(scope, code, createPortfolioDetails, effectiveAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#upsertPortfolioDetails");
@@ -1297,7 +1297,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the transaction portfolio to update or insert details for. |
  **code** | **String**| The code of the transaction portfolio to update or insert details for. Together with the              scope this uniquely identifies the transaction portfolio. |
- **portfolioDetails** | [**CreatePortfolioDetails**](CreatePortfolioDetails.md)| The details to update or insert for the specified transaction portfolio. |
+ **createPortfolioDetails** | [**CreatePortfolioDetails**](CreatePortfolioDetails.md)| The details to update or insert for the specified transaction portfolio. |
  **effectiveAt** | **String**| The effective datetime or cut label at which the updated or inserted details should become valid.              Defaults to the current LUSID system datetime if not specified. | [optional]
 
 ### Return type
@@ -1310,7 +1310,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -1322,7 +1322,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertTransactionProperties"></a>
 # **upsertTransactionProperties**
-> UpsertTransactionPropertiesResponse upsertTransactionProperties(scope, code, transactionId, transactionProperties)
+> UpsertTransactionPropertiesResponse upsertTransactionProperties(scope, code, transactionId, requestBody)
 
 Upsert transaction properties
 
@@ -1341,7 +1341,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1351,9 +1351,9 @@ public class Example {
     String scope = "scope_example"; // String | The scope of the transaction portfolio.
     String code = "code_example"; // String | The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio.
     String transactionId = "transactionId_example"; // String | The unique id of the transaction to update or insert properties against.
-    Map<String, PerpetualProperty> transactionProperties = new HashMap(); // Map<String, PerpetualProperty> | The properties with their associated values to update or insert onto the              transaction.
+    Map<String, PerpetualProperty> requestBody = {"transaction/MyScope/MyPropertyName":{"key":"Transaction/MyScope/MyPropertyName","value":{"metricValue":{"value":12345.5672,"unit":"Unit"}}},"transaction/MyScope/MyPropertyName2":{"key":"Transaction/MyScope/MyPropertyName2","value":{"metricValue":{"value":925.3,"unit":"Unit"}}}}; // Map<String, PerpetualProperty> | The properties with their associated values to update or insert onto the              transaction.
     try {
-      UpsertTransactionPropertiesResponse result = apiInstance.upsertTransactionProperties(scope, code, transactionId, transactionProperties);
+      UpsertTransactionPropertiesResponse result = apiInstance.upsertTransactionProperties(scope, code, transactionId, requestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#upsertTransactionProperties");
@@ -1373,7 +1373,7 @@ Name | Type | Description  | Notes
  **scope** | **String**| The scope of the transaction portfolio. |
  **code** | **String**| The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio. |
  **transactionId** | **String**| The unique id of the transaction to update or insert properties against. |
- **transactionProperties** | [**Map&lt;String, PerpetualProperty&gt;**](PerpetualProperty.md)| The properties with their associated values to update or insert onto the              transaction. |
+ **requestBody** | [**Map&lt;String, PerpetualProperty&gt;**](PerpetualProperty.md)| The properties with their associated values to update or insert onto the              transaction. |
 
 ### Return type
 
@@ -1385,7 +1385,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -1397,7 +1397,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertTransactions"></a>
 # **upsertTransactions**
-> UpsertPortfolioTransactionsResponse upsertTransactions(scope, code, transactions)
+> UpsertPortfolioTransactionsResponse upsertTransactions(scope, code, transactionRequest)
 
 Upsert transactions
 
@@ -1416,7 +1416,7 @@ import com.finbourne.lusid.api.TransactionPortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost/api");
+    defaultClient.setBasePath("http://localhost:46312");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1425,9 +1425,9 @@ public class Example {
     TransactionPortfoliosApi apiInstance = new TransactionPortfoliosApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the transaction portfolio.
     String code = "code_example"; // String | The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio.
-    List<TransactionRequest> transactions = Arrays.asList(null); // List<TransactionRequest> | The transactions to be updated or inserted.
+    List<TransactionRequest> transactionRequest = {"transactionId":"TransactionId-111111","type":"StockIn","instrumentIdentifiers":{"instrument/default/Figi":"BBG000C6K6G9","instrument/default/Isin":"GB00BH4HKS39"},"transactionDate":"2018-03-05T00:00:00+00:00","settlementDate":"2018-03-08T00:00:00+00:00","units":1000,"transactionPrice":{"price":123,"type":"Price"},"totalConsideration":{"amount":123000,"currency":"GBP"},"transactionCurrency":"GBP","properties":{"transaction/Algo/Name":{"key":"Transaction/Algo/Name","value":{"labelValue":"Algo1"}}},"counterpartyId":"CounterpartyId-118263","source":""}; // List<TransactionRequest> | The transactions to be updated or inserted.
     try {
-      UpsertPortfolioTransactionsResponse result = apiInstance.upsertTransactions(scope, code, transactions);
+      UpsertPortfolioTransactionsResponse result = apiInstance.upsertTransactions(scope, code, transactionRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#upsertTransactions");
@@ -1446,7 +1446,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the transaction portfolio. |
  **code** | **String**| The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio. |
- **transactions** | [**List&lt;TransactionRequest&gt;**](TransactionRequest.md)| The transactions to be updated or inserted. |
+ **transactionRequest** | [**List&lt;TransactionRequest&gt;**](TransactionRequest.md)| The transactions to be updated or inserted. |
 
 ### Return type
 
@@ -1458,7 +1458,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details

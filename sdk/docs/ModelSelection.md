@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**library** | [**LibraryEnum**](#LibraryEnum) | Which library is used for pricing requests | 
-**model** | [**ModelEnum**](#ModelEnum) | Which model should be used for pricing requests | 
+**library** | [**LibraryEnum**](#LibraryEnum) | The available values are: Lusid, RefinitivQps, RefinitivTracsWeb, VolMaster, IsdaCds | 
+**model** | [**ModelEnum**](#ModelEnum) | The available values are: SimpleStatic, Discounting, VendorDefault, BlackScholes | 
 
 
 
