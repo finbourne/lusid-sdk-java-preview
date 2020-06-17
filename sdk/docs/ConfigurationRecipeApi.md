@@ -1,6 +1,6 @@
 # ConfigurationRecipeApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://localhost:51462*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**getConfigurationRecipe**](ConfigurationRecipeApi.md#getConfigurationRecipe) | **GET** /api/recipes/{scope}/{code} | [EXPERIMENTAL] Get Configuration Recipe
 [**listConfigurationRecipes**](ConfigurationRecipeApi.md#listConfigurationRecipes) | **GET** /api/recipes/{scope} | [EXPERIMENTAL] List the set of Configuration Recipes
 [**listConfigurationRecipesForAllScopes**](ConfigurationRecipeApi.md#listConfigurationRecipesForAllScopes) | **GET** /api/recipes | [EXPERIMENTAL] List the set of Configuration Recipes from all scopes
-[**upsertConfigurationRecipe**](ConfigurationRecipeApi.md#upsertConfigurationRecipe) | **POST** /api/recipes/{scope} | [EXPERIMENTAL] Upsert a Configuration Recipe. This creates or updates the data in Lusid.
+[**upsertConfigurationRecipe**](ConfigurationRecipeApi.md#upsertConfigurationRecipe) | **POST** /api/recipes | [EXPERIMENTAL] Upsert a Configuration Recipe. This creates or updates the data in Lusid.
 
 
 <a name="deleteConfigurationRecipe"></a>
@@ -32,7 +32,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:51462");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -103,7 +103,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:51462");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -176,7 +176,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:51462");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -249,7 +249,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:51462");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertConfigurationRecipe"></a>
 # **upsertConfigurationRecipe**
-> UpsertSingleStructuredDataResponse upsertConfigurationRecipe(scope, upsertRecipeRequest)
+> UpsertSingleStructuredDataResponse upsertConfigurationRecipe(upsertRecipeRequest)
 
 [EXPERIMENTAL] Upsert a Configuration Recipe. This creates or updates the data in Lusid.
 
@@ -320,17 +320,16 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:51462");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ConfigurationRecipeApi apiInstance = new ConfigurationRecipeApi(defaultClient);
-    String scope = "scope_example"; // String | The scope to use when updating or inserting the Configuration Recipe.
-    UpsertRecipeRequest upsertRecipeRequest = {"code":"MyNamedRecipe12345","configurationRecipe":{"code":"MyNamedRecipe12345","market":{"marketRules":[{"key":"Fx.CurrencyPair.*","supplier":"DataScope","dataScope":"SomeScopeToLookAt","quoteType":"Rate","field":"Mid","priceSource":""}],"suppliers":{},"options":{"defaultSupplier":"Lusid","defaultInstrumentCodeType":"LusidInstrumentId","defaultScope":"default","attemptToInferMissingFx":false,"manifestLevelOfDetail":"None"}},"pricing":{"modelRules":[],"modelChoice":{},"options":{"modelSelection":{"library":"Lusid","model":"SimpleStatic"},"useInstrumentTypeToDeterminePricer":false,"allowAnyInstrumentsWithSecUidToPriceOffLookup":false,"allowPartiallySuccessfulEvaluation":false,"produceSeparateResultForLinearOtcLegs":false,"enableUseOfCachedUnitResults":false,"windowValuationOnInstrumentStartEnd":false,"removeContingentCashflowsInPaymentDiary":false,"useChildSubHoldingKeysForPortfolioExpansion":false},"resultDataRules":[]},"aggregation":{"options":{"useAnsiLikeSyntax":false}},"inheritedRecipes":[],"description":""}}; // UpsertRecipeRequest | The Configuration Recipe to update or insert
+    UpsertRecipeRequest upsertRecipeRequest = {"configurationRecipe":{"scope":"scopeName","code":"MyNamedRecipe12345","market":{"marketRules":[{"key":"Fx.CurrencyPair.*","supplier":"DataScope","dataScope":"SomeScopeToLookAt","quoteType":"Rate","field":"Mid","priceSource":""}],"suppliers":{},"options":{"defaultSupplier":"Lusid","defaultInstrumentCodeType":"LusidInstrumentId","defaultScope":"default","attemptToInferMissingFx":false,"manifestLevelOfDetail":"None"}},"pricing":{"modelRules":[],"modelChoice":{},"options":{"modelSelection":{"library":"Lusid","model":"SimpleStatic"},"useInstrumentTypeToDeterminePricer":false,"allowAnyInstrumentsWithSecUidToPriceOffLookup":false,"allowPartiallySuccessfulEvaluation":false,"produceSeparateResultForLinearOtcLegs":false,"enableUseOfCachedUnitResults":false,"windowValuationOnInstrumentStartEnd":false,"removeContingentCashflowsInPaymentDiary":false,"useChildSubHoldingKeysForPortfolioExpansion":false},"resultDataRules":[]},"aggregation":{"options":{"useAnsiLikeSyntax":false}},"inheritedRecipes":[],"description":""}}; // UpsertRecipeRequest | The Configuration Recipe to update or insert
     try {
-      UpsertSingleStructuredDataResponse result = apiInstance.upsertConfigurationRecipe(scope, upsertRecipeRequest);
+      UpsertSingleStructuredDataResponse result = apiInstance.upsertConfigurationRecipe(upsertRecipeRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConfigurationRecipeApi#upsertConfigurationRecipe");
@@ -347,7 +346,6 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| The scope to use when updating or inserting the Configuration Recipe. |
  **upsertRecipeRequest** | [**UpsertRecipeRequest**](UpsertRecipeRequest.md)| The Configuration Recipe to update or insert |
 
 ### Return type
