@@ -222,6 +222,7 @@ public class Valuation {
 
         //  create the recipe to get the quotes
         ConfigurationRecipe configurationRecipe = new ConfigurationRecipe()
+				.scope("default")
                 .code("quotes_recipe")
                 .market(new MarketContext()
                     .suppliers(new MarketContextSuppliers().equity(ResourceSupplier.LUSID))
@@ -279,6 +280,7 @@ public class Valuation {
     private List<Map<String, Object>> runAggregation(String portfolioId, String quotesScope, String groupingKey) throws ApiException {
         //  create the recipe that will instruct the aggregation on the market data provider and scope.
         ConfigurationRecipe configurationRecipe = new ConfigurationRecipe()
+				.scope("default")
                 .code("quotes_recipe")
                 .market(new MarketContext()
                         // equity and fx data both sourced from Lusid provider, reference the createUpsertQuote... methods
