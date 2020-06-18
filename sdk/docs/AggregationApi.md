@@ -1,6 +1,6 @@
 # AggregationApi
 
-All URIs are relative to *http://localhost:45968*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -35,7 +35,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:45968");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -44,7 +44,7 @@ public class Example {
     AggregationApi apiInstance = new AggregationApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the portfolio
     String code = "code_example"; // String | The code of the portfolio
-    CreateRecipeRequest createRecipeRequest = {"recipeCreationMarketDataScopes":["MyScope"],"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00"}; // CreateRecipeRequest | The request specifying the parameters to generating the recipe
+    CreateRecipeRequest createRecipeRequest = {"recipeCreationMarketDataScopes":["MyScope"],"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00.0000000+00:00","effectiveAt":"2018-03-05T00:00:00.0000000+00:00"}; // CreateRecipeRequest | The request specifying the parameters to generating the recipe
     try {
       ConfigurationRecipe result = apiInstance.generateConfigurationRecipe(scope, code, createRecipeRequest);
       System.out.println(result);
@@ -108,7 +108,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:45968");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -187,7 +187,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:45968");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -266,7 +266,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:45968");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -345,7 +345,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:45968");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -422,7 +422,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:45968");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -431,7 +431,7 @@ public class Example {
     AggregationApi apiInstance = new AggregationApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the portfolio group
     String code = "code_example"; // String | The code of the portfolio group
-    AggregationRequest aggregationRequest = {"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"]}; // AggregationRequest | The request specifying the parameters of the aggregation
+    AggregationRequest aggregationRequest = {"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00.0000000+00:00","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"]}; // AggregationRequest | The request specifying the parameters of the aggregation
     try {
       NestedAggregationResponse result = apiInstance.getNestedAggregationByGroup(scope, code, aggregationRequest);
       System.out.println(result);
@@ -495,7 +495,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:45968");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -504,7 +504,7 @@ public class Example {
     AggregationApi apiInstance = new AggregationApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the portfolio
     String code = "code_example"; // String | The code of the portfolio
-    AggregationRequest aggregationRequest = {"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"]}; // AggregationRequest | The request specifying the parameters of the aggregation
+    AggregationRequest aggregationRequest = {"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00.0000000+00:00","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"]}; // AggregationRequest | The request specifying the parameters of the aggregation
     try {
       NestedAggregationResponse result = apiInstance.getNestedAggregationByPortfolio(scope, code, aggregationRequest);
       System.out.println(result);
@@ -568,7 +568,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:45968");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
