@@ -1,6 +1,6 @@
 # ResultsApi
 
-All URIs are relative to *http://localhost:52293*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,7 +29,7 @@ import com.finbourne.lusid.api.ResultsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:52293");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -106,14 +106,14 @@ import com.finbourne.lusid.api.ResultsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:52293");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ResultsApi apiInstance = new ResultsApi(defaultClient);
-    CreateResults createResults = {"effectiveAt":"2018-03-05T00:00:00+00:00","entityScope":"MyEntityScope","entityCode":"MyEntityCode","calculationScope":"MyCalculationScope","calculationCode":"MyCalculationCode","format":"DataReader","data":"[]"}; // CreateResults | The details of what to upsert
+    CreateResults createResults = {"effectiveAt":"2018-03-05T00:00:00.0000000+00:00","entityScope":"MyEntityScope","entityCode":"MyEntityCode","calculationScope":"MyCalculationScope","calculationCode":"MyCalculationCode","format":"DataReader","data":"[]"}; // CreateResults | The details of what to upsert
     try {
       Results result = apiInstance.upsertResults(createResults);
       System.out.println(result);
