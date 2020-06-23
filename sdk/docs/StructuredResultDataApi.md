@@ -1,6 +1,6 @@
 # StructuredResultDataApi
 
-All URIs are relative to *http://localhost:63212*
+All URIs are relative to *http://localhost:60161*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,7 +30,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:63212");
+    defaultClient.setBasePath("http://localhost:60161");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -101,7 +101,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:63212");
+    defaultClient.setBasePath("http://localhost:60161");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -178,7 +178,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:63212");
+    defaultClient.setBasePath("http://localhost:60161");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
