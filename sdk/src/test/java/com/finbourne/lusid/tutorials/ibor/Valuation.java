@@ -245,7 +245,7 @@ public class Valuation {
                 .effectiveAt(EFFECTIVE_DATE.toString());
 
         //  do the aggregation
-        ListAggregationResponse aggregationResponse = aggregationApi.getAggregationByPortfolio(TutorialScope, portfolioId,null, null, null, aggregationRequest);
+        ListAggregationResponse aggregationResponse = aggregationApi.getAggregation(TutorialScope, portfolioId,null, null, null, aggregationRequest);
 
         aggregationResponse.getData().sort((o1, o2) -> {
             String name1 = (String)o1.get(GROUPBY_INSTRUMENT_NAME_KEY);
@@ -308,7 +308,7 @@ public class Valuation {
                 .effectiveAt(EFFECTIVE_DATE.toString());
 
         //  do the aggregation
-        ListAggregationResponse aggregationResponse = aggregationApi.getAggregationByPortfolio(TutorialScope, portfolioId,null, null, null, aggregationRequest);
+        ListAggregationResponse aggregationResponse = aggregationApi.getAggregation(TutorialScope, portfolioId,null, null, null, aggregationRequest);
 
         aggregationResponse.getData().sort((o1, o2) -> {
             String name1 = (String)o1.get(groupingKey);
