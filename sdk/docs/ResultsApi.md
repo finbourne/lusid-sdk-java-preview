@@ -1,6 +1,6 @@
 # ResultsApi
 
-All URIs are relative to *http://localhost:36794*
+All URIs are relative to *http://localhost:58478*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,7 +29,7 @@ import com.finbourne.lusid.api.ResultsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:36794");
+    defaultClient.setBasePath("http://localhost:58478");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -106,7 +106,7 @@ import com.finbourne.lusid.api.ResultsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:36794");
+    defaultClient.setBasePath("http://localhost:58478");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
