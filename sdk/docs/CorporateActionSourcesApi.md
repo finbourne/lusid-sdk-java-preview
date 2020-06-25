@@ -1,6 +1,6 @@
 # CorporateActionSourcesApi
 
-All URIs are relative to *http://localhost:39934*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,7 +32,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:39934");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -41,7 +41,7 @@ public class Example {
     CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of corporate action source
     String code = "code_example"; // String | The code of the corporate action source
-    List<UpsertCorporateActionRequest> upsertCorporateActionRequest = {"corporateActionCode":"MyStockSplitId","description":"2-for-1 stock split of instrument BBG001S6PJ31","announcementDate":"2018-03-01T00:00:00+00:00","exDate":"2018-06-01T00:00:00+00:00","recordDate":"2018-06-02T00:00:00+00:00","paymentDate":"2018-08-02T00:00:00+00:00","transitions":[{"inputTransition":{"instrumentIdentifiers":{"instrument/default/Figi":"BBG001S6PJ31"},"unitsFactor":1,"costFactor":1},"outputTransitions":[{"instrumentIdentifiers":{"instrument/default/Figi":"BBG001S6PJ31"},"unitsFactor":2,"costFactor":1}]}]}; // List<UpsertCorporateActionRequest> | The corporate action definitions
+    List<UpsertCorporateActionRequest> upsertCorporateActionRequest = {"corporateActionCode":"MyStockSplitId","description":"2-for-1 stock split of instrument BBG001S6PJ31","announcementDate":"2018-03-01T00:00:00.0000000+00:00","exDate":"2018-06-01T00:00:00.0000000+00:00","recordDate":"2018-06-02T00:00:00.0000000+00:00","paymentDate":"2018-08-02T00:00:00.0000000+00:00","transitions":[{"inputTransition":{"instrumentIdentifiers":{"instrument/default/Figi":"BBG001S6PJ31"},"unitsFactor":1,"costFactor":1},"outputTransitions":[{"instrumentIdentifiers":{"instrument/default/Figi":"BBG001S6PJ31"},"unitsFactor":2,"costFactor":1}]}]}; // List<UpsertCorporateActionRequest> | The corporate action definitions
     try {
       UpsertCorporateActionsResponse result = apiInstance.batchUpsertCorporateActions(scope, code, upsertCorporateActionRequest);
       System.out.println(result);
@@ -105,7 +105,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:39934");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -174,7 +174,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:39934");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -245,7 +245,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:39934");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -330,7 +330,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:39934");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
