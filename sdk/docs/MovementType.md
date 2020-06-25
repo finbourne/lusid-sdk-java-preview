@@ -9,8 +9,6 @@
 
 * `TRADED` (value: `"Traded"`)
 
-* `STOCKMOVEMENT` (value: `"StockMovement"`)
-
 * `FUTURECASH` (value: `"FutureCash"`)
 
 * `COMMITMENT` (value: `"Commitment"`)
@@ -19,21 +17,23 @@
 
 * `CASHSETTLEMENT` (value: `"CashSettlement"`)
 
-* `CASHFORWARD` (value: `"CashForward"`)
+* `ACCRUAL` (value: `"Accrual"`)
+
+* `FORWARDFX` (value: `"ForwardFx"`)
+
+* `UNSETTLEDCASHTYPES` (value: `"UnsettledCashTypes"`)
+
+* `STOCKMOVEMENT` (value: `"StockMovement"`)
 
 * `CASHCOMMITMENT` (value: `"CashCommitment"`)
 
 * `CASHRECEIVABLE` (value: `"CashReceivable"`)
 
-* `ACCRUAL` (value: `"Accrual"`)
-
-* `CASHACCRUAL` (value: `"CashAccrual"`)
-
-* `FORWARDFX` (value: `"ForwardFx"`)
+* `CASHFORWARD` (value: `"CashForward"`)
 
 * `CASHFXFORWARD` (value: `"CashFxForward"`)
 
-* `UNSETTLEDCASHTYPES` (value: `"UnsettledCashTypes"`)
+* `CASHACCRUAL` (value: `"CashAccrual"`)
 
 
 
