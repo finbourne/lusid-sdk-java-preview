@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **id** | [**ResourceId**](ResourceId.md) |  |  [optional]
 **displayName** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
-**type** | [**TypeEnum**](#TypeEnum) | The available values are: String, Int, Decimal, DateTime, Boolean, Map, List, PropertyArray, Percentage, BenchmarkType, Code, Id, Uri, ArrayOfIds, ArrayOfTransactionAliases, ArrayofTransactionMovements, ArrayofUnits, StringArray, CurrencyAndAmount, TradePrice, UnitCreation, Currency, UserId, MetricValue, QuoteId, QuoteSeriesId, ResourceId, ResultValue, CutLocalTime, DateOrCutLabel, Transition, StructuredData, StructuredDataId, ConfigurationRecipe, ConfigurationRecipeSnippet, StructuredResultDataId, StructuredResultData, DataMapping, LusidInstrument, WeightedInstrument, Tenor, CdsProtectionDetailSpecification, FlowConventions, CdsFlowConventions, LegDefinition, IndexConvention, OrderId, Order |  [optional]
+**type** | [**TypeEnum**](#TypeEnum) | The available values are: String, Int, Decimal, DateTime, Boolean, Map, List, PropertyArray, Percentage, BenchmarkType, Code, Id, Uri, ArrayOfIds, ArrayOfTransactionAliases, ArrayofTransactionMovements, ArrayofUnits, StringArray, CurrencyAndAmount, TradePrice, UnitCreation, Currency, UserId, MetricValue, QuoteId, QuoteSeriesId, ResourceId, ResultValue, CutLocalTime, DateOrCutLabel, Transition, StructuredData, StructuredDataId, ConfigurationRecipe, ConfigurationRecipeSnippet, StructuredResultDataId, StructuredResultData, DataMapping, LusidInstrument, WeightedInstrument, Tenor, CdsProtectionDetailSpecification, FlowConventions, CdsFlowConventions, LegDefinition, IndexConvention, OrderId |  [optional]
 **displayOrder** | **Integer** |  |  [optional]
 
 
@@ -65,7 +65,6 @@ CDSFLOWCONVENTIONS | &quot;CdsFlowConventions&quot;
 LEGDEFINITION | &quot;LegDefinition&quot;
 INDEXCONVENTION | &quot;IndexConvention&quot;
 ORDERID | &quot;OrderId&quot;
-ORDER | &quot;Order&quot;
 
 
 
