@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **String** | The key that uniquely identifies the property. It has the format {domain}/{scope}/{code}. | 
+**key** | **String** | The key that uniquely identifies a queryable address in Lusid. | 
 **sortOrder** | [**SortOrderEnum**](#SortOrderEnum) | The available values are: Ascending, Descending | 
 
 

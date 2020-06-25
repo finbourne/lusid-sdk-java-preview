@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**left** | **String** | The key that uniquely identifies the property. It has the format {domain}/{scope}/{code}. |  [optional]
+**left** | **String** | The key that uniquely identifies a queryable address in Lusid. |  [optional]
 **operator** | [**OperatorEnum**](#OperatorEnum) | The available values are: Equals, NotEquals, GreaterThan, GreaterThanOrEqualTo, LessThan, LessThanOrEqualTo, In |  [optional]
 **right** | [**Object**](.md) |  |  [optional]
 **rightOperandType** | [**RightOperandTypeEnum**](#RightOperandTypeEnum) | The available values are: Absolute, Property |  [optional]
