@@ -13,11 +13,11 @@
 
 * `SHORTSHORTER` (value: `"ShortShorter"`)
 
+* `SHORTER` (value: `"Shorter"`)
+
 * `SHORTLONGER` (value: `"ShortLonger"`)
 
 * `LONGER` (value: `"Longer"`)
-
-* `SHORTER` (value: `"Shorter"`)
 
 * `ALLROLES` (value: `"AllRoles"`)
 
