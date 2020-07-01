@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **aggregationCurrency** | **String** |  |  [optional]
 **dataSchema** | [**ResultDataSchema**](ResultDataSchema.md) |  |  [optional]
 **aggregationFailures** | [**List&lt;AggregationMeasureFailureDetail&gt;**](AggregationMeasureFailureDetail.md) |  |  [optional]
-**manifest** | [**MarketDataManifest**](MarketDataManifest.md) |  |  [optional]
+**manifests** | [**List&lt;MarketDataManifest&gt;**](MarketDataManifest.md) |  |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
