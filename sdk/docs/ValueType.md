@@ -101,5 +101,7 @@
 
 * `ORDER` (value: `"Order"`)
 
+* `QUOTE` (value: `"Quote"`)
+
 
 
