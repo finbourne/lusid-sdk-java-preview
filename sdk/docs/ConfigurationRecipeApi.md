@@ -1,13 +1,13 @@
 # ConfigurationRecipeApi
 
-All URIs are relative to *http://localhost:35645*
+All URIs are relative to *http://localhost:44264*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteConfigurationRecipe**](ConfigurationRecipeApi.md#deleteConfigurationRecipe) | **DELETE** /api/recipes/{scope}/{code} | [EXPERIMENTAL] Delete a Configuration Recipe, assuming that it is present.
 [**getConfigurationRecipe**](ConfigurationRecipeApi.md#getConfigurationRecipe) | **GET** /api/recipes/{scope}/{code} | [EXPERIMENTAL] Get Configuration Recipe
-[**listConfigurationRecipes**](ConfigurationRecipeApi.md#listConfigurationRecipes) | **GET** /api/recipes/{scope} | [EXPERIMENTAL] List the set of Configuration Recipes
-[**listConfigurationRecipesForAllScopes**](ConfigurationRecipeApi.md#listConfigurationRecipesForAllScopes) | **GET** /api/recipes | [EXPERIMENTAL] List the set of Configuration Recipes from all scopes
+[**listConfigurationRecipes**](ConfigurationRecipeApi.md#listConfigurationRecipes) | **GET** /api/recipes | [EXPERIMENTAL] List the set of Configuration Recipes
+[**listConfigurationRecipesForAllScopes**](ConfigurationRecipeApi.md#listConfigurationRecipesForAllScopes) | **GET** /api/recipes/list | [EXPERIMENTAL] List the set of Configuration Recipes from all scopes
 [**upsertConfigurationRecipe**](ConfigurationRecipeApi.md#upsertConfigurationRecipe) | **POST** /api/recipes | [EXPERIMENTAL] Upsert a Configuration Recipe. This creates or updates the data in Lusid.
 
 
@@ -32,7 +32,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:35645");
+    defaultClient.setBasePath("http://localhost:44264");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -103,7 +103,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:35645");
+    defaultClient.setBasePath("http://localhost:44264");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -157,11 +157,11 @@ Name | Type | Description  | Notes
 
 <a name="listConfigurationRecipes"></a>
 # **listConfigurationRecipes**
-> ResourceListOfGetRecipeResponse listConfigurationRecipes(scope, asAt, filter)
+> ResourceListOfGetRecipeResponse listConfigurationRecipes(asAt)
 
 [EXPERIMENTAL] List the set of Configuration Recipes
 
-List the set of  configuration recipes at the specified date/time and scope
+List the set of configuration recipes at the specified date/time and scope
 
 ### Example
 ```java
@@ -176,18 +176,16 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:35645");
+    defaultClient.setBasePath("http://localhost:44264");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ConfigurationRecipeApi apiInstance = new ConfigurationRecipeApi(defaultClient);
-    String scope = "scope_example"; // String | The scope of the Configuration Recipes to list
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to list the Configuration Recipes. Defaults to latest if not specified.
-    String filter = "filter_example"; // String | Expression to filter the result set.              For example, to filter on code, use \"value.code eq 'string'\"              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
     try {
-      ResourceListOfGetRecipeResponse result = apiInstance.listConfigurationRecipes(scope, asAt, filter);
+      ResourceListOfGetRecipeResponse result = apiInstance.listConfigurationRecipes(asAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConfigurationRecipeApi#listConfigurationRecipes");
@@ -204,9 +202,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| The scope of the Configuration Recipes to list |
  **asAt** | **OffsetDateTime**| The asAt datetime at which to list the Configuration Recipes. Defaults to latest if not specified. | [optional]
- **filter** | **String**| Expression to filter the result set.              For example, to filter on code, use \&quot;value.code eq &#39;string&#39;\&quot;              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
 
 ### Return type
 
@@ -249,7 +245,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:35645");
+    defaultClient.setBasePath("http://localhost:44264");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -320,7 +316,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:35645");
+    defaultClient.setBasePath("http://localhost:44264");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
