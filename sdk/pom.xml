@@ -54,10 +54,13 @@
                 <version>2.19.1</version>
                 <configuration>
                     <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*Tests.java</include>
                         <include>**/tutorials/**</include>
                     </includes>
                     <excludes>
                         <exclude>**/api/**</exclude>
+                        <exclude>**/model/**</exclude>
                     </excludes>
                     <systemProperties>
                         <property>
@@ -147,8 +150,10 @@
                         </goals>
                         <configuration>
                             <sources>
-                                <source>
-                                src/test/java</source>
+                                <source>src/test/java</source> <!-- Auto Generated Swagger Tests Only -->
+                                <source>src/test/unit/java</source>
+                                <source>src/test/integration/java</source>
+                                <source>src/test/tutorial/java</source>
                             </sources>
                         </configuration>
                     </execution>

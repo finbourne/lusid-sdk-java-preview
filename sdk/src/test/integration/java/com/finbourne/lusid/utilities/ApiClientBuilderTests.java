@@ -9,9 +9,6 @@ import org.junit.rules.ExpectedException;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.fail;
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.verify;
 
 public class ApiClientBuilderTests {
 
@@ -36,17 +33,24 @@ public class ApiClientBuilderTests {
     }
 
     @Test
-    public void build_OnNonExistingConfigurationFile_ShouldThrowException() throws ApiConfigurationException, LusidTokenException {
-        thrown.expect(ApiConfigurationException.class);
-        ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build("doesNotExist");
+    public void build_BadTokenConfigurationFile_ShouldThrowException() throws LusidTokenException {
+        thrown.expect(LusidTokenException.class);
+        ApiConfiguration apiConfiguration = getBadTokenConfiguration();
         ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
     }
 
-    @Test
-    public void build_BadTokenConfigurationFile_ShouldThrowException() throws ApiConfigurationException, LusidTokenException {
-        thrown.expect(LusidTokenException.class);
-        ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build("bad_token_credentials.json");
-        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
+    private ApiConfiguration getBadTokenConfiguration(){
+        return new ApiConfiguration(
+                "https://some-non-existing-test-instance.doesnotexist.com/oauth2/doesnotexist/v1/token",
+                "test.testing@finbourne.com",
+                "note",
+                "invalid-client-id",
+                "none",
+                "https://some-non-existing-test-instance.lusid.com/api",
+                "non-existent",
+                // proxy strs
+                "",8888,"",""
+        );
     }
 
 
