@@ -1,6 +1,6 @@
 # ReconciliationsApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://localhost:35645*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:35645");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -42,7 +42,7 @@ public class Example {
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
     Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
     String filter = "filter_example"; // String | Optional. Expression to filter the result set.              For example, to filter on the left portfolio Code, use \"left.portfolioId.code eq 'string'\"              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
-    PortfoliosReconciliationRequest portfoliosReconciliationRequest = {"left":{"portfolioId":{"scope":"MySourceScope","code":"MySourcePortfolioCode"},"effectiveAt":"2018-03-05T00:00:00.0000000+00:00","asAt":"2018-03-05T00:00:00.0000000+00:00"},"right":{"portfolioId":{"scope":"MyTargetScope","code":"MyTargetPortfolioCode"},"effectiveAt":"2018-03-05T00:00:00.0000000+00:00","asAt":"2018-03-05T00:00:00.0000000+00:00"},"instrumentPropertyKeys":["Instrument/default/Name"]}; // PortfoliosReconciliationRequest | The specifications of the inputs to the reconciliation
+    PortfoliosReconciliationRequest portfoliosReconciliationRequest = {"left":{"portfolioId":{"scope":"MySourceScope","code":"MySourcePortfolioCode"},"effectiveAt":"2018-03-05T00:00:00+00:00","asAt":"2018-03-05T00:00:00+00:00"},"right":{"portfolioId":{"scope":"MyTargetScope","code":"MyTargetPortfolioCode"},"effectiveAt":"2018-03-05T00:00:00+00:00","asAt":"2018-03-05T00:00:00+00:00"},"instrumentPropertyKeys":["Instrument/default/Name"]}; // PortfoliosReconciliationRequest | The specifications of the inputs to the reconciliation
     try {
       ResourceListOfReconciliationBreak result = apiInstance.reconcileHoldings(sortBy, start, limit, filter, portfoliosReconciliationRequest);
       System.out.println(result);
@@ -108,7 +108,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:35645");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -119,7 +119,7 @@ public class Example {
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
     Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
     String filter = "filter_example"; // String | Optional. Expression to filter the result set
-    PortfoliosReconciliationRequestPreview portfoliosReconciliationRequestPreview = {"tolerance":{"/Holding/Units":{"value":0,"type":"Absolute"},"/Holding/Cost":{"value":0,"type":"Relative"}},"left":{"portfolioId":{"scope":"MySourceScope","code":"MySourcePortfolioCode"},"effectiveAt":"2018-03-05T00:00:00.0000000+00:00","asAt":"2018-03-05T00:00:00.0000000+00:00"},"right":{"portfolioId":{"scope":"MyTargetScope","code":"MyTargetPortfolioCode"},"effectiveAt":"2018-03-05T00:00:00.0000000+00:00","asAt":"2018-03-05T00:00:00.0000000+00:00"},"instrumentPropertyKeys":["Instrument/default/Name"]}; // PortfoliosReconciliationRequestPreview | The specifications of the inputs to the reconciliation. This request can take tolerance for units and cost.
+    PortfoliosReconciliationRequestPreview portfoliosReconciliationRequestPreview = {"tolerance":{"/Holding/Units":{"value":0,"type":"Absolute"},"/Holding/Cost":{"value":0,"type":"Relative"}},"left":{"portfolioId":{"scope":"MySourceScope","code":"MySourcePortfolioCode"},"effectiveAt":"2018-03-05T00:00:00+00:00","asAt":"2018-03-05T00:00:00+00:00"},"right":{"portfolioId":{"scope":"MyTargetScope","code":"MyTargetPortfolioCode"},"effectiveAt":"2018-03-05T00:00:00+00:00","asAt":"2018-03-05T00:00:00+00:00"},"instrumentPropertyKeys":["Instrument/default/Name"]}; // PortfoliosReconciliationRequestPreview | The specifications of the inputs to the reconciliation. This request can take tolerance for units and cost.
     try {
       ResourceListOfReconciliationBreak result = apiInstance.reconcileHoldingsPreview(sortBy, start, limit, filter, portfoliosReconciliationRequestPreview);
       System.out.println(result);
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 <a name="reconcileInline"></a>
 # **reconcileInline**
-> AggregationReconciliation reconcileInline(sortBy, start, limit, filter, inlineValuationsReconciliationRequest)
+> ListAggregationReconciliation reconcileInline(sortBy, start, limit, filter, inlineValuationsReconciliationRequest)
 
 [EXPERIMENTAL] Reconcile valuations performed on one or two sets of inline instruments using one or two configuration recipes.
 
@@ -185,7 +185,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:35645");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -196,9 +196,9 @@ public class Example {
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
     Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
     String filter = "filter_example"; // String | Optional. Expression to filter the result set.              For example, to filter on the left portfolio Code, use \"left.portfolioId.code eq 'string'\"              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
-    InlineValuationsReconciliationRequest inlineValuationsReconciliationRequest = {"left":{"scope":"MySourceScope","aggregation":{"request":{"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00.0000000+00:00","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"],"portfolioIdentifierCode":"SinglePortfolio"},"instruments":[{"quantity":10000,"holdingIdentifier":"fx-fwd-GBPUSD","instrument":{"domAmount":100,"fgnAmount":-150,"isNdf":false,"fixingDate":"0001-01-01T00:00:00.0000000+00:00","fgnCcy":"GBP","refSpotRate":1.5,"startDate":"2020-07-07T14:02:17.4438422+00:00","maturityDate":"2020-08-06T14:02:17.4438427+00:00","domCcy":"USD","instrumentType":"FxForward"}}]}},"right":{"scope":"MyTargetScope","aggregation":{"request":{"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00.0000000+00:00","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"],"portfolioIdentifierCode":"SinglePortfolio"},"instruments":[{"quantity":10000,"holdingIdentifier":"fx-fwd-GBPJPY","instrument":{"domAmount":100,"fgnAmount":-150,"isNdf":false,"fixingDate":"0001-01-01T00:00:00.0000000+00:00","fgnCcy":"GBP","refSpotRate":132,"startDate":"2020-07-07T14:02:17.4438521+00:00","maturityDate":"2020-08-06T14:02:17.4438522+00:00","domCcy":"JPY","instrumentType":"FxForward"}}]}},"leftToRightMapping":{}}; // InlineValuationsReconciliationRequest | The specifications of the inputs to the reconciliation
+    InlineValuationsReconciliationRequest inlineValuationsReconciliationRequest = {"left":{"scope":"MySourceScope","aggregation":{"request":{"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"],"portfolioIdentifierCode":"SinglePortfolio"},"instruments":[{"quantity":10000,"holdingIdentifier":"fx-fwd-GBPUSD","instrument":{"domAmount":100,"fgnAmount":-150,"isNdf":false,"fixingDate":"0001-01-01T00:00:00+00:00","fgnCcy":"GBP","refSpotRate":1.5,"startDate":"2020-07-07T15:36:28.6938561+00:00","maturityDate":"2020-08-06T15:36:28.6938569+00:00","domCcy":"USD","instrumentType":"FxForward"}}]}},"right":{"scope":"MyTargetScope","aggregation":{"request":{"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"],"portfolioIdentifierCode":"SinglePortfolio"},"instruments":[{"quantity":10000,"holdingIdentifier":"fx-fwd-GBPJPY","instrument":{"domAmount":100,"fgnAmount":-150,"isNdf":false,"fixingDate":"0001-01-01T00:00:00+00:00","fgnCcy":"GBP","refSpotRate":132,"startDate":"2020-07-07T15:36:28.6938633+00:00","maturityDate":"2020-08-06T15:36:28.6938634+00:00","domCcy":"JPY","instrumentType":"FxForward"}}]}},"leftToRightMapping":[],"preserveKeys":[]}; // InlineValuationsReconciliationRequest | The specifications of the inputs to the reconciliation
     try {
-      AggregationReconciliation result = apiInstance.reconcileInline(sortBy, start, limit, filter, inlineValuationsReconciliationRequest);
+      ListAggregationReconciliation result = apiInstance.reconcileInline(sortBy, start, limit, filter, inlineValuationsReconciliationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReconciliationsApi#reconcileInline");
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AggregationReconciliation**](AggregationReconciliation.md)
+[**ListAggregationReconciliation**](ListAggregationReconciliation.md)
 
 ### Authorization
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 <a name="reconcileValuation"></a>
 # **reconcileValuation**
-> ResourceListOfReconciliationBreak reconcileValuation(sortBy, start, limit, filter, valuationsReconciliationRequest)
+> ListAggregationReconciliation reconcileValuation(sortBy, start, limit, filter, valuationsReconciliationRequest)
 
 [EXPERIMENTAL] Reconcile valuations performed on one or two sets of holdings using one or two configuration recipes.
 
@@ -262,7 +262,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:35645");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -273,9 +273,9 @@ public class Example {
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
     Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
     String filter = "filter_example"; // String | Optional. Expression to filter the result set.               For example, to filter on the left portfolio Code, use \"left.portfolioId.code eq 'string'\"              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
-    ValuationsReconciliationRequest valuationsReconciliationRequest = {"left":{"portfolioId":{"scope":"MySourceScope","code":"MySourcePortfolioCode"},"aggregation":{"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00.0000000+00:00","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"],"portfolioIdentifierCode":"SinglePortfolio"}},"right":{"portfolioId":{"scope":"MyTargetScope","code":"MyTargetPortfolioCode"},"aggregation":{"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00.0000000+00:00","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"],"portfolioIdentifierCode":"SinglePortfolio"}},"instrumentPropertyKeys":["Instrument/default/Name"]}; // ValuationsReconciliationRequest | The specifications of the inputs to the reconciliation
+    ValuationsReconciliationRequest valuationsReconciliationRequest = {"left":{"portfolioId":{"scope":"MySourceScope","code":"MySourcePortfolioCode"},"aggregation":{"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"],"portfolioIdentifierCode":"SinglePortfolio"}},"right":{"portfolioId":{"scope":"MyTargetScope","code":"MyTargetPortfolioCode"},"aggregation":{"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"],"portfolioIdentifierCode":"SinglePortfolio"}},"leftToRightMapping":[],"preserveKeys":[]}; // ValuationsReconciliationRequest | The specifications of the inputs to the reconciliation
     try {
-      ResourceListOfReconciliationBreak result = apiInstance.reconcileValuation(sortBy, start, limit, filter, valuationsReconciliationRequest);
+      ListAggregationReconciliation result = apiInstance.reconcileValuation(sortBy, start, limit, filter, valuationsReconciliationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReconciliationsApi#reconcileValuation");
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceListOfReconciliationBreak**](ResourceListOfReconciliationBreak.md)
+[**ListAggregationReconciliation**](ListAggregationReconciliation.md)
 
 ### Authorization
 
