@@ -41,7 +41,7 @@ public class FileConfigurationLoader {
         return (configFile.exists()) ? Optional.of(configFile) : Optional.empty();
     }
 
-    // Created in own methods for test mocking purposes.
+    // factory methods for test mocking purposes.
     ClassLoader getClassLoader(){
         return getClass().getClassLoader();
     }

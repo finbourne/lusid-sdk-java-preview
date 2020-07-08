@@ -52,13 +52,15 @@ public class FileConfigurationLoaderTest {
     public void loadConfiguration_InResources_ShouldLoadFromResource() throws IOException {
         // mock class loader finding URL in resources
         doReturn(configURL).when(classLoader).getResource(configFilePath);
-        // ensure not returning file from absolute path
-        doReturn(false).when(file).exists();
+        // file exists if in resources
+        doReturn(true).when(file).exists();
 
         // verify returned the file from resources
         File result = fileConfigurationLoader.loadConfiguration(configFilePath);
-        // check name not absolute path to keep this test platform agnostic
+        // verify getName() and not getAbsolutePath() to keep this test platform agnostic
         assertThat(result.getName(), equalTo("secrets.json"));
+        // verify we did not try and load from absolute path if already found in resources
+        verify(fileConfigurationLoader, times(0)).getFile(anyString());
     }
 
     @Test(expected = IOException.class)

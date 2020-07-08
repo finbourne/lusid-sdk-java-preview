@@ -5,6 +5,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import static com.finbourne.lusid.utilities.TestContants.DUMMY_CREDENTIALS_FILE;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.*;
@@ -26,7 +27,7 @@ public class ApiConfigurationBuilderTests {
         doReturn(emptyConfigFromEnvVariables()).when(apiConfigurationBuilder)
                 .getApiConfigurationFromEnvironmentVariables();
 
-        ApiConfiguration apiConfiguration = apiConfigurationBuilder.build("dummy_credentials.json");
+        ApiConfiguration apiConfiguration = apiConfigurationBuilder.build(DUMMY_CREDENTIALS_FILE);
 
         assertThat(apiConfiguration.getApiUrl(), equalTo("https://some-non-existing-test-instance.lusid.com/api"));
         assertThat(apiConfiguration.getTokenUrl(), equalTo("https://some-non-existing-test-instance.doesnotexist.com/oauth2/doesnotexist/v1/token"));
