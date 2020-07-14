@@ -229,7 +229,8 @@ public class Orders
         assertTrue(updateResult.stream().allMatch(order -> order.getQuantity().equals(500)));
     }
 
-    // We want to make a request for multiple orders across all scopes.
+    // We want to make a request for a single order. The internal security id will be mapped on upsert
+    // from the instrument identifiers passed. We can filter on a number of parameters on query.
     @Test
     public void Upsert_And_Retrieve_Simple_Orders() throws ApiException {
         String testScope = "Orders-Filter-TestScope";
@@ -329,11 +330,12 @@ public class Orders
                 null,
                 null,
                 null,
-                3,
                 null,
+                "Quantity gt 100 and Scope eq '" + testScope + "' and Id in '" + order1Filter + "', '" + order2Filter + "', '" + order3Filter + "'",
                 null)
                 .getValues();
-        assertEquals(3, quantityFilter.size());
+        assertEquals(2, quantityFilter.size());
+        assertTrue(quantityFilter.stream().allMatch(order -> order.getQuantity() > 100));
 
         /*
         List<Order> orderGroupFilter = ordersApi.listOrders(t, null, null, null, null,"Properties[" + testScope + "/OrderGroup] eq 'UK Test Orders 2'", null).getValues();
