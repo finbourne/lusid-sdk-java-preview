@@ -8,6 +8,7 @@ import com.finbourne.lusid.model.*;
 import com.finbourne.lusid.utilities.*;
 import com.finbourne.lusid.utilities.auth.LusidTokenException;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -231,6 +232,7 @@ public class Orders
 
     // We want to make a request for a single order. The internal security id will be mapped on upsert
     // from the instrument identifiers passed. We can filter on a number of parameters on query.
+    @Ignore
     @Test
     public void Upsert_And_Retrieve_Simple_Orders() throws ApiException {
         String testScope = "Orders-Filter-TestScope";
