@@ -14,8 +14,6 @@ Name | Type | Description | Notes
 **dayCountConvention** | [**DayCountConventionEnum**](#DayCountConventionEnum) | The available values are: Actual360, Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360, EuroBond, ActAct, ActualActual, ActActIsda, Invalid | 
 **rollConvention** | [**RollConventionEnum**](#RollConventionEnum) | The available values are: NoAdjustment, None, Previous, P, Following, F, ModifiedPrevious, MP, ModifiedFollowing, MF, EndOfMonth, EOM, EndOfMonthPrevious, EOMP, EndOfMonthFollowing, EOMF, Invalid | 
 **holidayCalendars** | **List&lt;String&gt;** | An array of strings denoting holiday calendars that apply to generation and payment. | 
-**settleDays** | **Integer** | Number of Good Business Days between the trade date and the effective or settlement date of the instrument. |  [optional]
-**resetDays** | **Integer** | The number of Good Business Days between determination and payment of reset. |  [optional]
 
 
 
