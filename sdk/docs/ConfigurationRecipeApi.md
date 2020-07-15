@@ -1,6 +1,6 @@
 # ConfigurationRecipeApi
 
-All URIs are relative to *http://localhost:37639*
+All URIs are relative to *http://localhost:31731*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,7 +32,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:37639");
+    defaultClient.setBasePath("http://localhost:31731");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -103,7 +103,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:37639");
+    defaultClient.setBasePath("http://localhost:31731");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -176,7 +176,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:37639");
+    defaultClient.setBasePath("http://localhost:31731");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -245,7 +245,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:37639");
+    defaultClient.setBasePath("http://localhost:31731");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -316,7 +316,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:37639");
+    defaultClient.setBasePath("http://localhost:31731");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
