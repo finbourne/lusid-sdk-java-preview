@@ -39,5 +39,7 @@
 
 * `ALLOCATION` (value: `"Allocation"`)
 
+* `CALENDAR` (value: `"Calendar"`)
+
 
 

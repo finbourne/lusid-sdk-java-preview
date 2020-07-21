@@ -103,5 +103,9 @@
 
 * `QUOTE` (value: `"Quote"`)
 
+* `WEEKENDMASK` (value: `"WeekendMask"`)
+
+* `DATEATTRIBUTES` (value: `"DateAttributes"`)
+
 
 
