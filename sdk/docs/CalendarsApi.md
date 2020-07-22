@@ -1,6 +1,6 @@
 # CalendarsApi
 
-All URIs are relative to *http://localhost:47721*
+All URIs are relative to *http://localhost:30920*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="addDateToCalendar"></a>
 # **addDateToCalendar**
-> java.util.Date addDateToCalendar(scope, code, createDateRequest)
+> CalendarDate addDateToCalendar(scope, code, createDateRequest)
 
 [EXPERIMENTAL] Add a date to a calendar
 
@@ -34,7 +34,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:47721");
+    defaultClient.setBasePath("http://localhost:30920");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -45,7 +45,7 @@ public class Example {
     String code = "code_example"; // String | Code of the calendar
     CreateDateRequest createDateRequest = {"dateId":"TestDate","fromUtc":"2020-02-12T12:00:00+00:00","toUtc":"2020-02-13T12:00:00+00:00","timeZone":"CET","description":"Chinese New year","type":"Holiday","sourceData":{}}; // CreateDateRequest | Add date to calendar request
     try {
-      java.util.Date result = apiInstance.addDateToCalendar(scope, code, createDateRequest);
+      CalendarDate result = apiInstance.addDateToCalendar(scope, code, createDateRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CalendarsApi#addDateToCalendar");
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**java.util.Date**](java.util.Date.md)
+[**CalendarDate**](CalendarDate.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:47721");
+    defaultClient.setBasePath("http://localhost:30920");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -176,7 +176,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:47721");
+    defaultClient.setBasePath("http://localhost:30920");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteDateFromCalendar"></a>
 # **deleteDateFromCalendar**
-> java.util.Date deleteDateFromCalendar(scope, code, dateId)
+> CalendarDate deleteDateFromCalendar(scope, code, dateId)
 
 [EXPERIMENTAL] Remove a date from a calendar
 
@@ -247,7 +247,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:47721");
+    defaultClient.setBasePath("http://localhost:30920");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -258,7 +258,7 @@ public class Example {
     String code = "code_example"; // String | Code of the calendar
     String dateId = "dateId_example"; // String | Identifier of the date to be removed
     try {
-      java.util.Date result = apiInstance.deleteDateFromCalendar(scope, code, dateId);
+      CalendarDate result = apiInstance.deleteDateFromCalendar(scope, code, dateId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CalendarsApi#deleteDateFromCalendar");
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**java.util.Date**](java.util.Date.md)
+[**CalendarDate**](CalendarDate.md)
 
 ### Authorization
 
@@ -320,7 +320,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:47721");
+    defaultClient.setBasePath("http://localhost:30920");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 <a name="getDates"></a>
 # **getDates**
-> ResourceListOfDate getDates(scope, code, fromEffectiveAt, toEffectiveAt, asAt, idFilter)
+> ResourceListOfCalendarDate getDates(scope, code, fromEffectiveAt, toEffectiveAt, asAt, idFilter)
 
 [EXPERIMENTAL] Get dates for a specific calendar
 
@@ -393,7 +393,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:47721");
+    defaultClient.setBasePath("http://localhost:30920");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -407,7 +407,7 @@ public class Example {
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | AsAt the dates should be retrieved at
     List<String> idFilter = Arrays.asList(); // List<String> | An additional filter that will filter dates based on their identifer
     try {
-      ResourceListOfDate result = apiInstance.getDates(scope, code, fromEffectiveAt, toEffectiveAt, asAt, idFilter);
+      ResourceListOfCalendarDate result = apiInstance.getDates(scope, code, fromEffectiveAt, toEffectiveAt, asAt, idFilter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CalendarsApi#getDates");
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceListOfDate**](ResourceListOfDate.md)
+[**ResourceListOfCalendarDate**](ResourceListOfCalendarDate.md)
 
 ### Authorization
 
@@ -472,7 +472,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:47721");
+    defaultClient.setBasePath("http://localhost:30920");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
