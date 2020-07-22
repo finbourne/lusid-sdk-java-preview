@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **name** | **String** | The name of the index convention | 
 **publicationDayLag** | **Integer** | Number of days between spot and publication of the rate. | 
 **paymentTenor** | [**Tenor**](Tenor.md) |  | 
-**dayCountConvention** | [**DayCountConventionEnum**](#DayCountConventionEnum) | The available values are: Actual360, Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360, EuroBond, ActAct, ActualActual, ActActIsda, Invalid | 
+**dayCountConvention** | [**DayCountConventionEnum**](#DayCountConventionEnum) | The available values are: Actual360, Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360, EuroBond, ActAct, ActualActual, ActActIsda, ActActIsma, ActActIcma, Invalid | 
 **currency** | **String** | Currency of the index convention. | 
 
 
@@ -32,6 +32,8 @@ EUROBOND | &quot;EuroBond&quot;
 ACTACT | &quot;ActAct&quot;
 ACTUALACTUAL | &quot;ActualActual&quot;
 ACTACTISDA | &quot;ActActIsda&quot;
+ACTACTISMA | &quot;ActActIsma&quot;
+ACTACTICMA | &quot;ActActIcma&quot;
 INVALID | &quot;Invalid&quot;
 
 
