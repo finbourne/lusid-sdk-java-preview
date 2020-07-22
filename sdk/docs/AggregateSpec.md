@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **String** | The key that uniquely identifies a queryable address in Lusid. |  [optional]
-**op** | [**OpEnum**](#OpEnum) | The available values are: Sum, Proportion, Average, Count, Min, Max, Value |  [optional]
+**key** | **String** | The key that uniquely identifies a queryable address in Lusid. | 
+**op** | [**OpEnum**](#OpEnum) | The available values are: Sum, Proportion, Average, Count, Min, Max, Value | 
 
 
 
