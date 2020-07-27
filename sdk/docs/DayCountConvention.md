@@ -31,6 +31,10 @@
 
 * `ACTACTISDA` (value: `"ActActIsda"`)
 
+* `ACTACTISMA` (value: `"ActActIsma"`)
+
+* `ACTACTICMA` (value: `"ActActIcma"`)
+
 * `INVALID` (value: `"Invalid"`)
 
 
