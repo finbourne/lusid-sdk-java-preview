@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **scope** | **String** | The scope used when updating or inserting the convention. |  [optional]
 **code** | **String** | The code of the convention. |  [optional]
 **currency** | **String** | Currency of the flow convention. | 
-**paymentFrequency** | [**Tenor**](Tenor.md) |  | 
+**paymentFrequency** | **String** | When generating a multiperiod flow, or when the maturity of the flow is not given but the start date is,  the tenor is the time-step from the anchor-date to the nominal maturity of the flow prior to any adjustment. | 
 **dayCountConvention** | [**DayCountConventionEnum**](#DayCountConventionEnum) | The available values are: Actual360, Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360, EuroBond, ActAct, ActualActual, ActActIsda, ActActIsma, ActActIcma, Invalid | 
 **rollConvention** | [**RollConventionEnum**](#RollConventionEnum) | The available values are: NoAdjustment, None, Previous, P, Following, F, ModifiedPrevious, MP, ModifiedFollowing, MF, EndOfMonth, EOM, EndOfMonthPrevious, EOMP, EndOfMonthFollowing, EOMF, Invalid | 
 **holidayCalendars** | **List&lt;String&gt;** | An array of strings denoting holiday calendars that apply to generation and payment. | 
