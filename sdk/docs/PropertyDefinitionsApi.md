@@ -1,6 +1,6 @@
 # PropertyDefinitionsApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://localhost:63279*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -33,7 +33,7 @@ import com.finbourne.lusid.api.PropertyDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63279");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -102,14 +102,14 @@ import com.finbourne.lusid.api.PropertyDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63279");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     PropertyDefinitionsApi apiInstance = new PropertyDefinitionsApi(defaultClient);
-    CreatePropertyDefinitionRequest createPropertyDefinitionRequest = {"domain":"Portfolio","scope":"MyScope","code":"MyPropertyName","valueRequired":false,"displayName":"My Property Display Name","dataTypeId":{"scope":"system","code":"string"},"lifeTime":"Perpetual","constraintStyle":"Property"}; // CreatePropertyDefinitionRequest | The definition of the new property.
+    CreatePropertyDefinitionRequest createPropertyDefinitionRequest = {"domain":"Portfolio","scope":"MyScope","code":"MyPropertyName","valueRequired":false,"displayName":"My Property Display Name","dataTypeId":{"scope":"system","code":"string"},"lifeTime":"Perpetual","constraintStyle":"Property","propertyDescription":"Optional property description"}; // CreatePropertyDefinitionRequest | The definition of the new property.
     try {
       PropertyDefinition result = apiInstance.createPropertyDefinition(createPropertyDefinitionRequest);
       System.out.println(result);
@@ -171,7 +171,7 @@ import com.finbourne.lusid.api.PropertyDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63279");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -244,7 +244,7 @@ import com.finbourne.lusid.api.PropertyDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63279");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -317,7 +317,7 @@ import com.finbourne.lusid.api.PropertyDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63279");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -392,7 +392,7 @@ import com.finbourne.lusid.api.PropertyDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63279");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -402,7 +402,7 @@ public class Example {
     String domain = "domain_example"; // String | The domain of the property being updated.
     String scope = "scope_example"; // String | The scope of the property being updated.
     String code = "code_example"; // String | The code of the property being updated. Together with the domain and scope this uniquely              identifies the property.
-    UpdatePropertyDefinitionRequest updatePropertyDefinitionRequest = {"displayName":"MyPropertyName"}; // UpdatePropertyDefinitionRequest | The updated definition of the property.
+    UpdatePropertyDefinitionRequest updatePropertyDefinitionRequest = {"displayName":"MyPropertyName","propertyDescription":"Option Property description"}; // UpdatePropertyDefinitionRequest | The updated definition of the property.
     try {
       PropertyDefinition result = apiInstance.updatePropertyDefinition(domain, scope, code, updatePropertyDefinitionRequest);
       System.out.println(result);
