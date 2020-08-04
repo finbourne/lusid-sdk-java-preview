@@ -6,10 +6,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**scope** | **String** | The scope used when updating or inserting the convention. |  [optional]
+**code** | **String** | The code of the convention. |  [optional]
 **fixingReference** | **String** | The reference rate name for fixings | 
-**name** | **String** | The name of the index convention | 
 **publicationDayLag** | **Integer** | Number of days between spot and publication of the rate. | 
-**paymentTenor** | [**Tenor**](Tenor.md) |  | 
+**paymentTenor** | **String** | The tenor of the payment. For an OIS index this is always 1 day. For other indices, e.g. LIBOR it will have a variable tenor typically between 1 day and 1 year. | 
 **dayCountConvention** | [**DayCountConventionEnum**](#DayCountConventionEnum) | The available values are: Actual360, Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360, EuroBond, ActAct, ActualActual, ActActIsda, ActActIsma, ActActIcma, Invalid | 
 **currency** | **String** | Currency of the index convention. | 
 
