@@ -93,6 +93,8 @@
 
 * `CDSFLOWCONVENTIONS` (value: `"CdsFlowConventions"`)
 
+* `CONVENTIONS` (value: `"Conventions"`)
+
 * `LEGDEFINITION` (value: `"LegDefinition"`)
 
 * `INDEXCONVENTION` (value: `"IndexConvention"`)

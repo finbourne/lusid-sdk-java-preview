@@ -7,8 +7,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **rollFrequency** | **String** | The frequency at which the reference bonds are updated, this defaults to 6M, but can be 3M, exp for historically issued products |  [optional]
-**scope** | **String** | The scope used when updating or inserting the convention. |  [optional]
-**code** | **String** | The code of the convention. |  [optional]
 **currency** | **String** | Currency of the flow convention. | 
 **paymentFrequency** | **String** | When generating a multiperiod flow, or when the maturity of the flow is not given but the start date is,  the tenor is the time-step from the anchor-date to the nominal maturity of the flow prior to any adjustment. | 
 **dayCountConvention** | [**DayCountConventionEnum**](#DayCountConventionEnum) | The available values are: Actual360, Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360, EuroBond, ActAct, ActualActual, ActActIsda, ActActIsma, ActActIcma, Invalid | 
@@ -16,6 +14,8 @@ Name | Type | Description | Notes
 **holidayCalendars** | **List&lt;String&gt;** | An array of strings denoting holiday calendars that apply to generation and payment. | 
 **settleDays** | **Integer** | Number of Good Business Days between the trade date and the effective or settlement date of the instrument. | 
 **resetDays** | **Integer** | The number of Good Business Days between determination and payment of reset. | 
+**scope** | **String** | The scope used when updating or inserting the convention. |  [optional]
+**code** | **String** | The code of the convention. |  [optional]
 
 
 
