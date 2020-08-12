@@ -1,6 +1,6 @@
 # CalendarsApi
 
-All URIs are relative to *http://localhost:37256*
+All URIs are relative to *http://localhost:48199*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**deleteDateFromCalendar**](CalendarsApi.md#deleteDateFromCalendar) | **DELETE** /api/calendar/generic/{scope}/{code}/dates/{dateId} | [EXPERIMENTAL] Remove a date from a calendar
 [**getCalendar**](CalendarsApi.md#getCalendar) | **GET** /api/calendar/generic/{scope}/{code} | [EXPERIMENTAL] Get a calendar in its generic form
 [**getDates**](CalendarsApi.md#getDates) | **GET** /api/calendar/generic/{scope}/{code}/dates | [EXPERIMENTAL] Get dates for a specific calendar
+[**isBusinessDateTime**](CalendarsApi.md#isBusinessDateTime) | **GET** /api/calendar/businessday/{scope}/{code} | [EXPERIMENTAL] Check whether a DateTime is a \&quot;Business DateTime\&quot;
 [**updateCalendar**](CalendarsApi.md#updateCalendar) | **PUT** /api/calendar/generic/{scope}/{code}/mask | [EXPERIMENTAL] Update a calendar
 
 
@@ -34,7 +35,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:37256");
+    defaultClient.setBasePath("http://localhost:48199");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -107,7 +108,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:37256");
+    defaultClient.setBasePath("http://localhost:48199");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -176,7 +177,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:37256");
+    defaultClient.setBasePath("http://localhost:48199");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -247,7 +248,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:37256");
+    defaultClient.setBasePath("http://localhost:48199");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -320,7 +321,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:37256");
+    defaultClient.setBasePath("http://localhost:48199");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -393,7 +394,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:37256");
+    defaultClient.setBasePath("http://localhost:48199");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -451,6 +452,81 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="isBusinessDateTime"></a>
+# **isBusinessDateTime**
+> IsBusinessDayResponse isBusinessDateTime(dateTime, scope, code, asAt)
+
+[EXPERIMENTAL] Check whether a DateTime is a \&quot;Business DateTime\&quot;
+
+A Business DateTime is defined as a point in time that:      * Does not represent a day that overlaps with the calendars WeekendMask      * If the calendar is a \&quot;Holiday Calendar\&quot; Does not overlap with any dates in the calendar      * If the calendar is a \&quot;TradingHours Calendar\&quot; Does overlap with a date in the calendar                All dates specified must be UTC and the upper bound of a calendar is not inclusive   e.g. From: 2020-12-25-00-00-00        To: 2020-12-26-00-00-00  IsBusinessDay(2020-12-26-00-00-00) &#x3D;&#x3D; false
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CalendarsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost:48199");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    CalendarsApi apiInstance = new CalendarsApi(defaultClient);
+    OffsetDateTime dateTime = new OffsetDateTime(); // OffsetDateTime | DateTime to check - This DateTime must be UTC
+    String scope = "scope_example"; // String | Scope of the calendar
+    String code = "code_example"; // String | Code of the calendar
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | AsAt for the request
+    try {
+      IsBusinessDayResponse result = apiInstance.isBusinessDateTime(dateTime, scope, code, asAt);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CalendarsApi#isBusinessDateTime");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dateTime** | **OffsetDateTime**| DateTime to check - This DateTime must be UTC |
+ **scope** | **String**| Scope of the calendar |
+ **code** | **String**| Code of the calendar |
+ **asAt** | **OffsetDateTime**| AsAt for the request | [optional]
+
+### Return type
+
+[**IsBusinessDayResponse**](IsBusinessDayResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Whether or not the requested DateTime is a BusinessDay or not |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="updateCalendar"></a>
 # **updateCalendar**
 > Calendar updateCalendar(scope, code, updateCalendarRequest)
@@ -472,7 +548,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:37256");
+    defaultClient.setBasePath("http://localhost:48199");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
