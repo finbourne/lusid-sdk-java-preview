@@ -1,17 +1,17 @@
 # CalendarsApi
 
-All URIs are relative to *http://localhost:57966*
+All URIs are relative to *http://localhost:56549*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addDateToCalendar**](CalendarsApi.md#addDateToCalendar) | **PUT** /api/calendar/generic/{scope}/{code}/dates | [EXPERIMENTAL] Add a date to a calendar
-[**createCalendar**](CalendarsApi.md#createCalendar) | **POST** /api/calendar/generic | [EXPERIMENTAL] Create a calendar in its generic form
-[**deleteCalendar**](CalendarsApi.md#deleteCalendar) | **DELETE** /api/calendar/generic/{scope}/{code} | [EXPERIMENTAL] Delete a calendar
-[**deleteDateFromCalendar**](CalendarsApi.md#deleteDateFromCalendar) | **DELETE** /api/calendar/generic/{scope}/{code}/dates/{dateId} | [EXPERIMENTAL] Remove a date from a calendar
-[**getCalendar**](CalendarsApi.md#getCalendar) | **GET** /api/calendar/generic/{scope}/{code} | [EXPERIMENTAL] Get a calendar in its generic form
-[**getDates**](CalendarsApi.md#getDates) | **GET** /api/calendar/generic/{scope}/{code}/dates | [EXPERIMENTAL] Get dates for a specific calendar
-[**isBusinessDateTime**](CalendarsApi.md#isBusinessDateTime) | **GET** /api/calendar/businessday/{scope}/{code} | [EXPERIMENTAL] Check whether a DateTime is a \&quot;Business DateTime\&quot;
-[**updateCalendar**](CalendarsApi.md#updateCalendar) | **PUT** /api/calendar/generic/{scope}/{code}/mask | [EXPERIMENTAL] Update a calendar
+[**addDateToCalendar**](CalendarsApi.md#addDateToCalendar) | **PUT** /api/calendars/generic/{scope}/{code}/dates | [EXPERIMENTAL] Add a date to a calendar
+[**createCalendar**](CalendarsApi.md#createCalendar) | **POST** /api/calendars/generic | [EXPERIMENTAL] Create a calendar in its generic form
+[**deleteCalendar**](CalendarsApi.md#deleteCalendar) | **DELETE** /api/calendars/generic/{scope}/{code} | [EXPERIMENTAL] Delete a calendar
+[**deleteDateFromCalendar**](CalendarsApi.md#deleteDateFromCalendar) | **DELETE** /api/calendars/generic/{scope}/{code}/dates/{dateId} | [EXPERIMENTAL] Remove a date from a calendar
+[**getCalendar**](CalendarsApi.md#getCalendar) | **GET** /api/calendars/generic/{scope}/{code} | [EXPERIMENTAL] Get a calendar in its generic form
+[**getDates**](CalendarsApi.md#getDates) | **GET** /api/calendars/generic/{scope}/{code}/dates | [EXPERIMENTAL] Get dates for a specific calendar
+[**isBusinessDateTime**](CalendarsApi.md#isBusinessDateTime) | **GET** /api/calendars/businessday/{scope}/{code} | [EXPERIMENTAL] Check whether a DateTime is a \&quot;Business DateTime\&quot;
+[**updateCalendar**](CalendarsApi.md#updateCalendar) | **PUT** /api/calendars/generic/{scope}/{code}/mask | [EXPERIMENTAL] Update a calendar
 
 
 <a name="addDateToCalendar"></a>
@@ -35,7 +35,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:57966");
+    defaultClient.setBasePath("http://localhost:56549");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -108,7 +108,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:57966");
+    defaultClient.setBasePath("http://localhost:56549");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -177,7 +177,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:57966");
+    defaultClient.setBasePath("http://localhost:56549");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -248,7 +248,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:57966");
+    defaultClient.setBasePath("http://localhost:56549");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -321,7 +321,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:57966");
+    defaultClient.setBasePath("http://localhost:56549");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -394,7 +394,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:57966");
+    defaultClient.setBasePath("http://localhost:56549");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -473,7 +473,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:57966");
+    defaultClient.setBasePath("http://localhost:56549");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -548,7 +548,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:57966");
+    defaultClient.setBasePath("http://localhost:56549");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
