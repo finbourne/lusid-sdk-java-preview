@@ -17,8 +17,8 @@ public class FeatureLookthroughTest {
     }
 
     @Test
-    @LusidFeature("in test")
-    public void checkFeatures() throws Exception {
+    // This is the reflections API example
+    public void checkFeatures() {
         FeatureLookthrough featureLookthrough = new FeatureLookthrough();
         featureLookthrough.retrieveAnnotations();
 
@@ -31,6 +31,7 @@ public class FeatureLookthroughTest {
     }
 
     @Test
+    // The reason I'm using this custom class as opposed to the Reflections API is because it's not working for ForEachLoopTest class at the moment
     public void customReflectionTest() throws ClassNotFoundException, IOException, URISyntaxException {
         CustomReflection customReflection = new CustomReflection();
         String annotations = customReflection.getAnnotations();

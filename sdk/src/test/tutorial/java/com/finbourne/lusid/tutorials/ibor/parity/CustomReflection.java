@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
+// The reason I'm using this custom class as opposed to the Reflections API is because it's not working for ForEachLoopTest class at the moment
 public class CustomReflection {
 
     String annotations;

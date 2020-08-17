@@ -10,10 +10,10 @@ public class ParityFileWriter {
     FileOutputStream fileOut;
 
     public void writeToFile(String data) throws IOException {
-        String path = this.getClass().getResource("parityOutput.txt").getPath();
+        // String path = this.getClass().getResource("parityOutput.txt").getPath();
         fileOut = new FileOutputStream("parityOutput.txt");
-        System.out.println(new File(path).getAbsolutePath());
-        System.out.println(path);
+        // System.out.println(new File(path).getAbsolutePath());
+        // System.out.println(path);
         fileOut.write(data.getBytes());
         fileOut.close();
     }
