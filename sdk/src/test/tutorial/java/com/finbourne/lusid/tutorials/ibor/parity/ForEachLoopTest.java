@@ -7,6 +7,7 @@ public class ForEachLoopTest {
     @LusidFeature(value = "Apply For loop")
     public void apply_bitemporal_portfolio_change() throws Exception
     {
+        // Reflections API doesn't work for this file completely when we add the ForLoop...
         ArrayList<String> test = new ArrayList<String>();
         test.forEach(t ->
                 System.out.print("Test")

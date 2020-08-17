@@ -1,8 +1,0 @@
-Apply Bi-temporal Change
-Set target holdings
-Get holdings
-Test
-in test
-Apply For loop
-Test method 2
-Just testing thing
