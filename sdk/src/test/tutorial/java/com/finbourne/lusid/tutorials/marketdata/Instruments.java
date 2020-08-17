@@ -5,7 +5,7 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.PropertyDefinitionsApi;
 import com.finbourne.lusid.model.*;
-import com.finbourne.lusid.tutorials.ibor.parity.LusidFeature;
+import parity.LusidFeature;
 import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;

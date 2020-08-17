@@ -5,14 +5,12 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.OrdersApi;
 import com.finbourne.lusid.model.*;
-import com.finbourne.lusid.tutorials.ibor.parity.LusidFeature;
+import parity.LusidFeature;
 import com.finbourne.lusid.utilities.*;
-import com.finbourne.lusid.utilities.auth.LusidTokenException;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.List;
