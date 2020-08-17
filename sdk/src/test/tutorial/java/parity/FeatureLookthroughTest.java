@@ -1,6 +1,5 @@
-package com.finbourne.lusid.tutorials.ibor.parity;
+package parity;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.IOException;

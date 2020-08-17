@@ -1,4 +1,4 @@
-package com.finbourne.lusid.tutorials.ibor.parity;
+package parity;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
