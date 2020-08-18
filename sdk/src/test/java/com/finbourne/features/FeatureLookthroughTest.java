@@ -1,4 +1,4 @@
-package parity;
+package com.finbourne.features;
 
 import org.junit.Test;
 

@@ -7,7 +7,7 @@ import com.finbourne.lusid.model.Transaction;
 import com.finbourne.lusid.model.TransactionRequest;
 import com.finbourne.lusid.model.UpsertPortfolioTransactionsResponse;
 import com.finbourne.lusid.model.VersionedResourceListOfTransaction;
-import parity.LusidFeature;
+import com.finbourne.features.LusidFeature;
 import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
