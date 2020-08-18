@@ -1,7 +1,9 @@
 package com.finbourne.features;
 
 import org.apache.commons.codec.Charsets;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -14,9 +16,10 @@ import static org.junit.Assert.assertThat;
 
 public class FeatureExtractorTest {
 
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     @Test
-    @LusidFeature("Unit Test 1")
     public void checkIfWriterWritesCorrectly() throws ClassNotFoundException, IOException, URISyntaxException, DuplicateFeatureException, NullFeatureValueException {
         FeatureExtractor featureExtractor = new FeatureExtractor();
         FeatureFileWriter featureFileWriter = new FeatureFileWriter();
@@ -32,14 +35,38 @@ public class FeatureExtractorTest {
     }
 
     @Test
-    @LusidFeature("Unit Test 2")
-    public void getAnnotationsFromThisPackage() throws ClassNotFoundException, IOException, URISyntaxException, DuplicateFeatureException, NullFeatureValueException {
+    public void getValidAnnotations() throws ClassNotFoundException, IOException, URISyntaxException, DuplicateFeatureException, NullFeatureValueException {
         FeatureExtractor featureExtractor = new FeatureExtractor();
 
-        List<String> annotations = featureExtractor.getAnnotations("com.finbourne.features");
+        List<String> annotations = featureExtractor.getAnnotations("com.finbourne.features.dummyfiles.valid");
 
         assertThat(annotations.size(), equalTo(2));
-        assertThat(annotations, hasItems("Unit Test 1", "Unit Test 2"));
+        assertThat(annotations, hasItems("F1", "F2"));
     }
 
+    @Test
+    public void throwErrorOnDuplicateAnnotations() throws ClassNotFoundException, IOException, NullFeatureValueException, DuplicateFeatureException, URISyntaxException {
+        FeatureExtractor featureExtractor = new FeatureExtractor();
+
+        thrown.expect(DuplicateFeatureException.class);
+        List<String> annotations = featureExtractor.getAnnotations("com.finbourne.features.dummyfiles.duplicates");
+
+    }
+
+    @Test
+    public void throwErrorOnEmptyStringAnnotations() throws ClassNotFoundException, IOException, NullFeatureValueException, DuplicateFeatureException, URISyntaxException {
+        FeatureExtractor featureExtractor = new FeatureExtractor();
+
+        thrown.expect(NullFeatureValueException.class);
+        List<String> annotations = featureExtractor.getAnnotations("com.finbourne.features.dummyfiles.empties");
+
+    }
+
+    @Test
+    public void throwErrorOnNullAnnotations() throws ClassNotFoundException, IOException, NullFeatureValueException, DuplicateFeatureException, URISyntaxException {
+        FeatureExtractor featureExtractor = new FeatureExtractor();
+
+        thrown.expect(NullFeatureValueException.class);
+        List<String> annotations = featureExtractor.getAnnotations("com.finbourne.features.dummyfiles.nulls");
+    }
 }
