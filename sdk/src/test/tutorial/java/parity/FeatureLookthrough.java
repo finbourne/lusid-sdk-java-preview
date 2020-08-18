@@ -25,7 +25,7 @@ public class FeatureLookthrough {
      */
     private Iterable<Class> getClasses(String packageName) throws ClassNotFoundException, IOException, URISyntaxException {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        String path = packageName.replace('.', '/');
+        String path = packageName.replace('.', File.separatorChar);
 
         // Get directories for the package name as resources
         Enumeration<URL> resources = classLoader.getResources(path);
