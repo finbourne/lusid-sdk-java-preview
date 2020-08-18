@@ -9,6 +9,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FeatureExtractor {
 
@@ -80,7 +82,29 @@ public class FeatureExtractor {
         return classes;
     }
 
-    public List<String> getAnnotations(String packageName) throws URISyntaxException, IOException, ClassNotFoundException {
+    /**
+     * A method that validates annotations. Checks for duplicate values and empty values
+     *
+     * @param annotations  the annotation list retrieved from getClasses method
+     * @throws DuplicateFeatureException throws when there are two LusidFeatures with the same values
+     * @throws NullFeatureValueException throws when a LusidFeature annotation has not been assigned an acceptable value
+     */
+
+    private void checkIfAnnotationsValid(List<String> annotations) throws DuplicateFeatureException, NullFeatureValueException {
+        long distinctAnnotationsCount = annotations.stream().distinct().count();
+        if(distinctAnnotationsCount < annotations.size()){
+            throw new DuplicateFeatureException("LusidFeature annotations with duplicate values have been found. " +
+                    "Please make sure no LusidFeature annotations duplicates are present.");
+        }
+
+        if(annotations.contains("")) {
+            throw new NullFeatureValueException("One of the LusidFeature annotations has not been assigned a value. " +
+                    "Please assign it a value in the form \"LusidFeature(\"<code-value>\")\"");
+        }
+
+    }
+
+    public List<String> getAnnotations(String packageName) throws URISyntaxException, IOException, ClassNotFoundException, NullFeatureValueException, DuplicateFeatureException {
         List<String> annotations = new ArrayList<>();
 
         this.getClasses(packageName).forEach(clazz -> {
@@ -92,6 +116,7 @@ public class FeatureExtractor {
                     }
                 }
         );
+        this.checkIfAnnotationsValid(annotations);
         return annotations;
     }
 

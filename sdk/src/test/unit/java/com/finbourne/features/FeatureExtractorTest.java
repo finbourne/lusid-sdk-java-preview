@@ -17,7 +17,7 @@ public class FeatureExtractorTest {
 
     @Test
     @LusidFeature("Unit Test 1")
-    public void checkIfWriterWritesCorrectly() throws ClassNotFoundException, IOException, URISyntaxException {
+    public void checkIfWriterWritesCorrectly() throws ClassNotFoundException, IOException, URISyntaxException, DuplicateFeatureException, NullFeatureValueException {
         FeatureExtractor featureExtractor = new FeatureExtractor();
         FeatureFileWriter featureFileWriter = new FeatureFileWriter();
 
@@ -33,7 +33,7 @@ public class FeatureExtractorTest {
 
     @Test
     @LusidFeature("Unit Test 2")
-    public void getAnnotationsFromThisPackage() throws ClassNotFoundException, IOException, URISyntaxException {
+    public void getAnnotationsFromThisPackage() throws ClassNotFoundException, IOException, URISyntaxException, DuplicateFeatureException, NullFeatureValueException {
         FeatureExtractor featureExtractor = new FeatureExtractor();
 
         List<String> annotations = featureExtractor.getAnnotations("com.finbourne.features");
