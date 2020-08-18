@@ -80,8 +80,7 @@ public class FeatureExtractor {
         return classes;
     }
 
-    public String getAnnotations() throws URISyntaxException, IOException, ClassNotFoundException {
-        String packageName = "com.finbourne.lusid.tutorials";
+    public String getAnnotations(String packageName) throws URISyntaxException, IOException, ClassNotFoundException {
         this.annotations = "";
 
         this.getClasses(packageName).forEach(clazz -> {

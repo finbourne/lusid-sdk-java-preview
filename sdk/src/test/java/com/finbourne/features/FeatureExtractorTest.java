@@ -10,7 +10,7 @@ public class FeatureExtractorTest {
     @Test
     public void getAnnotationsAndWriteToFile() throws ClassNotFoundException, IOException, URISyntaxException {
         FeatureExtractor featureExtractor = new FeatureExtractor();
-        String annotations = featureExtractor.getAnnotations();
+        String annotations = featureExtractor.getAnnotations("com.finbourne.lusid.tutorials");
 
         ParityFileWriter parityFileWriter = new ParityFileWriter();
         parityFileWriter.writeToFile(annotations);
