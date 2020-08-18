@@ -1,12 +1,12 @@
 
 
-# UpsertConventionsRequest
+# UpsertFlowConventionsRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**conventions** | [**Conventions**](Conventions.md) |  |  [optional]
+**flowConventions** | [**FlowConventions**](FlowConventions.md) |  |  [optional]
 
 
 
