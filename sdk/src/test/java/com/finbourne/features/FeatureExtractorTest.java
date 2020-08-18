@@ -5,12 +5,12 @@ import org.junit.Test;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-public class FeatureLookthroughTest {
+public class FeatureExtractorTest {
 
     @Test
     public void getAnnotationsAndWriteToFile() throws ClassNotFoundException, IOException, URISyntaxException {
-        FeatureLookthrough featureLookthrough = new FeatureLookthrough();
-        String annotations = featureLookthrough.getAnnotations();
+        FeatureExtractor featureExtractor = new FeatureExtractor();
+        String annotations = featureExtractor.getAnnotations();
 
         ParityFileWriter parityFileWriter = new ParityFileWriter();
         parityFileWriter.writeToFile(annotations);
