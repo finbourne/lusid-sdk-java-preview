@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-public class FeatureLookthrough {
+public class FeatureExtractor {
 
     String annotations;
 
