@@ -1,4 +1,4 @@
-package parity;
+package com.finbourne.features;
 
 import java.io.File;
 import java.io.IOException;

@@ -6,7 +6,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.ReconciliationsApi;
 import com.finbourne.lusid.api.TransactionPortfoliosApi;
 import com.finbourne.lusid.model.*;
-import parity.LusidFeature;
+import com.finbourne.features.LusidFeature;
 import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
