@@ -12,7 +12,7 @@ import java.util.List;
 
 public class FeatureExtractor {
 
-    String annotations;
+
 
     /**
      * Scans all classes accessible from the context class loader which belong
@@ -80,19 +80,19 @@ public class FeatureExtractor {
         return classes;
     }
 
-    public String getAnnotations(String packageName) throws URISyntaxException, IOException, ClassNotFoundException {
-        this.annotations = "";
+    public List<String> getAnnotations(String packageName) throws URISyntaxException, IOException, ClassNotFoundException {
+        List<String> annotations = new ArrayList<>();
 
         this.getClasses(packageName).forEach(clazz -> {
                     for (Method method : clazz.getMethods()) {
                         if (method.isAnnotationPresent(LusidFeature.class)) {
                             String annotationValue = method.getAnnotation(LusidFeature.class).value();
-                            this.annotations = this.annotations.concat(annotationValue).concat("\n");
+                            annotations.add(annotationValue);
                         }
                     }
                 }
         );
-        return this.annotations;
+        return annotations;
     }
 
 }
