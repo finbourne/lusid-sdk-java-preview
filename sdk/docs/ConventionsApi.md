@@ -1,6 +1,6 @@
 # ConventionsApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://localhost:63611*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,9 +10,11 @@ Method | HTTP request | Description
 [**getCdsFlowConventions**](ConventionsApi.md#getCdsFlowConventions) | **GET** /api/conventions/credit/conventions/{scope}/{code} | [EXPERIMENTAL] Get CDS Flow Conventions
 [**getFlowConventions**](ConventionsApi.md#getFlowConventions) | **GET** /api/conventions/rates/flowconventions/{scope}/{code} | [EXPERIMENTAL] Get Flow Conventions
 [**getIndexConvention**](ConventionsApi.md#getIndexConvention) | **GET** /api/conventions/rates/indexconventions/{scope}/{code} | [EXPERIMENTAL] Get Index Convention
-[**listConventions**](ConventionsApi.md#listConventions) | **GET** /api/conventions | [EXPERIMENTAL] List the set of conventions
+[**listCdsFlowConventions**](ConventionsApi.md#listCdsFlowConventions) | **GET** /api/conventions/credit/conventions | [EXPERIMENTAL] List the set of CDS Flow Conventions
+[**listFlowConventions**](ConventionsApi.md#listFlowConventions) | **GET** /api/conventions/rates/flowconventions | [EXPERIMENTAL] List the set of Flow Conventions
+[**listIndexConvention**](ConventionsApi.md#listIndexConvention) | **GET** /api/conventions/rates/indexconventions | [EXPERIMENTAL] List the set of Index Conventions
 [**upsertCdsFlowConventions**](ConventionsApi.md#upsertCdsFlowConventions) | **POST** /api/conventions/credit/conventions | [EXPERIMENTAL] Upsert a set of CDS Flow Conventions. This creates or updates the data in Lusid.
-[**upsertFlowConventions**](ConventionsApi.md#upsertFlowConventions) | **POST** /api/conventions/rates/flowconventions | [EXPERIMENTAL] Upsert a set of Flow Conventions. This creates or updates the data in Lusid.
+[**upsertFlowConventions**](ConventionsApi.md#upsertFlowConventions) | **POST** /api/conventions/rates/flowconventions | [EXPERIMENTAL] Upsert Flow Conventions. This creates or updates the data in Lusid.
 [**upsertIndexConvention**](ConventionsApi.md#upsertIndexConvention) | **POST** /api/conventions/rates/indexconventions | [EXPERIMENTAL] Upsert a set of Index Convention. This creates or updates the data in Lusid.
 
 
@@ -37,7 +39,7 @@ import com.finbourne.lusid.api.ConventionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63611");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -108,7 +110,7 @@ import com.finbourne.lusid.api.ConventionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63611");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -179,7 +181,7 @@ import com.finbourne.lusid.api.ConventionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63611");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -231,7 +233,7 @@ Name | Type | Description  | Notes
 
 <a name="getCdsFlowConventions"></a>
 # **getCdsFlowConventions**
-> GetConventionsResponse getCdsFlowConventions(scope, code, asAt)
+> GetCdsFlowConventionsResponse getCdsFlowConventions(scope, code, asAt)
 
 [EXPERIMENTAL] Get CDS Flow Conventions
 
@@ -250,7 +252,7 @@ import com.finbourne.lusid.api.ConventionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63611");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -261,7 +263,7 @@ public class Example {
     String code = "code_example"; // String | The name of the CDS Flow Conventions to retrieve the data for.
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the CDS Flow Conventions. Defaults to return the latest version if not specified.
     try {
-      GetConventionsResponse result = apiInstance.getCdsFlowConventions(scope, code, asAt);
+      GetCdsFlowConventionsResponse result = apiInstance.getCdsFlowConventions(scope, code, asAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConventionsApi#getCdsFlowConventions");
@@ -284,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetConventionsResponse**](GetConventionsResponse.md)
+[**GetCdsFlowConventionsResponse**](GetCdsFlowConventionsResponse.md)
 
 ### Authorization
 
@@ -304,7 +306,7 @@ Name | Type | Description  | Notes
 
 <a name="getFlowConventions"></a>
 # **getFlowConventions**
-> GetConventionsResponse getFlowConventions(scope, code, asAt)
+> GetFlowConventionsResponse getFlowConventions(scope, code, asAt)
 
 [EXPERIMENTAL] Get Flow Conventions
 
@@ -323,7 +325,7 @@ import com.finbourne.lusid.api.ConventionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63611");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -334,7 +336,7 @@ public class Example {
     String code = "code_example"; // String | The name of the Flow Conventions to retrieve the data for.
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the Flow Conventions. Defaults to return the latest version if not specified.
     try {
-      GetConventionsResponse result = apiInstance.getFlowConventions(scope, code, asAt);
+      GetFlowConventionsResponse result = apiInstance.getFlowConventions(scope, code, asAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConventionsApi#getFlowConventions");
@@ -357,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetConventionsResponse**](GetConventionsResponse.md)
+[**GetFlowConventionsResponse**](GetFlowConventionsResponse.md)
 
 ### Authorization
 
@@ -377,7 +379,7 @@ Name | Type | Description  | Notes
 
 <a name="getIndexConvention"></a>
 # **getIndexConvention**
-> GetConventionsResponse getIndexConvention(scope, code, asAt)
+> GetIndexConventionResponse getIndexConvention(scope, code, asAt)
 
 [EXPERIMENTAL] Get Index Convention
 
@@ -396,7 +398,7 @@ import com.finbourne.lusid.api.ConventionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63611");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -407,7 +409,7 @@ public class Example {
     String code = "code_example"; // String | The name of the Index Convention to retrieve the data for.
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the Index Convention. Defaults to return the latest version if not specified.
     try {
-      GetConventionsResponse result = apiInstance.getIndexConvention(scope, code, asAt);
+      GetIndexConventionResponse result = apiInstance.getIndexConvention(scope, code, asAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConventionsApi#getIndexConvention");
@@ -430,7 +432,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetConventionsResponse**](GetConventionsResponse.md)
+[**GetIndexConventionResponse**](GetIndexConventionResponse.md)
 
 ### Authorization
 
@@ -448,13 +450,13 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
-<a name="listConventions"></a>
-# **listConventions**
-> ResourceListOfGetConventionsResponse listConventions(asAt)
+<a name="listCdsFlowConventions"></a>
+# **listCdsFlowConventions**
+> ResourceListOfGetCdsFlowConventionsResponse listCdsFlowConventions(asAt)
 
-[EXPERIMENTAL] List the set of conventions
+[EXPERIMENTAL] List the set of CDS Flow Conventions
 
-List the set of conventions at the specified date/time
+List the set of CDS Flow Conventions at the specified date/time
 
 ### Example
 ```java
@@ -469,7 +471,7 @@ import com.finbourne.lusid.api.ConventionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63611");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -478,10 +480,10 @@ public class Example {
     ConventionsApi apiInstance = new ConventionsApi(defaultClient);
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to list the conventions. Defaults to latest if not specified.
     try {
-      ResourceListOfGetConventionsResponse result = apiInstance.listConventions(asAt);
+      ResourceListOfGetCdsFlowConventionsResponse result = apiInstance.listCdsFlowConventions(asAt);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ConventionsApi#listConventions");
+      System.err.println("Exception when calling ConventionsApi#listCdsFlowConventions");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -499,7 +501,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceListOfGetConventionsResponse**](ResourceListOfGetConventionsResponse.md)
+[**ResourceListOfGetCdsFlowConventionsResponse**](ResourceListOfGetCdsFlowConventionsResponse.md)
 
 ### Authorization
 
@@ -513,13 +515,151 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The requested conventions |  -  |
+**200** | The requested CDS Flow conventions |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="listFlowConventions"></a>
+# **listFlowConventions**
+> ResourceListOfGetFlowConventionsResponse listFlowConventions(asAt)
+
+[EXPERIMENTAL] List the set of Flow Conventions
+
+List the set of Flow Conventions at the specified date/time
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.ConventionsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost:63611");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    ConventionsApi apiInstance = new ConventionsApi(defaultClient);
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to list the conventions. Defaults to latest if not specified.
+    try {
+      ResourceListOfGetFlowConventionsResponse result = apiInstance.listFlowConventions(asAt);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ConventionsApi#listFlowConventions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to list the conventions. Defaults to latest if not specified. | [optional]
+
+### Return type
+
+[**ResourceListOfGetFlowConventionsResponse**](ResourceListOfGetFlowConventionsResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested Flow conventions |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="listIndexConvention"></a>
+# **listIndexConvention**
+> ResourceListOfGetIndexConventionResponse listIndexConvention(asAt)
+
+[EXPERIMENTAL] List the set of Index Conventions
+
+List the set of Index Conventions at the specified date/time
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.ConventionsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost:63611");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    ConventionsApi apiInstance = new ConventionsApi(defaultClient);
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to list the conventions. Defaults to latest if not specified.
+    try {
+      ResourceListOfGetIndexConventionResponse result = apiInstance.listIndexConvention(asAt);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ConventionsApi#listIndexConvention");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to list the conventions. Defaults to latest if not specified. | [optional]
+
+### Return type
+
+[**ResourceListOfGetIndexConventionResponse**](ResourceListOfGetIndexConventionResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested Index conventions |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
 <a name="upsertCdsFlowConventions"></a>
 # **upsertCdsFlowConventions**
-> UpsertSingleStructuredDataResponse upsertCdsFlowConventions(upsertConventionsRequest)
+> UpsertSingleStructuredDataResponse upsertCdsFlowConventions(upsertCdsFlowConventionsRequest)
 
 [EXPERIMENTAL] Upsert a set of CDS Flow Conventions. This creates or updates the data in Lusid.
 
@@ -538,16 +678,16 @@ import com.finbourne.lusid.api.ConventionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63611");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ConventionsApi apiInstance = new ConventionsApi(defaultClient);
-    UpsertConventionsRequest upsertConventionsRequest = {"conventions":{"rollFrequency":"6M","currency":"GBP","paymentFrequency":"1Y","dayCountConvention":"Act360","rollConvention":"F","holidayCalendars":["LON"],"settleDays":2,"resetDays":2,"scope":"someScope","code":"exampleCdsFlowConventionsName"}}; // UpsertConventionsRequest | The CDS Flow Conventions to update or insert
+    UpsertCdsFlowConventionsRequest upsertCdsFlowConventionsRequest = {"cdsFlowConventions":{"rollFrequency":"6M","currency":"GBP","paymentFrequency":"1Y","dayCountConvention":"Act360","rollConvention":"F","holidayCalendars":["LON"],"settleDays":2,"resetDays":2,"scope":"someScope","code":"exampleCdsFlowConventionsName"}}; // UpsertCdsFlowConventionsRequest | The CDS Flow Conventions to update or insert
     try {
-      UpsertSingleStructuredDataResponse result = apiInstance.upsertCdsFlowConventions(upsertConventionsRequest);
+      UpsertSingleStructuredDataResponse result = apiInstance.upsertCdsFlowConventions(upsertCdsFlowConventionsRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConventionsApi#upsertCdsFlowConventions");
@@ -564,7 +704,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **upsertConventionsRequest** | [**UpsertConventionsRequest**](UpsertConventionsRequest.md)| The CDS Flow Conventions to update or insert |
+ **upsertCdsFlowConventionsRequest** | [**UpsertCdsFlowConventionsRequest**](UpsertCdsFlowConventionsRequest.md)| The CDS Flow Conventions to update or insert |
 
 ### Return type
 
@@ -588,9 +728,9 @@ Name | Type | Description  | Notes
 
 <a name="upsertFlowConventions"></a>
 # **upsertFlowConventions**
-> UpsertSingleStructuredDataResponse upsertFlowConventions(upsertConventionsRequest)
+> UpsertSingleStructuredDataResponse upsertFlowConventions(upsertFlowConventionsRequest)
 
-[EXPERIMENTAL] Upsert a set of Flow Conventions. This creates or updates the data in Lusid.
+[EXPERIMENTAL] Upsert Flow Conventions. This creates or updates the data in Lusid.
 
 Update or insert Flow Conventions in a single scope. An item will be updated if it already exists  and inserted if it does not.                The response will return the successfully updated or inserted Flow Conventions or failure message if unsuccessful                It is important to always check to verify success (or failure).
 
@@ -607,16 +747,16 @@ import com.finbourne.lusid.api.ConventionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63611");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ConventionsApi apiInstance = new ConventionsApi(defaultClient);
-    UpsertConventionsRequest upsertConventionsRequest = {"conventions":{"currency":"GBP","paymentFrequency":"1Y","dayCountConvention":"Act360","rollConvention":"F","holidayCalendars":["LON"],"settleDays":2,"resetDays":2,"scope":"someScope","code":"exampleFlowConventionsName"}}; // UpsertConventionsRequest | The Flow Conventions to update or insert
+    UpsertFlowConventionsRequest upsertFlowConventionsRequest = {"flowConventions":{"currency":"GBP","paymentFrequency":"1Y","dayCountConvention":"Act360","rollConvention":"F","holidayCalendars":["LON"],"settleDays":2,"resetDays":2,"scope":"someScope","code":"exampleFlowConventionsName"}}; // UpsertFlowConventionsRequest | The Flow Conventions to update or insert
     try {
-      UpsertSingleStructuredDataResponse result = apiInstance.upsertFlowConventions(upsertConventionsRequest);
+      UpsertSingleStructuredDataResponse result = apiInstance.upsertFlowConventions(upsertFlowConventionsRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConventionsApi#upsertFlowConventions");
@@ -633,7 +773,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **upsertConventionsRequest** | [**UpsertConventionsRequest**](UpsertConventionsRequest.md)| The Flow Conventions to update or insert |
+ **upsertFlowConventionsRequest** | [**UpsertFlowConventionsRequest**](UpsertFlowConventionsRequest.md)| The Flow Conventions to update or insert |
 
 ### Return type
 
@@ -657,7 +797,7 @@ Name | Type | Description  | Notes
 
 <a name="upsertIndexConvention"></a>
 # **upsertIndexConvention**
-> UpsertSingleStructuredDataResponse upsertIndexConvention(upsertConventionsRequest)
+> UpsertSingleStructuredDataResponse upsertIndexConvention(upsertIndexConventionRequest)
 
 [EXPERIMENTAL] Upsert a set of Index Convention. This creates or updates the data in Lusid.
 
@@ -676,16 +816,16 @@ import com.finbourne.lusid.api.ConventionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:63611");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ConventionsApi apiInstance = new ConventionsApi(defaultClient);
-    UpsertConventionsRequest upsertConventionsRequest = {"conventions":{"fixingReference":"Unknown","publicationDayLag":2,"paymentTenor":"1Y","dayCountConvention":"Act360","currency":"GBP","scope":"someScope","code":"exampleIndexonventionsName"}}; // UpsertConventionsRequest | The Index Conventions to update or insert
+    UpsertIndexConventionRequest upsertIndexConventionRequest = {"indexConvention":{"fixingReference":"Unknown","publicationDayLag":2,"paymentTenor":"1Y","dayCountConvention":"Act360","currency":"GBP","scope":"someScope","code":"exampleIndexonventionsName"}}; // UpsertIndexConventionRequest | The Index Conventions to update or insert
     try {
-      UpsertSingleStructuredDataResponse result = apiInstance.upsertIndexConvention(upsertConventionsRequest);
+      UpsertSingleStructuredDataResponse result = apiInstance.upsertIndexConvention(upsertIndexConventionRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConventionsApi#upsertIndexConvention");
@@ -702,7 +842,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **upsertConventionsRequest** | [**UpsertConventionsRequest**](UpsertConventionsRequest.md)| The Index Conventions to update or insert |
+ **upsertIndexConventionRequest** | [**UpsertIndexConventionRequest**](UpsertIndexConventionRequest.md)| The Index Conventions to update or insert |
 
 ### Return type
 
