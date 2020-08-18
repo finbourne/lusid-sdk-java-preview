@@ -10,4 +10,8 @@ public class EmptyAnnotationsDummy {
     @LusidFeature("control annotation")
     public void methodTwo() {
     }
+
+    public void methodThree() {
+
+    }
 }

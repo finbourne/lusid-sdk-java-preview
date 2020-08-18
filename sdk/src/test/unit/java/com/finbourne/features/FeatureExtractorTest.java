@@ -63,10 +63,19 @@ public class FeatureExtractorTest {
     }
 
     @Test
-    public void throwErrorOnNullAnnotations() throws ClassNotFoundException, IOException, NullFeatureValueException, DuplicateFeatureException, URISyntaxException {
+    public void throwErrorOnNoInputAnnotations() throws ClassNotFoundException, IOException, NullFeatureValueException, DuplicateFeatureException, URISyntaxException {
         FeatureExtractor featureExtractor = new FeatureExtractor();
 
         thrown.expect(NullFeatureValueException.class);
-        List<String> annotations = featureExtractor.getAnnotations("com.finbourne.features.dummyfiles.nulls");
+        List<String> annotations = featureExtractor.getAnnotations("com.finbourne.features.dummyfiles.noinput");
+    }
+
+    @Test
+    public void returnEmptyListWhenMethodsNotAnnotated() throws ClassNotFoundException, IOException, NullFeatureValueException, DuplicateFeatureException, URISyntaxException {
+        FeatureExtractor featureExtractor = new FeatureExtractor();
+
+        List<String> annotations = featureExtractor.getAnnotations("com.finbourne.features.dummyfiles.notannotated");
+
+        assertThat(annotations.size(), equalTo(0));
     }
 }
