@@ -10,4 +10,8 @@ public class ValidAnnotationsDummy {
     @LusidFeature("F2")
     public void methodTwo() {
     }
+
+    public void methodThree() {
+
+    }
 }

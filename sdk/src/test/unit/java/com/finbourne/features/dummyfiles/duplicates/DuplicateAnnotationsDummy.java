@@ -12,4 +12,6 @@ public class DuplicateAnnotationsDummy {
 
     @LusidFeature("control annotation")
     public void methodThree(){}
+
+    public void methodFour() {}
 }
