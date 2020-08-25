@@ -4,7 +4,6 @@ import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.api.*;
 import com.finbourne.lusid.model.*;
-import com.finbourne.features.LusidFeature;
 import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -49,7 +48,6 @@ public class Portfolios {
     }
 
     @Test
-    @LusidFeature("F8")
     public void create_transaction_portfolio() throws ApiException {
 
         String uuid = UUID.randomUUID().toString();
@@ -73,7 +71,6 @@ public class Portfolios {
     }
 
     @Test
-    @LusidFeature("F9")
     public void create_transaction_portfolio_with_property() throws Exception {
 
         String uuid = UUID.randomUUID().toString();
@@ -130,7 +127,6 @@ public class Portfolios {
     }
 
     @Test
-    @LusidFeature("F10")
     public void add_transactions_to_portfolio() throws ApiException{
 
         //    Effective date of the portfolio, this is the date the portfolio was created and became live.  All dates/times
@@ -173,7 +169,6 @@ public class Portfolios {
     }
 
     @Test
-    @LusidFeature("F11")
     public void add_transactions_to_portfolio_with_property() throws ApiException{
 
         String uuid = UUID.randomUUID().toString();
@@ -247,7 +242,6 @@ public class Portfolios {
     }
 
     @Test
-    @LusidFeature("F12")
     public void list_scopes() throws ApiException {
 
         //    Get the list of scopes across all entities
@@ -257,7 +251,6 @@ public class Portfolios {
     }
 
     @Test
-    @LusidFeature("F13")
     public void list_portfolios() throws ApiException {
 
         //    This defines the scope that the portfolios will be retrieved from

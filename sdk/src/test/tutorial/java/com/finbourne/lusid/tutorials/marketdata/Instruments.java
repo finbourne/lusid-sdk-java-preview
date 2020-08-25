@@ -5,7 +5,6 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.PropertyDefinitionsApi;
 import com.finbourne.lusid.model.*;
-import com.finbourne.features.LusidFeature;
 import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -140,7 +139,6 @@ public class Instruments {
 
 
     @Test
-    @LusidFeature("F22")
     public void lookup_instrument_by_unique_id() throws ApiException
     {
         /*
@@ -167,7 +165,6 @@ public class Instruments {
     }
 
     @Test
-    @LusidFeature("F23")
     public void list_available_identifiers() throws ApiException {
 
         //    Get the list of identifier schemes
@@ -183,7 +180,6 @@ public class Instruments {
     }
 
     @Test
-    @LusidFeature("F24")
     public void list_all_instruments() throws  ApiException {
 
         final int pageSize = 5;
@@ -195,7 +191,6 @@ public class Instruments {
     }
 
     @Test
-    @LusidFeature("F25")
     public void list_instruments_by_Identifier_type() throws ApiException {
 
         List<String>    figis = Arrays.asList("BBG000C6K6G9", "BBG000C04D57", "BBG000FV67Q4");
@@ -209,7 +204,6 @@ public class Instruments {
     }
 
     @Test
-    @LusidFeature("F26")
     public void edit_instrument_property() throws ApiException {
         String figi = "BBG000C6K6G9";
         //  Create the property value
@@ -237,7 +231,6 @@ public class Instruments {
     }
 
     @Test
-    @LusidFeature("F27")
     public void create_custom_instrument() throws ApiException {
 
         //  swap definition, this is uploaded in a client custom format

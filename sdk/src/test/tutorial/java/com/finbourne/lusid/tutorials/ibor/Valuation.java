@@ -6,7 +6,6 @@ import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.QuotesApi;
 import com.finbourne.lusid.api.TransactionPortfoliosApi;
 import com.finbourne.lusid.model.*;
-import com.finbourne.features.LusidFeature;
 import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -61,7 +60,6 @@ public class Valuation {
     }
 
     @Test
-    @LusidFeature("F20")
     public void run_aggregation_with_buy() throws ApiException
     {
         run_aggregation(
@@ -90,7 +88,6 @@ public class Valuation {
     }
 
     @Test
-    @LusidFeature("F21")
     public void run_aggregation_on_multicurrency_portfolio_with_stock_in() throws ApiException {
         //  setup test environment scope
         String uuid = UUID.randomUUID().toString();
