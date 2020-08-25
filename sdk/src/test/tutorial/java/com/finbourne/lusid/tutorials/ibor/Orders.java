@@ -5,13 +5,12 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.OrdersApi;
 import com.finbourne.lusid.model.*;
+import com.finbourne.features.LusidFeature;
 import com.finbourne.lusid.utilities.*;
-import com.finbourne.lusid.utilities.auth.LusidTokenException;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.List;
@@ -43,6 +42,7 @@ public class Orders
     // We want to make a request for a single order. The LUID will be mapped on upsert
     // from the instrument identifiers passed.
     @Test
+    @LusidFeature("F4")
     public void Upsert_Simple_Order() throws ApiException {
         String testScope = "Orders-Simple-TestScope";
         String orderCode = "Order-" +  UUID.randomUUID().toString();
@@ -99,6 +99,7 @@ public class Orders
     // We want to make a request for a single order. The LUID will be mapped to an
     // "unknown" identifier on upsert as we're passing unregistered instrument identifiers.
     @Test
+    @LusidFeature("F5")
     public void Upsert_Simple_Order_With_Unknown_Instrument() throws ApiException {
         String testScope = "Orders-UnknownInstrument-TestScope";
         String orderCode = "Order-" +  UUID.randomUUID().toString();
@@ -154,6 +155,7 @@ public class Orders
     // We want to make a request for a single order. The internal security id will be mapped on upsert
     // from the instrument identifiers passed.
     @Test
+    @LusidFeature("F6")
     public void Update_Simple_Order() throws ApiException {
         String testScope = "Orders-Upsert-TestScope";
         String orderCode = "Order-" +  UUID.randomUUID().toString();
@@ -234,6 +236,7 @@ public class Orders
     // from the instrument identifiers passed. We can filter on a number of parameters on query.
     @Ignore
     @Test
+    @LusidFeature("F7")
     public void Upsert_And_Retrieve_Simple_Orders() throws ApiException {
         String testScope = "Orders-Filter-TestScope";
         String orderCode1 = "Order-" +  UUID.randomUUID().toString();
