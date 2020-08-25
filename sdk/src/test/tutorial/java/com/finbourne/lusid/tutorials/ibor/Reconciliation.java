@@ -6,11 +6,11 @@ import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.ReconciliationsApi;
 import com.finbourne.lusid.api.TransactionPortfoliosApi;
 import com.finbourne.lusid.model.*;
-import com.finbourne.features.LusidFeature;
 import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.io.Console;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
@@ -45,7 +45,6 @@ public class Reconciliation {
     }
 
     @Test
-    @LusidFeature("F16")
     public void reconcile_portfolio() throws ApiException {
 
         //  Create the portfolio
