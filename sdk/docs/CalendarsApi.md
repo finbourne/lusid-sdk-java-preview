@@ -1,6 +1,6 @@
 # CalendarsApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://localhost:57229*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,8 @@ Method | HTTP request | Description
 [**getCalendar**](CalendarsApi.md#getCalendar) | **GET** /api/calendars/generic/{scope}/{code} | [EXPERIMENTAL] Get a calendar in its generic form
 [**getDates**](CalendarsApi.md#getDates) | **GET** /api/calendars/generic/{scope}/{code}/dates | [EXPERIMENTAL] Get dates for a specific calendar
 [**isBusinessDateTime**](CalendarsApi.md#isBusinessDateTime) | **GET** /api/calendars/businessday/{scope}/{code} | [EXPERIMENTAL] Check whether a DateTime is a \&quot;Business DateTime\&quot;
-[**updateCalendar**](CalendarsApi.md#updateCalendar) | **PUT** /api/calendars/generic/{scope}/{code}/mask | [EXPERIMENTAL] Update a calendar
+[**listCalendars**](CalendarsApi.md#listCalendars) | **GET** /api/calendars/generic/{scope} | [EXPERIMENTAL] List all calenders in a specified scope
+[**updateCalendar**](CalendarsApi.md#updateCalendar) | **PUT** /api/calendars/generic/{scope}/{code} | [EXPERIMENTAL] Update a calendar
 
 
 <a name="addDateToCalendar"></a>
@@ -35,7 +36,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:57229");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -44,7 +45,7 @@ public class Example {
     CalendarsApi apiInstance = new CalendarsApi(defaultClient);
     String scope = "scope_example"; // String | Scope of the calendar
     String code = "code_example"; // String | Code of the calendar
-    CreateDateRequest createDateRequest = {"dateId":"TestDate","fromUtc":"2020-02-12T12:00:00.0000000+00:00","toUtc":"2020-02-13T12:00:00.0000000+00:00","timeZone":"CET","description":"Chinese New year","type":"Holiday","sourceData":{}}; // CreateDateRequest | Add date to calendar request
+    CreateDateRequest createDateRequest = {"dateId":"TestDate","fromUtc":"2020-02-12T12:00:00+00:00","toUtc":"2020-02-13T12:00:00+00:00","timeZone":"CET","description":"Chinese New year","type":"Holiday","sourceData":{}}; // CreateDateRequest | Add date to calendar request
     try {
       CalendarDate result = apiInstance.addDateToCalendar(scope, code, createDateRequest);
       System.out.println(result);
@@ -108,7 +109,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:57229");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -177,7 +178,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:57229");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -248,7 +249,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:57229");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -321,7 +322,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:57229");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -394,7 +395,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:57229");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -473,7 +474,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:57229");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -527,6 +528,85 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="listCalendars"></a>
+# **listCalendars**
+> PagedResourceListOfCalendar listCalendars(scope, asAt, page, start, limit, filter)
+
+[EXPERIMENTAL] List all calenders in a specified scope
+
+List calendars within a specific scope and a specific window of effective time, at a point in AsAt time.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CalendarsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost:57229");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    CalendarsApi apiInstance = new CalendarsApi(defaultClient);
+    String scope = "scope_example"; // String | Scope of the calendars
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The AsAt datetime at which to retrieve the calendars
+    String page = "page_example"; // String | The pagination token to use to continue listing calendars from a previous call to list calendars.              This value is returned from the previous call. If a pagination token is provided the sortBy, filter, and asAt fields              must not have changed since the original request. Also, if set, a start value cannot be provided.
+    Integer start = 56; // Integer | When paginating, skip this number of results.
+    Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many.
+    String filter = "filter_example"; // String | Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
+    try {
+      PagedResourceListOfCalendar result = apiInstance.listCalendars(scope, asAt, page, start, limit, filter);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CalendarsApi#listCalendars");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| Scope of the calendars |
+ **asAt** | **OffsetDateTime**| The AsAt datetime at which to retrieve the calendars | [optional]
+ **page** | **String**| The pagination token to use to continue listing calendars from a previous call to list calendars.              This value is returned from the previous call. If a pagination token is provided the sortBy, filter, and asAt fields              must not have changed since the original request. Also, if set, a start value cannot be provided. | [optional]
+ **start** | **Integer**| When paginating, skip this number of results. | [optional]
+ **limit** | **Integer**| When paginating, limit the number of returned results to this many. | [optional]
+ **filter** | **String**| Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
+
+### Return type
+
+[**PagedResourceListOfCalendar**](PagedResourceListOfCalendar.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Calendars in the requested scope |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="updateCalendar"></a>
 # **updateCalendar**
 > Calendar updateCalendar(scope, code, updateCalendarRequest)
@@ -548,7 +628,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:57229");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
