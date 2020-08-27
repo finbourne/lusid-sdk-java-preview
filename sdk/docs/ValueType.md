@@ -99,6 +99,8 @@
 
 * `INDEXCONVENTION` (value: `"IndexConvention"`)
 
+* `FUTURESCONTRACTDETAILS` (value: `"FuturesContractDetails"`)
+
 * `ORDERID` (value: `"OrderId"`)
 
 * `ORDER` (value: `"Order"`)

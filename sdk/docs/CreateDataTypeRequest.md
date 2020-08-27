@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **typeValueRange** | [**TypeValueRangeEnum**](#TypeValueRangeEnum) | The available values are: Open, Closed | 
 **displayName** | **String** |  | 
 **description** | **String** |  | 
-**valueType** | [**ValueTypeEnum**](#ValueTypeEnum) | The available values are: String, Int, Decimal, DateTime, Boolean, Map, List, PropertyArray, Percentage, BenchmarkType, Code, Id, Uri, ArrayOfIds, ArrayOfTransactionAliases, ArrayofTransactionMovements, ArrayofUnits, StringArray, CurrencyAndAmount, TradePrice, UnitCreation, Currency, UserId, MetricValue, QuoteId, QuoteSeriesId, ResourceId, ResultValue, CutLocalTime, DateOrCutLabel, Transition, StructuredData, StructuredDataId, ConfigurationRecipe, ConfigurationRecipeSnippet, StructuredResultDataId, StructuredResultData, DataMapping, LusidInstrument, WeightedInstrument, Tenor, CdsProtectionDetailSpecification, FlowConventions, CdsFlowConventions, Conventions, LegDefinition, IndexConvention, OrderId, Order, Quote, WeekendMask, DateAttributes | 
+**valueType** | [**ValueTypeEnum**](#ValueTypeEnum) | The available values are: String, Int, Decimal, DateTime, Boolean, Map, List, PropertyArray, Percentage, BenchmarkType, Code, Id, Uri, ArrayOfIds, ArrayOfTransactionAliases, ArrayofTransactionMovements, ArrayofUnits, StringArray, CurrencyAndAmount, TradePrice, UnitCreation, Currency, UserId, MetricValue, QuoteId, QuoteSeriesId, ResourceId, ResultValue, CutLocalTime, DateOrCutLabel, Transition, StructuredData, StructuredDataId, ConfigurationRecipe, ConfigurationRecipeSnippet, StructuredResultDataId, StructuredResultData, DataMapping, LusidInstrument, WeightedInstrument, Tenor, CdsProtectionDetailSpecification, FlowConventions, CdsFlowConventions, Conventions, LegDefinition, IndexConvention, FuturesContractDetails, OrderId, Order, Quote, WeekendMask, DateAttributes | 
 **acceptableValues** | **List&lt;String&gt;** |  |  [optional]
 **unitSchema** | [**UnitSchemaEnum**](#UnitSchemaEnum) | The available values are: NoUnits, Basic, Iso4217Currency |  [optional]
 **acceptableUnits** | [**List&lt;CreateUnitDefinition&gt;**](CreateUnitDefinition.md) |  |  [optional]
@@ -78,6 +78,7 @@ CDSFLOWCONVENTIONS | &quot;CdsFlowConventions&quot;
 CONVENTIONS | &quot;Conventions&quot;
 LEGDEFINITION | &quot;LegDefinition&quot;
 INDEXCONVENTION | &quot;IndexConvention&quot;
+FUTURESCONTRACTDETAILS | &quot;FuturesContractDetails&quot;
 ORDERID | &quot;OrderId&quot;
 ORDER | &quot;Order&quot;
 QUOTE | &quot;Quote&quot;

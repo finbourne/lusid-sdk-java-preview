@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **startDate** | [**OffsetDateTime**](OffsetDateTime.md) | The start date of the instrument. This is normally synonymous with the trade-date. | 
 **legDefinition** | [**LegDefinition**](LegDefinition.md) |  | 
 **overrides** | [**FixedLegAllOfOverrides**](FixedLegAllOfOverrides.md) |  |  [optional]
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Exotic, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedRateLeg, FloatingRateLeg, BespokeCashflowLeg, Unknown | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, Exotic, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedRateLeg, FloatingRateLeg, BespokeCashflowLeg, Unknown | 
 
 
 
@@ -22,6 +22,7 @@ Name | Value
 QUOTEDSECURITY | &quot;QuotedSecurity&quot;
 INTERESTRATESWAP | &quot;InterestRateSwap&quot;
 FXFORWARD | &quot;FxForward&quot;
+FUTURE | &quot;Future&quot;
 EXOTIC | &quot;Exotic&quot;
 FXOPTION | &quot;FxOption&quot;
 CREDITDEFAULTSWAP | &quot;CreditDefaultSwap&quot;

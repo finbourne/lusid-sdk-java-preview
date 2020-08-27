@@ -11,6 +11,8 @@
 
 * `FXFORWARD` (value: `"FxForward"`)
 
+* `FUTURE` (value: `"Future"`)
+
 * `EXOTIC` (value: `"Exotic"`)
 
 * `FXOPTION` (value: `"FxOption"`)

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **strike** | **Double** | The strike of the option. | 
 **domCcy** | **String** | The domestic currency of the FX. | 
 **fgnCcy** | **String** | The foreign currency of the FX. | 
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Exotic, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedRateLeg, FloatingRateLeg, BespokeCashflowLeg, Unknown | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, Exotic, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedRateLeg, FloatingRateLeg, BespokeCashflowLeg, Unknown | 
 
 
 
@@ -25,6 +25,7 @@ Name | Value
 QUOTEDSECURITY | &quot;QuotedSecurity&quot;
 INTERESTRATESWAP | &quot;InterestRateSwap&quot;
 FXFORWARD | &quot;FxForward&quot;
+FUTURE | &quot;Future&quot;
 EXOTIC | &quot;Exotic&quot;
 FXOPTION | &quot;FxOption&quot;
 CREDITDEFAULTSWAP | &quot;CreditDefaultSwap&quot;
