@@ -1,6 +1,6 @@
 # ReconciliationsApi
 
-All URIs are relative to *http://localhost:33336*
+All URIs are relative to *http://localhost:64847*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:33336");
+    defaultClient.setBasePath("http://localhost:64847");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -108,7 +108,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:33336");
+    defaultClient.setBasePath("http://localhost:64847");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -185,7 +185,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:33336");
+    defaultClient.setBasePath("http://localhost:64847");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -196,7 +196,7 @@ public class Example {
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
     Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many.
     String filter = "filter_example"; // String | Optional. Expression to filter the result set.              For example, to filter on the left portfolio Code, use \"left.portfolioId.code eq 'string'\"              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
-    InlineValuationsReconciliationRequest inlineValuationsReconciliationRequest = {"left":{"scope":"MySourceScope","aggregation":{"request":{"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"],"portfolioIdentifierCode":"SinglePortfolio"},"instruments":[{"quantity":10000,"holdingIdentifier":"fx-fwd-GBPUSD","instrument":{"domAmount":100,"fgnAmount":-150,"isNdf":false,"fixingDate":"0001-01-01T00:00:00+00:00","fgnCcy":"GBP","refSpotRate":1.5,"startDate":"2020-08-27T10:03:50.9295887+00:00","maturityDate":"2020-09-26T10:03:50.9295897+00:00","domCcy":"USD","instrumentType":"FxForward"}}]}},"right":{"scope":"MyTargetScope","aggregation":{"request":{"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"],"portfolioIdentifierCode":"SinglePortfolio"},"instruments":[{"quantity":10000,"holdingIdentifier":"fx-fwd-GBPJPY","instrument":{"domAmount":100,"fgnAmount":-150,"isNdf":false,"fixingDate":"0001-01-01T00:00:00+00:00","fgnCcy":"GBP","refSpotRate":132,"startDate":"2020-08-27T10:03:50.9295973+00:00","maturityDate":"2020-09-26T10:03:50.9295973+00:00","domCcy":"JPY","instrumentType":"FxForward"}}]}},"leftToRightMapping":[],"preserveKeys":[]}; // InlineValuationsReconciliationRequest | The specifications of the inputs to the reconciliation
+    InlineValuationsReconciliationRequest inlineValuationsReconciliationRequest = {"left":{"scope":"MySourceScope","aggregation":{"request":{"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"],"portfolioIdentifierCode":"SinglePortfolio"},"instruments":[{"quantity":10000,"holdingIdentifier":"fx-fwd-GBPUSD","instrument":{"domAmount":100,"fgnAmount":-150,"isNdf":false,"fixingDate":"0001-01-01T00:00:00+00:00","fgnCcy":"GBP","refSpotRate":1.5,"startDate":"2020-08-27T11:58:40.9254103+00:00","maturityDate":"2020-09-26T11:58:40.9254114+00:00","domCcy":"USD","instrumentType":"FxForward"}}]}},"right":{"scope":"MyTargetScope","aggregation":{"request":{"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00","metrics":[{"key":"Holding/default/PV","op":"Proportion"},{"key":"Holding/default/PV","op":"Sum"}],"groupBy":["Instrument/default/Name"],"portfolioIdentifierCode":"SinglePortfolio"},"instruments":[{"quantity":10000,"holdingIdentifier":"fx-fwd-GBPJPY","instrument":{"domAmount":100,"fgnAmount":-150,"isNdf":false,"fixingDate":"0001-01-01T00:00:00+00:00","fgnCcy":"GBP","refSpotRate":132,"startDate":"2020-08-27T11:58:40.9254223+00:00","maturityDate":"2020-09-26T11:58:40.9254224+00:00","domCcy":"JPY","instrumentType":"FxForward"}}]}},"leftToRightMapping":[],"preserveKeys":[]}; // InlineValuationsReconciliationRequest | The specifications of the inputs to the reconciliation
     try {
       ListAggregationReconciliation result = apiInstance.reconcileInline(sortBy, start, limit, filter, inlineValuationsReconciliationRequest);
       System.out.println(result);
@@ -262,7 +262,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:33336");
+    defaultClient.setBasePath("http://localhost:64847");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
