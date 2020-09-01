@@ -6,38 +6,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**defaultSupplier** | [**DefaultSupplierEnum**](#DefaultSupplierEnum) | The available values are: DataScope, Lusid, Isda, Client, Edi, TraderMade, FactSet |  [optional]
-**defaultInstrumentCodeType** | [**DefaultInstrumentCodeTypeEnum**](#DefaultInstrumentCodeTypeEnum) | The available values are: LusidInstrumentId, Figi, RIC, QuotePermId, Isin, CurrencyPair |  [optional]
+**defaultSupplier** | **String** | The default supplier of data. This controls which &#39;dialect&#39; is used to find particular market data. e.g. one supplier might address data by RIC, another by PermId |  [optional]
+**defaultInstrumentCodeType** | **String** | When instrument quotes are searched for, what identifier should be used by default |  [optional]
 **defaultScope** | **String** | For default rules, which scope should data be searched for in |  [optional]
 **attemptToInferMissingFx** | **Boolean** | if true will calculate a missing Fx pair (e.g. THBJPY) from the inverse JPYTHB or from standardised pairs against USD, e.g. THBUSD and JPYUSD |  [optional]
 **manifestLevelOfDetail** | [**ManifestLevelOfDetailEnum**](#ManifestLevelOfDetailEnum) | The available values are: None, Full |  [optional]
-
-
-
-## Enum: DefaultSupplierEnum
-
-Name | Value
----- | -----
-DATASCOPE | &quot;DataScope&quot;
-LUSID | &quot;Lusid&quot;
-ISDA | &quot;Isda&quot;
-CLIENT | &quot;Client&quot;
-EDI | &quot;Edi&quot;
-TRADERMADE | &quot;TraderMade&quot;
-FACTSET | &quot;FactSet&quot;
-
-
-
-## Enum: DefaultInstrumentCodeTypeEnum
-
-Name | Value
----- | -----
-LUSIDINSTRUMENTID | &quot;LusidInstrumentId&quot;
-FIGI | &quot;Figi&quot;
-RIC | &quot;RIC&quot;
-QUOTEPERMID | &quot;QuotePermId&quot;
-ISIN | &quot;Isin&quot;
-CURRENCYPAIR | &quot;CurrencyPair&quot;
 
 
 
