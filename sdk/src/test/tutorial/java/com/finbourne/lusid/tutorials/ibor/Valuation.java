@@ -225,10 +225,10 @@ public class Valuation {
 				.scope("default")
                 .code("quotes_recipe")
                 .market(new MarketContext()
-                    .suppliers(new MarketContextSuppliers().equity(ResourceSupplier.LUSID))
+                    .suppliers(new MarketContextSuppliers().equity("Lusid"))
                     .options(new MarketOptions()
-                        .defaultSupplier(MarketOptions.DefaultSupplierEnum.LUSID)
-                        .defaultInstrumentCodeType(MarketOptions.DefaultInstrumentCodeTypeEnum.LUSIDINSTRUMENTID)
+                        .defaultSupplier("Lusid")
+                        .defaultInstrumentCodeType("LusidInstrumentId")
                         .defaultScope(quotesScope)
                     )
                 );
@@ -286,12 +286,12 @@ public class Valuation {
                         // equity and fx data both sourced from Lusid provider, reference the createUpsertQuote... methods
                         // to view how the quote requests are mapped to providers.
                         .suppliers(new MarketContextSuppliers()
-                                .equity(ResourceSupplier.LUSID)
-                                .fx(ResourceSupplier.LUSID)
+                                .equity("Lusid")
+                                .fx("Lusid")
                         )
                         .options(new MarketOptions()
-                                .defaultSupplier(MarketOptions.DefaultSupplierEnum.LUSID)
-                                .defaultInstrumentCodeType(MarketOptions.DefaultInstrumentCodeTypeEnum.LUSIDINSTRUMENTID)
+                                .defaultSupplier("Lusid")
+                                .defaultInstrumentCodeType("LusidInstrumentId")
                                 .defaultScope(quotesScope)
                         )
                 );
