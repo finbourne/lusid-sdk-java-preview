@@ -13,7 +13,7 @@
 
 * `FUTURE` (value: `"Future"`)
 
-* `EXOTIC` (value: `"Exotic"`)
+* `EXOTICINSTRUMENT` (value: `"ExoticInstrument"`)
 
 * `FXOPTION` (value: `"FxOption"`)
 

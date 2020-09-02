@@ -1,6 +1,6 @@
 
 
-# BondInstrumentAllOf
+# FloatingLegAllOf
 
 ## Properties
 
@@ -8,12 +8,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **startDate** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 **maturityDate** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
-**domCcy** | **String** |  | 
-**couponRate** | **Double** | simple coupon rate. | 
-**principal** | **Double** | The face-value or principal for the bond at outset.              This might be reduced through its lifetime in the event of amortization or similar. | 
-**flowConventions** | [**FlowConventions**](FlowConventions.md) |  | 
-**identifiers** | **Map&lt;String, String&gt;** | set of market identifiers along with their types, e.g. ISIN, CUSIP, SEDOL. |  [optional]
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, Exotic, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedRateLeg, FloatingRateLeg, BespokeCashflowLeg, Unknown | 
+**legDefinition** | [**LegDefinition**](LegDefinition.md) |  | 
+**notional** | **Double** | scaling factor to apply to leg quantities. | 
+**overrides** | [**FixedLegAllOfOverrides**](FixedLegAllOfOverrides.md) |  |  [optional]
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedRateLeg, FloatingRateLeg, BespokeCashflowLeg, Unknown | 
 
 
 
@@ -25,7 +23,7 @@ QUOTEDSECURITY | &quot;QuotedSecurity&quot;
 INTERESTRATESWAP | &quot;InterestRateSwap&quot;
 FXFORWARD | &quot;FxForward&quot;
 FUTURE | &quot;Future&quot;
-EXOTIC | &quot;Exotic&quot;
+EXOTICINSTRUMENT | &quot;ExoticInstrument&quot;
 FXOPTION | &quot;FxOption&quot;
 CREDITDEFAULTSWAP | &quot;CreditDefaultSwap&quot;
 INTERESTRATESWAPTION | &quot;InterestRateSwaption&quot;

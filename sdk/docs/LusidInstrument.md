@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, Exotic, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedRateLeg, FloatingRateLeg, BespokeCashflowLeg, Unknown | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedRateLeg, FloatingRateLeg, BespokeCashflowLeg, Unknown | 
 
 
 
@@ -18,7 +18,7 @@ QUOTEDSECURITY | &quot;QuotedSecurity&quot;
 INTERESTRATESWAP | &quot;InterestRateSwap&quot;
 FXFORWARD | &quot;FxForward&quot;
 FUTURE | &quot;Future&quot;
-EXOTIC | &quot;Exotic&quot;
+EXOTICINSTRUMENT | &quot;ExoticInstrument&quot;
 FXOPTION | &quot;FxOption&quot;
 CREDITDEFAULTSWAP | &quot;CreditDefaultSwap&quot;
 INTERESTRATESWAPTION | &quot;InterestRateSwaption&quot;

@@ -6,12 +6,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**notional** | **Double** | scaling factor to apply to leg quantities. | 
-**maturityDate** | [**OffsetDateTime**](OffsetDateTime.md) | The final maturity date of the instrument. This means the last date on which the instruments makes a payment of any amount.              For the avoidance of doubt, that is not necessarily prior to its last sensitivity date for the purposes of risk; e.g. instruments such as              Constant Maturity Swaps (CMS) often have sensitivities to rates beyond their last payment date | 
 **startDate** | [**OffsetDateTime**](OffsetDateTime.md) | The start date of the instrument. This is normally synonymous with the trade-date. | 
+**maturityDate** | [**OffsetDateTime**](OffsetDateTime.md) | The final maturity date of the instrument. This means the last date on which the instruments makes a payment of any amount.              For the avoidance of doubt, that is not necessarily prior to its last sensitivity date for the purposes of risk; e.g. instruments such as              Constant Maturity Swaps (CMS) often have sensitivities to rates beyond their last payment date | 
 **legDefinition** | [**LegDefinition**](LegDefinition.md) |  | 
+**notional** | **Double** |  | 
 **overrides** | [**FixedLegAllOfOverrides**](FixedLegAllOfOverrides.md) |  |  [optional]
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, Exotic, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedRateLeg, FloatingRateLeg, BespokeCashflowLeg, Unknown | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedRateLeg, FloatingRateLeg, BespokeCashflowLeg, Unknown | 
 
 
 
@@ -23,7 +23,7 @@ QUOTEDSECURITY | &quot;QuotedSecurity&quot;
 INTERESTRATESWAP | &quot;InterestRateSwap&quot;
 FXFORWARD | &quot;FxForward&quot;
 FUTURE | &quot;Future&quot;
-EXOTIC | &quot;Exotic&quot;
+EXOTICINSTRUMENT | &quot;ExoticInstrument&quot;
 FXOPTION | &quot;FxOption&quot;
 CREDITDEFAULTSWAP | &quot;CreditDefaultSwap&quot;
 INTERESTRATESWAPTION | &quot;InterestRateSwaption&quot;

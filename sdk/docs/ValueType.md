@@ -111,5 +111,9 @@
 
 * `DATEATTRIBUTES` (value: `"DateAttributes"`)
 
+* `CASHFLOWLEG` (value: `"CashFlowLeg"`)
+
+* `INSTRUMENTDEFINITIONFORMAT` (value: `"InstrumentDefinitionFormat"`)
+
 
 
