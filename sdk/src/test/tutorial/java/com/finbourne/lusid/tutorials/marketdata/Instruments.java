@@ -245,7 +245,7 @@ public class Instruments {
                 .definition(
                         new ExoticInstrument()
                                 .instrumentFormat(
-									new InstrumentDefinitionFormat().
+									new InstrumentDefinitionFormat()
 										.sourceSystem("CustomFormat")
 										.vendor("CustomVendor")
 										.version("1.0.0")
