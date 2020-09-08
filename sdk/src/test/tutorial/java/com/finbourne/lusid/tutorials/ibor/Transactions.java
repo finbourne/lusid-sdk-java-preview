@@ -154,8 +154,13 @@ public class Transactions {
                 .name("10mm 5Y Fixed")
                 .identifiers(Collections.singletonMap("ClientInternal", new InstrumentIdValue().value("SW-1")))
                 .definition(
-                        new InstrumentEconomicDefinition()
-                                .instrumentFormat("CustomFormat")
+                        new ExoticInstrument()
+                                .instrumentFormat(
+									new InstrumentDefinitionFormat().
+										.sourceSystem("CustomFormat")
+										.vendor("CustomVendor")
+										.version("1.0.0")
+								)
                                 .content("<customFormat>upload in custom xml or JSON format</customFormat>")
                 );
 

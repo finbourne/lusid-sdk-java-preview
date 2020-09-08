@@ -243,11 +243,13 @@ public class Instruments {
 
                 //  The details for valuing the instrument
                 .definition(
-
-                        new InstrumentEconomicDefinition()
-
-                                //  Identifies which valuation engine to use
-                                .instrumentFormat("CustomFormat")
+                        new ExoticInstrument()
+                                .instrumentFormat(
+									new InstrumentDefinitionFormat().
+										.sourceSystem("CustomFormat")
+										.vendor("CustomVendor")
+										.version("1.0.0")
+								)
                                 .content("<customFormat>upload in custom xml or JSON format</customFormat>")
                 );
 
