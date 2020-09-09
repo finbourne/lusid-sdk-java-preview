@@ -5,13 +5,16 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertThat;
 
 public class FeatureExtractorTest {
@@ -20,15 +23,39 @@ public class FeatureExtractorTest {
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
-    public void checkIfWriterWritesCorrectly() throws ClassNotFoundException, IOException, URISyntaxException, DuplicateFeatureException, NullFeatureValueException {
+    public void checkIfWriterWritesDummyFeaturesCorrectly() throws ClassNotFoundException, IOException, URISyntaxException, DuplicateFeatureException, NullFeatureValueException {
         FeatureExtractor featureExtractor = new FeatureExtractor();
         FeatureFileWriter featureFileWriter = new FeatureFileWriter();
+        File file = File.createTempFile("features", ".txt");
+        String filePath = file.toString();
+        file.deleteOnExit();
 
-        List<String> annotations = featureExtractor.getAnnotations("com.finbourne.lusid.tutorials");
+        List<String> annotations = featureExtractor.getAnnotations("com.finbourne.features.dummyfiles.valid");
         String annotationsFromMethod = String.join("\n", annotations);
-        String fileName = "features.txt";
-        featureFileWriter.writeToFile(annotationsFromMethod, fileName);
-        List<String> lines = Files.readAllLines(Paths.get(fileName), Charsets.UTF_8);
+
+
+        featureFileWriter.writeToFile(annotationsFromMethod, filePath);
+        List<String> lines = Files.readAllLines(Paths.get(filePath), Charsets.UTF_8);
+        String annotationsFromFile = String.join("\n", lines);
+
+        assertNotEquals(annotationsFromFile.length(), 0);
+        assertThat(annotationsFromMethod, equalTo(annotationsFromFile));
+    }
+
+    @Test
+    public void checkIfWriterWritesActualFeaturesCorrectly() throws ClassNotFoundException, IOException, URISyntaxException, DuplicateFeatureException, NullFeatureValueException {
+        FeatureExtractor featureExtractor = new FeatureExtractor();
+        FeatureFileWriter featureFileWriter = new FeatureFileWriter();
+        File file = File.createTempFile("features", ".txt");
+        String filePath = file.toString();
+        file.deleteOnExit();
+
+        List<String> annotations = featureExtractor.getAnnotations("tests.tutorials");
+        String annotationsFromMethod = String.join("\n", annotations);
+
+
+        featureFileWriter.writeToFile(annotationsFromMethod, filePath);
+        List<String> lines = Files.readAllLines(Paths.get(filePath), Charsets.UTF_8);
         String annotationsFromFile = String.join("\n", lines);
 
         assertThat(annotationsFromMethod, equalTo(annotationsFromFile));
