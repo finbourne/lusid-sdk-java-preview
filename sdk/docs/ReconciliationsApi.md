@@ -1,6 +1,6 @@
 # ReconciliationsApi
 
-All URIs are relative to *http://localhost:31913*
+All URIs are relative to *http://localhost:46982*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:31913");
+    defaultClient.setBasePath("http://localhost:46982");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -108,7 +108,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:31913");
+    defaultClient.setBasePath("http://localhost:46982");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -185,7 +185,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:31913");
+    defaultClient.setBasePath("http://localhost:46982");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -262,7 +262,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:31913");
+    defaultClient.setBasePath("http://localhost:46982");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
