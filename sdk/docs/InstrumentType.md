@@ -25,9 +25,9 @@
 
 * `EQUITYOPTION` (value: `"EquityOption"`)
 
-* `FIXEDRATELEG` (value: `"FixedRateLeg"`)
+* `FIXEDLEG` (value: `"FixedLeg"`)
 
-* `FLOATINGRATELEG` (value: `"FloatingRateLeg"`)
+* `FLOATINGLEG` (value: `"FloatingLeg"`)
 
 * `BESPOKECASHFLOWLEG` (value: `"BespokeCashflowLeg"`)
 

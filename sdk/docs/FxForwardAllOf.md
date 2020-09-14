@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **refSpotRate** | **Double** | The reference Fx Spot rate for currency pair Foreign-Domestic that was seen on the trade start date (time). |  [optional]
 **isNdf** | **Boolean** | Is the contract an Fx-Forward of \&quot;Non-Deliverable\&quot; type, meaning a single payment in the domestic currency based on the change in fx-rate vs              a reference rate is used. |  [optional]
 **fixingDate** | [**OffsetDateTime**](OffsetDateTime.md) | The fixing date . |  [optional]
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedRateLeg, FloatingRateLeg, BespokeCashflowLeg, Unknown | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashflowLeg, Unknown | 
 
 
 
@@ -33,8 +33,8 @@ CREDITDEFAULTSWAP | &quot;CreditDefaultSwap&quot;
 INTERESTRATESWAPTION | &quot;InterestRateSwaption&quot;
 BOND | &quot;Bond&quot;
 EQUITYOPTION | &quot;EquityOption&quot;
-FIXEDRATELEG | &quot;FixedRateLeg&quot;
-FLOATINGRATELEG | &quot;FloatingRateLeg&quot;
+FIXEDLEG | &quot;FixedLeg&quot;
+FLOATINGLEG | &quot;FloatingLeg&quot;
 BESPOKECASHFLOWLEG | &quot;BespokeCashflowLeg&quot;
 UNKNOWN | &quot;Unknown&quot;
 
