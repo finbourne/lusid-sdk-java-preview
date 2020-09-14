@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sequenceNumber** | **Integer** |  | 
-**subHoldings** | [**Map&lt;String, PerpetualProperty&gt;**](PerpetualProperty.md) |  |  [optional]
+**subHoldingKeys** | [**Map&lt;String, PerpetualProperty&gt;**](PerpetualProperty.md) |  |  [optional]
 **type** | **String** |  | 
 **movementName** | **String** |  | 
 **cashflow** | [**CurrencyAndAmount**](CurrencyAndAmount.md) |  | 
