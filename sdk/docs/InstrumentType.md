@@ -33,5 +33,7 @@
 
 * `UNKNOWN` (value: `"Unknown"`)
 
+* `TERMDEPOSIT` (value: `"TermDeposit"`)
+
 
 
