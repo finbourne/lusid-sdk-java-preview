@@ -29,6 +29,8 @@
 
 * `URI` (value: `"Uri"`)
 
+* `CURRENCYANDAMOUNT` (value: `"CurrencyAndAmount"`)
+
 * `CURRENCY` (value: `"Currency"`)
 
 * `METRICVALUE` (value: `"MetricValue"`)
