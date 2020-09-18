@@ -41,5 +41,7 @@
 
 * `CALENDAR` (value: `"Calendar"`)
 
+* `LEGALENTITY` (value: `"LegalEntity"`)
+
 
 
