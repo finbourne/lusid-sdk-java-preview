@@ -1,6 +1,6 @@
 # AggregationApi
 
-All URIs are relative to *http://localhost:47344*
+All URIs are relative to *http://localhost:60609*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**getAggregationOfWeightedInstruments**](AggregationApi.md#getAggregationOfWeightedInstruments) | **POST** /api/portfolios/{scope}/$aggregateinlined | [EXPERIMENTAL] Aggregate data in an inlined portfolio
 [**getNestedAggregation**](AggregationApi.md#getNestedAggregation) | **POST** /api/aggregation/{scope}/{code}/$aggregatenested | [EXPERIMENTAL] Aggregate data in a portfolio or portfolio group, as nested
 [**getQueryableKeys**](AggregationApi.md#getQueryableKeys) | **GET** /api/results/queryable/keys | [EXPERIMENTAL] Query the set of supported \&quot;addresses\&quot; that can be queried from the aggregation endpoint.
+[**getValuation**](AggregationApi.md#getValuation) | **POST** /api/aggregation/$valuation | [EXPERIMENTAL] Perform valuation for a list of portfolios and/or portfolio groups
 
 
 <a name="generateConfigurationRecipe"></a>
@@ -33,7 +34,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:47344");
+    defaultClient.setBasePath("http://localhost:60609");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -106,7 +107,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:47344");
+    defaultClient.setBasePath("http://localhost:60609");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -185,7 +186,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:47344");
+    defaultClient.setBasePath("http://localhost:60609");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -264,7 +265,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:47344");
+    defaultClient.setBasePath("http://localhost:60609");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -341,7 +342,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:47344");
+    defaultClient.setBasePath("http://localhost:60609");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -414,7 +415,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:47344");
+    defaultClient.setBasePath("http://localhost:60609");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -459,6 +460,75 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="getValuation"></a>
+# **getValuation**
+> ListAggregationResponse getValuation(valuationRequest)
+
+[EXPERIMENTAL] Perform valuation for a list of portfolios and/or portfolio groups
+
+Perform valuation on specified list of portfolio and/or portfolio groups for a set of dates.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.AggregationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost:60609");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    AggregationApi apiInstance = new AggregationApi(defaultClient);
+    ValuationRequest valuationRequest = {"recipeId":{"scope":"MyRecipeScope","code":"default"},"asAt":"2018-03-05T00:00:00+00:00","metrics":[{"key":"Instrument/default/Name","op":"Value"},{"key":"Holding/default/PV","op":"Value"}],"groupBy":["Instrument/default/Name"],"reportCurrency":"USD","portfolioEntityIds":[{"scope":"PortfolioScope1","code":"MyPortfolioAbC","portfolioEntityType":"SinglePortfolio"},{"scope":"PortfolioScope2","code":"MyPortfolioDeF","portfolioEntityType":"SinglePortfolio"}],"valuationSchedule":{"effectiveFrom":"2018-03-05T00:00:00+00:00","effectiveAt":"2018-03-05T00:00:00+00:00","tenor":"1D","rollConvention":"F","holidayCalendars":[],"valuationDateTimes":[]}}; // ValuationRequest | The request specifying the set of portfolios and dates on which to calculate a set of valuation metrics
+    try {
+      ListAggregationResponse result = apiInstance.getValuation(valuationRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AggregationApi#getValuation");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **valuationRequest** | [**ValuationRequest**](ValuationRequest.md)| The request specifying the set of portfolios and dates on which to calculate a set of valuation metrics | [optional]
+
+### Return type
+
+[**ListAggregationResponse**](ListAggregationResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
