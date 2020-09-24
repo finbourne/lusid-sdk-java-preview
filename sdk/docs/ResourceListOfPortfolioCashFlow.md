@@ -1,12 +1,13 @@
 
 
-# PortfolioCashFlowsResponse
+# ResourceListOfPortfolioCashFlow
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**portfolioCashFlows** | [**List&lt;PortfolioCashFlow&gt;**](PortfolioCashFlow.md) | The cash flow details for the given portfolio. | 
+**values** | [**List&lt;PortfolioCashFlow&gt;**](PortfolioCashFlow.md) |  | 
+**href** | [**URI**](URI.md) |  |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
