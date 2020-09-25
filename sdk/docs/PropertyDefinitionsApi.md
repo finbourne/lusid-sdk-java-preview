@@ -40,7 +40,7 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     PropertyDefinitionsApi apiInstance = new PropertyDefinitionsApi(defaultClient);
-    CreateDerivedPropertyDefinitionRequest createDerivedPropertyDefinitionRequest = {"domain":"Instrument","scope":"MyScope","code":"MyDerivedPropertyName","displayName":"My Property Display Name","dataTypeId":{"scope":"system","code":"string"},"derivation":"(Properties[Instrument/default/Price] * Properties[Instrument/default/Cost]) / Properties[Instrument/default/Shares]"}; // CreateDerivedPropertyDefinitionRequest | The definition of the new derived property.
+    CreateDerivedPropertyDefinitionRequest createDerivedPropertyDefinitionRequest = {"domain":"Instrument","scope":"MyScope","code":"MyDerivedPropertyName","displayName":"My Property Display Name","dataTypeId":{"scope":"system","code":"string"},"derivationFormula":"(Properties[Instrument/default/Price] * Properties[Instrument/default/Cost]) / Properties[Instrument/default/Shares]"}; // CreateDerivedPropertyDefinitionRequest | The definition of the new derived property.
     try {
       PropertyDefinition result = apiInstance.createDerivedPropertyDefinition(createDerivedPropertyDefinitionRequest);
       System.out.println(result);
