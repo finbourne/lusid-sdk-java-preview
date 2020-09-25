@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **code** | **String** | The code of the property. Together with the domain and scope this uniquely identifies the property. | 
 **displayName** | **String** | The display name of the property. | 
 **dataTypeId** | [**ResourceId**](ResourceId.md) |  | 
-**derivationFormula** | **String** | The rule that defines how data is composed for a derived property. |  [optional]
+**derivation** | **String** | The string that contains the rule for the derived property. |  [optional]
 
 
 
