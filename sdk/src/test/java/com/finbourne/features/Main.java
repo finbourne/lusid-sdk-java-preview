@@ -2,8 +2,6 @@ package com.finbourne.features;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import org.apache.commons.cli.*;
 
@@ -13,13 +11,14 @@ public class Main {
         Options options = new Options();
 
         Option pkg = new Option("p", "package", true, "package name, eg. 'com.finbourne.lusid.tutorials' (which is also the default option) ");
-        pkg.setRequired(false);
+        pkg.setRequired(true);
         options.addOption(pkg);
 
-        Option fName = new Option("f", "filename", true, "Name of the features file to be created. By default 'features.txt', and will be created in the root sdk folder. Path from the sdk root folder can also be specified in this format <some-dir>/<another-dir>/filename.txt");
-        fName.setRequired(false);
+        Option fName = new Option("f", "filepath", true, "Fully qualified filepath name for the features file to be created. Eg. c/users/<some-dir>/<another-dir>/filename.txt");
+        fName.setRequired(true);
         options.addOption(fName);
 
+        // this needs refactoring from this point on. Not sure if try/catch is needed
         CommandLineParser parser = new DefaultParser();
         HelpFormatter formatter = new HelpFormatter();
         CommandLine cmd = null;
@@ -35,29 +34,16 @@ public class Main {
         }
 
         String packageName = cmd.getOptionValue("package");
-        String fileName = cmd.getOptionValue("filename");
+        String filepath = cmd.getOptionValue("filepath");
 
-        if(packageName == null) {
-            packageName = "com.finbourne.lusid.tutorials";
-        }
-
-        if(fileName == null) {
-            fileName = "features.txt";
-        }
-
-        System.out.println(packageName);
-        System.out.println(fileName);
-
-        Path currentDir = Paths.get(System.getProperty("user.dir"));
-        Path rootPath = currentDir.getParent().getParent().getParent().getParent().getParent().getParent().getParent();
-        String filePath = Paths.get(rootPath.toString(), "sdk", fileName).toString();
+        System.out.println("package name: " + packageName);
 
         FeatureExtractor featureExtractor = new FeatureExtractor();
         FeatureFileWriter featureFileWriter = new FeatureFileWriter();
 
         List<String> annotations = featureExtractor.getAnnotations(packageName);
         String annotationsFromMethod = String.join("\n", annotations);
-        featureFileWriter.writeToFile(annotationsFromMethod, filePath);
-        System.out.println("Done writing to filepath: " + filePath);
+        featureFileWriter.writeToFile(annotationsFromMethod, filepath);
+        System.out.println("Done writing to filepath: " + filepath);
     }
 }
