@@ -34,7 +34,7 @@ public class Main {
             // If parameters are not passed correctly, that will throw a MissingOptionException
             // and display the missing parameters in a pretty format
             formatter.printHelp("utility-name", options);
-            throw new ParseException(e.getMessage());
+            throw e;
         }
 
         // Retrieve the parameters passed in the cmd line
