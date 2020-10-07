@@ -1,6 +1,6 @@
 # LegalEntitiesApi
 
-All URIs are relative to *http://localhost:46490*
+All URIs are relative to *http://localhost:45784*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,7 +30,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:46490");
+    defaultClient.setBasePath("http://localhost:45784");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -103,7 +103,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:46490");
+    defaultClient.setBasePath("http://localhost:45784");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -182,7 +182,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:46490");
+    defaultClient.setBasePath("http://localhost:45784");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
