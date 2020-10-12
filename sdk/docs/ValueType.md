@@ -31,6 +31,8 @@
 
 * `CURRENCYANDAMOUNT` (value: `"CurrencyAndAmount"`)
 
+* `TRADEPRICE` (value: `"TradePrice"`)
+
 * `CURRENCY` (value: `"Currency"`)
 
 * `METRICVALUE` (value: `"MetricValue"`)
