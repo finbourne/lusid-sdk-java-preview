@@ -7,11 +7,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | [**URI**](URI.md) |  |  [optional]
-**calendarIdentifier** | [**ResourceId**](ResourceId.md) |  | 
 **dateIdentifier** | **String** |  | 
 **fromUtc** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 **toUtc** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
-**localDate** | **String** |  | 
+**localStartDate** | **String** |  | 
 **timezone** | **String** |  | 
 **description** | **String** |  | 
 **type** | **String** |  | 
