@@ -7,8 +7,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | [**URI**](URI.md) |  |  [optional]
-**id** | [**ResourceId**](ResourceId.md) |  | 
-**version** | [**Version**](Version.md) |  | 
+**id** | [**ResourceId**](ResourceId.md) |  |  [optional]
+**version** | [**Version**](Version.md) |  |  [optional]
 **displayName** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
