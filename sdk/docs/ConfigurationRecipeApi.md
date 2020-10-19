@@ -1,6 +1,6 @@
 # ConfigurationRecipeApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://localhost:54685*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:54685");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -102,7 +102,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:54685");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 <a name="listConfigurationRecipes"></a>
 # **listConfigurationRecipes**
-> ResourceListOfGetRecipeResponse listConfigurationRecipes(asAt)
+> ResourceListOfGetRecipeResponse listConfigurationRecipes(asAt, filter)
 
 [EXPERIMENTAL] List the set of Configuration Recipes
 
@@ -175,7 +175,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:54685");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -183,8 +183,9 @@ public class Example {
 
     ConfigurationRecipeApi apiInstance = new ConfigurationRecipeApi(defaultClient);
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to list the Configuration Recipes. Defaults to latest if not specified.
+    String filter = "filter_example"; // String | Expression to filter the result set. Read more about filtering results from LUSID here:              https://support.lusid.com/filtering-results-from-lusid.
     try {
-      ResourceListOfGetRecipeResponse result = apiInstance.listConfigurationRecipes(asAt);
+      ResourceListOfGetRecipeResponse result = apiInstance.listConfigurationRecipes(asAt, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConfigurationRecipeApi#listConfigurationRecipes");
@@ -202,6 +203,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asAt** | **OffsetDateTime**| The asAt datetime at which to list the Configuration Recipes. Defaults to latest if not specified. | [optional]
+ **filter** | **String**| Expression to filter the result set. Read more about filtering results from LUSID here:              https://support.lusid.com/filtering-results-from-lusid. | [optional]
 
 ### Return type
 
@@ -244,7 +246,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:54685");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
