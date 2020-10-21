@@ -1,6 +1,6 @@
 # RelationDefinitionsApi
 
-All URIs are relative to *http://localhost:40851*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,14 +29,14 @@ import com.finbourne.lusid.api.RelationDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:40851");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     RelationDefinitionsApi apiInstance = new RelationDefinitionsApi(defaultClient);
-    CreateRelationDefinitionRequest createRelationDefinitionRequest = {"scope":"PortfolioManagementTeam","code":"Traders","sourceEntityDomain":"Portfolio","targetEntityDomain":"Person","displayName":"Authorised traders to trade for specific portfolio ","outwardDescription":"can be traded by","inwardDescription":"can trade with portfolio","lifeTime":"TimeVariant","constraintStyle":"Collection"}; // CreateRelationDefinitionRequest | The definition of the new relation.
+    CreateRelationDefinitionRequest createRelationDefinitionRequest = {"scope":"PortfolioManagementTeam","code":"Traders","sourceEntityDomain":"Portfolio","targetEntityDomain":"Person","displayName":"Authorised traders to trade for specific portfolio ","outwardDescription":"can be traded by","inwardDescription":"can trade with","lifeTime":"TimeVariant","constraintStyle":"Collection"}; // CreateRelationDefinitionRequest | The definition of the new relation.
     try {
       RelationDefinition result = apiInstance.createRelationDefinition(createRelationDefinitionRequest);
       System.out.println(result);
@@ -98,7 +98,7 @@ import com.finbourne.lusid.api.RelationDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:40851");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

@@ -6,11 +6,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**href** | [**URI**](URI.md) |  |  [optional]
 **version** | [**Version**](Version.md) |  |  [optional]
 **relationDefinitionId** | [**ResourceId**](ResourceId.md) |  | 
-**relatedEntityId** | **Map&lt;String, String&gt;** |  | 
-**traversalDirection** | **String** |  | 
-**traversalDescription** | **String** |  | 
+**sourceEntityId** | **Map&lt;String, String&gt;** |  | 
+**targetEntityId** | **Map&lt;String, String&gt;** |  | 
+**description** | **String** |  | 
 **effectiveFrom** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 
 
