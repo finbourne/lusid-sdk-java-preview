@@ -36,7 +36,7 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     RelationDefinitionsApi apiInstance = new RelationDefinitionsApi(defaultClient);
-    CreateRelationDefinitionRequest createRelationDefinitionRequest = {"scope":"PortfolioManagementTeam","code":"Traders","sourceEntityDomain":"Portfolio","targetEntityDomain":"Person","displayName":"Authorised traders to trade for specific portfolio ","outwardDescription":"can be traded by","inwardDescription":"can trade with","lifeTime":"TimeVariant","constraintStyle":"Collection"}; // CreateRelationDefinitionRequest | The definition of the new relation.
+    CreateRelationDefinitionRequest createRelationDefinitionRequest = {"scope":"PortfolioManagementTeam","code":"Traders","sourceEntityDomain":"Portfolio","targetEntityDomain":"Person","displayName":"Authorised traders to trade for specific portfolio ","outwardDescription":"can be traded by","inwardDescription":"can trade with portfolio","lifeTime":"TimeVariant","constraintStyle":"Collection"}; // CreateRelationDefinitionRequest | The definition of the new relation.
     try {
       RelationDefinition result = apiInstance.createRelationDefinition(createRelationDefinitionRequest);
       System.out.println(result);
