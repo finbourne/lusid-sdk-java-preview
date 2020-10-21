@@ -1,6 +1,6 @@
 # RelationsApi
 
-All URIs are relative to *http://localhost:37452*
+All URIs are relative to *http://localhost:40851*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="createRelation"></a>
 # **createRelation**
-> Relation createRelation(scope, code, createRelationRequest, effectiveAt)
+> CompleteRelation createRelation(scope, code, createRelationRequest, effectiveAt)
 
 [EXPERIMENTAL] Create Relation
 
@@ -28,7 +28,7 @@ import com.finbourne.lusid.api.RelationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:37452");
+    defaultClient.setBasePath("http://localhost:40851");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -37,10 +37,10 @@ public class Example {
     RelationsApi apiInstance = new RelationsApi(defaultClient);
     String scope = "scope_example"; // String | Scope of the relation to create.
     String code = "code_example"; // String | Code of the relation to create.
-    CreateRelationRequest createRelationRequest = {"sourceEntityId":{"scope":"UkPortfolio","code":"PortfolioId-148176"},"targetEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"}}; // CreateRelationRequest | The details of the relation to create.
+    CreateRelationRequest createRelationRequest = {"sourceEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"},"targetEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"}}; // CreateRelationRequest | The details of the relation to create.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which the relation should be effective from. Defaults to the current LUSID system datetime if not specified.
     try {
-      Relation result = apiInstance.createRelation(scope, code, createRelationRequest, effectiveAt);
+      CompleteRelation result = apiInstance.createRelation(scope, code, createRelationRequest, effectiveAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RelationsApi#createRelation");
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Relation**](Relation.md)
+[**CompleteRelation**](CompleteRelation.md)
 
 ### Authorization
 
