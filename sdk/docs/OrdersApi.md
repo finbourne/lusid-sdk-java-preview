@@ -1,20 +1,22 @@
 # OrdersApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://localhost:31061*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getOrder**](OrdersApi.md#getOrder) | **GET** /api/orders/{scope}/{code} | [EXPERIMENTAL] Fetch a given order.
-[**listOrders**](OrdersApi.md#listOrders) | **GET** /api/orders | [EXPERIMENTAL] Fetch the last pre-AsAt date version of each order in scope (does not fetch the entire history).
-[**upsertOrderProperties**](OrdersApi.md#upsertOrderProperties) | **POST** /api/orders/{scope}/properties | [EXPERIMENTAL] Upsert; update properties on existing Orders with given ids.
-[**upsertOrders**](OrdersApi.md#upsertOrders) | **POST** /api/orders | [EXPERIMENTAL] Upsert; update existing orders with given ids, or create new orders otherwise.
+[**getOrder**](OrdersApi.md#getOrder) | **GET** /api/orders/{scope}/{code} | [EXPERIMENTAL] Get Order
+[**listOrders**](OrdersApi.md#listOrders) | **GET** /api/orders | [EXPERIMENTAL] List Orders
+[**upsertOrderProperties**](OrdersApi.md#upsertOrderProperties) | **POST** /api/orders/{scope}/properties | [EXPERIMENTAL] Upsert Order Properties
+[**upsertOrders**](OrdersApi.md#upsertOrders) | **POST** /api/orders | [EXPERIMENTAL] Upsert Order
 
 
 <a name="getOrder"></a>
 # **getOrder**
 > Order getOrder(scope, code, asAt, propertyKeys)
 
-[EXPERIMENTAL] Fetch a given order.
+[EXPERIMENTAL] Get Order
+
+Fetch an Order that matches the specified identifier
 
 ### Example
 ```java
@@ -29,7 +31,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:31061");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -87,7 +89,9 @@ Name | Type | Description  | Notes
 # **listOrders**
 > PagedResourceListOfOrder listOrders(asAt, page, sortBy, start, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] Fetch the last pre-AsAt date version of each order in scope (does not fetch the entire history).
+[EXPERIMENTAL] List Orders
+
+Fetch the last pre-AsAt date version of each order in scope (does not fetch the entire history).
 
 ### Example
 ```java
@@ -102,7 +106,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:31061");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -166,7 +170,9 @@ Name | Type | Description  | Notes
 # **upsertOrderProperties**
 > UpsertOrderPropertiesResponse upsertOrderProperties(scope, upsertOrderPropertiesRequest)
 
-[EXPERIMENTAL] Upsert; update properties on existing Orders with given ids.
+[EXPERIMENTAL] Upsert Order Properties
+
+Upsert; update properties on existing Orders with given ids.
 
 ### Example
 ```java
@@ -181,7 +187,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:31061");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -235,7 +241,9 @@ Name | Type | Description  | Notes
 # **upsertOrders**
 > ResourceListOfOrder upsertOrders(orderSetRequest)
 
-[EXPERIMENTAL] Upsert; update existing orders with given ids, or create new orders otherwise.
+[EXPERIMENTAL] Upsert Order
+
+Upsert; update existing orders with given ids, or create new orders otherwise.
 
 ### Example
 ```java
@@ -250,7 +258,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:31061");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

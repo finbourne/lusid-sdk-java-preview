@@ -1,19 +1,21 @@
 # AllocationsApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://localhost:31061*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAllocation**](AllocationsApi.md#getAllocation) | **GET** /api/allocations/{scope}/{code} | [EXPERIMENTAL] Fetch a given allocation.
-[**listAllocations**](AllocationsApi.md#listAllocations) | **GET** /api/allocations | [EXPERIMENTAL] Fetch the last pre-AsAt date version of each allocation in scope (does not fetch the entire history).
-[**upsertAllocations**](AllocationsApi.md#upsertAllocations) | **POST** /api/allocations | [EXPERIMENTAL] Upsert; update existing allocations with given ids, or create new allocations otherwise.
+[**getAllocation**](AllocationsApi.md#getAllocation) | **GET** /api/allocations/{scope}/{code} | [EXPERIMENTAL] Get Allocation
+[**listAllocations**](AllocationsApi.md#listAllocations) | **GET** /api/allocations | [EXPERIMENTAL] List Allocations
+[**upsertAllocations**](AllocationsApi.md#upsertAllocations) | **POST** /api/allocations | [EXPERIMENTAL] Upsert Allocations
 
 
 <a name="getAllocation"></a>
 # **getAllocation**
 > Allocation getAllocation(scope, code, asAt, propertyKeys)
 
-[EXPERIMENTAL] Fetch a given allocation.
+[EXPERIMENTAL] Get Allocation
+
+Fetch an Allocation matching the provided identifier
 
 ### Example
 ```java
@@ -28,7 +30,7 @@ import com.finbourne.lusid.api.AllocationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:31061");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -86,7 +88,9 @@ Name | Type | Description  | Notes
 # **listAllocations**
 > PagedResourceListOfAllocation listAllocations(asAt, page, sortBy, start, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] Fetch the last pre-AsAt date version of each allocation in scope (does not fetch the entire history).
+[EXPERIMENTAL] List Allocations
+
+Fetch the last pre-AsAt date version of each allocation in scope (does not fetch the entire history).
 
 ### Example
 ```java
@@ -101,7 +105,7 @@ import com.finbourne.lusid.api.AllocationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:31061");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -157,7 +161,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Allocations in scope. |  -  |
+**200** | Allocations. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
@@ -165,7 +169,9 @@ Name | Type | Description  | Notes
 # **upsertAllocations**
 > ResourceListOfAllocation upsertAllocations(allocationSetRequest)
 
-[EXPERIMENTAL] Upsert; update existing allocations with given ids, or create new allocations otherwise.
+[EXPERIMENTAL] Upsert Allocations
+
+Upsert; update existing allocations with given ids, or create new allocations otherwise.
 
 ### Example
 ```java
@@ -180,7 +186,7 @@ import com.finbourne.lusid.api.AllocationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:31061");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
