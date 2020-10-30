@@ -1,6 +1,6 @@
 # ConfigurationRecipeApi
 
-All URIs are relative to *http://localhost:57208*
+All URIs are relative to *http://localhost:55560*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:57208");
+    defaultClient.setBasePath("http://localhost:55560");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -102,7 +102,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:57208");
+    defaultClient.setBasePath("http://localhost:55560");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -175,7 +175,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:57208");
+    defaultClient.setBasePath("http://localhost:55560");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -246,14 +246,14 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:57208");
+    defaultClient.setBasePath("http://localhost:55560");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ConfigurationRecipeApi apiInstance = new ConfigurationRecipeApi(defaultClient);
-    UpsertRecipeRequest upsertRecipeRequest = {"configurationRecipe":{"scope":"scopeName","code":"MyNamedRecipe12345","market":{"marketRules":[{"key":"Fx.CurrencyPair.*","supplier":"DataScope","dataScope":"SomeScopeToLookAt","quoteType":"Rate","field":"Mid","priceSource":""}],"suppliers":{},"options":{"defaultSupplier":"Lusid","defaultInstrumentCodeType":"LusidInstrumentId","defaultScope":"default","attemptToInferMissingFx":false,"manifestLevelOfDetail":"None"}},"pricing":{"modelRules":[],"modelChoice":{},"options":{"modelSelection":{"library":"Lusid","model":"SimpleStatic"},"useInstrumentTypeToDeterminePricer":false,"allowAnyInstrumentsWithSecUidToPriceOffLookup":false,"allowPartiallySuccessfulEvaluation":false,"produceSeparateResultForLinearOtcLegs":false,"enableUseOfCachedUnitResults":false,"windowValuationOnInstrumentStartEnd":false,"removeContingentCashflowsInPaymentDiary":false,"useChildSubHoldingKeysForPortfolioExpansion":false},"resultDataRules":[]},"aggregation":{"options":{"useAnsiLikeSyntax":false}},"inheritedRecipes":[],"description":""}}; // UpsertRecipeRequest | The Configuration Recipe to update or insert
+    UpsertRecipeRequest upsertRecipeRequest = {"configurationRecipe":{"scope":"scopeName","code":"MyNamedRecipe12345","market":{"marketRules":[{"key":"Fx.CurrencyPair.*","supplier":"DataScope","dataScope":"SomeScopeToLookAt","quoteType":"Rate","field":"Mid","priceSource":""}],"suppliers":{},"options":{"defaultSupplier":"Lusid","defaultInstrumentCodeType":"LusidInstrumentId","defaultScope":"default","attemptToInferMissingFx":false}},"pricing":{"modelRules":[],"modelChoice":{},"options":{"modelSelection":{"library":"Lusid","model":"SimpleStatic"},"useInstrumentTypeToDeterminePricer":false,"allowAnyInstrumentsWithSecUidToPriceOffLookup":false,"allowPartiallySuccessfulEvaluation":false,"produceSeparateResultForLinearOtcLegs":false,"enableUseOfCachedUnitResults":false,"windowValuationOnInstrumentStartEnd":false,"removeContingentCashflowsInPaymentDiary":false,"useChildSubHoldingKeysForPortfolioExpansion":false},"resultDataRules":[]},"aggregation":{"options":{"useAnsiLikeSyntax":false}},"inheritedRecipes":[],"description":""}}; // UpsertRecipeRequest | The Configuration Recipe to update or insert
     try {
       UpsertSingleStructuredDataResponse result = apiInstance.upsertConfigurationRecipe(upsertRecipeRequest);
       System.out.println(result);
