@@ -6,10 +6,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**conventionName** | [**FlowConventionName**](FlowConventionName.md) |  | 
-**conventions** | [**FlowConventions**](FlowConventions.md) |  | 
-**indexConvention** | [**IndexConvention**](IndexConvention.md) |  | 
-**indexConventionName** | [**FlowConventionName**](FlowConventionName.md) |  | 
+**conventionName** | [**FlowConventionName**](FlowConventionName.md) |  |  [optional]
+**conventions** | [**FlowConventions**](FlowConventions.md) |  |  [optional]
+**indexConvention** | [**IndexConvention**](IndexConvention.md) |  |  [optional]
+**indexConventionName** | [**FlowConventionName**](FlowConventionName.md) |  |  [optional]
 **notionalExchangeType** | **String** | what type of notional exchange does the leg have  Supported string (enumeration) values are: [None, Initial, Final, Both]. | 
 **payReceive** | **String** | Is the leg to be paid or received  Supported string (enumeration) values are: [NotDefined, Pay, Receive]. | 
 **rateOrSpread** | **Double** | Is there either a fixed rate (non-zero) or spread to be paid over the value of the leg. | 
