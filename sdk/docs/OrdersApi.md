@@ -1,6 +1,6 @@
 # OrdersApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://localhost:61697*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:61697");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -106,7 +106,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:61697");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -187,7 +187,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:61697");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -195,7 +195,7 @@ public class Example {
 
     OrdersApi apiInstance = new OrdersApi(defaultClient);
     String scope = "scope_example"; // String | The scope to which the orders belong.
-    List<UpsertOrderPropertiesRequest> upsertOrderPropertiesRequest = {"properties":[{"key":"Order/MyScope/SomeOrderProperty","value":{"labelValue":"XYZ000034567"}}],"id":"ORD00000123"}; // List<UpsertOrderPropertiesRequest> | A collection of order property upsert requests.
+    List<UpsertOrderPropertiesRequest> upsertOrderPropertiesRequest = [{"properties":[{"key":"Order/MyScope/SomeOrderProperty","value":{"labelValue":"XYZ000034567"}}],"id":"ORD00000123"}]; // List<UpsertOrderPropertiesRequest> | A collection of order property upsert requests.
     try {
       UpsertOrderPropertiesResponse result = apiInstance.upsertOrderProperties(scope, upsertOrderPropertiesRequest);
       System.out.println(result);
@@ -258,7 +258,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://localhost:61697");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
