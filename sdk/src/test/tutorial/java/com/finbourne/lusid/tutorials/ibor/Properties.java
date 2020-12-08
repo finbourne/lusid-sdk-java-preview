@@ -5,6 +5,7 @@ import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.api.*;
 import com.finbourne.lusid.model.*;
+import com.finbourne.features.LusidFeature;
 import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -34,6 +35,7 @@ public class Properties {
     }
 
     @Test
+    @LusidFeature("F14")
     public void create_portfolio_with_label_property() throws ApiException {
 
         String uuid = UUID.randomUUID().toString();
@@ -95,6 +97,7 @@ public class Properties {
     }
 
     @Test
+    @LusidFeature("F15")
     public void create_portfolio_with_metric_property() throws ApiException {
 
         String uuid = UUID.randomUUID().toString();

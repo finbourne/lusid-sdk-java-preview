@@ -5,6 +5,7 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.TransactionPortfoliosApi;
 import com.finbourne.lusid.model.*;
+import com.finbourne.features.LusidFeature;
 import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -42,6 +43,7 @@ public class Holdings {
     }
 
     @Test
+    @LusidFeature("F2")
     public void get_holdings() throws ApiException {
 
         final String    currency = "GBP";
@@ -110,6 +112,7 @@ public class Holdings {
     }
 
     @Test
+    @LusidFeature("F3")
     public void set_target_holdings() throws ApiException {
 
         final String    currency = "GBP";
