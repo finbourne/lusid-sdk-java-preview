@@ -13,7 +13,5 @@
 
 * `BLACKSCHOLES` (value: `"BlackScholes"`)
 
-* `CONSTANTTIMEVALUEOFMONEY` (value: `"ConstantTimeValueOfMoney"`)
-
 
 

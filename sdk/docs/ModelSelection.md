@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **library** | [**LibraryEnum**](#LibraryEnum) | The available values are: Lusid, RefinitivQps, RefinitivTracsWeb, VolMaster, IsdaCds | 
-**model** | [**ModelEnum**](#ModelEnum) | The available values are: SimpleStatic, Discounting, VendorDefault, BlackScholes, ConstantTimeValueOfMoney | 
+**model** | [**ModelEnum**](#ModelEnum) | The available values are: SimpleStatic, Discounting, VendorDefault, BlackScholes | 
 
 
 
@@ -31,7 +31,6 @@ SIMPLESTATIC | &quot;SimpleStatic&quot;
 DISCOUNTING | &quot;Discounting&quot;
 VENDORDEFAULT | &quot;VendorDefault&quot;
 BLACKSCHOLES | &quot;BlackScholes&quot;
-CONSTANTTIMEVALUEOFMONEY | &quot;ConstantTimeValueOfMoney&quot;
 
 
 
