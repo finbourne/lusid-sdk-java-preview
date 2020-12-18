@@ -15,5 +15,7 @@
 
 * `CONSTANTTIMEVALUEOFMONEY` (value: `"ConstantTimeValueOfMoney"`)
 
+* `BACHELIER` (value: `"Bachelier"`)
+
 
 
