@@ -17,7 +17,5 @@
 
 * `CURRENCYPAIR` (value: `"CurrencyPair"`)
 
-* `CLIENTINTERNAL` (value: `"ClientInternal"`)
-
 
 
