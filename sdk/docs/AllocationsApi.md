@@ -1,13 +1,85 @@
 # AllocationsApi
 
-All URIs are relative to *http://localhost:39183*
+All URIs are relative to *http://localhost:62772*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**deleteAllocation**](AllocationsApi.md#deleteAllocation) | **DELETE** /api/allocations/{scope}/{code} | [EXPERIMENTAL] Delete allocation
 [**getAllocation**](AllocationsApi.md#getAllocation) | **GET** /api/allocations/{scope}/{code} | [EXPERIMENTAL] Get Allocation
 [**listAllocations**](AllocationsApi.md#listAllocations) | **GET** /api/allocations | [EXPERIMENTAL] List Allocations
 [**upsertAllocations**](AllocationsApi.md#upsertAllocations) | **POST** /api/allocations | [EXPERIMENTAL] Upsert Allocations
 
+
+<a name="deleteAllocation"></a>
+# **deleteAllocation**
+> DeletedEntityResponse deleteAllocation(scope, code)
+
+[EXPERIMENTAL] Delete allocation
+
+Delete an allocation. Deletion will be valid from the allocation&#39;s creation datetime.  This means that the allocation will no longer exist at any effective datetime from the asAt datetime of deletion.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.AllocationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost:62772");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    AllocationsApi apiInstance = new AllocationsApi(defaultClient);
+    String scope = "scope_example"; // String | The allocation scope.
+    String code = "code_example"; // String | The allocation's code. This, together with the scope uniquely identifies the allocation to delete.
+    try {
+      DeletedEntityResponse result = apiInstance.deleteAllocation(scope, code);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AllocationsApi#deleteAllocation");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The allocation scope. |
+ **code** | **String**| The allocation&#39;s code. This, together with the scope uniquely identifies the allocation to delete. |
+
+### Return type
+
+[**DeletedEntityResponse**](DeletedEntityResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The response from deleting an allocation. |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
 
 <a name="getAllocation"></a>
 # **getAllocation**
@@ -30,7 +102,7 @@ import com.finbourne.lusid.api.AllocationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:39183");
+    defaultClient.setBasePath("http://localhost:62772");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -105,7 +177,7 @@ import com.finbourne.lusid.api.AllocationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:39183");
+    defaultClient.setBasePath("http://localhost:62772");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -186,7 +258,7 @@ import com.finbourne.lusid.api.AllocationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:39183");
+    defaultClient.setBasePath("http://localhost:62772");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

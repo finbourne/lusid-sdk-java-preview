@@ -1,14 +1,86 @@
 # OrdersApi
 
-All URIs are relative to *http://localhost:39183*
+All URIs are relative to *http://localhost:62772*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**deleteOrder**](OrdersApi.md#deleteOrder) | **DELETE** /api/orders/{scope}/{code} | [EXPERIMENTAL] Delete order
 [**getOrder**](OrdersApi.md#getOrder) | **GET** /api/orders/{scope}/{code} | [EXPERIMENTAL] Get Order
 [**listOrders**](OrdersApi.md#listOrders) | **GET** /api/orders | [EXPERIMENTAL] List Orders
 [**upsertOrderProperties**](OrdersApi.md#upsertOrderProperties) | **POST** /api/orders/{scope}/properties | [EXPERIMENTAL] Upsert Order Properties
 [**upsertOrders**](OrdersApi.md#upsertOrders) | **POST** /api/orders | [EXPERIMENTAL] Upsert Order
 
+
+<a name="deleteOrder"></a>
+# **deleteOrder**
+> DeletedEntityResponse deleteOrder(scope, code)
+
+[EXPERIMENTAL] Delete order
+
+Delete an order. Deletion will be valid from the order&#39;s creation datetime.  This means that the order will no longer exist at any effective datetime from the asAt datetime of deletion.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.OrdersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost:62772");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    OrdersApi apiInstance = new OrdersApi(defaultClient);
+    String scope = "scope_example"; // String | The order scope.
+    String code = "code_example"; // String | The order's code. This, together with the scope uniquely identifies the order to delete.
+    try {
+      DeletedEntityResponse result = apiInstance.deleteOrder(scope, code);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OrdersApi#deleteOrder");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The order scope. |
+ **code** | **String**| The order&#39;s code. This, together with the scope uniquely identifies the order to delete. |
+
+### Return type
+
+[**DeletedEntityResponse**](DeletedEntityResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The response from deleting an order. |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
 
 <a name="getOrder"></a>
 # **getOrder**
@@ -31,7 +103,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:39183");
+    defaultClient.setBasePath("http://localhost:62772");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -106,7 +178,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:39183");
+    defaultClient.setBasePath("http://localhost:62772");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -187,7 +259,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:39183");
+    defaultClient.setBasePath("http://localhost:62772");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -258,7 +330,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:39183");
+    defaultClient.setBasePath("http://localhost:62772");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
