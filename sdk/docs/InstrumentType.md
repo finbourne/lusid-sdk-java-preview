@@ -35,5 +35,7 @@
 
 * `TERMDEPOSIT` (value: `"TermDeposit"`)
 
+* `CONTRACTFORDIFFERENCE` (value: `"ContractForDifference"`)
+
 
 
