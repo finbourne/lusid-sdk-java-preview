@@ -1,14 +1,14 @@
 # AggregationApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:58425*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**generateConfigurationRecipe**](AggregationApi.md#generateConfigurationRecipe) | **POST** /api/aggregation/{scope}/{code}/$generateconfigurationrecipe | [EXPERIMENTAL] Generates a recipe sufficient to perform valuations for the given portfolio.
-[**getAggregation**](AggregationApi.md#getAggregation) | **POST** /api/aggregation/{scope}/{code}/$aggregate | [EXPERIMENTAL] Aggregate data in a portfolio or portfolio group  Deprecated: Please use the GetValuation endpoint. It is aimed at a simpler set of requirements now deemed stable.  Aggregation will shortly be modified to include experimental features such as Simulation and XVA
+[**getAggregation**](AggregationApi.md#getAggregation) | **POST** /api/aggregation/{scope}/{code}/$aggregate | [EXPERIMENTAL] Aggregate data in a portfolio or portfolio group
 [**getAggregationByResultSet**](AggregationApi.md#getAggregationByResultSet) | **POST** /api/results/{scope}/{resultsKey}/$aggregate | [EXPERIMENTAL] Aggregate using result data
 [**getAggregationOfWeightedInstruments**](AggregationApi.md#getAggregationOfWeightedInstruments) | **POST** /api/portfolios/{scope}/$aggregateinlined | [EXPERIMENTAL] Aggregate data in an inlined portfolio
-[**getNestedAggregation**](AggregationApi.md#getNestedAggregation) | **POST** /api/aggregation/{scope}/{code}/$aggregatenested | [EXPERIMENTAL] Aggregate data in a portfolio or portfolio group, as nested                Deprecated: Endpoint is being retired. The nested functionality is supported on the valuation endpoint through use of an &#39;include subtotals&#39; flag.
+[**getNestedAggregation**](AggregationApi.md#getNestedAggregation) | **POST** /api/aggregation/{scope}/{code}/$aggregatenested | [EXPERIMENTAL] Aggregate data in a portfolio or portfolio group, as nested
 [**getQueryableKeys**](AggregationApi.md#getQueryableKeys) | **GET** /api/results/queryable/keys | [EXPERIMENTAL] Query the set of supported \&quot;addresses\&quot; that can be queried from the aggregation endpoint.
 [**getValuation**](AggregationApi.md#getValuation) | **POST** /api/aggregation/$valuation | [EXPERIMENTAL] Perform valuation for a list of portfolios and/or portfolio groups
 [**getValuationOfWeightedInstruments**](AggregationApi.md#getValuationOfWeightedInstruments) | **POST** /api/aggregation/$valuationinlined | [EXPERIMENTAL] Perform valuation for an inlined portfolio
@@ -35,7 +35,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58425");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 # **getAggregation**
 > ListAggregationResponse getAggregation(scope, code, sortBy, start, limit, aggregationRequest)
 
-[EXPERIMENTAL] Aggregate data in a portfolio or portfolio group  Deprecated: Please use the GetValuation endpoint. It is aimed at a simpler set of requirements now deemed stable.  Aggregation will shortly be modified to include experimental features such as Simulation and XVA
+[EXPERIMENTAL] Aggregate data in a portfolio or portfolio group
 
 Aggregate data sourced from the specified portfolio or portfolio group
 
@@ -108,7 +108,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58425");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -187,7 +187,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58425");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 [EXPERIMENTAL] Aggregate data in an inlined portfolio
 
-Aggregate data sourced from the portfolio that is defined by the weighted set of instruments passed to the request.  Deprecated: Please use the (inline) GetValuation endpoint. It is aimed at a simpler set of requirements now deemed stable.  Aggregation will shortly be modified to include experimental features such as Simulation and XVA
+Aggregate data sourced from the portfolio that is defined by the weighted set of instruments passed to the request.
 
 ### Example
 ```java
@@ -266,7 +266,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58425");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 # **getNestedAggregation**
 > NestedAggregationResponse getNestedAggregation(scope, code, aggregationRequest)
 
-[EXPERIMENTAL] Aggregate data in a portfolio or portfolio group, as nested                Deprecated: Endpoint is being retired. The nested functionality is supported on the valuation endpoint through use of an &#39;include subtotals&#39; flag.
+[EXPERIMENTAL] Aggregate data in a portfolio or portfolio group, as nested
 
 Aggregate data sourced from the specified portfolio or portfolio group into a nested structure. Data is nested following the group-by specifications.
 
@@ -343,7 +343,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58425");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -416,7 +416,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58425");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -491,7 +491,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58425");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -560,7 +560,7 @@ import com.finbourne.lusid.api.AggregationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58425");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
