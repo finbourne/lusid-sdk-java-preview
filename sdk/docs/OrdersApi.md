@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 [EXPERIMENTAL] Upsert Order Properties
 
-Upsert; update properties on existing Orders with given ids.
+Update or insert one or more order properties for existing orders with given ids. Each order property will be updated  if it already exists and inserted if it does not. If any properties fail to be updated or inserted, none will be updated or inserted and  the reason for the failure will be returned.                Properties have an &lt;i&gt;effectiveFrom&lt;/i&gt; datetime for which the property is valid, and an &lt;i&gt;effectiveUntil&lt;/i&gt;  datetime until which the property is valid. Not supplying an &lt;i&gt;effectiveUntil&lt;/i&gt; datetime results in the property being  valid indefinitely, or until the next &lt;i&gt;effectiveFrom&lt;/i&gt; datetime of the property.
 
 ### Example
 ```java
@@ -267,7 +267,7 @@ public class Example {
 
     OrdersApi apiInstance = new OrdersApi(defaultClient);
     String scope = "scope_example"; // String | The scope to which the orders belong.
-    List<UpsertOrderPropertiesRequest> upsertOrderPropertiesRequest = [{"properties":[{"key":"Order/MyScope/SomeOrderProperty","value":{"labelValue":"XYZ000034567"}}],"id":"ORD00000123"}]; // List<UpsertOrderPropertiesRequest> | A collection of order property upsert requests.
+    List<UpsertOrderPropertiesRequest> upsertOrderPropertiesRequest = [{"properties":[{"key":"Order/MyScope/SomeOrderProperty","value":{"labelValue":"XYZ000034567"}},{"key":"Order/MyScope/AnotherOrderProperty","value":{"labelValue":"XYZ000056748"},"effectiveFrom":"2018-05-10T12:00:00.0000000+00:00","effectiveUntil":"2019-07-12T12:00:00.0000000+00:00"},{"key":"Order/MyScope/AdditionalOrderProperty","value":{"labelValue":"XYZ000099134"},"effectiveFrom":"2020-03-05T00:00:00.0000000+00:00"}],"id":"ORD00000123"}]; // List<UpsertOrderPropertiesRequest> | A collection of order property upsert requests.
     try {
       UpsertOrderPropertiesResponse result = apiInstance.upsertOrderProperties(scope, upsertOrderPropertiesRequest);
       System.out.println(result);
