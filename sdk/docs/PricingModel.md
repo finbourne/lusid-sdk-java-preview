@@ -17,5 +17,9 @@
 
 * `BACHELIER` (value: `"Bachelier"`)
 
+* `FORWARDWITHPOINTS` (value: `"ForwardWithPoints"`)
+
+* `FORWARDWITHPOINTSUNDISCOUNTED` (value: `"ForwardWithPointsUndiscounted"`)
+
 
 
