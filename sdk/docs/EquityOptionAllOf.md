@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **domCcy** | **String** | The domestic currency of the instrument. | 
 **underlyingIdentifier** | [**UnderlyingIdentifierEnum**](#UnderlyingIdentifierEnum) | The available values are: LusidInstrumentId, Isin, Sedol, Cusip, ClientInternal, Figi, RIC, QuotePermId | 
 **code** | **String** | The reset code of the option. | 
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashflowLeg, Unknown, TermDeposit, ContractForDifference | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashflowLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap | 
 
 
 
@@ -73,6 +73,7 @@ BESPOKECASHFLOWLEG | &quot;BespokeCashflowLeg&quot;
 UNKNOWN | &quot;Unknown&quot;
 TERMDEPOSIT | &quot;TermDeposit&quot;
 CONTRACTFORDIFFERENCE | &quot;ContractForDifference&quot;
+EQUITYSWAP | &quot;EquitySwap&quot;
 
 
 

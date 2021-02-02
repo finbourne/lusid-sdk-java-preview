@@ -37,5 +37,7 @@
 
 * `CONTRACTFORDIFFERENCE` (value: `"ContractForDifference"`)
 
+* `EQUITYSWAP` (value: `"EquitySwap"`)
+
 
 
