@@ -1,6 +1,6 @@
 
 
-# PagedResourceListOfPortfolioGroupSearchResult
+# PagedResourceListOfPortfolioGroup
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **nextPage** | **String** |  |  [optional]
 **previousPage** | **String** |  |  [optional]
-**values** | [**List&lt;PortfolioGroupSearchResult&gt;**](PortfolioGroupSearchResult.md) |  | 
+**values** | [**List&lt;PortfolioGroup&gt;**](PortfolioGroup.md) |  | 
 **href** | [**URI**](URI.md) |  |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
