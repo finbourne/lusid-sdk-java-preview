@@ -1,6 +1,6 @@
 # SearchApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:62171*
+All URIs are relative to *http://local-unit-test-server.lusid.com:54308*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -34,7 +34,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62171");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54308");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -107,7 +107,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62171");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54308");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -178,7 +178,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62171");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54308");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -249,7 +249,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62171");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54308");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 <a name="searchPortfolioGroups"></a>
 # **searchPortfolioGroups**
-> PagedResourceListOfPortfolioGroup searchPortfolioGroups(search, filter, sortBy, limit, page)
+> PagedResourceListOfPortfolioGroupSearchResult searchPortfolioGroups(search, filter, sortBy, limit, page)
 
 [EXPERIMENTAL] Search Portfolio Groups
 
@@ -320,7 +320,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62171");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54308");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -333,7 +333,7 @@ public class Example {
     Integer limit = 56; // Integer | When paginating, only return this number of records
     String page = "page_example"; // String | Encoded page string returned from a previous search result that will retrieve the next page of data. When this field is supplied, filter, sortby and search fields should not be supplied.
     try {
-      PagedResourceListOfPortfolioGroup result = apiInstance.searchPortfolioGroups(search, filter, sortBy, limit, page);
+      PagedResourceListOfPortfolioGroupSearchResult result = apiInstance.searchPortfolioGroups(search, filter, sortBy, limit, page);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SearchApi#searchPortfolioGroups");
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PagedResourceListOfPortfolioGroup**](PagedResourceListOfPortfolioGroup.md)
+[**PagedResourceListOfPortfolioGroupSearchResult**](PagedResourceListOfPortfolioGroupSearchResult.md)
 
 ### Authorization
 
@@ -397,7 +397,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62171");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54308");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -474,7 +474,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62171");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54308");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
