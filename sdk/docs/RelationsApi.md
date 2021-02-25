@@ -1,6 +1,6 @@
 # RelationsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:56661*
+All URIs are relative to *http://local-unit-test-server.lusid.com:51891*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import com.finbourne.lusid.api.RelationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:56661");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:51891");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     RelationsApi apiInstance = new RelationsApi(defaultClient);
-    String scope = "scope_example"; // String | Scope of the relation to create.
-    String code = "code_example"; // String | Code of the relation to create.
+    String scope = "scope_example"; // String | The scope of the relation definition
+    String code = "code_example"; // String | The code of the relation definition
     CreateRelationRequest createRelationRequest = {"sourceEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"},"targetEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"}}; // CreateRelationRequest | The details of the relation to create.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which the relation should be effective from. Defaults to the current LUSID system datetime if not specified.
     try {
@@ -58,8 +58,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| Scope of the relation to create. |
- **code** | **String**| Code of the relation to create. |
+ **scope** | **String**| The scope of the relation definition |
+ **code** | **String**| The code of the relation definition |
  **createRelationRequest** | [**CreateRelationRequest**](CreateRelationRequest.md)| The details of the relation to create. |
  **effectiveAt** | **String**| The effective datetime or cut label at which the relation should be effective from. Defaults to the current LUSID system datetime if not specified. | [optional]
 
@@ -104,15 +104,15 @@ import com.finbourne.lusid.api.RelationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:56661");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:51891");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     RelationsApi apiInstance = new RelationsApi(defaultClient);
-    String scope = "scope_example"; // String | Scope of the relation to delete.
-    String code = "code_example"; // String | Code of the relation to delete.
+    String scope = "scope_example"; // String | The scope of the relation definition
+    String code = "code_example"; // String | The code of the relation definition
     DeleteRelationRequest deleteRelationRequest = {"sourceEntityId":{"entityType":"PortfolioGroup","scope":"UkPortfolio","code":"PortfolioId-148176"},"targetEntityId":{"entityType":"Person","idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"}}; // DeleteRelationRequest | The details of the relation to delete.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which the relation should the deletion be effective from. Defaults to the current LUSID system datetime if not specified.
     try {
@@ -133,8 +133,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| Scope of the relation to delete. |
- **code** | **String**| Code of the relation to delete. |
+ **scope** | **String**| The scope of the relation definition |
+ **code** | **String**| The code of the relation definition |
  **deleteRelationRequest** | [**DeleteRelationRequest**](DeleteRelationRequest.md)| The details of the relation to delete. |
  **effectiveAt** | **String**| The effective datetime or cut label at which the relation should the deletion be effective from. Defaults to the current LUSID system datetime if not specified. | [optional]
 
