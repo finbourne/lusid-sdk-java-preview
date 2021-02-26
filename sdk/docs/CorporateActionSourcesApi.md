@@ -1,12 +1,13 @@
 # CorporateActionSourcesApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:40537*
+All URIs are relative to *http://local-unit-test-server.lusid.com:61132*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**batchUpsertCorporateActions**](CorporateActionSourcesApi.md#batchUpsertCorporateActions) | **POST** /api/corporateactionsources/{scope}/{code}/corporateactions | [BETA] Upsert corporate actions
 [**createCorporateActionSource**](CorporateActionSourcesApi.md#createCorporateActionSource) | **POST** /api/corporateactionsources | [BETA] Create Corporate Action Source
 [**deleteCorporateActionSource**](CorporateActionSourcesApi.md#deleteCorporateActionSource) | **DELETE** /api/corporateactionsources/{scope}/{code} | [BETA] Delete a corporate action source
+[**deleteCorporateActions**](CorporateActionSourcesApi.md#deleteCorporateActions) | **DELETE** /api/corporateactionsources/{scope}/{code}/corporateactions | [EXPERIMENTAL] Delete one or more corporate actions
 [**getCorporateActions**](CorporateActionSourcesApi.md#getCorporateActions) | **GET** /api/corporateactionsources/{scope}/{code}/corporateactions | [BETA] Get corporate actions
 [**listCorporateActionSources**](CorporateActionSourcesApi.md#listCorporateActionSources) | **GET** /api/corporateactionsources | [BETA] List corporate action sources
 
@@ -32,7 +33,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:40537");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:61132");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -105,7 +106,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:40537");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:61132");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -174,7 +175,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:40537");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:61132");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -224,6 +225,79 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="deleteCorporateActions"></a>
+# **deleteCorporateActions**
+> DeletedEntityResponse deleteCorporateActions(scope, code, corporateActionIds)
+
+[EXPERIMENTAL] Delete one or more corporate actions
+
+Deletes one or more corporate actions from the specified corporate action source
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CorporateActionSourcesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:61132");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the corporate action source
+    String code = "code_example"; // String | The code of the corporate action source
+    List<String> corporateActionIds = Arrays.asList(); // List<String> | The ids of the corporate actions to delete
+    try {
+      DeletedEntityResponse result = apiInstance.deleteCorporateActions(scope, code, corporateActionIds);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CorporateActionSourcesApi#deleteCorporateActions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope of the corporate action source |
+ **code** | **String**| The code of the corporate action source |
+ **corporateActionIds** | [**List&lt;String&gt;**](String.md)| The ids of the corporate actions to delete |
+
+### Return type
+
+[**DeletedEntityResponse**](DeletedEntityResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Corporate Actions Deleted |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="getCorporateActions"></a>
 # **getCorporateActions**
 > ResourceListOfCorporateAction getCorporateActions(scope, code, fromEffectiveAt, toEffectiveAt, asAt, sortBy, limit, filter)
@@ -245,7 +319,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:40537");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:61132");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -328,7 +402,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:40537");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:61132");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
