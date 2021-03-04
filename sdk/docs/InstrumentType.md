@@ -39,5 +39,9 @@
 
 * `EQUITYSWAP` (value: `"EquitySwap"`)
 
+* `CASHPERPETUAL` (value: `"CashPerpetual"`)
+
+* `CASHSETTLED` (value: `"CashSettled"`)
+
 
 

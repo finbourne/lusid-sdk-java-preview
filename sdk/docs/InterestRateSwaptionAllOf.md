@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **payOrReceiveFixed** | [**PayOrReceiveFixedEnum**](#PayOrReceiveFixedEnum) | The available values are: NotDefined, Pay, Receive | 
 **deliveryMethod** | [**DeliveryMethodEnum**](#DeliveryMethodEnum) | The available values are: Cash, Physical | 
 **swap** | [**InterestRateSwap**](InterestRateSwap.md) |  | 
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashflowLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashflowLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled | 
 
 
 
@@ -54,6 +54,8 @@ UNKNOWN | &quot;Unknown&quot;
 TERMDEPOSIT | &quot;TermDeposit&quot;
 CONTRACTFORDIFFERENCE | &quot;ContractForDifference&quot;
 EQUITYSWAP | &quot;EquitySwap&quot;
+CASHPERPETUAL | &quot;CashPerpetual&quot;
+CASHSETTLED | &quot;CashSettled&quot;
 
 
 
