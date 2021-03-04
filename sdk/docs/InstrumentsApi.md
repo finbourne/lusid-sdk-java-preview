@@ -1,6 +1,6 @@
 # InstrumentsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:36497*
+All URIs are relative to *http://local-unit-test-server.lusid.com:54354*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -38,7 +38,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36497");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54354");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -109,7 +109,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36497");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54354");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -184,7 +184,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36497");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54354");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -261,7 +261,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36497");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54354");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -325,7 +325,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36497");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54354");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -400,7 +400,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36497");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54354");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -408,9 +408,9 @@ public class Example {
 
     InstrumentsApi apiInstance = new InstrumentsApi(defaultClient);
     String identifierType = "identifierType_example"; // String | The identifier type of the instrument, e.g., \"Figi\"
-    String identifier = "identifier_example"; // String | The identifier of the instrument to delete properties from.
+    String identifier = "identifier_example"; // String | The value of the identifier for the requested instrument.
     String propertyKey = "propertyKey_example"; // String | The property key of the property that will have its history shown.
-    String identifierEffectiveAt = "identifierEffectiveAt_example"; // String | The effective datetime of the instrument identifier. The property history of a property belonging to the associated instrument is listed. Defaults to the current LUSID system datetime if not specified.
+    String identifierEffectiveAt = "identifierEffectiveAt_example"; // String | The effective datetime used to resolve the instrument from the provided identifier. Defaults to the current LUSID system datetime if not specified.
     OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to list the instrument's property history. Defaults to return the current datetime if not supplied.
     String filter = "filter_example"; // String | Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
     String page = "page_example"; // String | The pagination token to use to continue listing properties from a previous call to get property time series.              This value is returned from the previous call. If a pagination token is provided the filter, effectiveAt, and asAt fields              must not have changed since the original request.
@@ -434,9 +434,9 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifierType** | **String**| The identifier type of the instrument, e.g., \&quot;Figi\&quot; |
- **identifier** | **String**| The identifier of the instrument to delete properties from. |
+ **identifier** | **String**| The value of the identifier for the requested instrument. |
  **propertyKey** | **String**| The property key of the property that will have its history shown. | [optional]
- **identifierEffectiveAt** | **String**| The effective datetime of the instrument identifier. The property history of a property belonging to the associated instrument is listed. Defaults to the current LUSID system datetime if not specified. | [optional]
+ **identifierEffectiveAt** | **String**| The effective datetime used to resolve the instrument from the provided identifier. Defaults to the current LUSID system datetime if not specified. | [optional]
  **asAt** | **OffsetDateTime**| The asAt datetime at which to list the instrument&#39;s property history. Defaults to return the current datetime if not supplied. | [optional]
  **filter** | **String**| Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
  **page** | **String**| The pagination token to use to continue listing properties from a previous call to get property time series.              This value is returned from the previous call. If a pagination token is provided the filter, effectiveAt, and asAt fields              must not have changed since the original request. | [optional]
@@ -483,7 +483,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36497");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54354");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -560,7 +560,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36497");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54354");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -643,7 +643,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36497");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54354");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -716,7 +716,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36497");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54354");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -785,7 +785,7 @@ import com.finbourne.lusid.api.InstrumentsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36497");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54354");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
