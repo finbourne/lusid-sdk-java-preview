@@ -43,5 +43,9 @@
 
 * `CASHSETTLED` (value: `"CashSettled"`)
 
+* `CDSINDEX` (value: `"CdsIndex"`)
+
+* `BASKET` (value: `"Basket"`)
+
 
 
