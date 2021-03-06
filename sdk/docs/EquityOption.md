@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **optionType** | [**OptionTypeEnum**](#OptionTypeEnum) | The available values are: None, Call, Put | 
 **strike** | **Double** | The strike of the option. | 
 **domCcy** | **String** | The domestic currency of the instrument. | 
-**underlyingIdentifier** | [**UnderlyingIdentifierEnum**](#UnderlyingIdentifierEnum) | The available values are: LusidInstrumentId, Isin, Sedol, Cusip, ClientInternal, Figi, RIC, QuotePermId | 
+**underlyingIdentifier** | [**UnderlyingIdentifierEnum**](#UnderlyingIdentifierEnum) | The available values are: LusidInstrumentId, Isin, Sedol, Cusip, ClientInternal, Figi, RIC, QuotePermId, REDCode, BBGId, ICECode | 
 **code** | **String** | The reset code of the option. | 
 
 
@@ -49,6 +49,9 @@ CLIENTINTERNAL | &quot;ClientInternal&quot;
 FIGI | &quot;Figi&quot;
 RIC | &quot;RIC&quot;
 QUOTEPERMID | &quot;QuotePermId&quot;
+REDCODE | &quot;REDCode&quot;
+BBGID | &quot;BBGId&quot;
+ICECODE | &quot;ICECode&quot;
 
 
 
