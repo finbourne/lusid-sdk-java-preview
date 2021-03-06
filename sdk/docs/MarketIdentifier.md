@@ -21,11 +21,5 @@
 
 * `QUOTEPERMID` (value: `"QuotePermId"`)
 
-* `REDCODE` (value: `"REDCode"`)
-
-* `BBGID` (value: `"BBGId"`)
-
-* `ICECODE` (value: `"ICECode"`)
-
 
 

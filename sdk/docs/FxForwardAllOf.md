@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **refSpotRate** | **Double** | The reference Fx Spot rate for currency pair Foreign-Domestic that was seen on the trade start date (time). |  [optional]
 **isNdf** | **Boolean** | Is the contract an Fx-Forward of \&quot;Non-Deliverable\&quot; type, meaning a single payment in the domestic currency based on the change in fx-rate vs              a reference rate is used. |  [optional]
 **fixingDate** | [**OffsetDateTime**](OffsetDateTime.md) | The fixing date . |  [optional]
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashflowLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashflowLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled | 
 
 
 
@@ -42,8 +42,6 @@ CONTRACTFORDIFFERENCE | &quot;ContractForDifference&quot;
 EQUITYSWAP | &quot;EquitySwap&quot;
 CASHPERPETUAL | &quot;CashPerpetual&quot;
 CASHSETTLED | &quot;CashSettled&quot;
-CDSINDEX | &quot;CdsIndex&quot;
-BASKET | &quot;Basket&quot;
 
 
 

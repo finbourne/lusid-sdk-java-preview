@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **principal** | **Double** | The face-value or principal for the bond at outset.              This might be reduced through its lifetime in the event of amortization or similar. | 
 **couponRate** | **Double** | simple coupon rate. | 
 **identifiers** | **Map&lt;String, String&gt;** | external market codes and identifiers for the bond, e.g. ISIN. |  [optional]
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashflowLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashflowLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled | 
 
 
 
@@ -40,8 +40,6 @@ CONTRACTFORDIFFERENCE | &quot;ContractForDifference&quot;
 EQUITYSWAP | &quot;EquitySwap&quot;
 CASHPERPETUAL | &quot;CashPerpetual&quot;
 CASHSETTLED | &quot;CashSettled&quot;
-CDSINDEX | &quot;CdsIndex&quot;
-BASKET | &quot;Basket&quot;
 
 
 

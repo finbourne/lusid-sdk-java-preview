@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **notionalReset** | **Boolean** | Notional reset flag, if true the notional of the funding leg is reset at the start of every  coupon to match the value of the equity leg (equity price at start of coupon times quantity) | 
 **quantity** | **Double** | The quantity or number of shares in the Equity Swap. | 
 **underlyingIdentifier** | **String** | external market codes and identifiers for the EquitySwap, e.g. RIC.  Supported string (enumeration) values are: [LusidInstrumentId, Isin, Sedol, Cusip, ClientInternal, Figi, RIC, QuotePermId]. | 
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashflowLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashflowLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled | 
 
 
 
@@ -43,8 +43,6 @@ CONTRACTFORDIFFERENCE | &quot;ContractForDifference&quot;
 EQUITYSWAP | &quot;EquitySwap&quot;
 CASHPERPETUAL | &quot;CashPerpetual&quot;
 CASHSETTLED | &quot;CashSettled&quot;
-CDSINDEX | &quot;CdsIndex&quot;
-BASKET | &quot;Basket&quot;
 
 
 
