@@ -1,13 +1,12 @@
 # OrdersApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://local-unit-test-server.lusid.com:58521*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteOrder**](OrdersApi.md#deleteOrder) | **DELETE** /api/orders/{scope}/{code} | [EXPERIMENTAL] Delete order
 [**getOrder**](OrdersApi.md#getOrder) | **GET** /api/orders/{scope}/{code} | [EXPERIMENTAL] Get Order
 [**listOrders**](OrdersApi.md#listOrders) | **GET** /api/orders | [EXPERIMENTAL] List Orders
-[**upsertOrderProperties**](OrdersApi.md#upsertOrderProperties) | **POST** /api/orders/{scope}/properties | [EXPERIMENTAL] Upsert Order Properties
 [**upsertOrders**](OrdersApi.md#upsertOrders) | **POST** /api/orders | [EXPERIMENTAL] Upsert Order
 
 
@@ -32,7 +31,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58521");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -103,7 +102,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58521");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -178,7 +177,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58521");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -238,77 +237,6 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
-<a name="upsertOrderProperties"></a>
-# **upsertOrderProperties**
-> UpsertOrderPropertiesResponse upsertOrderProperties(scope, upsertOrderPropertiesRequest)
-
-[EXPERIMENTAL] Upsert Order Properties
-
-Update or insert one or more order properties for existing orders with given ids. Each order property will be updated  if it already exists and inserted if it does not. If any properties fail to be updated or inserted, none will be updated or inserted and  the reason for the failure will be returned.                Properties have an &lt;i&gt;effectiveFrom&lt;/i&gt; datetime for which the property is valid, and an &lt;i&gt;effectiveUntil&lt;/i&gt;  datetime until which the property is valid. Not supplying an &lt;i&gt;effectiveUntil&lt;/i&gt; datetime results in the property being  valid indefinitely, or until the next &lt;i&gt;effectiveFrom&lt;/i&gt; datetime of the property.
-
-### Example
-```java
-// Import classes:
-import com.finbourne.lusid.ApiClient;
-import com.finbourne.lusid.ApiException;
-import com.finbourne.lusid.Configuration;
-import com.finbourne.lusid.auth.*;
-import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.OrdersApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
-    
-    // Configure OAuth2 access token for authorization: oauth2
-    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-    oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-    OrdersApi apiInstance = new OrdersApi(defaultClient);
-    String scope = "scope_example"; // String | The scope to which the orders belong.
-    List<UpsertOrderPropertiesRequest> upsertOrderPropertiesRequest = [{"properties":[{"key":"Order/MyScope/SomeOrderProperty","value":{"labelValue":"XYZ000034567"}},{"key":"Order/MyScope/AnotherOrderProperty","value":{"labelValue":"XYZ000056748"},"effectiveFrom":"2018-05-10T12:00:00.0000000+00:00","effectiveUntil":"2019-07-12T12:00:00.0000000+00:00"},{"key":"Order/MyScope/AdditionalOrderProperty","value":{"labelValue":"XYZ000099134"},"effectiveFrom":"2020-03-05T00:00:00.0000000+00:00"}],"id":"ORD00000123"}]; // List<UpsertOrderPropertiesRequest> | A collection of order property upsert requests.
-    try {
-      UpsertOrderPropertiesResponse result = apiInstance.upsertOrderProperties(scope, upsertOrderPropertiesRequest);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling OrdersApi#upsertOrderProperties");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **scope** | **String**| The scope to which the orders belong. |
- **upsertOrderPropertiesRequest** | [**List&lt;UpsertOrderPropertiesRequest&gt;**](UpsertOrderPropertiesRequest.md)| A collection of order property upsert requests. | [optional]
-
-### Return type
-
-[**UpsertOrderPropertiesResponse**](UpsertOrderPropertiesResponse.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
- - **Accept**: text/plain, application/json, text/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | An upsert order properties response. |  -  |
-**400** | The details of the input related failure |  -  |
-**0** | Error response |  -  |
-
 <a name="upsertOrders"></a>
 # **upsertOrders**
 > ResourceListOfOrder upsertOrders(orderSetRequest)
@@ -330,7 +258,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58521");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
