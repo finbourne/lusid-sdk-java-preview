@@ -21,9 +21,5 @@
 
 * `FORWARDWITHPOINTSUNDISCOUNTED` (value: `"ForwardWithPointsUndiscounted"`)
 
-* `FORWARDSPECIFIEDRATE` (value: `"ForwardSpecifiedRate"`)
-
-* `FORWARDSPECIFIEDRATEUNDISCOUNTED` (value: `"ForwardSpecifiedRateUndiscounted"`)
-
 
 
