@@ -1,6 +1,6 @@
 # PersonsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:38898*
+All URIs are relative to *http://local-unit-test-server.lusid.com:45599*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -41,7 +41,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38898");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45599");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -114,7 +114,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38898");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45599");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -191,7 +191,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38898");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45599");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -268,7 +268,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38898");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45599");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -345,7 +345,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38898");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45599");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -422,7 +422,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38898");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45599");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -501,7 +501,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38898");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45599");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -580,7 +580,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38898");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45599");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -663,7 +663,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38898");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45599");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -744,7 +744,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38898");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45599");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -829,7 +829,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38898");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45599");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -904,7 +904,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38898");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45599");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -979,14 +979,14 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38898");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45599");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     PersonsApi apiInstance = new PersonsApi(defaultClient);
-    UpsertPersonRequest upsertPersonRequest = {"identifiers":{"person/HrSystem1/InternalId":{"key":"Person/HrSystem1/InternalId","value":{"labelValue":"XY10001111"}},"person/PayrollSystem1/Id":{"key":"Person/PayrollSystem1/Id","value":{"labelValue":"HSI3453456"}},"person/CompanyIntranet/LoginId":{"key":"Person/CompanyIntranet/LoginId","value":{"labelValue":"johnsmith001"}}},"properties":{"person/PersonalDetails/Name":[{"key":"Person/PersonalDetails/Name","value":{"labelValue":"John Smith"}}],"person/CompanyDetails/Role":[{"key":"Person/CompanyDetails/Role","value":{"labelValue":"SalesRepresentative"},"effectiveFrom":"2016-01-01T00:00:00.0000000+00:00"},{"key":"Person/CompanyDetails/Role","value":{"labelValue":"CustomerServiceRepresentative"},"effectiveFrom":"2016-07-01T00:00:00.0000000+00:00"}]}}; // UpsertPersonRequest | Request to create or update a person.
+    UpsertPersonRequest upsertPersonRequest = {"identifiers":{"person/HrSystem1/InternalId":{"key":"Person/HrSystem1/InternalId","value":{"labelValue":"XY10001111"}},"person/PayrollSystem1/Id":{"key":"Person/PayrollSystem1/Id","value":{"labelValue":"HSI3453456"}},"person/CompanyIntranet/LoginId":{"key":"Person/CompanyIntranet/LoginId","value":{"labelValue":"johnsmith001"}}},"properties":{"person/PersonalDetails/Name":[{"key":"Person/PersonalDetails/Name","value":{"labelValue":"John Smith"}}],"person/CompanyDetails/Role":[{"key":"Person/CompanyDetails/Role","value":{"labelValue":"SalesRepresentative"},"effectiveFrom":"2016-01-01T00:00:00.0000000+00:00"},{"key":"Person/CompanyDetails/Role","value":{"labelValue":"CustomerServiceRepresentative"},"effectiveFrom":"2016-07-01T00:00:00.0000000+00:00"}]},"displayName":"Person1DisplayName","description":"Person1Description"}; // UpsertPersonRequest | Request to create or update a person.
     try {
       Person result = apiInstance.upsertPerson(upsertPersonRequest);
       System.out.println(result);
@@ -1048,7 +1048,7 @@ import com.finbourne.lusid.api.PersonsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38898");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45599");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
