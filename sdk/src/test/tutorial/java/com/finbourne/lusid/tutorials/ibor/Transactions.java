@@ -150,7 +150,7 @@ public class Transactions {
 
         String portfolioId = portfolio.getId().getCode();
 
-        TransactionRequest transaction1 = new TransactionRequest()
+        TransactionRequest tx1 = new TransactionRequest()
                 .transactionId(UUID.randomUUID().toString())
                 .type("StockIn")
                 .instrumentIdentifiers(new HashMap<String, String>() {{ put(LUSID_CASH_IDENTIFIER, "GBP"); }})
@@ -158,7 +158,7 @@ public class Transactions {
                 .transactionDate(effectiveDate.toString())
                 .settlementDate(effectiveDate.toString())
                 .units(100.0);
-        TransactionRequest transaction2 = new TransactionRequest()
+        TransactionRequest tx2 = new TransactionRequest()
                 .transactionId(UUID.randomUUID().toString())
                 .type("StockIn")
                 .instrumentIdentifiers(new HashMap<String, String>() {{ put(LUSID_CASH_IDENTIFIER, "GBP"); }})
@@ -166,7 +166,7 @@ public class Transactions {
                 .transactionDate(effectiveDate.toString())
                 .settlementDate(effectiveDate.toString())
                 .units(100.0);
-        TransactionRequest transaction3 = new TransactionRequest()
+        TransactionRequest tx3 = new TransactionRequest()
                 .transactionId(UUID.randomUUID().toString())
                 .type("StockIn")
                 .instrumentIdentifiers(new HashMap<String, String>() {{ put(LUSID_CASH_IDENTIFIER, "GBP"); }})
@@ -175,7 +175,7 @@ public class Transactions {
                 .settlementDate(effectiveDate.toString())
                 .units(100.0);
 
-        transactionPortfoliosApi.upsertTransactions(TutorialScope, portfolioId, Arrays.asList(transaction1, transaction2, transaction3));
+        transactionPortfoliosApi.upsertTransactions(TutorialScope, portfolioId, Arrays.asList(tx1, tx2, tx3));
 
         List<Transaction> txsBeforeDeletion = transactionPortfoliosApi.getTransactions(TutorialScope, portfolioId,
                 null, null, null, null, null).getValues();
