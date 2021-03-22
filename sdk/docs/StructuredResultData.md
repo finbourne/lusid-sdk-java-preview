@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **version** | **String** | The semantic version of the document format; MAJOR.MINOR.PATCH |  [optional]
 **name** | **String** | The name or description for the document |  [optional]
 **document** | **String** | The document that will be stored (or retrieved) and which describes a unit result data entity such as a set of prices or yields | 
-**dataMap** | [**DataMapping**](DataMapping.md) |  |  [optional]
+**dataMapKey** | [**DataMapKey**](DataMapKey.md) |  |  [optional]
 
 
 
