@@ -130,4 +130,64 @@ public class Transactions {
         assertEquals(1, transactions.getValues().size());
         assertEquals(transaction.getTransactionId(), transactions.getValues().get(0).getTransactionId());
     }
+
+    @Test
+    @LusidFeature("F31")
+    public void cancel_transactions() throws ApiException {
+        String uuid = UUID.randomUUID().toString();
+        OffsetDateTime effectiveDate = OffsetDateTime.of(2018, 1, 1, 0, 0, 0, 0, ZoneOffset.UTC);
+
+        //  portfolio request
+        String originalPortfolioId = String.format("Id-%s", uuid);
+        CreateTransactionPortfolioRequest request = new CreateTransactionPortfolioRequest()
+                .displayName(String.format("Portfolio-%s", uuid))
+                .code(originalPortfolioId)
+                .baseCurrency("GBP")
+                .created(effectiveDate);
+
+        //  create portfolio
+        Portfolio portfolio = transactionPortfoliosApi.createPortfolio(TutorialScope, request);
+
+        String portfolioId = portfolio.getId().getCode();
+
+        TransactionRequest tx1 = new TransactionRequest()
+                .transactionId(UUID.randomUUID().toString())
+                .type("StockIn")
+                .instrumentIdentifiers(new HashMap<String, String>() {{ put(LUSID_CASH_IDENTIFIER, "GBP"); }})
+                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(101.0))
+                .transactionDate(effectiveDate.toString())
+                .settlementDate(effectiveDate.toString())
+                .units(100.0);
+        TransactionRequest tx2 = new TransactionRequest()
+                .transactionId(UUID.randomUUID().toString())
+                .type("StockIn")
+                .instrumentIdentifiers(new HashMap<String, String>() {{ put(LUSID_CASH_IDENTIFIER, "GBP"); }})
+                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(102.0))
+                .transactionDate(effectiveDate.toString())
+                .settlementDate(effectiveDate.toString())
+                .units(100.0);
+        TransactionRequest tx3 = new TransactionRequest()
+                .transactionId(UUID.randomUUID().toString())
+                .type("StockIn")
+                .instrumentIdentifiers(new HashMap<String, String>() {{ put(LUSID_CASH_IDENTIFIER, "GBP"); }})
+                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(103.0))
+                .transactionDate(effectiveDate.toString())
+                .settlementDate(effectiveDate.toString())
+                .units(100.0);
+
+        transactionPortfoliosApi.upsertTransactions(TutorialScope, portfolioId, Arrays.asList(tx1, tx2, tx3));
+
+        List<Transaction> txsBeforeDeletion = transactionPortfoliosApi.getTransactions(TutorialScope, portfolioId,
+                null, null, null, null, null).getValues();
+        assertEquals(3, txsBeforeDeletion.size());
+
+        List<String> txIdsToDelete = txsBeforeDeletion.stream().map(Transaction::getTransactionId).collect(Collectors.toList());
+        transactionPortfoliosApi.cancelTransactions(TutorialScope, portfolioId, txIdsToDelete);
+
+        List<Transaction> txsAfterDeletion = transactionPortfoliosApi.getTransactions(TutorialScope, portfolioId,
+                null, null, null, null, null).getValues();
+
+        assertEquals(0, txsAfterDeletion.size());
+    }
+
 }
