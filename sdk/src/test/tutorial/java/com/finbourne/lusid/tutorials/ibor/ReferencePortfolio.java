@@ -3,7 +3,6 @@ package com.finbourne.lusid.tutorials.ibor;
 import com.finbourne.features.LusidFeature;
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
-import com.finbourne.lusid.Pair;
 import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.PortfoliosApi;
 import com.finbourne.lusid.api.ReferencePortfolioApi;
@@ -11,12 +10,10 @@ import com.finbourne.lusid.model.*;
 import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import sun.jvm.hotspot.compiler.ImmutableOopMapPair;
 
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static org.junit.Assert.assertEquals;
@@ -39,6 +36,8 @@ public class ReferencePortfolio {
 
         InstrumentLoader instrumentLoader = new InstrumentLoader(instrumentsApi);
         instrumentIds = instrumentLoader.loadInstruments();
+
+        Collections.sort(instrumentIds);
     }
 
     @Test
@@ -61,7 +60,7 @@ public class ReferencePortfolio {
         assertEquals(request.getCode(), portfolio.getId().getCode());
 
         // Delete portfolio once the test is completed
-        DeletedEntityResponse deletedPortfolio = portfoliosApi.deletePortfolio(TestDataUtilities.TutorialScope, F39PortfolioCode);
+        portfoliosApi.deletePortfolio(TestDataUtilities.TutorialScope, F39PortfolioCode);
     }
 
     @Test
@@ -71,29 +70,33 @@ public class ReferencePortfolio {
         // Declare name, code, effective date of the portfolio to create
         String F40PortfolioCode = "F40J_ReferencePortfolioCode";
         String F40PortfolioName = "F40J_Reference Portfolio name";
-        OffsetDateTime portfolioCreationDate = OffsetDateTime.of(2000, 1, 1, 0, 0, 0, 0, ZoneOffset.UTC);
         OffsetDateTime effectiveDate = OffsetDateTime.of(2010, 1, 1, 0, 0, 0, 0, ZoneOffset.UTC);
-//        List<Integer> weights = Arrays.asList(10, 20, 30, 15, 25); // TODO: implement multiple weights
+        List<Double> weights = Arrays.asList(10.0, 20.0, 30.0, 15.0, 25.0);
+
+        Map<String, Double> instrumentWeights = IntStream.range(0, instrumentIds.size())
+                .collect(TreeMap::new,
+                        (map, i) -> map.put(instrumentIds.get(i), weights.get(i)),
+                        Map::putAll);
 
         // Generate request using CreateReferencePortfolioRequest model
         CreateReferencePortfolioRequest createRequest = new CreateReferencePortfolioRequest()
                 .code(F40PortfolioCode)
                 .displayName(F40PortfolioName)
-                .created(portfolioCreationDate);
+                .created(effectiveDate);
 
         // Make the request using the reference portfolio API
-        Portfolio portfolio = referencePortfoliosApi.createReferencePortfolio(TestDataUtilities.TutorialScope, createRequest);
+        referencePortfoliosApi.createReferencePortfolio(TestDataUtilities.TutorialScope, createRequest);
 
         List<ReferencePortfolioConstituentRequest> constituentRequests = new ArrayList<>();
 
         // Prepare individual constituent requests
-        for (String instrumentId : instrumentIds) {
-            HashMap<String, String> instrumentIdentifier = new HashMap<>();
+        for (String instrumentId : instrumentWeights.keySet()) {
+            TreeMap<String, String> instrumentIdentifier = new TreeMap<>();
             instrumentIdentifier.put(TestDataUtilities.LUSID_INSTRUMENT_IDENTIFIER, instrumentId);
 
             constituentRequests.add(new ReferencePortfolioConstituentRequest()
                     .instrumentIdentifiers(instrumentIdentifier)
-                    .weight(0.2)
+                    .weight(instrumentWeights.get(instrumentId))
                     .currency("GBP")
             );
         }
@@ -105,35 +108,42 @@ public class ReferencePortfolio {
                 .effectiveFrom(effectiveDate.toString());
 
         // Make the request
-        UpsertReferencePortfolioConstituentsResponse response = referencePortfoliosApi.upsertReferencePortfolioConstituents(TestDataUtilities.TutorialScope,
+        referencePortfoliosApi.upsertReferencePortfolioConstituents(TestDataUtilities.TutorialScope,
                 F40PortfolioCode,
                 upsertRequest);
-
-        System.out.println(response);
 
         // Get constituents of portfolio
         List<ReferencePortfolioConstituent> constituents = referencePortfoliosApi.getReferencePortfolioConstituents(TestDataUtilities.TutorialScope,
                 F40PortfolioCode,
                 null,
                 null,
-                null).getConstituents(); // TODO: best way to leave propertyKeys blank?
+                null).getConstituents();
+
+        // Sorting constituents by their LUIDs so we can compare to the request LUIDs
+        constituents.sort(Comparator.comparing(ReferencePortfolioConstituent::getInstrumentUid));
 
         // Validate number of constituents matches what was inserted
         assertEquals(constituents.size(), instrumentIds.size());
 
         // Validate constituents match inserted instruments
-        List<Pair> instrumentLuidPairs = IntStream
-                .range(0, Math.min(constituents.size(), instrumentIds.size()))
-                .mapToObj(i -> new Pair(constituents.get(i).getInstrumentUid(), instrumentIds.get(i)))
-                .collect(Collectors.toList());
+        Map<String, String> constituentInstrumentLuidPairs = IntStream.range(0, constituents.size())
+                .collect(TreeMap::new,
+                        (map, i) -> map.put(constituents.get(i).getInstrumentUid(), instrumentIds.get(i)),
+                        Map::putAll);
 
-        for(Pair instrument : instrumentLuidPairs)
-            assertEquals(instrument.getName(), instrument.getValue());
+        for (String constituent : constituentInstrumentLuidPairs.keySet())
+            assertEquals(constituent, constituentInstrumentLuidPairs.get(constituent));
 
+        // Validate that weights of the constituents match weights that were inserted
+        Map<Double, Double> constituentWeightPairs = IntStream.range(0, constituents.size())
+                .collect(TreeMap::new,
+                        (map, i) -> map.put(constituents.get(i).getWeight(), instrumentWeights.get(instrumentIds.get(i))),
+                        Map::putAll);
 
-        // TODO: Validate weights of constituents match weights inserted
+        for (Double weight : constituentWeightPairs.keySet())
+            assertEquals(weight, constituentWeightPairs.get(weight));
 
         // Delete portfolio once the test is completed
-        DeletedEntityResponse deletedPortfolio = portfoliosApi.deletePortfolio(TestDataUtilities.TutorialScope, F40PortfolioCode);
+        portfoliosApi.deletePortfolio(TestDataUtilities.TutorialScope, F40PortfolioCode);
     }
 }
