@@ -14,6 +14,7 @@ import org.junit.Test;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static org.junit.Assert.assertEquals;
@@ -36,8 +37,6 @@ public class ReferencePortfolio {
 
         InstrumentLoader instrumentLoader = new InstrumentLoader(instrumentsApi);
         instrumentIds = instrumentLoader.loadInstruments();
-
-        Collections.sort(instrumentIds);
     }
 
     @Test
@@ -119,29 +118,17 @@ public class ReferencePortfolio {
                 null,
                 null).getConstituents();
 
-        // Sorting constituents by their LUIDs so we can compare to the request LUIDs
-        constituents.sort(Comparator.comparing(ReferencePortfolioConstituent::getInstrumentUid));
+        Map<String, Double> portfolioConstituentsAndWeights = constituents.stream()
+                .collect(Collectors.toMap(ReferencePortfolioConstituent::getInstrumentUid,
+                        ReferencePortfolioConstituent::getWeight));
 
         // Validate number of constituents matches what was inserted
         assertEquals(constituents.size(), instrumentIds.size());
 
-        // Validate constituents match inserted instruments
-        Map<String, String> constituentInstrumentLuidPairs = IntStream.range(0, constituents.size())
-                .collect(TreeMap::new,
-                        (map, i) -> map.put(constituents.get(i).getInstrumentUid(), instrumentIds.get(i)),
-                        Map::putAll);
 
-        for (String constituent : constituentInstrumentLuidPairs.keySet())
-            assertEquals(constituent, constituentInstrumentLuidPairs.get(constituent));
-
-        // Validate that weights of the constituents match weights that were inserted
-        Map<Double, Double> constituentWeightPairs = IntStream.range(0, constituents.size())
-                .collect(TreeMap::new,
-                        (map, i) -> map.put(constituents.get(i).getWeight(), instrumentWeights.get(instrumentIds.get(i))),
-                        Map::putAll);
-
-        for (Double weight : constituentWeightPairs.keySet())
-            assertEquals(weight, constituentWeightPairs.get(weight));
+        System.out.println("portfolioConstituentsAndWeights = " + portfolioConstituentsAndWeights);
+        System.out.println("instrumentWeights = " + instrumentWeights);
+        assertEquals(portfolioConstituentsAndWeights, instrumentWeights);
 
         // Delete portfolio once the test is completed
         portfoliosApi.deletePortfolio(TestDataUtilities.TutorialScope, F40PortfolioCode);
