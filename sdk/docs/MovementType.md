@@ -35,5 +35,9 @@
 
 * `UNSETTLEDCASHTYPES` (value: `"UnsettledCashTypes"`)
 
+* `CARRY` (value: `"Carry"`)
+
+* `CARRYASPNL` (value: `"CarryAsPnl"`)
+
 
 
