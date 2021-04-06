@@ -126,8 +126,6 @@ public class ReferencePortfolio {
         assertEquals(constituents.size(), instrumentIds.size());
 
 
-        System.out.println("portfolioConstituentsAndWeights = " + portfolioConstituentsAndWeights);
-        System.out.println("instrumentWeights = " + instrumentWeights);
         assertEquals(portfolioConstituentsAndWeights, instrumentWeights);
 
         // Delete portfolio once the test is completed
