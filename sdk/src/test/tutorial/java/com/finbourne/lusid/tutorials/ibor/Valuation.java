@@ -1,10 +1,7 @@
 package com.finbourne.lusid.tutorials.ibor;
 
 import com.finbourne.lusid.ApiException;
-import com.finbourne.lusid.api.AggregationApi;
-import com.finbourne.lusid.api.InstrumentsApi;
-import com.finbourne.lusid.api.QuotesApi;
-import com.finbourne.lusid.api.TransactionPortfoliosApi;
+import com.finbourne.lusid.api.*;
 import com.finbourne.lusid.model.*;
 import com.finbourne.features.LusidFeature;
 import com.finbourne.lusid.utilities.*;
@@ -38,6 +35,7 @@ public class Valuation {
     private static TransactionPortfoliosApi transactionPortfoliosApi;
     private static QuotesApi quotesApi;
     private static AggregationApi  aggregationApi;
+    private static ConfigurationRecipeApi recipeApi;
     private static List<String> instrumentIds;
 
     private static TestDataUtilities testDataUtilities;
@@ -51,6 +49,7 @@ public class Valuation {
         transactionPortfoliosApi = apiFactory.build(TransactionPortfoliosApi.class);
         quotesApi = apiFactory.build(QuotesApi.class);
         aggregationApi = apiFactory.build(AggregationApi.class);
+        recipeApi = apiFactory.build(ConfigurationRecipeApi.class);
 
         //  ensure instruments are created and exist in LUSID
         InstrumentsApi instrumentsApi = apiFactory.build(InstrumentsApi.class);
@@ -223,10 +222,13 @@ public class Valuation {
         //  upload the quotes
         quotesApi.upsertQuotes(quotesScope, quotes);
 
+        String recipeScope = "tutorials";
+        String recipeCode = "quotes";
+
         //  create the recipe to get the quotes
         ConfigurationRecipe configurationRecipe = new ConfigurationRecipe()
-				.scope("default")
-                .code("quotes_recipe")
+				.scope(recipeScope)
+                .code(recipeCode)
                 .market(new MarketContext()
                     .suppliers(new MarketContextSuppliers().equity("Lusid"))
                     .options(new MarketOptions()
@@ -236,19 +238,24 @@ public class Valuation {
                     )
                 );
 
+        saveRecipe(configurationRecipe);
+
         //    create the aggregation request, this example calculates the percentage of total portfolio value and value by instrument
-        AggregationRequest  aggregationRequest = new AggregationRequest()
-                .inlineRecipe(configurationRecipe)
+        ValuationRequest  valuationRequest = new ValuationRequest()
+                .recipeId(new ResourceId().scope(recipeScope).code(recipeCode))
                 .metrics(asList(
                         new AggregateSpec().key(GROUPBY_INSTRUMENT_NAME_KEY).op(AggregateSpec.OpEnum.VALUE),
                         new AggregateSpec().key(AGGREGATION_KEY).op(AggregateSpec.OpEnum.PROPORTION),
                         new AggregateSpec().key(AGGREGATION_KEY).op(AggregateSpec.OpEnum.SUM)
                 ))
-                .groupBy(Collections.singletonList(GROUPBY_INSTRUMENT_NAME_KEY))
-                .effectiveAt(EFFECTIVE_DATE.toString());
+                .valuationSchedule(new ValuationSchedule().effectiveAt(EFFECTIVE_DATE.toString()))
+                .portfolioEntityIds(asList(
+                        new PortfolioEntityId().scope(TutorialScope).code(portfolioId)
+                ))
+                .groupBy(Collections.singletonList(GROUPBY_INSTRUMENT_NAME_KEY));
 
         //  do the aggregation
-        ListAggregationResponse aggregationResponse = aggregationApi.getAggregation(TutorialScope, portfolioId,null, null, null, aggregationRequest);
+        ListAggregationResponse aggregationResponse = aggregationApi.getValuation(valuationRequest);
 
         aggregationResponse.getData().sort((o1, o2) -> {
             String name1 = (String)o1.get(GROUPBY_INSTRUMENT_NAME_KEY);
@@ -281,10 +288,14 @@ public class Valuation {
      * @throws ApiException
      */
     private List<Map<String, Object>> runAggregation(String portfolioId, String quotesScope, String groupingKey) throws ApiException {
+
+        String recipeScope = "tutorials";
+        String recipeCode = "multi-currency";
+
         //  create the recipe that will instruct the aggregation on the market data provider and scope.
         ConfigurationRecipe configurationRecipe = new ConfigurationRecipe()
-				.scope("default")
-                .code("quotes_recipe")
+				.scope(recipeScope)
+                .code(recipeCode)
                 .market(new MarketContext()
                         // equity and fx data both sourced from Lusid provider, reference the createUpsertQuote... methods
                         // to view how the quote requests are mapped to providers.
@@ -299,19 +310,24 @@ public class Valuation {
                         )
                 );
 
+        saveRecipe(configurationRecipe);
+
         //  create the aggregation request, this example calculates the percentage of total portfolio value and value by instrument
-        AggregationRequest  aggregationRequest = new AggregationRequest()
-                .inlineRecipe(configurationRecipe)
+        ValuationRequest  valuationRequest = new ValuationRequest()
+                .recipeId(new ResourceId().scope(recipeScope).code(recipeCode))
                 .metrics(asList(
                         new AggregateSpec().key(groupingKey).op(AggregateSpec.OpEnum.VALUE),
                         new AggregateSpec().key(AGGREGATION_KEY).op(AggregateSpec.OpEnum.PROPORTION),
                         new AggregateSpec().key(AGGREGATION_KEY).op(AggregateSpec.OpEnum.SUM)
                 ))
-                .groupBy(Collections.singletonList(groupingKey))
-                .effectiveAt(EFFECTIVE_DATE.toString());
+                .valuationSchedule(new ValuationSchedule().effectiveAt(EFFECTIVE_DATE.toString()))
+                .portfolioEntityIds(asList(
+                        new PortfolioEntityId().scope(TutorialScope).code(portfolioId)
+                ))
+                .groupBy(Collections.singletonList(groupingKey));
 
         //  do the aggregation
-        ListAggregationResponse aggregationResponse = aggregationApi.getAggregation(TutorialScope, portfolioId,null, null, null, aggregationRequest);
+        ListAggregationResponse aggregationResponse = aggregationApi.getValuation(valuationRequest);
 
         aggregationResponse.getData().sort((o1, o2) -> {
             String name1 = (String)o1.get(groupingKey);
@@ -325,6 +341,9 @@ public class Valuation {
         return  aggregationResults;
     }
 
+    private UpsertSingleStructuredDataResponse saveRecipe(ConfigurationRecipe recipe) throws ApiException{
+        return recipeApi.upsertConfigurationRecipe(new UpsertRecipeRequest().configurationRecipe(recipe));
+    }
 
     /**
      * Create a request to submit to LUSID to generate a transaction portfolio.
