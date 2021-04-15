@@ -1,14 +1,14 @@
 
 
-# ModelReturn
+# PerformanceReturn
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **effectiveAt** | [**OffsetDateTime**](OffsetDateTime.md) | The effectiveAt for the return. | 
-**returnValue** | **Double** | The return number. | 
-**marketValue** | **Double** | The market value. | 
+**roR** | **Double** | The return number. | 
+**openingMarketValue** | **Double** | The opening market value. | 
 **period** | **String** | Show the returns on a Daily or Monthly period. |  [optional]
 
 
