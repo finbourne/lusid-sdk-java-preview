@@ -25,5 +25,11 @@
 
 * `FORWARDSPECIFIEDRATEUNDISCOUNTED` (value: `"ForwardSpecifiedRateUndiscounted"`)
 
+* `INDEXNAV` (value: `"IndexNav"`)
+
+* `INDEXPRICE` (value: `"IndexPrice"`)
+
+* `INLINEDINDEX` (value: `"InlinedIndex"`)
+
 
 
