@@ -4,6 +4,7 @@ import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.api.InstrumentsApi;
 import com.finbourne.lusid.api.OrdersApi;
+import com.finbourne.lusid.api.PropertyDefinitionsApi;
 import com.finbourne.lusid.model.*;
 import com.finbourne.features.LusidFeature;
 import com.finbourne.lusid.utilities.*;
@@ -12,10 +13,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import java.time.OffsetDateTime;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
@@ -27,6 +25,14 @@ public class Orders
     private static OrdersApi ordersApi;
     private static List<String> instrumentIds;
 
+    private static Map<String, String> TutorialScopes = new HashMap<String, String>(){{
+        put("simple-upsert", "Orders-SimpleUpsert-TestScope");
+        put("unknown-instrument", "Orders-UnknownInstrument-TestScope");
+        put("filtering", "Orders-Filter-TestScope");
+    }};
+
+    private static Collection<String> TutorialPropertyCodes = Arrays.asList("TIF", "OrderBook", "PortfolioManager", "Account", "Strategy");
+
     @BeforeClass
     public static void setUp() throws Exception {
         ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(CredentialsSource.credentialsFile);
@@ -37,14 +43,45 @@ public class Orders
         instrumentIds = instrumentLoader.loadInstruments();
 
         ordersApi = new OrdersApi(apiClient);
+        LoadProperties(new PropertyDefinitionsApi(apiClient), TutorialScopes.values(), TutorialPropertyCodes);
     }
+
+    private static void LoadProperties(PropertyDefinitionsApi propertyDefinitionsApi, Collection<String> scopes, Collection<String> codes) throws ApiException {
+        for(String scope : scopes) {
+            for(String code: codes) {
+                //    Create the property definitions
+                try
+                {
+                    CreatePropertyDefinitionRequest propertyDefinition =  new CreatePropertyDefinitionRequest()
+                            .domain(CreatePropertyDefinitionRequest.DomainEnum.ORDER)
+                            .scope(scope)
+                            .lifeTime(CreatePropertyDefinitionRequest.LifeTimeEnum.PERPETUAL)
+                            .code(code)
+                            .valueRequired(false)
+                            .displayName(String.format("Order - %s", code))
+                            .dataTypeId(new ResourceId().scope("system").code("string"));
+
+                    propertyDefinitionsApi
+                            .createPropertyDefinition(propertyDefinition);
+                }
+                catch (ApiException apiException)
+                {
+                    if(!apiException.getMessage().contains("PropertyAlreadyExists")){
+                        throw apiException;
+                    }
+                    // Ignore if it already exists
+                }
+            }
+        }
+    }
+
 
     // We want to make a request for a single order. The LUID will be mapped on upsert
     // from the instrument identifiers passed.
     @Test
     @LusidFeature("F4")
     public void Upsert_Simple_Order() throws ApiException {
-        String testScope = "Orders-Simple-TestScope";
+        String testScope = TutorialScopes.get("simple-upsert");
         String orderCode = "Order-" +  UUID.randomUUID().toString();
         ResourceId orderId = new ResourceId()
                 .code(orderCode)
@@ -101,7 +138,7 @@ public class Orders
     @Test
     @LusidFeature("F5")
     public void Upsert_Simple_Order_With_Unknown_Instrument() throws ApiException {
-        String testScope = "Orders-UnknownInstrument-TestScope";
+        String testScope = TutorialScopes.get("unknown-instrument");
         String orderCode = "Order-" +  UUID.randomUUID().toString();
         ResourceId orderId = new ResourceId()
                 .code(orderCode)
@@ -157,7 +194,7 @@ public class Orders
     @Test
     @LusidFeature("F6")
     public void Update_Simple_Order() throws ApiException {
-        String testScope = "Orders-Upsert-TestScope";
+        String testScope = TutorialScopes.get("simple-upsert");
         String orderCode = "Order-" +  UUID.randomUUID().toString();
         ResourceId orderId = new ResourceId()
                 .code(orderCode)
@@ -238,7 +275,7 @@ public class Orders
     @Test
     @LusidFeature("F7")
     public void Upsert_And_Retrieve_Simple_Orders() throws ApiException {
-        String testScope = "Orders-Filter-TestScope";
+        String testScope = TutorialScopes.get("filtering");
         String orderCode1 = "Order-" +  UUID.randomUUID().toString();
         String orderCode2 = "Order-" +  UUID.randomUUID().toString();
         String orderCode3 = "Order-" +  UUID.randomUUID().toString();
