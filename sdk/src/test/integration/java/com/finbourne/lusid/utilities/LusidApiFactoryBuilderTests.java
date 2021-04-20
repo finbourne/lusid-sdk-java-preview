@@ -2,7 +2,9 @@ package com.finbourne.lusid.utilities;
 
 import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.api.InstrumentsApi;
+import com.finbourne.lusid.api.ScopesApi;
 import com.finbourne.lusid.model.ResourceListOfInstrumentIdTypeDescriptor;
+import com.finbourne.lusid.model.ResourceListOfScopeDefinition;
 import com.finbourne.lusid.utilities.auth.LusidTokenException;
 import org.junit.Rule;
 import org.junit.Test;
@@ -25,6 +27,11 @@ public class LusidApiFactoryBuilderTests {
     }
 
     private static void assertThatFactoryBuiltApiCanMakeLUSIDCalls(LusidApiFactory lusidApiFactory) throws ApiException {
+        ScopesApi scopesApi = lusidApiFactory.build(ScopesApi.class);
+        ResourceListOfScopeDefinition scopeDefinitions = scopesApi.listScopes("");
+        assertThat("Scopes API created by factory should have returned scope definitions"
+                , scopeDefinitions, is(notNullValue()));
+
         InstrumentsApi instrumentsApi = lusidApiFactory.build(InstrumentsApi.class);
         ResourceListOfInstrumentIdTypeDescriptor instrumentIdTypeDescriptor = instrumentsApi.getInstrumentIdentifierTypes();
         assertThat("Instruments API created by factory should have returned instrument identifier types"
