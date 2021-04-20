@@ -47,5 +47,7 @@
 
 * `BASKET` (value: `"Basket"`)
 
+* `FUNDINGLEG` (value: `"FundingLeg"`)
+
 
 
