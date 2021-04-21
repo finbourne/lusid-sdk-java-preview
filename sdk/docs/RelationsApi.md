@@ -1,18 +1,18 @@
 # RelationsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:58694*
+All URIs are relative to *http://local-unit-test-server.lusid.com:45930*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createRelation**](RelationsApi.md#createRelation) | **POST** /api/relations/{scope}/{code} | [DEPRECATED] Create Relation
-[**deleteRelation**](RelationsApi.md#deleteRelation) | **POST** /api/relations/{scope}/{code}/$delete | [DEPRECATED] Delete a relation
+[**createRelation**](RelationsApi.md#createRelation) | **POST** /api/relations/{scope}/{code} | [EXPERIMENTAL] Create Relation
+[**deleteRelation**](RelationsApi.md#deleteRelation) | **POST** /api/relations/{scope}/{code}/$delete | [EXPERIMENTAL] Delete a relation
 
 
 <a name="createRelation"></a>
 # **createRelation**
 > CompleteRelation createRelation(scope, code, createRelationRequest, effectiveAt)
 
-[DEPRECATED] Create Relation
+[EXPERIMENTAL] Create Relation
 
 Create a relation between two entity objects by their identifiers
 
@@ -29,7 +29,7 @@ import com.finbourne.lusid.api.RelationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58694");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45930");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 # **deleteRelation**
 > DeletedEntityResponse deleteRelation(scope, code, deleteRelationRequest, effectiveAt)
 
-[DEPRECATED] Delete a relation
+[EXPERIMENTAL] Delete a relation
 
 Delete a relation between two entity objects represented by their identifiers
 
@@ -104,7 +104,7 @@ import com.finbourne.lusid.api.RelationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58694");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45930");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
