@@ -1,6 +1,6 @@
 # RelationshipsApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://local-unit-test-server.lusid.com:58694*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="createRelationship"></a>
 # **createRelationship**
-> CompleteRelationship createRelationship(scope, code, createRelationshipRequest, effectiveAt)
+> CompleteRelationship createRelationship(scope, code, createRelationshipRequest)
 
 [EXPERIMENTAL] Create Relationship
 
@@ -29,7 +29,7 @@ import com.finbourne.lusid.api.RelationshipsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58694");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -39,9 +39,8 @@ public class Example {
     String scope = "scope_example"; // String | The scope of the relationship
     String code = "code_example"; // String | The code of the relationship
     CreateRelationshipRequest createRelationshipRequest = {"sourceEntityId":{"scope":"UkPortfolio","code":"PortfolioId-148176"},"targetEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"}}; // CreateRelationshipRequest | The details of the relationship to create.
-    String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which the relationship should be effective from. Defaults to the current LUSID system datetime if not specified.
     try {
-      CompleteRelationship result = apiInstance.createRelationship(scope, code, createRelationshipRequest, effectiveAt);
+      CompleteRelationship result = apiInstance.createRelationship(scope, code, createRelationshipRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RelationshipsApi#createRelationship");
@@ -61,7 +60,6 @@ Name | Type | Description  | Notes
  **scope** | **String**| The scope of the relationship |
  **code** | **String**| The code of the relationship |
  **createRelationshipRequest** | [**CreateRelationshipRequest**](CreateRelationshipRequest.md)| The details of the relationship to create. |
- **effectiveAt** | **String**| The effective datetime or cut label at which the relationship should be effective from. Defaults to the current LUSID system datetime if not specified. | [optional]
 
 ### Return type
 
@@ -85,7 +83,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteRelationship"></a>
 # **deleteRelationship**
-> DeletedEntityResponse deleteRelationship(scope, code, deleteRelationshipRequest, effectiveAt)
+> DeletedEntityResponse deleteRelationship(scope, code, deleteRelationshipRequest)
 
 [EXPERIMENTAL] Delete Relationship
 
@@ -104,7 +102,7 @@ import com.finbourne.lusid.api.RelationshipsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58694");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -114,9 +112,8 @@ public class Example {
     String scope = "scope_example"; // String | The scope of the relationship
     String code = "code_example"; // String | The code of the relationship
     DeleteRelationshipRequest deleteRelationshipRequest = {"sourceEntityId":{"scope":"UkPortfolio","code":"PortfolioId-148176"},"targetEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"}}; // DeleteRelationshipRequest | The details of the relationship to delete.
-    String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which the relationship should the deletion be effective from. Defaults to the current LUSID system datetime if not specified.
     try {
-      DeletedEntityResponse result = apiInstance.deleteRelationship(scope, code, deleteRelationshipRequest, effectiveAt);
+      DeletedEntityResponse result = apiInstance.deleteRelationship(scope, code, deleteRelationshipRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RelationshipsApi#deleteRelationship");
@@ -136,7 +133,6 @@ Name | Type | Description  | Notes
  **scope** | **String**| The scope of the relationship |
  **code** | **String**| The code of the relationship |
  **deleteRelationshipRequest** | [**DeleteRelationshipRequest**](DeleteRelationshipRequest.md)| The details of the relationship to delete. |
- **effectiveAt** | **String**| The effective datetime or cut label at which the relationship should the deletion be effective from. Defaults to the current LUSID system datetime if not specified. | [optional]
 
 ### Return type
 
