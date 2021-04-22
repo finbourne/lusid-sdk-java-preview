@@ -117,8 +117,7 @@ public class Orders
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
-                .side("Buy")
-                .orderBookId(orderBook);
+                .side("Buy");
 
         OrderSetRequest requestSet = new OrderSetRequest()
                 .addOrderRequestsItem(request);
@@ -174,8 +173,7 @@ public class Orders
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
-                .side("Buy")
-                .orderBookId(orderBook);
+                .side("Buy");
 
         OrderSetRequest requestSet = new OrderSetRequest()
                 .addOrderRequestsItem(request);
@@ -230,8 +228,7 @@ public class Orders
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
-                .side("Buy")
-                .orderBookId(orderBook);
+                .side("Buy");
 
         OrderSetRequest requestSet = new OrderSetRequest()
                 .addOrderRequestsItem(request);
@@ -254,8 +251,7 @@ public class Orders
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
-                .side("Buy")
-                .orderBookId(orderBook);
+                .side("Buy");
 
         OrderSetRequest updateRequestSet = new OrderSetRequest()
                 .addOrderRequestsItem(updateRequest);
@@ -329,8 +325,7 @@ public class Orders
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
-                .side("Sell")
-                .orderBookId(orderBook);
+                .side("Sell");
 
         OrderRequest request2 = new OrderRequest()
             .id(orderId2)
@@ -338,8 +333,7 @@ public class Orders
             .portfolioId(portfolio)
             .properties(properties)
             .instrumentIdentifiers(instruments)
-                .side("Buy")
-                .orderBookId(orderBook);
+                .side("Buy");
 
         OrderRequest request3 = new OrderRequest()
                 .id(orderId3)
@@ -347,8 +341,7 @@ public class Orders
                 .portfolioId(portfolio)
                 .properties(altProperties)
                 .instrumentIdentifiers(altInstruments)
-                .side("Buy")
-                .orderBookId(anotherOrderBook);
+                .side("Buy");
 
         OrderSetRequest request = new OrderSetRequest()
                 .addOrderRequestsItem(request1)
@@ -391,10 +384,6 @@ public class Orders
         List<Order> sideFilter = ordersApi.listOrders(t, null, null, null, null,"Side eq 'Sell' and Scope eq '" + testScope + "'", null).getValues();
         assertEquals(1, sideFilter.size());
         assertTrue(sideFilter.stream().allMatch(order -> order.getSide().equals("Sell")));
-
-        List<Order> orderBookFilter = ordersApi.listOrders(t, null, null, null, null,"OrderBook eq '" + testScope + "/AnotherOrdersTestBook'", null).getValues();
-        assertEquals(1, orderBookFilter.size());
-        assertTrue(orderBookFilter.stream().allMatch(order -> order.getOrderBookId().getCode().equals("AnotherOrdersTestBook")));
         */
     }
 }
