@@ -246,15 +246,15 @@ public class Portfolios {
         assertEquals(propertyValue, transactions.getValues().get(0).getProperties().get(propertyDefinitionDto.getKey()).getValue());
     }
 
-    @Test
-    @LusidFeature("F12")
-    public void list_scopes() throws ApiException {
+    // @Test
+    // @LusidFeature("F12")
+    // public void list_scopes() throws ApiException {
 
-        //    Get the list of scopes across all entities
-        ResourceListOfScopeDefinition    scopes = scopesApi.listScopes(null);
+    //     //    Get the list of scopes across all entities
+    //     ResourceListOfScopeDefinition    scopes = scopesApi.listScopes(null);
 
-        assertThat(scopes.getValues().size(), is(greaterThan(0)));
-    }
+    //     assertThat(scopes.getValues().size(), is(greaterThan(0)));
+    // }
 
     @Test
     @LusidFeature("F13")
