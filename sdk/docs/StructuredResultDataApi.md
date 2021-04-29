@@ -1,6 +1,6 @@
 # StructuredResultDataApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:63472*
+All URIs are relative to *http://local-unit-test-server.lusid.com:63728*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,7 +32,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63472");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63728");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -103,7 +103,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63472");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63728");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -174,7 +174,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63472");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63728");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -245,7 +245,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63472");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63728");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -320,7 +320,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63472");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63728");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -328,7 +328,7 @@ public class Example {
 
     StructuredResultDataApi apiInstance = new StructuredResultDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope to use when updating or inserting the structured result data.
-    Map<String, UpsertStructuredResultDataRequest> requestBody = {"first-item":{"id":{"source":"Client","code":"MyUploadedRiskResults","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","resultType":"Risk"},"data":{"documentFormat":"Xml","version":"1.0.0","name":"free text identifier of document 1","document":"<xml>data</xml>"}},"second-item":{"id":{"source":"Client","code":"MyUploadedRiskResults","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","resultType":"Risk"},"data":{"documentFormat":"Json","version":"1.0.0","name":"free text identifier of document 2","document":"{ \"some\":\"valid json\"}"}}}; // Map<String, UpsertStructuredResultDataRequest> | The set of structured result data items to update or insert keyed by a unique correlation id.
+    Map<String, UpsertStructuredResultDataRequest> requestBody = {"first-item":{"id":{"source":"Client","code":"MyUploadedRiskResults-1","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","resultType":"Risk"},"data":{"documentFormat":"Xml","version":"1.0.0","name":"free text identifier of document 1","document":"<xml>data</xml>"}},"second-item":{"id":{"source":"Client","code":"MyUploadedRiskResults-2","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","resultType":"Risk"},"data":{"documentFormat":"Json","version":"1.0.0","name":"free text identifier of document 2","document":"{ \"some\":\"valid json\"}"}}}; // Map<String, UpsertStructuredResultDataRequest> | The set of structured result data items to update or insert keyed by a unique correlation id.
     try {
       UpsertStructuredDataResponse result = apiInstance.upsertStructuredResultData(scope, requestBody);
       System.out.println(result);
