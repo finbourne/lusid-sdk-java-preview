@@ -1,11 +1,10 @@
 # AllocationsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:47365*
+All URIs are relative to *http://local-unit-test-server.lusid.com:31593*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteAllocation**](AllocationsApi.md#deleteAllocation) | **DELETE** /api/allocations/{scope}/{code} | [EXPERIMENTAL] Delete allocation
-[**deleteAllocations**](AllocationsApi.md#deleteAllocations) | **POST** /api/allocations/$delete | [EXPERIMENTAL] Delete Allocations.
 [**getAllocation**](AllocationsApi.md#getAllocation) | **GET** /api/allocations/{scope}/{code} | [EXPERIMENTAL] Get Allocation
 [**listAllocations**](AllocationsApi.md#listAllocations) | **GET** /api/allocations | [EXPERIMENTAL] List Allocations
 [**upsertAllocations**](AllocationsApi.md#upsertAllocations) | **POST** /api/allocations | [EXPERIMENTAL] Upsert Allocations
@@ -32,7 +31,7 @@ import com.finbourne.lusid.api.AllocationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:47365");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31593");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -82,75 +81,6 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
-<a name="deleteAllocations"></a>
-# **deleteAllocations**
-> DeletedOrdersEntitiesResponse deleteAllocations(resourceId)
-
-[EXPERIMENTAL] Delete Allocations.
-
-Use this method to delete a collection of Allocations, each defined by ResourceId. Each delete will be attempted  independently, and the method will return lists of successful and failed attempts.
-
-### Example
-```java
-// Import classes:
-import com.finbourne.lusid.ApiClient;
-import com.finbourne.lusid.ApiException;
-import com.finbourne.lusid.Configuration;
-import com.finbourne.lusid.auth.*;
-import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.AllocationsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:47365");
-    
-    // Configure OAuth2 access token for authorization: oauth2
-    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-    oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-    AllocationsApi apiInstance = new AllocationsApi(defaultClient);
-    List<ResourceId> resourceId = [{"scope":"MyScope","code":"ATestEntityId"}]; // List<ResourceId> | The IDs of the allocations to delete.
-    try {
-      DeletedOrdersEntitiesResponse result = apiInstance.deleteAllocations(resourceId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AllocationsApi#deleteAllocations");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceId** | [**List&lt;ResourceId&gt;**](ResourceId.md)| The IDs of the allocations to delete. |
-
-### Return type
-
-[**DeletedOrdersEntitiesResponse**](DeletedOrdersEntitiesResponse.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
- - **Accept**: text/plain, application/json, text/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The successfully deleted Allocations along with any failures |  -  |
-**400** | The details of the input related failure |  -  |
-**0** | Error response |  -  |
-
 <a name="getAllocation"></a>
 # **getAllocation**
 > Allocation getAllocation(scope, code, asAt, propertyKeys)
@@ -172,7 +102,7 @@ import com.finbourne.lusid.api.AllocationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:47365");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31593");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -247,7 +177,7 @@ import com.finbourne.lusid.api.AllocationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:47365");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31593");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -328,7 +258,7 @@ import com.finbourne.lusid.api.AllocationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:47365");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31593");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
