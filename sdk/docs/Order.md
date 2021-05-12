@@ -15,13 +15,6 @@ Name | Type | Description | Notes
 **portfolioId** | [**ResourceId**](ResourceId.md) |  | 
 **id** | [**ResourceId**](ResourceId.md) |  | 
 **lusidInstrumentId** | **String** | The LUSID instrument id for the instrument ordered. | 
-**state** | **String** | The order&#39;s state (examples: New, PartiallyFilled, ...) |  [optional]
-**type** | **String** | The order&#39;s type (examples: Limit, Market, ...) |  [optional]
-**timeInForce** | **String** | The order&#39;s time in force (examples: Day, GoodTilCancel, ...) |  [optional]
-**date** | [**OffsetDateTime**](OffsetDateTime.md) | The date on which the order was made |  [optional]
-**price** | [**CurrencyAndAmount**](CurrencyAndAmount.md) |  |  [optional]
-**orderInstructionId** | [**ResourceId**](ResourceId.md) |  |  [optional]
-**packageId** | [**ResourceId**](ResourceId.md) |  |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 

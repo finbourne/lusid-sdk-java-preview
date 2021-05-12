@@ -1,6 +1,6 @@
 # OrdersApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:54346*
+All URIs are relative to *http://local-unit-test-server.lusid.com:34713*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54346");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34713");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -102,7 +102,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54346");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34713");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -177,7 +177,7 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54346");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34713");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -258,14 +258,14 @@ import com.finbourne.lusid.api.OrdersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54346");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34713");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     OrdersApi apiInstance = new OrdersApi(defaultClient);
-    OrderSetRequest orderSetRequest = {"orderRequests":[{"properties":{"order/MyScope/SomeOrderProperty":{"key":"Order/MyScope/SomeOrderProperty","value":{"labelValue":"XYZ000034567"}}},"instrumentIdentifiers":{"instrument/default/Currency":"GBP"},"quantity":100,"side":"Buy","orderBookId":{"scope":"MyScope","code":"UKEQ Orders"},"portfolioId":{"scope":"MyScope","code":"UK Equity"},"id":{"scope":"MyScope","code":"ORD00000123"},"state":"New","type":"Limit","timeInForce":"GoodTilCancel","date":"2023-05-02T00:00:00.0000000+00:00","price":{"amount":534,"currency":"USD"},"orderInstruction":{"scope":"MyScope","code":"Instruction-06"},"package":{"scope":"MyScope","code":"UKEQ Package"}}]}; // OrderSetRequest | The collection of order requests.
+    OrderSetRequest orderSetRequest = {"orderRequests":[{"properties":{"order/MyScope/SomeOrderProperty":{"key":"Order/MyScope/SomeOrderProperty","value":{"labelValue":"XYZ000034567"}}},"instrumentIdentifiers":{"instrument/default/Currency":"GBP"},"quantity":100,"side":"Buy","orderBookId":{"scope":"MyScope","code":"UKEQ Orders"},"portfolioId":{"scope":"MyScope","code":"UK Equity"},"id":{"scope":"MyScope","code":"ORD00000123"}}]}; // OrderSetRequest | The collection of order requests.
     try {
       ResourceListOfOrder result = apiInstance.upsertOrders(orderSetRequest);
       System.out.println(result);
