@@ -1,13 +1,13 @@
 # ReconciliationsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:39219*
+All URIs are relative to *http://local-unit-test-server.lusid.com:55139*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**reconcileHoldings**](ReconciliationsApi.md#reconcileHoldings) | **POST** /api/portfolios/$reconcileholdings | [EARLY ACCESS] Reconcile portfolio holdings
 [**reconcileHoldingsPreview**](ReconciliationsApi.md#reconcileHoldingsPreview) | **POST** /api/portfolios/preview/$reconcileholdings | [EXPERIMENTAL] Reconcile portfolio holdings with given tolerance
-[**reconcileInline**](ReconciliationsApi.md#reconcileInline) | **POST** /api/portfolios/$reconcileInline | [EXPERIMENTAL] Reconcile valuations performed on one or two sets of inline instruments using one or two configuration recipes.
-[**reconcileValuation**](ReconciliationsApi.md#reconcileValuation) | **POST** /api/portfolios/$reconcileValuation | [EXPERIMENTAL] Reconcile valuations performed on one or two sets of holdings using one or two configuration recipes.
+[**reconcileInline**](ReconciliationsApi.md#reconcileInline) | **POST** /api/portfolios/$reconcileInline | [BETA] Reconcile valuations performed on one or two sets of inline instruments using one or two configuration recipes.
+[**reconcileValuation**](ReconciliationsApi.md#reconcileValuation) | **POST** /api/portfolios/$reconcileValuation | [BETA] Reconcile valuations performed on one or two sets of holdings using one or two configuration recipes.
 
 
 <a name="reconcileHoldings"></a>
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:39219");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55139");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -108,7 +108,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:39219");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55139");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 # **reconcileInline**
 > ListAggregationReconciliation reconcileInline(inlineValuationsReconciliationRequest)
 
-[EXPERIMENTAL] Reconcile valuations performed on one or two sets of inline instruments using one or two configuration recipes.
+[BETA] Reconcile valuations performed on one or two sets of inline instruments using one or two configuration recipes.
 
 Perform valuation of one or two set of inline instruments using different one or two configuration recipes. Produce a breakdown of the resulting differences in valuation.
 
@@ -185,7 +185,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:39219");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55139");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 # **reconcileValuation**
 > ListAggregationReconciliation reconcileValuation(valuationsReconciliationRequest)
 
-[EXPERIMENTAL] Reconcile valuations performed on one or two sets of holdings using one or two configuration recipes.
+[BETA] Reconcile valuations performed on one or two sets of holdings using one or two configuration recipes.
 
 Perform valuation of one or two set of holdings using different one or two configuration recipes. Produce a breakdown of the resulting differences in valuation.
 
@@ -254,7 +254,7 @@ import com.finbourne.lusid.api.ReconciliationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:39219");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55139");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
