@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **strike** | **Double** | The strike of the option. | 
 **domCcy** | **String** | The domestic currency of the instrument. | 
 **fgnCcy** | **String** | The foreign currency of the FX. | 
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashflowLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg | 
 
 
 
@@ -34,7 +34,7 @@ BOND | &quot;Bond&quot;
 EQUITYOPTION | &quot;EquityOption&quot;
 FIXEDLEG | &quot;FixedLeg&quot;
 FLOATINGLEG | &quot;FloatingLeg&quot;
-BESPOKECASHFLOWLEG | &quot;BespokeCashflowLeg&quot;
+BESPOKECASHFLOWSLEG | &quot;BespokeCashFlowsLeg&quot;
 UNKNOWN | &quot;Unknown&quot;
 TERMDEPOSIT | &quot;TermDeposit&quot;
 CONTRACTFORDIFFERENCE | &quot;ContractForDifference&quot;
