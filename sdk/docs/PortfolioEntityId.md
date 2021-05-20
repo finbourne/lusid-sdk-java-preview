@@ -2,6 +2,8 @@
 
 # PortfolioEntityId
 
+Specification of a portfolio or portfolio group id, its scope and which it is.
+
 ## Properties
 
 Name | Type | Description | Notes

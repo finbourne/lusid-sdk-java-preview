@@ -38,7 +38,7 @@ public class Example {
     RelationshipsApi apiInstance = new RelationshipsApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the relationship
     String code = "code_example"; // String | The code of the relationship
-    CreateRelationshipRequest createRelationshipRequest = {"sourceEntityId":{"scope":"UkPortfolio","code":"PortfolioId-148176"},"targetEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"}}; // CreateRelationshipRequest | The details of the relationship to create.
+    CreateRelationshipRequest createRelationshipRequest = new CreateRelationshipRequest(); // CreateRelationshipRequest | The details of the relationship to create.
     try {
       CompleteRelationship result = apiInstance.createRelationship(scope, code, createRelationshipRequest);
       System.out.println(result);
@@ -111,7 +111,7 @@ public class Example {
     RelationshipsApi apiInstance = new RelationshipsApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the relationship
     String code = "code_example"; // String | The code of the relationship
-    DeleteRelationshipRequest deleteRelationshipRequest = {"sourceEntityId":{"scope":"UkPortfolio","code":"PortfolioId-148176"},"targetEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"}}; // DeleteRelationshipRequest | The details of the relationship to delete.
+    DeleteRelationshipRequest deleteRelationshipRequest = new DeleteRelationshipRequest(); // DeleteRelationshipRequest | The details of the relationship to delete.
     try {
       DeletedEntityResponse result = apiInstance.deleteRelationship(scope, code, deleteRelationshipRequest);
       System.out.println(result);

@@ -2,11 +2,12 @@
 
 # Calendar
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | [**URI**](URI.md) |  |  [optional]
+**href** | **URI** |  |  [optional]
 **id** | [**ResourceId**](ResourceId.md) |  | 
 **type** | **String** |  | 
 **weekendMask** | [**WeekendMask**](WeekendMask.md) |  | 

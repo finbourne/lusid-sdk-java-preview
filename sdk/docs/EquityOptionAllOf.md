@@ -2,20 +2,21 @@
 
 # EquityOptionAllOf
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDate** | [**OffsetDateTime**](OffsetDateTime.md) | The start date of the instrument. This is normally synonymous with the trade-date. | 
-**optionMaturityDate** | [**OffsetDateTime**](OffsetDateTime.md) | The maturity date of the option. | 
-**optionSettlementDate** | [**OffsetDateTime**](OffsetDateTime.md) | The settlement date of the option. | 
+**startDate** | **OffsetDateTime** | The start date of the instrument. This is normally synonymous with the trade-date. | 
+**optionMaturityDate** | **OffsetDateTime** | The maturity date of the option. | 
+**optionSettlementDate** | **OffsetDateTime** | The settlement date of the option. | 
 **deliveryType** | [**DeliveryTypeEnum**](#DeliveryTypeEnum) | The available values are: Cash, Physical | 
 **optionType** | [**OptionTypeEnum**](#OptionTypeEnum) | The available values are: None, Call, Put | 
 **strike** | **Double** | The strike of the option. | 
 **domCcy** | **String** | The domestic currency of the instrument. | 
 **underlyingIdentifier** | [**UnderlyingIdentifierEnum**](#UnderlyingIdentifierEnum) | The available values are: LusidInstrumentId, Isin, Sedol, Cusip, ClientInternal, Figi, RIC, QuotePermId, REDCode, BBGId, ICECode | 
 **code** | **String** | The reset code of the option. | 
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashflowLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg | 
 
 
 
@@ -72,7 +73,7 @@ BOND | &quot;Bond&quot;
 EQUITYOPTION | &quot;EquityOption&quot;
 FIXEDLEG | &quot;FixedLeg&quot;
 FLOATINGLEG | &quot;FloatingLeg&quot;
-BESPOKECASHFLOWSLEG | &quot;BespokeCashFlowsLeg&quot;
+BESPOKECASHFLOWLEG | &quot;BespokeCashflowLeg&quot;
 UNKNOWN | &quot;Unknown&quot;
 TERMDEPOSIT | &quot;TermDeposit&quot;
 CONTRACTFORDIFFERENCE | &quot;ContractForDifference&quot;

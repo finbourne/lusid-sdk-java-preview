@@ -2,13 +2,15 @@
 
 # EquityOption
 
+Lusid-ibor internal representation of a plain vanilla equity option instrument.
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDate** | [**OffsetDateTime**](OffsetDateTime.md) | The start date of the instrument. This is normally synonymous with the trade-date. | 
-**optionMaturityDate** | [**OffsetDateTime**](OffsetDateTime.md) | The maturity date of the option. | 
-**optionSettlementDate** | [**OffsetDateTime**](OffsetDateTime.md) | The settlement date of the option. | 
+**startDate** | **OffsetDateTime** | The start date of the instrument. This is normally synonymous with the trade-date. | 
+**optionMaturityDate** | **OffsetDateTime** | The maturity date of the option. | 
+**optionSettlementDate** | **OffsetDateTime** | The settlement date of the option. | 
 **deliveryType** | [**DeliveryTypeEnum**](#DeliveryTypeEnum) | The available values are: Cash, Physical | 
 **optionType** | [**OptionTypeEnum**](#OptionTypeEnum) | The available values are: None, Call, Put | 
 **strike** | **Double** | The strike of the option. | 

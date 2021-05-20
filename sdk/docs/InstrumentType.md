@@ -29,7 +29,7 @@
 
 * `FLOATINGLEG` (value: `"FloatingLeg"`)
 
-* `BESPOKECASHFLOWSLEG` (value: `"BespokeCashFlowsLeg"`)
+* `BESPOKECASHFLOWLEG` (value: `"BespokeCashflowLeg"`)
 
 * `UNKNOWN` (value: `"Unknown"`)
 

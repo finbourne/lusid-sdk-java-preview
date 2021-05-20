@@ -40,7 +40,7 @@ public class Example {
 
     StructuredResultDataApi apiInstance = new StructuredResultDataApi(defaultClient);
     String scope = "scope_example"; // String | Scope in which to upsert the result address definition maps
-    Map<String, CreateDataMapRequest> requestBody = {}; // Map<String, CreateDataMapRequest> | Individual result address definition map creation requests
+    Map<String, CreateDataMapRequest> requestBody = new HashMap(); // Map<String, CreateDataMapRequest> | Individual result address definition map creation requests
     try {
       UpsertStructuredDataResponse result = apiInstance.createDataMap(scope, requestBody);
       System.out.println(result);
@@ -111,7 +111,7 @@ public class Example {
 
     StructuredResultDataApi apiInstance = new StructuredResultDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the structured result data to delete.
-    Map<String, StructuredResultDataId> requestBody = {"someCorrelationId1":{"source":"MiddleOffice","code":"MyUploadedRiskResults","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","resultType":"Risk"}}; // Map<String, StructuredResultDataId> | The structured result data Ids to delete, each keyed by a unique correlation id.
+    Map<String, StructuredResultDataId> requestBody = new HashMap(); // Map<String, StructuredResultDataId> | The structured result data Ids to delete, each keyed by a unique correlation id.
     try {
       AnnulStructuredDataResponse result = apiInstance.deleteStructuredResultData(scope, requestBody);
       System.out.println(result);
@@ -182,7 +182,7 @@ public class Example {
 
     StructuredResultDataApi apiInstance = new StructuredResultDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the result address definition map keys
-    Map<String, DataMapKey> requestBody = {}; // Map<String, DataMapKey> | The result address definition map keys to lookup
+    Map<String, DataMapKey> requestBody = new HashMap(); // Map<String, DataMapKey> | The result address definition map keys to lookup
     try {
       GetDataMapResponse result = apiInstance.getDataMap(scope, requestBody);
       System.out.println(result);
@@ -253,8 +253,8 @@ public class Example {
 
     StructuredResultDataApi apiInstance = new StructuredResultDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the structured result data to retrieve.
-    Map<String, StructuredResultDataId> requestBody = {"someCorrelationId1":{"source":"MiddleOffice","code":"MyUploadedRiskResults","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","resultType":"Risk"}}; // Map<String, StructuredResultDataId> | The time invariant set of structured data identifiers to retrieve the data for. These need to be               keyed by a unique correlation id allowing the retrieved item to be identified in the response.
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the structured result data. Defaults to return the latest version if not specified.
+    Map<String, StructuredResultDataId> requestBody = new HashMap(); // Map<String, StructuredResultDataId> | The time invariant set of structured data identifiers to retrieve the data for. These need to be               keyed by a unique correlation id allowing the retrieved item to be identified in the response.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the structured result data. Defaults to return the latest version if not specified.
     String maxAge = "maxAge_example"; // String | The duration of the look back window in an ISO8601 time interval format e.g. P1Y2M3DT4H30M (1 year, 2 months, 3 days, 4 hours and 30 minutes).               This is subtracted from the provided effectiveAt datetime to generate a effective datetime window inside which a structured result data item must exist to be retrieved.
     try {
       GetStructuredResultDataResponse result = apiInstance.getStructuredResultData(scope, requestBody, asAt, maxAge);
@@ -328,7 +328,7 @@ public class Example {
 
     StructuredResultDataApi apiInstance = new StructuredResultDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope to use when updating or inserting the structured result data.
-    Map<String, UpsertStructuredResultDataRequest> requestBody = {"first-item":{"id":{"source":"Client","code":"MyUploadedRiskResults-1","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","resultType":"Risk"},"data":{"documentFormat":"Xml","version":"1.0.0","name":"free text identifier of document 1","document":"<xml>data</xml>"}},"second-item":{"id":{"source":"Client","code":"MyUploadedRiskResults-2","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","resultType":"Risk"},"data":{"documentFormat":"Json","version":"1.0.0","name":"free text identifier of document 2","document":"{ \"some\":\"valid json\"}"}}}; // Map<String, UpsertStructuredResultDataRequest> | The set of structured result data items to update or insert keyed by a unique correlation id.
+    Map<String, UpsertStructuredResultDataRequest> requestBody = new HashMap(); // Map<String, UpsertStructuredResultDataRequest> | The set of structured result data items to update or insert keyed by a unique correlation id.
     try {
       UpsertStructuredDataResponse result = apiInstance.upsertStructuredResultData(scope, requestBody);
       System.out.println(result);

@@ -186,7 +186,7 @@ public class Example {
     CounterpartyApi apiInstance = new CounterpartyApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the Counterparty to retrieve.
     String code = "code_example"; // String | The name of the Counterparty to retrieve the data for.
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the counterparty. Defaults to return the latest version if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the counterparty. Defaults to return the latest version if not specified.
     try {
       GetCounterpartyResponse result = apiInstance.getCounterparty(scope, code, asAt);
       System.out.println(result);
@@ -259,7 +259,7 @@ public class Example {
     CounterpartyApi apiInstance = new CounterpartyApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the CSA to retrieve.
     String code = "code_example"; // String | The name of the CSA to retrieve the data for.
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the CSA. Defaults to return the latest version if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the CSA. Defaults to return the latest version if not specified.
     try {
       GetCreditSupportAnnexResponse result = apiInstance.getCreditSupportAnnex(scope, code, asAt);
       System.out.println(result);
@@ -330,7 +330,7 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CounterpartyApi apiInstance = new CounterpartyApi(defaultClient);
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to list the counterparty. Defaults to latest if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to list the counterparty. Defaults to latest if not specified.
     try {
       ResourceListOfGetCounterpartyResponse result = apiInstance.listCounterparties(asAt);
       System.out.println(result);
@@ -399,7 +399,7 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CounterpartyApi apiInstance = new CounterpartyApi(defaultClient);
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to list the CSAs. Defaults to latest if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to list the CSAs. Defaults to latest if not specified.
     try {
       ResourceListOfGetCreditSupportAnnexResponse result = apiInstance.listCreditSupportAnnexes(asAt);
       System.out.println(result);
@@ -468,7 +468,7 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CounterpartyApi apiInstance = new CounterpartyApi(defaultClient);
-    UpsertCounterpartyRequest upsertCounterpartyRequest = {"counterparty":{"counterpartyId":"12345","counterpartyName":"some-bank-of-somewhere","countryOfRisk":"United States","issuerRatings":[{"ratingSource":"S&P","rating":"BB"}],"industryScheme":{"schemeName":"TRCS","schemeId":"5010201010","economicSector":"Energy","businessSector":"Energy - Fossil Fuels","industry":"Oil & Gas","industryActivity":"Integrated Oil & Gas"},"scope":"some-scope","code":"some-code"}}; // UpsertCounterpartyRequest | The Counterparty to update or insert
+    UpsertCounterpartyRequest upsertCounterpartyRequest = new UpsertCounterpartyRequest(); // UpsertCounterpartyRequest | The Counterparty to update or insert
     try {
       UpsertSingleStructuredDataResponse result = apiInstance.upsertCounterparty(upsertCounterpartyRequest);
       System.out.println(result);
@@ -537,7 +537,7 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CounterpartyApi apiInstance = new CounterpartyApi(defaultClient);
-    UpsertCreditSupportAnnexRequest upsertCreditSupportAnnexRequest = {"creditSupportAnnex":{"referenceCurrency":"GBP","collateralCurrencies":["GBP"],"isdaAgreementVersion":"ISDA2002","marginCallFrequency":"1W","valuationAgent":"Institution","thresholdAmount":0,"roundingDecimalPlaces":2,"initialMarginAmount":100000,"minimumTransferAmount":10000,"scope":"some-scope","code":"some-code"}}; // UpsertCreditSupportAnnexRequest | The CSA to update or insert
+    UpsertCreditSupportAnnexRequest upsertCreditSupportAnnexRequest = new UpsertCreditSupportAnnexRequest(); // UpsertCreditSupportAnnexRequest | The CSA to update or insert
     try {
       UpsertSingleStructuredDataResponse result = apiInstance.upsertCreditSupportAnnex(upsertCreditSupportAnnexRequest);
       System.out.println(result);

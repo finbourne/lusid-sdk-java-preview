@@ -38,7 +38,7 @@ public class Example {
     RelationsApi apiInstance = new RelationsApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the relation definition
     String code = "code_example"; // String | The code of the relation definition
-    CreateRelationRequest createRelationRequest = {"sourceEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"},"targetEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"}}; // CreateRelationRequest | The details of the relation to create.
+    CreateRelationRequest createRelationRequest = new CreateRelationRequest(); // CreateRelationRequest | The details of the relation to create.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which the relation should be effective from. Defaults to the current LUSID system datetime if not specified.
     try {
       CompleteRelation result = apiInstance.createRelation(scope, code, createRelationRequest, effectiveAt);
@@ -113,7 +113,7 @@ public class Example {
     RelationsApi apiInstance = new RelationsApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the relation definition
     String code = "code_example"; // String | The code of the relation definition
-    DeleteRelationRequest deleteRelationRequest = {"sourceEntityId":{"entityType":"PortfolioGroup","scope":"UkPortfolio","code":"PortfolioId-148176"},"targetEntityId":{"entityType":"Person","idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"}}; // DeleteRelationRequest | The details of the relation to delete.
+    DeleteRelationRequest deleteRelationRequest = new DeleteRelationRequest(); // DeleteRelationRequest | The details of the relation to delete.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which the relation should the deletion be effective from. Defaults to the current LUSID system datetime if not specified.
     try {
       DeletedEntityResponse result = apiInstance.deleteRelation(scope, code, deleteRelationRequest, effectiveAt);

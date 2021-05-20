@@ -111,7 +111,7 @@ public class Example {
     ConfigurationRecipeApi apiInstance = new ConfigurationRecipeApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the Configuration Recipe to retrieve.
     String code = "code_example"; // String | The name of the recipe to retrieve the data for.
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the Configuration Recipe. Defaults to return the latest version if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the Configuration Recipe. Defaults to return the latest version if not specified.
     try {
       GetRecipeResponse result = apiInstance.getConfigurationRecipe(scope, code, asAt);
       System.out.println(result);
@@ -182,7 +182,7 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ConfigurationRecipeApi apiInstance = new ConfigurationRecipeApi(defaultClient);
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to list the Configuration Recipes. Defaults to latest if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to list the Configuration Recipes. Defaults to latest if not specified.
     String filter = "filter_example"; // String | Expression to filter the result set. Read more about filtering results from LUSID here:              https://support.lusid.com/filtering-results-from-lusid.
     try {
       ResourceListOfGetRecipeResponse result = apiInstance.listConfigurationRecipes(asAt, filter);
@@ -253,7 +253,7 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ConfigurationRecipeApi apiInstance = new ConfigurationRecipeApi(defaultClient);
-    UpsertRecipeRequest upsertRecipeRequest = {"configurationRecipe":{"scope":"scopeName","code":"MyNamedRecipe12345","market":{"marketRules":[{"key":"Fx.CurrencyPair.*","supplier":"DataScope","dataScope":"SomeScopeToLookAt","quoteType":"Rate","field":"Mid","priceSource":""}],"suppliers":{},"options":{"defaultSupplier":"Lusid","defaultInstrumentCodeType":"LusidInstrumentId","defaultScope":"default","attemptToInferMissingFx":false}},"pricing":{"modelRules":[],"modelChoice":{},"options":{"modelSelection":{"library":"Lusid","model":"SimpleStatic"},"useInstrumentTypeToDeterminePricer":false,"allowAnyInstrumentsWithSecUidToPriceOffLookup":false,"allowPartiallySuccessfulEvaluation":false,"produceSeparateResultForLinearOtcLegs":false,"enableUseOfCachedUnitResults":false,"windowValuationOnInstrumentStartEnd":false,"removeContingentCashflowsInPaymentDiary":false,"useChildSubHoldingKeysForPortfolioExpansion":false},"resultDataRules":[]},"aggregation":{"options":{"useAnsiLikeSyntax":false}},"inheritedRecipes":[],"description":""}}; // UpsertRecipeRequest | The Configuration Recipe to update or insert
+    UpsertRecipeRequest upsertRecipeRequest = new UpsertRecipeRequest(); // UpsertRecipeRequest | The Configuration Recipe to update or insert
     try {
       UpsertSingleStructuredDataResponse result = apiInstance.upsertConfigurationRecipe(upsertRecipeRequest);
       System.out.println(result);

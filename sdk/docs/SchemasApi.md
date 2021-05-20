@@ -108,7 +108,7 @@ public class Example {
 
     SchemasApi apiInstance = new SchemasApi(defaultClient);
     List<String> propertyKeys = Arrays.asList(); // List<String> | One or more property keys for which the schema is requested
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The AsAt date of the data
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | Optional. The AsAt date of the data
     try {
       PropertySchema result = apiInstance.getPropertySchema(propertyKeys, asAt);
       System.out.println(result);

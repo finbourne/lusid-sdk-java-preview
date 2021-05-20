@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**generateConfigurationRecipe**](AggregationApi.md#generateConfigurationRecipe) | **POST** /api/aggregation/{scope}/{code}/$generateconfigurationrecipe | [EXPERIMENTAL] Generates a recipe sufficient to perform valuations for the given portfolio.
 [**getQueryableKeys**](AggregationApi.md#getQueryableKeys) | **GET** /api/results/queryable/keys | [EXPERIMENTAL] Query the set of supported \&quot;addresses\&quot; that can be queried from the aggregation endpoint.
-[**getValuation**](AggregationApi.md#getValuation) | **POST** /api/aggregation/$valuation | [BETA] Perform valuation for a list of portfolios and/or portfolio groups
-[**getValuationOfWeightedInstruments**](AggregationApi.md#getValuationOfWeightedInstruments) | **POST** /api/aggregation/$valuationinlined | [BETA] Perform valuation for an inlined portfolio
+[**getValuation**](AggregationApi.md#getValuation) | **POST** /api/aggregation/$valuation | [EXPERIMENTAL] Perform valuation for a list of portfolios and/or portfolio groups
+[**getValuationOfWeightedInstruments**](AggregationApi.md#getValuationOfWeightedInstruments) | **POST** /api/aggregation/$valuationinlined | [EXPERIMENTAL] Perform valuation for an inlined portfolio
 
 
 <a name="generateConfigurationRecipe"></a>
@@ -40,7 +40,7 @@ public class Example {
     AggregationApi apiInstance = new AggregationApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the portfolio
     String code = "code_example"; // String | The code of the portfolio
-    CreateRecipeRequest createRecipeRequest = {"recipeCreationMarketDataScopes":["MyScope"],"recipeId":{"scope":"MyScope","code":"default"},"asAt":"2018-03-05T00:00:00.0000000+00:00","effectiveAt":"2018-03-05T00:00:00.0000000+00:00"}; // CreateRecipeRequest | The request specifying the parameters to generating the recipe
+    CreateRecipeRequest createRecipeRequest = new CreateRecipeRequest(); // CreateRecipeRequest | The request specifying the parameters to generating the recipe
     try {
       ConfigurationRecipe result = apiInstance.generateConfigurationRecipe(scope, code, createRecipeRequest);
       System.out.println(result);
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **getValuation**
 > ListAggregationResponse getValuation(valuationRequest)
 
-[BETA] Perform valuation for a list of portfolios and/or portfolio groups
+[EXPERIMENTAL] Perform valuation for a list of portfolios and/or portfolio groups
 
 Perform valuation on specified list of portfolio and/or portfolio groups for a set of dates.
 
@@ -184,7 +184,7 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     AggregationApi apiInstance = new AggregationApi(defaultClient);
-    ValuationRequest valuationRequest = {"recipeId":{"scope":"MyRecipeScope","code":"default"},"asAt":"2018-03-05T00:00:00.0000000+00:00","metrics":[{"key":"Instrument/default/Name","op":"Value"},{"key":"Holding/default/PV","op":"Value"}],"groupBy":["Instrument/default/Name"],"sort":[{"key":"Instrument/default/RIC","sortOrder":"Ascending"}],"reportCurrency":"USD","equipWithSubtotals":false,"portfolioEntityIds":[{"scope":"PortfolioScope1","code":"MyPortfolioAbC","portfolioEntityType":"SinglePortfolio"},{"scope":"PortfolioScope2","code":"MyPortfolioDeF","portfolioEntityType":"SinglePortfolio"}],"valuationSchedule":{"effectiveFrom":"2018-03-05T00:00:00.0000000+00:00","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","tenor":"1D","rollConvention":"F","holidayCalendars":[],"valuationDateTimes":[]}}; // ValuationRequest | The request specifying the set of portfolios and dates on which to calculate a set of valuation metrics
+    ValuationRequest valuationRequest = new ValuationRequest(); // ValuationRequest | The request specifying the set of portfolios and dates on which to calculate a set of valuation metrics
     try {
       ListAggregationResponse result = apiInstance.getValuation(valuationRequest);
       System.out.println(result);
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 # **getValuationOfWeightedInstruments**
 > ListAggregationResponse getValuationOfWeightedInstruments(inlineValuationRequest)
 
-[BETA] Perform valuation for an inlined portfolio
+[EXPERIMENTAL] Perform valuation for an inlined portfolio
 
 Perform valuation on the portfolio that is defined by the weighted set of instruments passed to the request.
 
@@ -253,7 +253,7 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     AggregationApi apiInstance = new AggregationApi(defaultClient);
-    InlineValuationRequest inlineValuationRequest = {"recipeId":{"scope":"MyRecipeScope","code":"default"},"asAt":"2018-03-05T00:00:00.0000000+00:00","metrics":[{"key":"Instrument/default/Name","op":"Value"},{"key":"Holding/default/PV","op":"Value"}],"groupBy":["Instrument/default/Name"],"reportCurrency":"USD","equipWithSubtotals":false,"valuationSchedule":{"effectiveFrom":"2018-03-05T00:00:00.0000000+00:00","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","tenor":"1D","rollConvention":"F","holidayCalendars":[],"valuationDateTimes":[]},"instruments":[{"quantity":10000,"holdingIdentifier":"my-holding-on-some-date","instrument":{"startDate":"2018-03-05T00:00:00.0000000+00:00","maturityDate":"2018-04-04T00:00:00.0000000+00:00","domAmount":100,"domCcy":"GBP","fgnAmount":-150,"fgnCcy":"USD","refSpotRate":1.5,"isNdf":false,"fixingDate":"0001-01-01T00:00:00.0000000+00:00","instrumentType":"FxForward"}}]}; // InlineValuationRequest | The request specifying the set of portfolios and dates on which to calculate a set of valuation metrics
+    InlineValuationRequest inlineValuationRequest = new InlineValuationRequest(); // InlineValuationRequest | The request specifying the set of portfolios and dates on which to calculate a set of valuation metrics
     try {
       ListAggregationResponse result = apiInstance.getValuationOfWeightedInstruments(inlineValuationRequest);
       System.out.println(result);
