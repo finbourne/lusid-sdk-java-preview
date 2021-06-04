@@ -49,5 +49,7 @@
 
 * `FUNDINGLEG` (value: `"FundingLeg"`)
 
+* `CROSSCURRENCYSWAP` (value: `"CrossCurrencySwap"`)
+
 
 

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **domCcy** | **String** | The domestic currency of the instrument. | 
 **underlyingIdentifier** | [**UnderlyingIdentifierEnum**](#UnderlyingIdentifierEnum) | The available values are: LusidInstrumentId, Isin, Sedol, Cusip, ClientInternal, Figi, RIC, QuotePermId, REDCode, BBGId, ICECode | 
 **code** | **String** | The reset code of the option. | 
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap | 
 
 
 
@@ -82,6 +82,7 @@ CASHSETTLED | &quot;CashSettled&quot;
 CDSINDEX | &quot;CdsIndex&quot;
 BASKET | &quot;Basket&quot;
 FUNDINGLEG | &quot;FundingLeg&quot;
+CROSSCURRENCYSWAP | &quot;CrossCurrencySwap&quot;
 
 
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **basketName** | [**BasketIdentifier**](BasketIdentifier.md) |  | 
 **basketType** | **String** | What contents does the basket have. The validation will check that the instrument types contained match those expected.  Supported string (enumeration) values are: [Bonds, Credits, Equities, EquitySwap, Unknown]. | 
 **weightedInstruments** | [**WeightedInstruments**](WeightedInstruments.md) |  | 
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap | 
 
 
 
@@ -39,6 +39,7 @@ CASHSETTLED | &quot;CashSettled&quot;
 CDSINDEX | &quot;CdsIndex&quot;
 BASKET | &quot;Basket&quot;
 FUNDINGLEG | &quot;FundingLeg&quot;
+CROSSCURRENCYSWAP | &quot;CrossCurrencySwap&quot;
 
 
 
