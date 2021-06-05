@@ -1,13 +1,13 @@
 # CorporateActionSourcesApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://local-unit-test-server.lusid.com:63946*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**batchUpsertCorporateActions**](CorporateActionSourcesApi.md#batchUpsertCorporateActions) | **POST** /api/corporateactionsources/{scope}/{code}/corporateactions | [BETA] Upsert corporate actions
-[**createCorporateActionSource**](CorporateActionSourcesApi.md#createCorporateActionSource) | **POST** /api/corporateactionsources | [BETA] Create Corporate Action Source
+[**createCorporateActionSource**](CorporateActionSourcesApi.md#createCorporateActionSource) | **POST** /api/corporateactionsources | [BETA] Create corporate action source
 [**deleteCorporateActionSource**](CorporateActionSourcesApi.md#deleteCorporateActionSource) | **DELETE** /api/corporateactionsources/{scope}/{code} | [BETA] Delete a corporate action source
-[**deleteCorporateActions**](CorporateActionSourcesApi.md#deleteCorporateActions) | **DELETE** /api/corporateactionsources/{scope}/{code}/corporateactions | [EXPERIMENTAL] Delete one or more corporate actions
+[**deleteCorporateActions**](CorporateActionSourcesApi.md#deleteCorporateActions) | **DELETE** /api/corporateactionsources/{scope}/{code}/corporateactions | [EXPERIMENTAL] Delete corporate actions
 [**getCorporateActions**](CorporateActionSourcesApi.md#getCorporateActions) | **GET** /api/corporateactionsources/{scope}/{code}/corporateactions | [BETA] Get corporate actions
 [**listCorporateActionSources**](CorporateActionSourcesApi.md#listCorporateActionSources) | **GET** /api/corporateactionsources | [BETA] List corporate action sources
 
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 [BETA] Upsert corporate actions
 
-Attempt to create/update one or more corporate action in a specified corporate action source. Failed actions will be identified in the body of the response.
+Create or update one or more corporate actions in a particular corporate action source. Failures are identified in the body of the response.                If a corporate action is upserted at exactly the same effective datetime as a transaction for the same instrument, the corporate action takes precedence. Depending on the nature of the corporate action, this may mean it affects the transaction.
 
 ### Example
 ```java
@@ -33,7 +33,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63946");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -89,9 +89,9 @@ Name | Type | Description  | Notes
 # **createCorporateActionSource**
 > CorporateActionSource createCorporateActionSource(createCorporateActionSourceRequest)
 
-[BETA] Create Corporate Action Source
+[BETA] Create corporate action source
 
-Attempt to create a corporate action source.
+Create a corporate action source.
 
 ### Example
 ```java
@@ -106,7 +106,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63946");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -175,15 +175,15 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63946");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
-    String scope = "scope_example"; // String | The Scope of the Corporate Action Source to be deleted
-    String code = "code_example"; // String | The Code of the Corporate Action Source to be deleted
+    String scope = "scope_example"; // String | The scope of the corporate action source to be deleted
+    String code = "code_example"; // String | The code of the corporate action source to be deleted
     try {
       DeletedEntityResponse result = apiInstance.deleteCorporateActionSource(scope, code);
       System.out.println(result);
@@ -202,8 +202,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| The Scope of the Corporate Action Source to be deleted |
- **code** | **String**| The Code of the Corporate Action Source to be deleted |
+ **scope** | **String**| The scope of the corporate action source to be deleted |
+ **code** | **String**| The code of the corporate action source to be deleted |
 
 ### Return type
 
@@ -229,9 +229,9 @@ Name | Type | Description  | Notes
 # **deleteCorporateActions**
 > DeletedEntityResponse deleteCorporateActions(scope, code, corporateActionIds)
 
-[EXPERIMENTAL] Delete one or more corporate actions
+[EXPERIMENTAL] Delete corporate actions
 
-Deletes one or more corporate actions from the specified corporate action source
+Delete one or more corporate actions from a particular corporate action source.
 
 ### Example
 ```java
@@ -246,7 +246,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63946");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -255,7 +255,7 @@ public class Example {
     CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the corporate action source
     String code = "code_example"; // String | The code of the corporate action source
-    List<String> corporateActionIds = Arrays.asList(); // List<String> | The ids of the corporate actions to delete
+    List<String> corporateActionIds = Arrays.asList(); // List<String> | The IDs of the corporate actions to delete
     try {
       DeletedEntityResponse result = apiInstance.deleteCorporateActions(scope, code, corporateActionIds);
       System.out.println(result);
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the corporate action source |
  **code** | **String**| The code of the corporate action source |
- **corporateActionIds** | [**List&lt;String&gt;**](String.md)| The ids of the corporate actions to delete |
+ **corporateActionIds** | [**List&lt;String&gt;**](String.md)| The IDs of the corporate actions to delete |
 
 ### Return type
 
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 [BETA] Get corporate actions
 
-Gets corporate actions from a specific corporate action source
+Get corporate actions from a particular corporate action source.
 
 ### Example
 ```java
@@ -319,20 +319,20 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63946");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
-    String scope = "scope_example"; // String | The scope of the corporate action source
-    String code = "code_example"; // String | The code of the corporate action source
-    String fromEffectiveAt = "fromEffectiveAt_example"; // String | Optional. The start effective date of the data range
-    String toEffectiveAt = "toEffectiveAt_example"; // String | Optional. The end effective date of the data range
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The AsAt date of the data
+    String scope = "scope_example"; // String | The scope of the corporate action source.
+    String code = "code_example"; // String | The code of the corporate action source.
+    String fromEffectiveAt = "fromEffectiveAt_example"; // String | Optional. The start effective date of the data range.
+    String toEffectiveAt = "toEffectiveAt_example"; // String | Optional. The end effective date of the data range.
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The AsAt date of the data.
     List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
-    Integer limit = 56; // Integer | Optional. When paginating, limit the number of returned results to this many
+    Integer limit = 56; // Integer | Optional. When paginating, limit the results to this number.
     String filter = "filter_example"; // String | Optional. Expression to filter the result set.              For example, to filter on the Announcement Date, use \"announcementDate eq '2020-03-06'\"              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
     try {
       ResourceListOfCorporateAction result = apiInstance.getCorporateActions(scope, code, fromEffectiveAt, toEffectiveAt, asAt, sortBy, limit, filter);
@@ -352,13 +352,13 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| The scope of the corporate action source |
- **code** | **String**| The code of the corporate action source |
- **fromEffectiveAt** | **String**| Optional. The start effective date of the data range | [optional]
- **toEffectiveAt** | **String**| Optional. The end effective date of the data range | [optional]
- **asAt** | **OffsetDateTime**| Optional. The AsAt date of the data | [optional]
+ **scope** | **String**| The scope of the corporate action source. |
+ **code** | **String**| The code of the corporate action source. |
+ **fromEffectiveAt** | **String**| Optional. The start effective date of the data range. | [optional]
+ **toEffectiveAt** | **String**| Optional. The end effective date of the data range. | [optional]
+ **asAt** | **OffsetDateTime**| Optional. The AsAt date of the data. | [optional]
  **sortBy** | [**List&lt;String&gt;**](String.md)| Optional. Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName | [optional]
- **limit** | **Integer**| Optional. When paginating, limit the number of returned results to this many | [optional]
+ **limit** | **Integer**| Optional. When paginating, limit the results to this number. | [optional]
  **filter** | **String**| Optional. Expression to filter the result set.              For example, to filter on the Announcement Date, use \&quot;announcementDate eq &#39;2020-03-06&#39;\&quot;              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
 
 ### Return type
@@ -402,7 +402,7 @@ import com.finbourne.lusid.api.CorporateActionSourcesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:63946");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
