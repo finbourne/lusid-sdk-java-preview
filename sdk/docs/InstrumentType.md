@@ -51,5 +51,7 @@
 
 * `CROSSCURRENCYSWAP` (value: `"CrossCurrencySwap"`)
 
+* `FXSWAP` (value: `"FxSwap"`)
+
 
 

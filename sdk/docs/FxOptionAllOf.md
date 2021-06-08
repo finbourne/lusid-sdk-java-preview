@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **strike** | **Double** | The strike of the option. | 
 **domCcy** | **String** | The domestic currency of the instrument. | 
 **fgnCcy** | **String** | The foreign currency of the FX. | 
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap | 
 
 
 
@@ -45,6 +45,7 @@ CDSINDEX | &quot;CdsIndex&quot;
 BASKET | &quot;Basket&quot;
 FUNDINGLEG | &quot;FundingLeg&quot;
 CROSSCURRENCYSWAP | &quot;CrossCurrencySwap&quot;
+FXSWAP | &quot;FxSwap&quot;
 
 
 
