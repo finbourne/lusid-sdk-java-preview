@@ -140,8 +140,6 @@ public class PortfoliosApiTest {
         String code = null;
         String returnScope = null;
         String returnCode = null;
-        String recipeIdScope = null;
-        String recipeIdCode = null;
         String fromEffectiveAt = null;
         String toEffectiveAt = null;
         String compositeMethod = null;
@@ -149,7 +147,7 @@ public class PortfoliosApiTest {
         String outputFrequency = null;
         List<String> metrics = null;
         OffsetDateTime asAt = null;
-        ResourceListOfAggregatedReturn response = api.getPortfolioAggregateReturns(scope, code, returnScope, returnCode, recipeIdScope, recipeIdCode, fromEffectiveAt, toEffectiveAt, compositeMethod, period, outputFrequency, metrics, asAt);
+        ResourceListOfAggregatedReturn response = api.getPortfolioAggregateReturns(scope, code, returnScope, returnCode, fromEffectiveAt, toEffectiveAt, compositeMethod, period, outputFrequency, metrics, asAt);
 
         // TODO: test validations
     }

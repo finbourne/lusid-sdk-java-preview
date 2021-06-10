@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**domain** | [**DomainEnum**](#DomainEnum) | The domain that the property exists in. The available values are: NotDefined, Transaction, Portfolio, Holding, ReferenceHolding, TransactionConfiguration, Instrument, CutLabelDefinition, Analytic, PortfolioGroup, Person, AccessMetadata, Order, UnitResult, MarketData, ConfigurationRecipe, Allocation, Calendar, LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction | 
+**domain** | [**DomainEnum**](#DomainEnum) | The domain that the property exists in. The available values are: NotDefined, Transaction, Portfolio, Holding, ReferenceHolding, TransactionConfiguration, Instrument, CutLabelDefinition, Analytic, PortfolioGroup, Person, AccessMetadata, Order, UnitResult, MarketData, ConfigurationRecipe, Allocation, Calendar, LegalEntity | 
 **scope** | **String** | The scope that the property exists in. | 
 **code** | **String** | The code of the property. Together with the domain and scope this uniquely identifies the property. | 
 **displayName** | **String** | The display name of the property. | 
@@ -39,12 +39,6 @@ CONFIGURATIONRECIPE | &quot;ConfigurationRecipe&quot;
 ALLOCATION | &quot;Allocation&quot;
 CALENDAR | &quot;Calendar&quot;
 LEGALENTITY | &quot;LegalEntity&quot;
-PLACEMENT | &quot;Placement&quot;
-EXECUTION | &quot;Execution&quot;
-BLOCK | &quot;Block&quot;
-PARTICIPATION | &quot;Participation&quot;
-PACKAGE | &quot;Package&quot;
-ORDERINSTRUCTION | &quot;OrderInstruction&quot;
 
 
 

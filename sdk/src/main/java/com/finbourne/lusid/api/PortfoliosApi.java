@@ -662,8 +662,6 @@ public class PortfoliosApi {
      * @param code The code of the  Portfolio. (required)
      * @param returnScope The scope of the Returns. (required)
      * @param returnCode The code of the Returns. (required)
-     * @param recipeIdScope The Recipe Scope for getting the fx rates (optional)
-     * @param recipeIdCode The Recipe Code for getting the fx rates (optional)
      * @param fromEffectiveAt The start date from which to delete the Returns. (optional)
      * @param toEffectiveAt The end date from which to delete the Returns (optional)
      * @param compositeMethod The method used to calculate the Portfolio performance:              Equal/Asset. (optional)
@@ -682,7 +680,7 @@ public class PortfoliosApi {
         <tr><td> 0 </td><td> Error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPortfolioAggregateReturnsCall(String scope, String code, String returnScope, String returnCode, String recipeIdScope, String recipeIdCode, String fromEffectiveAt, String toEffectiveAt, String compositeMethod, String period, String outputFrequency, List<String> metrics, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPortfolioAggregateReturnsCall(String scope, String code, String returnScope, String returnCode, String fromEffectiveAt, String toEffectiveAt, String compositeMethod, String period, String outputFrequency, List<String> metrics, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -694,14 +692,6 @@ public class PortfoliosApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (recipeIdScope != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("recipeIdScope", recipeIdScope));
-        }
-
-        if (recipeIdCode != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("recipeIdCode", recipeIdCode));
-        }
-
         if (fromEffectiveAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("fromEffectiveAt", fromEffectiveAt));
         }
@@ -753,7 +743,7 @@ public class PortfoliosApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPortfolioAggregateReturnsValidateBeforeCall(String scope, String code, String returnScope, String returnCode, String recipeIdScope, String recipeIdCode, String fromEffectiveAt, String toEffectiveAt, String compositeMethod, String period, String outputFrequency, List<String> metrics, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPortfolioAggregateReturnsValidateBeforeCall(String scope, String code, String returnScope, String returnCode, String fromEffectiveAt, String toEffectiveAt, String compositeMethod, String period, String outputFrequency, List<String> metrics, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'scope' is set
         if (scope == null) {
@@ -776,7 +766,7 @@ public class PortfoliosApi {
         }
         
 
-        okhttp3.Call localVarCall = getPortfolioAggregateReturnsCall(scope, code, returnScope, returnCode, recipeIdScope, recipeIdCode, fromEffectiveAt, toEffectiveAt, compositeMethod, period, outputFrequency, metrics, asAt, _callback);
+        okhttp3.Call localVarCall = getPortfolioAggregateReturnsCall(scope, code, returnScope, returnCode, fromEffectiveAt, toEffectiveAt, compositeMethod, period, outputFrequency, metrics, asAt, _callback);
         return localVarCall;
 
     }
@@ -788,8 +778,6 @@ public class PortfoliosApi {
      * @param code The code of the  Portfolio. (required)
      * @param returnScope The scope of the Returns. (required)
      * @param returnCode The code of the Returns. (required)
-     * @param recipeIdScope The Recipe Scope for getting the fx rates (optional)
-     * @param recipeIdCode The Recipe Code for getting the fx rates (optional)
      * @param fromEffectiveAt The start date from which to delete the Returns. (optional)
      * @param toEffectiveAt The end date from which to delete the Returns (optional)
      * @param compositeMethod The method used to calculate the Portfolio performance:              Equal/Asset. (optional)
@@ -807,8 +795,8 @@ public class PortfoliosApi {
         <tr><td> 0 </td><td> Error response </td><td>  -  </td></tr>
      </table>
      */
-    public ResourceListOfAggregatedReturn getPortfolioAggregateReturns(String scope, String code, String returnScope, String returnCode, String recipeIdScope, String recipeIdCode, String fromEffectiveAt, String toEffectiveAt, String compositeMethod, String period, String outputFrequency, List<String> metrics, OffsetDateTime asAt) throws ApiException {
-        ApiResponse<ResourceListOfAggregatedReturn> localVarResp = getPortfolioAggregateReturnsWithHttpInfo(scope, code, returnScope, returnCode, recipeIdScope, recipeIdCode, fromEffectiveAt, toEffectiveAt, compositeMethod, period, outputFrequency, metrics, asAt);
+    public ResourceListOfAggregatedReturn getPortfolioAggregateReturns(String scope, String code, String returnScope, String returnCode, String fromEffectiveAt, String toEffectiveAt, String compositeMethod, String period, String outputFrequency, List<String> metrics, OffsetDateTime asAt) throws ApiException {
+        ApiResponse<ResourceListOfAggregatedReturn> localVarResp = getPortfolioAggregateReturnsWithHttpInfo(scope, code, returnScope, returnCode, fromEffectiveAt, toEffectiveAt, compositeMethod, period, outputFrequency, metrics, asAt);
         return localVarResp.getData();
     }
 
@@ -819,8 +807,6 @@ public class PortfoliosApi {
      * @param code The code of the  Portfolio. (required)
      * @param returnScope The scope of the Returns. (required)
      * @param returnCode The code of the Returns. (required)
-     * @param recipeIdScope The Recipe Scope for getting the fx rates (optional)
-     * @param recipeIdCode The Recipe Code for getting the fx rates (optional)
      * @param fromEffectiveAt The start date from which to delete the Returns. (optional)
      * @param toEffectiveAt The end date from which to delete the Returns (optional)
      * @param compositeMethod The method used to calculate the Portfolio performance:              Equal/Asset. (optional)
@@ -838,8 +824,8 @@ public class PortfoliosApi {
         <tr><td> 0 </td><td> Error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ResourceListOfAggregatedReturn> getPortfolioAggregateReturnsWithHttpInfo(String scope, String code, String returnScope, String returnCode, String recipeIdScope, String recipeIdCode, String fromEffectiveAt, String toEffectiveAt, String compositeMethod, String period, String outputFrequency, List<String> metrics, OffsetDateTime asAt) throws ApiException {
-        okhttp3.Call localVarCall = getPortfolioAggregateReturnsValidateBeforeCall(scope, code, returnScope, returnCode, recipeIdScope, recipeIdCode, fromEffectiveAt, toEffectiveAt, compositeMethod, period, outputFrequency, metrics, asAt, null);
+    public ApiResponse<ResourceListOfAggregatedReturn> getPortfolioAggregateReturnsWithHttpInfo(String scope, String code, String returnScope, String returnCode, String fromEffectiveAt, String toEffectiveAt, String compositeMethod, String period, String outputFrequency, List<String> metrics, OffsetDateTime asAt) throws ApiException {
+        okhttp3.Call localVarCall = getPortfolioAggregateReturnsValidateBeforeCall(scope, code, returnScope, returnCode, fromEffectiveAt, toEffectiveAt, compositeMethod, period, outputFrequency, metrics, asAt, null);
         Type localVarReturnType = new TypeToken<ResourceListOfAggregatedReturn>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -851,8 +837,6 @@ public class PortfoliosApi {
      * @param code The code of the  Portfolio. (required)
      * @param returnScope The scope of the Returns. (required)
      * @param returnCode The code of the Returns. (required)
-     * @param recipeIdScope The Recipe Scope for getting the fx rates (optional)
-     * @param recipeIdCode The Recipe Code for getting the fx rates (optional)
      * @param fromEffectiveAt The start date from which to delete the Returns. (optional)
      * @param toEffectiveAt The end date from which to delete the Returns (optional)
      * @param compositeMethod The method used to calculate the Portfolio performance:              Equal/Asset. (optional)
@@ -871,9 +855,9 @@ public class PortfoliosApi {
         <tr><td> 0 </td><td> Error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPortfolioAggregateReturnsAsync(String scope, String code, String returnScope, String returnCode, String recipeIdScope, String recipeIdCode, String fromEffectiveAt, String toEffectiveAt, String compositeMethod, String period, String outputFrequency, List<String> metrics, OffsetDateTime asAt, final ApiCallback<ResourceListOfAggregatedReturn> _callback) throws ApiException {
+    public okhttp3.Call getPortfolioAggregateReturnsAsync(String scope, String code, String returnScope, String returnCode, String fromEffectiveAt, String toEffectiveAt, String compositeMethod, String period, String outputFrequency, List<String> metrics, OffsetDateTime asAt, final ApiCallback<ResourceListOfAggregatedReturn> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getPortfolioAggregateReturnsValidateBeforeCall(scope, code, returnScope, returnCode, recipeIdScope, recipeIdCode, fromEffectiveAt, toEffectiveAt, compositeMethod, period, outputFrequency, metrics, asAt, _callback);
+        okhttp3.Call localVarCall = getPortfolioAggregateReturnsValidateBeforeCall(scope, code, returnScope, returnCode, fromEffectiveAt, toEffectiveAt, compositeMethod, period, outputFrequency, metrics, asAt, _callback);
         Type localVarReturnType = new TypeToken<ResourceListOfAggregatedReturn>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

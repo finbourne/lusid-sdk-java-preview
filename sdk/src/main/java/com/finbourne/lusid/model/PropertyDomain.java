@@ -66,19 +66,7 @@ public enum PropertyDomain {
   
   CALENDAR("Calendar"),
   
-  LEGALENTITY("LegalEntity"),
-  
-  PLACEMENT("Placement"),
-  
-  EXECUTION("Execution"),
-  
-  BLOCK("Block"),
-  
-  PARTICIPATION("Participation"),
-  
-  PACKAGE("Package"),
-  
-  ORDERINSTRUCTION("OrderInstruction");
+  LEGALENTITY("LegalEntity");
 
   private String value;
 
