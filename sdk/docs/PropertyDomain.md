@@ -43,5 +43,17 @@
 
 * `LEGALENTITY` (value: `"LegalEntity"`)
 
+* `PLACEMENT` (value: `"Placement"`)
+
+* `EXECUTION` (value: `"Execution"`)
+
+* `BLOCK` (value: `"Block"`)
+
+* `PARTICIPATION` (value: `"Participation"`)
+
+* `PACKAGE` (value: `"Package"`)
+
+* `ORDERINSTRUCTION` (value: `"OrderInstruction"`)
+
 
 
