@@ -1,6 +1,6 @@
 # TranslationApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:61614*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,14 +28,14 @@ import com.finbourne.lusid.api.TranslationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:61614");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     TranslationApi apiInstance = new TranslationApi(defaultClient);
-    TranslateInstrumentDefinitionsRequest translateInstrumentDefinitionsRequest = {"instruments":{"myFavouriteInstrument":{"instrumentFormat":{"sourceSystem":"someSource","vendor":"someVendor","version":"someVersion"},"content":"{\"InstrumentContentShouldBeGivenAsAJsonString\": \"OrAnXmlString\"}","instrumentType":"ExoticInstrument"},"myFavouriteLusidInstrument":{"startDate":"2021-06-15T08:05:21.3063234+00:00","maturityDate":"2022-06-15T08:05:21.3063241+00:00","domAmount":1,"domCcy":"GBP","fgnAmount":-1.5,"fgnCcy":"USD","refSpotRate":1.5,"isNdf":false,"fixingDate":"0001-01-01T00:00:00.0000000+00:00","instrumentType":"FxForward"}},"dialect":"targetDialect"}; // TranslateInstrumentDefinitionsRequest | The definitions of the instruments to translate along with the target dialect.
+    TranslateInstrumentDefinitionsRequest translateInstrumentDefinitionsRequest = {"instruments":{"myFavouriteInstrument":{"instrumentFormat":{"sourceSystem":"someSource","vendor":"someVendor","version":"someVersion"},"content":"{\"InstrumentContentShouldBeGivenAsAJsonString\": \"OrAnXmlString\"}","instrumentType":"ExoticInstrument"},"myFavouriteLusidInstrument":{"startDate":"2021-06-15T08:29:15.9798276+00:00","maturityDate":"2022-06-15T08:29:15.9798284+00:00","domAmount":1,"domCcy":"GBP","fgnAmount":-1.5,"fgnCcy":"USD","refSpotRate":1.5,"isNdf":false,"fixingDate":"0001-01-01T00:00:00.0000000+00:00","instrumentType":"FxForward"}},"dialect":"targetDialect"}; // TranslateInstrumentDefinitionsRequest | The definitions of the instruments to translate along with the target dialect.
     try {
       TranslateInstrumentDefinitionsResponse result = apiInstance.translateInstrumentDefinitions(translateInstrumentDefinitionsRequest);
       System.out.println(result);
