@@ -111,7 +111,7 @@ public class Example {
     RelationshipsApi apiInstance = new RelationshipsApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the relationship
     String code = "code_example"; // String | The code of the relationship
-    DeleteRelationshipRequest deleteRelationshipRequest = {"sourceEntityId":{"scope":"UkPortfolio","code":"PortfolioId-148176"},"targetEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"}}; // DeleteRelationshipRequest | The details of the relationship to delete.
+    DeleteRelationshipRequest deleteRelationshipRequest = {"sourceEntityId":{"scope":"UkPortfolio","code":"PortfolioId-148176"},"targetEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"},"effectiveFrom":"2019-01-10T00:00:00.0000000+00:00"}; // DeleteRelationshipRequest | The details of the relationship to delete.
     try {
       DeletedEntityResponse result = apiInstance.deleteRelationship(scope, code, deleteRelationshipRequest);
       System.out.println(result);
