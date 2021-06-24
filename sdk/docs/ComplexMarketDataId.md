@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **priceSource** | **String** | The source or originator of the structured market data, e.g. a bank or financial institution. |  [optional]
 **lineage** | **String** | Description of the structured market data&#39;s lineage e.g. &#39;FundAccountant_GreenQuality&#39;. |  [optional]
 **effectiveAt** | **String** | The effectiveAt or cut label that this item of structured market data is/was updated/inserted with. |  [optional]
+**marketDataType** | **String** | The type of the market element that the market entity represents, e.g. a vol surface or credit curve |  [optional]
 **marketAsset** | **String** | The name of the market entity that the document represents |  [optional]
 
 
