@@ -1,26 +1,26 @@
 # CalendarsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:42436*
+All URIs are relative to *http://local-unit-test-server.lusid.com:45022*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addDateToCalendar**](CalendarsApi.md#addDateToCalendar) | **PUT** /api/calendars/generic/{scope}/{code}/dates | [EXPERIMENTAL] Add a date to a calendar
-[**createCalendar**](CalendarsApi.md#createCalendar) | **POST** /api/calendars/generic | [EXPERIMENTAL] Create a calendar in its generic form
-[**deleteCalendar**](CalendarsApi.md#deleteCalendar) | **DELETE** /api/calendars/generic/{scope}/{code} | [EXPERIMENTAL] Delete a calendar
-[**deleteDateFromCalendar**](CalendarsApi.md#deleteDateFromCalendar) | **DELETE** /api/calendars/generic/{scope}/{code}/dates/{dateId} | [EXPERIMENTAL] Remove a date from a calendar
-[**getCalendar**](CalendarsApi.md#getCalendar) | **GET** /api/calendars/generic/{scope}/{code} | [EXPERIMENTAL] Get a calendar in its generic form
-[**getDates**](CalendarsApi.md#getDates) | **GET** /api/calendars/generic/{scope}/{code}/dates | [EXPERIMENTAL] Get dates for a specific calendar
-[**isBusinessDateTime**](CalendarsApi.md#isBusinessDateTime) | **GET** /api/calendars/businessday/{scope}/{code} | [EXPERIMENTAL] Check whether a DateTime is a \&quot;Business DateTime\&quot;
-[**listCalendars**](CalendarsApi.md#listCalendars) | **GET** /api/calendars/generic | [EXPERIMENTAL] List Calenders
-[**listCalendarsInScope**](CalendarsApi.md#listCalendarsInScope) | **GET** /api/calendars/generic/{scope} | [EXPERIMENTAL] List all calenders in a specified scope
-[**updateCalendar**](CalendarsApi.md#updateCalendar) | **POST** /api/calendars/generic/{scope}/{code} | [EXPERIMENTAL] Update a calendar
+[**addDateToCalendar**](CalendarsApi.md#addDateToCalendar) | **PUT** /api/calendars/generic/{scope}/{code}/dates | [BETA] Add a date to a calendar
+[**createCalendar**](CalendarsApi.md#createCalendar) | **POST** /api/calendars/generic | [BETA] Create a calendar in its generic form
+[**deleteCalendar**](CalendarsApi.md#deleteCalendar) | **DELETE** /api/calendars/generic/{scope}/{code} | [BETA] Delete a calendar
+[**deleteDateFromCalendar**](CalendarsApi.md#deleteDateFromCalendar) | **DELETE** /api/calendars/generic/{scope}/{code}/dates/{dateId} | [BETA] Remove a date from a calendar
+[**getCalendar**](CalendarsApi.md#getCalendar) | **GET** /api/calendars/generic/{scope}/{code} | [BETA] Get a calendar in its generic form
+[**getDates**](CalendarsApi.md#getDates) | **GET** /api/calendars/generic/{scope}/{code}/dates | [BETA] Get dates for a specific calendar
+[**isBusinessDateTime**](CalendarsApi.md#isBusinessDateTime) | **GET** /api/calendars/businessday/{scope}/{code} | [BETA] Check whether a DateTime is a \&quot;Business DateTime\&quot;
+[**listCalendars**](CalendarsApi.md#listCalendars) | **GET** /api/calendars/generic | [BETA] List Calenders
+[**listCalendarsInScope**](CalendarsApi.md#listCalendarsInScope) | **GET** /api/calendars/generic/{scope} | [BETA] List all calenders in a specified scope
+[**updateCalendar**](CalendarsApi.md#updateCalendar) | **POST** /api/calendars/generic/{scope}/{code} | [BETA] Update a calendar
 
 
 <a name="addDateToCalendar"></a>
 # **addDateToCalendar**
 > CalendarDate addDateToCalendar(scope, code, createDateRequest)
 
-[EXPERIMENTAL] Add a date to a calendar
+[BETA] Add a date to a calendar
 
 Add an event to the calendar. These Events can be a maximum of 24 hours and must be specified in UTC.  A local date will be calculated by the system and applied to the calendar before processing.
 
@@ -37,7 +37,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42436");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45022");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 # **createCalendar**
 > Calendar createCalendar(createCalendarRequest)
 
-[EXPERIMENTAL] Create a calendar in its generic form
+[BETA] Create a calendar in its generic form
 
 Create a calendar in a generic form which can be used to store date events.
 
@@ -110,7 +110,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42436");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45022");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 # **deleteCalendar**
 > Calendar deleteCalendar(scope, code)
 
-[EXPERIMENTAL] Delete a calendar
+[BETA] Delete a calendar
 
 Delete a calendar and all of its respective dates
 
@@ -179,7 +179,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42436");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45022");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 # **deleteDateFromCalendar**
 > CalendarDate deleteDateFromCalendar(scope, code, dateId)
 
-[EXPERIMENTAL] Remove a date from a calendar
+[BETA] Remove a date from a calendar
 
 Remove a date from a calendar.
 
@@ -250,7 +250,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42436");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45022");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 # **getCalendar**
 > Calendar getCalendar(scope, code, asAt)
 
-[EXPERIMENTAL] Get a calendar in its generic form
+[BETA] Get a calendar in its generic form
 
 Retrieve a generic calendar by a specific ID at a point in AsAt time
 
@@ -323,7 +323,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42436");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45022");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 # **getDates**
 > ResourceListOfCalendarDate getDates(scope, code, fromEffectiveAt, toEffectiveAt, asAt, idFilter)
 
-[EXPERIMENTAL] Get dates for a specific calendar
+[BETA] Get dates for a specific calendar
 
 Get dates from a specific calendar within a specific window of effective time, at a point in AsAt time.  Providing an id filter can further refine the results.
 
@@ -396,7 +396,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42436");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45022");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 # **isBusinessDateTime**
 > IsBusinessDayResponse isBusinessDateTime(dateTime, scope, code, asAt)
 
-[EXPERIMENTAL] Check whether a DateTime is a \&quot;Business DateTime\&quot;
+[BETA] Check whether a DateTime is a \&quot;Business DateTime\&quot;
 
 A Business DateTime is defined as a point in time that:      * Does not represent a day that overlaps with the calendars WeekendMask      * If the calendar is a \&quot;Holiday Calendar\&quot; Does not overlap with any dates in the calendar      * If the calendar is a \&quot;TradingHours Calendar\&quot; Does overlap with a date in the calendar                All dates specified must be UTC and the upper bound of a calendar is not inclusive   e.g. From: 2020-12-25-00-00-00        To: 2020-12-26-00-00-00  IsBusinessDay(2020-12-26-00-00-00) &#x3D;&#x3D; false
 
@@ -475,7 +475,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42436");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45022");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 # **listCalendars**
 > PagedResourceListOfCalendar listCalendars(asAt, page, limit, filter)
 
-[EXPERIMENTAL] List Calenders
+[BETA] List Calenders
 
 List calendars at a point in AsAt time.
 
@@ -550,7 +550,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42436");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45022");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -608,7 +608,7 @@ Name | Type | Description  | Notes
 # **listCalendarsInScope**
 > PagedResourceListOfCalendar listCalendarsInScope(scope, asAt, page, start, limit, filter)
 
-[EXPERIMENTAL] List all calenders in a specified scope
+[BETA] List all calenders in a specified scope
 
 List calendars at a point in AsAt time.
 
@@ -625,7 +625,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42436");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45022");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -687,7 +687,7 @@ Name | Type | Description  | Notes
 # **updateCalendar**
 > Calendar updateCalendar(scope, code, updateCalendarRequest)
 
-[EXPERIMENTAL] Update a calendar
+[BETA] Update a calendar
 
 Update the calendars WeekendMask, SourceProvider or Properties
 
@@ -704,7 +704,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42436");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45022");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
