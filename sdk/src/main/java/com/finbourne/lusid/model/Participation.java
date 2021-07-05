@@ -141,10 +141,10 @@ public class Participation {
   }
 
    /**
-   * Collection of links.
+   * Get links
    * @return links
   **/
-  @ApiModelProperty(value = "Collection of links.")
+  @ApiModelProperty(value = "")
   public List<Link> getLinks() {
     return links;
   }
