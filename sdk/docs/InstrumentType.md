@@ -53,7 +53,5 @@
 
 * `FXSWAP` (value: `"FxSwap"`)
 
-* `FORWARDRATEAGREEMENT` (value: `"ForwardRateAgreement"`)
-
 
 
