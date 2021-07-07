@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **version** | [**Version**](Version.md) |  |  [optional]
 **displayName** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
 
 
 
