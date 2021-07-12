@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **settlementCurrencyFxRate** | **Double** | The exectuion&#39;s settlement currency rate. | 
 **counterparty** | **String** | The market entity this placement is placed with. | 
 **version** | [**Version**](Version.md) |  |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
 
 
 
