@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **strike** | **Double** | The strike of the option. | 
 **domCcy** | **String** | The domestic currency of the instrument. | 
 **fgnCcy** | **String** | The foreign currency of the FX. | 
-**premium** | [**Premium**](Premium.md) |  |  [optional]
 
 
 
