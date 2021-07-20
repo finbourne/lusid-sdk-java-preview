@@ -55,7 +55,5 @@
 
 * `FORWARDRATEAGREEMENT` (value: `"ForwardRateAgreement"`)
 
-* `SIMPLEINSTRUMENT` (value: `"SimpleInstrument"`)
-
 
 

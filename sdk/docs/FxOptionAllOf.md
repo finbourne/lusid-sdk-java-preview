@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **domCcy** | **String** | The domestic currency of the instrument. | 
 **fgnCcy** | **String** | The foreign currency of the FX. | 
 **premium** | [**Premium**](Premium.md) |  |  [optional]
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap, ForwardRateAgreement, SimpleInstrument | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap, ForwardRateAgreement | 
 
 
 
@@ -48,7 +48,6 @@ FUNDINGLEG | &quot;FundingLeg&quot;
 CROSSCURRENCYSWAP | &quot;CrossCurrencySwap&quot;
 FXSWAP | &quot;FxSwap&quot;
 FORWARDRATEAGREEMENT | &quot;ForwardRateAgreement&quot;
-SIMPLEINSTRUMENT | &quot;SimpleInstrument&quot;
 
 
 
