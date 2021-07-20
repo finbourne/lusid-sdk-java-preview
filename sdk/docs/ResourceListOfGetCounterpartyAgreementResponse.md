@@ -1,12 +1,12 @@
 
 
-# ResourceListOfGetCounterpartyResponse
+# ResourceListOfGetCounterpartyAgreementResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**values** | [**List&lt;GetCounterpartyResponse&gt;**](GetCounterpartyResponse.md) | The resources to list. | 
+**values** | [**List&lt;GetCounterpartyAgreementResponse&gt;**](GetCounterpartyAgreementResponse.md) | The resources to list. | 
 **href** | [**URI**](URI.md) | The URI of the resource list. |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
 **nextPage** | **String** | The next page of results. |  [optional]

@@ -1,26 +1,26 @@
-# CounterpartyApi
+# CounterpartiesApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:42637*
+All URIs are relative to *http://local-unit-test-server.lusid.com:34858*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteCounterparty**](CounterpartyApi.md#deleteCounterparty) | **DELETE** /api/counterparties/counterparties/counterparty/{scope}/{code} | [EXPERIMENTAL] Delete the Counterparty of given scope and code, assuming that it is present.
-[**deleteCreditSupportAnnex**](CounterpartyApi.md#deleteCreditSupportAnnex) | **DELETE** /api/counterparties/counterparties/csa/{scope}/{code} | [EXPERIMENTAL] Delete the CSA of given scope and code, assuming that it is present.
-[**getCounterparty**](CounterpartyApi.md#getCounterparty) | **GET** /api/counterparties/counterparties/counterparty/{scope}/{code} | [EXPERIMENTAL] Get Counterparty
-[**getCreditSupportAnnex**](CounterpartyApi.md#getCreditSupportAnnex) | **GET** /api/counterparties/counterparties/csa/{scope}/{code} | [EXPERIMENTAL] Get CSA
-[**listCounterparties**](CounterpartyApi.md#listCounterparties) | **GET** /api/counterparties/counterparties/counterparty | [EXPERIMENTAL] List the set of Counterparties
-[**listCreditSupportAnnexes**](CounterpartyApi.md#listCreditSupportAnnexes) | **GET** /api/counterparties/counterparties/csa | [EXPERIMENTAL] List the set of CSAs
-[**upsertCounterparty**](CounterpartyApi.md#upsertCounterparty) | **POST** /api/counterparties/counterparties/counterparty | [EXPERIMENTAL] Upsert Counterparty. This creates or updates the data in Lusid.
-[**upsertCreditSupportAnnex**](CounterpartyApi.md#upsertCreditSupportAnnex) | **POST** /api/counterparties/counterparties/csa | [EXPERIMENTAL] Upsert CSA. This creates or updates the data in Lusid.
+[**deleteCounterpartyAgreement**](CounterpartiesApi.md#deleteCounterpartyAgreement) | **DELETE** /api/counterparties/counterpartyagreements/{scope}/{code} | [EXPERIMENTAL] Delete the Counterparty Agreement of given scope and code
+[**deleteCreditSupportAnnex**](CounterpartiesApi.md#deleteCreditSupportAnnex) | **DELETE** /api/counterparties/creditsupportannexes/{scope}/{code} | [EXPERIMENTAL] Delete the Credit Support Annex of given scope and code
+[**getCounterpartyAgreement**](CounterpartiesApi.md#getCounterpartyAgreement) | **GET** /api/counterparties/counterpartyagreements/{scope}/{code} | [EXPERIMENTAL] Get Counterparty Agreement
+[**getCreditSupportAnnex**](CounterpartiesApi.md#getCreditSupportAnnex) | **GET** /api/counterparties/creditsupportannexes/{scope}/{code} | [EXPERIMENTAL] Get Credit Support Annex
+[**listCounterpartyAgreements**](CounterpartiesApi.md#listCounterpartyAgreements) | **GET** /api/counterparties/counterpartyagreements | [EXPERIMENTAL] List the set of Counterparty Agreements
+[**listCreditSupportAnnexes**](CounterpartiesApi.md#listCreditSupportAnnexes) | **GET** /api/counterparties/creditsupportannexes | [EXPERIMENTAL] List the set of Credit Support Annexes
+[**upsertCounterpartyAgreement**](CounterpartiesApi.md#upsertCounterpartyAgreement) | **POST** /api/counterparties/counterpartyagreements | [EXPERIMENTAL] Upsert Counterparty Agreement
+[**upsertCreditSupportAnnex**](CounterpartiesApi.md#upsertCreditSupportAnnex) | **POST** /api/counterparties/creditsupportannexes | [EXPERIMENTAL] Upsert Credit Support Annex
 
 
-<a name="deleteCounterparty"></a>
-# **deleteCounterparty**
-> AnnulSingleStructuredDataResponse deleteCounterparty(scope, code)
+<a name="deleteCounterpartyAgreement"></a>
+# **deleteCounterpartyAgreement**
+> AnnulSingleStructuredDataResponse deleteCounterpartyAgreement(scope, code)
 
-[EXPERIMENTAL] Delete the Counterparty of given scope and code, assuming that it is present.
+[EXPERIMENTAL] Delete the Counterparty Agreement of given scope and code
 
-Delete the specified Counterparty from a single scope.  The response will return either detail of the deleted item, or an explanation (failure) as to why this did not succeed.                It is important to always check for any unsuccessful response.
+Delete the specified Counterparty Agreement from a single scope.  The response will return either detail of the deleted item, or an explanation (failure) as to why this did not succeed.                It is important to always check for any unsuccessful response.
 
 ### Example
 ```java
@@ -30,25 +30,25 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
 import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.CounterpartyApi;
+import com.finbourne.lusid.api.CounterpartiesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42637");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34858");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    CounterpartyApi apiInstance = new CounterpartyApi(defaultClient);
-    String scope = "scope_example"; // String | The scope of the Counterparty to delete.
-    String code = "code_example"; // String | The Counterparty to delete.
+    CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the Counterparty Agreement to delete.
+    String code = "code_example"; // String | The Counterparty Agreement to delete.
     try {
-      AnnulSingleStructuredDataResponse result = apiInstance.deleteCounterparty(scope, code);
+      AnnulSingleStructuredDataResponse result = apiInstance.deleteCounterpartyAgreement(scope, code);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CounterpartyApi#deleteCounterparty");
+      System.err.println("Exception when calling CounterpartiesApi#deleteCounterpartyAgreement");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -62,8 +62,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| The scope of the Counterparty to delete. |
- **code** | **String**| The Counterparty to delete. |
+ **scope** | **String**| The scope of the Counterparty Agreement to delete. |
+ **code** | **String**| The Counterparty Agreement to delete. |
 
 ### Return type
 
@@ -89,9 +89,9 @@ Name | Type | Description  | Notes
 # **deleteCreditSupportAnnex**
 > AnnulSingleStructuredDataResponse deleteCreditSupportAnnex(scope, code)
 
-[EXPERIMENTAL] Delete the CSA of given scope and code, assuming that it is present.
+[EXPERIMENTAL] Delete the Credit Support Annex of given scope and code
 
-Delete the specified CSA from a single scope.  The response will return either detail of the deleted item, or an explanation (failure) as to why this did not succeed.                It is important to always check for any unsuccessful response.
+Delete the specified Credit Support Annex from a single scope.  The response will return either detail of the deleted item, or an explanation (failure) as to why this did not succeed.                It is important to always check for any unsuccessful response.
 
 ### Example
 ```java
@@ -101,25 +101,25 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
 import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.CounterpartyApi;
+import com.finbourne.lusid.api.CounterpartiesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42637");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34858");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    CounterpartyApi apiInstance = new CounterpartyApi(defaultClient);
-    String scope = "scope_example"; // String | The scope of the CSA to delete.
-    String code = "code_example"; // String | The CSA to delete.
+    CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the Credit Support Annex to delete.
+    String code = "code_example"; // String | The Credit Support Annex to delete.
     try {
       AnnulSingleStructuredDataResponse result = apiInstance.deleteCreditSupportAnnex(scope, code);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CounterpartyApi#deleteCreditSupportAnnex");
+      System.err.println("Exception when calling CounterpartiesApi#deleteCreditSupportAnnex");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -133,8 +133,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| The scope of the CSA to delete. |
- **code** | **String**| The CSA to delete. |
+ **scope** | **String**| The scope of the Credit Support Annex to delete. |
+ **code** | **String**| The Credit Support Annex to delete. |
 
 ### Return type
 
@@ -156,13 +156,13 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
-<a name="getCounterparty"></a>
-# **getCounterparty**
-> GetCounterpartyResponse getCounterparty(scope, code, asAt)
+<a name="getCounterpartyAgreement"></a>
+# **getCounterpartyAgreement**
+> GetCounterpartyAgreementResponse getCounterpartyAgreement(scope, code, asAt)
 
-[EXPERIMENTAL] Get Counterparty
+[EXPERIMENTAL] Get Counterparty Agreement
 
-Get a Counterparty from a single scope.  The response will return either the counterparty that has been stored, or a failure explaining why the request was unsuccessful.  It is important to always check for any unsuccessful requests (failures).
+Get a Counterparty Agreement from a single scope.  The response will return either the Counterparty Agreement that has been stored, or a failure explaining why the request was unsuccessful.  It is important to always check for any unsuccessful requests (failures).
 
 ### Example
 ```java
@@ -172,26 +172,26 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
 import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.CounterpartyApi;
+import com.finbourne.lusid.api.CounterpartiesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42637");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34858");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    CounterpartyApi apiInstance = new CounterpartyApi(defaultClient);
-    String scope = "scope_example"; // String | The scope of the Counterparty to retrieve.
-    String code = "code_example"; // String | The name of the Counterparty to retrieve the data for.
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the counterparty. Defaults to return the latest version if not specified.
+    CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the Counterparty Agreement to retrieve.
+    String code = "code_example"; // String | The name of the Counterparty Agreement to retrieve the data for.
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the Counterparty Agreement. Defaults to return the latest version if not specified.
     try {
-      GetCounterpartyResponse result = apiInstance.getCounterparty(scope, code, asAt);
+      GetCounterpartyAgreementResponse result = apiInstance.getCounterpartyAgreement(scope, code, asAt);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CounterpartyApi#getCounterparty");
+      System.err.println("Exception when calling CounterpartiesApi#getCounterpartyAgreement");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -205,13 +205,13 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| The scope of the Counterparty to retrieve. |
- **code** | **String**| The name of the Counterparty to retrieve the data for. |
- **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the counterparty. Defaults to return the latest version if not specified. | [optional]
+ **scope** | **String**| The scope of the Counterparty Agreement to retrieve. |
+ **code** | **String**| The name of the Counterparty Agreement to retrieve the data for. |
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the Counterparty Agreement. Defaults to return the latest version if not specified. | [optional]
 
 ### Return type
 
-[**GetCounterpartyResponse**](GetCounterpartyResponse.md)
+[**GetCounterpartyAgreementResponse**](GetCounterpartyAgreementResponse.md)
 
 ### Authorization
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The successfully retrieved counterparty or any failure |  -  |
+**200** | The successfully retrieved Counterparty Agreement or any failure |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
@@ -233,9 +233,9 @@ Name | Type | Description  | Notes
 # **getCreditSupportAnnex**
 > GetCreditSupportAnnexResponse getCreditSupportAnnex(scope, code, asAt)
 
-[EXPERIMENTAL] Get CSA
+[EXPERIMENTAL] Get Credit Support Annex
 
-Get a CSA from a single scope.  The response will return either the CSA that has been stored, or a failure explaining why the request was unsuccessful.  It is important to always check for any unsuccessful requests (failures).
+Get a Credit Support Annex from a single scope.  The response will return either the Credit Support Annex that has been stored, or a failure explaining why the request was unsuccessful.  It is important to always check for any unsuccessful requests (failures).
 
 ### Example
 ```java
@@ -245,26 +245,26 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
 import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.CounterpartyApi;
+import com.finbourne.lusid.api.CounterpartiesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42637");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34858");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    CounterpartyApi apiInstance = new CounterpartyApi(defaultClient);
-    String scope = "scope_example"; // String | The scope of the CSA to retrieve.
-    String code = "code_example"; // String | The name of the CSA to retrieve the data for.
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the CSA. Defaults to return the latest version if not specified.
+    CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the Credit Support Annex to retrieve.
+    String code = "code_example"; // String | The name of the Credit Support Annex to retrieve the data for.
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the Credit Support Annex . Defaults to return the latest version if not specified.
     try {
       GetCreditSupportAnnexResponse result = apiInstance.getCreditSupportAnnex(scope, code, asAt);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CounterpartyApi#getCreditSupportAnnex");
+      System.err.println("Exception when calling CounterpartiesApi#getCreditSupportAnnex");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -278,9 +278,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| The scope of the CSA to retrieve. |
- **code** | **String**| The name of the CSA to retrieve the data for. |
- **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the CSA. Defaults to return the latest version if not specified. | [optional]
+ **scope** | **String**| The scope of the Credit Support Annex to retrieve. |
+ **code** | **String**| The name of the Credit Support Annex to retrieve the data for. |
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the Credit Support Annex . Defaults to return the latest version if not specified. | [optional]
 
 ### Return type
 
@@ -302,13 +302,13 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
-<a name="listCounterparties"></a>
-# **listCounterparties**
-> ResourceListOfGetCounterpartyResponse listCounterparties(asAt)
+<a name="listCounterpartyAgreements"></a>
+# **listCounterpartyAgreements**
+> ResourceListOfGetCounterpartyAgreementResponse listCounterpartyAgreements(asAt)
 
-[EXPERIMENTAL] List the set of Counterparties
+[EXPERIMENTAL] List the set of Counterparty Agreements
 
-List the set of Counterparties at the specified AsAt date/time
+List the set of Counterparty Agreements at the specified AsAt date/time
 
 ### Example
 ```java
@@ -318,24 +318,24 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
 import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.CounterpartyApi;
+import com.finbourne.lusid.api.CounterpartiesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42637");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34858");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    CounterpartyApi apiInstance = new CounterpartyApi(defaultClient);
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to list the counterparty. Defaults to latest if not specified.
+    CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to list the Counterparty Agreements. Defaults to latest if not specified.
     try {
-      ResourceListOfGetCounterpartyResponse result = apiInstance.listCounterparties(asAt);
+      ResourceListOfGetCounterpartyAgreementResponse result = apiInstance.listCounterpartyAgreements(asAt);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CounterpartyApi#listCounterparties");
+      System.err.println("Exception when calling CounterpartiesApi#listCounterpartyAgreements");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -349,11 +349,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **asAt** | **OffsetDateTime**| The asAt datetime at which to list the counterparty. Defaults to latest if not specified. | [optional]
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to list the Counterparty Agreements. Defaults to latest if not specified. | [optional]
 
 ### Return type
 
-[**ResourceListOfGetCounterpartyResponse**](ResourceListOfGetCounterpartyResponse.md)
+[**ResourceListOfGetCounterpartyAgreementResponse**](ResourceListOfGetCounterpartyAgreementResponse.md)
 
 ### Authorization
 
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The requested counterparties |  -  |
+**200** | The requested Counterparty Agreements |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
@@ -375,9 +375,9 @@ Name | Type | Description  | Notes
 # **listCreditSupportAnnexes**
 > ResourceListOfGetCreditSupportAnnexResponse listCreditSupportAnnexes(asAt)
 
-[EXPERIMENTAL] List the set of CSAs
+[EXPERIMENTAL] List the set of Credit Support Annexes
 
-List the set of CSAs at the specified AsAt date/time
+List the set of Credit Support Annexes at the specified AsAt date/time
 
 ### Example
 ```java
@@ -387,24 +387,24 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
 import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.CounterpartyApi;
+import com.finbourne.lusid.api.CounterpartiesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42637");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34858");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    CounterpartyApi apiInstance = new CounterpartyApi(defaultClient);
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to list the CSAs. Defaults to latest if not specified.
+    CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to list the Credit Support Annexes. Defaults to latest if not specified.
     try {
       ResourceListOfGetCreditSupportAnnexResponse result = apiInstance.listCreditSupportAnnexes(asAt);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CounterpartyApi#listCreditSupportAnnexes");
+      System.err.println("Exception when calling CounterpartiesApi#listCreditSupportAnnexes");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -418,7 +418,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **asAt** | **OffsetDateTime**| The asAt datetime at which to list the CSAs. Defaults to latest if not specified. | [optional]
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to list the Credit Support Annexes. Defaults to latest if not specified. | [optional]
 
 ### Return type
 
@@ -436,17 +436,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The requested CSAs |  -  |
+**200** | The requested Credit Support Annexes |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
-<a name="upsertCounterparty"></a>
-# **upsertCounterparty**
-> UpsertSingleStructuredDataResponse upsertCounterparty(upsertCounterpartyRequest)
+<a name="upsertCounterpartyAgreement"></a>
+# **upsertCounterpartyAgreement**
+> UpsertSingleStructuredDataResponse upsertCounterpartyAgreement(upsertCounterpartyAgreementRequest)
 
-[EXPERIMENTAL] Upsert Counterparty. This creates or updates the data in Lusid.
+[EXPERIMENTAL] Upsert Counterparty Agreement
 
-Update or insert Counterparty in a single scope. An item will be updated if it already exists and inserted if it does not.                The response will return the successfully updated or inserted Counterparty or failure message if unsuccessful                It is important to always check to verify success (or failure).
+Update or insert Counterparty Agreement in a single scope. An item will be updated if it already exists and inserted if it does not.                The response will return the successfully updated or inserted Counterparty Agreement or failure message if unsuccessful                It is important to always check to verify success (or failure).
 
 ### Example
 ```java
@@ -456,24 +456,24 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
 import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.CounterpartyApi;
+import com.finbourne.lusid.api.CounterpartiesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42637");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34858");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    CounterpartyApi apiInstance = new CounterpartyApi(defaultClient);
-    UpsertCounterpartyRequest upsertCounterpartyRequest = {"counterparty":{"counterpartyId":"12345","counterpartyName":"some-bank-of-somewhere","countryOfRisk":"United States","issuerRatings":[{"ratingSource":"S&P","rating":"BB"}],"industryScheme":{"schemeName":"TRCS","schemeId":"5010201010","economicSector":"Energy","businessSector":"Energy - Fossil Fuels","industry":"Oil & Gas","industryActivity":"Integrated Oil & Gas"},"scope":"some-scope","code":"some-code"}}; // UpsertCounterpartyRequest | The Counterparty to update or insert
+    CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
+    UpsertCounterpartyAgreementRequest upsertCounterpartyAgreementRequest = {"counterpartyAgreement":{"displayName":"display-name","agreementType":"type","counterpartySignatory":{"name":"counterparty-signatory-name","legalEntityIdentifier":{"idTypeScope":"legal-identifier-idTypeScope","idTypeCode":"legal-identifier-idTypeCode","code":"legal-identifier-code"}},"datedAsOf":"2020-01-01T01:00:00.0000000+00:00","creditSupportAnnexId":{"scope":"credit-support-annex-scope","code":"credit-support-annex-code"},"id":{"scope":"some-scope","code":"some-code"}}}; // UpsertCounterpartyAgreementRequest | The Counterparty Agreement to update or insert
     try {
-      UpsertSingleStructuredDataResponse result = apiInstance.upsertCounterparty(upsertCounterpartyRequest);
+      UpsertSingleStructuredDataResponse result = apiInstance.upsertCounterpartyAgreement(upsertCounterpartyAgreementRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CounterpartyApi#upsertCounterparty");
+      System.err.println("Exception when calling CounterpartiesApi#upsertCounterpartyAgreement");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -487,7 +487,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **upsertCounterpartyRequest** | [**UpsertCounterpartyRequest**](UpsertCounterpartyRequest.md)| The Counterparty to update or insert |
+ **upsertCounterpartyAgreementRequest** | [**UpsertCounterpartyAgreementRequest**](UpsertCounterpartyAgreementRequest.md)| The Counterparty Agreement to update or insert |
 
 ### Return type
 
@@ -505,7 +505,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The successfully updated or inserted item or any failure |  -  |
+**200** | The successfully updated or inserted Counterparty Agreement or any failure |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
@@ -513,9 +513,9 @@ Name | Type | Description  | Notes
 # **upsertCreditSupportAnnex**
 > UpsertSingleStructuredDataResponse upsertCreditSupportAnnex(upsertCreditSupportAnnexRequest)
 
-[EXPERIMENTAL] Upsert CSA. This creates or updates the data in Lusid.
+[EXPERIMENTAL] Upsert Credit Support Annex
 
-Update or insert CSA in a single scope. An item will be updated if it already exists and inserted if it does not.                The response will return the successfully updated or inserted CSA or failure message if unsuccessful                It is important to always check to verify success (or failure).
+Update or insert Credit Support Annex in a single scope. An item will be updated if it already exists and inserted if it does not.                The response will return the successfully updated or inserted Credit Support Annex or failure message if unsuccessful                It is important to always check to verify success (or failure).
 
 ### Example
 ```java
@@ -525,24 +525,24 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
 import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.CounterpartyApi;
+import com.finbourne.lusid.api.CounterpartiesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42637");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34858");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    CounterpartyApi apiInstance = new CounterpartyApi(defaultClient);
-    UpsertCreditSupportAnnexRequest upsertCreditSupportAnnexRequest = {"creditSupportAnnex":{"referenceCurrency":"GBP","collateralCurrencies":["GBP"],"isdaAgreementVersion":"ISDA2002","marginCallFrequency":"1W","valuationAgent":"Institution","thresholdAmount":0,"roundingDecimalPlaces":2,"initialMarginAmount":100000,"minimumTransferAmount":10000,"scope":"some-scope","code":"some-code"}}; // UpsertCreditSupportAnnexRequest | The CSA to update or insert
+    CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
+    UpsertCreditSupportAnnexRequest upsertCreditSupportAnnexRequest = {"creditSupportAnnex":{"referenceCurrency":"GBP","collateralCurrencies":["GBP"],"isdaAgreementVersion":"ISDA2002","marginCallFrequency":"1W","valuationAgent":"Institution","thresholdAmount":0,"roundingDecimalPlaces":2,"initialMarginAmount":100000,"minimumTransferAmount":10000,"id":{"scope":"some-scope","code":"some-code"}}}; // UpsertCreditSupportAnnexRequest | The Credit Support Annex to update or insert
     try {
       UpsertSingleStructuredDataResponse result = apiInstance.upsertCreditSupportAnnex(upsertCreditSupportAnnexRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CounterpartyApi#upsertCreditSupportAnnex");
+      System.err.println("Exception when calling CounterpartiesApi#upsertCreditSupportAnnex");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -556,7 +556,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **upsertCreditSupportAnnexRequest** | [**UpsertCreditSupportAnnexRequest**](UpsertCreditSupportAnnexRequest.md)| The CSA to update or insert |
+ **upsertCreditSupportAnnexRequest** | [**UpsertCreditSupportAnnexRequest**](UpsertCreditSupportAnnexRequest.md)| The Credit Support Annex to update or insert |
 
 ### Return type
 
