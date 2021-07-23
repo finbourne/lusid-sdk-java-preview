@@ -1,9 +1,10 @@
 # CalendarsApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://local-unit-test-server.lusid.com:36238*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addBusinessDaysToDate**](CalendarsApi.md#addBusinessDaysToDate) | **POST** /api/calendars/businessday/{scope}/add | [EXPERIMENTAL] Adds the requested number of Business Days to the provided date.
 [**addDateToCalendar**](CalendarsApi.md#addDateToCalendar) | **PUT** /api/calendars/generic/{scope}/{code}/dates | [BETA] Add a date to a calendar
 [**createCalendar**](CalendarsApi.md#createCalendar) | **POST** /api/calendars/generic | [BETA] Create a calendar in its generic form
 [**deleteCalendar**](CalendarsApi.md#deleteCalendar) | **DELETE** /api/calendars/generic/{scope}/{code} | [BETA] Delete a calendar
@@ -15,6 +16,77 @@ Method | HTTP request | Description
 [**listCalendarsInScope**](CalendarsApi.md#listCalendarsInScope) | **GET** /api/calendars/generic/{scope} | [BETA] List all calenders in a specified scope
 [**updateCalendar**](CalendarsApi.md#updateCalendar) | **POST** /api/calendars/generic/{scope}/{code} | [BETA] Update a calendar
 
+
+<a name="addBusinessDaysToDate"></a>
+# **addBusinessDaysToDate**
+> AddBusinessDaysToDateResponse addBusinessDaysToDate(scope, addBusinessDaysToDateRequest)
+
+[EXPERIMENTAL] Adds the requested number of Business Days to the provided date.
+
+A Business day is defined as a point in time that:      * Does not represent a day in the calendar&#39;s weekend      * Does not represent a day in the calendar&#39;s list of holidays (e.g. Christmas Day in the UK)                 All dates specified must be UTC and the upper bound of a calendar is not inclusive                 e.g. From: 2020-12-24-00-00-00:       Adding 3 business days returns 2020-12-30, assuming Saturday and Sunday are weekends, and the 25th and 28th are holidays.       Adding -2 business days returns 2020-12-22 under the same assumptions.                If the provided number of days to add is zero, returns a failure.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CalendarsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36238");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    CalendarsApi apiInstance = new CalendarsApi(defaultClient);
+    String scope = "scope_example"; // String | Scope within which to search for the calendars
+    AddBusinessDaysToDateRequest addBusinessDaysToDateRequest = {"businessDayOffset":5,"holidayCodes":["GBP"],"startDate":"2020-02-10T00:00:00.0000000+00:00"}; // AddBusinessDaysToDateRequest | Request Details: start date, number of days to add (which can be negative, but not zero), calendar codes and optionally an AsAt date for searching the calendar store
+    try {
+      AddBusinessDaysToDateResponse result = apiInstance.addBusinessDaysToDate(scope, addBusinessDaysToDateRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CalendarsApi#addBusinessDaysToDate");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| Scope within which to search for the calendars |
+ **addBusinessDaysToDateRequest** | [**AddBusinessDaysToDateRequest**](AddBusinessDaysToDateRequest.md)| Request Details: start date, number of days to add (which can be negative, but not zero), calendar codes and optionally an AsAt date for searching the calendar store |
+
+### Return type
+
+[**AddBusinessDaysToDateResponse**](AddBusinessDaysToDateResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The business day that is a number of business days after the given date as determined by the given calendar codes |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
 
 <a name="addDateToCalendar"></a>
 # **addDateToCalendar**
@@ -37,7 +109,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -110,7 +182,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -179,7 +251,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -250,7 +322,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -323,7 +395,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -396,7 +468,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -475,7 +547,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -550,7 +622,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -625,7 +697,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -704,7 +776,7 @@ import com.finbourne.lusid.api.CalendarsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
