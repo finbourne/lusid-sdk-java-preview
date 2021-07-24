@@ -28,7 +28,7 @@ import java.io.IOException;
  * The market quote for an observable which will be used to calibrate the market data,  including the format of the quote.  e.g. a volatility quote for a specific strike and expiry  the par rate of a swap                This is a slimmed down version of a full Quote that can be stored in our QuoteStore to  remove lineage, price source etc. for ease of use when creating complex market data.
  */
 @ApiModel(description = "The market quote for an observable which will be used to calibrate the market data,  including the format of the quote.  e.g. a volatility quote for a specific strike and expiry  the par rate of a swap                This is a slimmed down version of a full Quote that can be stored in our QuoteStore to  remove lineage, price source etc. for ease of use when creating complex market data.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class MarketQuote {
   /**
    * The available values are: Price, Spread, Rate, LogNormalVol, NormalVol, ParSpread, IsdaSpread, Upfront
@@ -83,7 +83,7 @@ public class MarketQuote {
 
       @Override
       public QuoteTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return QuoteTypeEnum.fromValue(value);
       }
     }
@@ -97,8 +97,9 @@ public class MarketQuote {
   @SerializedName(SERIALIZED_NAME_VALUE)
   private Double value;
 
+
   public MarketQuote quoteType(QuoteTypeEnum quoteType) {
-    this.quoteType = quoteType;
+    this.quoteType = quoteType; 
     return this;
   }
 
@@ -115,8 +116,9 @@ public class MarketQuote {
     this.quoteType = quoteType;
   }
 
+
   public MarketQuote value(Double value) {
-    this.value = value;
+    this.value = value; 
     return this;
   }
 
@@ -135,7 +137,7 @@ public class MarketQuote {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -147,9 +149,8 @@ public class MarketQuote {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -165,7 +166,7 @@ public class MarketQuote {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -37,11 +37,11 @@ import java.util.List;
  * Specification object for the parameters of an inline valuation
  */
 @ApiModel(description = "Specification object for the parameters of an inline valuation")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class InlineValuationRequest {
   public static final String SERIALIZED_NAME_RECIPE_ID = "recipeId";
   @SerializedName(SERIALIZED_NAME_RECIPE_ID)
-  private ResourceId recipeId = null;
+  private ResourceId recipeId;
 
   public static final String SERIALIZED_NAME_AS_AT = "asAt";
   @SerializedName(SERIALIZED_NAME_AS_AT)
@@ -53,15 +53,15 @@ public class InlineValuationRequest {
 
   public static final String SERIALIZED_NAME_GROUP_BY = "groupBy";
   @SerializedName(SERIALIZED_NAME_GROUP_BY)
-  private List<String> groupBy = new ArrayList<>();
+  private List<String> groupBy = null;
 
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
-  private List<PropertyFilter> filters = new ArrayList<>();
+  private List<PropertyFilter> filters = null;
 
   public static final String SERIALIZED_NAME_SORT = "sort";
   @SerializedName(SERIALIZED_NAME_SORT)
-  private List<OrderBySpec> sort = new ArrayList<>();
+  private List<OrderBySpec> sort = null;
 
   public static final String SERIALIZED_NAME_REPORT_CURRENCY = "reportCurrency";
   @SerializedName(SERIALIZED_NAME_REPORT_CURRENCY)
@@ -73,14 +73,15 @@ public class InlineValuationRequest {
 
   public static final String SERIALIZED_NAME_VALUATION_SCHEDULE = "valuationSchedule";
   @SerializedName(SERIALIZED_NAME_VALUATION_SCHEDULE)
-  private ValuationSchedule valuationSchedule = null;
+  private ValuationSchedule valuationSchedule;
 
   public static final String SERIALIZED_NAME_INSTRUMENTS = "instruments";
   @SerializedName(SERIALIZED_NAME_INSTRUMENTS)
   private List<WeightedInstrument> instruments = new ArrayList<>();
 
+
   public InlineValuationRequest recipeId(ResourceId recipeId) {
-    this.recipeId = recipeId;
+    this.recipeId = recipeId; 
     return this;
   }
 
@@ -97,8 +98,9 @@ public class InlineValuationRequest {
     this.recipeId = recipeId;
   }
 
+
   public InlineValuationRequest asAt(OffsetDateTime asAt) {
-    this.asAt = asAt;
+    this.asAt = asAt; 
     return this;
   }
 
@@ -115,12 +117,14 @@ public class InlineValuationRequest {
     this.asAt = asAt;
   }
 
+
   public InlineValuationRequest metrics(List<AggregateSpec> metrics) {
-    this.metrics = metrics;
+    this.metrics = metrics; 
     return this;
   }
 
   public InlineValuationRequest addMetricsItem(AggregateSpec metricsItem) {
+   
     this.metrics.add(metricsItem);
     return this;
   }
@@ -138,12 +142,14 @@ public class InlineValuationRequest {
     this.metrics = metrics;
   }
 
+
   public InlineValuationRequest groupBy(List<String> groupBy) {
-    this.groupBy = groupBy;
+    this.groupBy = groupBy; 
     return this;
   }
 
   public InlineValuationRequest addGroupByItem(String groupByItem) {
+   
     if (this.groupBy == null) {
       this.groupBy = new ArrayList<>();
     }
@@ -164,12 +170,14 @@ public class InlineValuationRequest {
     this.groupBy = groupBy;
   }
 
+
   public InlineValuationRequest filters(List<PropertyFilter> filters) {
-    this.filters = filters;
+    this.filters = filters; 
     return this;
   }
 
   public InlineValuationRequest addFiltersItem(PropertyFilter filtersItem) {
+   
     if (this.filters == null) {
       this.filters = new ArrayList<>();
     }
@@ -190,12 +198,14 @@ public class InlineValuationRequest {
     this.filters = filters;
   }
 
+
   public InlineValuationRequest sort(List<OrderBySpec> sort) {
-    this.sort = sort;
+    this.sort = sort; 
     return this;
   }
 
   public InlineValuationRequest addSortItem(OrderBySpec sortItem) {
+   
     if (this.sort == null) {
       this.sort = new ArrayList<>();
     }
@@ -216,8 +226,9 @@ public class InlineValuationRequest {
     this.sort = sort;
   }
 
+
   public InlineValuationRequest reportCurrency(String reportCurrency) {
-    this.reportCurrency = reportCurrency;
+    this.reportCurrency = reportCurrency; 
     return this;
   }
 
@@ -234,8 +245,9 @@ public class InlineValuationRequest {
     this.reportCurrency = reportCurrency;
   }
 
+
   public InlineValuationRequest equipWithSubtotals(Boolean equipWithSubtotals) {
-    this.equipWithSubtotals = equipWithSubtotals;
+    this.equipWithSubtotals = equipWithSubtotals; 
     return this;
   }
 
@@ -252,8 +264,9 @@ public class InlineValuationRequest {
     this.equipWithSubtotals = equipWithSubtotals;
   }
 
+
   public InlineValuationRequest valuationSchedule(ValuationSchedule valuationSchedule) {
-    this.valuationSchedule = valuationSchedule;
+    this.valuationSchedule = valuationSchedule; 
     return this;
   }
 
@@ -270,12 +283,14 @@ public class InlineValuationRequest {
     this.valuationSchedule = valuationSchedule;
   }
 
+
   public InlineValuationRequest instruments(List<WeightedInstrument> instruments) {
-    this.instruments = instruments;
+    this.instruments = instruments; 
     return this;
   }
 
   public InlineValuationRequest addInstrumentsItem(WeightedInstrument instrumentsItem) {
+   
     this.instruments.add(instrumentsItem);
     return this;
   }
@@ -295,7 +310,7 @@ public class InlineValuationRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -307,9 +322,8 @@ public class InlineValuationRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -333,7 +347,7 @@ public class InlineValuationRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

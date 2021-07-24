@@ -30,7 +30,7 @@ import java.time.OffsetDateTime;
 /**
  * FloatingLegAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FloatingLegAllOf {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -42,7 +42,7 @@ public class FloatingLegAllOf {
 
   public static final String SERIALIZED_NAME_LEG_DEFINITION = "legDefinition";
   @SerializedName(SERIALIZED_NAME_LEG_DEFINITION)
-  private LegDefinition legDefinition = null;
+  private LegDefinition legDefinition;
 
   public static final String SERIALIZED_NAME_NOTIONAL = "notional";
   @SerializedName(SERIALIZED_NAME_NOTIONAL)
@@ -50,7 +50,7 @@ public class FloatingLegAllOf {
 
   public static final String SERIALIZED_NAME_OVERRIDES = "overrides";
   @SerializedName(SERIALIZED_NAME_OVERRIDES)
-  private FixedLegAllOfOverrides overrides = null;
+  private FixedLegAllOfOverrides overrides;
 
   /**
    * The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap, ForwardRateAgreement, SimpleInstrument
@@ -141,7 +141,7 @@ public class FloatingLegAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -151,8 +151,9 @@ public class FloatingLegAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public FloatingLegAllOf startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -169,8 +170,9 @@ public class FloatingLegAllOf {
     this.startDate = startDate;
   }
 
+
   public FloatingLegAllOf maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -187,8 +189,9 @@ public class FloatingLegAllOf {
     this.maturityDate = maturityDate;
   }
 
+
   public FloatingLegAllOf legDefinition(LegDefinition legDefinition) {
-    this.legDefinition = legDefinition;
+    this.legDefinition = legDefinition; 
     return this;
   }
 
@@ -205,8 +208,9 @@ public class FloatingLegAllOf {
     this.legDefinition = legDefinition;
   }
 
+
   public FloatingLegAllOf notional(Double notional) {
-    this.notional = notional;
+    this.notional = notional; 
     return this;
   }
 
@@ -223,8 +227,9 @@ public class FloatingLegAllOf {
     this.notional = notional;
   }
 
+
   public FloatingLegAllOf overrides(FixedLegAllOfOverrides overrides) {
-    this.overrides = overrides;
+    this.overrides = overrides; 
     return this;
   }
 
@@ -241,8 +246,9 @@ public class FloatingLegAllOf {
     this.overrides = overrides;
   }
 
+
   public FloatingLegAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -261,7 +267,7 @@ public class FloatingLegAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -273,9 +279,8 @@ public class FloatingLegAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -295,7 +300,7 @@ public class FloatingLegAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

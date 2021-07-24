@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * UpsertPersonRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpsertPersonRequest {
   public static final String SERIALIZED_NAME_IDENTIFIERS = "identifiers";
   @SerializedName(SERIALIZED_NAME_IDENTIFIERS)
@@ -39,7 +39,7 @@ public class UpsertPersonRequest {
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, List<Property>> properties = new HashMap<>();
+  private Map<String, List<Property>> properties = null;
 
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
@@ -49,8 +49,9 @@ public class UpsertPersonRequest {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
+
   public UpsertPersonRequest identifiers(Map<String, Property> identifiers) {
-    this.identifiers = identifiers;
+    this.identifiers = identifiers; 
     return this;
   }
 
@@ -72,8 +73,9 @@ public class UpsertPersonRequest {
     this.identifiers = identifiers;
   }
 
+
   public UpsertPersonRequest properties(Map<String, List<Property>> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
@@ -98,8 +100,9 @@ public class UpsertPersonRequest {
     this.properties = properties;
   }
 
+
   public UpsertPersonRequest displayName(String displayName) {
-    this.displayName = displayName;
+    this.displayName = displayName; 
     return this;
   }
 
@@ -116,8 +119,9 @@ public class UpsertPersonRequest {
     this.displayName = displayName;
   }
 
+
   public UpsertPersonRequest description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -136,7 +140,7 @@ public class UpsertPersonRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -148,9 +152,8 @@ public class UpsertPersonRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -168,7 +171,7 @@ public class UpsertPersonRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

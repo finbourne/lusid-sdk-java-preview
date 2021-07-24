@@ -2,6 +2,8 @@
 
 # OrderInstructionRequest
 
+A request to create or update a Order Instruction.
+
 ## Properties
 
 Name | Type | Description | Notes

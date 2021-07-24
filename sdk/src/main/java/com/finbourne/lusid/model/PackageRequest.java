@@ -34,11 +34,11 @@ import java.util.Map;
  * A request to create or update a Package.
  */
 @ApiModel(description = "A request to create or update a Package.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PackageRequest {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
 
   public static final String SERIALIZED_NAME_ORDER_IDS = "orderIds";
   @SerializedName(SERIALIZED_NAME_ORDER_IDS)
@@ -50,10 +50,11 @@ public class PackageRequest {
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = new HashMap<>();
+  private Map<String, PerpetualProperty> properties = null;
+
 
   public PackageRequest id(ResourceId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -70,12 +71,14 @@ public class PackageRequest {
     this.id = id;
   }
 
+
   public PackageRequest orderIds(List<ResourceId> orderIds) {
-    this.orderIds = orderIds;
+    this.orderIds = orderIds; 
     return this;
   }
 
   public PackageRequest addOrderIdsItem(ResourceId orderIdsItem) {
+   
     this.orderIds.add(orderIdsItem);
     return this;
   }
@@ -93,12 +96,14 @@ public class PackageRequest {
     this.orderIds = orderIds;
   }
 
+
   public PackageRequest orderInstructionIds(List<ResourceId> orderInstructionIds) {
-    this.orderInstructionIds = orderInstructionIds;
+    this.orderInstructionIds = orderInstructionIds; 
     return this;
   }
 
   public PackageRequest addOrderInstructionIdsItem(ResourceId orderInstructionIdsItem) {
+   
     this.orderInstructionIds.add(orderInstructionIdsItem);
     return this;
   }
@@ -116,8 +121,9 @@ public class PackageRequest {
     this.orderInstructionIds = orderInstructionIds;
   }
 
+
   public PackageRequest properties(Map<String, PerpetualProperty> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
@@ -144,7 +150,7 @@ public class PackageRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -156,9 +162,8 @@ public class PackageRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -176,7 +181,7 @@ public class PackageRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

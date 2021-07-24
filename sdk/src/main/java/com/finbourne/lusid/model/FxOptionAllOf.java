@@ -29,7 +29,7 @@ import java.time.OffsetDateTime;
 /**
  * FxOptionAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FxOptionAllOf {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -65,7 +65,7 @@ public class FxOptionAllOf {
 
   public static final String SERIALIZED_NAME_PREMIUM = "premium";
   @SerializedName(SERIALIZED_NAME_PREMIUM)
-  private Premium premium = null;
+  private Premium premium;
 
   /**
    * The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap, ForwardRateAgreement, SimpleInstrument
@@ -156,7 +156,7 @@ public class FxOptionAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -166,8 +166,9 @@ public class FxOptionAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public FxOptionAllOf startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -184,8 +185,9 @@ public class FxOptionAllOf {
     this.startDate = startDate;
   }
 
+
   public FxOptionAllOf optionMaturityDate(OffsetDateTime optionMaturityDate) {
-    this.optionMaturityDate = optionMaturityDate;
+    this.optionMaturityDate = optionMaturityDate; 
     return this;
   }
 
@@ -202,8 +204,9 @@ public class FxOptionAllOf {
     this.optionMaturityDate = optionMaturityDate;
   }
 
+
   public FxOptionAllOf optionSettlementDate(OffsetDateTime optionSettlementDate) {
-    this.optionSettlementDate = optionSettlementDate;
+    this.optionSettlementDate = optionSettlementDate; 
     return this;
   }
 
@@ -220,8 +223,9 @@ public class FxOptionAllOf {
     this.optionSettlementDate = optionSettlementDate;
   }
 
+
   public FxOptionAllOf isDeliveryNotCash(Boolean isDeliveryNotCash) {
-    this.isDeliveryNotCash = isDeliveryNotCash;
+    this.isDeliveryNotCash = isDeliveryNotCash; 
     return this;
   }
 
@@ -238,8 +242,9 @@ public class FxOptionAllOf {
     this.isDeliveryNotCash = isDeliveryNotCash;
   }
 
+
   public FxOptionAllOf isCallNotPut(Boolean isCallNotPut) {
-    this.isCallNotPut = isCallNotPut;
+    this.isCallNotPut = isCallNotPut; 
     return this;
   }
 
@@ -256,8 +261,9 @@ public class FxOptionAllOf {
     this.isCallNotPut = isCallNotPut;
   }
 
+
   public FxOptionAllOf strike(Double strike) {
-    this.strike = strike;
+    this.strike = strike; 
     return this;
   }
 
@@ -274,8 +280,9 @@ public class FxOptionAllOf {
     this.strike = strike;
   }
 
+
   public FxOptionAllOf domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -292,8 +299,9 @@ public class FxOptionAllOf {
     this.domCcy = domCcy;
   }
 
+
   public FxOptionAllOf fgnCcy(String fgnCcy) {
-    this.fgnCcy = fgnCcy;
+    this.fgnCcy = fgnCcy; 
     return this;
   }
 
@@ -310,8 +318,9 @@ public class FxOptionAllOf {
     this.fgnCcy = fgnCcy;
   }
 
+
   public FxOptionAllOf premium(Premium premium) {
-    this.premium = premium;
+    this.premium = premium; 
     return this;
   }
 
@@ -328,8 +337,9 @@ public class FxOptionAllOf {
     this.premium = premium;
   }
 
+
   public FxOptionAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -348,7 +358,7 @@ public class FxOptionAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -360,9 +370,8 @@ public class FxOptionAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -386,7 +395,7 @@ public class FxOptionAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

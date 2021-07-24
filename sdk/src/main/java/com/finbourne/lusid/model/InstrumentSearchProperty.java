@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * InstrumentSearchProperty
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class InstrumentSearchProperty {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -37,8 +37,9 @@ public class InstrumentSearchProperty {
   @SerializedName(SERIALIZED_NAME_VALUE)
   private String value;
 
+
   public InstrumentSearchProperty key(String key) {
-    this.key = key;
+    this.key = key; 
     return this;
   }
 
@@ -55,8 +56,9 @@ public class InstrumentSearchProperty {
     this.key = key;
   }
 
+
   public InstrumentSearchProperty value(String value) {
-    this.value = value;
+    this.value = value; 
     return this;
   }
 
@@ -75,7 +77,7 @@ public class InstrumentSearchProperty {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -87,9 +89,8 @@ public class InstrumentSearchProperty {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -105,7 +106,7 @@ public class InstrumentSearchProperty {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

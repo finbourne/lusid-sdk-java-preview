@@ -35,7 +35,7 @@ import java.util.Map;
 /**
  * GetFlowConventionsResponse
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class GetFlowConventionsResponse {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -43,18 +43,19 @@ public class GetFlowConventionsResponse {
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private FlowConventions value = null;
+  private FlowConventions value;
 
   public static final String SERIALIZED_NAME_FAILED = "failed";
   @SerializedName(SERIALIZED_NAME_FAILED)
-  private Map<String, ErrorDetail> failed = new HashMap<>();
+  private Map<String, ErrorDetail> failed = null;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public GetFlowConventionsResponse href(URI href) {
-    this.href = href;
+    this.href = href; 
     return this;
   }
 
@@ -71,8 +72,9 @@ public class GetFlowConventionsResponse {
     this.href = href;
   }
 
+
   public GetFlowConventionsResponse value(FlowConventions value) {
-    this.value = value;
+    this.value = value; 
     return this;
   }
 
@@ -89,8 +91,9 @@ public class GetFlowConventionsResponse {
     this.value = value;
   }
 
+
   public GetFlowConventionsResponse failed(Map<String, ErrorDetail> failed) {
-    this.failed = failed;
+    this.failed = failed; 
     return this;
   }
 
@@ -115,12 +118,14 @@ public class GetFlowConventionsResponse {
     this.failed = failed;
   }
 
+
   public GetFlowConventionsResponse links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public GetFlowConventionsResponse addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -143,7 +148,7 @@ public class GetFlowConventionsResponse {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -155,9 +160,8 @@ public class GetFlowConventionsResponse {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -175,7 +179,7 @@ public class GetFlowConventionsResponse {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

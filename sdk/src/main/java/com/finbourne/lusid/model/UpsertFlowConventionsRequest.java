@@ -29,14 +29,15 @@ import java.io.IOException;
  * Flow conventions that is to be stored in the convention data store.  Only one of these must be present.
  */
 @ApiModel(description = "Flow conventions that is to be stored in the convention data store.  Only one of these must be present.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpsertFlowConventionsRequest {
   public static final String SERIALIZED_NAME_FLOW_CONVENTIONS = "flowConventions";
   @SerializedName(SERIALIZED_NAME_FLOW_CONVENTIONS)
-  private FlowConventions flowConventions = null;
+  private FlowConventions flowConventions;
+
 
   public UpsertFlowConventionsRequest flowConventions(FlowConventions flowConventions) {
-    this.flowConventions = flowConventions;
+    this.flowConventions = flowConventions; 
     return this;
   }
 
@@ -55,7 +56,7 @@ public class UpsertFlowConventionsRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -67,9 +68,8 @@ public class UpsertFlowConventionsRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -84,7 +84,7 @@ public class UpsertFlowConventionsRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

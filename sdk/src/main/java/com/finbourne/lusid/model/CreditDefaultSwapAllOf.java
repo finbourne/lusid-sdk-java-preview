@@ -31,7 +31,7 @@ import java.time.OffsetDateTime;
 /**
  * CreditDefaultSwapAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreditDefaultSwapAllOf {
   public static final String SERIALIZED_NAME_TICKER = "ticker";
   @SerializedName(SERIALIZED_NAME_TICKER)
@@ -47,7 +47,7 @@ public class CreditDefaultSwapAllOf {
 
   public static final String SERIALIZED_NAME_FLOW_CONVENTIONS = "flowConventions";
   @SerializedName(SERIALIZED_NAME_FLOW_CONVENTIONS)
-  private CdsFlowConventions flowConventions = null;
+  private CdsFlowConventions flowConventions;
 
   public static final String SERIALIZED_NAME_COUPON_RATE = "couponRate";
   @SerializedName(SERIALIZED_NAME_COUPON_RATE)
@@ -55,11 +55,11 @@ public class CreditDefaultSwapAllOf {
 
   public static final String SERIALIZED_NAME_CONVENTION_NAME = "conventionName";
   @SerializedName(SERIALIZED_NAME_CONVENTION_NAME)
-  private FlowConventionName conventionName = null;
+  private FlowConventionName conventionName;
 
   public static final String SERIALIZED_NAME_PROTECTION_DETAIL_SPECIFICATION = "protectionDetailSpecification";
   @SerializedName(SERIALIZED_NAME_PROTECTION_DETAIL_SPECIFICATION)
-  private CdsProtectionDetailSpecification protectionDetailSpecification = null;
+  private CdsProtectionDetailSpecification protectionDetailSpecification;
 
   /**
    * The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap, ForwardRateAgreement, SimpleInstrument
@@ -150,7 +150,7 @@ public class CreditDefaultSwapAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -160,8 +160,9 @@ public class CreditDefaultSwapAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public CreditDefaultSwapAllOf ticker(String ticker) {
-    this.ticker = ticker;
+    this.ticker = ticker; 
     return this;
   }
 
@@ -178,8 +179,9 @@ public class CreditDefaultSwapAllOf {
     this.ticker = ticker;
   }
 
+
   public CreditDefaultSwapAllOf startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -196,8 +198,9 @@ public class CreditDefaultSwapAllOf {
     this.startDate = startDate;
   }
 
+
   public CreditDefaultSwapAllOf maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -214,8 +217,9 @@ public class CreditDefaultSwapAllOf {
     this.maturityDate = maturityDate;
   }
 
+
   public CreditDefaultSwapAllOf flowConventions(CdsFlowConventions flowConventions) {
-    this.flowConventions = flowConventions;
+    this.flowConventions = flowConventions; 
     return this;
   }
 
@@ -232,8 +236,9 @@ public class CreditDefaultSwapAllOf {
     this.flowConventions = flowConventions;
   }
 
+
   public CreditDefaultSwapAllOf couponRate(Double couponRate) {
-    this.couponRate = couponRate;
+    this.couponRate = couponRate; 
     return this;
   }
 
@@ -250,8 +255,9 @@ public class CreditDefaultSwapAllOf {
     this.couponRate = couponRate;
   }
 
+
   public CreditDefaultSwapAllOf conventionName(FlowConventionName conventionName) {
-    this.conventionName = conventionName;
+    this.conventionName = conventionName; 
     return this;
   }
 
@@ -268,8 +274,9 @@ public class CreditDefaultSwapAllOf {
     this.conventionName = conventionName;
   }
 
+
   public CreditDefaultSwapAllOf protectionDetailSpecification(CdsProtectionDetailSpecification protectionDetailSpecification) {
-    this.protectionDetailSpecification = protectionDetailSpecification;
+    this.protectionDetailSpecification = protectionDetailSpecification; 
     return this;
   }
 
@@ -286,8 +293,9 @@ public class CreditDefaultSwapAllOf {
     this.protectionDetailSpecification = protectionDetailSpecification;
   }
 
+
   public CreditDefaultSwapAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -306,7 +314,7 @@ public class CreditDefaultSwapAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -318,9 +326,8 @@ public class CreditDefaultSwapAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -342,7 +349,7 @@ public class CreditDefaultSwapAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -28,7 +28,7 @@ import java.io.IOException;
  * What is the provenance of an instrument. This defines who creates/owns it, what format it is in (e.g. a proprietary format or a common and known one)              and what the version of that is.
  */
 @ApiModel(description = "What is the provenance of an instrument. This defines who creates/owns it, what format it is in (e.g. a proprietary format or a common and known one)              and what the version of that is.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class InstrumentDefinitionFormat {
   public static final String SERIALIZED_NAME_SOURCE_SYSTEM = "sourceSystem";
   @SerializedName(SERIALIZED_NAME_SOURCE_SYSTEM)
@@ -42,8 +42,9 @@ public class InstrumentDefinitionFormat {
   @SerializedName(SERIALIZED_NAME_VERSION)
   private String version;
 
+
   public InstrumentDefinitionFormat sourceSystem(String sourceSystem) {
-    this.sourceSystem = sourceSystem;
+    this.sourceSystem = sourceSystem; 
     return this;
   }
 
@@ -60,8 +61,9 @@ public class InstrumentDefinitionFormat {
     this.sourceSystem = sourceSystem;
   }
 
+
   public InstrumentDefinitionFormat vendor(String vendor) {
-    this.vendor = vendor;
+    this.vendor = vendor; 
     return this;
   }
 
@@ -78,8 +80,9 @@ public class InstrumentDefinitionFormat {
     this.vendor = vendor;
   }
 
+
   public InstrumentDefinitionFormat version(String version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -98,7 +101,7 @@ public class InstrumentDefinitionFormat {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -110,9 +113,8 @@ public class InstrumentDefinitionFormat {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -129,7 +131,7 @@ public class InstrumentDefinitionFormat {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

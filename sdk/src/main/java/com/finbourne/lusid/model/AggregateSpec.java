@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * AggregateSpec
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class AggregateSpec {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -84,7 +84,7 @@ public class AggregateSpec {
 
       @Override
       public OpEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return OpEnum.fromValue(value);
       }
     }
@@ -94,8 +94,9 @@ public class AggregateSpec {
   @SerializedName(SERIALIZED_NAME_OP)
   private OpEnum op;
 
+
   public AggregateSpec key(String key) {
-    this.key = key;
+    this.key = key; 
     return this;
   }
 
@@ -112,8 +113,9 @@ public class AggregateSpec {
     this.key = key;
   }
 
+
   public AggregateSpec op(OpEnum op) {
-    this.op = op;
+    this.op = op; 
     return this;
   }
 
@@ -132,7 +134,7 @@ public class AggregateSpec {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -144,9 +146,8 @@ public class AggregateSpec {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -162,7 +163,7 @@ public class AggregateSpec {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

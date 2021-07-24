@@ -31,7 +31,7 @@ import java.time.OffsetDateTime;
  * Cash Instrument; LUSID representation of a perpetual cash instrument.
  */
 @ApiModel(description = "Cash Instrument; LUSID representation of a perpetual cash instrument.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CashPerpetual extends LusidInstrument {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -45,8 +45,12 @@ public class CashPerpetual extends LusidInstrument {
   @SerializedName(SERIALIZED_NAME_PRINCIPAL)
   private Double principal;
 
+  public CashPerpetual() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
+
   public CashPerpetual startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -63,8 +67,9 @@ public class CashPerpetual extends LusidInstrument {
     this.startDate = startDate;
   }
 
+
   public CashPerpetual domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -81,8 +86,9 @@ public class CashPerpetual extends LusidInstrument {
     this.domCcy = domCcy;
   }
 
+
   public CashPerpetual principal(Double principal) {
-    this.principal = principal;
+    this.principal = principal; 
     return this;
   }
 
@@ -101,7 +107,7 @@ public class CashPerpetual extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -113,9 +119,8 @@ public class CashPerpetual extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -133,7 +138,7 @@ public class CashPerpetual extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

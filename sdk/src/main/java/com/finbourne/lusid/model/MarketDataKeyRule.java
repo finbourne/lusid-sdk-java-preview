@@ -29,7 +29,7 @@ import java.time.OffsetDateTime;
  * A market data key rule describes a mapping for satisfying a particular market dependency. The supplier, scope, quote type and price side  information define the quote in the market and which Vendor for market data would be used to perform the lookup.  The market data key defines what dependency this satisfies. The key is a rule that describes the asset class, its identifier and any other  specifics required to uniquely describe a specific economic entity (e.g. an Fx currency pair, equity name or credit curve).
  */
 @ApiModel(description = "A market data key rule describes a mapping for satisfying a particular market dependency. The supplier, scope, quote type and price side  information define the quote in the market and which Vendor for market data would be used to perform the lookup.  The market data key defines what dependency this satisfies. The key is a rule that describes the asset class, its identifier and any other  specifics required to uniquely describe a specific economic entity (e.g. an Fx currency pair, equity name or credit curve).")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class MarketDataKeyRule {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -96,7 +96,7 @@ public class MarketDataKeyRule {
 
       @Override
       public QuoteTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return QuoteTypeEnum.fromValue(value);
       }
     }
@@ -126,8 +126,9 @@ public class MarketDataKeyRule {
   @SerializedName(SERIALIZED_NAME_MASK)
   private String mask;
 
+
   public MarketDataKeyRule key(String key) {
-    this.key = key;
+    this.key = key; 
     return this;
   }
 
@@ -144,8 +145,9 @@ public class MarketDataKeyRule {
     this.key = key;
   }
 
+
   public MarketDataKeyRule supplier(String supplier) {
-    this.supplier = supplier;
+    this.supplier = supplier; 
     return this;
   }
 
@@ -162,8 +164,9 @@ public class MarketDataKeyRule {
     this.supplier = supplier;
   }
 
+
   public MarketDataKeyRule dataScope(String dataScope) {
-    this.dataScope = dataScope;
+    this.dataScope = dataScope; 
     return this;
   }
 
@@ -180,8 +183,9 @@ public class MarketDataKeyRule {
     this.dataScope = dataScope;
   }
 
+
   public MarketDataKeyRule quoteType(QuoteTypeEnum quoteType) {
-    this.quoteType = quoteType;
+    this.quoteType = quoteType; 
     return this;
   }
 
@@ -198,8 +202,9 @@ public class MarketDataKeyRule {
     this.quoteType = quoteType;
   }
 
+
   public MarketDataKeyRule field(String field) {
-    this.field = field;
+    this.field = field; 
     return this;
   }
 
@@ -216,8 +221,9 @@ public class MarketDataKeyRule {
     this.field = field;
   }
 
+
   public MarketDataKeyRule quoteInterval(String quoteInterval) {
-    this.quoteInterval = quoteInterval;
+    this.quoteInterval = quoteInterval; 
     return this;
   }
 
@@ -234,8 +240,9 @@ public class MarketDataKeyRule {
     this.quoteInterval = quoteInterval;
   }
 
+
   public MarketDataKeyRule asAt(OffsetDateTime asAt) {
-    this.asAt = asAt;
+    this.asAt = asAt; 
     return this;
   }
 
@@ -252,8 +259,9 @@ public class MarketDataKeyRule {
     this.asAt = asAt;
   }
 
+
   public MarketDataKeyRule priceSource(String priceSource) {
-    this.priceSource = priceSource;
+    this.priceSource = priceSource; 
     return this;
   }
 
@@ -270,8 +278,9 @@ public class MarketDataKeyRule {
     this.priceSource = priceSource;
   }
 
+
   public MarketDataKeyRule mask(String mask) {
-    this.mask = mask;
+    this.mask = mask; 
     return this;
   }
 
@@ -290,7 +299,7 @@ public class MarketDataKeyRule {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -302,9 +311,8 @@ public class MarketDataKeyRule {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -327,7 +335,7 @@ public class MarketDataKeyRule {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

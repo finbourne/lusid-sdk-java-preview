@@ -31,18 +31,20 @@ import java.util.List;
  * When importing data from an external source there are essentially three levels of interaction with LUSID.  (1) The data is a raw document that LUSID does not understand. You can store and retrieve it but it does not full interact with other documents inside LUSID  (2) The data has a map from fields and paths to &#39;properties&#39; in LUSID. In essence, LUSID can then treat the data as weakly typed (decimal, string) data that can be returned through queries      and where various aggregation requests will then work.  (3) The data is fully translatable into LUSID and understood, in some sense, natively. This means that it can be used for context sensitive calculations such as pricing or risk calculations.  The data map object is designed to allow data to transition from step 1 to 2 and in some cases as an alternative for step 2 to 3.
  */
 @ApiModel(description = "When importing data from an external source there are essentially three levels of interaction with LUSID.  (1) The data is a raw document that LUSID does not understand. You can store and retrieve it but it does not full interact with other documents inside LUSID  (2) The data has a map from fields and paths to 'properties' in LUSID. In essence, LUSID can then treat the data as weakly typed (decimal, string) data that can be returned through queries      and where various aggregation requests will then work.  (3) The data is fully translatable into LUSID and understood, in some sense, natively. This means that it can be used for context sensitive calculations such as pricing or risk calculations.  The data map object is designed to allow data to transition from step 1 to 2 and in some cases as an alternative for step 2 to 3.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class DataMapping {
   public static final String SERIALIZED_NAME_DATA_DEFINITIONS = "dataDefinitions";
   @SerializedName(SERIALIZED_NAME_DATA_DEFINITIONS)
-  private List<DataDefinition> dataDefinitions = new ArrayList<>();
+  private List<DataDefinition> dataDefinitions = null;
+
 
   public DataMapping dataDefinitions(List<DataDefinition> dataDefinitions) {
-    this.dataDefinitions = dataDefinitions;
+    this.dataDefinitions = dataDefinitions; 
     return this;
   }
 
   public DataMapping addDataDefinitionsItem(DataDefinition dataDefinitionsItem) {
+   
     if (this.dataDefinitions == null) {
       this.dataDefinitions = new ArrayList<>();
     }
@@ -65,7 +67,7 @@ public class DataMapping {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -77,9 +79,8 @@ public class DataMapping {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -94,7 +95,7 @@ public class DataMapping {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

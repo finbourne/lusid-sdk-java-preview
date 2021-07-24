@@ -2,6 +2,8 @@
 
 # CreditSupportAnnex
 
+Entity to capture the calculable and queryable methods and practices of determining and transferring collateral  to a counterparty as part of margining of transactions. These typically come from a particular ISDA agreement  that is in place between the two counterparties.
+
 ## Properties
 
 Name | Type | Description | Notes

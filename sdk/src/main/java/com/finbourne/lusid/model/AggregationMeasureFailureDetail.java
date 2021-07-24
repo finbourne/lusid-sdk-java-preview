@@ -28,7 +28,7 @@ import java.time.OffsetDateTime;
 /**
  * AggregationMeasureFailureDetail
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class AggregationMeasureFailureDetail {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -50,8 +50,9 @@ public class AggregationMeasureFailureDetail {
   @SerializedName(SERIALIZED_NAME_DETAIL)
   private String detail;
 
+
   public AggregationMeasureFailureDetail id(String id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -68,8 +69,9 @@ public class AggregationMeasureFailureDetail {
     this.id = id;
   }
 
+
   public AggregationMeasureFailureDetail effectiveAt(OffsetDateTime effectiveAt) {
-    this.effectiveAt = effectiveAt;
+    this.effectiveAt = effectiveAt; 
     return this;
   }
 
@@ -86,8 +88,9 @@ public class AggregationMeasureFailureDetail {
     this.effectiveAt = effectiveAt;
   }
 
+
   public AggregationMeasureFailureDetail measure(String measure) {
-    this.measure = measure;
+    this.measure = measure; 
     return this;
   }
 
@@ -104,8 +107,9 @@ public class AggregationMeasureFailureDetail {
     this.measure = measure;
   }
 
+
   public AggregationMeasureFailureDetail reason(String reason) {
-    this.reason = reason;
+    this.reason = reason; 
     return this;
   }
 
@@ -122,8 +126,9 @@ public class AggregationMeasureFailureDetail {
     this.reason = reason;
   }
 
+
   public AggregationMeasureFailureDetail detail(String detail) {
-    this.detail = detail;
+    this.detail = detail; 
     return this;
   }
 
@@ -142,7 +147,7 @@ public class AggregationMeasureFailureDetail {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -154,9 +159,8 @@ public class AggregationMeasureFailureDetail {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -175,7 +179,7 @@ public class AggregationMeasureFailureDetail {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

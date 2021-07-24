@@ -33,7 +33,7 @@ import java.util.Map;
 /**
  * CalendarDate
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CalendarDate {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -69,14 +69,15 @@ public class CalendarDate {
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  private DateAttributes attributes = null;
+  private DateAttributes attributes;
 
   public static final String SERIALIZED_NAME_SOURCE_DATA = "sourceData";
   @SerializedName(SERIALIZED_NAME_SOURCE_DATA)
   private Map<String, String> sourceData = new HashMap<>();
 
+
   public CalendarDate href(URI href) {
-    this.href = href;
+    this.href = href; 
     return this;
   }
 
@@ -93,8 +94,9 @@ public class CalendarDate {
     this.href = href;
   }
 
+
   public CalendarDate dateIdentifier(String dateIdentifier) {
-    this.dateIdentifier = dateIdentifier;
+    this.dateIdentifier = dateIdentifier; 
     return this;
   }
 
@@ -111,8 +113,9 @@ public class CalendarDate {
     this.dateIdentifier = dateIdentifier;
   }
 
+
   public CalendarDate fromUtc(OffsetDateTime fromUtc) {
-    this.fromUtc = fromUtc;
+    this.fromUtc = fromUtc; 
     return this;
   }
 
@@ -129,8 +132,9 @@ public class CalendarDate {
     this.fromUtc = fromUtc;
   }
 
+
   public CalendarDate toUtc(OffsetDateTime toUtc) {
-    this.toUtc = toUtc;
+    this.toUtc = toUtc; 
     return this;
   }
 
@@ -147,8 +151,9 @@ public class CalendarDate {
     this.toUtc = toUtc;
   }
 
+
   public CalendarDate localDate(String localDate) {
-    this.localDate = localDate;
+    this.localDate = localDate; 
     return this;
   }
 
@@ -165,8 +170,9 @@ public class CalendarDate {
     this.localDate = localDate;
   }
 
+
   public CalendarDate timezone(String timezone) {
-    this.timezone = timezone;
+    this.timezone = timezone; 
     return this;
   }
 
@@ -183,8 +189,9 @@ public class CalendarDate {
     this.timezone = timezone;
   }
 
+
   public CalendarDate description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -201,8 +208,9 @@ public class CalendarDate {
     this.description = description;
   }
 
+
   public CalendarDate type(String type) {
-    this.type = type;
+    this.type = type; 
     return this;
   }
 
@@ -219,8 +227,9 @@ public class CalendarDate {
     this.type = type;
   }
 
+
   public CalendarDate attributes(DateAttributes attributes) {
-    this.attributes = attributes;
+    this.attributes = attributes; 
     return this;
   }
 
@@ -237,8 +246,9 @@ public class CalendarDate {
     this.attributes = attributes;
   }
 
+
   public CalendarDate sourceData(Map<String, String> sourceData) {
-    this.sourceData = sourceData;
+    this.sourceData = sourceData; 
     return this;
   }
 
@@ -262,7 +272,7 @@ public class CalendarDate {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -274,9 +284,8 @@ public class CalendarDate {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -300,7 +309,7 @@ public class CalendarDate {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

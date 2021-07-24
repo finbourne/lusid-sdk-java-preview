@@ -28,7 +28,7 @@ import java.io.IOException;
  * It is possible to control which supplier is used for a given asset class.
  */
 @ApiModel(description = "It is possible to control which supplier is used for a given asset class.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class MarketContextSuppliers {
   public static final String SERIALIZED_NAME_COMMODITY = "Commodity";
   @SerializedName(SERIALIZED_NAME_COMMODITY)
@@ -50,8 +50,9 @@ public class MarketContextSuppliers {
   @SerializedName(SERIALIZED_NAME_RATES)
   private String rates;
 
+
   public MarketContextSuppliers commodity(String commodity) {
-    this.commodity = commodity;
+    this.commodity = commodity; 
     return this;
   }
 
@@ -68,8 +69,9 @@ public class MarketContextSuppliers {
     this.commodity = commodity;
   }
 
+
   public MarketContextSuppliers credit(String credit) {
-    this.credit = credit;
+    this.credit = credit; 
     return this;
   }
 
@@ -86,8 +88,9 @@ public class MarketContextSuppliers {
     this.credit = credit;
   }
 
+
   public MarketContextSuppliers equity(String equity) {
-    this.equity = equity;
+    this.equity = equity; 
     return this;
   }
 
@@ -104,8 +107,9 @@ public class MarketContextSuppliers {
     this.equity = equity;
   }
 
+
   public MarketContextSuppliers fx(String fx) {
-    this.fx = fx;
+    this.fx = fx; 
     return this;
   }
 
@@ -122,8 +126,9 @@ public class MarketContextSuppliers {
     this.fx = fx;
   }
 
+
   public MarketContextSuppliers rates(String rates) {
-    this.rates = rates;
+    this.rates = rates; 
     return this;
   }
 
@@ -142,7 +147,7 @@ public class MarketContextSuppliers {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -154,9 +159,8 @@ public class MarketContextSuppliers {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -175,7 +179,7 @@ public class MarketContextSuppliers {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

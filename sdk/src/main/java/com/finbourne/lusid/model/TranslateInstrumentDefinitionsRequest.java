@@ -32,7 +32,7 @@ import java.util.Map;
  * A collection of instruments to translate, along with the target dialect to translate into.
  */
 @ApiModel(description = "A collection of instruments to translate, along with the target dialect to translate into.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TranslateInstrumentDefinitionsRequest {
   public static final String SERIALIZED_NAME_INSTRUMENTS = "instruments";
   @SerializedName(SERIALIZED_NAME_INSTRUMENTS)
@@ -42,8 +42,9 @@ public class TranslateInstrumentDefinitionsRequest {
   @SerializedName(SERIALIZED_NAME_DIALECT)
   private String dialect;
 
+
   public TranslateInstrumentDefinitionsRequest instruments(Map<String, LusidInstrument> instruments) {
-    this.instruments = instruments;
+    this.instruments = instruments; 
     return this;
   }
 
@@ -65,8 +66,9 @@ public class TranslateInstrumentDefinitionsRequest {
     this.instruments = instruments;
   }
 
+
   public TranslateInstrumentDefinitionsRequest dialect(String dialect) {
-    this.dialect = dialect;
+    this.dialect = dialect; 
     return this;
   }
 
@@ -85,7 +87,7 @@ public class TranslateInstrumentDefinitionsRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -97,9 +99,8 @@ public class TranslateInstrumentDefinitionsRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -115,7 +116,7 @@ public class TranslateInstrumentDefinitionsRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

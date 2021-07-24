@@ -30,18 +30,19 @@ import java.io.IOException;
  * A recipe or recipe snippet that is to be stored in the recipe structured data store.  Only one of these must be present.
  */
 @ApiModel(description = "A recipe or recipe snippet that is to be stored in the recipe structured data store.  Only one of these must be present.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpsertRecipeRequest {
   public static final String SERIALIZED_NAME_CONFIGURATION_RECIPE = "configurationRecipe";
   @SerializedName(SERIALIZED_NAME_CONFIGURATION_RECIPE)
-  private ConfigurationRecipe configurationRecipe = null;
+  private ConfigurationRecipe configurationRecipe;
 
   public static final String SERIALIZED_NAME_CONFIGURATION_RECIPE_SNIPPET = "configurationRecipeSnippet";
   @SerializedName(SERIALIZED_NAME_CONFIGURATION_RECIPE_SNIPPET)
-  private ConfigurationRecipeSnippet configurationRecipeSnippet = null;
+  private ConfigurationRecipeSnippet configurationRecipeSnippet;
+
 
   public UpsertRecipeRequest configurationRecipe(ConfigurationRecipe configurationRecipe) {
-    this.configurationRecipe = configurationRecipe;
+    this.configurationRecipe = configurationRecipe; 
     return this;
   }
 
@@ -58,8 +59,9 @@ public class UpsertRecipeRequest {
     this.configurationRecipe = configurationRecipe;
   }
 
+
   public UpsertRecipeRequest configurationRecipeSnippet(ConfigurationRecipeSnippet configurationRecipeSnippet) {
-    this.configurationRecipeSnippet = configurationRecipeSnippet;
+    this.configurationRecipeSnippet = configurationRecipeSnippet; 
     return this;
   }
 
@@ -78,7 +80,7 @@ public class UpsertRecipeRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -90,9 +92,8 @@ public class UpsertRecipeRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -108,7 +109,7 @@ public class UpsertRecipeRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

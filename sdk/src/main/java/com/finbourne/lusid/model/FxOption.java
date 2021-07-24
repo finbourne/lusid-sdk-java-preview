@@ -32,7 +32,7 @@ import java.time.OffsetDateTime;
  * Lusid-ibor internal representation of a plain vanilla FX Option instrument.
  */
 @ApiModel(description = "Lusid-ibor internal representation of a plain vanilla FX Option instrument.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FxOption extends LusidInstrument {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -68,10 +68,14 @@ public class FxOption extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_PREMIUM = "premium";
   @SerializedName(SERIALIZED_NAME_PREMIUM)
-  private Premium premium = null;
+  private Premium premium;
+
+  public FxOption() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
 
   public FxOption startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -88,8 +92,9 @@ public class FxOption extends LusidInstrument {
     this.startDate = startDate;
   }
 
+
   public FxOption optionMaturityDate(OffsetDateTime optionMaturityDate) {
-    this.optionMaturityDate = optionMaturityDate;
+    this.optionMaturityDate = optionMaturityDate; 
     return this;
   }
 
@@ -106,8 +111,9 @@ public class FxOption extends LusidInstrument {
     this.optionMaturityDate = optionMaturityDate;
   }
 
+
   public FxOption optionSettlementDate(OffsetDateTime optionSettlementDate) {
-    this.optionSettlementDate = optionSettlementDate;
+    this.optionSettlementDate = optionSettlementDate; 
     return this;
   }
 
@@ -124,8 +130,9 @@ public class FxOption extends LusidInstrument {
     this.optionSettlementDate = optionSettlementDate;
   }
 
+
   public FxOption isDeliveryNotCash(Boolean isDeliveryNotCash) {
-    this.isDeliveryNotCash = isDeliveryNotCash;
+    this.isDeliveryNotCash = isDeliveryNotCash; 
     return this;
   }
 
@@ -142,8 +149,9 @@ public class FxOption extends LusidInstrument {
     this.isDeliveryNotCash = isDeliveryNotCash;
   }
 
+
   public FxOption isCallNotPut(Boolean isCallNotPut) {
-    this.isCallNotPut = isCallNotPut;
+    this.isCallNotPut = isCallNotPut; 
     return this;
   }
 
@@ -160,8 +168,9 @@ public class FxOption extends LusidInstrument {
     this.isCallNotPut = isCallNotPut;
   }
 
+
   public FxOption strike(Double strike) {
-    this.strike = strike;
+    this.strike = strike; 
     return this;
   }
 
@@ -178,8 +187,9 @@ public class FxOption extends LusidInstrument {
     this.strike = strike;
   }
 
+
   public FxOption domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -196,8 +206,9 @@ public class FxOption extends LusidInstrument {
     this.domCcy = domCcy;
   }
 
+
   public FxOption fgnCcy(String fgnCcy) {
-    this.fgnCcy = fgnCcy;
+    this.fgnCcy = fgnCcy; 
     return this;
   }
 
@@ -214,8 +225,9 @@ public class FxOption extends LusidInstrument {
     this.fgnCcy = fgnCcy;
   }
 
+
   public FxOption premium(Premium premium) {
-    this.premium = premium;
+    this.premium = premium; 
     return this;
   }
 
@@ -234,7 +246,7 @@ public class FxOption extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -246,9 +258,8 @@ public class FxOption extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -272,7 +283,7 @@ public class FxOption extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

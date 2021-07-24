@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * CashLadderRecord
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CashLadderRecord {
   public static final String SERIALIZED_NAME_EFFECTIVE_DATE = "effectiveDate";
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_DATE)
@@ -49,8 +49,9 @@ public class CashLadderRecord {
   @SerializedName(SERIALIZED_NAME_CLOSE)
   private Double close;
 
+
   public CashLadderRecord effectiveDate(OffsetDateTime effectiveDate) {
-    this.effectiveDate = effectiveDate;
+    this.effectiveDate = effectiveDate; 
     return this;
   }
 
@@ -67,8 +68,9 @@ public class CashLadderRecord {
     this.effectiveDate = effectiveDate;
   }
 
+
   public CashLadderRecord open(Double open) {
-    this.open = open;
+    this.open = open; 
     return this;
   }
 
@@ -85,8 +87,9 @@ public class CashLadderRecord {
     this.open = open;
   }
 
+
   public CashLadderRecord activities(Map<String, Double> activities) {
-    this.activities = activities;
+    this.activities = activities; 
     return this;
   }
 
@@ -108,8 +111,9 @@ public class CashLadderRecord {
     this.activities = activities;
   }
 
+
   public CashLadderRecord close(Double close) {
-    this.close = close;
+    this.close = close; 
     return this;
   }
 
@@ -128,7 +132,7 @@ public class CashLadderRecord {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -140,9 +144,8 @@ public class CashLadderRecord {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -160,7 +163,7 @@ public class CashLadderRecord {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

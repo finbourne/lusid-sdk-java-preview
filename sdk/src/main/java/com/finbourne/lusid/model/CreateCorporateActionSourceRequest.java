@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CreateCorporateActionSourceRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreateCorporateActionSourceRequest {
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
@@ -45,8 +45,9 @@ public class CreateCorporateActionSourceRequest {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
+
   public CreateCorporateActionSourceRequest scope(String scope) {
-    this.scope = scope;
+    this.scope = scope; 
     return this;
   }
 
@@ -63,8 +64,9 @@ public class CreateCorporateActionSourceRequest {
     this.scope = scope;
   }
 
+
   public CreateCorporateActionSourceRequest code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -81,8 +83,9 @@ public class CreateCorporateActionSourceRequest {
     this.code = code;
   }
 
+
   public CreateCorporateActionSourceRequest displayName(String displayName) {
-    this.displayName = displayName;
+    this.displayName = displayName; 
     return this;
   }
 
@@ -99,8 +102,9 @@ public class CreateCorporateActionSourceRequest {
     this.displayName = displayName;
   }
 
+
   public CreateCorporateActionSourceRequest description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -119,7 +123,7 @@ public class CreateCorporateActionSourceRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -131,9 +135,8 @@ public class CreateCorporateActionSourceRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -151,7 +154,7 @@ public class CreateCorporateActionSourceRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

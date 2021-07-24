@@ -37,11 +37,11 @@ import java.util.List;
  * Specification object for the parameters of a valuation
  */
 @ApiModel(description = "Specification object for the parameters of a valuation")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ValuationRequest {
   public static final String SERIALIZED_NAME_RECIPE_ID = "recipeId";
   @SerializedName(SERIALIZED_NAME_RECIPE_ID)
-  private ResourceId recipeId = null;
+  private ResourceId recipeId;
 
   public static final String SERIALIZED_NAME_AS_AT = "asAt";
   @SerializedName(SERIALIZED_NAME_AS_AT)
@@ -53,15 +53,15 @@ public class ValuationRequest {
 
   public static final String SERIALIZED_NAME_GROUP_BY = "groupBy";
   @SerializedName(SERIALIZED_NAME_GROUP_BY)
-  private List<String> groupBy = new ArrayList<>();
+  private List<String> groupBy = null;
 
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
-  private List<PropertyFilter> filters = new ArrayList<>();
+  private List<PropertyFilter> filters = null;
 
   public static final String SERIALIZED_NAME_SORT = "sort";
   @SerializedName(SERIALIZED_NAME_SORT)
-  private List<OrderBySpec> sort = new ArrayList<>();
+  private List<OrderBySpec> sort = null;
 
   public static final String SERIALIZED_NAME_REPORT_CURRENCY = "reportCurrency";
   @SerializedName(SERIALIZED_NAME_REPORT_CURRENCY)
@@ -73,14 +73,15 @@ public class ValuationRequest {
 
   public static final String SERIALIZED_NAME_PORTFOLIO_ENTITY_IDS = "portfolioEntityIds";
   @SerializedName(SERIALIZED_NAME_PORTFOLIO_ENTITY_IDS)
-  private List<PortfolioEntityId> portfolioEntityIds = new ArrayList<>();
+  private List<PortfolioEntityId> portfolioEntityIds = null;
 
   public static final String SERIALIZED_NAME_VALUATION_SCHEDULE = "valuationSchedule";
   @SerializedName(SERIALIZED_NAME_VALUATION_SCHEDULE)
-  private ValuationSchedule valuationSchedule = null;
+  private ValuationSchedule valuationSchedule;
+
 
   public ValuationRequest recipeId(ResourceId recipeId) {
-    this.recipeId = recipeId;
+    this.recipeId = recipeId; 
     return this;
   }
 
@@ -97,8 +98,9 @@ public class ValuationRequest {
     this.recipeId = recipeId;
   }
 
+
   public ValuationRequest asAt(OffsetDateTime asAt) {
-    this.asAt = asAt;
+    this.asAt = asAt; 
     return this;
   }
 
@@ -115,12 +117,14 @@ public class ValuationRequest {
     this.asAt = asAt;
   }
 
+
   public ValuationRequest metrics(List<AggregateSpec> metrics) {
-    this.metrics = metrics;
+    this.metrics = metrics; 
     return this;
   }
 
   public ValuationRequest addMetricsItem(AggregateSpec metricsItem) {
+   
     this.metrics.add(metricsItem);
     return this;
   }
@@ -138,12 +142,14 @@ public class ValuationRequest {
     this.metrics = metrics;
   }
 
+
   public ValuationRequest groupBy(List<String> groupBy) {
-    this.groupBy = groupBy;
+    this.groupBy = groupBy; 
     return this;
   }
 
   public ValuationRequest addGroupByItem(String groupByItem) {
+   
     if (this.groupBy == null) {
       this.groupBy = new ArrayList<>();
     }
@@ -164,12 +170,14 @@ public class ValuationRequest {
     this.groupBy = groupBy;
   }
 
+
   public ValuationRequest filters(List<PropertyFilter> filters) {
-    this.filters = filters;
+    this.filters = filters; 
     return this;
   }
 
   public ValuationRequest addFiltersItem(PropertyFilter filtersItem) {
+   
     if (this.filters == null) {
       this.filters = new ArrayList<>();
     }
@@ -190,12 +198,14 @@ public class ValuationRequest {
     this.filters = filters;
   }
 
+
   public ValuationRequest sort(List<OrderBySpec> sort) {
-    this.sort = sort;
+    this.sort = sort; 
     return this;
   }
 
   public ValuationRequest addSortItem(OrderBySpec sortItem) {
+   
     if (this.sort == null) {
       this.sort = new ArrayList<>();
     }
@@ -216,8 +226,9 @@ public class ValuationRequest {
     this.sort = sort;
   }
 
+
   public ValuationRequest reportCurrency(String reportCurrency) {
-    this.reportCurrency = reportCurrency;
+    this.reportCurrency = reportCurrency; 
     return this;
   }
 
@@ -234,8 +245,9 @@ public class ValuationRequest {
     this.reportCurrency = reportCurrency;
   }
 
+
   public ValuationRequest equipWithSubtotals(Boolean equipWithSubtotals) {
-    this.equipWithSubtotals = equipWithSubtotals;
+    this.equipWithSubtotals = equipWithSubtotals; 
     return this;
   }
 
@@ -252,12 +264,14 @@ public class ValuationRequest {
     this.equipWithSubtotals = equipWithSubtotals;
   }
 
+
   public ValuationRequest portfolioEntityIds(List<PortfolioEntityId> portfolioEntityIds) {
-    this.portfolioEntityIds = portfolioEntityIds;
+    this.portfolioEntityIds = portfolioEntityIds; 
     return this;
   }
 
   public ValuationRequest addPortfolioEntityIdsItem(PortfolioEntityId portfolioEntityIdsItem) {
+   
     if (this.portfolioEntityIds == null) {
       this.portfolioEntityIds = new ArrayList<>();
     }
@@ -278,8 +292,9 @@ public class ValuationRequest {
     this.portfolioEntityIds = portfolioEntityIds;
   }
 
+
   public ValuationRequest valuationSchedule(ValuationSchedule valuationSchedule) {
-    this.valuationSchedule = valuationSchedule;
+    this.valuationSchedule = valuationSchedule; 
     return this;
   }
 
@@ -298,7 +313,7 @@ public class ValuationRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -310,9 +325,8 @@ public class ValuationRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -336,7 +350,7 @@ public class ValuationRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

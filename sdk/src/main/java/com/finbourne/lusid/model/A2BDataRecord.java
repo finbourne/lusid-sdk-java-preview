@@ -35,11 +35,11 @@ import java.util.Map;
  * A2B Record - shows values on, and changes between two dates: A and B
  */
 @ApiModel(description = "A2B Record - shows values on, and changes between two dates: A and B")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class A2BDataRecord {
   public static final String SERIALIZED_NAME_PORTFOLIO_ID = "portfolioId";
   @SerializedName(SERIALIZED_NAME_PORTFOLIO_ID)
-  private ResourceId portfolioId = null;
+  private ResourceId portfolioId;
 
   public static final String SERIALIZED_NAME_HOLDING_TYPE = "holdingType";
   @SerializedName(SERIALIZED_NAME_HOLDING_TYPE)
@@ -51,7 +51,7 @@ public class A2BDataRecord {
 
   public static final String SERIALIZED_NAME_SUB_HOLDING_KEYS = "subHoldingKeys";
   @SerializedName(SERIALIZED_NAME_SUB_HOLDING_KEYS)
-  private Map<String, PerpetualProperty> subHoldingKeys = new HashMap<>();
+  private Map<String, PerpetualProperty> subHoldingKeys = null;
 
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)
@@ -63,34 +63,35 @@ public class A2BDataRecord {
 
   public static final String SERIALIZED_NAME_START = "start";
   @SerializedName(SERIALIZED_NAME_START)
-  private A2BCategory start = null;
+  private A2BCategory start;
 
   public static final String SERIALIZED_NAME_FLOWS = "flows";
   @SerializedName(SERIALIZED_NAME_FLOWS)
-  private A2BCategory flows = null;
+  private A2BCategory flows;
 
   public static final String SERIALIZED_NAME_GAINS = "gains";
   @SerializedName(SERIALIZED_NAME_GAINS)
-  private A2BCategory gains = null;
+  private A2BCategory gains;
 
   public static final String SERIALIZED_NAME_CARRY = "carry";
   @SerializedName(SERIALIZED_NAME_CARRY)
-  private A2BCategory carry = null;
+  private A2BCategory carry;
 
   public static final String SERIALIZED_NAME_END = "end";
   @SerializedName(SERIALIZED_NAME_END)
-  private A2BCategory end = null;
+  private A2BCategory end;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, Property> properties = new HashMap<>();
+  private Map<String, Property> properties = null;
 
   public static final String SERIALIZED_NAME_GROUP_ID = "groupId";
   @SerializedName(SERIALIZED_NAME_GROUP_ID)
   private String groupId;
 
+
   public A2BDataRecord portfolioId(ResourceId portfolioId) {
-    this.portfolioId = portfolioId;
+    this.portfolioId = portfolioId; 
     return this;
   }
 
@@ -107,8 +108,9 @@ public class A2BDataRecord {
     this.portfolioId = portfolioId;
   }
 
+
   public A2BDataRecord holdingType(String holdingType) {
-    this.holdingType = holdingType;
+    this.holdingType = holdingType; 
     return this;
   }
 
@@ -125,8 +127,9 @@ public class A2BDataRecord {
     this.holdingType = holdingType;
   }
 
+
   public A2BDataRecord instrumentUid(String instrumentUid) {
-    this.instrumentUid = instrumentUid;
+    this.instrumentUid = instrumentUid; 
     return this;
   }
 
@@ -143,8 +146,9 @@ public class A2BDataRecord {
     this.instrumentUid = instrumentUid;
   }
 
+
   public A2BDataRecord subHoldingKeys(Map<String, PerpetualProperty> subHoldingKeys) {
-    this.subHoldingKeys = subHoldingKeys;
+    this.subHoldingKeys = subHoldingKeys; 
     return this;
   }
 
@@ -169,8 +173,9 @@ public class A2BDataRecord {
     this.subHoldingKeys = subHoldingKeys;
   }
 
+
   public A2BDataRecord currency(String currency) {
-    this.currency = currency;
+    this.currency = currency; 
     return this;
   }
 
@@ -187,8 +192,9 @@ public class A2BDataRecord {
     this.currency = currency;
   }
 
+
   public A2BDataRecord transactionId(String transactionId) {
-    this.transactionId = transactionId;
+    this.transactionId = transactionId; 
     return this;
   }
 
@@ -205,8 +211,9 @@ public class A2BDataRecord {
     this.transactionId = transactionId;
   }
 
+
   public A2BDataRecord start(A2BCategory start) {
-    this.start = start;
+    this.start = start; 
     return this;
   }
 
@@ -223,8 +230,9 @@ public class A2BDataRecord {
     this.start = start;
   }
 
+
   public A2BDataRecord flows(A2BCategory flows) {
-    this.flows = flows;
+    this.flows = flows; 
     return this;
   }
 
@@ -241,8 +249,9 @@ public class A2BDataRecord {
     this.flows = flows;
   }
 
+
   public A2BDataRecord gains(A2BCategory gains) {
-    this.gains = gains;
+    this.gains = gains; 
     return this;
   }
 
@@ -259,8 +268,9 @@ public class A2BDataRecord {
     this.gains = gains;
   }
 
+
   public A2BDataRecord carry(A2BCategory carry) {
-    this.carry = carry;
+    this.carry = carry; 
     return this;
   }
 
@@ -277,8 +287,9 @@ public class A2BDataRecord {
     this.carry = carry;
   }
 
+
   public A2BDataRecord end(A2BCategory end) {
-    this.end = end;
+    this.end = end; 
     return this;
   }
 
@@ -295,8 +306,9 @@ public class A2BDataRecord {
     this.end = end;
   }
 
+
   public A2BDataRecord properties(Map<String, Property> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
@@ -321,8 +333,9 @@ public class A2BDataRecord {
     this.properties = properties;
   }
 
+
   public A2BDataRecord groupId(String groupId) {
-    this.groupId = groupId;
+    this.groupId = groupId; 
     return this;
   }
 
@@ -341,7 +354,7 @@ public class A2BDataRecord {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -353,9 +366,8 @@ public class A2BDataRecord {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -382,7 +394,7 @@ public class A2BDataRecord {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

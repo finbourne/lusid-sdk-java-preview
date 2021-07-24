@@ -29,7 +29,7 @@ import java.time.OffsetDateTime;
  * A class containing information for a given premium payment.
  */
 @ApiModel(description = "A class containing information for a given premium payment.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Premium {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -43,8 +43,9 @@ public class Premium {
   @SerializedName(SERIALIZED_NAME_DATE)
   private OffsetDateTime date;
 
+
   public Premium amount(Double amount) {
-    this.amount = amount;
+    this.amount = amount; 
     return this;
   }
 
@@ -61,8 +62,9 @@ public class Premium {
     this.amount = amount;
   }
 
+
   public Premium currency(String currency) {
-    this.currency = currency;
+    this.currency = currency; 
     return this;
   }
 
@@ -79,8 +81,9 @@ public class Premium {
     this.currency = currency;
   }
 
+
   public Premium date(OffsetDateTime date) {
-    this.date = date;
+    this.date = date; 
     return this;
   }
 
@@ -99,7 +102,7 @@ public class Premium {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -111,9 +114,8 @@ public class Premium {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -130,7 +132,7 @@ public class Premium {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * OrderBySpec
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderBySpec {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -74,7 +74,7 @@ public class OrderBySpec {
 
       @Override
       public SortOrderEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return SortOrderEnum.fromValue(value);
       }
     }
@@ -84,8 +84,9 @@ public class OrderBySpec {
   @SerializedName(SERIALIZED_NAME_SORT_ORDER)
   private SortOrderEnum sortOrder;
 
+
   public OrderBySpec key(String key) {
-    this.key = key;
+    this.key = key; 
     return this;
   }
 
@@ -102,8 +103,9 @@ public class OrderBySpec {
     this.key = key;
   }
 
+
   public OrderBySpec sortOrder(SortOrderEnum sortOrder) {
-    this.sortOrder = sortOrder;
+    this.sortOrder = sortOrder; 
     return this;
   }
 
@@ -122,7 +124,7 @@ public class OrderBySpec {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -134,9 +136,8 @@ public class OrderBySpec {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -152,7 +153,7 @@ public class OrderBySpec {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

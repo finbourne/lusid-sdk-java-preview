@@ -28,11 +28,11 @@ import java.io.IOException;
 /**
  * ExoticInstrumentAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ExoticInstrumentAllOf {
   public static final String SERIALIZED_NAME_INSTRUMENT_FORMAT = "instrumentFormat";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_FORMAT)
-  private InstrumentDefinitionFormat instrumentFormat = null;
+  private InstrumentDefinitionFormat instrumentFormat;
 
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
@@ -127,7 +127,7 @@ public class ExoticInstrumentAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -137,8 +137,9 @@ public class ExoticInstrumentAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public ExoticInstrumentAllOf instrumentFormat(InstrumentDefinitionFormat instrumentFormat) {
-    this.instrumentFormat = instrumentFormat;
+    this.instrumentFormat = instrumentFormat; 
     return this;
   }
 
@@ -155,8 +156,9 @@ public class ExoticInstrumentAllOf {
     this.instrumentFormat = instrumentFormat;
   }
 
+
   public ExoticInstrumentAllOf content(String content) {
-    this.content = content;
+    this.content = content; 
     return this;
   }
 
@@ -173,8 +175,9 @@ public class ExoticInstrumentAllOf {
     this.content = content;
   }
 
+
   public ExoticInstrumentAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -193,7 +196,7 @@ public class ExoticInstrumentAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -205,9 +208,8 @@ public class ExoticInstrumentAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -224,7 +226,7 @@ public class ExoticInstrumentAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

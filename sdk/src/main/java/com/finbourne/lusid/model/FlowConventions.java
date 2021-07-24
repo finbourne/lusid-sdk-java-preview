@@ -30,7 +30,7 @@ import java.util.List;
  * A flow convention defines the specification for generation of the date schedule for a leg or set of cashflows.  It determines the tenor of these and, how to map the unadjusted set of dates to dates which are &#39;good business  days&#39;. For example, if an unadjusted date falls on a Saturday or a bank holiday, should it be rolled forward  or backward to obtain the adjusted date.
  */
 @ApiModel(description = "A flow convention defines the specification for generation of the date schedule for a leg or set of cashflows.  It determines the tenor of these and, how to map the unadjusted set of dates to dates which are 'good business  days'. For example, if an unadjusted date falls on a Saturday or a bank holiday, should it be rolled forward  or backward to obtain the adjusted date.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FlowConventions {
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)
@@ -72,8 +72,9 @@ public class FlowConventions {
   @SerializedName(SERIALIZED_NAME_CODE)
   private String code;
 
+
   public FlowConventions currency(String currency) {
-    this.currency = currency;
+    this.currency = currency; 
     return this;
   }
 
@@ -90,8 +91,9 @@ public class FlowConventions {
     this.currency = currency;
   }
 
+
   public FlowConventions paymentFrequency(String paymentFrequency) {
-    this.paymentFrequency = paymentFrequency;
+    this.paymentFrequency = paymentFrequency; 
     return this;
   }
 
@@ -108,8 +110,9 @@ public class FlowConventions {
     this.paymentFrequency = paymentFrequency;
   }
 
+
   public FlowConventions dayCountConvention(String dayCountConvention) {
-    this.dayCountConvention = dayCountConvention;
+    this.dayCountConvention = dayCountConvention; 
     return this;
   }
 
@@ -126,8 +129,9 @@ public class FlowConventions {
     this.dayCountConvention = dayCountConvention;
   }
 
+
   public FlowConventions rollConvention(String rollConvention) {
-    this.rollConvention = rollConvention;
+    this.rollConvention = rollConvention; 
     return this;
   }
 
@@ -144,12 +148,14 @@ public class FlowConventions {
     this.rollConvention = rollConvention;
   }
 
+
   public FlowConventions paymentCalendars(List<String> paymentCalendars) {
-    this.paymentCalendars = paymentCalendars;
+    this.paymentCalendars = paymentCalendars; 
     return this;
   }
 
   public FlowConventions addPaymentCalendarsItem(String paymentCalendarsItem) {
+   
     this.paymentCalendars.add(paymentCalendarsItem);
     return this;
   }
@@ -167,12 +173,14 @@ public class FlowConventions {
     this.paymentCalendars = paymentCalendars;
   }
 
+
   public FlowConventions resetCalendars(List<String> resetCalendars) {
-    this.resetCalendars = resetCalendars;
+    this.resetCalendars = resetCalendars; 
     return this;
   }
 
   public FlowConventions addResetCalendarsItem(String resetCalendarsItem) {
+   
     this.resetCalendars.add(resetCalendarsItem);
     return this;
   }
@@ -190,8 +198,9 @@ public class FlowConventions {
     this.resetCalendars = resetCalendars;
   }
 
+
   public FlowConventions settleDays(Integer settleDays) {
-    this.settleDays = settleDays;
+    this.settleDays = settleDays; 
     return this;
   }
 
@@ -208,8 +217,9 @@ public class FlowConventions {
     this.settleDays = settleDays;
   }
 
+
   public FlowConventions resetDays(Integer resetDays) {
-    this.resetDays = resetDays;
+    this.resetDays = resetDays; 
     return this;
   }
 
@@ -226,8 +236,9 @@ public class FlowConventions {
     this.resetDays = resetDays;
   }
 
+
   public FlowConventions scope(String scope) {
-    this.scope = scope;
+    this.scope = scope; 
     return this;
   }
 
@@ -244,8 +255,9 @@ public class FlowConventions {
     this.scope = scope;
   }
 
+
   public FlowConventions code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -264,7 +276,7 @@ public class FlowConventions {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -276,9 +288,8 @@ public class FlowConventions {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -302,7 +313,7 @@ public class FlowConventions {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

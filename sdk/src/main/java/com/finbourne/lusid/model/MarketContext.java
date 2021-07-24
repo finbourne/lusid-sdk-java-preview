@@ -33,26 +33,28 @@ import java.util.List;
  * Market context node. This defines how LUSID processes parts of a request that require resolution of market data such as instrument prices or  Fx rates. It controls where the data is loaded from and which sources take precedence.
  */
 @ApiModel(description = "Market context node. This defines how LUSID processes parts of a request that require resolution of market data such as instrument prices or  Fx rates. It controls where the data is loaded from and which sources take precedence.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class MarketContext {
   public static final String SERIALIZED_NAME_MARKET_RULES = "marketRules";
   @SerializedName(SERIALIZED_NAME_MARKET_RULES)
-  private List<MarketDataKeyRule> marketRules = new ArrayList<>();
+  private List<MarketDataKeyRule> marketRules = null;
 
   public static final String SERIALIZED_NAME_SUPPLIERS = "suppliers";
   @SerializedName(SERIALIZED_NAME_SUPPLIERS)
-  private MarketContextSuppliers suppliers = null;
+  private MarketContextSuppliers suppliers;
 
   public static final String SERIALIZED_NAME_OPTIONS = "options";
   @SerializedName(SERIALIZED_NAME_OPTIONS)
-  private MarketOptions options = null;
+  private MarketOptions options;
+
 
   public MarketContext marketRules(List<MarketDataKeyRule> marketRules) {
-    this.marketRules = marketRules;
+    this.marketRules = marketRules; 
     return this;
   }
 
   public MarketContext addMarketRulesItem(MarketDataKeyRule marketRulesItem) {
+   
     if (this.marketRules == null) {
       this.marketRules = new ArrayList<>();
     }
@@ -73,8 +75,9 @@ public class MarketContext {
     this.marketRules = marketRules;
   }
 
+
   public MarketContext suppliers(MarketContextSuppliers suppliers) {
-    this.suppliers = suppliers;
+    this.suppliers = suppliers; 
     return this;
   }
 
@@ -91,8 +94,9 @@ public class MarketContext {
     this.suppliers = suppliers;
   }
 
+
   public MarketContext options(MarketOptions options) {
-    this.options = options;
+    this.options = options; 
     return this;
   }
 
@@ -111,7 +115,7 @@ public class MarketContext {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -123,9 +127,8 @@ public class MarketContext {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -142,7 +145,7 @@ public class MarketContext {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

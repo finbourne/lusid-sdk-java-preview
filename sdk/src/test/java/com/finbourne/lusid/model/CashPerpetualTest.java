@@ -51,4 +51,28 @@ public class CashPerpetualTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'domCcy'
+     */
+    @Test
+    public void domCcyTest() {
+        // TODO: test domCcy
+    }
+
+    /**
+     * Test the property 'principal'
+     */
+    @Test
+    public void principalTest() {
+        // TODO: test principal
+    }
+
 }

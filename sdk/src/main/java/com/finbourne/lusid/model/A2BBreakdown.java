@@ -31,7 +31,7 @@ import java.util.Map;
  * A2B Breakdown - Shows the total, and each sub-element within an A2B Category
  */
 @ApiModel(description = "A2B Breakdown - Shows the total, and each sub-element within an A2B Category")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class A2BBreakdown {
   public static final String SERIALIZED_NAME_TOTAL = "total";
   @SerializedName(SERIALIZED_NAME_TOTAL)
@@ -43,10 +43,11 @@ public class A2BBreakdown {
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  private Map<String, Double> components = new HashMap<>();
+  private Map<String, Double> components = null;
+
 
   public A2BBreakdown total(Double total) {
-    this.total = total;
+    this.total = total; 
     return this;
   }
 
@@ -63,8 +64,9 @@ public class A2BBreakdown {
     this.total = total;
   }
 
+
   public A2BBreakdown currency(String currency) {
-    this.currency = currency;
+    this.currency = currency; 
     return this;
   }
 
@@ -81,8 +83,9 @@ public class A2BBreakdown {
     this.currency = currency;
   }
 
+
   public A2BBreakdown components(Map<String, Double> components) {
-    this.components = components;
+    this.components = components; 
     return this;
   }
 
@@ -109,7 +112,7 @@ public class A2BBreakdown {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -121,9 +124,8 @@ public class A2BBreakdown {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -140,7 +142,7 @@ public class A2BBreakdown {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

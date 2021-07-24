@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Tolerance
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Tolerance {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
@@ -74,7 +74,7 @@ public class Tolerance {
 
       @Override
       public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return TypeEnum.fromValue(value);
       }
     }
@@ -84,8 +84,9 @@ public class Tolerance {
   @SerializedName(SERIALIZED_NAME_TYPE)
   private TypeEnum type;
 
+
   public Tolerance value(Double value) {
-    this.value = value;
+    this.value = value; 
     return this;
   }
 
@@ -102,8 +103,9 @@ public class Tolerance {
     this.value = value;
   }
 
+
   public Tolerance type(TypeEnum type) {
-    this.type = type;
+    this.type = type; 
     return this;
   }
 
@@ -122,7 +124,7 @@ public class Tolerance {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -134,9 +136,8 @@ public class Tolerance {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -152,7 +153,7 @@ public class Tolerance {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -32,7 +32,7 @@ import java.time.OffsetDateTime;
  * A swaption, an option to enter into an interest rate swap.
  */
 @ApiModel(description = "A swaption, an option to enter into an interest rate swap.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class InterestRateSwaption extends LusidInstrument {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -81,7 +81,7 @@ public class InterestRateSwaption extends LusidInstrument {
 
       @Override
       public PayOrReceiveFixedEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return PayOrReceiveFixedEnum.fromValue(value);
       }
     }
@@ -132,7 +132,7 @@ public class InterestRateSwaption extends LusidInstrument {
 
       @Override
       public DeliveryMethodEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return DeliveryMethodEnum.fromValue(value);
       }
     }
@@ -146,8 +146,12 @@ public class InterestRateSwaption extends LusidInstrument {
   @SerializedName(SERIALIZED_NAME_SWAP)
   private InterestRateSwap swap = null;
 
+  public InterestRateSwaption() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
+
   public InterestRateSwaption startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -164,8 +168,9 @@ public class InterestRateSwaption extends LusidInstrument {
     this.startDate = startDate;
   }
 
+
   public InterestRateSwaption payOrReceiveFixed(PayOrReceiveFixedEnum payOrReceiveFixed) {
-    this.payOrReceiveFixed = payOrReceiveFixed;
+    this.payOrReceiveFixed = payOrReceiveFixed; 
     return this;
   }
 
@@ -182,8 +187,9 @@ public class InterestRateSwaption extends LusidInstrument {
     this.payOrReceiveFixed = payOrReceiveFixed;
   }
 
+
   public InterestRateSwaption deliveryMethod(DeliveryMethodEnum deliveryMethod) {
-    this.deliveryMethod = deliveryMethod;
+    this.deliveryMethod = deliveryMethod; 
     return this;
   }
 
@@ -200,8 +206,9 @@ public class InterestRateSwaption extends LusidInstrument {
     this.deliveryMethod = deliveryMethod;
   }
 
+
   public InterestRateSwaption swap(InterestRateSwap swap) {
-    this.swap = swap;
+    this.swap = swap; 
     return this;
   }
 
@@ -220,7 +227,7 @@ public class InterestRateSwaption extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -232,9 +239,8 @@ public class InterestRateSwaption extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -253,7 +259,7 @@ public class InterestRateSwaption extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -52,4 +52,76 @@ public class FxOptionTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'optionMaturityDate'
+     */
+    @Test
+    public void optionMaturityDateTest() {
+        // TODO: test optionMaturityDate
+    }
+
+    /**
+     * Test the property 'optionSettlementDate'
+     */
+    @Test
+    public void optionSettlementDateTest() {
+        // TODO: test optionSettlementDate
+    }
+
+    /**
+     * Test the property 'isDeliveryNotCash'
+     */
+    @Test
+    public void isDeliveryNotCashTest() {
+        // TODO: test isDeliveryNotCash
+    }
+
+    /**
+     * Test the property 'isCallNotPut'
+     */
+    @Test
+    public void isCallNotPutTest() {
+        // TODO: test isCallNotPut
+    }
+
+    /**
+     * Test the property 'strike'
+     */
+    @Test
+    public void strikeTest() {
+        // TODO: test strike
+    }
+
+    /**
+     * Test the property 'domCcy'
+     */
+    @Test
+    public void domCcyTest() {
+        // TODO: test domCcy
+    }
+
+    /**
+     * Test the property 'fgnCcy'
+     */
+    @Test
+    public void fgnCcyTest() {
+        // TODO: test fgnCcy
+    }
+
+    /**
+     * Test the property 'premium'
+     */
+    @Test
+    public void premiumTest() {
+        // TODO: test premium
+    }
+
 }

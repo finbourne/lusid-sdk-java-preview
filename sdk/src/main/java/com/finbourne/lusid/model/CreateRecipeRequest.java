@@ -33,7 +33,7 @@ import java.util.List;
  * Specification class to request for the creation/supplementing of a configuration recipe
  */
 @ApiModel(description = "Specification class to request for the creation/supplementing of a configuration recipe")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreateRecipeRequest {
   public static final String SERIALIZED_NAME_RECIPE_CREATION_MARKET_DATA_SCOPES = "recipeCreationMarketDataScopes";
   @SerializedName(SERIALIZED_NAME_RECIPE_CREATION_MARKET_DATA_SCOPES)
@@ -41,11 +41,11 @@ public class CreateRecipeRequest {
 
   public static final String SERIALIZED_NAME_RECIPE_ID = "recipeId";
   @SerializedName(SERIALIZED_NAME_RECIPE_ID)
-  private ResourceId recipeId = null;
+  private ResourceId recipeId;
 
   public static final String SERIALIZED_NAME_INLINE_RECIPE = "inlineRecipe";
   @SerializedName(SERIALIZED_NAME_INLINE_RECIPE)
-  private ConfigurationRecipe inlineRecipe = null;
+  private ConfigurationRecipe inlineRecipe;
 
   public static final String SERIALIZED_NAME_AS_AT = "asAt";
   @SerializedName(SERIALIZED_NAME_AS_AT)
@@ -55,12 +55,14 @@ public class CreateRecipeRequest {
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_AT)
   private String effectiveAt;
 
+
   public CreateRecipeRequest recipeCreationMarketDataScopes(List<String> recipeCreationMarketDataScopes) {
-    this.recipeCreationMarketDataScopes = recipeCreationMarketDataScopes;
+    this.recipeCreationMarketDataScopes = recipeCreationMarketDataScopes; 
     return this;
   }
 
   public CreateRecipeRequest addRecipeCreationMarketDataScopesItem(String recipeCreationMarketDataScopesItem) {
+   
     this.recipeCreationMarketDataScopes.add(recipeCreationMarketDataScopesItem);
     return this;
   }
@@ -78,8 +80,9 @@ public class CreateRecipeRequest {
     this.recipeCreationMarketDataScopes = recipeCreationMarketDataScopes;
   }
 
+
   public CreateRecipeRequest recipeId(ResourceId recipeId) {
-    this.recipeId = recipeId;
+    this.recipeId = recipeId; 
     return this;
   }
 
@@ -96,8 +99,9 @@ public class CreateRecipeRequest {
     this.recipeId = recipeId;
   }
 
+
   public CreateRecipeRequest inlineRecipe(ConfigurationRecipe inlineRecipe) {
-    this.inlineRecipe = inlineRecipe;
+    this.inlineRecipe = inlineRecipe; 
     return this;
   }
 
@@ -114,8 +118,9 @@ public class CreateRecipeRequest {
     this.inlineRecipe = inlineRecipe;
   }
 
+
   public CreateRecipeRequest asAt(OffsetDateTime asAt) {
-    this.asAt = asAt;
+    this.asAt = asAt; 
     return this;
   }
 
@@ -132,8 +137,9 @@ public class CreateRecipeRequest {
     this.asAt = asAt;
   }
 
+
   public CreateRecipeRequest effectiveAt(String effectiveAt) {
-    this.effectiveAt = effectiveAt;
+    this.effectiveAt = effectiveAt; 
     return this;
   }
 
@@ -152,7 +158,7 @@ public class CreateRecipeRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -164,9 +170,8 @@ public class CreateRecipeRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -185,7 +190,7 @@ public class CreateRecipeRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

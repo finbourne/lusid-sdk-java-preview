@@ -29,7 +29,7 @@ import java.time.OffsetDateTime;
 /**
  * FundingLegAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FundingLegAllOf {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -41,7 +41,7 @@ public class FundingLegAllOf {
 
   public static final String SERIALIZED_NAME_LEG_DEFINITION = "legDefinition";
   @SerializedName(SERIALIZED_NAME_LEG_DEFINITION)
-  private LegDefinition legDefinition = null;
+  private LegDefinition legDefinition;
 
   public static final String SERIALIZED_NAME_NOTIONAL = "notional";
   @SerializedName(SERIALIZED_NAME_NOTIONAL)
@@ -136,7 +136,7 @@ public class FundingLegAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -146,8 +146,9 @@ public class FundingLegAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public FundingLegAllOf startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -164,8 +165,9 @@ public class FundingLegAllOf {
     this.startDate = startDate;
   }
 
+
   public FundingLegAllOf maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -182,8 +184,9 @@ public class FundingLegAllOf {
     this.maturityDate = maturityDate;
   }
 
+
   public FundingLegAllOf legDefinition(LegDefinition legDefinition) {
-    this.legDefinition = legDefinition;
+    this.legDefinition = legDefinition; 
     return this;
   }
 
@@ -200,8 +203,9 @@ public class FundingLegAllOf {
     this.legDefinition = legDefinition;
   }
 
+
   public FundingLegAllOf notional(Double notional) {
-    this.notional = notional;
+    this.notional = notional; 
     return this;
   }
 
@@ -218,8 +222,9 @@ public class FundingLegAllOf {
     this.notional = notional;
   }
 
+
   public FundingLegAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -238,7 +243,7 @@ public class FundingLegAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -250,9 +255,8 @@ public class FundingLegAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -271,7 +275,7 @@ public class FundingLegAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

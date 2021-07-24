@@ -53,4 +53,44 @@ public class FloatingLegTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'maturityDate'
+     */
+    @Test
+    public void maturityDateTest() {
+        // TODO: test maturityDate
+    }
+
+    /**
+     * Test the property 'legDefinition'
+     */
+    @Test
+    public void legDefinitionTest() {
+        // TODO: test legDefinition
+    }
+
+    /**
+     * Test the property 'notional'
+     */
+    @Test
+    public void notionalTest() {
+        // TODO: test notional
+    }
+
+    /**
+     * Test the property 'overrides'
+     */
+    @Test
+    public void overridesTest() {
+        // TODO: test overrides
+    }
+
 }

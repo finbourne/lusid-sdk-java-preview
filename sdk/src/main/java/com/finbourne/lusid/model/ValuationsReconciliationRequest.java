@@ -32,26 +32,27 @@ import java.util.List;
  * Specification for the reconciliation request. Left and Right hand sides are constructed. Each consists of a valuation of a portfolio  using an aggregation request. The results of this can then be compared to each other. The difference, which is effectively a risk based  difference allows comparison of the effects of changing a recipe, valuation date, or (though it may or may not make logical sense) a portfolio.  For instance, one might look at the difference in risk caused by the addition of transaction to a portfolio, or through changing the valuation  methodology or system.
  */
 @ApiModel(description = "Specification for the reconciliation request. Left and Right hand sides are constructed. Each consists of a valuation of a portfolio  using an aggregation request. The results of this can then be compared to each other. The difference, which is effectively a risk based  difference allows comparison of the effects of changing a recipe, valuation date, or (though it may or may not make logical sense) a portfolio.  For instance, one might look at the difference in risk caused by the addition of transaction to a portfolio, or through changing the valuation  methodology or system.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ValuationsReconciliationRequest {
   public static final String SERIALIZED_NAME_LEFT = "left";
   @SerializedName(SERIALIZED_NAME_LEFT)
-  private ValuationRequest left = null;
+  private ValuationRequest left;
 
   public static final String SERIALIZED_NAME_RIGHT = "right";
   @SerializedName(SERIALIZED_NAME_RIGHT)
-  private ValuationRequest right = null;
+  private ValuationRequest right;
 
   public static final String SERIALIZED_NAME_LEFT_TO_RIGHT_MAPPING = "leftToRightMapping";
   @SerializedName(SERIALIZED_NAME_LEFT_TO_RIGHT_MAPPING)
-  private List<ReconciliationLeftRightAddressKeyPair> leftToRightMapping = new ArrayList<>();
+  private List<ReconciliationLeftRightAddressKeyPair> leftToRightMapping = null;
 
   public static final String SERIALIZED_NAME_PRESERVE_KEYS = "preserveKeys";
   @SerializedName(SERIALIZED_NAME_PRESERVE_KEYS)
-  private List<String> preserveKeys = new ArrayList<>();
+  private List<String> preserveKeys = null;
+
 
   public ValuationsReconciliationRequest left(ValuationRequest left) {
-    this.left = left;
+    this.left = left; 
     return this;
   }
 
@@ -68,8 +69,9 @@ public class ValuationsReconciliationRequest {
     this.left = left;
   }
 
+
   public ValuationsReconciliationRequest right(ValuationRequest right) {
-    this.right = right;
+    this.right = right; 
     return this;
   }
 
@@ -86,12 +88,14 @@ public class ValuationsReconciliationRequest {
     this.right = right;
   }
 
+
   public ValuationsReconciliationRequest leftToRightMapping(List<ReconciliationLeftRightAddressKeyPair> leftToRightMapping) {
-    this.leftToRightMapping = leftToRightMapping;
+    this.leftToRightMapping = leftToRightMapping; 
     return this;
   }
 
   public ValuationsReconciliationRequest addLeftToRightMappingItem(ReconciliationLeftRightAddressKeyPair leftToRightMappingItem) {
+   
     if (this.leftToRightMapping == null) {
       this.leftToRightMapping = new ArrayList<>();
     }
@@ -112,12 +116,14 @@ public class ValuationsReconciliationRequest {
     this.leftToRightMapping = leftToRightMapping;
   }
 
+
   public ValuationsReconciliationRequest preserveKeys(List<String> preserveKeys) {
-    this.preserveKeys = preserveKeys;
+    this.preserveKeys = preserveKeys; 
     return this;
   }
 
   public ValuationsReconciliationRequest addPreserveKeysItem(String preserveKeysItem) {
+   
     if (this.preserveKeys == null) {
       this.preserveKeys = new ArrayList<>();
     }
@@ -140,7 +146,7 @@ public class ValuationsReconciliationRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -152,9 +158,8 @@ public class ValuationsReconciliationRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -172,7 +177,7 @@ public class ValuationsReconciliationRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -52,4 +52,44 @@ public class TermDepositTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'maturityDate'
+     */
+    @Test
+    public void maturityDateTest() {
+        // TODO: test maturityDate
+    }
+
+    /**
+     * Test the property 'contractSize'
+     */
+    @Test
+    public void contractSizeTest() {
+        // TODO: test contractSize
+    }
+
+    /**
+     * Test the property 'flowConvention'
+     */
+    @Test
+    public void flowConventionTest() {
+        // TODO: test flowConvention
+    }
+
+    /**
+     * Test the property 'rate'
+     */
+    @Test
+    public void rateTest() {
+        // TODO: test rate
+    }
+
 }

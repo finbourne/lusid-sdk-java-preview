@@ -53,4 +53,44 @@ public class SimpleInstrumentTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'maturityDate'
+     */
+    @Test
+    public void maturityDateTest() {
+        // TODO: test maturityDate
+    }
+
+    /**
+     * Test the property 'domCcy'
+     */
+    @Test
+    public void domCcyTest() {
+        // TODO: test domCcy
+    }
+
+    /**
+     * Test the property 'assetClass'
+     */
+    @Test
+    public void assetClassTest() {
+        // TODO: test assetClass
+    }
+
+    /**
+     * Test the property 'fgnCcys'
+     */
+    @Test
+    public void fgnCcysTest() {
+        // TODO: test fgnCcys
+    }
+
+    /**
+     * Test the property 'simpleInstrumentType'
+     */
+    @Test
+    public void simpleInstrumentTypeTest() {
+        // TODO: test simpleInstrumentType
+    }
+
 }

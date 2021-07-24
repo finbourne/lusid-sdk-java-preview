@@ -52,4 +52,28 @@ public class BasketTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'basketName'
+     */
+    @Test
+    public void basketNameTest() {
+        // TODO: test basketName
+    }
+
+    /**
+     * Test the property 'basketType'
+     */
+    @Test
+    public void basketTypeTest() {
+        // TODO: test basketType
+    }
+
+    /**
+     * Test the property 'weightedInstruments'
+     */
+    @Test
+    public void weightedInstrumentsTest() {
+        // TODO: test weightedInstruments
+    }
+
 }

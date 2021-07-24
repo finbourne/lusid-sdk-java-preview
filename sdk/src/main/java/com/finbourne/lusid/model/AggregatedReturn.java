@@ -32,7 +32,7 @@ import java.util.Map;
  * A list of Aggregated Returns.
  */
 @ApiModel(description = "A list of Aggregated Returns.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class AggregatedReturn {
   public static final String SERIALIZED_NAME_EFFECTIVE_AT = "effectiveAt";
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_AT)
@@ -54,8 +54,9 @@ public class AggregatedReturn {
   @SerializedName(SERIALIZED_NAME_FREQUENCY)
   private String frequency;
 
+
   public AggregatedReturn effectiveAt(OffsetDateTime effectiveAt) {
-    this.effectiveAt = effectiveAt;
+    this.effectiveAt = effectiveAt; 
     return this;
   }
 
@@ -72,8 +73,9 @@ public class AggregatedReturn {
     this.effectiveAt = effectiveAt;
   }
 
+
   public AggregatedReturn openingMarketValue(Double openingMarketValue) {
-    this.openingMarketValue = openingMarketValue;
+    this.openingMarketValue = openingMarketValue; 
     return this;
   }
 
@@ -90,8 +92,9 @@ public class AggregatedReturn {
     this.openingMarketValue = openingMarketValue;
   }
 
+
   public AggregatedReturn closingMarketValue(Double closingMarketValue) {
-    this.closingMarketValue = closingMarketValue;
+    this.closingMarketValue = closingMarketValue; 
     return this;
   }
 
@@ -108,8 +111,9 @@ public class AggregatedReturn {
     this.closingMarketValue = closingMarketValue;
   }
 
+
   public AggregatedReturn metricsValue(Map<String, Double> metricsValue) {
-    this.metricsValue = metricsValue;
+    this.metricsValue = metricsValue; 
     return this;
   }
 
@@ -131,8 +135,9 @@ public class AggregatedReturn {
     this.metricsValue = metricsValue;
   }
 
+
   public AggregatedReturn frequency(String frequency) {
-    this.frequency = frequency;
+    this.frequency = frequency; 
     return this;
   }
 
@@ -151,7 +156,7 @@ public class AggregatedReturn {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -163,9 +168,8 @@ public class AggregatedReturn {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -184,7 +188,7 @@ public class AggregatedReturn {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

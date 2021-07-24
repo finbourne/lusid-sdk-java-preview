@@ -31,14 +31,15 @@ import java.util.Map;
 /**
  * SetPersonPropertiesRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SetPersonPropertiesRequest {
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, List<Property>> properties = new HashMap<>();
+  private Map<String, List<Property>> properties = null;
+
 
   public SetPersonPropertiesRequest properties(Map<String, List<Property>> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
@@ -65,7 +66,7 @@ public class SetPersonPropertiesRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -77,9 +78,8 @@ public class SetPersonPropertiesRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -94,7 +94,7 @@ public class SetPersonPropertiesRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

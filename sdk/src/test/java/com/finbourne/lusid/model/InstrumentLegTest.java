@@ -13,6 +13,9 @@
 
 package com.finbourne.lusid.model;
 
+import com.finbourne.lusid.model.FixedLeg;
+import com.finbourne.lusid.model.FloatingLeg;
+import com.finbourne.lusid.model.FundingLeg;
 import com.finbourne.lusid.model.InstrumentLegAllOf;
 import com.finbourne.lusid.model.LusidInstrument;
 import com.google.gson.TypeAdapter;

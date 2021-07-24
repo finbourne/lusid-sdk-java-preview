@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * CrossCurrencySwapAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CrossCurrencySwapAllOf {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -134,7 +134,7 @@ public class CrossCurrencySwapAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -144,8 +144,9 @@ public class CrossCurrencySwapAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public CrossCurrencySwapAllOf startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -162,8 +163,9 @@ public class CrossCurrencySwapAllOf {
     this.startDate = startDate;
   }
 
+
   public CrossCurrencySwapAllOf maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -180,12 +182,14 @@ public class CrossCurrencySwapAllOf {
     this.maturityDate = maturityDate;
   }
 
+
   public CrossCurrencySwapAllOf legs(List<InstrumentLeg> legs) {
-    this.legs = legs;
+    this.legs = legs; 
     return this;
   }
 
   public CrossCurrencySwapAllOf addLegsItem(InstrumentLeg legsItem) {
+   
     this.legs.add(legsItem);
     return this;
   }
@@ -203,8 +207,9 @@ public class CrossCurrencySwapAllOf {
     this.legs = legs;
   }
 
+
   public CrossCurrencySwapAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -223,7 +228,7 @@ public class CrossCurrencySwapAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -235,9 +240,8 @@ public class CrossCurrencySwapAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -255,7 +259,7 @@ public class CrossCurrencySwapAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

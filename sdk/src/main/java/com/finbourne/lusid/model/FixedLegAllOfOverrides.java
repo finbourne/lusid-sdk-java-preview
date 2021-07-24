@@ -30,22 +30,24 @@ import java.util.List;
  * Any overriding data for notionals, spreads or rates that would affect generation of a leg.              This supports the case where an amortization schedule is given but otherwise generation is allowed as usual.
  */
 @ApiModel(description = "Any overriding data for notionals, spreads or rates that would affect generation of a leg.              This supports the case where an amortization schedule is given but otherwise generation is allowed as usual.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FixedLegAllOfOverrides {
   public static final String SERIALIZED_NAME_AMORTIZATION = "Amortization";
   @SerializedName(SERIALIZED_NAME_AMORTIZATION)
-  private List<Double> amortization = new ArrayList<>();
+  private List<Double> amortization = null;
 
   public static final String SERIALIZED_NAME_SPREADS = "Spreads";
   @SerializedName(SERIALIZED_NAME_SPREADS)
-  private List<Double> spreads = new ArrayList<>();
+  private List<Double> spreads = null;
+
 
   public FixedLegAllOfOverrides amortization(List<Double> amortization) {
-    this.amortization = amortization;
+    this.amortization = amortization; 
     return this;
   }
 
   public FixedLegAllOfOverrides addAmortizationItem(Double amortizationItem) {
+   
     if (this.amortization == null) {
       this.amortization = new ArrayList<>();
     }
@@ -66,12 +68,14 @@ public class FixedLegAllOfOverrides {
     this.amortization = amortization;
   }
 
+
   public FixedLegAllOfOverrides spreads(List<Double> spreads) {
-    this.spreads = spreads;
+    this.spreads = spreads; 
     return this;
   }
 
   public FixedLegAllOfOverrides addSpreadsItem(Double spreadsItem) {
+   
     if (this.spreads == null) {
       this.spreads = new ArrayList<>();
     }
@@ -94,7 +98,7 @@ public class FixedLegAllOfOverrides {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -106,9 +110,8 @@ public class FixedLegAllOfOverrides {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -124,7 +127,7 @@ public class FixedLegAllOfOverrides {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

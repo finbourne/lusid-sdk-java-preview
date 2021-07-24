@@ -32,7 +32,7 @@ import java.time.OffsetDateTime;
  * Lusid internal representation of a term deposit
  */
 @ApiModel(description = "Lusid internal representation of a term deposit")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TermDeposit extends LusidInstrument {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -48,14 +48,18 @@ public class TermDeposit extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_FLOW_CONVENTION = "flowConvention";
   @SerializedName(SERIALIZED_NAME_FLOW_CONVENTION)
-  private FlowConventions flowConvention = null;
+  private FlowConventions flowConvention;
 
   public static final String SERIALIZED_NAME_RATE = "rate";
   @SerializedName(SERIALIZED_NAME_RATE)
   private Double rate;
 
+  public TermDeposit() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
+
   public TermDeposit startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -72,8 +76,9 @@ public class TermDeposit extends LusidInstrument {
     this.startDate = startDate;
   }
 
+
   public TermDeposit maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -90,8 +95,9 @@ public class TermDeposit extends LusidInstrument {
     this.maturityDate = maturityDate;
   }
 
+
   public TermDeposit contractSize(Double contractSize) {
-    this.contractSize = contractSize;
+    this.contractSize = contractSize; 
     return this;
   }
 
@@ -108,8 +114,9 @@ public class TermDeposit extends LusidInstrument {
     this.contractSize = contractSize;
   }
 
+
   public TermDeposit flowConvention(FlowConventions flowConvention) {
-    this.flowConvention = flowConvention;
+    this.flowConvention = flowConvention; 
     return this;
   }
 
@@ -126,8 +133,9 @@ public class TermDeposit extends LusidInstrument {
     this.flowConvention = flowConvention;
   }
 
+
   public TermDeposit rate(Double rate) {
-    this.rate = rate;
+    this.rate = rate; 
     return this;
   }
 
@@ -146,7 +154,7 @@ public class TermDeposit extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -158,9 +166,8 @@ public class TermDeposit extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -180,7 +187,7 @@ public class TermDeposit extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

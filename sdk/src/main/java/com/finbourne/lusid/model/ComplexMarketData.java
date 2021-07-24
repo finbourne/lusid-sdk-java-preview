@@ -15,6 +15,12 @@ package com.finbourne.lusid.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.finbourne.lusid.model.DiscountFactorCurveData;
+import com.finbourne.lusid.model.EquityVolSurfaceData;
+import com.finbourne.lusid.model.FxVolSurfaceData;
+import com.finbourne.lusid.model.IrVolCubeData;
+import com.finbourne.lusid.model.OpaqueMarketData;
+import com.finbourne.lusid.model.YieldCurveData;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,8 +34,7 @@ import java.io.IOException;
  * A base class for any form of market data with structure
  */
 @ApiModel(description = "A base class for any form of market data with structure")
-
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ComplexMarketData {
   /**
    * The available values are: DiscountFactorCurveData, EquityVolSurfaceData, FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData
@@ -80,7 +85,7 @@ public class ComplexMarketData {
 
       @Override
       public MarketDataTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return MarketDataTypeEnum.fromValue(value);
       }
     }
@@ -88,13 +93,14 @@ public class ComplexMarketData {
 
   public static final String SERIALIZED_NAME_MARKET_DATA_TYPE = "marketDataType";
   @SerializedName(SERIALIZED_NAME_MARKET_DATA_TYPE)
-  private MarketDataTypeEnum marketDataType;
+  protected MarketDataTypeEnum marketDataType;
 
   public ComplexMarketData() {
     //this.marketDataType = this.getClass().getSimpleName();
   }
+
   public ComplexMarketData marketDataType(MarketDataTypeEnum marketDataType) {
-    this.marketDataType = marketDataType;
+    this.marketDataType = marketDataType; 
     return this;
   }
 
@@ -113,7 +119,7 @@ public class ComplexMarketData {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -125,9 +131,8 @@ public class ComplexMarketData {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -142,7 +147,7 @@ public class ComplexMarketData {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

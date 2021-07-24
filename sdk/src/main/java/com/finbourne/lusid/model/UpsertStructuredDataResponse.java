@@ -36,7 +36,7 @@ import java.util.Map;
  * Response from upserting structured data document
  */
 @ApiModel(description = "Response from upserting structured data document")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpsertStructuredDataResponse {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -44,18 +44,19 @@ public class UpsertStructuredDataResponse {
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  private Map<String, OffsetDateTime> values = new HashMap<>();
+  private Map<String, OffsetDateTime> values = null;
 
   public static final String SERIALIZED_NAME_FAILED = "failed";
   @SerializedName(SERIALIZED_NAME_FAILED)
-  private Map<String, ErrorDetail> failed = new HashMap<>();
+  private Map<String, ErrorDetail> failed = null;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public UpsertStructuredDataResponse href(URI href) {
-    this.href = href;
+    this.href = href; 
     return this;
   }
 
@@ -72,8 +73,9 @@ public class UpsertStructuredDataResponse {
     this.href = href;
   }
 
+
   public UpsertStructuredDataResponse values(Map<String, OffsetDateTime> values) {
-    this.values = values;
+    this.values = values; 
     return this;
   }
 
@@ -98,8 +100,9 @@ public class UpsertStructuredDataResponse {
     this.values = values;
   }
 
+
   public UpsertStructuredDataResponse failed(Map<String, ErrorDetail> failed) {
-    this.failed = failed;
+    this.failed = failed; 
     return this;
   }
 
@@ -124,12 +127,14 @@ public class UpsertStructuredDataResponse {
     this.failed = failed;
   }
 
+
   public UpsertStructuredDataResponse links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public UpsertStructuredDataResponse addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -152,7 +157,7 @@ public class UpsertStructuredDataResponse {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -164,9 +169,8 @@ public class UpsertStructuredDataResponse {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -184,7 +188,7 @@ public class UpsertStructuredDataResponse {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

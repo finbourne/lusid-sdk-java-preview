@@ -2,6 +2,8 @@
 
 # ParticipationRequest
 
+A request to create or update a Participation.
+
 ## Properties
 
 Name | Type | Description | Notes

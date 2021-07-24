@@ -35,7 +35,7 @@ import java.util.List;
  * Market Data for an fx vol surface, represented by a list of fx options and corresponding market quotes
  */
 @ApiModel(description = "Market Data for an fx vol surface, represented by a list of fx options and corresponding market quotes")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FxVolSurfaceData extends ComplexMarketData {
   public static final String SERIALIZED_NAME_BASE_DATE = "baseDate";
   @SerializedName(SERIALIZED_NAME_BASE_DATE)
@@ -49,8 +49,12 @@ public class FxVolSurfaceData extends ComplexMarketData {
   @SerializedName(SERIALIZED_NAME_QUOTES)
   private List<MarketQuote> quotes = new ArrayList<>();
 
+  public FxVolSurfaceData() {
+    //this.marketDataType = this.getClass().getSimpleName();
+  }
+
   public FxVolSurfaceData baseDate(OffsetDateTime baseDate) {
-    this.baseDate = baseDate;
+    this.baseDate = baseDate; 
     return this;
   }
 
@@ -67,12 +71,14 @@ public class FxVolSurfaceData extends ComplexMarketData {
     this.baseDate = baseDate;
   }
 
+
   public FxVolSurfaceData instruments(List<LusidInstrument> instruments) {
-    this.instruments = instruments;
+    this.instruments = instruments; 
     return this;
   }
 
   public FxVolSurfaceData addInstrumentsItem(LusidInstrument instrumentsItem) {
+   
     this.instruments.add(instrumentsItem);
     return this;
   }
@@ -90,12 +96,14 @@ public class FxVolSurfaceData extends ComplexMarketData {
     this.instruments = instruments;
   }
 
+
   public FxVolSurfaceData quotes(List<MarketQuote> quotes) {
-    this.quotes = quotes;
+    this.quotes = quotes; 
     return this;
   }
 
   public FxVolSurfaceData addQuotesItem(MarketQuote quotesItem) {
+   
     this.quotes.add(quotesItem);
     return this;
   }
@@ -115,7 +123,7 @@ public class FxVolSurfaceData extends ComplexMarketData {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -127,9 +135,8 @@ public class FxVolSurfaceData extends ComplexMarketData {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -147,7 +154,7 @@ public class FxVolSurfaceData extends ComplexMarketData {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -28,7 +28,7 @@ import java.io.IOException;
  * When importing data from an external data source, in order for it to be reliable queryable, LUSID needs to know something about it.  A data definition tells LUSID, what a given external data item is, what type it is and whether it in some way identifies items of data.  Consider presenting LUSID with a list of dictionaries where each dictionary contains the same set of keys (names). Each data item pointed to by  a key would be expected to be of the same type (integer, string, decimal etc.). To identify a particular dictionary from the list, a tuple of  one or more of the items in the dictionary would make it unique. If only a single item is required then the
  */
 @ApiModel(description = "When importing data from an external data source, in order for it to be reliable queryable, LUSID needs to know something about it.  A data definition tells LUSID, what a given external data item is, what type it is and whether it in some way identifies items of data.  Consider presenting LUSID with a list of dictionaries where each dictionary contains the same set of keys (names). Each data item pointed to by  a key would be expected to be of the same type (integer, string, decimal etc.). To identify a particular dictionary from the list, a tuple of  one or more of the items in the dictionary would make it unique. If only a single item is required then the")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class DataDefinition {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -46,8 +46,9 @@ public class DataDefinition {
   @SerializedName(SERIALIZED_NAME_KEY_TYPE)
   private String keyType;
 
+
   public DataDefinition address(String address) {
-    this.address = address;
+    this.address = address; 
     return this;
   }
 
@@ -64,8 +65,9 @@ public class DataDefinition {
     this.address = address;
   }
 
+
   public DataDefinition name(String name) {
-    this.name = name;
+    this.name = name; 
     return this;
   }
 
@@ -82,8 +84,9 @@ public class DataDefinition {
     this.name = name;
   }
 
+
   public DataDefinition dataType(String dataType) {
-    this.dataType = dataType;
+    this.dataType = dataType; 
     return this;
   }
 
@@ -100,8 +103,9 @@ public class DataDefinition {
     this.dataType = dataType;
   }
 
+
   public DataDefinition keyType(String keyType) {
-    this.keyType = keyType;
+    this.keyType = keyType; 
     return this;
   }
 
@@ -120,7 +124,7 @@ public class DataDefinition {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -132,9 +136,8 @@ public class DataDefinition {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -152,7 +155,7 @@ public class DataDefinition {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

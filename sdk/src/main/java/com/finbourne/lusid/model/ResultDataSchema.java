@@ -31,18 +31,19 @@ import java.util.Map;
 /**
  * ResultDataSchema
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ResultDataSchema {
   public static final String SERIALIZED_NAME_NODE_VALUE_SCHEMA = "nodeValueSchema";
   @SerializedName(SERIALIZED_NAME_NODE_VALUE_SCHEMA)
-  private Map<String, FieldSchema> nodeValueSchema = new HashMap<>();
+  private Map<String, FieldSchema> nodeValueSchema = null;
 
   public static final String SERIALIZED_NAME_PROPERTY_SCHEMA = "propertySchema";
   @SerializedName(SERIALIZED_NAME_PROPERTY_SCHEMA)
-  private Map<String, FieldSchema> propertySchema = new HashMap<>();
+  private Map<String, FieldSchema> propertySchema = null;
+
 
   public ResultDataSchema nodeValueSchema(Map<String, FieldSchema> nodeValueSchema) {
-    this.nodeValueSchema = nodeValueSchema;
+    this.nodeValueSchema = nodeValueSchema; 
     return this;
   }
 
@@ -67,8 +68,9 @@ public class ResultDataSchema {
     this.nodeValueSchema = nodeValueSchema;
   }
 
+
   public ResultDataSchema propertySchema(Map<String, FieldSchema> propertySchema) {
-    this.propertySchema = propertySchema;
+    this.propertySchema = propertySchema; 
     return this;
   }
 
@@ -95,7 +97,7 @@ public class ResultDataSchema {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -107,9 +109,8 @@ public class ResultDataSchema {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -125,7 +126,7 @@ public class ResultDataSchema {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

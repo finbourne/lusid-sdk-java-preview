@@ -29,7 +29,7 @@ import java.io.IOException;
  * The counterpartyAgreement is signed by two parties, one of which is implicitly the LUSID user.  The CounterpartySignatory represents the &#39;other side&#39; of the agreement.  It comprises a name and identifier for a Legal Entity in LUSID.
  */
 @ApiModel(description = "The counterpartyAgreement is signed by two parties, one of which is implicitly the LUSID user.  The CounterpartySignatory represents the 'other side' of the agreement.  It comprises a name and identifier for a Legal Entity in LUSID.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CounterpartySignatory {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -37,10 +37,11 @@ public class CounterpartySignatory {
 
   public static final String SERIALIZED_NAME_LEGAL_ENTITY_IDENTIFIER = "legalEntityIdentifier";
   @SerializedName(SERIALIZED_NAME_LEGAL_ENTITY_IDENTIFIER)
-  private TypedResourceId legalEntityIdentifier = null;
+  private TypedResourceId legalEntityIdentifier;
+
 
   public CounterpartySignatory name(String name) {
-    this.name = name;
+    this.name = name; 
     return this;
   }
 
@@ -57,8 +58,9 @@ public class CounterpartySignatory {
     this.name = name;
   }
 
+
   public CounterpartySignatory legalEntityIdentifier(TypedResourceId legalEntityIdentifier) {
-    this.legalEntityIdentifier = legalEntityIdentifier;
+    this.legalEntityIdentifier = legalEntityIdentifier; 
     return this;
   }
 
@@ -77,7 +79,7 @@ public class CounterpartySignatory {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -89,9 +91,8 @@ public class CounterpartySignatory {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -107,7 +108,7 @@ public class CounterpartySignatory {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

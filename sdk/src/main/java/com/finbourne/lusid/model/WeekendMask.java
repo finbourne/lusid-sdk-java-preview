@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * WeekendMask
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class WeekendMask {
   public static final String SERIALIZED_NAME_DAYS = "days";
   @SerializedName(SERIALIZED_NAME_DAYS)
@@ -40,12 +40,14 @@ public class WeekendMask {
   @SerializedName(SERIALIZED_NAME_TIME_ZONE)
   private String timeZone;
 
+
   public WeekendMask days(List<DayOfWeek> days) {
-    this.days = days;
+    this.days = days; 
     return this;
   }
 
   public WeekendMask addDaysItem(DayOfWeek daysItem) {
+   
     this.days.add(daysItem);
     return this;
   }
@@ -63,8 +65,9 @@ public class WeekendMask {
     this.days = days;
   }
 
+
   public WeekendMask timeZone(String timeZone) {
-    this.timeZone = timeZone;
+    this.timeZone = timeZone; 
     return this;
   }
 
@@ -83,7 +86,7 @@ public class WeekendMask {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -95,9 +98,8 @@ public class WeekendMask {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -113,7 +115,7 @@ public class WeekendMask {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

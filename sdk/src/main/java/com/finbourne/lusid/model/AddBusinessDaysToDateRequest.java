@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * AddBusinessDaysToDateRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class AddBusinessDaysToDateRequest {
   public static final String SERIALIZED_NAME_BUSINESS_DAY_OFFSET = "businessDayOffset";
   @SerializedName(SERIALIZED_NAME_BUSINESS_DAY_OFFSET)
@@ -48,8 +48,9 @@ public class AddBusinessDaysToDateRequest {
   @SerializedName(SERIALIZED_NAME_AS_AT)
   private OffsetDateTime asAt;
 
+
   public AddBusinessDaysToDateRequest businessDayOffset(Integer businessDayOffset) {
-    this.businessDayOffset = businessDayOffset;
+    this.businessDayOffset = businessDayOffset; 
     return this;
   }
 
@@ -66,12 +67,14 @@ public class AddBusinessDaysToDateRequest {
     this.businessDayOffset = businessDayOffset;
   }
 
+
   public AddBusinessDaysToDateRequest holidayCodes(List<String> holidayCodes) {
-    this.holidayCodes = holidayCodes;
+    this.holidayCodes = holidayCodes; 
     return this;
   }
 
   public AddBusinessDaysToDateRequest addHolidayCodesItem(String holidayCodesItem) {
+   
     this.holidayCodes.add(holidayCodesItem);
     return this;
   }
@@ -89,8 +92,9 @@ public class AddBusinessDaysToDateRequest {
     this.holidayCodes = holidayCodes;
   }
 
+
   public AddBusinessDaysToDateRequest startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -107,8 +111,9 @@ public class AddBusinessDaysToDateRequest {
     this.startDate = startDate;
   }
 
+
   public AddBusinessDaysToDateRequest asAt(OffsetDateTime asAt) {
-    this.asAt = asAt;
+    this.asAt = asAt; 
     return this;
   }
 
@@ -127,7 +132,7 @@ public class AddBusinessDaysToDateRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -139,9 +144,8 @@ public class AddBusinessDaysToDateRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -159,7 +163,7 @@ public class AddBusinessDaysToDateRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

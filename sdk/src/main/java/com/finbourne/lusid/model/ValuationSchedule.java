@@ -30,7 +30,7 @@ import java.util.List;
  * Specification object for the valuation schedule, how do we determine which days we wish to perform a valuation upon.
  */
 @ApiModel(description = "Specification object for the valuation schedule, how do we determine which days we wish to perform a valuation upon.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ValuationSchedule {
   public static final String SERIALIZED_NAME_EFFECTIVE_FROM = "effectiveFrom";
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_FROM)
@@ -50,14 +50,15 @@ public class ValuationSchedule {
 
   public static final String SERIALIZED_NAME_HOLIDAY_CALENDARS = "holidayCalendars";
   @SerializedName(SERIALIZED_NAME_HOLIDAY_CALENDARS)
-  private List<String> holidayCalendars = new ArrayList<>();
+  private List<String> holidayCalendars = null;
 
   public static final String SERIALIZED_NAME_VALUATION_DATE_TIMES = "valuationDateTimes";
   @SerializedName(SERIALIZED_NAME_VALUATION_DATE_TIMES)
-  private List<String> valuationDateTimes = new ArrayList<>();
+  private List<String> valuationDateTimes = null;
+
 
   public ValuationSchedule effectiveFrom(String effectiveFrom) {
-    this.effectiveFrom = effectiveFrom;
+    this.effectiveFrom = effectiveFrom; 
     return this;
   }
 
@@ -74,8 +75,9 @@ public class ValuationSchedule {
     this.effectiveFrom = effectiveFrom;
   }
 
+
   public ValuationSchedule effectiveAt(String effectiveAt) {
-    this.effectiveAt = effectiveAt;
+    this.effectiveAt = effectiveAt; 
     return this;
   }
 
@@ -92,8 +94,9 @@ public class ValuationSchedule {
     this.effectiveAt = effectiveAt;
   }
 
+
   public ValuationSchedule tenor(String tenor) {
-    this.tenor = tenor;
+    this.tenor = tenor; 
     return this;
   }
 
@@ -110,8 +113,9 @@ public class ValuationSchedule {
     this.tenor = tenor;
   }
 
+
   public ValuationSchedule rollConvention(String rollConvention) {
-    this.rollConvention = rollConvention;
+    this.rollConvention = rollConvention; 
     return this;
   }
 
@@ -128,12 +132,14 @@ public class ValuationSchedule {
     this.rollConvention = rollConvention;
   }
 
+
   public ValuationSchedule holidayCalendars(List<String> holidayCalendars) {
-    this.holidayCalendars = holidayCalendars;
+    this.holidayCalendars = holidayCalendars; 
     return this;
   }
 
   public ValuationSchedule addHolidayCalendarsItem(String holidayCalendarsItem) {
+   
     if (this.holidayCalendars == null) {
       this.holidayCalendars = new ArrayList<>();
     }
@@ -154,12 +160,14 @@ public class ValuationSchedule {
     this.holidayCalendars = holidayCalendars;
   }
 
+
   public ValuationSchedule valuationDateTimes(List<String> valuationDateTimes) {
-    this.valuationDateTimes = valuationDateTimes;
+    this.valuationDateTimes = valuationDateTimes; 
     return this;
   }
 
   public ValuationSchedule addValuationDateTimesItem(String valuationDateTimesItem) {
+   
     if (this.valuationDateTimes == null) {
       this.valuationDateTimes = new ArrayList<>();
     }
@@ -182,7 +190,7 @@ public class ValuationSchedule {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -194,9 +202,8 @@ public class ValuationSchedule {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -216,7 +223,7 @@ public class ValuationSchedule {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

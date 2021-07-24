@@ -34,7 +34,7 @@ import java.util.List;
  * The Configuration or Calculation Recipe controls how LUSID processes a given request.  This can be used to change where market data used in pricing is loaded from and in what order, or which model is used to  price a given instrument as well as how aggregation will process the produced results.
  */
 @ApiModel(description = "The Configuration or Calculation Recipe controls how LUSID processes a given request.  This can be used to change where market data used in pricing is loaded from and in what order, or which model is used to  price a given instrument as well as how aggregation will process the produced results.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ConfigurationRecipe {
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
@@ -46,26 +46,27 @@ public class ConfigurationRecipe {
 
   public static final String SERIALIZED_NAME_MARKET = "market";
   @SerializedName(SERIALIZED_NAME_MARKET)
-  private MarketContext market = null;
+  private MarketContext market;
 
   public static final String SERIALIZED_NAME_PRICING = "pricing";
   @SerializedName(SERIALIZED_NAME_PRICING)
-  private PricingContext pricing = null;
+  private PricingContext pricing;
 
   public static final String SERIALIZED_NAME_AGGREGATION = "aggregation";
   @SerializedName(SERIALIZED_NAME_AGGREGATION)
-  private AggregationContext aggregation = null;
+  private AggregationContext aggregation;
 
   public static final String SERIALIZED_NAME_INHERITED_RECIPES = "inheritedRecipes";
   @SerializedName(SERIALIZED_NAME_INHERITED_RECIPES)
-  private List<ResourceId> inheritedRecipes = new ArrayList<>();
+  private List<ResourceId> inheritedRecipes = null;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
+
   public ConfigurationRecipe scope(String scope) {
-    this.scope = scope;
+    this.scope = scope; 
     return this;
   }
 
@@ -82,8 +83,9 @@ public class ConfigurationRecipe {
     this.scope = scope;
   }
 
+
   public ConfigurationRecipe code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -100,8 +102,9 @@ public class ConfigurationRecipe {
     this.code = code;
   }
 
+
   public ConfigurationRecipe market(MarketContext market) {
-    this.market = market;
+    this.market = market; 
     return this;
   }
 
@@ -118,8 +121,9 @@ public class ConfigurationRecipe {
     this.market = market;
   }
 
+
   public ConfigurationRecipe pricing(PricingContext pricing) {
-    this.pricing = pricing;
+    this.pricing = pricing; 
     return this;
   }
 
@@ -136,8 +140,9 @@ public class ConfigurationRecipe {
     this.pricing = pricing;
   }
 
+
   public ConfigurationRecipe aggregation(AggregationContext aggregation) {
-    this.aggregation = aggregation;
+    this.aggregation = aggregation; 
     return this;
   }
 
@@ -154,12 +159,14 @@ public class ConfigurationRecipe {
     this.aggregation = aggregation;
   }
 
+
   public ConfigurationRecipe inheritedRecipes(List<ResourceId> inheritedRecipes) {
-    this.inheritedRecipes = inheritedRecipes;
+    this.inheritedRecipes = inheritedRecipes; 
     return this;
   }
 
   public ConfigurationRecipe addInheritedRecipesItem(ResourceId inheritedRecipesItem) {
+   
     if (this.inheritedRecipes == null) {
       this.inheritedRecipes = new ArrayList<>();
     }
@@ -180,8 +187,9 @@ public class ConfigurationRecipe {
     this.inheritedRecipes = inheritedRecipes;
   }
 
+
   public ConfigurationRecipe description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -200,7 +208,7 @@ public class ConfigurationRecipe {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -212,9 +220,8 @@ public class ConfigurationRecipe {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -235,7 +242,7 @@ public class ConfigurationRecipe {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -34,7 +34,7 @@ import java.util.List;
  * IL Cross Currency Swap Instrument; Lusid-ibor internal representation of a Cross Currency Swap instrument  A Cross Currency Swap is the exchange of two sets of cashflows (of differing currencies) occurring at one or more dates.  These may include a notional exchange at the start and, or, maturity of the trade. Depending upon the choice of  payment currency, payment frequency and so on they can be used to match sets of future obligations
  */
 @ApiModel(description = "IL Cross Currency Swap Instrument; Lusid-ibor internal representation of a Cross Currency Swap instrument  A Cross Currency Swap is the exchange of two sets of cashflows (of differing currencies) occurring at one or more dates.  These may include a notional exchange at the start and, or, maturity of the trade. Depending upon the choice of  payment currency, payment frequency and so on they can be used to match sets of future obligations")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CrossCurrencySwap extends LusidInstrument {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -48,8 +48,12 @@ public class CrossCurrencySwap extends LusidInstrument {
   @SerializedName(SERIALIZED_NAME_LEGS)
   private List<InstrumentLeg> legs = new ArrayList<>();
 
+  public CrossCurrencySwap() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
+
   public CrossCurrencySwap startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -66,8 +70,9 @@ public class CrossCurrencySwap extends LusidInstrument {
     this.startDate = startDate;
   }
 
+
   public CrossCurrencySwap maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -84,12 +89,14 @@ public class CrossCurrencySwap extends LusidInstrument {
     this.maturityDate = maturityDate;
   }
 
+
   public CrossCurrencySwap legs(List<InstrumentLeg> legs) {
-    this.legs = legs;
+    this.legs = legs; 
     return this;
   }
 
   public CrossCurrencySwap addLegsItem(InstrumentLeg legsItem) {
+   
     this.legs.add(legsItem);
     return this;
   }
@@ -109,7 +116,7 @@ public class CrossCurrencySwap extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -121,9 +128,8 @@ public class CrossCurrencySwap extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -141,7 +147,7 @@ public class CrossCurrencySwap extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

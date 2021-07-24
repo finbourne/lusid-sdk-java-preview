@@ -2,6 +2,8 @@
 
 # A2BMovementRecord
 
+A2B Movement Record - shows A2B category based changes relating to a specific movement
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -13,7 +15,7 @@ Name | Type | Description | Notes
 **currency** | **String** | The holding currency. |  [optional]
 **transactionId** | **String** | The unique identifier for the transaction. |  [optional]
 **movementName** | **String** | The name of the movement. |  [optional]
-**effectiveDate** | [**OffsetDateTime**](OffsetDateTime.md) | The date of the movement. |  [optional]
+**effectiveDate** | **OffsetDateTime** | The date of the movement. |  [optional]
 **units** | **Double** | The number of units of the instrument that are affected by the movement. |  [optional]
 **start** | [**A2BCategory**](A2BCategory.md) |  |  [optional]
 **flows** | [**A2BCategory**](A2BCategory.md) |  |  [optional]

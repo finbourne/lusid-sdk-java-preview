@@ -33,7 +33,7 @@ import java.util.List;
  * IL SimpleInstrument Instrument; Lusid-ibor internal representation of a SimpleInstrument instrument
  */
 @ApiModel(description = "IL SimpleInstrument Instrument; Lusid-ibor internal representation of a SimpleInstrument instrument")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SimpleInstrument extends LusidInstrument {
   public static final String SERIALIZED_NAME_MATURITY_DATE = "maturityDate";
   @SerializedName(SERIALIZED_NAME_MATURITY_DATE)
@@ -94,7 +94,7 @@ public class SimpleInstrument extends LusidInstrument {
 
       @Override
       public AssetClassEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return AssetClassEnum.fromValue(value);
       }
     }
@@ -106,14 +106,18 @@ public class SimpleInstrument extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_FGN_CCYS = "fgnCcys";
   @SerializedName(SERIALIZED_NAME_FGN_CCYS)
-  private List<String> fgnCcys = new ArrayList<>();
+  private List<String> fgnCcys = null;
 
   public static final String SERIALIZED_NAME_SIMPLE_INSTRUMENT_TYPE = "simpleInstrumentType";
   @SerializedName(SERIALIZED_NAME_SIMPLE_INSTRUMENT_TYPE)
   private String simpleInstrumentType;
 
+  public SimpleInstrument() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
+
   public SimpleInstrument maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -130,8 +134,9 @@ public class SimpleInstrument extends LusidInstrument {
     this.maturityDate = maturityDate;
   }
 
+
   public SimpleInstrument domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -148,8 +153,9 @@ public class SimpleInstrument extends LusidInstrument {
     this.domCcy = domCcy;
   }
 
+
   public SimpleInstrument assetClass(AssetClassEnum assetClass) {
-    this.assetClass = assetClass;
+    this.assetClass = assetClass; 
     return this;
   }
 
@@ -166,12 +172,14 @@ public class SimpleInstrument extends LusidInstrument {
     this.assetClass = assetClass;
   }
 
+
   public SimpleInstrument fgnCcys(List<String> fgnCcys) {
-    this.fgnCcys = fgnCcys;
+    this.fgnCcys = fgnCcys; 
     return this;
   }
 
   public SimpleInstrument addFgnCcysItem(String fgnCcysItem) {
+   
     if (this.fgnCcys == null) {
       this.fgnCcys = new ArrayList<>();
     }
@@ -192,8 +200,9 @@ public class SimpleInstrument extends LusidInstrument {
     this.fgnCcys = fgnCcys;
   }
 
+
   public SimpleInstrument simpleInstrumentType(String simpleInstrumentType) {
-    this.simpleInstrumentType = simpleInstrumentType;
+    this.simpleInstrumentType = simpleInstrumentType; 
     return this;
   }
 
@@ -212,7 +221,7 @@ public class SimpleInstrument extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -224,9 +233,8 @@ public class SimpleInstrument extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -246,7 +254,7 @@ public class SimpleInstrument extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

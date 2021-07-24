@@ -15,6 +15,9 @@ package com.finbourne.lusid.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.finbourne.lusid.model.FixedLeg;
+import com.finbourne.lusid.model.FloatingLeg;
+import com.finbourne.lusid.model.FundingLeg;
 import com.finbourne.lusid.model.InstrumentLegAllOf;
 import com.finbourne.lusid.model.LusidInstrument;
 import com.google.gson.TypeAdapter;
@@ -30,15 +33,14 @@ import java.io.IOException;
  * Representation of a rates leg.              A set of cashflows that are paid at a set of points in time according to some set of conventions.
  */
 @ApiModel(description = "Representation of a rates leg.              A set of cashflows that are paid at a set of points in time according to some set of conventions.")
-
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class InstrumentLeg extends LusidInstrument {
   public InstrumentLeg() {
     //this.instrumentType = this.getClass().getSimpleName();
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -50,9 +52,8 @@ public class InstrumentLeg extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -67,7 +68,7 @@ public class InstrumentLeg extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

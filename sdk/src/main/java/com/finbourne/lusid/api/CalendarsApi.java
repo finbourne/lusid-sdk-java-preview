@@ -49,7 +49,6 @@ import java.util.Map;
 
 public class CalendarsApi {
     private ApiClient localVarApiClient;
-
     public CalendarsApi() {
         this(Configuration.getDefaultApiClient());
     }
@@ -91,7 +90,9 @@ public class CalendarsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -109,7 +110,7 @@ public class CalendarsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3313");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -189,7 +190,6 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call addBusinessDaysToDateAsync(String scope, AddBusinessDaysToDateRequest addBusinessDaysToDateRequest, final ApiCallback<AddBusinessDaysToDateResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = addBusinessDaysToDateValidateBeforeCall(scope, addBusinessDaysToDateRequest, _callback);
         Type localVarReturnType = new TypeToken<AddBusinessDaysToDateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -222,7 +222,9 @@ public class CalendarsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -240,7 +242,7 @@ public class CalendarsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3313");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -328,7 +330,6 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call addDateToCalendarAsync(String scope, String code, CreateDateRequest createDateRequest, final ApiCallback<CalendarDate> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = addDateToCalendarValidateBeforeCall(scope, code, createDateRequest, _callback);
         Type localVarReturnType = new TypeToken<CalendarDate>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -357,7 +358,9 @@ public class CalendarsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -375,7 +378,7 @@ public class CalendarsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3313");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -447,7 +450,6 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call createCalendarAsync(CreateCalendarRequest createCalendarRequest, final ApiCallback<Calendar> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = createCalendarValidateBeforeCall(createCalendarRequest, _callback);
         Type localVarReturnType = new TypeToken<Calendar>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -469,7 +471,7 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call deleteCalendarCall(String scope, String code, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/calendars/generic/{scope}/{code}"
@@ -479,7 +481,9 @@ public class CalendarsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -497,7 +501,7 @@ public class CalendarsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3313");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -577,7 +581,6 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call deleteCalendarAsync(String scope, String code, final ApiCallback<Calendar> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = deleteCalendarValidateBeforeCall(scope, code, _callback);
         Type localVarReturnType = new TypeToken<Calendar>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -600,7 +603,7 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call deleteDateFromCalendarCall(String scope, String code, String dateId, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/calendars/generic/{scope}/{code}/dates/{dateId}"
@@ -611,7 +614,9 @@ public class CalendarsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -629,7 +634,7 @@ public class CalendarsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3313");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -717,7 +722,6 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call deleteDateFromCalendarAsync(String scope, String code, String dateId, final ApiCallback<CalendarDate> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = deleteDateFromCalendarValidateBeforeCall(scope, code, dateId, _callback);
         Type localVarReturnType = new TypeToken<CalendarDate>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -740,7 +744,7 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call getCalendarCall(String scope, String code, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/calendars/generic/{scope}/{code}"
@@ -749,12 +753,14 @@ public class CalendarsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (asAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -772,7 +778,7 @@ public class CalendarsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3313");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -855,7 +861,6 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call getCalendarAsync(String scope, String code, OffsetDateTime asAt, final ApiCallback<Calendar> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getCalendarValidateBeforeCall(scope, code, asAt, _callback);
         Type localVarReturnType = new TypeToken<Calendar>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -881,7 +886,7 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call getDatesCall(String scope, String code, String fromEffectiveAt, String toEffectiveAt, OffsetDateTime asAt, List<String> idFilter, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/calendars/generic/{scope}/{code}/dates"
@@ -890,6 +895,10 @@ public class CalendarsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (fromEffectiveAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("fromEffectiveAt", fromEffectiveAt));
         }
@@ -906,8 +915,6 @@ public class CalendarsApi {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "idFilter", idFilter));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -925,7 +932,7 @@ public class CalendarsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3313");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1017,7 +1024,6 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call getDatesAsync(String scope, String code, String fromEffectiveAt, String toEffectiveAt, OffsetDateTime asAt, List<String> idFilter, final ApiCallback<ResourceListOfCalendarDate> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getDatesValidateBeforeCall(scope, code, fromEffectiveAt, toEffectiveAt, asAt, idFilter, _callback);
         Type localVarReturnType = new TypeToken<ResourceListOfCalendarDate>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -1041,7 +1047,7 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call isBusinessDateTimeCall(OffsetDateTime dateTime, String scope, String code, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/calendars/businessday/{scope}/{code}"
@@ -1050,6 +1056,10 @@ public class CalendarsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (dateTime != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("dateTime", dateTime));
         }
@@ -1058,8 +1068,6 @@ public class CalendarsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -1077,7 +1085,7 @@ public class CalendarsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3313");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1168,7 +1176,6 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call isBusinessDateTimeAsync(OffsetDateTime dateTime, String scope, String code, OffsetDateTime asAt, final ApiCallback<IsBusinessDayResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = isBusinessDateTimeValidateBeforeCall(dateTime, scope, code, asAt, _callback);
         Type localVarReturnType = new TypeToken<IsBusinessDayResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -1192,13 +1199,17 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call listCalendarsCall(OffsetDateTime asAt, String page, Integer limit, String filter, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/calendars/generic";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (asAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
@@ -1215,8 +1226,6 @@ public class CalendarsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -1234,7 +1243,7 @@ public class CalendarsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3313");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1310,7 +1319,6 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call listCalendarsAsync(OffsetDateTime asAt, String page, Integer limit, String filter, final ApiCallback<PagedResourceListOfCalendar> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = listCalendarsValidateBeforeCall(asAt, page, limit, filter, _callback);
         Type localVarReturnType = new TypeToken<PagedResourceListOfCalendar>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -1336,7 +1344,7 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call listCalendarsInScopeCall(String scope, OffsetDateTime asAt, String page, Integer start, Integer limit, String filter, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/calendars/generic/{scope}"
@@ -1344,6 +1352,10 @@ public class CalendarsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (asAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
@@ -1364,8 +1376,6 @@ public class CalendarsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -1383,7 +1393,7 @@ public class CalendarsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3313");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1470,7 +1480,6 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call listCalendarsInScopeAsync(String scope, OffsetDateTime asAt, String page, Integer start, Integer limit, String filter, final ApiCallback<PagedResourceListOfCalendar> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = listCalendarsInScopeValidateBeforeCall(scope, asAt, page, start, limit, filter, _callback);
         Type localVarReturnType = new TypeToken<PagedResourceListOfCalendar>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -1503,7 +1512,9 @@ public class CalendarsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -1521,7 +1532,7 @@ public class CalendarsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3313");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1609,7 +1620,6 @@ public class CalendarsApi {
      </table>
      */
     public okhttp3.Call updateCalendarAsync(String scope, String code, UpdateCalendarRequest updateCalendarRequest, final ApiCallback<Calendar> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = updateCalendarValidateBeforeCall(scope, code, updateCalendarRequest, _callback);
         Type localVarReturnType = new TypeToken<Calendar>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);

@@ -36,11 +36,11 @@ import java.util.Map;
  * A structure used to describe the structure of an order or orders that make up a non-trivial trade.
  */
 @ApiModel(description = "A structure used to describe the structure of an order or orders that make up a non-trivial trade.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ModelPackage {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
 
   public static final String SERIALIZED_NAME_ORDER_IDS = "orderIds";
   @SerializedName(SERIALIZED_NAME_ORDER_IDS)
@@ -52,18 +52,19 @@ public class ModelPackage {
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = new HashMap<>();
+  private Map<String, PerpetualProperty> properties = null;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version = null;
+  private Version version;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public ModelPackage id(ResourceId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -80,12 +81,14 @@ public class ModelPackage {
     this.id = id;
   }
 
+
   public ModelPackage orderIds(List<ResourceId> orderIds) {
-    this.orderIds = orderIds;
+    this.orderIds = orderIds; 
     return this;
   }
 
   public ModelPackage addOrderIdsItem(ResourceId orderIdsItem) {
+   
     this.orderIds.add(orderIdsItem);
     return this;
   }
@@ -103,12 +106,14 @@ public class ModelPackage {
     this.orderIds = orderIds;
   }
 
+
   public ModelPackage orderInstructionIds(List<ResourceId> orderInstructionIds) {
-    this.orderInstructionIds = orderInstructionIds;
+    this.orderInstructionIds = orderInstructionIds; 
     return this;
   }
 
   public ModelPackage addOrderInstructionIdsItem(ResourceId orderInstructionIdsItem) {
+   
     this.orderInstructionIds.add(orderInstructionIdsItem);
     return this;
   }
@@ -126,8 +131,9 @@ public class ModelPackage {
     this.orderInstructionIds = orderInstructionIds;
   }
 
+
   public ModelPackage properties(Map<String, PerpetualProperty> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
@@ -152,8 +158,9 @@ public class ModelPackage {
     this.properties = properties;
   }
 
+
   public ModelPackage version(Version version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -170,12 +177,14 @@ public class ModelPackage {
     this.version = version;
   }
 
+
   public ModelPackage links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public ModelPackage addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -198,7 +207,7 @@ public class ModelPackage {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -210,9 +219,8 @@ public class ModelPackage {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -232,7 +240,7 @@ public class ModelPackage {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -34,7 +34,7 @@ import java.util.Map;
 /**
  * PortfolioCashLadder
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PortfolioCashLadder {
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)
@@ -42,18 +42,19 @@ public class PortfolioCashLadder {
 
   public static final String SERIALIZED_NAME_SUB_HOLDING_KEYS = "subHoldingKeys";
   @SerializedName(SERIALIZED_NAME_SUB_HOLDING_KEYS)
-  private Map<String, PerpetualProperty> subHoldingKeys = new HashMap<>();
+  private Map<String, PerpetualProperty> subHoldingKeys = null;
 
   public static final String SERIALIZED_NAME_RECORDS = "records";
   @SerializedName(SERIALIZED_NAME_RECORDS)
-  private List<CashLadderRecord> records = new ArrayList<>();
+  private List<CashLadderRecord> records = null;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public PortfolioCashLadder currency(String currency) {
-    this.currency = currency;
+    this.currency = currency; 
     return this;
   }
 
@@ -70,8 +71,9 @@ public class PortfolioCashLadder {
     this.currency = currency;
   }
 
+
   public PortfolioCashLadder subHoldingKeys(Map<String, PerpetualProperty> subHoldingKeys) {
-    this.subHoldingKeys = subHoldingKeys;
+    this.subHoldingKeys = subHoldingKeys; 
     return this;
   }
 
@@ -96,12 +98,14 @@ public class PortfolioCashLadder {
     this.subHoldingKeys = subHoldingKeys;
   }
 
+
   public PortfolioCashLadder records(List<CashLadderRecord> records) {
-    this.records = records;
+    this.records = records; 
     return this;
   }
 
   public PortfolioCashLadder addRecordsItem(CashLadderRecord recordsItem) {
+   
     if (this.records == null) {
       this.records = new ArrayList<>();
     }
@@ -122,12 +126,14 @@ public class PortfolioCashLadder {
     this.records = records;
   }
 
+
   public PortfolioCashLadder links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public PortfolioCashLadder addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -150,7 +156,7 @@ public class PortfolioCashLadder {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -162,9 +168,8 @@ public class PortfolioCashLadder {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -182,7 +187,7 @@ public class PortfolioCashLadder {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

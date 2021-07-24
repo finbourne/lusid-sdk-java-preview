@@ -31,7 +31,7 @@ import java.time.OffsetDateTime;
  * Represents the legal agreement between two parties engaged in an OTC transaction.  A typical example would be a 2002 ISDA Master Agreement, signed by two legal entities on a given date.
  */
 @ApiModel(description = "Represents the legal agreement between two parties engaged in an OTC transaction.  A typical example would be a 2002 ISDA Master Agreement, signed by two legal entities on a given date.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CounterpartyAgreement {
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
@@ -43,7 +43,7 @@ public class CounterpartyAgreement {
 
   public static final String SERIALIZED_NAME_COUNTERPARTY_SIGNATORY = "counterpartySignatory";
   @SerializedName(SERIALIZED_NAME_COUNTERPARTY_SIGNATORY)
-  private CounterpartySignatory counterpartySignatory = null;
+  private CounterpartySignatory counterpartySignatory;
 
   public static final String SERIALIZED_NAME_DATED_AS_OF = "datedAsOf";
   @SerializedName(SERIALIZED_NAME_DATED_AS_OF)
@@ -51,14 +51,15 @@ public class CounterpartyAgreement {
 
   public static final String SERIALIZED_NAME_CREDIT_SUPPORT_ANNEX_ID = "creditSupportAnnexId";
   @SerializedName(SERIALIZED_NAME_CREDIT_SUPPORT_ANNEX_ID)
-  private ResourceId creditSupportAnnexId = null;
+  private ResourceId creditSupportAnnexId;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
+
 
   public CounterpartyAgreement displayName(String displayName) {
-    this.displayName = displayName;
+    this.displayName = displayName; 
     return this;
   }
 
@@ -75,8 +76,9 @@ public class CounterpartyAgreement {
     this.displayName = displayName;
   }
 
+
   public CounterpartyAgreement agreementType(String agreementType) {
-    this.agreementType = agreementType;
+    this.agreementType = agreementType; 
     return this;
   }
 
@@ -93,8 +95,9 @@ public class CounterpartyAgreement {
     this.agreementType = agreementType;
   }
 
+
   public CounterpartyAgreement counterpartySignatory(CounterpartySignatory counterpartySignatory) {
-    this.counterpartySignatory = counterpartySignatory;
+    this.counterpartySignatory = counterpartySignatory; 
     return this;
   }
 
@@ -111,8 +114,9 @@ public class CounterpartyAgreement {
     this.counterpartySignatory = counterpartySignatory;
   }
 
+
   public CounterpartyAgreement datedAsOf(OffsetDateTime datedAsOf) {
-    this.datedAsOf = datedAsOf;
+    this.datedAsOf = datedAsOf; 
     return this;
   }
 
@@ -129,8 +133,9 @@ public class CounterpartyAgreement {
     this.datedAsOf = datedAsOf;
   }
 
+
   public CounterpartyAgreement creditSupportAnnexId(ResourceId creditSupportAnnexId) {
-    this.creditSupportAnnexId = creditSupportAnnexId;
+    this.creditSupportAnnexId = creditSupportAnnexId; 
     return this;
   }
 
@@ -147,8 +152,9 @@ public class CounterpartyAgreement {
     this.creditSupportAnnexId = creditSupportAnnexId;
   }
 
+
   public CounterpartyAgreement id(ResourceId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -167,7 +173,7 @@ public class CounterpartyAgreement {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -179,9 +185,8 @@ public class CounterpartyAgreement {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -201,7 +206,7 @@ public class CounterpartyAgreement {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

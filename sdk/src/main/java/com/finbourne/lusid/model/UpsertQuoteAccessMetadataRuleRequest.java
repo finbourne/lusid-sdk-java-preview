@@ -32,18 +32,19 @@ import java.util.Map;
 /**
  * UpsertQuoteAccessMetadataRuleRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpsertQuoteAccessMetadataRuleRequest {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private QuoteAccessMetadataRuleId id = null;
+  private QuoteAccessMetadataRuleId id;
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
   private Map<String, List<AccessMetadataValue>> metadata = new HashMap<>();
 
+
   public UpsertQuoteAccessMetadataRuleRequest id(QuoteAccessMetadataRuleId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -60,8 +61,9 @@ public class UpsertQuoteAccessMetadataRuleRequest {
     this.id = id;
   }
 
+
   public UpsertQuoteAccessMetadataRuleRequest metadata(Map<String, List<AccessMetadataValue>> metadata) {
-    this.metadata = metadata;
+    this.metadata = metadata; 
     return this;
   }
 
@@ -85,7 +87,7 @@ public class UpsertQuoteAccessMetadataRuleRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -97,9 +99,8 @@ public class UpsertQuoteAccessMetadataRuleRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -115,7 +116,7 @@ public class UpsertQuoteAccessMetadataRuleRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -36,11 +36,11 @@ import java.util.Map;
  * A2B Movement Record - shows A2B category based changes relating to a specific movement
  */
 @ApiModel(description = "A2B Movement Record - shows A2B category based changes relating to a specific movement")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class A2BMovementRecord {
   public static final String SERIALIZED_NAME_PORTFOLIO_ID = "portfolioId";
   @SerializedName(SERIALIZED_NAME_PORTFOLIO_ID)
-  private ResourceId portfolioId = null;
+  private ResourceId portfolioId;
 
   public static final String SERIALIZED_NAME_HOLDING_TYPE = "holdingType";
   @SerializedName(SERIALIZED_NAME_HOLDING_TYPE)
@@ -52,7 +52,7 @@ public class A2BMovementRecord {
 
   public static final String SERIALIZED_NAME_SUB_HOLDING_KEYS = "subHoldingKeys";
   @SerializedName(SERIALIZED_NAME_SUB_HOLDING_KEYS)
-  private Map<String, PerpetualProperty> subHoldingKeys = new HashMap<>();
+  private Map<String, PerpetualProperty> subHoldingKeys = null;
 
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)
@@ -76,34 +76,35 @@ public class A2BMovementRecord {
 
   public static final String SERIALIZED_NAME_START = "start";
   @SerializedName(SERIALIZED_NAME_START)
-  private A2BCategory start = null;
+  private A2BCategory start;
 
   public static final String SERIALIZED_NAME_FLOWS = "flows";
   @SerializedName(SERIALIZED_NAME_FLOWS)
-  private A2BCategory flows = null;
+  private A2BCategory flows;
 
   public static final String SERIALIZED_NAME_GAINS = "gains";
   @SerializedName(SERIALIZED_NAME_GAINS)
-  private A2BCategory gains = null;
+  private A2BCategory gains;
 
   public static final String SERIALIZED_NAME_CARRY = "carry";
   @SerializedName(SERIALIZED_NAME_CARRY)
-  private A2BCategory carry = null;
+  private A2BCategory carry;
 
   public static final String SERIALIZED_NAME_END = "end";
   @SerializedName(SERIALIZED_NAME_END)
-  private A2BCategory end = null;
+  private A2BCategory end;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, Property> properties = new HashMap<>();
+  private Map<String, Property> properties = null;
 
   public static final String SERIALIZED_NAME_GROUP_ID = "groupId";
   @SerializedName(SERIALIZED_NAME_GROUP_ID)
   private String groupId;
 
+
   public A2BMovementRecord portfolioId(ResourceId portfolioId) {
-    this.portfolioId = portfolioId;
+    this.portfolioId = portfolioId; 
     return this;
   }
 
@@ -120,8 +121,9 @@ public class A2BMovementRecord {
     this.portfolioId = portfolioId;
   }
 
+
   public A2BMovementRecord holdingType(String holdingType) {
-    this.holdingType = holdingType;
+    this.holdingType = holdingType; 
     return this;
   }
 
@@ -138,8 +140,9 @@ public class A2BMovementRecord {
     this.holdingType = holdingType;
   }
 
+
   public A2BMovementRecord instrumentUid(String instrumentUid) {
-    this.instrumentUid = instrumentUid;
+    this.instrumentUid = instrumentUid; 
     return this;
   }
 
@@ -156,8 +159,9 @@ public class A2BMovementRecord {
     this.instrumentUid = instrumentUid;
   }
 
+
   public A2BMovementRecord subHoldingKeys(Map<String, PerpetualProperty> subHoldingKeys) {
-    this.subHoldingKeys = subHoldingKeys;
+    this.subHoldingKeys = subHoldingKeys; 
     return this;
   }
 
@@ -182,8 +186,9 @@ public class A2BMovementRecord {
     this.subHoldingKeys = subHoldingKeys;
   }
 
+
   public A2BMovementRecord currency(String currency) {
-    this.currency = currency;
+    this.currency = currency; 
     return this;
   }
 
@@ -200,8 +205,9 @@ public class A2BMovementRecord {
     this.currency = currency;
   }
 
+
   public A2BMovementRecord transactionId(String transactionId) {
-    this.transactionId = transactionId;
+    this.transactionId = transactionId; 
     return this;
   }
 
@@ -218,8 +224,9 @@ public class A2BMovementRecord {
     this.transactionId = transactionId;
   }
 
+
   public A2BMovementRecord movementName(String movementName) {
-    this.movementName = movementName;
+    this.movementName = movementName; 
     return this;
   }
 
@@ -236,8 +243,9 @@ public class A2BMovementRecord {
     this.movementName = movementName;
   }
 
+
   public A2BMovementRecord effectiveDate(OffsetDateTime effectiveDate) {
-    this.effectiveDate = effectiveDate;
+    this.effectiveDate = effectiveDate; 
     return this;
   }
 
@@ -254,8 +262,9 @@ public class A2BMovementRecord {
     this.effectiveDate = effectiveDate;
   }
 
+
   public A2BMovementRecord units(Double units) {
-    this.units = units;
+    this.units = units; 
     return this;
   }
 
@@ -272,8 +281,9 @@ public class A2BMovementRecord {
     this.units = units;
   }
 
+
   public A2BMovementRecord start(A2BCategory start) {
-    this.start = start;
+    this.start = start; 
     return this;
   }
 
@@ -290,8 +300,9 @@ public class A2BMovementRecord {
     this.start = start;
   }
 
+
   public A2BMovementRecord flows(A2BCategory flows) {
-    this.flows = flows;
+    this.flows = flows; 
     return this;
   }
 
@@ -308,8 +319,9 @@ public class A2BMovementRecord {
     this.flows = flows;
   }
 
+
   public A2BMovementRecord gains(A2BCategory gains) {
-    this.gains = gains;
+    this.gains = gains; 
     return this;
   }
 
@@ -326,8 +338,9 @@ public class A2BMovementRecord {
     this.gains = gains;
   }
 
+
   public A2BMovementRecord carry(A2BCategory carry) {
-    this.carry = carry;
+    this.carry = carry; 
     return this;
   }
 
@@ -344,8 +357,9 @@ public class A2BMovementRecord {
     this.carry = carry;
   }
 
+
   public A2BMovementRecord end(A2BCategory end) {
-    this.end = end;
+    this.end = end; 
     return this;
   }
 
@@ -362,8 +376,9 @@ public class A2BMovementRecord {
     this.end = end;
   }
 
+
   public A2BMovementRecord properties(Map<String, Property> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
@@ -388,8 +403,9 @@ public class A2BMovementRecord {
     this.properties = properties;
   }
 
+
   public A2BMovementRecord groupId(String groupId) {
-    this.groupId = groupId;
+    this.groupId = groupId; 
     return this;
   }
 
@@ -408,7 +424,7 @@ public class A2BMovementRecord {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -420,9 +436,8 @@ public class A2BMovementRecord {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -452,7 +467,7 @@ public class A2BMovementRecord {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

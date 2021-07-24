@@ -28,7 +28,7 @@ import java.io.IOException;
  * CDSs generally conform to fairly standard definitions, but can be tweaked in a number of different ways.  This class gathers a number of common features which may deviate. These will default to the market standard when  no overrides are provided
  */
 @ApiModel(description = "CDSs generally conform to fairly standard definitions, but can be tweaked in a number of different ways.  This class gathers a number of common features which may deviate. These will default to the market standard when  no overrides are provided")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CdsProtectionDetailSpecification {
   /**
    * The available values are: Unknown, SNR, SUB, JRSUBUT2, PREFT1, SECDOM, SNRFOR, SUBLT2
@@ -83,7 +83,7 @@ public class CdsProtectionDetailSpecification {
 
       @Override
       public SeniorityEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return SeniorityEnum.fromValue(value);
       }
     }
@@ -140,7 +140,7 @@ public class CdsProtectionDetailSpecification {
 
       @Override
       public RestructuringTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return RestructuringTypeEnum.fromValue(value);
       }
     }
@@ -158,8 +158,9 @@ public class CdsProtectionDetailSpecification {
   @SerializedName(SERIALIZED_NAME_PAY_ACCRUED_INTEREST_ON_DEFAULT)
   private Boolean payAccruedInterestOnDefault;
 
+
   public CdsProtectionDetailSpecification seniority(SeniorityEnum seniority) {
-    this.seniority = seniority;
+    this.seniority = seniority; 
     return this;
   }
 
@@ -176,8 +177,9 @@ public class CdsProtectionDetailSpecification {
     this.seniority = seniority;
   }
 
+
   public CdsProtectionDetailSpecification restructuringType(RestructuringTypeEnum restructuringType) {
-    this.restructuringType = restructuringType;
+    this.restructuringType = restructuringType; 
     return this;
   }
 
@@ -194,8 +196,9 @@ public class CdsProtectionDetailSpecification {
     this.restructuringType = restructuringType;
   }
 
+
   public CdsProtectionDetailSpecification protectStartDay(Boolean protectStartDay) {
-    this.protectStartDay = protectStartDay;
+    this.protectStartDay = protectStartDay; 
     return this;
   }
 
@@ -212,8 +215,9 @@ public class CdsProtectionDetailSpecification {
     this.protectStartDay = protectStartDay;
   }
 
+
   public CdsProtectionDetailSpecification payAccruedInterestOnDefault(Boolean payAccruedInterestOnDefault) {
-    this.payAccruedInterestOnDefault = payAccruedInterestOnDefault;
+    this.payAccruedInterestOnDefault = payAccruedInterestOnDefault; 
     return this;
   }
 
@@ -232,7 +236,7 @@ public class CdsProtectionDetailSpecification {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -244,9 +248,8 @@ public class CdsProtectionDetailSpecification {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -264,7 +267,7 @@ public class CdsProtectionDetailSpecification {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

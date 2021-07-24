@@ -51,4 +51,76 @@ public class EquityOptionTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'optionMaturityDate'
+     */
+    @Test
+    public void optionMaturityDateTest() {
+        // TODO: test optionMaturityDate
+    }
+
+    /**
+     * Test the property 'optionSettlementDate'
+     */
+    @Test
+    public void optionSettlementDateTest() {
+        // TODO: test optionSettlementDate
+    }
+
+    /**
+     * Test the property 'deliveryType'
+     */
+    @Test
+    public void deliveryTypeTest() {
+        // TODO: test deliveryType
+    }
+
+    /**
+     * Test the property 'optionType'
+     */
+    @Test
+    public void optionTypeTest() {
+        // TODO: test optionType
+    }
+
+    /**
+     * Test the property 'strike'
+     */
+    @Test
+    public void strikeTest() {
+        // TODO: test strike
+    }
+
+    /**
+     * Test the property 'domCcy'
+     */
+    @Test
+    public void domCcyTest() {
+        // TODO: test domCcy
+    }
+
+    /**
+     * Test the property 'underlyingIdentifier'
+     */
+    @Test
+    public void underlyingIdentifierTest() {
+        // TODO: test underlyingIdentifier
+    }
+
+    /**
+     * Test the property 'code'
+     */
+    @Test
+    public void codeTest() {
+        // TODO: test code
+    }
+
 }

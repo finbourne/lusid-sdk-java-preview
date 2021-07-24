@@ -35,19 +35,19 @@ import java.util.Map;
  * A request to create or update a Execution.
  */
 @ApiModel(description = "A request to create or update a Execution.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ExecutionRequest {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
 
   public static final String SERIALIZED_NAME_PLACEMENT_ID = "placementId";
   @SerializedName(SERIALIZED_NAME_PLACEMENT_ID)
-  private ResourceId placementId = null;
+  private ResourceId placementId;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = new HashMap<>();
+  private Map<String, PerpetualProperty> properties = null;
 
   public static final String SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS = "instrumentIdentifiers";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS)
@@ -79,7 +79,7 @@ public class ExecutionRequest {
 
   public static final String SERIALIZED_NAME_PRICE = "price";
   @SerializedName(SERIALIZED_NAME_PRICE)
-  private CurrencyAndAmount price = null;
+  private CurrencyAndAmount price;
 
   public static final String SERIALIZED_NAME_SETTLEMENT_CURRENCY = "settlementCurrency";
   @SerializedName(SERIALIZED_NAME_SETTLEMENT_CURRENCY)
@@ -93,8 +93,9 @@ public class ExecutionRequest {
   @SerializedName(SERIALIZED_NAME_COUNTERPARTY)
   private String counterparty;
 
+
   public ExecutionRequest id(ResourceId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -111,8 +112,9 @@ public class ExecutionRequest {
     this.id = id;
   }
 
+
   public ExecutionRequest placementId(ResourceId placementId) {
-    this.placementId = placementId;
+    this.placementId = placementId; 
     return this;
   }
 
@@ -129,8 +131,9 @@ public class ExecutionRequest {
     this.placementId = placementId;
   }
 
+
   public ExecutionRequest properties(Map<String, PerpetualProperty> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
@@ -155,8 +158,9 @@ public class ExecutionRequest {
     this.properties = properties;
   }
 
+
   public ExecutionRequest instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
-    this.instrumentIdentifiers = instrumentIdentifiers;
+    this.instrumentIdentifiers = instrumentIdentifiers; 
     return this;
   }
 
@@ -178,8 +182,9 @@ public class ExecutionRequest {
     this.instrumentIdentifiers = instrumentIdentifiers;
   }
 
+
   public ExecutionRequest quantity(Double quantity) {
-    this.quantity = quantity;
+    this.quantity = quantity; 
     return this;
   }
 
@@ -196,8 +201,9 @@ public class ExecutionRequest {
     this.quantity = quantity;
   }
 
+
   public ExecutionRequest state(String state) {
-    this.state = state;
+    this.state = state; 
     return this;
   }
 
@@ -214,8 +220,9 @@ public class ExecutionRequest {
     this.state = state;
   }
 
+
   public ExecutionRequest side(String side) {
-    this.side = side;
+    this.side = side; 
     return this;
   }
 
@@ -232,8 +239,9 @@ public class ExecutionRequest {
     this.side = side;
   }
 
+
   public ExecutionRequest type(String type) {
-    this.type = type;
+    this.type = type; 
     return this;
   }
 
@@ -250,8 +258,9 @@ public class ExecutionRequest {
     this.type = type;
   }
 
+
   public ExecutionRequest createdDate(OffsetDateTime createdDate) {
-    this.createdDate = createdDate;
+    this.createdDate = createdDate; 
     return this;
   }
 
@@ -268,8 +277,9 @@ public class ExecutionRequest {
     this.createdDate = createdDate;
   }
 
+
   public ExecutionRequest settlementDate(OffsetDateTime settlementDate) {
-    this.settlementDate = settlementDate;
+    this.settlementDate = settlementDate; 
     return this;
   }
 
@@ -286,8 +296,9 @@ public class ExecutionRequest {
     this.settlementDate = settlementDate;
   }
 
+
   public ExecutionRequest price(CurrencyAndAmount price) {
-    this.price = price;
+    this.price = price; 
     return this;
   }
 
@@ -304,8 +315,9 @@ public class ExecutionRequest {
     this.price = price;
   }
 
+
   public ExecutionRequest settlementCurrency(String settlementCurrency) {
-    this.settlementCurrency = settlementCurrency;
+    this.settlementCurrency = settlementCurrency; 
     return this;
   }
 
@@ -322,8 +334,9 @@ public class ExecutionRequest {
     this.settlementCurrency = settlementCurrency;
   }
 
+
   public ExecutionRequest settlementCurrencyFxRate(Double settlementCurrencyFxRate) {
-    this.settlementCurrencyFxRate = settlementCurrencyFxRate;
+    this.settlementCurrencyFxRate = settlementCurrencyFxRate; 
     return this;
   }
 
@@ -340,8 +353,9 @@ public class ExecutionRequest {
     this.settlementCurrencyFxRate = settlementCurrencyFxRate;
   }
 
+
   public ExecutionRequest counterparty(String counterparty) {
-    this.counterparty = counterparty;
+    this.counterparty = counterparty; 
     return this;
   }
 
@@ -360,7 +374,7 @@ public class ExecutionRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -372,9 +386,8 @@ public class ExecutionRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -402,7 +415,7 @@ public class ExecutionRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

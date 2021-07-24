@@ -29,7 +29,7 @@ import java.io.IOException;
  * An item of structured result data that is to be inserted into Lusid. This will typically be a Json or Xml document that  contains a set of result data appropriate to a specific entity such as an instrument or potentially an index.
  */
 @ApiModel(description = "An item of structured result data that is to be inserted into Lusid. This will typically be a Json or Xml document that  contains a set of result data appropriate to a specific entity such as an instrument or potentially an index.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class StructuredResultData {
   public static final String SERIALIZED_NAME_DOCUMENT_FORMAT = "documentFormat";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_FORMAT)
@@ -49,10 +49,11 @@ public class StructuredResultData {
 
   public static final String SERIALIZED_NAME_DATA_MAP_KEY = "dataMapKey";
   @SerializedName(SERIALIZED_NAME_DATA_MAP_KEY)
-  private DataMapKey dataMapKey = null;
+  private DataMapKey dataMapKey;
+
 
   public StructuredResultData documentFormat(String documentFormat) {
-    this.documentFormat = documentFormat;
+    this.documentFormat = documentFormat; 
     return this;
   }
 
@@ -69,8 +70,9 @@ public class StructuredResultData {
     this.documentFormat = documentFormat;
   }
 
+
   public StructuredResultData version(String version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -87,8 +89,9 @@ public class StructuredResultData {
     this.version = version;
   }
 
+
   public StructuredResultData name(String name) {
-    this.name = name;
+    this.name = name; 
     return this;
   }
 
@@ -105,8 +108,9 @@ public class StructuredResultData {
     this.name = name;
   }
 
+
   public StructuredResultData document(String document) {
-    this.document = document;
+    this.document = document; 
     return this;
   }
 
@@ -123,8 +127,9 @@ public class StructuredResultData {
     this.document = document;
   }
 
+
   public StructuredResultData dataMapKey(DataMapKey dataMapKey) {
-    this.dataMapKey = dataMapKey;
+    this.dataMapKey = dataMapKey; 
     return this;
   }
 
@@ -143,7 +148,7 @@ public class StructuredResultData {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -155,9 +160,8 @@ public class StructuredResultData {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -176,7 +180,7 @@ public class StructuredResultData {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

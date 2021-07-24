@@ -32,26 +32,27 @@ import java.util.Map;
 /**
  * ListAggregationReconciliation
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ListAggregationReconciliation {
   public static final String SERIALIZED_NAME_LEFT = "left";
   @SerializedName(SERIALIZED_NAME_LEFT)
-  private ListAggregationResponse left = null;
+  private ListAggregationResponse left;
 
   public static final String SERIALIZED_NAME_RIGHT = "right";
   @SerializedName(SERIALIZED_NAME_RIGHT)
-  private ListAggregationResponse right = null;
+  private ListAggregationResponse right;
 
   public static final String SERIALIZED_NAME_DIFF = "diff";
   @SerializedName(SERIALIZED_NAME_DIFF)
-  private List<Map<String, Object>> diff = new ArrayList<>();
+  private List<Map<String, Object>> diff = null;
 
   public static final String SERIALIZED_NAME_DATA_SCHEMA = "dataSchema";
   @SerializedName(SERIALIZED_NAME_DATA_SCHEMA)
-  private ResultDataSchema dataSchema = null;
+  private ResultDataSchema dataSchema;
+
 
   public ListAggregationReconciliation left(ListAggregationResponse left) {
-    this.left = left;
+    this.left = left; 
     return this;
   }
 
@@ -68,8 +69,9 @@ public class ListAggregationReconciliation {
     this.left = left;
   }
 
+
   public ListAggregationReconciliation right(ListAggregationResponse right) {
-    this.right = right;
+    this.right = right; 
     return this;
   }
 
@@ -86,12 +88,14 @@ public class ListAggregationReconciliation {
     this.right = right;
   }
 
+
   public ListAggregationReconciliation diff(List<Map<String, Object>> diff) {
-    this.diff = diff;
+    this.diff = diff; 
     return this;
   }
 
   public ListAggregationReconciliation addDiffItem(Map<String, Object> diffItem) {
+   
     if (this.diff == null) {
       this.diff = new ArrayList<>();
     }
@@ -112,8 +116,9 @@ public class ListAggregationReconciliation {
     this.diff = diff;
   }
 
+
   public ListAggregationReconciliation dataSchema(ResultDataSchema dataSchema) {
-    this.dataSchema = dataSchema;
+    this.dataSchema = dataSchema; 
     return this;
   }
 
@@ -132,7 +137,7 @@ public class ListAggregationReconciliation {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -144,9 +149,8 @@ public class ListAggregationReconciliation {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -164,7 +168,7 @@ public class ListAggregationReconciliation {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

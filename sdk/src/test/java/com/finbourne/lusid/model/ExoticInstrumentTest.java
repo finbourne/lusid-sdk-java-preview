@@ -51,4 +51,20 @@ public class ExoticInstrumentTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'instrumentFormat'
+     */
+    @Test
+    public void instrumentFormatTest() {
+        // TODO: test instrumentFormat
+    }
+
+    /**
+     * Test the property 'content'
+     */
+    @Test
+    public void contentTest() {
+        // TODO: test content
+    }
+
 }

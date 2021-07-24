@@ -33,7 +33,7 @@ import java.time.OffsetDateTime;
  * Lusid-ibor internal representation of an Equity Swap instrument.
  */
 @ApiModel(description = "Lusid-ibor internal representation of an Equity Swap instrument.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class EquitySwap extends LusidInstrument {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -49,7 +49,7 @@ public class EquitySwap extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_EQUITY_FLOW_CONVENTIONS = "equityFlowConventions";
   @SerializedName(SERIALIZED_NAME_EQUITY_FLOW_CONVENTIONS)
-  private FlowConventions equityFlowConventions = null;
+  private FlowConventions equityFlowConventions;
 
   public static final String SERIALIZED_NAME_FUNDING_LEG = "fundingLeg";
   @SerializedName(SERIALIZED_NAME_FUNDING_LEG)
@@ -75,8 +75,12 @@ public class EquitySwap extends LusidInstrument {
   @SerializedName(SERIALIZED_NAME_UNDERLYING_IDENTIFIER)
   private String underlyingIdentifier;
 
+  public EquitySwap() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
+
   public EquitySwap startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -93,8 +97,9 @@ public class EquitySwap extends LusidInstrument {
     this.startDate = startDate;
   }
 
+
   public EquitySwap maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -111,8 +116,9 @@ public class EquitySwap extends LusidInstrument {
     this.maturityDate = maturityDate;
   }
 
+
   public EquitySwap code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -129,8 +135,9 @@ public class EquitySwap extends LusidInstrument {
     this.code = code;
   }
 
+
   public EquitySwap equityFlowConventions(FlowConventions equityFlowConventions) {
-    this.equityFlowConventions = equityFlowConventions;
+    this.equityFlowConventions = equityFlowConventions; 
     return this;
   }
 
@@ -147,8 +154,9 @@ public class EquitySwap extends LusidInstrument {
     this.equityFlowConventions = equityFlowConventions;
   }
 
+
   public EquitySwap fundingLeg(InstrumentLeg fundingLeg) {
-    this.fundingLeg = fundingLeg;
+    this.fundingLeg = fundingLeg; 
     return this;
   }
 
@@ -165,8 +173,9 @@ public class EquitySwap extends LusidInstrument {
     this.fundingLeg = fundingLeg;
   }
 
+
   public EquitySwap includeDividends(Boolean includeDividends) {
-    this.includeDividends = includeDividends;
+    this.includeDividends = includeDividends; 
     return this;
   }
 
@@ -183,8 +192,9 @@ public class EquitySwap extends LusidInstrument {
     this.includeDividends = includeDividends;
   }
 
+
   public EquitySwap initialPrice(Double initialPrice) {
-    this.initialPrice = initialPrice;
+    this.initialPrice = initialPrice; 
     return this;
   }
 
@@ -201,8 +211,9 @@ public class EquitySwap extends LusidInstrument {
     this.initialPrice = initialPrice;
   }
 
+
   public EquitySwap notionalReset(Boolean notionalReset) {
-    this.notionalReset = notionalReset;
+    this.notionalReset = notionalReset; 
     return this;
   }
 
@@ -219,8 +230,9 @@ public class EquitySwap extends LusidInstrument {
     this.notionalReset = notionalReset;
   }
 
+
   public EquitySwap quantity(Double quantity) {
-    this.quantity = quantity;
+    this.quantity = quantity; 
     return this;
   }
 
@@ -237,8 +249,9 @@ public class EquitySwap extends LusidInstrument {
     this.quantity = quantity;
   }
 
+
   public EquitySwap underlyingIdentifier(String underlyingIdentifier) {
-    this.underlyingIdentifier = underlyingIdentifier;
+    this.underlyingIdentifier = underlyingIdentifier; 
     return this;
   }
 
@@ -257,7 +270,7 @@ public class EquitySwap extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -269,9 +282,8 @@ public class EquitySwap extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -296,7 +308,7 @@ public class EquitySwap extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

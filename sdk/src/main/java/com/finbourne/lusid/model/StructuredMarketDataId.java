@@ -28,7 +28,7 @@ import java.io.IOException;
  * An identifier that uniquely describes an item of structured market data such as an interest rate curve or volatility surface.
  */
 @ApiModel(description = "An identifier that uniquely describes an item of structured market data such as an interest rate curve or volatility surface.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class StructuredMarketDataId {
   public static final String SERIALIZED_NAME_PROVIDER = "provider";
   @SerializedName(SERIALIZED_NAME_PROVIDER)
@@ -54,8 +54,9 @@ public class StructuredMarketDataId {
   @SerializedName(SERIALIZED_NAME_MARKET_ASSET)
   private String marketAsset;
 
+
   public StructuredMarketDataId provider(String provider) {
-    this.provider = provider;
+    this.provider = provider; 
     return this;
   }
 
@@ -72,8 +73,9 @@ public class StructuredMarketDataId {
     this.provider = provider;
   }
 
+
   public StructuredMarketDataId priceSource(String priceSource) {
-    this.priceSource = priceSource;
+    this.priceSource = priceSource; 
     return this;
   }
 
@@ -90,8 +92,9 @@ public class StructuredMarketDataId {
     this.priceSource = priceSource;
   }
 
+
   public StructuredMarketDataId lineage(String lineage) {
-    this.lineage = lineage;
+    this.lineage = lineage; 
     return this;
   }
 
@@ -108,8 +111,9 @@ public class StructuredMarketDataId {
     this.lineage = lineage;
   }
 
+
   public StructuredMarketDataId effectiveAt(String effectiveAt) {
-    this.effectiveAt = effectiveAt;
+    this.effectiveAt = effectiveAt; 
     return this;
   }
 
@@ -126,8 +130,9 @@ public class StructuredMarketDataId {
     this.effectiveAt = effectiveAt;
   }
 
+
   public StructuredMarketDataId marketElementType(String marketElementType) {
-    this.marketElementType = marketElementType;
+    this.marketElementType = marketElementType; 
     return this;
   }
 
@@ -144,8 +149,9 @@ public class StructuredMarketDataId {
     this.marketElementType = marketElementType;
   }
 
+
   public StructuredMarketDataId marketAsset(String marketAsset) {
-    this.marketAsset = marketAsset;
+    this.marketAsset = marketAsset; 
     return this;
   }
 
@@ -164,7 +170,7 @@ public class StructuredMarketDataId {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -176,9 +182,8 @@ public class StructuredMarketDataId {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -198,7 +203,7 @@ public class StructuredMarketDataId {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

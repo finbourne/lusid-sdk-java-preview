@@ -31,18 +31,20 @@ import java.util.List;
  * A request to create or update multiple Placements.
  */
 @ApiModel(description = "A request to create or update multiple Placements.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PlacementSetRequest {
   public static final String SERIALIZED_NAME_REQUESTS = "requests";
   @SerializedName(SERIALIZED_NAME_REQUESTS)
-  private List<PlacementRequest> requests = new ArrayList<>();
+  private List<PlacementRequest> requests = null;
+
 
   public PlacementSetRequest requests(List<PlacementRequest> requests) {
-    this.requests = requests;
+    this.requests = requests; 
     return this;
   }
 
   public PlacementSetRequest addRequestsItem(PlacementRequest requestsItem) {
+   
     if (this.requests == null) {
       this.requests = new ArrayList<>();
     }
@@ -65,7 +67,7 @@ public class PlacementSetRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -77,9 +79,8 @@ public class PlacementSetRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -94,7 +95,7 @@ public class PlacementSetRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

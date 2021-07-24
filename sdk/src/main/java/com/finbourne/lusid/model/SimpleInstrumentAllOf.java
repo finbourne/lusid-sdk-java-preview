@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * SimpleInstrumentAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SimpleInstrumentAllOf {
   public static final String SERIALIZED_NAME_MATURITY_DATE = "maturityDate";
   @SerializedName(SERIALIZED_NAME_MATURITY_DATE)
@@ -91,7 +91,7 @@ public class SimpleInstrumentAllOf {
 
       @Override
       public AssetClassEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return AssetClassEnum.fromValue(value);
       }
     }
@@ -103,7 +103,7 @@ public class SimpleInstrumentAllOf {
 
   public static final String SERIALIZED_NAME_FGN_CCYS = "fgnCcys";
   @SerializedName(SERIALIZED_NAME_FGN_CCYS)
-  private List<String> fgnCcys = new ArrayList<>();
+  private List<String> fgnCcys = null;
 
   public static final String SERIALIZED_NAME_SIMPLE_INSTRUMENT_TYPE = "simpleInstrumentType";
   @SerializedName(SERIALIZED_NAME_SIMPLE_INSTRUMENT_TYPE)
@@ -198,7 +198,7 @@ public class SimpleInstrumentAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -208,8 +208,9 @@ public class SimpleInstrumentAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public SimpleInstrumentAllOf maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -226,8 +227,9 @@ public class SimpleInstrumentAllOf {
     this.maturityDate = maturityDate;
   }
 
+
   public SimpleInstrumentAllOf domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -244,8 +246,9 @@ public class SimpleInstrumentAllOf {
     this.domCcy = domCcy;
   }
 
+
   public SimpleInstrumentAllOf assetClass(AssetClassEnum assetClass) {
-    this.assetClass = assetClass;
+    this.assetClass = assetClass; 
     return this;
   }
 
@@ -262,12 +265,14 @@ public class SimpleInstrumentAllOf {
     this.assetClass = assetClass;
   }
 
+
   public SimpleInstrumentAllOf fgnCcys(List<String> fgnCcys) {
-    this.fgnCcys = fgnCcys;
+    this.fgnCcys = fgnCcys; 
     return this;
   }
 
   public SimpleInstrumentAllOf addFgnCcysItem(String fgnCcysItem) {
+   
     if (this.fgnCcys == null) {
       this.fgnCcys = new ArrayList<>();
     }
@@ -288,8 +293,9 @@ public class SimpleInstrumentAllOf {
     this.fgnCcys = fgnCcys;
   }
 
+
   public SimpleInstrumentAllOf simpleInstrumentType(String simpleInstrumentType) {
-    this.simpleInstrumentType = simpleInstrumentType;
+    this.simpleInstrumentType = simpleInstrumentType; 
     return this;
   }
 
@@ -306,8 +312,9 @@ public class SimpleInstrumentAllOf {
     this.simpleInstrumentType = simpleInstrumentType;
   }
 
+
   public SimpleInstrumentAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -326,7 +333,7 @@ public class SimpleInstrumentAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -338,9 +345,8 @@ public class SimpleInstrumentAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -360,7 +366,7 @@ public class SimpleInstrumentAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

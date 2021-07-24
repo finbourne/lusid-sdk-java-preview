@@ -31,18 +31,20 @@ import java.util.List;
  * Class that models a set of instruments of which each has some quantity and can be identified by a unique label.
  */
 @ApiModel(description = "Class that models a set of instruments of which each has some quantity and can be identified by a unique label.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class WeightedInstruments {
   public static final String SERIALIZED_NAME_INSTRUMENTS = "instruments";
   @SerializedName(SERIALIZED_NAME_INSTRUMENTS)
   private List<WeightedInstrument> instruments = new ArrayList<>();
 
+
   public WeightedInstruments instruments(List<WeightedInstrument> instruments) {
-    this.instruments = instruments;
+    this.instruments = instruments; 
     return this;
   }
 
   public WeightedInstruments addInstrumentsItem(WeightedInstrument instrumentsItem) {
+   
     this.instruments.add(instrumentsItem);
     return this;
   }
@@ -62,7 +64,7 @@ public class WeightedInstruments {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -74,9 +76,8 @@ public class WeightedInstruments {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -91,7 +92,7 @@ public class WeightedInstruments {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

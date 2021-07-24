@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * DiscountFactorCurveDataAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class DiscountFactorCurveDataAllOf {
   public static final String SERIALIZED_NAME_BASE_DATE = "baseDate";
   @SerializedName(SERIALIZED_NAME_BASE_DATE)
@@ -93,7 +93,7 @@ public class DiscountFactorCurveDataAllOf {
 
       @Override
       public MarketDataTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return MarketDataTypeEnum.fromValue(value);
       }
     }
@@ -103,8 +103,9 @@ public class DiscountFactorCurveDataAllOf {
   @SerializedName(SERIALIZED_NAME_MARKET_DATA_TYPE)
   private MarketDataTypeEnum marketDataType;
 
+
   public DiscountFactorCurveDataAllOf baseDate(OffsetDateTime baseDate) {
-    this.baseDate = baseDate;
+    this.baseDate = baseDate; 
     return this;
   }
 
@@ -121,12 +122,14 @@ public class DiscountFactorCurveDataAllOf {
     this.baseDate = baseDate;
   }
 
+
   public DiscountFactorCurveDataAllOf dates(List<OffsetDateTime> dates) {
-    this.dates = dates;
+    this.dates = dates; 
     return this;
   }
 
   public DiscountFactorCurveDataAllOf addDatesItem(OffsetDateTime datesItem) {
+   
     this.dates.add(datesItem);
     return this;
   }
@@ -144,12 +147,14 @@ public class DiscountFactorCurveDataAllOf {
     this.dates = dates;
   }
 
+
   public DiscountFactorCurveDataAllOf discountFactors(List<Double> discountFactors) {
-    this.discountFactors = discountFactors;
+    this.discountFactors = discountFactors; 
     return this;
   }
 
   public DiscountFactorCurveDataAllOf addDiscountFactorsItem(Double discountFactorsItem) {
+   
     this.discountFactors.add(discountFactorsItem);
     return this;
   }
@@ -167,8 +172,9 @@ public class DiscountFactorCurveDataAllOf {
     this.discountFactors = discountFactors;
   }
 
+
   public DiscountFactorCurveDataAllOf marketDataType(MarketDataTypeEnum marketDataType) {
-    this.marketDataType = marketDataType;
+    this.marketDataType = marketDataType; 
     return this;
   }
 
@@ -187,7 +193,7 @@ public class DiscountFactorCurveDataAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -199,9 +205,8 @@ public class DiscountFactorCurveDataAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -219,7 +224,7 @@ public class DiscountFactorCurveDataAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

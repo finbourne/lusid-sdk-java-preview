@@ -31,7 +31,7 @@ import java.time.OffsetDateTime;
  * Forward Rate Agreement
  */
 @ApiModel(description = "Forward Rate Agreement")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ForwardRateAgreement extends LusidInstrument {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -57,8 +57,12 @@ public class ForwardRateAgreement extends LusidInstrument {
   @SerializedName(SERIALIZED_NAME_NOTIONAL)
   private Double notional;
 
+  public ForwardRateAgreement() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
+
   public ForwardRateAgreement startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -75,8 +79,9 @@ public class ForwardRateAgreement extends LusidInstrument {
     this.startDate = startDate;
   }
 
+
   public ForwardRateAgreement maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -93,8 +98,9 @@ public class ForwardRateAgreement extends LusidInstrument {
     this.maturityDate = maturityDate;
   }
 
+
   public ForwardRateAgreement domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -111,8 +117,9 @@ public class ForwardRateAgreement extends LusidInstrument {
     this.domCcy = domCcy;
   }
 
+
   public ForwardRateAgreement fixingDate(OffsetDateTime fixingDate) {
-    this.fixingDate = fixingDate;
+    this.fixingDate = fixingDate; 
     return this;
   }
 
@@ -129,8 +136,9 @@ public class ForwardRateAgreement extends LusidInstrument {
     this.fixingDate = fixingDate;
   }
 
+
   public ForwardRateAgreement fraRate(Double fraRate) {
-    this.fraRate = fraRate;
+    this.fraRate = fraRate; 
     return this;
   }
 
@@ -147,8 +155,9 @@ public class ForwardRateAgreement extends LusidInstrument {
     this.fraRate = fraRate;
   }
 
+
   public ForwardRateAgreement notional(Double notional) {
-    this.notional = notional;
+    this.notional = notional; 
     return this;
   }
 
@@ -167,7 +176,7 @@ public class ForwardRateAgreement extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -179,9 +188,8 @@ public class ForwardRateAgreement extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -202,7 +210,7 @@ public class ForwardRateAgreement extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

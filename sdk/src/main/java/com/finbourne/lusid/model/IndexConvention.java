@@ -28,7 +28,7 @@ import java.io.IOException;
  * A set of conventions that describe the conventions for calculation of payments made on rates interbank lending and similar.  Based on ISDA 2006 conventions and similar documentation. Please see the knowledge base for further documentation.
  */
 @ApiModel(description = "A set of conventions that describe the conventions for calculation of payments made on rates interbank lending and similar.  Based on ISDA 2006 conventions and similar documentation. Please see the knowledge base for further documentation.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class IndexConvention {
   public static final String SERIALIZED_NAME_FIXING_REFERENCE = "fixingReference";
   @SerializedName(SERIALIZED_NAME_FIXING_REFERENCE)
@@ -58,8 +58,9 @@ public class IndexConvention {
   @SerializedName(SERIALIZED_NAME_CODE)
   private String code;
 
+
   public IndexConvention fixingReference(String fixingReference) {
-    this.fixingReference = fixingReference;
+    this.fixingReference = fixingReference; 
     return this;
   }
 
@@ -76,8 +77,9 @@ public class IndexConvention {
     this.fixingReference = fixingReference;
   }
 
+
   public IndexConvention publicationDayLag(Integer publicationDayLag) {
-    this.publicationDayLag = publicationDayLag;
+    this.publicationDayLag = publicationDayLag; 
     return this;
   }
 
@@ -94,8 +96,9 @@ public class IndexConvention {
     this.publicationDayLag = publicationDayLag;
   }
 
+
   public IndexConvention paymentTenor(String paymentTenor) {
-    this.paymentTenor = paymentTenor;
+    this.paymentTenor = paymentTenor; 
     return this;
   }
 
@@ -112,8 +115,9 @@ public class IndexConvention {
     this.paymentTenor = paymentTenor;
   }
 
+
   public IndexConvention dayCountConvention(String dayCountConvention) {
-    this.dayCountConvention = dayCountConvention;
+    this.dayCountConvention = dayCountConvention; 
     return this;
   }
 
@@ -130,8 +134,9 @@ public class IndexConvention {
     this.dayCountConvention = dayCountConvention;
   }
 
+
   public IndexConvention currency(String currency) {
-    this.currency = currency;
+    this.currency = currency; 
     return this;
   }
 
@@ -148,8 +153,9 @@ public class IndexConvention {
     this.currency = currency;
   }
 
+
   public IndexConvention scope(String scope) {
-    this.scope = scope;
+    this.scope = scope; 
     return this;
   }
 
@@ -166,8 +172,9 @@ public class IndexConvention {
     this.scope = scope;
   }
 
+
   public IndexConvention code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -186,7 +193,7 @@ public class IndexConvention {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -198,9 +205,8 @@ public class IndexConvention {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -221,7 +227,7 @@ public class IndexConvention {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

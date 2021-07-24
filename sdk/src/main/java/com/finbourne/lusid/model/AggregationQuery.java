@@ -28,7 +28,7 @@ import java.time.OffsetDateTime;
 /**
  * AggregationQuery
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class AggregationQuery {
   public static final String SERIALIZED_NAME_ADDRESS_KEY = "addressKey";
   @SerializedName(SERIALIZED_NAME_ADDRESS_KEY)
@@ -97,7 +97,7 @@ public class AggregationQuery {
 
       @Override
       public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return TypeEnum.fromValue(value);
       }
     }
@@ -123,8 +123,9 @@ public class AggregationQuery {
   @SerializedName(SERIALIZED_NAME_REMOVAL_DATE)
   private OffsetDateTime removalDate;
 
+
   public AggregationQuery addressKey(String addressKey) {
-    this.addressKey = addressKey;
+    this.addressKey = addressKey; 
     return this;
   }
 
@@ -141,8 +142,9 @@ public class AggregationQuery {
     this.addressKey = addressKey;
   }
 
+
   public AggregationQuery description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -159,8 +161,9 @@ public class AggregationQuery {
     this.description = description;
   }
 
+
   public AggregationQuery displayName(String displayName) {
-    this.displayName = displayName;
+    this.displayName = displayName; 
     return this;
   }
 
@@ -177,8 +180,9 @@ public class AggregationQuery {
     this.displayName = displayName;
   }
 
+
   public AggregationQuery type(TypeEnum type) {
-    this.type = type;
+    this.type = type; 
     return this;
   }
 
@@ -195,8 +199,9 @@ public class AggregationQuery {
     this.type = type;
   }
 
+
   public AggregationQuery scalesWithHoldingQuantity(Boolean scalesWithHoldingQuantity) {
-    this.scalesWithHoldingQuantity = scalesWithHoldingQuantity;
+    this.scalesWithHoldingQuantity = scalesWithHoldingQuantity; 
     return this;
   }
 
@@ -213,8 +218,9 @@ public class AggregationQuery {
     this.scalesWithHoldingQuantity = scalesWithHoldingQuantity;
   }
 
+
   public AggregationQuery supportedOperations(String supportedOperations) {
-    this.supportedOperations = supportedOperations;
+    this.supportedOperations = supportedOperations; 
     return this;
   }
 
@@ -231,8 +237,9 @@ public class AggregationQuery {
     this.supportedOperations = supportedOperations;
   }
 
+
   public AggregationQuery lifeCycleStatus(String lifeCycleStatus) {
-    this.lifeCycleStatus = lifeCycleStatus;
+    this.lifeCycleStatus = lifeCycleStatus; 
     return this;
   }
 
@@ -249,8 +256,9 @@ public class AggregationQuery {
     this.lifeCycleStatus = lifeCycleStatus;
   }
 
+
   public AggregationQuery removalDate(OffsetDateTime removalDate) {
-    this.removalDate = removalDate;
+    this.removalDate = removalDate; 
     return this;
   }
 
@@ -269,7 +277,7 @@ public class AggregationQuery {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -281,9 +289,8 @@ public class AggregationQuery {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -305,7 +312,7 @@ public class AggregationQuery {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
