@@ -2,8 +2,6 @@
 
 # ComplexMarketDataId
 
-An identifier that uniquely describes an item of complex market data such as an interest rate curve or volatility surface.
-
 ## Properties
 
 Name | Type | Description | Notes

@@ -2,7 +2,6 @@
 
 # AggregateSpec
 
-
 ## Properties
 
 Name | Type | Description | Notes

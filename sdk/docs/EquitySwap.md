@@ -2,14 +2,12 @@
 
 # EquitySwap
 
-Lusid-ibor internal representation of an Equity Swap instrument.
-
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDate** | **OffsetDateTime** | The start date of the EquitySwap | 
-**maturityDate** | **OffsetDateTime** | The maturity date of the EquitySwap. | 
+**startDate** | [**OffsetDateTime**](OffsetDateTime.md) | The start date of the EquitySwap | 
+**maturityDate** | [**OffsetDateTime**](OffsetDateTime.md) | The maturity date of the EquitySwap. | 
 **code** | **String** | The code of the underlying. | 
 **equityFlowConventions** | [**FlowConventions**](FlowConventions.md) |  | 
 **fundingLeg** | [**InstrumentLeg**](InstrumentLeg.md) |  | 

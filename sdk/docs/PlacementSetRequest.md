@@ -2,8 +2,6 @@
 
 # PlacementSetRequest
 
-A request to create or update multiple Placements.
-
 ## Properties
 
 Name | Type | Description | Notes

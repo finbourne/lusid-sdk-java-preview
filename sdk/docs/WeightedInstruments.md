@@ -2,8 +2,6 @@
 
 # WeightedInstruments
 
-Class that models a set of instruments of which each has some quantity and can be identified by a unique label.
-
 ## Properties
 
 Name | Type | Description | Notes

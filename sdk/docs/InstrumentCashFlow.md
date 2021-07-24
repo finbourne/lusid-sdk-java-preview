@@ -2,13 +2,11 @@
 
 # InstrumentCashFlow
 
-The details for the cashflow associated with an instrument from a given portfolio.
-
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**paymentDate** | **OffsetDateTime** | The date at which the given cash flow is due to be paid (SettlementDate is used somewhat interchangeably with PaymentDate.) | 
+**paymentDate** | [**OffsetDateTime**](OffsetDateTime.md) | The date at which the given cash flow is due to be paid (SettlementDate is used somewhat interchangeably with PaymentDate.) | 
 **amount** | **Double** | The quantity (amount) that will be paid. Note that this can be empty if the payment is in the future and a model is used that cannot estimate it. |  [optional]
 **currency** | **String** | The payment currency of the cash flow. | 
 **sourceTransactionId** | **String** | The identifier for the parent transaction on the instrument that will pay/receive this cash flow. | 

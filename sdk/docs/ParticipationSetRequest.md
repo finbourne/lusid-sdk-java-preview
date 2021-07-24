@@ -2,8 +2,6 @@
 
 # ParticipationSetRequest
 
-A request to create or update multiple Participations.
-
 ## Properties
 
 Name | Type | Description | Notes

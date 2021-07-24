@@ -2,14 +2,13 @@
 
 # CreateDateRequest
 
-
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dateId** | **String** |  | 
-**fromUtc** | **OffsetDateTime** |  | 
-**toUtc** | **OffsetDateTime** |  | 
+**fromUtc** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
+**toUtc** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 **timeZone** | **String** |  | 
 **description** | **String** |  | 
 **type** | **String** |  |  [optional]

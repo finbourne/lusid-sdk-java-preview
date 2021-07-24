@@ -2,8 +2,6 @@
 
 # A2BCategory
 
-A2B Category - one of the five major categories in the A2BDataRecord
-
 ## Properties
 
 Name | Type | Description | Notes

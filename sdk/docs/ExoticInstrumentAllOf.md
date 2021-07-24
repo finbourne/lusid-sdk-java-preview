@@ -2,7 +2,6 @@
 
 # ExoticInstrumentAllOf
 
-
 ## Properties
 
 Name | Type | Description | Notes

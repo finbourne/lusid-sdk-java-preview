@@ -2,8 +2,6 @@
 
 # ComplexMarketData
 
-A base class for any form of market data with structure
-
 ## Properties
 
 Name | Type | Description | Notes
