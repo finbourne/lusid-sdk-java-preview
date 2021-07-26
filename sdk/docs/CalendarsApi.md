@@ -189,7 +189,7 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CalendarsApi apiInstance = new CalendarsApi(defaultClient);
-    CreateCalendarRequest createCalendarRequest = {"calendarId":{"scope":"TestScope","code":"TestCode"},"calendarType":"Holiday","weekendMask":{"days":["Saturday","Sunday"],"timeZone":"UTC"},"sourceProvider":"Finbourne Calendar Service","properties":[{"key":"Calendar/default/Center","value":{"labelValue":"CBTR"}}]}; // CreateCalendarRequest | A request to create the calendar
+    CreateCalendarRequest createCalendarRequest = {"calendarId":{"scope":"TestScope","code":"TestCode"},"calendarType":"Holiday","weekendMask":{"days":["Saturday","Sunday"],"timeZone":"UTC"},"sourceProvider":"Finbourne-Calendar-Service","properties":[{"key":"Calendar/HolidayType/Statutory","value":{"labelValue":"CBTR"}}]}; // CreateCalendarRequest | A request to create the calendar
     try {
       Calendar result = apiInstance.createCalendar(createCalendarRequest);
       System.out.println(result);
@@ -785,7 +785,7 @@ public class Example {
     CalendarsApi apiInstance = new CalendarsApi(defaultClient);
     String scope = "scope_example"; // String | Scope of the request
     String code = "code_example"; // String | Code of the request
-    UpdateCalendarRequest updateCalendarRequest = {"weekendMask":{"days":["Saturday","Sunday"],"timeZone":"UTC"},"sourceProvider":"Finbourne Calendar Service","properties":[{"key":"Calendar/default/Center","value":{"labelValue":"CBTR"}}]}; // UpdateCalendarRequest | The new state of the calendar
+    UpdateCalendarRequest updateCalendarRequest = {"weekendMask":{"days":["Saturday","Sunday"],"timeZone":"UTC"},"sourceProvider":"Finbourne-Calendar-Service","properties":[{"key":"Calendar/HolidayType/Statutory","value":{"labelValue":"CBTR"}}]}; // UpdateCalendarRequest | The new state of the calendar
     try {
       Calendar result = apiInstance.updateCalendar(scope, code, updateCalendarRequest);
       System.out.println(result);
