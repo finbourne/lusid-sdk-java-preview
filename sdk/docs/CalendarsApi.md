@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**createCalendar**](CalendarsApi.md#createCalendar) | **POST** /api/calendars/generic | [BETA] Create a calendar in its generic form
 [**deleteCalendar**](CalendarsApi.md#deleteCalendar) | **DELETE** /api/calendars/generic/{scope}/{code} | [BETA] Delete a calendar
 [**deleteDateFromCalendar**](CalendarsApi.md#deleteDateFromCalendar) | **DELETE** /api/calendars/generic/{scope}/{code}/dates/{dateId} | [BETA] Remove a date from a calendar
+[**generateSchedule**](CalendarsApi.md#generateSchedule) | **POST** /api/calendars/schedule/{scope} | [EXPERIMENTAL] Generate an ordered schedule of dates.
 [**getCalendar**](CalendarsApi.md#getCalendar) | **GET** /api/calendars/generic/{scope}/{code} | [BETA] Get a calendar in its generic form
 [**getDates**](CalendarsApi.md#getDates) | **GET** /api/calendars/generic/{scope}/{code}/dates | [BETA] Get dates for a specific calendar
 [**isBusinessDateTime**](CalendarsApi.md#isBusinessDateTime) | **GET** /api/calendars/businessday/{scope}/{code} | [BETA] Check whether a DateTime is a \&quot;Business DateTime\&quot;
@@ -371,6 +372,79 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The deleted date |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="generateSchedule"></a>
+# **generateSchedule**
+> List&lt;OffsetDateTime&gt; generateSchedule(scope, valuationSchedule, asAt)
+
+[EXPERIMENTAL] Generate an ordered schedule of dates.
+
+Returns an ordered array of dates. The dates will only fall on business  days as defined by the scope and calendar codes in the valuation schedule.                Valuations are made at a frequency defined by the valuation schedule&#39;s tenor, e.g. every day (\&quot;1D\&quot;),  every other week (\&quot;2W\&quot;) etc. These dates will be adjusted onto business days as defined by the schedule&#39;s  rollConvention.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CalendarsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    CalendarsApi apiInstance = new CalendarsApi(defaultClient);
+    String scope = "scope_example"; // String | Scope of the calendars to use
+    ValuationSchedule valuationSchedule = {"effectiveFrom":"2020-01-01","effectiveAt":"2021-01-01","tenor":"1M","rollConvention":"F","holidayCalendars":["GBP","USD"],"valuationDateTimes":[]}; // ValuationSchedule | The ValuationSchedule to generate schedule dates from
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional AsAt for searching the calendar store. Defaults to Latest.
+    try {
+      List<OffsetDateTime> result = apiInstance.generateSchedule(scope, valuationSchedule, asAt);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CalendarsApi#generateSchedule");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| Scope of the calendars to use |
+ **valuationSchedule** | [**ValuationSchedule**](ValuationSchedule.md)| The ValuationSchedule to generate schedule dates from |
+ **asAt** | **OffsetDateTime**| Optional AsAt for searching the calendar store. Defaults to Latest. | [optional]
+
+### Return type
+
+[**List&lt;OffsetDateTime&gt;**](OffsetDateTime.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | An array of dates in chronological order. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
