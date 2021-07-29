@@ -57,5 +57,7 @@
 
 * `SIMPLEINSTRUMENT` (value: `"SimpleInstrument"`)
 
+* `REPO` (value: `"Repo"`)
+
 
 
