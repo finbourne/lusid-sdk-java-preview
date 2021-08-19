@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **principal** | **Double** | The face-value or principal for the bond at outset.              This might be reduced through its lifetime in the event of amortization or similar. | 
 **couponRate** | **Double** | simple coupon rate. | 
 **identifiers** | **Map&lt;String, String&gt;** | external market codes and identifiers for the bond, e.g. ISIN. |  [optional]
+**exDividendDays** | **Integer** | The number of days before the next coupon payment for which the bond goes ex-dividend. |  [optional]
+**initialCouponDate** | [**OffsetDateTime**](OffsetDateTime.md) | The initial coupon date which specifies the accrual start period for a fixed coupon bond with ex dividend schedule |  [optional]
 
 
 
