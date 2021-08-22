@@ -41,7 +41,6 @@ import java.util.Map;
 
 public class CustomEntityDefinitionsApi {
     private ApiClient localVarApiClient;
-
     public CustomEntityDefinitionsApi() {
         this(Configuration.getDefaultApiClient());
     }
@@ -81,7 +80,9 @@ public class CustomEntityDefinitionsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -99,7 +100,7 @@ public class CustomEntityDefinitionsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -166,7 +167,6 @@ public class CustomEntityDefinitionsApi {
      </table>
      */
     public okhttp3.Call createCustomEntityDefinitionAsync(CustomEntityDefinitionRequest customEntityDefinitionRequest, final ApiCallback<CustomEntityDefinition> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = createCustomEntityDefinitionValidateBeforeCall(customEntityDefinitionRequest, _callback);
         Type localVarReturnType = new TypeToken<CustomEntityDefinition>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -188,7 +188,7 @@ public class CustomEntityDefinitionsApi {
      </table>
      */
     public okhttp3.Call getDefinitionCall(String customEntityId, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/customentitydefinitions/{customEntityId}"
@@ -196,12 +196,14 @@ public class CustomEntityDefinitionsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (asAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -219,7 +221,7 @@ public class CustomEntityDefinitionsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -294,7 +296,6 @@ public class CustomEntityDefinitionsApi {
      </table>
      */
     public okhttp3.Call getDefinitionAsync(String customEntityId, OffsetDateTime asAt, final ApiCallback<CustomEntityDefinition> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getDefinitionValidateBeforeCall(customEntityId, asAt, _callback);
         Type localVarReturnType = new TypeToken<CustomEntityDefinition>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);

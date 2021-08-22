@@ -55,4 +55,28 @@ public class IrVolCubeDataTest {
         // TODO: test marketDataType
     }
 
+    /**
+     * Test the property 'baseDate'
+     */
+    @Test
+    public void baseDateTest() {
+        // TODO: test baseDate
+    }
+
+    /**
+     * Test the property 'instruments'
+     */
+    @Test
+    public void instrumentsTest() {
+        // TODO: test instruments
+    }
+
+    /**
+     * Test the property 'quotes'
+     */
+    @Test
+    public void quotesTest() {
+        // TODO: test quotes
+    }
+
 }

@@ -29,11 +29,11 @@ import java.io.IOException;
  * Options for controlling the default aspects and behaviour of the pricing engine.
  */
 @ApiModel(description = "Options for controlling the default aspects and behaviour of the pricing engine.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PricingOptions {
   public static final String SERIALIZED_NAME_MODEL_SELECTION = "modelSelection";
   @SerializedName(SERIALIZED_NAME_MODEL_SELECTION)
-  private ModelSelection modelSelection = null;
+  private ModelSelection modelSelection;
 
   public static final String SERIALIZED_NAME_USE_INSTRUMENT_TYPE_TO_DETERMINE_PRICER = "useInstrumentTypeToDeterminePricer";
   @SerializedName(SERIALIZED_NAME_USE_INSTRUMENT_TYPE_TO_DETERMINE_PRICER)
@@ -67,8 +67,9 @@ public class PricingOptions {
   @SerializedName(SERIALIZED_NAME_USE_CHILD_SUB_HOLDING_KEYS_FOR_PORTFOLIO_EXPANSION)
   private Boolean useChildSubHoldingKeysForPortfolioExpansion;
 
+
   public PricingOptions modelSelection(ModelSelection modelSelection) {
-    this.modelSelection = modelSelection;
+    this.modelSelection = modelSelection; 
     return this;
   }
 
@@ -85,8 +86,9 @@ public class PricingOptions {
     this.modelSelection = modelSelection;
   }
 
+
   public PricingOptions useInstrumentTypeToDeterminePricer(Boolean useInstrumentTypeToDeterminePricer) {
-    this.useInstrumentTypeToDeterminePricer = useInstrumentTypeToDeterminePricer;
+    this.useInstrumentTypeToDeterminePricer = useInstrumentTypeToDeterminePricer; 
     return this;
   }
 
@@ -103,8 +105,9 @@ public class PricingOptions {
     this.useInstrumentTypeToDeterminePricer = useInstrumentTypeToDeterminePricer;
   }
 
+
   public PricingOptions allowAnyInstrumentsWithSecUidToPriceOffLookup(Boolean allowAnyInstrumentsWithSecUidToPriceOffLookup) {
-    this.allowAnyInstrumentsWithSecUidToPriceOffLookup = allowAnyInstrumentsWithSecUidToPriceOffLookup;
+    this.allowAnyInstrumentsWithSecUidToPriceOffLookup = allowAnyInstrumentsWithSecUidToPriceOffLookup; 
     return this;
   }
 
@@ -121,8 +124,9 @@ public class PricingOptions {
     this.allowAnyInstrumentsWithSecUidToPriceOffLookup = allowAnyInstrumentsWithSecUidToPriceOffLookup;
   }
 
+
   public PricingOptions allowPartiallySuccessfulEvaluation(Boolean allowPartiallySuccessfulEvaluation) {
-    this.allowPartiallySuccessfulEvaluation = allowPartiallySuccessfulEvaluation;
+    this.allowPartiallySuccessfulEvaluation = allowPartiallySuccessfulEvaluation; 
     return this;
   }
 
@@ -139,8 +143,9 @@ public class PricingOptions {
     this.allowPartiallySuccessfulEvaluation = allowPartiallySuccessfulEvaluation;
   }
 
+
   public PricingOptions produceSeparateResultForLinearOtcLegs(Boolean produceSeparateResultForLinearOtcLegs) {
-    this.produceSeparateResultForLinearOtcLegs = produceSeparateResultForLinearOtcLegs;
+    this.produceSeparateResultForLinearOtcLegs = produceSeparateResultForLinearOtcLegs; 
     return this;
   }
 
@@ -157,8 +162,9 @@ public class PricingOptions {
     this.produceSeparateResultForLinearOtcLegs = produceSeparateResultForLinearOtcLegs;
   }
 
+
   public PricingOptions enableUseOfCachedUnitResults(Boolean enableUseOfCachedUnitResults) {
-    this.enableUseOfCachedUnitResults = enableUseOfCachedUnitResults;
+    this.enableUseOfCachedUnitResults = enableUseOfCachedUnitResults; 
     return this;
   }
 
@@ -175,8 +181,9 @@ public class PricingOptions {
     this.enableUseOfCachedUnitResults = enableUseOfCachedUnitResults;
   }
 
+
   public PricingOptions windowValuationOnInstrumentStartEnd(Boolean windowValuationOnInstrumentStartEnd) {
-    this.windowValuationOnInstrumentStartEnd = windowValuationOnInstrumentStartEnd;
+    this.windowValuationOnInstrumentStartEnd = windowValuationOnInstrumentStartEnd; 
     return this;
   }
 
@@ -193,8 +200,9 @@ public class PricingOptions {
     this.windowValuationOnInstrumentStartEnd = windowValuationOnInstrumentStartEnd;
   }
 
+
   public PricingOptions removeContingentCashflowsInPaymentDiary(Boolean removeContingentCashflowsInPaymentDiary) {
-    this.removeContingentCashflowsInPaymentDiary = removeContingentCashflowsInPaymentDiary;
+    this.removeContingentCashflowsInPaymentDiary = removeContingentCashflowsInPaymentDiary; 
     return this;
   }
 
@@ -211,8 +219,9 @@ public class PricingOptions {
     this.removeContingentCashflowsInPaymentDiary = removeContingentCashflowsInPaymentDiary;
   }
 
+
   public PricingOptions useChildSubHoldingKeysForPortfolioExpansion(Boolean useChildSubHoldingKeysForPortfolioExpansion) {
-    this.useChildSubHoldingKeysForPortfolioExpansion = useChildSubHoldingKeysForPortfolioExpansion;
+    this.useChildSubHoldingKeysForPortfolioExpansion = useChildSubHoldingKeysForPortfolioExpansion; 
     return this;
   }
 
@@ -231,7 +240,7 @@ public class PricingOptions {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -243,9 +252,8 @@ public class PricingOptions {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -268,7 +276,7 @@ public class PricingOptions {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

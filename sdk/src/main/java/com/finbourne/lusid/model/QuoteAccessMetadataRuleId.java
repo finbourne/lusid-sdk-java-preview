@@ -28,7 +28,7 @@ import java.io.IOException;
  * An identifier that uniquely identifies a set of Quote access control metadata.
  */
 @ApiModel(description = "An identifier that uniquely identifies a set of Quote access control metadata.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class QuoteAccessMetadataRuleId {
   public static final String SERIALIZED_NAME_PROVIDER = "provider";
   @SerializedName(SERIALIZED_NAME_PROVIDER)
@@ -54,8 +54,9 @@ public class QuoteAccessMetadataRuleId {
   @SerializedName(SERIALIZED_NAME_FIELD)
   private String field;
 
+
   public QuoteAccessMetadataRuleId provider(String provider) {
-    this.provider = provider;
+    this.provider = provider; 
     return this;
   }
 
@@ -72,8 +73,9 @@ public class QuoteAccessMetadataRuleId {
     this.provider = provider;
   }
 
+
   public QuoteAccessMetadataRuleId priceSource(String priceSource) {
-    this.priceSource = priceSource;
+    this.priceSource = priceSource; 
     return this;
   }
 
@@ -90,8 +92,9 @@ public class QuoteAccessMetadataRuleId {
     this.priceSource = priceSource;
   }
 
+
   public QuoteAccessMetadataRuleId instrumentId(String instrumentId) {
-    this.instrumentId = instrumentId;
+    this.instrumentId = instrumentId; 
     return this;
   }
 
@@ -108,8 +111,9 @@ public class QuoteAccessMetadataRuleId {
     this.instrumentId = instrumentId;
   }
 
+
   public QuoteAccessMetadataRuleId instrumentIdType(String instrumentIdType) {
-    this.instrumentIdType = instrumentIdType;
+    this.instrumentIdType = instrumentIdType; 
     return this;
   }
 
@@ -126,8 +130,9 @@ public class QuoteAccessMetadataRuleId {
     this.instrumentIdType = instrumentIdType;
   }
 
+
   public QuoteAccessMetadataRuleId quoteType(String quoteType) {
-    this.quoteType = quoteType;
+    this.quoteType = quoteType; 
     return this;
   }
 
@@ -144,8 +149,9 @@ public class QuoteAccessMetadataRuleId {
     this.quoteType = quoteType;
   }
 
+
   public QuoteAccessMetadataRuleId field(String field) {
-    this.field = field;
+    this.field = field; 
     return this;
   }
 
@@ -164,7 +170,7 @@ public class QuoteAccessMetadataRuleId {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -176,9 +182,8 @@ public class QuoteAccessMetadataRuleId {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -198,7 +203,7 @@ public class QuoteAccessMetadataRuleId {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

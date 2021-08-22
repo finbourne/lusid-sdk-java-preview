@@ -31,7 +31,7 @@ import java.time.OffsetDateTime;
  * IL Fx-Forward Instrument; Lusid-ibor internal representation of a Fx Forward instrument
  */
 @ApiModel(description = "IL Fx-Forward Instrument; Lusid-ibor internal representation of a Fx Forward instrument")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FxForward extends LusidInstrument {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -69,8 +69,12 @@ public class FxForward extends LusidInstrument {
   @SerializedName(SERIALIZED_NAME_FIXING_DATE)
   private OffsetDateTime fixingDate;
 
+  public FxForward() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
+
   public FxForward startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -87,8 +91,9 @@ public class FxForward extends LusidInstrument {
     this.startDate = startDate;
   }
 
+
   public FxForward maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -105,8 +110,9 @@ public class FxForward extends LusidInstrument {
     this.maturityDate = maturityDate;
   }
 
+
   public FxForward domAmount(Double domAmount) {
-    this.domAmount = domAmount;
+    this.domAmount = domAmount; 
     return this;
   }
 
@@ -123,8 +129,9 @@ public class FxForward extends LusidInstrument {
     this.domAmount = domAmount;
   }
 
+
   public FxForward domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -141,8 +148,9 @@ public class FxForward extends LusidInstrument {
     this.domCcy = domCcy;
   }
 
+
   public FxForward fgnAmount(Double fgnAmount) {
-    this.fgnAmount = fgnAmount;
+    this.fgnAmount = fgnAmount; 
     return this;
   }
 
@@ -159,8 +167,9 @@ public class FxForward extends LusidInstrument {
     this.fgnAmount = fgnAmount;
   }
 
+
   public FxForward fgnCcy(String fgnCcy) {
-    this.fgnCcy = fgnCcy;
+    this.fgnCcy = fgnCcy; 
     return this;
   }
 
@@ -177,8 +186,9 @@ public class FxForward extends LusidInstrument {
     this.fgnCcy = fgnCcy;
   }
 
+
   public FxForward refSpotRate(Double refSpotRate) {
-    this.refSpotRate = refSpotRate;
+    this.refSpotRate = refSpotRate; 
     return this;
   }
 
@@ -195,8 +205,9 @@ public class FxForward extends LusidInstrument {
     this.refSpotRate = refSpotRate;
   }
 
+
   public FxForward isNdf(Boolean isNdf) {
-    this.isNdf = isNdf;
+    this.isNdf = isNdf; 
     return this;
   }
 
@@ -213,8 +224,9 @@ public class FxForward extends LusidInstrument {
     this.isNdf = isNdf;
   }
 
+
   public FxForward fixingDate(OffsetDateTime fixingDate) {
-    this.fixingDate = fixingDate;
+    this.fixingDate = fixingDate; 
     return this;
   }
 
@@ -233,7 +245,7 @@ public class FxForward extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -245,9 +257,8 @@ public class FxForward extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -271,7 +282,7 @@ public class FxForward extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

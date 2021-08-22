@@ -30,18 +30,20 @@ import java.util.List;
 /**
  * UpsertPortfolioGroupAccessMetadataRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpsertPortfolioGroupAccessMetadataRequest {
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
   private List<AccessMetadataValue> metadata = new ArrayList<>();
 
+
   public UpsertPortfolioGroupAccessMetadataRequest metadata(List<AccessMetadataValue> metadata) {
-    this.metadata = metadata;
+    this.metadata = metadata; 
     return this;
   }
 
   public UpsertPortfolioGroupAccessMetadataRequest addMetadataItem(AccessMetadataValue metadataItem) {
+   
     this.metadata.add(metadataItem);
     return this;
   }
@@ -61,7 +63,7 @@ public class UpsertPortfolioGroupAccessMetadataRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -73,9 +75,8 @@ public class UpsertPortfolioGroupAccessMetadataRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -90,7 +91,7 @@ public class UpsertPortfolioGroupAccessMetadataRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

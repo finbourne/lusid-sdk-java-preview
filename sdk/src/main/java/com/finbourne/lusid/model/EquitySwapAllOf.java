@@ -30,7 +30,7 @@ import java.time.OffsetDateTime;
 /**
  * EquitySwapAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class EquitySwapAllOf {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -46,7 +46,7 @@ public class EquitySwapAllOf {
 
   public static final String SERIALIZED_NAME_EQUITY_FLOW_CONVENTIONS = "equityFlowConventions";
   @SerializedName(SERIALIZED_NAME_EQUITY_FLOW_CONVENTIONS)
-  private FlowConventions equityFlowConventions = null;
+  private FlowConventions equityFlowConventions;
 
   public static final String SERIALIZED_NAME_FUNDING_LEG = "fundingLeg";
   @SerializedName(SERIALIZED_NAME_FUNDING_LEG)
@@ -163,7 +163,7 @@ public class EquitySwapAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -173,8 +173,9 @@ public class EquitySwapAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public EquitySwapAllOf startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -191,8 +192,9 @@ public class EquitySwapAllOf {
     this.startDate = startDate;
   }
 
+
   public EquitySwapAllOf maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -209,8 +211,9 @@ public class EquitySwapAllOf {
     this.maturityDate = maturityDate;
   }
 
+
   public EquitySwapAllOf code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -227,8 +230,9 @@ public class EquitySwapAllOf {
     this.code = code;
   }
 
+
   public EquitySwapAllOf equityFlowConventions(FlowConventions equityFlowConventions) {
-    this.equityFlowConventions = equityFlowConventions;
+    this.equityFlowConventions = equityFlowConventions; 
     return this;
   }
 
@@ -245,8 +249,9 @@ public class EquitySwapAllOf {
     this.equityFlowConventions = equityFlowConventions;
   }
 
+
   public EquitySwapAllOf fundingLeg(InstrumentLeg fundingLeg) {
-    this.fundingLeg = fundingLeg;
+    this.fundingLeg = fundingLeg; 
     return this;
   }
 
@@ -263,8 +268,9 @@ public class EquitySwapAllOf {
     this.fundingLeg = fundingLeg;
   }
 
+
   public EquitySwapAllOf includeDividends(Boolean includeDividends) {
-    this.includeDividends = includeDividends;
+    this.includeDividends = includeDividends; 
     return this;
   }
 
@@ -281,8 +287,9 @@ public class EquitySwapAllOf {
     this.includeDividends = includeDividends;
   }
 
+
   public EquitySwapAllOf initialPrice(Double initialPrice) {
-    this.initialPrice = initialPrice;
+    this.initialPrice = initialPrice; 
     return this;
   }
 
@@ -299,8 +306,9 @@ public class EquitySwapAllOf {
     this.initialPrice = initialPrice;
   }
 
+
   public EquitySwapAllOf notionalReset(Boolean notionalReset) {
-    this.notionalReset = notionalReset;
+    this.notionalReset = notionalReset; 
     return this;
   }
 
@@ -317,8 +325,9 @@ public class EquitySwapAllOf {
     this.notionalReset = notionalReset;
   }
 
+
   public EquitySwapAllOf quantity(Double quantity) {
-    this.quantity = quantity;
+    this.quantity = quantity; 
     return this;
   }
 
@@ -335,8 +344,9 @@ public class EquitySwapAllOf {
     this.quantity = quantity;
   }
 
+
   public EquitySwapAllOf underlyingIdentifier(String underlyingIdentifier) {
-    this.underlyingIdentifier = underlyingIdentifier;
+    this.underlyingIdentifier = underlyingIdentifier; 
     return this;
   }
 
@@ -353,8 +363,9 @@ public class EquitySwapAllOf {
     this.underlyingIdentifier = underlyingIdentifier;
   }
 
+
   public EquitySwapAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -373,7 +384,7 @@ public class EquitySwapAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -385,9 +396,8 @@ public class EquitySwapAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -412,7 +422,7 @@ public class EquitySwapAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

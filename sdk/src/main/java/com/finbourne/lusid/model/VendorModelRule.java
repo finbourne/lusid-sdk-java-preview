@@ -28,7 +28,7 @@ import java.io.IOException;
  * A rule that identifies the set of preferences to be used for a given library, model and instrument type.  There can be many such rules, though only the first found for a given combination would be used.
  */
 @ApiModel(description = "A rule that identifies the set of preferences to be used for a given library, model and instrument type.  There can be many such rules, though only the first found for a given combination would be used.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class VendorModelRule {
   /**
    * The available values are: Lusid, RefinitivQps, RefinitivTracsWeb, VolMaster, IsdaCds
@@ -77,7 +77,7 @@ public class VendorModelRule {
 
       @Override
       public SupplierEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return SupplierEnum.fromValue(value);
       }
     }
@@ -99,8 +99,9 @@ public class VendorModelRule {
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
   private String parameters;
 
+
   public VendorModelRule supplier(SupplierEnum supplier) {
-    this.supplier = supplier;
+    this.supplier = supplier; 
     return this;
   }
 
@@ -117,8 +118,9 @@ public class VendorModelRule {
     this.supplier = supplier;
   }
 
+
   public VendorModelRule modelName(String modelName) {
-    this.modelName = modelName;
+    this.modelName = modelName; 
     return this;
   }
 
@@ -135,8 +137,9 @@ public class VendorModelRule {
     this.modelName = modelName;
   }
 
+
   public VendorModelRule instrumentType(String instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -153,8 +156,9 @@ public class VendorModelRule {
     this.instrumentType = instrumentType;
   }
 
+
   public VendorModelRule parameters(String parameters) {
-    this.parameters = parameters;
+    this.parameters = parameters; 
     return this;
   }
 
@@ -173,7 +177,7 @@ public class VendorModelRule {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -185,9 +189,8 @@ public class VendorModelRule {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -205,7 +208,7 @@ public class VendorModelRule {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

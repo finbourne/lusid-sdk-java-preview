@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * OpaqueMarketDataAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OpaqueMarketDataAllOf {
   public static final String SERIALIZED_NAME_DOCUMENT = "document";
   @SerializedName(SERIALIZED_NAME_DOCUMENT)
@@ -90,7 +90,7 @@ public class OpaqueMarketDataAllOf {
 
       @Override
       public MarketDataTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return MarketDataTypeEnum.fromValue(value);
       }
     }
@@ -100,8 +100,9 @@ public class OpaqueMarketDataAllOf {
   @SerializedName(SERIALIZED_NAME_MARKET_DATA_TYPE)
   private MarketDataTypeEnum marketDataType;
 
+
   public OpaqueMarketDataAllOf document(String document) {
-    this.document = document;
+    this.document = document; 
     return this;
   }
 
@@ -118,8 +119,9 @@ public class OpaqueMarketDataAllOf {
     this.document = document;
   }
 
+
   public OpaqueMarketDataAllOf format(String format) {
-    this.format = format;
+    this.format = format; 
     return this;
   }
 
@@ -136,8 +138,9 @@ public class OpaqueMarketDataAllOf {
     this.format = format;
   }
 
+
   public OpaqueMarketDataAllOf name(String name) {
-    this.name = name;
+    this.name = name; 
     return this;
   }
 
@@ -154,8 +157,9 @@ public class OpaqueMarketDataAllOf {
     this.name = name;
   }
 
+
   public OpaqueMarketDataAllOf marketDataType(MarketDataTypeEnum marketDataType) {
-    this.marketDataType = marketDataType;
+    this.marketDataType = marketDataType; 
     return this;
   }
 
@@ -174,7 +178,7 @@ public class OpaqueMarketDataAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -186,9 +190,8 @@ public class OpaqueMarketDataAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -206,7 +209,7 @@ public class OpaqueMarketDataAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

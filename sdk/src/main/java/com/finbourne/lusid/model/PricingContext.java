@@ -36,30 +36,32 @@ import java.util.Map;
  * Pricing context node. In order to price an instrument a number of configuration parameters are required to determine which  (a) pricing model (ranging from a simple lookup of a market quote/price through to a Monte-Carlo simulation for the behaviour of its cashflows)  (b) vendor library (Lusid internal models or those provided through an external Vendor such as Refinitiv (proprietary) or QuantLib (open source)  are used in the pricing.    In conjunction with these there are a number of parameters that govern the behaviour of these models. For example, in pricing an Fx volatility  dependent product such as an Fx option, there are various parameters that affect model behaviour for the smile. In Lusid a distinction is made between  those which are understood natively and those which are only held for use with a given vendor-model combination. The problem is that, unlike market  quote data, there are few standards around model descriptions. Hence, apparently similar terminology can be mis-leading; for example in SABR models where  the basic parameters are agreed upon but most practical models have used an approximation with adjustments where the parameters can have wildly different meanings.  To avoid confusion or mis-behaviour in this area, where parameters are not understood to be interchangeable, they are only settable on a per-library per-model  basis, essentially as opaque data that will be given to the Vendor library \&quot;verbatim\&quot; but not used with any other.
  */
 @ApiModel(description = "Pricing context node. In order to price an instrument a number of configuration parameters are required to determine which  (a) pricing model (ranging from a simple lookup of a market quote/price through to a Monte-Carlo simulation for the behaviour of its cashflows)  (b) vendor library (Lusid internal models or those provided through an external Vendor such as Refinitiv (proprietary) or QuantLib (open source)  are used in the pricing.    In conjunction with these there are a number of parameters that govern the behaviour of these models. For example, in pricing an Fx volatility  dependent product such as an Fx option, there are various parameters that affect model behaviour for the smile. In Lusid a distinction is made between  those which are understood natively and those which are only held for use with a given vendor-model combination. The problem is that, unlike market  quote data, there are few standards around model descriptions. Hence, apparently similar terminology can be mis-leading; for example in SABR models where  the basic parameters are agreed upon but most practical models have used an approximation with adjustments where the parameters can have wildly different meanings.  To avoid confusion or mis-behaviour in this area, where parameters are not understood to be interchangeable, they are only settable on a per-library per-model  basis, essentially as opaque data that will be given to the Vendor library \"verbatim\" but not used with any other.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PricingContext {
   public static final String SERIALIZED_NAME_MODEL_RULES = "modelRules";
   @SerializedName(SERIALIZED_NAME_MODEL_RULES)
-  private List<VendorModelRule> modelRules = new ArrayList<>();
+  private List<VendorModelRule> modelRules = null;
 
   public static final String SERIALIZED_NAME_MODEL_CHOICE = "modelChoice";
   @SerializedName(SERIALIZED_NAME_MODEL_CHOICE)
-  private Map<String, ModelSelection> modelChoice = new HashMap<>();
+  private Map<String, ModelSelection> modelChoice = null;
 
   public static final String SERIALIZED_NAME_OPTIONS = "options";
   @SerializedName(SERIALIZED_NAME_OPTIONS)
-  private PricingOptions options = null;
+  private PricingOptions options;
 
   public static final String SERIALIZED_NAME_RESULT_DATA_RULES = "resultDataRules";
   @SerializedName(SERIALIZED_NAME_RESULT_DATA_RULES)
-  private List<ResultDataKeyRule> resultDataRules = new ArrayList<>();
+  private List<ResultDataKeyRule> resultDataRules = null;
+
 
   public PricingContext modelRules(List<VendorModelRule> modelRules) {
-    this.modelRules = modelRules;
+    this.modelRules = modelRules; 
     return this;
   }
 
   public PricingContext addModelRulesItem(VendorModelRule modelRulesItem) {
+   
     if (this.modelRules == null) {
       this.modelRules = new ArrayList<>();
     }
@@ -80,8 +82,9 @@ public class PricingContext {
     this.modelRules = modelRules;
   }
 
+
   public PricingContext modelChoice(Map<String, ModelSelection> modelChoice) {
-    this.modelChoice = modelChoice;
+    this.modelChoice = modelChoice; 
     return this;
   }
 
@@ -106,8 +109,9 @@ public class PricingContext {
     this.modelChoice = modelChoice;
   }
 
+
   public PricingContext options(PricingOptions options) {
-    this.options = options;
+    this.options = options; 
     return this;
   }
 
@@ -124,12 +128,14 @@ public class PricingContext {
     this.options = options;
   }
 
+
   public PricingContext resultDataRules(List<ResultDataKeyRule> resultDataRules) {
-    this.resultDataRules = resultDataRules;
+    this.resultDataRules = resultDataRules; 
     return this;
   }
 
   public PricingContext addResultDataRulesItem(ResultDataKeyRule resultDataRulesItem) {
+   
     if (this.resultDataRules == null) {
       this.resultDataRules = new ArrayList<>();
     }
@@ -152,7 +158,7 @@ public class PricingContext {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -164,9 +170,8 @@ public class PricingContext {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -184,7 +189,7 @@ public class PricingContext {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -55,4 +55,60 @@ public class FutureTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'maturityDate'
+     */
+    @Test
+    public void maturityDateTest() {
+        // TODO: test maturityDate
+    }
+
+    /**
+     * Test the property 'identifiers'
+     */
+    @Test
+    public void identifiersTest() {
+        // TODO: test identifiers
+    }
+
+    /**
+     * Test the property 'contractDetails'
+     */
+    @Test
+    public void contractDetailsTest() {
+        // TODO: test contractDetails
+    }
+
+    /**
+     * Test the property 'contracts'
+     */
+    @Test
+    public void contractsTest() {
+        // TODO: test contracts
+    }
+
+    /**
+     * Test the property 'refSpotPrice'
+     */
+    @Test
+    public void refSpotPriceTest() {
+        // TODO: test refSpotPrice
+    }
+
+    /**
+     * Test the property 'underlying'
+     */
+    @Test
+    public void underlyingTest() {
+        // TODO: test underlying
+    }
+
 }

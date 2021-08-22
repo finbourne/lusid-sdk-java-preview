@@ -47,7 +47,6 @@ import java.util.Map;
 
 public class StructuredResultDataApi {
     private ApiClient localVarApiClient;
-
     public StructuredResultDataApi() {
         this(Configuration.getDefaultApiClient());
     }
@@ -89,7 +88,9 @@ public class StructuredResultDataApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -107,7 +108,7 @@ public class StructuredResultDataApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -187,7 +188,6 @@ public class StructuredResultDataApi {
      </table>
      */
     public okhttp3.Call createDataMapAsync(String scope, Map<String, CreateDataMapRequest> requestBody, final ApiCallback<UpsertStructuredDataResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = createDataMapValidateBeforeCall(scope, requestBody, _callback);
         Type localVarReturnType = new TypeToken<UpsertStructuredDataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -218,7 +218,9 @@ public class StructuredResultDataApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -236,7 +238,7 @@ public class StructuredResultDataApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -316,7 +318,6 @@ public class StructuredResultDataApi {
      </table>
      */
     public okhttp3.Call deleteStructuredResultDataAsync(String scope, Map<String, StructuredResultDataId> requestBody, final ApiCallback<AnnulStructuredDataResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = deleteStructuredResultDataValidateBeforeCall(scope, requestBody, _callback);
         Type localVarReturnType = new TypeToken<AnnulStructuredDataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -347,7 +348,9 @@ public class StructuredResultDataApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -365,7 +368,7 @@ public class StructuredResultDataApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -445,7 +448,6 @@ public class StructuredResultDataApi {
      </table>
      */
     public okhttp3.Call getDataMapAsync(String scope, Map<String, DataMapKey> requestBody, final ApiCallback<GetDataMapResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getDataMapValidateBeforeCall(scope, requestBody, _callback);
         Type localVarReturnType = new TypeToken<GetDataMapResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -477,6 +479,10 @@ public class StructuredResultDataApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (asAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
@@ -485,8 +491,6 @@ public class StructuredResultDataApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("maxAge", maxAge));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -504,7 +508,7 @@ public class StructuredResultDataApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -590,7 +594,6 @@ public class StructuredResultDataApi {
      </table>
      */
     public okhttp3.Call getStructuredResultDataAsync(String scope, Map<String, StructuredResultDataId> requestBody, OffsetDateTime asAt, String maxAge, final ApiCallback<GetStructuredResultDataResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getStructuredResultDataValidateBeforeCall(scope, requestBody, asAt, maxAge, _callback);
         Type localVarReturnType = new TypeToken<GetStructuredResultDataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -621,7 +624,9 @@ public class StructuredResultDataApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -639,7 +644,7 @@ public class StructuredResultDataApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -719,7 +724,6 @@ public class StructuredResultDataApi {
      </table>
      */
     public okhttp3.Call upsertStructuredResultDataAsync(String scope, Map<String, UpsertStructuredResultDataRequest> requestBody, final ApiCallback<UpsertStructuredDataResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = upsertStructuredResultDataValidateBeforeCall(scope, requestBody, _callback);
         Type localVarReturnType = new TypeToken<UpsertStructuredDataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);

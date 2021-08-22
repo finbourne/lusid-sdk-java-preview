@@ -28,7 +28,7 @@ import java.time.OffsetDateTime;
 /**
  * CashPerpetualAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CashPerpetualAllOf {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -133,7 +133,7 @@ public class CashPerpetualAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -143,8 +143,9 @@ public class CashPerpetualAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public CashPerpetualAllOf startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -161,8 +162,9 @@ public class CashPerpetualAllOf {
     this.startDate = startDate;
   }
 
+
   public CashPerpetualAllOf domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -179,8 +181,9 @@ public class CashPerpetualAllOf {
     this.domCcy = domCcy;
   }
 
+
   public CashPerpetualAllOf principal(Double principal) {
-    this.principal = principal;
+    this.principal = principal; 
     return this;
   }
 
@@ -197,8 +200,9 @@ public class CashPerpetualAllOf {
     this.principal = principal;
   }
 
+
   public CashPerpetualAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -217,7 +221,7 @@ public class CashPerpetualAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -229,9 +233,8 @@ public class CashPerpetualAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -249,7 +252,7 @@ public class CashPerpetualAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

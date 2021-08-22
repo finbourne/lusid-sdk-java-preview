@@ -53,4 +53,84 @@ public class EquitySwapTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'maturityDate'
+     */
+    @Test
+    public void maturityDateTest() {
+        // TODO: test maturityDate
+    }
+
+    /**
+     * Test the property 'code'
+     */
+    @Test
+    public void codeTest() {
+        // TODO: test code
+    }
+
+    /**
+     * Test the property 'equityFlowConventions'
+     */
+    @Test
+    public void equityFlowConventionsTest() {
+        // TODO: test equityFlowConventions
+    }
+
+    /**
+     * Test the property 'fundingLeg'
+     */
+    @Test
+    public void fundingLegTest() {
+        // TODO: test fundingLeg
+    }
+
+    /**
+     * Test the property 'includeDividends'
+     */
+    @Test
+    public void includeDividendsTest() {
+        // TODO: test includeDividends
+    }
+
+    /**
+     * Test the property 'initialPrice'
+     */
+    @Test
+    public void initialPriceTest() {
+        // TODO: test initialPrice
+    }
+
+    /**
+     * Test the property 'notionalReset'
+     */
+    @Test
+    public void notionalResetTest() {
+        // TODO: test notionalReset
+    }
+
+    /**
+     * Test the property 'quantity'
+     */
+    @Test
+    public void quantityTest() {
+        // TODO: test quantity
+    }
+
+    /**
+     * Test the property 'underlyingIdentifier'
+     */
+    @Test
+    public void underlyingIdentifierTest() {
+        // TODO: test underlyingIdentifier
+    }
+
 }

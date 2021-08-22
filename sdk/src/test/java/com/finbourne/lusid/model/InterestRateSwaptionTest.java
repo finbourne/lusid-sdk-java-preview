@@ -52,4 +52,36 @@ public class InterestRateSwaptionTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'payOrReceiveFixed'
+     */
+    @Test
+    public void payOrReceiveFixedTest() {
+        // TODO: test payOrReceiveFixed
+    }
+
+    /**
+     * Test the property 'deliveryMethod'
+     */
+    @Test
+    public void deliveryMethodTest() {
+        // TODO: test deliveryMethod
+    }
+
+    /**
+     * Test the property 'swap'
+     */
+    @Test
+    public void swapTest() {
+        // TODO: test swap
+    }
+
 }

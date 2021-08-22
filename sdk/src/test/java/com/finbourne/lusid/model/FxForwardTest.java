@@ -51,4 +51,76 @@ public class FxForwardTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'maturityDate'
+     */
+    @Test
+    public void maturityDateTest() {
+        // TODO: test maturityDate
+    }
+
+    /**
+     * Test the property 'domAmount'
+     */
+    @Test
+    public void domAmountTest() {
+        // TODO: test domAmount
+    }
+
+    /**
+     * Test the property 'domCcy'
+     */
+    @Test
+    public void domCcyTest() {
+        // TODO: test domCcy
+    }
+
+    /**
+     * Test the property 'fgnAmount'
+     */
+    @Test
+    public void fgnAmountTest() {
+        // TODO: test fgnAmount
+    }
+
+    /**
+     * Test the property 'fgnCcy'
+     */
+    @Test
+    public void fgnCcyTest() {
+        // TODO: test fgnCcy
+    }
+
+    /**
+     * Test the property 'refSpotRate'
+     */
+    @Test
+    public void refSpotRateTest() {
+        // TODO: test refSpotRate
+    }
+
+    /**
+     * Test the property 'isNdf'
+     */
+    @Test
+    public void isNdfTest() {
+        // TODO: test isNdf
+    }
+
+    /**
+     * Test the property 'fixingDate'
+     */
+    @Test
+    public void fixingDateTest() {
+        // TODO: test fixingDate
+    }
+
 }

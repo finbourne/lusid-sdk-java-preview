@@ -32,7 +32,7 @@ import java.util.List;
  * A bundle of requests to configure a set of transaction types.
  */
 @ApiModel(description = "A bundle of requests to configure a set of transaction types.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TransactionSetConfigurationDataRequest {
   public static final String SERIALIZED_NAME_TRANSACTION_CONFIG_REQUESTS = "transactionConfigRequests";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_CONFIG_REQUESTS)
@@ -40,14 +40,16 @@ public class TransactionSetConfigurationDataRequest {
 
   public static final String SERIALIZED_NAME_SIDE_CONFIG_REQUESTS = "sideConfigRequests";
   @SerializedName(SERIALIZED_NAME_SIDE_CONFIG_REQUESTS)
-  private List<SideConfigurationDataRequest> sideConfigRequests = new ArrayList<>();
+  private List<SideConfigurationDataRequest> sideConfigRequests = null;
+
 
   public TransactionSetConfigurationDataRequest transactionConfigRequests(List<TransactionConfigurationDataRequest> transactionConfigRequests) {
-    this.transactionConfigRequests = transactionConfigRequests;
+    this.transactionConfigRequests = transactionConfigRequests; 
     return this;
   }
 
   public TransactionSetConfigurationDataRequest addTransactionConfigRequestsItem(TransactionConfigurationDataRequest transactionConfigRequestsItem) {
+   
     this.transactionConfigRequests.add(transactionConfigRequestsItem);
     return this;
   }
@@ -65,12 +67,14 @@ public class TransactionSetConfigurationDataRequest {
     this.transactionConfigRequests = transactionConfigRequests;
   }
 
+
   public TransactionSetConfigurationDataRequest sideConfigRequests(List<SideConfigurationDataRequest> sideConfigRequests) {
-    this.sideConfigRequests = sideConfigRequests;
+    this.sideConfigRequests = sideConfigRequests; 
     return this;
   }
 
   public TransactionSetConfigurationDataRequest addSideConfigRequestsItem(SideConfigurationDataRequest sideConfigRequestsItem) {
+   
     if (this.sideConfigRequests == null) {
       this.sideConfigRequests = new ArrayList<>();
     }
@@ -93,7 +97,7 @@ public class TransactionSetConfigurationDataRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -105,9 +109,8 @@ public class TransactionSetConfigurationDataRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -123,7 +126,7 @@ public class TransactionSetConfigurationDataRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

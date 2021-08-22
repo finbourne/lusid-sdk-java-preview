@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * FxSwapAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FxSwapAllOf {
   public static final String SERIALIZED_NAME_NEAR_FX_FORWARD = "nearFxForward";
   @SerializedName(SERIALIZED_NAME_NEAR_FX_FORWARD)
@@ -129,7 +129,7 @@ public class FxSwapAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -139,8 +139,9 @@ public class FxSwapAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public FxSwapAllOf nearFxForward(FxForward nearFxForward) {
-    this.nearFxForward = nearFxForward;
+    this.nearFxForward = nearFxForward; 
     return this;
   }
 
@@ -157,8 +158,9 @@ public class FxSwapAllOf {
     this.nearFxForward = nearFxForward;
   }
 
+
   public FxSwapAllOf farFxForward(FxForward farFxForward) {
-    this.farFxForward = farFxForward;
+    this.farFxForward = farFxForward; 
     return this;
   }
 
@@ -175,8 +177,9 @@ public class FxSwapAllOf {
     this.farFxForward = farFxForward;
   }
 
+
   public FxSwapAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -195,7 +198,7 @@ public class FxSwapAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -207,9 +210,8 @@ public class FxSwapAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -226,7 +228,7 @@ public class FxSwapAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

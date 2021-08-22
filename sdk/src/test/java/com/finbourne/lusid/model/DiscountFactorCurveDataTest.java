@@ -53,4 +53,28 @@ public class DiscountFactorCurveDataTest {
         // TODO: test marketDataType
     }
 
+    /**
+     * Test the property 'baseDate'
+     */
+    @Test
+    public void baseDateTest() {
+        // TODO: test baseDate
+    }
+
+    /**
+     * Test the property 'dates'
+     */
+    @Test
+    public void datesTest() {
+        // TODO: test dates
+    }
+
+    /**
+     * Test the property 'discountFactors'
+     */
+    @Test
+    public void discountFactorsTest() {
+        // TODO: test discountFactors
+    }
+
 }

@@ -32,7 +32,7 @@ import java.util.List;
  * Specification class consisting of parameters for BucketedCashFlow endpoint.
  */
 @ApiModel(description = "Specification class consisting of parameters for BucketedCashFlow endpoint.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BucketedCashFlowRequest {
   public static final String SERIALIZED_NAME_ROUNDING_METHOD = "roundingMethod";
   @SerializedName(SERIALIZED_NAME_ROUNDING_METHOD)
@@ -40,11 +40,11 @@ public class BucketedCashFlowRequest {
 
   public static final String SERIALIZED_NAME_BUCKETING_DATES = "bucketingDates";
   @SerializedName(SERIALIZED_NAME_BUCKETING_DATES)
-  private List<OffsetDateTime> bucketingDates = new ArrayList<>();
+  private List<OffsetDateTime> bucketingDates = null;
 
   public static final String SERIALIZED_NAME_BUCKET_TENORS = "bucketTenors";
   @SerializedName(SERIALIZED_NAME_BUCKET_TENORS)
-  private List<String> bucketTenors = new ArrayList<>();
+  private List<String> bucketTenors = null;
 
   public static final String SERIALIZED_NAME_EFFECTIVE_AT = "effectiveAt";
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_AT)
@@ -60,7 +60,7 @@ public class BucketedCashFlowRequest {
 
   public static final String SERIALIZED_NAME_RECIPE_ID = "recipeId";
   @SerializedName(SERIALIZED_NAME_RECIPE_ID)
-  private ResourceId recipeId = null;
+  private ResourceId recipeId;
 
   public static final String SERIALIZED_NAME_REPORT_CURRENCY = "reportCurrency";
   @SerializedName(SERIALIZED_NAME_REPORT_CURRENCY)
@@ -70,8 +70,9 @@ public class BucketedCashFlowRequest {
   @SerializedName(SERIALIZED_NAME_AS_AT)
   private OffsetDateTime asAt;
 
+
   public BucketedCashFlowRequest roundingMethod(String roundingMethod) {
-    this.roundingMethod = roundingMethod;
+    this.roundingMethod = roundingMethod; 
     return this;
   }
 
@@ -88,12 +89,14 @@ public class BucketedCashFlowRequest {
     this.roundingMethod = roundingMethod;
   }
 
+
   public BucketedCashFlowRequest bucketingDates(List<OffsetDateTime> bucketingDates) {
-    this.bucketingDates = bucketingDates;
+    this.bucketingDates = bucketingDates; 
     return this;
   }
 
   public BucketedCashFlowRequest addBucketingDatesItem(OffsetDateTime bucketingDatesItem) {
+   
     if (this.bucketingDates == null) {
       this.bucketingDates = new ArrayList<>();
     }
@@ -114,12 +117,14 @@ public class BucketedCashFlowRequest {
     this.bucketingDates = bucketingDates;
   }
 
+
   public BucketedCashFlowRequest bucketTenors(List<String> bucketTenors) {
-    this.bucketTenors = bucketTenors;
+    this.bucketTenors = bucketTenors; 
     return this;
   }
 
   public BucketedCashFlowRequest addBucketTenorsItem(String bucketTenorsItem) {
+   
     if (this.bucketTenors == null) {
       this.bucketTenors = new ArrayList<>();
     }
@@ -140,8 +145,9 @@ public class BucketedCashFlowRequest {
     this.bucketTenors = bucketTenors;
   }
 
+
   public BucketedCashFlowRequest effectiveAt(String effectiveAt) {
-    this.effectiveAt = effectiveAt;
+    this.effectiveAt = effectiveAt; 
     return this;
   }
 
@@ -158,8 +164,9 @@ public class BucketedCashFlowRequest {
     this.effectiveAt = effectiveAt;
   }
 
+
   public BucketedCashFlowRequest windowStart(String windowStart) {
-    this.windowStart = windowStart;
+    this.windowStart = windowStart; 
     return this;
   }
 
@@ -176,8 +183,9 @@ public class BucketedCashFlowRequest {
     this.windowStart = windowStart;
   }
 
+
   public BucketedCashFlowRequest windowEnd(String windowEnd) {
-    this.windowEnd = windowEnd;
+    this.windowEnd = windowEnd; 
     return this;
   }
 
@@ -194,8 +202,9 @@ public class BucketedCashFlowRequest {
     this.windowEnd = windowEnd;
   }
 
+
   public BucketedCashFlowRequest recipeId(ResourceId recipeId) {
-    this.recipeId = recipeId;
+    this.recipeId = recipeId; 
     return this;
   }
 
@@ -212,8 +221,9 @@ public class BucketedCashFlowRequest {
     this.recipeId = recipeId;
   }
 
+
   public BucketedCashFlowRequest reportCurrency(String reportCurrency) {
-    this.reportCurrency = reportCurrency;
+    this.reportCurrency = reportCurrency; 
     return this;
   }
 
@@ -230,8 +240,9 @@ public class BucketedCashFlowRequest {
     this.reportCurrency = reportCurrency;
   }
 
+
   public BucketedCashFlowRequest asAt(OffsetDateTime asAt) {
-    this.asAt = asAt;
+    this.asAt = asAt; 
     return this;
   }
 
@@ -250,7 +261,7 @@ public class BucketedCashFlowRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -262,9 +273,8 @@ public class BucketedCashFlowRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -287,7 +297,7 @@ public class BucketedCashFlowRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

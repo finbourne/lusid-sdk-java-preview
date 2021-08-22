@@ -36,7 +36,7 @@ import java.util.List;
  * If it is desired to have multiple recipes, there is a strong likelihood that they will share various components.  A configuration recipe snippet allows a user to define a set of rules that can then be included into a parent recipe.  This allows sharing of common blocks of the recipe.                For example, a user might define a set of rules for resolving Fx and then include them into every recipe used firm-wide, thereby  enforcing consistency. As the rules can be permissioned differently using Shrine, it is possible to enable users to   read but not alter such a rule set.                The same applies to a set of pricing rules.                A configuration snippet must only contain one entry from the available set.                 Recipes are compiled from the set of snippets through a model that is analogous to inheritance.  A recipe can have a set of &#39;parent&#39; recipes from which it inherits. These are specified in the inheritance section of a recipe.  Upon loading, the recipe will fall back on these recipe components for any options or rules that are not explicitly specified in the  named recipe for the request.                This allows control of pricing to be harmonised across a set of desks within an institution. Suppose that, e.g.  there are four desks looking after products under the areas of Fx, Rates, Credit and Exotics.  The model and market data for pricing given asset types would potentially be controlled by the appropriate desk; e.g. rules for Fx market data resolution being  controlled by the Fx desk. The exotics desk would likely depend upon rules for all the other asset classes as well as, say, correlation rules of its own.  It could inherit the market data and model rules from the other desks for finding the appropriate institution-standard data and then overlay that with the correlation rules.                Note that permissioning of the store means that one could decide that only a particular desk or control function could update certain rules. That would assist the abilitiy  to ensure that pricing is performed consistently and provide an audit of changes made to it along with restricting changes to appropriate authorised functions.
  */
 @ApiModel(description = "If it is desired to have multiple recipes, there is a strong likelihood that they will share various components.  A configuration recipe snippet allows a user to define a set of rules that can then be included into a parent recipe.  This allows sharing of common blocks of the recipe.                For example, a user might define a set of rules for resolving Fx and then include them into every recipe used firm-wide, thereby  enforcing consistency. As the rules can be permissioned differently using Shrine, it is possible to enable users to   read but not alter such a rule set.                The same applies to a set of pricing rules.                A configuration snippet must only contain one entry from the available set.                 Recipes are compiled from the set of snippets through a model that is analogous to inheritance.  A recipe can have a set of 'parent' recipes from which it inherits. These are specified in the inheritance section of a recipe.  Upon loading, the recipe will fall back on these recipe components for any options or rules that are not explicitly specified in the  named recipe for the request.                This allows control of pricing to be harmonised across a set of desks within an institution. Suppose that, e.g.  there are four desks looking after products under the areas of Fx, Rates, Credit and Exotics.  The model and market data for pricing given asset types would potentially be controlled by the appropriate desk; e.g. rules for Fx market data resolution being  controlled by the Fx desk. The exotics desk would likely depend upon rules for all the other asset classes as well as, say, correlation rules of its own.  It could inherit the market data and model rules from the other desks for finding the appropriate institution-standard data and then overlay that with the correlation rules.                Note that permissioning of the store means that one could decide that only a particular desk or control function could update certain rules. That would assist the abilitiy  to ensure that pricing is performed consistently and provide an audit of changes made to it along with restricting changes to appropriate authorised functions.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ConfigurationRecipeSnippet {
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
@@ -48,30 +48,31 @@ public class ConfigurationRecipeSnippet {
 
   public static final String SERIALIZED_NAME_AGGREGATION_OPTIONS = "aggregationOptions";
   @SerializedName(SERIALIZED_NAME_AGGREGATION_OPTIONS)
-  private AggregationOptions aggregationOptions = null;
+  private AggregationOptions aggregationOptions;
 
   public static final String SERIALIZED_NAME_MODEL_RULES = "modelRules";
   @SerializedName(SERIALIZED_NAME_MODEL_RULES)
-  private List<VendorModelRule> modelRules = new ArrayList<>();
+  private List<VendorModelRule> modelRules = null;
 
   public static final String SERIALIZED_NAME_PRICING_OPTIONS = "pricingOptions";
   @SerializedName(SERIALIZED_NAME_PRICING_OPTIONS)
-  private PricingOptions pricingOptions = null;
+  private PricingOptions pricingOptions;
 
   public static final String SERIALIZED_NAME_MARKET_RULES = "marketRules";
   @SerializedName(SERIALIZED_NAME_MARKET_RULES)
-  private List<MarketDataKeyRule> marketRules = new ArrayList<>();
+  private List<MarketDataKeyRule> marketRules = null;
 
   public static final String SERIALIZED_NAME_MARKET_OPTIONS = "marketOptions";
   @SerializedName(SERIALIZED_NAME_MARKET_OPTIONS)
-  private MarketOptions marketOptions = null;
+  private MarketOptions marketOptions;
 
   public static final String SERIALIZED_NAME_RECIPE = "recipe";
   @SerializedName(SERIALIZED_NAME_RECIPE)
-  private ConfigurationRecipe recipe = null;
+  private ConfigurationRecipe recipe;
+
 
   public ConfigurationRecipeSnippet scope(String scope) {
-    this.scope = scope;
+    this.scope = scope; 
     return this;
   }
 
@@ -88,8 +89,9 @@ public class ConfigurationRecipeSnippet {
     this.scope = scope;
   }
 
+
   public ConfigurationRecipeSnippet code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -106,8 +108,9 @@ public class ConfigurationRecipeSnippet {
     this.code = code;
   }
 
+
   public ConfigurationRecipeSnippet aggregationOptions(AggregationOptions aggregationOptions) {
-    this.aggregationOptions = aggregationOptions;
+    this.aggregationOptions = aggregationOptions; 
     return this;
   }
 
@@ -124,12 +127,14 @@ public class ConfigurationRecipeSnippet {
     this.aggregationOptions = aggregationOptions;
   }
 
+
   public ConfigurationRecipeSnippet modelRules(List<VendorModelRule> modelRules) {
-    this.modelRules = modelRules;
+    this.modelRules = modelRules; 
     return this;
   }
 
   public ConfigurationRecipeSnippet addModelRulesItem(VendorModelRule modelRulesItem) {
+   
     if (this.modelRules == null) {
       this.modelRules = new ArrayList<>();
     }
@@ -150,8 +155,9 @@ public class ConfigurationRecipeSnippet {
     this.modelRules = modelRules;
   }
 
+
   public ConfigurationRecipeSnippet pricingOptions(PricingOptions pricingOptions) {
-    this.pricingOptions = pricingOptions;
+    this.pricingOptions = pricingOptions; 
     return this;
   }
 
@@ -168,12 +174,14 @@ public class ConfigurationRecipeSnippet {
     this.pricingOptions = pricingOptions;
   }
 
+
   public ConfigurationRecipeSnippet marketRules(List<MarketDataKeyRule> marketRules) {
-    this.marketRules = marketRules;
+    this.marketRules = marketRules; 
     return this;
   }
 
   public ConfigurationRecipeSnippet addMarketRulesItem(MarketDataKeyRule marketRulesItem) {
+   
     if (this.marketRules == null) {
       this.marketRules = new ArrayList<>();
     }
@@ -194,8 +202,9 @@ public class ConfigurationRecipeSnippet {
     this.marketRules = marketRules;
   }
 
+
   public ConfigurationRecipeSnippet marketOptions(MarketOptions marketOptions) {
-    this.marketOptions = marketOptions;
+    this.marketOptions = marketOptions; 
     return this;
   }
 
@@ -212,8 +221,9 @@ public class ConfigurationRecipeSnippet {
     this.marketOptions = marketOptions;
   }
 
+
   public ConfigurationRecipeSnippet recipe(ConfigurationRecipe recipe) {
-    this.recipe = recipe;
+    this.recipe = recipe; 
     return this;
   }
 
@@ -232,7 +242,7 @@ public class ConfigurationRecipeSnippet {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -244,9 +254,8 @@ public class ConfigurationRecipeSnippet {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -268,7 +277,7 @@ public class ConfigurationRecipeSnippet {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

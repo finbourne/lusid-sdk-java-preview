@@ -32,11 +32,11 @@ import java.util.List;
 /**
  * CreateCalendarRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreateCalendarRequest {
   public static final String SERIALIZED_NAME_CALENDAR_ID = "calendarId";
   @SerializedName(SERIALIZED_NAME_CALENDAR_ID)
-  private ResourceId calendarId = null;
+  private ResourceId calendarId;
 
   public static final String SERIALIZED_NAME_CALENDAR_TYPE = "calendarType";
   @SerializedName(SERIALIZED_NAME_CALENDAR_TYPE)
@@ -44,7 +44,7 @@ public class CreateCalendarRequest {
 
   public static final String SERIALIZED_NAME_WEEKEND_MASK = "weekendMask";
   @SerializedName(SERIALIZED_NAME_WEEKEND_MASK)
-  private WeekendMask weekendMask = null;
+  private WeekendMask weekendMask;
 
   public static final String SERIALIZED_NAME_SOURCE_PROVIDER = "sourceProvider";
   @SerializedName(SERIALIZED_NAME_SOURCE_PROVIDER)
@@ -52,10 +52,11 @@ public class CreateCalendarRequest {
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private List<Property> properties = new ArrayList<>();
+  private List<Property> properties = null;
+
 
   public CreateCalendarRequest calendarId(ResourceId calendarId) {
-    this.calendarId = calendarId;
+    this.calendarId = calendarId; 
     return this;
   }
 
@@ -72,8 +73,9 @@ public class CreateCalendarRequest {
     this.calendarId = calendarId;
   }
 
+
   public CreateCalendarRequest calendarType(String calendarType) {
-    this.calendarType = calendarType;
+    this.calendarType = calendarType; 
     return this;
   }
 
@@ -90,8 +92,9 @@ public class CreateCalendarRequest {
     this.calendarType = calendarType;
   }
 
+
   public CreateCalendarRequest weekendMask(WeekendMask weekendMask) {
-    this.weekendMask = weekendMask;
+    this.weekendMask = weekendMask; 
     return this;
   }
 
@@ -108,8 +111,9 @@ public class CreateCalendarRequest {
     this.weekendMask = weekendMask;
   }
 
+
   public CreateCalendarRequest sourceProvider(String sourceProvider) {
-    this.sourceProvider = sourceProvider;
+    this.sourceProvider = sourceProvider; 
     return this;
   }
 
@@ -126,12 +130,14 @@ public class CreateCalendarRequest {
     this.sourceProvider = sourceProvider;
   }
 
+
   public CreateCalendarRequest properties(List<Property> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
   public CreateCalendarRequest addPropertiesItem(Property propertiesItem) {
+   
     if (this.properties == null) {
       this.properties = new ArrayList<>();
     }
@@ -154,7 +160,7 @@ public class CreateCalendarRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -166,9 +172,8 @@ public class CreateCalendarRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -187,7 +192,7 @@ public class CreateCalendarRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

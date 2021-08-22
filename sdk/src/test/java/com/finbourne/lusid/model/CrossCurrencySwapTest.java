@@ -54,4 +54,28 @@ public class CrossCurrencySwapTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'maturityDate'
+     */
+    @Test
+    public void maturityDateTest() {
+        // TODO: test maturityDate
+    }
+
+    /**
+     * Test the property 'legs'
+     */
+    @Test
+    public void legsTest() {
+        // TODO: test legs
+    }
+
 }

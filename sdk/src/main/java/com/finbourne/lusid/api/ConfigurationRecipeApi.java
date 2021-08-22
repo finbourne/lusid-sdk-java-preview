@@ -44,7 +44,6 @@ import java.util.Map;
 
 public class ConfigurationRecipeApi {
     private ApiClient localVarApiClient;
-
     public ConfigurationRecipeApi() {
         this(Configuration.getDefaultApiClient());
     }
@@ -77,7 +76,7 @@ public class ConfigurationRecipeApi {
      </table>
      */
     public okhttp3.Call deleteConfigurationRecipeCall(String scope, String code, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/recipes/{scope}/{code}"
@@ -87,7 +86,9 @@ public class ConfigurationRecipeApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -105,7 +106,7 @@ public class ConfigurationRecipeApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -185,7 +186,6 @@ public class ConfigurationRecipeApi {
      </table>
      */
     public okhttp3.Call deleteConfigurationRecipeAsync(String scope, String code, final ApiCallback<AnnulSingleStructuredDataResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = deleteConfigurationRecipeValidateBeforeCall(scope, code, _callback);
         Type localVarReturnType = new TypeToken<AnnulSingleStructuredDataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -208,7 +208,7 @@ public class ConfigurationRecipeApi {
      </table>
      */
     public okhttp3.Call getConfigurationRecipeCall(String scope, String code, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/recipes/{scope}/{code}"
@@ -217,12 +217,14 @@ public class ConfigurationRecipeApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (asAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -240,7 +242,7 @@ public class ConfigurationRecipeApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -323,7 +325,6 @@ public class ConfigurationRecipeApi {
      </table>
      */
     public okhttp3.Call getConfigurationRecipeAsync(String scope, String code, OffsetDateTime asAt, final ApiCallback<GetRecipeResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getConfigurationRecipeValidateBeforeCall(scope, code, asAt, _callback);
         Type localVarReturnType = new TypeToken<GetRecipeResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -345,13 +346,17 @@ public class ConfigurationRecipeApi {
      </table>
      */
     public okhttp3.Call listConfigurationRecipesCall(OffsetDateTime asAt, String filter, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/recipes";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (asAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
@@ -360,8 +365,6 @@ public class ConfigurationRecipeApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -379,7 +382,7 @@ public class ConfigurationRecipeApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -449,7 +452,6 @@ public class ConfigurationRecipeApi {
      </table>
      */
     public okhttp3.Call listConfigurationRecipesAsync(OffsetDateTime asAt, String filter, final ApiCallback<ResourceListOfGetRecipeResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = listConfigurationRecipesValidateBeforeCall(asAt, filter, _callback);
         Type localVarReturnType = new TypeToken<ResourceListOfGetRecipeResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -478,7 +480,9 @@ public class ConfigurationRecipeApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -496,7 +500,7 @@ public class ConfigurationRecipeApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -568,7 +572,6 @@ public class ConfigurationRecipeApi {
      </table>
      */
     public okhttp3.Call upsertConfigurationRecipeAsync(UpsertRecipeRequest upsertRecipeRequest, final ApiCallback<UpsertSingleStructuredDataResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = upsertConfigurationRecipeValidateBeforeCall(upsertRecipeRequest, _callback);
         Type localVarReturnType = new TypeToken<UpsertSingleStructuredDataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);

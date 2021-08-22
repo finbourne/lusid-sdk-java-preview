@@ -38,19 +38,19 @@ import java.util.Map;
  * The record of a number of executions against a single Placement (directly analogous to  a partial or full fill against a street order).
  */
 @ApiModel(description = "The record of a number of executions against a single Placement (directly analogous to  a partial or full fill against a street order).")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Execution {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
 
   public static final String SERIALIZED_NAME_PLACEMENT_ID = "placementId";
   @SerializedName(SERIALIZED_NAME_PLACEMENT_ID)
-  private ResourceId placementId = null;
+  private ResourceId placementId;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = new HashMap<>();
+  private Map<String, PerpetualProperty> properties = null;
 
   public static final String SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS = "instrumentIdentifiers";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS)
@@ -86,7 +86,7 @@ public class Execution {
 
   public static final String SERIALIZED_NAME_PRICE = "price";
   @SerializedName(SERIALIZED_NAME_PRICE)
-  private CurrencyAndAmount price = null;
+  private CurrencyAndAmount price;
 
   public static final String SERIALIZED_NAME_SETTLEMENT_CURRENCY = "settlementCurrency";
   @SerializedName(SERIALIZED_NAME_SETTLEMENT_CURRENCY)
@@ -102,14 +102,15 @@ public class Execution {
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version = null;
+  private Version version;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public Execution id(ResourceId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -126,8 +127,9 @@ public class Execution {
     this.id = id;
   }
 
+
   public Execution placementId(ResourceId placementId) {
-    this.placementId = placementId;
+    this.placementId = placementId; 
     return this;
   }
 
@@ -144,8 +146,9 @@ public class Execution {
     this.placementId = placementId;
   }
 
+
   public Execution properties(Map<String, PerpetualProperty> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
@@ -170,8 +173,9 @@ public class Execution {
     this.properties = properties;
   }
 
+
   public Execution instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
-    this.instrumentIdentifiers = instrumentIdentifiers;
+    this.instrumentIdentifiers = instrumentIdentifiers; 
     return this;
   }
 
@@ -193,8 +197,9 @@ public class Execution {
     this.instrumentIdentifiers = instrumentIdentifiers;
   }
 
+
   public Execution lusidInstrumentId(String lusidInstrumentId) {
-    this.lusidInstrumentId = lusidInstrumentId;
+    this.lusidInstrumentId = lusidInstrumentId; 
     return this;
   }
 
@@ -211,8 +216,9 @@ public class Execution {
     this.lusidInstrumentId = lusidInstrumentId;
   }
 
+
   public Execution quantity(Double quantity) {
-    this.quantity = quantity;
+    this.quantity = quantity; 
     return this;
   }
 
@@ -229,8 +235,9 @@ public class Execution {
     this.quantity = quantity;
   }
 
+
   public Execution state(String state) {
-    this.state = state;
+    this.state = state; 
     return this;
   }
 
@@ -247,8 +254,9 @@ public class Execution {
     this.state = state;
   }
 
+
   public Execution side(String side) {
-    this.side = side;
+    this.side = side; 
     return this;
   }
 
@@ -265,8 +273,9 @@ public class Execution {
     this.side = side;
   }
 
+
   public Execution type(String type) {
-    this.type = type;
+    this.type = type; 
     return this;
   }
 
@@ -283,8 +292,9 @@ public class Execution {
     this.type = type;
   }
 
+
   public Execution createdDate(OffsetDateTime createdDate) {
-    this.createdDate = createdDate;
+    this.createdDate = createdDate; 
     return this;
   }
 
@@ -301,8 +311,9 @@ public class Execution {
     this.createdDate = createdDate;
   }
 
+
   public Execution settlementDate(OffsetDateTime settlementDate) {
-    this.settlementDate = settlementDate;
+    this.settlementDate = settlementDate; 
     return this;
   }
 
@@ -319,8 +330,9 @@ public class Execution {
     this.settlementDate = settlementDate;
   }
 
+
   public Execution price(CurrencyAndAmount price) {
-    this.price = price;
+    this.price = price; 
     return this;
   }
 
@@ -337,8 +349,9 @@ public class Execution {
     this.price = price;
   }
 
+
   public Execution settlementCurrency(String settlementCurrency) {
-    this.settlementCurrency = settlementCurrency;
+    this.settlementCurrency = settlementCurrency; 
     return this;
   }
 
@@ -355,8 +368,9 @@ public class Execution {
     this.settlementCurrency = settlementCurrency;
   }
 
+
   public Execution settlementCurrencyFxRate(Double settlementCurrencyFxRate) {
-    this.settlementCurrencyFxRate = settlementCurrencyFxRate;
+    this.settlementCurrencyFxRate = settlementCurrencyFxRate; 
     return this;
   }
 
@@ -373,8 +387,9 @@ public class Execution {
     this.settlementCurrencyFxRate = settlementCurrencyFxRate;
   }
 
+
   public Execution counterparty(String counterparty) {
-    this.counterparty = counterparty;
+    this.counterparty = counterparty; 
     return this;
   }
 
@@ -391,8 +406,9 @@ public class Execution {
     this.counterparty = counterparty;
   }
 
+
   public Execution version(Version version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -409,12 +425,14 @@ public class Execution {
     this.version = version;
   }
 
+
   public Execution links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public Execution addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -437,7 +455,7 @@ public class Execution {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -449,9 +467,8 @@ public class Execution {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -482,7 +499,7 @@ public class Execution {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

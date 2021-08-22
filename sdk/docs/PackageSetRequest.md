@@ -2,6 +2,8 @@
 
 # PackageSetRequest
 
+A request to create or update multiple Packages.
+
 ## Properties
 
 Name | Type | Description | Notes

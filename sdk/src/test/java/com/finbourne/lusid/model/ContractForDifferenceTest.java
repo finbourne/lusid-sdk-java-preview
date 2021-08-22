@@ -51,4 +51,76 @@ public class ContractForDifferenceTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'maturityDate'
+     */
+    @Test
+    public void maturityDateTest() {
+        // TODO: test maturityDate
+    }
+
+    /**
+     * Test the property 'code'
+     */
+    @Test
+    public void codeTest() {
+        // TODO: test code
+    }
+
+    /**
+     * Test the property 'contractSize'
+     */
+    @Test
+    public void contractSizeTest() {
+        // TODO: test contractSize
+    }
+
+    /**
+     * Test the property 'payCcy'
+     */
+    @Test
+    public void payCcyTest() {
+        // TODO: test payCcy
+    }
+
+    /**
+     * Test the property 'referenceRate'
+     */
+    @Test
+    public void referenceRateTest() {
+        // TODO: test referenceRate
+    }
+
+    /**
+     * Test the property 'type'
+     */
+    @Test
+    public void typeTest() {
+        // TODO: test type
+    }
+
+    /**
+     * Test the property 'underlyingCcy'
+     */
+    @Test
+    public void underlyingCcyTest() {
+        // TODO: test underlyingCcy
+    }
+
+    /**
+     * Test the property 'underlyingIdentifier'
+     */
+    @Test
+    public void underlyingIdentifierTest() {
+        // TODO: test underlyingIdentifier
+    }
+
 }

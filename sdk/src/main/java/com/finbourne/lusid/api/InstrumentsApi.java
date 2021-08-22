@@ -52,7 +52,6 @@ import java.util.Map;
 
 public class InstrumentsApi {
     private ApiClient localVarApiClient;
-
     public InstrumentsApi() {
         this(Configuration.getDefaultApiClient());
     }
@@ -85,7 +84,7 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call deleteInstrumentCall(String identifierType, String identifier, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/instruments/{identifierType}/{identifier}"
@@ -95,7 +94,9 @@ public class InstrumentsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -113,7 +114,7 @@ public class InstrumentsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -193,7 +194,6 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call deleteInstrumentAsync(String identifierType, String identifier, final ApiCallback<DeleteInstrumentResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = deleteInstrumentValidateBeforeCall(identifierType, identifier, _callback);
         Type localVarReturnType = new TypeToken<DeleteInstrumentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -226,12 +226,14 @@ public class InstrumentsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (effectiveAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("effectiveAt", effectiveAt));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -249,7 +251,7 @@ public class InstrumentsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -340,7 +342,6 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call deleteInstrumentPropertiesAsync(String identifierType, String identifier, List<String> requestBody, String effectiveAt, final ApiCallback<DeleteInstrumentPropertiesResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = deleteInstrumentPropertiesValidateBeforeCall(identifierType, identifier, requestBody, effectiveAt, _callback);
         Type localVarReturnType = new TypeToken<DeleteInstrumentPropertiesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -365,7 +366,7 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call getInstrumentCall(String identifierType, String identifier, String effectiveAt, OffsetDateTime asAt, List<String> propertyKeys, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/instruments/{identifierType}/{identifier}"
@@ -374,6 +375,10 @@ public class InstrumentsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (effectiveAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("effectiveAt", effectiveAt));
         }
@@ -386,8 +391,6 @@ public class InstrumentsApi {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "propertyKeys", propertyKeys));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -405,7 +408,7 @@ public class InstrumentsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -494,7 +497,6 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call getInstrumentAsync(String identifierType, String identifier, String effectiveAt, OffsetDateTime asAt, List<String> propertyKeys, final ApiCallback<Instrument> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getInstrumentValidateBeforeCall(identifierType, identifier, effectiveAt, asAt, propertyKeys, _callback);
         Type localVarReturnType = new TypeToken<Instrument>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -513,7 +515,7 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call getInstrumentIdentifierTypesCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/instruments/identifierTypes";
@@ -521,7 +523,9 @@ public class InstrumentsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -539,7 +543,7 @@ public class InstrumentsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -600,7 +604,6 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call getInstrumentIdentifierTypesAsync(final ApiCallback<ResourceListOfInstrumentIdTypeDescriptor> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getInstrumentIdentifierTypesValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<ResourceListOfInstrumentIdTypeDescriptor>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -624,7 +627,7 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call getInstrumentPropertiesCall(String identifierType, String identifier, String effectiveAt, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/instruments/{identifierType}/{identifier}/properties"
@@ -633,6 +636,10 @@ public class InstrumentsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (effectiveAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("effectiveAt", effectiveAt));
         }
@@ -641,8 +648,6 @@ public class InstrumentsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -660,7 +665,7 @@ public class InstrumentsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -746,7 +751,6 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call getInstrumentPropertiesAsync(String identifierType, String identifier, String effectiveAt, OffsetDateTime asAt, final ApiCallback<InstrumentProperties> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getInstrumentPropertiesValidateBeforeCall(identifierType, identifier, effectiveAt, asAt, _callback);
         Type localVarReturnType = new TypeToken<InstrumentProperties>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -774,7 +778,7 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call getInstrumentPropertyTimeSeriesCall(String identifierType, String identifier, String propertyKey, String identifierEffectiveAt, OffsetDateTime asAt, String filter, String page, Integer limit, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/instruments/{identifierType}/{identifier}/properties/time-series"
@@ -783,6 +787,10 @@ public class InstrumentsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (propertyKey != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("propertyKey", propertyKey));
         }
@@ -807,8 +815,6 @@ public class InstrumentsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -826,7 +832,7 @@ public class InstrumentsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -924,7 +930,6 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call getInstrumentPropertyTimeSeriesAsync(String identifierType, String identifier, String propertyKey, String identifierEffectiveAt, OffsetDateTime asAt, String filter, String page, Integer limit, final ApiCallback<ResourceListOfPropertyInterval> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getInstrumentPropertyTimeSeriesValidateBeforeCall(identifierType, identifier, propertyKey, identifierEffectiveAt, asAt, filter, page, limit, _callback);
         Type localVarReturnType = new TypeToken<ResourceListOfPropertyInterval>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -956,6 +961,10 @@ public class InstrumentsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (identifierType != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("identifierType", identifierType));
         }
@@ -972,8 +981,6 @@ public class InstrumentsApi {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "propertyKeys", propertyKeys));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -991,7 +998,7 @@ public class InstrumentsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1080,7 +1087,6 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call getInstrumentsAsync(String identifierType, List<String> requestBody, String effectiveAt, OffsetDateTime asAt, List<String> propertyKeys, final ApiCallback<GetInstrumentsResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getInstrumentsValidateBeforeCall(identifierType, requestBody, effectiveAt, asAt, propertyKeys, _callback);
         Type localVarReturnType = new TypeToken<GetInstrumentsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -1094,7 +1100,7 @@ public class InstrumentsApi {
      * @param sortBy Order results by particular fields. Use the &#39;-&#39; sign to denote descending order, for               example &#39;-MyFieldName&#39;. (optional)
      * @param start When paginating, skip this number of results. (optional)
      * @param limit When paginating, limit the results to this number. (optional)
-     * @param filter Expression to filter the result set. Defaults to filtering out inactive instruments               (that is, those that have been deleted). For more information about filtering results,               see https://support.lusid.com/knowledgebase/article/KA-01914. (optional, default to &quot;State eq &#39;Active&#39;&quot;)
+     * @param filter Expression to filter the result set. Defaults to filtering out inactive instruments               (that is, those that have been deleted). For more information about filtering results,               see https://support.lusid.com/knowledgebase/article/KA-01914. (optional, default to State eq &#39;Active&#39;)
      * @param instrumentPropertyKeys A list of property keys from the &#39;Instrument&#39; domain to decorate onto               instruments. These must have the format {domain}/{scope}/{code}, for example &#39;Instrument/system/Name&#39;. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1108,13 +1114,17 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call listInstrumentsCall(OffsetDateTime asAt, String effectiveAt, String page, List<String> sortBy, Integer start, Integer limit, String filter, List<String> instrumentPropertyKeys, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/instruments";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (asAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
@@ -1147,8 +1157,6 @@ public class InstrumentsApi {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "instrumentPropertyKeys", instrumentPropertyKeys));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -1166,7 +1174,7 @@ public class InstrumentsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1187,7 +1195,7 @@ public class InstrumentsApi {
      * @param sortBy Order results by particular fields. Use the &#39;-&#39; sign to denote descending order, for               example &#39;-MyFieldName&#39;. (optional)
      * @param start When paginating, skip this number of results. (optional)
      * @param limit When paginating, limit the results to this number. (optional)
-     * @param filter Expression to filter the result set. Defaults to filtering out inactive instruments               (that is, those that have been deleted). For more information about filtering results,               see https://support.lusid.com/knowledgebase/article/KA-01914. (optional, default to &quot;State eq &#39;Active&#39;&quot;)
+     * @param filter Expression to filter the result set. Defaults to filtering out inactive instruments               (that is, those that have been deleted). For more information about filtering results,               see https://support.lusid.com/knowledgebase/article/KA-01914. (optional, default to State eq &#39;Active&#39;)
      * @param instrumentPropertyKeys A list of property keys from the &#39;Instrument&#39; domain to decorate onto               instruments. These must have the format {domain}/{scope}/{code}, for example &#39;Instrument/system/Name&#39;. (optional)
      * @return PagedResourceListOfInstrument
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1213,7 +1221,7 @@ public class InstrumentsApi {
      * @param sortBy Order results by particular fields. Use the &#39;-&#39; sign to denote descending order, for               example &#39;-MyFieldName&#39;. (optional)
      * @param start When paginating, skip this number of results. (optional)
      * @param limit When paginating, limit the results to this number. (optional)
-     * @param filter Expression to filter the result set. Defaults to filtering out inactive instruments               (that is, those that have been deleted). For more information about filtering results,               see https://support.lusid.com/knowledgebase/article/KA-01914. (optional, default to &quot;State eq &#39;Active&#39;&quot;)
+     * @param filter Expression to filter the result set. Defaults to filtering out inactive instruments               (that is, those that have been deleted). For more information about filtering results,               see https://support.lusid.com/knowledgebase/article/KA-01914. (optional, default to State eq &#39;Active&#39;)
      * @param instrumentPropertyKeys A list of property keys from the &#39;Instrument&#39; domain to decorate onto               instruments. These must have the format {domain}/{scope}/{code}, for example &#39;Instrument/system/Name&#39;. (optional)
      * @return ApiResponse&lt;PagedResourceListOfInstrument&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1240,7 +1248,7 @@ public class InstrumentsApi {
      * @param sortBy Order results by particular fields. Use the &#39;-&#39; sign to denote descending order, for               example &#39;-MyFieldName&#39;. (optional)
      * @param start When paginating, skip this number of results. (optional)
      * @param limit When paginating, limit the results to this number. (optional)
-     * @param filter Expression to filter the result set. Defaults to filtering out inactive instruments               (that is, those that have been deleted). For more information about filtering results,               see https://support.lusid.com/knowledgebase/article/KA-01914. (optional, default to &quot;State eq &#39;Active&#39;&quot;)
+     * @param filter Expression to filter the result set. Defaults to filtering out inactive instruments               (that is, those that have been deleted). For more information about filtering results,               see https://support.lusid.com/knowledgebase/article/KA-01914. (optional, default to State eq &#39;Active&#39;)
      * @param instrumentPropertyKeys A list of property keys from the &#39;Instrument&#39; domain to decorate onto               instruments. These must have the format {domain}/{scope}/{code}, for example &#39;Instrument/system/Name&#39;. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1254,7 +1262,6 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call listInstrumentsAsync(OffsetDateTime asAt, String effectiveAt, String page, List<String> sortBy, Integer start, Integer limit, String filter, List<String> instrumentPropertyKeys, final ApiCallback<PagedResourceListOfInstrument> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = listInstrumentsValidateBeforeCall(asAt, effectiveAt, page, sortBy, start, limit, filter, instrumentPropertyKeys, _callback);
         Type localVarReturnType = new TypeToken<PagedResourceListOfInstrument>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -1287,7 +1294,9 @@ public class InstrumentsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -1305,7 +1314,7 @@ public class InstrumentsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1393,7 +1402,6 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call updateInstrumentIdentifierAsync(String identifierType, String identifier, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest, final ApiCallback<Instrument> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = updateInstrumentIdentifierValidateBeforeCall(identifierType, identifier, updateInstrumentIdentifierRequest, _callback);
         Type localVarReturnType = new TypeToken<Instrument>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -1422,7 +1430,9 @@ public class InstrumentsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -1440,7 +1450,7 @@ public class InstrumentsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1512,7 +1522,6 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call upsertInstrumentsAsync(Map<String, InstrumentDefinition> requestBody, final ApiCallback<UpsertInstrumentsResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = upsertInstrumentsValidateBeforeCall(requestBody, _callback);
         Type localVarReturnType = new TypeToken<UpsertInstrumentsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -1541,7 +1550,9 @@ public class InstrumentsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -1559,7 +1570,7 @@ public class InstrumentsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1631,7 +1642,6 @@ public class InstrumentsApi {
      </table>
      */
     public okhttp3.Call upsertInstrumentsPropertiesAsync(List<UpsertInstrumentPropertyRequest> upsertInstrumentPropertyRequest, final ApiCallback<UpsertInstrumentPropertiesResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = upsertInstrumentsPropertiesValidateBeforeCall(upsertInstrumentPropertyRequest, _callback);
         Type localVarReturnType = new TypeToken<UpsertInstrumentPropertiesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);

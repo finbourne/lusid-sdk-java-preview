@@ -28,7 +28,7 @@ import java.time.OffsetDateTime;
 /**
  * RepoAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class RepoAllOf {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -149,7 +149,7 @@ public class RepoAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -159,8 +159,9 @@ public class RepoAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public RepoAllOf startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -177,8 +178,9 @@ public class RepoAllOf {
     this.startDate = startDate;
   }
 
+
   public RepoAllOf maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -195,8 +197,9 @@ public class RepoAllOf {
     this.maturityDate = maturityDate;
   }
 
+
   public RepoAllOf domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -213,8 +216,9 @@ public class RepoAllOf {
     this.domCcy = domCcy;
   }
 
+
   public RepoAllOf accrualBasis(String accrualBasis) {
-    this.accrualBasis = accrualBasis;
+    this.accrualBasis = accrualBasis; 
     return this;
   }
 
@@ -231,8 +235,9 @@ public class RepoAllOf {
     this.accrualBasis = accrualBasis;
   }
 
+
   public RepoAllOf collateralValue(Double collateralValue) {
-    this.collateralValue = collateralValue;
+    this.collateralValue = collateralValue; 
     return this;
   }
 
@@ -249,8 +254,9 @@ public class RepoAllOf {
     this.collateralValue = collateralValue;
   }
 
+
   public RepoAllOf margin(Double margin) {
-    this.margin = margin;
+    this.margin = margin; 
     return this;
   }
 
@@ -267,8 +273,9 @@ public class RepoAllOf {
     this.margin = margin;
   }
 
+
   public RepoAllOf repoRate(Double repoRate) {
-    this.repoRate = repoRate;
+    this.repoRate = repoRate; 
     return this;
   }
 
@@ -285,8 +292,9 @@ public class RepoAllOf {
     this.repoRate = repoRate;
   }
 
+
   public RepoAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -305,7 +313,7 @@ public class RepoAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -317,9 +325,8 @@ public class RepoAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -341,7 +348,7 @@ public class RepoAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

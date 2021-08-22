@@ -31,23 +31,23 @@ import java.io.IOException;
  * Definition of the set of flow and index conventions along with other miscellaneous information required to generate an instrument leg.
  */
 @ApiModel(description = "Definition of the set of flow and index conventions along with other miscellaneous information required to generate an instrument leg.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class LegDefinition {
   public static final String SERIALIZED_NAME_CONVENTION_NAME = "conventionName";
   @SerializedName(SERIALIZED_NAME_CONVENTION_NAME)
-  private FlowConventionName conventionName = null;
+  private FlowConventionName conventionName;
 
   public static final String SERIALIZED_NAME_CONVENTIONS = "conventions";
   @SerializedName(SERIALIZED_NAME_CONVENTIONS)
-  private FlowConventions conventions = null;
+  private FlowConventions conventions;
 
   public static final String SERIALIZED_NAME_INDEX_CONVENTION = "indexConvention";
   @SerializedName(SERIALIZED_NAME_INDEX_CONVENTION)
-  private IndexConvention indexConvention = null;
+  private IndexConvention indexConvention;
 
   public static final String SERIALIZED_NAME_INDEX_CONVENTION_NAME = "indexConventionName";
   @SerializedName(SERIALIZED_NAME_INDEX_CONVENTION_NAME)
-  private FlowConventionName indexConventionName = null;
+  private FlowConventionName indexConventionName;
 
   public static final String SERIALIZED_NAME_NOTIONAL_EXCHANGE_TYPE = "notionalExchangeType";
   @SerializedName(SERIALIZED_NAME_NOTIONAL_EXCHANGE_TYPE)
@@ -69,8 +69,9 @@ public class LegDefinition {
   @SerializedName(SERIALIZED_NAME_STUB_TYPE)
   private String stubType;
 
+
   public LegDefinition conventionName(FlowConventionName conventionName) {
-    this.conventionName = conventionName;
+    this.conventionName = conventionName; 
     return this;
   }
 
@@ -87,8 +88,9 @@ public class LegDefinition {
     this.conventionName = conventionName;
   }
 
+
   public LegDefinition conventions(FlowConventions conventions) {
-    this.conventions = conventions;
+    this.conventions = conventions; 
     return this;
   }
 
@@ -105,8 +107,9 @@ public class LegDefinition {
     this.conventions = conventions;
   }
 
+
   public LegDefinition indexConvention(IndexConvention indexConvention) {
-    this.indexConvention = indexConvention;
+    this.indexConvention = indexConvention; 
     return this;
   }
 
@@ -123,8 +126,9 @@ public class LegDefinition {
     this.indexConvention = indexConvention;
   }
 
+
   public LegDefinition indexConventionName(FlowConventionName indexConventionName) {
-    this.indexConventionName = indexConventionName;
+    this.indexConventionName = indexConventionName; 
     return this;
   }
 
@@ -141,8 +145,9 @@ public class LegDefinition {
     this.indexConventionName = indexConventionName;
   }
 
+
   public LegDefinition notionalExchangeType(String notionalExchangeType) {
-    this.notionalExchangeType = notionalExchangeType;
+    this.notionalExchangeType = notionalExchangeType; 
     return this;
   }
 
@@ -159,8 +164,9 @@ public class LegDefinition {
     this.notionalExchangeType = notionalExchangeType;
   }
 
+
   public LegDefinition payReceive(String payReceive) {
-    this.payReceive = payReceive;
+    this.payReceive = payReceive; 
     return this;
   }
 
@@ -177,8 +183,9 @@ public class LegDefinition {
     this.payReceive = payReceive;
   }
 
+
   public LegDefinition rateOrSpread(Double rateOrSpread) {
-    this.rateOrSpread = rateOrSpread;
+    this.rateOrSpread = rateOrSpread; 
     return this;
   }
 
@@ -195,8 +202,9 @@ public class LegDefinition {
     this.rateOrSpread = rateOrSpread;
   }
 
+
   public LegDefinition resetConvention(String resetConvention) {
-    this.resetConvention = resetConvention;
+    this.resetConvention = resetConvention; 
     return this;
   }
 
@@ -213,8 +221,9 @@ public class LegDefinition {
     this.resetConvention = resetConvention;
   }
 
+
   public LegDefinition stubType(String stubType) {
-    this.stubType = stubType;
+    this.stubType = stubType; 
     return this;
   }
 
@@ -233,7 +242,7 @@ public class LegDefinition {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -245,9 +254,8 @@ public class LegDefinition {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -270,7 +278,7 @@ public class LegDefinition {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

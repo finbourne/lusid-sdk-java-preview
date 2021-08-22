@@ -30,7 +30,7 @@ import java.io.IOException;
  * A representation of an un-built piece of complex market data, to allow for passing through  to the vendor library for building.  The market data will usually be in some standard form such as XML or Json, representing a curve or surface.
  */
 @ApiModel(description = "A representation of an un-built piece of complex market data, to allow for passing through  to the vendor library for building.  The market data will usually be in some standard form such as XML or Json, representing a curve or surface.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OpaqueMarketData extends ComplexMarketData {
   public static final String SERIALIZED_NAME_DOCUMENT = "document";
   @SerializedName(SERIALIZED_NAME_DOCUMENT)
@@ -44,8 +44,12 @@ public class OpaqueMarketData extends ComplexMarketData {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
+  public OpaqueMarketData() {
+    //this.marketDataType = this.getClass().getSimpleName();
+  }
+
   public OpaqueMarketData document(String document) {
-    this.document = document;
+    this.document = document; 
     return this;
   }
 
@@ -62,8 +66,9 @@ public class OpaqueMarketData extends ComplexMarketData {
     this.document = document;
   }
 
+
   public OpaqueMarketData format(String format) {
-    this.format = format;
+    this.format = format; 
     return this;
   }
 
@@ -80,8 +85,9 @@ public class OpaqueMarketData extends ComplexMarketData {
     this.format = format;
   }
 
+
   public OpaqueMarketData name(String name) {
-    this.name = name;
+    this.name = name; 
     return this;
   }
 
@@ -100,7 +106,7 @@ public class OpaqueMarketData extends ComplexMarketData {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -112,9 +118,8 @@ public class OpaqueMarketData extends ComplexMarketData {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -132,7 +137,7 @@ public class OpaqueMarketData extends ComplexMarketData {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

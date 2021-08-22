@@ -34,15 +34,15 @@ import java.util.Map;
  * Representation of a Relation between a requested entity with the stated entity as RelationedEntityId
  */
 @ApiModel(description = "Representation of a Relation between a requested entity with the stated entity as RelationedEntityId")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Relation {
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version = null;
+  private Version version;
 
   public static final String SERIALIZED_NAME_RELATION_DEFINITION_ID = "relationDefinitionId";
   @SerializedName(SERIALIZED_NAME_RELATION_DEFINITION_ID)
-  private ResourceId relationDefinitionId = null;
+  private ResourceId relationDefinitionId;
 
   public static final String SERIALIZED_NAME_RELATED_ENTITY_ID = "relatedEntityId";
   @SerializedName(SERIALIZED_NAME_RELATED_ENTITY_ID)
@@ -60,8 +60,9 @@ public class Relation {
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_FROM)
   private OffsetDateTime effectiveFrom;
 
+
   public Relation version(Version version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -78,8 +79,9 @@ public class Relation {
     this.version = version;
   }
 
+
   public Relation relationDefinitionId(ResourceId relationDefinitionId) {
-    this.relationDefinitionId = relationDefinitionId;
+    this.relationDefinitionId = relationDefinitionId; 
     return this;
   }
 
@@ -96,8 +98,9 @@ public class Relation {
     this.relationDefinitionId = relationDefinitionId;
   }
 
+
   public Relation relatedEntityId(Map<String, String> relatedEntityId) {
-    this.relatedEntityId = relatedEntityId;
+    this.relatedEntityId = relatedEntityId; 
     return this;
   }
 
@@ -119,8 +122,9 @@ public class Relation {
     this.relatedEntityId = relatedEntityId;
   }
 
+
   public Relation traversalDirection(String traversalDirection) {
-    this.traversalDirection = traversalDirection;
+    this.traversalDirection = traversalDirection; 
     return this;
   }
 
@@ -137,8 +141,9 @@ public class Relation {
     this.traversalDirection = traversalDirection;
   }
 
+
   public Relation traversalDescription(String traversalDescription) {
-    this.traversalDescription = traversalDescription;
+    this.traversalDescription = traversalDescription; 
     return this;
   }
 
@@ -155,8 +160,9 @@ public class Relation {
     this.traversalDescription = traversalDescription;
   }
 
+
   public Relation effectiveFrom(OffsetDateTime effectiveFrom) {
-    this.effectiveFrom = effectiveFrom;
+    this.effectiveFrom = effectiveFrom; 
     return this;
   }
 
@@ -175,7 +181,7 @@ public class Relation {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -187,9 +193,8 @@ public class Relation {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -209,7 +214,7 @@ public class Relation {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

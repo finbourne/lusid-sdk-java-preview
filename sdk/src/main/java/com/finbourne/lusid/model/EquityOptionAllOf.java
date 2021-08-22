@@ -28,7 +28,7 @@ import java.time.OffsetDateTime;
 /**
  * EquityOptionAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class EquityOptionAllOf {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -83,7 +83,7 @@ public class EquityOptionAllOf {
 
       @Override
       public DeliveryTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return DeliveryTypeEnum.fromValue(value);
       }
     }
@@ -136,7 +136,7 @@ public class EquityOptionAllOf {
 
       @Override
       public OptionTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return OptionTypeEnum.fromValue(value);
       }
     }
@@ -213,7 +213,7 @@ public class EquityOptionAllOf {
 
       @Override
       public UnderlyingIdentifierEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return UnderlyingIdentifierEnum.fromValue(value);
       }
     }
@@ -318,7 +318,7 @@ public class EquityOptionAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -328,8 +328,9 @@ public class EquityOptionAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public EquityOptionAllOf startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -346,8 +347,9 @@ public class EquityOptionAllOf {
     this.startDate = startDate;
   }
 
+
   public EquityOptionAllOf optionMaturityDate(OffsetDateTime optionMaturityDate) {
-    this.optionMaturityDate = optionMaturityDate;
+    this.optionMaturityDate = optionMaturityDate; 
     return this;
   }
 
@@ -364,8 +366,9 @@ public class EquityOptionAllOf {
     this.optionMaturityDate = optionMaturityDate;
   }
 
+
   public EquityOptionAllOf optionSettlementDate(OffsetDateTime optionSettlementDate) {
-    this.optionSettlementDate = optionSettlementDate;
+    this.optionSettlementDate = optionSettlementDate; 
     return this;
   }
 
@@ -382,8 +385,9 @@ public class EquityOptionAllOf {
     this.optionSettlementDate = optionSettlementDate;
   }
 
+
   public EquityOptionAllOf deliveryType(DeliveryTypeEnum deliveryType) {
-    this.deliveryType = deliveryType;
+    this.deliveryType = deliveryType; 
     return this;
   }
 
@@ -400,8 +404,9 @@ public class EquityOptionAllOf {
     this.deliveryType = deliveryType;
   }
 
+
   public EquityOptionAllOf optionType(OptionTypeEnum optionType) {
-    this.optionType = optionType;
+    this.optionType = optionType; 
     return this;
   }
 
@@ -418,8 +423,9 @@ public class EquityOptionAllOf {
     this.optionType = optionType;
   }
 
+
   public EquityOptionAllOf strike(Double strike) {
-    this.strike = strike;
+    this.strike = strike; 
     return this;
   }
 
@@ -436,8 +442,9 @@ public class EquityOptionAllOf {
     this.strike = strike;
   }
 
+
   public EquityOptionAllOf domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -454,8 +461,9 @@ public class EquityOptionAllOf {
     this.domCcy = domCcy;
   }
 
+
   public EquityOptionAllOf underlyingIdentifier(UnderlyingIdentifierEnum underlyingIdentifier) {
-    this.underlyingIdentifier = underlyingIdentifier;
+    this.underlyingIdentifier = underlyingIdentifier; 
     return this;
   }
 
@@ -472,8 +480,9 @@ public class EquityOptionAllOf {
     this.underlyingIdentifier = underlyingIdentifier;
   }
 
+
   public EquityOptionAllOf code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -490,8 +499,9 @@ public class EquityOptionAllOf {
     this.code = code;
   }
 
+
   public EquityOptionAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -510,7 +520,7 @@ public class EquityOptionAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -522,9 +532,8 @@ public class EquityOptionAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -548,7 +557,7 @@ public class EquityOptionAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

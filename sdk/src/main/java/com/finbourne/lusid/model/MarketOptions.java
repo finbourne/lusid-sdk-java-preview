@@ -28,7 +28,7 @@ import java.io.IOException;
  * The set of options that control miscellaneous and default market resolution behaviour.  These are aimed at a &#39;crude&#39; level of control for those who do not wish to fine tune the way that data is resolved.  For clients who wish to simply match instruments to prices this is quite possibly sufficient. For those wishing to control market data sources  according to requirements based on accuracy or timeliness it is not. In more advanced cases the options should largely be ignored and rules specified  per source. Be aware that where no specified rule matches the final fallback is on to the logic implied here.
  */
 @ApiModel(description = "The set of options that control miscellaneous and default market resolution behaviour.  These are aimed at a 'crude' level of control for those who do not wish to fine tune the way that data is resolved.  For clients who wish to simply match instruments to prices this is quite possibly sufficient. For those wishing to control market data sources  according to requirements based on accuracy or timeliness it is not. In more advanced cases the options should largely be ignored and rules specified  per source. Be aware that where no specified rule matches the final fallback is on to the logic implied here.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class MarketOptions {
   public static final String SERIALIZED_NAME_DEFAULT_SUPPLIER = "defaultSupplier";
   @SerializedName(SERIALIZED_NAME_DEFAULT_SUPPLIER)
@@ -46,8 +46,9 @@ public class MarketOptions {
   @SerializedName(SERIALIZED_NAME_ATTEMPT_TO_INFER_MISSING_FX)
   private Boolean attemptToInferMissingFx;
 
+
   public MarketOptions defaultSupplier(String defaultSupplier) {
-    this.defaultSupplier = defaultSupplier;
+    this.defaultSupplier = defaultSupplier; 
     return this;
   }
 
@@ -64,8 +65,9 @@ public class MarketOptions {
     this.defaultSupplier = defaultSupplier;
   }
 
+
   public MarketOptions defaultInstrumentCodeType(String defaultInstrumentCodeType) {
-    this.defaultInstrumentCodeType = defaultInstrumentCodeType;
+    this.defaultInstrumentCodeType = defaultInstrumentCodeType; 
     return this;
   }
 
@@ -82,8 +84,9 @@ public class MarketOptions {
     this.defaultInstrumentCodeType = defaultInstrumentCodeType;
   }
 
+
   public MarketOptions defaultScope(String defaultScope) {
-    this.defaultScope = defaultScope;
+    this.defaultScope = defaultScope; 
     return this;
   }
 
@@ -100,8 +103,9 @@ public class MarketOptions {
     this.defaultScope = defaultScope;
   }
 
+
   public MarketOptions attemptToInferMissingFx(Boolean attemptToInferMissingFx) {
-    this.attemptToInferMissingFx = attemptToInferMissingFx;
+    this.attemptToInferMissingFx = attemptToInferMissingFx; 
     return this;
   }
 
@@ -120,7 +124,7 @@ public class MarketOptions {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -132,9 +136,8 @@ public class MarketOptions {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -152,7 +155,7 @@ public class MarketOptions {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

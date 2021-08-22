@@ -29,18 +29,19 @@ import java.io.IOException;
  * A2B Category - one of the five major categories in the A2BDataRecord
  */
 @ApiModel(description = "A2B Category - one of the five major categories in the A2BDataRecord")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class A2BCategory {
   public static final String SERIALIZED_NAME_HOLDING_CURRENCY = "holdingCurrency";
   @SerializedName(SERIALIZED_NAME_HOLDING_CURRENCY)
-  private A2BBreakdown holdingCurrency = null;
+  private A2BBreakdown holdingCurrency;
 
   public static final String SERIALIZED_NAME_PORTFOLIO_CURRENCY = "portfolioCurrency";
   @SerializedName(SERIALIZED_NAME_PORTFOLIO_CURRENCY)
-  private A2BBreakdown portfolioCurrency = null;
+  private A2BBreakdown portfolioCurrency;
+
 
   public A2BCategory holdingCurrency(A2BBreakdown holdingCurrency) {
-    this.holdingCurrency = holdingCurrency;
+    this.holdingCurrency = holdingCurrency; 
     return this;
   }
 
@@ -57,8 +58,9 @@ public class A2BCategory {
     this.holdingCurrency = holdingCurrency;
   }
 
+
   public A2BCategory portfolioCurrency(A2BBreakdown portfolioCurrency) {
-    this.portfolioCurrency = portfolioCurrency;
+    this.portfolioCurrency = portfolioCurrency; 
     return this;
   }
 
@@ -77,7 +79,7 @@ public class A2BCategory {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -89,9 +91,8 @@ public class A2BCategory {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -107,7 +108,7 @@ public class A2BCategory {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

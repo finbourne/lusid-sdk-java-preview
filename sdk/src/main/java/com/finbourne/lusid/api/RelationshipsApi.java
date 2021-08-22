@@ -42,7 +42,6 @@ import java.util.Map;
 
 public class RelationshipsApi {
     private ApiClient localVarApiClient;
-
     public RelationshipsApi() {
         this(Configuration.getDefaultApiClient());
     }
@@ -86,7 +85,9 @@ public class RelationshipsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -104,7 +105,7 @@ public class RelationshipsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -192,7 +193,6 @@ public class RelationshipsApi {
      </table>
      */
     public okhttp3.Call createRelationshipAsync(String scope, String code, CreateRelationshipRequest createRelationshipRequest, final ApiCallback<CompleteRelationship> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = createRelationshipValidateBeforeCall(scope, code, createRelationshipRequest, _callback);
         Type localVarReturnType = new TypeToken<CompleteRelationship>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -225,7 +225,9 @@ public class RelationshipsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -243,7 +245,7 @@ public class RelationshipsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -331,7 +333,6 @@ public class RelationshipsApi {
      </table>
      */
     public okhttp3.Call deleteRelationshipAsync(String scope, String code, DeleteRelationshipRequest deleteRelationshipRequest, final ApiCallback<DeletedEntityResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = deleteRelationshipValidateBeforeCall(scope, code, deleteRelationshipRequest, _callback);
         Type localVarReturnType = new TypeToken<DeletedEntityResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);

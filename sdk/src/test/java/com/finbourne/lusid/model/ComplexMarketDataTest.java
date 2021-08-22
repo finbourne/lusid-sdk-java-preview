@@ -13,6 +13,12 @@
 
 package com.finbourne.lusid.model;
 
+import com.finbourne.lusid.model.DiscountFactorCurveData;
+import com.finbourne.lusid.model.EquityVolSurfaceData;
+import com.finbourne.lusid.model.FxVolSurfaceData;
+import com.finbourne.lusid.model.IrVolCubeData;
+import com.finbourne.lusid.model.OpaqueMarketData;
+import com.finbourne.lusid.model.YieldCurveData;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;

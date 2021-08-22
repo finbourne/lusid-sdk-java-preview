@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * CustomEntityDefinitionRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomEntityDefinitionRequest {
   public static final String SERIALIZED_NAME_CUSTOM_ENTITY_ID = "customEntityId";
   @SerializedName(SERIALIZED_NAME_CUSTOM_ENTITY_ID)
@@ -46,10 +46,11 @@ public class CustomEntityDefinitionRequest {
 
   public static final String SERIALIZED_NAME_FIELD_SCHEMA = "fieldSchema";
   @SerializedName(SERIALIZED_NAME_FIELD_SCHEMA)
-  private List<CustomEntityFieldDefinition> fieldSchema = new ArrayList<>();
+  private List<CustomEntityFieldDefinition> fieldSchema = null;
+
 
   public CustomEntityDefinitionRequest customEntityId(String customEntityId) {
-    this.customEntityId = customEntityId;
+    this.customEntityId = customEntityId; 
     return this;
   }
 
@@ -66,8 +67,9 @@ public class CustomEntityDefinitionRequest {
     this.customEntityId = customEntityId;
   }
 
+
   public CustomEntityDefinitionRequest displayName(String displayName) {
-    this.displayName = displayName;
+    this.displayName = displayName; 
     return this;
   }
 
@@ -84,8 +86,9 @@ public class CustomEntityDefinitionRequest {
     this.displayName = displayName;
   }
 
+
   public CustomEntityDefinitionRequest description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -102,12 +105,14 @@ public class CustomEntityDefinitionRequest {
     this.description = description;
   }
 
+
   public CustomEntityDefinitionRequest fieldSchema(List<CustomEntityFieldDefinition> fieldSchema) {
-    this.fieldSchema = fieldSchema;
+    this.fieldSchema = fieldSchema; 
     return this;
   }
 
   public CustomEntityDefinitionRequest addFieldSchemaItem(CustomEntityFieldDefinition fieldSchemaItem) {
+   
     if (this.fieldSchema == null) {
       this.fieldSchema = new ArrayList<>();
     }
@@ -130,7 +135,7 @@ public class CustomEntityDefinitionRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -142,9 +147,8 @@ public class CustomEntityDefinitionRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -162,7 +166,7 @@ public class CustomEntityDefinitionRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

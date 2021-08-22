@@ -29,11 +29,11 @@ import java.io.IOException;
 /**
  * BasketAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BasketAllOf {
   public static final String SERIALIZED_NAME_BASKET_NAME = "basketName";
   @SerializedName(SERIALIZED_NAME_BASKET_NAME)
-  private BasketIdentifier basketName = null;
+  private BasketIdentifier basketName;
 
   public static final String SERIALIZED_NAME_BASKET_TYPE = "basketType";
   @SerializedName(SERIALIZED_NAME_BASKET_TYPE)
@@ -41,7 +41,7 @@ public class BasketAllOf {
 
   public static final String SERIALIZED_NAME_WEIGHTED_INSTRUMENTS = "weightedInstruments";
   @SerializedName(SERIALIZED_NAME_WEIGHTED_INSTRUMENTS)
-  private WeightedInstruments weightedInstruments = null;
+  private WeightedInstruments weightedInstruments;
 
   /**
    * The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo
@@ -134,7 +134,7 @@ public class BasketAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -144,8 +144,9 @@ public class BasketAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public BasketAllOf basketName(BasketIdentifier basketName) {
-    this.basketName = basketName;
+    this.basketName = basketName; 
     return this;
   }
 
@@ -162,8 +163,9 @@ public class BasketAllOf {
     this.basketName = basketName;
   }
 
+
   public BasketAllOf basketType(String basketType) {
-    this.basketType = basketType;
+    this.basketType = basketType; 
     return this;
   }
 
@@ -180,8 +182,9 @@ public class BasketAllOf {
     this.basketType = basketType;
   }
 
+
   public BasketAllOf weightedInstruments(WeightedInstruments weightedInstruments) {
-    this.weightedInstruments = weightedInstruments;
+    this.weightedInstruments = weightedInstruments; 
     return this;
   }
 
@@ -198,8 +201,9 @@ public class BasketAllOf {
     this.weightedInstruments = weightedInstruments;
   }
 
+
   public BasketAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -218,7 +222,7 @@ public class BasketAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -230,9 +234,8 @@ public class BasketAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -250,7 +253,7 @@ public class BasketAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -32,11 +32,11 @@ import java.io.IOException;
  * Class that models a basket of risky instruments that can default.  Upon default, the weight of a defaulting instrument can (will) change and this then affects the behaviour of the basket.
  */
 @ApiModel(description = "Class that models a basket of risky instruments that can default.  Upon default, the weight of a defaulting instrument can (will) change and this then affects the behaviour of the basket.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Basket extends LusidInstrument {
   public static final String SERIALIZED_NAME_BASKET_NAME = "basketName";
   @SerializedName(SERIALIZED_NAME_BASKET_NAME)
-  private BasketIdentifier basketName = null;
+  private BasketIdentifier basketName;
 
   public static final String SERIALIZED_NAME_BASKET_TYPE = "basketType";
   @SerializedName(SERIALIZED_NAME_BASKET_TYPE)
@@ -44,10 +44,14 @@ public class Basket extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_WEIGHTED_INSTRUMENTS = "weightedInstruments";
   @SerializedName(SERIALIZED_NAME_WEIGHTED_INSTRUMENTS)
-  private WeightedInstruments weightedInstruments = null;
+  private WeightedInstruments weightedInstruments;
+
+  public Basket() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
 
   public Basket basketName(BasketIdentifier basketName) {
-    this.basketName = basketName;
+    this.basketName = basketName; 
     return this;
   }
 
@@ -64,8 +68,9 @@ public class Basket extends LusidInstrument {
     this.basketName = basketName;
   }
 
+
   public Basket basketType(String basketType) {
-    this.basketType = basketType;
+    this.basketType = basketType; 
     return this;
   }
 
@@ -82,8 +87,9 @@ public class Basket extends LusidInstrument {
     this.basketType = basketType;
   }
 
+
   public Basket weightedInstruments(WeightedInstruments weightedInstruments) {
-    this.weightedInstruments = weightedInstruments;
+    this.weightedInstruments = weightedInstruments; 
     return this;
   }
 
@@ -102,7 +108,7 @@ public class Basket extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -114,9 +120,8 @@ public class Basket extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -134,7 +139,7 @@ public class Basket extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

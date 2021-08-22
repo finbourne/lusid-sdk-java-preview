@@ -33,7 +33,7 @@ import java.util.List;
  * A curve containing discount factors and dates to which they apply
  */
 @ApiModel(description = "A curve containing discount factors and dates to which they apply")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class DiscountFactorCurveData extends ComplexMarketData {
   public static final String SERIALIZED_NAME_BASE_DATE = "baseDate";
   @SerializedName(SERIALIZED_NAME_BASE_DATE)
@@ -47,8 +47,12 @@ public class DiscountFactorCurveData extends ComplexMarketData {
   @SerializedName(SERIALIZED_NAME_DISCOUNT_FACTORS)
   private List<Double> discountFactors = new ArrayList<>();
 
+  public DiscountFactorCurveData() {
+    //this.marketDataType = this.getClass().getSimpleName();
+  }
+
   public DiscountFactorCurveData baseDate(OffsetDateTime baseDate) {
-    this.baseDate = baseDate;
+    this.baseDate = baseDate; 
     return this;
   }
 
@@ -65,12 +69,14 @@ public class DiscountFactorCurveData extends ComplexMarketData {
     this.baseDate = baseDate;
   }
 
+
   public DiscountFactorCurveData dates(List<OffsetDateTime> dates) {
-    this.dates = dates;
+    this.dates = dates; 
     return this;
   }
 
   public DiscountFactorCurveData addDatesItem(OffsetDateTime datesItem) {
+   
     this.dates.add(datesItem);
     return this;
   }
@@ -88,12 +94,14 @@ public class DiscountFactorCurveData extends ComplexMarketData {
     this.dates = dates;
   }
 
+
   public DiscountFactorCurveData discountFactors(List<Double> discountFactors) {
-    this.discountFactors = discountFactors;
+    this.discountFactors = discountFactors; 
     return this;
   }
 
   public DiscountFactorCurveData addDiscountFactorsItem(Double discountFactorsItem) {
+   
     this.discountFactors.add(discountFactorsItem);
     return this;
   }
@@ -113,7 +121,7 @@ public class DiscountFactorCurveData extends ComplexMarketData {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -125,9 +133,8 @@ public class DiscountFactorCurveData extends ComplexMarketData {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -145,7 +152,7 @@ public class DiscountFactorCurveData extends ComplexMarketData {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * CreateUnitDefinition
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreateUnitDefinition {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
@@ -46,10 +46,11 @@ public class CreateUnitDefinition {
 
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
-  private Map<String, String> details = new HashMap<>();
+  private Map<String, String> details = null;
+
 
   public CreateUnitDefinition code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -66,8 +67,9 @@ public class CreateUnitDefinition {
     this.code = code;
   }
 
+
   public CreateUnitDefinition displayName(String displayName) {
-    this.displayName = displayName;
+    this.displayName = displayName; 
     return this;
   }
 
@@ -84,8 +86,9 @@ public class CreateUnitDefinition {
     this.displayName = displayName;
   }
 
+
   public CreateUnitDefinition description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -102,8 +105,9 @@ public class CreateUnitDefinition {
     this.description = description;
   }
 
+
   public CreateUnitDefinition details(Map<String, String> details) {
-    this.details = details;
+    this.details = details; 
     return this;
   }
 
@@ -130,7 +134,7 @@ public class CreateUnitDefinition {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -142,9 +146,8 @@ public class CreateUnitDefinition {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -162,7 +165,7 @@ public class CreateUnitDefinition {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

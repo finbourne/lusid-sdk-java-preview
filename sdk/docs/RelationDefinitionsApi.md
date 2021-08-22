@@ -1,6 +1,6 @@
 # RelationDefinitionsApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://local-unit-test-server.lusid.com:50272*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,14 +29,14 @@ import com.finbourne.lusid.api.RelationDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:50272");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     RelationDefinitionsApi apiInstance = new RelationDefinitionsApi(defaultClient);
-    CreateRelationDefinitionRequest createRelationDefinitionRequest = {"scope":"PortfolioManagementTeam","code":"Traders","sourceEntityDomain":"Portfolio","targetEntityDomain":"Person","displayName":"Authorised traders to trade for specific portfolio ","outwardDescription":"can be traded by","inwardDescription":"can trade with portfolio","lifeTime":"TimeVariant","constraintStyle":"Collection"}; // CreateRelationDefinitionRequest | The definition of the new relation.
+    CreateRelationDefinitionRequest createRelationDefinitionRequest = new CreateRelationDefinitionRequest(); // CreateRelationDefinitionRequest | The definition of the new relation.
     try {
       RelationDefinition result = apiInstance.createRelationDefinition(createRelationDefinitionRequest);
       System.out.println(result);
@@ -98,7 +98,7 @@ import com.finbourne.lusid.api.RelationDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:50272");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -107,7 +107,7 @@ public class Example {
     RelationDefinitionsApi apiInstance = new RelationDefinitionsApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the specified relation.
     String code = "code_example"; // String | The code of the specified relation. Together with the domain and scope this uniquely              identifies the relation.
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the relation definition. Defaults to return              the latest version of the definition if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the relation definition. Defaults to return              the latest version of the definition if not specified.
     try {
       RelationDefinition result = apiInstance.getRelationDefinition(scope, code, asAt);
       System.out.println(result);

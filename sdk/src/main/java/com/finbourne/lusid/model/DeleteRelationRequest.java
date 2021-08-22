@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * DeleteRelationRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class DeleteRelationRequest {
   public static final String SERIALIZED_NAME_SOURCE_ENTITY_ID = "sourceEntityId";
   @SerializedName(SERIALIZED_NAME_SOURCE_ENTITY_ID)
@@ -40,8 +40,9 @@ public class DeleteRelationRequest {
   @SerializedName(SERIALIZED_NAME_TARGET_ENTITY_ID)
   private Map<String, String> targetEntityId = new HashMap<>();
 
+
   public DeleteRelationRequest sourceEntityId(Map<String, String> sourceEntityId) {
-    this.sourceEntityId = sourceEntityId;
+    this.sourceEntityId = sourceEntityId; 
     return this;
   }
 
@@ -63,8 +64,9 @@ public class DeleteRelationRequest {
     this.sourceEntityId = sourceEntityId;
   }
 
+
   public DeleteRelationRequest targetEntityId(Map<String, String> targetEntityId) {
-    this.targetEntityId = targetEntityId;
+    this.targetEntityId = targetEntityId; 
     return this;
   }
 
@@ -88,7 +90,7 @@ public class DeleteRelationRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -100,9 +102,8 @@ public class DeleteRelationRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -118,7 +119,7 @@ public class DeleteRelationRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

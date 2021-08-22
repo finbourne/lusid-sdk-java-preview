@@ -33,26 +33,27 @@ import java.util.Map;
 /**
  * PortfoliosReconciliationRequestPreview
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PortfoliosReconciliationRequestPreview {
   public static final String SERIALIZED_NAME_TOLERANCE = "tolerance";
   @SerializedName(SERIALIZED_NAME_TOLERANCE)
-  private Map<String, Tolerance> tolerance = new HashMap<>();
+  private Map<String, Tolerance> tolerance = null;
 
   public static final String SERIALIZED_NAME_LEFT = "left";
   @SerializedName(SERIALIZED_NAME_LEFT)
-  private PortfolioReconciliationRequest left = null;
+  private PortfolioReconciliationRequest left;
 
   public static final String SERIALIZED_NAME_RIGHT = "right";
   @SerializedName(SERIALIZED_NAME_RIGHT)
-  private PortfolioReconciliationRequest right = null;
+  private PortfolioReconciliationRequest right;
 
   public static final String SERIALIZED_NAME_INSTRUMENT_PROPERTY_KEYS = "instrumentPropertyKeys";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_PROPERTY_KEYS)
   private List<String> instrumentPropertyKeys = new ArrayList<>();
 
+
   public PortfoliosReconciliationRequestPreview tolerance(Map<String, Tolerance> tolerance) {
-    this.tolerance = tolerance;
+    this.tolerance = tolerance; 
     return this;
   }
 
@@ -77,8 +78,9 @@ public class PortfoliosReconciliationRequestPreview {
     this.tolerance = tolerance;
   }
 
+
   public PortfoliosReconciliationRequestPreview left(PortfolioReconciliationRequest left) {
-    this.left = left;
+    this.left = left; 
     return this;
   }
 
@@ -95,8 +97,9 @@ public class PortfoliosReconciliationRequestPreview {
     this.left = left;
   }
 
+
   public PortfoliosReconciliationRequestPreview right(PortfolioReconciliationRequest right) {
-    this.right = right;
+    this.right = right; 
     return this;
   }
 
@@ -113,12 +116,14 @@ public class PortfoliosReconciliationRequestPreview {
     this.right = right;
   }
 
+
   public PortfoliosReconciliationRequestPreview instrumentPropertyKeys(List<String> instrumentPropertyKeys) {
-    this.instrumentPropertyKeys = instrumentPropertyKeys;
+    this.instrumentPropertyKeys = instrumentPropertyKeys; 
     return this;
   }
 
   public PortfoliosReconciliationRequestPreview addInstrumentPropertyKeysItem(String instrumentPropertyKeysItem) {
+   
     this.instrumentPropertyKeys.add(instrumentPropertyKeysItem);
     return this;
   }
@@ -138,7 +143,7 @@ public class PortfoliosReconciliationRequestPreview {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -150,9 +155,8 @@ public class PortfoliosReconciliationRequestPreview {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -170,7 +174,7 @@ public class PortfoliosReconciliationRequestPreview {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

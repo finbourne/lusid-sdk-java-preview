@@ -32,19 +32,19 @@ import java.time.OffsetDateTime;
  * Representation of a Relationship between a requested entity with the stated entity as RelatedEntityId
  */
 @ApiModel(description = "Representation of a Relationship between a requested entity with the stated entity as RelatedEntityId")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Relationship {
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version = null;
+  private Version version;
 
   public static final String SERIALIZED_NAME_RELATIONSHIP_DEFINITION_ID = "relationshipDefinitionId";
   @SerializedName(SERIALIZED_NAME_RELATIONSHIP_DEFINITION_ID)
-  private ResourceId relationshipDefinitionId = null;
+  private ResourceId relationshipDefinitionId;
 
   public static final String SERIALIZED_NAME_RELATED_ENTITY = "relatedEntity";
   @SerializedName(SERIALIZED_NAME_RELATED_ENTITY)
-  private RelatedEntity relatedEntity = null;
+  private RelatedEntity relatedEntity;
 
   public static final String SERIALIZED_NAME_TRAVERSAL_DIRECTION = "traversalDirection";
   @SerializedName(SERIALIZED_NAME_TRAVERSAL_DIRECTION)
@@ -58,8 +58,9 @@ public class Relationship {
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_FROM)
   private OffsetDateTime effectiveFrom;
 
+
   public Relationship version(Version version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -76,8 +77,9 @@ public class Relationship {
     this.version = version;
   }
 
+
   public Relationship relationshipDefinitionId(ResourceId relationshipDefinitionId) {
-    this.relationshipDefinitionId = relationshipDefinitionId;
+    this.relationshipDefinitionId = relationshipDefinitionId; 
     return this;
   }
 
@@ -94,8 +96,9 @@ public class Relationship {
     this.relationshipDefinitionId = relationshipDefinitionId;
   }
 
+
   public Relationship relatedEntity(RelatedEntity relatedEntity) {
-    this.relatedEntity = relatedEntity;
+    this.relatedEntity = relatedEntity; 
     return this;
   }
 
@@ -112,8 +115,9 @@ public class Relationship {
     this.relatedEntity = relatedEntity;
   }
 
+
   public Relationship traversalDirection(String traversalDirection) {
-    this.traversalDirection = traversalDirection;
+    this.traversalDirection = traversalDirection; 
     return this;
   }
 
@@ -130,8 +134,9 @@ public class Relationship {
     this.traversalDirection = traversalDirection;
   }
 
+
   public Relationship traversalDescription(String traversalDescription) {
-    this.traversalDescription = traversalDescription;
+    this.traversalDescription = traversalDescription; 
     return this;
   }
 
@@ -148,8 +153,9 @@ public class Relationship {
     this.traversalDescription = traversalDescription;
   }
 
+
   public Relationship effectiveFrom(OffsetDateTime effectiveFrom) {
-    this.effectiveFrom = effectiveFrom;
+    this.effectiveFrom = effectiveFrom; 
     return this;
   }
 
@@ -168,7 +174,7 @@ public class Relationship {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -180,9 +186,8 @@ public class Relationship {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -202,7 +207,7 @@ public class Relationship {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

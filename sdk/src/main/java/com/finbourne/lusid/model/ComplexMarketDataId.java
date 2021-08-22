@@ -28,7 +28,7 @@ import java.io.IOException;
  * An identifier that uniquely describes an item of complex market data such as an interest rate curve or volatility surface.
  */
 @ApiModel(description = "An identifier that uniquely describes an item of complex market data such as an interest rate curve or volatility surface.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ComplexMarketDataId {
   public static final String SERIALIZED_NAME_PROVIDER = "provider";
   @SerializedName(SERIALIZED_NAME_PROVIDER)
@@ -50,8 +50,9 @@ public class ComplexMarketDataId {
   @SerializedName(SERIALIZED_NAME_MARKET_ASSET)
   private String marketAsset;
 
+
   public ComplexMarketDataId provider(String provider) {
-    this.provider = provider;
+    this.provider = provider; 
     return this;
   }
 
@@ -68,8 +69,9 @@ public class ComplexMarketDataId {
     this.provider = provider;
   }
 
+
   public ComplexMarketDataId priceSource(String priceSource) {
-    this.priceSource = priceSource;
+    this.priceSource = priceSource; 
     return this;
   }
 
@@ -86,8 +88,9 @@ public class ComplexMarketDataId {
     this.priceSource = priceSource;
   }
 
+
   public ComplexMarketDataId lineage(String lineage) {
-    this.lineage = lineage;
+    this.lineage = lineage; 
     return this;
   }
 
@@ -104,8 +107,9 @@ public class ComplexMarketDataId {
     this.lineage = lineage;
   }
 
+
   public ComplexMarketDataId effectiveAt(String effectiveAt) {
-    this.effectiveAt = effectiveAt;
+    this.effectiveAt = effectiveAt; 
     return this;
   }
 
@@ -122,8 +126,9 @@ public class ComplexMarketDataId {
     this.effectiveAt = effectiveAt;
   }
 
+
   public ComplexMarketDataId marketAsset(String marketAsset) {
-    this.marketAsset = marketAsset;
+    this.marketAsset = marketAsset; 
     return this;
   }
 
@@ -142,7 +147,7 @@ public class ComplexMarketDataId {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -154,9 +159,8 @@ public class ComplexMarketDataId {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -175,7 +179,7 @@ public class ComplexMarketDataId {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

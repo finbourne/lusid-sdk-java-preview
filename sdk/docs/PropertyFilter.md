@@ -2,13 +2,14 @@
 
 # PropertyFilter
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **left** | **String** | The key that uniquely identifies a queryable address in Lusid. |  [optional]
 **operator** | [**OperatorEnum**](#OperatorEnum) | The available values are: Equals, NotEquals, GreaterThan, GreaterThanOrEqualTo, LessThan, LessThanOrEqualTo, In |  [optional]
-**right** | [**Object**](.md) |  |  [optional]
+**right** | **Object** |  |  [optional]
 **rightOperandType** | [**RightOperandTypeEnum**](#RightOperandTypeEnum) | The available values are: Absolute, Property |  [optional]
 
 

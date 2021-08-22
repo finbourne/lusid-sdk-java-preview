@@ -35,7 +35,7 @@ import java.util.Map;
  * IL Fx-Forward Instrument; Lusid-ibor internal representation of a Fx Forward instrument                             A future contract, entered into on the start date at an initial reference spot price has zero initial value. It is a committment to buy a certain number of               contracts of a certain size at a date in the future.
  */
 @ApiModel(description = "IL Fx-Forward Instrument; Lusid-ibor internal representation of a Fx Forward instrument                             A future contract, entered into on the start date at an initial reference spot price has zero initial value. It is a committment to buy a certain number of               contracts of a certain size at a date in the future.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Future extends LusidInstrument {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -51,7 +51,7 @@ public class Future extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_CONTRACT_DETAILS = "contractDetails";
   @SerializedName(SERIALIZED_NAME_CONTRACT_DETAILS)
-  private FuturesContractDetails contractDetails = null;
+  private FuturesContractDetails contractDetails;
 
   public static final String SERIALIZED_NAME_CONTRACTS = "contracts";
   @SerializedName(SERIALIZED_NAME_CONTRACTS)
@@ -63,10 +63,14 @@ public class Future extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_UNDERLYING = "underlying";
   @SerializedName(SERIALIZED_NAME_UNDERLYING)
-  private LusidInstrument underlying = null;
+  private LusidInstrument underlying;
+
+  public Future() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
 
   public Future startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -83,8 +87,9 @@ public class Future extends LusidInstrument {
     this.startDate = startDate;
   }
 
+
   public Future maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -101,8 +106,9 @@ public class Future extends LusidInstrument {
     this.maturityDate = maturityDate;
   }
 
+
   public Future identifiers(Map<String, String> identifiers) {
-    this.identifiers = identifiers;
+    this.identifiers = identifiers; 
     return this;
   }
 
@@ -124,8 +130,9 @@ public class Future extends LusidInstrument {
     this.identifiers = identifiers;
   }
 
+
   public Future contractDetails(FuturesContractDetails contractDetails) {
-    this.contractDetails = contractDetails;
+    this.contractDetails = contractDetails; 
     return this;
   }
 
@@ -142,8 +149,9 @@ public class Future extends LusidInstrument {
     this.contractDetails = contractDetails;
   }
 
+
   public Future contracts(Double contracts) {
-    this.contracts = contracts;
+    this.contracts = contracts; 
     return this;
   }
 
@@ -160,8 +168,9 @@ public class Future extends LusidInstrument {
     this.contracts = contracts;
   }
 
+
   public Future refSpotPrice(Double refSpotPrice) {
-    this.refSpotPrice = refSpotPrice;
+    this.refSpotPrice = refSpotPrice; 
     return this;
   }
 
@@ -178,8 +187,9 @@ public class Future extends LusidInstrument {
     this.refSpotPrice = refSpotPrice;
   }
 
+
   public Future underlying(LusidInstrument underlying) {
-    this.underlying = underlying;
+    this.underlying = underlying; 
     return this;
   }
 
@@ -198,7 +208,7 @@ public class Future extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -210,9 +220,8 @@ public class Future extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -234,7 +243,7 @@ public class Future extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

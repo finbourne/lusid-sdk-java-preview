@@ -28,7 +28,7 @@ import java.io.IOException;
  * An identifier that uniquely describes an item of structured result data such as the risk to an interest curve or a set of yields or analytics on an index.
  */
 @ApiModel(description = "An identifier that uniquely describes an item of structured result data such as the risk to an interest curve or a set of yields or analytics on an index.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class StructuredResultDataId {
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
@@ -46,8 +46,9 @@ public class StructuredResultDataId {
   @SerializedName(SERIALIZED_NAME_RESULT_TYPE)
   private String resultType;
 
+
   public StructuredResultDataId source(String source) {
-    this.source = source;
+    this.source = source; 
     return this;
   }
 
@@ -64,8 +65,9 @@ public class StructuredResultDataId {
     this.source = source;
   }
 
+
   public StructuredResultDataId code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -82,8 +84,9 @@ public class StructuredResultDataId {
     this.code = code;
   }
 
+
   public StructuredResultDataId effectiveAt(String effectiveAt) {
-    this.effectiveAt = effectiveAt;
+    this.effectiveAt = effectiveAt; 
     return this;
   }
 
@@ -100,8 +103,9 @@ public class StructuredResultDataId {
     this.effectiveAt = effectiveAt;
   }
 
+
   public StructuredResultDataId resultType(String resultType) {
-    this.resultType = resultType;
+    this.resultType = resultType; 
     return this;
   }
 
@@ -120,7 +124,7 @@ public class StructuredResultDataId {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -132,9 +136,8 @@ public class StructuredResultDataId {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -152,7 +155,7 @@ public class StructuredResultDataId {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

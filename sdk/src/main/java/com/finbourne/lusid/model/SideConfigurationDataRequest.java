@@ -28,7 +28,7 @@ import java.io.IOException;
  * Configuration needed to define a side. Sides are referenced by Label. Beyond that, other properties  can be used to reference either transaction fields, or transaction properties.
  */
 @ApiModel(description = "Configuration needed to define a side. Sides are referenced by Label. Beyond that, other properties  can be used to reference either transaction fields, or transaction properties.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SideConfigurationDataRequest {
   public static final String SERIALIZED_NAME_SIDE = "side";
   @SerializedName(SERIALIZED_NAME_SIDE)
@@ -54,8 +54,9 @@ public class SideConfigurationDataRequest {
   @SerializedName(SERIALIZED_NAME_AMOUNT)
   private String amount;
 
+
   public SideConfigurationDataRequest side(String side) {
-    this.side = side;
+    this.side = side; 
     return this;
   }
 
@@ -72,8 +73,9 @@ public class SideConfigurationDataRequest {
     this.side = side;
   }
 
+
   public SideConfigurationDataRequest security(String security) {
-    this.security = security;
+    this.security = security; 
     return this;
   }
 
@@ -90,8 +92,9 @@ public class SideConfigurationDataRequest {
     this.security = security;
   }
 
+
   public SideConfigurationDataRequest currency(String currency) {
-    this.currency = currency;
+    this.currency = currency; 
     return this;
   }
 
@@ -108,8 +111,9 @@ public class SideConfigurationDataRequest {
     this.currency = currency;
   }
 
+
   public SideConfigurationDataRequest rate(String rate) {
-    this.rate = rate;
+    this.rate = rate; 
     return this;
   }
 
@@ -126,8 +130,9 @@ public class SideConfigurationDataRequest {
     this.rate = rate;
   }
 
+
   public SideConfigurationDataRequest units(String units) {
-    this.units = units;
+    this.units = units; 
     return this;
   }
 
@@ -144,8 +149,9 @@ public class SideConfigurationDataRequest {
     this.units = units;
   }
 
+
   public SideConfigurationDataRequest amount(String amount) {
-    this.amount = amount;
+    this.amount = amount; 
     return this;
   }
 
@@ -164,7 +170,7 @@ public class SideConfigurationDataRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -176,9 +182,8 @@ public class SideConfigurationDataRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -198,7 +203,7 @@ public class SideConfigurationDataRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

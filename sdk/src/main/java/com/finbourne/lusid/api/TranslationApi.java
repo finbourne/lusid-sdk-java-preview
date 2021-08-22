@@ -40,7 +40,6 @@ import java.util.Map;
 
 public class TranslationApi {
     private ApiClient localVarApiClient;
-
     public TranslationApi() {
         this(Configuration.getDefaultApiClient());
     }
@@ -80,7 +79,9 @@ public class TranslationApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -98,7 +99,7 @@ public class TranslationApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -170,7 +171,6 @@ public class TranslationApi {
      </table>
      */
     public okhttp3.Call translateInstrumentDefinitionsAsync(TranslateInstrumentDefinitionsRequest translateInstrumentDefinitionsRequest, final ApiCallback<TranslateInstrumentDefinitionsResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = translateInstrumentDefinitionsValidateBeforeCall(translateInstrumentDefinitionsRequest, _callback);
         Type localVarReturnType = new TypeToken<TranslateInstrumentDefinitionsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);

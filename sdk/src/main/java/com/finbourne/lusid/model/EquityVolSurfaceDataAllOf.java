@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * EquityVolSurfaceDataAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class EquityVolSurfaceDataAllOf {
   public static final String SERIALIZED_NAME_BASE_DATE = "baseDate";
   @SerializedName(SERIALIZED_NAME_BASE_DATE)
@@ -95,7 +95,7 @@ public class EquityVolSurfaceDataAllOf {
 
       @Override
       public MarketDataTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return MarketDataTypeEnum.fromValue(value);
       }
     }
@@ -105,8 +105,9 @@ public class EquityVolSurfaceDataAllOf {
   @SerializedName(SERIALIZED_NAME_MARKET_DATA_TYPE)
   private MarketDataTypeEnum marketDataType;
 
+
   public EquityVolSurfaceDataAllOf baseDate(OffsetDateTime baseDate) {
-    this.baseDate = baseDate;
+    this.baseDate = baseDate; 
     return this;
   }
 
@@ -123,12 +124,14 @@ public class EquityVolSurfaceDataAllOf {
     this.baseDate = baseDate;
   }
 
+
   public EquityVolSurfaceDataAllOf instruments(List<LusidInstrument> instruments) {
-    this.instruments = instruments;
+    this.instruments = instruments; 
     return this;
   }
 
   public EquityVolSurfaceDataAllOf addInstrumentsItem(LusidInstrument instrumentsItem) {
+   
     this.instruments.add(instrumentsItem);
     return this;
   }
@@ -146,12 +149,14 @@ public class EquityVolSurfaceDataAllOf {
     this.instruments = instruments;
   }
 
+
   public EquityVolSurfaceDataAllOf quotes(List<MarketQuote> quotes) {
-    this.quotes = quotes;
+    this.quotes = quotes; 
     return this;
   }
 
   public EquityVolSurfaceDataAllOf addQuotesItem(MarketQuote quotesItem) {
+   
     this.quotes.add(quotesItem);
     return this;
   }
@@ -169,8 +174,9 @@ public class EquityVolSurfaceDataAllOf {
     this.quotes = quotes;
   }
 
+
   public EquityVolSurfaceDataAllOf marketDataType(MarketDataTypeEnum marketDataType) {
-    this.marketDataType = marketDataType;
+    this.marketDataType = marketDataType; 
     return this;
   }
 
@@ -189,7 +195,7 @@ public class EquityVolSurfaceDataAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -201,9 +207,8 @@ public class EquityVolSurfaceDataAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -221,7 +226,7 @@ public class EquityVolSurfaceDataAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

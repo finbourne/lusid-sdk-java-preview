@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * UpsertCorporateActionRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpsertCorporateActionRequest {
   public static final String SERIALIZED_NAME_CORPORATE_ACTION_CODE = "corporateActionCode";
   @SerializedName(SERIALIZED_NAME_CORPORATE_ACTION_CODE)
@@ -61,8 +61,9 @@ public class UpsertCorporateActionRequest {
   @SerializedName(SERIALIZED_NAME_TRANSITIONS)
   private List<CorporateActionTransitionRequest> transitions = new ArrayList<>();
 
+
   public UpsertCorporateActionRequest corporateActionCode(String corporateActionCode) {
-    this.corporateActionCode = corporateActionCode;
+    this.corporateActionCode = corporateActionCode; 
     return this;
   }
 
@@ -79,8 +80,9 @@ public class UpsertCorporateActionRequest {
     this.corporateActionCode = corporateActionCode;
   }
 
+
   public UpsertCorporateActionRequest description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -97,8 +99,9 @@ public class UpsertCorporateActionRequest {
     this.description = description;
   }
 
+
   public UpsertCorporateActionRequest announcementDate(OffsetDateTime announcementDate) {
-    this.announcementDate = announcementDate;
+    this.announcementDate = announcementDate; 
     return this;
   }
 
@@ -115,8 +118,9 @@ public class UpsertCorporateActionRequest {
     this.announcementDate = announcementDate;
   }
 
+
   public UpsertCorporateActionRequest exDate(OffsetDateTime exDate) {
-    this.exDate = exDate;
+    this.exDate = exDate; 
     return this;
   }
 
@@ -133,8 +137,9 @@ public class UpsertCorporateActionRequest {
     this.exDate = exDate;
   }
 
+
   public UpsertCorporateActionRequest recordDate(OffsetDateTime recordDate) {
-    this.recordDate = recordDate;
+    this.recordDate = recordDate; 
     return this;
   }
 
@@ -151,8 +156,9 @@ public class UpsertCorporateActionRequest {
     this.recordDate = recordDate;
   }
 
+
   public UpsertCorporateActionRequest paymentDate(OffsetDateTime paymentDate) {
-    this.paymentDate = paymentDate;
+    this.paymentDate = paymentDate; 
     return this;
   }
 
@@ -169,12 +175,14 @@ public class UpsertCorporateActionRequest {
     this.paymentDate = paymentDate;
   }
 
+
   public UpsertCorporateActionRequest transitions(List<CorporateActionTransitionRequest> transitions) {
-    this.transitions = transitions;
+    this.transitions = transitions; 
     return this;
   }
 
   public UpsertCorporateActionRequest addTransitionsItem(CorporateActionTransitionRequest transitionsItem) {
+   
     this.transitions.add(transitionsItem);
     return this;
   }
@@ -194,7 +202,7 @@ public class UpsertCorporateActionRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -206,9 +214,8 @@ public class UpsertCorporateActionRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -229,7 +236,7 @@ public class UpsertCorporateActionRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

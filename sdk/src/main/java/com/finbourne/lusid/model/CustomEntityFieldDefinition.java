@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CustomEntityFieldDefinition
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomEntityFieldDefinition {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -45,8 +45,9 @@ public class CustomEntityFieldDefinition {
   @SerializedName(SERIALIZED_NAME_REQUIRED)
   private Boolean required;
 
+
   public CustomEntityFieldDefinition name(String name) {
-    this.name = name;
+    this.name = name; 
     return this;
   }
 
@@ -63,8 +64,9 @@ public class CustomEntityFieldDefinition {
     this.name = name;
   }
 
+
   public CustomEntityFieldDefinition temporality(String temporality) {
-    this.temporality = temporality;
+    this.temporality = temporality; 
     return this;
   }
 
@@ -81,8 +83,9 @@ public class CustomEntityFieldDefinition {
     this.temporality = temporality;
   }
 
+
   public CustomEntityFieldDefinition type(String type) {
-    this.type = type;
+    this.type = type; 
     return this;
   }
 
@@ -99,8 +102,9 @@ public class CustomEntityFieldDefinition {
     this.type = type;
   }
 
+
   public CustomEntityFieldDefinition required(Boolean required) {
-    this.required = required;
+    this.required = required; 
     return this;
   }
 
@@ -119,7 +123,7 @@ public class CustomEntityFieldDefinition {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -131,9 +135,8 @@ public class CustomEntityFieldDefinition {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -151,7 +154,7 @@ public class CustomEntityFieldDefinition {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -30,18 +30,19 @@ import java.io.IOException;
  * The details of the structured market data item to upsert into Lusid.
  */
 @ApiModel(description = "The details of the structured market data item to upsert into Lusid.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpsertStructuredMarketDataRequest {
   public static final String SERIALIZED_NAME_MARKET_DATA_ID = "marketDataId";
   @SerializedName(SERIALIZED_NAME_MARKET_DATA_ID)
-  private StructuredMarketDataId marketDataId = null;
+  private StructuredMarketDataId marketDataId;
 
   public static final String SERIALIZED_NAME_MARKET_DATA = "marketData";
   @SerializedName(SERIALIZED_NAME_MARKET_DATA)
-  private StructuredMarketData marketData = null;
+  private StructuredMarketData marketData;
+
 
   public UpsertStructuredMarketDataRequest marketDataId(StructuredMarketDataId marketDataId) {
-    this.marketDataId = marketDataId;
+    this.marketDataId = marketDataId; 
     return this;
   }
 
@@ -58,8 +59,9 @@ public class UpsertStructuredMarketDataRequest {
     this.marketDataId = marketDataId;
   }
 
+
   public UpsertStructuredMarketDataRequest marketData(StructuredMarketData marketData) {
-    this.marketData = marketData;
+    this.marketData = marketData; 
     return this;
   }
 
@@ -78,7 +80,7 @@ public class UpsertStructuredMarketDataRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -90,9 +92,8 @@ public class UpsertStructuredMarketDataRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -108,7 +109,7 @@ public class UpsertStructuredMarketDataRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

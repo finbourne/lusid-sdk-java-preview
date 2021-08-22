@@ -34,7 +34,7 @@ import java.util.Map;
 /**
  * CdsIndexAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CdsIndexAllOf {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -46,7 +46,7 @@ public class CdsIndexAllOf {
 
   public static final String SERIALIZED_NAME_FLOW_CONVENTIONS = "flowConventions";
   @SerializedName(SERIALIZED_NAME_FLOW_CONVENTIONS)
-  private CdsFlowConventions flowConventions = null;
+  private CdsFlowConventions flowConventions;
 
   public static final String SERIALIZED_NAME_COUPON_RATE = "couponRate";
   @SerializedName(SERIALIZED_NAME_COUPON_RATE)
@@ -62,7 +62,7 @@ public class CdsIndexAllOf {
 
   public static final String SERIALIZED_NAME_CONVENTION_NAME = "conventionName";
   @SerializedName(SERIALIZED_NAME_CONVENTION_NAME)
-  private FlowConventionName conventionName = null;
+  private FlowConventionName conventionName;
 
   public static final String SERIALIZED_NAME_NOTIONAL = "notional";
   @SerializedName(SERIALIZED_NAME_NOTIONAL)
@@ -159,7 +159,7 @@ public class CdsIndexAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -169,8 +169,9 @@ public class CdsIndexAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public CdsIndexAllOf startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -187,8 +188,9 @@ public class CdsIndexAllOf {
     this.startDate = startDate;
   }
 
+
   public CdsIndexAllOf maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -205,8 +207,9 @@ public class CdsIndexAllOf {
     this.maturityDate = maturityDate;
   }
 
+
   public CdsIndexAllOf flowConventions(CdsFlowConventions flowConventions) {
-    this.flowConventions = flowConventions;
+    this.flowConventions = flowConventions; 
     return this;
   }
 
@@ -223,8 +226,9 @@ public class CdsIndexAllOf {
     this.flowConventions = flowConventions;
   }
 
+
   public CdsIndexAllOf couponRate(Double couponRate) {
-    this.couponRate = couponRate;
+    this.couponRate = couponRate; 
     return this;
   }
 
@@ -241,8 +245,9 @@ public class CdsIndexAllOf {
     this.couponRate = couponRate;
   }
 
+
   public CdsIndexAllOf identifiers(Map<String, String> identifiers) {
-    this.identifiers = identifiers;
+    this.identifiers = identifiers; 
     return this;
   }
 
@@ -264,8 +269,9 @@ public class CdsIndexAllOf {
     this.identifiers = identifiers;
   }
 
+
   public CdsIndexAllOf basket(Basket basket) {
-    this.basket = basket;
+    this.basket = basket; 
     return this;
   }
 
@@ -282,8 +288,9 @@ public class CdsIndexAllOf {
     this.basket = basket;
   }
 
+
   public CdsIndexAllOf conventionName(FlowConventionName conventionName) {
-    this.conventionName = conventionName;
+    this.conventionName = conventionName; 
     return this;
   }
 
@@ -300,8 +307,9 @@ public class CdsIndexAllOf {
     this.conventionName = conventionName;
   }
 
+
   public CdsIndexAllOf notional(Double notional) {
-    this.notional = notional;
+    this.notional = notional; 
     return this;
   }
 
@@ -318,8 +326,9 @@ public class CdsIndexAllOf {
     this.notional = notional;
   }
 
+
   public CdsIndexAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -338,7 +347,7 @@ public class CdsIndexAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -350,9 +359,8 @@ public class CdsIndexAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -375,7 +383,7 @@ public class CdsIndexAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

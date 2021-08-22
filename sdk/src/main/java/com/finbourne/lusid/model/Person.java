@@ -33,7 +33,7 @@ import java.util.Map;
 /**
  * Person
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Person {
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
@@ -53,18 +53,19 @@ public class Person {
 
   public static final String SERIALIZED_NAME_IDENTIFIERS = "identifiers";
   @SerializedName(SERIALIZED_NAME_IDENTIFIERS)
-  private Map<String, Property> identifiers = new HashMap<>();
+  private Map<String, Property> identifiers = null;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, List<Property>> properties = new HashMap<>();
+  private Map<String, List<Property>> properties = null;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version = null;
+  private Version version;
+
 
   public Person displayName(String displayName) {
-    this.displayName = displayName;
+    this.displayName = displayName; 
     return this;
   }
 
@@ -81,8 +82,9 @@ public class Person {
     this.displayName = displayName;
   }
 
+
   public Person description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -99,8 +101,9 @@ public class Person {
     this.description = description;
   }
 
+
   public Person href(URI href) {
-    this.href = href;
+    this.href = href; 
     return this;
   }
 
@@ -117,8 +120,9 @@ public class Person {
     this.href = href;
   }
 
+
   public Person lusidPersonId(String lusidPersonId) {
-    this.lusidPersonId = lusidPersonId;
+    this.lusidPersonId = lusidPersonId; 
     return this;
   }
 
@@ -135,8 +139,9 @@ public class Person {
     this.lusidPersonId = lusidPersonId;
   }
 
+
   public Person identifiers(Map<String, Property> identifiers) {
-    this.identifiers = identifiers;
+    this.identifiers = identifiers; 
     return this;
   }
 
@@ -161,8 +166,9 @@ public class Person {
     this.identifiers = identifiers;
   }
 
+
   public Person properties(Map<String, List<Property>> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
@@ -187,8 +193,9 @@ public class Person {
     this.properties = properties;
   }
 
+
   public Person version(Version version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -207,7 +214,7 @@ public class Person {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -219,9 +226,8 @@ public class Person {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -242,7 +248,7 @@ public class Person {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

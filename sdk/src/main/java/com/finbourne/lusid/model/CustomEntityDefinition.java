@@ -32,7 +32,7 @@ import java.util.List;
  * Representation of Custom Entity Definition on LUSID API
  */
 @ApiModel(description = "Representation of Custom Entity Definition on LUSID API")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomEntityDefinition {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -58,8 +58,9 @@ public class CustomEntityDefinition {
   @SerializedName(SERIALIZED_NAME_FIELD_SCHEMA)
   private List<CustomEntityFieldDefinition> fieldSchema = new ArrayList<>();
 
+
   public CustomEntityDefinition href(URI href) {
-    this.href = href;
+    this.href = href; 
     return this;
   }
 
@@ -76,8 +77,9 @@ public class CustomEntityDefinition {
     this.href = href;
   }
 
+
   public CustomEntityDefinition customEntityId(String customEntityId) {
-    this.customEntityId = customEntityId;
+    this.customEntityId = customEntityId; 
     return this;
   }
 
@@ -94,8 +96,9 @@ public class CustomEntityDefinition {
     this.customEntityId = customEntityId;
   }
 
+
   public CustomEntityDefinition displayName(String displayName) {
-    this.displayName = displayName;
+    this.displayName = displayName; 
     return this;
   }
 
@@ -112,8 +115,9 @@ public class CustomEntityDefinition {
     this.displayName = displayName;
   }
 
+
   public CustomEntityDefinition description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -130,8 +134,9 @@ public class CustomEntityDefinition {
     this.description = description;
   }
 
+
   public CustomEntityDefinition entityType(String entityType) {
-    this.entityType = entityType;
+    this.entityType = entityType; 
     return this;
   }
 
@@ -148,12 +153,14 @@ public class CustomEntityDefinition {
     this.entityType = entityType;
   }
 
+
   public CustomEntityDefinition fieldSchema(List<CustomEntityFieldDefinition> fieldSchema) {
-    this.fieldSchema = fieldSchema;
+    this.fieldSchema = fieldSchema; 
     return this;
   }
 
   public CustomEntityDefinition addFieldSchemaItem(CustomEntityFieldDefinition fieldSchemaItem) {
+   
     this.fieldSchema.add(fieldSchemaItem);
     return this;
   }
@@ -173,7 +180,7 @@ public class CustomEntityDefinition {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -185,9 +192,8 @@ public class CustomEntityDefinition {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -207,7 +213,7 @@ public class CustomEntityDefinition {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

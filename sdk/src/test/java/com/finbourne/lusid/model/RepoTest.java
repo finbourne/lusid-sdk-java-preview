@@ -51,4 +51,60 @@ public class RepoTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'maturityDate'
+     */
+    @Test
+    public void maturityDateTest() {
+        // TODO: test maturityDate
+    }
+
+    /**
+     * Test the property 'domCcy'
+     */
+    @Test
+    public void domCcyTest() {
+        // TODO: test domCcy
+    }
+
+    /**
+     * Test the property 'accrualBasis'
+     */
+    @Test
+    public void accrualBasisTest() {
+        // TODO: test accrualBasis
+    }
+
+    /**
+     * Test the property 'collateralValue'
+     */
+    @Test
+    public void collateralValueTest() {
+        // TODO: test collateralValue
+    }
+
+    /**
+     * Test the property 'margin'
+     */
+    @Test
+    public void marginTest() {
+        // TODO: test margin
+    }
+
+    /**
+     * Test the property 'repoRate'
+     */
+    @Test
+    public void repoRateTest() {
+        // TODO: test repoRate
+    }
+
 }

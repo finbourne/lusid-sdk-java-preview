@@ -36,11 +36,11 @@ import java.util.Map;
  * A request to create or update a Placement.
  */
 @ApiModel(description = "A request to create or update a Placement.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PlacementRequest {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
 
   public static final String SERIALIZED_NAME_BLOCK_IDS = "blockIds";
   @SerializedName(SERIALIZED_NAME_BLOCK_IDS)
@@ -48,7 +48,7 @@ public class PlacementRequest {
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = new HashMap<>();
+  private Map<String, PerpetualProperty> properties = null;
 
   public static final String SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS = "instrumentIdentifiers";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS)
@@ -80,18 +80,19 @@ public class PlacementRequest {
 
   public static final String SERIALIZED_NAME_LIMIT_PRICE = "limitPrice";
   @SerializedName(SERIALIZED_NAME_LIMIT_PRICE)
-  private CurrencyAndAmount limitPrice = null;
+  private CurrencyAndAmount limitPrice;
 
   public static final String SERIALIZED_NAME_STOP_PRICE = "stopPrice";
   @SerializedName(SERIALIZED_NAME_STOP_PRICE)
-  private CurrencyAndAmount stopPrice = null;
+  private CurrencyAndAmount stopPrice;
 
   public static final String SERIALIZED_NAME_COUNTERPARTY = "counterparty";
   @SerializedName(SERIALIZED_NAME_COUNTERPARTY)
   private String counterparty;
 
+
   public PlacementRequest id(ResourceId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -108,12 +109,14 @@ public class PlacementRequest {
     this.id = id;
   }
 
+
   public PlacementRequest blockIds(List<ResourceId> blockIds) {
-    this.blockIds = blockIds;
+    this.blockIds = blockIds; 
     return this;
   }
 
   public PlacementRequest addBlockIdsItem(ResourceId blockIdsItem) {
+   
     this.blockIds.add(blockIdsItem);
     return this;
   }
@@ -131,8 +134,9 @@ public class PlacementRequest {
     this.blockIds = blockIds;
   }
 
+
   public PlacementRequest properties(Map<String, PerpetualProperty> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
@@ -157,8 +161,9 @@ public class PlacementRequest {
     this.properties = properties;
   }
 
+
   public PlacementRequest instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
-    this.instrumentIdentifiers = instrumentIdentifiers;
+    this.instrumentIdentifiers = instrumentIdentifiers; 
     return this;
   }
 
@@ -180,8 +185,9 @@ public class PlacementRequest {
     this.instrumentIdentifiers = instrumentIdentifiers;
   }
 
+
   public PlacementRequest quantity(Double quantity) {
-    this.quantity = quantity;
+    this.quantity = quantity; 
     return this;
   }
 
@@ -198,8 +204,9 @@ public class PlacementRequest {
     this.quantity = quantity;
   }
 
+
   public PlacementRequest state(String state) {
-    this.state = state;
+    this.state = state; 
     return this;
   }
 
@@ -216,8 +223,9 @@ public class PlacementRequest {
     this.state = state;
   }
 
+
   public PlacementRequest side(String side) {
-    this.side = side;
+    this.side = side; 
     return this;
   }
 
@@ -234,8 +242,9 @@ public class PlacementRequest {
     this.side = side;
   }
 
+
   public PlacementRequest timeInForce(String timeInForce) {
-    this.timeInForce = timeInForce;
+    this.timeInForce = timeInForce; 
     return this;
   }
 
@@ -252,8 +261,9 @@ public class PlacementRequest {
     this.timeInForce = timeInForce;
   }
 
+
   public PlacementRequest type(String type) {
-    this.type = type;
+    this.type = type; 
     return this;
   }
 
@@ -270,8 +280,9 @@ public class PlacementRequest {
     this.type = type;
   }
 
+
   public PlacementRequest createdDate(OffsetDateTime createdDate) {
-    this.createdDate = createdDate;
+    this.createdDate = createdDate; 
     return this;
   }
 
@@ -288,8 +299,9 @@ public class PlacementRequest {
     this.createdDate = createdDate;
   }
 
+
   public PlacementRequest limitPrice(CurrencyAndAmount limitPrice) {
-    this.limitPrice = limitPrice;
+    this.limitPrice = limitPrice; 
     return this;
   }
 
@@ -306,8 +318,9 @@ public class PlacementRequest {
     this.limitPrice = limitPrice;
   }
 
+
   public PlacementRequest stopPrice(CurrencyAndAmount stopPrice) {
-    this.stopPrice = stopPrice;
+    this.stopPrice = stopPrice; 
     return this;
   }
 
@@ -324,8 +337,9 @@ public class PlacementRequest {
     this.stopPrice = stopPrice;
   }
 
+
   public PlacementRequest counterparty(String counterparty) {
-    this.counterparty = counterparty;
+    this.counterparty = counterparty; 
     return this;
   }
 
@@ -344,7 +358,7 @@ public class PlacementRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -356,9 +370,8 @@ public class PlacementRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -385,7 +398,7 @@ public class PlacementRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

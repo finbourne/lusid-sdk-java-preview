@@ -33,7 +33,7 @@ import java.time.OffsetDateTime;
  * Representation of a relationship containing details of source and target entities, and both outward and inward descriptions.
  */
 @ApiModel(description = "Representation of a relationship containing details of source and target entities, and both outward and inward descriptions.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CompleteRelationship {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -41,19 +41,19 @@ public class CompleteRelationship {
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version = null;
+  private Version version;
 
   public static final String SERIALIZED_NAME_RELATIONSHIP_DEFINITION_ID = "relationshipDefinitionId";
   @SerializedName(SERIALIZED_NAME_RELATIONSHIP_DEFINITION_ID)
-  private ResourceId relationshipDefinitionId = null;
+  private ResourceId relationshipDefinitionId;
 
   public static final String SERIALIZED_NAME_SOURCE_ENTITY = "sourceEntity";
   @SerializedName(SERIALIZED_NAME_SOURCE_ENTITY)
-  private RelatedEntity sourceEntity = null;
+  private RelatedEntity sourceEntity;
 
   public static final String SERIALIZED_NAME_TARGET_ENTITY = "targetEntity";
   @SerializedName(SERIALIZED_NAME_TARGET_ENTITY)
-  private RelatedEntity targetEntity = null;
+  private RelatedEntity targetEntity;
 
   public static final String SERIALIZED_NAME_OUTWARD_DESCRIPTION = "outwardDescription";
   @SerializedName(SERIALIZED_NAME_OUTWARD_DESCRIPTION)
@@ -67,8 +67,9 @@ public class CompleteRelationship {
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_FROM)
   private OffsetDateTime effectiveFrom;
 
+
   public CompleteRelationship href(URI href) {
-    this.href = href;
+    this.href = href; 
     return this;
   }
 
@@ -85,8 +86,9 @@ public class CompleteRelationship {
     this.href = href;
   }
 
+
   public CompleteRelationship version(Version version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -103,8 +105,9 @@ public class CompleteRelationship {
     this.version = version;
   }
 
+
   public CompleteRelationship relationshipDefinitionId(ResourceId relationshipDefinitionId) {
-    this.relationshipDefinitionId = relationshipDefinitionId;
+    this.relationshipDefinitionId = relationshipDefinitionId; 
     return this;
   }
 
@@ -121,8 +124,9 @@ public class CompleteRelationship {
     this.relationshipDefinitionId = relationshipDefinitionId;
   }
 
+
   public CompleteRelationship sourceEntity(RelatedEntity sourceEntity) {
-    this.sourceEntity = sourceEntity;
+    this.sourceEntity = sourceEntity; 
     return this;
   }
 
@@ -139,8 +143,9 @@ public class CompleteRelationship {
     this.sourceEntity = sourceEntity;
   }
 
+
   public CompleteRelationship targetEntity(RelatedEntity targetEntity) {
-    this.targetEntity = targetEntity;
+    this.targetEntity = targetEntity; 
     return this;
   }
 
@@ -157,8 +162,9 @@ public class CompleteRelationship {
     this.targetEntity = targetEntity;
   }
 
+
   public CompleteRelationship outwardDescription(String outwardDescription) {
-    this.outwardDescription = outwardDescription;
+    this.outwardDescription = outwardDescription; 
     return this;
   }
 
@@ -175,8 +181,9 @@ public class CompleteRelationship {
     this.outwardDescription = outwardDescription;
   }
 
+
   public CompleteRelationship inwardDescription(String inwardDescription) {
-    this.inwardDescription = inwardDescription;
+    this.inwardDescription = inwardDescription; 
     return this;
   }
 
@@ -193,8 +200,9 @@ public class CompleteRelationship {
     this.inwardDescription = inwardDescription;
   }
 
+
   public CompleteRelationship effectiveFrom(OffsetDateTime effectiveFrom) {
-    this.effectiveFrom = effectiveFrom;
+    this.effectiveFrom = effectiveFrom; 
     return this;
   }
 
@@ -213,7 +221,7 @@ public class CompleteRelationship {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -225,9 +233,8 @@ public class CompleteRelationship {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -249,7 +256,7 @@ public class CompleteRelationship {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

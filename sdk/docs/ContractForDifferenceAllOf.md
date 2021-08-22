@@ -2,12 +2,13 @@
 
 # ContractForDifferenceAllOf
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDate** | [**OffsetDateTime**](OffsetDateTime.md) | The start date of the CFD. | 
-**maturityDate** | [**OffsetDateTime**](OffsetDateTime.md) | The maturity date for the CFD. If CFDType is Futures, this should be set to be the maturity date of the underlying  future. If CFDType is Cash, this should not be set. |  [optional]
+**startDate** | **OffsetDateTime** | The start date of the CFD. | 
+**maturityDate** | **OffsetDateTime** | The maturity date for the CFD. If CFDType is Futures, this should be set to be the maturity date of the underlying  future. If CFDType is Cash, this should not be set. |  [optional]
 **code** | **String** | The code of the underlying. | 
 **contractSize** | **Double** | The size of the CFD contract, this should represent the total number of stocks that the CFD represents. | 
 **payCcy** | **String** | The currency that this CFD pays out, this can be different to the UnderlyingCcy. | 

@@ -28,7 +28,7 @@ import java.io.IOException;
  * Specification of a portfolio or portfolio group id, its scope and which it is.
  */
 @ApiModel(description = "Specification of a portfolio or portfolio group id, its scope and which it is.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PortfolioEntityId {
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
@@ -42,8 +42,9 @@ public class PortfolioEntityId {
   @SerializedName(SERIALIZED_NAME_PORTFOLIO_ENTITY_TYPE)
   private String portfolioEntityType;
 
+
   public PortfolioEntityId scope(String scope) {
-    this.scope = scope;
+    this.scope = scope; 
     return this;
   }
 
@@ -60,8 +61,9 @@ public class PortfolioEntityId {
     this.scope = scope;
   }
 
+
   public PortfolioEntityId code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -78,8 +80,9 @@ public class PortfolioEntityId {
     this.code = code;
   }
 
+
   public PortfolioEntityId portfolioEntityType(String portfolioEntityType) {
-    this.portfolioEntityType = portfolioEntityType;
+    this.portfolioEntityType = portfolioEntityType; 
     return this;
   }
 
@@ -98,7 +101,7 @@ public class PortfolioEntityId {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -110,9 +113,8 @@ public class PortfolioEntityId {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -129,7 +131,7 @@ public class PortfolioEntityId {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

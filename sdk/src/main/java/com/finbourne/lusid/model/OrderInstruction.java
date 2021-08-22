@@ -36,26 +36,27 @@ import java.util.Map;
  * Record of an order instruction
  */
 @ApiModel(description = "Record of an order instruction")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderInstruction {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = new HashMap<>();
+  private Map<String, PerpetualProperty> properties = null;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version = null;
+  private Version version;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public OrderInstruction id(ResourceId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -72,8 +73,9 @@ public class OrderInstruction {
     this.id = id;
   }
 
+
   public OrderInstruction properties(Map<String, PerpetualProperty> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
@@ -98,8 +100,9 @@ public class OrderInstruction {
     this.properties = properties;
   }
 
+
   public OrderInstruction version(Version version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -116,12 +119,14 @@ public class OrderInstruction {
     this.version = version;
   }
 
+
   public OrderInstruction links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public OrderInstruction addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -144,7 +149,7 @@ public class OrderInstruction {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -156,9 +161,8 @@ public class OrderInstruction {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -176,7 +180,7 @@ public class OrderInstruction {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

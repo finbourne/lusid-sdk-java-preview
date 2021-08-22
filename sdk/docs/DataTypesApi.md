@@ -1,6 +1,6 @@
 # DataTypesApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://local-unit-test-server.lusid.com:50272*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,14 +32,14 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:50272");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     DataTypesApi apiInstance = new DataTypesApi(defaultClient);
-    CreateDataTypeRequest createDataTypeRequest = {"scope":"TestScope","code":"MyType","typeValueRange":"Open","displayName":"My data format","description":"Data type description","valueType":"Decimal","unitSchema":"Basic","acceptableUnits":[{"code":"Ap","displayName":"Apples","description":"A quantity of apples"},{"code":"Bn","displayName":"Bananas","description":"A quantity of bananas"},{"code":"Ch","displayName":"Cherry","description":"A quantity of cherries"}]}; // CreateDataTypeRequest | The definition of the new data type
+    CreateDataTypeRequest createDataTypeRequest = new CreateDataTypeRequest(); // CreateDataTypeRequest | The definition of the new data type
     try {
       DataType result = apiInstance.createDataType(createDataTypeRequest);
       System.out.println(result);
@@ -101,7 +101,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:50272");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -110,7 +110,7 @@ public class Example {
     DataTypesApi apiInstance = new DataTypesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the data type
     String code = "code_example"; // String | The code of the data type
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the data type definition. Defaults to              return the latest version of the instrument definition if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the data type definition. Defaults to              return the latest version of the instrument definition if not specified.
     try {
       DataType result = apiInstance.getDataType(scope, code, asAt);
       System.out.println(result);
@@ -174,7 +174,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:50272");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -185,7 +185,7 @@ public class Example {
     String code = "code_example"; // String | The code of the data type
     List<String> units = Arrays.asList(); // List<String> | One or more unit identifiers for which the definition is being requested
     String filter = "filter_example"; // String | Optional. Expression to filter the result set.               For example, to filter on the Schema, use \"schema eq 'string'\"              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | Optional. The as at of the requested data type
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | Optional. The as at of the requested data type
     try {
       ResourceListOfIUnitDefinitionDto result = apiInstance.getUnitsFromDataType(scope, code, units, filter, asAt);
       System.out.println(result);
@@ -251,7 +251,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:50272");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -259,7 +259,7 @@ public class Example {
 
     DataTypesApi apiInstance = new DataTypesApi(defaultClient);
     String scope = "scope_example"; // String | The requested scope of the data types
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The as at of the requested data types
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The as at of the requested data types
     Boolean includeSystem = true; // Boolean | Whether to additionally include those data types in the \"system\" scope
     List<String> sortBy = Arrays.asList(); // List<String> | Optional. Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName
     Integer start = 56; // Integer | Optional. When paginating, skip this number of results
@@ -332,7 +332,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:50272");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -341,7 +341,7 @@ public class Example {
     DataTypesApi apiInstance = new DataTypesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the data type
     String code = "code_example"; // String | The code of the data type
-    UpdateDataTypeRequest updateDataTypeRequest = {"typeValueRange":"Open","displayName":"My data format","description":"Data type description","valueType":"Decimal","unitSchema":"Basic","acceptableUnits":[{"code":"Ap","displayName":"Apples","description":"A quantity of apples"},{"code":"Bn","displayName":"Bananas","description":"A quantity of bananas"},{"code":"Ch","displayName":"Cherry","description":"A quantity of cherries"}]}; // UpdateDataTypeRequest | The updated definition of the data type
+    UpdateDataTypeRequest updateDataTypeRequest = new UpdateDataTypeRequest(); // UpdateDataTypeRequest | The updated definition of the data type
     try {
       DataType result = apiInstance.updateDataType(scope, code, updateDataTypeRequest);
       System.out.println(result);

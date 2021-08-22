@@ -32,15 +32,15 @@ import java.util.List;
 /**
  * RelationDefinition
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class RelationDefinition {
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version = null;
+  private Version version;
 
   public static final String SERIALIZED_NAME_RELATION_DEFINITION_ID = "relationDefinitionId";
   @SerializedName(SERIALIZED_NAME_RELATION_DEFINITION_ID)
-  private ResourceId relationDefinitionId = null;
+  private ResourceId relationDefinitionId;
 
   public static final String SERIALIZED_NAME_SOURCE_ENTITY_DOMAIN = "sourceEntityDomain";
   @SerializedName(SERIALIZED_NAME_SOURCE_ENTITY_DOMAIN)
@@ -72,10 +72,11 @@ public class RelationDefinition {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public RelationDefinition version(Version version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -92,8 +93,9 @@ public class RelationDefinition {
     this.version = version;
   }
 
+
   public RelationDefinition relationDefinitionId(ResourceId relationDefinitionId) {
-    this.relationDefinitionId = relationDefinitionId;
+    this.relationDefinitionId = relationDefinitionId; 
     return this;
   }
 
@@ -110,8 +112,9 @@ public class RelationDefinition {
     this.relationDefinitionId = relationDefinitionId;
   }
 
+
   public RelationDefinition sourceEntityDomain(String sourceEntityDomain) {
-    this.sourceEntityDomain = sourceEntityDomain;
+    this.sourceEntityDomain = sourceEntityDomain; 
     return this;
   }
 
@@ -128,8 +131,9 @@ public class RelationDefinition {
     this.sourceEntityDomain = sourceEntityDomain;
   }
 
+
   public RelationDefinition targetEntityDomain(String targetEntityDomain) {
-    this.targetEntityDomain = targetEntityDomain;
+    this.targetEntityDomain = targetEntityDomain; 
     return this;
   }
 
@@ -146,8 +150,9 @@ public class RelationDefinition {
     this.targetEntityDomain = targetEntityDomain;
   }
 
+
   public RelationDefinition displayName(String displayName) {
-    this.displayName = displayName;
+    this.displayName = displayName; 
     return this;
   }
 
@@ -164,8 +169,9 @@ public class RelationDefinition {
     this.displayName = displayName;
   }
 
+
   public RelationDefinition outwardDescription(String outwardDescription) {
-    this.outwardDescription = outwardDescription;
+    this.outwardDescription = outwardDescription; 
     return this;
   }
 
@@ -182,8 +188,9 @@ public class RelationDefinition {
     this.outwardDescription = outwardDescription;
   }
 
+
   public RelationDefinition inwardDescription(String inwardDescription) {
-    this.inwardDescription = inwardDescription;
+    this.inwardDescription = inwardDescription; 
     return this;
   }
 
@@ -200,8 +207,9 @@ public class RelationDefinition {
     this.inwardDescription = inwardDescription;
   }
 
+
   public RelationDefinition lifeTime(String lifeTime) {
-    this.lifeTime = lifeTime;
+    this.lifeTime = lifeTime; 
     return this;
   }
 
@@ -218,8 +226,9 @@ public class RelationDefinition {
     this.lifeTime = lifeTime;
   }
 
+
   public RelationDefinition constraintStyle(String constraintStyle) {
-    this.constraintStyle = constraintStyle;
+    this.constraintStyle = constraintStyle; 
     return this;
   }
 
@@ -236,12 +245,14 @@ public class RelationDefinition {
     this.constraintStyle = constraintStyle;
   }
 
+
   public RelationDefinition links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public RelationDefinition addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -264,7 +275,7 @@ public class RelationDefinition {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -276,9 +287,8 @@ public class RelationDefinition {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -302,7 +312,7 @@ public class RelationDefinition {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

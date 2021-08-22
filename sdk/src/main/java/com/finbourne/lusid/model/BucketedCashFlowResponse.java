@@ -33,7 +33,7 @@ import java.util.Map;
 /**
  * BucketedCashFlowResponse
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BucketedCashFlowResponse {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -41,7 +41,7 @@ public class BucketedCashFlowResponse {
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private List<Map<String, Object>> data = new ArrayList<>();
+  private List<Map<String, Object>> data = null;
 
   public static final String SERIALIZED_NAME_REPORT_CURRENCY = "reportCurrency";
   @SerializedName(SERIALIZED_NAME_REPORT_CURRENCY)
@@ -49,14 +49,15 @@ public class BucketedCashFlowResponse {
 
   public static final String SERIALIZED_NAME_DATA_SCHEMA = "dataSchema";
   @SerializedName(SERIALIZED_NAME_DATA_SCHEMA)
-  private ResultDataSchema dataSchema = null;
+  private ResultDataSchema dataSchema;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public BucketedCashFlowResponse href(URI href) {
-    this.href = href;
+    this.href = href; 
     return this;
   }
 
@@ -73,12 +74,14 @@ public class BucketedCashFlowResponse {
     this.href = href;
   }
 
+
   public BucketedCashFlowResponse data(List<Map<String, Object>> data) {
-    this.data = data;
+    this.data = data; 
     return this;
   }
 
   public BucketedCashFlowResponse addDataItem(Map<String, Object> dataItem) {
+   
     if (this.data == null) {
       this.data = new ArrayList<>();
     }
@@ -99,8 +102,9 @@ public class BucketedCashFlowResponse {
     this.data = data;
   }
 
+
   public BucketedCashFlowResponse reportCurrency(String reportCurrency) {
-    this.reportCurrency = reportCurrency;
+    this.reportCurrency = reportCurrency; 
     return this;
   }
 
@@ -117,8 +121,9 @@ public class BucketedCashFlowResponse {
     this.reportCurrency = reportCurrency;
   }
 
+
   public BucketedCashFlowResponse dataSchema(ResultDataSchema dataSchema) {
-    this.dataSchema = dataSchema;
+    this.dataSchema = dataSchema; 
     return this;
   }
 
@@ -135,12 +140,14 @@ public class BucketedCashFlowResponse {
     this.dataSchema = dataSchema;
   }
 
+
   public BucketedCashFlowResponse links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public BucketedCashFlowResponse addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -163,7 +170,7 @@ public class BucketedCashFlowResponse {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -175,9 +182,8 @@ public class BucketedCashFlowResponse {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -196,7 +202,7 @@ public class BucketedCashFlowResponse {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

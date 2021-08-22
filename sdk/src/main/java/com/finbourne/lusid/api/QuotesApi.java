@@ -49,7 +49,6 @@ import java.util.Map;
 
 public class QuotesApi {
     private ApiClient localVarApiClient;
-
     public QuotesApi() {
         this(Configuration.getDefaultApiClient());
     }
@@ -88,7 +87,7 @@ public class QuotesApi {
      </table>
      */
     public okhttp3.Call deleteQuoteAcccesMetadataRuleCall(String scope, String provider, String priceSource, String instrumentIdType, String instrumentId, String quoteType, String field, String effectiveAt, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/metadata/quotes/rules/{scope}"
@@ -96,6 +95,10 @@ public class QuotesApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (provider != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("provider", provider));
         }
@@ -124,8 +127,6 @@ public class QuotesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("effectiveAt", effectiveAt));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -143,7 +144,7 @@ public class QuotesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -236,7 +237,6 @@ public class QuotesApi {
      </table>
      */
     public okhttp3.Call deleteQuoteAcccesMetadataRuleAsync(String scope, String provider, String priceSource, String instrumentIdType, String instrumentId, String quoteType, String field, String effectiveAt, final ApiCallback<QuoteAccessMetadataRule> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = deleteQuoteAcccesMetadataRuleValidateBeforeCall(scope, provider, priceSource, instrumentIdType, instrumentId, quoteType, field, effectiveAt, _callback);
         Type localVarReturnType = new TypeToken<QuoteAccessMetadataRule>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -267,7 +267,9 @@ public class QuotesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -285,7 +287,7 @@ public class QuotesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -360,7 +362,6 @@ public class QuotesApi {
      </table>
      */
     public okhttp3.Call deleteQuotesAsync(String scope, Map<String, QuoteId> requestBody, final ApiCallback<AnnulQuotesResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = deleteQuotesValidateBeforeCall(scope, requestBody, _callback);
         Type localVarReturnType = new TypeToken<AnnulQuotesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -393,6 +394,10 @@ public class QuotesApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (effectiveAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("effectiveAt", effectiveAt));
         }
@@ -405,8 +410,6 @@ public class QuotesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("maxAge", maxAge));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -424,7 +427,7 @@ public class QuotesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -508,7 +511,6 @@ public class QuotesApi {
      </table>
      */
     public okhttp3.Call getQuotesAsync(String scope, String effectiveAt, OffsetDateTime asAt, String maxAge, Map<String, QuoteSeriesId> requestBody, final ApiCallback<GetQuotesResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getQuotesValidateBeforeCall(scope, effectiveAt, asAt, maxAge, requestBody, _callback);
         Type localVarReturnType = new TypeToken<GetQuotesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -537,13 +539,17 @@ public class QuotesApi {
      </table>
      */
     public okhttp3.Call getQuotesAccessMetadataRuleCall(String scope, String provider, String priceSource, String instrumentIdType, String instrumentId, String quoteType, String field, String effectiveAt, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/metadata/quotes/rules";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (scope != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("scope", scope));
         }
@@ -580,8 +586,6 @@ public class QuotesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -599,7 +603,7 @@ public class QuotesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -695,7 +699,6 @@ public class QuotesApi {
      </table>
      */
     public okhttp3.Call getQuotesAccessMetadataRuleAsync(String scope, String provider, String priceSource, String instrumentIdType, String instrumentId, String quoteType, String field, String effectiveAt, OffsetDateTime asAt, final ApiCallback<QuoteAccessMetadataRule> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getQuotesAccessMetadataRuleValidateBeforeCall(scope, provider, priceSource, instrumentIdType, instrumentId, quoteType, field, effectiveAt, asAt, _callback);
         Type localVarReturnType = new TypeToken<QuoteAccessMetadataRule>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -721,7 +724,7 @@ public class QuotesApi {
      </table>
      */
     public okhttp3.Call listQuotesCall(String scope, OffsetDateTime asAt, String page, Integer start, Integer limit, String filter, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/quotes/{scope}/$deprecated"
@@ -729,6 +732,10 @@ public class QuotesApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (asAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
@@ -749,8 +756,6 @@ public class QuotesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -768,7 +773,7 @@ public class QuotesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -855,7 +860,6 @@ public class QuotesApi {
      </table>
      */
     public okhttp3.Call listQuotesAsync(String scope, OffsetDateTime asAt, String page, Integer start, Integer limit, String filter, final ApiCallback<ResourceListOfQuote> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = listQuotesValidateBeforeCall(scope, asAt, page, start, limit, filter, _callback);
         Type localVarReturnType = new TypeToken<ResourceListOfQuote>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -877,7 +881,7 @@ public class QuotesApi {
      </table>
      */
     public okhttp3.Call listQuotesAccessMetadataRulesCall(String scope, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/metadata/quotes/rules/{scope}"
@@ -885,12 +889,14 @@ public class QuotesApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (asAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -908,7 +914,7 @@ public class QuotesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -983,7 +989,6 @@ public class QuotesApi {
      </table>
      */
     public okhttp3.Call listQuotesAccessMetadataRulesAsync(String scope, OffsetDateTime asAt, final ApiCallback<ResourceListOfQuoteAccessMetadataRule> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = listQuotesAccessMetadataRulesValidateBeforeCall(scope, asAt, _callback);
         Type localVarReturnType = new TypeToken<ResourceListOfQuoteAccessMetadataRule>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -1009,7 +1014,7 @@ public class QuotesApi {
      </table>
      */
     public okhttp3.Call listQuotesForScopeCall(String scope, OffsetDateTime asAt, String page, Integer start, Integer limit, String filter, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/quotes/{scope}"
@@ -1017,6 +1022,10 @@ public class QuotesApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (asAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
@@ -1037,8 +1046,6 @@ public class QuotesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -1056,7 +1063,7 @@ public class QuotesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1143,7 +1150,6 @@ public class QuotesApi {
      </table>
      */
     public okhttp3.Call listQuotesForScopeAsync(String scope, OffsetDateTime asAt, String page, Integer start, Integer limit, String filter, final ApiCallback<ResourceListOfQuote> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = listQuotesForScopeValidateBeforeCall(scope, asAt, page, start, limit, filter, _callback);
         Type localVarReturnType = new TypeToken<ResourceListOfQuote>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -1174,12 +1180,14 @@ public class QuotesApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (effectiveAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("effectiveAt", effectiveAt));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -1197,7 +1205,7 @@ public class QuotesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1280,7 +1288,6 @@ public class QuotesApi {
      </table>
      */
     public okhttp3.Call upsertQuoteAccessMetadataRuleAsync(String scope, UpsertQuoteAccessMetadataRuleRequest upsertQuoteAccessMetadataRuleRequest, String effectiveAt, final ApiCallback<QuoteAccessMetadataRule> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = upsertQuoteAccessMetadataRuleValidateBeforeCall(scope, upsertQuoteAccessMetadataRuleRequest, effectiveAt, _callback);
         Type localVarReturnType = new TypeToken<QuoteAccessMetadataRule>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -1311,7 +1318,9 @@ public class QuotesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -1329,7 +1338,7 @@ public class QuotesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3412");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1404,7 +1413,6 @@ public class QuotesApi {
      </table>
      */
     public okhttp3.Call upsertQuotesAsync(String scope, Map<String, UpsertQuoteRequest> requestBody, final ApiCallback<UpsertQuotesResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = upsertQuotesValidateBeforeCall(scope, requestBody, _callback);
         Type localVarReturnType = new TypeToken<UpsertQuotesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);

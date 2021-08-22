@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * UpdateDataTypeRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpdateDataTypeRequest {
   /**
    * The available values are: Open, Closed
@@ -73,7 +73,7 @@ public class UpdateDataTypeRequest {
 
       @Override
       public TypeValueRangeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return TypeValueRangeEnum.fromValue(value);
       }
     }
@@ -168,7 +168,7 @@ public class UpdateDataTypeRequest {
 
       @Override
       public ValueTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return ValueTypeEnum.fromValue(value);
       }
     }
@@ -180,7 +180,7 @@ public class UpdateDataTypeRequest {
 
   public static final String SERIALIZED_NAME_ACCEPTABLE_VALUES = "acceptableValues";
   @SerializedName(SERIALIZED_NAME_ACCEPTABLE_VALUES)
-  private List<String> acceptableValues = new ArrayList<>();
+  private List<String> acceptableValues = null;
 
   /**
    * The available values are: NoUnits, Basic, Iso4217Currency
@@ -225,7 +225,7 @@ public class UpdateDataTypeRequest {
 
       @Override
       public UnitSchemaEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return UnitSchemaEnum.fromValue(value);
       }
     }
@@ -237,10 +237,11 @@ public class UpdateDataTypeRequest {
 
   public static final String SERIALIZED_NAME_ACCEPTABLE_UNITS = "acceptableUnits";
   @SerializedName(SERIALIZED_NAME_ACCEPTABLE_UNITS)
-  private List<CreateUnitDefinition> acceptableUnits = new ArrayList<>();
+  private List<CreateUnitDefinition> acceptableUnits = null;
+
 
   public UpdateDataTypeRequest typeValueRange(TypeValueRangeEnum typeValueRange) {
-    this.typeValueRange = typeValueRange;
+    this.typeValueRange = typeValueRange; 
     return this;
   }
 
@@ -257,8 +258,9 @@ public class UpdateDataTypeRequest {
     this.typeValueRange = typeValueRange;
   }
 
+
   public UpdateDataTypeRequest displayName(String displayName) {
-    this.displayName = displayName;
+    this.displayName = displayName; 
     return this;
   }
 
@@ -275,8 +277,9 @@ public class UpdateDataTypeRequest {
     this.displayName = displayName;
   }
 
+
   public UpdateDataTypeRequest description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -293,8 +296,9 @@ public class UpdateDataTypeRequest {
     this.description = description;
   }
 
+
   public UpdateDataTypeRequest valueType(ValueTypeEnum valueType) {
-    this.valueType = valueType;
+    this.valueType = valueType; 
     return this;
   }
 
@@ -311,12 +315,14 @@ public class UpdateDataTypeRequest {
     this.valueType = valueType;
   }
 
+
   public UpdateDataTypeRequest acceptableValues(List<String> acceptableValues) {
-    this.acceptableValues = acceptableValues;
+    this.acceptableValues = acceptableValues; 
     return this;
   }
 
   public UpdateDataTypeRequest addAcceptableValuesItem(String acceptableValuesItem) {
+   
     if (this.acceptableValues == null) {
       this.acceptableValues = new ArrayList<>();
     }
@@ -337,8 +343,9 @@ public class UpdateDataTypeRequest {
     this.acceptableValues = acceptableValues;
   }
 
+
   public UpdateDataTypeRequest unitSchema(UnitSchemaEnum unitSchema) {
-    this.unitSchema = unitSchema;
+    this.unitSchema = unitSchema; 
     return this;
   }
 
@@ -355,12 +362,14 @@ public class UpdateDataTypeRequest {
     this.unitSchema = unitSchema;
   }
 
+
   public UpdateDataTypeRequest acceptableUnits(List<CreateUnitDefinition> acceptableUnits) {
-    this.acceptableUnits = acceptableUnits;
+    this.acceptableUnits = acceptableUnits; 
     return this;
   }
 
   public UpdateDataTypeRequest addAcceptableUnitsItem(CreateUnitDefinition acceptableUnitsItem) {
+   
     if (this.acceptableUnits == null) {
       this.acceptableUnits = new ArrayList<>();
     }
@@ -383,7 +392,7 @@ public class UpdateDataTypeRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -395,9 +404,8 @@ public class UpdateDataTypeRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -418,7 +426,7 @@ public class UpdateDataTypeRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
