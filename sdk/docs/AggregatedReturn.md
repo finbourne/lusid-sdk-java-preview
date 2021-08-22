@@ -2,13 +2,11 @@
 
 # AggregatedReturn
 
-A list of Aggregated Returns.
-
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**effectiveAt** | **OffsetDateTime** | The effectiveAt for the return. | 
+**effectiveAt** | [**OffsetDateTime**](OffsetDateTime.md) | The effectiveAt for the return. | 
 **openingMarketValue** | **Double** | The opening market value. |  [optional]
 **closingMarketValue** | **Double** | The closing market value. |  [optional]
 **metricsValue** | **Map&lt;String, Double&gt;** | The value for the specified metric. | 

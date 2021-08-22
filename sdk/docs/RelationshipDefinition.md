@@ -2,7 +2,6 @@
 
 # RelationshipDefinition
 
-
 ## Properties
 
 Name | Type | Description | Notes

@@ -2,8 +2,6 @@
 
 # A2BDataRecord
 
-A2B Record - shows values on, and changes between two dates: A and B
-
 ## Properties
 
 Name | Type | Description | Notes

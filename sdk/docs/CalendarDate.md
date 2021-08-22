@@ -2,15 +2,14 @@
 
 # CalendarDate
 
-
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **URI** |  |  [optional]
+**href** | [**URI**](URI.md) |  |  [optional]
 **dateIdentifier** | **String** |  | 
-**fromUtc** | **OffsetDateTime** |  | 
-**toUtc** | **OffsetDateTime** |  | 
+**fromUtc** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
+**toUtc** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 **localDate** | **String** |  | 
 **timezone** | **String** |  | 
 **description** | **String** |  | 

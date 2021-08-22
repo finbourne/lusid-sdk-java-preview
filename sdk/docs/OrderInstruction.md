@@ -2,8 +2,6 @@
 
 # OrderInstruction
 
-Record of an order instruction
-
 ## Properties
 
 Name | Type | Description | Notes

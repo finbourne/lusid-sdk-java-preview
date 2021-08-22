@@ -2,8 +2,6 @@
 
 # Execution
 
-The record of a number of executions against a single Placement (directly analogous to  a partial or full fill against a street order).
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -17,8 +15,8 @@ Name | Type | Description | Notes
 **state** | **String** | The state of this execution (typically a FIX state; Open, Filled, etc). | 
 **side** | **String** | The side (Buy, Sell, ...) of this execution. | 
 **type** | **String** | The type of this execution (Market, Limit, etc). | 
-**createdDate** | **OffsetDateTime** | The active date of this execution. | 
-**settlementDate** | **OffsetDateTime** | The (optional) settlement date for this execution |  [optional]
+**createdDate** | [**OffsetDateTime**](OffsetDateTime.md) | The active date of this execution. | 
+**settlementDate** | [**OffsetDateTime**](OffsetDateTime.md) | The (optional) settlement date for this execution |  [optional]
 **price** | [**CurrencyAndAmount**](CurrencyAndAmount.md) |  | 
 **settlementCurrency** | **String** | The execution&#39;s settlement currency. | 
 **settlementCurrencyFxRate** | **Double** | The exectuion&#39;s settlement currency rate. | 

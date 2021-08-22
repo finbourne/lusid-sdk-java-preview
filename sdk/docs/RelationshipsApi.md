@@ -1,6 +1,6 @@
 # RelationshipsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:39646*
+All URIs are relative to *http://local-unit-test-server.lusid.com:62039*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,7 +29,7 @@ import com.finbourne.lusid.api.RelationshipsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:39646");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62039");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -38,7 +38,7 @@ public class Example {
     RelationshipsApi apiInstance = new RelationshipsApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the relationship
     String code = "code_example"; // String | The code of the relationship
-    CreateRelationshipRequest createRelationshipRequest = new CreateRelationshipRequest(); // CreateRelationshipRequest | The details of the relationship to create.
+    CreateRelationshipRequest createRelationshipRequest = {"sourceEntityId":{"scope":"UkPortfolio","code":"PortfolioId-148176"},"targetEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"}}; // CreateRelationshipRequest | The details of the relationship to create.
     try {
       CompleteRelationship result = apiInstance.createRelationship(scope, code, createRelationshipRequest);
       System.out.println(result);
@@ -102,7 +102,7 @@ import com.finbourne.lusid.api.RelationshipsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:39646");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62039");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -111,7 +111,7 @@ public class Example {
     RelationshipsApi apiInstance = new RelationshipsApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the relationship
     String code = "code_example"; // String | The code of the relationship
-    DeleteRelationshipRequest deleteRelationshipRequest = new DeleteRelationshipRequest(); // DeleteRelationshipRequest | The details of the relationship to delete.
+    DeleteRelationshipRequest deleteRelationshipRequest = {"sourceEntityId":{"scope":"UkPortfolio","code":"PortfolioId-148176"},"targetEntityId":{"idTypeScope":"HrSystem1","idTypeCode":"InternalId","code":"XY10001111"},"effectiveFrom":"2019-01-10T00:00:00.0000000+00:00"}; // DeleteRelationshipRequest | The details of the relationship to delete.
     try {
       DeletedEntityResponse result = apiInstance.deleteRelationship(scope, code, deleteRelationshipRequest);
       System.out.println(result);

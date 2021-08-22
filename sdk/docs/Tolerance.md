@@ -2,7 +2,6 @@
 
 # Tolerance
 
-
 ## Properties
 
 Name | Type | Description | Notes

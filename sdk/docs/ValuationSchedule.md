@@ -2,8 +2,6 @@
 
 # ValuationSchedule
 
-Specification object for the valuation schedule, how do we determine which days we wish to perform a valuation upon.
-
 ## Properties
 
 Name | Type | Description | Notes

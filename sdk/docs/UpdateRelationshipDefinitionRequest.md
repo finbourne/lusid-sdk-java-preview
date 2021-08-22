@@ -2,7 +2,6 @@
 
 # UpdateRelationshipDefinitionRequest
 
-
 ## Properties
 
 Name | Type | Description | Notes

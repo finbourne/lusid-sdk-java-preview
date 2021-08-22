@@ -2,8 +2,6 @@
 
 # PlacementRequest
 
-A request to create or update a Placement.
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -17,7 +15,7 @@ Name | Type | Description | Notes
 **side** | **String** | The side (Buy, Sell, ...) of this placement. | 
 **timeInForce** | **String** | The time in force applicable to this placement (GTC, FOK, Day, etc) | 
 **type** | **String** | The type of this placement (Market, Limit, etc). | 
-**createdDate** | **OffsetDateTime** | The active date of this placement. | 
+**createdDate** | [**OffsetDateTime**](OffsetDateTime.md) | The active date of this placement. | 
 **limitPrice** | [**CurrencyAndAmount**](CurrencyAndAmount.md) |  |  [optional]
 **stopPrice** | [**CurrencyAndAmount**](CurrencyAndAmount.md) |  |  [optional]
 **counterparty** | **String** | The market entity this placement is placed with. | 

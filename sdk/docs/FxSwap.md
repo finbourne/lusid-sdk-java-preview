@@ -2,8 +2,6 @@
 
 # FxSwap
 
-IL FX Swap Instrument; Lusid-ibor internal representation of an FX Swap instrument
-
 ## Properties
 
 Name | Type | Description | Notes

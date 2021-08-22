@@ -2,13 +2,12 @@
 
 # FundingLegAllOf
 
-
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDate** | **OffsetDateTime** |  | 
-**maturityDate** | **OffsetDateTime** |  | 
+**startDate** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
+**maturityDate** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 **legDefinition** | [**LegDefinition**](LegDefinition.md) |  | 
 **notional** | **Double** |  | 
 **instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo | 

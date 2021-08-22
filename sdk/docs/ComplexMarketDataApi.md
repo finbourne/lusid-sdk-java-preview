@@ -1,6 +1,6 @@
 # ComplexMarketDataApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:39646*
+All URIs are relative to *http://local-unit-test-server.lusid.com:62039*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,7 +30,7 @@ import com.finbourne.lusid.api.ComplexMarketDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:39646");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62039");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -38,7 +38,7 @@ public class Example {
 
     ComplexMarketDataApi apiInstance = new ComplexMarketDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the complex market data to delete.
-    Map<String, ComplexMarketDataId> requestBody = new HashMap(); // Map<String, ComplexMarketDataId> | The complex market data Ids to delete, each keyed by a unique correlation id.
+    Map<String, ComplexMarketDataId> requestBody = {"first-item":{"provider":"DataScope","priceSource":"Some Bank Plc","lineage":"Swaps Desk Trader A","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","marketAsset":"USDOIS"},"second-item":{"provider":"DataScope","priceSource":"AN.Other Bank Plc","lineage":"Swaps Desk Trader B","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","marketAsset":"RBS"}}; // Map<String, ComplexMarketDataId> | The complex market data Ids to delete, each keyed by a unique correlation id.
     try {
       AnnulStructuredDataResponse result = apiInstance.deleteComplexMarketData(scope, requestBody);
       System.out.println(result);
@@ -101,7 +101,7 @@ import com.finbourne.lusid.api.ComplexMarketDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:39646");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62039");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -109,9 +109,9 @@ public class Example {
 
     ComplexMarketDataApi apiInstance = new ComplexMarketDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the complex market data to retrieve.
-    Map<String, ComplexMarketDataId> requestBody = new HashMap(); // Map<String, ComplexMarketDataId> | The time invariant set of complex data identifiers to retrieve the data for. These need to be               keyed by a unique correlation id allowing the retrieved item to be identified in the response.
+    Map<String, ComplexMarketDataId> requestBody = {"first-item":{"provider":"DataScope","priceSource":"Some Bank Plc","lineage":"Swaps Desk Trader A","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","marketAsset":"USDOIS"},"second-item":{"provider":"DataScope","priceSource":"AN.Other Bank Plc","lineage":"Swaps Desk Trader B","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","marketAsset":"RBS"}}; // Map<String, ComplexMarketDataId> | The time invariant set of complex data identifiers to retrieve the data for. These need to be               keyed by a unique correlation id allowing the retrieved item to be identified in the response.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime at which to retrieve the complex market data. Defaults to the current LUSID system datetime if not specified.
-    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the complex market data. Defaults to return the latest version if not specified.
+    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the complex market data. Defaults to return the latest version if not specified.
     String maxAge = "maxAge_example"; // String | The duration of the look back window in an ISO8601 time interval format e.g. P1Y2M3DT4H30M (1 year, 2 months, 3 days, 4 hours and 30 minutes).               This is subtracted from the provided effectiveAt datetime to generate a effective datetime window inside which a complex market data item must exist to be retrieved.
     try {
       GetComplexMarketDataResponse result = apiInstance.getComplexMarketData(scope, requestBody, effectiveAt, asAt, maxAge);
@@ -178,7 +178,7 @@ import com.finbourne.lusid.api.ComplexMarketDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:39646");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62039");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -186,7 +186,7 @@ public class Example {
 
     ComplexMarketDataApi apiInstance = new ComplexMarketDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope to use when updating or inserting the complex market data.
-    Map<String, UpsertComplexMarketDataRequest> requestBody = new HashMap(); // Map<String, UpsertComplexMarketDataRequest> | The set of complex market data items to update or insert keyed by a unique correlation id.
+    Map<String, UpsertComplexMarketDataRequest> requestBody = {"first-item":{"marketDataId":{"provider":"DataScope","priceSource":"Some Bank Plc","lineage":"Swaps Desk Trader A","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","marketAsset":"USDOIS"},"marketData":{"baseDate":"1970-01-01T00:00:00.0000000+00:00","dates":["1970-01-01T00:00:00.0000000+00:00"],"discountFactors":[1],"marketDataType":"DiscountFactorCurveData"}},"second-item":{"marketDataId":{"provider":"DataScope","priceSource":"AN.Other Bank Plc","lineage":"Swaps Desk Trader B","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","marketAsset":"RBS"},"marketData":{"document":"{ \"some\":\"valid json\"}","format":"Json","name":"free text identifier of document 1","marketDataType":"OpaqueMarketData"}}}; // Map<String, UpsertComplexMarketDataRequest> | The set of complex market data items to update or insert keyed by a unique correlation id.
     try {
       UpsertStructuredDataResponse result = apiInstance.upsertComplexMarketData(scope, requestBody);
       System.out.println(result);

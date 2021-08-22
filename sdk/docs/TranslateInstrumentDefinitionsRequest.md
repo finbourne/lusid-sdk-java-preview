@@ -2,8 +2,6 @@
 
 # TranslateInstrumentDefinitionsRequest
 
-A collection of instruments to translate, along with the target dialect to translate into.
-
 ## Properties
 
 Name | Type | Description | Notes
