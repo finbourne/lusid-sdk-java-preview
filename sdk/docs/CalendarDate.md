@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **timezone** | **String** |  | 
 **description** | **String** |  | 
 **type** | **String** |  | 
-**attributes** | [**DateAttributes**](DateAttributes.md) |  | 
-**sourceData** | **Map&lt;String, String&gt;** |  | 
+**attributes** | [**DateAttributes**](DateAttributes.md) |  |  [optional]
+**sourceData** | **Map&lt;String, String&gt;** |  |  [optional]
 
 
 
