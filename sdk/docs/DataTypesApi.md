@@ -1,6 +1,6 @@
 # DataTypesApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:58038*
+All URIs are relative to *http://local-unit-test-server.lusid.com:53048*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,7 +32,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58038");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53048");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -101,7 +101,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58038");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53048");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -174,7 +174,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58038");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53048");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -251,7 +251,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58038");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53048");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -332,7 +332,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58038");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53048");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -341,7 +341,7 @@ public class Example {
     DataTypesApi apiInstance = new DataTypesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the data type
     String code = "code_example"; // String | The code of the data type
-    UpdateDataTypeRequest updateDataTypeRequest = {"typeValueRange":"Open","displayName":"My data format","description":"Data type description","valueType":"Decimal","unitSchema":"Basic","acceptableUnits":[{"code":"Ap","displayName":"Apples","description":"A quantity of apples"},{"code":"Bn","displayName":"Bananas","description":"A quantity of bananas"},{"code":"Ch","displayName":"Cherry","description":"A quantity of cherries"}]}; // UpdateDataTypeRequest | The updated definition of the data type
+    UpdateDataTypeRequest updateDataTypeRequest = {"displayName":"My data format","description":"Data type description"}; // UpdateDataTypeRequest | The updated definition of the data type
     try {
       DataType result = apiInstance.updateDataType(scope, code, updateDataTypeRequest);
       System.out.println(result);
