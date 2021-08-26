@@ -1,6 +1,6 @@
 # SystemConfigurationApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:61410*
+All URIs are relative to *http://local-unit-test-server.lusid.com:46515*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:61410");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:46515");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -100,14 +100,14 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:61410");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:46515");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     SystemConfigurationApi apiInstance = new SystemConfigurationApi(defaultClient);
-    SideConfigurationDataRequest sideConfigurationDataRequest = {"side":"Side1","security":"security","currency":"currency","rate":"0.5","units":"500","amount":"1000"}; // SideConfigurationDataRequest | The definition of the side.
+    SideConfigurationDataRequest sideConfigurationDataRequest = {"side":"Side_Test","security":"security","currency":"currency","rate":"0.7","units":"300","amount":"2000"}; // SideConfigurationDataRequest | The definition of the side.
     try {
       TransactionSetConfigurationData result = apiInstance.createSideDefinition(sideConfigurationDataRequest);
       System.out.println(result);
@@ -169,7 +169,7 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:61410");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:46515");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -238,7 +238,7 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:61410");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:46515");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
