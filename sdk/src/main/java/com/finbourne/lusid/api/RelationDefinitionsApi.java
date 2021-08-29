@@ -41,7 +41,6 @@ import java.util.Map;
 
 public class RelationDefinitionsApi {
     private ApiClient localVarApiClient;
-
     public RelationDefinitionsApi() {
         this(Configuration.getDefaultApiClient());
     }
@@ -81,7 +80,9 @@ public class RelationDefinitionsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -99,7 +100,7 @@ public class RelationDefinitionsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -171,7 +172,6 @@ public class RelationDefinitionsApi {
      </table>
      */
     public okhttp3.Call createRelationDefinitionAsync(CreateRelationDefinitionRequest createRelationDefinitionRequest, final ApiCallback<RelationDefinition> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = createRelationDefinitionValidateBeforeCall(createRelationDefinitionRequest, _callback);
         Type localVarReturnType = new TypeToken<RelationDefinition>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -194,7 +194,7 @@ public class RelationDefinitionsApi {
      </table>
      */
     public okhttp3.Call getRelationDefinitionCall(String scope, String code, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/relationdefinitions/{scope}/{code}"
@@ -203,12 +203,14 @@ public class RelationDefinitionsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (asAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -226,7 +228,7 @@ public class RelationDefinitionsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -309,7 +311,6 @@ public class RelationDefinitionsApi {
      </table>
      */
     public okhttp3.Call getRelationDefinitionAsync(String scope, String code, OffsetDateTime asAt, final ApiCallback<RelationDefinition> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getRelationDefinitionValidateBeforeCall(scope, code, asAt, _callback);
         Type localVarReturnType = new TypeToken<RelationDefinition>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);

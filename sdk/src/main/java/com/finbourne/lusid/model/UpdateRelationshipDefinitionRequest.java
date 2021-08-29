@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * UpdateRelationshipDefinitionRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpdateRelationshipDefinitionRequest {
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
@@ -41,8 +41,9 @@ public class UpdateRelationshipDefinitionRequest {
   @SerializedName(SERIALIZED_NAME_INWARD_DESCRIPTION)
   private String inwardDescription;
 
+
   public UpdateRelationshipDefinitionRequest displayName(String displayName) {
-    this.displayName = displayName;
+    this.displayName = displayName; 
     return this;
   }
 
@@ -59,8 +60,9 @@ public class UpdateRelationshipDefinitionRequest {
     this.displayName = displayName;
   }
 
+
   public UpdateRelationshipDefinitionRequest outwardDescription(String outwardDescription) {
-    this.outwardDescription = outwardDescription;
+    this.outwardDescription = outwardDescription; 
     return this;
   }
 
@@ -77,8 +79,9 @@ public class UpdateRelationshipDefinitionRequest {
     this.outwardDescription = outwardDescription;
   }
 
+
   public UpdateRelationshipDefinitionRequest inwardDescription(String inwardDescription) {
-    this.inwardDescription = inwardDescription;
+    this.inwardDescription = inwardDescription; 
     return this;
   }
 
@@ -97,7 +100,7 @@ public class UpdateRelationshipDefinitionRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -109,9 +112,8 @@ public class UpdateRelationshipDefinitionRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -128,7 +130,7 @@ public class UpdateRelationshipDefinitionRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

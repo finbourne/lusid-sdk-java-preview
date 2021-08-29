@@ -13,6 +13,30 @@
 
 package com.finbourne.lusid.model;
 
+import com.finbourne.lusid.model.Basket;
+import com.finbourne.lusid.model.Bond;
+import com.finbourne.lusid.model.CashPerpetual;
+import com.finbourne.lusid.model.CdsIndex;
+import com.finbourne.lusid.model.ContractForDifference;
+import com.finbourne.lusid.model.CreditDefaultSwap;
+import com.finbourne.lusid.model.CrossCurrencySwap;
+import com.finbourne.lusid.model.EquityOption;
+import com.finbourne.lusid.model.EquitySwap;
+import com.finbourne.lusid.model.ExoticInstrument;
+import com.finbourne.lusid.model.FixedLeg;
+import com.finbourne.lusid.model.FloatingLeg;
+import com.finbourne.lusid.model.ForwardRateAgreement;
+import com.finbourne.lusid.model.FundingLeg;
+import com.finbourne.lusid.model.Future;
+import com.finbourne.lusid.model.FxForward;
+import com.finbourne.lusid.model.FxOption;
+import com.finbourne.lusid.model.FxSwap;
+import com.finbourne.lusid.model.InstrumentLeg;
+import com.finbourne.lusid.model.InterestRateSwap;
+import com.finbourne.lusid.model.InterestRateSwaption;
+import com.finbourne.lusid.model.Repo;
+import com.finbourne.lusid.model.SimpleInstrument;
+import com.finbourne.lusid.model.TermDeposit;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;

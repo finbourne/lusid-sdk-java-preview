@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * DeleteRelationshipRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class DeleteRelationshipRequest {
   public static final String SERIALIZED_NAME_SOURCE_ENTITY_ID = "sourceEntityId";
   @SerializedName(SERIALIZED_NAME_SOURCE_ENTITY_ID)
@@ -44,8 +44,9 @@ public class DeleteRelationshipRequest {
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_FROM)
   private String effectiveFrom;
 
+
   public DeleteRelationshipRequest sourceEntityId(Map<String, String> sourceEntityId) {
-    this.sourceEntityId = sourceEntityId;
+    this.sourceEntityId = sourceEntityId; 
     return this;
   }
 
@@ -67,8 +68,9 @@ public class DeleteRelationshipRequest {
     this.sourceEntityId = sourceEntityId;
   }
 
+
   public DeleteRelationshipRequest targetEntityId(Map<String, String> targetEntityId) {
-    this.targetEntityId = targetEntityId;
+    this.targetEntityId = targetEntityId; 
     return this;
   }
 
@@ -90,8 +92,9 @@ public class DeleteRelationshipRequest {
     this.targetEntityId = targetEntityId;
   }
 
+
   public DeleteRelationshipRequest effectiveFrom(String effectiveFrom) {
-    this.effectiveFrom = effectiveFrom;
+    this.effectiveFrom = effectiveFrom; 
     return this;
   }
 
@@ -110,7 +113,7 @@ public class DeleteRelationshipRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -122,9 +125,8 @@ public class DeleteRelationshipRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -141,7 +143,7 @@ public class DeleteRelationshipRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

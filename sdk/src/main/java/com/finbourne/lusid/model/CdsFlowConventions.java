@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * CdsFlowConventions
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CdsFlowConventions {
   public static final String SERIALIZED_NAME_ROLL_FREQUENCY = "rollFrequency";
   @SerializedName(SERIALIZED_NAME_ROLL_FREQUENCY)
@@ -75,8 +75,9 @@ public class CdsFlowConventions {
   @SerializedName(SERIALIZED_NAME_CODE)
   private String code;
 
+
   public CdsFlowConventions rollFrequency(String rollFrequency) {
-    this.rollFrequency = rollFrequency;
+    this.rollFrequency = rollFrequency; 
     return this;
   }
 
@@ -93,8 +94,9 @@ public class CdsFlowConventions {
     this.rollFrequency = rollFrequency;
   }
 
+
   public CdsFlowConventions currency(String currency) {
-    this.currency = currency;
+    this.currency = currency; 
     return this;
   }
 
@@ -111,8 +113,9 @@ public class CdsFlowConventions {
     this.currency = currency;
   }
 
+
   public CdsFlowConventions paymentFrequency(String paymentFrequency) {
-    this.paymentFrequency = paymentFrequency;
+    this.paymentFrequency = paymentFrequency; 
     return this;
   }
 
@@ -129,8 +132,9 @@ public class CdsFlowConventions {
     this.paymentFrequency = paymentFrequency;
   }
 
+
   public CdsFlowConventions dayCountConvention(String dayCountConvention) {
-    this.dayCountConvention = dayCountConvention;
+    this.dayCountConvention = dayCountConvention; 
     return this;
   }
 
@@ -147,8 +151,9 @@ public class CdsFlowConventions {
     this.dayCountConvention = dayCountConvention;
   }
 
+
   public CdsFlowConventions rollConvention(String rollConvention) {
-    this.rollConvention = rollConvention;
+    this.rollConvention = rollConvention; 
     return this;
   }
 
@@ -165,12 +170,14 @@ public class CdsFlowConventions {
     this.rollConvention = rollConvention;
   }
 
+
   public CdsFlowConventions paymentCalendars(List<String> paymentCalendars) {
-    this.paymentCalendars = paymentCalendars;
+    this.paymentCalendars = paymentCalendars; 
     return this;
   }
 
   public CdsFlowConventions addPaymentCalendarsItem(String paymentCalendarsItem) {
+   
     this.paymentCalendars.add(paymentCalendarsItem);
     return this;
   }
@@ -188,12 +195,14 @@ public class CdsFlowConventions {
     this.paymentCalendars = paymentCalendars;
   }
 
+
   public CdsFlowConventions resetCalendars(List<String> resetCalendars) {
-    this.resetCalendars = resetCalendars;
+    this.resetCalendars = resetCalendars; 
     return this;
   }
 
   public CdsFlowConventions addResetCalendarsItem(String resetCalendarsItem) {
+   
     this.resetCalendars.add(resetCalendarsItem);
     return this;
   }
@@ -211,8 +220,9 @@ public class CdsFlowConventions {
     this.resetCalendars = resetCalendars;
   }
 
+
   public CdsFlowConventions settleDays(Integer settleDays) {
-    this.settleDays = settleDays;
+    this.settleDays = settleDays; 
     return this;
   }
 
@@ -229,8 +239,9 @@ public class CdsFlowConventions {
     this.settleDays = settleDays;
   }
 
+
   public CdsFlowConventions resetDays(Integer resetDays) {
-    this.resetDays = resetDays;
+    this.resetDays = resetDays; 
     return this;
   }
 
@@ -247,8 +258,9 @@ public class CdsFlowConventions {
     this.resetDays = resetDays;
   }
 
+
   public CdsFlowConventions scope(String scope) {
-    this.scope = scope;
+    this.scope = scope; 
     return this;
   }
 
@@ -265,8 +277,9 @@ public class CdsFlowConventions {
     this.scope = scope;
   }
 
+
   public CdsFlowConventions code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -285,7 +298,7 @@ public class CdsFlowConventions {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -297,9 +310,8 @@ public class CdsFlowConventions {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -324,7 +336,7 @@ public class CdsFlowConventions {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

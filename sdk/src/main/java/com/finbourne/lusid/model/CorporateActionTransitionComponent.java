@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * CorporateActionTransitionComponent
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CorporateActionTransitionComponent {
   public static final String SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS = "instrumentIdentifiers";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS)
@@ -48,8 +48,9 @@ public class CorporateActionTransitionComponent {
   @SerializedName(SERIALIZED_NAME_COST_FACTOR)
   private Double costFactor;
 
+
   public CorporateActionTransitionComponent instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
-    this.instrumentIdentifiers = instrumentIdentifiers;
+    this.instrumentIdentifiers = instrumentIdentifiers; 
     return this;
   }
 
@@ -71,8 +72,9 @@ public class CorporateActionTransitionComponent {
     this.instrumentIdentifiers = instrumentIdentifiers;
   }
 
+
   public CorporateActionTransitionComponent instrumentUid(String instrumentUid) {
-    this.instrumentUid = instrumentUid;
+    this.instrumentUid = instrumentUid; 
     return this;
   }
 
@@ -89,8 +91,9 @@ public class CorporateActionTransitionComponent {
     this.instrumentUid = instrumentUid;
   }
 
+
   public CorporateActionTransitionComponent unitsFactor(Double unitsFactor) {
-    this.unitsFactor = unitsFactor;
+    this.unitsFactor = unitsFactor; 
     return this;
   }
 
@@ -107,8 +110,9 @@ public class CorporateActionTransitionComponent {
     this.unitsFactor = unitsFactor;
   }
 
+
   public CorporateActionTransitionComponent costFactor(Double costFactor) {
-    this.costFactor = costFactor;
+    this.costFactor = costFactor; 
     return this;
   }
 
@@ -127,7 +131,7 @@ public class CorporateActionTransitionComponent {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -139,9 +143,8 @@ public class CorporateActionTransitionComponent {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -159,7 +162,7 @@ public class CorporateActionTransitionComponent {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

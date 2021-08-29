@@ -31,18 +31,19 @@ import java.util.List;
  * A &#39;transition&#39; within a corporate action, representing a set of output movements paired to a single input position
  */
 @ApiModel(description = "A 'transition' within a corporate action, representing a set of output movements paired to a single input position")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CorporateActionTransitionRequest {
   public static final String SERIALIZED_NAME_INPUT_TRANSITION = "inputTransition";
   @SerializedName(SERIALIZED_NAME_INPUT_TRANSITION)
-  private CorporateActionTransitionComponentRequest inputTransition = null;
+  private CorporateActionTransitionComponentRequest inputTransition;
 
   public static final String SERIALIZED_NAME_OUTPUT_TRANSITIONS = "outputTransitions";
   @SerializedName(SERIALIZED_NAME_OUTPUT_TRANSITIONS)
-  private List<CorporateActionTransitionComponentRequest> outputTransitions = new ArrayList<>();
+  private List<CorporateActionTransitionComponentRequest> outputTransitions = null;
+
 
   public CorporateActionTransitionRequest inputTransition(CorporateActionTransitionComponentRequest inputTransition) {
-    this.inputTransition = inputTransition;
+    this.inputTransition = inputTransition; 
     return this;
   }
 
@@ -59,12 +60,14 @@ public class CorporateActionTransitionRequest {
     this.inputTransition = inputTransition;
   }
 
+
   public CorporateActionTransitionRequest outputTransitions(List<CorporateActionTransitionComponentRequest> outputTransitions) {
-    this.outputTransitions = outputTransitions;
+    this.outputTransitions = outputTransitions; 
     return this;
   }
 
   public CorporateActionTransitionRequest addOutputTransitionsItem(CorporateActionTransitionComponentRequest outputTransitionsItem) {
+   
     if (this.outputTransitions == null) {
       this.outputTransitions = new ArrayList<>();
     }
@@ -87,7 +90,7 @@ public class CorporateActionTransitionRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -99,9 +102,8 @@ public class CorporateActionTransitionRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -117,7 +119,7 @@ public class CorporateActionTransitionRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

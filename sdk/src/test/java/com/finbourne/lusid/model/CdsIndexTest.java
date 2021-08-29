@@ -57,4 +57,68 @@ public class CdsIndexTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'maturityDate'
+     */
+    @Test
+    public void maturityDateTest() {
+        // TODO: test maturityDate
+    }
+
+    /**
+     * Test the property 'flowConventions'
+     */
+    @Test
+    public void flowConventionsTest() {
+        // TODO: test flowConventions
+    }
+
+    /**
+     * Test the property 'couponRate'
+     */
+    @Test
+    public void couponRateTest() {
+        // TODO: test couponRate
+    }
+
+    /**
+     * Test the property 'identifiers'
+     */
+    @Test
+    public void identifiersTest() {
+        // TODO: test identifiers
+    }
+
+    /**
+     * Test the property 'basket'
+     */
+    @Test
+    public void basketTest() {
+        // TODO: test basket
+    }
+
+    /**
+     * Test the property 'conventionName'
+     */
+    @Test
+    public void conventionNameTest() {
+        // TODO: test conventionName
+    }
+
+    /**
+     * Test the property 'notional'
+     */
+    @Test
+    public void notionalTest() {
+        // TODO: test notional
+    }
+
 }

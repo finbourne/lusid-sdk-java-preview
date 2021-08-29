@@ -38,11 +38,11 @@ import java.util.Map;
  * A block of orders for the same instrument, intended to record for example a trader&#39;s aggregation  of outstanding orders at a given time.
  */
 @ApiModel(description = "A block of orders for the same instrument, intended to record for example a trader's aggregation  of outstanding orders at a given time.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Block {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
 
   public static final String SERIALIZED_NAME_ORDER_IDS = "orderIds";
   @SerializedName(SERIALIZED_NAME_ORDER_IDS)
@@ -50,7 +50,7 @@ public class Block {
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = new HashMap<>();
+  private Map<String, PerpetualProperty> properties = null;
 
   public static final String SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS = "instrumentIdentifiers";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS)
@@ -82,22 +82,23 @@ public class Block {
 
   public static final String SERIALIZED_NAME_LIMIT_PRICE = "limitPrice";
   @SerializedName(SERIALIZED_NAME_LIMIT_PRICE)
-  private CurrencyAndAmount limitPrice = null;
+  private CurrencyAndAmount limitPrice;
 
   public static final String SERIALIZED_NAME_STOP_PRICE = "stopPrice";
   @SerializedName(SERIALIZED_NAME_STOP_PRICE)
-  private CurrencyAndAmount stopPrice = null;
+  private CurrencyAndAmount stopPrice;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version = null;
+  private Version version;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public Block id(ResourceId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -114,12 +115,14 @@ public class Block {
     this.id = id;
   }
 
+
   public Block orderIds(List<ResourceId> orderIds) {
-    this.orderIds = orderIds;
+    this.orderIds = orderIds; 
     return this;
   }
 
   public Block addOrderIdsItem(ResourceId orderIdsItem) {
+   
     this.orderIds.add(orderIdsItem);
     return this;
   }
@@ -137,8 +140,9 @@ public class Block {
     this.orderIds = orderIds;
   }
 
+
   public Block properties(Map<String, PerpetualProperty> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
@@ -163,8 +167,9 @@ public class Block {
     this.properties = properties;
   }
 
+
   public Block instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
-    this.instrumentIdentifiers = instrumentIdentifiers;
+    this.instrumentIdentifiers = instrumentIdentifiers; 
     return this;
   }
 
@@ -186,8 +191,9 @@ public class Block {
     this.instrumentIdentifiers = instrumentIdentifiers;
   }
 
+
   public Block lusidInstrumentId(String lusidInstrumentId) {
-    this.lusidInstrumentId = lusidInstrumentId;
+    this.lusidInstrumentId = lusidInstrumentId; 
     return this;
   }
 
@@ -204,8 +210,9 @@ public class Block {
     this.lusidInstrumentId = lusidInstrumentId;
   }
 
+
   public Block quantity(Double quantity) {
-    this.quantity = quantity;
+    this.quantity = quantity; 
     return this;
   }
 
@@ -222,8 +229,9 @@ public class Block {
     this.quantity = quantity;
   }
 
+
   public Block side(String side) {
-    this.side = side;
+    this.side = side; 
     return this;
   }
 
@@ -240,8 +248,9 @@ public class Block {
     this.side = side;
   }
 
+
   public Block type(String type) {
-    this.type = type;
+    this.type = type; 
     return this;
   }
 
@@ -258,8 +267,9 @@ public class Block {
     this.type = type;
   }
 
+
   public Block timeInForce(String timeInForce) {
-    this.timeInForce = timeInForce;
+    this.timeInForce = timeInForce; 
     return this;
   }
 
@@ -276,8 +286,9 @@ public class Block {
     this.timeInForce = timeInForce;
   }
 
+
   public Block createdDate(OffsetDateTime createdDate) {
-    this.createdDate = createdDate;
+    this.createdDate = createdDate; 
     return this;
   }
 
@@ -294,8 +305,9 @@ public class Block {
     this.createdDate = createdDate;
   }
 
+
   public Block limitPrice(CurrencyAndAmount limitPrice) {
-    this.limitPrice = limitPrice;
+    this.limitPrice = limitPrice; 
     return this;
   }
 
@@ -312,8 +324,9 @@ public class Block {
     this.limitPrice = limitPrice;
   }
 
+
   public Block stopPrice(CurrencyAndAmount stopPrice) {
-    this.stopPrice = stopPrice;
+    this.stopPrice = stopPrice; 
     return this;
   }
 
@@ -330,8 +343,9 @@ public class Block {
     this.stopPrice = stopPrice;
   }
 
+
   public Block version(Version version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -348,12 +362,14 @@ public class Block {
     this.version = version;
   }
 
+
   public Block links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public Block addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -376,7 +392,7 @@ public class Block {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -388,9 +404,8 @@ public class Block {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -418,7 +433,7 @@ public class Block {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -32,7 +32,7 @@ import java.util.List;
  * A corporate action
  */
 @ApiModel(description = "A corporate action")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CorporateAction {
   public static final String SERIALIZED_NAME_CORPORATE_ACTION_CODE = "corporateActionCode";
   @SerializedName(SERIALIZED_NAME_CORPORATE_ACTION_CODE)
@@ -60,10 +60,11 @@ public class CorporateAction {
 
   public static final String SERIALIZED_NAME_TRANSITIONS = "transitions";
   @SerializedName(SERIALIZED_NAME_TRANSITIONS)
-  private List<CorporateActionTransition> transitions = new ArrayList<>();
+  private List<CorporateActionTransition> transitions = null;
+
 
   public CorporateAction corporateActionCode(String corporateActionCode) {
-    this.corporateActionCode = corporateActionCode;
+    this.corporateActionCode = corporateActionCode; 
     return this;
   }
 
@@ -80,8 +81,9 @@ public class CorporateAction {
     this.corporateActionCode = corporateActionCode;
   }
 
+
   public CorporateAction description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -98,8 +100,9 @@ public class CorporateAction {
     this.description = description;
   }
 
+
   public CorporateAction announcementDate(OffsetDateTime announcementDate) {
-    this.announcementDate = announcementDate;
+    this.announcementDate = announcementDate; 
     return this;
   }
 
@@ -116,8 +119,9 @@ public class CorporateAction {
     this.announcementDate = announcementDate;
   }
 
+
   public CorporateAction exDate(OffsetDateTime exDate) {
-    this.exDate = exDate;
+    this.exDate = exDate; 
     return this;
   }
 
@@ -134,8 +138,9 @@ public class CorporateAction {
     this.exDate = exDate;
   }
 
+
   public CorporateAction recordDate(OffsetDateTime recordDate) {
-    this.recordDate = recordDate;
+    this.recordDate = recordDate; 
     return this;
   }
 
@@ -152,8 +157,9 @@ public class CorporateAction {
     this.recordDate = recordDate;
   }
 
+
   public CorporateAction paymentDate(OffsetDateTime paymentDate) {
-    this.paymentDate = paymentDate;
+    this.paymentDate = paymentDate; 
     return this;
   }
 
@@ -170,12 +176,14 @@ public class CorporateAction {
     this.paymentDate = paymentDate;
   }
 
+
   public CorporateAction transitions(List<CorporateActionTransition> transitions) {
-    this.transitions = transitions;
+    this.transitions = transitions; 
     return this;
   }
 
   public CorporateAction addTransitionsItem(CorporateActionTransition transitionsItem) {
+   
     if (this.transitions == null) {
       this.transitions = new ArrayList<>();
     }
@@ -198,7 +206,7 @@ public class CorporateAction {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -210,9 +218,8 @@ public class CorporateAction {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -233,7 +240,7 @@ public class CorporateAction {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

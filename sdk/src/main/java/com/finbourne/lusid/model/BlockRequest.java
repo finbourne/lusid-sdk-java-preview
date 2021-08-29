@@ -36,11 +36,11 @@ import java.util.Map;
  * A request to create or update an Order.
  */
 @ApiModel(description = "A request to create or update an Order.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BlockRequest {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
 
   public static final String SERIALIZED_NAME_ORDER_IDS = "orderIds";
   @SerializedName(SERIALIZED_NAME_ORDER_IDS)
@@ -48,7 +48,7 @@ public class BlockRequest {
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  private Map<String, PerpetualProperty> properties = new HashMap<>();
+  private Map<String, PerpetualProperty> properties = null;
 
   public static final String SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS = "instrumentIdentifiers";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_IDENTIFIERS)
@@ -76,14 +76,15 @@ public class BlockRequest {
 
   public static final String SERIALIZED_NAME_LIMIT_PRICE = "limitPrice";
   @SerializedName(SERIALIZED_NAME_LIMIT_PRICE)
-  private CurrencyAndAmount limitPrice = null;
+  private CurrencyAndAmount limitPrice;
 
   public static final String SERIALIZED_NAME_STOP_PRICE = "stopPrice";
   @SerializedName(SERIALIZED_NAME_STOP_PRICE)
-  private CurrencyAndAmount stopPrice = null;
+  private CurrencyAndAmount stopPrice;
+
 
   public BlockRequest id(ResourceId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -100,12 +101,14 @@ public class BlockRequest {
     this.id = id;
   }
 
+
   public BlockRequest orderIds(List<ResourceId> orderIds) {
-    this.orderIds = orderIds;
+    this.orderIds = orderIds; 
     return this;
   }
 
   public BlockRequest addOrderIdsItem(ResourceId orderIdsItem) {
+   
     this.orderIds.add(orderIdsItem);
     return this;
   }
@@ -123,8 +126,9 @@ public class BlockRequest {
     this.orderIds = orderIds;
   }
 
+
   public BlockRequest properties(Map<String, PerpetualProperty> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
@@ -149,8 +153,9 @@ public class BlockRequest {
     this.properties = properties;
   }
 
+
   public BlockRequest instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
-    this.instrumentIdentifiers = instrumentIdentifiers;
+    this.instrumentIdentifiers = instrumentIdentifiers; 
     return this;
   }
 
@@ -172,8 +177,9 @@ public class BlockRequest {
     this.instrumentIdentifiers = instrumentIdentifiers;
   }
 
+
   public BlockRequest quantity(Double quantity) {
-    this.quantity = quantity;
+    this.quantity = quantity; 
     return this;
   }
 
@@ -190,8 +196,9 @@ public class BlockRequest {
     this.quantity = quantity;
   }
 
+
   public BlockRequest side(String side) {
-    this.side = side;
+    this.side = side; 
     return this;
   }
 
@@ -208,8 +215,9 @@ public class BlockRequest {
     this.side = side;
   }
 
+
   public BlockRequest type(String type) {
-    this.type = type;
+    this.type = type; 
     return this;
   }
 
@@ -226,8 +234,9 @@ public class BlockRequest {
     this.type = type;
   }
 
+
   public BlockRequest timeInForce(String timeInForce) {
-    this.timeInForce = timeInForce;
+    this.timeInForce = timeInForce; 
     return this;
   }
 
@@ -244,8 +253,9 @@ public class BlockRequest {
     this.timeInForce = timeInForce;
   }
 
+
   public BlockRequest createdDate(OffsetDateTime createdDate) {
-    this.createdDate = createdDate;
+    this.createdDate = createdDate; 
     return this;
   }
 
@@ -262,8 +272,9 @@ public class BlockRequest {
     this.createdDate = createdDate;
   }
 
+
   public BlockRequest limitPrice(CurrencyAndAmount limitPrice) {
-    this.limitPrice = limitPrice;
+    this.limitPrice = limitPrice; 
     return this;
   }
 
@@ -280,8 +291,9 @@ public class BlockRequest {
     this.limitPrice = limitPrice;
   }
 
+
   public BlockRequest stopPrice(CurrencyAndAmount stopPrice) {
-    this.stopPrice = stopPrice;
+    this.stopPrice = stopPrice; 
     return this;
   }
 
@@ -300,7 +312,7 @@ public class BlockRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -312,9 +324,8 @@ public class BlockRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -339,7 +350,7 @@ public class BlockRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

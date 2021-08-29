@@ -31,18 +31,22 @@ import java.io.IOException;
  * Class modeling an instrument which is not fully described, in the sense of being able to obtain a price or other analytic result,              by a simple SecurityUid. This would include non-exchange traded instruments such as an interest-rate-swap (IRS) and obviously 3rd generation exotics              like FX-TARNs or FX-Chooser-Redeemers and Credit instruments like CDS or Tranches.
  */
 @ApiModel(description = "Class modeling an instrument which is not fully described, in the sense of being able to obtain a price or other analytic result,              by a simple SecurityUid. This would include non-exchange traded instruments such as an interest-rate-swap (IRS) and obviously 3rd generation exotics              like FX-TARNs or FX-Chooser-Redeemers and Credit instruments like CDS or Tranches.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ExoticInstrument extends LusidInstrument {
   public static final String SERIALIZED_NAME_INSTRUMENT_FORMAT = "instrumentFormat";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_FORMAT)
-  private InstrumentDefinitionFormat instrumentFormat = null;
+  private InstrumentDefinitionFormat instrumentFormat;
 
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
   private String content;
 
+  public ExoticInstrument() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
+
   public ExoticInstrument instrumentFormat(InstrumentDefinitionFormat instrumentFormat) {
-    this.instrumentFormat = instrumentFormat;
+    this.instrumentFormat = instrumentFormat; 
     return this;
   }
 
@@ -59,8 +63,9 @@ public class ExoticInstrument extends LusidInstrument {
     this.instrumentFormat = instrumentFormat;
   }
 
+
   public ExoticInstrument content(String content) {
-    this.content = content;
+    this.content = content; 
     return this;
   }
 
@@ -79,7 +84,7 @@ public class ExoticInstrument extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -91,9 +96,8 @@ public class ExoticInstrument extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -110,7 +114,7 @@ public class ExoticInstrument extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -32,26 +32,27 @@ import java.util.List;
  * Specification for the reconciliation request. Left and Right hand sides are constructed. Each consists of a valuation of a inline set of instruments  using an inline aggregation request. The results of this can then be compared to each other. The difference, which is effectively a risk based  difference allows comparison of the effects of changing a recipe, valuation date, or (though it may or may not make logical sense) a set of instruments.
  */
 @ApiModel(description = "Specification for the reconciliation request. Left and Right hand sides are constructed. Each consists of a valuation of a inline set of instruments  using an inline aggregation request. The results of this can then be compared to each other. The difference, which is effectively a risk based  difference allows comparison of the effects of changing a recipe, valuation date, or (though it may or may not make logical sense) a set of instruments.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class InlineValuationsReconciliationRequest {
   public static final String SERIALIZED_NAME_LEFT = "left";
   @SerializedName(SERIALIZED_NAME_LEFT)
-  private InlineValuationRequest left = null;
+  private InlineValuationRequest left;
 
   public static final String SERIALIZED_NAME_RIGHT = "right";
   @SerializedName(SERIALIZED_NAME_RIGHT)
-  private InlineValuationRequest right = null;
+  private InlineValuationRequest right;
 
   public static final String SERIALIZED_NAME_LEFT_TO_RIGHT_MAPPING = "leftToRightMapping";
   @SerializedName(SERIALIZED_NAME_LEFT_TO_RIGHT_MAPPING)
-  private List<ReconciliationLeftRightAddressKeyPair> leftToRightMapping = new ArrayList<>();
+  private List<ReconciliationLeftRightAddressKeyPair> leftToRightMapping = null;
 
   public static final String SERIALIZED_NAME_PRESERVE_KEYS = "preserveKeys";
   @SerializedName(SERIALIZED_NAME_PRESERVE_KEYS)
-  private List<String> preserveKeys = new ArrayList<>();
+  private List<String> preserveKeys = null;
+
 
   public InlineValuationsReconciliationRequest left(InlineValuationRequest left) {
-    this.left = left;
+    this.left = left; 
     return this;
   }
 
@@ -68,8 +69,9 @@ public class InlineValuationsReconciliationRequest {
     this.left = left;
   }
 
+
   public InlineValuationsReconciliationRequest right(InlineValuationRequest right) {
-    this.right = right;
+    this.right = right; 
     return this;
   }
 
@@ -86,12 +88,14 @@ public class InlineValuationsReconciliationRequest {
     this.right = right;
   }
 
+
   public InlineValuationsReconciliationRequest leftToRightMapping(List<ReconciliationLeftRightAddressKeyPair> leftToRightMapping) {
-    this.leftToRightMapping = leftToRightMapping;
+    this.leftToRightMapping = leftToRightMapping; 
     return this;
   }
 
   public InlineValuationsReconciliationRequest addLeftToRightMappingItem(ReconciliationLeftRightAddressKeyPair leftToRightMappingItem) {
+   
     if (this.leftToRightMapping == null) {
       this.leftToRightMapping = new ArrayList<>();
     }
@@ -112,12 +116,14 @@ public class InlineValuationsReconciliationRequest {
     this.leftToRightMapping = leftToRightMapping;
   }
 
+
   public InlineValuationsReconciliationRequest preserveKeys(List<String> preserveKeys) {
-    this.preserveKeys = preserveKeys;
+    this.preserveKeys = preserveKeys; 
     return this;
   }
 
   public InlineValuationsReconciliationRequest addPreserveKeysItem(String preserveKeysItem) {
+   
     if (this.preserveKeys == null) {
       this.preserveKeys = new ArrayList<>();
     }
@@ -140,7 +146,7 @@ public class InlineValuationsReconciliationRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -152,9 +158,8 @@ public class InlineValuationsReconciliationRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -172,7 +177,7 @@ public class InlineValuationsReconciliationRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

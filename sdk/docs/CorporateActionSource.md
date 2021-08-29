@@ -2,11 +2,12 @@
 
 # CorporateActionSource
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | [**URI**](URI.md) |  |  [optional]
+**href** | **URI** |  |  [optional]
 **id** | [**ResourceId**](ResourceId.md) |  |  [optional]
 **version** | [**Version**](Version.md) |  |  [optional]
 **displayName** | **String** |  |  [optional]

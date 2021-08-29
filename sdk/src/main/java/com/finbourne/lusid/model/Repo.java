@@ -31,7 +31,7 @@ import java.time.OffsetDateTime;
  * IL Repo Instrument; Lusid-ibor internal representation of a Repo instrument  The repurchase (repo) agreement involves the transfer of instruments (the collateral) from the seller to the buyer.  Ownership is transferred and returns to the seller upon completion of the contract. If the collateral depreciates sharply, it is possible that additional  margin/collateral will be required depending upon the terms of the agreement. The buyer agrees not to sell the securities unless there is some condition of default  in the repo contract.   Repurchase of the securities is at their value plus the agreed upon fixed repo rate.  On the start date, the buyer receives the collateral and pays Cash.  On the maturity date, the buyer returns the collateral and receives Cash.
  */
 @ApiModel(description = "IL Repo Instrument; Lusid-ibor internal representation of a Repo instrument  The repurchase (repo) agreement involves the transfer of instruments (the collateral) from the seller to the buyer.  Ownership is transferred and returns to the seller upon completion of the contract. If the collateral depreciates sharply, it is possible that additional  margin/collateral will be required depending upon the terms of the agreement. The buyer agrees not to sell the securities unless there is some condition of default  in the repo contract.   Repurchase of the securities is at their value plus the agreed upon fixed repo rate.  On the start date, the buyer receives the collateral and pays Cash.  On the maturity date, the buyer returns the collateral and receives Cash.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Repo extends LusidInstrument {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -61,8 +61,12 @@ public class Repo extends LusidInstrument {
   @SerializedName(SERIALIZED_NAME_REPO_RATE)
   private Double repoRate;
 
+  public Repo() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
+
   public Repo startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -79,8 +83,9 @@ public class Repo extends LusidInstrument {
     this.startDate = startDate;
   }
 
+
   public Repo maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -97,8 +102,9 @@ public class Repo extends LusidInstrument {
     this.maturityDate = maturityDate;
   }
 
+
   public Repo domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -115,8 +121,9 @@ public class Repo extends LusidInstrument {
     this.domCcy = domCcy;
   }
 
+
   public Repo accrualBasis(String accrualBasis) {
-    this.accrualBasis = accrualBasis;
+    this.accrualBasis = accrualBasis; 
     return this;
   }
 
@@ -133,8 +140,9 @@ public class Repo extends LusidInstrument {
     this.accrualBasis = accrualBasis;
   }
 
+
   public Repo collateralValue(Double collateralValue) {
-    this.collateralValue = collateralValue;
+    this.collateralValue = collateralValue; 
     return this;
   }
 
@@ -151,8 +159,9 @@ public class Repo extends LusidInstrument {
     this.collateralValue = collateralValue;
   }
 
+
   public Repo margin(Double margin) {
-    this.margin = margin;
+    this.margin = margin; 
     return this;
   }
 
@@ -169,8 +178,9 @@ public class Repo extends LusidInstrument {
     this.margin = margin;
   }
 
+
   public Repo repoRate(Double repoRate) {
-    this.repoRate = repoRate;
+    this.repoRate = repoRate; 
     return this;
   }
 
@@ -189,7 +199,7 @@ public class Repo extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -201,9 +211,8 @@ public class Repo extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -225,7 +234,7 @@ public class Repo extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -34,7 +34,7 @@ import java.util.Map;
 /**
  * Schema
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Schema {
   public static final String SERIALIZED_NAME_ENTITY = "entity";
   @SerializedName(SERIALIZED_NAME_ENTITY)
@@ -46,14 +46,15 @@ public class Schema {
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  private Map<String, FieldSchema> values = new HashMap<>();
+  private Map<String, FieldSchema> values = null;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public Schema entity(String entity) {
-    this.entity = entity;
+    this.entity = entity; 
     return this;
   }
 
@@ -70,8 +71,9 @@ public class Schema {
     this.entity = entity;
   }
 
+
   public Schema href(URI href) {
-    this.href = href;
+    this.href = href; 
     return this;
   }
 
@@ -88,8 +90,9 @@ public class Schema {
     this.href = href;
   }
 
+
   public Schema values(Map<String, FieldSchema> values) {
-    this.values = values;
+    this.values = values; 
     return this;
   }
 
@@ -114,12 +117,14 @@ public class Schema {
     this.values = values;
   }
 
+
   public Schema links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public Schema addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -142,7 +147,7 @@ public class Schema {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -154,9 +159,8 @@ public class Schema {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -174,7 +178,7 @@ public class Schema {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

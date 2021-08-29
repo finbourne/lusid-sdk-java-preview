@@ -32,7 +32,7 @@ import java.util.Map;
 /**
  * BondAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BondAllOf {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -48,7 +48,7 @@ public class BondAllOf {
 
   public static final String SERIALIZED_NAME_FLOW_CONVENTIONS = "flowConventions";
   @SerializedName(SERIALIZED_NAME_FLOW_CONVENTIONS)
-  private FlowConventions flowConventions = null;
+  private FlowConventions flowConventions;
 
   public static final String SERIALIZED_NAME_PRINCIPAL = "principal";
   @SerializedName(SERIALIZED_NAME_PRINCIPAL)
@@ -60,7 +60,7 @@ public class BondAllOf {
 
   public static final String SERIALIZED_NAME_IDENTIFIERS = "identifiers";
   @SerializedName(SERIALIZED_NAME_IDENTIFIERS)
-  private Map<String, String> identifiers = new HashMap<>();
+  private Map<String, String> identifiers = null;
 
   public static final String SERIALIZED_NAME_EX_DIVIDEND_DAYS = "exDividendDays";
   @SerializedName(SERIALIZED_NAME_EX_DIVIDEND_DAYS)
@@ -161,7 +161,7 @@ public class BondAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -171,8 +171,9 @@ public class BondAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public BondAllOf startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -189,8 +190,9 @@ public class BondAllOf {
     this.startDate = startDate;
   }
 
+
   public BondAllOf maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -207,8 +209,9 @@ public class BondAllOf {
     this.maturityDate = maturityDate;
   }
 
+
   public BondAllOf domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -225,8 +228,9 @@ public class BondAllOf {
     this.domCcy = domCcy;
   }
 
+
   public BondAllOf flowConventions(FlowConventions flowConventions) {
-    this.flowConventions = flowConventions;
+    this.flowConventions = flowConventions; 
     return this;
   }
 
@@ -243,8 +247,9 @@ public class BondAllOf {
     this.flowConventions = flowConventions;
   }
 
+
   public BondAllOf principal(Double principal) {
-    this.principal = principal;
+    this.principal = principal; 
     return this;
   }
 
@@ -261,8 +266,9 @@ public class BondAllOf {
     this.principal = principal;
   }
 
+
   public BondAllOf couponRate(Double couponRate) {
-    this.couponRate = couponRate;
+    this.couponRate = couponRate; 
     return this;
   }
 
@@ -279,8 +285,9 @@ public class BondAllOf {
     this.couponRate = couponRate;
   }
 
+
   public BondAllOf identifiers(Map<String, String> identifiers) {
-    this.identifiers = identifiers;
+    this.identifiers = identifiers; 
     return this;
   }
 
@@ -305,8 +312,9 @@ public class BondAllOf {
     this.identifiers = identifiers;
   }
 
+
   public BondAllOf exDividendDays(Integer exDividendDays) {
-    this.exDividendDays = exDividendDays;
+    this.exDividendDays = exDividendDays; 
     return this;
   }
 
@@ -323,8 +331,9 @@ public class BondAllOf {
     this.exDividendDays = exDividendDays;
   }
 
+
   public BondAllOf initialCouponDate(OffsetDateTime initialCouponDate) {
-    this.initialCouponDate = initialCouponDate;
+    this.initialCouponDate = initialCouponDate; 
     return this;
   }
 
@@ -341,8 +350,9 @@ public class BondAllOf {
     this.initialCouponDate = initialCouponDate;
   }
 
+
   public BondAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -361,7 +371,7 @@ public class BondAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -373,9 +383,8 @@ public class BondAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -399,7 +408,7 @@ public class BondAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -29,14 +29,15 @@ import java.time.OffsetDateTime;
  * The date that is the requested number of business days after the given start date
  */
 @ApiModel(description = "The date that is the requested number of business days after the given start date")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class AddBusinessDaysToDateResponse {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
   private OffsetDateTime value;
 
+
   public AddBusinessDaysToDateResponse value(OffsetDateTime value) {
-    this.value = value;
+    this.value = value; 
     return this;
   }
 
@@ -55,7 +56,7 @@ public class AddBusinessDaysToDateResponse {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -67,9 +68,8 @@ public class AddBusinessDaysToDateResponse {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -84,7 +84,7 @@ public class AddBusinessDaysToDateResponse {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

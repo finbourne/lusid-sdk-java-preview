@@ -51,4 +51,20 @@ public class FxSwapTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'nearFxForward'
+     */
+    @Test
+    public void nearFxForwardTest() {
+        // TODO: test nearFxForward
+    }
+
+    /**
+     * Test the property 'farFxForward'
+     */
+    @Test
+    public void farFxForwardTest() {
+        // TODO: test farFxForward
+    }
+
 }

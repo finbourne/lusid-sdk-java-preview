@@ -2,6 +2,8 @@
 
 # RelatedEntity
 
+Information about the other related entity in the relationship
+
 ## Properties
 
 Name | Type | Description | Notes

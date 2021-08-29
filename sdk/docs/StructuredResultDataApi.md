@@ -1,6 +1,6 @@
 # StructuredResultDataApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://local-unit-test-server.lusid.com:53397*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,7 +32,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53397");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -40,7 +40,7 @@ public class Example {
 
     StructuredResultDataApi apiInstance = new StructuredResultDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope in which to create or update data maps.
-    Map<String, CreateDataMapRequest> requestBody = {}; // Map<String, CreateDataMapRequest> | Individual data map creation requests.
+    Map<String, CreateDataMapRequest> requestBody = new HashMap(); // Map<String, CreateDataMapRequest> | Individual data map creation requests.
     try {
       UpsertStructuredDataResponse result = apiInstance.createDataMap(scope, requestBody);
       System.out.println(result);
@@ -103,7 +103,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53397");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -111,7 +111,7 @@ public class Example {
 
     StructuredResultDataApi apiInstance = new StructuredResultDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope from which to delete data items.
-    Map<String, StructuredResultDataId> requestBody = {"someCorrelationId1":{"source":"MiddleOffice","code":"MyUploadedRiskResults","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","resultType":"Risk"}}; // Map<String, StructuredResultDataId> | The data IDs to delete, each keyed by a unique, ephemeral correlation ID.
+    Map<String, StructuredResultDataId> requestBody = new HashMap(); // Map<String, StructuredResultDataId> | The data IDs to delete, each keyed by a unique, ephemeral correlation ID.
     try {
       AnnulStructuredDataResponse result = apiInstance.deleteStructuredResultData(scope, requestBody);
       System.out.println(result);
@@ -174,7 +174,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53397");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -182,7 +182,7 @@ public class Example {
 
     StructuredResultDataApi apiInstance = new StructuredResultDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope from which to retrieve data maps.
-    Map<String, DataMapKey> requestBody = {}; // Map<String, DataMapKey> | The data map keys to look up, each keyed by a unique, ephemeral correlation ID.
+    Map<String, DataMapKey> requestBody = new HashMap(); // Map<String, DataMapKey> | The data map keys to look up, each keyed by a unique, ephemeral correlation ID.
     try {
       GetDataMapResponse result = apiInstance.getDataMap(scope, requestBody);
       System.out.println(result);
@@ -245,7 +245,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53397");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -253,8 +253,8 @@ public class Example {
 
     StructuredResultDataApi apiInstance = new StructuredResultDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope from which to retrieve data items.
-    Map<String, StructuredResultDataId> requestBody = {"someCorrelationId1":{"source":"MiddleOffice","code":"MyUploadedRiskResults","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","resultType":"Risk"}}; // Map<String, StructuredResultDataId> | The time invariant set of structured data identifiers to retrieve, keyed by a unique, ephemeral correlation ID.
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the structured result data. Defaults to returning the latest version if not specified.
+    Map<String, StructuredResultDataId> requestBody = new HashMap(); // Map<String, StructuredResultDataId> | The time invariant set of structured data identifiers to retrieve, keyed by a unique, ephemeral correlation ID.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the structured result data. Defaults to returning the latest version if not specified.
     String maxAge = "maxAge_example"; // String | The duration of the look-back window in ISO8601 time interval format, for example 'P1Y2M3DT4H30M' (1 year, 2 months, 3 days, 4 hours and 30 minutes).               This is subtracted from the provided effectiveAt datetime to generate a effective datetime window inside which a data item must exist to be retrieved.
     try {
       GetStructuredResultDataResponse result = apiInstance.getStructuredResultData(scope, requestBody, asAt, maxAge);
@@ -320,7 +320,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53397");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -328,7 +328,7 @@ public class Example {
 
     StructuredResultDataApi apiInstance = new StructuredResultDataApi(defaultClient);
     String scope = "scope_example"; // String | The scope in which to create or update data items.
-    Map<String, UpsertStructuredResultDataRequest> requestBody = {"first-item":{"id":{"source":"Client","code":"MyUploadedRiskResults-1","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","resultType":"Risk"},"data":{"documentFormat":"Xml","version":"1.0.0","name":"free text identifier of document 1","document":"<xml>data</xml>"}},"second-item":{"id":{"source":"Client","code":"MyUploadedRiskResults-2","effectiveAt":"2018-03-05T00:00:00.0000000+00:00","resultType":"Risk"},"data":{"documentFormat":"Json","version":"1.0.0","name":"free text identifier of document 2","document":"{ \"some\":\"valid json\"}"}}}; // Map<String, UpsertStructuredResultDataRequest> | The set of data items to create or update, keyed by a unique, ephemeral correlation ID.
+    Map<String, UpsertStructuredResultDataRequest> requestBody = new HashMap(); // Map<String, UpsertStructuredResultDataRequest> | The set of data items to create or update, keyed by a unique, ephemeral correlation ID.
     try {
       UpsertStructuredDataResponse result = apiInstance.upsertStructuredResultData(scope, requestBody);
       System.out.println(result);

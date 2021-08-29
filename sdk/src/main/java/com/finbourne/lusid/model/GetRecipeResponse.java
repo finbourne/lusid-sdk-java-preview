@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * GetRecipeResponse
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class GetRecipeResponse {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -40,14 +40,15 @@ public class GetRecipeResponse {
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private ConfigurationRecipe value = null;
+  private ConfigurationRecipe value;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public GetRecipeResponse href(URI href) {
-    this.href = href;
+    this.href = href; 
     return this;
   }
 
@@ -64,8 +65,9 @@ public class GetRecipeResponse {
     this.href = href;
   }
 
+
   public GetRecipeResponse value(ConfigurationRecipe value) {
-    this.value = value;
+    this.value = value; 
     return this;
   }
 
@@ -82,12 +84,14 @@ public class GetRecipeResponse {
     this.value = value;
   }
 
+
   public GetRecipeResponse links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public GetRecipeResponse addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -110,7 +114,7 @@ public class GetRecipeResponse {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -122,9 +126,8 @@ public class GetRecipeResponse {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -141,7 +144,7 @@ public class GetRecipeResponse {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

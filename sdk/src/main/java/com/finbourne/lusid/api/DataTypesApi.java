@@ -44,7 +44,6 @@ import java.util.Map;
 
 public class DataTypesApi {
     private ApiClient localVarApiClient;
-
     public DataTypesApi() {
         this(Configuration.getDefaultApiClient());
     }
@@ -84,7 +83,9 @@ public class DataTypesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -102,7 +103,7 @@ public class DataTypesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -169,7 +170,6 @@ public class DataTypesApi {
      </table>
      */
     public okhttp3.Call createDataTypeAsync(CreateDataTypeRequest createDataTypeRequest, final ApiCallback<DataType> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = createDataTypeValidateBeforeCall(createDataTypeRequest, _callback);
         Type localVarReturnType = new TypeToken<DataType>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -192,7 +192,7 @@ public class DataTypesApi {
      </table>
      */
     public okhttp3.Call getDataTypeCall(String scope, String code, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/datatypes/{scope}/{code}"
@@ -201,12 +201,14 @@ public class DataTypesApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (asAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -224,7 +226,7 @@ public class DataTypesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -307,7 +309,6 @@ public class DataTypesApi {
      </table>
      */
     public okhttp3.Call getDataTypeAsync(String scope, String code, OffsetDateTime asAt, final ApiCallback<DataType> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getDataTypeValidateBeforeCall(scope, code, asAt, _callback);
         Type localVarReturnType = new TypeToken<DataType>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -332,7 +333,7 @@ public class DataTypesApi {
      </table>
      */
     public okhttp3.Call getUnitsFromDataTypeCall(String scope, String code, List<String> units, String filter, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/datatypes/{scope}/{code}/units"
@@ -341,6 +342,10 @@ public class DataTypesApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (units != null) {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "units", units));
         }
@@ -353,8 +358,6 @@ public class DataTypesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -372,7 +375,7 @@ public class DataTypesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -461,7 +464,6 @@ public class DataTypesApi {
      </table>
      */
     public okhttp3.Call getUnitsFromDataTypeAsync(String scope, String code, List<String> units, String filter, OffsetDateTime asAt, final ApiCallback<ResourceListOfIUnitDefinitionDto> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getUnitsFromDataTypeValidateBeforeCall(scope, code, units, filter, asAt, _callback);
         Type localVarReturnType = new TypeToken<ResourceListOfIUnitDefinitionDto>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -488,7 +490,7 @@ public class DataTypesApi {
      </table>
      */
     public okhttp3.Call listDataTypesCall(String scope, OffsetDateTime asAt, Boolean includeSystem, List<String> sortBy, Integer start, Integer limit, String filter, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/datatypes/{scope}"
@@ -496,6 +498,10 @@ public class DataTypesApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (asAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
@@ -520,8 +526,6 @@ public class DataTypesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -539,7 +543,7 @@ public class DataTypesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -629,7 +633,6 @@ public class DataTypesApi {
      </table>
      */
     public okhttp3.Call listDataTypesAsync(String scope, OffsetDateTime asAt, Boolean includeSystem, List<String> sortBy, Integer start, Integer limit, String filter, final ApiCallback<ResourceListOfDataType> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = listDataTypesValidateBeforeCall(scope, asAt, includeSystem, sortBy, start, limit, filter, _callback);
         Type localVarReturnType = new TypeToken<ResourceListOfDataType>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -662,7 +665,9 @@ public class DataTypesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -680,7 +685,7 @@ public class DataTypesApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -763,7 +768,6 @@ public class DataTypesApi {
      </table>
      */
     public okhttp3.Call updateDataTypeAsync(String scope, String code, UpdateDataTypeRequest updateDataTypeRequest, final ApiCallback<DataType> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = updateDataTypeValidateBeforeCall(scope, code, updateDataTypeRequest, _callback);
         Type localVarReturnType = new TypeToken<DataType>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);

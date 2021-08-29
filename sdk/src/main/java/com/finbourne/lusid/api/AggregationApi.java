@@ -44,7 +44,6 @@ import java.util.Map;
 
 public class AggregationApi {
     private ApiClient localVarApiClient;
-
     public AggregationApi() {
         this(Configuration.getDefaultApiClient());
     }
@@ -88,7 +87,9 @@ public class AggregationApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -106,7 +107,7 @@ public class AggregationApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -189,7 +190,6 @@ public class AggregationApi {
      </table>
      */
     public okhttp3.Call generateConfigurationRecipeAsync(String scope, String code, CreateRecipeRequest createRecipeRequest, final ApiCallback<ConfigurationRecipe> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = generateConfigurationRecipeValidateBeforeCall(scope, code, createRecipeRequest, _callback);
         Type localVarReturnType = new TypeToken<ConfigurationRecipe>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -212,13 +212,17 @@ public class AggregationApi {
      </table>
      */
     public okhttp3.Call getQueryableKeysCall(String page, Integer limit, String filter, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/results/queryable/keys";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (page != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
         }
@@ -231,8 +235,6 @@ public class AggregationApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -250,7 +252,7 @@ public class AggregationApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -323,7 +325,6 @@ public class AggregationApi {
      </table>
      */
     public okhttp3.Call getQueryableKeysAsync(String page, Integer limit, String filter, final ApiCallback<ResourceListOfAggregationQuery> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getQueryableKeysValidateBeforeCall(page, limit, filter, _callback);
         Type localVarReturnType = new TypeToken<ResourceListOfAggregationQuery>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -352,7 +353,9 @@ public class AggregationApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -370,7 +373,7 @@ public class AggregationApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -437,7 +440,6 @@ public class AggregationApi {
      </table>
      */
     public okhttp3.Call getValuationAsync(ValuationRequest valuationRequest, final ApiCallback<ListAggregationResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getValuationValidateBeforeCall(valuationRequest, _callback);
         Type localVarReturnType = new TypeToken<ListAggregationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -466,7 +468,9 @@ public class AggregationApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -484,7 +488,7 @@ public class AggregationApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -551,7 +555,6 @@ public class AggregationApi {
      </table>
      */
     public okhttp3.Call getValuationOfWeightedInstrumentsAsync(InlineValuationRequest inlineValuationRequest, final ApiCallback<ListAggregationResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getValuationOfWeightedInstrumentsValidateBeforeCall(inlineValuationRequest, _callback);
         Type localVarReturnType = new TypeToken<ListAggregationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);

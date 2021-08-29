@@ -34,7 +34,7 @@ import java.util.Map;
  * The details for the cashflow associated with an instrument from a given portfolio.
  */
 @ApiModel(description = "The details for the cashflow associated with an instrument from a given portfolio.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class InstrumentCashFlow {
   public static final String SERIALIZED_NAME_PAYMENT_DATE = "paymentDate";
   @SerializedName(SERIALIZED_NAME_PAYMENT_DATE)
@@ -62,10 +62,11 @@ public class InstrumentCashFlow {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public InstrumentCashFlow paymentDate(OffsetDateTime paymentDate) {
-    this.paymentDate = paymentDate;
+    this.paymentDate = paymentDate; 
     return this;
   }
 
@@ -82,8 +83,9 @@ public class InstrumentCashFlow {
     this.paymentDate = paymentDate;
   }
 
+
   public InstrumentCashFlow amount(Double amount) {
-    this.amount = amount;
+    this.amount = amount; 
     return this;
   }
 
@@ -100,8 +102,9 @@ public class InstrumentCashFlow {
     this.amount = amount;
   }
 
+
   public InstrumentCashFlow currency(String currency) {
-    this.currency = currency;
+    this.currency = currency; 
     return this;
   }
 
@@ -118,8 +121,9 @@ public class InstrumentCashFlow {
     this.currency = currency;
   }
 
+
   public InstrumentCashFlow sourceTransactionId(String sourceTransactionId) {
-    this.sourceTransactionId = sourceTransactionId;
+    this.sourceTransactionId = sourceTransactionId; 
     return this;
   }
 
@@ -136,8 +140,9 @@ public class InstrumentCashFlow {
     this.sourceTransactionId = sourceTransactionId;
   }
 
+
   public InstrumentCashFlow sourceInstrumentId(String sourceInstrumentId) {
-    this.sourceInstrumentId = sourceInstrumentId;
+    this.sourceInstrumentId = sourceInstrumentId; 
     return this;
   }
 
@@ -154,8 +159,9 @@ public class InstrumentCashFlow {
     this.sourceInstrumentId = sourceInstrumentId;
   }
 
+
   public InstrumentCashFlow diagnostics(Map<String, String> diagnostics) {
-    this.diagnostics = diagnostics;
+    this.diagnostics = diagnostics; 
     return this;
   }
 
@@ -177,12 +183,14 @@ public class InstrumentCashFlow {
     this.diagnostics = diagnostics;
   }
 
+
   public InstrumentCashFlow links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public InstrumentCashFlow addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -205,7 +213,7 @@ public class InstrumentCashFlow {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -217,9 +225,8 @@ public class InstrumentCashFlow {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -240,7 +247,7 @@ public class InstrumentCashFlow {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

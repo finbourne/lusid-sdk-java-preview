@@ -44,7 +44,6 @@ import java.util.Map;
 
 public class ComplexMarketDataApi {
     private ApiClient localVarApiClient;
-
     public ComplexMarketDataApi() {
         this(Configuration.getDefaultApiClient());
     }
@@ -86,7 +85,9 @@ public class ComplexMarketDataApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -104,7 +105,7 @@ public class ComplexMarketDataApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -184,7 +185,6 @@ public class ComplexMarketDataApi {
      </table>
      */
     public okhttp3.Call deleteComplexMarketDataAsync(String scope, Map<String, ComplexMarketDataId> requestBody, final ApiCallback<AnnulStructuredDataResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = deleteComplexMarketDataValidateBeforeCall(scope, requestBody, _callback);
         Type localVarReturnType = new TypeToken<AnnulStructuredDataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -217,6 +217,10 @@ public class ComplexMarketDataApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (effectiveAt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("effectiveAt", effectiveAt));
         }
@@ -229,8 +233,6 @@ public class ComplexMarketDataApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("maxAge", maxAge));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -248,7 +250,7 @@ public class ComplexMarketDataApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -337,7 +339,6 @@ public class ComplexMarketDataApi {
      </table>
      */
     public okhttp3.Call getComplexMarketDataAsync(String scope, Map<String, ComplexMarketDataId> requestBody, String effectiveAt, OffsetDateTime asAt, String maxAge, final ApiCallback<GetComplexMarketDataResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getComplexMarketDataValidateBeforeCall(scope, requestBody, effectiveAt, asAt, maxAge, _callback);
         Type localVarReturnType = new TypeToken<GetComplexMarketDataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -368,7 +369,9 @@ public class ComplexMarketDataApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -386,7 +389,7 @@ public class ComplexMarketDataApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -466,7 +469,6 @@ public class ComplexMarketDataApi {
      </table>
      */
     public okhttp3.Call upsertComplexMarketDataAsync(String scope, Map<String, UpsertComplexMarketDataRequest> requestBody, final ApiCallback<UpsertStructuredDataResponse> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = upsertComplexMarketDataValidateBeforeCall(scope, requestBody, _callback);
         Type localVarReturnType = new TypeToken<UpsertStructuredDataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);

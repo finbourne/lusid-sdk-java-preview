@@ -31,7 +31,7 @@ import java.time.OffsetDateTime;
  * Lusid-ibor internal representation of a plain vanilla equity option instrument.
  */
 @ApiModel(description = "Lusid-ibor internal representation of a plain vanilla equity option instrument.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class EquityOption extends LusidInstrument {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -86,7 +86,7 @@ public class EquityOption extends LusidInstrument {
 
       @Override
       public DeliveryTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return DeliveryTypeEnum.fromValue(value);
       }
     }
@@ -139,7 +139,7 @@ public class EquityOption extends LusidInstrument {
 
       @Override
       public OptionTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return OptionTypeEnum.fromValue(value);
       }
     }
@@ -216,7 +216,7 @@ public class EquityOption extends LusidInstrument {
 
       @Override
       public UnderlyingIdentifierEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return UnderlyingIdentifierEnum.fromValue(value);
       }
     }
@@ -230,8 +230,12 @@ public class EquityOption extends LusidInstrument {
   @SerializedName(SERIALIZED_NAME_CODE)
   private String code;
 
+  public EquityOption() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
+
   public EquityOption startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -248,8 +252,9 @@ public class EquityOption extends LusidInstrument {
     this.startDate = startDate;
   }
 
+
   public EquityOption optionMaturityDate(OffsetDateTime optionMaturityDate) {
-    this.optionMaturityDate = optionMaturityDate;
+    this.optionMaturityDate = optionMaturityDate; 
     return this;
   }
 
@@ -266,8 +271,9 @@ public class EquityOption extends LusidInstrument {
     this.optionMaturityDate = optionMaturityDate;
   }
 
+
   public EquityOption optionSettlementDate(OffsetDateTime optionSettlementDate) {
-    this.optionSettlementDate = optionSettlementDate;
+    this.optionSettlementDate = optionSettlementDate; 
     return this;
   }
 
@@ -284,8 +290,9 @@ public class EquityOption extends LusidInstrument {
     this.optionSettlementDate = optionSettlementDate;
   }
 
+
   public EquityOption deliveryType(DeliveryTypeEnum deliveryType) {
-    this.deliveryType = deliveryType;
+    this.deliveryType = deliveryType; 
     return this;
   }
 
@@ -302,8 +309,9 @@ public class EquityOption extends LusidInstrument {
     this.deliveryType = deliveryType;
   }
 
+
   public EquityOption optionType(OptionTypeEnum optionType) {
-    this.optionType = optionType;
+    this.optionType = optionType; 
     return this;
   }
 
@@ -320,8 +328,9 @@ public class EquityOption extends LusidInstrument {
     this.optionType = optionType;
   }
 
+
   public EquityOption strike(Double strike) {
-    this.strike = strike;
+    this.strike = strike; 
     return this;
   }
 
@@ -338,8 +347,9 @@ public class EquityOption extends LusidInstrument {
     this.strike = strike;
   }
 
+
   public EquityOption domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -356,8 +366,9 @@ public class EquityOption extends LusidInstrument {
     this.domCcy = domCcy;
   }
 
+
   public EquityOption underlyingIdentifier(UnderlyingIdentifierEnum underlyingIdentifier) {
-    this.underlyingIdentifier = underlyingIdentifier;
+    this.underlyingIdentifier = underlyingIdentifier; 
     return this;
   }
 
@@ -374,8 +385,9 @@ public class EquityOption extends LusidInstrument {
     this.underlyingIdentifier = underlyingIdentifier;
   }
 
+
   public EquityOption code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -394,7 +406,7 @@ public class EquityOption extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -406,9 +418,8 @@ public class EquityOption extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -432,7 +443,7 @@ public class EquityOption extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

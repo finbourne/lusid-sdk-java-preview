@@ -33,7 +33,7 @@ import java.util.List;
  * Response from upserting structured data document
  */
 @ApiModel(description = "Response from upserting structured data document")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpsertSingleStructuredDataResponse {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -45,10 +45,11 @@ public class UpsertSingleStructuredDataResponse {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public UpsertSingleStructuredDataResponse href(URI href) {
-    this.href = href;
+    this.href = href; 
     return this;
   }
 
@@ -65,8 +66,9 @@ public class UpsertSingleStructuredDataResponse {
     this.href = href;
   }
 
+
   public UpsertSingleStructuredDataResponse value(OffsetDateTime value) {
-    this.value = value;
+    this.value = value; 
     return this;
   }
 
@@ -83,12 +85,14 @@ public class UpsertSingleStructuredDataResponse {
     this.value = value;
   }
 
+
   public UpsertSingleStructuredDataResponse links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public UpsertSingleStructuredDataResponse addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -111,7 +115,7 @@ public class UpsertSingleStructuredDataResponse {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -123,9 +127,8 @@ public class UpsertSingleStructuredDataResponse {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -142,7 +145,7 @@ public class UpsertSingleStructuredDataResponse {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

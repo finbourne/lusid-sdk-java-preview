@@ -31,7 +31,7 @@ import java.time.OffsetDateTime;
  * IL CFD Instrument; Lusid-ibor internal representation of a Contract For Difference instrument.
  */
 @ApiModel(description = "IL CFD Instrument; Lusid-ibor internal representation of a Contract For Difference instrument.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ContractForDifference extends LusidInstrument {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -69,8 +69,12 @@ public class ContractForDifference extends LusidInstrument {
   @SerializedName(SERIALIZED_NAME_UNDERLYING_IDENTIFIER)
   private String underlyingIdentifier;
 
+  public ContractForDifference() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
+
   public ContractForDifference startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -87,8 +91,9 @@ public class ContractForDifference extends LusidInstrument {
     this.startDate = startDate;
   }
 
+
   public ContractForDifference maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -105,8 +110,9 @@ public class ContractForDifference extends LusidInstrument {
     this.maturityDate = maturityDate;
   }
 
+
   public ContractForDifference code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -123,8 +129,9 @@ public class ContractForDifference extends LusidInstrument {
     this.code = code;
   }
 
+
   public ContractForDifference contractSize(Double contractSize) {
-    this.contractSize = contractSize;
+    this.contractSize = contractSize; 
     return this;
   }
 
@@ -141,8 +148,9 @@ public class ContractForDifference extends LusidInstrument {
     this.contractSize = contractSize;
   }
 
+
   public ContractForDifference payCcy(String payCcy) {
-    this.payCcy = payCcy;
+    this.payCcy = payCcy; 
     return this;
   }
 
@@ -159,8 +167,9 @@ public class ContractForDifference extends LusidInstrument {
     this.payCcy = payCcy;
   }
 
+
   public ContractForDifference referenceRate(Double referenceRate) {
-    this.referenceRate = referenceRate;
+    this.referenceRate = referenceRate; 
     return this;
   }
 
@@ -177,8 +186,9 @@ public class ContractForDifference extends LusidInstrument {
     this.referenceRate = referenceRate;
   }
 
+
   public ContractForDifference type(String type) {
-    this.type = type;
+    this.type = type; 
     return this;
   }
 
@@ -195,8 +205,9 @@ public class ContractForDifference extends LusidInstrument {
     this.type = type;
   }
 
+
   public ContractForDifference underlyingCcy(String underlyingCcy) {
-    this.underlyingCcy = underlyingCcy;
+    this.underlyingCcy = underlyingCcy; 
     return this;
   }
 
@@ -213,8 +224,9 @@ public class ContractForDifference extends LusidInstrument {
     this.underlyingCcy = underlyingCcy;
   }
 
+
   public ContractForDifference underlyingIdentifier(String underlyingIdentifier) {
-    this.underlyingIdentifier = underlyingIdentifier;
+    this.underlyingIdentifier = underlyingIdentifier; 
     return this;
   }
 
@@ -233,7 +245,7 @@ public class ContractForDifference extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -245,9 +257,8 @@ public class ContractForDifference extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -271,7 +282,7 @@ public class ContractForDifference extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

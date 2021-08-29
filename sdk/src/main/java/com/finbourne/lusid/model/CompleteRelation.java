@@ -35,7 +35,7 @@ import java.util.Map;
  * Representation of a relation containing details of source and target entities, and both outward and inward descriptions.
  */
 @ApiModel(description = "Representation of a relation containing details of source and target entities, and both outward and inward descriptions.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CompleteRelation {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -43,11 +43,11 @@ public class CompleteRelation {
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version = null;
+  private Version version;
 
   public static final String SERIALIZED_NAME_RELATION_DEFINITION_ID = "relationDefinitionId";
   @SerializedName(SERIALIZED_NAME_RELATION_DEFINITION_ID)
-  private ResourceId relationDefinitionId = null;
+  private ResourceId relationDefinitionId;
 
   public static final String SERIALIZED_NAME_SOURCE_ENTITY_ID = "sourceEntityId";
   @SerializedName(SERIALIZED_NAME_SOURCE_ENTITY_ID)
@@ -69,8 +69,9 @@ public class CompleteRelation {
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_FROM)
   private OffsetDateTime effectiveFrom;
 
+
   public CompleteRelation href(URI href) {
-    this.href = href;
+    this.href = href; 
     return this;
   }
 
@@ -87,8 +88,9 @@ public class CompleteRelation {
     this.href = href;
   }
 
+
   public CompleteRelation version(Version version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -105,8 +107,9 @@ public class CompleteRelation {
     this.version = version;
   }
 
+
   public CompleteRelation relationDefinitionId(ResourceId relationDefinitionId) {
-    this.relationDefinitionId = relationDefinitionId;
+    this.relationDefinitionId = relationDefinitionId; 
     return this;
   }
 
@@ -123,8 +126,9 @@ public class CompleteRelation {
     this.relationDefinitionId = relationDefinitionId;
   }
 
+
   public CompleteRelation sourceEntityId(Map<String, String> sourceEntityId) {
-    this.sourceEntityId = sourceEntityId;
+    this.sourceEntityId = sourceEntityId; 
     return this;
   }
 
@@ -146,8 +150,9 @@ public class CompleteRelation {
     this.sourceEntityId = sourceEntityId;
   }
 
+
   public CompleteRelation targetEntityId(Map<String, String> targetEntityId) {
-    this.targetEntityId = targetEntityId;
+    this.targetEntityId = targetEntityId; 
     return this;
   }
 
@@ -169,8 +174,9 @@ public class CompleteRelation {
     this.targetEntityId = targetEntityId;
   }
 
+
   public CompleteRelation outwardDescription(String outwardDescription) {
-    this.outwardDescription = outwardDescription;
+    this.outwardDescription = outwardDescription; 
     return this;
   }
 
@@ -187,8 +193,9 @@ public class CompleteRelation {
     this.outwardDescription = outwardDescription;
   }
 
+
   public CompleteRelation inwardDescription(String inwardDescription) {
-    this.inwardDescription = inwardDescription;
+    this.inwardDescription = inwardDescription; 
     return this;
   }
 
@@ -205,8 +212,9 @@ public class CompleteRelation {
     this.inwardDescription = inwardDescription;
   }
 
+
   public CompleteRelation effectiveFrom(OffsetDateTime effectiveFrom) {
-    this.effectiveFrom = effectiveFrom;
+    this.effectiveFrom = effectiveFrom; 
     return this;
   }
 
@@ -225,7 +233,7 @@ public class CompleteRelation {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -237,9 +245,8 @@ public class CompleteRelation {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -261,7 +268,7 @@ public class CompleteRelation {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

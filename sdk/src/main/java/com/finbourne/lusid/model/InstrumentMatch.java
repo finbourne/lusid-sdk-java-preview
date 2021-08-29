@@ -31,22 +31,24 @@ import java.util.List;
  * A collection of instrument search results
  */
 @ApiModel(description = "A collection of instrument search results")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class InstrumentMatch {
   public static final String SERIALIZED_NAME_MASTERED_INSTRUMENTS = "masteredInstruments";
   @SerializedName(SERIALIZED_NAME_MASTERED_INSTRUMENTS)
-  private List<InstrumentDefinition> masteredInstruments = new ArrayList<>();
+  private List<InstrumentDefinition> masteredInstruments = null;
 
   public static final String SERIALIZED_NAME_EXTERNAL_INSTRUMENTS = "externalInstruments";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_INSTRUMENTS)
-  private List<InstrumentDefinition> externalInstruments = new ArrayList<>();
+  private List<InstrumentDefinition> externalInstruments = null;
+
 
   public InstrumentMatch masteredInstruments(List<InstrumentDefinition> masteredInstruments) {
-    this.masteredInstruments = masteredInstruments;
+    this.masteredInstruments = masteredInstruments; 
     return this;
   }
 
   public InstrumentMatch addMasteredInstrumentsItem(InstrumentDefinition masteredInstrumentsItem) {
+   
     if (this.masteredInstruments == null) {
       this.masteredInstruments = new ArrayList<>();
     }
@@ -67,12 +69,14 @@ public class InstrumentMatch {
     this.masteredInstruments = masteredInstruments;
   }
 
+
   public InstrumentMatch externalInstruments(List<InstrumentDefinition> externalInstruments) {
-    this.externalInstruments = externalInstruments;
+    this.externalInstruments = externalInstruments; 
     return this;
   }
 
   public InstrumentMatch addExternalInstrumentsItem(InstrumentDefinition externalInstrumentsItem) {
+   
     if (this.externalInstruments == null) {
       this.externalInstruments = new ArrayList<>();
     }
@@ -95,7 +99,7 @@ public class InstrumentMatch {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -107,9 +111,8 @@ public class InstrumentMatch {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -125,7 +128,7 @@ public class InstrumentMatch {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

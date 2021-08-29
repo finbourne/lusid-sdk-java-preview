@@ -33,30 +33,31 @@ import java.util.List;
  * The record an order&#39;s participation in a specific placement.
  */
 @ApiModel(description = "The record an order's participation in a specific placement.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Participation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
 
   public static final String SERIALIZED_NAME_PLACEMENT_ID = "placementId";
   @SerializedName(SERIALIZED_NAME_PLACEMENT_ID)
-  private ResourceId placementId = null;
+  private ResourceId placementId;
 
   public static final String SERIALIZED_NAME_ORDER_ID = "orderId";
   @SerializedName(SERIALIZED_NAME_ORDER_ID)
-  private ResourceId orderId = null;
+  private ResourceId orderId;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
-  private Version version = null;
+  private Version version;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public Participation id(ResourceId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -73,8 +74,9 @@ public class Participation {
     this.id = id;
   }
 
+
   public Participation placementId(ResourceId placementId) {
-    this.placementId = placementId;
+    this.placementId = placementId; 
     return this;
   }
 
@@ -91,8 +93,9 @@ public class Participation {
     this.placementId = placementId;
   }
 
+
   public Participation orderId(ResourceId orderId) {
-    this.orderId = orderId;
+    this.orderId = orderId; 
     return this;
   }
 
@@ -109,8 +112,9 @@ public class Participation {
     this.orderId = orderId;
   }
 
+
   public Participation version(Version version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -127,12 +131,14 @@ public class Participation {
     this.version = version;
   }
 
+
   public Participation links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public Participation addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -155,7 +161,7 @@ public class Participation {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -167,9 +173,8 @@ public class Participation {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -188,7 +193,7 @@ public class Participation {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

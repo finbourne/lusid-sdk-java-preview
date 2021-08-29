@@ -28,7 +28,7 @@ import java.io.IOException;
  * An item of structured market data that is to be inserted into Lusid. This will typically be a Json or Xml document that  contains a set of market quotes (tradables) that can be used to construct a composite view of a market property such as the  interest rates over time; commonly referred to as an interest rate, projection or discount curve. Other examples include  volatility surfaces and credit spread curves.
  */
 @ApiModel(description = "An item of structured market data that is to be inserted into Lusid. This will typically be a Json or Xml document that  contains a set of market quotes (tradables) that can be used to construct a composite view of a market property such as the  interest rates over time; commonly referred to as an interest rate, projection or discount curve. Other examples include  volatility surfaces and credit spread curves.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class StructuredMarketData {
   public static final String SERIALIZED_NAME_DOCUMENT_FORMAT = "documentFormat";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_FORMAT)
@@ -46,8 +46,9 @@ public class StructuredMarketData {
   @SerializedName(SERIALIZED_NAME_DOCUMENT)
   private String document;
 
+
   public StructuredMarketData documentFormat(String documentFormat) {
-    this.documentFormat = documentFormat;
+    this.documentFormat = documentFormat; 
     return this;
   }
 
@@ -64,8 +65,9 @@ public class StructuredMarketData {
     this.documentFormat = documentFormat;
   }
 
+
   public StructuredMarketData version(String version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -82,8 +84,9 @@ public class StructuredMarketData {
     this.version = version;
   }
 
+
   public StructuredMarketData name(String name) {
-    this.name = name;
+    this.name = name; 
     return this;
   }
 
@@ -100,8 +103,9 @@ public class StructuredMarketData {
     this.name = name;
   }
 
+
   public StructuredMarketData document(String document) {
-    this.document = document;
+    this.document = document; 
     return this;
   }
 
@@ -120,7 +124,7 @@ public class StructuredMarketData {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -132,9 +136,8 @@ public class StructuredMarketData {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -152,7 +155,7 @@ public class StructuredMarketData {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
