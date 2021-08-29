@@ -35,7 +35,7 @@ import java.util.Map;
 /**
  * ListAggregationResponse
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ListAggregationResponse {
   public static final String SERIALIZED_NAME_AGGREGATION_EFFECTIVE_AT = "aggregationEffectiveAt";
   @SerializedName(SERIALIZED_NAME_AGGREGATION_EFFECTIVE_AT)
@@ -51,7 +51,7 @@ public class ListAggregationResponse {
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private List<Map<String, Object>> data = new ArrayList<>();
+  private List<Map<String, Object>> data = null;
 
   public static final String SERIALIZED_NAME_AGGREGATION_CURRENCY = "aggregationCurrency";
   @SerializedName(SERIALIZED_NAME_AGGREGATION_CURRENCY)
@@ -59,18 +59,19 @@ public class ListAggregationResponse {
 
   public static final String SERIALIZED_NAME_DATA_SCHEMA = "dataSchema";
   @SerializedName(SERIALIZED_NAME_DATA_SCHEMA)
-  private ResultDataSchema dataSchema = null;
+  private ResultDataSchema dataSchema;
 
   public static final String SERIALIZED_NAME_AGGREGATION_FAILURES = "aggregationFailures";
   @SerializedName(SERIALIZED_NAME_AGGREGATION_FAILURES)
-  private List<AggregationMeasureFailureDetail> aggregationFailures = new ArrayList<>();
+  private List<AggregationMeasureFailureDetail> aggregationFailures = null;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
+  private List<Link> links = null;
+
 
   public ListAggregationResponse aggregationEffectiveAt(OffsetDateTime aggregationEffectiveAt) {
-    this.aggregationEffectiveAt = aggregationEffectiveAt;
+    this.aggregationEffectiveAt = aggregationEffectiveAt; 
     return this;
   }
 
@@ -87,8 +88,9 @@ public class ListAggregationResponse {
     this.aggregationEffectiveAt = aggregationEffectiveAt;
   }
 
+
   public ListAggregationResponse aggregationAsAt(OffsetDateTime aggregationAsAt) {
-    this.aggregationAsAt = aggregationAsAt;
+    this.aggregationAsAt = aggregationAsAt; 
     return this;
   }
 
@@ -105,8 +107,9 @@ public class ListAggregationResponse {
     this.aggregationAsAt = aggregationAsAt;
   }
 
+
   public ListAggregationResponse href(URI href) {
-    this.href = href;
+    this.href = href; 
     return this;
   }
 
@@ -123,12 +126,14 @@ public class ListAggregationResponse {
     this.href = href;
   }
 
+
   public ListAggregationResponse data(List<Map<String, Object>> data) {
-    this.data = data;
+    this.data = data; 
     return this;
   }
 
   public ListAggregationResponse addDataItem(Map<String, Object> dataItem) {
+   
     if (this.data == null) {
       this.data = new ArrayList<>();
     }
@@ -149,8 +154,9 @@ public class ListAggregationResponse {
     this.data = data;
   }
 
+
   public ListAggregationResponse aggregationCurrency(String aggregationCurrency) {
-    this.aggregationCurrency = aggregationCurrency;
+    this.aggregationCurrency = aggregationCurrency; 
     return this;
   }
 
@@ -167,8 +173,9 @@ public class ListAggregationResponse {
     this.aggregationCurrency = aggregationCurrency;
   }
 
+
   public ListAggregationResponse dataSchema(ResultDataSchema dataSchema) {
-    this.dataSchema = dataSchema;
+    this.dataSchema = dataSchema; 
     return this;
   }
 
@@ -185,12 +192,14 @@ public class ListAggregationResponse {
     this.dataSchema = dataSchema;
   }
 
+
   public ListAggregationResponse aggregationFailures(List<AggregationMeasureFailureDetail> aggregationFailures) {
-    this.aggregationFailures = aggregationFailures;
+    this.aggregationFailures = aggregationFailures; 
     return this;
   }
 
   public ListAggregationResponse addAggregationFailuresItem(AggregationMeasureFailureDetail aggregationFailuresItem) {
+   
     if (this.aggregationFailures == null) {
       this.aggregationFailures = new ArrayList<>();
     }
@@ -211,12 +220,14 @@ public class ListAggregationResponse {
     this.aggregationFailures = aggregationFailures;
   }
 
+
   public ListAggregationResponse links(List<Link> links) {
-    this.links = links;
+    this.links = links; 
     return this;
   }
 
   public ListAggregationResponse addLinksItem(Link linksItem) {
+   
     if (this.links == null) {
       this.links = new ArrayList<>();
     }
@@ -239,7 +250,7 @@ public class ListAggregationResponse {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -251,9 +262,8 @@ public class ListAggregationResponse {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -275,7 +285,7 @@ public class ListAggregationResponse {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

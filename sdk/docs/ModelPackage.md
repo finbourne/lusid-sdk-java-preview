@@ -2,6 +2,8 @@
 
 # ModelPackage
 
+A structure used to describe the structure of an order or orders that make up a non-trivial trade.
+
 ## Properties
 
 Name | Type | Description | Notes

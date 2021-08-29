@@ -28,7 +28,7 @@ import java.io.IOException;
  * The combination of a library to use and a model in that library that defines which pricing code will evaluate instruments  having a particular type/class. This allows us to control the model type and library for a given instrument.
  */
 @ApiModel(description = "The combination of a library to use and a model in that library that defines which pricing code will evaluate instruments  having a particular type/class. This allows us to control the model type and library for a given instrument.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ModelSelection {
   /**
    * The available values are: Lusid, RefinitivQps, RefinitivTracsWeb, VolMaster, IsdaCds
@@ -77,7 +77,7 @@ public class ModelSelection {
 
       @Override
       public LibraryEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return LibraryEnum.fromValue(value);
       }
     }
@@ -150,7 +150,7 @@ public class ModelSelection {
 
       @Override
       public ModelEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return ModelEnum.fromValue(value);
       }
     }
@@ -160,8 +160,9 @@ public class ModelSelection {
   @SerializedName(SERIALIZED_NAME_MODEL)
   private ModelEnum model;
 
+
   public ModelSelection library(LibraryEnum library) {
-    this.library = library;
+    this.library = library; 
     return this;
   }
 
@@ -178,8 +179,9 @@ public class ModelSelection {
     this.library = library;
   }
 
+
   public ModelSelection model(ModelEnum model) {
-    this.model = model;
+    this.model = model; 
     return this;
   }
 
@@ -198,7 +200,7 @@ public class ModelSelection {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -210,9 +212,8 @@ public class ModelSelection {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -228,7 +229,7 @@ public class ModelSelection {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

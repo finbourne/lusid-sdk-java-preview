@@ -44,7 +44,6 @@ import java.util.Map;
 
 public class ReconciliationsApi {
     private ApiClient localVarApiClient;
-
     public ReconciliationsApi() {
         this(Configuration.getDefaultApiClient());
     }
@@ -87,6 +86,10 @@ public class ReconciliationsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (sortBy != null) {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "sortBy", sortBy));
         }
@@ -103,8 +106,6 @@ public class ReconciliationsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -122,7 +123,7 @@ public class ReconciliationsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -201,7 +202,6 @@ public class ReconciliationsApi {
      </table>
      */
     public okhttp3.Call reconcileHoldingsAsync(List<String> sortBy, Integer start, Integer limit, String filter, PortfoliosReconciliationRequest portfoliosReconciliationRequest, final ApiCallback<ResourceListOfReconciliationBreak> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = reconcileHoldingsValidateBeforeCall(sortBy, start, limit, filter, portfoliosReconciliationRequest, _callback);
         Type localVarReturnType = new TypeToken<ResourceListOfReconciliationBreak>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -233,6 +233,10 @@ public class ReconciliationsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (sortBy != null) {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "sortBy", sortBy));
         }
@@ -249,8 +253,6 @@ public class ReconciliationsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -268,7 +270,7 @@ public class ReconciliationsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -347,7 +349,6 @@ public class ReconciliationsApi {
      </table>
      */
     public okhttp3.Call reconcileHoldingsPreviewAsync(List<String> sortBy, Integer start, Integer limit, String filter, PortfoliosReconciliationRequestPreview portfoliosReconciliationRequestPreview, final ApiCallback<ResourceListOfReconciliationBreak> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = reconcileHoldingsPreviewValidateBeforeCall(sortBy, start, limit, filter, portfoliosReconciliationRequestPreview, _callback);
         Type localVarReturnType = new TypeToken<ResourceListOfReconciliationBreak>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -376,7 +377,9 @@ public class ReconciliationsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -394,7 +397,7 @@ public class ReconciliationsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -461,7 +464,6 @@ public class ReconciliationsApi {
      </table>
      */
     public okhttp3.Call reconcileInlineAsync(InlineValuationsReconciliationRequest inlineValuationsReconciliationRequest, final ApiCallback<ListAggregationReconciliation> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = reconcileInlineValidateBeforeCall(inlineValuationsReconciliationRequest, _callback);
         Type localVarReturnType = new TypeToken<ListAggregationReconciliation>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -490,7 +492,9 @@ public class ReconciliationsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -508,7 +512,7 @@ public class ReconciliationsApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -575,7 +579,6 @@ public class ReconciliationsApi {
      </table>
      */
     public okhttp3.Call reconcileValuationAsync(ValuationsReconciliationRequest valuationsReconciliationRequest, final ApiCallback<ListAggregationReconciliation> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = reconcileValuationValidateBeforeCall(valuationsReconciliationRequest, _callback);
         Type localVarReturnType = new TypeToken<ListAggregationReconciliation>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);

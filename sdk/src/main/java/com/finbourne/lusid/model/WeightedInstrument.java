@@ -29,7 +29,7 @@ import java.io.IOException;
  * Specification for a holding or quantity of (weight for) an instrument on a given date.
  */
 @ApiModel(description = "Specification for a holding or quantity of (weight for) an instrument on a given date.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class WeightedInstrument {
   public static final String SERIALIZED_NAME_QUANTITY = "quantity";
   @SerializedName(SERIALIZED_NAME_QUANTITY)
@@ -41,10 +41,11 @@ public class WeightedInstrument {
 
   public static final String SERIALIZED_NAME_INSTRUMENT = "instrument";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT)
-  private LusidInstrument instrument = null;
+  private LusidInstrument instrument;
+
 
   public WeightedInstrument quantity(Double quantity) {
-    this.quantity = quantity;
+    this.quantity = quantity; 
     return this;
   }
 
@@ -61,8 +62,9 @@ public class WeightedInstrument {
     this.quantity = quantity;
   }
 
+
   public WeightedInstrument holdingIdentifier(String holdingIdentifier) {
-    this.holdingIdentifier = holdingIdentifier;
+    this.holdingIdentifier = holdingIdentifier; 
     return this;
   }
 
@@ -79,8 +81,9 @@ public class WeightedInstrument {
     this.holdingIdentifier = holdingIdentifier;
   }
 
+
   public WeightedInstrument instrument(LusidInstrument instrument) {
-    this.instrument = instrument;
+    this.instrument = instrument; 
     return this;
   }
 
@@ -99,7 +102,7 @@ public class WeightedInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -111,9 +114,8 @@ public class WeightedInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -130,7 +132,7 @@ public class WeightedInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

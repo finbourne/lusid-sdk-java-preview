@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * Calendar
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Calendar {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -41,7 +41,7 @@ public class Calendar {
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -49,7 +49,7 @@ public class Calendar {
 
   public static final String SERIALIZED_NAME_WEEKEND_MASK = "weekendMask";
   @SerializedName(SERIALIZED_NAME_WEEKEND_MASK)
-  private WeekendMask weekendMask = null;
+  private WeekendMask weekendMask;
 
   public static final String SERIALIZED_NAME_SOURCE_PROVIDER = "sourceProvider";
   @SerializedName(SERIALIZED_NAME_SOURCE_PROVIDER)
@@ -59,8 +59,9 @@ public class Calendar {
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
   private List<Property> properties = new ArrayList<>();
 
+
   public Calendar href(URI href) {
-    this.href = href;
+    this.href = href; 
     return this;
   }
 
@@ -77,8 +78,9 @@ public class Calendar {
     this.href = href;
   }
 
+
   public Calendar id(ResourceId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -95,8 +97,9 @@ public class Calendar {
     this.id = id;
   }
 
+
   public Calendar type(String type) {
-    this.type = type;
+    this.type = type; 
     return this;
   }
 
@@ -113,8 +116,9 @@ public class Calendar {
     this.type = type;
   }
 
+
   public Calendar weekendMask(WeekendMask weekendMask) {
-    this.weekendMask = weekendMask;
+    this.weekendMask = weekendMask; 
     return this;
   }
 
@@ -131,8 +135,9 @@ public class Calendar {
     this.weekendMask = weekendMask;
   }
 
+
   public Calendar sourceProvider(String sourceProvider) {
-    this.sourceProvider = sourceProvider;
+    this.sourceProvider = sourceProvider; 
     return this;
   }
 
@@ -149,12 +154,14 @@ public class Calendar {
     this.sourceProvider = sourceProvider;
   }
 
+
   public Calendar properties(List<Property> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
   public Calendar addPropertiesItem(Property propertiesItem) {
+   
     this.properties.add(propertiesItem);
     return this;
   }
@@ -174,7 +181,7 @@ public class Calendar {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -186,9 +193,8 @@ public class Calendar {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -208,7 +214,7 @@ public class Calendar {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

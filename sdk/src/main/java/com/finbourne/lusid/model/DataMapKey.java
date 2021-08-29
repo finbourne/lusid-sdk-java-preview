@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * DataMapKey
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class DataMapKey {
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
@@ -37,8 +37,9 @@ public class DataMapKey {
   @SerializedName(SERIALIZED_NAME_CODE)
   private String code;
 
+
   public DataMapKey version(String version) {
-    this.version = version;
+    this.version = version; 
     return this;
   }
 
@@ -55,8 +56,9 @@ public class DataMapKey {
     this.version = version;
   }
 
+
   public DataMapKey code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -75,7 +77,7 @@ public class DataMapKey {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -87,9 +89,8 @@ public class DataMapKey {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -105,7 +106,7 @@ public class DataMapKey {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

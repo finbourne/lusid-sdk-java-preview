@@ -28,7 +28,7 @@ import java.io.IOException;
  * An access control value. Provider should only be used if you are a service provide licensing data. In that case  the provider value must match your domain.
  */
 @ApiModel(description = "An access control value. Provider should only be used if you are a service provide licensing data. In that case  the provider value must match your domain.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class AccessMetadataValue {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
@@ -38,8 +38,9 @@ public class AccessMetadataValue {
   @SerializedName(SERIALIZED_NAME_PROVIDER)
   private String provider;
 
+
   public AccessMetadataValue value(String value) {
-    this.value = value;
+    this.value = value; 
     return this;
   }
 
@@ -56,8 +57,9 @@ public class AccessMetadataValue {
     this.value = value;
   }
 
+
   public AccessMetadataValue provider(String provider) {
-    this.provider = provider;
+    this.provider = provider; 
     return this;
   }
 
@@ -76,7 +78,7 @@ public class AccessMetadataValue {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -88,9 +90,8 @@ public class AccessMetadataValue {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -106,7 +107,7 @@ public class AccessMetadataValue {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

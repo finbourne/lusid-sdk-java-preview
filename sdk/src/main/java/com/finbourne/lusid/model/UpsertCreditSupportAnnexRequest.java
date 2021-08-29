@@ -29,14 +29,15 @@ import java.io.IOException;
  * Credit Support Annex information. The interaction in terms of margining requirements between a set of trades for a given counterparty.
  */
 @ApiModel(description = "Credit Support Annex information. The interaction in terms of margining requirements between a set of trades for a given counterparty.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpsertCreditSupportAnnexRequest {
   public static final String SERIALIZED_NAME_CREDIT_SUPPORT_ANNEX = "creditSupportAnnex";
   @SerializedName(SERIALIZED_NAME_CREDIT_SUPPORT_ANNEX)
-  private CreditSupportAnnex creditSupportAnnex = null;
+  private CreditSupportAnnex creditSupportAnnex;
+
 
   public UpsertCreditSupportAnnexRequest creditSupportAnnex(CreditSupportAnnex creditSupportAnnex) {
-    this.creditSupportAnnex = creditSupportAnnex;
+    this.creditSupportAnnex = creditSupportAnnex; 
     return this;
   }
 
@@ -55,7 +56,7 @@ public class UpsertCreditSupportAnnexRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -67,9 +68,8 @@ public class UpsertCreditSupportAnnexRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -84,7 +84,7 @@ public class UpsertCreditSupportAnnexRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

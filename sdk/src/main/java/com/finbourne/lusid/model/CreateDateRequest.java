@@ -32,7 +32,7 @@ import java.util.Map;
 /**
  * CreateDateRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreateDateRequest {
   public static final String SERIALIZED_NAME_DATE_ID = "dateId";
   @SerializedName(SERIALIZED_NAME_DATE_ID)
@@ -60,14 +60,15 @@ public class CreateDateRequest {
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  private DateAttributes attributes = null;
+  private DateAttributes attributes;
 
   public static final String SERIALIZED_NAME_SOURCE_DATA = "sourceData";
   @SerializedName(SERIALIZED_NAME_SOURCE_DATA)
-  private Map<String, String> sourceData = new HashMap<>();
+  private Map<String, String> sourceData = null;
+
 
   public CreateDateRequest dateId(String dateId) {
-    this.dateId = dateId;
+    this.dateId = dateId; 
     return this;
   }
 
@@ -84,8 +85,9 @@ public class CreateDateRequest {
     this.dateId = dateId;
   }
 
+
   public CreateDateRequest fromUtc(OffsetDateTime fromUtc) {
-    this.fromUtc = fromUtc;
+    this.fromUtc = fromUtc; 
     return this;
   }
 
@@ -102,8 +104,9 @@ public class CreateDateRequest {
     this.fromUtc = fromUtc;
   }
 
+
   public CreateDateRequest toUtc(OffsetDateTime toUtc) {
-    this.toUtc = toUtc;
+    this.toUtc = toUtc; 
     return this;
   }
 
@@ -120,8 +123,9 @@ public class CreateDateRequest {
     this.toUtc = toUtc;
   }
 
+
   public CreateDateRequest timeZone(String timeZone) {
-    this.timeZone = timeZone;
+    this.timeZone = timeZone; 
     return this;
   }
 
@@ -138,8 +142,9 @@ public class CreateDateRequest {
     this.timeZone = timeZone;
   }
 
+
   public CreateDateRequest description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -156,8 +161,9 @@ public class CreateDateRequest {
     this.description = description;
   }
 
+
   public CreateDateRequest type(String type) {
-    this.type = type;
+    this.type = type; 
     return this;
   }
 
@@ -174,8 +180,9 @@ public class CreateDateRequest {
     this.type = type;
   }
 
+
   public CreateDateRequest attributes(DateAttributes attributes) {
-    this.attributes = attributes;
+    this.attributes = attributes; 
     return this;
   }
 
@@ -192,8 +199,9 @@ public class CreateDateRequest {
     this.attributes = attributes;
   }
 
+
   public CreateDateRequest sourceData(Map<String, String> sourceData) {
-    this.sourceData = sourceData;
+    this.sourceData = sourceData; 
     return this;
   }
 
@@ -220,7 +228,7 @@ public class CreateDateRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -232,9 +240,8 @@ public class CreateDateRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -256,7 +263,7 @@ public class CreateDateRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

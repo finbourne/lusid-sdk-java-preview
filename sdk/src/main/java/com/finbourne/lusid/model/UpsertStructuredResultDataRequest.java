@@ -30,18 +30,19 @@ import java.io.IOException;
  * The details of the structured unit result data item to upsert into Lusid.
  */
 @ApiModel(description = "The details of the structured unit result data item to upsert into Lusid.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpsertStructuredResultDataRequest {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private StructuredResultDataId id = null;
+  private StructuredResultDataId id;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private StructuredResultData data = null;
+  private StructuredResultData data;
+
 
   public UpsertStructuredResultDataRequest id(StructuredResultDataId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -58,8 +59,9 @@ public class UpsertStructuredResultDataRequest {
     this.id = id;
   }
 
+
   public UpsertStructuredResultDataRequest data(StructuredResultData data) {
-    this.data = data;
+    this.data = data; 
     return this;
   }
 
@@ -78,7 +80,7 @@ public class UpsertStructuredResultDataRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -90,9 +92,8 @@ public class UpsertStructuredResultDataRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -108,7 +109,7 @@ public class UpsertStructuredResultDataRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

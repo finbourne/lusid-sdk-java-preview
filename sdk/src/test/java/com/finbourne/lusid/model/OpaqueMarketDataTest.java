@@ -50,4 +50,28 @@ public class OpaqueMarketDataTest {
         // TODO: test marketDataType
     }
 
+    /**
+     * Test the property 'document'
+     */
+    @Test
+    public void documentTest() {
+        // TODO: test document
+    }
+
+    /**
+     * Test the property 'format'
+     */
+    @Test
+    public void formatTest() {
+        // TODO: test format
+    }
+
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
+    }
+
 }

@@ -28,7 +28,7 @@ import java.io.IOException;
  * Descriptive information that describes a particular basket of instruments. Most commonly required with a CDS Index or similarly defined instrument.
  */
 @ApiModel(description = "Descriptive information that describes a particular basket of instruments. Most commonly required with a CDS Index or similarly defined instrument.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BasketIdentifier {
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
@@ -46,8 +46,9 @@ public class BasketIdentifier {
   @SerializedName(SERIALIZED_NAME_SERIES_ID)
   private Integer seriesId;
 
+
   public BasketIdentifier index(String index) {
-    this.index = index;
+    this.index = index; 
     return this;
   }
 
@@ -64,8 +65,9 @@ public class BasketIdentifier {
     this.index = index;
   }
 
+
   public BasketIdentifier name(String name) {
-    this.name = name;
+    this.name = name; 
     return this;
   }
 
@@ -82,8 +84,9 @@ public class BasketIdentifier {
     this.name = name;
   }
 
+
   public BasketIdentifier region(String region) {
-    this.region = region;
+    this.region = region; 
     return this;
   }
 
@@ -100,8 +103,9 @@ public class BasketIdentifier {
     this.region = region;
   }
 
+
   public BasketIdentifier seriesId(Integer seriesId) {
-    this.seriesId = seriesId;
+    this.seriesId = seriesId; 
     return this;
   }
 
@@ -120,7 +124,7 @@ public class BasketIdentifier {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -132,9 +136,8 @@ public class BasketIdentifier {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -152,7 +155,7 @@ public class BasketIdentifier {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

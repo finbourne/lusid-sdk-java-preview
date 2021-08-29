@@ -35,7 +35,7 @@ import java.util.Map;
  * IL Bond Instrument; Lusid-ibor internal representation of a Bond instrument
  */
 @ApiModel(description = "IL Bond Instrument; Lusid-ibor internal representation of a Bond instrument")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Bond extends LusidInstrument {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -51,7 +51,7 @@ public class Bond extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_FLOW_CONVENTIONS = "flowConventions";
   @SerializedName(SERIALIZED_NAME_FLOW_CONVENTIONS)
-  private FlowConventions flowConventions = null;
+  private FlowConventions flowConventions;
 
   public static final String SERIALIZED_NAME_PRINCIPAL = "principal";
   @SerializedName(SERIALIZED_NAME_PRINCIPAL)
@@ -63,7 +63,7 @@ public class Bond extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_IDENTIFIERS = "identifiers";
   @SerializedName(SERIALIZED_NAME_IDENTIFIERS)
-  private Map<String, String> identifiers = new HashMap<>();
+  private Map<String, String> identifiers = null;
 
   public static final String SERIALIZED_NAME_EX_DIVIDEND_DAYS = "exDividendDays";
   @SerializedName(SERIALIZED_NAME_EX_DIVIDEND_DAYS)
@@ -73,8 +73,12 @@ public class Bond extends LusidInstrument {
   @SerializedName(SERIALIZED_NAME_INITIAL_COUPON_DATE)
   private OffsetDateTime initialCouponDate;
 
+  public Bond() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
+
   public Bond startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -91,8 +95,9 @@ public class Bond extends LusidInstrument {
     this.startDate = startDate;
   }
 
+
   public Bond maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -109,8 +114,9 @@ public class Bond extends LusidInstrument {
     this.maturityDate = maturityDate;
   }
 
+
   public Bond domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -127,8 +133,9 @@ public class Bond extends LusidInstrument {
     this.domCcy = domCcy;
   }
 
+
   public Bond flowConventions(FlowConventions flowConventions) {
-    this.flowConventions = flowConventions;
+    this.flowConventions = flowConventions; 
     return this;
   }
 
@@ -145,8 +152,9 @@ public class Bond extends LusidInstrument {
     this.flowConventions = flowConventions;
   }
 
+
   public Bond principal(Double principal) {
-    this.principal = principal;
+    this.principal = principal; 
     return this;
   }
 
@@ -163,8 +171,9 @@ public class Bond extends LusidInstrument {
     this.principal = principal;
   }
 
+
   public Bond couponRate(Double couponRate) {
-    this.couponRate = couponRate;
+    this.couponRate = couponRate; 
     return this;
   }
 
@@ -181,8 +190,9 @@ public class Bond extends LusidInstrument {
     this.couponRate = couponRate;
   }
 
+
   public Bond identifiers(Map<String, String> identifiers) {
-    this.identifiers = identifiers;
+    this.identifiers = identifiers; 
     return this;
   }
 
@@ -207,8 +217,9 @@ public class Bond extends LusidInstrument {
     this.identifiers = identifiers;
   }
 
+
   public Bond exDividendDays(Integer exDividendDays) {
-    this.exDividendDays = exDividendDays;
+    this.exDividendDays = exDividendDays; 
     return this;
   }
 
@@ -225,8 +236,9 @@ public class Bond extends LusidInstrument {
     this.exDividendDays = exDividendDays;
   }
 
+
   public Bond initialCouponDate(OffsetDateTime initialCouponDate) {
-    this.initialCouponDate = initialCouponDate;
+    this.initialCouponDate = initialCouponDate; 
     return this;
   }
 
@@ -245,7 +257,7 @@ public class Bond extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -257,9 +269,8 @@ public class Bond extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -283,7 +294,7 @@ public class Bond extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

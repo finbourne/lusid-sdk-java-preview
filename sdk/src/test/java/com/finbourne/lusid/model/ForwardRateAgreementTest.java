@@ -51,4 +51,52 @@ public class ForwardRateAgreementTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'maturityDate'
+     */
+    @Test
+    public void maturityDateTest() {
+        // TODO: test maturityDate
+    }
+
+    /**
+     * Test the property 'domCcy'
+     */
+    @Test
+    public void domCcyTest() {
+        // TODO: test domCcy
+    }
+
+    /**
+     * Test the property 'fixingDate'
+     */
+    @Test
+    public void fixingDateTest() {
+        // TODO: test fixingDate
+    }
+
+    /**
+     * Test the property 'fraRate'
+     */
+    @Test
+    public void fraRateTest() {
+        // TODO: test fraRate
+    }
+
+    /**
+     * Test the property 'notional'
+     */
+    @Test
+    public void notionalTest() {
+        // TODO: test notional
+    }
+
 }

@@ -28,7 +28,7 @@ import java.io.IOException;
  * Representation of an abstract definition of a flow convention set consisting of currency, tenor and an index name (arbitrary string but likely something like \&quot;IBOR\&quot;)
  */
 @ApiModel(description = "Representation of an abstract definition of a flow convention set consisting of currency, tenor and an index name (arbitrary string but likely something like \"IBOR\")")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FlowConventionName {
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)
@@ -42,8 +42,9 @@ public class FlowConventionName {
   @SerializedName(SERIALIZED_NAME_TENOR)
   private String tenor;
 
+
   public FlowConventionName currency(String currency) {
-    this.currency = currency;
+    this.currency = currency; 
     return this;
   }
 
@@ -60,8 +61,9 @@ public class FlowConventionName {
     this.currency = currency;
   }
 
+
   public FlowConventionName indexName(String indexName) {
-    this.indexName = indexName;
+    this.indexName = indexName; 
     return this;
   }
 
@@ -78,8 +80,9 @@ public class FlowConventionName {
     this.indexName = indexName;
   }
 
+
   public FlowConventionName tenor(String tenor) {
-    this.tenor = tenor;
+    this.tenor = tenor; 
     return this;
   }
 
@@ -98,7 +101,7 @@ public class FlowConventionName {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -110,9 +113,8 @@ public class FlowConventionName {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -129,7 +131,7 @@ public class FlowConventionName {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

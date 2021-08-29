@@ -33,7 +33,7 @@ import java.util.Map;
 /**
  * FutureAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FutureAllOf {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -49,7 +49,7 @@ public class FutureAllOf {
 
   public static final String SERIALIZED_NAME_CONTRACT_DETAILS = "contractDetails";
   @SerializedName(SERIALIZED_NAME_CONTRACT_DETAILS)
-  private FuturesContractDetails contractDetails = null;
+  private FuturesContractDetails contractDetails;
 
   public static final String SERIALIZED_NAME_CONTRACTS = "contracts";
   @SerializedName(SERIALIZED_NAME_CONTRACTS)
@@ -61,7 +61,7 @@ public class FutureAllOf {
 
   public static final String SERIALIZED_NAME_UNDERLYING = "underlying";
   @SerializedName(SERIALIZED_NAME_UNDERLYING)
-  private LusidInstrument underlying = null;
+  private LusidInstrument underlying;
 
   /**
    * The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo
@@ -154,7 +154,7 @@ public class FutureAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -164,8 +164,9 @@ public class FutureAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public FutureAllOf startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -182,8 +183,9 @@ public class FutureAllOf {
     this.startDate = startDate;
   }
 
+
   public FutureAllOf maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -200,8 +202,9 @@ public class FutureAllOf {
     this.maturityDate = maturityDate;
   }
 
+
   public FutureAllOf identifiers(Map<String, String> identifiers) {
-    this.identifiers = identifiers;
+    this.identifiers = identifiers; 
     return this;
   }
 
@@ -223,8 +226,9 @@ public class FutureAllOf {
     this.identifiers = identifiers;
   }
 
+
   public FutureAllOf contractDetails(FuturesContractDetails contractDetails) {
-    this.contractDetails = contractDetails;
+    this.contractDetails = contractDetails; 
     return this;
   }
 
@@ -241,8 +245,9 @@ public class FutureAllOf {
     this.contractDetails = contractDetails;
   }
 
+
   public FutureAllOf contracts(Double contracts) {
-    this.contracts = contracts;
+    this.contracts = contracts; 
     return this;
   }
 
@@ -259,8 +264,9 @@ public class FutureAllOf {
     this.contracts = contracts;
   }
 
+
   public FutureAllOf refSpotPrice(Double refSpotPrice) {
-    this.refSpotPrice = refSpotPrice;
+    this.refSpotPrice = refSpotPrice; 
     return this;
   }
 
@@ -277,8 +283,9 @@ public class FutureAllOf {
     this.refSpotPrice = refSpotPrice;
   }
 
+
   public FutureAllOf underlying(LusidInstrument underlying) {
-    this.underlying = underlying;
+    this.underlying = underlying; 
     return this;
   }
 
@@ -295,8 +302,9 @@ public class FutureAllOf {
     this.underlying = underlying;
   }
 
+
   public FutureAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -315,7 +323,7 @@ public class FutureAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -327,9 +335,8 @@ public class FutureAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -351,7 +358,7 @@ public class FutureAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

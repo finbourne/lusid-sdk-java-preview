@@ -54,4 +54,60 @@ public class CreditDefaultSwapTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'ticker'
+     */
+    @Test
+    public void tickerTest() {
+        // TODO: test ticker
+    }
+
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'maturityDate'
+     */
+    @Test
+    public void maturityDateTest() {
+        // TODO: test maturityDate
+    }
+
+    /**
+     * Test the property 'flowConventions'
+     */
+    @Test
+    public void flowConventionsTest() {
+        // TODO: test flowConventions
+    }
+
+    /**
+     * Test the property 'couponRate'
+     */
+    @Test
+    public void couponRateTest() {
+        // TODO: test couponRate
+    }
+
+    /**
+     * Test the property 'conventionName'
+     */
+    @Test
+    public void conventionNameTest() {
+        // TODO: test conventionName
+    }
+
+    /**
+     * Test the property 'protectionDetailSpecification'
+     */
+    @Test
+    public void protectionDetailSpecificationTest() {
+        // TODO: test protectionDetailSpecification
+    }
+
 }

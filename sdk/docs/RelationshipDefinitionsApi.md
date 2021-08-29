@@ -1,6 +1,6 @@
 # RelationshipDefinitionsApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://local-unit-test-server.lusid.com:53397*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,14 +30,14 @@ import com.finbourne.lusid.api.RelationshipDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53397");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     RelationshipDefinitionsApi apiInstance = new RelationshipDefinitionsApi(defaultClient);
-    CreateRelationshipDefinitionRequest createRelationshipDefinitionRequest = {"scope":"PortfolioManagementTeam","code":"Traders","sourceEntityType":"Portfolio","targetEntityType":"Person","displayName":"Authorised traders to trade for specific portfolio ","outwardDescription":"can be traded by","inwardDescription":"can trade with portfolio","lifeTime":"TimeVariant","relationshipCardinality":"ManyToMany"}; // CreateRelationshipDefinitionRequest | The definition of the new relationship.
+    CreateRelationshipDefinitionRequest createRelationshipDefinitionRequest = new CreateRelationshipDefinitionRequest(); // CreateRelationshipDefinitionRequest | The definition of the new relationship.
     try {
       RelationshipDefinition result = apiInstance.createRelationshipDefinition(createRelationshipDefinitionRequest);
       System.out.println(result);
@@ -99,7 +99,7 @@ import com.finbourne.lusid.api.RelationshipDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53397");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -108,7 +108,7 @@ public class Example {
     RelationshipDefinitionsApi apiInstance = new RelationshipDefinitionsApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the specified relationship definition.
     String code = "code_example"; // String | The code of the specified relationship definition. Together with the domain and scope this uniquely              identifies the relationship definition.
-    OffsetDateTime asAt = new OffsetDateTime(); // OffsetDateTime | The asAt datetime at which to retrieve the relationship definition. Defaults to return              the latest version of the definition if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the relationship definition. Defaults to return              the latest version of the definition if not specified.
     try {
       RelationshipDefinition result = apiInstance.getRelationshipDefinition(scope, code, asAt);
       System.out.println(result);
@@ -172,7 +172,7 @@ import com.finbourne.lusid.api.RelationshipDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53397");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -181,7 +181,7 @@ public class Example {
     RelationshipDefinitionsApi apiInstance = new RelationshipDefinitionsApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the relationship definition being updated.
     String code = "code_example"; // String | The code of the relationship definition being updated. Together with the scope this uniquely              identifies the relationship definition.
-    UpdateRelationshipDefinitionRequest updateRelationshipDefinitionRequest = {"displayName":"Authorised traders to trade for specific portfolio ","outwardDescription":"can be traded by","inwardDescription":"can trade with portfolio"}; // UpdateRelationshipDefinitionRequest | The details of relationship definition to update.
+    UpdateRelationshipDefinitionRequest updateRelationshipDefinitionRequest = new UpdateRelationshipDefinitionRequest(); // UpdateRelationshipDefinitionRequest | The details of relationship definition to update.
     try {
       RelationshipDefinition result = apiInstance.updateRelationshipDefinition(scope, code, updateRelationshipDefinitionRequest);
       System.out.println(result);

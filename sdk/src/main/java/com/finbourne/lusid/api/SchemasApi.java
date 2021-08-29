@@ -43,7 +43,6 @@ import java.util.Map;
 
 public class SchemasApi {
     private ApiClient localVarApiClient;
-
     public SchemasApi() {
         this(Configuration.getDefaultApiClient());
     }
@@ -75,7 +74,7 @@ public class SchemasApi {
      </table>
      */
     public okhttp3.Call getEntitySchemaCall(String entity, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/schemas/entities/{entity}"
@@ -84,7 +83,9 @@ public class SchemasApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -102,7 +103,7 @@ public class SchemasApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -174,7 +175,6 @@ public class SchemasApi {
      </table>
      */
     public okhttp3.Call getEntitySchemaAsync(String entity, final ApiCallback<Schema> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getEntitySchemaValidateBeforeCall(entity, _callback);
         Type localVarReturnType = new TypeToken<Schema>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -196,13 +196,17 @@ public class SchemasApi {
      </table>
      */
     public okhttp3.Call getPropertySchemaCall(List<String> propertyKeys, OffsetDateTime asAt, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/schemas/properties";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (propertyKeys != null) {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "propertyKeys", propertyKeys));
         }
@@ -211,8 +215,6 @@ public class SchemasApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("asAt", asAt));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -230,7 +232,7 @@ public class SchemasApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -300,7 +302,6 @@ public class SchemasApi {
      </table>
      */
     public okhttp3.Call getPropertySchemaAsync(List<String> propertyKeys, OffsetDateTime asAt, final ApiCallback<PropertySchema> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getPropertySchemaValidateBeforeCall(propertyKeys, asAt, _callback);
         Type localVarReturnType = new TypeToken<PropertySchema>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -323,13 +324,17 @@ public class SchemasApi {
      </table>
      */
     public okhttp3.Call getValueTypesCall(List<String> sortBy, Integer start, Integer limit, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/schemas/types";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         if (sortBy != null) {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "sortBy", sortBy));
         }
@@ -342,8 +347,6 @@ public class SchemasApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
         }
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -361,7 +364,7 @@ public class SchemasApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -434,7 +437,6 @@ public class SchemasApi {
      </table>
      */
     public okhttp3.Call getValueTypesAsync(List<String> sortBy, Integer start, Integer limit, final ApiCallback<ResourceListOfValueType> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = getValueTypesValidateBeforeCall(sortBy, start, limit, _callback);
         Type localVarReturnType = new TypeToken<ResourceListOfValueType>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
@@ -453,7 +455,7 @@ public class SchemasApi {
      </table>
      */
     public okhttp3.Call listEntitiesCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/schemas/entities";
@@ -461,7 +463,9 @@ public class SchemasApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
         final String[] localVarAccepts = {
             "text/plain", "application/json", "text/json"
         };
@@ -479,7 +483,7 @@ public class SchemasApi {
         localVarHeaderParams.put("X-LUSID-SDK-Version", "0.11.3438");
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -540,7 +544,6 @@ public class SchemasApi {
      </table>
      */
     public okhttp3.Call listEntitiesAsync(final ApiCallback<ResourceListOfString> _callback) throws ApiException {
-
         okhttp3.Call localVarCall = listEntitiesValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<ResourceListOfString>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);

@@ -28,7 +28,7 @@ import java.time.OffsetDateTime;
 /**
  * ForwardRateAgreementAllOf
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ForwardRateAgreementAllOf {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -145,7 +145,7 @@ public class ForwardRateAgreementAllOf {
 
       @Override
       public InstrumentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return InstrumentTypeEnum.fromValue(value);
       }
     }
@@ -155,8 +155,9 @@ public class ForwardRateAgreementAllOf {
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPE)
   private InstrumentTypeEnum instrumentType;
 
+
   public ForwardRateAgreementAllOf startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -173,8 +174,9 @@ public class ForwardRateAgreementAllOf {
     this.startDate = startDate;
   }
 
+
   public ForwardRateAgreementAllOf maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -191,8 +193,9 @@ public class ForwardRateAgreementAllOf {
     this.maturityDate = maturityDate;
   }
 
+
   public ForwardRateAgreementAllOf domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -209,8 +212,9 @@ public class ForwardRateAgreementAllOf {
     this.domCcy = domCcy;
   }
 
+
   public ForwardRateAgreementAllOf fixingDate(OffsetDateTime fixingDate) {
-    this.fixingDate = fixingDate;
+    this.fixingDate = fixingDate; 
     return this;
   }
 
@@ -227,8 +231,9 @@ public class ForwardRateAgreementAllOf {
     this.fixingDate = fixingDate;
   }
 
+
   public ForwardRateAgreementAllOf fraRate(Double fraRate) {
-    this.fraRate = fraRate;
+    this.fraRate = fraRate; 
     return this;
   }
 
@@ -245,8 +250,9 @@ public class ForwardRateAgreementAllOf {
     this.fraRate = fraRate;
   }
 
+
   public ForwardRateAgreementAllOf notional(Double notional) {
-    this.notional = notional;
+    this.notional = notional; 
     return this;
   }
 
@@ -263,8 +269,9 @@ public class ForwardRateAgreementAllOf {
     this.notional = notional;
   }
 
+
   public ForwardRateAgreementAllOf instrumentType(InstrumentTypeEnum instrumentType) {
-    this.instrumentType = instrumentType;
+    this.instrumentType = instrumentType; 
     return this;
   }
 
@@ -283,7 +290,7 @@ public class ForwardRateAgreementAllOf {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -295,9 +302,8 @@ public class ForwardRateAgreementAllOf {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -318,7 +324,7 @@ public class ForwardRateAgreementAllOf {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -2,11 +2,13 @@
 
 # CustomEntityDefinition
 
+Representation of Custom Entity Definition on LUSID API
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | [**URI**](URI.md) |  |  [optional]
+**href** | **URI** |  |  [optional]
 **customEntityId** | **String** |  | 
 **displayName** | **String** |  | 
 **description** | **String** |  |  [optional]

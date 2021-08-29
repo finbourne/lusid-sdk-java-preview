@@ -29,7 +29,7 @@ import java.time.OffsetDateTime;
  * A rule that describes how we resolve (unit) result data.
  */
 @ApiModel(description = "A rule that describes how we resolve (unit) result data.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ResultDataKeyRule {
   public static final String SERIALIZED_NAME_RESOURCE_KEY = "resourceKey";
   @SerializedName(SERIALIZED_NAME_RESOURCE_KEY)
@@ -55,8 +55,9 @@ public class ResultDataKeyRule {
   @SerializedName(SERIALIZED_NAME_AS_AT)
   private OffsetDateTime asAt;
 
+
   public ResultDataKeyRule resourceKey(String resourceKey) {
-    this.resourceKey = resourceKey;
+    this.resourceKey = resourceKey; 
     return this;
   }
 
@@ -73,8 +74,9 @@ public class ResultDataKeyRule {
     this.resourceKey = resourceKey;
   }
 
+
   public ResultDataKeyRule supplier(String supplier) {
-    this.supplier = supplier;
+    this.supplier = supplier; 
     return this;
   }
 
@@ -91,8 +93,9 @@ public class ResultDataKeyRule {
     this.supplier = supplier;
   }
 
+
   public ResultDataKeyRule dataScope(String dataScope) {
-    this.dataScope = dataScope;
+    this.dataScope = dataScope; 
     return this;
   }
 
@@ -109,8 +112,9 @@ public class ResultDataKeyRule {
     this.dataScope = dataScope;
   }
 
+
   public ResultDataKeyRule documentCode(String documentCode) {
-    this.documentCode = documentCode;
+    this.documentCode = documentCode; 
     return this;
   }
 
@@ -127,8 +131,9 @@ public class ResultDataKeyRule {
     this.documentCode = documentCode;
   }
 
+
   public ResultDataKeyRule quoteInterval(String quoteInterval) {
-    this.quoteInterval = quoteInterval;
+    this.quoteInterval = quoteInterval; 
     return this;
   }
 
@@ -145,8 +150,9 @@ public class ResultDataKeyRule {
     this.quoteInterval = quoteInterval;
   }
 
+
   public ResultDataKeyRule asAt(OffsetDateTime asAt) {
-    this.asAt = asAt;
+    this.asAt = asAt; 
     return this;
   }
 
@@ -165,7 +171,7 @@ public class ResultDataKeyRule {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -177,9 +183,8 @@ public class ResultDataKeyRule {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -199,7 +204,7 @@ public class ResultDataKeyRule {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

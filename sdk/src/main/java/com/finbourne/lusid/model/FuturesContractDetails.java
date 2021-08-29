@@ -28,7 +28,7 @@ import java.io.IOException;
  * Most, if not all, information about contracts is standardized. See, e.g. https://www.cmegroup.com/ for              common codes and similar data. This appears to be in common use by well known market information providers, e.g. Bloomberg and Refinitiv.
  */
 @ApiModel(description = "Most, if not all, information about contracts is standardized. See, e.g. https://www.cmegroup.com/ for              common codes and similar data. This appears to be in common use by well known market information providers, e.g. Bloomberg and Refinitiv.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FuturesContractDetails {
   public static final String SERIALIZED_NAME_DOM_CCY = "domCcy";
   @SerializedName(SERIALIZED_NAME_DOM_CCY)
@@ -74,8 +74,9 @@ public class FuturesContractDetails {
   @SerializedName(SERIALIZED_NAME_UNIT_VALUE)
   private Double unitValue;
 
+
   public FuturesContractDetails domCcy(String domCcy) {
-    this.domCcy = domCcy;
+    this.domCcy = domCcy; 
     return this;
   }
 
@@ -92,8 +93,9 @@ public class FuturesContractDetails {
     this.domCcy = domCcy;
   }
 
+
   public FuturesContractDetails contractCode(String contractCode) {
-    this.contractCode = contractCode;
+    this.contractCode = contractCode; 
     return this;
   }
 
@@ -110,8 +112,9 @@ public class FuturesContractDetails {
     this.contractCode = contractCode;
   }
 
+
   public FuturesContractDetails contractMonth(String contractMonth) {
-    this.contractMonth = contractMonth;
+    this.contractMonth = contractMonth; 
     return this;
   }
 
@@ -128,8 +131,9 @@ public class FuturesContractDetails {
     this.contractMonth = contractMonth;
   }
 
+
   public FuturesContractDetails contractSize(Double contractSize) {
-    this.contractSize = contractSize;
+    this.contractSize = contractSize; 
     return this;
   }
 
@@ -146,8 +150,9 @@ public class FuturesContractDetails {
     this.contractSize = contractSize;
   }
 
+
   public FuturesContractDetails convention(String convention) {
-    this.convention = convention;
+    this.convention = convention; 
     return this;
   }
 
@@ -164,8 +169,9 @@ public class FuturesContractDetails {
     this.convention = convention;
   }
 
+
   public FuturesContractDetails country(String country) {
-    this.country = country;
+    this.country = country; 
     return this;
   }
 
@@ -182,8 +188,9 @@ public class FuturesContractDetails {
     this.country = country;
   }
 
+
   public FuturesContractDetails description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -200,8 +207,9 @@ public class FuturesContractDetails {
     this.description = description;
   }
 
+
   public FuturesContractDetails exchangeCode(String exchangeCode) {
-    this.exchangeCode = exchangeCode;
+    this.exchangeCode = exchangeCode; 
     return this;
   }
 
@@ -218,8 +226,9 @@ public class FuturesContractDetails {
     this.exchangeCode = exchangeCode;
   }
 
+
   public FuturesContractDetails exchangeName(String exchangeName) {
-    this.exchangeName = exchangeName;
+    this.exchangeName = exchangeName; 
     return this;
   }
 
@@ -236,8 +245,9 @@ public class FuturesContractDetails {
     this.exchangeName = exchangeName;
   }
 
+
   public FuturesContractDetails tickerStep(Double tickerStep) {
-    this.tickerStep = tickerStep;
+    this.tickerStep = tickerStep; 
     return this;
   }
 
@@ -254,8 +264,9 @@ public class FuturesContractDetails {
     this.tickerStep = tickerStep;
   }
 
+
   public FuturesContractDetails unitValue(Double unitValue) {
-    this.unitValue = unitValue;
+    this.unitValue = unitValue; 
     return this;
   }
 
@@ -274,7 +285,7 @@ public class FuturesContractDetails {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -286,9 +297,8 @@ public class FuturesContractDetails {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -313,7 +323,7 @@ public class FuturesContractDetails {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -31,11 +31,11 @@ import java.util.List;
 /**
  * UpdateCalendarRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpdateCalendarRequest {
   public static final String SERIALIZED_NAME_WEEKEND_MASK = "weekendMask";
   @SerializedName(SERIALIZED_NAME_WEEKEND_MASK)
-  private WeekendMask weekendMask = null;
+  private WeekendMask weekendMask;
 
   public static final String SERIALIZED_NAME_SOURCE_PROVIDER = "sourceProvider";
   @SerializedName(SERIALIZED_NAME_SOURCE_PROVIDER)
@@ -45,8 +45,9 @@ public class UpdateCalendarRequest {
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
   private List<Property> properties = new ArrayList<>();
 
+
   public UpdateCalendarRequest weekendMask(WeekendMask weekendMask) {
-    this.weekendMask = weekendMask;
+    this.weekendMask = weekendMask; 
     return this;
   }
 
@@ -63,8 +64,9 @@ public class UpdateCalendarRequest {
     this.weekendMask = weekendMask;
   }
 
+
   public UpdateCalendarRequest sourceProvider(String sourceProvider) {
-    this.sourceProvider = sourceProvider;
+    this.sourceProvider = sourceProvider; 
     return this;
   }
 
@@ -81,12 +83,14 @@ public class UpdateCalendarRequest {
     this.sourceProvider = sourceProvider;
   }
 
+
   public UpdateCalendarRequest properties(List<Property> properties) {
-    this.properties = properties;
+    this.properties = properties; 
     return this;
   }
 
   public UpdateCalendarRequest addPropertiesItem(Property propertiesItem) {
+   
     this.properties.add(propertiesItem);
     return this;
   }
@@ -106,7 +110,7 @@ public class UpdateCalendarRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -118,9 +122,8 @@ public class UpdateCalendarRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -137,7 +140,7 @@ public class UpdateCalendarRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

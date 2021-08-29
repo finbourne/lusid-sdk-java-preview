@@ -34,7 +34,7 @@ import java.time.OffsetDateTime;
  * IL CDS Instrument; Lusid-ibor internal representation of a Credit Default Swap instrument
  */
 @ApiModel(description = "IL CDS Instrument; Lusid-ibor internal representation of a Credit Default Swap instrument")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreditDefaultSwap extends LusidInstrument {
   public static final String SERIALIZED_NAME_TICKER = "ticker";
   @SerializedName(SERIALIZED_NAME_TICKER)
@@ -50,7 +50,7 @@ public class CreditDefaultSwap extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_FLOW_CONVENTIONS = "flowConventions";
   @SerializedName(SERIALIZED_NAME_FLOW_CONVENTIONS)
-  private CdsFlowConventions flowConventions = null;
+  private CdsFlowConventions flowConventions;
 
   public static final String SERIALIZED_NAME_COUPON_RATE = "couponRate";
   @SerializedName(SERIALIZED_NAME_COUPON_RATE)
@@ -58,14 +58,18 @@ public class CreditDefaultSwap extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_CONVENTION_NAME = "conventionName";
   @SerializedName(SERIALIZED_NAME_CONVENTION_NAME)
-  private FlowConventionName conventionName = null;
+  private FlowConventionName conventionName;
 
   public static final String SERIALIZED_NAME_PROTECTION_DETAIL_SPECIFICATION = "protectionDetailSpecification";
   @SerializedName(SERIALIZED_NAME_PROTECTION_DETAIL_SPECIFICATION)
-  private CdsProtectionDetailSpecification protectionDetailSpecification = null;
+  private CdsProtectionDetailSpecification protectionDetailSpecification;
+
+  public CreditDefaultSwap() {
+    //this.instrumentType = this.getClass().getSimpleName();
+  }
 
   public CreditDefaultSwap ticker(String ticker) {
-    this.ticker = ticker;
+    this.ticker = ticker; 
     return this;
   }
 
@@ -82,8 +86,9 @@ public class CreditDefaultSwap extends LusidInstrument {
     this.ticker = ticker;
   }
 
+
   public CreditDefaultSwap startDate(OffsetDateTime startDate) {
-    this.startDate = startDate;
+    this.startDate = startDate; 
     return this;
   }
 
@@ -100,8 +105,9 @@ public class CreditDefaultSwap extends LusidInstrument {
     this.startDate = startDate;
   }
 
+
   public CreditDefaultSwap maturityDate(OffsetDateTime maturityDate) {
-    this.maturityDate = maturityDate;
+    this.maturityDate = maturityDate; 
     return this;
   }
 
@@ -118,8 +124,9 @@ public class CreditDefaultSwap extends LusidInstrument {
     this.maturityDate = maturityDate;
   }
 
+
   public CreditDefaultSwap flowConventions(CdsFlowConventions flowConventions) {
-    this.flowConventions = flowConventions;
+    this.flowConventions = flowConventions; 
     return this;
   }
 
@@ -136,8 +143,9 @@ public class CreditDefaultSwap extends LusidInstrument {
     this.flowConventions = flowConventions;
   }
 
+
   public CreditDefaultSwap couponRate(Double couponRate) {
-    this.couponRate = couponRate;
+    this.couponRate = couponRate; 
     return this;
   }
 
@@ -154,8 +162,9 @@ public class CreditDefaultSwap extends LusidInstrument {
     this.couponRate = couponRate;
   }
 
+
   public CreditDefaultSwap conventionName(FlowConventionName conventionName) {
-    this.conventionName = conventionName;
+    this.conventionName = conventionName; 
     return this;
   }
 
@@ -172,8 +181,9 @@ public class CreditDefaultSwap extends LusidInstrument {
     this.conventionName = conventionName;
   }
 
+
   public CreditDefaultSwap protectionDetailSpecification(CdsProtectionDetailSpecification protectionDetailSpecification) {
-    this.protectionDetailSpecification = protectionDetailSpecification;
+    this.protectionDetailSpecification = protectionDetailSpecification; 
     return this;
   }
 
@@ -192,7 +202,7 @@ public class CreditDefaultSwap extends LusidInstrument {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -204,9 +214,8 @@ public class CreditDefaultSwap extends LusidInstrument {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -228,7 +237,7 @@ public class CreditDefaultSwap extends LusidInstrument {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

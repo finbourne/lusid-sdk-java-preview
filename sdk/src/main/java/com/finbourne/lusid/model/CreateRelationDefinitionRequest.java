@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CreateRelationDefinitionRequest
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreateRelationDefinitionRequest {
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
@@ -65,8 +65,9 @@ public class CreateRelationDefinitionRequest {
   @SerializedName(SERIALIZED_NAME_CONSTRAINT_STYLE)
   private String constraintStyle;
 
+
   public CreateRelationDefinitionRequest scope(String scope) {
-    this.scope = scope;
+    this.scope = scope; 
     return this;
   }
 
@@ -83,8 +84,9 @@ public class CreateRelationDefinitionRequest {
     this.scope = scope;
   }
 
+
   public CreateRelationDefinitionRequest code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -101,8 +103,9 @@ public class CreateRelationDefinitionRequest {
     this.code = code;
   }
 
+
   public CreateRelationDefinitionRequest sourceEntityDomain(String sourceEntityDomain) {
-    this.sourceEntityDomain = sourceEntityDomain;
+    this.sourceEntityDomain = sourceEntityDomain; 
     return this;
   }
 
@@ -119,8 +122,9 @@ public class CreateRelationDefinitionRequest {
     this.sourceEntityDomain = sourceEntityDomain;
   }
 
+
   public CreateRelationDefinitionRequest targetEntityDomain(String targetEntityDomain) {
-    this.targetEntityDomain = targetEntityDomain;
+    this.targetEntityDomain = targetEntityDomain; 
     return this;
   }
 
@@ -137,8 +141,9 @@ public class CreateRelationDefinitionRequest {
     this.targetEntityDomain = targetEntityDomain;
   }
 
+
   public CreateRelationDefinitionRequest displayName(String displayName) {
-    this.displayName = displayName;
+    this.displayName = displayName; 
     return this;
   }
 
@@ -155,8 +160,9 @@ public class CreateRelationDefinitionRequest {
     this.displayName = displayName;
   }
 
+
   public CreateRelationDefinitionRequest outwardDescription(String outwardDescription) {
-    this.outwardDescription = outwardDescription;
+    this.outwardDescription = outwardDescription; 
     return this;
   }
 
@@ -173,8 +179,9 @@ public class CreateRelationDefinitionRequest {
     this.outwardDescription = outwardDescription;
   }
 
+
   public CreateRelationDefinitionRequest inwardDescription(String inwardDescription) {
-    this.inwardDescription = inwardDescription;
+    this.inwardDescription = inwardDescription; 
     return this;
   }
 
@@ -191,8 +198,9 @@ public class CreateRelationDefinitionRequest {
     this.inwardDescription = inwardDescription;
   }
 
+
   public CreateRelationDefinitionRequest lifeTime(String lifeTime) {
-    this.lifeTime = lifeTime;
+    this.lifeTime = lifeTime; 
     return this;
   }
 
@@ -209,8 +217,9 @@ public class CreateRelationDefinitionRequest {
     this.lifeTime = lifeTime;
   }
 
+
   public CreateRelationDefinitionRequest constraintStyle(String constraintStyle) {
-    this.constraintStyle = constraintStyle;
+    this.constraintStyle = constraintStyle; 
     return this;
   }
 
@@ -229,7 +238,7 @@ public class CreateRelationDefinitionRequest {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -241,9 +250,8 @@ public class CreateRelationDefinitionRequest {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -266,7 +274,7 @@ public class CreateRelationDefinitionRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

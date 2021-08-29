@@ -31,7 +31,7 @@ import java.util.List;
  * Entity to capture the calculable and queryable methods and practices of determining and transferring collateral  to a counterparty as part of margining of transactions. These typically come from a particular ISDA agreement  that is in place between the two counterparties.
  */
 @ApiModel(description = "Entity to capture the calculable and queryable methods and practices of determining and transferring collateral  to a counterparty as part of margining of transactions. These typically come from a particular ISDA agreement  that is in place between the two counterparties.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreditSupportAnnex {
   public static final String SERIALIZED_NAME_REFERENCE_CURRENCY = "referenceCurrency";
   @SerializedName(SERIALIZED_NAME_REFERENCE_CURRENCY)
@@ -71,10 +71,11 @@ public class CreditSupportAnnex {
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
+
 
   public CreditSupportAnnex referenceCurrency(String referenceCurrency) {
-    this.referenceCurrency = referenceCurrency;
+    this.referenceCurrency = referenceCurrency; 
     return this;
   }
 
@@ -91,12 +92,14 @@ public class CreditSupportAnnex {
     this.referenceCurrency = referenceCurrency;
   }
 
+
   public CreditSupportAnnex collateralCurrencies(List<String> collateralCurrencies) {
-    this.collateralCurrencies = collateralCurrencies;
+    this.collateralCurrencies = collateralCurrencies; 
     return this;
   }
 
   public CreditSupportAnnex addCollateralCurrenciesItem(String collateralCurrenciesItem) {
+   
     this.collateralCurrencies.add(collateralCurrenciesItem);
     return this;
   }
@@ -114,8 +117,9 @@ public class CreditSupportAnnex {
     this.collateralCurrencies = collateralCurrencies;
   }
 
+
   public CreditSupportAnnex isdaAgreementVersion(String isdaAgreementVersion) {
-    this.isdaAgreementVersion = isdaAgreementVersion;
+    this.isdaAgreementVersion = isdaAgreementVersion; 
     return this;
   }
 
@@ -132,8 +136,9 @@ public class CreditSupportAnnex {
     this.isdaAgreementVersion = isdaAgreementVersion;
   }
 
+
   public CreditSupportAnnex marginCallFrequency(String marginCallFrequency) {
-    this.marginCallFrequency = marginCallFrequency;
+    this.marginCallFrequency = marginCallFrequency; 
     return this;
   }
 
@@ -150,8 +155,9 @@ public class CreditSupportAnnex {
     this.marginCallFrequency = marginCallFrequency;
   }
 
+
   public CreditSupportAnnex valuationAgent(String valuationAgent) {
-    this.valuationAgent = valuationAgent;
+    this.valuationAgent = valuationAgent; 
     return this;
   }
 
@@ -168,8 +174,9 @@ public class CreditSupportAnnex {
     this.valuationAgent = valuationAgent;
   }
 
+
   public CreditSupportAnnex thresholdAmount(Double thresholdAmount) {
-    this.thresholdAmount = thresholdAmount;
+    this.thresholdAmount = thresholdAmount; 
     return this;
   }
 
@@ -186,8 +193,9 @@ public class CreditSupportAnnex {
     this.thresholdAmount = thresholdAmount;
   }
 
+
   public CreditSupportAnnex roundingDecimalPlaces(Integer roundingDecimalPlaces) {
-    this.roundingDecimalPlaces = roundingDecimalPlaces;
+    this.roundingDecimalPlaces = roundingDecimalPlaces; 
     return this;
   }
 
@@ -204,8 +212,9 @@ public class CreditSupportAnnex {
     this.roundingDecimalPlaces = roundingDecimalPlaces;
   }
 
+
   public CreditSupportAnnex initialMarginAmount(Double initialMarginAmount) {
-    this.initialMarginAmount = initialMarginAmount;
+    this.initialMarginAmount = initialMarginAmount; 
     return this;
   }
 
@@ -222,8 +231,9 @@ public class CreditSupportAnnex {
     this.initialMarginAmount = initialMarginAmount;
   }
 
+
   public CreditSupportAnnex minimumTransferAmount(Double minimumTransferAmount) {
-    this.minimumTransferAmount = minimumTransferAmount;
+    this.minimumTransferAmount = minimumTransferAmount; 
     return this;
   }
 
@@ -240,8 +250,9 @@ public class CreditSupportAnnex {
     this.minimumTransferAmount = minimumTransferAmount;
   }
 
+
   public CreditSupportAnnex id(ResourceId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -260,7 +271,7 @@ public class CreditSupportAnnex {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -272,9 +283,8 @@ public class CreditSupportAnnex {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -298,7 +308,7 @@ public class CreditSupportAnnex {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

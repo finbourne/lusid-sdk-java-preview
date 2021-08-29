@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * DateAttributes
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class DateAttributes {
   public static final String SERIALIZED_NAME_IRREGULAR = "irregular";
   @SerializedName(SERIALIZED_NAME_IRREGULAR)
@@ -61,8 +61,9 @@ public class DateAttributes {
   @SerializedName(SERIALIZED_NAME_LAST_CLOSE)
   private String lastClose;
 
+
   public DateAttributes irregular(Boolean irregular) {
-    this.irregular = irregular;
+    this.irregular = irregular; 
     return this;
   }
 
@@ -79,8 +80,9 @@ public class DateAttributes {
     this.irregular = irregular;
   }
 
+
   public DateAttributes irregularSession(Boolean irregularSession) {
-    this.irregularSession = irregularSession;
+    this.irregularSession = irregularSession; 
     return this;
   }
 
@@ -97,8 +99,9 @@ public class DateAttributes {
     this.irregularSession = irregularSession;
   }
 
+
   public DateAttributes newHours(Boolean newHours) {
-    this.newHours = newHours;
+    this.newHours = newHours; 
     return this;
   }
 
@@ -115,8 +118,9 @@ public class DateAttributes {
     this.newHours = newHours;
   }
 
+
   public DateAttributes activity(String activity) {
-    this.activity = activity;
+    this.activity = activity; 
     return this;
   }
 
@@ -133,8 +137,9 @@ public class DateAttributes {
     this.activity = activity;
   }
 
+
   public DateAttributes firstOpen(String firstOpen) {
-    this.firstOpen = firstOpen;
+    this.firstOpen = firstOpen; 
     return this;
   }
 
@@ -151,8 +156,9 @@ public class DateAttributes {
     this.firstOpen = firstOpen;
   }
 
+
   public DateAttributes lastOpen(String lastOpen) {
-    this.lastOpen = lastOpen;
+    this.lastOpen = lastOpen; 
     return this;
   }
 
@@ -169,8 +175,9 @@ public class DateAttributes {
     this.lastOpen = lastOpen;
   }
 
+
   public DateAttributes firstClose(String firstClose) {
-    this.firstClose = firstClose;
+    this.firstClose = firstClose; 
     return this;
   }
 
@@ -187,8 +194,9 @@ public class DateAttributes {
     this.firstClose = firstClose;
   }
 
+
   public DateAttributes lastClose(String lastClose) {
-    this.lastClose = lastClose;
+    this.lastClose = lastClose; 
     return this;
   }
 
@@ -207,7 +215,7 @@ public class DateAttributes {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -219,9 +227,8 @@ public class DateAttributes {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -243,7 +250,7 @@ public class DateAttributes {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

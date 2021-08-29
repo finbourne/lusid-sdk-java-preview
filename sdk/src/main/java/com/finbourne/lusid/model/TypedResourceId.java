@@ -28,7 +28,7 @@ import java.io.IOException;
  * Represents the user-defined identifier for a Legal Entity or Person.  Users can define their own, scoped identifiers for Legal Entities and Persons using identifier properties.  For example,  when used to identify a Person, the identifier defined by Person/myScope/username would be represented as   {     \&quot;idTypeScope\&quot;: \&quot;myScope\&quot;,     \&quot;idTypeCode\&quot;: \&quot;username\&quot;,     \&quot;code\&quot;: \&quot;john_doe_001\&quot;   }
  */
 @ApiModel(description = "Represents the user-defined identifier for a Legal Entity or Person.  Users can define their own, scoped identifiers for Legal Entities and Persons using identifier properties.  For example,  when used to identify a Person, the identifier defined by Person/myScope/username would be represented as   {     \"idTypeScope\": \"myScope\",     \"idTypeCode\": \"username\",     \"code\": \"john_doe_001\"   }")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TypedResourceId {
   public static final String SERIALIZED_NAME_ID_TYPE_SCOPE = "idTypeScope";
   @SerializedName(SERIALIZED_NAME_ID_TYPE_SCOPE)
@@ -42,8 +42,9 @@ public class TypedResourceId {
   @SerializedName(SERIALIZED_NAME_CODE)
   private String code;
 
+
   public TypedResourceId idTypeScope(String idTypeScope) {
-    this.idTypeScope = idTypeScope;
+    this.idTypeScope = idTypeScope; 
     return this;
   }
 
@@ -60,8 +61,9 @@ public class TypedResourceId {
     this.idTypeScope = idTypeScope;
   }
 
+
   public TypedResourceId idTypeCode(String idTypeCode) {
-    this.idTypeCode = idTypeCode;
+    this.idTypeCode = idTypeCode; 
     return this;
   }
 
@@ -78,8 +80,9 @@ public class TypedResourceId {
     this.idTypeCode = idTypeCode;
   }
 
+
   public TypedResourceId code(String code) {
-    this.code = code;
+    this.code = code; 
     return this;
   }
 
@@ -98,7 +101,7 @@ public class TypedResourceId {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -110,9 +113,8 @@ public class TypedResourceId {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -129,7 +131,7 @@ public class TypedResourceId {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

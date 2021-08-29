@@ -55,4 +55,76 @@ public class BondTest {
         // TODO: test instrumentType
     }
 
+    /**
+     * Test the property 'startDate'
+     */
+    @Test
+    public void startDateTest() {
+        // TODO: test startDate
+    }
+
+    /**
+     * Test the property 'maturityDate'
+     */
+    @Test
+    public void maturityDateTest() {
+        // TODO: test maturityDate
+    }
+
+    /**
+     * Test the property 'domCcy'
+     */
+    @Test
+    public void domCcyTest() {
+        // TODO: test domCcy
+    }
+
+    /**
+     * Test the property 'flowConventions'
+     */
+    @Test
+    public void flowConventionsTest() {
+        // TODO: test flowConventions
+    }
+
+    /**
+     * Test the property 'principal'
+     */
+    @Test
+    public void principalTest() {
+        // TODO: test principal
+    }
+
+    /**
+     * Test the property 'couponRate'
+     */
+    @Test
+    public void couponRateTest() {
+        // TODO: test couponRate
+    }
+
+    /**
+     * Test the property 'identifiers'
+     */
+    @Test
+    public void identifiersTest() {
+        // TODO: test identifiers
+    }
+
+    /**
+     * Test the property 'exDividendDays'
+     */
+    @Test
+    public void exDividendDaysTest() {
+        // TODO: test exDividendDays
+    }
+
+    /**
+     * Test the property 'initialCouponDate'
+     */
+    @Test
+    public void initialCouponDateTest() {
+        // TODO: test initialCouponDate
+    }
+
 }

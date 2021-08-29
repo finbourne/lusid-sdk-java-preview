@@ -28,11 +28,11 @@ import java.io.IOException;
 /**
  * FieldSchema
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FieldSchema {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private ResourceId id = null;
+  private ResourceId id;
 
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
@@ -119,7 +119,7 @@ public class FieldSchema {
 
       @Override
       public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return TypeEnum.fromValue(value);
       }
     }
@@ -133,8 +133,9 @@ public class FieldSchema {
   @SerializedName(SERIALIZED_NAME_DISPLAY_ORDER)
   private Integer displayOrder;
 
+
   public FieldSchema id(ResourceId id) {
-    this.id = id;
+    this.id = id; 
     return this;
   }
 
@@ -151,8 +152,9 @@ public class FieldSchema {
     this.id = id;
   }
 
+
   public FieldSchema displayName(String displayName) {
-    this.displayName = displayName;
+    this.displayName = displayName; 
     return this;
   }
 
@@ -169,8 +171,9 @@ public class FieldSchema {
     this.displayName = displayName;
   }
 
+
   public FieldSchema description(String description) {
-    this.description = description;
+    this.description = description; 
     return this;
   }
 
@@ -187,8 +190,9 @@ public class FieldSchema {
     this.description = description;
   }
 
+
   public FieldSchema type(TypeEnum type) {
-    this.type = type;
+    this.type = type; 
     return this;
   }
 
@@ -205,8 +209,9 @@ public class FieldSchema {
     this.type = type;
   }
 
+
   public FieldSchema displayOrder(Integer displayOrder) {
-    this.displayOrder = displayOrder;
+    this.displayOrder = displayOrder; 
     return this;
   }
 
@@ -225,7 +230,7 @@ public class FieldSchema {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -237,9 +242,8 @@ public class FieldSchema {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -258,7 +262,7 @@ public class FieldSchema {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

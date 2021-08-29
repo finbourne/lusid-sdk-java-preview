@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * PropertyFilter
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PropertyFilter {
   public static final String SERIALIZED_NAME_LEFT = "left";
   @SerializedName(SERIALIZED_NAME_LEFT)
@@ -84,7 +84,7 @@ public class PropertyFilter {
 
       @Override
       public OperatorEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return OperatorEnum.fromValue(value);
       }
     }
@@ -96,7 +96,7 @@ public class PropertyFilter {
 
   public static final String SERIALIZED_NAME_RIGHT = "right";
   @SerializedName(SERIALIZED_NAME_RIGHT)
-  private Object right = null;
+  private Object right;
 
   /**
    * The available values are: Absolute, Property
@@ -139,7 +139,7 @@ public class PropertyFilter {
 
       @Override
       public RightOperandTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return RightOperandTypeEnum.fromValue(value);
       }
     }
@@ -149,8 +149,9 @@ public class PropertyFilter {
   @SerializedName(SERIALIZED_NAME_RIGHT_OPERAND_TYPE)
   private RightOperandTypeEnum rightOperandType;
 
+
   public PropertyFilter left(String left) {
-    this.left = left;
+    this.left = left; 
     return this;
   }
 
@@ -167,8 +168,9 @@ public class PropertyFilter {
     this.left = left;
   }
 
+
   public PropertyFilter operator(OperatorEnum operator) {
-    this.operator = operator;
+    this.operator = operator; 
     return this;
   }
 
@@ -185,8 +187,9 @@ public class PropertyFilter {
     this.operator = operator;
   }
 
+
   public PropertyFilter right(Object right) {
-    this.right = right;
+    this.right = right; 
     return this;
   }
 
@@ -203,8 +206,9 @@ public class PropertyFilter {
     this.right = right;
   }
 
+
   public PropertyFilter rightOperandType(RightOperandTypeEnum rightOperandType) {
-    this.rightOperandType = rightOperandType;
+    this.rightOperandType = rightOperandType; 
     return this;
   }
 
@@ -223,7 +227,7 @@ public class PropertyFilter {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -235,9 +239,8 @@ public class PropertyFilter {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -255,7 +258,7 @@ public class PropertyFilter {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -2,11 +2,12 @@
 
 # WeekendMask
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**days** | [**List&lt;DayOfWeek&gt;**](DayOfWeek.md) |  | 
+**days** | **List&lt;DayOfWeek&gt;** |  | 
 **timeZone** | **String** |  | 
 
 

@@ -28,14 +28,15 @@ import java.io.IOException;
  * Options for controlling the default aspects and behaviour of the aggregation.
  */
 @ApiModel(description = "Options for controlling the default aspects and behaviour of the aggregation.")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class AggregationOptions {
   public static final String SERIALIZED_NAME_USE_ANSI_LIKE_SYNTAX = "useAnsiLikeSyntax";
   @SerializedName(SERIALIZED_NAME_USE_ANSI_LIKE_SYNTAX)
   private Boolean useAnsiLikeSyntax;
 
+
   public AggregationOptions useAnsiLikeSyntax(Boolean useAnsiLikeSyntax) {
-    this.useAnsiLikeSyntax = useAnsiLikeSyntax;
+    this.useAnsiLikeSyntax = useAnsiLikeSyntax; 
     return this;
   }
 
@@ -54,7 +55,7 @@ public class AggregationOptions {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -66,9 +67,8 @@ public class AggregationOptions {
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return super.hashCode();  
   }
-
 
   @Override
   public String toString() {
@@ -83,7 +83,7 @@ public class AggregationOptions {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
