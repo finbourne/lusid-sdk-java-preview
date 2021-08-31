@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3440
+  version: 0.11.3441
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:43983
 security:
 - {}
 tags:
@@ -27344,6 +27344,194 @@ paths:
       x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
+  /api/portfolios/{scope}/{code}/returns/{returnScope}/{returnCode}/$aggregated:
+    post:
+      description: Aggregate Returns which are on the specified portfolio.
+      operationId: GetPortfolioAggregatedReturns
+      parameters:
+      - description: The scope of the Portfolio.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the Portfolio.
+          nullable: true
+          type: string
+        style: simple
+      - description: The code of the  Portfolio.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The code of the  Portfolio.
+          nullable: true
+          type: string
+        style: simple
+      - description: The scope of the Returns.
+        explode: false
+        in: path
+        name: returnScope
+        required: true
+        schema:
+          description: The scope of the Returns.
+          nullable: true
+          type: string
+        style: simple
+      - description: The code of the Returns.
+        explode: false
+        in: path
+        name: returnCode
+        required: true
+        schema:
+          description: The code of the Returns.
+          nullable: true
+          type: string
+        style: simple
+      - description: The start date from which to calculate the Returns.
+        explode: true
+        in: query
+        name: fromEffectiveAt
+        required: false
+        schema:
+          description: The start date from which to calculate the Returns.
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: The end date for which to calculate the Returns.
+        explode: true
+        in: query
+        name: toEffectiveAt
+        required: false
+        schema:
+          description: The end date for which to calculate the Returns.
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: The asAt datetime at which to retrieve the Returns. Defaults
+          to the latest.
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: The asAt datetime at which to retrieve the Returns. Defaults
+            to the latest.
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              metrics:
+              - window: 1Y
+                allowPartial: false
+                annualised: false
+                withFee: false
+                alias: 1M
+              recipeId:
+                scope: TestScope
+                code: default
+              compositeMethod: Asset
+              period: Daily
+              outputFrequency: Daily
+            schema:
+              $ref: '#/components/schemas/AggregatedReturnsRequest'
+          application/json:
+            example:
+              metrics:
+              - window: 1Y
+                allowPartial: false
+                annualised: false
+                withFee: false
+                alias: 1M
+              recipeId:
+                scope: TestScope
+                code: default
+              compositeMethod: Asset
+              period: Daily
+              outputFrequency: Daily
+            schema:
+              $ref: '#/components/schemas/AggregatedReturnsRequest'
+          text/json:
+            example:
+              metrics:
+              - window: 1Y
+                allowPartial: false
+                annualised: false
+                withFee: false
+                alias: 1M
+              recipeId:
+                scope: TestScope
+                code: default
+              compositeMethod: Asset
+              period: Daily
+              outputFrequency: Daily
+            schema:
+              $ref: '#/components/schemas/AggregatedReturnsRequest'
+          application/*+json:
+            example:
+              metrics:
+              - window: 1Y
+                allowPartial: false
+                annualised: false
+                withFee: false
+                alias: 1M
+              recipeId:
+                scope: TestScope
+                code: default
+              compositeMethod: Asset
+              period: Daily
+              outputFrequency: Daily
+            schema:
+              $ref: '#/components/schemas/AggregatedReturnsRequest'
+        description: The request used in the AggregatedReturns.
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ResourceListOfAggregatedReturn'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceListOfAggregatedReturn'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ResourceListOfAggregatedReturn'
+          description: The aggregated returns.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] Aggregated Returns'
+      tags:
+      - Portfolios
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
   /api/portfolios/{scope}/{code}/returns/{returnScope}/{returnCode}/$delete:
     delete:
       description: Cancel one or more Returns which exist into the specified portfolio.
@@ -27653,7 +27841,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Aggregate Returns'
+      summary: '[EXPERIMENTAL] Aggregate Returns (This is a deprecated endpoint).'
       tags:
       - Portfolios
       x-fbn-apistatus: Experimental
@@ -45957,6 +46145,53 @@ components:
       - effectiveAt
       - metricsValue
       type: object
+    AggregatedReturnsRequest:
+      additionalProperties: false
+      description: The request used in the AggregatedReturns.
+      example:
+        outputFrequency: outputFrequency
+        period: period
+        metrics:
+        - withFee: true
+          annualised: true
+          alias: alias
+          window: window
+          type: type
+          allowPartial: true
+        - withFee: true
+          annualised: true
+          alias: alias
+          window: window
+          type: type
+          allowPartial: true
+        recipeId:
+          code: code
+          scope: scope
+        compositeMethod: compositeMethod
+      properties:
+        metrics:
+          description: A list of metrics to calculate in the AggregatedReturns.
+          items:
+            $ref: '#/components/schemas/PerformanceReturnsMetric'
+          type: array
+        recipeId:
+          $ref: '#/components/schemas/ResourceId'
+        compositeMethod:
+          description: 'The method used to calculate the Portfolio performance: Equal/Asset.'
+          nullable: true
+          type: string
+        period:
+          description: 'The type of the returns used to calculate the aggregation
+            result: Daily/Monthly.'
+          nullable: true
+          type: string
+        outputFrequency:
+          description: 'The type of calculated output: Daily/Weekly/Monthly/Quarterly/Half-Yearly/Yearly.'
+          nullable: true
+          type: string
+      required:
+      - metrics
+      type: object
     AggregateSpec:
       additionalProperties: false
       example:
@@ -57473,6 +57708,43 @@ components:
       required:
       - effectiveAt
       - rateOfReturn
+      type: object
+    PerformanceReturnsMetric:
+      additionalProperties: false
+      description: The request used in the AggregatedReturns.
+      example:
+        withFee: true
+        annualised: true
+        alias: alias
+        window: window
+        type: type
+        allowPartial: true
+      properties:
+        type:
+          description: The type of the metric. Default to Return
+          nullable: true
+          readOnly: true
+          type: string
+        window:
+          description: The given metric for the calculation i.e. 1Y, 1D.
+          nullable: true
+          type: string
+        allowPartial:
+          description: Bool if the metric is allowed partial results. Deafult to false.
+          type: boolean
+        annualised:
+          description: Bool if the metric is annualized. Default to false.
+          type: boolean
+        withFee:
+          description: Bool if the metric should consider the fees when is calculated.
+            Default to false.
+          readOnly: true
+          type: boolean
+        alias:
+          description: The alias for the metric.
+          nullable: true
+          readOnly: true
+          type: string
       type: object
     PeriodType:
       enum:
@@ -72074,7 +72346,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
