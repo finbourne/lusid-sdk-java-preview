@@ -55,7 +55,5 @@
 
 * `ORDERINSTRUCTION` (value: `"OrderInstruction"`)
 
-* `CUSTOMENTITY` (value: `"CustomEntity"`)
-
 
 
