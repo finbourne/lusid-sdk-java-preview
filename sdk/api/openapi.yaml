@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3449
+  version: 0.11.3450
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:49165
+- url: http://local-unit-test-server.lusid.com:38845
 security:
 - {}
 tags:
@@ -71,6 +71,7 @@ tags:
 - description: Methods for the storage and retrieval of counterparty related information
     such as Counterparty Agreements, Credit Support Annexes and Netting Set data.
   name: Counterparties
+- name: CustomEntities
 - name: CustomEntityDefinitions
 - description: Methods for interacting with Cut Label Definitions
   name: Cut Label Definitions
@@ -6769,6 +6770,526 @@ paths:
       summary: '[EXPERIMENTAL] Get Credit Support Annex'
       tags:
       - Counterparties
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+  /api/customentities/{entityType}:
+    post:
+      description: Insert the custom entity if it does not exist or update the custom
+        entity with the supplied state if it does exist.
+      operationId: UpsertCustomEntity
+      parameters:
+      - description: The type of the CustomEntity to be created. An entityType can
+          be created using the M:Finbourne.WebApi.Controllers.CustomEntityDefinitionController.GetDefinition(System.String,System.Nullable{System.DateTimeOffset})
+          endpoint.
+        explode: false
+        in: path
+        name: entityType
+        required: true
+        schema:
+          description: The type of the CustomEntity to be created. An entityType can
+            be created using the M:Finbourne.WebApi.Controllers.CustomEntityDefinitionController.GetDefinition(System.String,System.Nullable{System.DateTimeOffset})
+            endpoint.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              displayName: Issue
+              description: Issue with loading data
+              effectiveAt: 2021-07-23T12:00:00.0000000+00:00
+              identifiers:
+              - identifierScope: DataLoadingIssues
+                identifierType: InternalId
+                identifierValue: 067e9f2fce07401ca13285a0ab9ef5a6
+              - identifierScope: DataLoadingIssues
+                identifierType: JiraID
+                identifierValue: PLAT-250
+              fields:
+              - name: IssueName
+                value: InstrumentNotFound
+              - name: Status
+                value: InProgress
+              - name: StoryPointEstimate
+                value: 1
+              - name: Assigned
+                value: true
+              - name: DateCreated
+                value: 2021-07-13T12:00:00.0000000+00:00
+            schema:
+              $ref: '#/components/schemas/CustomEntityRequest'
+          application/json:
+            example:
+              displayName: Issue
+              description: Issue with loading data
+              effectiveAt: 2021-07-23T12:00:00.0000000+00:00
+              identifiers:
+              - identifierScope: DataLoadingIssues
+                identifierType: InternalId
+                identifierValue: 067e9f2fce07401ca13285a0ab9ef5a6
+              - identifierScope: DataLoadingIssues
+                identifierType: JiraID
+                identifierValue: PLAT-250
+              fields:
+              - name: IssueName
+                value: InstrumentNotFound
+              - name: Status
+                value: InProgress
+              - name: StoryPointEstimate
+                value: 1
+              - name: Assigned
+                value: true
+              - name: DateCreated
+                value: 2021-07-13T12:00:00.0000000+00:00
+            schema:
+              $ref: '#/components/schemas/CustomEntityRequest'
+          text/json:
+            example:
+              displayName: Issue
+              description: Issue with loading data
+              effectiveAt: 2021-07-23T12:00:00.0000000+00:00
+              identifiers:
+              - identifierScope: DataLoadingIssues
+                identifierType: InternalId
+                identifierValue: 067e9f2fce07401ca13285a0ab9ef5a6
+              - identifierScope: DataLoadingIssues
+                identifierType: JiraID
+                identifierValue: PLAT-250
+              fields:
+              - name: IssueName
+                value: InstrumentNotFound
+              - name: Status
+                value: InProgress
+              - name: StoryPointEstimate
+                value: 1
+              - name: Assigned
+                value: true
+              - name: DateCreated
+                value: 2021-07-13T12:00:00.0000000+00:00
+            schema:
+              $ref: '#/components/schemas/CustomEntityRequest'
+          application/*+json:
+            example:
+              displayName: Issue
+              description: Issue with loading data
+              effectiveAt: 2021-07-23T12:00:00.0000000+00:00
+              identifiers:
+              - identifierScope: DataLoadingIssues
+                identifierType: InternalId
+                identifierValue: 067e9f2fce07401ca13285a0ab9ef5a6
+              - identifierScope: DataLoadingIssues
+                identifierType: JiraID
+                identifierValue: PLAT-250
+              fields:
+              - name: IssueName
+                value: InstrumentNotFound
+              - name: Status
+                value: InProgress
+              - name: StoryPointEstimate
+                value: 1
+              - name: Assigned
+                value: true
+              - name: DateCreated
+                value: 2021-07-13T12:00:00.0000000+00:00
+            schema:
+              $ref: '#/components/schemas/CustomEntityRequest'
+        description: The CustomEntity to be created
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
+                entityType: ~issue
+                customEntityId: 908c90ba-bbcf-4c92-b6ba-00e90e2b2e9c
+                version:
+                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
+                  asAtDate: 2021-07-23T12:00:00.0000000+00:00
+                displayName: Issue
+                description: Issue with loading data
+                identifiers:
+                - identifierScope: DataLoadingIssues
+                  identifierType: InternalId
+                  identifierValue: 567409653e1b460faa68c3df9bd71403
+                  effectiveRange:
+                    fromDate: 2021-07-23T12:00:00.0000000+00:00
+                    untilDate: 9999-12-31T23:59:59.9999999+00:00
+                  asAtRange:
+                    fromDate: 2021-07-23T12:00:00.0000000+00:00
+                    untilDate: 9999-12-31T23:59:59.9999999+00:00
+                - identifierScope: DataLoadingIssues
+                  identifierType: JiraId
+                  identifierValue: PLAT-250
+                  effectiveRange:
+                    fromDate: 2021-07-23T12:00:00.0000000+00:00
+                    untilDate: 9999-12-31T23:59:59.9999999+00:00
+                  asAtRange:
+                    fromDate: 2021-07-23T12:00:00.0000000+00:00
+                    untilDate: 9999-12-31T23:59:59.9999999+00:00
+                fields:
+                - name: IssueName
+                  value: InstrumentNotFound
+                - name: Status
+                  value: InProgress
+                - name: StoryPointEstimate
+                  value: 1
+                - name: Assigned
+                  value: true
+                - name: DateCreated
+                  value: 2021-07-13T12:00:00.0000000+00:00
+                effectiveRange:
+                  fromDate: 2021-07-23T12:00:00.0000000+00:00
+                  untilDate: 9999-12-31T23:59:59.9999999+00:00
+                asAtRange:
+                  fromDate: 2021-07-23T12:00:00.0000000+00:00
+                  untilDate: 9999-12-31T23:59:59.9999999+00:00
+              schema:
+                $ref: '#/components/schemas/CustomEntityResponse'
+            application/json:
+              example:
+                href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
+                entityType: ~issue
+                customEntityId: 908c90ba-bbcf-4c92-b6ba-00e90e2b2e9c
+                version:
+                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
+                  asAtDate: 2021-07-23T12:00:00.0000000+00:00
+                displayName: Issue
+                description: Issue with loading data
+                identifiers:
+                - identifierScope: DataLoadingIssues
+                  identifierType: InternalId
+                  identifierValue: 567409653e1b460faa68c3df9bd71403
+                  effectiveRange:
+                    fromDate: 2021-07-23T12:00:00.0000000+00:00
+                    untilDate: 9999-12-31T23:59:59.9999999+00:00
+                  asAtRange:
+                    fromDate: 2021-07-23T12:00:00.0000000+00:00
+                    untilDate: 9999-12-31T23:59:59.9999999+00:00
+                - identifierScope: DataLoadingIssues
+                  identifierType: JiraId
+                  identifierValue: PLAT-250
+                  effectiveRange:
+                    fromDate: 2021-07-23T12:00:00.0000000+00:00
+                    untilDate: 9999-12-31T23:59:59.9999999+00:00
+                  asAtRange:
+                    fromDate: 2021-07-23T12:00:00.0000000+00:00
+                    untilDate: 9999-12-31T23:59:59.9999999+00:00
+                fields:
+                - name: IssueName
+                  value: InstrumentNotFound
+                - name: Status
+                  value: InProgress
+                - name: StoryPointEstimate
+                  value: 1
+                - name: Assigned
+                  value: true
+                - name: DateCreated
+                  value: 2021-07-13T12:00:00.0000000+00:00
+                effectiveRange:
+                  fromDate: 2021-07-23T12:00:00.0000000+00:00
+                  untilDate: 9999-12-31T23:59:59.9999999+00:00
+                asAtRange:
+                  fromDate: 2021-07-23T12:00:00.0000000+00:00
+                  untilDate: 9999-12-31T23:59:59.9999999+00:00
+              schema:
+                $ref: '#/components/schemas/CustomEntityResponse'
+            text/json:
+              example:
+                href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
+                entityType: ~issue
+                customEntityId: 908c90ba-bbcf-4c92-b6ba-00e90e2b2e9c
+                version:
+                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
+                  asAtDate: 2021-07-23T12:00:00.0000000+00:00
+                displayName: Issue
+                description: Issue with loading data
+                identifiers:
+                - identifierScope: DataLoadingIssues
+                  identifierType: InternalId
+                  identifierValue: 567409653e1b460faa68c3df9bd71403
+                  effectiveRange:
+                    fromDate: 2021-07-23T12:00:00.0000000+00:00
+                    untilDate: 9999-12-31T23:59:59.9999999+00:00
+                  asAtRange:
+                    fromDate: 2021-07-23T12:00:00.0000000+00:00
+                    untilDate: 9999-12-31T23:59:59.9999999+00:00
+                - identifierScope: DataLoadingIssues
+                  identifierType: JiraId
+                  identifierValue: PLAT-250
+                  effectiveRange:
+                    fromDate: 2021-07-23T12:00:00.0000000+00:00
+                    untilDate: 9999-12-31T23:59:59.9999999+00:00
+                  asAtRange:
+                    fromDate: 2021-07-23T12:00:00.0000000+00:00
+                    untilDate: 9999-12-31T23:59:59.9999999+00:00
+                fields:
+                - name: IssueName
+                  value: InstrumentNotFound
+                - name: Status
+                  value: InProgress
+                - name: StoryPointEstimate
+                  value: 1
+                - name: Assigned
+                  value: true
+                - name: DateCreated
+                  value: 2021-07-13T12:00:00.0000000+00:00
+                effectiveRange:
+                  fromDate: 2021-07-23T12:00:00.0000000+00:00
+                  untilDate: 9999-12-31T23:59:59.9999999+00:00
+                asAtRange:
+                  fromDate: 2021-07-23T12:00:00.0000000+00:00
+                  untilDate: 9999-12-31T23:59:59.9999999+00:00
+              schema:
+                $ref: '#/components/schemas/CustomEntityResponse'
+          description: The upserted Custom Entity
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] Upsert a new CustomEntity'
+      tags:
+      - CustomEntities
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/customentities/{entityType}/{identifierType}/{identifierValue}:
+    get:
+      description: Retrieve a CustomEntity by a specific Id at a point in AsAt time
+      operationId: GetCustomEntity
+      parameters:
+      - description: The type of entity to retrieve
+        explode: false
+        in: path
+        name: entityType
+        required: true
+        schema:
+          description: The type of entity to retrieve
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: An identifier type attached to the CustomEntity
+        explode: false
+        in: path
+        name: identifierType
+        required: true
+        schema:
+          description: An identifier type attached to the CustomEntity
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The identifier value
+        explode: false
+        in: path
+        name: identifierValue
+        required: true
+        schema:
+          description: The identifier value
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The identifier scope
+        explode: true
+        in: query
+        name: identifierScope
+        required: true
+        schema:
+          description: The identifier scope
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: The AsAt at which to retrieve the CustomEntity
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: The AsAt at which to retrieve the CustomEntity
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
+                entityType: ~branch
+                customEntityId: 913a1897-fbcc-47f1-a93f-493107659dbd
+                version:
+                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  asAtDate: 2020-01-23T12:00:00.0000000+00:00
+                displayName: The Frames
+                description: Finbourne's London office in The Frames building
+                identifiers:
+                - identifierScope: locations
+                  identifierType: what3words
+                  identifierValue: loaf.fires.basket
+                  effectiveRange:
+                    fromDate: 2020-01-23T12:00:00.0000000+00:00
+                  asAtRange:
+                    fromDate: 2020-01-22T12:00:00.0000000+00:00
+                - identifierScope: locations
+                  identifierType: Coordinates
+                  identifierValue: 51.52356,-0.08192
+                  effectiveRange:
+                    fromDate: 2020-01-23T12:00:00.0000000+00:00
+                  asAtRange:
+                    fromDate: 2020-01-22T12:00:00.0000000+00:00
+                fields:
+                - name: Name of building
+                  value: Frames Building
+                - name: Town
+                  value: Shoreditch
+                - name: CurrentOffice
+                  value: 1
+                - name: Date Moved in
+                  value: true
+                - name: Date Created
+                  value: 2019-01-23T12:00:00.0000000+00:00
+                effectiveRange:
+                  fromDate: 2020-01-23T12:00:00.0000000+00:00
+                asAtRange:
+                  fromDate: 2020-01-22T12:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/CustomEntityResponse'
+            application/json:
+              example:
+                href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
+                entityType: ~branch
+                customEntityId: 913a1897-fbcc-47f1-a93f-493107659dbd
+                version:
+                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  asAtDate: 2020-01-23T12:00:00.0000000+00:00
+                displayName: The Frames
+                description: Finbourne's London office in The Frames building
+                identifiers:
+                - identifierScope: locations
+                  identifierType: what3words
+                  identifierValue: loaf.fires.basket
+                  effectiveRange:
+                    fromDate: 2020-01-23T12:00:00.0000000+00:00
+                  asAtRange:
+                    fromDate: 2020-01-22T12:00:00.0000000+00:00
+                - identifierScope: locations
+                  identifierType: Coordinates
+                  identifierValue: 51.52356,-0.08192
+                  effectiveRange:
+                    fromDate: 2020-01-23T12:00:00.0000000+00:00
+                  asAtRange:
+                    fromDate: 2020-01-22T12:00:00.0000000+00:00
+                fields:
+                - name: Name of building
+                  value: Frames Building
+                - name: Town
+                  value: Shoreditch
+                - name: CurrentOffice
+                  value: 1
+                - name: Date Moved in
+                  value: true
+                - name: Date Created
+                  value: 2019-01-23T12:00:00.0000000+00:00
+                effectiveRange:
+                  fromDate: 2020-01-23T12:00:00.0000000+00:00
+                asAtRange:
+                  fromDate: 2020-01-22T12:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/CustomEntityResponse'
+            text/json:
+              example:
+                href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
+                entityType: ~branch
+                customEntityId: 913a1897-fbcc-47f1-a93f-493107659dbd
+                version:
+                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  asAtDate: 2020-01-23T12:00:00.0000000+00:00
+                displayName: The Frames
+                description: Finbourne's London office in The Frames building
+                identifiers:
+                - identifierScope: locations
+                  identifierType: what3words
+                  identifierValue: loaf.fires.basket
+                  effectiveRange:
+                    fromDate: 2020-01-23T12:00:00.0000000+00:00
+                  asAtRange:
+                    fromDate: 2020-01-22T12:00:00.0000000+00:00
+                - identifierScope: locations
+                  identifierType: Coordinates
+                  identifierValue: 51.52356,-0.08192
+                  effectiveRange:
+                    fromDate: 2020-01-23T12:00:00.0000000+00:00
+                  asAtRange:
+                    fromDate: 2020-01-22T12:00:00.0000000+00:00
+                fields:
+                - name: Name of building
+                  value: Frames Building
+                - name: Town
+                  value: Shoreditch
+                - name: CurrentOffice
+                  value: 1
+                - name: Date Moved in
+                  value: true
+                - name: Date Created
+                  value: 2019-01-23T12:00:00.0000000+00:00
+                effectiveRange:
+                  fromDate: 2020-01-23T12:00:00.0000000+00:00
+                asAtRange:
+                  fromDate: 2020-01-22T12:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/CustomEntityResponse'
+          description: The requested Custom Entity
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] Get CustomEntity'
+      tags:
+      - CustomEntities
       x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/customentitydefinitions:
@@ -28162,7 +28683,7 @@ paths:
             Holding, ReferenceHolding, TransactionConfiguration, Instrument, CutLabelDefinition,
             Analytic, PortfolioGroup, Person, AccessMetadata, Order, UnitResult, MarketData,
             ConfigurationRecipe, Allocation, Calendar, LegalEntity, Placement, Execution,
-            Block, Participation, Package, OrderInstruction'
+            Block, Participation, Package, OrderInstruction, CustomEntity'
           enum:
           - NotDefined
           - Transaction
@@ -28189,6 +28710,7 @@ paths:
           - Participation
           - Package
           - OrderInstruction
+          - CustomEntity
           type: string
         style: simple
       - description: The scope of the property to be deleted.
@@ -28271,7 +28793,7 @@ paths:
             Holding, ReferenceHolding, TransactionConfiguration, Instrument, CutLabelDefinition,
             Analytic, PortfolioGroup, Person, AccessMetadata, Order, UnitResult, MarketData,
             ConfigurationRecipe, Allocation, Calendar, LegalEntity, Placement, Execution,
-            Block, Participation, Package, OrderInstruction'
+            Block, Participation, Package, OrderInstruction, CustomEntity'
           enum:
           - NotDefined
           - Transaction
@@ -28298,6 +28820,7 @@ paths:
           - Participation
           - Package
           - OrderInstruction
+          - CustomEntity
           type: string
         style: simple
       - description: The scope of the specified property.
@@ -28398,7 +28921,7 @@ paths:
             Holding, ReferenceHolding, TransactionConfiguration, Instrument, CutLabelDefinition,
             Analytic, PortfolioGroup, Person, AccessMetadata, Order, UnitResult, MarketData,
             ConfigurationRecipe, Allocation, Calendar, LegalEntity, Placement, Execution,
-            Block, Participation, Package, OrderInstruction'
+            Block, Participation, Package, OrderInstruction, CustomEntity'
           enum:
           - NotDefined
           - Transaction
@@ -28425,6 +28948,7 @@ paths:
           - Participation
           - Package
           - OrderInstruction
+          - CustomEntity
           type: string
         style: simple
       - description: The scope of the property being updated.
@@ -49097,7 +49621,8 @@ components:
             are: NotDefined, Transaction, Portfolio, Holding, ReferenceHolding, TransactionConfiguration,
             Instrument, CutLabelDefinition, Analytic, PortfolioGroup, Person, AccessMetadata,
             Order, UnitResult, MarketData, ConfigurationRecipe, Allocation, Calendar,
-            LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction'
+            LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction,
+            CustomEntity'
           enum:
           - NotDefined
           - Transaction
@@ -49124,6 +49649,7 @@ components:
           - Participation
           - Package
           - OrderInstruction
+          - CustomEntity
           type: string
         scope:
           description: The scope that the property exists in.
@@ -49324,7 +49850,8 @@ components:
             are: NotDefined, Transaction, Portfolio, Holding, ReferenceHolding, TransactionConfiguration,
             Instrument, CutLabelDefinition, Analytic, PortfolioGroup, Person, AccessMetadata,
             Order, UnitResult, MarketData, ConfigurationRecipe, Allocation, Calendar,
-            LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction'
+            LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction,
+            CustomEntity'
           enum:
           - NotDefined
           - Transaction
@@ -49351,6 +49878,7 @@ components:
           - Participation
           - Package
           - OrderInstruction
+          - CustomEntity
           type: string
         scope:
           description: The scope that the property exists in.
@@ -50076,6 +50604,21 @@ components:
       - customEntityId
       - displayName
       type: object
+    CustomEntityField:
+      additionalProperties: false
+      example:
+        name: name
+        value: '{}'
+      properties:
+        name:
+          type: string
+        value:
+          additionalProperties: false
+          type: object
+      required:
+      - name
+      - value
+      type: object
     CustomEntityFieldDefinition:
       additionalProperties: false
       example:
@@ -50097,6 +50640,188 @@ components:
       - required
       - temporality
       - type
+      type: object
+    CustomEntityIdRequest:
+      additionalProperties: false
+      example:
+        identifierValue: identifierValue
+        identifierType: identifierType
+        identifierScope: identifierScope
+      properties:
+        identifierScope:
+          type: string
+        identifierType:
+          type: string
+        identifierValue:
+          type: string
+      required:
+      - identifierScope
+      - identifierType
+      - identifierValue
+      type: object
+    CustomEntityIdResponse:
+      additionalProperties: false
+      example:
+        effectiveRange:
+          fromDate: 2000-01-23T04:56:07.000+00:00
+          untilDate: 2000-01-23T04:56:07.000+00:00
+        asAtRange:
+          fromDate: 2000-01-23T04:56:07.000+00:00
+          untilDate: 2000-01-23T04:56:07.000+00:00
+        identifierValue: identifierValue
+        identifierType: identifierType
+        identifierScope: identifierScope
+      properties:
+        identifierScope:
+          type: string
+        identifierType:
+          type: string
+        identifierValue:
+          type: string
+        effectiveRange:
+          $ref: '#/components/schemas/DateRange'
+        asAtRange:
+          $ref: '#/components/schemas/DateRange'
+      required:
+      - asAtRange
+      - effectiveRange
+      - identifierScope
+      - identifierType
+      - identifierValue
+      type: object
+    CustomEntityRequest:
+      additionalProperties: false
+      example:
+        displayName: displayName
+        identifiers:
+        - identifierValue: identifierValue
+          identifierType: identifierType
+          identifierScope: identifierScope
+        - identifierValue: identifierValue
+          identifierType: identifierType
+          identifierScope: identifierScope
+        effectiveAt: effectiveAt
+        description: description
+        fields:
+        - name: name
+          value: '{}'
+        - name: name
+          value: '{}'
+      properties:
+        displayName:
+          type: string
+        description:
+          type: string
+        effectiveAt:
+          nullable: true
+          type: string
+        identifiers:
+          items:
+            $ref: '#/components/schemas/CustomEntityIdRequest'
+          type: array
+        fields:
+          items:
+            $ref: '#/components/schemas/CustomEntityField'
+          nullable: true
+          type: array
+      required:
+      - description
+      - displayName
+      - identifiers
+      type: object
+    CustomEntityResponse:
+      additionalProperties: false
+      example:
+        customEntityId: customEntityId
+        effectiveRange:
+          fromDate: 2000-01-23T04:56:07.000+00:00
+          untilDate: 2000-01-23T04:56:07.000+00:00
+        asAtRange:
+          fromDate: 2000-01-23T04:56:07.000+00:00
+          untilDate: 2000-01-23T04:56:07.000+00:00
+        entityType: entityType
+        displayName: displayName
+        identifiers:
+        - effectiveRange:
+            fromDate: 2000-01-23T04:56:07.000+00:00
+            untilDate: 2000-01-23T04:56:07.000+00:00
+          asAtRange:
+            fromDate: 2000-01-23T04:56:07.000+00:00
+            untilDate: 2000-01-23T04:56:07.000+00:00
+          identifierValue: identifierValue
+          identifierType: identifierType
+          identifierScope: identifierScope
+        - effectiveRange:
+            fromDate: 2000-01-23T04:56:07.000+00:00
+            untilDate: 2000-01-23T04:56:07.000+00:00
+          asAtRange:
+            fromDate: 2000-01-23T04:56:07.000+00:00
+            untilDate: 2000-01-23T04:56:07.000+00:00
+          identifierValue: identifierValue
+          identifierType: identifierType
+          identifierScope: identifierScope
+        description: description
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+        fields:
+        - name: name
+          value: '{}'
+        - name: name
+          value: '{}'
+        version:
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          asAtDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        href:
+          format: uri
+          nullable: true
+          type: string
+        entityType:
+          type: string
+        customEntityId:
+          type: string
+        version:
+          $ref: '#/components/schemas/Version'
+        displayName:
+          type: string
+        description:
+          nullable: true
+          type: string
+        identifiers:
+          items:
+            $ref: '#/components/schemas/CustomEntityIdResponse'
+          type: array
+        fields:
+          items:
+            $ref: '#/components/schemas/CustomEntityField'
+          type: array
+        effectiveRange:
+          $ref: '#/components/schemas/DateRange'
+        asAtRange:
+          $ref: '#/components/schemas/DateRange'
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - asAtRange
+      - customEntityId
+      - displayName
+      - effectiveRange
+      - entityType
+      - fields
+      - identifiers
+      - version
       type: object
     CutLabelDefinition:
       additionalProperties: false
@@ -59543,7 +60268,8 @@ components:
             are: NotDefined, Transaction, Portfolio, Holding, ReferenceHolding, TransactionConfiguration,
             Instrument, CutLabelDefinition, Analytic, PortfolioGroup, Person, AccessMetadata,
             Order, UnitResult, MarketData, ConfigurationRecipe, Allocation, Calendar,
-            LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction'
+            LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction,
+            CustomEntity'
           enum:
           - NotDefined
           - Transaction
@@ -59570,6 +60296,7 @@ components:
           - Participation
           - Package
           - OrderInstruction
+          - CustomEntity
           type: string
         scope:
           description: The scope that the property exists in.
@@ -59719,7 +60446,8 @@ components:
             are: NotDefined, Transaction, Portfolio, Holding, ReferenceHolding, TransactionConfiguration,
             Instrument, CutLabelDefinition, Analytic, PortfolioGroup, Person, AccessMetadata,
             Order, UnitResult, MarketData, ConfigurationRecipe, Allocation, Calendar,
-            LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction'
+            LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction,
+            CustomEntity'
           enum:
           - NotDefined
           - Transaction
@@ -59746,6 +60474,7 @@ components:
           - Participation
           - Package
           - OrderInstruction
+          - CustomEntity
           type: string
         scope:
           description: The scope that the property exists in.
@@ -59831,6 +60560,7 @@ components:
       - Participation
       - Package
       - OrderInstruction
+      - CustomEntity
       type: string
     PropertyFilter:
       additionalProperties: false
@@ -72364,6 +73094,7 @@ x-tagGroups:
   - Conventions
   - Corporate Action Sources
   - Counterparties
+  - CustomEntities
   - CustomEntityDefinitions
   - Cut Label Definitions
   - Data Types
