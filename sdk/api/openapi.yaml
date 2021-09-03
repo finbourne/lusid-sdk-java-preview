@@ -39,7 +39,7 @@ info:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:52329
+- url: https://fbn-prd.lusid.com/api
 security:
 - {}
 tags:
@@ -6804,7 +6804,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 07f184efbc0342e0beafbd5605aa3b70
+                identifierValue: 24b5eb887526459799953c7b369c75ce
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -6829,7 +6829,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 07f184efbc0342e0beafbd5605aa3b70
+                identifierValue: 24b5eb887526459799953c7b369c75ce
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -6854,7 +6854,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 07f184efbc0342e0beafbd5605aa3b70
+                identifierValue: 24b5eb887526459799953c7b369c75ce
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -6879,7 +6879,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 07f184efbc0342e0beafbd5605aa3b70
+                identifierValue: 24b5eb887526459799953c7b369c75ce
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -6905,7 +6905,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: fef69b17-879b-4a5d-8fb8-8214732889a1
+                customEntityId: bf6a41fa-6962-4d23-8cd6-29da367f7167
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -6914,7 +6914,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 7b2f51cf9ba94ddca7a8d3bdbc96a7c3
+                  identifierValue: 3703f31b14d1467f8d4dce2462c3a94e
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -6953,7 +6953,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: fef69b17-879b-4a5d-8fb8-8214732889a1
+                customEntityId: bf6a41fa-6962-4d23-8cd6-29da367f7167
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -6962,7 +6962,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 7b2f51cf9ba94ddca7a8d3bdbc96a7c3
+                  identifierValue: 3703f31b14d1467f8d4dce2462c3a94e
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7001,7 +7001,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: fef69b17-879b-4a5d-8fb8-8214732889a1
+                customEntityId: bf6a41fa-6962-4d23-8cd6-29da367f7167
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7010,7 +7010,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 7b2f51cf9ba94ddca7a8d3bdbc96a7c3
+                  identifierValue: 3703f31b14d1467f8d4dce2462c3a94e
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7144,7 +7144,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 97116c93-0372-44aa-8fac-58c4627098c3
+                customEntityId: 69231d36-49ba-42b0-b949-442dc77749bc
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7186,7 +7186,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 97116c93-0372-44aa-8fac-58c4627098c3
+                customEntityId: 69231d36-49ba-42b0-b949-442dc77749bc
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7228,7 +7228,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 97116c93-0372-44aa-8fac-58c4627098c3
+                customEntityId: 69231d36-49ba-42b0-b949-442dc77749bc
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -73078,7 +73078,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:
