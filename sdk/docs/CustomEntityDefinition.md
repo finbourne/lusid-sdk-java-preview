@@ -9,7 +9,7 @@ Representation of Custom Entity Definition on LUSID API
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | **URI** |  |  [optional]
-**entityTypeName** | **String** |  | 
+**customEntityId** | **String** |  | 
 **displayName** | **String** |  | 
 **description** | **String** |  |  [optional]
 **entityType** | **String** |  | 

@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3459
+  version: 0.11.3457
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:38291
+- url: https://fbn-prd.lusid.com/api
 security:
 - {}
 tags:
@@ -6774,356 +6774,6 @@ paths:
       - Counterparties
       x-fbn-apistatus: Experimental
       x-accepts: application/json
-  /api/customentities/entitytypes:
-    post:
-      description: Create a custom entity definition that does not already exist.
-        Will return a Bad Request if the CustomEntityDefinition already exists
-      operationId: CreateCustomEntityDefinition
-      requestBody:
-        content:
-          application/json-patch+json:
-            example:
-              entityTypeName: issue
-              displayName: Issue
-              description: Represents an issue in the system
-              fieldSchema:
-              - name: Assigned
-                lifetime: TimeVariant
-                type: bool
-                required: true
-              - name: Status
-                lifetime: TimeVariant
-                type: string
-                required: true
-              - name: Effort In Days
-                lifetime: Perpetual
-                type: number
-                required: false
-              - name: DateCreated
-                lifetime: Perpetual
-                type: datetime
-                required: true
-            schema:
-              $ref: '#/components/schemas/CustomEntityDefinitionRequest'
-          application/json:
-            example:
-              entityTypeName: issue
-              displayName: Issue
-              description: Represents an issue in the system
-              fieldSchema:
-              - name: Assigned
-                lifetime: TimeVariant
-                type: bool
-                required: true
-              - name: Status
-                lifetime: TimeVariant
-                type: string
-                required: true
-              - name: Effort In Days
-                lifetime: Perpetual
-                type: number
-                required: false
-              - name: DateCreated
-                lifetime: Perpetual
-                type: datetime
-                required: true
-            schema:
-              $ref: '#/components/schemas/CustomEntityDefinitionRequest'
-          text/json:
-            example:
-              entityTypeName: issue
-              displayName: Issue
-              description: Represents an issue in the system
-              fieldSchema:
-              - name: Assigned
-                lifetime: TimeVariant
-                type: bool
-                required: true
-              - name: Status
-                lifetime: TimeVariant
-                type: string
-                required: true
-              - name: Effort In Days
-                lifetime: Perpetual
-                type: number
-                required: false
-              - name: DateCreated
-                lifetime: Perpetual
-                type: datetime
-                required: true
-            schema:
-              $ref: '#/components/schemas/CustomEntityDefinitionRequest'
-          application/*+json:
-            example:
-              entityTypeName: issue
-              displayName: Issue
-              description: Represents an issue in the system
-              fieldSchema:
-              - name: Assigned
-                lifetime: TimeVariant
-                type: bool
-                required: true
-              - name: Status
-                lifetime: TimeVariant
-                type: string
-                required: true
-              - name: Effort In Days
-                lifetime: Perpetual
-                type: number
-                required: false
-              - name: DateCreated
-                lifetime: Perpetual
-                type: datetime
-                required: true
-            schema:
-              $ref: '#/components/schemas/CustomEntityDefinitionRequest'
-        description: The CustomEntityDefinitionRequest
-      responses:
-        "200":
-          content:
-            text/plain:
-              example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/issue
-                entityTypeName: issue
-                displayName: Issue
-                description: Represents an issue in the system
-                entityType: ~issue
-                fieldSchema:
-                - name: Assigned
-                  lifetime: TimeVariant
-                  type: bool
-                  required: true
-                - name: Status
-                  lifetime: TimeVariant
-                  type: string
-                  required: true
-                - name: Effort In Days
-                  lifetime: Perpetual
-                  type: number
-                  required: false
-                - name: DateCreated
-                  lifetime: Perpetual
-                  type: datetime
-                  required: true
-              schema:
-                $ref: '#/components/schemas/CustomEntityDefinition'
-            application/json:
-              example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/issue
-                entityTypeName: issue
-                displayName: Issue
-                description: Represents an issue in the system
-                entityType: ~issue
-                fieldSchema:
-                - name: Assigned
-                  lifetime: TimeVariant
-                  type: bool
-                  required: true
-                - name: Status
-                  lifetime: TimeVariant
-                  type: string
-                  required: true
-                - name: Effort In Days
-                  lifetime: Perpetual
-                  type: number
-                  required: false
-                - name: DateCreated
-                  lifetime: Perpetual
-                  type: datetime
-                  required: true
-              schema:
-                $ref: '#/components/schemas/CustomEntityDefinition'
-            text/json:
-              example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/issue
-                entityTypeName: issue
-                displayName: Issue
-                description: Represents an issue in the system
-                entityType: ~issue
-                fieldSchema:
-                - name: Assigned
-                  lifetime: TimeVariant
-                  type: bool
-                  required: true
-                - name: Status
-                  lifetime: TimeVariant
-                  type: string
-                  required: true
-                - name: Effort In Days
-                  lifetime: Perpetual
-                  type: number
-                  required: false
-                - name: DateCreated
-                  lifetime: Perpetual
-                  type: datetime
-                  required: true
-              schema:
-                $ref: '#/components/schemas/CustomEntityDefinition'
-          description: The created custom entity definition
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] Create a new CustomEntityDefinition'
-      tags:
-      - CustomEntityDefinitions
-      x-fbn-apistatus: Experimental
-      x-contentType: application/json-patch+json
-      x-accepts: application/json
-  /api/customentities/entitytypes/{entityType}:
-    get:
-      description: Retrieve a CustomEntityDefinition by a specific EntityType at a
-        point in AsAt time
-      operationId: GetDefinition
-      parameters:
-      - description: The type of entity for which to retrieve the CustomEntityDefinition.
-          This is included in the response from M:Finbourne.WebApi.Controllers.CustomEntityDefinitionController.CreateCustomEntityDefinition(Finbourne.WebApi.Interface.Dto.CustomEntityDefinitions.CustomEntityDefinitionRequest).
-        explode: false
-        in: path
-        name: entityType
-        required: true
-        schema:
-          description: The type of entity for which to retrieve the CustomEntityDefinition.
-            This is included in the response from M:Finbourne.WebApi.Controllers.CustomEntityDefinitionController.CreateCustomEntityDefinition(Finbourne.WebApi.Interface.Dto.CustomEntityDefinitions.CustomEntityDefinitionRequest).
-          maxLength: 64
-          minLength: 1
-          type: string
-        style: simple
-      - description: The AsAt at which to retrieve the CustomEntityDefinition.
-        explode: true
-        in: query
-        name: asAt
-        required: false
-        schema:
-          description: The AsAt at which to retrieve the CustomEntityDefinition.
-          format: date-time
-          nullable: true
-          type: string
-        style: form
-        x-nullable: true
-      responses:
-        "200":
-          content:
-            text/plain:
-              example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/issue
-                entityTypeName: issue
-                displayName: Issue
-                description: Represents an issue in the system
-                entityType: ~issue
-                fieldSchema:
-                - name: Assigned
-                  lifetime: TimeVariant
-                  type: bool
-                  required: true
-                - name: Status
-                  lifetime: TimeVariant
-                  type: string
-                  required: true
-                - name: Effort In Days
-                  lifetime: Perpetual
-                  type: number
-                  required: false
-                - name: DateCreated
-                  lifetime: Perpetual
-                  type: datetime
-                  required: true
-              schema:
-                $ref: '#/components/schemas/CustomEntityDefinition'
-            application/json:
-              example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/issue
-                entityTypeName: issue
-                displayName: Issue
-                description: Represents an issue in the system
-                entityType: ~issue
-                fieldSchema:
-                - name: Assigned
-                  lifetime: TimeVariant
-                  type: bool
-                  required: true
-                - name: Status
-                  lifetime: TimeVariant
-                  type: string
-                  required: true
-                - name: Effort In Days
-                  lifetime: Perpetual
-                  type: number
-                  required: false
-                - name: DateCreated
-                  lifetime: Perpetual
-                  type: datetime
-                  required: true
-              schema:
-                $ref: '#/components/schemas/CustomEntityDefinition'
-            text/json:
-              example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/issue
-                entityTypeName: issue
-                displayName: Issue
-                description: Represents an issue in the system
-                entityType: ~issue
-                fieldSchema:
-                - name: Assigned
-                  lifetime: TimeVariant
-                  type: bool
-                  required: true
-                - name: Status
-                  lifetime: TimeVariant
-                  type: string
-                  required: true
-                - name: Effort In Days
-                  lifetime: Perpetual
-                  type: number
-                  required: false
-                - name: DateCreated
-                  lifetime: Perpetual
-                  type: datetime
-                  required: true
-              schema:
-                $ref: '#/components/schemas/CustomEntityDefinition'
-          description: The requested custom entity definition
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] Get CustomEntityDefinition'
-      tags:
-      - CustomEntityDefinitions
-      x-fbn-apistatus: Experimental
-      x-accepts: application/json
   /api/customentities/{entityType}:
     post:
       description: Insert the custom entity if it does not exist or update the custom
@@ -7143,6 +6793,7 @@ paths:
             endpoint.
           maxLength: 64
           minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       requestBody:
@@ -7155,7 +6806,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 92099a2006074deb8c6398b3acbe7687
+                identifierValue: dd361d3881ee4fa8a350c489594b29d0
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7180,7 +6831,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 92099a2006074deb8c6398b3acbe7687
+                identifierValue: dd361d3881ee4fa8a350c489594b29d0
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7205,7 +6856,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 92099a2006074deb8c6398b3acbe7687
+                identifierValue: dd361d3881ee4fa8a350c489594b29d0
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7230,7 +6881,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 92099a2006074deb8c6398b3acbe7687
+                identifierValue: dd361d3881ee4fa8a350c489594b29d0
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7256,7 +6907,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 50828a76-922c-4ca2-bc71-1e745975683c
+                customEntityId: c609aa9f-82bb-4950-8742-33d30e11964c
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7265,7 +6916,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 020f7ac412ed48c5a5e1c96187193578
+                  identifierValue: eb5ef1fdb883489a8f5d0be5a75ffe43
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7304,7 +6955,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 50828a76-922c-4ca2-bc71-1e745975683c
+                customEntityId: c609aa9f-82bb-4950-8742-33d30e11964c
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7313,7 +6964,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 020f7ac412ed48c5a5e1c96187193578
+                  identifierValue: eb5ef1fdb883489a8f5d0be5a75ffe43
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7352,7 +7003,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 50828a76-922c-4ca2-bc71-1e745975683c
+                customEntityId: c609aa9f-82bb-4950-8742-33d30e11964c
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7361,7 +7012,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 020f7ac412ed48c5a5e1c96187193578
+                  identifierValue: eb5ef1fdb883489a8f5d0be5a75ffe43
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7428,17 +7079,16 @@ paths:
       description: Retrieve a CustomEntity by a specific Id at a point in AsAt time
       operationId: GetCustomEntity
       parameters:
-      - description: The type of entity to retrieve. This is included in the response
-          from M:Finbourne.WebApi.Controllers.CustomEntityDefinitionController.CreateCustomEntityDefinition(Finbourne.WebApi.Interface.Dto.CustomEntityDefinitions.CustomEntityDefinitionRequest).
+      - description: The type of entity to retrieve
         explode: false
         in: path
         name: entityType
         required: true
         schema:
-          description: The type of entity to retrieve. This is included in the response
-            from M:Finbourne.WebApi.Controllers.CustomEntityDefinitionController.CreateCustomEntityDefinition(Finbourne.WebApi.Interface.Dto.CustomEntityDefinitions.CustomEntityDefinitionRequest).
+          description: The type of entity to retrieve
           maxLength: 64
           minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: An identifier type attached to the CustomEntity
@@ -7496,7 +7146,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 2598f8d0-f73b-4977-9582-3ac79997c822
+                customEntityId: 44099909-bf52-4b7e-bac6-5aef0141dd49
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7538,7 +7188,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 2598f8d0-f73b-4977-9582-3ac79997c822
+                customEntityId: 44099909-bf52-4b7e-bac6-5aef0141dd49
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7580,7 +7230,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 2598f8d0-f73b-4977-9582-3ac79997c822
+                customEntityId: 44099909-bf52-4b7e-bac6-5aef0141dd49
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7642,6 +7292,355 @@ paths:
       summary: '[EXPERIMENTAL] Get CustomEntity'
       tags:
       - CustomEntities
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+  /api/customentitydefinitions:
+    post:
+      description: Create a custom entity definition that does not already exist.
+        Will return a Bad Request if the CustomEntityDefinition already exists
+      operationId: CreateCustomEntityDefinition
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              customEntityId: issue
+              displayName: Issue
+              description: Represents an issue in the system
+              fieldSchema:
+              - name: Assigned
+                temporality: Bitemporal
+                type: bool
+                required: true
+              - name: Status
+                temporality: Bitemporal
+                type: string
+                required: true
+              - name: Effort In Days
+                temporality: Monotemporal
+                type: number
+                required: false
+              - name: DateCreated
+                temporality: Monotemporal
+                type: datetime
+                required: true
+            schema:
+              $ref: '#/components/schemas/CustomEntityDefinitionRequest'
+          application/json:
+            example:
+              customEntityId: issue
+              displayName: Issue
+              description: Represents an issue in the system
+              fieldSchema:
+              - name: Assigned
+                temporality: Bitemporal
+                type: bool
+                required: true
+              - name: Status
+                temporality: Bitemporal
+                type: string
+                required: true
+              - name: Effort In Days
+                temporality: Monotemporal
+                type: number
+                required: false
+              - name: DateCreated
+                temporality: Monotemporal
+                type: datetime
+                required: true
+            schema:
+              $ref: '#/components/schemas/CustomEntityDefinitionRequest'
+          text/json:
+            example:
+              customEntityId: issue
+              displayName: Issue
+              description: Represents an issue in the system
+              fieldSchema:
+              - name: Assigned
+                temporality: Bitemporal
+                type: bool
+                required: true
+              - name: Status
+                temporality: Bitemporal
+                type: string
+                required: true
+              - name: Effort In Days
+                temporality: Monotemporal
+                type: number
+                required: false
+              - name: DateCreated
+                temporality: Monotemporal
+                type: datetime
+                required: true
+            schema:
+              $ref: '#/components/schemas/CustomEntityDefinitionRequest'
+          application/*+json:
+            example:
+              customEntityId: issue
+              displayName: Issue
+              description: Represents an issue in the system
+              fieldSchema:
+              - name: Assigned
+                temporality: Bitemporal
+                type: bool
+                required: true
+              - name: Status
+                temporality: Bitemporal
+                type: string
+                required: true
+              - name: Effort In Days
+                temporality: Monotemporal
+                type: number
+                required: false
+              - name: DateCreated
+                temporality: Monotemporal
+                type: datetime
+                required: true
+            schema:
+              $ref: '#/components/schemas/CustomEntityDefinitionRequest'
+        description: The CustomEntityDefinitionRequest
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                href: https://myco.lusid.com/api/customentitydefinitions/issue
+                customEntityId: issue
+                displayName: Issue
+                description: Represents an issue in the system
+                entityType: ~issue
+                fieldSchema:
+                - name: Assigned
+                  temporality: Bitemporal
+                  type: bool
+                  required: true
+                - name: Status
+                  temporality: Bitemporal
+                  type: string
+                  required: true
+                - name: Effort In Days
+                  temporality: Monotemporal
+                  type: number
+                  required: false
+                - name: DateCreated
+                  temporality: Monotemporal
+                  type: datetime
+                  required: true
+              schema:
+                $ref: '#/components/schemas/CustomEntityDefinition'
+            application/json:
+              example:
+                href: https://myco.lusid.com/api/customentitydefinitions/issue
+                customEntityId: issue
+                displayName: Issue
+                description: Represents an issue in the system
+                entityType: ~issue
+                fieldSchema:
+                - name: Assigned
+                  temporality: Bitemporal
+                  type: bool
+                  required: true
+                - name: Status
+                  temporality: Bitemporal
+                  type: string
+                  required: true
+                - name: Effort In Days
+                  temporality: Monotemporal
+                  type: number
+                  required: false
+                - name: DateCreated
+                  temporality: Monotemporal
+                  type: datetime
+                  required: true
+              schema:
+                $ref: '#/components/schemas/CustomEntityDefinition'
+            text/json:
+              example:
+                href: https://myco.lusid.com/api/customentitydefinitions/issue
+                customEntityId: issue
+                displayName: Issue
+                description: Represents an issue in the system
+                entityType: ~issue
+                fieldSchema:
+                - name: Assigned
+                  temporality: Bitemporal
+                  type: bool
+                  required: true
+                - name: Status
+                  temporality: Bitemporal
+                  type: string
+                  required: true
+                - name: Effort In Days
+                  temporality: Monotemporal
+                  type: number
+                  required: false
+                - name: DateCreated
+                  temporality: Monotemporal
+                  type: datetime
+                  required: true
+              schema:
+                $ref: '#/components/schemas/CustomEntityDefinition'
+          description: The created custom entity definition
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] Create a new CustomEntityDefinition'
+      tags:
+      - CustomEntityDefinitions
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/customentitydefinitions/{customEntityId}:
+    get:
+      description: Retrieve a CustomEntityDefinition by a specific Id at a point in
+        AsAt time
+      operationId: GetDefinition
+      parameters:
+      - description: Id of the CustomEntityDefinition
+        explode: false
+        in: path
+        name: customEntityId
+        required: true
+        schema:
+          description: Id of the CustomEntityDefinition
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The AsAt at which to retrieve the CustomEntityDefinition
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: The AsAt at which to retrieve the CustomEntityDefinition
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                href: https://myco.lusid.com/api/customentitydefinitions/issue
+                customEntityId: issue
+                displayName: Issue
+                description: Represents an issue in the system
+                entityType: ~issue
+                fieldSchema:
+                - name: Assigned
+                  temporality: Bitemporal
+                  type: bool
+                  required: true
+                - name: Status
+                  temporality: Bitemporal
+                  type: string
+                  required: true
+                - name: Effort In Days
+                  temporality: Monotemporal
+                  type: number
+                  required: false
+                - name: DateCreated
+                  temporality: Monotemporal
+                  type: datetime
+                  required: true
+              schema:
+                $ref: '#/components/schemas/CustomEntityDefinition'
+            application/json:
+              example:
+                href: https://myco.lusid.com/api/customentitydefinitions/issue
+                customEntityId: issue
+                displayName: Issue
+                description: Represents an issue in the system
+                entityType: ~issue
+                fieldSchema:
+                - name: Assigned
+                  temporality: Bitemporal
+                  type: bool
+                  required: true
+                - name: Status
+                  temporality: Bitemporal
+                  type: string
+                  required: true
+                - name: Effort In Days
+                  temporality: Monotemporal
+                  type: number
+                  required: false
+                - name: DateCreated
+                  temporality: Monotemporal
+                  type: datetime
+                  required: true
+              schema:
+                $ref: '#/components/schemas/CustomEntityDefinition'
+            text/json:
+              example:
+                href: https://myco.lusid.com/api/customentitydefinitions/issue
+                customEntityId: issue
+                displayName: Issue
+                description: Represents an issue in the system
+                entityType: ~issue
+                fieldSchema:
+                - name: Assigned
+                  temporality: Bitemporal
+                  type: bool
+                  required: true
+                - name: Status
+                  temporality: Bitemporal
+                  type: string
+                  required: true
+                - name: Effort In Days
+                  temporality: Monotemporal
+                  type: number
+                  required: false
+                - name: DateCreated
+                  temporality: Monotemporal
+                  type: datetime
+                  required: true
+              schema:
+                $ref: '#/components/schemas/CustomEntityDefinition'
+          description: The requested custom entity definition
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] Get CustomEntityDefinition'
+      tags:
+      - CustomEntityDefinitions
       x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/datatypes:
@@ -50694,17 +50693,17 @@ components:
       additionalProperties: false
       description: Representation of Custom Entity Definition on LUSID API
       example:
+        customEntityId: customEntityId
         displayName: displayName
         entityType: entityType
-        entityTypeName: entityTypeName
         description: description
         fieldSchema:
         - name: name
-          lifetime: lifetime
+          temporality: temporality
           type: type
           required: true
         - name: name
-          lifetime: lifetime
+          temporality: temporality
           type: type
           required: true
         href: https://openapi-generator.tech
@@ -50713,7 +50712,7 @@ components:
           format: uri
           nullable: true
           type: string
-        entityTypeName:
+        customEntityId:
           type: string
         displayName:
           type: string
@@ -50727,28 +50726,28 @@ components:
             $ref: '#/components/schemas/CustomEntityFieldDefinition'
           type: array
       required:
+      - customEntityId
       - displayName
       - entityType
-      - entityTypeName
       - fieldSchema
       type: object
     CustomEntityDefinitionRequest:
       additionalProperties: false
       example:
+        customEntityId: customEntityId
         displayName: displayName
-        entityTypeName: entityTypeName
         description: description
         fieldSchema:
         - name: name
-          lifetime: lifetime
+          temporality: temporality
           type: type
           required: true
         - name: name
-          lifetime: lifetime
+          temporality: temporality
           type: type
           required: true
       properties:
-        entityTypeName:
+        customEntityId:
           type: string
         displayName:
           type: string
@@ -50761,8 +50760,8 @@ components:
           nullable: true
           type: array
       required:
+      - customEntityId
       - displayName
-      - entityTypeName
       type: object
     CustomEntityField:
       additionalProperties: false
@@ -50783,22 +50782,22 @@ components:
       additionalProperties: false
       example:
         name: name
-        lifetime: lifetime
+        temporality: temporality
         type: type
         required: true
       properties:
         name:
           type: string
-        lifetime:
+        temporality:
           type: string
         type:
           type: string
         required:
           type: boolean
       required:
-      - lifetime
       - name
       - required
+      - temporality
       - type
       type: object
     CustomEntityIdRequest:
@@ -73354,7 +73353,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:

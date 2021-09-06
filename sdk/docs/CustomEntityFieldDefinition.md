@@ -8,7 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | 
-**lifetime** | **String** |  | 
+**temporality** | **String** |  | 
 **type** | **String** |  | 
 **required** | **Boolean** |  | 
 
