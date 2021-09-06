@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3457
+  version: 0.11.3454
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:51720
+- url: https://fbn-prd.lusid.com/api
 security:
 - {}
 tags:
@@ -92,8 +92,6 @@ tags:
     at the as-at time of update, and its not possible to make retroactive (or forward)
     changes.
   name: Executions
-- description: Methods for storage and retrieval of Fees and Commissions rules
-  name: FeesAndCommissions
 - description: An instrument represents a financial asset that an investor owns or
     has exposure to. Each transaction should be booked against an instrument stored
     in the LUSID instrument master. For more information, see https://support.lusid.com/knowledgebase/article/KA-01857.
@@ -6806,7 +6804,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 34ae4344f6324f4a827e2bbe19850f6c
+                identifierValue: 09c9861e984d4e1b8e0e1a9409ab5b7d
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -6831,7 +6829,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 34ae4344f6324f4a827e2bbe19850f6c
+                identifierValue: 09c9861e984d4e1b8e0e1a9409ab5b7d
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -6856,7 +6854,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 34ae4344f6324f4a827e2bbe19850f6c
+                identifierValue: 09c9861e984d4e1b8e0e1a9409ab5b7d
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -6881,7 +6879,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 34ae4344f6324f4a827e2bbe19850f6c
+                identifierValue: 09c9861e984d4e1b8e0e1a9409ab5b7d
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -6907,7 +6905,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 166c65a9-0dc3-48b5-903f-c54412eeaaf1
+                customEntityId: 850e8d94-37e5-4b03-b2a4-130a0c01f0c4
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -6916,7 +6914,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 5239c1c4cbc44c7c884e2df9ff138b49
+                  identifierValue: 7aae4060ceda41b09ecb2203e485ea4d
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -6955,7 +6953,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 166c65a9-0dc3-48b5-903f-c54412eeaaf1
+                customEntityId: 850e8d94-37e5-4b03-b2a4-130a0c01f0c4
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -6964,7 +6962,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 5239c1c4cbc44c7c884e2df9ff138b49
+                  identifierValue: 7aae4060ceda41b09ecb2203e485ea4d
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7003,7 +7001,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 166c65a9-0dc3-48b5-903f-c54412eeaaf1
+                customEntityId: 850e8d94-37e5-4b03-b2a4-130a0c01f0c4
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7012,7 +7010,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 5239c1c4cbc44c7c884e2df9ff138b49
+                  identifierValue: 7aae4060ceda41b09ecb2203e485ea4d
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7146,7 +7144,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 0a5e47a4-4fc8-486c-a3e9-0cadf8db75d5
+                customEntityId: cbb676f9-c715-49eb-bce9-37cd941c628e
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7188,7 +7186,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 0a5e47a4-4fc8-486c-a3e9-0cadf8db75d5
+                customEntityId: cbb676f9-c715-49eb-bce9-37cd941c628e
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7230,7 +7228,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 0a5e47a4-4fc8-486c-a3e9-0cadf8db75d5
+                customEntityId: cbb676f9-c715-49eb-bce9-37cd941c628e
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -9176,163 +9174,6 @@ paths:
       summary: '[EXPERIMENTAL] Get Execution'
       tags:
       - Executions
-      x-fbn-apistatus: Experimental
-      x-accepts: application/json
-  /api/feesandcommissions:
-    get:
-      description: Additionally, matching can be based on the instrument's properties,
-        its portfolio properties, and any additional property keys present in the
-        data file.
-      operationId: GetApplicableFees
-      parameters:
-      - description: Optional. The unique identifier type to use, eg 'Figi' or 'LusidInstrumentId'.
-        explode: true
-        in: query
-        name: instrumentIdentifierType
-        required: false
-        schema:
-          description: Optional. The unique identifier type to use, eg 'Figi' or 'LusidInstrumentId'.
-          nullable: true
-          type: string
-        style: form
-      - description: Optional. The Instrument Identifier to get properties for.
-        explode: true
-        in: query
-        name: instrumentIdentifier
-        required: false
-        schema:
-          description: Optional. The Instrument Identifier to get properties for.
-          nullable: true
-          type: string
-        style: form
-      - description: Optional. The scope of the portfolio to fetch additional properties
-          from.
-        explode: true
-        in: query
-        name: portfolioScope
-        required: false
-        schema:
-          description: Optional. The scope of the portfolio to fetch additional properties
-            from.
-          maxLength: 64
-          minLength: 1
-          nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
-          type: string
-        style: form
-      - description: Optional. The code of the portfolio to fetch additional properties
-          from.
-        explode: true
-        in: query
-        name: portfolioCode
-        required: false
-        schema:
-          description: Optional. The code of the portfolio to fetch additional properties
-            from.
-          maxLength: 64
-          minLength: 1
-          nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
-          type: string
-        style: form
-      - description: "Any other property keys or fields and their corresponding values\
-          \ that should be matched for fees. Eg. \"Instrument/default/Name=exampleValue\"\
-          \ or \"AdditionalKey2=Value2\".\r\n            The list of fields available\
-          \ is as follows : \"RuleName\", \"Country\", \"FeeType\", \"FeeRate\", \"\
-          MinFee\", \"MaxFee\", \"PropertyKey\", \r\n            \"TransactionType\"\
-          , \"Counterparty\", \"SettlementCurrency\", \"TransactionCurrency\", \"\
-          ExecutionBroker\", \r\n            \"Custodian\", \"Exchange\""
-        explode: true
-        in: query
-        name: additionalSearchKeys
-        required: false
-        schema:
-          description: "Any other property keys or fields and their corresponding\
-            \ values that should be matched for fees. Eg. \"Instrument/default/Name=exampleValue\"\
-            \ or \"AdditionalKey2=Value2\".\r\n            The list of fields available\
-            \ is as follows : \"RuleName\", \"Country\", \"FeeType\", \"FeeRate\"\
-            , \"MinFee\", \"MaxFee\", \"PropertyKey\", \r\n            \"TransactionType\"\
-            , \"Counterparty\", \"SettlementCurrency\", \"TransactionCurrency\", \"\
-            ExecutionBroker\", \r\n            \"Custodian\", \"Exchange\""
-          items:
-            type: string
-          nullable: true
-          type: array
-        style: form
-        x-nullable: true
-      responses:
-        "200":
-          content:
-            text/plain:
-              example:
-                values:
-                - ruleType: RuleType
-                  ruleInformation: 'Country : << unspecified / any >> , TransactionType:
-                    Buy, Counterparty : someName, SettlementCurrency : << unspecified
-                    / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
-                    : some, Custodian : some, Exchange : some'
-                  propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationMethod: Calculation Method
-                  amount: 0.5
-                href: https://example.com
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfFeeCalculationDetails'
-            application/json:
-              example:
-                values:
-                - ruleType: RuleType
-                  ruleInformation: 'Country : << unspecified / any >> , TransactionType:
-                    Buy, Counterparty : someName, SettlementCurrency : << unspecified
-                    / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
-                    : some, Custodian : some, Exchange : some'
-                  propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationMethod: Calculation Method
-                  amount: 0.5
-                href: https://example.com
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfFeeCalculationDetails'
-            text/json:
-              example:
-                values:
-                - ruleType: RuleType
-                  ruleInformation: 'Country : << unspecified / any >> , TransactionType:
-                    Buy, Counterparty : someName, SettlementCurrency : << unspecified
-                    / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
-                    : some, Custodian : some, Exchange : some'
-                  propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationMethod: Calculation Method
-                  amount: 0.5
-                href: https://example.com
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfFeeCalculationDetails'
-          description: The List of applicable fee calculations details
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] Get the Fees and Commissions that may be applicable
-        to a transaction.'
-      tags:
-      - FeesAndCommissions
       x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/instruments:
@@ -52022,59 +51863,6 @@ components:
       - displayName
       - id
       type: object
-    FeeCalculationDetails:
-      additionalProperties: false
-      example:
-        propertyKey: propertyKey
-        calculationMethod: calculationMethod
-        additionalInformation:
-          key: additionalInformation
-        amount: 0.8008281904610115
-        min: 6.027456183070403
-        max: 1.4658129805029452
-        ruleType: ruleType
-        ruleInformation: ruleInformation
-      properties:
-        ruleType:
-          description: Rule Type
-          type: string
-        ruleInformation:
-          description: Rule Sub Type
-          type: string
-        additionalInformation:
-          additionalProperties:
-            type: string
-          description: Other property keys populated for the fee
-          type: object
-        propertyKey:
-          description: The property key which uniquely identifies the property. The
-            format for the property key is {domain}/{scope}/{code}, e.g. 'Portfolio/Manager/Id'.
-          type: string
-        calculationMethod:
-          description: Method of calculating the fees or commission eg. BPS or Fraction
-          type: string
-        amount:
-          description: Calculation value
-          format: double
-          type: number
-        min:
-          description: Calculation value
-          format: double
-          type: number
-        max:
-          description: Calculation value
-          format: double
-          type: number
-      required:
-      - additionalInformation
-      - amount
-      - calculationMethod
-      - max
-      - min
-      - propertyKey
-      - ruleInformation
-      - ruleType
-      type: object
     FieldSchema:
       additionalProperties: false
       example:
@@ -63576,69 +63364,6 @@ components:
       required:
       - values
       type: object
-    ResourceListOfFeeCalculationDetails:
-      additionalProperties: false
-      description: A collection of resources that can be returned from requests.
-      example:
-        previousPage: previousPage
-        nextPage: nextPage
-        values:
-        - propertyKey: propertyKey
-          calculationMethod: calculationMethod
-          additionalInformation:
-            key: additionalInformation
-          amount: 0.8008281904610115
-          min: 6.027456183070403
-          max: 1.4658129805029452
-          ruleType: ruleType
-          ruleInformation: ruleInformation
-        - propertyKey: propertyKey
-          calculationMethod: calculationMethod
-          additionalInformation:
-            key: additionalInformation
-          amount: 0.8008281904610115
-          min: 6.027456183070403
-          max: 1.4658129805029452
-          ruleType: ruleType
-          ruleInformation: ruleInformation
-        links:
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        href: https://openapi-generator.tech
-      properties:
-        values:
-          description: The resources to list.
-          items:
-            $ref: '#/components/schemas/FeeCalculationDetails'
-          type: array
-        href:
-          description: The URI of the resource list.
-          format: uri
-          nullable: true
-          type: string
-        links:
-          description: Collection of links.
-          items:
-            $ref: '#/components/schemas/Link'
-          nullable: true
-          type: array
-        nextPage:
-          description: The next page of results.
-          nullable: true
-          type: string
-        previousPage:
-          description: The previous page of results.
-          nullable: true
-          type: string
-      required:
-      - values
-      type: object
     ResourceListOfGetCdsFlowConventionsResponse:
       additionalProperties: false
       description: A collection of resources that can be returned from requests.
@@ -73353,7 +73078,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:
@@ -73376,7 +73101,6 @@ x-tagGroups:
   - Derived Transaction Portfolios
   - Entities
   - Executions
-  - FeesAndCommissions
   - Instruments
   - Legal Entities
   - Login
