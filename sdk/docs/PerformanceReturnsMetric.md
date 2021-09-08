@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **window** | **String** | The given metric for the calculation i.e. 1Y, 1D. |  [optional]
 **allowPartial** | **Boolean** | Bool if the metric is allowed partial results. Deafult to false. |  [optional]
 **annualised** | **Boolean** | Bool if the metric is annualized. Default to false. |  [optional]
-**withFee** | **Boolean** | Bool if the metric should consider the fees when is calculated. Default to false. |  [optional] [readonly]
-**alias** | **String** | The alias for the metric. |  [optional] [readonly]
+**withFee** | **Boolean** | Bool if the metric should consider the fees when is calculated. Default to false. |  [optional]
+**alias** | **String** | The alias for the metric. |  [optional]
 
 
 
