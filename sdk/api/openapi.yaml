@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3464
+  version: 0.11.3465
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:37552
+- url: http://local-unit-test-server.lusid.com:56349
 security:
 - {}
 tags:
@@ -7157,7 +7157,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: cc45b3efb8914707b3f00931f89c910f
+                identifierValue: 78adbd4c304849419071ab3be13ef973
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7182,7 +7182,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: cc45b3efb8914707b3f00931f89c910f
+                identifierValue: 78adbd4c304849419071ab3be13ef973
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7207,7 +7207,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: cc45b3efb8914707b3f00931f89c910f
+                identifierValue: 78adbd4c304849419071ab3be13ef973
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7232,7 +7232,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: cc45b3efb8914707b3f00931f89c910f
+                identifierValue: 78adbd4c304849419071ab3be13ef973
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7258,7 +7258,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: e838f400-a685-4596-a2cc-11ffcf748be4
+                customEntityId: b25f23c7-76d0-4d72-a342-6feb04bee206
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7267,7 +7267,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: c90be474662f44d09116ba7a7f1a823d
+                  identifierValue: d4c94cd570a34919aa7ae28d2228b8a5
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7306,7 +7306,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: e838f400-a685-4596-a2cc-11ffcf748be4
+                customEntityId: b25f23c7-76d0-4d72-a342-6feb04bee206
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7315,7 +7315,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: c90be474662f44d09116ba7a7f1a823d
+                  identifierValue: d4c94cd570a34919aa7ae28d2228b8a5
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7354,7 +7354,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: e838f400-a685-4596-a2cc-11ffcf748be4
+                customEntityId: b25f23c7-76d0-4d72-a342-6feb04bee206
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7363,7 +7363,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: c90be474662f44d09116ba7a7f1a823d
+                  identifierValue: d4c94cd570a34919aa7ae28d2228b8a5
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7498,7 +7498,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 707b8105-0129-42a2-8efc-d28426737ece
+                customEntityId: 1be89f28-2384-40c5-a16c-1e59f0f7937a
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7540,7 +7540,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 707b8105-0129-42a2-8efc-d28426737ece
+                customEntityId: 1be89f28-2384-40c5-a16c-1e59f0f7937a
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7582,7 +7582,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 707b8105-0129-42a2-8efc-d28426737ece
+                customEntityId: 1be89f28-2384-40c5-a16c-1e59f0f7937a
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -10574,7 +10574,10 @@ paths:
       x-accepts: application/json
   /api/instruments/{identifierType}/{identifier}/properties/$delete:
     post:
-      description: Delete a collection of properties from a particular instrument.
+      description: "Delete one or more properties from a particular instrument. If\
+        \ the properties are time-variant then an effective datetime from which\r\n\
+        to delete properties must be specified. If the properties are perpetual then\
+        \ it is invalid to specify an effective datetime for deletion."
       operationId: DeleteInstrumentProperties
       parameters:
       - description: The unique identifier type to search, for example 'Figi'.
@@ -10599,17 +10602,23 @@ paths:
           nullable: true
           type: string
         style: simple
-      - description: "The effective date to delete time-variant properties from. Do\
-          \ not specify this parameter\r\n            if any of the properties to\
-          \ delete are perpetual."
+      - description: "The effective datetime or cut label at which to delete time-variant\
+          \ properties from.\r\n            The property must exist at the specified\
+          \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\n\
+          \            before the time-variant property exists then a failure is returned.\
+          \ Do not specify this parameter if any of\r\n            the properties\
+          \ to delete are perpetual."
         explode: true
         in: query
         name: effectiveAt
         required: false
         schema:
-          description: "The effective date to delete time-variant properties from.\
-            \ Do not specify this parameter\r\n            if any of the properties\
-            \ to delete are perpetual."
+          description: "The effective datetime or cut label at which to delete time-variant\
+            \ properties from.\r\n            The property must exist at the specified\
+            \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\
+            \n            before the time-variant property exists then a failure is\
+            \ returned. Do not specify this parameter if any of\r\n            the\
+            \ properties to delete are perpetual."
           format: dateorcutlabel
           nullable: true
           type: string
@@ -10902,11 +10911,10 @@ paths:
         explode: true
         in: query
         name: propertyKey
-        required: false
+        required: true
         schema:
           description: The key that uniquely identifies the property. It has the format
             {domain}/{scope}/{code}.
-          nullable: true
           type: string
         style: form
       - description: "The effective datetime used to resolve the instrument from the\
@@ -12641,18 +12649,23 @@ paths:
             type: string
           type: array
         style: form
-      - description: "The effective datetime or cut label at which to delete the properties.\
-          \ Defaults to the current LUSID system datetime if not specified.\r\n  \
-          \          Must not include an effective datetime of properties are perpetual."
+      - description: "The effective datetime or cut label at which to delete time-variant\
+          \ properties from.\r\n            The property must exist at the specified\
+          \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\n\
+          \            before the time-variant property exists then a failure is returned.\
+          \ Do not specify this parameter if any of\r\n            the properties\
+          \ to delete are perpetual."
         explode: true
         in: query
         name: effectiveAt
         required: false
         schema:
-          description: "The effective datetime or cut label at which to delete the\
-            \ properties. Defaults to the current LUSID system datetime if not specified.\r\
-            \n            Must not include an effective datetime of properties are\
-            \ perpetual."
+          description: "The effective datetime or cut label at which to delete time-variant\
+            \ properties from.\r\n            The property must exist at the specified\
+            \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\
+            \n            before the time-variant property exists then a failure is\
+            \ returned. Do not specify this parameter if any of\r\n            the\
+            \ properties to delete are perpetual."
           format: dateorcutlabel
           nullable: true
           type: string
@@ -12744,11 +12757,10 @@ paths:
         explode: true
         in: query
         name: propertyKey
-        required: false
+        required: true
         schema:
           description: The key that uniquely identifies the property. It has the format
             {domain}/{scope}/{code}.
-          nullable: true
           type: string
         style: form
       - description: The asAt datetime at which to list the person's property history.
@@ -17982,18 +17994,23 @@ paths:
             type: string
           type: array
         style: form
-      - description: "The effective datetime or cut label at which to delete the properties.\
-          \ Defaults to the current LUSID system datetime if not specified.\r\n  \
-          \          Must not include an effective datetime of properties are perpetual."
+      - description: "The effective datetime or cut label at which to delete time-variant\
+          \ properties from.\r\n            The property must exist at the specified\
+          \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\n\
+          \            before the time-variant property exists then a failure is returned.\
+          \ Do not specify this parameter if any of\r\n            the properties\
+          \ to delete are perpetual."
         explode: true
         in: query
         name: effectiveAt
         required: false
         schema:
-          description: "The effective datetime or cut label at which to delete the\
-            \ properties. Defaults to the current LUSID system datetime if not specified.\r\
-            \n            Must not include an effective datetime of properties are\
-            \ perpetual."
+          description: "The effective datetime or cut label at which to delete time-variant\
+            \ properties from.\r\n            The property must exist at the specified\
+            \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\
+            \n            before the time-variant property exists then a failure is\
+            \ returned. Do not specify this parameter if any of\r\n            the\
+            \ properties to delete are perpetual."
           format: dateorcutlabel
           nullable: true
           type: string
@@ -18291,11 +18308,10 @@ paths:
         explode: true
         in: query
         name: propertyKey
-        required: false
+        required: true
         schema:
           description: The key that uniquely identifies the property. It has the format
             {domain}/{scope}/{code}.
-          nullable: true
           type: string
         style: form
       - description: The asAt datetime at which to list the person's property history.
@@ -22288,14 +22304,23 @@ paths:
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
-      - description: The effective datetime or cut label at which to delete the properties.
+      - description: "The effective datetime or cut label at which to delete time-variant\
+          \ properties from.\r\n            The property must exist at the specified\
+          \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\n\
+          \            before the time-variant property exists then a failure is returned.\
+          \ Do not specify this parameter if any of\r\n            the properties\
+          \ to delete are perpetual."
         explode: true
         in: query
         name: effectiveAt
         required: false
         schema:
-          description: The effective datetime or cut label at which to delete the
-            properties.
+          description: "The effective datetime or cut label at which to delete time-variant\
+            \ properties from.\r\n            The property must exist at the specified\
+            \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\
+            \n            before the time-variant property exists then a failure is\
+            \ returned. Do not specify this parameter if any of\r\n            the\
+            \ properties to delete are perpetual."
           format: dateorcutlabel
           nullable: true
           type: string
@@ -22656,11 +22681,10 @@ paths:
         explode: true
         in: query
         name: propertyKey
-        required: false
+        required: true
         schema:
           description: The key that uniquely identifies the property. It has the format
             {domain}/{scope}/{code}.
-          nullable: true
           type: string
         style: form
       - description: The effective datetime used to resolve the portfolio group. Defaults
@@ -22768,10 +22792,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get the time series of a portfolio group property'
+      summary: '[EARLY ACCESS] Get the time series of a portfolio group property'
       tags:
       - Portfolio Groups
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/portfoliogroups/{scope}/{code}/relations:
     get:
@@ -26613,15 +26637,23 @@ paths:
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
-      - description: The effective datetime or cut label at which to delete time-variant
-          properties.
+      - description: "The effective datetime or cut label at which to delete time-variant\
+          \ properties from.\r\n            The property must exist at the specified\
+          \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\n\
+          \            before the time-variant property exists then a failure is returned.\
+          \ Do not specify this parameter if any of\r\n            the properties\
+          \ to delete are perpetual."
         explode: true
         in: query
         name: effectiveAt
         required: false
         schema:
-          description: The effective datetime or cut label at which to delete time-variant
-            properties.
+          description: "The effective datetime or cut label at which to delete time-variant\
+            \ properties from.\r\n            The property must exist at the specified\
+            \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\
+            \n            before the time-variant property exists then a failure is\
+            \ returned. Do not specify this parameter if any of\r\n            the\
+            \ properties to delete are perpetual."
           format: dateorcutlabel
           nullable: true
           type: string
@@ -27194,11 +27226,10 @@ paths:
         explode: true
         in: query
         name: propertyKey
-        required: false
+        required: true
         schema:
           description: The key that uniquely identifies the property. It has the format
             {domain}/{scope}/{code}.
-          nullable: true
           type: string
         style: form
       - description: The effective datetime used to resolve the portfolio. Defaults
