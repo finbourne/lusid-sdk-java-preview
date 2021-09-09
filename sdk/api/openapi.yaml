@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3468
+  version: 0.11.3462
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:37109
+- url: https://fbn-prd.lusid.com/api
 security:
 - {}
 tags:
@@ -165,8 +165,6 @@ tags:
   name: Scopes
 - description: Methods providing Search capability.
   name: Search
-- description: Methods for generating and using sequences.
-  name: Sequences
 - description: Methods for the storage and retrieval of structured market data documents.
     Read more about these in the LUSID Knowledge Base here https://support.lusid.com/knowledgebase/article/KA-01894.
   name: Structured Market Data
@@ -7157,7 +7155,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: e89ce8a562c34c0a960e37c1ccb00013
+                identifierValue: ad303a3c4c904de4a095a255e87ec63d
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7182,7 +7180,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: e89ce8a562c34c0a960e37c1ccb00013
+                identifierValue: ad303a3c4c904de4a095a255e87ec63d
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7207,7 +7205,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: e89ce8a562c34c0a960e37c1ccb00013
+                identifierValue: ad303a3c4c904de4a095a255e87ec63d
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7232,7 +7230,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: e89ce8a562c34c0a960e37c1ccb00013
+                identifierValue: ad303a3c4c904de4a095a255e87ec63d
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7258,7 +7256,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 60bf1919-ce56-4f9b-a3df-0ffd5dab8bc3
+                customEntityId: ace97b1a-1d06-4091-9dac-61eab3f903db
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7267,7 +7265,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: ff37d0bb1a014f16a728c786d7eba7cc
+                  identifierValue: 8a0b5727cc9a4ce5ab5be294c9c72721
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7306,7 +7304,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 60bf1919-ce56-4f9b-a3df-0ffd5dab8bc3
+                customEntityId: ace97b1a-1d06-4091-9dac-61eab3f903db
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7315,7 +7313,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: ff37d0bb1a014f16a728c786d7eba7cc
+                  identifierValue: 8a0b5727cc9a4ce5ab5be294c9c72721
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7354,7 +7352,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 60bf1919-ce56-4f9b-a3df-0ffd5dab8bc3
+                customEntityId: ace97b1a-1d06-4091-9dac-61eab3f903db
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7363,7 +7361,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: ff37d0bb1a014f16a728c786d7eba7cc
+                  identifierValue: 8a0b5727cc9a4ce5ab5be294c9c72721
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7498,7 +7496,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 74a6a591-024c-48e1-ab2f-85a95c8f6736
+                customEntityId: 9b5e6bab-dfbc-4afe-a81e-4ba33c40c0f7
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7540,7 +7538,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 74a6a591-024c-48e1-ab2f-85a95c8f6736
+                customEntityId: 9b5e6bab-dfbc-4afe-a81e-4ba33c40c0f7
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7582,7 +7580,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 74a6a591-024c-48e1-ab2f-85a95c8f6736
+                customEntityId: 9b5e6bab-dfbc-4afe-a81e-4ba33c40c0f7
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -10574,10 +10572,7 @@ paths:
       x-accepts: application/json
   /api/instruments/{identifierType}/{identifier}/properties/$delete:
     post:
-      description: "Delete one or more properties from a particular instrument. If\
-        \ the properties are time-variant then an effective datetime from which\r\n\
-        to delete properties must be specified. If the properties are perpetual then\
-        \ it is invalid to specify an effective datetime for deletion."
+      description: Delete a collection of properties from a particular instrument.
       operationId: DeleteInstrumentProperties
       parameters:
       - description: The unique identifier type to search, for example 'Figi'.
@@ -10602,23 +10597,17 @@ paths:
           nullable: true
           type: string
         style: simple
-      - description: "The effective datetime or cut label at which to delete time-variant\
-          \ properties from.\r\n            The property must exist at the specified\
-          \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\n\
-          \            before the time-variant property exists then a failure is returned.\
-          \ Do not specify this parameter if any of\r\n            the properties\
-          \ to delete are perpetual."
+      - description: "The effective date to delete time-variant properties from. Do\
+          \ not specify this parameter\r\n            if any of the properties to\
+          \ delete are perpetual."
         explode: true
         in: query
         name: effectiveAt
         required: false
         schema:
-          description: "The effective datetime or cut label at which to delete time-variant\
-            \ properties from.\r\n            The property must exist at the specified\
-            \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\
-            \n            before the time-variant property exists then a failure is\
-            \ returned. Do not specify this parameter if any of\r\n            the\
-            \ properties to delete are perpetual."
+          description: "The effective date to delete time-variant properties from.\
+            \ Do not specify this parameter\r\n            if any of the properties\
+            \ to delete are perpetual."
           format: dateorcutlabel
           nullable: true
           type: string
@@ -10911,10 +10900,11 @@ paths:
         explode: true
         in: query
         name: propertyKey
-        required: true
+        required: false
         schema:
           description: The key that uniquely identifies the property. It has the format
             {domain}/{scope}/{code}.
+          nullable: true
           type: string
         style: form
       - description: "The effective datetime used to resolve the instrument from the\
@@ -12649,23 +12639,18 @@ paths:
             type: string
           type: array
         style: form
-      - description: "The effective datetime or cut label at which to delete time-variant\
-          \ properties from.\r\n            The property must exist at the specified\
-          \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\n\
-          \            before the time-variant property exists then a failure is returned.\
-          \ Do not specify this parameter if any of\r\n            the properties\
-          \ to delete are perpetual."
+      - description: "The effective datetime or cut label at which to delete the properties.\
+          \ Defaults to the current LUSID system datetime if not specified.\r\n  \
+          \          Must not include an effective datetime of properties are perpetual."
         explode: true
         in: query
         name: effectiveAt
         required: false
         schema:
-          description: "The effective datetime or cut label at which to delete time-variant\
-            \ properties from.\r\n            The property must exist at the specified\
-            \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\
-            \n            before the time-variant property exists then a failure is\
-            \ returned. Do not specify this parameter if any of\r\n            the\
-            \ properties to delete are perpetual."
+          description: "The effective datetime or cut label at which to delete the\
+            \ properties. Defaults to the current LUSID system datetime if not specified.\r\
+            \n            Must not include an effective datetime of properties are\
+            \ perpetual."
           format: dateorcutlabel
           nullable: true
           type: string
@@ -12757,10 +12742,11 @@ paths:
         explode: true
         in: query
         name: propertyKey
-        required: true
+        required: false
         schema:
           description: The key that uniquely identifies the property. It has the format
             {domain}/{scope}/{code}.
+          nullable: true
           type: string
         style: form
       - description: The asAt datetime at which to list the person's property history.
@@ -17994,23 +17980,18 @@ paths:
             type: string
           type: array
         style: form
-      - description: "The effective datetime or cut label at which to delete time-variant\
-          \ properties from.\r\n            The property must exist at the specified\
-          \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\n\
-          \            before the time-variant property exists then a failure is returned.\
-          \ Do not specify this parameter if any of\r\n            the properties\
-          \ to delete are perpetual."
+      - description: "The effective datetime or cut label at which to delete the properties.\
+          \ Defaults to the current LUSID system datetime if not specified.\r\n  \
+          \          Must not include an effective datetime of properties are perpetual."
         explode: true
         in: query
         name: effectiveAt
         required: false
         schema:
-          description: "The effective datetime or cut label at which to delete time-variant\
-            \ properties from.\r\n            The property must exist at the specified\
-            \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\
-            \n            before the time-variant property exists then a failure is\
-            \ returned. Do not specify this parameter if any of\r\n            the\
-            \ properties to delete are perpetual."
+          description: "The effective datetime or cut label at which to delete the\
+            \ properties. Defaults to the current LUSID system datetime if not specified.\r\
+            \n            Must not include an effective datetime of properties are\
+            \ perpetual."
           format: dateorcutlabel
           nullable: true
           type: string
@@ -18308,10 +18289,11 @@ paths:
         explode: true
         in: query
         name: propertyKey
-        required: true
+        required: false
         schema:
           description: The key that uniquely identifies the property. It has the format
             {domain}/{scope}/{code}.
+          nullable: true
           type: string
         style: form
       - description: The asAt datetime at which to list the person's property history.
@@ -22304,23 +22286,14 @@ paths:
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
-      - description: "The effective datetime or cut label at which to delete time-variant\
-          \ properties from.\r\n            The property must exist at the specified\
-          \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\n\
-          \            before the time-variant property exists then a failure is returned.\
-          \ Do not specify this parameter if any of\r\n            the properties\
-          \ to delete are perpetual."
+      - description: The effective datetime or cut label at which to delete the properties.
         explode: true
         in: query
         name: effectiveAt
         required: false
         schema:
-          description: "The effective datetime or cut label at which to delete time-variant\
-            \ properties from.\r\n            The property must exist at the specified\
-            \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\
-            \n            before the time-variant property exists then a failure is\
-            \ returned. Do not specify this parameter if any of\r\n            the\
-            \ properties to delete are perpetual."
+          description: The effective datetime or cut label at which to delete the
+            properties.
           format: dateorcutlabel
           nullable: true
           type: string
@@ -22681,10 +22654,11 @@ paths:
         explode: true
         in: query
         name: propertyKey
-        required: true
+        required: false
         schema:
           description: The key that uniquely identifies the property. It has the format
             {domain}/{scope}/{code}.
+          nullable: true
           type: string
         style: form
       - description: The effective datetime used to resolve the portfolio group. Defaults
@@ -22792,10 +22766,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get the time series of a portfolio group property'
+      summary: '[EXPERIMENTAL] Get the time series of a portfolio group property'
       tags:
       - Portfolio Groups
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/portfoliogroups/{scope}/{code}/relations:
     get:
@@ -26637,23 +26611,15 @@ paths:
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
-      - description: "The effective datetime or cut label at which to delete time-variant\
-          \ properties from.\r\n            The property must exist at the specified\
-          \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\n\
-          \            before the time-variant property exists then a failure is returned.\
-          \ Do not specify this parameter if any of\r\n            the properties\
-          \ to delete are perpetual."
+      - description: The effective datetime or cut label at which to delete time-variant
+          properties.
         explode: true
         in: query
         name: effectiveAt
         required: false
         schema:
-          description: "The effective datetime or cut label at which to delete time-variant\
-            \ properties from.\r\n            The property must exist at the specified\
-            \ 'effectiveAt' datetime. If the 'effectiveAt' is not provided or is\r\
-            \n            before the time-variant property exists then a failure is\
-            \ returned. Do not specify this parameter if any of\r\n            the\
-            \ properties to delete are perpetual."
+          description: The effective datetime or cut label at which to delete time-variant
+            properties.
           format: dateorcutlabel
           nullable: true
           type: string
@@ -27226,10 +27192,11 @@ paths:
         explode: true
         in: query
         name: propertyKey
-        required: true
+        required: false
         schema:
           description: The key that uniquely identifies the property. It has the format
             {domain}/{scope}/{code}.
+          nullable: true
           type: string
         style: form
       - description: The effective datetime used to resolve the portfolio. Defaults
@@ -33651,322 +33618,6 @@ paths:
       tags:
       - Search
       x-fbn-apistatus: EarlyAccess
-      x-accepts: application/json
-  /api/sequences/{scope}:
-    post:
-      description: Create a new sequence
-      operationId: CreateSequence
-      parameters:
-      - description: Scope of the sequence definition.
-        explode: false
-        in: path
-        name: scope
-        required: true
-        schema:
-          description: Scope of the sequence definition.
-          nullable: true
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json-patch+json:
-            example:
-              code: TestCode
-              increment: 1
-              minValue: 0
-              maxValue: 10
-              start: 0
-              cycle: false
-            schema:
-              $ref: '#/components/schemas/CreateSequenceRequest'
-          application/json:
-            example:
-              code: TestCode
-              increment: 1
-              minValue: 0
-              maxValue: 10
-              start: 0
-              cycle: false
-            schema:
-              $ref: '#/components/schemas/CreateSequenceRequest'
-          text/json:
-            example:
-              code: TestCode
-              increment: 1
-              minValue: 0
-              maxValue: 10
-              start: 0
-              cycle: false
-            schema:
-              $ref: '#/components/schemas/CreateSequenceRequest'
-          application/*+json:
-            example:
-              code: TestCode
-              increment: 1
-              minValue: 0
-              maxValue: 10
-              start: 0
-              cycle: false
-            schema:
-              $ref: '#/components/schemas/CreateSequenceRequest'
-        description: Request to create sequence definition.
-      responses:
-        "201":
-          content:
-            text/plain:
-              example:
-                id:
-                  scope: TestScope
-                  code: TestCode
-                increment: 1
-                minValue: 0
-                maxValue: 10
-                start: 1
-                value: 3
-                cycle: false
-              schema:
-                $ref: '#/components/schemas/SequenceDefinition'
-            application/json:
-              example:
-                id:
-                  scope: TestScope
-                  code: TestCode
-                increment: 1
-                minValue: 0
-                maxValue: 10
-                start: 1
-                value: 3
-                cycle: false
-              schema:
-                $ref: '#/components/schemas/SequenceDefinition'
-            text/json:
-              example:
-                id:
-                  scope: TestScope
-                  code: TestCode
-                increment: 1
-                minValue: 0
-                maxValue: 10
-                start: 1
-                value: 3
-                cycle: false
-              schema:
-                $ref: '#/components/schemas/SequenceDefinition'
-          description: Successful creation of the sequence
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] Create a new sequence'
-      tags:
-      - Sequences
-      x-fbn-apistatus: Experimental
-      x-contentType: application/json-patch+json
-      x-accepts: application/json
-  /api/sequences/{scope}/{code}:
-    get:
-      description: Return the detailed definition of a sequence
-      operationId: GetSequenceDefinition
-      parameters:
-      - description: Scope of the sequence definition.
-        explode: false
-        in: path
-        name: scope
-        required: true
-        schema:
-          description: Scope of the sequence definition.
-          nullable: true
-          type: string
-        style: simple
-      - description: "Code of the sequence definition. This together with stated scope\
-          \ uniquely\r\n            identifies the sequence definition."
-        explode: false
-        in: path
-        name: code
-        required: true
-        schema:
-          description: "Code of the sequence definition. This together with stated\
-            \ scope uniquely\r\n            identifies the sequence definition."
-          nullable: true
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            text/plain:
-              example:
-                id:
-                  scope: TestScope
-                  code: TestCode
-                increment: 1
-                minValue: 0
-                maxValue: 10
-                start: 1
-                value: 3
-                cycle: false
-              schema:
-                $ref: '#/components/schemas/SequenceDefinition'
-            application/json:
-              example:
-                id:
-                  scope: TestScope
-                  code: TestCode
-                increment: 1
-                minValue: 0
-                maxValue: 10
-                start: 1
-                value: 3
-                cycle: false
-              schema:
-                $ref: '#/components/schemas/SequenceDefinition'
-            text/json:
-              example:
-                id:
-                  scope: TestScope
-                  code: TestCode
-                increment: 1
-                minValue: 0
-                maxValue: 10
-                start: 1
-                value: 3
-                cycle: false
-              schema:
-                $ref: '#/components/schemas/SequenceDefinition'
-          description: The requested sequence
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] Return the definition of a sequence'
-      tags:
-      - Sequences
-      x-fbn-apistatus: Experimental
-      x-accepts: application/json
-  /api/sequences/{scope}/{code}/next:
-    get:
-      description: Get the next set of values from the sequence
-      operationId: Next
-      parameters:
-      - description: Scope of the sequence definition.
-        explode: false
-        in: path
-        name: scope
-        required: true
-        schema:
-          description: Scope of the sequence definition.
-          nullable: true
-          type: string
-        style: simple
-      - description: "Code of the sequence definition. This together with stated scope\
-          \ uniquely\r\n            identifies the sequence definition."
-        explode: false
-        in: path
-        name: code
-        required: true
-        schema:
-          description: "Code of the sequence definition. This together with stated\
-            \ scope uniquely\r\n            identifies the sequence definition."
-          nullable: true
-          type: string
-        style: simple
-      - description: Number of sequences items to return for the specified sequence
-          definition.
-        explode: true
-        in: query
-        name: batch
-        required: false
-        schema:
-          default: 1
-          description: Number of sequences items to return for the specified sequence
-            definition.
-          format: int32
-          type: integer
-        style: form
-        x-nullable: true
-      responses:
-        "200":
-          content:
-            text/plain:
-              example:
-                values:
-                - "1"
-                - "2"
-                - "3"
-              schema:
-                $ref: '#/components/schemas/NextValueInSequenceResponse'
-            application/json:
-              example:
-                values:
-                - "1"
-                - "2"
-                - "3"
-              schema:
-                $ref: '#/components/schemas/NextValueInSequenceResponse'
-            text/json:
-              example:
-                values:
-                - "1"
-                - "2"
-                - "3"
-              schema:
-                $ref: '#/components/schemas/NextValueInSequenceResponse'
-          description: Gets the next set of values for the sequence
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] Get the next set of values from the sequence'
-      tags:
-      - Sequences
-      x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/structured/{scope}:
     post:
@@ -50781,61 +50432,6 @@ components:
       - sourceEntityId
       - targetEntityId
       type: object
-    CreateSequenceRequest:
-      additionalProperties: false
-      example:
-        minValue: 6
-        code: code
-        maxValue: 1
-        start: 5
-        increment: 0
-        links:
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        cycle: true
-      properties:
-        code:
-          description: Code of the sequence
-          type: string
-        increment:
-          description: Size of the increment
-          format: int64
-          type: integer
-        minValue:
-          description: Minimum value
-          format: int64
-          type: integer
-        maxValue:
-          description: Maximum value
-          format: int64
-          type: integer
-        start:
-          description: Start value
-          format: int64
-          type: integer
-        cycle:
-          description: Indicate whether the sequence will cycle
-          type: boolean
-        links:
-          description: Collection of links.
-          items:
-            $ref: '#/components/schemas/Link'
-          nullable: true
-          type: array
-      required:
-      - code
-      - cycle
-      - increment
-      - maxValue
-      - minValue
-      - start
-      type: object
     CreateTransactionPortfolioRequest:
       additionalProperties: false
       example:
@@ -55920,36 +55516,6 @@ components:
       - Carry
       - CarryAsPnl
       type: string
-    NextValueInSequenceResponse:
-      additionalProperties: false
-      example:
-        values:
-        - values
-        - values
-        links:
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-      properties:
-        values:
-          description: Next values
-          items:
-            type: string
-          type: array
-        links:
-          description: Collection of links.
-          items:
-            $ref: '#/components/schemas/Link'
-          nullable: true
-          type: array
-      required:
-      - values
-      type: object
     OpaqueMarketData:
       allOf:
       - $ref: '#/components/schemas/ComplexMarketData'
@@ -67427,68 +66993,6 @@ components:
       required:
       - scope
       type: object
-    SequenceDefinition:
-      additionalProperties: false
-      example:
-        minValue: 6
-        maxValue: 1
-        start: 5
-        increment: 0
-        links:
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        id:
-          code: code
-          scope: scope
-        value: 5
-        cycle: true
-      properties:
-        id:
-          $ref: '#/components/schemas/ResourceId'
-        increment:
-          description: Size of the increment
-          format: int64
-          type: integer
-        minValue:
-          description: Minimum value
-          format: int64
-          type: integer
-        maxValue:
-          description: Maximum value
-          format: int64
-          type: integer
-        start:
-          description: Start value
-          format: int64
-          type: integer
-        value:
-          description: Current value of the sequence
-          format: int64
-          type: integer
-        cycle:
-          description: Indicate whether the sequence will cycle
-          type: boolean
-        links:
-          description: Collection of links.
-          items:
-            $ref: '#/components/schemas/Link'
-          nullable: true
-          type: array
-      required:
-      - cycle
-      - id
-      - increment
-      - maxValue
-      - minValue
-      - start
-      - value
-      type: object
     SetPersonIdentifiersRequest:
       additionalProperties: false
       example:
@@ -73850,7 +73354,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:
@@ -73896,7 +73400,6 @@ x-tagGroups:
   - Schemas
   - Scopes
   - Search
-  - Sequences
   - Structured Market Data
   - Structured Result Data
   - System Configuration
