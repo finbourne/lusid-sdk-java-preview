@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3471
+  version: 0.11.3472
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:40295
+- url: http://local-unit-test-server.lusid.com:35009
 security:
 - {}
 tags:
@@ -7155,7 +7155,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 33243127541d41c485b2ff1c0e92883b
+                identifierValue: cbcaadd035de4a7c9abe37ccfada1193
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7180,7 +7180,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 33243127541d41c485b2ff1c0e92883b
+                identifierValue: cbcaadd035de4a7c9abe37ccfada1193
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7205,7 +7205,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 33243127541d41c485b2ff1c0e92883b
+                identifierValue: cbcaadd035de4a7c9abe37ccfada1193
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7230,7 +7230,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 33243127541d41c485b2ff1c0e92883b
+                identifierValue: cbcaadd035de4a7c9abe37ccfada1193
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7256,7 +7256,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 5e24d9c3-4fb7-4f72-a3cf-571e8be06c2c
+                customEntityId: 4f82c083-0bf9-4aa7-a649-7ccbeca4e454
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7265,7 +7265,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 5f2083179c064d999758f4b7780ae946
+                  identifierValue: d5e4eee2cfc944bfb68eced94b5c6f6c
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7304,7 +7304,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 5e24d9c3-4fb7-4f72-a3cf-571e8be06c2c
+                customEntityId: 4f82c083-0bf9-4aa7-a649-7ccbeca4e454
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7313,7 +7313,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 5f2083179c064d999758f4b7780ae946
+                  identifierValue: d5e4eee2cfc944bfb68eced94b5c6f6c
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7352,7 +7352,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 5e24d9c3-4fb7-4f72-a3cf-571e8be06c2c
+                customEntityId: 4f82c083-0bf9-4aa7-a649-7ccbeca4e454
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7361,7 +7361,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 5f2083179c064d999758f4b7780ae946
+                  identifierValue: d5e4eee2cfc944bfb68eced94b5c6f6c
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7496,7 +7496,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 9e6e05d6-d02f-494b-939e-9d1b449e67a0
+                customEntityId: 09478b44-ec6a-4803-983b-a30ebb3d30c6
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7538,7 +7538,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 9e6e05d6-d02f-494b-939e-9d1b449e67a0
+                customEntityId: 09478b44-ec6a-4803-983b-a30ebb3d30c6
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7580,7 +7580,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 9e6e05d6-d02f-494b-939e-9d1b449e67a0
+                customEntityId: 09478b44-ec6a-4803-983b-a30ebb3d30c6
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -28137,6 +28137,21 @@ paths:
           type: string
         style: form
         x-nullable: true
+      - description: The date from which to consider the Returns on the Portfolio,
+          if this is different from the date when Returns begin. Can be a date string
+          or Portfolio property.
+        explode: true
+        in: query
+        name: alternativeIncDate
+        required: false
+        schema:
+          description: The date from which to consider the Returns on the Portfolio,
+            if this is different from the date when Returns begin. Can be a date string
+            or Portfolio property.
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
       requestBody:
         content:
           application/json-patch+json:
@@ -28145,7 +28160,7 @@ paths:
               - window: 1Y
                 allowPartial: false
                 annualised: false
-                withFee: false
+                withFee: true
                 alias: 1M
               recipeId:
                 scope: TestScope
@@ -28161,7 +28176,7 @@ paths:
               - window: 1Y
                 allowPartial: false
                 annualised: false
-                withFee: false
+                withFee: true
                 alias: 1M
               recipeId:
                 scope: TestScope
@@ -28177,7 +28192,7 @@ paths:
               - window: 1Y
                 allowPartial: false
                 annualised: false
-                withFee: false
+                withFee: true
                 alias: 1M
               recipeId:
                 scope: TestScope
@@ -28193,7 +28208,7 @@ paths:
               - window: 1Y
                 allowPartial: false
                 annualised: false
-                withFee: false
+                withFee: true
                 alias: 1M
               recipeId:
                 scope: TestScope
@@ -58709,12 +58724,10 @@ components:
         withFee:
           description: Bool if the metric should consider the fees when is calculated.
             Default to false.
-          readOnly: true
           type: boolean
         alias:
           description: The alias for the metric.
           nullable: true
-          readOnly: true
           type: string
       type: object
     PeriodType:
