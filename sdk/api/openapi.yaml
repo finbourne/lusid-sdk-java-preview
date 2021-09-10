@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3469
+  version: 0.11.3470
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:59385
+- url: http://local-unit-test-server.lusid.com:31634
 security:
 - {}
 tags:
@@ -165,8 +165,6 @@ tags:
   name: Scopes
 - description: Methods providing Search capability.
   name: Search
-- description: Methods for generating and using sequences.
-  name: Sequences
 - description: Methods for the storage and retrieval of structured market data documents.
     Read more about these in the LUSID Knowledge Base here https://support.lusid.com/knowledgebase/article/KA-01894.
   name: Structured Market Data
@@ -7157,7 +7155,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: e3503ce92b7b4845aa54bd17d64589c1
+                identifierValue: 64a910fd1a3e424da6aa0abfd6a93f72
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7182,7 +7180,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: e3503ce92b7b4845aa54bd17d64589c1
+                identifierValue: 64a910fd1a3e424da6aa0abfd6a93f72
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7207,7 +7205,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: e3503ce92b7b4845aa54bd17d64589c1
+                identifierValue: 64a910fd1a3e424da6aa0abfd6a93f72
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7232,7 +7230,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: e3503ce92b7b4845aa54bd17d64589c1
+                identifierValue: 64a910fd1a3e424da6aa0abfd6a93f72
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7258,7 +7256,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 2e1f1ea3-0f4b-4941-8be5-e9c7e33d9ea3
+                customEntityId: ab66b6cf-76e4-4bbb-b232-7b76f11e33ca
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7267,7 +7265,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: e786292660cd4c5e8299260d31a86c2c
+                  identifierValue: a15fe2ea354948a6a3b4966f579b9336
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7306,7 +7304,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 2e1f1ea3-0f4b-4941-8be5-e9c7e33d9ea3
+                customEntityId: ab66b6cf-76e4-4bbb-b232-7b76f11e33ca
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7315,7 +7313,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: e786292660cd4c5e8299260d31a86c2c
+                  identifierValue: a15fe2ea354948a6a3b4966f579b9336
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7354,7 +7352,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 2e1f1ea3-0f4b-4941-8be5-e9c7e33d9ea3
+                customEntityId: ab66b6cf-76e4-4bbb-b232-7b76f11e33ca
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7363,7 +7361,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: e786292660cd4c5e8299260d31a86c2c
+                  identifierValue: a15fe2ea354948a6a3b4966f579b9336
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7498,7 +7496,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 020315a4-15f4-43c0-8320-2e41fc988a0d
+                customEntityId: c4f36930-8e4d-4321-8352-09fad4f9706c
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7540,7 +7538,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 020315a4-15f4-43c0-8320-2e41fc988a0d
+                customEntityId: c4f36930-8e4d-4321-8352-09fad4f9706c
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7582,7 +7580,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 020315a4-15f4-43c0-8320-2e41fc988a0d
+                customEntityId: c4f36930-8e4d-4321-8352-09fad4f9706c
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -33652,322 +33650,6 @@ paths:
       - Search
       x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
-  /api/sequences/{scope}:
-    post:
-      description: Create a new sequence
-      operationId: CreateSequence
-      parameters:
-      - description: Scope of the sequence definition.
-        explode: false
-        in: path
-        name: scope
-        required: true
-        schema:
-          description: Scope of the sequence definition.
-          nullable: true
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json-patch+json:
-            example:
-              code: TestCode
-              increment: 1
-              minValue: 0
-              maxValue: 10
-              start: 0
-              cycle: false
-            schema:
-              $ref: '#/components/schemas/CreateSequenceRequest'
-          application/json:
-            example:
-              code: TestCode
-              increment: 1
-              minValue: 0
-              maxValue: 10
-              start: 0
-              cycle: false
-            schema:
-              $ref: '#/components/schemas/CreateSequenceRequest'
-          text/json:
-            example:
-              code: TestCode
-              increment: 1
-              minValue: 0
-              maxValue: 10
-              start: 0
-              cycle: false
-            schema:
-              $ref: '#/components/schemas/CreateSequenceRequest'
-          application/*+json:
-            example:
-              code: TestCode
-              increment: 1
-              minValue: 0
-              maxValue: 10
-              start: 0
-              cycle: false
-            schema:
-              $ref: '#/components/schemas/CreateSequenceRequest'
-        description: Request to create sequence definition.
-      responses:
-        "201":
-          content:
-            text/plain:
-              example:
-                id:
-                  scope: TestScope
-                  code: TestCode
-                increment: 1
-                minValue: 0
-                maxValue: 10
-                start: 1
-                value: 3
-                cycle: false
-              schema:
-                $ref: '#/components/schemas/SequenceDefinition'
-            application/json:
-              example:
-                id:
-                  scope: TestScope
-                  code: TestCode
-                increment: 1
-                minValue: 0
-                maxValue: 10
-                start: 1
-                value: 3
-                cycle: false
-              schema:
-                $ref: '#/components/schemas/SequenceDefinition'
-            text/json:
-              example:
-                id:
-                  scope: TestScope
-                  code: TestCode
-                increment: 1
-                minValue: 0
-                maxValue: 10
-                start: 1
-                value: 3
-                cycle: false
-              schema:
-                $ref: '#/components/schemas/SequenceDefinition'
-          description: Successful creation of the sequence
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] Create a new sequence'
-      tags:
-      - Sequences
-      x-fbn-apistatus: Experimental
-      x-contentType: application/json-patch+json
-      x-accepts: application/json
-  /api/sequences/{scope}/{code}:
-    get:
-      description: Return the detailed definition of a sequence
-      operationId: GetSequenceDefinition
-      parameters:
-      - description: Scope of the sequence definition.
-        explode: false
-        in: path
-        name: scope
-        required: true
-        schema:
-          description: Scope of the sequence definition.
-          nullable: true
-          type: string
-        style: simple
-      - description: "Code of the sequence definition. This together with stated scope\
-          \ uniquely\r\n            identifies the sequence definition."
-        explode: false
-        in: path
-        name: code
-        required: true
-        schema:
-          description: "Code of the sequence definition. This together with stated\
-            \ scope uniquely\r\n            identifies the sequence definition."
-          nullable: true
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            text/plain:
-              example:
-                id:
-                  scope: TestScope
-                  code: TestCode
-                increment: 1
-                minValue: 0
-                maxValue: 10
-                start: 1
-                value: 3
-                cycle: false
-              schema:
-                $ref: '#/components/schemas/SequenceDefinition'
-            application/json:
-              example:
-                id:
-                  scope: TestScope
-                  code: TestCode
-                increment: 1
-                minValue: 0
-                maxValue: 10
-                start: 1
-                value: 3
-                cycle: false
-              schema:
-                $ref: '#/components/schemas/SequenceDefinition'
-            text/json:
-              example:
-                id:
-                  scope: TestScope
-                  code: TestCode
-                increment: 1
-                minValue: 0
-                maxValue: 10
-                start: 1
-                value: 3
-                cycle: false
-              schema:
-                $ref: '#/components/schemas/SequenceDefinition'
-          description: The requested sequence
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] Return the definition of a sequence'
-      tags:
-      - Sequences
-      x-fbn-apistatus: Experimental
-      x-accepts: application/json
-  /api/sequences/{scope}/{code}/next:
-    get:
-      description: Get the next set of values from the sequence
-      operationId: Next
-      parameters:
-      - description: Scope of the sequence definition.
-        explode: false
-        in: path
-        name: scope
-        required: true
-        schema:
-          description: Scope of the sequence definition.
-          nullable: true
-          type: string
-        style: simple
-      - description: "Code of the sequence definition. This together with stated scope\
-          \ uniquely\r\n            identifies the sequence definition."
-        explode: false
-        in: path
-        name: code
-        required: true
-        schema:
-          description: "Code of the sequence definition. This together with stated\
-            \ scope uniquely\r\n            identifies the sequence definition."
-          nullable: true
-          type: string
-        style: simple
-      - description: Number of sequences items to return for the specified sequence
-          definition.
-        explode: true
-        in: query
-        name: batch
-        required: false
-        schema:
-          default: 1
-          description: Number of sequences items to return for the specified sequence
-            definition.
-          format: int32
-          type: integer
-        style: form
-        x-nullable: true
-      responses:
-        "200":
-          content:
-            text/plain:
-              example:
-                values:
-                - "1"
-                - "2"
-                - "3"
-              schema:
-                $ref: '#/components/schemas/NextValueInSequenceResponse'
-            application/json:
-              example:
-                values:
-                - "1"
-                - "2"
-                - "3"
-              schema:
-                $ref: '#/components/schemas/NextValueInSequenceResponse'
-            text/json:
-              example:
-                values:
-                - "1"
-                - "2"
-                - "3"
-              schema:
-                $ref: '#/components/schemas/NextValueInSequenceResponse'
-          description: Gets the next set of values for the sequence
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] Get the next set of values from the sequence'
-      tags:
-      - Sequences
-      x-fbn-apistatus: Experimental
-      x-accepts: application/json
   /api/structured/{scope}:
     post:
       description: "Update or insert one or more structured market data items in a\
@@ -50781,61 +50463,6 @@ components:
       - sourceEntityId
       - targetEntityId
       type: object
-    CreateSequenceRequest:
-      additionalProperties: false
-      example:
-        minValue: 6
-        code: code
-        maxValue: 1
-        start: 5
-        increment: 0
-        links:
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        cycle: true
-      properties:
-        code:
-          description: Code of the sequence
-          type: string
-        increment:
-          description: Size of the increment
-          format: int64
-          type: integer
-        minValue:
-          description: Minimum value
-          format: int64
-          type: integer
-        maxValue:
-          description: Maximum value
-          format: int64
-          type: integer
-        start:
-          description: Start value
-          format: int64
-          type: integer
-        cycle:
-          description: Indicate whether the sequence will cycle
-          type: boolean
-        links:
-          description: Collection of links.
-          items:
-            $ref: '#/components/schemas/Link'
-          nullable: true
-          type: array
-      required:
-      - code
-      - cycle
-      - increment
-      - maxValue
-      - minValue
-      - start
-      type: object
     CreateTransactionPortfolioRequest:
       additionalProperties: false
       example:
@@ -55920,36 +55547,6 @@ components:
       - Carry
       - CarryAsPnl
       type: string
-    NextValueInSequenceResponse:
-      additionalProperties: false
-      example:
-        values:
-        - values
-        - values
-        links:
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-      properties:
-        values:
-          description: Next values
-          items:
-            type: string
-          type: array
-        links:
-          description: Collection of links.
-          items:
-            $ref: '#/components/schemas/Link'
-          nullable: true
-          type: array
-      required:
-      - values
-      type: object
     OpaqueMarketData:
       allOf:
       - $ref: '#/components/schemas/ComplexMarketData'
@@ -67427,68 +67024,6 @@ components:
       required:
       - scope
       type: object
-    SequenceDefinition:
-      additionalProperties: false
-      example:
-        minValue: 6
-        maxValue: 1
-        start: 5
-        increment: 0
-        links:
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        id:
-          code: code
-          scope: scope
-        value: 5
-        cycle: true
-      properties:
-        id:
-          $ref: '#/components/schemas/ResourceId'
-        increment:
-          description: Size of the increment
-          format: int64
-          type: integer
-        minValue:
-          description: Minimum value
-          format: int64
-          type: integer
-        maxValue:
-          description: Maximum value
-          format: int64
-          type: integer
-        start:
-          description: Start value
-          format: int64
-          type: integer
-        value:
-          description: Current value of the sequence
-          format: int64
-          type: integer
-        cycle:
-          description: Indicate whether the sequence will cycle
-          type: boolean
-        links:
-          description: Collection of links.
-          items:
-            $ref: '#/components/schemas/Link'
-          nullable: true
-          type: array
-      required:
-      - cycle
-      - id
-      - increment
-      - maxValue
-      - minValue
-      - start
-      - value
-      type: object
     SetPersonIdentifiersRequest:
       additionalProperties: false
       example:
@@ -73896,7 +73431,6 @@ x-tagGroups:
   - Schemas
   - Scopes
   - Search
-  - Sequences
   - Structured Market Data
   - Structured Result Data
   - System Configuration
