@@ -1,6 +1,6 @@
 # PortfoliosApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:31565*
+All URIs are relative to *http://local-unit-test-server.lusid.com:54349*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -49,7 +49,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -124,7 +124,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -195,7 +195,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -270,7 +270,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -351,7 +351,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -428,7 +428,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -523,7 +523,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -608,7 +608,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -689,7 +689,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -764,7 +764,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -839,7 +839,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -922,7 +922,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1001,7 +1001,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1080,7 +1080,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1163,7 +1163,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1240,7 +1240,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1319,7 +1319,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1402,7 +1402,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1485,7 +1485,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1560,7 +1560,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1637,7 +1637,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1710,7 +1710,7 @@ import com.finbourne.lusid.api.PortfoliosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31565");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54349");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
