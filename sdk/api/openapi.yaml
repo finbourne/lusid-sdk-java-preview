@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3475
+  version: 0.11.3476
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:54349
+- url: http://local-unit-test-server.lusid.com:60563
 security:
 - {}
 tags:
@@ -7155,7 +7155,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 0053e8d60b84490ba08e4a5ee40ddfca
+                identifierValue: 25b52ca392dd4c679ac6339ce1b47bb7
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7180,7 +7180,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 0053e8d60b84490ba08e4a5ee40ddfca
+                identifierValue: 25b52ca392dd4c679ac6339ce1b47bb7
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7205,7 +7205,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 0053e8d60b84490ba08e4a5ee40ddfca
+                identifierValue: 25b52ca392dd4c679ac6339ce1b47bb7
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7230,7 +7230,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 0053e8d60b84490ba08e4a5ee40ddfca
+                identifierValue: 25b52ca392dd4c679ac6339ce1b47bb7
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7256,7 +7256,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: c198f77b-dcc4-4178-aca1-24b431db5515
+                customEntityId: 4007d283-721f-4dc3-a6a1-43661455a87d
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7265,7 +7265,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 54970c0502024b909089b4ca8d4c9950
+                  identifierValue: 154621f4874c44bca238c0e57ed36035
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7304,7 +7304,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: c198f77b-dcc4-4178-aca1-24b431db5515
+                customEntityId: 4007d283-721f-4dc3-a6a1-43661455a87d
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7313,7 +7313,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 54970c0502024b909089b4ca8d4c9950
+                  identifierValue: 154621f4874c44bca238c0e57ed36035
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7352,7 +7352,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: c198f77b-dcc4-4178-aca1-24b431db5515
+                customEntityId: 4007d283-721f-4dc3-a6a1-43661455a87d
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7361,7 +7361,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 54970c0502024b909089b4ca8d4c9950
+                  identifierValue: 154621f4874c44bca238c0e57ed36035
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7496,7 +7496,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: e2ec1980-74ff-4779-af9b-f23af5590075
+                customEntityId: dc8cc037-aa17-4cdf-a2ad-d54fa19ada87
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7538,7 +7538,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: e2ec1980-74ff-4779-af9b-f23af5590075
+                customEntityId: dc8cc037-aa17-4cdf-a2ad-d54fa19ada87
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7580,7 +7580,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: e2ec1980-74ff-4779-af9b-f23af5590075
+                customEntityId: dc8cc037-aa17-4cdf-a2ad-d54fa19ada87
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -46842,6 +46842,10 @@ components:
       additionalProperties: false
       description: A list of Aggregated Returns.
       example:
+        compositeMembers: 5
+        compositeMembersWithoutReturn:
+        - key: compositeMembersWithoutReturn
+        - key: compositeMembersWithoutReturn
         openingMarketValue: 0.8008281904610115
         metricsValue:
           key: 1.4658129805029452
@@ -46873,6 +46877,20 @@ components:
           description: Show the aggregated output returns on a Daily or Monthly period.
           nullable: true
           type: string
+        compositeMembers:
+          description: The number of members in the Composite on the given day.
+          format: int32
+          nullable: true
+          type: integer
+        compositeMembersWithoutReturn:
+          description: List containing Composite members which post no return on the
+            given day.
+          items:
+            additionalProperties:
+              type: string
+            type: object
+          nullable: true
+          type: array
       required:
       - effectiveAt
       - metricsValue
@@ -62618,13 +62636,21 @@ components:
         previousPage: previousPage
         nextPage: nextPage
         values:
-        - openingMarketValue: 0.8008281904610115
+        - compositeMembers: 5
+          compositeMembersWithoutReturn:
+          - key: compositeMembersWithoutReturn
+          - key: compositeMembersWithoutReturn
+          openingMarketValue: 0.8008281904610115
           metricsValue:
             key: 1.4658129805029452
           effectiveAt: 2000-01-23T04:56:07.000+00:00
           closingMarketValue: 6.027456183070403
           frequency: frequency
-        - openingMarketValue: 0.8008281904610115
+        - compositeMembers: 5
+          compositeMembersWithoutReturn:
+          - key: compositeMembersWithoutReturn
+          - key: compositeMembersWithoutReturn
+          openingMarketValue: 0.8008281904610115
           metricsValue:
             key: 1.4658129805029452
           effectiveAt: 2000-01-23T04:56:07.000+00:00
