@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3480
+  version: 0.11.3482
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:61424
 security:
 - {}
 tags:
@@ -7155,7 +7155,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 561d07f67f5c4c368b8a77d9fc9c2252
+                identifierValue: 348e9db9d4624a3cb1df4b34a3199d53
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7180,7 +7180,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 561d07f67f5c4c368b8a77d9fc9c2252
+                identifierValue: 348e9db9d4624a3cb1df4b34a3199d53
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7205,7 +7205,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 561d07f67f5c4c368b8a77d9fc9c2252
+                identifierValue: 348e9db9d4624a3cb1df4b34a3199d53
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7230,7 +7230,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 561d07f67f5c4c368b8a77d9fc9c2252
+                identifierValue: 348e9db9d4624a3cb1df4b34a3199d53
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7256,7 +7256,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: f308b90c-31e5-41ab-9d5b-52cb9008f022
+                customEntityId: 57da639b-89f5-4b76-b96c-0aa5c2590005
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7265,7 +7265,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 15f6a14cce8b43cebed288ed9d2fe307
+                  identifierValue: 77b51709e5a24c8c83d6e3d9cb0f4293
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7304,7 +7304,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: f308b90c-31e5-41ab-9d5b-52cb9008f022
+                customEntityId: 57da639b-89f5-4b76-b96c-0aa5c2590005
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7313,7 +7313,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 15f6a14cce8b43cebed288ed9d2fe307
+                  identifierValue: 77b51709e5a24c8c83d6e3d9cb0f4293
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7352,7 +7352,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: f308b90c-31e5-41ab-9d5b-52cb9008f022
+                customEntityId: 57da639b-89f5-4b76-b96c-0aa5c2590005
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7361,7 +7361,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 15f6a14cce8b43cebed288ed9d2fe307
+                  identifierValue: 77b51709e5a24c8c83d6e3d9cb0f4293
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7496,7 +7496,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: c0baf96a-2533-47f8-a459-97f85bc5c533
+                customEntityId: 04d24ec7-01b4-44f3-8213-2956f6392593
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7538,7 +7538,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: c0baf96a-2533-47f8-a459-97f85bc5c533
+                customEntityId: 04d24ec7-01b4-44f3-8213-2956f6392593
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7580,7 +7580,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: c0baf96a-2533-47f8-a459-97f85bc5c533
+                customEntityId: 04d24ec7-01b4-44f3-8213-2956f6392593
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -48818,6 +48818,8 @@ components:
             key: key
             mask: mask
           options:
+            conventionScope: conventionScope
+            calendarScope: calendarScope
             defaultInstrumentCodeType: defaultInstrumentCodeType
             defaultSupplier: defaultSupplier
             attemptToInferMissingFx: true
@@ -48984,6 +48986,8 @@ components:
           mask: mask
         scope: scope
         marketOptions:
+          conventionScope: conventionScope
+          calendarScope: calendarScope
           defaultInstrumentCodeType: defaultInstrumentCodeType
           defaultSupplier: defaultSupplier
           attemptToInferMissingFx: true
@@ -49016,6 +49020,8 @@ components:
               key: key
               mask: mask
             options:
+              conventionScope: conventionScope
+              calendarScope: calendarScope
               defaultInstrumentCodeType: defaultInstrumentCodeType
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
@@ -50178,6 +50184,8 @@ components:
               key: key
               mask: mask
             options:
+              conventionScope: conventionScope
+              calendarScope: calendarScope
               defaultInstrumentCodeType: defaultInstrumentCodeType
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
@@ -53071,6 +53079,8 @@ components:
               key: key
               mask: mask
             options:
+              conventionScope: conventionScope
+              calendarScope: calendarScope
               defaultInstrumentCodeType: defaultInstrumentCodeType
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
@@ -55300,6 +55310,8 @@ components:
           key: key
           mask: mask
         options:
+          conventionScope: conventionScope
+          calendarScope: calendarScope
           defaultInstrumentCodeType: defaultInstrumentCodeType
           defaultSupplier: defaultSupplier
           attemptToInferMissingFx: true
@@ -55445,6 +55457,8 @@ components:
         \ Be aware that where no specified rule matches the final fallback is on to\
         \ the logic implied here."
       example:
+        conventionScope: conventionScope
+        calendarScope: calendarScope
         defaultInstrumentCodeType: defaultInstrumentCodeType
         defaultSupplier: defaultSupplier
         attemptToInferMissingFx: true
@@ -55471,6 +55485,14 @@ components:
             the inverse JPYTHB or from standardised pairs against USD, e.g. THBUSD
             and JPYUSD
           type: boolean
+        calendarScope:
+          description: The scope in which holiday calendars stored
+          nullable: true
+          type: string
+        conventionScope:
+          description: The scope in which holiday calendars stored
+          nullable: true
+          type: string
       type: object
     MarketQuote:
       additionalProperties: false
@@ -64300,6 +64322,8 @@ components:
                 key: key
                 mask: mask
               options:
+                conventionScope: conventionScope
+                calendarScope: calendarScope
                 defaultInstrumentCodeType: defaultInstrumentCodeType
                 defaultSupplier: defaultSupplier
                 attemptToInferMissingFx: true
@@ -64392,6 +64416,8 @@ components:
                 key: key
                 mask: mask
               options:
+                conventionScope: conventionScope
+                calendarScope: calendarScope
                 defaultInstrumentCodeType: defaultInstrumentCodeType
                 defaultSupplier: defaultSupplier
                 attemptToInferMissingFx: true
@@ -69881,6 +69907,8 @@ components:
               key: key
               mask: mask
             options:
+              conventionScope: conventionScope
+              calendarScope: calendarScope
               defaultInstrumentCodeType: defaultInstrumentCodeType
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
@@ -69972,6 +70000,8 @@ components:
             mask: mask
           scope: scope
           marketOptions:
+            conventionScope: conventionScope
+            calendarScope: calendarScope
             defaultInstrumentCodeType: defaultInstrumentCodeType
             defaultSupplier: defaultSupplier
             attemptToInferMissingFx: true
@@ -70004,6 +70034,8 @@ components:
                 key: key
                 mask: mask
               options:
+                conventionScope: conventionScope
+                calendarScope: calendarScope
                 defaultInstrumentCodeType: defaultInstrumentCodeType
                 defaultSupplier: defaultSupplier
                 attemptToInferMissingFx: true
@@ -73424,7 +73456,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
