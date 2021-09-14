@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3488
+  version: 0.11.3489
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:39462
 security:
 - {}
 tags:
@@ -7125,6 +7125,132 @@ paths:
       x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/customentities/{entityType}:
+    get:
+      description: List all the Custom Entities matching particular criteria.
+      operationId: ListCustomEntities
+      parameters:
+      - description: The type of entity to list.
+        explode: false
+        in: path
+        name: entityType
+        required: true
+        schema:
+          description: The type of entity to list.
+          maxLength: 64
+          minLength: 1
+          type: string
+        style: simple
+      - description: "The effective datetime or cut label at which to list the entities.\
+          \ Defaults to the current LUSID\r\n            system datetime if not specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which to list the entities.\
+            \ Defaults to the current LUSID\r\n            system datetime if not\
+            \ specified."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: "The asAt datetime at which to list the entities. Defaults to\
+          \ returning the latest version\r\n            of each portfolio if not specified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to list the entities. Defaults\
+            \ to returning the latest version\r\n            of each portfolio if\
+            \ not specified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: When paginating, limit the results to this number. Defaults to
+          65,535 if not specified.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: When paginating, limit the results to this number. Defaults
+            to 65,535 if not specified.
+          format: int32
+          maximum: 5000
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: "Expression to filter the results. For more information about\
+          \ filtering\r\n            results, see https://support.lusid.com/knowledgebase/article/KA-01914."
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          description: "Expression to filter the results. For more information about\
+            \ filtering\r\n            results, see https://support.lusid.com/knowledgebase/article/KA-01914."
+          nullable: true
+          type: string
+        style: form
+      - description: "The pagination token to use to continue listing entities; this\r\
+          \n            value is returned from the previous call. If a pagination\
+          \ token is provided, the filter, effectiveAt\r\n            and asAt fields\
+          \ must not have changed since the original request."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          description: "The pagination token to use to continue listing entities;\
+            \ this\r\n            value is returned from the previous call. If a pagination\
+            \ token is provided, the filter, effectiveAt\r\n            and asAt fields\
+            \ must not have changed since the original request."
+          nullable: true
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfCustomEntityResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfCustomEntityResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfCustomEntityResponse'
+          description: The requested custom entities
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] List Custom Entities'
+      tags:
+      - CustomEntities
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
     post:
       description: Insert the custom entity if it does not exist or update the custom
         entity with the supplied state if it does exist.
@@ -7155,7 +7281,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 6756fa049e3049d4bebb7ae4b3d3beca
+                identifierValue: 66ca2acf2fea49289fa3704b348e074a
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7180,7 +7306,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 6756fa049e3049d4bebb7ae4b3d3beca
+                identifierValue: 66ca2acf2fea49289fa3704b348e074a
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7205,7 +7331,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 6756fa049e3049d4bebb7ae4b3d3beca
+                identifierValue: 66ca2acf2fea49289fa3704b348e074a
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7230,7 +7356,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 6756fa049e3049d4bebb7ae4b3d3beca
+                identifierValue: 66ca2acf2fea49289fa3704b348e074a
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7247,7 +7373,7 @@ paths:
                 value: 2021-07-13T12:00:00.0000000+00:00
             schema:
               $ref: '#/components/schemas/CustomEntityRequest'
-        description: The CustomEntity to be created
+        description: The CustomEntity to be created.
         required: true
       responses:
         "200":
@@ -7256,7 +7382,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 9425e7de-96f5-4303-b979-661984113c26
+                customEntityId: 0d6562b3-37a9-45e7-9da9-694900d95d52
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7265,7 +7391,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 8f4774af40204e768154f7135d82c432
+                  identifierValue: 0f8def5d633e4d5e99a01646db5516e6
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7304,7 +7430,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 9425e7de-96f5-4303-b979-661984113c26
+                customEntityId: 0d6562b3-37a9-45e7-9da9-694900d95d52
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7313,7 +7439,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 8f4774af40204e768154f7135d82c432
+                  identifierValue: 0f8def5d633e4d5e99a01646db5516e6
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7352,7 +7478,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 9425e7de-96f5-4303-b979-661984113c26
+                customEntityId: 0d6562b3-37a9-45e7-9da9-694900d95d52
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7361,7 +7487,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 8f4774af40204e768154f7135d82c432
+                  identifierValue: 0f8def5d633e4d5e99a01646db5516e6
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7425,7 +7551,7 @@ paths:
       x-accepts: application/json
   /api/customentities/{entityType}/{identifierType}/{identifierValue}:
     get:
-      description: Retrieve a CustomEntity by a specific Id at a point in AsAt time
+      description: Retrieve a CustomEntity by a specific Id at a point in AsAt time.
       operationId: GetCustomEntity
       parameters:
       - description: The type of entity to retrieve. This is included in the response
@@ -7441,49 +7567,49 @@ paths:
           minLength: 1
           type: string
         style: simple
-      - description: An identifier type attached to the CustomEntity
+      - description: An identifier type attached to the CustomEntity.
         explode: false
         in: path
         name: identifierType
         required: true
         schema:
-          description: An identifier type attached to the CustomEntity
+          description: An identifier type attached to the CustomEntity.
           maxLength: 64
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
-      - description: The identifier value
+      - description: The identifier value.
         explode: false
         in: path
         name: identifierValue
         required: true
         schema:
-          description: The identifier value
+          description: The identifier value.
           maxLength: 64
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
-      - description: The identifier scope
+      - description: The identifier scope.
         explode: true
         in: query
         name: identifierScope
         required: true
         schema:
-          description: The identifier scope
+          description: The identifier scope.
           maxLength: 64
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: form
-      - description: The AsAt at which to retrieve the CustomEntity
+      - description: The AsAt at which to retrieve the CustomEntity.
         explode: true
         in: query
         name: asAt
         required: false
         schema:
-          description: The AsAt at which to retrieve the CustomEntity
+          description: The AsAt at which to retrieve the CustomEntity.
           format: date-time
           nullable: true
           type: string
@@ -7496,7 +7622,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 5f2c7476-8b52-4a2b-9889-8e4d1225cb9b
+                customEntityId: b56891db-1c9d-4a39-95d7-9085de8ed9da
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7538,7 +7664,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 5f2c7476-8b52-4a2b-9889-8e4d1225cb9b
+                customEntityId: b56891db-1c9d-4a39-95d7-9085de8ed9da
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7580,7 +7706,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 5f2c7476-8b52-4a2b-9889-8e4d1225cb9b
+                customEntityId: b56891db-1c9d-4a39-95d7-9085de8ed9da
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -51005,25 +51131,35 @@ components:
           asAtDate: 2000-01-23T04:56:07.000+00:00
       properties:
         href:
+          description: The specific Uniform Resource Identifier (URI) for this resource
+            at the requested effective and asAt datetime.
           format: uri
           nullable: true
           type: string
         entityType:
+          description: The EntityType to be used when relations are created to the
+            CustomEntity
           type: string
         customEntityId:
+          description: A unique identifier for the CustomEntity
           type: string
         version:
           $ref: '#/components/schemas/Version'
         displayName:
+          description: The display name of the CustomEntity
           type: string
         description:
+          description: The description of the CustomEntity
           nullable: true
           type: string
         identifiers:
+          description: A collection of CustomEntityIdentifiers that can identify the
+            CustomEntity
           items:
             $ref: '#/components/schemas/CustomEntityIdResponse'
           type: array
         fields:
+          description: A collection of CustomEntityFields that decorate the CustomEntity
           items:
             $ref: '#/components/schemas/CustomEntityField'
           type: array
@@ -56926,6 +57062,145 @@ components:
           description: The resources to list.
           items:
             $ref: '#/components/schemas/CorporateActionSource'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - values
+      type: object
+    PagedResourceListOfCustomEntityResponse:
+      additionalProperties: false
+      description: A paginated list of resource that can be returned from a request.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - customEntityId: customEntityId
+          effectiveRange:
+            fromDate: 2000-01-23T04:56:07.000+00:00
+            untilDate: 2000-01-23T04:56:07.000+00:00
+          asAtRange:
+            fromDate: 2000-01-23T04:56:07.000+00:00
+            untilDate: 2000-01-23T04:56:07.000+00:00
+          entityType: entityType
+          displayName: displayName
+          identifiers:
+          - effectiveRange:
+              fromDate: 2000-01-23T04:56:07.000+00:00
+              untilDate: 2000-01-23T04:56:07.000+00:00
+            asAtRange:
+              fromDate: 2000-01-23T04:56:07.000+00:00
+              untilDate: 2000-01-23T04:56:07.000+00:00
+            identifierValue: identifierValue
+            identifierType: identifierType
+            identifierScope: identifierScope
+          - effectiveRange:
+              fromDate: 2000-01-23T04:56:07.000+00:00
+              untilDate: 2000-01-23T04:56:07.000+00:00
+            asAtRange:
+              fromDate: 2000-01-23T04:56:07.000+00:00
+              untilDate: 2000-01-23T04:56:07.000+00:00
+            identifierValue: identifierValue
+            identifierType: identifierType
+            identifierScope: identifierScope
+          description: description
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          href: https://openapi-generator.tech
+          fields:
+          - name: name
+            value: '{}'
+          - name: name
+            value: '{}'
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+        - customEntityId: customEntityId
+          effectiveRange:
+            fromDate: 2000-01-23T04:56:07.000+00:00
+            untilDate: 2000-01-23T04:56:07.000+00:00
+          asAtRange:
+            fromDate: 2000-01-23T04:56:07.000+00:00
+            untilDate: 2000-01-23T04:56:07.000+00:00
+          entityType: entityType
+          displayName: displayName
+          identifiers:
+          - effectiveRange:
+              fromDate: 2000-01-23T04:56:07.000+00:00
+              untilDate: 2000-01-23T04:56:07.000+00:00
+            asAtRange:
+              fromDate: 2000-01-23T04:56:07.000+00:00
+              untilDate: 2000-01-23T04:56:07.000+00:00
+            identifierValue: identifierValue
+            identifierType: identifierType
+            identifierScope: identifierScope
+          - effectiveRange:
+              fromDate: 2000-01-23T04:56:07.000+00:00
+              untilDate: 2000-01-23T04:56:07.000+00:00
+            asAtRange:
+              fromDate: 2000-01-23T04:56:07.000+00:00
+              untilDate: 2000-01-23T04:56:07.000+00:00
+            identifierValue: identifierValue
+            identifierType: identifierType
+            identifierScope: identifierScope
+          description: description
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          href: https://openapi-generator.tech
+          fields:
+          - name: name
+            value: '{}'
+          - name: name
+            value: '{}'
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/CustomEntityResponse'
           type: array
         href:
           description: The URI of the resource list.
@@ -73424,7 +73699,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
