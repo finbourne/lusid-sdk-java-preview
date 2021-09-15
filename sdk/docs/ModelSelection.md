@@ -9,7 +9,7 @@ The combination of a library to use and a model in that library that defines whi
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **library** | [**LibraryEnum**](#LibraryEnum) | The available values are: Lusid, RefinitivQps, RefinitivTracsWeb, VolMaster, IsdaCds | 
-**model** | [**ModelEnum**](#ModelEnum) | The available values are: SimpleStatic, Discounting, VendorDefault, BlackScholes, ConstantTimeValueOfMoney, Bachelier, ForwardWithPoints, ForwardWithPointsUndiscounted, ForwardSpecifiedRate, ForwardSpecifiedRateUndiscounted, IndexNav, IndexPrice, InlinedIndex | 
+**model** | [**ModelEnum**](#ModelEnum) | The available values are: SimpleStatic, Discounting, VendorDefault, BlackScholes, ConstantTimeValueOfMoney, Bachelier, ForwardWithPoints, ForwardWithPointsUndiscounted, ForwardSpecifiedRate, ForwardSpecifiedRateUndiscounted, IndexNav, IndexPrice, InlinedIndex, ForwardFromCurve, ForwardFromCurveUndiscounted | 
 
 
 
@@ -42,6 +42,8 @@ FORWARDSPECIFIEDRATEUNDISCOUNTED | &quot;ForwardSpecifiedRateUndiscounted&quot;
 INDEXNAV | &quot;IndexNav&quot;
 INDEXPRICE | &quot;IndexPrice&quot;
 INLINEDINDEX | &quot;InlinedIndex&quot;
+FORWARDFROMCURVE | &quot;ForwardFromCurve&quot;
+FORWARDFROMCURVEUNDISCOUNTED | &quot;ForwardFromCurveUndiscounted&quot;
 
 
 

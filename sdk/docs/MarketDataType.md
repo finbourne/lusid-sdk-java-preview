@@ -17,5 +17,13 @@
 
 * `YIELDCURVEDATA` (value: `"YieldCurveData"`)
 
+* `FXFORWARDCURVEDATA` (value: `"FxForwardCurveData"`)
+
+* `FXFORWARDPIPSCURVEDATA` (value: `"FxForwardPipsCurveData"`)
+
+* `FXFORWARDTENORCURVEDATA` (value: `"FxForwardTenorCurveData"`)
+
+* `FXFORWARDTENORPIPSCURVEDATA` (value: `"FxForwardTenorPipsCurveData"`)
+
 
 

@@ -31,5 +31,9 @@
 
 * `INLINEDINDEX` (value: `"InlinedIndex"`)
 
+* `FORWARDFROMCURVE` (value: `"ForwardFromCurve"`)
+
+* `FORWARDFROMCURVEUNDISCOUNTED` (value: `"ForwardFromCurveUndiscounted"`)
+
 
 

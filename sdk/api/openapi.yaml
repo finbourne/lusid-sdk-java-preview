@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3492
+  version: 0.11.3493
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:39910
+- url: http://local-unit-test-server.lusid.com:33491
 security:
 - {}
 tags:
@@ -7281,7 +7281,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: c30d0a5f11264510bc2825a814784a0d
+                identifierValue: 893c499bcb8748f5bed8fd9a2df16650
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7306,7 +7306,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: c30d0a5f11264510bc2825a814784a0d
+                identifierValue: 893c499bcb8748f5bed8fd9a2df16650
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7331,7 +7331,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: c30d0a5f11264510bc2825a814784a0d
+                identifierValue: 893c499bcb8748f5bed8fd9a2df16650
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7356,7 +7356,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: c30d0a5f11264510bc2825a814784a0d
+                identifierValue: 893c499bcb8748f5bed8fd9a2df16650
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7382,7 +7382,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 128168f0-e38c-42ce-8409-57d2896a40ab
+                customEntityId: 92540dc8-8fa2-4f68-98d5-4cc5adba40a3
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7391,7 +7391,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 78878bb7e42449d982e1a56ca7db2f4a
+                  identifierValue: 83b0dea54fe9492780a8a4b9f3407336
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7430,7 +7430,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 128168f0-e38c-42ce-8409-57d2896a40ab
+                customEntityId: 92540dc8-8fa2-4f68-98d5-4cc5adba40a3
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7439,7 +7439,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 78878bb7e42449d982e1a56ca7db2f4a
+                  identifierValue: 83b0dea54fe9492780a8a4b9f3407336
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7478,7 +7478,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 128168f0-e38c-42ce-8409-57d2896a40ab
+                customEntityId: 92540dc8-8fa2-4f68-98d5-4cc5adba40a3
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7487,7 +7487,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: 78878bb7e42449d982e1a56ca7db2f4a
+                  identifierValue: 83b0dea54fe9492780a8a4b9f3407336
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7622,7 +7622,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 35c4f094-b0b3-48d1-8595-217c80b1273c
+                customEntityId: 0d876029-7ec6-45e9-b84a-3c87beef086d
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7664,7 +7664,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 35c4f094-b0b3-48d1-8595-217c80b1273c
+                customEntityId: 0d876029-7ec6-45e9-b84a-3c87beef086d
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7706,7 +7706,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: 35c4f094-b0b3-48d1-8595-217c80b1273c
+                customEntityId: 0d876029-7ec6-45e9-b84a-3c87beef086d
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -48862,7 +48862,8 @@ components:
       properties:
         marketDataType:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
-            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData'
+            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
+            FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -48870,6 +48871,10 @@ components:
           - IrVolCubeData
           - OpaqueMarketData
           - YieldCurveData
+          - FxForwardCurveData
+          - FxForwardPipsCurveData
+          - FxForwardTenorCurveData
+          - FxForwardTenorPipsCurveData
           type: string
       required:
       - marketDataType
@@ -52572,6 +52577,30 @@ components:
       - $ref: '#/components/schemas/FxForward_allOf'
       description: IL Fx-Forward Instrument; Lusid-ibor internal representation of
         a Fx Forward instrument
+    FxForwardCurveData:
+      allOf:
+      - $ref: '#/components/schemas/ComplexMarketData'
+      - $ref: '#/components/schemas/FxForwardCurveData_allOf'
+      description: Contains data (i.e. dates and rates + metadata) for building fx
+        forward curves
+    FxForwardPipsCurveData:
+      allOf:
+      - $ref: '#/components/schemas/ComplexMarketData'
+      - $ref: '#/components/schemas/FxForwardPipsCurveData_allOf'
+      description: Contains data (i.e. dates and pips + metadata) for building fx
+        forward curves (when combined with a spot rate to build on)
+    FxForwardTenorCurveData:
+      allOf:
+      - $ref: '#/components/schemas/ComplexMarketData'
+      - $ref: '#/components/schemas/FxForwardTenorCurveData_allOf'
+      description: Contains data (i.e. tenors and rates + metadata) for building fx
+        forward curves (when combined with a date to build on)
+    FxForwardTenorPipsCurveData:
+      allOf:
+      - $ref: '#/components/schemas/ComplexMarketData'
+      - $ref: '#/components/schemas/FxForwardTenorPipsCurveData_allOf'
+      description: Contains data (i.e. tenors and pips + metadata) for building fx
+        forward curves (when combined with a spot rate and a date to build on)
     FxOption:
       allOf:
       - $ref: '#/components/schemas/LusidInstrument'
@@ -55558,6 +55587,10 @@ components:
       - IrVolCubeData
       - OpaqueMarketData
       - YieldCurveData
+      - FxForwardCurveData
+      - FxForwardPipsCurveData
+      - FxForwardTenorCurveData
+      - FxForwardTenorPipsCurveData
       type: string
     MarketIdentifier:
       enum:
@@ -55680,7 +55713,7 @@ components:
           description: 'The available values are: SimpleStatic, Discounting, VendorDefault,
             BlackScholes, ConstantTimeValueOfMoney, Bachelier, ForwardWithPoints,
             ForwardWithPointsUndiscounted, ForwardSpecifiedRate, ForwardSpecifiedRateUndiscounted,
-            IndexNav, IndexPrice, InlinedIndex'
+            IndexNav, IndexPrice, InlinedIndex, ForwardFromCurve, ForwardFromCurveUndiscounted'
           enum:
           - SimpleStatic
           - Discounting
@@ -55695,6 +55728,8 @@ components:
           - IndexNav
           - IndexPrice
           - InlinedIndex
+          - ForwardFromCurve
+          - ForwardFromCurveUndiscounted
           type: string
       required:
       - library
@@ -60593,6 +60628,8 @@ components:
       - IndexNav
       - IndexPrice
       - InlinedIndex
+      - ForwardFromCurve
+      - ForwardFromCurveUndiscounted
       type: string
     PricingOptions:
       additionalProperties: false
@@ -72289,7 +72326,8 @@ components:
           type: array
         marketDataType:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
-            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData'
+            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
+            FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -72297,6 +72335,10 @@ components:
           - IrVolCubeData
           - OpaqueMarketData
           - YieldCurveData
+          - FxForwardCurveData
+          - FxForwardPipsCurveData
+          - FxForwardTenorCurveData
+          - FxForwardTenorPipsCurveData
           type: string
       required:
       - baseDate
@@ -72514,7 +72556,8 @@ components:
           type: array
         marketDataType:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
-            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData'
+            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
+            FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -72522,6 +72565,10 @@ components:
           - IrVolCubeData
           - OpaqueMarketData
           - YieldCurveData
+          - FxForwardCurveData
+          - FxForwardPipsCurveData
+          - FxForwardTenorCurveData
+          - FxForwardTenorPipsCurveData
           type: string
       required:
       - baseDate
@@ -73030,6 +73077,200 @@ components:
       - maturityDate
       - startDate
       type: object
+    FxForwardCurveData_allOf:
+      properties:
+        baseDate:
+          description: EffectiveAt date of the quoted rates
+          format: date-time
+          type: string
+        domCcy:
+          description: Domestic currency of the fx forward
+          type: string
+        fgnCcy:
+          description: Foreign currency of the fx forward
+          type: string
+        dates:
+          description: Dates for which the forward rates apply
+          items:
+            format: date-time
+            type: string
+          type: array
+        rates:
+          description: Rates provided for the fx forward (price in FgnCcy per unit
+            of DomCcy)
+          items:
+            format: double
+            type: number
+          type: array
+        marketDataType:
+          description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
+            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
+            FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData'
+          enum:
+          - DiscountFactorCurveData
+          - EquityVolSurfaceData
+          - FxVolSurfaceData
+          - IrVolCubeData
+          - OpaqueMarketData
+          - YieldCurveData
+          - FxForwardCurveData
+          - FxForwardPipsCurveData
+          - FxForwardTenorCurveData
+          - FxForwardTenorPipsCurveData
+          type: string
+      required:
+      - baseDate
+      - dates
+      - domCcy
+      - fgnCcy
+      - marketDataType
+      - rates
+      type: object
+    FxForwardPipsCurveData_allOf:
+      properties:
+        baseDate:
+          description: EffectiveAt date of the quoted pip rates
+          format: date-time
+          type: string
+        domCcy:
+          description: Domestic currency of the fx forward
+          type: string
+        fgnCcy:
+          description: Foreign currency of the fx forward
+          type: string
+        dates:
+          description: Dates for which the forward rates apply
+          items:
+            format: date-time
+            type: string
+          type: array
+        pipRates:
+          description: Rates provided for the fx forward (price in FgnCcy per unit
+            of DomCcy), expressed in pips
+          items:
+            format: double
+            type: number
+          type: array
+        marketDataType:
+          description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
+            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
+            FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData'
+          enum:
+          - DiscountFactorCurveData
+          - EquityVolSurfaceData
+          - FxVolSurfaceData
+          - IrVolCubeData
+          - OpaqueMarketData
+          - YieldCurveData
+          - FxForwardCurveData
+          - FxForwardPipsCurveData
+          - FxForwardTenorCurveData
+          - FxForwardTenorPipsCurveData
+          type: string
+      required:
+      - baseDate
+      - dates
+      - domCcy
+      - fgnCcy
+      - marketDataType
+      - pipRates
+      type: object
+    FxForwardTenorCurveData_allOf:
+      properties:
+        baseDate:
+          description: EffectiveAt date of the quoted rates
+          format: date-time
+          type: string
+        domCcy:
+          description: Domestic currency of the fx forward
+          type: string
+        fgnCcy:
+          description: Foreign currency of the fx forward
+          type: string
+        tenors:
+          description: Tenors for which the forward rates apply
+          items:
+            type: string
+          type: array
+        rates:
+          description: Rates provided for the fx forward (price in FgnCcy per unit
+            of DomCcy)
+          items:
+            format: double
+            type: number
+          type: array
+        marketDataType:
+          description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
+            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
+            FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData'
+          enum:
+          - DiscountFactorCurveData
+          - EquityVolSurfaceData
+          - FxVolSurfaceData
+          - IrVolCubeData
+          - OpaqueMarketData
+          - YieldCurveData
+          - FxForwardCurveData
+          - FxForwardPipsCurveData
+          - FxForwardTenorCurveData
+          - FxForwardTenorPipsCurveData
+          type: string
+      required:
+      - baseDate
+      - domCcy
+      - fgnCcy
+      - marketDataType
+      - rates
+      - tenors
+      type: object
+    FxForwardTenorPipsCurveData_allOf:
+      properties:
+        baseDate:
+          description: EffectiveAt date of the quoted pip rates
+          format: date-time
+          type: string
+        domCcy:
+          description: Domestic currency of the fx forward
+          type: string
+        fgnCcy:
+          description: Foreign currency of the fx forward
+          type: string
+        tenors:
+          description: Tenors for which the forward rates apply
+          items:
+            type: string
+          type: array
+        pipRates:
+          description: Rates provided for the fx forward (price in FgnCcy per unit
+            of DomCcy), expressed in pips
+          items:
+            format: double
+            type: number
+          type: array
+        marketDataType:
+          description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
+            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
+            FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData'
+          enum:
+          - DiscountFactorCurveData
+          - EquityVolSurfaceData
+          - FxVolSurfaceData
+          - IrVolCubeData
+          - OpaqueMarketData
+          - YieldCurveData
+          - FxForwardCurveData
+          - FxForwardPipsCurveData
+          - FxForwardTenorCurveData
+          - FxForwardTenorPipsCurveData
+          type: string
+      required:
+      - baseDate
+      - domCcy
+      - fgnCcy
+      - marketDataType
+      - pipRates
+      - tenors
+      type: object
     FxOption_allOf:
       properties:
         startDate:
@@ -73345,7 +73586,8 @@ components:
           type: array
         marketDataType:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
-            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData'
+            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
+            FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -73353,6 +73595,10 @@ components:
           - IrVolCubeData
           - OpaqueMarketData
           - YieldCurveData
+          - FxForwardCurveData
+          - FxForwardPipsCurveData
+          - FxForwardTenorCurveData
+          - FxForwardTenorPipsCurveData
           type: string
       required:
       - baseDate
@@ -73398,7 +73644,8 @@ components:
           type: string
         marketDataType:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
-            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData'
+            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
+            FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -73406,6 +73653,10 @@ components:
           - IrVolCubeData
           - OpaqueMarketData
           - YieldCurveData
+          - FxForwardCurveData
+          - FxForwardPipsCurveData
+          - FxForwardTenorCurveData
+          - FxForwardTenorPipsCurveData
           type: string
       required:
       - document
@@ -73685,7 +73936,8 @@ components:
           type: array
         marketDataType:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
-            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData'
+            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
+            FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -73693,6 +73945,10 @@ components:
           - IrVolCubeData
           - OpaqueMarketData
           - YieldCurveData
+          - FxForwardCurveData
+          - FxForwardPipsCurveData
+          - FxForwardTenorCurveData
+          - FxForwardTenorPipsCurveData
           type: string
       required:
       - baseDate

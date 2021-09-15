@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **baseDate** | **OffsetDateTime** | Base date | 
 **instruments** | [**List&lt;LusidInstrument&gt;**](LusidInstrument.md) | The set of instruments that define the curve. | 
 **quotes** | [**List&lt;MarketQuote&gt;**](MarketQuote.md) | The market quotes corresponding to the the instruments used to define the curve | 
-**marketDataType** | [**MarketDataTypeEnum**](#MarketDataTypeEnum) | The available values are: DiscountFactorCurveData, EquityVolSurfaceData, FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData | 
+**marketDataType** | [**MarketDataTypeEnum**](#MarketDataTypeEnum) | The available values are: DiscountFactorCurveData, EquityVolSurfaceData, FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData, FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData | 
 
 
 
@@ -24,6 +24,10 @@ FXVOLSURFACEDATA | &quot;FxVolSurfaceData&quot;
 IRVOLCUBEDATA | &quot;IrVolCubeData&quot;
 OPAQUEMARKETDATA | &quot;OpaqueMarketData&quot;
 YIELDCURVEDATA | &quot;YieldCurveData&quot;
+FXFORWARDCURVEDATA | &quot;FxForwardCurveData&quot;
+FXFORWARDPIPSCURVEDATA | &quot;FxForwardPipsCurveData&quot;
+FXFORWARDTENORCURVEDATA | &quot;FxForwardTenorCurveData&quot;
+FXFORWARDTENORPIPSCURVEDATA | &quot;FxForwardTenorPipsCurveData&quot;
 
 
 
