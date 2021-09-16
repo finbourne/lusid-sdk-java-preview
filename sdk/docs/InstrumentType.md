@@ -59,5 +59,7 @@
 
 * `REPO` (value: `"Repo"`)
 
+* `EQUITY` (value: `"Equity"`)
+
 
 
