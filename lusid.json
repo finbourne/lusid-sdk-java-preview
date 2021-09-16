@@ -9,7 +9,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "0.11.3499",
+    "version": "0.11.3500",
     "x-logo": {
       "url": "https://content.finbourne.com/LUSID-header.png",
       "backgroundColor": "#415464"
@@ -17,7 +17,7 @@
   },
   "servers": [
     {
-      "url": "http://local-unit-test-server.lusid.com:62717"
+      "url": "http://local-unit-test-server.lusid.com:30524"
     }
   ],
   "paths": {
@@ -9401,7 +9401,7 @@
                   {
                     "identifierScope": "DataLoadingIssues",
                     "identifierType": "InternalId",
-                    "identifierValue": "6c3f5fcc349c4c1ab6942908dd81008e"
+                    "identifierValue": "188ce1eaecaf43efa6b33b680b75b40c"
                   },
                   {
                     "identifierScope": "DataLoadingIssues",
@@ -9445,7 +9445,7 @@
                   {
                     "identifierScope": "DataLoadingIssues",
                     "identifierType": "InternalId",
-                    "identifierValue": "6c3f5fcc349c4c1ab6942908dd81008e"
+                    "identifierValue": "188ce1eaecaf43efa6b33b680b75b40c"
                   },
                   {
                     "identifierScope": "DataLoadingIssues",
@@ -9489,7 +9489,7 @@
                   {
                     "identifierScope": "DataLoadingIssues",
                     "identifierType": "InternalId",
-                    "identifierValue": "6c3f5fcc349c4c1ab6942908dd81008e"
+                    "identifierValue": "188ce1eaecaf43efa6b33b680b75b40c"
                   },
                   {
                     "identifierScope": "DataLoadingIssues",
@@ -9533,7 +9533,7 @@
                   {
                     "identifierScope": "DataLoadingIssues",
                     "identifierType": "InternalId",
-                    "identifierValue": "6c3f5fcc349c4c1ab6942908dd81008e"
+                    "identifierValue": "188ce1eaecaf43efa6b33b680b75b40c"
                   },
                   {
                     "identifierScope": "DataLoadingIssues",
@@ -9579,7 +9579,7 @@
                 "example": {
                   "href": "https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues",
                   "entityType": "~issue",
-                  "customEntityId": "3399bf7b-9027-4c92-94e2-cd897100b414",
+                  "customEntityId": "0059d745-c65a-48c9-b87b-4f996819c6c2",
                   "version": {
                     "effectiveFrom": "2021-07-23T12:00:00.0000000+00:00",
                     "asAtDate": "2021-07-23T12:00:00.0000000+00:00"
@@ -9590,7 +9590,7 @@
                     {
                       "identifierScope": "DataLoadingIssues",
                       "identifierType": "InternalId",
-                      "identifierValue": "b1953df1c8124d298ea68bd9be9b7d8e",
+                      "identifierValue": "139cab7ea74b4af7b00de6f5137b5207",
                       "effectiveRange": {
                         "fromDate": "2021-07-23T12:00:00.0000000+00:00",
                         "untilDate": "9999-12-31T23:59:59.9999999+00:00"
@@ -9653,7 +9653,7 @@
                 "example": {
                   "href": "https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues",
                   "entityType": "~issue",
-                  "customEntityId": "3399bf7b-9027-4c92-94e2-cd897100b414",
+                  "customEntityId": "0059d745-c65a-48c9-b87b-4f996819c6c2",
                   "version": {
                     "effectiveFrom": "2021-07-23T12:00:00.0000000+00:00",
                     "asAtDate": "2021-07-23T12:00:00.0000000+00:00"
@@ -9664,7 +9664,7 @@
                     {
                       "identifierScope": "DataLoadingIssues",
                       "identifierType": "InternalId",
-                      "identifierValue": "b1953df1c8124d298ea68bd9be9b7d8e",
+                      "identifierValue": "139cab7ea74b4af7b00de6f5137b5207",
                       "effectiveRange": {
                         "fromDate": "2021-07-23T12:00:00.0000000+00:00",
                         "untilDate": "9999-12-31T23:59:59.9999999+00:00"
@@ -9727,7 +9727,7 @@
                 "example": {
                   "href": "https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues",
                   "entityType": "~issue",
-                  "customEntityId": "3399bf7b-9027-4c92-94e2-cd897100b414",
+                  "customEntityId": "0059d745-c65a-48c9-b87b-4f996819c6c2",
                   "version": {
                     "effectiveFrom": "2021-07-23T12:00:00.0000000+00:00",
                     "asAtDate": "2021-07-23T12:00:00.0000000+00:00"
@@ -9738,7 +9738,7 @@
                     {
                       "identifierScope": "DataLoadingIssues",
                       "identifierType": "InternalId",
-                      "identifierValue": "b1953df1c8124d298ea68bd9be9b7d8e",
+                      "identifierValue": "139cab7ea74b4af7b00de6f5137b5207",
                       "effectiveRange": {
                         "fromDate": "2021-07-23T12:00:00.0000000+00:00",
                         "untilDate": "9999-12-31T23:59:59.9999999+00:00"
@@ -10056,7 +10056,7 @@
                 "example": {
                   "href": "https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket",
                   "entityType": "~branch",
-                  "customEntityId": "f1854570-0913-4174-b00f-b8277ab168b4",
+                  "customEntityId": "43968036e117446dbac7986605084ab7",
                   "version": {
                     "effectiveFrom": "2020-01-23T12:00:00.0000000+00:00",
                     "asAtDate": "2020-01-23T12:00:00.0000000+00:00"
@@ -10124,7 +10124,7 @@
                 "example": {
                   "href": "https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket",
                   "entityType": "~branch",
-                  "customEntityId": "f1854570-0913-4174-b00f-b8277ab168b4",
+                  "customEntityId": "43968036e117446dbac7986605084ab7",
                   "version": {
                     "effectiveFrom": "2020-01-23T12:00:00.0000000+00:00",
                     "asAtDate": "2020-01-23T12:00:00.0000000+00:00"
@@ -10192,7 +10192,7 @@
                 "example": {
                   "href": "https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket",
                   "entityType": "~branch",
-                  "customEntityId": "f1854570-0913-4174-b00f-b8277ab168b4",
+                  "customEntityId": "43968036e117446dbac7986605084ab7",
                   "version": {
                     "effectiveFrom": "2020-01-23T12:00:00.0000000+00:00",
                     "asAtDate": "2020-01-23T12:00:00.0000000+00:00"
@@ -10726,7 +10726,8 @@
                 "description": "Data type description"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -62724,10 +62725,16 @@
         "type": "object",
         "properties": {
           "scope": {
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9\\-_]+$",
             "type": "string",
             "description": "The scope that the data type will be created in."
           },
           "code": {
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9\\-_]+$",
             "type": "string",
             "description": "The code of the data type. Together with the scope this uniquely defines the data type."
           },
@@ -62740,10 +62747,16 @@
             "description": "Indicates the range of data acceptable by a data type. The available values are: Open, Closed"
           },
           "displayName": {
+            "maxLength": 512,
+            "minLength": 1,
+            "pattern": "^[\\s\\S]*$",
             "type": "string",
             "description": "The display name of the data type."
           },
           "description": {
+            "maxLength": 1024,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]*$",
             "type": "string",
             "description": "The description of the data type."
           },
@@ -63464,12 +63477,21 @@
         "type": "object",
         "properties": {
           "code": {
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9\\-_]+$",
             "type": "string"
           },
           "displayName": {
+            "maxLength": 512,
+            "minLength": 1,
+            "pattern": "^[\\s\\S]*$",
             "type": "string"
           },
           "description": {
+            "maxLength": 1024,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]*$",
             "type": "string"
           },
           "details": {
@@ -75922,13 +75944,35 @@
         "type": "object",
         "properties": {
           "displayName": {
+            "maxLength": 512,
+            "minLength": 1,
+            "pattern": "^[\\s\\S]*$",
             "type": "string",
             "description": "The display name of the data type.",
             "nullable": true
           },
           "description": {
+            "maxLength": 1024,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]*$",
             "type": "string",
             "description": "The description of the data type.",
+            "nullable": true
+          },
+          "acceptableValues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The acceptable set of values for this data type. Only applies to 'open' value type range.",
+            "nullable": true
+          },
+          "acceptableUnits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateUnitRequest"
+            },
+            "description": "The definitions of the acceptable units.",
             "nullable": true
           }
         },
@@ -76041,6 +76085,33 @@
             "pattern": "^[\\s\\S]*$",
             "type": "string",
             "description": "The description to relate target entity object and source entity object."
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateUnitRequest": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9\\-_]+$",
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "maxLength": 512,
+            "minLength": 1,
+            "pattern": "^[\\s\\S]*$",
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "maxLength": 512,
+            "minLength": 1,
+            "pattern": "^[\\s\\S]*$",
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

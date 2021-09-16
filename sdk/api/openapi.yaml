@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3499
+  version: 0.11.3500
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:62717
+- url: http://local-unit-test-server.lusid.com:30524
 security:
 - {}
 tags:
@@ -7281,7 +7281,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 6c3f5fcc349c4c1ab6942908dd81008e
+                identifierValue: 188ce1eaecaf43efa6b33b680b75b40c
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7306,7 +7306,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 6c3f5fcc349c4c1ab6942908dd81008e
+                identifierValue: 188ce1eaecaf43efa6b33b680b75b40c
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7331,7 +7331,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 6c3f5fcc349c4c1ab6942908dd81008e
+                identifierValue: 188ce1eaecaf43efa6b33b680b75b40c
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7356,7 +7356,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 6c3f5fcc349c4c1ab6942908dd81008e
+                identifierValue: 188ce1eaecaf43efa6b33b680b75b40c
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -7382,7 +7382,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 3399bf7b-9027-4c92-94e2-cd897100b414
+                customEntityId: 0059d745-c65a-48c9-b87b-4f996819c6c2
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7391,7 +7391,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: b1953df1c8124d298ea68bd9be9b7d8e
+                  identifierValue: 139cab7ea74b4af7b00de6f5137b5207
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7430,7 +7430,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 3399bf7b-9027-4c92-94e2-cd897100b414
+                customEntityId: 0059d745-c65a-48c9-b87b-4f996819c6c2
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7439,7 +7439,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: b1953df1c8124d298ea68bd9be9b7d8e
+                  identifierValue: 139cab7ea74b4af7b00de6f5137b5207
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7478,7 +7478,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
                 entityType: ~issue
-                customEntityId: 3399bf7b-9027-4c92-94e2-cd897100b414
+                customEntityId: 0059d745-c65a-48c9-b87b-4f996819c6c2
                 version:
                   effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
                   asAtDate: 2021-07-23T12:00:00.0000000+00:00
@@ -7487,7 +7487,7 @@ paths:
                 identifiers:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
-                  identifierValue: b1953df1c8124d298ea68bd9be9b7d8e
+                  identifierValue: 139cab7ea74b4af7b00de6f5137b5207
                   effectiveRange:
                     fromDate: 2021-07-23T12:00:00.0000000+00:00
                     untilDate: 9999-12-31T23:59:59.9999999+00:00
@@ -7622,7 +7622,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: f1854570-0913-4174-b00f-b8277ab168b4
+                customEntityId: 43968036e117446dbac7986605084ab7
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7664,7 +7664,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: f1854570-0913-4174-b00f-b8277ab168b4
+                customEntityId: 43968036e117446dbac7986605084ab7
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -7706,7 +7706,7 @@ paths:
               example:
                 href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
                 entityType: ~branch
-                customEntityId: f1854570-0913-4174-b00f-b8277ab168b4
+                customEntityId: 43968036e117446dbac7986605084ab7
                 version:
                   effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
                   asAtDate: 2020-01-23T12:00:00.0000000+00:00
@@ -8185,6 +8185,7 @@ paths:
             schema:
               $ref: '#/components/schemas/UpdateDataTypeRequest'
         description: The updated definition of the data type
+        required: true
       responses:
         "200":
           content:
@@ -49818,10 +49819,16 @@ components:
       properties:
         scope:
           description: The scope that the data type will be created in.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         code:
           description: The code of the data type. Together with the scope this uniquely
             defines the data type.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         typeValueRange:
           description: 'Indicates the range of data acceptable by a data type. The
@@ -49832,9 +49839,15 @@ components:
           type: string
         displayName:
           description: The display name of the data type.
+          maxLength: 512
+          minLength: 1
+          pattern: ^[\s\S]*$
           type: string
         description:
           description: The description of the data type.
+          maxLength: 1024
+          minLength: 0
+          pattern: ^[\s\S]*$
           type: string
         valueType:
           description: 'The expected type of the values. The available values are:
@@ -50727,10 +50740,19 @@ components:
           key: details
       properties:
         code:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         displayName:
+          maxLength: 512
+          minLength: 1
+          pattern: ^[\s\S]*$
           type: string
         description:
+          maxLength: 1024
+          minLength: 0
+          pattern: ^[\s\S]*$
           type: string
         details:
           additionalProperties:
@@ -69180,17 +69202,46 @@ components:
     UpdateDataTypeRequest:
       additionalProperties: false
       example:
+        acceptableValues:
+        - acceptableValues
+        - acceptableValues
+        acceptableUnits:
+        - code: code
+          displayName: displayName
+          description: description
+        - code: code
+          displayName: displayName
+          description: description
         displayName: displayName
         description: description
       properties:
         displayName:
           description: The display name of the data type.
+          maxLength: 512
+          minLength: 1
           nullable: true
+          pattern: ^[\s\S]*$
           type: string
         description:
           description: The description of the data type.
+          maxLength: 1024
+          minLength: 0
           nullable: true
+          pattern: ^[\s\S]*$
           type: string
+        acceptableValues:
+          description: The acceptable set of values for this data type. Only applies
+            to 'open' value type range.
+          items:
+            type: string
+          nullable: true
+          type: array
+        acceptableUnits:
+          description: The definitions of the acceptable units.
+          items:
+            $ref: '#/components/schemas/UpdateUnitRequest'
+          nullable: true
+          type: array
       type: object
     UpdateInstrumentIdentifierRequest:
       additionalProperties: false
@@ -69298,6 +69349,32 @@ components:
       - displayName
       - inwardDescription
       - outwardDescription
+      type: object
+    UpdateUnitRequest:
+      additionalProperties: false
+      example:
+        code: code
+        displayName: displayName
+        description: description
+      properties:
+        code:
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        displayName:
+          maxLength: 512
+          minLength: 1
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        description:
+          maxLength: 512
+          minLength: 1
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
       type: object
     UpsertCdsFlowConventionsRequest:
       additionalProperties: false
