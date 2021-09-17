@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3506
+  version: 0.11.3507
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:55880
+- url: http://local-unit-test-server.lusid.com:45378
 security:
 - {}
 tags:
@@ -47413,8 +47413,10 @@ components:
       example:
         compositeMembers: 5
         compositeMembersWithoutReturn:
-        - key: compositeMembersWithoutReturn
-        - key: compositeMembersWithoutReturn
+        - code: code
+          scope: scope
+        - code: code
+          scope: scope
         openingMarketValue: 0.8008281904610115
         metricsValue:
           key: 1.4658129805029452
@@ -47455,9 +47457,7 @@ components:
           description: List containing Composite members which post no return on the
             given day.
           items:
-            additionalProperties:
-              type: string
-            type: object
+            $ref: '#/components/schemas/ResourceId'
           nullable: true
           type: array
       required:
@@ -63528,8 +63528,10 @@ components:
         values:
         - compositeMembers: 5
           compositeMembersWithoutReturn:
-          - key: compositeMembersWithoutReturn
-          - key: compositeMembersWithoutReturn
+          - code: code
+            scope: scope
+          - code: code
+            scope: scope
           openingMarketValue: 0.8008281904610115
           metricsValue:
             key: 1.4658129805029452
@@ -63538,8 +63540,10 @@ components:
           frequency: frequency
         - compositeMembers: 5
           compositeMembersWithoutReturn:
-          - key: compositeMembersWithoutReturn
-          - key: compositeMembersWithoutReturn
+          - code: code
+            scope: scope
+          - code: code
+            scope: scope
           openingMarketValue: 0.8008281904610115
           metricsValue:
             key: 1.4658129805029452
