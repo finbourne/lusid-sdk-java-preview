@@ -34,12 +34,12 @@ info:
     | Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3513
+  version: 0.11.3514
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:35247
+- url: http://local-unit-test-server.lusid.com:60039
 security:
 - {}
 tags:
@@ -30329,6 +30329,8 @@ paths:
                         defaultInstrumentCodeType: LusidInstrumentId
                         defaultScope: default
                         attemptToInferMissingFx: false
+                        calendarScope: CoppClarkHolidayCalendars
+                        conventionScope: Conventions
                     pricing:
                       modelRules:
                       - supplier: Lusid
@@ -30371,6 +30373,8 @@ paths:
                         defaultInstrumentCodeType: LusidInstrumentId
                         defaultScope: default
                         attemptToInferMissingFx: false
+                        calendarScope: CoppClarkHolidayCalendars
+                        conventionScope: Conventions
                     pricing:
                       modelRules: []
                       modelChoice: {}
@@ -30421,6 +30425,8 @@ paths:
                         defaultInstrumentCodeType: LusidInstrumentId
                         defaultScope: default
                         attemptToInferMissingFx: false
+                        calendarScope: CoppClarkHolidayCalendars
+                        conventionScope: Conventions
                     pricing:
                       modelRules:
                       - supplier: Lusid
@@ -30463,6 +30469,8 @@ paths:
                         defaultInstrumentCodeType: LusidInstrumentId
                         defaultScope: default
                         attemptToInferMissingFx: false
+                        calendarScope: CoppClarkHolidayCalendars
+                        conventionScope: Conventions
                     pricing:
                       modelRules: []
                       modelChoice: {}
@@ -30513,6 +30521,8 @@ paths:
                         defaultInstrumentCodeType: LusidInstrumentId
                         defaultScope: default
                         attemptToInferMissingFx: false
+                        calendarScope: CoppClarkHolidayCalendars
+                        conventionScope: Conventions
                     pricing:
                       modelRules:
                       - supplier: Lusid
@@ -30555,6 +30565,8 @@ paths:
                         defaultInstrumentCodeType: LusidInstrumentId
                         defaultScope: default
                         attemptToInferMissingFx: false
+                        calendarScope: CoppClarkHolidayCalendars
+                        conventionScope: Conventions
                     pricing:
                       modelRules: []
                       modelChoice: {}
@@ -30639,6 +30651,8 @@ paths:
                     defaultInstrumentCodeType: LusidInstrumentId
                     defaultScope: default
                     attemptToInferMissingFx: false
+                    calendarScope: CoppClarkHolidayCalendars
+                    conventionScope: Conventions
                 pricing:
                   modelRules: []
                   modelChoice: {}
@@ -30681,6 +30695,8 @@ paths:
                     defaultInstrumentCodeType: LusidInstrumentId
                     defaultScope: default
                     attemptToInferMissingFx: false
+                    calendarScope: CoppClarkHolidayCalendars
+                    conventionScope: Conventions
                 pricing:
                   modelRules: []
                   modelChoice: {}
@@ -30723,6 +30739,8 @@ paths:
                     defaultInstrumentCodeType: LusidInstrumentId
                     defaultScope: default
                     attemptToInferMissingFx: false
+                    calendarScope: CoppClarkHolidayCalendars
+                    conventionScope: Conventions
                 pricing:
                   modelRules: []
                   modelChoice: {}
@@ -30765,6 +30783,8 @@ paths:
                     defaultInstrumentCodeType: LusidInstrumentId
                     defaultScope: default
                     attemptToInferMissingFx: false
+                    calendarScope: CoppClarkHolidayCalendars
+                    conventionScope: Conventions
                 pricing:
                   modelRules: []
                   modelChoice: {}
@@ -30968,6 +30988,8 @@ paths:
                       defaultInstrumentCodeType: LusidInstrumentId
                       defaultScope: default
                       attemptToInferMissingFx: false
+                      calendarScope: CoppClarkHolidayCalendars
+                      conventionScope: Conventions
                   pricing:
                     modelRules:
                     - supplier: Lusid
@@ -31014,6 +31036,8 @@ paths:
                       defaultInstrumentCodeType: LusidInstrumentId
                       defaultScope: default
                       attemptToInferMissingFx: false
+                      calendarScope: CoppClarkHolidayCalendars
+                      conventionScope: Conventions
                   pricing:
                     modelRules:
                     - supplier: Lusid
@@ -31060,6 +31084,8 @@ paths:
                       defaultInstrumentCodeType: LusidInstrumentId
                       defaultScope: default
                       attemptToInferMissingFx: false
+                      calendarScope: CoppClarkHolidayCalendars
+                      conventionScope: Conventions
                   pricing:
                     modelRules:
                     - supplier: Lusid
@@ -49399,6 +49425,8 @@ components:
             key: key
             mask: mask
           options:
+            conventionScope: conventionScope
+            calendarScope: calendarScope
             defaultInstrumentCodeType: defaultInstrumentCodeType
             defaultSupplier: defaultSupplier
             attemptToInferMissingFx: true
@@ -49565,6 +49593,8 @@ components:
           mask: mask
         scope: scope
         marketOptions:
+          conventionScope: conventionScope
+          calendarScope: calendarScope
           defaultInstrumentCodeType: defaultInstrumentCodeType
           defaultSupplier: defaultSupplier
           attemptToInferMissingFx: true
@@ -49597,6 +49627,8 @@ components:
               key: key
               mask: mask
             options:
+              conventionScope: conventionScope
+              calendarScope: calendarScope
               defaultInstrumentCodeType: defaultInstrumentCodeType
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
@@ -50771,6 +50803,8 @@ components:
               key: key
               mask: mask
             options:
+              conventionScope: conventionScope
+              calendarScope: calendarScope
               defaultInstrumentCodeType: defaultInstrumentCodeType
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
@@ -53782,6 +53816,8 @@ components:
               key: key
               mask: mask
             options:
+              conventionScope: conventionScope
+              calendarScope: calendarScope
               defaultInstrumentCodeType: defaultInstrumentCodeType
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
@@ -56013,6 +56049,8 @@ components:
           key: key
           mask: mask
         options:
+          conventionScope: conventionScope
+          calendarScope: calendarScope
           defaultInstrumentCodeType: defaultInstrumentCodeType
           defaultSupplier: defaultSupplier
           attemptToInferMissingFx: true
@@ -56162,6 +56200,8 @@ components:
         \ Be aware that where no specified rule matches the final fallback is on to\
         \ the logic implied here."
       example:
+        conventionScope: conventionScope
+        calendarScope: calendarScope
         defaultInstrumentCodeType: defaultInstrumentCodeType
         defaultSupplier: defaultSupplier
         attemptToInferMissingFx: true
@@ -56188,6 +56228,14 @@ components:
             the inverse JPYTHB or from standardised pairs against USD, e.g. THBUSD
             and JPYUSD
           type: boolean
+        calendarScope:
+          description: The scope in which holiday calendars stored
+          nullable: true
+          type: string
+        conventionScope:
+          description: The scope in which holiday calendars stored
+          nullable: true
+          type: string
       type: object
     MarketQuote:
       additionalProperties: false
@@ -65194,6 +65242,8 @@ components:
                 key: key
                 mask: mask
               options:
+                conventionScope: conventionScope
+                calendarScope: calendarScope
                 defaultInstrumentCodeType: defaultInstrumentCodeType
                 defaultSupplier: defaultSupplier
                 attemptToInferMissingFx: true
@@ -65286,6 +65336,8 @@ components:
                 key: key
                 mask: mask
               options:
+                conventionScope: conventionScope
+                calendarScope: calendarScope
                 defaultInstrumentCodeType: defaultInstrumentCodeType
                 defaultSupplier: defaultSupplier
                 attemptToInferMissingFx: true
@@ -70899,6 +70951,8 @@ components:
               key: key
               mask: mask
             options:
+              conventionScope: conventionScope
+              calendarScope: calendarScope
               defaultInstrumentCodeType: defaultInstrumentCodeType
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
@@ -70990,6 +71044,8 @@ components:
             mask: mask
           scope: scope
           marketOptions:
+            conventionScope: conventionScope
+            calendarScope: calendarScope
             defaultInstrumentCodeType: defaultInstrumentCodeType
             defaultSupplier: defaultSupplier
             attemptToInferMissingFx: true
@@ -71022,6 +71078,8 @@ components:
                 key: key
                 mask: mask
               options:
+                conventionScope: conventionScope
+                calendarScope: calendarScope
                 defaultInstrumentCodeType: defaultInstrumentCodeType
                 defaultSupplier: defaultSupplier
                 attemptToInferMissingFx: true
