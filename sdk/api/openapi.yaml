@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3527
+  version: 0.11.3528
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:64002
+- url: http://local-unit-test-server.lusid.com:53190
 security:
 - {}
 tags:
@@ -9638,19 +9638,9 @@ paths:
                     Buy, Counterparty : someName, SettlementCurrency : << unspecified
                     / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
                     : some, Custodian : some, Exchange : some'
-                  additionalInformation:
-                    some/extra/Propety: PropValue
-                    otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationInfo:
-                  - calculationDescription: Fee
-                    calculationMethod: Bps
-                    multiplier: Quantity
-                    calculationAmount: 35
-                  - calculationDescription: FeeMax
-                    calculationMethod: Flat
-                    calculationAmount: 5
-                  - calculationDescription: FeeMin
+                  calculationMethod: Calculation Method
+                  amount: 0.5
                 href: https://example.com
                 links: []
               schema:
@@ -9663,19 +9653,9 @@ paths:
                     Buy, Counterparty : someName, SettlementCurrency : << unspecified
                     / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
                     : some, Custodian : some, Exchange : some'
-                  additionalInformation:
-                    some/extra/Propety: PropValue
-                    otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationInfo:
-                  - calculationDescription: Fee
-                    calculationMethod: Bps
-                    multiplier: Quantity
-                    calculationAmount: 35
-                  - calculationDescription: FeeMax
-                    calculationMethod: Flat
-                    calculationAmount: 5
-                  - calculationDescription: FeeMin
+                  calculationMethod: Calculation Method
+                  amount: 0.5
                 href: https://example.com
                 links: []
               schema:
@@ -9688,19 +9668,9 @@ paths:
                     Buy, Counterparty : someName, SettlementCurrency : << unspecified
                     / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
                     : some, Custodian : some, Exchange : some'
-                  additionalInformation:
-                    some/extra/Propety: PropValue
-                    otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationInfo:
-                  - calculationDescription: Fee
-                    calculationMethod: Bps
-                    multiplier: Quantity
-                    calculationAmount: 35
-                  - calculationDescription: FeeMax
-                    calculationMethod: Flat
-                    calculationAmount: 5
-                  - calculationDescription: FeeMin
+                  calculationMethod: Calculation Method
+                  amount: 0.5
                 href: https://example.com
                 links: []
               schema:
@@ -9740,13 +9710,11 @@ paths:
       parameters:
       - description: "Any other property keys or fields and their corresponding values\
           \ that should be matched to reduce the list of rules returned. Eg. \"Instrument/default/Name=exampleValue\"\
-          \ or \"AdditionalKey2=Value2\".\r\n            The minimum list of fields\
-          \ available is as follows : \"RuleName\", \"Country\", \"FeeCalculationMethod\"\
-          , \"FeeMultiplier\", \"MinFeeCalculationMethod\", \r\n            \"MinFeeMultiplier\"\
-          , \"MaxFeeCalculationMethod\", \"MaxFeeMultiplier\", \"PropertyKey\", \r\
-          \n            \"TransactionType\", \"Counterparty\", \"SettlementCurrency\"\
-          , \"TransactionCurrency\", \"ExecutionBroker\", \r\n            \"Custodian\"\
-          , \"Exchange\""
+          \ or \"AdditionalKey2=Value2\".\r\n            The list of fields available\
+          \ is as follows : \"RuleName\", \"Country\", \"FeeType\", \"FeeRate\", \"\
+          MinFee\", \"MaxFee\", \"PropertyKey\", \r\n            \"TransactionType\"\
+          , \"Counterparty\", \"SettlementCurrency\", \"TransactionCurrency\", \"\
+          ExecutionBroker\", \r\n            \"Custodian\", \"Exchange\""
         explode: true
         in: query
         name: additionalSearchKeys
@@ -9755,11 +9723,9 @@ paths:
           description: "Any other property keys or fields and their corresponding\
             \ values that should be matched to reduce the list of rules returned.\
             \ Eg. \"Instrument/default/Name=exampleValue\" or \"AdditionalKey2=Value2\"\
-            .\r\n            The minimum list of fields available is as follows :\
-            \ \"RuleName\", \"Country\", \"FeeCalculationMethod\", \"FeeMultiplier\"\
-            , \"MinFeeCalculationMethod\", \r\n            \"MinFeeMultiplier\", \"\
-            MaxFeeCalculationMethod\", \"MaxFeeMultiplier\", \"PropertyKey\", \r\n\
-            \            \"TransactionType\", \"Counterparty\", \"SettlementCurrency\"\
+            .\r\n            The list of fields available is as follows : \"RuleName\"\
+            , \"Country\", \"FeeType\", \"FeeRate\", \"MinFee\", \"MaxFee\", \"PropertyKey\"\
+            , \r\n            \"TransactionType\", \"Counterparty\", \"SettlementCurrency\"\
             , \"TransactionCurrency\", \"ExecutionBroker\", \r\n            \"Custodian\"\
             , \"Exchange\""
           items:
@@ -9779,19 +9745,9 @@ paths:
                     Buy, Counterparty : someName, SettlementCurrency : << unspecified
                     / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
                     : some, Custodian : some, Exchange : some'
-                  additionalInformation:
-                    some/extra/Propety: PropValue
-                    otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationInfo:
-                  - calculationDescription: Fee
-                    calculationMethod: Bps
-                    multiplier: Quantity
-                    calculationAmount: 35
-                  - calculationDescription: FeeMax
-                    calculationMethod: Flat
-                    calculationAmount: 5
-                  - calculationDescription: FeeMin
+                  calculationMethod: Calculation Method
+                  amount: 0.5
                 href: https://example.com
                 links: []
               schema:
@@ -9804,19 +9760,9 @@ paths:
                     Buy, Counterparty : someName, SettlementCurrency : << unspecified
                     / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
                     : some, Custodian : some, Exchange : some'
-                  additionalInformation:
-                    some/extra/Propety: PropValue
-                    otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationInfo:
-                  - calculationDescription: Fee
-                    calculationMethod: Bps
-                    multiplier: Quantity
-                    calculationAmount: 35
-                  - calculationDescription: FeeMax
-                    calculationMethod: Flat
-                    calculationAmount: 5
-                  - calculationDescription: FeeMin
+                  calculationMethod: Calculation Method
+                  amount: 0.5
                 href: https://example.com
                 links: []
               schema:
@@ -9829,19 +9775,9 @@ paths:
                     Buy, Counterparty : someName, SettlementCurrency : << unspecified
                     / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
                     : some, Custodian : some, Exchange : some'
-                  additionalInformation:
-                    some/extra/Propety: PropValue
-                    otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationInfo:
-                  - calculationDescription: Fee
-                    calculationMethod: Bps
-                    multiplier: Quantity
-                    calculationAmount: 35
-                  - calculationDescription: FeeMax
-                    calculationMethod: Flat
-                    calculationAmount: 5
-                  - calculationDescription: FeeMin
+                  calculationMethod: Calculation Method
+                  amount: 0.5
                 href: https://example.com
                 links: []
               schema:
@@ -49001,56 +48937,6 @@ components:
           nullable: true
           type: array
       type: object
-    CalculationInfo:
-      additionalProperties: false
-      example:
-        calculationMethod: Rate
-        multiplier: Quantity
-        calculationDescription: calculationDescription
-        calculationAmount: 0.8008281904610115
-      properties:
-        calculationDescription:
-          type: string
-        calculationMethod:
-          description: 'The available values are: Rate, BasisPoints, Bps, Percentage,
-            Flat, FlatFee, None'
-          enum:
-          - Rate
-          - BasisPoints
-          - Bps
-          - Percentage
-          - Flat
-          - FlatFee
-          - None
-          nullable: true
-          type: string
-        multiplier:
-          description: 'The available values are: Quantity, Value, None'
-          enum:
-          - Quantity
-          - Value
-          - None
-          nullable: true
-          type: string
-        calculationAmount:
-          format: double
-          type: number
-      required:
-      - calculationAmount
-      - calculationDescription
-      - calculationMethod
-      - multiplier
-      type: object
-    CalculationMethod:
-      enum:
-      - Rate
-      - BasisPoints
-      - Bps
-      - Percentage
-      - Flat
-      - FlatFee
-      - None
-      type: string
     Calendar:
       additionalProperties: false
       example:
@@ -53161,18 +53047,13 @@ components:
       additionalProperties: false
       example:
         propertyKey: propertyKey
+        calculationMethod: calculationMethod
         additionalInformation:
           key: additionalInformation
+        amount: 0.8008281904610115
+        min: 6.027456183070403
+        max: 1.4658129805029452
         ruleType: ruleType
-        calculationInfo:
-        - calculationMethod: Rate
-          multiplier: Quantity
-          calculationDescription: calculationDescription
-          calculationAmount: 0.8008281904610115
-        - calculationMethod: Rate
-          multiplier: Quantity
-          calculationDescription: calculationDescription
-          calculationAmount: 0.8008281904610115
         ruleInformation: ruleInformation
       properties:
         ruleType:
@@ -53190,14 +53071,27 @@ components:
           description: The property key which uniquely identifies the property. The
             format for the property key is {domain}/{scope}/{code}, e.g. 'Portfolio/Manager/Id'.
           type: string
-        calculationInfo:
-          description: Information for calculating fees and commissions
-          items:
-            $ref: '#/components/schemas/CalculationInfo'
-          type: array
+        calculationMethod:
+          description: Method of calculating the fees or commission eg. BPS or Fraction
+          type: string
+        amount:
+          description: Calculation value
+          format: double
+          type: number
+        min:
+          description: Calculation value
+          format: double
+          type: number
+        max:
+          description: Calculation value
+          format: double
+          type: number
       required:
       - additionalInformation
-      - calculationInfo
+      - amount
+      - calculationMethod
+      - max
+      - min
       - propertyKey
       - ruleInformation
       - ruleType
@@ -56689,12 +56583,6 @@ components:
       - UnsettledCashTypes
       - Carry
       - CarryAsPnl
-      type: string
-    Multiplier:
-      enum:
-      - Quantity
-      - Value
-      - None
       type: string
     NextValueInSequenceResponse:
       additionalProperties: false
@@ -64946,32 +64834,22 @@ components:
         nextPage: nextPage
         values:
         - propertyKey: propertyKey
+          calculationMethod: calculationMethod
           additionalInformation:
             key: additionalInformation
+          amount: 0.8008281904610115
+          min: 6.027456183070403
+          max: 1.4658129805029452
           ruleType: ruleType
-          calculationInfo:
-          - calculationMethod: Rate
-            multiplier: Quantity
-            calculationDescription: calculationDescription
-            calculationAmount: 0.8008281904610115
-          - calculationMethod: Rate
-            multiplier: Quantity
-            calculationDescription: calculationDescription
-            calculationAmount: 0.8008281904610115
           ruleInformation: ruleInformation
         - propertyKey: propertyKey
+          calculationMethod: calculationMethod
           additionalInformation:
             key: additionalInformation
+          amount: 0.8008281904610115
+          min: 6.027456183070403
+          max: 1.4658129805029452
           ruleType: ruleType
-          calculationInfo:
-          - calculationMethod: Rate
-            multiplier: Quantity
-            calculationDescription: calculationDescription
-            calculationAmount: 0.8008281904610115
-          - calculationMethod: Rate
-            multiplier: Quantity
-            calculationDescription: calculationDescription
-            calculationAmount: 0.8008281904610115
           ruleInformation: ruleInformation
         links:
         - method: method
