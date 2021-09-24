@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3534
+  version: 0.11.3535
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:40490
+- url: http://local-unit-test-server.lusid.com:40007
 security:
 - {}
 tags:
@@ -30616,8 +30616,6 @@ paths:
                 - value:
                     scope: scopeName
                     code: MyNamedRecipe12345
-                    holding:
-                      taxLotLevelHoldings: true
                     market:
                       marketRules:
                       - key: Fx.CurrencyPair.*
@@ -30662,8 +30660,6 @@ paths:
                 - value:
                     scope: anotherScopeName
                     code: MyNamedRecipe98765
-                    holding:
-                      taxLotLevelHoldings: true
                     market:
                       marketRules:
                       - key: Fx.CurrencyPair.*
@@ -30716,8 +30712,6 @@ paths:
                 - value:
                     scope: scopeName
                     code: MyNamedRecipe12345
-                    holding:
-                      taxLotLevelHoldings: true
                     market:
                       marketRules:
                       - key: Fx.CurrencyPair.*
@@ -30762,8 +30756,6 @@ paths:
                 - value:
                     scope: anotherScopeName
                     code: MyNamedRecipe98765
-                    holding:
-                      taxLotLevelHoldings: true
                     market:
                       marketRules:
                       - key: Fx.CurrencyPair.*
@@ -30816,8 +30808,6 @@ paths:
                 - value:
                     scope: scopeName
                     code: MyNamedRecipe12345
-                    holding:
-                      taxLotLevelHoldings: true
                     market:
                       marketRules:
                       - key: Fx.CurrencyPair.*
@@ -30862,8 +30852,6 @@ paths:
                 - value:
                     scope: anotherScopeName
                     code: MyNamedRecipe98765
-                    holding:
-                      taxLotLevelHoldings: true
                     market:
                       marketRules:
                       - key: Fx.CurrencyPair.*
@@ -30950,8 +30938,6 @@ paths:
               configurationRecipe:
                 scope: scopeName
                 code: MyNamedRecipe12345
-                holding:
-                  taxLotLevelHoldings: true
                 market:
                   marketRules:
                   - key: Fx.CurrencyPair.*
@@ -30996,8 +30982,6 @@ paths:
               configurationRecipe:
                 scope: scopeName
                 code: MyNamedRecipe12345
-                holding:
-                  taxLotLevelHoldings: true
                 market:
                   marketRules:
                   - key: Fx.CurrencyPair.*
@@ -31042,8 +31026,6 @@ paths:
               configurationRecipe:
                 scope: scopeName
                 code: MyNamedRecipe12345
-                holding:
-                  taxLotLevelHoldings: true
                 market:
                   marketRules:
                   - key: Fx.CurrencyPair.*
@@ -31088,8 +31070,6 @@ paths:
               configurationRecipe:
                 scope: scopeName
                 code: MyNamedRecipe12345
-                holding:
-                  taxLotLevelHoldings: true
                 market:
                   marketRules:
                   - key: Fx.CurrencyPair.*
@@ -31295,8 +31275,6 @@ paths:
                 value:
                   scope: scopeName
                   code: MyNamedRecipe12345
-                  holding:
-                    taxLotLevelHoldings: true
                   market:
                     marketRules:
                     - key: Fx.CurrencyPair.*
@@ -31345,8 +31323,6 @@ paths:
                 value:
                   scope: scopeName
                   code: MyNamedRecipe12345
-                  holding:
-                    taxLotLevelHoldings: true
                   market:
                     marketRules:
                     - key: Fx.CurrencyPair.*
@@ -31395,8 +31371,6 @@ paths:
                 value:
                   scope: scopeName
                   code: MyNamedRecipe12345
-                  holding:
-                    taxLotLevelHoldings: true
                   market:
                     marketRules:
                     - key: Fx.CurrencyPair.*
@@ -49808,8 +49782,6 @@ components:
             defaultSupplier: defaultSupplier
             attemptToInferMissingFx: true
             defaultScope: defaultScope
-        holding:
-          taxLotLevelHoldings: true
         inheritedRecipes:
         - code: code
           scope: scope
@@ -49874,8 +49846,6 @@ components:
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
-        holding:
-          $ref: '#/components/schemas/HoldingContext'
         market:
           $ref: '#/components/schemas/MarketContext'
         pricing:
@@ -50014,8 +49984,6 @@ components:
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
               defaultScope: defaultScope
-          holding:
-            taxLotLevelHoldings: true
           inheritedRecipes:
           - code: code
             scope: scope
@@ -51192,8 +51160,6 @@ components:
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
               defaultScope: defaultScope
-          holding:
-            taxLotLevelHoldings: true
           inheritedRecipes:
           - code: code
             scope: scope
@@ -54199,8 +54165,6 @@ components:
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
               defaultScope: defaultScope
-          holding:
-            taxLotLevelHoldings: true
           inheritedRecipes:
           - code: code
             scope: scope
@@ -54569,18 +54533,6 @@ components:
       required:
       - instrumentUid
       - taxLots
-      type: object
-    HoldingContext:
-      additionalProperties: false
-      description: "Holding context node.\r\nContains settings that control how LUSID\
-        \ handles holdings within portfolios."
-      example:
-        taxLotLevelHoldings: true
-      properties:
-        taxLotLevelHoldings:
-          description: Whether or not to expand the holdings to return the underlying
-            tax-lots. Defaults to True.
-          type: boolean
       type: object
     HoldingsAdjustment:
       additionalProperties: false
@@ -65655,8 +65607,6 @@ components:
                 defaultSupplier: defaultSupplier
                 attemptToInferMissingFx: true
                 defaultScope: defaultScope
-            holding:
-              taxLotLevelHoldings: true
             inheritedRecipes:
             - code: code
               scope: scope
@@ -65751,8 +65701,6 @@ components:
                 defaultSupplier: defaultSupplier
                 attemptToInferMissingFx: true
                 defaultScope: defaultScope
-            holding:
-              taxLotLevelHoldings: true
             inheritedRecipes:
             - code: code
               scope: scope
@@ -71368,8 +71316,6 @@ components:
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
               defaultScope: defaultScope
-          holding:
-            taxLotLevelHoldings: true
           inheritedRecipes:
           - code: code
             scope: scope
@@ -71497,8 +71443,6 @@ components:
                 defaultSupplier: defaultSupplier
                 attemptToInferMissingFx: true
                 defaultScope: defaultScope
-            holding:
-              taxLotLevelHoldings: true
             inheritedRecipes:
             - code: code
               scope: scope

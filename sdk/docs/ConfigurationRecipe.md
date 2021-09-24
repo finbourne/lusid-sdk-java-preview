@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **scope** | **String** | The scope used when updating or inserting the Configuration Recipe. | 
 **code** | **String** | User given string name (code) to identify the recipe. | 
-**holding** | [**HoldingContext**](HoldingContext.md) |  |  [optional]
 **market** | [**MarketContext**](MarketContext.md) |  |  [optional]
 **pricing** | [**PricingContext**](PricingContext.md) |  |  [optional]
 **aggregation** | [**AggregationContext**](AggregationContext.md) |  |  [optional]
