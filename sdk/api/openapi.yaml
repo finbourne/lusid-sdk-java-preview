@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3538
+  version: 0.11.3540
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:56318
 security:
 - {}
 tags:
@@ -17743,7 +17743,7 @@ paths:
         style: form
       - description: "The effective datetime or cut label at which to delete the identifiers.\
           \ Defaults to the current LUSID system datetime if not specified.\r\n  \
-          \          Must not include an effective datetime of identifiers are perpetual."
+          \          Must not include an effective datetime if identifiers are perpetual."
         explode: true
         in: query
         name: effectiveAt
@@ -17751,7 +17751,7 @@ paths:
         schema:
           description: "The effective datetime or cut label at which to delete the\
             \ identifiers. Defaults to the current LUSID system datetime if not specified.\r\
-            \n            Must not include an effective datetime of identifiers are\
+            \n            Must not include an effective datetime if identifiers are\
             \ perpetual."
           format: dateorcutlabel
           nullable: true
@@ -59878,15 +59878,6 @@ components:
         orderId:
           code: code
           scope: scope
-        links:
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
         id:
           code: code
           scope: scope
@@ -59902,12 +59893,6 @@ components:
           $ref: '#/components/schemas/ResourceId'
         version:
           $ref: '#/components/schemas/Version'
-        links:
-          description: Collection of links.
-          items:
-            $ref: '#/components/schemas/Link'
-          nullable: true
-          type: array
       required:
       - id
       - orderId
@@ -59924,15 +59909,6 @@ components:
           orderId:
             code: code
             scope: scope
-          links:
-          - method: method
-            description: description
-            href: https://openapi-generator.tech
-            relation: relation
-          - method: method
-            description: description
-            href: https://openapi-generator.tech
-            relation: relation
           id:
             code: code
             scope: scope
@@ -59945,15 +59921,6 @@ components:
           orderId:
             code: code
             scope: scope
-          links:
-          - method: method
-            description: description
-            href: https://openapi-generator.tech
-            relation: relation
-          - method: method
-            description: description
-            href: https://openapi-generator.tech
-            relation: relation
           id:
             code: code
             scope: scope
@@ -75223,7 +75190,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
