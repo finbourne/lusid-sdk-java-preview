@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **placementId** | [**ResourceId**](ResourceId.md) |  | 
 **orderId** | [**ResourceId**](ResourceId.md) |  | 
 **version** | [**Version**](Version.md) |  |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
 
 
 
