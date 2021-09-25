@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3541
+  version: 0.11.3542
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:58111
+- url: http://local-unit-test-server.lusid.com:56878
 security:
 - {}
 tags:
@@ -57469,12 +57469,12 @@ components:
         id:
           $ref: '#/components/schemas/ResourceId'
         orderIds:
-          description: A related order ids.
+          description: Related order ids.
           items:
             $ref: '#/components/schemas/ResourceId'
           type: array
         orderInstructionIds:
-          description: A related order instruction id.
+          description: Related order instruction ids.
           items:
             $ref: '#/components/schemas/ResourceId'
           type: array
@@ -57530,12 +57530,12 @@ components:
         id:
           $ref: '#/components/schemas/ResourceId'
         orderIds:
-          description: A related order ids.
+          description: Related order ids.
           items:
             $ref: '#/components/schemas/ResourceId'
           type: array
         orderInstructionIds:
-          description: A related order instruction id.
+          description: Related order instruction ids.
           items:
             $ref: '#/components/schemas/ResourceId'
           type: array
