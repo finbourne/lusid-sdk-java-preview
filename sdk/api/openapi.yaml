@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3543
+  version: 0.11.3546
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:62483
 security:
 - {}
 tags:
@@ -30657,6 +30657,8 @@ paths:
                         useAnsiLikeSyntax: false
                     inheritedRecipes: []
                     description: ""
+                    holding:
+                      taxLotLevelHoldings: true
                 - value:
                     scope: anotherScopeName
                     code: MyNamedRecipe98765
@@ -30697,6 +30699,8 @@ paths:
                         useAnsiLikeSyntax: false
                     inheritedRecipes: []
                     description: ""
+                    holding:
+                      taxLotLevelHoldings: true
                 href: https://lusid.com/api/
                 links:
                 - relation: RequestLogs
@@ -30753,6 +30757,8 @@ paths:
                         useAnsiLikeSyntax: false
                     inheritedRecipes: []
                     description: ""
+                    holding:
+                      taxLotLevelHoldings: true
                 - value:
                     scope: anotherScopeName
                     code: MyNamedRecipe98765
@@ -30793,6 +30799,8 @@ paths:
                         useAnsiLikeSyntax: false
                     inheritedRecipes: []
                     description: ""
+                    holding:
+                      taxLotLevelHoldings: true
                 href: https://lusid.com/api/
                 links:
                 - relation: RequestLogs
@@ -30849,6 +30857,8 @@ paths:
                         useAnsiLikeSyntax: false
                     inheritedRecipes: []
                     description: ""
+                    holding:
+                      taxLotLevelHoldings: true
                 - value:
                     scope: anotherScopeName
                     code: MyNamedRecipe98765
@@ -30889,6 +30899,8 @@ paths:
                         useAnsiLikeSyntax: false
                     inheritedRecipes: []
                     description: ""
+                    holding:
+                      taxLotLevelHoldings: true
                 href: https://lusid.com/api/
                 links:
                 - relation: RequestLogs
@@ -30975,6 +30987,8 @@ paths:
                     useAnsiLikeSyntax: false
                 inheritedRecipes: []
                 description: ""
+                holding:
+                  taxLotLevelHoldings: true
             schema:
               $ref: '#/components/schemas/UpsertRecipeRequest'
           application/json:
@@ -31019,6 +31033,8 @@ paths:
                     useAnsiLikeSyntax: false
                 inheritedRecipes: []
                 description: ""
+                holding:
+                  taxLotLevelHoldings: true
             schema:
               $ref: '#/components/schemas/UpsertRecipeRequest'
           text/json:
@@ -31063,6 +31079,8 @@ paths:
                     useAnsiLikeSyntax: false
                 inheritedRecipes: []
                 description: ""
+                holding:
+                  taxLotLevelHoldings: true
             schema:
               $ref: '#/components/schemas/UpsertRecipeRequest'
           application/*+json:
@@ -31107,6 +31125,8 @@ paths:
                     useAnsiLikeSyntax: false
                 inheritedRecipes: []
                 description: ""
+                holding:
+                  taxLotLevelHoldings: true
             schema:
               $ref: '#/components/schemas/UpsertRecipeRequest'
         description: The Configuration Recipe to update or insert
@@ -31316,6 +31336,8 @@ paths:
                       useAnsiLikeSyntax: false
                   inheritedRecipes: []
                   description: ""
+                  holding:
+                    taxLotLevelHoldings: true
               schema:
                 $ref: '#/components/schemas/GetRecipeResponse'
             application/json:
@@ -31364,6 +31386,8 @@ paths:
                       useAnsiLikeSyntax: false
                   inheritedRecipes: []
                   description: ""
+                  holding:
+                    taxLotLevelHoldings: true
               schema:
                 $ref: '#/components/schemas/GetRecipeResponse'
             text/json:
@@ -31412,6 +31436,8 @@ paths:
                       useAnsiLikeSyntax: false
                   inheritedRecipes: []
                   description: ""
+                  holding:
+                    taxLotLevelHoldings: true
               schema:
                 $ref: '#/components/schemas/GetRecipeResponse'
           description: The successfully retrieved Configuration Recipe or any failure
@@ -49794,6 +49820,8 @@ components:
             defaultSupplier: defaultSupplier
             attemptToInferMissingFx: true
             defaultScope: defaultScope
+        holding:
+          taxLotLevelHoldings: true
         inheritedRecipes:
         - code: code
           scope: scope
@@ -49883,6 +49911,8 @@ components:
           nullable: true
           pattern: ^[\s\S]*$
           type: string
+        holding:
+          $ref: '#/components/schemas/HoldingContext'
       required:
       - code
       - scope
@@ -49996,6 +50026,8 @@ components:
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
               defaultScope: defaultScope
+          holding:
+            taxLotLevelHoldings: true
           inheritedRecipes:
           - code: code
             scope: scope
@@ -51172,6 +51204,8 @@ components:
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
               defaultScope: defaultScope
+          holding:
+            taxLotLevelHoldings: true
           inheritedRecipes:
           - code: code
             scope: scope
@@ -54177,6 +54211,8 @@ components:
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
               defaultScope: defaultScope
+          holding:
+            taxLotLevelHoldings: true
           inheritedRecipes:
           - code: code
             scope: scope
@@ -54545,6 +54581,18 @@ components:
       required:
       - instrumentUid
       - taxLots
+      type: object
+    HoldingContext:
+      additionalProperties: false
+      description: "Holding context node.\r\nContains settings that control how LUSID\
+        \ handles holdings within portfolios."
+      example:
+        taxLotLevelHoldings: true
+      properties:
+        taxLotLevelHoldings:
+          description: Whether or not to expand the holdings to return the underlying
+            tax-lots. Defaults to True.
+          type: boolean
       type: object
     HoldingsAdjustment:
       additionalProperties: false
@@ -65586,6 +65634,8 @@ components:
                 defaultSupplier: defaultSupplier
                 attemptToInferMissingFx: true
                 defaultScope: defaultScope
+            holding:
+              taxLotLevelHoldings: true
             inheritedRecipes:
             - code: code
               scope: scope
@@ -65680,6 +65730,8 @@ components:
                 defaultSupplier: defaultSupplier
                 attemptToInferMissingFx: true
                 defaultScope: defaultScope
+            holding:
+              taxLotLevelHoldings: true
             inheritedRecipes:
             - code: code
               scope: scope
@@ -71311,6 +71363,8 @@ components:
               defaultSupplier: defaultSupplier
               attemptToInferMissingFx: true
               defaultScope: defaultScope
+          holding:
+            taxLotLevelHoldings: true
           inheritedRecipes:
           - code: code
             scope: scope
@@ -71438,6 +71492,8 @@ components:
                 defaultSupplier: defaultSupplier
                 attemptToInferMissingFx: true
                 defaultScope: defaultScope
+            holding:
+              taxLotLevelHoldings: true
             inheritedRecipes:
             - code: code
               scope: scope
@@ -75190,7 +75246,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
