@@ -41,6 +41,8 @@
 
 * `CASHPERPETUAL` (value: `"CashPerpetual"`)
 
+* `CAPFLOOR` (value: `"CapFloor"`)
+
 * `CASHSETTLED` (value: `"CashSettled"`)
 
 * `CDSINDEX` (value: `"CdsIndex"`)
