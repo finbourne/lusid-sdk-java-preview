@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3551
+  version: 0.11.3552
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:36369
+- url: http://local-unit-test-server.lusid.com:36767
 security:
 - {}
 tags:
@@ -68455,6 +68455,7 @@ components:
         value:
           description: The last used value of the sequence
           format: int64
+          nullable: true
           type: integer
         cycle:
           description: Indicates if the sequence would start from minimun value once
@@ -68463,6 +68464,7 @@ components:
           type: boolean
         pattern:
           description: The pattern to be used to generate next values in the sequence.
+          nullable: true
           type: string
         links:
           description: Collection of links.
@@ -68476,9 +68478,7 @@ components:
       - increment
       - maxValue
       - minValue
-      - pattern
       - start
-      - value
       type: object
     SetPersonIdentifiersRequest:
       additionalProperties: false
