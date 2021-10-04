@@ -5,7 +5,7 @@ This is the Java Preview SDK for [LUSID by FINBOURNE](https://www.finbourne.com/
 ![LUSID_by_Finbourne](https://content.finbourne.com/LUSID_repo.png)
 
 
-## Installation
+## Installation 
 
 Maven artifacts can be downloaded from the Open Source Software Repository Hosting (OSSRH) by adding the following to your pom.xml
 
