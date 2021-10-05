@@ -271,7 +271,7 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3565
+  version: 0.11.3568
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
@@ -8403,24 +8403,32 @@ paths:
             example:
               displayName: My data format
               description: Data type description
+              acceptableValues:
+              - Apples, Bananas, Cherry
             schema:
               $ref: '#/components/schemas/UpdateDataTypeRequest'
           application/json:
             example:
               displayName: My data format
               description: Data type description
+              acceptableValues:
+              - Apples, Bananas, Cherry
             schema:
               $ref: '#/components/schemas/UpdateDataTypeRequest'
           text/json:
             example:
               displayName: My data format
               description: Data type description
+              acceptableValues:
+              - Apples, Bananas, Cherry
             schema:
               $ref: '#/components/schemas/UpdateDataTypeRequest'
           application/*+json:
             example:
               displayName: My data format
               description: Data type description
+              acceptableValues:
+              - Apples, Bananas, Cherry
             schema:
               $ref: '#/components/schemas/UpdateDataTypeRequest'
         description: The updated definition of the data type
