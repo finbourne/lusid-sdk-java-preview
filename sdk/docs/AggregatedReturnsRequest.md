@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **compositeMethod** | **String** | The method used to calculate the Portfolio performance: Equal/Asset. |  [optional]
 **period** | **String** | The type of the returns used to calculate the aggregation result: Daily/Monthly. |  [optional]
 **outputFrequency** | **String** | The type of calculated output: Daily/Weekly/Monthly/Quarterly/Half-Yearly/Yearly. |  [optional]
-**alternativeInceptionDate** | **String** | The type of calculated output: Daily/Weekly/Monthly/Quarterly/Half-Yearly/Yearly. |  [optional]
+**alternativeInceptionDate** | **String** | Optional - either a date, or the key for a portfolio property containing a date. If provided, the given date will override the inception date for this request. |  [optional]
 
 
 

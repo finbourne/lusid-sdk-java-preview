@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3572
+  version: 0.11.3573
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:39300
+- url: http://local-unit-test-server.lusid.com:32792
 security:
 - {}
 tags:
@@ -28382,13 +28382,14 @@ paths:
           nullable: true
           type: string
         style: form
-      - description: Show the Returns on a Daily or Monthly period.
+      - description: Show the Returns on a Daily or Monthly period. Defaults to Daily.
         explode: true
         in: query
         name: period
         required: false
         schema:
-          description: Show the Returns on a Daily or Monthly period.
+          description: Show the Returns on a Daily or Monthly period. Defaults to
+            Daily.
           nullable: true
           type: string
         style: form
@@ -28686,7 +28687,8 @@ paths:
           application/json-patch+json:
             example:
               metrics:
-              - window: 1Y
+              - type: Return
+                window: 1Y
                 allowPartial: false
                 annualised: false
                 withFee: true
@@ -28703,7 +28705,8 @@ paths:
           application/json:
             example:
               metrics:
-              - window: 1Y
+              - type: Return
+                window: 1Y
                 allowPartial: false
                 annualised: false
                 withFee: true
@@ -28720,7 +28723,8 @@ paths:
           text/json:
             example:
               metrics:
-              - window: 1Y
+              - type: Return
+                window: 1Y
                 allowPartial: false
                 annualised: false
                 withFee: true
@@ -28737,7 +28741,8 @@ paths:
           application/*+json:
             example:
               metrics:
-              - window: 1Y
+              - type: Return
+                window: 1Y
                 allowPartial: false
                 annualised: false
                 withFee: true
@@ -28857,13 +28862,15 @@ paths:
           format: dateorcutlabel
           type: string
         style: form
-      - description: The Period (Daily or Monthly) of the Returns to be deleted.
+      - description: The Period (Daily or Monthly) of the Returns to be deleted. Defaults
+          to Daily.
         explode: true
         in: query
         name: period
         required: false
         schema:
           description: The Period (Daily or Monthly) of the Returns to be deleted.
+            Defaults to Daily.
           nullable: true
           type: string
         style: form
@@ -47883,7 +47890,9 @@ components:
           nullable: true
           type: string
         alternativeInceptionDate:
-          description: 'The type of calculated output: Daily/Weekly/Monthly/Quarterly/Half-Yearly/Yearly.'
+          description: Optional - either a date, or the key for a portfolio property
+            containing a date. If provided, the given date will override the inception
+            date for this request.
           nullable: true
           type: string
       required:
@@ -60047,7 +60056,8 @@ components:
           nullable: true
           type: number
         period:
-          description: Show the returns on a Daily or Monthly period.
+          description: Upsert the returns on a Daily or Monthly period. Defaults to
+            Daily.
           nullable: true
           type: string
       required:
@@ -60068,7 +60078,6 @@ components:
         type:
           description: The type of the metric. Default to Return
           nullable: true
-          readOnly: true
           type: string
         window:
           description: The given metric for the calculation i.e. 1Y, 1D.
