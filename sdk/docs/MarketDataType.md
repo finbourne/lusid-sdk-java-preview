@@ -25,5 +25,7 @@
 
 * `FXFORWARDTENORPIPSCURVEDATA` (value: `"FxForwardTenorPipsCurveData"`)
 
+* `FXFORWARDCURVEBYQUOTEREFERENCE` (value: `"FxForwardCurveByQuoteReference"`)
+
 
 
