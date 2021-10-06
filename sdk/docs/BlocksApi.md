@@ -4,17 +4,17 @@ All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteBlock**](BlocksApi.md#deleteBlock) | **DELETE** /api/blocks/{scope}/{code} | [EXPERIMENTAL] Delete block
-[**getBlock**](BlocksApi.md#getBlock) | **GET** /api/blocks/{scope}/{code} | [EXPERIMENTAL] Get Block
-[**listBlocks**](BlocksApi.md#listBlocks) | **GET** /api/blocks | [EXPERIMENTAL] List Blocks
-[**upsertBlocks**](BlocksApi.md#upsertBlocks) | **POST** /api/blocks | [EXPERIMENTAL] Upsert Block
+[**deleteBlock**](BlocksApi.md#deleteBlock) | **DELETE** /api/blocks/{scope}/{code} | [EXPERIMENTAL] DeleteBlock: Delete block
+[**getBlock**](BlocksApi.md#getBlock) | **GET** /api/blocks/{scope}/{code} | [EXPERIMENTAL] GetBlock: Get Block
+[**listBlocks**](BlocksApi.md#listBlocks) | **GET** /api/blocks | [EXPERIMENTAL] ListBlocks: List Blocks
+[**upsertBlocks**](BlocksApi.md#upsertBlocks) | **POST** /api/blocks | [EXPERIMENTAL] UpsertBlocks: Upsert Block
 
 
 <a name="deleteBlock"></a>
 # **deleteBlock**
 > DeletedEntityResponse deleteBlock(scope, code)
 
-[EXPERIMENTAL] Delete block
+[EXPERIMENTAL] DeleteBlock: Delete block
 
 Delete an block. Deletion will be valid from the block&#39;s creation datetime.  This means that the block will no longer exist at any effective datetime from the asAt datetime of deletion.
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getBlock**
 > Block getBlock(scope, code, asAt, propertyKeys)
 
-[EXPERIMENTAL] Get Block
+[EXPERIMENTAL] GetBlock: Get Block
 
 Fetch a Block that matches the specified identifier
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **listBlocks**
 > PagedResourceListOfBlock listBlocks(asAt, page, sortBy, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] List Blocks
+[EXPERIMENTAL] ListBlocks: List Blocks
 
 Fetch the last pre-AsAt date version of each block in scope (does not fetch the entire history).
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 # **upsertBlocks**
 > ResourceListOfBlock upsertBlocks(blockSetRequest)
 
-[EXPERIMENTAL] Upsert Block
+[EXPERIMENTAL] UpsertBlocks: Upsert Block
 
 Upsert; update existing blocks with given ids, or create new blocks otherwise.
 

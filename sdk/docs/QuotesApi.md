@@ -4,22 +4,22 @@ All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteQuoteAcccesMetadataRule**](QuotesApi.md#deleteQuoteAcccesMetadataRule) | **DELETE** /api/metadata/quotes/rules/{scope} | [EXPERIMENTAL] Delete a Quote Access Metadata Rule
-[**deleteQuotes**](QuotesApi.md#deleteQuotes) | **POST** /api/quotes/{scope}/$delete | [EARLY ACCESS] Delete quotes
-[**getQuotes**](QuotesApi.md#getQuotes) | **POST** /api/quotes/{scope}/$get | [EARLY ACCESS] Get quotes
-[**getQuotesAccessMetadataRule**](QuotesApi.md#getQuotesAccessMetadataRule) | **GET** /api/metadata/quotes/rules | [EXPERIMENTAL] Get a quote access metadata rule
-[**listQuotes**](QuotesApi.md#listQuotes) | **GET** /api/quotes/{scope}/$deprecated | [DEPRECATED] List quotes
-[**listQuotesAccessMetadataRules**](QuotesApi.md#listQuotesAccessMetadataRules) | **GET** /api/metadata/quotes/rules/{scope} | [EXPERIMENTAL] List all quote access metadata rules in a scope
-[**listQuotesForScope**](QuotesApi.md#listQuotesForScope) | **GET** /api/quotes/{scope} | [EARLY ACCESS] List quotes for scope
-[**upsertQuoteAccessMetadataRule**](QuotesApi.md#upsertQuoteAccessMetadataRule) | **POST** /api/metadata/quotes/rules/{scope} | [EXPERIMENTAL] Upsert a Quote Access Metadata Rule. This creates or updates the data in LUSID.
-[**upsertQuotes**](QuotesApi.md#upsertQuotes) | **POST** /api/quotes/{scope} | [EARLY ACCESS] Upsert quotes
+[**deleteQuoteAcccesMetadataRule**](QuotesApi.md#deleteQuoteAcccesMetadataRule) | **DELETE** /api/metadata/quotes/rules/{scope} | [EXPERIMENTAL] DeleteQuoteAcccesMetadataRule: Delete a Quote Access Metadata Rule
+[**deleteQuotes**](QuotesApi.md#deleteQuotes) | **POST** /api/quotes/{scope}/$delete | [EARLY ACCESS] DeleteQuotes: Delete quotes
+[**getQuotes**](QuotesApi.md#getQuotes) | **POST** /api/quotes/{scope}/$get | [EARLY ACCESS] GetQuotes: Get quotes
+[**getQuotesAccessMetadataRule**](QuotesApi.md#getQuotesAccessMetadataRule) | **GET** /api/metadata/quotes/rules | [EXPERIMENTAL] GetQuotesAccessMetadataRule: Get a quote access metadata rule
+[**listQuotes**](QuotesApi.md#listQuotes) | **GET** /api/quotes/{scope}/$deprecated | [DEPRECATED] ListQuotes: List quotes
+[**listQuotesAccessMetadataRules**](QuotesApi.md#listQuotesAccessMetadataRules) | **GET** /api/metadata/quotes/rules/{scope} | [EXPERIMENTAL] ListQuotesAccessMetadataRules: List all quote access metadata rules in a scope
+[**listQuotesForScope**](QuotesApi.md#listQuotesForScope) | **GET** /api/quotes/{scope} | [EARLY ACCESS] ListQuotesForScope: List quotes for scope
+[**upsertQuoteAccessMetadataRule**](QuotesApi.md#upsertQuoteAccessMetadataRule) | **POST** /api/metadata/quotes/rules/{scope} | [EXPERIMENTAL] UpsertQuoteAccessMetadataRule: Upsert a Quote Access Metadata Rule. This creates or updates the data in LUSID.
+[**upsertQuotes**](QuotesApi.md#upsertQuotes) | **POST** /api/quotes/{scope} | [EARLY ACCESS] UpsertQuotes: Upsert quotes
 
 
 <a name="deleteQuoteAcccesMetadataRule"></a>
 # **deleteQuoteAcccesMetadataRule**
 > QuoteAccessMetadataRule deleteQuoteAcccesMetadataRule(scope, provider, priceSource, instrumentIdType, instrumentId, quoteType, field, effectiveAt)
 
-[EXPERIMENTAL] Delete a Quote Access Metadata Rule
+[EXPERIMENTAL] DeleteQuoteAcccesMetadataRule: Delete a Quote Access Metadata Rule
 
 Delete the Quote Access Metadata Rule that exactly matches the provided identifier parts
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 # **deleteQuotes**
 > AnnulQuotesResponse deleteQuotes(scope, requestBody)
 
-[EARLY ACCESS] Delete quotes
+[EARLY ACCESS] DeleteQuotes: Delete quotes
 
 Delete one or more specified quotes from a single scope. A quote is identified by its unique id which includes information about  the type of quote as well as the exact effective datetime (to the microsecond) from which it became valid.                In the request each quote must be keyed by a unique correlation id. This id is ephemeral and is not stored by LUSID.  It serves only as a way to easily identify each quote in the response.                The response will return both the collection of successfully deleted quotes, as well as those that failed.  For the failures a reason will be provided explaining why the quote could not be deleted.                It is important to always check the failed set for any unsuccessful results.
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 # **getQuotes**
 > GetQuotesResponse getQuotes(scope, effectiveAt, asAt, maxAge, requestBody)
 
-[EARLY ACCESS] Get quotes
+[EARLY ACCESS] GetQuotes: Get quotes
 
 Get one or more quotes from a single scope.                Each quote can be identified by its time invariant quote series id.                For each quote series id LUSID will return the most recent quote with respect to the provided (or default) effective datetime.                 An optional maximum age range window can be specified which defines how far back to look back for a quote from the specified effective datetime.  LUSID will return the most recent quote within this window.                In the request each quote series id must be keyed by a unique correlation id. This id is ephemeral and is not stored by LUSID.  It serves only as a way to easily identify each quote in the response.                The response will return three collections. One, the successfully retrieved quotes. Two, those that had a  valid quote series id but could not be found. Three, those that failed because LUSID could not construct a valid quote series id from the request.    For the quotes that failed or could not be found a reason will be provided explaining why the quote could not be retrieved.                It is important to always check the failed and not found sets for any unsuccessful results.  The maximum number of quotes that this method can get per request is 2,000.
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 # **getQuotesAccessMetadataRule**
 > QuoteAccessMetadataRule getQuotesAccessMetadataRule(scope, provider, priceSource, instrumentIdType, instrumentId, quoteType, field, effectiveAt, asAt)
 
-[EXPERIMENTAL] Get a quote access metadata rule
+[EXPERIMENTAL] GetQuotesAccessMetadataRule: Get a quote access metadata rule
 
 Get a specific quote access metadata rule by specifying the corresponding identifier parts                No matching will be performed through this endpoint. To retrieve a rule, it is necessary to specify, exactly, the identifier of the rule
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 # **listQuotes**
 > ResourceListOfQuote listQuotes(scope, asAt, page, start, limit, filter)
 
-[DEPRECATED] List quotes
+[DEPRECATED] ListQuotes: List quotes
 
 List all the quotes from a single scope at the specified date/time  Please use M:Finbourne.WebApi.Controllers.QuotesController.ListQuotesForScope(System.String,System.Nullable{System.DateTimeOffset},System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.String) - the signature and behaviour of this endpoint will be changing to omit scope
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 # **listQuotesAccessMetadataRules**
 > ResourceListOfQuoteAccessMetadataRule listQuotesAccessMetadataRules(scope, asAt)
 
-[EXPERIMENTAL] List all quote access metadata rules in a scope
+[EXPERIMENTAL] ListQuotesAccessMetadataRules: List all quote access metadata rules in a scope
 
 Get all the quote access metadata rules in the specified scope
 
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 # **listQuotesForScope**
 > ResourceListOfQuote listQuotesForScope(scope, asAt, page, start, limit, filter)
 
-[EARLY ACCESS] List quotes for scope
+[EARLY ACCESS] ListQuotesForScope: List quotes for scope
 
 List all the quotes from a single scope at the specified date/time
 
@@ -564,7 +564,7 @@ Name | Type | Description  | Notes
 # **upsertQuoteAccessMetadataRule**
 > QuoteAccessMetadataRule upsertQuoteAccessMetadataRule(scope, upsertQuoteAccessMetadataRuleRequest, effectiveAt)
 
-[EXPERIMENTAL] Upsert a Quote Access Metadata Rule. This creates or updates the data in LUSID.
+[EXPERIMENTAL] UpsertQuoteAccessMetadataRule: Upsert a Quote Access Metadata Rule. This creates or updates the data in LUSID.
 
 Update or insert one Quote Access Metadata Rule in a single scope. An item will be updated if it already exists  and inserted if it does not.    The response will return the successfully updated or inserted Quote Access Metadata Rule or failure message if unsuccessful    It is important to always check to verify success (or failure).                Multiple rules for a key can exists with different effective at dates, when resources are accessed the rule that is active for the current time will be fetched
 
@@ -637,7 +637,7 @@ Name | Type | Description  | Notes
 # **upsertQuotes**
 > UpsertQuotesResponse upsertQuotes(scope, requestBody)
 
-[EARLY ACCESS] Upsert quotes
+[EARLY ACCESS] UpsertQuotes: Upsert quotes
 
 Update or insert one or more quotes in a single scope. A quote will be updated if it already exists  and inserted if it does not.                In the request each quote must be keyed by a unique correlation id. This id is ephemeral and is not stored by LUSID.  It serves only as a way to easily identify each quote in the response.                The response will return both the collection of successfully updated or inserted quotes, as well as those that failed.  For the failures a reason will be provided explaining why the quote could not be updated or inserted.                It is important to always check the failed set for any unsuccessful results.  The maximum number of quotes that this method can upsert per request is 2,000.
 

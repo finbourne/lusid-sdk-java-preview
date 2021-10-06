@@ -4,16 +4,16 @@ All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createRelationshipDefinition**](RelationshipDefinitionsApi.md#createRelationshipDefinition) | **POST** /api/relationshipdefinitions | [EXPERIMENTAL] Create Relationship Definition
-[**getRelationshipDefinition**](RelationshipDefinitionsApi.md#getRelationshipDefinition) | **GET** /api/relationshipdefinitions/{scope}/{code} | [EXPERIMENTAL] Get relationship definition
-[**updateRelationshipDefinition**](RelationshipDefinitionsApi.md#updateRelationshipDefinition) | **PUT** /api/relationshipdefinitions/{scope}/{code} | [EXPERIMENTAL] Update Relationship Definition
+[**createRelationshipDefinition**](RelationshipDefinitionsApi.md#createRelationshipDefinition) | **POST** /api/relationshipdefinitions | [EXPERIMENTAL] CreateRelationshipDefinition: Create Relationship Definition
+[**getRelationshipDefinition**](RelationshipDefinitionsApi.md#getRelationshipDefinition) | **GET** /api/relationshipdefinitions/{scope}/{code} | [EXPERIMENTAL] GetRelationshipDefinition: Get relationship definition
+[**updateRelationshipDefinition**](RelationshipDefinitionsApi.md#updateRelationshipDefinition) | **PUT** /api/relationshipdefinitions/{scope}/{code} | [EXPERIMENTAL] UpdateRelationshipDefinition: Update Relationship Definition
 
 
 <a name="createRelationshipDefinition"></a>
 # **createRelationshipDefinition**
 > RelationshipDefinition createRelationshipDefinition(createRelationshipDefinitionRequest)
 
-[EXPERIMENTAL] Create Relationship Definition
+[EXPERIMENTAL] CreateRelationshipDefinition: Create Relationship Definition
 
 Create a new relationship definition to be used for creating relationships between entities.
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 # **getRelationshipDefinition**
 > RelationshipDefinition getRelationshipDefinition(scope, code, asAt)
 
-[EXPERIMENTAL] Get relationship definition
+[EXPERIMENTAL] GetRelationshipDefinition: Get relationship definition
 
 Retrieve the specified relationship definition
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 # **updateRelationshipDefinition**
 > RelationshipDefinition updateRelationshipDefinition(scope, code, updateRelationshipDefinitionRequest)
 
-[EXPERIMENTAL] Update Relationship Definition
+[EXPERIMENTAL] UpdateRelationshipDefinition: Update Relationship Definition
 
 Update the definition of a specified existing relationship. Not all elements within a relationship definition  are modifiable due to the potential implications for values already stored against the relationship.
 

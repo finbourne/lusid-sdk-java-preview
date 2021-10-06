@@ -4,17 +4,17 @@ All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generateConfigurationRecipe**](AggregationApi.md#generateConfigurationRecipe) | **POST** /api/aggregation/{scope}/{code}/$generateconfigurationrecipe | [EXPERIMENTAL] Generates a recipe sufficient to perform valuations for the given portfolio.
-[**getQueryableKeys**](AggregationApi.md#getQueryableKeys) | **GET** /api/results/queryable/keys | [EXPERIMENTAL] Query the set of supported \&quot;addresses\&quot; that can be queried from the aggregation endpoint.
-[**getValuation**](AggregationApi.md#getValuation) | **POST** /api/aggregation/$valuation | [BETA] Perform valuation for a list of portfolios and/or portfolio groups
-[**getValuationOfWeightedInstruments**](AggregationApi.md#getValuationOfWeightedInstruments) | **POST** /api/aggregation/$valuationinlined | [BETA] Perform valuation for an inlined portfolio
+[**generateConfigurationRecipe**](AggregationApi.md#generateConfigurationRecipe) | **POST** /api/aggregation/{scope}/{code}/$generateconfigurationrecipe | [EXPERIMENTAL] GenerateConfigurationRecipe: Generates a recipe sufficient to perform valuations for the given portfolio.
+[**getQueryableKeys**](AggregationApi.md#getQueryableKeys) | **GET** /api/results/queryable/keys | [EXPERIMENTAL] GetQueryableKeys: Query the set of supported \&quot;addresses\&quot; that can be queried from the aggregation endpoint.
+[**getValuation**](AggregationApi.md#getValuation) | **POST** /api/aggregation/$valuation | [BETA] GetValuation: Perform valuation for a list of portfolios and/or portfolio groups
+[**getValuationOfWeightedInstruments**](AggregationApi.md#getValuationOfWeightedInstruments) | **POST** /api/aggregation/$valuationinlined | [BETA] GetValuationOfWeightedInstruments: Perform valuation for an inlined portfolio
 
 
 <a name="generateConfigurationRecipe"></a>
 # **generateConfigurationRecipe**
 > ConfigurationRecipe generateConfigurationRecipe(scope, code, createRecipeRequest)
 
-[EXPERIMENTAL] Generates a recipe sufficient to perform valuations for the given portfolio.
+[EXPERIMENTAL] GenerateConfigurationRecipe: Generates a recipe sufficient to perform valuations for the given portfolio.
 
 Given a set of scopes, a portfolio Id and a basic recipe, this endpoint generates a configuration recipe with relevant rules that can value the instruments in the portfolio.
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 # **getQueryableKeys**
 > ResourceListOfAggregationQuery getQueryableKeys(page, limit, filter)
 
-[EXPERIMENTAL] Query the set of supported \&quot;addresses\&quot; that can be queried from the aggregation endpoint.
+[EXPERIMENTAL] GetQueryableKeys: Query the set of supported \&quot;addresses\&quot; that can be queried from the aggregation endpoint.
 
 When a request is made for aggregation, the user needs to know what keys can be passed to it for queryable data. This endpoint allows to queries to provide the set of keys,  what they are and what they return.
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **getValuation**
 > ListAggregationResponse getValuation(valuationRequest)
 
-[BETA] Perform valuation for a list of portfolios and/or portfolio groups
+[BETA] GetValuation: Perform valuation for a list of portfolios and/or portfolio groups
 
 Perform valuation on specified list of portfolio and/or portfolio groups for a set of dates.
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 # **getValuationOfWeightedInstruments**
 > ListAggregationResponse getValuationOfWeightedInstruments(inlineValuationRequest)
 
-[BETA] Perform valuation for an inlined portfolio
+[BETA] GetValuationOfWeightedInstruments: Perform valuation for an inlined portfolio
 
 Perform valuation on the portfolio that is defined by the weighted set of instruments passed to the request.
 

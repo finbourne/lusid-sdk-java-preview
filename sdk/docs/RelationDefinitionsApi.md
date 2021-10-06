@@ -4,15 +4,15 @@ All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createRelationDefinition**](RelationDefinitionsApi.md#createRelationDefinition) | **POST** /api/relationdefinitions | [EXPERIMENTAL] Create a relation definition
-[**getRelationDefinition**](RelationDefinitionsApi.md#getRelationDefinition) | **GET** /api/relationdefinitions/{scope}/{code} | [EXPERIMENTAL] Get relation definition
+[**createRelationDefinition**](RelationDefinitionsApi.md#createRelationDefinition) | **POST** /api/relationdefinitions | [EXPERIMENTAL] CreateRelationDefinition: Create a relation definition
+[**getRelationDefinition**](RelationDefinitionsApi.md#getRelationDefinition) | **GET** /api/relationdefinitions/{scope}/{code} | [EXPERIMENTAL] GetRelationDefinition: Get relation definition
 
 
 <a name="createRelationDefinition"></a>
 # **createRelationDefinition**
 > RelationDefinition createRelationDefinition(createRelationDefinitionRequest)
 
-[EXPERIMENTAL] Create a relation definition
+[EXPERIMENTAL] CreateRelationDefinition: Create a relation definition
 
 Define a new relation.
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 # **getRelationDefinition**
 > RelationDefinition getRelationDefinition(scope, code, asAt)
 
-[EXPERIMENTAL] Get relation definition
+[EXPERIMENTAL] GetRelationDefinition: Get relation definition
 
 Retrieve the definition of a specified relation.
 

@@ -4,17 +4,17 @@ All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteConfigurationRecipe**](ConfigurationRecipeApi.md#deleteConfigurationRecipe) | **DELETE** /api/recipes/{scope}/{code} | [EXPERIMENTAL] Delete a Configuration Recipe, assuming that it is present.
-[**getConfigurationRecipe**](ConfigurationRecipeApi.md#getConfigurationRecipe) | **GET** /api/recipes/{scope}/{code} | [EXPERIMENTAL] Get Configuration Recipe
-[**listConfigurationRecipes**](ConfigurationRecipeApi.md#listConfigurationRecipes) | **GET** /api/recipes | [EXPERIMENTAL] List the set of Configuration Recipes
-[**upsertConfigurationRecipe**](ConfigurationRecipeApi.md#upsertConfigurationRecipe) | **POST** /api/recipes | [EXPERIMENTAL] Upsert a Configuration Recipe. This creates or updates the data in Lusid.
+[**deleteConfigurationRecipe**](ConfigurationRecipeApi.md#deleteConfigurationRecipe) | **DELETE** /api/recipes/{scope}/{code} | [EXPERIMENTAL] DeleteConfigurationRecipe: Delete a Configuration Recipe, assuming that it is present.
+[**getConfigurationRecipe**](ConfigurationRecipeApi.md#getConfigurationRecipe) | **GET** /api/recipes/{scope}/{code} | [EXPERIMENTAL] GetConfigurationRecipe: Get Configuration Recipe
+[**listConfigurationRecipes**](ConfigurationRecipeApi.md#listConfigurationRecipes) | **GET** /api/recipes | [EXPERIMENTAL] ListConfigurationRecipes: List the set of Configuration Recipes
+[**upsertConfigurationRecipe**](ConfigurationRecipeApi.md#upsertConfigurationRecipe) | **POST** /api/recipes | [EXPERIMENTAL] UpsertConfigurationRecipe: Upsert a Configuration Recipe. This creates or updates the data in Lusid.
 
 
 <a name="deleteConfigurationRecipe"></a>
 # **deleteConfigurationRecipe**
 > AnnulSingleStructuredDataResponse deleteConfigurationRecipe(scope, code)
 
-[EXPERIMENTAL] Delete a Configuration Recipe, assuming that it is present.
+[EXPERIMENTAL] DeleteConfigurationRecipe: Delete a Configuration Recipe, assuming that it is present.
 
 Delete the specified Configuration Recipe from a single scope.                The response will return either detail of the deleted item, or an explanation (failure) as to why this did not succeed.                It is important to always check for any unsuccessful response.
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getConfigurationRecipe**
 > GetRecipeResponse getConfigurationRecipe(scope, code, asAt)
 
-[EXPERIMENTAL] Get Configuration Recipe
+[EXPERIMENTAL] GetConfigurationRecipe: Get Configuration Recipe
 
 Get a Configuration Recipe from a single scope.                The response will return either the recipe that has been stored, or a failure explaining why the request was unsuccessful.                It is important to always check for any unsuccessful requests (failures).
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 # **listConfigurationRecipes**
 > ResourceListOfGetRecipeResponse listConfigurationRecipes(asAt, filter)
 
-[EXPERIMENTAL] List the set of Configuration Recipes
+[EXPERIMENTAL] ListConfigurationRecipes: List the set of Configuration Recipes
 
 List the set of configuration recipes at the specified date/time and scope
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 # **upsertConfigurationRecipe**
 > UpsertSingleStructuredDataResponse upsertConfigurationRecipe(upsertRecipeRequest)
 
-[EXPERIMENTAL] Upsert a Configuration Recipe. This creates or updates the data in Lusid.
+[EXPERIMENTAL] UpsertConfigurationRecipe: Upsert a Configuration Recipe. This creates or updates the data in Lusid.
 
 Update or insert one Configuration Recipe in a single scope. An item will be updated if it already exists  and inserted if it does not.                The response will return the successfully updated or inserted Configuration Recipe or failure message if unsuccessful                It is important to always check to verify success (or failure).
 

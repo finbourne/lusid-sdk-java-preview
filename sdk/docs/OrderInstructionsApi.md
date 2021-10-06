@@ -4,17 +4,17 @@ All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteOrderInstruction**](OrderInstructionsApi.md#deleteOrderInstruction) | **DELETE** /api/orderinstructions/{scope}/{code} | [EXPERIMENTAL] Delete orderInstruction
-[**getOrderInstruction**](OrderInstructionsApi.md#getOrderInstruction) | **GET** /api/orderinstructions/{scope}/{code} | [EXPERIMENTAL] Get OrderInstruction
-[**listOrderInstructions**](OrderInstructionsApi.md#listOrderInstructions) | **GET** /api/orderinstructions | [EXPERIMENTAL] List OrderInstructions
-[**upsertOrderInstructions**](OrderInstructionsApi.md#upsertOrderInstructions) | **POST** /api/orderinstructions | [EXPERIMENTAL] Upsert OrderInstruction
+[**deleteOrderInstruction**](OrderInstructionsApi.md#deleteOrderInstruction) | **DELETE** /api/orderinstructions/{scope}/{code} | [EXPERIMENTAL] DeleteOrderInstruction: Delete orderInstruction
+[**getOrderInstruction**](OrderInstructionsApi.md#getOrderInstruction) | **GET** /api/orderinstructions/{scope}/{code} | [EXPERIMENTAL] GetOrderInstruction: Get OrderInstruction
+[**listOrderInstructions**](OrderInstructionsApi.md#listOrderInstructions) | **GET** /api/orderinstructions | [EXPERIMENTAL] ListOrderInstructions: List OrderInstructions
+[**upsertOrderInstructions**](OrderInstructionsApi.md#upsertOrderInstructions) | **POST** /api/orderinstructions | [EXPERIMENTAL] UpsertOrderInstructions: Upsert OrderInstruction
 
 
 <a name="deleteOrderInstruction"></a>
 # **deleteOrderInstruction**
 > DeletedEntityResponse deleteOrderInstruction(scope, code)
 
-[EXPERIMENTAL] Delete orderInstruction
+[EXPERIMENTAL] DeleteOrderInstruction: Delete orderInstruction
 
 Delete an orderInstruction. Deletion will be valid from the orderInstruction&#39;s creation datetime.  This means that the orderInstruction will no longer exist at any effective datetime from the asAt datetime of deletion.
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getOrderInstruction**
 > OrderInstruction getOrderInstruction(scope, code, asAt, propertyKeys)
 
-[EXPERIMENTAL] Get OrderInstruction
+[EXPERIMENTAL] GetOrderInstruction: Get OrderInstruction
 
 Fetch a OrderInstruction that matches the specified identifier
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **listOrderInstructions**
 > PagedResourceListOfOrderInstruction listOrderInstructions(asAt, page, sortBy, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] List OrderInstructions
+[EXPERIMENTAL] ListOrderInstructions: List OrderInstructions
 
 Fetch the last pre-AsAt date version of each orderInstruction in scope (does not fetch the entire history).
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 # **upsertOrderInstructions**
 > ResourceListOfOrderInstruction upsertOrderInstructions(orderInstructionSetRequest)
 
-[EXPERIMENTAL] Upsert OrderInstruction
+[EXPERIMENTAL] UpsertOrderInstructions: Upsert OrderInstruction
 
 Upsert; update existing orderInstructions with given ids, or create new orderInstructions otherwise.
 

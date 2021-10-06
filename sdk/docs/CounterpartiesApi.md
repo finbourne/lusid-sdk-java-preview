@@ -4,21 +4,21 @@ All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteCounterpartyAgreement**](CounterpartiesApi.md#deleteCounterpartyAgreement) | **DELETE** /api/counterparties/counterpartyagreements/{scope}/{code} | [EXPERIMENTAL] Delete the Counterparty Agreement of given scope and code
-[**deleteCreditSupportAnnex**](CounterpartiesApi.md#deleteCreditSupportAnnex) | **DELETE** /api/counterparties/creditsupportannexes/{scope}/{code} | [EXPERIMENTAL] Delete the Credit Support Annex of given scope and code
-[**getCounterpartyAgreement**](CounterpartiesApi.md#getCounterpartyAgreement) | **GET** /api/counterparties/counterpartyagreements/{scope}/{code} | [EXPERIMENTAL] Get Counterparty Agreement
-[**getCreditSupportAnnex**](CounterpartiesApi.md#getCreditSupportAnnex) | **GET** /api/counterparties/creditsupportannexes/{scope}/{code} | [EXPERIMENTAL] Get Credit Support Annex
-[**listCounterpartyAgreements**](CounterpartiesApi.md#listCounterpartyAgreements) | **GET** /api/counterparties/counterpartyagreements | [EXPERIMENTAL] List the set of Counterparty Agreements
-[**listCreditSupportAnnexes**](CounterpartiesApi.md#listCreditSupportAnnexes) | **GET** /api/counterparties/creditsupportannexes | [EXPERIMENTAL] List the set of Credit Support Annexes
-[**upsertCounterpartyAgreement**](CounterpartiesApi.md#upsertCounterpartyAgreement) | **POST** /api/counterparties/counterpartyagreements | [EXPERIMENTAL] Upsert Counterparty Agreement
-[**upsertCreditSupportAnnex**](CounterpartiesApi.md#upsertCreditSupportAnnex) | **POST** /api/counterparties/creditsupportannexes | [EXPERIMENTAL] Upsert Credit Support Annex
+[**deleteCounterpartyAgreement**](CounterpartiesApi.md#deleteCounterpartyAgreement) | **DELETE** /api/counterparties/counterpartyagreements/{scope}/{code} | [EXPERIMENTAL] DeleteCounterpartyAgreement: Delete the Counterparty Agreement of given scope and code
+[**deleteCreditSupportAnnex**](CounterpartiesApi.md#deleteCreditSupportAnnex) | **DELETE** /api/counterparties/creditsupportannexes/{scope}/{code} | [EXPERIMENTAL] DeleteCreditSupportAnnex: Delete the Credit Support Annex of given scope and code
+[**getCounterpartyAgreement**](CounterpartiesApi.md#getCounterpartyAgreement) | **GET** /api/counterparties/counterpartyagreements/{scope}/{code} | [EXPERIMENTAL] GetCounterpartyAgreement: Get Counterparty Agreement
+[**getCreditSupportAnnex**](CounterpartiesApi.md#getCreditSupportAnnex) | **GET** /api/counterparties/creditsupportannexes/{scope}/{code} | [EXPERIMENTAL] GetCreditSupportAnnex: Get Credit Support Annex
+[**listCounterpartyAgreements**](CounterpartiesApi.md#listCounterpartyAgreements) | **GET** /api/counterparties/counterpartyagreements | [EXPERIMENTAL] ListCounterpartyAgreements: List the set of Counterparty Agreements
+[**listCreditSupportAnnexes**](CounterpartiesApi.md#listCreditSupportAnnexes) | **GET** /api/counterparties/creditsupportannexes | [EXPERIMENTAL] ListCreditSupportAnnexes: List the set of Credit Support Annexes
+[**upsertCounterpartyAgreement**](CounterpartiesApi.md#upsertCounterpartyAgreement) | **POST** /api/counterparties/counterpartyagreements | [EXPERIMENTAL] UpsertCounterpartyAgreement: Upsert Counterparty Agreement
+[**upsertCreditSupportAnnex**](CounterpartiesApi.md#upsertCreditSupportAnnex) | **POST** /api/counterparties/creditsupportannexes | [EXPERIMENTAL] UpsertCreditSupportAnnex: Upsert Credit Support Annex
 
 
 <a name="deleteCounterpartyAgreement"></a>
 # **deleteCounterpartyAgreement**
 > AnnulSingleStructuredDataResponse deleteCounterpartyAgreement(scope, code)
 
-[EXPERIMENTAL] Delete the Counterparty Agreement of given scope and code
+[EXPERIMENTAL] DeleteCounterpartyAgreement: Delete the Counterparty Agreement of given scope and code
 
 Delete the specified Counterparty Agreement from a single scope.  The response will return either detail of the deleted item, or an explanation (failure) as to why this did not succeed.                It is important to always check for any unsuccessful response.
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 # **deleteCreditSupportAnnex**
 > AnnulSingleStructuredDataResponse deleteCreditSupportAnnex(scope, code)
 
-[EXPERIMENTAL] Delete the Credit Support Annex of given scope and code
+[EXPERIMENTAL] DeleteCreditSupportAnnex: Delete the Credit Support Annex of given scope and code
 
 Delete the specified Credit Support Annex from a single scope.  The response will return either detail of the deleted item, or an explanation (failure) as to why this did not succeed.                It is important to always check for any unsuccessful response.
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **getCounterpartyAgreement**
 > GetCounterpartyAgreementResponse getCounterpartyAgreement(scope, code, asAt)
 
-[EXPERIMENTAL] Get Counterparty Agreement
+[EXPERIMENTAL] GetCounterpartyAgreement: Get Counterparty Agreement
 
 Get a Counterparty Agreement from a single scope.  The response will return either the Counterparty Agreement that has been stored, or a failure explaining why the request was unsuccessful.  It is important to always check for any unsuccessful requests (failures).
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 # **getCreditSupportAnnex**
 > GetCreditSupportAnnexResponse getCreditSupportAnnex(scope, code, asAt)
 
-[EXPERIMENTAL] Get Credit Support Annex
+[EXPERIMENTAL] GetCreditSupportAnnex: Get Credit Support Annex
 
 Get a Credit Support Annex from a single scope.  The response will return either the Credit Support Annex that has been stored, or a failure explaining why the request was unsuccessful.  It is important to always check for any unsuccessful requests (failures).
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 # **listCounterpartyAgreements**
 > ResourceListOfGetCounterpartyAgreementResponse listCounterpartyAgreements(asAt)
 
-[EXPERIMENTAL] List the set of Counterparty Agreements
+[EXPERIMENTAL] ListCounterpartyAgreements: List the set of Counterparty Agreements
 
 List the set of Counterparty Agreements at the specified AsAt date/time
 
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 # **listCreditSupportAnnexes**
 > ResourceListOfGetCreditSupportAnnexResponse listCreditSupportAnnexes(asAt)
 
-[EXPERIMENTAL] List the set of Credit Support Annexes
+[EXPERIMENTAL] ListCreditSupportAnnexes: List the set of Credit Support Annexes
 
 List the set of Credit Support Annexes at the specified AsAt date/time
 
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 # **upsertCounterpartyAgreement**
 > UpsertSingleStructuredDataResponse upsertCounterpartyAgreement(upsertCounterpartyAgreementRequest)
 
-[EXPERIMENTAL] Upsert Counterparty Agreement
+[EXPERIMENTAL] UpsertCounterpartyAgreement: Upsert Counterparty Agreement
 
 Update or insert Counterparty Agreement in a single scope. An item will be updated if it already exists and inserted if it does not.                The response will return the successfully updated or inserted Counterparty Agreement or failure message if unsuccessful                It is important to always check to verify success (or failure).
 
@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 # **upsertCreditSupportAnnex**
 > UpsertSingleStructuredDataResponse upsertCreditSupportAnnex(upsertCreditSupportAnnexRequest)
 
-[EXPERIMENTAL] Upsert Credit Support Annex
+[EXPERIMENTAL] UpsertCreditSupportAnnex: Upsert Credit Support Annex
 
 Update or insert Credit Support Annex in a single scope. An item will be updated if it already exists and inserted if it does not.                The response will return the successfully updated or inserted Credit Support Annex or failure message if unsuccessful                It is important to always check to verify success (or failure).
 

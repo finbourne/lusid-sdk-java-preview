@@ -4,25 +4,25 @@ All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteCdsFlowConventions**](ConventionsApi.md#deleteCdsFlowConventions) | **DELETE** /api/conventions/credit/conventions/{scope}/{code} | [BETA] Delete the CDS Flow Conventions of given scope and code, assuming that it is present.
-[**deleteFlowConventions**](ConventionsApi.md#deleteFlowConventions) | **DELETE** /api/conventions/rates/flowconventions/{scope}/{code} | [BETA] Delete the Flow Conventions of given scope and code, assuming that it is present.
-[**deleteIndexConvention**](ConventionsApi.md#deleteIndexConvention) | **DELETE** /api/conventions/rates/indexconventions/{scope}/{code} | [BETA] Delete the Index Convention of given scope and code, assuming that it is present.
-[**getCdsFlowConventions**](ConventionsApi.md#getCdsFlowConventions) | **GET** /api/conventions/credit/conventions/{scope}/{code} | [BETA] Get CDS Flow Conventions
-[**getFlowConventions**](ConventionsApi.md#getFlowConventions) | **GET** /api/conventions/rates/flowconventions/{scope}/{code} | [BETA] Get Flow Conventions
-[**getIndexConvention**](ConventionsApi.md#getIndexConvention) | **GET** /api/conventions/rates/indexconventions/{scope}/{code} | [BETA] Get Index Convention
-[**listCdsFlowConventions**](ConventionsApi.md#listCdsFlowConventions) | **GET** /api/conventions/credit/conventions | [BETA] List the set of CDS Flow Conventions
-[**listFlowConventions**](ConventionsApi.md#listFlowConventions) | **GET** /api/conventions/rates/flowconventions | [BETA] List the set of Flow Conventions
-[**listIndexConvention**](ConventionsApi.md#listIndexConvention) | **GET** /api/conventions/rates/indexconventions | [BETA] List the set of Index Conventions
-[**upsertCdsFlowConventions**](ConventionsApi.md#upsertCdsFlowConventions) | **POST** /api/conventions/credit/conventions | [BETA] Upsert a set of CDS Flow Conventions. This creates or updates the data in Lusid.
-[**upsertFlowConventions**](ConventionsApi.md#upsertFlowConventions) | **POST** /api/conventions/rates/flowconventions | [BETA] Upsert Flow Conventions. This creates or updates the data in Lusid.
-[**upsertIndexConvention**](ConventionsApi.md#upsertIndexConvention) | **POST** /api/conventions/rates/indexconventions | [BETA] Upsert a set of Index Convention. This creates or updates the data in Lusid.
+[**deleteCdsFlowConventions**](ConventionsApi.md#deleteCdsFlowConventions) | **DELETE** /api/conventions/credit/conventions/{scope}/{code} | [BETA] DeleteCdsFlowConventions: Delete the CDS Flow Conventions of given scope and code, assuming that it is present.
+[**deleteFlowConventions**](ConventionsApi.md#deleteFlowConventions) | **DELETE** /api/conventions/rates/flowconventions/{scope}/{code} | [BETA] DeleteFlowConventions: Delete the Flow Conventions of given scope and code, assuming that it is present.
+[**deleteIndexConvention**](ConventionsApi.md#deleteIndexConvention) | **DELETE** /api/conventions/rates/indexconventions/{scope}/{code} | [BETA] DeleteIndexConvention: Delete the Index Convention of given scope and code, assuming that it is present.
+[**getCdsFlowConventions**](ConventionsApi.md#getCdsFlowConventions) | **GET** /api/conventions/credit/conventions/{scope}/{code} | [BETA] GetCdsFlowConventions: Get CDS Flow Conventions
+[**getFlowConventions**](ConventionsApi.md#getFlowConventions) | **GET** /api/conventions/rates/flowconventions/{scope}/{code} | [BETA] GetFlowConventions: Get Flow Conventions
+[**getIndexConvention**](ConventionsApi.md#getIndexConvention) | **GET** /api/conventions/rates/indexconventions/{scope}/{code} | [BETA] GetIndexConvention: Get Index Convention
+[**listCdsFlowConventions**](ConventionsApi.md#listCdsFlowConventions) | **GET** /api/conventions/credit/conventions | [BETA] ListCdsFlowConventions: List the set of CDS Flow Conventions
+[**listFlowConventions**](ConventionsApi.md#listFlowConventions) | **GET** /api/conventions/rates/flowconventions | [BETA] ListFlowConventions: List the set of Flow Conventions
+[**listIndexConvention**](ConventionsApi.md#listIndexConvention) | **GET** /api/conventions/rates/indexconventions | [BETA] ListIndexConvention: List the set of Index Conventions
+[**upsertCdsFlowConventions**](ConventionsApi.md#upsertCdsFlowConventions) | **POST** /api/conventions/credit/conventions | [BETA] UpsertCdsFlowConventions: Upsert a set of CDS Flow Conventions. This creates or updates the data in Lusid.
+[**upsertFlowConventions**](ConventionsApi.md#upsertFlowConventions) | **POST** /api/conventions/rates/flowconventions | [BETA] UpsertFlowConventions: Upsert Flow Conventions. This creates or updates the data in Lusid.
+[**upsertIndexConvention**](ConventionsApi.md#upsertIndexConvention) | **POST** /api/conventions/rates/indexconventions | [BETA] UpsertIndexConvention: Upsert a set of Index Convention. This creates or updates the data in Lusid.
 
 
 <a name="deleteCdsFlowConventions"></a>
 # **deleteCdsFlowConventions**
 > AnnulSingleStructuredDataResponse deleteCdsFlowConventions(scope, code)
 
-[BETA] Delete the CDS Flow Conventions of given scope and code, assuming that it is present.
+[BETA] DeleteCdsFlowConventions: Delete the CDS Flow Conventions of given scope and code, assuming that it is present.
 
 Delete the specified CDS Flow Conventions from a single scope.  The response will return either detail of the deleted item, or an explanation (failure) as to why this did not succeed.  It is important to always check for any unsuccessful response.
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 # **deleteFlowConventions**
 > AnnulSingleStructuredDataResponse deleteFlowConventions(scope, code)
 
-[BETA] Delete the Flow Conventions of given scope and code, assuming that it is present.
+[BETA] DeleteFlowConventions: Delete the Flow Conventions of given scope and code, assuming that it is present.
 
 Delete the specified conventions from a single scope.  The response will return either detail of the deleted item, or an explanation (failure) as to why this did not succeed.  It is important to always check for any unsuccessful response.
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 # **deleteIndexConvention**
 > AnnulSingleStructuredDataResponse deleteIndexConvention(scope, code)
 
-[BETA] Delete the Index Convention of given scope and code, assuming that it is present.
+[BETA] DeleteIndexConvention: Delete the Index Convention of given scope and code, assuming that it is present.
 
 Delete the specified Index Convention from a single scope.  The response will return either detail of the deleted item, or an explanation (failure) as to why this did not succeed.  It is important to always check for any unsuccessful response.
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 # **getCdsFlowConventions**
 > GetCdsFlowConventionsResponse getCdsFlowConventions(scope, code, asAt)
 
-[BETA] Get CDS Flow Conventions
+[BETA] GetCdsFlowConventions: Get CDS Flow Conventions
 
 Get a CDS Flow Conventions from a single scope.  The response will return either the conventions that has been stored, or a failure explaining why the request was unsuccessful.  It is important to always check for any unsuccessful requests (failures).
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 # **getFlowConventions**
 > GetFlowConventionsResponse getFlowConventions(scope, code, asAt)
 
-[BETA] Get Flow Conventions
+[BETA] GetFlowConventions: Get Flow Conventions
 
 Get a Flow Conventions from a single scope.  The response will return either the conventions that has been stored, or a failure explaining why the request was unsuccessful.  It is important to always check for any unsuccessful requests (failures).
 
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 # **getIndexConvention**
 > GetIndexConventionResponse getIndexConvention(scope, code, asAt)
 
-[BETA] Get Index Convention
+[BETA] GetIndexConvention: Get Index Convention
 
 Get a Index Convention from a single scope.  The response will return either the conventions that has been stored, or a failure explaining why the request was unsuccessful.  It is important to always check for any unsuccessful requests (failures).
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 # **listCdsFlowConventions**
 > ResourceListOfGetCdsFlowConventionsResponse listCdsFlowConventions(asAt)
 
-[BETA] List the set of CDS Flow Conventions
+[BETA] ListCdsFlowConventions: List the set of CDS Flow Conventions
 
 List the set of CDS Flow Conventions at the specified date/time
 
@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 # **listFlowConventions**
 > ResourceListOfGetFlowConventionsResponse listFlowConventions(asAt)
 
-[BETA] List the set of Flow Conventions
+[BETA] ListFlowConventions: List the set of Flow Conventions
 
 List the set of Flow Conventions at the specified date/time
 
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 # **listIndexConvention**
 > ResourceListOfGetIndexConventionResponse listIndexConvention(asAt)
 
-[BETA] List the set of Index Conventions
+[BETA] ListIndexConvention: List the set of Index Conventions
 
 List the set of Index Conventions at the specified date/time
 
@@ -661,7 +661,7 @@ Name | Type | Description  | Notes
 # **upsertCdsFlowConventions**
 > UpsertSingleStructuredDataResponse upsertCdsFlowConventions(upsertCdsFlowConventionsRequest)
 
-[BETA] Upsert a set of CDS Flow Conventions. This creates or updates the data in Lusid.
+[BETA] UpsertCdsFlowConventions: Upsert a set of CDS Flow Conventions. This creates or updates the data in Lusid.
 
 Update or insert CDS Flow Conventions in a single scope. An item will be updated if it already exists  and inserted if it does not.                The response will return the successfully updated or inserted CDS Flow Conventions or failure message if unsuccessful                It is important to always check to verify success (or failure).
 
@@ -730,7 +730,7 @@ Name | Type | Description  | Notes
 # **upsertFlowConventions**
 > UpsertSingleStructuredDataResponse upsertFlowConventions(upsertFlowConventionsRequest)
 
-[BETA] Upsert Flow Conventions. This creates or updates the data in Lusid.
+[BETA] UpsertFlowConventions: Upsert Flow Conventions. This creates or updates the data in Lusid.
 
 Update or insert Flow Conventions in a single scope. An item will be updated if it already exists  and inserted if it does not.                The response will return the successfully updated or inserted Flow Conventions or failure message if unsuccessful                It is important to always check to verify success (or failure).
 
@@ -799,7 +799,7 @@ Name | Type | Description  | Notes
 # **upsertIndexConvention**
 > UpsertSingleStructuredDataResponse upsertIndexConvention(upsertIndexConventionRequest)
 
-[BETA] Upsert a set of Index Convention. This creates or updates the data in Lusid.
+[BETA] UpsertIndexConvention: Upsert a set of Index Convention. This creates or updates the data in Lusid.
 
 Update or insert Index Convention in a single scope. An item will be updated if it already exists  and inserted if it does not.                The response will return the successfully updated or inserted Index Convention or failure message if unsuccessful                It is important to always check to verify success (or failure).
 

@@ -4,17 +4,17 @@ All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getEntitySchema**](SchemasApi.md#getEntitySchema) | **GET** /api/schemas/entities/{entity} | [BETA] Get schema
-[**getPropertySchema**](SchemasApi.md#getPropertySchema) | **GET** /api/schemas/properties | [BETA] Get property schema
-[**getValueTypes**](SchemasApi.md#getValueTypes) | **GET** /api/schemas/types | [BETA] Get value types
-[**listEntities**](SchemasApi.md#listEntities) | **GET** /api/schemas/entities | [BETA] List entities
+[**getEntitySchema**](SchemasApi.md#getEntitySchema) | **GET** /api/schemas/entities/{entity} | [BETA] GetEntitySchema: Get schema
+[**getPropertySchema**](SchemasApi.md#getPropertySchema) | **GET** /api/schemas/properties | [BETA] GetPropertySchema: Get property schema
+[**getValueTypes**](SchemasApi.md#getValueTypes) | **GET** /api/schemas/types | [BETA] GetValueTypes: Get value types
+[**listEntities**](SchemasApi.md#listEntities) | **GET** /api/schemas/entities | [BETA] ListEntities: List entities
 
 
 <a name="getEntitySchema"></a>
 # **getEntitySchema**
 > Schema getEntitySchema(entity)
 
-[BETA] Get schema
+[BETA] GetEntitySchema: Get schema
 
 Gets the schema and meta-data for a given entity
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 # **getPropertySchema**
 > PropertySchema getPropertySchema(propertyKeys, asAt)
 
-[BETA] Get property schema
+[BETA] GetPropertySchema: Get property schema
 
 Get the schemas for the provided list of property keys.
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 # **getValueTypes**
 > ResourceListOfValueType getValueTypes(sortBy, start, limit)
 
-[BETA] Get value types
+[BETA] GetValueTypes: Get value types
 
 Gets the available value types for which a schema is available.
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 # **listEntities**
 > ResourceListOfString listEntities()
 
-[BETA] List entities
+[BETA] ListEntities: List entities
 
 List all available entities for which schema information is available.
 

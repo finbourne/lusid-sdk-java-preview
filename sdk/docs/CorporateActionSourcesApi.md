@@ -4,19 +4,19 @@ All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**batchUpsertCorporateActions**](CorporateActionSourcesApi.md#batchUpsertCorporateActions) | **POST** /api/corporateactionsources/{scope}/{code}/corporateactions | [BETA] Upsert corporate actions
-[**createCorporateActionSource**](CorporateActionSourcesApi.md#createCorporateActionSource) | **POST** /api/corporateactionsources | [BETA] Create corporate action source
-[**deleteCorporateActionSource**](CorporateActionSourcesApi.md#deleteCorporateActionSource) | **DELETE** /api/corporateactionsources/{scope}/{code} | [BETA] Delete a corporate action source
-[**deleteCorporateActions**](CorporateActionSourcesApi.md#deleteCorporateActions) | **DELETE** /api/corporateactionsources/{scope}/{code}/corporateactions | [EXPERIMENTAL] Delete corporate actions
-[**getCorporateActions**](CorporateActionSourcesApi.md#getCorporateActions) | **GET** /api/corporateactionsources/{scope}/{code}/corporateactions | [BETA] Get corporate actions
-[**listCorporateActionSources**](CorporateActionSourcesApi.md#listCorporateActionSources) | **GET** /api/corporateactionsources | [BETA] List corporate action sources
+[**batchUpsertCorporateActions**](CorporateActionSourcesApi.md#batchUpsertCorporateActions) | **POST** /api/corporateactionsources/{scope}/{code}/corporateactions | [BETA] BatchUpsertCorporateActions: Upsert corporate actions
+[**createCorporateActionSource**](CorporateActionSourcesApi.md#createCorporateActionSource) | **POST** /api/corporateactionsources | [BETA] CreateCorporateActionSource: Create corporate action source
+[**deleteCorporateActionSource**](CorporateActionSourcesApi.md#deleteCorporateActionSource) | **DELETE** /api/corporateactionsources/{scope}/{code} | [BETA] DeleteCorporateActionSource: Delete a corporate action source
+[**deleteCorporateActions**](CorporateActionSourcesApi.md#deleteCorporateActions) | **DELETE** /api/corporateactionsources/{scope}/{code}/corporateactions | [EXPERIMENTAL] DeleteCorporateActions: Delete corporate actions
+[**getCorporateActions**](CorporateActionSourcesApi.md#getCorporateActions) | **GET** /api/corporateactionsources/{scope}/{code}/corporateactions | [BETA] GetCorporateActions: Get corporate actions
+[**listCorporateActionSources**](CorporateActionSourcesApi.md#listCorporateActionSources) | **GET** /api/corporateactionsources | [BETA] ListCorporateActionSources: List corporate action sources
 
 
 <a name="batchUpsertCorporateActions"></a>
 # **batchUpsertCorporateActions**
 > UpsertCorporateActionsResponse batchUpsertCorporateActions(scope, code, upsertCorporateActionRequest)
 
-[BETA] Upsert corporate actions
+[BETA] BatchUpsertCorporateActions: Upsert corporate actions
 
 Create or update one or more corporate actions in a particular corporate action source. Failures are identified in the body of the response.                If a corporate action is upserted at exactly the same effective datetime as a transaction for the same instrument, the corporate action takes precedence. Depending on the nature of the corporate action, this may mean it affects the transaction.
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 # **createCorporateActionSource**
 > CorporateActionSource createCorporateActionSource(createCorporateActionSourceRequest)
 
-[BETA] Create corporate action source
+[BETA] CreateCorporateActionSource: Create corporate action source
 
 Create a corporate action source.
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 # **deleteCorporateActionSource**
 > DeletedEntityResponse deleteCorporateActionSource(scope, code)
 
-[BETA] Delete a corporate action source
+[BETA] DeleteCorporateActionSource: Delete a corporate action source
 
 Deletes a single corporate action source
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 # **deleteCorporateActions**
 > DeletedEntityResponse deleteCorporateActions(scope, code, corporateActionIds)
 
-[EXPERIMENTAL] Delete corporate actions
+[EXPERIMENTAL] DeleteCorporateActions: Delete corporate actions
 
 Delete one or more corporate actions from a particular corporate action source.
 
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 # **getCorporateActions**
 > ResourceListOfCorporateAction getCorporateActions(scope, code, fromEffectiveAt, toEffectiveAt, asAt, sortBy, limit, filter)
 
-[BETA] Get corporate actions
+[BETA] GetCorporateActions: Get corporate actions
 
 Get corporate actions from a particular corporate action source.
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 # **listCorporateActionSources**
 > PagedResourceListOfCorporateActionSource listCorporateActionSources(asAt, sortBy, limit, filter, page)
 
-[BETA] List corporate action sources
+[BETA] ListCorporateActionSources: List corporate action sources
 
 Gets a list of all corporate action sources
 

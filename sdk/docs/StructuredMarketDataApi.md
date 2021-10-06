@@ -4,16 +4,16 @@ All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteStructuredMarketData**](StructuredMarketDataApi.md#deleteStructuredMarketData) | **POST** /api/structured/{scope}/$delete | [EXPERIMENTAL] Delete one or more items of structured market data, assuming they are present.
-[**getStructuredMarketData**](StructuredMarketDataApi.md#getStructuredMarketData) | **POST** /api/structured/{scope}/$get | [EXPERIMENTAL] Get structured market data
-[**upsertStructuredMarketData**](StructuredMarketDataApi.md#upsertStructuredMarketData) | **POST** /api/structured/{scope} | [EXPERIMENTAL] Upsert a set of structured market data items. This creates or updates the data in Lusid.
+[**deleteStructuredMarketData**](StructuredMarketDataApi.md#deleteStructuredMarketData) | **POST** /api/structured/{scope}/$delete | [EXPERIMENTAL] DeleteStructuredMarketData: Delete one or more items of structured market data, assuming they are present.
+[**getStructuredMarketData**](StructuredMarketDataApi.md#getStructuredMarketData) | **POST** /api/structured/{scope}/$get | [EXPERIMENTAL] GetStructuredMarketData: Get structured market data
+[**upsertStructuredMarketData**](StructuredMarketDataApi.md#upsertStructuredMarketData) | **POST** /api/structured/{scope} | [EXPERIMENTAL] UpsertStructuredMarketData: Upsert a set of structured market data items. This creates or updates the data in Lusid.
 
 
 <a name="deleteStructuredMarketData"></a>
 # **deleteStructuredMarketData**
 > AnnulStructuredDataResponse deleteStructuredMarketData(scope, requestBody)
 
-[EXPERIMENTAL] Delete one or more items of structured market data, assuming they are present.
+[EXPERIMENTAL] DeleteStructuredMarketData: Delete one or more items of structured market data, assuming they are present.
 
 Delete one or more specified structured market data items from a single scope. Each item is identified by a unique id which includes  information about its type as well as the exact effective datetime (to the microsecond) at which it entered the system (became valid).                In the request each market data item must be keyed by a unique correlation id. This id is ephemeral and is not stored by LUSID.  It serves only as a way to easily identify each quote in the response.                The response will return both the collection of successfully deleted market data items, as well as those that failed.  For the failures a reason will be provided explaining why the it could not be deleted.                It is important to always check the failed set for any unsuccessful results.
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 # **getStructuredMarketData**
 > GetStructuredMarketDataResponse getStructuredMarketData(scope, requestBody, effectiveAt, asAt, maxAge)
 
-[EXPERIMENTAL] Get structured market data
+[EXPERIMENTAL] GetStructuredMarketData: Get structured market data
 
 Get one or more items of structured market data from a single scope.                Each item can be identified by its time invariant structured market data identifier.                For each id LUSID will return the most recent matched item with respect to the provided (or default) effective datetime.                 An optional maximum age range window can be specified which defines how far back to look back for data from the specified effective datetime.  LUSID will return the most recent item within this window.                In the request each structured market data id must be keyed by a unique correlation id. This id is ephemeral and is not stored by LUSID.  It serves only as a way to easily identify each item in the response.                The response will return three collections. One, the successfully retrieved structured market data. Two, those that had a  valid identifier but could not be found. Three, those that failed because LUSID could not construct a valid identifier from the request.    For the ids that failed to resolve or could not be found a reason will be provided explaining why that is the case.                It is important to always check the failed and not found sets for any unsuccessful results.
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 # **upsertStructuredMarketData**
 > UpsertStructuredDataResponse upsertStructuredMarketData(scope, requestBody)
 
-[EXPERIMENTAL] Upsert a set of structured market data items. This creates or updates the data in Lusid.
+[EXPERIMENTAL] UpsertStructuredMarketData: Upsert a set of structured market data items. This creates or updates the data in Lusid.
 
 Update or insert one or more structured market data items in a single scope. An item will be updated if it already exists  and inserted if it does not.                In the request each structured market data item must be keyed by a unique correlation id. This id is ephemeral and is not stored by LUSID.  It serves only as a way to easily identify each structured market data in the response.                The response will return both the collection of successfully updated or inserted structured market data, as well as those that failed.  For the failures a reason will be provided explaining why the item could not be updated or inserted.                It is important to always check the failed set for any unsuccessful results.
 
