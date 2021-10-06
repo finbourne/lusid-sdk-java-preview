@@ -1,19 +1,19 @@
 # RelationshipDefinitionsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createRelationshipDefinition**](RelationshipDefinitionsApi.md#createRelationshipDefinition) | **POST** /api/relationshipdefinitions | [EXPERIMENTAL] CreateRelationshipDefinition: Create Relationship Definition
-[**getRelationshipDefinition**](RelationshipDefinitionsApi.md#getRelationshipDefinition) | **GET** /api/relationshipdefinitions/{scope}/{code} | [EXPERIMENTAL] GetRelationshipDefinition: Get relationship definition
-[**updateRelationshipDefinition**](RelationshipDefinitionsApi.md#updateRelationshipDefinition) | **PUT** /api/relationshipdefinitions/{scope}/{code} | [EXPERIMENTAL] UpdateRelationshipDefinition: Update Relationship Definition
+[**createRelationshipDefinition**](RelationshipDefinitionsApi.md#createRelationshipDefinition) | **POST** /api/relationshipdefinitions | [EXPERIMENTAL] Create Relationship Definition
+[**getRelationshipDefinition**](RelationshipDefinitionsApi.md#getRelationshipDefinition) | **GET** /api/relationshipdefinitions/{scope}/{code} | [EXPERIMENTAL] Get relationship definition
+[**updateRelationshipDefinition**](RelationshipDefinitionsApi.md#updateRelationshipDefinition) | **PUT** /api/relationshipdefinitions/{scope}/{code} | [EXPERIMENTAL] Update Relationship Definition
 
 
 <a name="createRelationshipDefinition"></a>
 # **createRelationshipDefinition**
 > RelationshipDefinition createRelationshipDefinition(createRelationshipDefinitionRequest)
 
-[EXPERIMENTAL] CreateRelationshipDefinition: Create Relationship Definition
+[EXPERIMENTAL] Create Relationship Definition
 
 Create a new relationship definition to be used for creating relationships between entities.
 
@@ -30,7 +30,7 @@ import com.finbourne.lusid.api.RelationshipDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 # **getRelationshipDefinition**
 > RelationshipDefinition getRelationshipDefinition(scope, code, asAt)
 
-[EXPERIMENTAL] GetRelationshipDefinition: Get relationship definition
+[EXPERIMENTAL] Get relationship definition
 
 Retrieve the specified relationship definition
 
@@ -99,7 +99,7 @@ import com.finbourne.lusid.api.RelationshipDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 # **updateRelationshipDefinition**
 > RelationshipDefinition updateRelationshipDefinition(scope, code, updateRelationshipDefinitionRequest)
 
-[EXPERIMENTAL] UpdateRelationshipDefinition: Update Relationship Definition
+[EXPERIMENTAL] Update Relationship Definition
 
 Update the definition of a specified existing relationship. Not all elements within a relationship definition  are modifiable due to the potential implications for values already stored against the relationship.
 
@@ -172,7 +172,7 @@ import com.finbourne.lusid.api.RelationshipDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

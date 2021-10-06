@@ -1,20 +1,20 @@
 # BlocksApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteBlock**](BlocksApi.md#deleteBlock) | **DELETE** /api/blocks/{scope}/{code} | [EXPERIMENTAL] DeleteBlock: Delete block
-[**getBlock**](BlocksApi.md#getBlock) | **GET** /api/blocks/{scope}/{code} | [EXPERIMENTAL] GetBlock: Get Block
-[**listBlocks**](BlocksApi.md#listBlocks) | **GET** /api/blocks | [EXPERIMENTAL] ListBlocks: List Blocks
-[**upsertBlocks**](BlocksApi.md#upsertBlocks) | **POST** /api/blocks | [EXPERIMENTAL] UpsertBlocks: Upsert Block
+[**deleteBlock**](BlocksApi.md#deleteBlock) | **DELETE** /api/blocks/{scope}/{code} | [EXPERIMENTAL] Delete block
+[**getBlock**](BlocksApi.md#getBlock) | **GET** /api/blocks/{scope}/{code} | [EXPERIMENTAL] Get Block
+[**listBlocks**](BlocksApi.md#listBlocks) | **GET** /api/blocks | [EXPERIMENTAL] List Blocks
+[**upsertBlocks**](BlocksApi.md#upsertBlocks) | **POST** /api/blocks | [EXPERIMENTAL] Upsert Block
 
 
 <a name="deleteBlock"></a>
 # **deleteBlock**
 > DeletedEntityResponse deleteBlock(scope, code)
 
-[EXPERIMENTAL] DeleteBlock: Delete block
+[EXPERIMENTAL] Delete block
 
 Delete an block. Deletion will be valid from the block&#39;s creation datetime.  This means that the block will no longer exist at any effective datetime from the asAt datetime of deletion.
 
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.BlocksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getBlock**
 > Block getBlock(scope, code, asAt, propertyKeys)
 
-[EXPERIMENTAL] GetBlock: Get Block
+[EXPERIMENTAL] Get Block
 
 Fetch a Block that matches the specified identifier
 
@@ -102,7 +102,7 @@ import com.finbourne.lusid.api.BlocksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **listBlocks**
 > PagedResourceListOfBlock listBlocks(asAt, page, sortBy, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] ListBlocks: List Blocks
+[EXPERIMENTAL] List Blocks
 
 Fetch the last pre-AsAt date version of each block in scope (does not fetch the entire history).
 
@@ -177,7 +177,7 @@ import com.finbourne.lusid.api.BlocksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 # **upsertBlocks**
 > ResourceListOfBlock upsertBlocks(blockSetRequest)
 
-[EXPERIMENTAL] UpsertBlocks: Upsert Block
+[EXPERIMENTAL] Upsert Block
 
 Upsert; update existing blocks with given ids, or create new blocks otherwise.
 
@@ -256,7 +256,7 @@ import com.finbourne.lusid.api.BlocksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

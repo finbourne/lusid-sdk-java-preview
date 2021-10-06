@@ -1,20 +1,20 @@
 # PlacementsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deletePlacement**](PlacementsApi.md#deletePlacement) | **DELETE** /api/placements/{scope}/{code} | [EXPERIMENTAL] DeletePlacement: Delete placement
-[**getPlacement**](PlacementsApi.md#getPlacement) | **GET** /api/placements/{scope}/{code} | [EXPERIMENTAL] GetPlacement: Get Placement
-[**listPlacements**](PlacementsApi.md#listPlacements) | **GET** /api/placements | [EXPERIMENTAL] ListPlacements: List Placements
-[**upsertPlacements**](PlacementsApi.md#upsertPlacements) | **POST** /api/placements | [EXPERIMENTAL] UpsertPlacements: Upsert Placement
+[**deletePlacement**](PlacementsApi.md#deletePlacement) | **DELETE** /api/placements/{scope}/{code} | [EXPERIMENTAL] Delete placement
+[**getPlacement**](PlacementsApi.md#getPlacement) | **GET** /api/placements/{scope}/{code} | [EXPERIMENTAL] Get Placement
+[**listPlacements**](PlacementsApi.md#listPlacements) | **GET** /api/placements | [EXPERIMENTAL] List Placements
+[**upsertPlacements**](PlacementsApi.md#upsertPlacements) | **POST** /api/placements | [EXPERIMENTAL] Upsert Placement
 
 
 <a name="deletePlacement"></a>
 # **deletePlacement**
 > DeletedEntityResponse deletePlacement(scope, code)
 
-[EXPERIMENTAL] DeletePlacement: Delete placement
+[EXPERIMENTAL] Delete placement
 
 Delete an placement. Deletion will be valid from the placement&#39;s creation datetime.  This means that the placement will no longer exist at any effective datetime from the asAt datetime of deletion.
 
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.PlacementsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getPlacement**
 > Placement getPlacement(scope, code, asAt, propertyKeys)
 
-[EXPERIMENTAL] GetPlacement: Get Placement
+[EXPERIMENTAL] Get Placement
 
 Fetch a Placement that matches the specified identifier
 
@@ -102,7 +102,7 @@ import com.finbourne.lusid.api.PlacementsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **listPlacements**
 > PagedResourceListOfPlacement listPlacements(asAt, page, sortBy, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] ListPlacements: List Placements
+[EXPERIMENTAL] List Placements
 
 Fetch the last pre-AsAt date version of each placement in scope (does not fetch the entire history).
 
@@ -177,7 +177,7 @@ import com.finbourne.lusid.api.PlacementsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 # **upsertPlacements**
 > ResourceListOfPlacement upsertPlacements(placementSetRequest)
 
-[EXPERIMENTAL] UpsertPlacements: Upsert Placement
+[EXPERIMENTAL] Upsert Placement
 
 Upsert; update existing placements with given ids, or create new placements otherwise.
 
@@ -256,7 +256,7 @@ import com.finbourne.lusid.api.PlacementsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

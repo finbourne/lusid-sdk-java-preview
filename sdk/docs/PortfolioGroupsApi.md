@@ -1,41 +1,41 @@
 # PortfolioGroupsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addPortfolioToGroup**](PortfolioGroupsApi.md#addPortfolioToGroup) | **POST** /api/portfoliogroups/{scope}/{code}/portfolios | [EARLY ACCESS] AddPortfolioToGroup: Add portfolio to group
-[**addSubGroupToGroup**](PortfolioGroupsApi.md#addSubGroupToGroup) | **POST** /api/portfoliogroups/{scope}/{code}/subgroups | [EARLY ACCESS] AddSubGroupToGroup: Add sub group to group
-[**buildTransactionsForPortfolioGroup**](PortfolioGroupsApi.md#buildTransactionsForPortfolioGroup) | **POST** /api/portfoliogroups/{scope}/{code}/transactions/$build | [EARLY ACCESS] BuildTransactionsForPortfolioGroup: Build transactions for transaction portfolios in a portfolio group
-[**createPortfolioGroup**](PortfolioGroupsApi.md#createPortfolioGroup) | **POST** /api/portfoliogroups/{scope} | [EARLY ACCESS] CreatePortfolioGroup: Create portfolio group
-[**deleteGroupProperties**](PortfolioGroupsApi.md#deleteGroupProperties) | **POST** /api/portfoliogroups/{scope}/{code}/properties/$delete | [EARLY ACCESS] DeleteGroupProperties: Delete group properties
-[**deleteKeyFromPortfolioGroupAccessMetadata**](PortfolioGroupsApi.md#deleteKeyFromPortfolioGroupAccessMetadata) | **DELETE** /api/portfoliogroups/{scope}/{code}/metadata/{metadataKey} | [EXPERIMENTAL] DeleteKeyFromPortfolioGroupAccessMetadata: Delete a Portfolio Group Access Metadata entry
-[**deletePortfolioFromGroup**](PortfolioGroupsApi.md#deletePortfolioFromGroup) | **DELETE** /api/portfoliogroups/{scope}/{code}/portfolios/{portfolioScope}/{portfolioCode} | [EARLY ACCESS] DeletePortfolioFromGroup: Delete portfolio from group
-[**deletePortfolioGroup**](PortfolioGroupsApi.md#deletePortfolioGroup) | **DELETE** /api/portfoliogroups/{scope}/{code} | [EARLY ACCESS] DeletePortfolioGroup: Delete portfolio group
-[**deleteSubGroupFromGroup**](PortfolioGroupsApi.md#deleteSubGroupFromGroup) | **DELETE** /api/portfoliogroups/{scope}/{code}/subgroups/{subgroupScope}/{subgroupCode} | [EARLY ACCESS] DeleteSubGroupFromGroup: Delete sub group from group
-[**getA2BDataForPortfolioGroup**](PortfolioGroupsApi.md#getA2BDataForPortfolioGroup) | **GET** /api/portfoliogroups/{scope}/{code}/a2b | [EXPERIMENTAL] GetA2BDataForPortfolioGroup: Get A2B data for a Portfolio Group
-[**getGroupProperties**](PortfolioGroupsApi.md#getGroupProperties) | **GET** /api/portfoliogroups/{scope}/{code}/properties | [EARLY ACCESS] GetGroupProperties: Get group properties
-[**getHoldingsForPortfolioGroup**](PortfolioGroupsApi.md#getHoldingsForPortfolioGroup) | **GET** /api/portfoliogroups/{scope}/{code}/holdings | [EARLY ACCESS] GetHoldingsForPortfolioGroup: Get holdings for transaction portfolios in portfolio group
-[**getPortfolioGroup**](PortfolioGroupsApi.md#getPortfolioGroup) | **GET** /api/portfoliogroups/{scope}/{code} | [EARLY ACCESS] GetPortfolioGroup: Get portfolio group
-[**getPortfolioGroupAccessMetadataByKey**](PortfolioGroupsApi.md#getPortfolioGroupAccessMetadataByKey) | **GET** /api/portfoliogroups/{scope}/{code}/metadata/{metadataKey} | [EXPERIMENTAL] GetPortfolioGroupAccessMetadataByKey: Get an entry identified by a metadataKey in the Access Metadata of a Portfolio Group
-[**getPortfolioGroupCommands**](PortfolioGroupsApi.md#getPortfolioGroupCommands) | **GET** /api/portfoliogroups/{scope}/{code}/commands | [EARLY ACCESS] GetPortfolioGroupCommands: Get portfolio group commands
-[**getPortfolioGroupExpansion**](PortfolioGroupsApi.md#getPortfolioGroupExpansion) | **GET** /api/portfoliogroups/{scope}/{code}/expansion | [EARLY ACCESS] GetPortfolioGroupExpansion: Get portfolio group expansion
-[**getPortfolioGroupMetadata**](PortfolioGroupsApi.md#getPortfolioGroupMetadata) | **GET** /api/portfoliogroups/{scope}/{code}/metadata | [EXPERIMENTAL] GetPortfolioGroupMetadata: Get Access Metadata rules for Portfolio Group
-[**getPortfolioGroupPropertyTimeSeries**](PortfolioGroupsApi.md#getPortfolioGroupPropertyTimeSeries) | **GET** /api/portfoliogroups/{scope}/{code}/properties/time-series | [EARLY ACCESS] GetPortfolioGroupPropertyTimeSeries: Get the time series of a portfolio group property
-[**getPortfolioGroupRelations**](PortfolioGroupsApi.md#getPortfolioGroupRelations) | **GET** /api/portfoliogroups/{scope}/{code}/relations | [EXPERIMENTAL] GetPortfolioGroupRelations: Get Relations for Portfolio Group
-[**getPortfolioGroupRelationships**](PortfolioGroupsApi.md#getPortfolioGroupRelationships) | **GET** /api/portfoliogroups/{scope}/{code}/relationships | [EXPERIMENTAL] GetPortfolioGroupRelationships: Get Relationships for Portfolio Group
-[**getTransactionsForPortfolioGroup**](PortfolioGroupsApi.md#getTransactionsForPortfolioGroup) | **GET** /api/portfoliogroups/{scope}/{code}/transactions | [EARLY ACCESS] GetTransactionsForPortfolioGroup: Get transactions for transaction portfolios in a portfolio group
-[**listPortfolioGroups**](PortfolioGroupsApi.md#listPortfolioGroups) | **GET** /api/portfoliogroups/{scope} | [EARLY ACCESS] ListPortfolioGroups: List portfolio groups
-[**updatePortfolioGroup**](PortfolioGroupsApi.md#updatePortfolioGroup) | **PUT** /api/portfoliogroups/{scope}/{code} | [EARLY ACCESS] UpdatePortfolioGroup: Update portfolio group
-[**upsertGroupProperties**](PortfolioGroupsApi.md#upsertGroupProperties) | **POST** /api/portfoliogroups/{scope}/{code}/properties/$upsert | [EARLY ACCESS] UpsertGroupProperties: Upsert group properties
-[**upsertPortfolioGroupAccessMetadata**](PortfolioGroupsApi.md#upsertPortfolioGroupAccessMetadata) | **PUT** /api/portfoliogroups/{scope}/{code}/metadata/{metadataKey} | [EXPERIMENTAL] UpsertPortfolioGroupAccessMetadata: Upsert a Portfolio Group Access Metadata entry associated with a specific metadataKey. This creates or updates the data in LUSID.
+[**addPortfolioToGroup**](PortfolioGroupsApi.md#addPortfolioToGroup) | **POST** /api/portfoliogroups/{scope}/{code}/portfolios | [EARLY ACCESS] Add portfolio to group
+[**addSubGroupToGroup**](PortfolioGroupsApi.md#addSubGroupToGroup) | **POST** /api/portfoliogroups/{scope}/{code}/subgroups | [EARLY ACCESS] Add sub group to group
+[**buildTransactionsForPortfolioGroup**](PortfolioGroupsApi.md#buildTransactionsForPortfolioGroup) | **POST** /api/portfoliogroups/{scope}/{code}/transactions/$build | [EARLY ACCESS] Build transactions for transaction portfolios in a portfolio group
+[**createPortfolioGroup**](PortfolioGroupsApi.md#createPortfolioGroup) | **POST** /api/portfoliogroups/{scope} | [EARLY ACCESS] Create portfolio group
+[**deleteGroupProperties**](PortfolioGroupsApi.md#deleteGroupProperties) | **POST** /api/portfoliogroups/{scope}/{code}/properties/$delete | [EARLY ACCESS] Delete group properties
+[**deleteKeyFromPortfolioGroupAccessMetadata**](PortfolioGroupsApi.md#deleteKeyFromPortfolioGroupAccessMetadata) | **DELETE** /api/portfoliogroups/{scope}/{code}/metadata/{metadataKey} | [EXPERIMENTAL] Delete a Portfolio Group Access Metadata entry
+[**deletePortfolioFromGroup**](PortfolioGroupsApi.md#deletePortfolioFromGroup) | **DELETE** /api/portfoliogroups/{scope}/{code}/portfolios/{portfolioScope}/{portfolioCode} | [EARLY ACCESS] Delete portfolio from group
+[**deletePortfolioGroup**](PortfolioGroupsApi.md#deletePortfolioGroup) | **DELETE** /api/portfoliogroups/{scope}/{code} | [EARLY ACCESS] Delete portfolio group
+[**deleteSubGroupFromGroup**](PortfolioGroupsApi.md#deleteSubGroupFromGroup) | **DELETE** /api/portfoliogroups/{scope}/{code}/subgroups/{subgroupScope}/{subgroupCode} | [EARLY ACCESS] Delete sub group from group
+[**getA2BDataForPortfolioGroup**](PortfolioGroupsApi.md#getA2BDataForPortfolioGroup) | **GET** /api/portfoliogroups/{scope}/{code}/a2b | [EXPERIMENTAL] Get A2B data for a Portfolio Group
+[**getGroupProperties**](PortfolioGroupsApi.md#getGroupProperties) | **GET** /api/portfoliogroups/{scope}/{code}/properties | [EARLY ACCESS] Get group properties
+[**getHoldingsForPortfolioGroup**](PortfolioGroupsApi.md#getHoldingsForPortfolioGroup) | **GET** /api/portfoliogroups/{scope}/{code}/holdings | [EARLY ACCESS] Get holdings for transaction portfolios in portfolio group
+[**getPortfolioGroup**](PortfolioGroupsApi.md#getPortfolioGroup) | **GET** /api/portfoliogroups/{scope}/{code} | [EARLY ACCESS] Get portfolio group
+[**getPortfolioGroupAccessMetadataByKey**](PortfolioGroupsApi.md#getPortfolioGroupAccessMetadataByKey) | **GET** /api/portfoliogroups/{scope}/{code}/metadata/{metadataKey} | [EXPERIMENTAL] Get an entry identified by a metadataKey in the Access Metadata of a Portfolio Group
+[**getPortfolioGroupCommands**](PortfolioGroupsApi.md#getPortfolioGroupCommands) | **GET** /api/portfoliogroups/{scope}/{code}/commands | [EARLY ACCESS] Get portfolio group commands
+[**getPortfolioGroupExpansion**](PortfolioGroupsApi.md#getPortfolioGroupExpansion) | **GET** /api/portfoliogroups/{scope}/{code}/expansion | [EARLY ACCESS] Get portfolio group expansion
+[**getPortfolioGroupMetadata**](PortfolioGroupsApi.md#getPortfolioGroupMetadata) | **GET** /api/portfoliogroups/{scope}/{code}/metadata | [EXPERIMENTAL] Get Access Metadata rules for Portfolio Group
+[**getPortfolioGroupPropertyTimeSeries**](PortfolioGroupsApi.md#getPortfolioGroupPropertyTimeSeries) | **GET** /api/portfoliogroups/{scope}/{code}/properties/time-series | [EARLY ACCESS] Get the time series of a portfolio group property
+[**getPortfolioGroupRelations**](PortfolioGroupsApi.md#getPortfolioGroupRelations) | **GET** /api/portfoliogroups/{scope}/{code}/relations | [EXPERIMENTAL] Get Relations for Portfolio Group
+[**getPortfolioGroupRelationships**](PortfolioGroupsApi.md#getPortfolioGroupRelationships) | **GET** /api/portfoliogroups/{scope}/{code}/relationships | [EXPERIMENTAL] Get Relationships for Portfolio Group
+[**getTransactionsForPortfolioGroup**](PortfolioGroupsApi.md#getTransactionsForPortfolioGroup) | **GET** /api/portfoliogroups/{scope}/{code}/transactions | [EARLY ACCESS] Get transactions for transaction portfolios in a portfolio group
+[**listPortfolioGroups**](PortfolioGroupsApi.md#listPortfolioGroups) | **GET** /api/portfoliogroups/{scope} | [EARLY ACCESS] List portfolio groups
+[**updatePortfolioGroup**](PortfolioGroupsApi.md#updatePortfolioGroup) | **PUT** /api/portfoliogroups/{scope}/{code} | [EARLY ACCESS] Update portfolio group
+[**upsertGroupProperties**](PortfolioGroupsApi.md#upsertGroupProperties) | **POST** /api/portfoliogroups/{scope}/{code}/properties/$upsert | [EARLY ACCESS] Upsert group properties
+[**upsertPortfolioGroupAccessMetadata**](PortfolioGroupsApi.md#upsertPortfolioGroupAccessMetadata) | **PUT** /api/portfoliogroups/{scope}/{code}/metadata/{metadataKey} | [EXPERIMENTAL] Upsert a Portfolio Group Access Metadata entry associated with a specific metadataKey. This creates or updates the data in LUSID.
 
 
 <a name="addPortfolioToGroup"></a>
 # **addPortfolioToGroup**
 > PortfolioGroup addPortfolioToGroup(scope, code, effectiveAt, resourceId)
 
-[EARLY ACCESS] AddPortfolioToGroup: Add portfolio to group
+[EARLY ACCESS] Add portfolio to group
 
 Add a single portfolio to a portfolio group.
 
@@ -52,7 +52,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 # **addSubGroupToGroup**
 > PortfolioGroup addSubGroupToGroup(scope, code, effectiveAt, resourceId)
 
-[EARLY ACCESS] AddSubGroupToGroup: Add sub group to group
+[EARLY ACCESS] Add sub group to group
 
 Add a portfolio group to a portfolio group as a sub group.
 
@@ -127,7 +127,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 # **buildTransactionsForPortfolioGroup**
 > VersionedResourceListOfOutputTransaction buildTransactionsForPortfolioGroup(scope, code, transactionQueryParameters, asAt, filter, propertyKeys, limit, page)
 
-[EARLY ACCESS] BuildTransactionsForPortfolioGroup: Build transactions for transaction portfolios in a portfolio group
+[EARLY ACCESS] Build transactions for transaction portfolios in a portfolio group
 
 Build transactions for transaction portfolios in a portfolio group over a given interval of effective time.     When the specified portfolio in a portfolio group is a derived transaction portfolio, the returned set of transactions is the  union set of all transactions of the parent (and any grandparents etc.) and the specified derived transaction portfolio itself.
 
@@ -202,7 +202,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 # **createPortfolioGroup**
 > PortfolioGroup createPortfolioGroup(scope, createPortfolioGroupRequest)
 
-[EARLY ACCESS] CreatePortfolioGroup: Create portfolio group
+[EARLY ACCESS] Create portfolio group
 
 Create a portfolio group in a specific scope.
 
@@ -285,7 +285,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 # **deleteGroupProperties**
 > DeletedEntityResponse deleteGroupProperties(scope, code, requestBody, effectiveAt)
 
-[EARLY ACCESS] DeleteGroupProperties: Delete group properties
+[EARLY ACCESS] Delete group properties
 
 Delete one or more properties from a single portfolio group. If the properties are time variant then an effective date time from which the properties  will be deleted must be specified. If the properties are perpetual then it is invalid to specify an effective date time for deletion.
 
@@ -356,7 +356,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 # **deleteKeyFromPortfolioGroupAccessMetadata**
 > DeletedEntityResponse deleteKeyFromPortfolioGroupAccessMetadata(scope, code, metadataKey, effectiveAt)
 
-[EXPERIMENTAL] DeleteKeyFromPortfolioGroupAccessMetadata: Delete a Portfolio Group Access Metadata entry
+[EXPERIMENTAL] Delete a Portfolio Group Access Metadata entry
 
 Deletes the Portfolio Group Access Metadata entry that exactly matches the provided identifier parts.    It is important to always check to verify success (or failure).
 
@@ -431,7 +431,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -489,7 +489,7 @@ Name | Type | Description  | Notes
 # **deletePortfolioFromGroup**
 > PortfolioGroup deletePortfolioFromGroup(scope, code, portfolioScope, portfolioCode, effectiveAt)
 
-[EARLY ACCESS] DeletePortfolioFromGroup: Delete portfolio from group
+[EARLY ACCESS] Delete portfolio from group
 
 Remove a single portfolio from a portfolio group.
 
@@ -506,7 +506,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 # **deletePortfolioGroup**
 > DeletedEntityResponse deletePortfolioGroup(scope, code)
 
-[EARLY ACCESS] DeletePortfolioGroup: Delete portfolio group
+[EARLY ACCESS] Delete portfolio group
 
 Delete a single portfolio group. A portfolio group can be deleted while it still contains portfolios or sub groups.  In this case any portfolios or sub groups contained in this group will not be deleted, however they will no longer be grouped together by this portfolio group.  The deletion will be valid from the portfolio group&#39;s creation datetime, ie. the portfolio group will no longer exist at any effective datetime from the asAt datetime of deletion.
 
@@ -583,7 +583,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -637,7 +637,7 @@ Name | Type | Description  | Notes
 # **deleteSubGroupFromGroup**
 > PortfolioGroup deleteSubGroupFromGroup(scope, code, subgroupScope, subgroupCode, effectiveAt)
 
-[EARLY ACCESS] DeleteSubGroupFromGroup: Delete sub group from group
+[EARLY ACCESS] Delete sub group from group
 
 Remove a single portfolio group (sub group) from a portfolio group.
 
@@ -654,7 +654,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -714,7 +714,7 @@ Name | Type | Description  | Notes
 # **getA2BDataForPortfolioGroup**
 > ResourceListOfA2BDataRecord getA2BDataForPortfolioGroup(scope, code, fromEffectiveAt, toEffectiveAt, asAt, recipeIdScope, recipeIdCode, propertyKeys, filter)
 
-[EXPERIMENTAL] GetA2BDataForPortfolioGroup: Get A2B data for a Portfolio Group
+[EXPERIMENTAL] Get A2B data for a Portfolio Group
 
 Get an A2B report for all Transaction Portfolios within the given portfolio group.
 
@@ -731,7 +731,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -799,7 +799,7 @@ Name | Type | Description  | Notes
 # **getGroupProperties**
 > PortfolioGroupProperties getGroupProperties(scope, code, effectiveAt, asAt)
 
-[EARLY ACCESS] GetGroupProperties: Get group properties
+[EARLY ACCESS] Get group properties
 
 List all the properties of a single portfolio group.
 
@@ -816,7 +816,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -874,7 +874,7 @@ Name | Type | Description  | Notes
 # **getHoldingsForPortfolioGroup**
 > VersionedResourceListOfPortfolioHolding getHoldingsForPortfolioGroup(scope, code, effectiveAt, asAt, filter, propertyKeys, byTaxlots)
 
-[EARLY ACCESS] GetHoldingsForPortfolioGroup: Get holdings for transaction portfolios in portfolio group
+[EARLY ACCESS] Get holdings for transaction portfolios in portfolio group
 
 Get the holdings of transaction portfolios in specified portfolio group.
 
@@ -891,7 +891,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -955,7 +955,7 @@ Name | Type | Description  | Notes
 # **getPortfolioGroup**
 > PortfolioGroup getPortfolioGroup(scope, code, effectiveAt, asAt)
 
-[EARLY ACCESS] GetPortfolioGroup: Get portfolio group
+[EARLY ACCESS] Get portfolio group
 
 Retrieve the definition of a single portfolio group.
 
@@ -972,7 +972,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1030,7 +1030,7 @@ Name | Type | Description  | Notes
 # **getPortfolioGroupAccessMetadataByKey**
 > List&lt;AccessMetadataValue&gt; getPortfolioGroupAccessMetadataByKey(scope, code, metadataKey, effectiveAt, asAt)
 
-[EXPERIMENTAL] GetPortfolioGroupAccessMetadataByKey: Get an entry identified by a metadataKey in the Access Metadata of a Portfolio Group
+[EXPERIMENTAL] Get an entry identified by a metadataKey in the Access Metadata of a Portfolio Group
 
 Get a specific Portfolio Group access metadata by specifying the corresponding identifier parts                No matching will be performed through this endpoint. To retrieve a rule, it is necessary to specify, exactly, the identifier of the rule
 
@@ -1047,7 +1047,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1107,7 +1107,7 @@ Name | Type | Description  | Notes
 # **getPortfolioGroupCommands**
 > ResourceListOfProcessedCommand getPortfolioGroupCommands(scope, code, fromAsAt, toAsAt, filter)
 
-[EARLY ACCESS] GetPortfolioGroupCommands: Get portfolio group commands
+[EARLY ACCESS] Get portfolio group commands
 
 Gets all the commands that modified a single portfolio group.
 
@@ -1124,7 +1124,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1184,7 +1184,7 @@ Name | Type | Description  | Notes
 # **getPortfolioGroupExpansion**
 > ExpandedGroup getPortfolioGroupExpansion(scope, code, effectiveAt, asAt, propertyFilter)
 
-[EARLY ACCESS] GetPortfolioGroupExpansion: Get portfolio group expansion
+[EARLY ACCESS] Get portfolio group expansion
 
 List all the portfolios in a group, including all portfolios within sub groups in the group. Each portfolio will be decorated with all of its properties unless a property filter is specified.
 
@@ -1201,7 +1201,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1261,7 +1261,7 @@ Name | Type | Description  | Notes
 # **getPortfolioGroupMetadata**
 > Map&lt;String, List&lt;AccessMetadataValue&gt;&gt; getPortfolioGroupMetadata(scope, code, effectiveAt, asAt)
 
-[EXPERIMENTAL] GetPortfolioGroupMetadata: Get Access Metadata rules for Portfolio Group
+[EXPERIMENTAL] Get Access Metadata rules for Portfolio Group
 
 Pass the scope and Portfolio Group code parameters to retrieve the associated Access Metadata
 
@@ -1278,7 +1278,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1336,7 +1336,7 @@ Name | Type | Description  | Notes
 # **getPortfolioGroupPropertyTimeSeries**
 > ResourceListOfPropertyInterval getPortfolioGroupPropertyTimeSeries(scope, code, propertyKey, portfolioGroupEffectiveAt, asAt, filter, page, limit)
 
-[EARLY ACCESS] GetPortfolioGroupPropertyTimeSeries: Get the time series of a portfolio group property
+[EARLY ACCESS] Get the time series of a portfolio group property
 
 List the complete time series of a portfolio group property.
 
@@ -1353,7 +1353,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1419,7 +1419,7 @@ Name | Type | Description  | Notes
 # **getPortfolioGroupRelations**
 > ResourceListOfRelation getPortfolioGroupRelations(scope, code, effectiveAt, asAt, filter, identifierTypes)
 
-[EXPERIMENTAL] GetPortfolioGroupRelations: Get Relations for Portfolio Group
+[EXPERIMENTAL] Get Relations for Portfolio Group
 
 Get relations for the specified Portfolio Group
 
@@ -1436,7 +1436,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1498,7 +1498,7 @@ Name | Type | Description  | Notes
 # **getPortfolioGroupRelationships**
 > ResourceListOfRelationship getPortfolioGroupRelationships(scope, code, effectiveAt, asAt, filter, identifierTypes)
 
-[EXPERIMENTAL] GetPortfolioGroupRelationships: Get Relationships for Portfolio Group
+[EXPERIMENTAL] Get Relationships for Portfolio Group
 
 Get relationships for the specified Portfolio Group
 
@@ -1515,7 +1515,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1577,7 +1577,7 @@ Name | Type | Description  | Notes
 # **getTransactionsForPortfolioGroup**
 > VersionedResourceListOfTransaction getTransactionsForPortfolioGroup(scope, code, fromTransactionDate, toTransactionDate, asAt, filter, propertyKeys, limit, page)
 
-[EARLY ACCESS] GetTransactionsForPortfolioGroup: Get transactions for transaction portfolios in a portfolio group
+[EARLY ACCESS] Get transactions for transaction portfolios in a portfolio group
 
 Get transactions for transaction portfolios in a portfolio group over a given interval of effective time.     When the specified portfolio in a portfolio group is a derived transaction portfolio, the returned set of transactions is the  union set of all transactions of the parent (and any grandparents etc.) and the specified derived transaction portfolio itself.
 
@@ -1594,7 +1594,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1662,7 +1662,7 @@ Name | Type | Description  | Notes
 # **listPortfolioGroups**
 > ResourceListOfPortfolioGroup listPortfolioGroups(scope, effectiveAt, asAt, filter)
 
-[EARLY ACCESS] ListPortfolioGroups: List portfolio groups
+[EARLY ACCESS] List portfolio groups
 
 List all the portfolio groups in a single scope.
 
@@ -1679,7 +1679,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1737,7 +1737,7 @@ Name | Type | Description  | Notes
 # **updatePortfolioGroup**
 > PortfolioGroup updatePortfolioGroup(scope, code, effectiveAt, updatePortfolioGroupRequest)
 
-[EARLY ACCESS] UpdatePortfolioGroup: Update portfolio group
+[EARLY ACCESS] Update portfolio group
 
 Update the definition of a single portfolio group. Not all elements within a portfolio group definition are modifiable  due to the potential implications for data already stored against the portfolio group.
 
@@ -1754,7 +1754,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1812,7 +1812,7 @@ Name | Type | Description  | Notes
 # **upsertGroupProperties**
 > PortfolioGroupProperties upsertGroupProperties(scope, code, requestBody)
 
-[EARLY ACCESS] UpsertGroupProperties: Upsert group properties
+[EARLY ACCESS] Upsert group properties
 
 Update or insert one or more properties onto a single group. A property will be updated if it  already exists and inserted if it does not. All properties must be of the domain &#39;PortfolioGroup&#39;.                Upserting a property that exists for a group, with a null value, will delete the instance of the property for that group.    Properties have an &lt;i&gt;effectiveFrom&lt;/i&gt; datetime for which the property is valid, and an &lt;i&gt;effectiveUntil&lt;/i&gt;  datetime until which the property is valid. Not supplying an &lt;i&gt;effectiveUntil&lt;/i&gt; datetime results in the property being  valid indefinitely, or until the next &lt;i&gt;effectiveFrom&lt;/i&gt; datetime of the property.
 
@@ -1829,7 +1829,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1885,7 +1885,7 @@ Name | Type | Description  | Notes
 # **upsertPortfolioGroupAccessMetadata**
 > ResourceListOfAccessMetadataValueOf upsertPortfolioGroupAccessMetadata(scope, code, metadataKey, upsertPortfolioGroupAccessMetadataRequest, effectiveAt)
 
-[EXPERIMENTAL] UpsertPortfolioGroupAccessMetadata: Upsert a Portfolio Group Access Metadata entry associated with a specific metadataKey. This creates or updates the data in LUSID.
+[EXPERIMENTAL] Upsert a Portfolio Group Access Metadata entry associated with a specific metadataKey. This creates or updates the data in LUSID.
 
 Update or insert one Portfolio Group Access Metadata Entry in a single scope. An item will be updated if it already exists  and inserted if it does not.                The response will return the successfully updated or inserted Portfolio Group Access Metadata rule or failure message if unsuccessful.                It is important to always check to verify success (or failure).                Multiple rules for a metadataKey can exist with different effective at dates, when resources are accessed the rule that is active for the current time will be fetched.
 
@@ -1902,7 +1902,7 @@ import com.finbourne.lusid.api.PortfolioGroupsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

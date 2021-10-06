@@ -1,21 +1,21 @@
 # DataTypesApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDataType**](DataTypesApi.md#createDataType) | **POST** /api/datatypes | [BETA] CreateDataType: Create data type definition
-[**getDataType**](DataTypesApi.md#getDataType) | **GET** /api/datatypes/{scope}/{code} | [EARLY ACCESS] GetDataType: Get data type definition
-[**getUnitsFromDataType**](DataTypesApi.md#getUnitsFromDataType) | **GET** /api/datatypes/{scope}/{code}/units | [EARLY ACCESS] GetUnitsFromDataType: Get units from data type
-[**listDataTypes**](DataTypesApi.md#listDataTypes) | **GET** /api/datatypes/{scope} | [EARLY ACCESS] ListDataTypes: List data types
-[**updateDataType**](DataTypesApi.md#updateDataType) | **PUT** /api/datatypes/{scope}/{code} | [BETA] UpdateDataType: Update data type definition
+[**createDataType**](DataTypesApi.md#createDataType) | **POST** /api/datatypes | [BETA] Create data type definition
+[**getDataType**](DataTypesApi.md#getDataType) | **GET** /api/datatypes/{scope}/{code} | [EARLY ACCESS] Get data type definition
+[**getUnitsFromDataType**](DataTypesApi.md#getUnitsFromDataType) | **GET** /api/datatypes/{scope}/{code}/units | [EARLY ACCESS] Get units from data type
+[**listDataTypes**](DataTypesApi.md#listDataTypes) | **GET** /api/datatypes/{scope} | [EARLY ACCESS] List data types
+[**updateDataType**](DataTypesApi.md#updateDataType) | **PUT** /api/datatypes/{scope}/{code} | [BETA] Update data type definition
 
 
 <a name="createDataType"></a>
 # **createDataType**
 > DataType createDataType(createDataTypeRequest)
 
-[BETA] CreateDataType: Create data type definition
+[BETA] Create data type definition
 
 Create a new data type definition    Data types cannot be created in either the \&quot;default\&quot; or \&quot;system\&quot; scopes.
 
@@ -32,7 +32,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 # **getDataType**
 > DataType getDataType(scope, code, asAt)
 
-[EARLY ACCESS] GetDataType: Get data type definition
+[EARLY ACCESS] Get data type definition
 
 Get the definition of a specified data type
 
@@ -101,7 +101,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 # **getUnitsFromDataType**
 > ResourceListOfIUnitDefinitionDto getUnitsFromDataType(scope, code, units, filter, asAt)
 
-[EARLY ACCESS] GetUnitsFromDataType: Get units from data type
+[EARLY ACCESS] Get units from data type
 
 Get the definitions of the specified units associated bound to a specific data type
 
@@ -174,7 +174,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 # **listDataTypes**
 > ResourceListOfDataType listDataTypes(scope, asAt, includeSystem, sortBy, start, limit, filter)
 
-[EARLY ACCESS] ListDataTypes: List data types
+[EARLY ACCESS] List data types
 
 List all data types in a specified scope
 
@@ -251,7 +251,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 # **updateDataType**
 > DataType updateDataType(scope, code, updateDataTypeRequest)
 
-[BETA] UpdateDataType: Update data type definition
+[BETA] Update data type definition
 
 Update the definition of the specified existing data type    Not all elements within a data type definition are modifiable due to the potential implications for data  already stored against the types
 
@@ -332,7 +332,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

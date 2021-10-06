@@ -1,18 +1,18 @@
 # RelationDefinitionsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createRelationDefinition**](RelationDefinitionsApi.md#createRelationDefinition) | **POST** /api/relationdefinitions | [EXPERIMENTAL] CreateRelationDefinition: Create a relation definition
-[**getRelationDefinition**](RelationDefinitionsApi.md#getRelationDefinition) | **GET** /api/relationdefinitions/{scope}/{code} | [EXPERIMENTAL] GetRelationDefinition: Get relation definition
+[**createRelationDefinition**](RelationDefinitionsApi.md#createRelationDefinition) | **POST** /api/relationdefinitions | [EXPERIMENTAL] Create a relation definition
+[**getRelationDefinition**](RelationDefinitionsApi.md#getRelationDefinition) | **GET** /api/relationdefinitions/{scope}/{code} | [EXPERIMENTAL] Get relation definition
 
 
 <a name="createRelationDefinition"></a>
 # **createRelationDefinition**
 > RelationDefinition createRelationDefinition(createRelationDefinitionRequest)
 
-[EXPERIMENTAL] CreateRelationDefinition: Create a relation definition
+[EXPERIMENTAL] Create a relation definition
 
 Define a new relation.
 
@@ -29,7 +29,7 @@ import com.finbourne.lusid.api.RelationDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 # **getRelationDefinition**
 > RelationDefinition getRelationDefinition(scope, code, asAt)
 
-[EXPERIMENTAL] GetRelationDefinition: Get relation definition
+[EXPERIMENTAL] Get relation definition
 
 Retrieve the definition of a specified relation.
 
@@ -98,7 +98,7 @@ import com.finbourne.lusid.api.RelationDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

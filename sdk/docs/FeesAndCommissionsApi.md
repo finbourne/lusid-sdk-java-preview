@@ -1,18 +1,18 @@
 # FeesAndCommissionsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getApplicableFees**](FeesAndCommissionsApi.md#getApplicableFees) | **GET** /api/feesandcommissions | [EXPERIMENTAL] GetApplicableFees: Get the Fees and Commissions that may be applicable to a transaction.
-[**listAllFees**](FeesAndCommissionsApi.md#listAllFees) | **GET** /api/feesandcommissions/rules | [EXPERIMENTAL] ListAllFees: List the rules available for fees and commissions.
+[**getApplicableFees**](FeesAndCommissionsApi.md#getApplicableFees) | **GET** /api/feesandcommissions | [EXPERIMENTAL] Get the Fees and Commissions that may be applicable to a transaction.
+[**listAllFees**](FeesAndCommissionsApi.md#listAllFees) | **GET** /api/feesandcommissions/rules | [EXPERIMENTAL] List the rules available for fees and commissions.
 
 
 <a name="getApplicableFees"></a>
 # **getApplicableFees**
 > ResourceListOfFeeCalculationDetails getApplicableFees(instrumentIdentifierType, instrumentIdentifier, portfolioScope, portfolioCode, additionalSearchKeys)
 
-[EXPERIMENTAL] GetApplicableFees: Get the Fees and Commissions that may be applicable to a transaction.
+[EXPERIMENTAL] Get the Fees and Commissions that may be applicable to a transaction.
 
 Additionally, matching can be based on the instrument&#39;s properties, its portfolio properties, and any additional property keys present in the data file.
 
@@ -29,7 +29,7 @@ import com.finbourne.lusid.api.FeesAndCommissionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 # **listAllFees**
 > ResourceListOfFeeCalculationDetails listAllFees(additionalSearchKeys)
 
-[EXPERIMENTAL] ListAllFees: List the rules available for fees and commissions.
+[EXPERIMENTAL] List the rules available for fees and commissions.
 
 By default, will list ALL rules available. Additional keys and be specified to list a smaller subset of rules.
 
@@ -106,7 +106,7 @@ import com.finbourne.lusid.api.FeesAndCommissionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

@@ -1,20 +1,20 @@
 # SchemasApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getEntitySchema**](SchemasApi.md#getEntitySchema) | **GET** /api/schemas/entities/{entity} | [BETA] GetEntitySchema: Get schema
-[**getPropertySchema**](SchemasApi.md#getPropertySchema) | **GET** /api/schemas/properties | [BETA] GetPropertySchema: Get property schema
-[**getValueTypes**](SchemasApi.md#getValueTypes) | **GET** /api/schemas/types | [BETA] GetValueTypes: Get value types
-[**listEntities**](SchemasApi.md#listEntities) | **GET** /api/schemas/entities | [BETA] ListEntities: List entities
+[**getEntitySchema**](SchemasApi.md#getEntitySchema) | **GET** /api/schemas/entities/{entity} | [BETA] Get schema
+[**getPropertySchema**](SchemasApi.md#getPropertySchema) | **GET** /api/schemas/properties | [BETA] Get property schema
+[**getValueTypes**](SchemasApi.md#getValueTypes) | **GET** /api/schemas/types | [BETA] Get value types
+[**listEntities**](SchemasApi.md#listEntities) | **GET** /api/schemas/entities | [BETA] List entities
 
 
 <a name="getEntitySchema"></a>
 # **getEntitySchema**
 > Schema getEntitySchema(entity)
 
-[BETA] GetEntitySchema: Get schema
+[BETA] Get schema
 
 Gets the schema and meta-data for a given entity
 
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.SchemasApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 # **getPropertySchema**
 > PropertySchema getPropertySchema(propertyKeys, asAt)
 
-[BETA] GetPropertySchema: Get property schema
+[BETA] Get property schema
 
 Get the schemas for the provided list of property keys.
 
@@ -100,7 +100,7 @@ import com.finbourne.lusid.api.SchemasApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 # **getValueTypes**
 > ResourceListOfValueType getValueTypes(sortBy, start, limit)
 
-[BETA] GetValueTypes: Get value types
+[BETA] Get value types
 
 Gets the available value types for which a schema is available.
 
@@ -171,7 +171,7 @@ import com.finbourne.lusid.api.SchemasApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 # **listEntities**
 > ResourceListOfString listEntities()
 
-[BETA] ListEntities: List entities
+[BETA] List entities
 
 List all available entities for which schema information is available.
 
@@ -244,7 +244,7 @@ import com.finbourne.lusid.api.SchemasApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

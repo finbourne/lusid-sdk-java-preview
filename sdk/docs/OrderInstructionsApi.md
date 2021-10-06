@@ -1,20 +1,20 @@
 # OrderInstructionsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteOrderInstruction**](OrderInstructionsApi.md#deleteOrderInstruction) | **DELETE** /api/orderinstructions/{scope}/{code} | [EXPERIMENTAL] DeleteOrderInstruction: Delete orderInstruction
-[**getOrderInstruction**](OrderInstructionsApi.md#getOrderInstruction) | **GET** /api/orderinstructions/{scope}/{code} | [EXPERIMENTAL] GetOrderInstruction: Get OrderInstruction
-[**listOrderInstructions**](OrderInstructionsApi.md#listOrderInstructions) | **GET** /api/orderinstructions | [EXPERIMENTAL] ListOrderInstructions: List OrderInstructions
-[**upsertOrderInstructions**](OrderInstructionsApi.md#upsertOrderInstructions) | **POST** /api/orderinstructions | [EXPERIMENTAL] UpsertOrderInstructions: Upsert OrderInstruction
+[**deleteOrderInstruction**](OrderInstructionsApi.md#deleteOrderInstruction) | **DELETE** /api/orderinstructions/{scope}/{code} | [EXPERIMENTAL] Delete orderInstruction
+[**getOrderInstruction**](OrderInstructionsApi.md#getOrderInstruction) | **GET** /api/orderinstructions/{scope}/{code} | [EXPERIMENTAL] Get OrderInstruction
+[**listOrderInstructions**](OrderInstructionsApi.md#listOrderInstructions) | **GET** /api/orderinstructions | [EXPERIMENTAL] List OrderInstructions
+[**upsertOrderInstructions**](OrderInstructionsApi.md#upsertOrderInstructions) | **POST** /api/orderinstructions | [EXPERIMENTAL] Upsert OrderInstruction
 
 
 <a name="deleteOrderInstruction"></a>
 # **deleteOrderInstruction**
 > DeletedEntityResponse deleteOrderInstruction(scope, code)
 
-[EXPERIMENTAL] DeleteOrderInstruction: Delete orderInstruction
+[EXPERIMENTAL] Delete orderInstruction
 
 Delete an orderInstruction. Deletion will be valid from the orderInstruction&#39;s creation datetime.  This means that the orderInstruction will no longer exist at any effective datetime from the asAt datetime of deletion.
 
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.OrderInstructionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getOrderInstruction**
 > OrderInstruction getOrderInstruction(scope, code, asAt, propertyKeys)
 
-[EXPERIMENTAL] GetOrderInstruction: Get OrderInstruction
+[EXPERIMENTAL] Get OrderInstruction
 
 Fetch a OrderInstruction that matches the specified identifier
 
@@ -102,7 +102,7 @@ import com.finbourne.lusid.api.OrderInstructionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **listOrderInstructions**
 > PagedResourceListOfOrderInstruction listOrderInstructions(asAt, page, sortBy, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] ListOrderInstructions: List OrderInstructions
+[EXPERIMENTAL] List OrderInstructions
 
 Fetch the last pre-AsAt date version of each orderInstruction in scope (does not fetch the entire history).
 
@@ -177,7 +177,7 @@ import com.finbourne.lusid.api.OrderInstructionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 # **upsertOrderInstructions**
 > ResourceListOfOrderInstruction upsertOrderInstructions(orderInstructionSetRequest)
 
-[EXPERIMENTAL] UpsertOrderInstructions: Upsert OrderInstruction
+[EXPERIMENTAL] Upsert OrderInstruction
 
 Upsert; update existing orderInstructions with given ids, or create new orderInstructions otherwise.
 
@@ -256,7 +256,7 @@ import com.finbourne.lusid.api.OrderInstructionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

@@ -1,19 +1,19 @@
 # CustomEntitiesApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCustomEntity**](CustomEntitiesApi.md#getCustomEntity) | **GET** /api/customentities/{entityType}/{identifierType}/{identifierValue} | [EXPERIMENTAL] GetCustomEntity: Get CustomEntity
-[**listCustomEntities**](CustomEntitiesApi.md#listCustomEntities) | **GET** /api/customentities/{entityType} | [EXPERIMENTAL] ListCustomEntities: List Custom Entities
-[**upsertCustomEntity**](CustomEntitiesApi.md#upsertCustomEntity) | **POST** /api/customentities/{entityType} | [EXPERIMENTAL] UpsertCustomEntity: Upsert a new CustomEntity
+[**getCustomEntity**](CustomEntitiesApi.md#getCustomEntity) | **GET** /api/customentities/{entityType}/{identifierType}/{identifierValue} | [EXPERIMENTAL] Get CustomEntity
+[**listCustomEntities**](CustomEntitiesApi.md#listCustomEntities) | **GET** /api/customentities/{entityType} | [EXPERIMENTAL] List Custom Entities
+[**upsertCustomEntity**](CustomEntitiesApi.md#upsertCustomEntity) | **POST** /api/customentities/{entityType} | [EXPERIMENTAL] Upsert a new CustomEntity
 
 
 <a name="getCustomEntity"></a>
 # **getCustomEntity**
 > CustomEntityResponse getCustomEntity(entityType, identifierType, identifierValue, identifierScope, asAt)
 
-[EXPERIMENTAL] GetCustomEntity: Get CustomEntity
+[EXPERIMENTAL] Get CustomEntity
 
 Retrieve a CustomEntity by a specific Id at a point in AsAt time.
 
@@ -30,7 +30,7 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 # **listCustomEntities**
 > PagedResourceListOfCustomEntityResponse listCustomEntities(entityType, effectiveAt, asAt, limit, filter, page)
 
-[EXPERIMENTAL] ListCustomEntities: List Custom Entities
+[EXPERIMENTAL] List Custom Entities
 
 List all the Custom Entities matching particular criteria.
 
@@ -107,7 +107,7 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 # **upsertCustomEntity**
 > CustomEntityResponse upsertCustomEntity(entityType, customEntityRequest)
 
-[EXPERIMENTAL] UpsertCustomEntity: Upsert a new CustomEntity
+[EXPERIMENTAL] Upsert a new CustomEntity
 
 Insert the custom entity if it does not exist or update the custom entity with the supplied state if it does exist.
 
@@ -186,7 +186,7 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

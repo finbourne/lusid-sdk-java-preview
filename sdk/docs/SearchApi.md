@@ -1,20 +1,20 @@
 # SearchApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**instrumentsSearch**](SearchApi.md#instrumentsSearch) | **POST** /api/search/instruments | [EXPERIMENTAL] InstrumentsSearch: Instruments search
-[**searchPortfolioGroups**](SearchApi.md#searchPortfolioGroups) | **GET** /api/search/portfoliogroups | [EARLY ACCESS] SearchPortfolioGroups: Search Portfolio Groups
-[**searchPortfolios**](SearchApi.md#searchPortfolios) | **GET** /api/search/portfolios | [EARLY ACCESS] SearchPortfolios: Search Portfolios
-[**searchProperties**](SearchApi.md#searchProperties) | **GET** /api/search/propertydefinitions | [EARLY ACCESS] SearchProperties: Search Property Definitions
+[**instrumentsSearch**](SearchApi.md#instrumentsSearch) | **POST** /api/search/instruments | [EXPERIMENTAL] Instruments search
+[**searchPortfolioGroups**](SearchApi.md#searchPortfolioGroups) | **GET** /api/search/portfoliogroups | [EARLY ACCESS] Search Portfolio Groups
+[**searchPortfolios**](SearchApi.md#searchPortfolios) | **GET** /api/search/portfolios | [EARLY ACCESS] Search Portfolios
+[**searchProperties**](SearchApi.md#searchProperties) | **GET** /api/search/propertydefinitions | [EARLY ACCESS] Search Property Definitions
 
 
 <a name="instrumentsSearch"></a>
 # **instrumentsSearch**
 > List&lt;InstrumentMatch&gt; instrumentsSearch(instrumentSearchProperty, masteredEffectiveAt, masteredOnly)
 
-[EXPERIMENTAL] InstrumentsSearch: Instruments search
+[EXPERIMENTAL] Instruments search
 
 Search across all instruments that have been mastered in LUSID. Optionally augment the results with instruments from an external symbology service,  currently OpenFIGI.
 
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 # **searchPortfolioGroups**
 > PagedResourceListOfPortfolioGroupSearchResult searchPortfolioGroups(search, filter, sortBy, limit, page)
 
-[EARLY ACCESS] SearchPortfolioGroups: Search Portfolio Groups
+[EARLY ACCESS] Search Portfolio Groups
 
 Search through all portfolio groups
 
@@ -104,7 +104,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 # **searchPortfolios**
 > PagedResourceListOfPortfolioSearchResult searchPortfolios(search, filter, sortBy, limit, page)
 
-[EARLY ACCESS] SearchPortfolios: Search Portfolios
+[EARLY ACCESS] Search Portfolios
 
 Search through all portfolios
 
@@ -181,7 +181,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 # **searchProperties**
 > PagedResourceListOfPropertyDefinitionSearchResult searchProperties(search, filter, sortBy, limit, page)
 
-[EARLY ACCESS] SearchProperties: Search Property Definitions
+[EARLY ACCESS] Search Property Definitions
 
 Search through all Property Definitions
 
@@ -258,7 +258,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
