@@ -1,18 +1,18 @@
 # CustomEntityDefinitionsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:37599*
+All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCustomEntityDefinition**](CustomEntityDefinitionsApi.md#createCustomEntityDefinition) | **POST** /api/customentities/entitytypes | [EXPERIMENTAL] Create a new CustomEntityDefinition
-[**getDefinition**](CustomEntityDefinitionsApi.md#getDefinition) | **GET** /api/customentities/entitytypes/{entityType} | [EXPERIMENTAL] Get CustomEntityDefinition
+[**createCustomEntityDefinition**](CustomEntityDefinitionsApi.md#createCustomEntityDefinition) | **POST** /api/customentities/entitytypes | [EXPERIMENTAL] CreateCustomEntityDefinition: Create a new CustomEntityDefinition
+[**getDefinition**](CustomEntityDefinitionsApi.md#getDefinition) | **GET** /api/customentities/entitytypes/{entityType} | [EXPERIMENTAL] GetDefinition: Get CustomEntityDefinition
 
 
 <a name="createCustomEntityDefinition"></a>
 # **createCustomEntityDefinition**
 > CustomEntityDefinition createCustomEntityDefinition(customEntityDefinitionRequest)
 
-[EXPERIMENTAL] Create a new CustomEntityDefinition
+[EXPERIMENTAL] CreateCustomEntityDefinition: Create a new CustomEntityDefinition
 
 Create a custom entity definition that does not already exist. Will return a Bad Request if the CustomEntityDefinition already exists
 
@@ -29,7 +29,7 @@ import com.finbourne.lusid.api.CustomEntityDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 # **getDefinition**
 > CustomEntityDefinition getDefinition(entityType, asAt)
 
-[EXPERIMENTAL] Get CustomEntityDefinition
+[EXPERIMENTAL] GetDefinition: Get CustomEntityDefinition
 
 Retrieve a CustomEntityDefinition by a specific EntityType at a point in AsAt time
 
@@ -98,7 +98,7 @@ import com.finbourne.lusid.api.CustomEntityDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

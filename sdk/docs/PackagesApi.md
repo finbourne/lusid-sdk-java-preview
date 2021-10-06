@@ -1,20 +1,20 @@
 # PackagesApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:37599*
+All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deletePackage**](PackagesApi.md#deletePackage) | **DELETE** /api/packages/{scope}/{code} | [EXPERIMENTAL] Delete package
-[**getPackage**](PackagesApi.md#getPackage) | **GET** /api/packages/{scope}/{code} | [EXPERIMENTAL] Get Package
-[**listPackages**](PackagesApi.md#listPackages) | **GET** /api/packages | [EXPERIMENTAL] List Packages
-[**upsertPackages**](PackagesApi.md#upsertPackages) | **POST** /api/packages | [EXPERIMENTAL] Upsert Package
+[**deletePackage**](PackagesApi.md#deletePackage) | **DELETE** /api/packages/{scope}/{code} | [EXPERIMENTAL] DeletePackage: Delete package
+[**getPackage**](PackagesApi.md#getPackage) | **GET** /api/packages/{scope}/{code} | [EXPERIMENTAL] GetPackage: Get Package
+[**listPackages**](PackagesApi.md#listPackages) | **GET** /api/packages | [EXPERIMENTAL] ListPackages: List Packages
+[**upsertPackages**](PackagesApi.md#upsertPackages) | **POST** /api/packages | [EXPERIMENTAL] UpsertPackages: Upsert Package
 
 
 <a name="deletePackage"></a>
 # **deletePackage**
 > DeletedEntityResponse deletePackage(scope, code)
 
-[EXPERIMENTAL] Delete package
+[EXPERIMENTAL] DeletePackage: Delete package
 
 Delete an package. Deletion will be valid from the package&#39;s creation datetime.  This means that the package will no longer exist at any effective datetime from the asAt datetime of deletion.
 
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.PackagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getPackage**
 > ModelPackage getPackage(scope, code, asAt, propertyKeys)
 
-[EXPERIMENTAL] Get Package
+[EXPERIMENTAL] GetPackage: Get Package
 
 Fetch a Package that matches the specified identifier
 
@@ -102,7 +102,7 @@ import com.finbourne.lusid.api.PackagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **listPackages**
 > PagedResourceListOfPackage listPackages(asAt, page, sortBy, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] List Packages
+[EXPERIMENTAL] ListPackages: List Packages
 
 Fetch the last pre-AsAt date version of each package in scope (does not fetch the entire history).
 
@@ -177,7 +177,7 @@ import com.finbourne.lusid.api.PackagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 # **upsertPackages**
 > ResourceListOfPackage upsertPackages(packageSetRequest)
 
-[EXPERIMENTAL] Upsert Package
+[EXPERIMENTAL] UpsertPackages: Upsert Package
 
 Upsert; update existing packages with given ids, or create new packages otherwise.
 
@@ -256,7 +256,7 @@ import com.finbourne.lusid.api.PackagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

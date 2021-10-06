@@ -1,20 +1,20 @@
 # ParticipationsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:37599*
+All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteParticipation**](ParticipationsApi.md#deleteParticipation) | **DELETE** /api/participations/{scope}/{code} | [EXPERIMENTAL] Delete participation
-[**getParticipation**](ParticipationsApi.md#getParticipation) | **GET** /api/participations/{scope}/{code} | [EXPERIMENTAL] Get Participation
-[**listParticipations**](ParticipationsApi.md#listParticipations) | **GET** /api/participations | [EXPERIMENTAL] List Participations
-[**upsertParticipations**](ParticipationsApi.md#upsertParticipations) | **POST** /api/participations | [EXPERIMENTAL] Upsert Participation
+[**deleteParticipation**](ParticipationsApi.md#deleteParticipation) | **DELETE** /api/participations/{scope}/{code} | [EXPERIMENTAL] DeleteParticipation: Delete participation
+[**getParticipation**](ParticipationsApi.md#getParticipation) | **GET** /api/participations/{scope}/{code} | [EXPERIMENTAL] GetParticipation: Get Participation
+[**listParticipations**](ParticipationsApi.md#listParticipations) | **GET** /api/participations | [EXPERIMENTAL] ListParticipations: List Participations
+[**upsertParticipations**](ParticipationsApi.md#upsertParticipations) | **POST** /api/participations | [EXPERIMENTAL] UpsertParticipations: Upsert Participation
 
 
 <a name="deleteParticipation"></a>
 # **deleteParticipation**
 > DeletedEntityResponse deleteParticipation(scope, code)
 
-[EXPERIMENTAL] Delete participation
+[EXPERIMENTAL] DeleteParticipation: Delete participation
 
 Delete an participation. Deletion will be valid from the participation&#39;s creation datetime.  This means that the participation will no longer exist at any effective datetime from the asAt datetime of deletion.
 
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.ParticipationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getParticipation**
 > Participation getParticipation(scope, code, asAt, propertyKeys)
 
-[EXPERIMENTAL] Get Participation
+[EXPERIMENTAL] GetParticipation: Get Participation
 
 Fetch a Participation that matches the specified identifier
 
@@ -102,7 +102,7 @@ import com.finbourne.lusid.api.ParticipationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **listParticipations**
 > PagedResourceListOfParticipation listParticipations(asAt, page, sortBy, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] List Participations
+[EXPERIMENTAL] ListParticipations: List Participations
 
 Fetch the last pre-AsAt date version of each Participation in scope (does not fetch the entire history).
 
@@ -177,7 +177,7 @@ import com.finbourne.lusid.api.ParticipationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 # **upsertParticipations**
 > ResourceListOfParticipation upsertParticipations(participationSetRequest)
 
-[EXPERIMENTAL] Upsert Participation
+[EXPERIMENTAL] UpsertParticipations: Upsert Participation
 
 Upsert; update existing participations with given ids, or create new participations otherwise.
 
@@ -256,7 +256,7 @@ import com.finbourne.lusid.api.ParticipationsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

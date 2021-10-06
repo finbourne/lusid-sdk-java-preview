@@ -1,20 +1,20 @@
 # ExecutionsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:37599*
+All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteExecution**](ExecutionsApi.md#deleteExecution) | **DELETE** /api/executions/{scope}/{code} | [EXPERIMENTAL] Delete execution
-[**getExecution**](ExecutionsApi.md#getExecution) | **GET** /api/executions/{scope}/{code} | [EXPERIMENTAL] Get Execution
-[**listExecutions**](ExecutionsApi.md#listExecutions) | **GET** /api/executions | [EXPERIMENTAL] List Executions
-[**upsertExecutions**](ExecutionsApi.md#upsertExecutions) | **POST** /api/executions | [EXPERIMENTAL] Upsert Execution
+[**deleteExecution**](ExecutionsApi.md#deleteExecution) | **DELETE** /api/executions/{scope}/{code} | [EXPERIMENTAL] DeleteExecution: Delete execution
+[**getExecution**](ExecutionsApi.md#getExecution) | **GET** /api/executions/{scope}/{code} | [EXPERIMENTAL] GetExecution: Get Execution
+[**listExecutions**](ExecutionsApi.md#listExecutions) | **GET** /api/executions | [EXPERIMENTAL] ListExecutions: List Executions
+[**upsertExecutions**](ExecutionsApi.md#upsertExecutions) | **POST** /api/executions | [EXPERIMENTAL] UpsertExecutions: Upsert Execution
 
 
 <a name="deleteExecution"></a>
 # **deleteExecution**
 > DeletedEntityResponse deleteExecution(scope, code)
 
-[EXPERIMENTAL] Delete execution
+[EXPERIMENTAL] DeleteExecution: Delete execution
 
 Delete an execution. Deletion will be valid from the execution&#39;s creation datetime.  This means that the execution will no longer exist at any effective datetime from the asAt datetime of deletion.
 
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.ExecutionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getExecution**
 > Execution getExecution(scope, code, asAt, propertyKeys)
 
-[EXPERIMENTAL] Get Execution
+[EXPERIMENTAL] GetExecution: Get Execution
 
 Fetch a Execution that matches the specified identifier
 
@@ -102,7 +102,7 @@ import com.finbourne.lusid.api.ExecutionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **listExecutions**
 > PagedResourceListOfExecution listExecutions(asAt, page, sortBy, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] List Executions
+[EXPERIMENTAL] ListExecutions: List Executions
 
 Fetch the last pre-AsAt date version of each execution in scope (does not fetch the entire history).
 
@@ -177,7 +177,7 @@ import com.finbourne.lusid.api.ExecutionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 # **upsertExecutions**
 > ResourceListOfExecution upsertExecutions(executionSetRequest)
 
-[EXPERIMENTAL] Upsert Execution
+[EXPERIMENTAL] UpsertExecutions: Upsert Execution
 
 Upsert; update existing executions with given ids, or create new executions otherwise.
 
@@ -256,7 +256,7 @@ import com.finbourne.lusid.api.ExecutionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

@@ -1,19 +1,19 @@
 # SequencesApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:37599*
+All URIs are relative to *http://local-unit-test-server.lusid.com:55238*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSequence**](SequencesApi.md#createSequence) | **POST** /api/sequences/{scope} | [EXPERIMENTAL] Create a new sequence
-[**getSequence**](SequencesApi.md#getSequence) | **GET** /api/sequences/{scope}/{code} | [EXPERIMENTAL] Get a specified sequence
-[**next**](SequencesApi.md#next) | **GET** /api/sequences/{scope}/{code}/next | [EXPERIMENTAL] Get next values from sequence
+[**createSequence**](SequencesApi.md#createSequence) | **POST** /api/sequences/{scope} | [EXPERIMENTAL] CreateSequence: Create a new sequence
+[**getSequence**](SequencesApi.md#getSequence) | **GET** /api/sequences/{scope}/{code} | [EXPERIMENTAL] GetSequence: Get a specified sequence
+[**next**](SequencesApi.md#next) | **GET** /api/sequences/{scope}/{code}/next | [EXPERIMENTAL] Next: Get next values from sequence
 
 
 <a name="createSequence"></a>
 # **createSequence**
 > SequenceDefinition createSequence(scope, createSequenceRequest)
 
-[EXPERIMENTAL] Create a new sequence
+[EXPERIMENTAL] CreateSequence: Create a new sequence
 
 Create a new sequence
 
@@ -30,7 +30,7 @@ import com.finbourne.lusid.api.SequencesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 # **getSequence**
 > SequenceDefinition getSequence(scope, code)
 
-[EXPERIMENTAL] Get a specified sequence
+[EXPERIMENTAL] GetSequence: Get a specified sequence
 
 Return the details of a specified sequence
 
@@ -101,7 +101,7 @@ import com.finbourne.lusid.api.SequencesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 # **next**
 > NextValueInSequenceResponse next(scope, code, batch)
 
-[EXPERIMENTAL] Get next values from sequence
+[EXPERIMENTAL] Next: Get next values from sequence
 
 Get the next set of values from a specified sequence
 
@@ -172,7 +172,7 @@ import com.finbourne.lusid.api.SequencesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37599");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55238");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

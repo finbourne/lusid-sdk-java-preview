@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3577
+  version: 0.11.3579
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:37599
+- url: http://local-unit-test-server.lusid.com:55238
 security:
 - {}
 tags:
@@ -605,8 +605,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Perform valuation for a list of portfolios and/or portfolio
-        groups'
+      summary: '[BETA] GetValuation: Perform valuation for a list of portfolios and/or
+        portfolio groups'
       tags:
       - Aggregation
       x-fbn-apistatus: Beta
@@ -806,7 +806,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Perform valuation for an inlined portfolio'
+      summary: '[BETA] GetValuationOfWeightedInstruments: Perform valuation for an
+        inlined portfolio'
       tags:
       - Aggregation
       x-fbn-apistatus: Beta
@@ -925,8 +926,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Generates a recipe sufficient to perform valuations
-        for the given portfolio.'
+      summary: '[EXPERIMENTAL] GenerateConfigurationRecipe: Generates a recipe sufficient
+        to perform valuations for the given portfolio.'
       tags:
       - Aggregation
       x-fbn-apistatus: Experimental
@@ -1080,7 +1081,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] List Allocations'
+      summary: '[EARLY ACCESS] ListAllocations: List Allocations'
       tags:
       - Allocations
       x-fbn-apistatus: EarlyAccess
@@ -1380,7 +1381,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Upsert Allocations'
+      summary: '[EARLY ACCESS] UpsertAllocations: Upsert Allocations'
       tags:
       - Allocations
       x-fbn-apistatus: EarlyAccess
@@ -1452,7 +1453,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Delete allocation'
+      summary: '[EARLY ACCESS] DeleteAllocation: Delete allocation'
       tags:
       - Allocations
       x-fbn-apistatus: EarlyAccess
@@ -1658,7 +1659,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get Allocation'
+      summary: '[EARLY ACCESS] GetAllocation: Get Allocation'
       tags:
       - Allocations
       x-fbn-apistatus: EarlyAccess
@@ -1803,7 +1804,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] List Blocks'
+      summary: '[EXPERIMENTAL] ListBlocks: List Blocks'
       tags:
       - Blocks
       x-fbn-apistatus: Experimental
@@ -2054,7 +2055,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert Block'
+      summary: '[EXPERIMENTAL] UpsertBlocks: Upsert Block'
       tags:
       - Blocks
       x-fbn-apistatus: Experimental
@@ -2126,7 +2127,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete block'
+      summary: '[EXPERIMENTAL] DeleteBlock: Delete block'
       tags:
       - Blocks
       x-fbn-apistatus: Experimental
@@ -2311,7 +2312,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Block'
+      summary: '[EXPERIMENTAL] GetBlock: Get Block'
       tags:
       - Blocks
       x-fbn-apistatus: Experimental
@@ -2419,8 +2420,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Adds the requested number of Business Days to the provided
-        date.'
+      summary: '[EXPERIMENTAL] AddBusinessDaysToDate: Adds the requested number of
+        Business Days to the provided date.'
       tags:
       - Calendars
       x-fbn-apistatus: Experimental
@@ -2527,7 +2528,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Check whether a DateTime is a "Business DateTime"'
+      summary: '[BETA] IsBusinessDateTime: Check whether a DateTime is a "Business
+        DateTime"'
       tags:
       - Calendars
       x-fbn-apistatus: Beta
@@ -2730,7 +2732,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] List Calenders'
+      summary: '[BETA] ListCalendars: List Calenders'
       tags:
       - Calendars
       x-fbn-apistatus: Beta
@@ -2896,7 +2898,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Create a calendar in its generic form'
+      summary: '[BETA] CreateCalendar: Create a calendar in its generic form'
       tags:
       - Calendars
       x-fbn-apistatus: Beta
@@ -3130,7 +3132,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] List all calenders in a specified scope'
+      summary: '[BETA] ListCalendarsInScope: List all calenders in a specified scope'
       tags:
       - Calendars
       x-fbn-apistatus: Beta
@@ -3245,7 +3247,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Delete a calendar'
+      summary: '[BETA] DeleteCalendar: Delete a calendar'
       tags:
       - Calendars
       x-fbn-apistatus: Beta
@@ -3372,7 +3374,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Get a calendar in its generic form'
+      summary: '[BETA] GetCalendar: Get a calendar in its generic form'
       tags:
       - Calendars
       x-fbn-apistatus: Beta
@@ -3546,7 +3548,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Update a calendar'
+      summary: '[BETA] UpdateCalendar: Update a calendar'
       tags:
       - Calendars
       x-fbn-apistatus: Beta
@@ -3706,7 +3708,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Get dates for a specific calendar'
+      summary: '[BETA] GetDates: Get dates for a specific calendar'
       tags:
       - Calendars
       x-fbn-apistatus: Beta
@@ -3852,7 +3854,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Add a date to a calendar'
+      summary: '[BETA] AddDateToCalendar: Add a date to a calendar'
       tags:
       - Calendars
       x-fbn-apistatus: Beta
@@ -3962,7 +3964,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Remove a date from a calendar'
+      summary: '[BETA] DeleteDateFromCalendar: Remove a date from a calendar'
       tags:
       - Calendars
       x-fbn-apistatus: Beta
@@ -4096,7 +4098,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Generate an ordered schedule of dates.'
+      summary: '[EXPERIMENTAL] GenerateSchedule: Generate an ordered schedule of dates.'
       tags:
       - Calendars
       x-fbn-apistatus: Experimental
@@ -4306,8 +4308,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert a set of complex market data items. This creates
-        or updates the data in Lusid.'
+      summary: '[EXPERIMENTAL] UpsertComplexMarketData: Upsert a set of complex market
+        data items. This creates or updates the data in Lusid.'
       tags:
       - Complex Market Data
       x-fbn-apistatus: Experimental
@@ -4459,8 +4461,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete one or more items of complex market data, assuming
-        they are present.'
+      summary: '[EXPERIMENTAL] DeleteComplexMarketData: Delete one or more items of
+        complex market data, assuming they are present.'
       tags:
       - Complex Market Data
       x-fbn-apistatus: Experimental
@@ -4677,7 +4679,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get complex market data'
+      summary: '[EXPERIMENTAL] GetComplexMarketData: Get complex market data'
       tags:
       - Complex Market Data
       x-fbn-apistatus: Experimental
@@ -4735,7 +4737,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] List the set of CDS Flow Conventions'
+      summary: '[BETA] ListCdsFlowConventions: List the set of CDS Flow Conventions'
       tags:
       - Conventions
       x-fbn-apistatus: Beta
@@ -4856,8 +4858,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Upsert a set of CDS Flow Conventions. This creates or updates
-        the data in Lusid.'
+      summary: '[BETA] UpsertCdsFlowConventions: Upsert a set of CDS Flow Conventions.
+        This creates or updates the data in Lusid.'
       tags:
       - Conventions
       x-fbn-apistatus: Beta
@@ -4928,8 +4930,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Delete the CDS Flow Conventions of given scope and code, assuming
-        that it is present.'
+      summary: '[BETA] DeleteCdsFlowConventions: Delete the CDS Flow Conventions of
+        given scope and code, assuming that it is present.'
       tags:
       - Conventions
       x-fbn-apistatus: Beta
@@ -5012,7 +5014,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Get CDS Flow Conventions'
+      summary: '[BETA] GetCdsFlowConventions: Get CDS Flow Conventions'
       tags:
       - Conventions
       x-fbn-apistatus: Beta
@@ -5069,7 +5071,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] List the set of Flow Conventions'
+      summary: '[BETA] ListFlowConventions: List the set of Flow Conventions'
       tags:
       - Conventions
       x-fbn-apistatus: Beta
@@ -5186,8 +5188,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Upsert Flow Conventions. This creates or updates the data in
-        Lusid.'
+      summary: '[BETA] UpsertFlowConventions: Upsert Flow Conventions. This creates
+        or updates the data in Lusid.'
       tags:
       - Conventions
       x-fbn-apistatus: Beta
@@ -5258,8 +5260,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Delete the Flow Conventions of given scope and code, assuming
-        that it is present.'
+      summary: '[BETA] DeleteFlowConventions: Delete the Flow Conventions of given
+        scope and code, assuming that it is present.'
       tags:
       - Conventions
       x-fbn-apistatus: Beta
@@ -5342,7 +5344,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Get Flow Conventions'
+      summary: '[BETA] GetFlowConventions: Get Flow Conventions'
       tags:
       - Conventions
       x-fbn-apistatus: Beta
@@ -5399,7 +5401,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] List the set of Index Conventions'
+      summary: '[BETA] ListIndexConvention: List the set of Index Conventions'
       tags:
       - Conventions
       x-fbn-apistatus: Beta
@@ -5496,8 +5498,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Upsert a set of Index Convention. This creates or updates the
-        data in Lusid.'
+      summary: '[BETA] UpsertIndexConvention: Upsert a set of Index Convention. This
+        creates or updates the data in Lusid.'
       tags:
       - Conventions
       x-fbn-apistatus: Beta
@@ -5568,8 +5570,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Delete the Index Convention of given scope and code, assuming
-        that it is present.'
+      summary: '[BETA] DeleteIndexConvention: Delete the Index Convention of given
+        scope and code, assuming that it is present.'
       tags:
       - Conventions
       x-fbn-apistatus: Beta
@@ -5652,7 +5654,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Get Index Convention'
+      summary: '[BETA] GetIndexConvention: Get Index Convention'
       tags:
       - Conventions
       x-fbn-apistatus: Beta
@@ -5773,7 +5775,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] List corporate action sources'
+      summary: '[BETA] ListCorporateActionSources: List corporate action sources'
       tags:
       - Corporate Action Sources
       x-fbn-apistatus: Beta
@@ -5850,7 +5852,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Create corporate action source'
+      summary: '[BETA] CreateCorporateActionSource: Create corporate action source'
       tags:
       - Corporate Action Sources
       x-fbn-apistatus: Beta
@@ -5920,7 +5922,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Delete a corporate action source'
+      summary: '[BETA] DeleteCorporateActionSource: Delete a corporate action source'
       tags:
       - Corporate Action Sources
       x-fbn-apistatus: Beta
@@ -6001,7 +6003,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete corporate actions'
+      summary: '[EXPERIMENTAL] DeleteCorporateActions: Delete corporate actions'
       tags:
       - Corporate Action Sources
       x-fbn-apistatus: Experimental
@@ -6155,7 +6157,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Get corporate actions'
+      summary: '[BETA] GetCorporateActions: Get corporate actions'
       tags:
       - Corporate Action Sources
       x-fbn-apistatus: Beta
@@ -6331,7 +6333,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Upsert corporate actions'
+      summary: '[BETA] BatchUpsertCorporateActions: Upsert corporate actions'
       tags:
       - Corporate Action Sources
       x-fbn-apistatus: Beta
@@ -6389,7 +6391,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] List the set of Counterparty Agreements'
+      summary: '[EXPERIMENTAL] ListCounterpartyAgreements: List the set of Counterparty
+        Agreements'
       tags:
       - Counterparties
       x-fbn-apistatus: Experimental
@@ -6519,7 +6522,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert Counterparty Agreement'
+      summary: '[EXPERIMENTAL] UpsertCounterpartyAgreement: Upsert Counterparty Agreement'
       tags:
       - Counterparties
       x-fbn-apistatus: Experimental
@@ -6590,8 +6593,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete the Counterparty Agreement of given scope and
-        code'
+      summary: '[EXPERIMENTAL] DeleteCounterpartyAgreement: Delete the Counterparty
+        Agreement of given scope and code'
       tags:
       - Counterparties
       x-fbn-apistatus: Experimental
@@ -6675,7 +6678,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Counterparty Agreement'
+      summary: '[EXPERIMENTAL] GetCounterpartyAgreement: Get Counterparty Agreement'
       tags:
       - Counterparties
       x-fbn-apistatus: Experimental
@@ -6732,7 +6735,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] List the set of Credit Support Annexes'
+      summary: '[EXPERIMENTAL] ListCreditSupportAnnexes: List the set of Credit Support
+        Annexes'
       tags:
       - Counterparties
       x-fbn-apistatus: Experimental
@@ -6853,7 +6857,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert Credit Support Annex'
+      summary: '[EXPERIMENTAL] UpsertCreditSupportAnnex: Upsert Credit Support Annex'
       tags:
       - Counterparties
       x-fbn-apistatus: Experimental
@@ -6924,8 +6928,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete the Credit Support Annex of given scope and
-        code'
+      summary: '[EXPERIMENTAL] DeleteCreditSupportAnnex: Delete the Credit Support
+        Annex of given scope and code'
       tags:
       - Counterparties
       x-fbn-apistatus: Experimental
@@ -7008,7 +7012,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Credit Support Annex'
+      summary: '[EXPERIMENTAL] GetCreditSupportAnnex: Get Credit Support Annex'
       tags:
       - Counterparties
       x-fbn-apistatus: Experimental
@@ -7219,7 +7223,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Create a new CustomEntityDefinition'
+      summary: '[EXPERIMENTAL] CreateCustomEntityDefinition: Create a new CustomEntityDefinition'
       tags:
       - CustomEntityDefinitions
       x-fbn-apistatus: Experimental
@@ -7358,7 +7362,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get CustomEntityDefinition'
+      summary: '[EXPERIMENTAL] GetDefinition: Get CustomEntityDefinition'
       tags:
       - CustomEntityDefinitions
       x-fbn-apistatus: Experimental
@@ -7485,7 +7489,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] List Custom Entities'
+      summary: '[EXPERIMENTAL] ListCustomEntities: List Custom Entities'
       tags:
       - CustomEntities
       x-fbn-apistatus: Experimental
@@ -7782,7 +7786,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert a new CustomEntity'
+      summary: '[EXPERIMENTAL] UpsertCustomEntity: Upsert a new CustomEntity'
       tags:
       - CustomEntities
       x-fbn-apistatus: Experimental
@@ -8004,7 +8008,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get CustomEntity'
+      summary: '[EXPERIMENTAL] GetCustomEntity: Get CustomEntity'
       tags:
       - CustomEntities
       x-fbn-apistatus: Experimental
@@ -8134,7 +8138,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Create data type definition'
+      summary: '[BETA] CreateDataType: Create data type definition'
       tags:
       - Data Types
       x-fbn-apistatus: Beta
@@ -8275,7 +8279,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] List data types'
+      summary: '[EARLY ACCESS] ListDataTypes: List data types'
       tags:
       - Data Types
       x-fbn-apistatus: EarlyAccess
@@ -8360,7 +8364,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get data type definition'
+      summary: '[EARLY ACCESS] GetDataType: Get data type definition'
       tags:
       - Data Types
       x-fbn-apistatus: EarlyAccess
@@ -8466,7 +8470,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Update data type definition'
+      summary: '[BETA] UpdateDataType: Update data type definition'
       tags:
       - Data Types
       x-fbn-apistatus: Beta
@@ -8581,7 +8585,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get units from data type'
+      summary: '[EARLY ACCESS] GetUnitsFromDataType: Get units from data type'
       tags:
       - Data Types
       x-fbn-apistatus: EarlyAccess
@@ -8713,7 +8717,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Create derived portfolio'
+      summary: '[EARLY ACCESS] CreateDerivedPortfolio: Create derived portfolio'
       tags:
       - Derived Transaction Portfolios
       x-fbn-apistatus: EarlyAccess
@@ -8801,7 +8805,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Delete derived portfolio details'
+      summary: '[EARLY ACCESS] DeleteDerivedPortfolioDetails: Delete derived portfolio
+        details'
       tags:
       - Derived Transaction Portfolios
       x-fbn-apistatus: EarlyAccess
@@ -8885,7 +8890,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get the next change to each portfolio in a scope.'
+      summary: '[EARLY ACCESS] GetPortfolioChanges: Get the next change to each portfolio
+        in a scope.'
       tags:
       - Entities
       x-fbn-apistatus: EarlyAccess
@@ -9030,7 +9036,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] List Executions'
+      summary: '[EXPERIMENTAL] ListExecutions: List Executions'
       tags:
       - Executions
       x-fbn-apistatus: Experimental
@@ -9288,7 +9294,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert Execution'
+      summary: '[EXPERIMENTAL] UpsertExecutions: Upsert Execution'
       tags:
       - Executions
       x-fbn-apistatus: Experimental
@@ -9360,7 +9366,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete execution'
+      summary: '[EXPERIMENTAL] DeleteExecution: Delete execution'
       tags:
       - Executions
       x-fbn-apistatus: Experimental
@@ -9548,7 +9554,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Execution'
+      summary: '[EXPERIMENTAL] GetExecution: Get Execution'
       tags:
       - Executions
       x-fbn-apistatus: Experimental
@@ -9734,8 +9740,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get the Fees and Commissions that may be applicable
-        to a transaction.'
+      summary: '[EXPERIMENTAL] GetApplicableFees: Get the Fees and Commissions that
+        may be applicable to a transaction.'
       tags:
       - FeesAndCommissions
       x-fbn-apistatus: Experimental
@@ -9875,7 +9881,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] List the rules available for fees and commissions.'
+      summary: '[EXPERIMENTAL] ListAllFees: List the rules available for fees and
+        commissions.'
       tags:
       - FeesAndCommissions
       x-fbn-apistatus: Experimental
@@ -10046,7 +10053,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] List instruments'
+      summary: '[EARLY ACCESS] ListInstruments: List instruments'
       tags:
       - Instruments
       x-fbn-apistatus: EarlyAccess
@@ -10322,7 +10329,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Upsert instruments
+      summary: 'UpsertInstruments: Upsert instruments'
       tags:
       - Instruments
       x-fbn-apistatus: Stable
@@ -10474,7 +10481,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Get instruments
+      summary: 'GetInstruments: Get instruments'
       tags:
       - Instruments
       x-fbn-apistatus: Stable
@@ -10645,7 +10652,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Upsert instruments properties
+      summary: 'UpsertInstrumentsProperties: Upsert instruments properties'
       tags:
       - Instruments
       x-fbn-apistatus: Stable
@@ -10682,7 +10689,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get instrument identifier types'
+      summary: '[EARLY ACCESS] GetInstrumentIdentifierTypes: Get instrument identifier
+        types'
       tags:
       - Instruments
       x-fbn-apistatus: EarlyAccess
@@ -10751,7 +10759,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Delete instrument'
+      summary: '[EARLY ACCESS] DeleteInstrument: Delete instrument'
       tags:
       - Instruments
       x-fbn-apistatus: EarlyAccess
@@ -10864,7 +10872,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Get instrument
+      summary: 'GetInstrument: Get instrument'
       tags:
       - Instruments
       x-fbn-apistatus: Stable
@@ -10966,7 +10974,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Update instrument identifier'
+      summary: '[EARLY ACCESS] UpdateInstrumentIdentifier: Update instrument identifier'
       tags:
       - Instruments
       x-fbn-apistatus: EarlyAccess
@@ -11109,7 +11117,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get instrument properties'
+      summary: '[EXPERIMENTAL] GetInstrumentProperties: Get instrument properties'
       tags:
       - Instruments
       x-fbn-apistatus: Experimental
@@ -11251,7 +11259,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete instrument properties'
+      summary: '[EXPERIMENTAL] DeleteInstrumentProperties: Delete instrument properties'
       tags:
       - Instruments
       x-fbn-apistatus: Experimental
@@ -11414,7 +11422,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get instrument properties (with Pagination)'
+      summary: '[EXPERIMENTAL] ListInstrumentProperties: Get instrument properties
+        (with Pagination)'
       tags:
       - Instruments
       x-fbn-apistatus: Experimental
@@ -11566,7 +11575,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get instrument property time series'
+      summary: '[EARLY ACCESS] GetInstrumentPropertyTimeSeries: Get instrument property
+        time series'
       tags:
       - Instruments
       x-fbn-apistatus: EarlyAccess
@@ -11884,7 +11894,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Upsert Legal Entity'
+      summary: '[EARLY ACCESS] UpsertLegalEntity: Upsert Legal Entity'
       tags:
       - Legal Entities
       x-fbn-apistatus: EarlyAccess
@@ -12281,7 +12291,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] List Legal Entities'
+      summary: '[EARLY ACCESS] ListLegalEntities: List Legal Entities'
       tags:
       - Legal Entities
       x-fbn-apistatus: EarlyAccess
@@ -12366,7 +12376,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Delete Legal Entity'
+      summary: '[EARLY ACCESS] DeleteLegalEntity: Delete Legal Entity'
       tags:
       - Legal Entities
       x-fbn-apistatus: EarlyAccess
@@ -12622,7 +12632,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get Legal Entity'
+      summary: '[EARLY ACCESS] GetLegalEntity: Get Legal Entity'
       tags:
       - Legal Entities
       x-fbn-apistatus: EarlyAccess
@@ -12739,7 +12749,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Access Metadata rules for a Legal Entity'
+      summary: '[EXPERIMENTAL] GetAllLegalEntityAccessMetadata: Get Access Metadata
+        rules for a Legal Entity'
       tags:
       - Legal Entities
       x-fbn-apistatus: Experimental
@@ -12847,7 +12858,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete a Legal Entity Access Metadata entry'
+      summary: '[EXPERIMENTAL] DeleteLegalEntityAccessMetadata: Delete a Legal Entity
+        Access Metadata entry'
       tags:
       - Legal Entities
       x-fbn-apistatus: Experimental
@@ -12972,8 +12984,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get an entry identified by a metadataKey in the Access
-        Metadata of a Legal Entity'
+      summary: '[EXPERIMENTAL] GetLegalEntityAccessMetadataByKey: Get an entry identified
+        by a metadataKey in the Access Metadata of a Legal Entity'
       tags:
       - Legal Entities
       x-fbn-apistatus: Experimental
@@ -13115,8 +13127,9 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert a Legal Entity Access Metadata entry associated
-        with a specific metadataKey. This creates or updates the data in LUSID.'
+      summary: '[EXPERIMENTAL] UpsertLegalEntityAccessMetadata: Upsert a Legal Entity
+        Access Metadata entry associated with a specific metadataKey. This creates
+        or updates the data in LUSID.'
       tags:
       - Legal Entities
       x-fbn-apistatus: Experimental
@@ -13246,7 +13259,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete Legal Entity Properties'
+      summary: '[EXPERIMENTAL] DeleteLegalEntityProperties: Delete Legal Entity Properties'
       tags:
       - Legal Entities
       x-fbn-apistatus: Experimental
@@ -13398,7 +13411,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Legal Entity Property Time Series'
+      summary: '[EXPERIMENTAL] GetLegalEntityPropertyTimeSeries: Get Legal Entity
+        Property Time Series'
       tags:
       - Legal Entities
       x-fbn-apistatus: Experimental
@@ -13599,7 +13613,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Relations for Legal Entity'
+      summary: '[EXPERIMENTAL] GetLegalEntityRelations: Get Relations for Legal Entity'
       tags:
       - Legal Entities
       x-fbn-apistatus: Experimental
@@ -13809,7 +13823,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Relationships for Legal Entity'
+      summary: '[EXPERIMENTAL] GetLegalEntityRelationships: Get Relationships for
+        Legal Entity'
       tags:
       - Legal Entities
       x-fbn-apistatus: Experimental
@@ -13863,7 +13878,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Get SAML Identity Provider
+      summary: 'GetSamlIdentityProviderId: Get SAML Identity Provider'
       tags:
       - Login
       x-fbn-apistatus: Stable
@@ -13922,7 +13937,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get resources available for access control'
+      summary: '[EARLY ACCESS] ListAccessControlledResources: Get resources available
+        for access control'
       tags:
       - Application Metadata
       x-fbn-apistatus: EarlyAccess
@@ -13976,7 +13992,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Download Excel Addin'
+      summary: '[EARLY ACCESS] GetExcelAddin: Download Excel Addin'
       tags:
       - Application Metadata
       x-fbn-apistatus: EarlyAccess
@@ -14120,7 +14136,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get a quote access metadata rule'
+      summary: '[EXPERIMENTAL] GetQuotesAccessMetadataRule: Get a quote access metadata
+        rule'
       tags:
       - Quotes
       x-fbn-apistatus: Experimental
@@ -14249,7 +14266,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete a Quote Access Metadata Rule'
+      summary: '[EXPERIMENTAL] DeleteQuoteAcccesMetadataRule: Delete a Quote Access
+        Metadata Rule'
       tags:
       - Quotes
       x-fbn-apistatus: Experimental
@@ -14317,7 +14335,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] List all quote access metadata rules in a scope'
+      summary: '[EXPERIMENTAL] ListQuotesAccessMetadataRules: List all quote access
+        metadata rules in a scope'
       tags:
       - Quotes
       x-fbn-apistatus: Experimental
@@ -14443,8 +14462,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert a Quote Access Metadata Rule. This creates or
-        updates the data in LUSID.'
+      summary: '[EXPERIMENTAL] UpsertQuoteAccessMetadataRule: Upsert a Quote Access
+        Metadata Rule. This creates or updates the data in LUSID.'
       tags:
       - Quotes
       x-fbn-apistatus: Experimental
@@ -14475,7 +14494,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get LUSID versions'
+      summary: '[EARLY ACCESS] GetLusidVersions: Get LUSID versions'
       tags:
       - Application Metadata
       x-fbn-apistatus: EarlyAccess
@@ -14622,7 +14641,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] List OrderInstructions'
+      summary: '[EXPERIMENTAL] ListOrderInstructions: List OrderInstructions'
       tags:
       - OrderInstructions
       x-fbn-apistatus: Experimental
@@ -14761,7 +14780,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert OrderInstruction'
+      summary: '[EXPERIMENTAL] UpsertOrderInstructions: Upsert OrderInstruction'
       tags:
       - OrderInstructions
       x-fbn-apistatus: Experimental
@@ -14833,7 +14852,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete orderInstruction'
+      summary: '[EXPERIMENTAL] DeleteOrderInstruction: Delete orderInstruction'
       tags:
       - OrderInstructions
       x-fbn-apistatus: Experimental
@@ -14971,7 +14990,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get OrderInstruction'
+      summary: '[EXPERIMENTAL] GetOrderInstruction: Get OrderInstruction'
       tags:
       - OrderInstructions
       x-fbn-apistatus: Experimental
@@ -15122,7 +15141,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] List Orders'
+      summary: '[EARLY ACCESS] ListOrders: List Orders'
       tags:
       - Orders
       x-fbn-apistatus: EarlyAccess
@@ -15422,7 +15441,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Upsert Order'
+      summary: '[EARLY ACCESS] UpsertOrders: Upsert Order'
       tags:
       - Orders
       x-fbn-apistatus: EarlyAccess
@@ -15494,7 +15513,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Delete order'
+      summary: '[EARLY ACCESS] DeleteOrder: Delete order'
       tags:
       - Orders
       x-fbn-apistatus: EarlyAccess
@@ -15700,7 +15719,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get Order'
+      summary: '[EARLY ACCESS] GetOrder: Get Order'
       tags:
       - Orders
       x-fbn-apistatus: EarlyAccess
@@ -15845,7 +15864,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] List Packages'
+      summary: '[EXPERIMENTAL] ListPackages: List Packages'
       tags:
       - Packages
       x-fbn-apistatus: Experimental
@@ -16011,7 +16030,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert Package'
+      summary: '[EXPERIMENTAL] UpsertPackages: Upsert Package'
       tags:
       - Packages
       x-fbn-apistatus: Experimental
@@ -16083,7 +16102,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete package'
+      summary: '[EXPERIMENTAL] DeletePackage: Delete package'
       tags:
       - Packages
       x-fbn-apistatus: Experimental
@@ -16223,7 +16242,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Package'
+      summary: '[EXPERIMENTAL] GetPackage: Get Package'
       tags:
       - Packages
       x-fbn-apistatus: Experimental
@@ -16368,7 +16387,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] List Participations'
+      summary: '[EXPERIMENTAL] ListParticipations: List Participations'
       tags:
       - Participations
       x-fbn-apistatus: Experimental
@@ -16496,7 +16515,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert Participation'
+      summary: '[EXPERIMENTAL] UpsertParticipations: Upsert Participation'
       tags:
       - Participations
       x-fbn-apistatus: Experimental
@@ -16568,7 +16587,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete participation'
+      summary: '[EXPERIMENTAL] DeleteParticipation: Delete participation'
       tags:
       - Participations
       x-fbn-apistatus: Experimental
@@ -16690,7 +16709,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Participation'
+      summary: '[EXPERIMENTAL] GetParticipation: Get Participation'
       tags:
       - Participations
       x-fbn-apistatus: Experimental
@@ -16973,7 +16992,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert Person'
+      summary: '[EXPERIMENTAL] UpsertPerson: Upsert Person'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -17361,7 +17380,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] List Persons'
+      summary: '[EXPERIMENTAL] ListPersons: List Persons'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -17446,7 +17465,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete person'
+      summary: '[EXPERIMENTAL] DeletePerson: Delete person'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -17676,7 +17695,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Person'
+      summary: '[EXPERIMENTAL] GetPerson: Get Person'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -17799,7 +17818,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete Person Identifiers'
+      summary: '[EXPERIMENTAL] DeletePersonIdentifiers: Delete Person Identifiers'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -18000,7 +18019,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Set Person Identifiers'
+      summary: '[EXPERIMENTAL] SetPersonIdentifiers: Set Person Identifiers'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -18112,7 +18131,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Access Metadata rules for a Person'
+      summary: '[EXPERIMENTAL] GetAllPersonAccessMetadata: Get Access Metadata rules
+        for a Person'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -18211,7 +18231,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete a Person Access Metadata entry'
+      summary: '[EXPERIMENTAL] DeletePersonAccessMetadata: Delete a Person Access
+        Metadata entry'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -18327,8 +18348,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get an entry identified by a metadataKey in the Access
-        Metadata of a Person'
+      summary: '[EXPERIMENTAL] GetPersonAccessMetadataByKey: Get an entry identified
+        by a metadataKey in the Access Metadata of a Person'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -18461,8 +18482,9 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert a Person Access Metadata entry associated with
-        a specific metadataKey. This creates or updates the data in LUSID.'
+      summary: '[EXPERIMENTAL] UpsertPersonAccessMetadata: Upsert a Person Access
+        Metadata entry associated with a specific metadataKey. This creates or updates
+        the data in LUSID.'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -18591,7 +18613,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete Person Properties'
+      summary: '[EXPERIMENTAL] DeletePersonProperties: Delete Person Properties'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -18796,7 +18818,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Set Person Properties'
+      summary: '[EXPERIMENTAL] SetPersonProperties: Set Person Properties'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -18949,7 +18971,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Person Property Time Series'
+      summary: '[EXPERIMENTAL] GetPersonPropertyTimeSeries: Get Person Property Time
+        Series'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -19129,7 +19152,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Relations for Person'
+      summary: '[EXPERIMENTAL] GetPersonRelations: Get Relations for Person'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -19333,7 +19356,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Relationships for Person'
+      summary: '[EXPERIMENTAL] GetPersonRelationships: Get Relationships for Person'
       tags:
       - Persons
       x-fbn-apistatus: Experimental
@@ -19478,7 +19501,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] List Placements'
+      summary: '[EXPERIMENTAL] ListPlacements: List Placements'
       tags:
       - Placements
       x-fbn-apistatus: Experimental
@@ -19743,7 +19766,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert Placement'
+      summary: '[EXPERIMENTAL] UpsertPlacements: Upsert Placement'
       tags:
       - Placements
       x-fbn-apistatus: Experimental
@@ -19815,7 +19838,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete placement'
+      summary: '[EXPERIMENTAL] DeletePlacement: Delete placement'
       tags:
       - Placements
       x-fbn-apistatus: Experimental
@@ -20006,7 +20029,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Placement'
+      summary: '[EXPERIMENTAL] GetPlacement: Get Placement'
       tags:
       - Placements
       x-fbn-apistatus: Experimental
@@ -20101,7 +20124,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] List portfolio groups'
+      summary: '[EARLY ACCESS] ListPortfolioGroups: List portfolio groups'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -20224,7 +20247,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Create portfolio group'
+      summary: '[EARLY ACCESS] CreatePortfolioGroup: Create portfolio group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -20302,7 +20325,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Delete portfolio group'
+      summary: '[EARLY ACCESS] DeletePortfolioGroup: Delete portfolio group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -20405,7 +20428,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get portfolio group'
+      summary: '[EARLY ACCESS] GetPortfolioGroup: Get portfolio group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -20516,7 +20539,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Update portfolio group'
+      summary: '[EARLY ACCESS] UpdatePortfolioGroup: Update portfolio group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -21591,7 +21614,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get A2B data for a Portfolio Group'
+      summary: '[EXPERIMENTAL] GetA2BDataForPortfolioGroup: Get A2B data for a Portfolio
+        Group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: Experimental
@@ -21698,7 +21722,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get portfolio group commands'
+      summary: '[EARLY ACCESS] GetPortfolioGroupCommands: Get portfolio group commands'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -21819,7 +21843,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get portfolio group expansion'
+      summary: '[EARLY ACCESS] GetPortfolioGroupExpansion: Get portfolio group expansion'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -22053,8 +22077,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get holdings for transaction portfolios in portfolio
-        group'
+      summary: '[EARLY ACCESS] GetHoldingsForPortfolioGroup: Get holdings for transaction
+        portfolios in portfolio group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -22157,7 +22181,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Access Metadata rules for Portfolio Group'
+      summary: '[EXPERIMENTAL] GetPortfolioGroupMetadata: Get Access Metadata rules
+        for Portfolio Group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: Experimental
@@ -22248,7 +22273,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete a Portfolio Group Access Metadata entry'
+      summary: '[EXPERIMENTAL] DeleteKeyFromPortfolioGroupAccessMetadata: Delete a
+        Portfolio Group Access Metadata entry'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: Experimental
@@ -22356,8 +22382,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get an entry identified by a metadataKey in the Access
-        Metadata of a Portfolio Group'
+      summary: '[EXPERIMENTAL] GetPortfolioGroupAccessMetadataByKey: Get an entry
+        identified by a metadataKey in the Access Metadata of a Portfolio Group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: Experimental
@@ -22482,8 +22508,9 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert a Portfolio Group Access Metadata entry associated
-        with a specific metadataKey. This creates or updates the data in LUSID.'
+      summary: '[EXPERIMENTAL] UpsertPortfolioGroupAccessMetadata: Upsert a Portfolio
+        Group Access Metadata entry associated with a specific metadataKey. This creates
+        or updates the data in LUSID.'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: Experimental
@@ -22597,7 +22624,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Add portfolio to group'
+      summary: '[EARLY ACCESS] AddPortfolioToGroup: Add portfolio to group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -22707,7 +22734,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Delete portfolio from group'
+      summary: '[EARLY ACCESS] DeletePortfolioFromGroup: Delete portfolio from group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -22805,7 +22832,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get group properties'
+      summary: '[EARLY ACCESS] GetGroupProperties: Get group properties'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -22959,7 +22986,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Delete group properties'
+      summary: '[EARLY ACCESS] DeleteGroupProperties: Delete group properties'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -23178,7 +23205,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Upsert group properties'
+      summary: '[EARLY ACCESS] UpsertGroupProperties: Upsert group properties'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -23334,7 +23361,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get the time series of a portfolio group property'
+      summary: '[EARLY ACCESS] GetPortfolioGroupPropertyTimeSeries: Get the time series
+        of a portfolio group property'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -23511,7 +23539,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Relations for Portfolio Group'
+      summary: '[EXPERIMENTAL] GetPortfolioGroupRelations: Get Relations for Portfolio
+        Group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: Experimental
@@ -23703,7 +23732,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Relationships for Portfolio Group'
+      summary: '[EXPERIMENTAL] GetPortfolioGroupRelationships: Get Relationships for
+        Portfolio Group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: Experimental
@@ -23817,7 +23847,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Add sub group to group'
+      summary: '[EARLY ACCESS] AddSubGroupToGroup: Add sub group to group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -23925,7 +23955,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Delete sub group from group'
+      summary: '[EARLY ACCESS] DeleteSubGroupFromGroup: Delete sub group from group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -24219,8 +24249,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get transactions for transaction portfolios in a portfolio
-        group'
+      summary: '[EARLY ACCESS] GetTransactionsForPortfolioGroup: Get transactions
+        for transaction portfolios in a portfolio group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -24875,8 +24905,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Build transactions for transaction portfolios in a
-        portfolio group'
+      summary: '[EARLY ACCESS] BuildTransactionsForPortfolioGroup: Build transactions
+        for transaction portfolios in a portfolio group'
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
@@ -25049,7 +25079,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: List portfolios
+      summary: 'ListPortfolios: List portfolios'
       tags:
       - Portfolios
       x-fbn-apistatus: Stable
@@ -25224,7 +25254,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Reconcile portfolio holdings'
+      summary: '[EARLY ACCESS] ReconcileHoldings: Reconcile portfolio holdings'
       tags:
       - Reconciliations
       x-fbn-apistatus: EarlyAccess
@@ -25576,8 +25606,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Reconcile valuations performed on one or two sets of inline
-        instruments using one or two configuration recipes.'
+      summary: '[BETA] ReconcileInline: Reconcile valuations performed on one or two
+        sets of inline instruments using one or two configuration recipes.'
       tags:
       - Reconciliations
       x-fbn-apistatus: Beta
@@ -25885,8 +25915,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Reconcile valuations performed on one or two sets of holdings
-        using one or two configuration recipes.'
+      summary: '[BETA] ReconcileValuation: Reconcile valuations performed on one or
+        two sets of holdings using one or two configuration recipes.'
       tags:
       - Reconciliations
       x-fbn-apistatus: Beta
@@ -26085,7 +26115,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Reconcile portfolio holdings with given tolerance'
+      summary: '[EXPERIMENTAL] ReconcileHoldingsPreview: Reconcile portfolio holdings
+        with given tolerance'
       tags:
       - Reconciliations
       x-fbn-apistatus: Experimental
@@ -26253,7 +26284,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: List portfolios for scope
+      summary: 'ListPortfoliosForScope: List portfolios for scope'
       tags:
       - Portfolios
       x-fbn-apistatus: Stable
@@ -26327,7 +26358,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Delete portfolio
+      summary: 'DeletePortfolio: Delete portfolio'
       tags:
       - Portfolios
       x-fbn-apistatus: Stable
@@ -26447,7 +26478,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Get portfolio
+      summary: 'GetPortfolio: Get portfolio'
       tags:
       - Portfolios
       x-fbn-apistatus: Stable
@@ -26561,7 +26592,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Update portfolio
+      summary: 'UpdatePortfolio: Update portfolio'
       tags:
       - Portfolios
       x-fbn-apistatus: Stable
@@ -26704,7 +26735,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get portfolio commands'
+      summary: '[EARLY ACCESS] GetPortfolioCommands: Get portfolio commands'
       tags:
       - Portfolios
       x-fbn-apistatus: EarlyAccess
@@ -26809,7 +26840,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get access metadata rules for a portfolio'
+      summary: '[EXPERIMENTAL] GetPortfolioMetadata: Get access metadata rules for
+        a portfolio'
       tags:
       - Portfolios
       x-fbn-apistatus: Experimental
@@ -26899,7 +26931,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete a Portfolio Access Metadata Rule'
+      summary: '[EXPERIMENTAL] DeleteKeyFromPortfolioAccessMetadata: Delete a Portfolio
+        Access Metadata Rule'
       tags:
       - Portfolios
       x-fbn-apistatus: Experimental
@@ -27008,8 +27041,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get an entry identified by a metadataKey in the access
-        metadata object'
+      summary: '[EXPERIMENTAL] GetPortfoliosAccessMetadataByKey: Get an entry identified
+        by a metadataKey in the access metadata object'
       tags:
       - Portfolios
       x-fbn-apistatus: Experimental
@@ -27136,8 +27169,9 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert a Portfolio Access Metadata Rule associated
-        with specific metadataKey. This creates or updates the data in LUSID.'
+      summary: '[EXPERIMENTAL] UpsertPortfolioAccessMetadata: Upsert a Portfolio Access
+        Metadata Rule associated with specific metadataKey. This creates or updates
+        the data in LUSID.'
       tags:
       - Portfolios
       x-fbn-apistatus: Experimental
@@ -27251,7 +27285,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Delete portfolio properties
+      summary: 'DeletePortfolioProperties: Delete portfolio properties'
       tags:
       - Portfolios
       x-fbn-apistatus: Stable
@@ -27348,7 +27382,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Get portfolio properties
+      summary: 'GetPortfolioProperties: Get portfolio properties'
       tags:
       - Portfolios
       x-fbn-apistatus: Stable
@@ -27559,7 +27593,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Upsert portfolio properties
+      summary: 'UpsertPortfolioProperties: Upsert portfolio properties'
       tags:
       - Portfolios
       x-fbn-apistatus: Stable
@@ -27723,7 +27757,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get portfolio properties'
+      summary: '[EXPERIMENTAL] ListPortfolioProperties: Get portfolio properties'
       tags:
       - Portfolios
       x-fbn-apistatus: Experimental
@@ -27875,7 +27909,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get portfolio property time series'
+      summary: '[EXPERIMENTAL] GetPortfolioPropertyTimeSeries: Get portfolio property
+        time series'
       tags:
       - Portfolios
       x-fbn-apistatus: Experimental
@@ -28079,7 +28114,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get portfolio relations'
+      summary: '[EXPERIMENTAL] GetPortfolioRelations: Get portfolio relations'
       tags:
       - Portfolios
       x-fbn-apistatus: Experimental
@@ -28310,7 +28345,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get portfolio relationships'
+      summary: '[EXPERIMENTAL] GetPortfolioRelationships: Get portfolio relationships'
       tags:
       - Portfolios
       x-fbn-apistatus: Experimental
@@ -28440,7 +28475,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get Returns'
+      summary: '[EARLY ACCESS] GetPortfolioReturns: Get Returns'
       tags:
       - Portfolios
       x-fbn-apistatus: EarlyAccess
@@ -28595,7 +28630,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Upsert Returns'
+      summary: '[EARLY ACCESS] UpsertPortfolioReturns: Upsert Returns'
       tags:
       - Portfolios
       x-fbn-apistatus: EarlyAccess
@@ -28791,7 +28826,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Aggregated Returns'
+      summary: '[EXPERIMENTAL] GetPortfolioAggregatedReturns: Aggregated Returns'
       tags:
       - Portfolios
       x-fbn-apistatus: Experimental
@@ -28907,7 +28942,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete Returns'
+      summary: '[EXPERIMENTAL] DeletePortfolioReturns: Delete Returns'
       tags:
       - Portfolios
       x-fbn-apistatus: Experimental
@@ -29110,7 +29145,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Aggregate Returns (This is a deprecated endpoint).'
+      summary: '[EXPERIMENTAL] GetPortfolioAggregateReturns: Aggregate Returns (This
+        is a deprecated endpoint).'
       tags:
       - Portfolios
       x-fbn-apistatus: Experimental
@@ -29200,7 +29236,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Get multiple property definitions
+      summary: 'GetMultiplePropertyDefinitions: Get multiple property definitions'
       tags:
       - Property Definitions
       x-fbn-apistatus: Stable
@@ -29305,7 +29341,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Create property definition
+      summary: 'CreatePropertyDefinition: Create property definition'
       tags:
       - Property Definitions
       x-fbn-apistatus: Stable
@@ -29408,7 +29444,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Create derived property definition'
+      summary: '[EARLY ACCESS] CreateDerivedPropertyDefinition: Create derived property
+        definition'
       tags:
       - Property Definitions
       x-fbn-apistatus: EarlyAccess
@@ -29520,7 +29557,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Delete property definition
+      summary: 'DeletePropertyDefinition: Delete property definition'
       tags:
       - Property Definitions
       x-fbn-apistatus: Stable
@@ -29646,7 +29683,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Get property definition
+      summary: 'GetPropertyDefinition: Get property definition'
       tags:
       - Property Definitions
       x-fbn-apistatus: Stable
@@ -29786,7 +29823,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Update property definition
+      summary: 'UpdatePropertyDefinition: Update property definition'
       tags:
       - Property Definitions
       x-fbn-apistatus: Stable
@@ -29910,7 +29947,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] List quotes for scope'
+      summary: '[EARLY ACCESS] ListQuotesForScope: List quotes for scope'
       tags:
       - Quotes
       x-fbn-apistatus: EarlyAccess
@@ -30124,7 +30161,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Upsert quotes'
+      summary: '[EARLY ACCESS] UpsertQuotes: Upsert quotes'
       tags:
       - Quotes
       x-fbn-apistatus: EarlyAccess
@@ -30262,7 +30299,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Delete quotes'
+      summary: '[EARLY ACCESS] DeleteQuotes: Delete quotes'
       tags:
       - Quotes
       x-fbn-apistatus: EarlyAccess
@@ -30389,7 +30426,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[DEPRECATED] List quotes'
+      summary: '[DEPRECATED] ListQuotes: List quotes'
       tags:
       - Quotes
       x-fbn-apistatus: Deprecated
@@ -30581,7 +30618,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get quotes'
+      summary: '[EARLY ACCESS] GetQuotes: Get quotes'
       tags:
       - Quotes
       x-fbn-apistatus: EarlyAccess
@@ -30952,7 +30989,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] List the set of Configuration Recipes'
+      summary: '[EXPERIMENTAL] ListConfigurationRecipes: List the set of Configuration
+        Recipes'
       tags:
       - Configuration Recipe
       x-fbn-apistatus: Experimental
@@ -31189,8 +31227,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert a Configuration Recipe. This creates or updates
-        the data in Lusid.'
+      summary: '[EXPERIMENTAL] UpsertConfigurationRecipe: Upsert a Configuration Recipe.
+        This creates or updates the data in Lusid.'
       tags:
       - Configuration Recipe
       x-fbn-apistatus: Experimental
@@ -31261,8 +31299,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete a Configuration Recipe, assuming that it is
-        present.'
+      summary: '[EXPERIMENTAL] DeleteConfigurationRecipe: Delete a Configuration Recipe,
+        assuming that it is present.'
       tags:
       - Configuration Recipe
       x-fbn-apistatus: Experimental
@@ -31489,7 +31527,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get Configuration Recipe'
+      summary: '[EXPERIMENTAL] GetConfigurationRecipe: Get Configuration Recipe'
       tags:
       - Configuration Recipe
       x-fbn-apistatus: Experimental
@@ -31582,7 +31620,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Create reference portfolio
+      summary: 'CreateReferencePortfolio: Create reference portfolio'
       tags:
       - Reference Portfolio
       x-fbn-apistatus: Stable
@@ -31707,7 +31745,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Get reference portfolio constituents
+      summary: 'GetReferencePortfolioConstituents: Get reference portfolio constituents'
       tags:
       - Reference Portfolio
       x-fbn-apistatus: Stable
@@ -31889,7 +31927,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Upsert reference portfolio constituents
+      summary: 'UpsertReferencePortfolioConstituents: Upsert reference portfolio constituents'
       tags:
       - Reference Portfolio
       x-fbn-apistatus: Stable
@@ -31997,7 +32035,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: List constituents adjustments
+      summary: 'ListConstituentsAdjustments: List constituents adjustments'
       tags:
       - Reference Portfolio
       x-fbn-apistatus: Stable
@@ -32095,7 +32133,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Create a relation definition'
+      summary: '[EXPERIMENTAL] CreateRelationDefinition: Create a relation definition'
       tags:
       - Relation Definitions
       x-fbn-apistatus: Experimental
@@ -32183,7 +32221,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get relation definition'
+      summary: '[EXPERIMENTAL] GetRelationDefinition: Get relation definition'
       tags:
       - Relation Definitions
       x-fbn-apistatus: Experimental
@@ -32367,7 +32405,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Create Relation'
+      summary: '[EXPERIMENTAL] CreateRelation: Create Relation'
       tags:
       - Relations
       x-fbn-apistatus: Experimental
@@ -32509,7 +32547,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete a relation'
+      summary: '[EXPERIMENTAL] DeleteRelation: Delete a relation'
       tags:
       - Relations
       x-fbn-apistatus: Experimental
@@ -32651,7 +32689,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Create Relationship Definition'
+      summary: '[EXPERIMENTAL] CreateRelationshipDefinition: Create Relationship Definition'
       tags:
       - Relationship Definitions
       x-fbn-apistatus: Experimental
@@ -32783,7 +32821,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get relationship definition'
+      summary: '[EXPERIMENTAL] GetRelationshipDefinition: Get relationship definition'
       tags:
       - Relationship Definitions
       x-fbn-apistatus: Experimental
@@ -32931,7 +32969,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Update Relationship Definition'
+      summary: '[EXPERIMENTAL] UpdateRelationshipDefinition: Update Relationship Definition'
       tags:
       - Relationship Definitions
       x-fbn-apistatus: Experimental
@@ -33115,7 +33153,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Create Relationship'
+      summary: '[EXPERIMENTAL] CreateRelationship: Create Relationship'
       tags:
       - Relationships
       x-fbn-apistatus: Experimental
@@ -33238,7 +33276,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete Relationship'
+      summary: '[EXPERIMENTAL] DeleteRelationship: Delete Relationship'
       tags:
       - Relationships
       x-fbn-apistatus: Experimental
@@ -33324,8 +33362,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Query the set of supported "addresses" that can be
-        queried from the aggregation endpoint.'
+      summary: '[EXPERIMENTAL] GetQueryableKeys: Query the set of supported "addresses"
+        that can be queried from the aggregation endpoint.'
       tags:
       - Aggregation
       x-fbn-apistatus: Experimental
@@ -33355,7 +33393,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] List entities'
+      summary: '[BETA] ListEntities: List entities'
       tags:
       - Schemas
       x-fbn-apistatus: Beta
@@ -33411,7 +33449,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Get schema'
+      summary: '[BETA] GetEntitySchema: Get schema'
       tags:
       - Schemas
       x-fbn-apistatus: Beta
@@ -33481,7 +33519,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Get property schema'
+      summary: '[BETA] GetPropertySchema: Get property schema'
       tags:
       - Schemas
       x-fbn-apistatus: Beta
@@ -33565,7 +33603,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Get value types'
+      summary: '[BETA] GetValueTypes: Get value types'
       tags:
       - Schemas
       x-fbn-apistatus: Beta
@@ -33625,7 +33663,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] List Scopes'
+      summary: '[EARLY ACCESS] ListScopes: List Scopes'
       tags:
       - Scopes
       x-fbn-apistatus: EarlyAccess
@@ -33751,7 +33789,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Instruments search'
+      summary: '[EXPERIMENTAL] InstrumentsSearch: Instruments search'
       tags:
       - Search
       x-fbn-apistatus: Experimental
@@ -33913,7 +33951,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Search Portfolio Groups'
+      summary: '[EARLY ACCESS] SearchPortfolioGroups: Search Portfolio Groups'
       tags:
       - Search
       x-fbn-apistatus: EarlyAccess
@@ -34089,7 +34127,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Search Portfolios'
+      summary: '[EARLY ACCESS] SearchPortfolios: Search Portfolios'
       tags:
       - Search
       x-fbn-apistatus: EarlyAccess
@@ -34265,7 +34303,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Search Property Definitions'
+      summary: '[EARLY ACCESS] SearchProperties: Search Property Definitions'
       tags:
       - Search
       x-fbn-apistatus: EarlyAccess
@@ -34298,7 +34336,7 @@ paths:
               maxValue: 10
               start: 0
               cycle: false
-              pattern: Prefix-
+              pattern: TXN-{{seqValue}}
             schema:
               $ref: '#/components/schemas/CreateSequenceRequest'
           application/json:
@@ -34309,7 +34347,7 @@ paths:
               maxValue: 10
               start: 0
               cycle: false
-              pattern: Prefix-
+              pattern: TXN-{{seqValue}}
             schema:
               $ref: '#/components/schemas/CreateSequenceRequest'
           text/json:
@@ -34320,7 +34358,7 @@ paths:
               maxValue: 10
               start: 0
               cycle: false
-              pattern: Prefix-
+              pattern: TXN-{{seqValue}}
             schema:
               $ref: '#/components/schemas/CreateSequenceRequest'
           application/*+json:
@@ -34331,7 +34369,7 @@ paths:
               maxValue: 10
               start: 0
               cycle: false
-              pattern: Prefix-
+              pattern: TXN-{{seqValue}}
             schema:
               $ref: '#/components/schemas/CreateSequenceRequest'
         description: Request to create sequence
@@ -34350,7 +34388,7 @@ paths:
                 start: 1
                 value: 3
                 cycle: false
-                pattern: Prefix-
+                pattern: TXN-{{seqValue}}
               schema:
                 $ref: '#/components/schemas/SequenceDefinition'
             application/json:
@@ -34364,7 +34402,7 @@ paths:
                 start: 1
                 value: 3
                 cycle: false
-                pattern: Prefix-
+                pattern: TXN-{{seqValue}}
               schema:
                 $ref: '#/components/schemas/SequenceDefinition'
             text/json:
@@ -34378,7 +34416,7 @@ paths:
                 start: 1
                 value: 3
                 cycle: false
-                pattern: Prefix-
+                pattern: TXN-{{seqValue}}
               schema:
                 $ref: '#/components/schemas/SequenceDefinition'
           description: The newly created Sequence
@@ -34402,7 +34440,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Create a new sequence'
+      summary: '[EXPERIMENTAL] CreateSequence: Create a new sequence'
       tags:
       - Sequences
       x-fbn-apistatus: Experimental
@@ -34455,7 +34493,7 @@ paths:
                 start: 1
                 value: 3
                 cycle: false
-                pattern: Prefix-
+                pattern: TXN-{{seqValue}}
               schema:
                 $ref: '#/components/schemas/SequenceDefinition'
             application/json:
@@ -34469,7 +34507,7 @@ paths:
                 start: 1
                 value: 3
                 cycle: false
-                pattern: Prefix-
+                pattern: TXN-{{seqValue}}
               schema:
                 $ref: '#/components/schemas/SequenceDefinition'
             text/json:
@@ -34483,7 +34521,7 @@ paths:
                 start: 1
                 value: 3
                 cycle: false
-                pattern: Prefix-
+                pattern: TXN-{{seqValue}}
               schema:
                 $ref: '#/components/schemas/SequenceDefinition'
           description: The requested sequence
@@ -34507,7 +34545,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get a specified sequence'
+      summary: '[EXPERIMENTAL] GetSequence: Get a specified sequence'
       tags:
       - Sequences
       x-fbn-apistatus: Experimental
@@ -34567,25 +34605,25 @@ paths:
             text/plain:
               example:
                 values:
-                - Prefix-1
-                - Prefix-2
-                - Prefix-3
+                - TXN-0
+                - TXN-1
+                - TXN-2
               schema:
                 $ref: '#/components/schemas/NextValueInSequenceResponse'
             application/json:
               example:
                 values:
-                - Prefix-1
-                - Prefix-2
-                - Prefix-3
+                - TXN-0
+                - TXN-1
+                - TXN-2
               schema:
                 $ref: '#/components/schemas/NextValueInSequenceResponse'
             text/json:
               example:
                 values:
-                - Prefix-1
-                - Prefix-2
-                - Prefix-3
+                - TXN-0
+                - TXN-1
+                - TXN-2
               schema:
                 $ref: '#/components/schemas/NextValueInSequenceResponse'
           description: The response containing next available values in specified
@@ -34610,7 +34648,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get next values from sequence'
+      summary: '[EXPERIMENTAL] Next: Get next values from sequence'
       tags:
       - Sequences
       x-fbn-apistatus: Experimental
@@ -34819,8 +34857,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Upsert a set of structured market data items. This
-        creates or updates the data in Lusid.'
+      summary: '[EXPERIMENTAL] UpsertStructuredMarketData: Upsert a set of structured
+        market data items. This creates or updates the data in Lusid.'
       tags:
       - Structured Market Data
       x-fbn-apistatus: Experimental
@@ -34952,8 +34990,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete one or more items of structured market data,
-        assuming they are present.'
+      summary: '[EXPERIMENTAL] DeleteStructuredMarketData: Delete one or more items
+        of structured market data, assuming they are present.'
       tags:
       - Structured Market Data
       x-fbn-apistatus: Experimental
@@ -35150,7 +35188,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get structured market data'
+      summary: '[EXPERIMENTAL] GetStructuredMarketData: Get structured market data'
       tags:
       - Structured Market Data
       x-fbn-apistatus: Experimental
@@ -35280,7 +35318,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] List Existing Cut Labels'
+      summary: '[EARLY ACCESS] ListCutLabelDefinitions: List Existing Cut Labels'
       tags:
       - Cut Label Definitions
       x-fbn-apistatus: EarlyAccess
@@ -35368,7 +35406,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Create a Cut Label'
+      summary: '[EARLY ACCESS] CreateCutLabelDefinition: Create a Cut Label'
       tags:
       - Cut Label Definitions
       x-fbn-apistatus: EarlyAccess
@@ -35428,7 +35466,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Delete a Cut Label'
+      summary: '[EARLY ACCESS] DeleteCutLabelDefinition: Delete a Cut Label'
       tags:
       - Cut Label Definitions
       x-fbn-apistatus: EarlyAccess
@@ -35495,7 +35533,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get a Cut Label'
+      summary: '[EARLY ACCESS] GetCutLabelDefinition: Get a Cut Label'
       tags:
       - Cut Label Definitions
       x-fbn-apistatus: EarlyAccess
@@ -35593,7 +35631,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Update a Cut Label'
+      summary: '[EARLY ACCESS] UpdateCutLabelDefinition: Update a Cut Label'
       tags:
       - Cut Label Definitions
       x-fbn-apistatus: EarlyAccess
@@ -35652,7 +35690,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] List transaction types'
+      summary: '[EARLY ACCESS] ListConfigurationTransactionTypes: List transaction
+        types'
       tags:
       - System Configuration
       x-fbn-apistatus: EarlyAccess
@@ -35957,7 +35996,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Set transaction types'
+      summary: '[EXPERIMENTAL] SetConfigurationTransactionTypes: Set transaction types'
       tags:
       - System Configuration
       x-fbn-apistatus: Experimental
@@ -36044,7 +36083,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Create side definition'
+      summary: '[EXPERIMENTAL] CreateSideDefinition: Create side definition'
       tags:
       - System Configuration
       x-fbn-apistatus: Experimental
@@ -36183,7 +36222,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Create transaction type'
+      summary: '[EARLY ACCESS] CreateConfigurationTransactionType: Create transaction
+        type'
       tags:
       - System Configuration
       x-fbn-apistatus: EarlyAccess
@@ -36349,7 +36389,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Create portfolio
+      summary: 'CreatePortfolio: Create portfolio'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -36504,7 +36544,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Resolve instrument'
+      summary: '[EARLY ACCESS] ResolveInstrument: Resolve instrument'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: EarlyAccess
@@ -39564,7 +39604,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get A2B data'
+      summary: '[EXPERIMENTAL] GetA2BData: Get A2B data'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Experimental
@@ -40142,8 +40182,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get an A2B report at the movement level for the given
-        portfolio.'
+      summary: '[EXPERIMENTAL] GetA2BMovements: Get an A2B report at the movement
+        level for the given portfolio.'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Experimental
@@ -40262,7 +40302,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get bucketed cash flows from a list of portfolios'
+      summary: '[EXPERIMENTAL] GetBucketedCashFlows: Get bucketed cash flows from
+        a list of portfolios'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Experimental
@@ -40452,7 +40493,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Get portfolio cash flows'
+      summary: '[BETA] GetPortfolioCashFlows: Get portfolio cash flows'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Beta
@@ -40850,7 +40891,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get portfolio cash ladder'
+      summary: '[EXPERIMENTAL] GetPortfolioCashLadder: Get portfolio cash ladder'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Experimental
@@ -42774,7 +42815,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Get portfolio cash statement'
+      summary: '[EARLY ACCESS] GetPortfolioCashStatement: Get portfolio cash statement'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: EarlyAccess
@@ -42906,7 +42947,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Get details
+      summary: 'GetDetails: Get details'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -43058,7 +43099,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Upsert portfolio details
+      summary: 'UpsertPortfolioDetails: Upsert portfolio details'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -43144,7 +43185,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Cancel adjust holdings
+      summary: 'CancelAdjustHoldings: Cancel adjust holdings'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -43374,7 +43415,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Get holdings
+      summary: 'GetHoldings: Get holdings'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -43606,7 +43647,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Adjust holdings
+      summary: 'AdjustHoldings: Adjust holdings'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -43838,7 +43879,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Set holdings
+      summary: 'SetHoldings: Set holdings'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -43958,7 +43999,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: List holdings adjustments
+      summary: 'ListHoldingsAdjustments: List holdings adjustments'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -44148,7 +44189,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Get holdings adjustment
+      summary: 'GetHoldingsAdjustment: Get holdings adjustment'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -44481,7 +44522,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get holdings with orders'
+      summary: '[EXPERIMENTAL] GetHoldingsWithOrders: Get holdings with orders'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Experimental
@@ -44563,7 +44604,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Cancel transactions
+      summary: 'CancelTransactions: Cancel transactions'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -44857,7 +44898,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Get transactions
+      summary: 'GetTransactions: Get transactions'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -45051,7 +45092,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Upsert transactions
+      summary: 'UpsertTransactions: Upsert transactions'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -45704,7 +45745,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Build transactions
+      summary: 'BuildTransactions: Build transactions'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -45805,7 +45846,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Delete properties from transaction
+      summary: 'DeletePropertiesFromTransaction: Delete properties from transaction'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -45975,7 +46016,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: Upsert transaction properties
+      summary: 'UpsertTransactionProperties: Upsert transaction properties'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
@@ -46177,7 +46218,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Get upsertable portfolio cash flows.'
+      summary: '[BETA] GetUpsertablePortfolioCashFlows: Get upsertable portfolio cash
+        flows.'
       tags:
       - Transaction Portfolios
       x-fbn-apistatus: Beta
@@ -46329,7 +46371,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Translate instruments'
+      summary: '[EXPERIMENTAL] TranslateInstrumentDefinitions: Translate instruments'
       tags:
       - Translation
       x-fbn-apistatus: Experimental
@@ -46426,7 +46468,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Create data map'
+      summary: '[EXPERIMENTAL] CreateDataMap: Create data map'
       tags:
       - Structured Result Data
       x-fbn-apistatus: Experimental
@@ -46532,7 +46574,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get data map'
+      summary: '[EXPERIMENTAL] GetDataMap: Get data map'
       tags:
       - Structured Result Data
       x-fbn-apistatus: Experimental
@@ -46722,7 +46764,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] Upsert structured result data'
+      summary: '[BETA] UpsertStructuredResultData: Upsert structured result data'
       tags:
       - Structured Result Data
       x-fbn-apistatus: Beta
@@ -46844,7 +46886,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Delete structured result data'
+      summary: '[EXPERIMENTAL] DeleteStructuredResultData: Delete structured result
+        data'
       tags:
       - Structured Result Data
       x-fbn-apistatus: Experimental
@@ -47005,7 +47048,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] Get structured result data'
+      summary: '[EXPERIMENTAL] GetStructuredResultData: Get structured result data'
       tags:
       - Structured Result Data
       x-fbn-apistatus: Experimental
