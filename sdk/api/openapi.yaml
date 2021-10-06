@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3574
+  version: 0.11.3575
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:56952
+- url: http://local-unit-test-server.lusid.com:50683
 security:
 - {}
 tags:
@@ -30670,6 +30670,7 @@ paths:
                     aggregation:
                       options:
                         useAnsiLikeSyntax: false
+                        allowPartialEntitlementSuccess: false
                     inheritedRecipes: []
                     description: ""
                     holding:
@@ -30712,6 +30713,7 @@ paths:
                     aggregation:
                       options:
                         useAnsiLikeSyntax: false
+                        allowPartialEntitlementSuccess: false
                     inheritedRecipes: []
                     description: ""
                     holding:
@@ -30770,6 +30772,7 @@ paths:
                     aggregation:
                       options:
                         useAnsiLikeSyntax: false
+                        allowPartialEntitlementSuccess: false
                     inheritedRecipes: []
                     description: ""
                     holding:
@@ -30812,6 +30815,7 @@ paths:
                     aggregation:
                       options:
                         useAnsiLikeSyntax: false
+                        allowPartialEntitlementSuccess: false
                     inheritedRecipes: []
                     description: ""
                     holding:
@@ -30870,6 +30874,7 @@ paths:
                     aggregation:
                       options:
                         useAnsiLikeSyntax: false
+                        allowPartialEntitlementSuccess: false
                     inheritedRecipes: []
                     description: ""
                     holding:
@@ -30912,6 +30917,7 @@ paths:
                     aggregation:
                       options:
                         useAnsiLikeSyntax: false
+                        allowPartialEntitlementSuccess: false
                     inheritedRecipes: []
                     description: ""
                     holding:
@@ -31000,6 +31006,7 @@ paths:
                 aggregation:
                   options:
                     useAnsiLikeSyntax: false
+                    allowPartialEntitlementSuccess: false
                 inheritedRecipes: []
                 description: ""
                 holding:
@@ -31046,6 +31053,7 @@ paths:
                 aggregation:
                   options:
                     useAnsiLikeSyntax: false
+                    allowPartialEntitlementSuccess: false
                 inheritedRecipes: []
                 description: ""
                 holding:
@@ -31092,6 +31100,7 @@ paths:
                 aggregation:
                   options:
                     useAnsiLikeSyntax: false
+                    allowPartialEntitlementSuccess: false
                 inheritedRecipes: []
                 description: ""
                 holding:
@@ -31138,6 +31147,7 @@ paths:
                 aggregation:
                   options:
                     useAnsiLikeSyntax: false
+                    allowPartialEntitlementSuccess: false
                 inheritedRecipes: []
                 description: ""
                 holding:
@@ -31349,6 +31359,7 @@ paths:
                   aggregation:
                     options:
                       useAnsiLikeSyntax: false
+                      allowPartialEntitlementSuccess: false
                   inheritedRecipes: []
                   description: ""
                   holding:
@@ -31399,6 +31410,7 @@ paths:
                   aggregation:
                     options:
                       useAnsiLikeSyntax: false
+                      allowPartialEntitlementSuccess: false
                   inheritedRecipes: []
                   description: ""
                   holding:
@@ -31449,6 +31461,7 @@ paths:
                   aggregation:
                     options:
                       useAnsiLikeSyntax: false
+                      allowPartialEntitlementSuccess: false
                   inheritedRecipes: []
                   description: ""
                   holding:
@@ -47935,6 +47948,7 @@ components:
       example:
         options:
           useAnsiLikeSyntax: true
+          allowPartialEntitlementSuccess: true
       properties:
         options:
           $ref: '#/components/schemas/AggregationOptions'
@@ -47980,12 +47994,18 @@ components:
         aggregation.
       example:
         useAnsiLikeSyntax: true
+        allowPartialEntitlementSuccess: true
       properties:
         useAnsiLikeSyntax:
           description: "Should the aggregation behave like ANSI Sql or MySql with\
             \ respect to a conceptual request which is equivalent to \"select a,sum(a)\
             \ from results\";\r\nANSI Sql would report an error if a was not unique\
             \ where MySql would simply view a,suma(a) as equivalent to firstof(a),sum(a)."
+          type: boolean
+        allowPartialEntitlementSuccess:
+          description: "In the case of valuing a portfolio group where some, but not\
+            \ all entitlements fail, should the aggregation return the valuations\r\
+            \napplied only to those portfolios where entitlements checks succeeded."
           type: boolean
       type: object
     AggregationQuery:
@@ -49862,6 +49882,7 @@ components:
         aggregation:
           options:
             useAnsiLikeSyntax: true
+            allowPartialEntitlementSuccess: true
         pricing:
           modelChoice:
             key:
@@ -49982,6 +50003,7 @@ components:
         code: code
         aggregationOptions:
           useAnsiLikeSyntax: true
+          allowPartialEntitlementSuccess: true
         pricingOptions:
           enableUseOfCachedUnitResults: true
           windowValuationOnInstrumentStartEnd: true
@@ -50068,6 +50090,7 @@ components:
           aggregation:
             options:
               useAnsiLikeSyntax: true
+              allowPartialEntitlementSuccess: true
           pricing:
             modelChoice:
               key:
@@ -51246,6 +51269,7 @@ components:
           aggregation:
             options:
               useAnsiLikeSyntax: true
+              allowPartialEntitlementSuccess: true
           pricing:
             modelChoice:
               key:
@@ -54259,6 +54283,7 @@ components:
           aggregation:
             options:
               useAnsiLikeSyntax: true
+              allowPartialEntitlementSuccess: true
           pricing:
             modelChoice:
               key:
@@ -65686,6 +65711,7 @@ components:
             aggregation:
               options:
                 useAnsiLikeSyntax: true
+                allowPartialEntitlementSuccess: true
             pricing:
               modelChoice:
                 key:
@@ -65782,6 +65808,7 @@ components:
             aggregation:
               options:
                 useAnsiLikeSyntax: true
+                allowPartialEntitlementSuccess: true
             pricing:
               modelChoice:
                 key:
@@ -71415,6 +71442,7 @@ components:
           aggregation:
             options:
               useAnsiLikeSyntax: true
+              allowPartialEntitlementSuccess: true
           pricing:
             modelChoice:
               key:
@@ -71458,6 +71486,7 @@ components:
           code: code
           aggregationOptions:
             useAnsiLikeSyntax: true
+            allowPartialEntitlementSuccess: true
           pricingOptions:
             enableUseOfCachedUnitResults: true
             windowValuationOnInstrumentStartEnd: true
@@ -71544,6 +71573,7 @@ components:
             aggregation:
               options:
                 useAnsiLikeSyntax: true
+                allowPartialEntitlementSuccess: true
             pricing:
               modelChoice:
                 key:
