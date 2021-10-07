@@ -7,10 +7,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**calculationDescription** | **String** |  | 
-**calculationMethod** | [**CalculationMethodEnum**](#CalculationMethodEnum) | The available values are: Rate, BasisPoints, Bps, Percentage, Flat, FlatFee, None | 
-**multiplier** | [**MultiplierEnum**](#MultiplierEnum) | The available values are: Quantity, Value, None | 
-**calculationAmount** | **Double** |  | 
+**calculationDescription** | **String** | Description of what the calculation applies to eg. Fee, MinFee, MaxFee | 
+**calculationMethod** | [**CalculationMethodEnum**](#CalculationMethodEnum) | Method of calculating the fees or commission among: BasisPoints, Percentage, Rate, Flat etc. The available values are: Rate, BasisPoints, Percentage, Flat | 
+**multiplier** | [**MultiplierEnum**](#MultiplierEnum) | . The available values are: None, Quantity, Value | 
+**calculationAmount** | **Double** | Numerical fee amount | 
 
 
 
@@ -20,11 +20,8 @@ Name | Value
 ---- | -----
 RATE | &quot;Rate&quot;
 BASISPOINTS | &quot;BasisPoints&quot;
-BPS | &quot;Bps&quot;
 PERCENTAGE | &quot;Percentage&quot;
 FLAT | &quot;Flat&quot;
-FLATFEE | &quot;FlatFee&quot;
-NONE | &quot;None&quot;
 
 
 
@@ -32,9 +29,9 @@ NONE | &quot;None&quot;
 
 Name | Value
 ---- | -----
+NONE | &quot;None&quot;
 QUANTITY | &quot;Quantity&quot;
 VALUE | &quot;Value&quot;
-NONE | &quot;None&quot;
 
 
 

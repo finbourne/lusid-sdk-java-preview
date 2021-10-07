@@ -11,7 +11,9 @@ Name | Type | Description | Notes
 **ruleInformation** | **String** | Rule Sub Type | 
 **additionalInformation** | **Map&lt;String, String&gt;** | Other property keys populated for the fee | 
 **propertyKey** | **String** | The property key which uniquely identifies the property. The format for the property key is {domain}/{scope}/{code}, e.g. &#39;Portfolio/Manager/Id&#39;. | 
-**calculationInfo** | [**List&lt;CalculationInfo&gt;**](CalculationInfo.md) | Information for calculating fees and commissions | 
+**fee** | [**CalculationInfo**](CalculationInfo.md) |  | 
+**maxFee** | [**CalculationInfo**](CalculationInfo.md) |  |  [optional]
+**minFee** | [**CalculationInfo**](CalculationInfo.md) |  |  [optional]
 
 
 

@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3580
+  version: 0.11.3581
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:47787
 security:
 - {}
 tags:
@@ -9653,18 +9653,43 @@ paths:
                     / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
                     : some, Custodian : some, Exchange : some'
                   additionalInformation:
-                    some/extra/Propety: PropValue
+                    some/extra/Property: PropValue
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationInfo:
-                  - calculationDescription: Fee
-                    calculationMethod: Bps
+                  fee:
+                    calculationDescription: Fee
+                    calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
-                  - calculationDescription: FeeMax
+                  maxFee:
+                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
+                    multiplier: None
                     calculationAmount: 5
-                  - calculationDescription: FeeMin
+                - ruleType: RuleType
+                  ruleInformation: 'Country : << unspecified / any >> , TransactionType:
+                    Buy, Counterparty : someName, SettlementCurrency : << unspecified
+                    / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
+                    : some, Custodian : some, Exchange : some'
+                  additionalInformation:
+                    some/extra/Property: PropValue
+                    otherColumnInfo: RowValue
+                  propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
+                  fee:
+                    calculationDescription: Fee
+                    calculationMethod: BasisPoints
+                    multiplier: Quantity
+                    calculationAmount: 35
+                  maxFee:
+                    calculationDescription: The maximum fee chargeable
+                    calculationMethod: Flat
+                    multiplier: None
+                    calculationAmount: 5
+                  minFee:
+                    calculationDescription: The minimum fee chargeable
+                    calculationMethod: BasisPoints
+                    multiplier: Quantity
+                    calculationAmount: 5
                 href: https://example.com
                 links: []
               schema:
@@ -9678,18 +9703,43 @@ paths:
                     / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
                     : some, Custodian : some, Exchange : some'
                   additionalInformation:
-                    some/extra/Propety: PropValue
+                    some/extra/Property: PropValue
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationInfo:
-                  - calculationDescription: Fee
-                    calculationMethod: Bps
+                  fee:
+                    calculationDescription: Fee
+                    calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
-                  - calculationDescription: FeeMax
+                  maxFee:
+                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
+                    multiplier: None
                     calculationAmount: 5
-                  - calculationDescription: FeeMin
+                - ruleType: RuleType
+                  ruleInformation: 'Country : << unspecified / any >> , TransactionType:
+                    Buy, Counterparty : someName, SettlementCurrency : << unspecified
+                    / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
+                    : some, Custodian : some, Exchange : some'
+                  additionalInformation:
+                    some/extra/Property: PropValue
+                    otherColumnInfo: RowValue
+                  propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
+                  fee:
+                    calculationDescription: Fee
+                    calculationMethod: BasisPoints
+                    multiplier: Quantity
+                    calculationAmount: 35
+                  maxFee:
+                    calculationDescription: The maximum fee chargeable
+                    calculationMethod: Flat
+                    multiplier: None
+                    calculationAmount: 5
+                  minFee:
+                    calculationDescription: The minimum fee chargeable
+                    calculationMethod: BasisPoints
+                    multiplier: Quantity
+                    calculationAmount: 5
                 href: https://example.com
                 links: []
               schema:
@@ -9703,18 +9753,43 @@ paths:
                     / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
                     : some, Custodian : some, Exchange : some'
                   additionalInformation:
-                    some/extra/Propety: PropValue
+                    some/extra/Property: PropValue
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationInfo:
-                  - calculationDescription: Fee
-                    calculationMethod: Bps
+                  fee:
+                    calculationDescription: Fee
+                    calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
-                  - calculationDescription: FeeMax
+                  maxFee:
+                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
+                    multiplier: None
                     calculationAmount: 5
-                  - calculationDescription: FeeMin
+                - ruleType: RuleType
+                  ruleInformation: 'Country : << unspecified / any >> , TransactionType:
+                    Buy, Counterparty : someName, SettlementCurrency : << unspecified
+                    / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
+                    : some, Custodian : some, Exchange : some'
+                  additionalInformation:
+                    some/extra/Property: PropValue
+                    otherColumnInfo: RowValue
+                  propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
+                  fee:
+                    calculationDescription: Fee
+                    calculationMethod: BasisPoints
+                    multiplier: Quantity
+                    calculationAmount: 35
+                  maxFee:
+                    calculationDescription: The maximum fee chargeable
+                    calculationMethod: Flat
+                    multiplier: None
+                    calculationAmount: 5
+                  minFee:
+                    calculationDescription: The minimum fee chargeable
+                    calculationMethod: BasisPoints
+                    multiplier: Quantity
+                    calculationAmount: 5
                 href: https://example.com
                 links: []
               schema:
@@ -9794,18 +9869,43 @@ paths:
                     / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
                     : some, Custodian : some, Exchange : some'
                   additionalInformation:
-                    some/extra/Propety: PropValue
+                    some/extra/Property: PropValue
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationInfo:
-                  - calculationDescription: Fee
-                    calculationMethod: Bps
+                  fee:
+                    calculationDescription: Fee
+                    calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
-                  - calculationDescription: FeeMax
+                  maxFee:
+                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
+                    multiplier: None
                     calculationAmount: 5
-                  - calculationDescription: FeeMin
+                - ruleType: RuleType
+                  ruleInformation: 'Country : << unspecified / any >> , TransactionType:
+                    Buy, Counterparty : someName, SettlementCurrency : << unspecified
+                    / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
+                    : some, Custodian : some, Exchange : some'
+                  additionalInformation:
+                    some/extra/Property: PropValue
+                    otherColumnInfo: RowValue
+                  propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
+                  fee:
+                    calculationDescription: Fee
+                    calculationMethod: BasisPoints
+                    multiplier: Quantity
+                    calculationAmount: 35
+                  maxFee:
+                    calculationDescription: The maximum fee chargeable
+                    calculationMethod: Flat
+                    multiplier: None
+                    calculationAmount: 5
+                  minFee:
+                    calculationDescription: The minimum fee chargeable
+                    calculationMethod: BasisPoints
+                    multiplier: Quantity
+                    calculationAmount: 5
                 href: https://example.com
                 links: []
               schema:
@@ -9819,18 +9919,43 @@ paths:
                     / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
                     : some, Custodian : some, Exchange : some'
                   additionalInformation:
-                    some/extra/Propety: PropValue
+                    some/extra/Property: PropValue
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationInfo:
-                  - calculationDescription: Fee
-                    calculationMethod: Bps
+                  fee:
+                    calculationDescription: Fee
+                    calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
-                  - calculationDescription: FeeMax
+                  maxFee:
+                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
+                    multiplier: None
                     calculationAmount: 5
-                  - calculationDescription: FeeMin
+                - ruleType: RuleType
+                  ruleInformation: 'Country : << unspecified / any >> , TransactionType:
+                    Buy, Counterparty : someName, SettlementCurrency : << unspecified
+                    / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
+                    : some, Custodian : some, Exchange : some'
+                  additionalInformation:
+                    some/extra/Property: PropValue
+                    otherColumnInfo: RowValue
+                  propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
+                  fee:
+                    calculationDescription: Fee
+                    calculationMethod: BasisPoints
+                    multiplier: Quantity
+                    calculationAmount: 35
+                  maxFee:
+                    calculationDescription: The maximum fee chargeable
+                    calculationMethod: Flat
+                    multiplier: None
+                    calculationAmount: 5
+                  minFee:
+                    calculationDescription: The minimum fee chargeable
+                    calculationMethod: BasisPoints
+                    multiplier: Quantity
+                    calculationAmount: 5
                 href: https://example.com
                 links: []
               schema:
@@ -9844,18 +9969,43 @@ paths:
                     / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
                     : some, Custodian : some, Exchange : some'
                   additionalInformation:
-                    some/extra/Propety: PropValue
+                    some/extra/Property: PropValue
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
-                  calculationInfo:
-                  - calculationDescription: Fee
-                    calculationMethod: Bps
+                  fee:
+                    calculationDescription: Fee
+                    calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
-                  - calculationDescription: FeeMax
+                  maxFee:
+                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
+                    multiplier: None
                     calculationAmount: 5
-                  - calculationDescription: FeeMin
+                - ruleType: RuleType
+                  ruleInformation: 'Country : << unspecified / any >> , TransactionType:
+                    Buy, Counterparty : someName, SettlementCurrency : << unspecified
+                    / any >>, TransactionCurrency : << unspecified / any >>, ExecutionBroker
+                    : some, Custodian : some, Exchange : some'
+                  additionalInformation:
+                    some/extra/Property: PropValue
+                    otherColumnInfo: RowValue
+                  propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
+                  fee:
+                    calculationDescription: Fee
+                    calculationMethod: BasisPoints
+                    multiplier: Quantity
+                    calculationAmount: 35
+                  maxFee:
+                    calculationDescription: The maximum fee chargeable
+                    calculationMethod: Flat
+                    multiplier: None
+                    calculationAmount: 5
+                  minFee:
+                    calculationDescription: The minimum fee chargeable
+                    calculationMethod: BasisPoints
+                    multiplier: Quantity
+                    calculationAmount: 5
                 href: https://example.com
                 links: []
               schema:
@@ -49123,34 +49273,33 @@ components:
       additionalProperties: false
       example:
         calculationMethod: Rate
-        multiplier: Quantity
+        multiplier: None
         calculationDescription: calculationDescription
         calculationAmount: 0.8008281904610115
       properties:
         calculationDescription:
+          description: Description of what the calculation applies to eg. Fee, MinFee,
+            MaxFee
           type: string
         calculationMethod:
-          description: 'The available values are: Rate, BasisPoints, Bps, Percentage,
-            Flat, FlatFee, None'
+          description: 'Method of calculating the fees or commission among: BasisPoints,
+            Percentage, Rate, Flat etc. The available values are: Rate, BasisPoints,
+            Percentage, Flat'
           enum:
           - Rate
           - BasisPoints
-          - Bps
           - Percentage
           - Flat
-          - FlatFee
-          - None
-          nullable: true
           type: string
         multiplier:
-          description: 'The available values are: Quantity, Value, None'
+          description: '. The available values are: None, Quantity, Value'
           enum:
+          - None
           - Quantity
           - Value
-          - None
-          nullable: true
           type: string
         calculationAmount:
+          description: Numerical fee amount
           format: double
           type: number
       required:
@@ -49163,11 +49312,8 @@ components:
       enum:
       - Rate
       - BasisPoints
-      - Bps
       - Percentage
       - Flat
-      - FlatFee
-      - None
       type: string
     Calendar:
       additionalProperties: false
@@ -53306,13 +53452,19 @@ components:
         additionalInformation:
           key: additionalInformation
         ruleType: ruleType
-        calculationInfo:
-        - calculationMethod: Rate
-          multiplier: Quantity
+        fee:
+          calculationMethod: Rate
+          multiplier: None
           calculationDescription: calculationDescription
           calculationAmount: 0.8008281904610115
-        - calculationMethod: Rate
-          multiplier: Quantity
+        maxFee:
+          calculationMethod: Rate
+          multiplier: None
+          calculationDescription: calculationDescription
+          calculationAmount: 0.8008281904610115
+        minFee:
+          calculationMethod: Rate
+          multiplier: None
           calculationDescription: calculationDescription
           calculationAmount: 0.8008281904610115
         ruleInformation: ruleInformation
@@ -53332,14 +53484,15 @@ components:
           description: The property key which uniquely identifies the property. The
             format for the property key is {domain}/{scope}/{code}, e.g. 'Portfolio/Manager/Id'.
           type: string
-        calculationInfo:
-          description: Information for calculating fees and commissions
-          items:
-            $ref: '#/components/schemas/CalculationInfo'
-          type: array
+        fee:
+          $ref: '#/components/schemas/CalculationInfo'
+        maxFee:
+          $ref: '#/components/schemas/CalculationInfo'
+        minFee:
+          $ref: '#/components/schemas/CalculationInfo'
       required:
       - additionalInformation
-      - calculationInfo
+      - fee
       - propertyKey
       - ruleInformation
       - ruleType
@@ -56858,9 +57011,9 @@ components:
       type: string
     Multiplier:
       enum:
+      - None
       - Quantity
       - Value
-      - None
       type: string
     NextValueInSequenceResponse:
       additionalProperties: false
@@ -65083,13 +65236,19 @@ components:
           additionalInformation:
             key: additionalInformation
           ruleType: ruleType
-          calculationInfo:
-          - calculationMethod: Rate
-            multiplier: Quantity
+          fee:
+            calculationMethod: Rate
+            multiplier: None
             calculationDescription: calculationDescription
             calculationAmount: 0.8008281904610115
-          - calculationMethod: Rate
-            multiplier: Quantity
+          maxFee:
+            calculationMethod: Rate
+            multiplier: None
+            calculationDescription: calculationDescription
+            calculationAmount: 0.8008281904610115
+          minFee:
+            calculationMethod: Rate
+            multiplier: None
             calculationDescription: calculationDescription
             calculationAmount: 0.8008281904610115
           ruleInformation: ruleInformation
@@ -65097,13 +65256,19 @@ components:
           additionalInformation:
             key: additionalInformation
           ruleType: ruleType
-          calculationInfo:
-          - calculationMethod: Rate
-            multiplier: Quantity
+          fee:
+            calculationMethod: Rate
+            multiplier: None
             calculationDescription: calculationDescription
             calculationAmount: 0.8008281904610115
-          - calculationMethod: Rate
-            multiplier: Quantity
+          maxFee:
+            calculationMethod: Rate
+            multiplier: None
+            calculationDescription: calculationDescription
+            calculationAmount: 0.8008281904610115
+          minFee:
+            calculationMethod: Rate
+            multiplier: None
             calculationDescription: calculationDescription
             calculationAmount: 0.8008281904610115
           ruleInformation: ruleInformation
@@ -75568,7 +75733,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

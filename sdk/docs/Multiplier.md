@@ -5,11 +5,11 @@
 ## Enum
 
 
+* `NONE` (value: `"None"`)
+
 * `QUANTITY` (value: `"Quantity"`)
 
 * `VALUE` (value: `"Value"`)
-
-* `NONE` (value: `"None"`)
 
 
 
