@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3581
+  version: 0.11.3582
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:47787
+- url: http://local-unit-test-server.lusid.com:39198
 security:
 - {}
 tags:
@@ -61039,7 +61039,6 @@ components:
       properties:
         currency:
           description: The currency of the cash-flows.
-          nullable: true
           type: string
         subHoldingKeys:
           additionalProperties:
@@ -61053,7 +61052,6 @@ components:
           description: A record of cash flows on a specific date.
           items:
             $ref: '#/components/schemas/CashLadderRecord'
-          nullable: true
           type: array
         links:
           description: Collection of links.
@@ -61061,6 +61059,9 @@ components:
             $ref: '#/components/schemas/Link'
           nullable: true
           type: array
+      required:
+      - currency
+      - records
       type: object
     PortfolioDetails:
       additionalProperties: false
