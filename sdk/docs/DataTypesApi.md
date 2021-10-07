@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**getDataType**](DataTypesApi.md#getDataType) | **GET** /api/datatypes/{scope}/{code} | [EARLY ACCESS] GetDataType: Get data type definition
 [**getUnitsFromDataType**](DataTypesApi.md#getUnitsFromDataType) | **GET** /api/datatypes/{scope}/{code}/units | [EARLY ACCESS] GetUnitsFromDataType: Get units from data type
 [**listDataTypes**](DataTypesApi.md#listDataTypes) | **GET** /api/datatypes/{scope} | [EARLY ACCESS] ListDataTypes: List data types
-[**updateDataType**](DataTypesApi.md#updateDataType) | **PUT** /api/datatypes/{scope}/{code} | [BETA] UpdateDataType: Update data type definition
+[**updateDataType**](DataTypesApi.md#updateDataType) | **PUT** /api/datatypes/{scope}/{code} | [EXPERIMENTAL] UpdateDataType: Update data type definition
 
 
 <a name="createDataType"></a>
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 # **updateDataType**
 > DataType updateDataType(scope, code, updateDataTypeRequest)
 
-[BETA] UpdateDataType: Update data type definition
+[EXPERIMENTAL] UpdateDataType: Update data type definition
 
 Update the definition of the specified existing data type    Not all elements within a data type definition are modifiable due to the potential implications for data  already stored against the types
 
