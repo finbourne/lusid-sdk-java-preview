@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3585
+  version: 0.11.3586
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:32821
+- url: http://local-unit-test-server.lusid.com:45830
 security:
 - {}
 tags:
@@ -44796,6 +44796,26 @@ paths:
           type: boolean
         style: form
         x-nullable: true
+      - description: The scope of the given recipeId
+        explode: true
+        in: query
+        name: recipeIdScope
+        required: false
+        schema:
+          description: The scope of the given recipeId
+          nullable: true
+          type: string
+        style: form
+      - description: The code of the given recipeId
+        explode: true
+        in: query
+        name: recipeIdCode
+        required: false
+        schema:
+          description: The code of the given recipeId
+          nullable: true
+          type: string
+        style: form
       responses:
         "200":
           content:
