@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3589
+  version: 0.11.3590
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:32803
+- url: http://local-unit-test-server.lusid.com:57493
 security:
 - {}
 tags:
@@ -75366,7 +75366,7 @@ components:
             \ in fx-rate vs\r\n            a reference rate is used."
           type: boolean
         fixingDate:
-          description: The fixing date .
+          description: The fixing date.
           format: date-time
           type: string
         instrumentType:
@@ -75680,7 +75680,7 @@ components:
           format: date-time
           type: string
         isDeliveryNotCash:
-          description: True of the option is settled in cash false if delivery.
+          description: True if the option is settled in cash, false if delivery.
           type: boolean
         isCallNotPut:
           description: True if the option is a call, false if the option is a put.
