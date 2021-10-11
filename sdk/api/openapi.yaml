@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3592
+  version: 0.11.3593
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:39171
+- url: http://local-unit-test-server.lusid.com:60202
 security:
 - {}
 tags:
@@ -14799,10 +14799,14 @@ paths:
                     code: EXEC0000123
                   - scope: MyScope
                     code: EXEC0000456
-                  ordered: 1500
-                  placed: 1250
-                  allocated: 1100
-                  executed: 800
+                  ordered:
+                    quantity: 1500
+                  placed:
+                    quantity: 1250
+                  allocated:
+                    quantity: 1100
+                  executed:
+                    quantity: 800
                   derivedState: In progress
                 links: []
               schema:
@@ -14858,10 +14862,14 @@ paths:
                     code: EXEC0000123
                   - scope: MyScope
                     code: EXEC0000456
-                  ordered: 1500
-                  placed: 1250
-                  allocated: 1100
-                  executed: 800
+                  ordered:
+                    quantity: 1500
+                  placed:
+                    quantity: 1250
+                  allocated:
+                    quantity: 1100
+                  executed:
+                    quantity: 800
                   derivedState: In progress
                 links: []
               schema:
@@ -14917,10 +14925,14 @@ paths:
                     code: EXEC0000123
                   - scope: MyScope
                     code: EXEC0000456
-                  ordered: 1500
-                  placed: 1250
-                  allocated: 1100
-                  executed: 800
+                  ordered:
+                    quantity: 1500
+                  placed:
+                    quantity: 1250
+                  allocated:
+                    quantity: 1100
+                  executed:
+                    quantity: 800
                   derivedState: In progress
                 links: []
               schema:
@@ -57579,13 +57591,15 @@ components:
     OrderGraphBlock:
       additionalProperties: false
       example:
-        ordered: 0.8008281904610115
+        ordered:
+          quantity: 0.8008281904610115
         executionIds:
         - code: code
           scope: scope
         - code: code
           scope: scope
-        placed: 6.027456183070403
+        placed:
+          quantity: 0.8008281904610115
         derivedState: derivedState
         block:
           side: side
@@ -57644,13 +57658,15 @@ components:
           scope: scope
         - code: code
           scope: scope
-        executed: 5.962133916683182
+        executed:
+          quantity: 0.8008281904610115
         orderIds:
         - code: code
           scope: scope
         - code: code
           scope: scope
-        allocated: 1.4658129805029452
+        allocated:
+          quantity: 0.8008281904610115
       properties:
         block:
           $ref: '#/components/schemas/Block'
@@ -57676,25 +57692,13 @@ components:
             $ref: '#/components/schemas/ResourceId'
           type: array
         ordered:
-          description: Total number of units of the instrument across all orders in
-            the block.
-          format: double
-          type: number
+          $ref: '#/components/schemas/OrderGraphSynopsis'
         placed:
-          description: Number of units of the instrument across all placements in
-            the block.
-          format: double
-          type: number
+          $ref: '#/components/schemas/OrderGraphSynopsis'
         allocated:
-          description: Number of units of the instrument across all allocations in
-            the block.
-          format: double
-          type: number
+          $ref: '#/components/schemas/OrderGraphSynopsis'
         executed:
-          description: How many of the quantity ordered for this block have been executed
-            in the market.
-          format: double
-          type: number
+          $ref: '#/components/schemas/OrderGraphSynopsis'
         derivedState:
           description: A simple description of the overall state of a block.
           type: string
@@ -57709,6 +57713,18 @@ components:
       - ordered
       - placed
       - placementIds
+      type: object
+    OrderGraphSynopsis:
+      additionalProperties: false
+      example:
+        quantity: 0.8008281904610115
+      properties:
+        quantity:
+          description: Total number of units.
+          format: double
+          type: number
+      required:
+      - quantity
       type: object
     OrderInstruction:
       additionalProperties: false
@@ -59705,13 +59721,15 @@ components:
         previousPage: previousPage
         nextPage: nextPage
         values:
-        - ordered: 0.8008281904610115
+        - ordered:
+            quantity: 0.8008281904610115
           executionIds:
           - code: code
             scope: scope
           - code: code
             scope: scope
-          placed: 6.027456183070403
+          placed:
+            quantity: 0.8008281904610115
           derivedState: derivedState
           block:
             side: side
@@ -59770,20 +59788,24 @@ components:
             scope: scope
           - code: code
             scope: scope
-          executed: 5.962133916683182
+          executed:
+            quantity: 0.8008281904610115
           orderIds:
           - code: code
             scope: scope
           - code: code
             scope: scope
-          allocated: 1.4658129805029452
-        - ordered: 0.8008281904610115
+          allocated:
+            quantity: 0.8008281904610115
+        - ordered:
+            quantity: 0.8008281904610115
           executionIds:
           - code: code
             scope: scope
           - code: code
             scope: scope
-          placed: 6.027456183070403
+          placed:
+            quantity: 0.8008281904610115
           derivedState: derivedState
           block:
             side: side
@@ -59842,13 +59864,15 @@ components:
             scope: scope
           - code: code
             scope: scope
-          executed: 5.962133916683182
+          executed:
+            quantity: 0.8008281904610115
           orderIds:
           - code: code
             scope: scope
           - code: code
             scope: scope
-          allocated: 1.4658129805029452
+          allocated:
+            quantity: 0.8008281904610115
         links:
         - method: method
           description: description
