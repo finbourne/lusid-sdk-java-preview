@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **initialCouponDate** | **OffsetDateTime** | The initial coupon date which specifies the accrual start period for a fixed coupon bond with ex dividend schedule |  [optional]
 **firstCouponPayDate** | **OffsetDateTime** | The date that the first coupon of the bond is paid. This is required for bonds that have a long first coupon or short first coupon. The first coupon pay date is used  as an anchor to compare with the start date and determine if this is a long/short coupon period. |  [optional]
 **calculationType** | **String** | The calculation type applied to the bond coupon amount. This is required for bonds that have a particular type of computing the period coupon, such as simple compounding,  irregular coupons etc.  Supported string (enumeration) values are: [Standard, NoCalculationFloater, BrazilFixedCoupon]. |  [optional]
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity | 
 
 
 
@@ -55,7 +55,6 @@ FORWARDRATEAGREEMENT | &quot;ForwardRateAgreement&quot;
 SIMPLEINSTRUMENT | &quot;SimpleInstrument&quot;
 REPO | &quot;Repo&quot;
 EQUITY | &quot;Equity&quot;
-EXCHANGETRADEDOPTION | &quot;ExchangeTradedOption&quot;
 
 
 
