@@ -63,7 +63,5 @@
 
 * `EQUITY` (value: `"Equity"`)
 
-* `EXCHANGETRADEDOPTION` (value: `"ExchangeTradedOption"`)
-
 
 
