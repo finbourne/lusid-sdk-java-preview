@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3601
+  version: 0.11.3602
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:43538
+- url: http://local-unit-test-server.lusid.com:45304
 security:
 - {}
 tags:
@@ -48434,12 +48434,14 @@ components:
           annualised: true
           alias: alias
           window: window
+          seedAmount: 0.8008281904610115
           type: type
           allowPartial: true
         - withFee: true
           annualised: true
           alias: alias
           window: window
+          seedAmount: 0.8008281904610115
           type: type
           allowPartial: true
         recipeId:
@@ -61077,6 +61079,7 @@ components:
         annualised: true
         alias: alias
         window: window
+        seedAmount: 0.8008281904610115
         type: type
         allowPartial: true
       properties:
@@ -61098,6 +61101,12 @@ components:
           description: Bool if the metric should consider the fees when is calculated.
             Default to false.
           type: boolean
+        seedAmount:
+          description: The given seed amount for the calculation of the indicative
+            amount metrics.
+          format: double
+          nullable: true
+          type: number
         alias:
           description: The alias for the metric.
           nullable: true
