@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3605
+  version: 0.11.3603
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:60292
+- url: https://fbn-prd.lusid.com/api
 security:
 - {}
 tags:
@@ -31192,8 +31192,6 @@ paths:
                         modelName: Discounting
                         instrumentType: Bond
                         parameters: ""
-                        modelOptions:
-                          modelOptionsType: EmptyModelOptions
                       modelChoice: {}
                       options:
                         modelSelection:
@@ -31296,8 +31294,6 @@ paths:
                         modelName: Discounting
                         instrumentType: Bond
                         parameters: ""
-                        modelOptions:
-                          modelOptionsType: EmptyModelOptions
                       modelChoice: {}
                       options:
                         modelSelection:
@@ -31400,8 +31396,6 @@ paths:
                         modelName: Discounting
                         instrumentType: Bond
                         parameters: ""
-                        modelOptions:
-                          modelOptionsType: EmptyModelOptions
                       modelChoice: {}
                       options:
                         modelSelection:
@@ -31888,8 +31882,6 @@ paths:
                       modelName: Discounting
                       instrumentType: Bond
                       parameters: ""
-                      modelOptions:
-                        modelOptionsType: EmptyModelOptions
                     modelChoice: {}
                     options:
                       modelSelection:
@@ -31941,8 +31933,6 @@ paths:
                       modelName: Discounting
                       instrumentType: Bond
                       parameters: ""
-                      modelOptions:
-                        modelOptionsType: EmptyModelOptions
                     modelChoice: {}
                     options:
                       modelSelection:
@@ -31994,8 +31984,6 @@ paths:
                       modelName: Discounting
                       instrumentType: Bond
                       parameters: ""
-                      modelOptions:
-                        modelOptionsType: EmptyModelOptions
                     modelChoice: {}
                     options:
                       modelSelection:
@@ -50493,14 +50481,10 @@ components:
             instrumentType: instrumentType
             supplier: Lusid
             parameters: parameters
-            modelOptions:
-              modelOptionsType: Invalid
           - modelName: modelName
             instrumentType: instrumentType
             supplier: Lusid
             parameters: parameters
-            modelOptions:
-              modelOptionsType: Invalid
       properties:
         scope:
           description: The scope used when updating or inserting the Configuration
@@ -50705,27 +50689,19 @@ components:
               instrumentType: instrumentType
               supplier: Lusid
               parameters: parameters
-              modelOptions:
-                modelOptionsType: Invalid
             - modelName: modelName
               instrumentType: instrumentType
               supplier: Lusid
               parameters: parameters
-              modelOptions:
-                modelOptionsType: Invalid
         modelRules:
         - modelName: modelName
           instrumentType: instrumentType
           supplier: Lusid
           parameters: parameters
-          modelOptions:
-            modelOptionsType: Invalid
         - modelName: modelName
           instrumentType: instrumentType
           supplier: Lusid
           parameters: parameters
-          modelOptions:
-            modelOptionsType: Invalid
       properties:
         scope:
           description: The scope used when updating or inserting the Configuration
@@ -51892,14 +51868,10 @@ components:
               instrumentType: instrumentType
               supplier: Lusid
               parameters: parameters
-              modelOptions:
-                modelOptionsType: Invalid
             - modelName: modelName
               instrumentType: instrumentType
               supplier: Lusid
               parameters: parameters
-              modelOptions:
-                modelOptionsType: Invalid
         asAt: 2000-01-23T04:56:07.000+00:00
         effectiveAt: effectiveAt
         recipeCreationMarketDataScopes:
@@ -53313,10 +53285,6 @@ components:
       - $ref: '#/components/schemas/ComplexMarketData'
       - $ref: '#/components/schemas/DiscountFactorCurveData_allOf'
       description: A curve containing discount factors and dates to which they apply
-    EmptyModelOptions:
-      allOf:
-      - $ref: '#/components/schemas/ModelOptions'
-      - $ref: '#/components/schemas/EmptyModelOptions_allOf'
     Equity:
       allOf:
       - $ref: '#/components/schemas/LusidInstrument'
@@ -55002,14 +54970,10 @@ components:
               instrumentType: instrumentType
               supplier: Lusid
               parameters: parameters
-              modelOptions:
-                modelOptionsType: Invalid
             - modelName: modelName
               instrumentType: instrumentType
               supplier: Lusid
               parameters: parameters
-              modelOptions:
-                modelOptionsType: Invalid
       properties:
         href:
           description: The specific Uniform Resource Identifier (URI) for this resource
@@ -57436,29 +57400,6 @@ components:
           nullable: true
           type: string
       type: object
-    ModelOptions:
-      additionalProperties: false
-      discriminator:
-        propertyName: modelOptionsType
-      example:
-        modelOptionsType: Invalid
-      properties:
-        modelOptionsType:
-          description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions'
-          enum:
-          - Invalid
-          - OpaqueModelOptions
-          - EmptyModelOptions
-          type: string
-      required:
-      - modelOptionsType
-      type: object
-    ModelOptionsType:
-      enum:
-      - Invalid
-      - OpaqueModelOptions
-      - EmptyModelOptions
-      type: string
     ModelSelection:
       additionalProperties: false
       description: "The combination of a library to use and a model in that library\
@@ -57569,10 +57510,6 @@ components:
         \ to allow for passing through\r\nto the vendor library for building.\r\n\
         The market data will usually be in some standard form such as XML or Json,\
         \ representing a curve or surface."
-    OpaqueModelOptions:
-      allOf:
-      - $ref: '#/components/schemas/ModelOptions'
-      - $ref: '#/components/schemas/OpaqueModelOptions_allOf'
     OperandType:
       enum:
       - Absolute
@@ -62690,14 +62627,10 @@ components:
           instrumentType: instrumentType
           supplier: Lusid
           parameters: parameters
-          modelOptions:
-            modelOptionsType: Invalid
         - modelName: modelName
           instrumentType: instrumentType
           supplier: Lusid
           parameters: parameters
-          modelOptions:
-            modelOptionsType: Invalid
       properties:
         modelRules:
           description: "The set of model rules that are available. There may be multiple\
@@ -66816,14 +66749,10 @@ components:
                 instrumentType: instrumentType
                 supplier: Lusid
                 parameters: parameters
-                modelOptions:
-                  modelOptionsType: Invalid
               - modelName: modelName
                 instrumentType: instrumentType
                 supplier: Lusid
                 parameters: parameters
-                modelOptions:
-                  modelOptionsType: Invalid
         - links:
           - method: method
             description: description
@@ -66917,14 +66846,10 @@ components:
                 instrumentType: instrumentType
                 supplier: Lusid
                 parameters: parameters
-                modelOptions:
-                  modelOptionsType: Invalid
               - modelName: modelName
                 instrumentType: instrumentType
                 supplier: Lusid
                 parameters: parameters
-                modelOptions:
-                  modelOptionsType: Invalid
         links:
         - method: method
           description: description
@@ -72555,14 +72480,10 @@ components:
               instrumentType: instrumentType
               supplier: Lusid
               parameters: parameters
-              modelOptions:
-                modelOptionsType: Invalid
             - modelName: modelName
               instrumentType: instrumentType
               supplier: Lusid
               parameters: parameters
-              modelOptions:
-                modelOptionsType: Invalid
         configurationRecipeSnippet:
           code: code
           aggregationOptions:
@@ -72690,27 +72611,19 @@ components:
                 instrumentType: instrumentType
                 supplier: Lusid
                 parameters: parameters
-                modelOptions:
-                  modelOptionsType: Invalid
               - modelName: modelName
                 instrumentType: instrumentType
                 supplier: Lusid
                 parameters: parameters
-                modelOptions:
-                  modelOptionsType: Invalid
           modelRules:
           - modelName: modelName
             instrumentType: instrumentType
             supplier: Lusid
             parameters: parameters
-            modelOptions:
-              modelOptionsType: Invalid
           - modelName: modelName
             instrumentType: instrumentType
             supplier: Lusid
             parameters: parameters
-            modelOptions:
-              modelOptionsType: Invalid
       properties:
         configurationRecipe:
           $ref: '#/components/schemas/ConfigurationRecipe'
@@ -73449,8 +73362,6 @@ components:
         instrumentType: instrumentType
         supplier: Lusid
         parameters: parameters
-        modelOptions:
-          modelOptionsType: Invalid
       properties:
         supplier:
           description: 'The available values are: Lusid, RefinitivQps, RefinitivTracsWeb,
@@ -73469,19 +73380,16 @@ components:
           description: The vendor library instrument type
           type: string
         parameters:
-          description: "THIS FIELD IS DEPRECATED - use ModelOptions\r\nThe set of\
-            \ opaque model parameters, provided as a Json object, that is a string\
-            \ object which will internally be converted to a dictionary of string\
-            \ to object.\r\nNote that this is not intended as the final form of this\
-            \ object. It will be replaced with a more structured object as the set\
-            \ of parameters that are possible is\r\nbetter understood."
-          nullable: true
+          description: "The set of opaque model parameters, provided as a Json object,\
+            \ that is a string object which will internally be converted to a dictionary\
+            \ of string to object.\r\nNote that this is not intended as the final\
+            \ form of this object. It will be replaced with a more structured object\
+            \ as the set of parameters that are possible is\r\nbetter understood."
           type: string
-        modelOptions:
-          $ref: '#/components/schemas/ModelOptions'
       required:
       - instrumentType
       - modelName
+      - parameters
       - supplier
       type: object
     Version:
@@ -74994,18 +74902,6 @@ components:
       - dates
       - discountFactors
       - marketDataType
-      type: object
-    EmptyModelOptions_allOf:
-      properties:
-        modelOptionsType:
-          description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions'
-          enum:
-          - Invalid
-          - OpaqueModelOptions
-          - EmptyModelOptions
-          type: string
-      required:
-      - modelOptionsType
       type: object
     Equity_allOf_identifiers:
       description: external market codes and identifiers for the equity, e.g. IBM
@@ -76580,24 +76476,6 @@ components:
       - marketDataType
       - name
       type: object
-    OpaqueModelOptions_allOf:
-      properties:
-        data:
-          additionalProperties:
-            additionalProperties: false
-            type: object
-          type: object
-        modelOptionsType:
-          description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions'
-          enum:
-          - Invalid
-          - OpaqueModelOptions
-          - EmptyModelOptions
-          type: string
-      required:
-      - data
-      - modelOptionsType
-      type: object
     Repo_allOf:
       properties:
         startDate:
@@ -76947,7 +76825,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:

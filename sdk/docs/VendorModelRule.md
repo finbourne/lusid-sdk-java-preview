@@ -11,8 +11,7 @@ Name | Type | Description | Notes
 **supplier** | [**SupplierEnum**](#SupplierEnum) | The available values are: Lusid, RefinitivQps, RefinitivTracsWeb, VolMaster, IsdaCds | 
 **modelName** | **String** | The vendor library model name | 
 **instrumentType** | **String** | The vendor library instrument type | 
-**parameters** | **String** | THIS FIELD IS DEPRECATED - use ModelOptions  The set of opaque model parameters, provided as a Json object, that is a string object which will internally be converted to a dictionary of string to object.  Note that this is not intended as the final form of this object. It will be replaced with a more structured object as the set of parameters that are possible is  better understood. |  [optional]
-**modelOptions** | [**ModelOptions**](ModelOptions.md) |  |  [optional]
+**parameters** | **String** | The set of opaque model parameters, provided as a Json object, that is a string object which will internally be converted to a dictionary of string to object.  Note that this is not intended as the final form of this object. It will be replaced with a more structured object as the set of parameters that are possible is  better understood. | 
 
 
 
