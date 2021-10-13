@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3599
+  version: 0.11.3600
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:42423
 security:
 - {}
 tags:
@@ -44894,7 +44894,7 @@ paths:
                   currency: ZZZ
                 links: []
               schema:
-                $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
+                $ref: '#/components/schemas/VersionedResourceListWithWarningsOfPortfolioHolding'
             application/json:
               example:
                 version:
@@ -44958,7 +44958,7 @@ paths:
                   currency: ZZZ
                 links: []
               schema:
-                $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
+                $ref: '#/components/schemas/VersionedResourceListWithWarningsOfPortfolioHolding'
             text/json:
               example:
                 version:
@@ -45022,7 +45022,7 @@ paths:
                   currency: ZZZ
                 links: []
               schema:
-                $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
+                $ref: '#/components/schemas/VersionedResourceListWithWarningsOfPortfolioHolding'
           description: The holdings and version of the specified transaction portfolio
         "400":
           content:
@@ -73919,6 +73919,204 @@ components:
       - values
       - version
       type: object
+    VersionedResourceListWithWarningsOfPortfolioHolding:
+      additionalProperties: false
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - subHoldingKeys:
+            key:
+              value:
+                metricValue:
+                  unit: unit
+                  value: 6.027456183070403
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              key: key
+          cost:
+            amount: 1.4658129805029452
+            currency: currency
+          holdingType: holdingType
+          instrumentUid: instrumentUid
+          currency: currency
+          units: 0.8008281904610115
+          costPortfolioCcy:
+            amount: 1.4658129805029452
+            currency: currency
+          settledUnits: 6.027456183070403
+          properties:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 6.027456183070403
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+          transaction:
+            transactionCurrency: transactionCurrency
+            entryDateTime: 2000-01-23T04:56:07.000+00:00
+            transactionPrice:
+              price: 5.962133916683182
+              type: Price
+            instrumentIdentifiers:
+              key: instrumentIdentifiers
+            settlementDate: 2000-01-23T04:56:07.000+00:00
+            units: 1.4658129805029452
+            source: source
+            type: type
+            transactionDate: 2000-01-23T04:56:07.000+00:00
+            totalConsideration:
+              amount: 1.4658129805029452
+              currency: currency
+            transactionId: transactionId
+            counterpartyId: counterpartyId
+            exchangeRate: 5.637376656633329
+            instrumentUid: instrumentUid
+            properties:
+              key:
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 6.027456183070403
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                key: key
+        - subHoldingKeys:
+            key:
+              value:
+                metricValue:
+                  unit: unit
+                  value: 6.027456183070403
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              key: key
+          cost:
+            amount: 1.4658129805029452
+            currency: currency
+          holdingType: holdingType
+          instrumentUid: instrumentUid
+          currency: currency
+          units: 0.8008281904610115
+          costPortfolioCcy:
+            amount: 1.4658129805029452
+            currency: currency
+          settledUnits: 6.027456183070403
+          properties:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 6.027456183070403
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+          transaction:
+            transactionCurrency: transactionCurrency
+            entryDateTime: 2000-01-23T04:56:07.000+00:00
+            transactionPrice:
+              price: 5.962133916683182
+              type: Price
+            instrumentIdentifiers:
+              key: instrumentIdentifiers
+            settlementDate: 2000-01-23T04:56:07.000+00:00
+            units: 1.4658129805029452
+            source: source
+            type: type
+            transactionDate: 2000-01-23T04:56:07.000+00:00
+            totalConsideration:
+              amount: 1.4658129805029452
+              currency: currency
+            transactionId: transactionId
+            counterpartyId: counterpartyId
+            exchangeRate: 5.637376656633329
+            instrumentUid: instrumentUid
+            properties:
+              key:
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 6.027456183070403
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                key: key
+        warnings:
+        - entityId: entityId
+          message: message
+        - entityId: entityId
+          message: message
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+        version:
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          asAtDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        version:
+          $ref: '#/components/schemas/Version'
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/PortfolioHolding'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+        warnings:
+          items:
+            $ref: '#/components/schemas/Warning'
+          nullable: true
+          type: array
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - values
+      - version
+      type: object
     VersionSummaryDto:
       additionalProperties: false
       example:
@@ -73950,6 +74148,20 @@ components:
             $ref: '#/components/schemas/Link'
           nullable: true
           type: array
+      type: object
+    Warning:
+      additionalProperties: false
+      example:
+        entityId: entityId
+        message: message
+      properties:
+        entityId:
+          type: string
+        message:
+          type: string
+      required:
+      - entityId
+      - message
       type: object
     WeekendMask:
       additionalProperties: false
@@ -76604,7 +76816,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
