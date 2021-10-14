@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3608
+  version: 0.11.3610
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:38983
 security:
 - {}
 tags:
@@ -1956,6 +1956,7 @@ paths:
                         labelValue: XYZ000034567
                   instrumentIdentifiers:
                     instrument/default/Currency: GBP
+                  lusidInstrumentId: LUID_1234567
                   quantity: 100.5
                   side: Buy
                   type: Limit
@@ -1989,6 +1990,7 @@ paths:
                         labelValue: XYZ000034567
                   instrumentIdentifiers:
                     instrument/default/Currency: GBP
+                  lusidInstrumentId: LUID_1234567
                   quantity: 100.5
                   side: Buy
                   type: Limit
@@ -2022,6 +2024,7 @@ paths:
                         labelValue: XYZ000034567
                   instrumentIdentifiers:
                     instrument/default/Currency: GBP
+                  lusidInstrumentId: LUID_1234567
                   quantity: 100.5
                   side: Buy
                   type: Limit
@@ -2218,6 +2221,7 @@ paths:
                       labelValue: XYZ000034567
                 instrumentIdentifiers:
                   instrument/default/Currency: GBP
+                lusidInstrumentId: LUID_1234567
                 quantity: 100.5
                 side: Buy
                 type: Limit
@@ -2249,6 +2253,7 @@ paths:
                       labelValue: XYZ000034567
                 instrumentIdentifiers:
                   instrument/default/Currency: GBP
+                lusidInstrumentId: LUID_1234567
                 quantity: 100.5
                 side: Buy
                 type: Limit
@@ -2280,6 +2285,7 @@ paths:
                       labelValue: XYZ000034567
                 instrumentIdentifiers:
                   instrument/default/Currency: GBP
+                lusidInstrumentId: LUID_1234567
                 quantity: 100.5
                 side: Buy
                 type: Limit
@@ -14730,13 +14736,13 @@ paths:
           pattern: ^[\s\S]*$
           type: string
         style: form
-      - description: See https://support.lusid.com/knowledgebase/article/KA-01855/
+      - description: Must be block-level properties. See https://support.lusid.com/knowledgebase/article/KA-01855/
         explode: true
         in: query
         name: propertyKeys
         required: false
         schema:
-          description: See https://support.lusid.com/knowledgebase/article/KA-01855/
+          description: Must be block-level properties. See https://support.lusid.com/knowledgebase/article/KA-01855/
           items:
             description: The key that uniquely identifies the property. It has the
               format {domain}/{scope}/{code}.
@@ -14765,6 +14771,7 @@ paths:
                           labelValue: XYZ000034567
                     instrumentIdentifiers:
                       instrument/default/Currency: GBP
+                    lusidInstrumentId: LUID_1234567
                     quantity: 100.5
                     side: Buy
                     type: Limit
@@ -14828,6 +14835,7 @@ paths:
                           labelValue: XYZ000034567
                     instrumentIdentifiers:
                       instrument/default/Currency: GBP
+                    lusidInstrumentId: LUID_1234567
                     quantity: 100.5
                     side: Buy
                     type: Limit
@@ -14891,6 +14899,7 @@ paths:
                           labelValue: XYZ000034567
                     instrumentIdentifiers:
                       instrument/default/Currency: GBP
+                    lusidInstrumentId: LUID_1234567
                     quantity: 100.5
                     side: Buy
                     type: Limit
@@ -14961,6 +14970,312 @@ paths:
       summary: '[EXPERIMENTAL] ListOrderGraphBlocks: Lists blocks that pass the filter
         provided, and builds a summary picture of the state of their associated order
         entities.'
+      tags:
+      - OrderGraph
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+  /api/ordergraph/placements:
+    get:
+      description: "Lists all order placements, subject to the filter, along with\
+        \ the IDs of the block and order that the\r\nplacement is for, each placement's\
+        \ quantity, the IDs of all allocations and executions in the placement\r\n\
+        and the total quantities of those, and a simple text field describing the\
+        \ overall state of the placement."
+      operationId: ListOrderGraphPlacements
+      parameters:
+      - description: See https://support.lusid.com/knowledgebase/article/KA-01832/
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: See https://support.lusid.com/knowledgebase/article/KA-01832/
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: See https://support.lusid.com/knowledgebase/article/KA-01915/
+        explode: true
+        in: query
+        name: paginationToken
+        required: false
+        schema:
+          description: See https://support.lusid.com/knowledgebase/article/KA-01915/
+          maxLength: 500
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
+          type: string
+        style: form
+      - description: Order the results by these fields. Use use the '-' sign to denote
+          descending order e.g. -MyFieldName.
+        explode: true
+        in: query
+        name: sortBy
+        required: false
+        schema:
+          description: Order the results by these fields. Use use the '-' sign to
+            denote descending order e.g. -MyFieldName.
+          items:
+            type: string
+          nullable: true
+          type: array
+        style: form
+        x-nullable: true
+      - description: See https://support.lusid.com/knowledgebase/article/KA-01915/
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: See https://support.lusid.com/knowledgebase/article/KA-01915/
+          format: int32
+          maximum: 5000
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: See https://support.lusid.com/knowledgebase/article/KA-01914/
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          default: ""
+          description: See https://support.lusid.com/knowledgebase/article/KA-01914/
+          maxLength: 2147483647
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        style: form
+      - description: Must be placement properties. See https://support.lusid.com/knowledgebase/article/KA-01855/
+        explode: true
+        in: query
+        name: propertyKeys
+        required: false
+        schema:
+          description: Must be placement properties. See https://support.lusid.com/knowledgebase/article/KA-01855/
+          items:
+            description: The key that uniquely identifies the property. It has the
+              format {domain}/{scope}/{code}.
+            type: string
+          nullable: true
+          type: array
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                - placement:
+                    id:
+                      scope: MyScope
+                      code: PLAC00000123
+                    blockIds:
+                    - scope: MyScope
+                      code: BLOC00000123
+                    properties:
+                      allocation/MyScope/SomeAllocationProperty:
+                        key: Allocation/MyScope/SomeAllocationProperty
+                        value:
+                          labelValue: XYZ000034567
+                    instrumentIdentifiers:
+                      instrument/default/Currency: GBP
+                    quantity: 100.5
+                    state: New
+                    side: Buy
+                    timeInForce: GoodTilCancel
+                    type: Limit
+                    createdDate: 2006-04-11T00:00:00.0000000+00:00
+                    limitPrice:
+                      amount: 12413.33
+                      currency: USD
+                    stopPrice:
+                      amount: 51244.33
+                      currency: USD
+                    counterparty: SomeCounterparty
+                    version:
+                      effectiveFrom: 2018-03-05T10:10:10.0000000+00:00
+                      asAtDate: 2018-03-05T10:10:10.0000000+00:00
+                  blockId:
+                    scope: MyScope
+                    code: BLOC00000123
+                  orderIds:
+                  - scope: MyScope
+                    code: ORD00000123
+                  - scope: MyScope
+                    code: ORD00000456
+                  allocationIds:
+                  - scope: MyScope
+                    code: ALLOC00000123
+                  - scope: MyScope
+                    code: ALLOC00000456
+                  executionIds:
+                  - scope: MyScope
+                    code: EXEC0000123
+                  - scope: MyScope
+                    code: EXEC0000456
+                  placed:
+                    quantity: 1250
+                  allocated:
+                    quantity: 1100
+                  executed:
+                    quantity: 800
+                  derivedState: In progress
+                links: []
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfOrderGraphPlacement'
+            application/json:
+              example:
+                values:
+                - placement:
+                    id:
+                      scope: MyScope
+                      code: PLAC00000123
+                    blockIds:
+                    - scope: MyScope
+                      code: BLOC00000123
+                    properties:
+                      allocation/MyScope/SomeAllocationProperty:
+                        key: Allocation/MyScope/SomeAllocationProperty
+                        value:
+                          labelValue: XYZ000034567
+                    instrumentIdentifiers:
+                      instrument/default/Currency: GBP
+                    quantity: 100.5
+                    state: New
+                    side: Buy
+                    timeInForce: GoodTilCancel
+                    type: Limit
+                    createdDate: 2006-04-11T00:00:00.0000000+00:00
+                    limitPrice:
+                      amount: 12413.33
+                      currency: USD
+                    stopPrice:
+                      amount: 51244.33
+                      currency: USD
+                    counterparty: SomeCounterparty
+                    version:
+                      effectiveFrom: 2018-03-05T10:10:10.0000000+00:00
+                      asAtDate: 2018-03-05T10:10:10.0000000+00:00
+                  blockId:
+                    scope: MyScope
+                    code: BLOC00000123
+                  orderIds:
+                  - scope: MyScope
+                    code: ORD00000123
+                  - scope: MyScope
+                    code: ORD00000456
+                  allocationIds:
+                  - scope: MyScope
+                    code: ALLOC00000123
+                  - scope: MyScope
+                    code: ALLOC00000456
+                  executionIds:
+                  - scope: MyScope
+                    code: EXEC0000123
+                  - scope: MyScope
+                    code: EXEC0000456
+                  placed:
+                    quantity: 1250
+                  allocated:
+                    quantity: 1100
+                  executed:
+                    quantity: 800
+                  derivedState: In progress
+                links: []
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfOrderGraphPlacement'
+            text/json:
+              example:
+                values:
+                - placement:
+                    id:
+                      scope: MyScope
+                      code: PLAC00000123
+                    blockIds:
+                    - scope: MyScope
+                      code: BLOC00000123
+                    properties:
+                      allocation/MyScope/SomeAllocationProperty:
+                        key: Allocation/MyScope/SomeAllocationProperty
+                        value:
+                          labelValue: XYZ000034567
+                    instrumentIdentifiers:
+                      instrument/default/Currency: GBP
+                    quantity: 100.5
+                    state: New
+                    side: Buy
+                    timeInForce: GoodTilCancel
+                    type: Limit
+                    createdDate: 2006-04-11T00:00:00.0000000+00:00
+                    limitPrice:
+                      amount: 12413.33
+                      currency: USD
+                    stopPrice:
+                      amount: 51244.33
+                      currency: USD
+                    counterparty: SomeCounterparty
+                    version:
+                      effectiveFrom: 2018-03-05T10:10:10.0000000+00:00
+                      asAtDate: 2018-03-05T10:10:10.0000000+00:00
+                  blockId:
+                    scope: MyScope
+                    code: BLOC00000123
+                  orderIds:
+                  - scope: MyScope
+                    code: ORD00000123
+                  - scope: MyScope
+                    code: ORD00000456
+                  allocationIds:
+                  - scope: MyScope
+                    code: ALLOC00000123
+                  - scope: MyScope
+                    code: ALLOC00000456
+                  executionIds:
+                  - scope: MyScope
+                    code: EXEC0000123
+                  - scope: MyScope
+                    code: EXEC0000456
+                  placed:
+                    quantity: 1250
+                  allocated:
+                    quantity: 1100
+                  executed:
+                    quantity: 800
+                  derivedState: In progress
+                links: []
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfOrderGraphPlacement'
+          description: Placements in scope.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListOrderGraphPlacements: Lists placements that pass
+        the filter provided, and builds a summary picture of the state of their associated
+        order entities.'
       tags:
       - OrderGraph
       x-fbn-apistatus: Experimental
@@ -57862,6 +58177,123 @@ components:
       - placed
       - placementIds
       type: object
+    OrderGraphPlacement:
+      additionalProperties: false
+      example:
+        blockId:
+          code: code
+          scope: scope
+        executionIds:
+        - code: code
+          scope: scope
+        - code: code
+          scope: scope
+        placed:
+          quantity: 0.8008281904610115
+        derivedState: derivedState
+        allocationIds:
+        - code: code
+          scope: scope
+        - code: code
+          scope: scope
+        executed:
+          quantity: 0.8008281904610115
+        placement:
+          side: side
+          quantity: 0.8008281904610115
+          limitPrice:
+            amount: 1.4658129805029452
+            currency: currency
+          blockIds:
+          - code: code
+            scope: scope
+          - code: code
+            scope: scope
+          instrumentIdentifiers:
+            key: instrumentIdentifiers
+          type: type
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          stopPrice:
+            amount: 1.4658129805029452
+            currency: currency
+          createdDate: 2000-01-23T04:56:07.000+00:00
+          counterparty: counterparty
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          id:
+            code: code
+            scope: scope
+          state: state
+          lusidInstrumentId: lusidInstrumentId
+          timeInForce: timeInForce
+          properties:
+            key:
+              value:
+                metricValue:
+                  unit: unit
+                  value: 6.027456183070403
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              key: key
+        orderIds:
+        - code: code
+          scope: scope
+        - code: code
+          scope: scope
+        allocated:
+          quantity: 0.8008281904610115
+      properties:
+        placement:
+          $ref: '#/components/schemas/Placement'
+        blockId:
+          $ref: '#/components/schemas/ResourceId'
+        orderIds:
+          description: Identifiers for all orders in the block.
+          items:
+            $ref: '#/components/schemas/ResourceId'
+          type: array
+        allocationIds:
+          description: Identifiers for all allocations relating to this placement.
+          items:
+            $ref: '#/components/schemas/ResourceId'
+          type: array
+        executionIds:
+          description: Identifiers of all executions against this placement.
+          items:
+            $ref: '#/components/schemas/ResourceId'
+          type: array
+        placed:
+          $ref: '#/components/schemas/OrderGraphSynopsis'
+        allocated:
+          $ref: '#/components/schemas/OrderGraphSynopsis'
+        executed:
+          $ref: '#/components/schemas/OrderGraphSynopsis'
+        derivedState:
+          description: A simple description of the overall state of a placement.
+          type: string
+      required:
+      - allocated
+      - allocationIds
+      - blockId
+      - derivedState
+      - executed
+      - executionIds
+      - orderIds
+      - placed
+      - placement
+      type: object
     OrderGraphSynopsis:
       additionalProperties: false
       example:
@@ -60044,6 +60476,199 @@ components:
           description: The resources to list.
           items:
             $ref: '#/components/schemas/OrderGraphBlock'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - values
+      type: object
+    PagedResourceListOfOrderGraphPlacement:
+      additionalProperties: false
+      description: A paginated list of resource that can be returned from a request.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - blockId:
+            code: code
+            scope: scope
+          executionIds:
+          - code: code
+            scope: scope
+          - code: code
+            scope: scope
+          placed:
+            quantity: 0.8008281904610115
+          derivedState: derivedState
+          allocationIds:
+          - code: code
+            scope: scope
+          - code: code
+            scope: scope
+          executed:
+            quantity: 0.8008281904610115
+          placement:
+            side: side
+            quantity: 0.8008281904610115
+            limitPrice:
+              amount: 1.4658129805029452
+              currency: currency
+            blockIds:
+            - code: code
+              scope: scope
+            - code: code
+              scope: scope
+            instrumentIdentifiers:
+              key: instrumentIdentifiers
+            type: type
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            stopPrice:
+              amount: 1.4658129805029452
+              currency: currency
+            createdDate: 2000-01-23T04:56:07.000+00:00
+            counterparty: counterparty
+            links:
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            id:
+              code: code
+              scope: scope
+            state: state
+            lusidInstrumentId: lusidInstrumentId
+            timeInForce: timeInForce
+            properties:
+              key:
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 6.027456183070403
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                key: key
+          orderIds:
+          - code: code
+            scope: scope
+          - code: code
+            scope: scope
+          allocated:
+            quantity: 0.8008281904610115
+        - blockId:
+            code: code
+            scope: scope
+          executionIds:
+          - code: code
+            scope: scope
+          - code: code
+            scope: scope
+          placed:
+            quantity: 0.8008281904610115
+          derivedState: derivedState
+          allocationIds:
+          - code: code
+            scope: scope
+          - code: code
+            scope: scope
+          executed:
+            quantity: 0.8008281904610115
+          placement:
+            side: side
+            quantity: 0.8008281904610115
+            limitPrice:
+              amount: 1.4658129805029452
+              currency: currency
+            blockIds:
+            - code: code
+              scope: scope
+            - code: code
+              scope: scope
+            instrumentIdentifiers:
+              key: instrumentIdentifiers
+            type: type
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            stopPrice:
+              amount: 1.4658129805029452
+              currency: currency
+            createdDate: 2000-01-23T04:56:07.000+00:00
+            counterparty: counterparty
+            links:
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            id:
+              code: code
+              scope: scope
+            state: state
+            lusidInstrumentId: lusidInstrumentId
+            timeInForce: timeInForce
+            properties:
+              key:
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 6.027456183070403
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                key: key
+          orderIds:
+          - code: code
+            scope: scope
+          - code: code
+            scope: scope
+          allocated:
+            quantity: 0.8008281904610115
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/OrderGraphPlacement'
           type: array
         href:
           description: The URI of the resource list.
@@ -76200,6 +76825,16 @@ components:
         domCcy:
           description: The domestic currency of the instrument.
           type: string
+        domAmount:
+          description: "The Amount of DomCcy that will be exchanged if the option\
+            \ is exercised.\r\nThis amount should be a positive number, with the Call/Put\
+            \ flag used to indicate direction.\r\nThe corresponding amount of FgnCcy\
+            \ that will be exchanged is this amount times the strike.\r\nNote there\
+            \ is no rounding performed on this computed value.\r\nThis is an optional\
+            \ field, if not set the option ContractSize will default to 1."
+          format: double
+          nullable: true
+          type: number
         fgnCcy:
           description: The foreign currency of the FX.
           type: string
@@ -76947,7 +77582,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
