@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3612
+  version: 0.11.3615
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:44717
 security:
 - {}
 tags:
@@ -298,6 +298,8 @@ tags:
 - name: Calendars
 - description: Methods for the storage and retrieval of complex market data documents.
   name: Complex Market Data
+- description: Methods for storage and retrieval of Compliance runs
+  name: Compliance
 - description: Methods for the storage and retrieval of Configuration Recipe documents.
     Read more about these in the LUSID Knowledge Base here https://support.lusid.com/what-is-a-lusid-recipe-and-how-is-it-used.
   name: Configuration Recipe
@@ -4695,6 +4697,247 @@ paths:
       - Complex Market Data
       x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/compliance:
+    get:
+      description: Use this endpoint to fetch a list of all historical compliance
+        runs.
+      operationId: ListComplianceRuns
+      parameters:
+      - description: "The pagination token to use to continue listing compliance runs\
+          \ from a previous call to list compliance runs.\r\n            This value\
+          \ is returned from the previous call. If a pagination token is provided\
+          \ the sortBy, filter, and asAt fields\r\n            must not have changed\
+          \ since the original request. Also, if set, a start value cannot be provided."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          description: "The pagination token to use to continue listing compliance\
+            \ runs from a previous call to list compliance runs.\r\n            This\
+            \ value is returned from the previous call. If a pagination token is provided\
+            \ the sortBy, filter, and asAt fields\r\n            must not have changed\
+            \ since the original request. Also, if set, a start value cannot be provided."
+          nullable: true
+          type: string
+        style: form
+      - description: When paginating, limit the number of returned results to this
+          many.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: When paginating, limit the number of returned results to this
+            many.
+          format: int32
+          maximum: 5000
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: Expression to filter the result set. Read more about filtering
+          results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          description: Expression to filter the result set. Read more about filtering
+            results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
+          nullable: true
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                - runId: 1234-5678-9101
+                  asAt: 2020-01-05T00:00:00.0000000+00:00
+                href: https://myco.lusid.com/api/api/compliance
+                links: []
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfComplianceRun'
+            application/json:
+              example:
+                values:
+                - runId: 1234-5678-9101
+                  asAt: 2020-01-05T00:00:00.0000000+00:00
+                href: https://myco.lusid.com/api/api/compliance
+                links: []
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfComplianceRun'
+            text/json:
+              example:
+                values:
+                - runId: 1234-5678-9101
+                  asAt: 2020-01-05T00:00:00.0000000+00:00
+                href: https://myco.lusid.com/api/api/compliance
+                links: []
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfComplianceRun'
+          description: The List of all compliance runs completed
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListComplianceRuns: List historical compliance runs.'
+      tags:
+      - Compliance
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+  /api/compliance/{runId}:
+    get:
+      description: "Use this endpoint to fetch the detail associated with a specific\
+        \ compliance run, including a breakdown\r\nof the passing state of each rule,\
+        \ portfolio combination."
+      operationId: GetComplianceRun
+      parameters:
+      - description: The unique identifier of the compliance run requested.
+        explode: false
+        in: path
+        name: runId
+        required: true
+        schema:
+          description: The unique identifier of the compliance run requested.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The pagination token to use to continue listing compliance rule\
+          \ results from a previous call to list compliance rule result.\r\n     \
+          \       This value is returned from the previous call. If a pagination token\
+          \ is provided the sortBy, filter, and asAt fields\r\n            must not\
+          \ have changed since the original request. Also, if set, a start value cannot\
+          \ be provided."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          description: "The pagination token to use to continue listing compliance\
+            \ rule results from a previous call to list compliance rule result.\r\n\
+            \            This value is returned from the previous call. If a pagination\
+            \ token is provided the sortBy, filter, and asAt fields\r\n          \
+            \  must not have changed since the original request. Also, if set, a start\
+            \ value cannot be provided."
+          nullable: true
+          type: string
+        style: form
+      - description: When paginating, limit the number of returned results to this
+          many.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: When paginating, limit the number of returned results to this
+            many.
+          format: int32
+          maximum: 5000
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: Expression to filter the result set. Read more about filtering
+          results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          description: Expression to filter the result set. Read more about filtering
+            results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
+          nullable: true
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                - ruleId: 0897-6574-1324
+                  portfolio:
+                    scope: MyScope
+                    code: MyPortfolioCode
+                  passed: true
+                href: https://myco.lusid.com/api/api/compliance/some-run-id
+                links: []
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfComplianceRuleResult'
+            application/json:
+              example:
+                values:
+                - ruleId: 0897-6574-1324
+                  portfolio:
+                    scope: MyScope
+                    code: MyPortfolioCode
+                  passed: true
+                href: https://myco.lusid.com/api/api/compliance/some-run-id
+                links: []
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfComplianceRuleResult'
+            text/json:
+              example:
+                values:
+                - ruleId: 0897-6574-1324
+                  portfolio:
+                    scope: MyScope
+                    code: MyPortfolioCode
+                  passed: true
+                href: https://myco.lusid.com/api/api/compliance/some-run-id
+                links: []
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfComplianceRuleResult'
+          description: The details of a specific compliance run
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] GetComplianceRun: Get the details of a single compliance
+        run.'
+      tags:
+      - Compliance
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/conventions/credit/conventions:
     get:
@@ -29643,10 +29886,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetPortfolioAggregatedReturns: Aggregated Returns'
+      summary: '[EARLY ACCESS] GetPortfolioAggregatedReturns: Aggregated Returns'
       tags:
       - Portfolios
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/portfolios/{scope}/{code}/returns/{returnScope}/{returnCode}/$delete:
@@ -29759,10 +30002,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeletePortfolioReturns: Delete Returns'
+      summary: '[EARLY ACCESS] DeletePortfolioReturns: Delete Returns'
       tags:
       - Portfolios
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/portfolios/{scope}/{code}/returns/{returnScope}/{returnCode}/aggregated:
     get:
@@ -50718,6 +50961,45 @@ components:
       required:
       - provider
       type: object
+    ComplianceRuleResult:
+      additionalProperties: false
+      example:
+        portfolio:
+          code: code
+          scope: scope
+        passed: true
+        ruleId: ruleId
+      properties:
+        ruleId:
+          description: The unique identifierof a compliance rule
+          type: string
+        portfolio:
+          $ref: '#/components/schemas/ResourceId'
+        passed:
+          description: The result of an individual compliance run, true if passed
+          type: boolean
+      required:
+      - passed
+      - portfolio
+      - ruleId
+      type: object
+    ComplianceRun:
+      additionalProperties: false
+      example:
+        asAt: 2000-01-23T04:56:07.000+00:00
+        runId: runId
+      properties:
+        runId:
+          description: The unique identifier of a compliance run
+          type: string
+        asAt:
+          description: The date at time at which the compliance run was run
+          format: date-time
+          type: string
+      required:
+      - asAt
+      - runId
+      type: object
     ConfigurationRecipe:
       additionalProperties: false
       description: "The Configuration or Calculation Recipe controls how LUSID processes\
@@ -59400,6 +59682,110 @@ components:
           description: The resources to list.
           items:
             $ref: '#/components/schemas/Calendar'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - values
+      type: object
+    PagedResourceListOfComplianceRuleResult:
+      additionalProperties: false
+      description: A paginated list of resource that can be returned from a request.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - portfolio:
+            code: code
+            scope: scope
+          passed: true
+          ruleId: ruleId
+        - portfolio:
+            code: code
+            scope: scope
+          passed: true
+          ruleId: ruleId
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/ComplianceRuleResult'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - values
+      type: object
+    PagedResourceListOfComplianceRun:
+      additionalProperties: false
+      description: A paginated list of resource that can be returned from a request.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - asAt: 2000-01-23T04:56:07.000+00:00
+          runId: runId
+        - asAt: 2000-01-23T04:56:07.000+00:00
+          runId: runId
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/ComplianceRun'
           type: array
         href:
           description: The URI of the resource list.
@@ -77582,7 +77968,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
@@ -77594,6 +77980,7 @@ x-tagGroups:
   - Blocks
   - Calendars
   - Complex Market Data
+  - Compliance
   - Configuration Recipe
   - Conventions
   - Corporate Action Sources
