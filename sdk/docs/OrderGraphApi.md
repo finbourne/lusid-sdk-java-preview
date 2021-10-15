@@ -1,11 +1,10 @@
 # OrderGraphApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:38983*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**listOrderGraphBlocks**](OrderGraphApi.md#listOrderGraphBlocks) | **GET** /api/ordergraph/blocks | [EXPERIMENTAL] ListOrderGraphBlocks: Lists blocks that pass the filter provided, and builds a summary picture of the state of their associated order entities.
-[**listOrderGraphPlacements**](OrderGraphApi.md#listOrderGraphPlacements) | **GET** /api/ordergraph/placements | [EXPERIMENTAL] ListOrderGraphPlacements: Lists placements that pass the filter provided, and builds a summary picture of the state of their associated order entities.
 
 
 <a name="listOrderGraphBlocks"></a>
@@ -29,7 +28,7 @@ import com.finbourne.lusid.api.OrderGraphApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38983");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -41,7 +40,7 @@ public class Example {
     List<String> sortBy = Arrays.asList(); // List<String> | Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName.
     Integer limit = 56; // Integer | See https://support.lusid.com/knowledgebase/article/KA-01915/
     String filter = ""; // String | See https://support.lusid.com/knowledgebase/article/KA-01914/
-    List<String> propertyKeys = Arrays.asList(); // List<String> | Must be block-level properties. See https://support.lusid.com/knowledgebase/article/KA-01855/
+    List<String> propertyKeys = Arrays.asList(); // List<String> | See https://support.lusid.com/knowledgebase/article/KA-01855/
     try {
       PagedResourceListOfOrderGraphBlock result = apiInstance.listOrderGraphBlocks(asAt, paginationToken, sortBy, limit, filter, propertyKeys);
       System.out.println(result);
@@ -65,7 +64,7 @@ Name | Type | Description  | Notes
  **sortBy** | [**List&lt;String&gt;**](String.md)| Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName. | [optional]
  **limit** | **Integer**| See https://support.lusid.com/knowledgebase/article/KA-01915/ | [optional]
  **filter** | **String**| See https://support.lusid.com/knowledgebase/article/KA-01914/ | [optional] [default to ]
- **propertyKeys** | [**List&lt;String&gt;**](String.md)| Must be block-level properties. See https://support.lusid.com/knowledgebase/article/KA-01855/ | [optional]
+ **propertyKeys** | [**List&lt;String&gt;**](String.md)| See https://support.lusid.com/knowledgebase/article/KA-01855/ | [optional]
 
 ### Return type
 
@@ -84,85 +83,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Blocks in scope. |  -  |
-**400** | The details of the input related failure |  -  |
-**0** | Error response |  -  |
-
-<a name="listOrderGraphPlacements"></a>
-# **listOrderGraphPlacements**
-> PagedResourceListOfOrderGraphPlacement listOrderGraphPlacements(asAt, paginationToken, sortBy, limit, filter, propertyKeys)
-
-[EXPERIMENTAL] ListOrderGraphPlacements: Lists placements that pass the filter provided, and builds a summary picture of the state of their associated order entities.
-
-Lists all order placements, subject to the filter, along with the IDs of the block and order that the  placement is for, each placement&#39;s quantity, the IDs of all allocations and executions in the placement  and the total quantities of those, and a simple text field describing the overall state of the placement.
-
-### Example
-```java
-// Import classes:
-import com.finbourne.lusid.ApiClient;
-import com.finbourne.lusid.ApiException;
-import com.finbourne.lusid.Configuration;
-import com.finbourne.lusid.auth.*;
-import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.OrderGraphApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:38983");
-    
-    // Configure OAuth2 access token for authorization: oauth2
-    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-    oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-    OrderGraphApi apiInstance = new OrderGraphApi(defaultClient);
-    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | See https://support.lusid.com/knowledgebase/article/KA-01832/
-    String paginationToken = "paginationToken_example"; // String | See https://support.lusid.com/knowledgebase/article/KA-01915/
-    List<String> sortBy = Arrays.asList(); // List<String> | Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName.
-    Integer limit = 56; // Integer | See https://support.lusid.com/knowledgebase/article/KA-01915/
-    String filter = ""; // String | See https://support.lusid.com/knowledgebase/article/KA-01914/
-    List<String> propertyKeys = Arrays.asList(); // List<String> | Must be placement properties. See https://support.lusid.com/knowledgebase/article/KA-01855/
-    try {
-      PagedResourceListOfOrderGraphPlacement result = apiInstance.listOrderGraphPlacements(asAt, paginationToken, sortBy, limit, filter, propertyKeys);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling OrderGraphApi#listOrderGraphPlacements");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **asAt** | **OffsetDateTime**| See https://support.lusid.com/knowledgebase/article/KA-01832/ | [optional]
- **paginationToken** | **String**| See https://support.lusid.com/knowledgebase/article/KA-01915/ | [optional]
- **sortBy** | [**List&lt;String&gt;**](String.md)| Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName. | [optional]
- **limit** | **Integer**| See https://support.lusid.com/knowledgebase/article/KA-01915/ | [optional]
- **filter** | **String**| See https://support.lusid.com/knowledgebase/article/KA-01914/ | [optional] [default to ]
- **propertyKeys** | [**List&lt;String&gt;**](String.md)| Must be placement properties. See https://support.lusid.com/knowledgebase/article/KA-01855/ | [optional]
-
-### Return type
-
-[**PagedResourceListOfOrderGraphPlacement**](PagedResourceListOfOrderGraphPlacement.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Placements in scope. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
