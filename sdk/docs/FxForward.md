@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **refSpotRate** | **Double** | The reference Fx Spot rate for currency pair Foreign-Domestic that was seen on the trade start date (time). |  [optional]
 **isNdf** | **Boolean** | Is the contract an Fx-Forward of \&quot;Non-Deliverable\&quot; type, meaning a single payment in the domestic currency based on the change in fx-rate vs              a reference rate is used. |  [optional]
 **fixingDate** | **OffsetDateTime** | The fixing date. |  [optional]
+**settlementCcy** | **String** | The settlement currency.  If provided, present value will be calculated in settlement currency, otherwise the domestic currency. Applies only to non-deliverable FX Forwards. |  [optional]
 
 
 
