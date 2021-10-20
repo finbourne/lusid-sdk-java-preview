@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3626
+  version: 0.11.3627
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:55270
 security:
 - {}
 tags:
@@ -8281,7 +8281,7 @@ paths:
               typeValueRange: Open
               displayName: My data format
               description: Data type description
-              valueType: Decimal
+              valueType: String
               unitSchema: Basic
               acceptableUnits:
               - code: Ap
@@ -8293,6 +8293,23 @@ paths:
               - code: Ch
                 displayName: Cherry
                 description: A quantity of cherries
+              referenceData:
+                fieldDefinitions:
+                - key: english_short_name
+                  isRequired: true
+                  isUnique: true
+                - key: continent
+                  isRequired: true
+                  isUnique: false
+                values:
+                - value: FRA
+                  fields:
+                    english_short_name: France
+                    continent: Europe
+                - value: DEU
+                  fields:
+                    english_short_name: Germany
+                    continent: Europe
             schema:
               $ref: '#/components/schemas/CreateDataTypeRequest'
           application/json:
@@ -8302,7 +8319,7 @@ paths:
               typeValueRange: Open
               displayName: My data format
               description: Data type description
-              valueType: Decimal
+              valueType: String
               unitSchema: Basic
               acceptableUnits:
               - code: Ap
@@ -8314,6 +8331,23 @@ paths:
               - code: Ch
                 displayName: Cherry
                 description: A quantity of cherries
+              referenceData:
+                fieldDefinitions:
+                - key: english_short_name
+                  isRequired: true
+                  isUnique: true
+                - key: continent
+                  isRequired: true
+                  isUnique: false
+                values:
+                - value: FRA
+                  fields:
+                    english_short_name: France
+                    continent: Europe
+                - value: DEU
+                  fields:
+                    english_short_name: Germany
+                    continent: Europe
             schema:
               $ref: '#/components/schemas/CreateDataTypeRequest'
           text/json:
@@ -8323,7 +8357,7 @@ paths:
               typeValueRange: Open
               displayName: My data format
               description: Data type description
-              valueType: Decimal
+              valueType: String
               unitSchema: Basic
               acceptableUnits:
               - code: Ap
@@ -8335,6 +8369,23 @@ paths:
               - code: Ch
                 displayName: Cherry
                 description: A quantity of cherries
+              referenceData:
+                fieldDefinitions:
+                - key: english_short_name
+                  isRequired: true
+                  isUnique: true
+                - key: continent
+                  isRequired: true
+                  isUnique: false
+                values:
+                - value: FRA
+                  fields:
+                    english_short_name: France
+                    continent: Europe
+                - value: DEU
+                  fields:
+                    english_short_name: Germany
+                    continent: Europe
             schema:
               $ref: '#/components/schemas/CreateDataTypeRequest'
           application/*+json:
@@ -8344,7 +8395,7 @@ paths:
               typeValueRange: Open
               displayName: My data format
               description: Data type description
-              valueType: Decimal
+              valueType: String
               unitSchema: Basic
               acceptableUnits:
               - code: Ap
@@ -8356,6 +8407,23 @@ paths:
               - code: Ch
                 displayName: Cherry
                 description: A quantity of cherries
+              referenceData:
+                fieldDefinitions:
+                - key: english_short_name
+                  isRequired: true
+                  isUnique: true
+                - key: continent
+                  isRequired: true
+                  isUnique: false
+                values:
+                - value: FRA
+                  fields:
+                    english_short_name: France
+                    continent: Europe
+                - value: DEU
+                  fields:
+                    english_short_name: Germany
+                    continent: Europe
             schema:
               $ref: '#/components/schemas/CreateDataTypeRequest'
         description: The definition of the new data type
@@ -51914,6 +51982,21 @@ components:
         acceptableValues:
         - acceptableValues
         - acceptableValues
+        referenceData:
+          values:
+          - fields:
+              key: fields
+            value: value
+          - fields:
+              key: fields
+            value: value
+          fieldDefinitions:
+          - isRequired: true
+            isUnique: true
+            key: key
+          - isRequired: true
+            isUnique: true
+            key: key
         acceptableUnits:
         - code: code
           displayName: displayName
@@ -52013,6 +52096,8 @@ components:
             $ref: '#/components/schemas/CreateUnitDefinition'
           nullable: true
           type: array
+        referenceData:
+          $ref: '#/components/schemas/ReferenceData'
       required:
       - code
       - description
@@ -53556,6 +53641,21 @@ components:
         acceptableValues:
         - acceptableValues
         - acceptableValues
+        referenceData:
+          values:
+          - fields:
+              key: fields
+            value: value
+          - fields:
+              key: fields
+            value: value
+          fieldDefinitions:
+          - isRequired: true
+            isUnique: true
+            key: key
+          - isRequired: true
+            isUnique: true
+            key: key
         acceptableUnits:
         - schema: NoUnits
           code: code
@@ -53644,6 +53744,8 @@ components:
             $ref: '#/components/schemas/IUnitDefinitionDto'
           nullable: true
           type: array
+        referenceData:
+          $ref: '#/components/schemas/ReferenceData'
         links:
           description: Collection of links.
           items:
@@ -54581,6 +54683,27 @@ components:
       - ruleInformation
       - ruleType
       type: object
+    FieldDefinition:
+      additionalProperties: false
+      example:
+        isRequired: true
+        isUnique: true
+        key: key
+      properties:
+        key:
+          maxLength: 512
+          minLength: 1
+          pattern: ^[\s\S]*$
+          type: string
+        isRequired:
+          type: boolean
+        isUnique:
+          type: boolean
+      required:
+      - isRequired
+      - isUnique
+      - key
+      type: object
     FieldSchema:
       additionalProperties: false
       example:
@@ -54630,6 +54753,28 @@ components:
         displayOrder:
           format: int32
           type: integer
+      type: object
+    FieldValue:
+      additionalProperties: false
+      example:
+        fields:
+          key: fields
+        value: value
+      properties:
+        value:
+          maxLength: 512
+          minLength: 1
+          pattern: ^[\s\S]*$
+          type: string
+        fields:
+          additionalProperties:
+            type: string
+          maxLength: 10
+          minLength: 1
+          type: object
+      required:
+      - fields
+      - value
       type: object
     FileResponse:
       additionalProperties: false
@@ -64857,6 +65002,36 @@ components:
       - left
       - right
       type: object
+    ReferenceData:
+      additionalProperties: false
+      example:
+        values:
+        - fields:
+            key: fields
+          value: value
+        - fields:
+            key: fields
+          value: value
+        fieldDefinitions:
+        - isRequired: true
+          isUnique: true
+          key: key
+        - isRequired: true
+          isUnique: true
+          key: key
+      properties:
+        fieldDefinitions:
+          items:
+            $ref: '#/components/schemas/FieldDefinition'
+          type: array
+        values:
+          items:
+            $ref: '#/components/schemas/FieldValue'
+          type: array
+      required:
+      - fieldDefinitions
+      - values
+      type: object
     ReferencePortfolioConstituent:
       additionalProperties: false
       example:
@@ -66867,6 +67042,21 @@ components:
         - acceptableValues:
           - acceptableValues
           - acceptableValues
+          referenceData:
+            values:
+            - fields:
+                key: fields
+              value: value
+            - fields:
+                key: fields
+              value: value
+            fieldDefinitions:
+            - isRequired: true
+              isUnique: true
+              key: key
+            - isRequired: true
+              isUnique: true
+              key: key
           acceptableUnits:
           - schema: NoUnits
             code: code
@@ -66897,6 +67087,21 @@ components:
         - acceptableValues:
           - acceptableValues
           - acceptableValues
+          referenceData:
+            values:
+            - fields:
+                key: fields
+              value: value
+            - fields:
+                key: fields
+              value: value
+            fieldDefinitions:
+            - isRequired: true
+              isUnique: true
+              key: key
+            - isRequired: true
+              isUnique: true
+              key: key
           acceptableUnits:
           - schema: NoUnits
             code: code
@@ -77975,7 +78180,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
