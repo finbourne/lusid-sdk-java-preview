@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3633
+  version: 0.11.3634
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:53528
 security:
 - {}
 tags:
@@ -42184,6 +42184,9 @@ paths:
                   costBasisReportingCurrency:
                     amount: 128347
                     currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 1
                   effectiveDate: 2020-06-13T00:00:00.0000000+00:00
@@ -42230,6 +42233,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 2
                   effectiveDate: 2020-06-14T00:00:00.0000000+00:00
@@ -42276,6 +42282,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 3
                   effectiveDate: 2020-06-15T00:00:00.0000000+00:00
@@ -42322,6 +42331,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 4
                   effectiveDate: 2020-06-20T00:00:00.0000000+00:00
@@ -42368,6 +42380,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 5
                   effectiveDate: 2020-06-20T00:00:00.0000000+00:00
@@ -42414,6 +42429,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 6
                   effectiveDate: 2020-06-21T00:00:00.0000000+00:00
@@ -42460,6 +42478,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 7
                   effectiveDate: 2020-06-21T00:00:00.0000000+00:00
@@ -42506,6 +42527,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 8
                   effectiveDate: 2020-06-30T00:00:00.0000000+00:00
@@ -42535,6 +42559,9 @@ paths:
                   costBasisReportingCurrency:
                     amount: 63890.34
                     currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 2
                   sequenceNumber: 0
                   effectiveDate: 2020-06-01T00:00:00.0000000+00:00
@@ -42563,6 +42590,9 @@ paths:
                     currency: USD
                   costBasisReportingCurrency:
                     amount: 16744.39
+                    currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
                     currency: USD
                 - groupById: 2
                   sequenceNumber: 1
@@ -42610,6 +42640,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 2
                   sequenceNumber: 2
                   effectiveDate: 2020-06-18T00:00:00.0000000+00:00
@@ -42656,6 +42689,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 2
                   sequenceNumber: 3
                   effectiveDate: 2020-06-30T00:00:00.0000000+00:00
@@ -42684,6 +42720,9 @@ paths:
                     currency: USD
                   costBasisReportingCurrency:
                     amount: 77652.81
+                    currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
                     currency: USD
                 - groupById: 3
                   sequenceNumber: 0
@@ -42714,6 +42753,9 @@ paths:
                   costBasisReportingCurrency:
                     amount: 10000
                     currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 3
                   sequenceNumber: 1
                   effectiveDate: 2020-06-30T00:00:00.0000000+00:00
@@ -42741,6 +42783,9 @@ paths:
                     amount: 0
                     currency: USD
                   costBasisReportingCurrency:
+                    amount: 10000
+                    currency: USD
+                  unrealisedGainLossReportingCurrency:
                     amount: 10000
                     currency: USD
                 links: []
@@ -42778,6 +42823,9 @@ paths:
                   costBasisReportingCurrency:
                     amount: 128347
                     currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 1
                   effectiveDate: 2020-06-13T00:00:00.0000000+00:00
@@ -42824,6 +42872,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 2
                   effectiveDate: 2020-06-14T00:00:00.0000000+00:00
@@ -42870,6 +42921,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 3
                   effectiveDate: 2020-06-15T00:00:00.0000000+00:00
@@ -42916,6 +42970,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 4
                   effectiveDate: 2020-06-20T00:00:00.0000000+00:00
@@ -42962,6 +43019,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 5
                   effectiveDate: 2020-06-20T00:00:00.0000000+00:00
@@ -43008,6 +43068,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 6
                   effectiveDate: 2020-06-21T00:00:00.0000000+00:00
@@ -43054,6 +43117,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 7
                   effectiveDate: 2020-06-21T00:00:00.0000000+00:00
@@ -43100,6 +43166,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 8
                   effectiveDate: 2020-06-30T00:00:00.0000000+00:00
@@ -43129,6 +43198,9 @@ paths:
                   costBasisReportingCurrency:
                     amount: 63890.34
                     currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 2
                   sequenceNumber: 0
                   effectiveDate: 2020-06-01T00:00:00.0000000+00:00
@@ -43157,6 +43229,9 @@ paths:
                     currency: USD
                   costBasisReportingCurrency:
                     amount: 16744.39
+                    currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
                     currency: USD
                 - groupById: 2
                   sequenceNumber: 1
@@ -43204,6 +43279,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 2
                   sequenceNumber: 2
                   effectiveDate: 2020-06-18T00:00:00.0000000+00:00
@@ -43250,6 +43328,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 2
                   sequenceNumber: 3
                   effectiveDate: 2020-06-30T00:00:00.0000000+00:00
@@ -43278,6 +43359,9 @@ paths:
                     currency: USD
                   costBasisReportingCurrency:
                     amount: 77652.81
+                    currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
                     currency: USD
                 - groupById: 3
                   sequenceNumber: 0
@@ -43308,6 +43392,9 @@ paths:
                   costBasisReportingCurrency:
                     amount: 10000
                     currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 3
                   sequenceNumber: 1
                   effectiveDate: 2020-06-30T00:00:00.0000000+00:00
@@ -43335,6 +43422,9 @@ paths:
                     amount: 0
                     currency: USD
                   costBasisReportingCurrency:
+                    amount: 10000
+                    currency: USD
+                  unrealisedGainLossReportingCurrency:
                     amount: 10000
                     currency: USD
                 links: []
@@ -43372,6 +43462,9 @@ paths:
                   costBasisReportingCurrency:
                     amount: 128347
                     currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 1
                   effectiveDate: 2020-06-13T00:00:00.0000000+00:00
@@ -43418,6 +43511,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 2
                   effectiveDate: 2020-06-14T00:00:00.0000000+00:00
@@ -43464,6 +43560,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 3
                   effectiveDate: 2020-06-15T00:00:00.0000000+00:00
@@ -43510,6 +43609,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 4
                   effectiveDate: 2020-06-20T00:00:00.0000000+00:00
@@ -43556,6 +43658,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 5
                   effectiveDate: 2020-06-20T00:00:00.0000000+00:00
@@ -43602,6 +43707,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 6
                   effectiveDate: 2020-06-21T00:00:00.0000000+00:00
@@ -43648,6 +43756,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 7
                   effectiveDate: 2020-06-21T00:00:00.0000000+00:00
@@ -43694,6 +43805,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 1
                   sequenceNumber: 8
                   effectiveDate: 2020-06-30T00:00:00.0000000+00:00
@@ -43723,6 +43837,9 @@ paths:
                   costBasisReportingCurrency:
                     amount: 63890.34
                     currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 2
                   sequenceNumber: 0
                   effectiveDate: 2020-06-01T00:00:00.0000000+00:00
@@ -43751,6 +43868,9 @@ paths:
                     currency: USD
                   costBasisReportingCurrency:
                     amount: 16744.39
+                    currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
                     currency: USD
                 - groupById: 2
                   sequenceNumber: 1
@@ -43798,6 +43918,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 2
                   sequenceNumber: 2
                   effectiveDate: 2020-06-18T00:00:00.0000000+00:00
@@ -43844,6 +43967,9 @@ paths:
                     properties: {}
                     source: ""
                     entryDateTime: 0001-01-01T00:00:00.0000000+00:00
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 2
                   sequenceNumber: 3
                   effectiveDate: 2020-06-30T00:00:00.0000000+00:00
@@ -43872,6 +43998,9 @@ paths:
                     currency: USD
                   costBasisReportingCurrency:
                     amount: 77652.81
+                    currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
                     currency: USD
                 - groupById: 3
                   sequenceNumber: 0
@@ -43902,6 +44031,9 @@ paths:
                   costBasisReportingCurrency:
                     amount: 10000
                     currency: USD
+                  unrealisedGainLossReportingCurrency:
+                    amount: 0
+                    currency: USD
                 - groupById: 3
                   sequenceNumber: 1
                   effectiveDate: 2020-06-30T00:00:00.0000000+00:00
@@ -43929,6 +44061,9 @@ paths:
                     amount: 0
                     currency: USD
                   costBasisReportingCurrency:
+                    amount: 10000
+                    currency: USD
+                  unrealisedGainLossReportingCurrency:
                     amount: 10000
                     currency: USD
                 links: []
@@ -62891,6 +63026,9 @@ components:
         translationGainLoss:
           amount: 1.4658129805029452
           currency: currency
+        unrealisedGainLossReportingCurrency:
+          amount: 1.4658129805029452
+          currency: currency
         type: type
         balance:
           amount: 1.4658129805029452
@@ -62993,6 +63131,8 @@ components:
           $ref: '#/components/schemas/CurrencyAndAmount'
         transaction:
           $ref: '#/components/schemas/Transaction'
+        unrealisedGainLossReportingCurrency:
+          $ref: '#/components/schemas/CurrencyAndAmount'
         links:
           description: Collection of links.
           items:
@@ -63011,6 +63151,7 @@ components:
       - sequenceNumber
       - translationGainLoss
       - type
+      - unrealisedGainLossReportingCurrency
       type: object
     PortfolioCashLadder:
       additionalProperties: false
@@ -69233,6 +69374,9 @@ components:
           translationGainLoss:
             amount: 1.4658129805029452
             currency: currency
+          unrealisedGainLossReportingCurrency:
+            amount: 1.4658129805029452
+            currency: currency
           type: type
           balance:
             amount: 1.4658129805029452
@@ -69308,6 +69452,9 @@ components:
             amount: 1.4658129805029452
             currency: currency
           translationGainLoss:
+            amount: 1.4658129805029452
+            currency: currency
+          unrealisedGainLossReportingCurrency:
             amount: 1.4658129805029452
             currency: currency
           type: type
@@ -78180,7 +78327,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
