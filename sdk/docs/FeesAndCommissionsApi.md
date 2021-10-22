@@ -1,6 +1,6 @@
 # FeesAndCommissionsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:54254*
+All URIs are relative to *http://local-unit-test-server.lusid.com:50466*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getApplicableFees"></a>
 # **getApplicableFees**
-> ResourceListOfFeeCalculationDetails getApplicableFees(instrumentIdentifierType, instrumentIdentifier, portfolioScope, portfolioCode, additionalSearchKeys)
+> ResourceListOfFeeCalculationDetails getApplicableFees(instrumentIdentifierType, instrumentIdentifier, portfolioScope, portfolioCode, additionalSearchKeys, fileName)
 
 [EXPERIMENTAL] GetApplicableFees: Get the Fees and Commissions that may be applicable to a transaction.
 
@@ -29,7 +29,7 @@ import com.finbourne.lusid.api.FeesAndCommissionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54254");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:50466");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -41,8 +41,9 @@ public class Example {
     String portfolioScope = "portfolioScope_example"; // String | Optional. The scope of the portfolio to fetch additional properties from.
     String portfolioCode = "portfolioCode_example"; // String | Optional. The code of the portfolio to fetch additional properties from.
     List<String> additionalSearchKeys = Arrays.asList(); // List<String> | Any other property keys or fields and their corresponding values that should be matched for fees. Eg. \"Instrument/default/Name=exampleValue\" or \"AdditionalKey2=Value2\".              The list of fields available is as follows : \"RuleName\", \"Country\", \"FeeType\", \"FeeRate\", \"MinFee\", \"MaxFee\", \"PropertyKey\",               \"TransactionType\", \"Counterparty\", \"SettlementCurrency\", \"TransactionCurrency\", \"ExecutionBroker\",               \"Custodian\", \"Exchange\"
+    String fileName = "fileName_example"; // String | Optionally provide the filename of an alternative to the default fees file ({fees.csv})              in your {fees-and-commissions} Drive folder, to support different fee structures.              For example, you might use one to understand the effect of different fees when considering a change in broker.
     try {
-      ResourceListOfFeeCalculationDetails result = apiInstance.getApplicableFees(instrumentIdentifierType, instrumentIdentifier, portfolioScope, portfolioCode, additionalSearchKeys);
+      ResourceListOfFeeCalculationDetails result = apiInstance.getApplicableFees(instrumentIdentifierType, instrumentIdentifier, portfolioScope, portfolioCode, additionalSearchKeys, fileName);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeesAndCommissionsApi#getApplicableFees");
@@ -64,6 +65,7 @@ Name | Type | Description  | Notes
  **portfolioScope** | **String**| Optional. The scope of the portfolio to fetch additional properties from. | [optional]
  **portfolioCode** | **String**| Optional. The code of the portfolio to fetch additional properties from. | [optional]
  **additionalSearchKeys** | [**List&lt;String&gt;**](String.md)| Any other property keys or fields and their corresponding values that should be matched for fees. Eg. \&quot;Instrument/default/Name&#x3D;exampleValue\&quot; or \&quot;AdditionalKey2&#x3D;Value2\&quot;.              The list of fields available is as follows : \&quot;RuleName\&quot;, \&quot;Country\&quot;, \&quot;FeeType\&quot;, \&quot;FeeRate\&quot;, \&quot;MinFee\&quot;, \&quot;MaxFee\&quot;, \&quot;PropertyKey\&quot;,               \&quot;TransactionType\&quot;, \&quot;Counterparty\&quot;, \&quot;SettlementCurrency\&quot;, \&quot;TransactionCurrency\&quot;, \&quot;ExecutionBroker\&quot;,               \&quot;Custodian\&quot;, \&quot;Exchange\&quot; | [optional]
+ **fileName** | **String**| Optionally provide the filename of an alternative to the default fees file ({fees.csv})              in your {fees-and-commissions} Drive folder, to support different fee structures.              For example, you might use one to understand the effect of different fees when considering a change in broker. | [optional]
 
 ### Return type
 
@@ -87,7 +89,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllFees"></a>
 # **listAllFees**
-> ResourceListOfFeeCalculationDetails listAllFees(additionalSearchKeys)
+> ResourceListOfFeeCalculationDetails listAllFees(additionalSearchKeys, fileName)
 
 [EXPERIMENTAL] ListAllFees: List the rules available for fees and commissions.
 
@@ -106,7 +108,7 @@ import com.finbourne.lusid.api.FeesAndCommissionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:54254");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:50466");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -114,8 +116,9 @@ public class Example {
 
     FeesAndCommissionsApi apiInstance = new FeesAndCommissionsApi(defaultClient);
     List<String> additionalSearchKeys = Arrays.asList(); // List<String> | Any other property keys or fields and their corresponding values that should be matched to reduce the list of rules returned. Eg. \"Instrument/default/Name=exampleValue\" or \"AdditionalKey2=Value2\".              The minimum list of fields available is as follows : \"RuleName\", \"Country\", \"FeeCalculationMethod\", \"FeeMultiplier\", \"MinFeeCalculationMethod\",               \"MinFeeMultiplier\", \"MaxFeeCalculationMethod\", \"MaxFeeMultiplier\", \"PropertyKey\",               \"TransactionType\", \"Counterparty\", \"SettlementCurrency\", \"TransactionCurrency\", \"ExecutionBroker\",               \"Custodian\", \"Exchange\"
+    String fileName = "fileName_example"; // String | Optionally provide the filename of an alternative to the default fees file ({fees.csv})              in your Drive {fees-and-commissions} folder, to support different fee structures.              For example, you might use one to understand the effect of different fees when considering a change in broker.
     try {
-      ResourceListOfFeeCalculationDetails result = apiInstance.listAllFees(additionalSearchKeys);
+      ResourceListOfFeeCalculationDetails result = apiInstance.listAllFees(additionalSearchKeys, fileName);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeesAndCommissionsApi#listAllFees");
@@ -133,6 +136,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **additionalSearchKeys** | [**List&lt;String&gt;**](String.md)| Any other property keys or fields and their corresponding values that should be matched to reduce the list of rules returned. Eg. \&quot;Instrument/default/Name&#x3D;exampleValue\&quot; or \&quot;AdditionalKey2&#x3D;Value2\&quot;.              The minimum list of fields available is as follows : \&quot;RuleName\&quot;, \&quot;Country\&quot;, \&quot;FeeCalculationMethod\&quot;, \&quot;FeeMultiplier\&quot;, \&quot;MinFeeCalculationMethod\&quot;,               \&quot;MinFeeMultiplier\&quot;, \&quot;MaxFeeCalculationMethod\&quot;, \&quot;MaxFeeMultiplier\&quot;, \&quot;PropertyKey\&quot;,               \&quot;TransactionType\&quot;, \&quot;Counterparty\&quot;, \&quot;SettlementCurrency\&quot;, \&quot;TransactionCurrency\&quot;, \&quot;ExecutionBroker\&quot;,               \&quot;Custodian\&quot;, \&quot;Exchange\&quot; | [optional]
+ **fileName** | **String**| Optionally provide the filename of an alternative to the default fees file ({fees.csv})              in your Drive {fees-and-commissions} folder, to support different fee structures.              For example, you might use one to understand the effect of different fees when considering a change in broker. | [optional]
 
 ### Return type
 
