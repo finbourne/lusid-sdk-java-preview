@@ -19,5 +19,13 @@
 
 * `VALUE` (value: `"Value"`)
 
+* `SUMOFPOSITIVEVALUES` (value: `"SumOfPositiveValues"`)
+
+* `SUMOFNEGATIVEVALUES` (value: `"SumOfNegativeValues"`)
+
+* `SUMOFABSOLUTEVALUES` (value: `"SumOfAbsoluteValues"`)
+
+* `PROPORTIONOFABSOLUTEVALUES` (value: `"ProportionOfAbsoluteValues"`)
+
 
 

@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3645
+  version: 0.11.3646
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:31430
 security:
 - {}
 tags:
@@ -48756,7 +48756,8 @@ components:
           type: string
         op:
           description: 'The available values are: Sum, Proportion, Average, Count,
-            Min, Max, Value'
+            Min, Max, Value, SumOfPositiveValues, SumOfNegativeValues, SumOfAbsoluteValues,
+            ProportionOfAbsoluteValues'
           enum:
           - Sum
           - Proportion
@@ -48765,6 +48766,10 @@ components:
           - Min
           - Max
           - Value
+          - SumOfPositiveValues
+          - SumOfNegativeValues
+          - SumOfAbsoluteValues
+          - ProportionOfAbsoluteValues
           type: string
       required:
       - key
@@ -48821,6 +48826,10 @@ components:
       - Min
       - Max
       - Value
+      - SumOfPositiveValues
+      - SumOfNegativeValues
+      - SumOfAbsoluteValues
+      - ProportionOfAbsoluteValues
       type: string
     AggregationOptions:
       additionalProperties: false
@@ -77665,7 +77674,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
