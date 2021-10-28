@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**modelOptionsType** | [**ModelOptionsTypeEnum**](#ModelOptionsTypeEnum) | The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions | 
+**modelOptionsType** | [**ModelOptionsTypeEnum**](#ModelOptionsTypeEnum) | The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions, IndexModelOptions | 
 
 
 
@@ -18,6 +18,7 @@ Name | Value
 INVALID | &quot;Invalid&quot;
 OPAQUEMODELOPTIONS | &quot;OpaqueModelOptions&quot;
 EMPTYMODELOPTIONS | &quot;EmptyModelOptions&quot;
+INDEXMODELOPTIONS | &quot;IndexModelOptions&quot;
 
 
 

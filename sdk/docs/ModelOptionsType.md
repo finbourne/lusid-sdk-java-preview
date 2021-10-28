@@ -11,5 +11,7 @@
 
 * `EMPTYMODELOPTIONS` (value: `"EmptyModelOptions"`)
 
+* `INDEXMODELOPTIONS` (value: `"IndexModelOptions"`)
+
 
 

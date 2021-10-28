@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3657
+  version: 0.11.3659
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:45241
 security:
 - {}
 tags:
@@ -31855,6 +31855,7 @@ paths:
                         parameters: ""
                         modelOptions:
                           modelOptionsType: EmptyModelOptions
+                        instrumentId: ""
                       modelChoice: {}
                       options:
                         modelSelection:
@@ -31959,6 +31960,7 @@ paths:
                         parameters: ""
                         modelOptions:
                           modelOptionsType: EmptyModelOptions
+                        instrumentId: ""
                       modelChoice: {}
                       options:
                         modelSelection:
@@ -32063,6 +32065,7 @@ paths:
                         parameters: ""
                         modelOptions:
                           modelOptionsType: EmptyModelOptions
+                        instrumentId: ""
                       modelChoice: {}
                       options:
                         modelSelection:
@@ -32551,6 +32554,7 @@ paths:
                       parameters: ""
                       modelOptions:
                         modelOptionsType: EmptyModelOptions
+                      instrumentId: ""
                     modelChoice: {}
                     options:
                       modelSelection:
@@ -32604,6 +32608,7 @@ paths:
                       parameters: ""
                       modelOptions:
                         modelOptionsType: EmptyModelOptions
+                      instrumentId: ""
                     modelChoice: {}
                     options:
                       modelSelection:
@@ -32657,6 +32662,7 @@ paths:
                       parameters: ""
                       modelOptions:
                         modelOptionsType: EmptyModelOptions
+                      instrumentId: ""
                     modelChoice: {}
                     options:
                       modelSelection:
@@ -50794,12 +50800,14 @@ components:
           modelRules:
           - modelName: modelName
             instrumentType: instrumentType
+            instrumentId: instrumentId
             supplier: Lusid
             parameters: parameters
             modelOptions:
               modelOptionsType: Invalid
           - modelName: modelName
             instrumentType: instrumentType
+            instrumentId: instrumentId
             supplier: Lusid
             parameters: parameters
             modelOptions:
@@ -51006,12 +51014,14 @@ components:
             modelRules:
             - modelName: modelName
               instrumentType: instrumentType
+              instrumentId: instrumentId
               supplier: Lusid
               parameters: parameters
               modelOptions:
                 modelOptionsType: Invalid
             - modelName: modelName
               instrumentType: instrumentType
+              instrumentId: instrumentId
               supplier: Lusid
               parameters: parameters
               modelOptions:
@@ -51019,12 +51029,14 @@ components:
         modelRules:
         - modelName: modelName
           instrumentType: instrumentType
+          instrumentId: instrumentId
           supplier: Lusid
           parameters: parameters
           modelOptions:
             modelOptionsType: Invalid
         - modelName: modelName
           instrumentType: instrumentType
+          instrumentId: instrumentId
           supplier: Lusid
           parameters: parameters
           modelOptions:
@@ -52210,12 +52222,14 @@ components:
             modelRules:
             - modelName: modelName
               instrumentType: instrumentType
+              instrumentId: instrumentId
               supplier: Lusid
               parameters: parameters
               modelOptions:
                 modelOptionsType: Invalid
             - modelName: modelName
               instrumentType: instrumentType
+              instrumentId: instrumentId
               supplier: Lusid
               parameters: parameters
               modelOptions:
@@ -55380,12 +55394,14 @@ components:
             modelRules:
             - modelName: modelName
               instrumentType: instrumentType
+              instrumentId: instrumentId
               supplier: Lusid
               parameters: parameters
               modelOptions:
                 modelOptionsType: Invalid
             - modelName: modelName
               instrumentType: instrumentType
+              instrumentId: instrumentId
               supplier: Lusid
               parameters: parameters
               modelOptions:
@@ -56003,6 +56019,10 @@ components:
       - paymentTenor
       - publicationDayLag
       type: object
+    IndexModelOptions:
+      allOf:
+      - $ref: '#/components/schemas/ModelOptions'
+      - $ref: '#/components/schemas/IndexModelOptions_allOf'
     IndustryClassifier:
       additionalProperties: false
       description: "Object describing a particular industry classifier,\r\nwhich comprises\
@@ -57770,11 +57790,13 @@ components:
         modelOptionsType: Invalid
       properties:
         modelOptionsType:
-          description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions'
+          description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
+            IndexModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
           - EmptyModelOptions
+          - IndexModelOptions
           type: string
       required:
       - modelOptionsType
@@ -57784,6 +57806,7 @@ components:
       - Invalid
       - OpaqueModelOptions
       - EmptyModelOptions
+      - IndexModelOptions
       type: string
     ModelSelection:
       additionalProperties: false
@@ -63433,12 +63456,14 @@ components:
         modelRules:
         - modelName: modelName
           instrumentType: instrumentType
+          instrumentId: instrumentId
           supplier: Lusid
           parameters: parameters
           modelOptions:
             modelOptionsType: Invalid
         - modelName: modelName
           instrumentType: instrumentType
+          instrumentId: instrumentId
           supplier: Lusid
           parameters: parameters
           modelOptions:
@@ -67619,12 +67644,14 @@ components:
               modelRules:
               - modelName: modelName
                 instrumentType: instrumentType
+                instrumentId: instrumentId
                 supplier: Lusid
                 parameters: parameters
                 modelOptions:
                   modelOptionsType: Invalid
               - modelName: modelName
                 instrumentType: instrumentType
+                instrumentId: instrumentId
                 supplier: Lusid
                 parameters: parameters
                 modelOptions:
@@ -67720,12 +67747,14 @@ components:
               modelRules:
               - modelName: modelName
                 instrumentType: instrumentType
+                instrumentId: instrumentId
                 supplier: Lusid
                 parameters: parameters
                 modelOptions:
                   modelOptionsType: Invalid
               - modelName: modelName
                 instrumentType: instrumentType
+                instrumentId: instrumentId
                 supplier: Lusid
                 parameters: parameters
                 modelOptions:
@@ -70298,6 +70327,12 @@ components:
           nullable: true
           type: object
       type: object
+    ScalingMethodology:
+      enum:
+      - Sum
+      - AbsoluteSum
+      - Unity
+      type: string
     Schema:
       additionalProperties: false
       example:
@@ -70941,12 +70976,14 @@ components:
           transactionClass: transactionClass
           transactionGroup: transactionGroup
           description: description
+          source: source
           type: type
         - transactionRoles: None
           isDefault: true
           transactionClass: transactionClass
           transactionGroup: transactionGroup
           description: description
+          source: source
           type: type
         movements:
         - side: side
@@ -71038,12 +71075,14 @@ components:
           transactionClass: transactionClass
           transactionGroup: transactionGroup
           description: description
+          source: source
           type: type
         - transactionRoles: None
           isDefault: true
           transactionClass: transactionClass
           transactionGroup: transactionGroup
           description: description
+          source: source
           type: type
         movements:
         - side: side
@@ -71294,6 +71333,7 @@ components:
         transactionClass: transactionClass
         transactionGroup: transactionGroup
         description: description
+        source: source
         type: type
       properties:
         type:
@@ -71306,7 +71346,16 @@ components:
           description: Relates types of a similar class. E.g. Buy/Sell, StockIn/StockOut
           type: string
         transactionGroup:
-          description: Group is a set of codes related to a source, or sync
+          description: 'Group is a set of codes related to a source, or sync. DEPRECATED:
+            This field will be removed, use `Source` instead'
+          nullable: true
+          type: string
+        source:
+          description: Used to group a set of transaction types
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         transactionRoles:
           description: '. The available values are: None, LongLonger, LongShorter,
@@ -71328,7 +71377,6 @@ components:
       required:
       - description
       - transactionClass
-      - transactionGroup
       - transactionRoles
       - type
       type: object
@@ -71604,12 +71652,14 @@ components:
             transactionClass: transactionClass
             transactionGroup: transactionGroup
             description: description
+            source: source
             type: type
           - transactionRoles: None
             isDefault: true
             transactionClass: transactionClass
             transactionGroup: transactionGroup
             description: description
+            source: source
             type: type
           movements:
           - side: side
@@ -71676,12 +71726,14 @@ components:
             transactionClass: transactionClass
             transactionGroup: transactionGroup
             description: description
+            source: source
             type: type
           - transactionRoles: None
             isDefault: true
             transactionClass: transactionClass
             transactionGroup: transactionGroup
             description: description
+            source: source
             type: type
           movements:
           - side: side
@@ -71774,12 +71826,14 @@ components:
             transactionClass: transactionClass
             transactionGroup: transactionGroup
             description: description
+            source: source
             type: type
           - transactionRoles: None
             isDefault: true
             transactionClass: transactionClass
             transactionGroup: transactionGroup
             description: description
+            source: source
             type: type
           movements:
           - side: side
@@ -71846,12 +71900,14 @@ components:
             transactionClass: transactionClass
             transactionGroup: transactionGroup
             description: description
+            source: source
             type: type
           - transactionRoles: None
             isDefault: true
             transactionClass: transactionClass
             transactionGroup: transactionGroup
             description: description
+            source: source
             type: type
           movements:
           - side: side
@@ -73289,12 +73345,14 @@ components:
             modelRules:
             - modelName: modelName
               instrumentType: instrumentType
+              instrumentId: instrumentId
               supplier: Lusid
               parameters: parameters
               modelOptions:
                 modelOptionsType: Invalid
             - modelName: modelName
               instrumentType: instrumentType
+              instrumentId: instrumentId
               supplier: Lusid
               parameters: parameters
               modelOptions:
@@ -73424,12 +73482,14 @@ components:
               modelRules:
               - modelName: modelName
                 instrumentType: instrumentType
+                instrumentId: instrumentId
                 supplier: Lusid
                 parameters: parameters
                 modelOptions:
                   modelOptionsType: Invalid
               - modelName: modelName
                 instrumentType: instrumentType
+                instrumentId: instrumentId
                 supplier: Lusid
                 parameters: parameters
                 modelOptions:
@@ -73437,12 +73497,14 @@ components:
           modelRules:
           - modelName: modelName
             instrumentType: instrumentType
+            instrumentId: instrumentId
             supplier: Lusid
             parameters: parameters
             modelOptions:
               modelOptionsType: Invalid
           - modelName: modelName
             instrumentType: instrumentType
+            instrumentId: instrumentId
             supplier: Lusid
             parameters: parameters
             modelOptions:
@@ -74158,6 +74220,7 @@ components:
       example:
         modelName: modelName
         instrumentType: instrumentType
+        instrumentId: instrumentId
         supplier: Lusid
         parameters: parameters
         modelOptions:
@@ -74190,6 +74253,17 @@ components:
           type: string
         modelOptions:
           $ref: '#/components/schemas/ModelOptions'
+        instrumentId:
+          description: "This field should generally not be required. It indicates\
+            \ a specific case where there is a particular need to make a rule apply\
+            \ to only a single instrument\r\nspecified by an identifier on that instrument\
+            \ such as its LUID. One particular example would be to control the behaviour\
+            \ of a look-through portfolio scaling\r\nmethodology, such as where there\
+            \ is a mixture of indices and credit-debit portfolios where scaling on\
+            \ the sum of valuation would be deemed incorrectly for one\r\nset but\
+            \ desired in general."
+          nullable: true
+          type: string
       required:
       - instrumentType
       - modelName
@@ -75709,11 +75783,13 @@ components:
     EmptyModelOptions_allOf:
       properties:
         modelOptionsType:
-          description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions'
+          description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
+            IndexModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
           - EmptyModelOptions
+          - IndexModelOptions
           type: string
       required:
       - modelOptionsType
@@ -77032,6 +77108,28 @@ components:
       - instrumentType
       - nearFxForward
       type: object
+    IndexModelOptions_allOf:
+      properties:
+        portfolioScaling:
+          description: 'The available values are: Sum, AbsoluteSum, Unity'
+          enum:
+          - Sum
+          - AbsoluteSum
+          - Unity
+          type: string
+        modelOptionsType:
+          description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
+            IndexModelOptions'
+          enum:
+          - Invalid
+          - OpaqueModelOptions
+          - EmptyModelOptions
+          - IndexModelOptions
+          type: string
+      required:
+      - modelOptionsType
+      - portfolioScaling
+      type: object
     InstrumentLeg_allOf:
       properties:
         instrumentType:
@@ -77315,11 +77413,13 @@ components:
             type: object
           type: object
         modelOptionsType:
-          description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions'
+          description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
+            IndexModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
           - EmptyModelOptions
+          - IndexModelOptions
           type: string
       required:
       - data
@@ -77674,7 +77774,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
