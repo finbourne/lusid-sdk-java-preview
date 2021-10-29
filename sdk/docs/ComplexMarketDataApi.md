@@ -1,6 +1,6 @@
 # ComplexMarketDataApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:33498*
+All URIs are relative to *http://local-unit-test-server.lusid.com:34588*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,7 +30,7 @@ import com.finbourne.lusid.api.ComplexMarketDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:33498");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34588");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -101,7 +101,7 @@ import com.finbourne.lusid.api.ComplexMarketDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:33498");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34588");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -178,7 +178,7 @@ import com.finbourne.lusid.api.ComplexMarketDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:33498");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:34588");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The successfully updated or inserted StructuredMarketData along with any failures |  -  |
+**200** | The successfully updated or inserted ComplexMarketData along with any failures |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
