@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **executionIds** | [**List&lt;ResourceId&gt;**](ResourceId.md) | Identifiers of all executions against placements in the block. | 
 **ordered** | [**OrderGraphSynopsis**](OrderGraphSynopsis.md) |  | 
 **placed** | [**OrderGraphSynopsis**](OrderGraphSynopsis.md) |  | 
-**allocated** | [**OrderGraphSynopsis**](OrderGraphSynopsis.md) |  | 
 **executed** | [**OrderGraphSynopsis**](OrderGraphSynopsis.md) |  | 
+**allocated** | [**OrderGraphSynopsis**](OrderGraphSynopsis.md) |  | 
 **derivedState** | **String** | A simple description of the overall state of a block. | 
 
 

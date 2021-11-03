@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3674
+  version: 0.11.3675
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:42122
+- url: http://local-unit-test-server.lusid.com:40719
 security:
 - {}
 tags:
@@ -15156,11 +15156,11 @@ paths:
                     quantity: 1500
                   placed:
                     quantity: 1250
-                  allocated:
-                    quantity: 1100
                   executed:
+                    quantity: 1100
+                  allocated:
                     quantity: 800
-                  derivedState: In progress
+                  derivedState: Partially placed
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphBlock'
@@ -15220,11 +15220,11 @@ paths:
                     quantity: 1500
                   placed:
                     quantity: 1250
-                  allocated:
-                    quantity: 1100
                   executed:
+                    quantity: 1100
+                  allocated:
                     quantity: 800
-                  derivedState: In progress
+                  derivedState: Partially placed
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphBlock'
@@ -15284,11 +15284,11 @@ paths:
                     quantity: 1500
                   placed:
                     quantity: 1250
-                  allocated:
-                    quantity: 1100
                   executed:
+                    quantity: 1100
+                  allocated:
                     quantity: 800
-                  derivedState: In progress
+                  derivedState: Partially placed
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphBlock'
@@ -58220,9 +58220,9 @@ components:
           $ref: '#/components/schemas/OrderGraphSynopsis'
         placed:
           $ref: '#/components/schemas/OrderGraphSynopsis'
-        allocated:
-          $ref: '#/components/schemas/OrderGraphSynopsis'
         executed:
+          $ref: '#/components/schemas/OrderGraphSynopsis'
+        allocated:
           $ref: '#/components/schemas/OrderGraphSynopsis'
         derivedState:
           description: A simple description of the overall state of a block.
