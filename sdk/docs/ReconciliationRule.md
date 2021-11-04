@@ -9,7 +9,6 @@ A rule describing how a comparison between two items in the reconciliation shoul
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ruleType** | [**RuleTypeEnum**](#RuleTypeEnum) | The available values are: ReconcileNumericRule, ReconcileDateTimeRule, ReconcileStringRule, ReconcileExact | 
-**appliesTo** | [**AggregateSpec**](AggregateSpec.md) |  | 
 
 
 

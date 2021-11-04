@@ -271,12 +271,12 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3687
+  version: 0.11.3688
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:46559
+- url: http://local-unit-test-server.lusid.com:64488
 security:
 - {}
 tags:
@@ -26275,10 +26275,10 @@ paths:
               comparisonRules:
               - comparisonType: AbsoluteDifference
                 tolerance: 1.2345
-                ruleType: ReconcileNumericRule
                 appliesTo:
                   key: Holding/default/PV
                   op: Sum
+                ruleType: ReconcileNumericRule
               preserveKeys:
               - Instrument/default/Name
             schema:
@@ -26347,10 +26347,10 @@ paths:
               comparisonRules:
               - comparisonType: AbsoluteDifference
                 tolerance: 1.2345
-                ruleType: ReconcileNumericRule
                 appliesTo:
                   key: Holding/default/PV
                   op: Sum
+                ruleType: ReconcileNumericRule
               preserveKeys:
               - Instrument/default/Name
             schema:
@@ -26419,10 +26419,10 @@ paths:
               comparisonRules:
               - comparisonType: AbsoluteDifference
                 tolerance: 1.2345
-                ruleType: ReconcileNumericRule
                 appliesTo:
                   key: Holding/default/PV
                   op: Sum
+                ruleType: ReconcileNumericRule
               preserveKeys:
               - Instrument/default/Name
             schema:
@@ -26491,10 +26491,10 @@ paths:
               comparisonRules:
               - comparisonType: AbsoluteDifference
                 tolerance: 1.2345
-                ruleType: ReconcileNumericRule
                 appliesTo:
                   key: Holding/default/PV
                   op: Sum
+                ruleType: ReconcileNumericRule
               preserveKeys:
               - Instrument/default/Name
             schema:
@@ -65035,13 +65035,7 @@ components:
       example:
         comparisonRules:
         - ruleType: ReconcileNumericRule
-          appliesTo:
-            op: Sum
-            key: key
         - ruleType: ReconcileNumericRule
-          appliesTo:
-            op: Sum
-            key: key
         preserveKeys:
         - preserveKeys
         - preserveKeys
@@ -65243,9 +65237,6 @@ components:
         propertyName: reconciliationRuleType
       example:
         ruleType: ReconcileNumericRule
-        appliesTo:
-          op: Sum
-          key: key
       properties:
         ruleType:
           description: 'The available values are: ReconcileNumericRule, ReconcileDateTimeRule,
@@ -65256,10 +65247,7 @@ components:
           - ReconcileStringRule
           - ReconcileExact
           type: string
-        appliesTo:
-          $ref: '#/components/schemas/AggregateSpec'
       required:
-      - appliesTo
       - ruleType
       type: object
     ReconciliationRuleType:
@@ -78120,6 +78108,8 @@ components:
             \ If fewer than a single day then this should be\r\npassed as a fraction."
           format: double
           type: number
+        appliesTo:
+          $ref: '#/components/schemas/AggregateSpec'
         ruleType:
           description: 'The available values are: ReconcileNumericRule, ReconcileDateTimeRule,
             ReconcileStringRule, ReconcileExact'
@@ -78129,8 +78119,6 @@ components:
           - ReconcileStringRule
           - ReconcileExact
           type: string
-        appliesTo:
-          $ref: '#/components/schemas/AggregateSpec'
       required:
       - appliesTo
       - comparisonType
@@ -78154,6 +78142,8 @@ components:
             \ If fewer than a single day then this should be\r\npassed as a fraction."
           format: double
           type: number
+        appliesTo:
+          $ref: '#/components/schemas/AggregateSpec'
         ruleType:
           description: 'The available values are: ReconcileNumericRule, ReconcileDateTimeRule,
             ReconcileStringRule, ReconcileExact'
@@ -78163,8 +78153,6 @@ components:
           - ReconcileStringRule
           - ReconcileExact
           type: string
-        appliesTo:
-          $ref: '#/components/schemas/AggregateSpec'
       required:
       - appliesTo
       - comparisonType
@@ -78198,6 +78186,8 @@ components:
             \ will be slow and should therefore be used sparingly."
           nullable: true
           type: object
+        appliesTo:
+          $ref: '#/components/schemas/AggregateSpec'
         ruleType:
           description: 'The available values are: ReconcileNumericRule, ReconcileDateTimeRule,
             ReconcileStringRule, ReconcileExact'
@@ -78207,8 +78197,6 @@ components:
           - ReconcileStringRule
           - ReconcileExact
           type: string
-        appliesTo:
-          $ref: '#/components/schemas/AggregateSpec'
       required:
       - appliesTo
       - comparisonType
