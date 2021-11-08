@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3697
+  version: 0.11.3699
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:48600
 security:
 - {}
 tags:
@@ -37169,6 +37169,66 @@ paths:
       - System Configuration
       x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/systemconfiguration/transactions/type/{source}:
+    delete:
+      description: "/// WARNING! Changing existing transaction types has a material\
+        \ impact on how data, new and old,\r\nis processed and aggregated by LUSID,\
+        \ and will affect your whole organisation. Only call this API if you are fully\
+        \ aware of the implications of the change."
+      operationId: DeleteTransactionConfigurationSource
+      parameters:
+      - description: The source to delete transaction configurations for
+        explode: false
+        in: path
+        name: source
+        required: true
+        schema:
+          description: The source to delete transaction configurations for
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+          description: Success
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] DeleteTransactionConfigurationSource: Delete all transaction
+        configurations for a source'
+      tags:
+      - System Configuration
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/transactionportfolios/{scope}:
     post:
@@ -78555,7 +78615,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
