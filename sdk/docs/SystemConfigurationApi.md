@@ -1,12 +1,13 @@
 # SystemConfigurationApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:42907*
+All URIs are relative to *http://local-unit-test-server.lusid.com:56988*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createConfigurationTransactionType**](SystemConfigurationApi.md#createConfigurationTransactionType) | **POST** /api/systemconfiguration/transactions/type | [EARLY ACCESS] CreateConfigurationTransactionType: Create transaction type
 [**createSideDefinition**](SystemConfigurationApi.md#createSideDefinition) | **POST** /api/systemconfiguration/transactions/side | [EXPERIMENTAL] CreateSideDefinition: Create side definition
 [**deleteTransactionConfigurationSource**](SystemConfigurationApi.md#deleteTransactionConfigurationSource) | **DELETE** /api/systemconfiguration/transactions/type/{source} | [EXPERIMENTAL] DeleteTransactionConfigurationSource: Delete all transaction configurations for a source
+[**getTransactionConfigurationSource**](SystemConfigurationApi.md#getTransactionConfigurationSource) | **GET** /api/systemconfiguration/transactions/type/{source} | [EXPERIMENTAL] GetTransactionConfigurationSource: Get all transaction configurations for a source
 [**listConfigurationTransactionTypes**](SystemConfigurationApi.md#listConfigurationTransactionTypes) | **GET** /api/systemconfiguration/transactions | [EARLY ACCESS] ListConfigurationTransactionTypes: List transaction types
 [**setConfigurationTransactionTypes**](SystemConfigurationApi.md#setConfigurationTransactionTypes) | **PUT** /api/systemconfiguration/transactions | [EXPERIMENTAL] SetConfigurationTransactionTypes: Set transaction types
 
@@ -32,7 +33,7 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42907");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:56988");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -101,7 +102,7 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42907");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:56988");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -170,7 +171,7 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42907");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:56988");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -218,6 +219,77 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="getTransactionConfigurationSource"></a>
+# **getTransactionConfigurationSource**
+> TransactionSetConfigurationData getTransactionConfigurationSource(source, asAt)
+
+[EXPERIMENTAL] GetTransactionConfigurationSource: Get all transaction configurations for a source
+
+Returns failure if requested source is not found
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.SystemConfigurationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:56988");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    SystemConfigurationApi apiInstance = new SystemConfigurationApi(defaultClient);
+    String source = "source_example"; // String | The source for which to retrieve transaction configurations
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the transaction configurations.              Defaults to returning the latest version of the transaction configurations if not specified.
+    try {
+      TransactionSetConfigurationData result = apiInstance.getTransactionConfigurationSource(source, asAt);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SystemConfigurationApi#getTransactionConfigurationSource");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | **String**| The source for which to retrieve transaction configurations |
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the transaction configurations.              Defaults to returning the latest version of the transaction configurations if not specified. | [optional]
+
+### Return type
+
+[**TransactionSetConfigurationData**](TransactionSetConfigurationData.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="listConfigurationTransactionTypes"></a>
 # **listConfigurationTransactionTypes**
 > TransactionSetConfigurationData listConfigurationTransactionTypes(asAt)
@@ -239,7 +311,7 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42907");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:56988");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -308,7 +380,7 @@ import com.finbourne.lusid.api.SystemConfigurationApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42907");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:56988");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
