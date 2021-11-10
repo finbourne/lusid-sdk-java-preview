@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3704
+  version: 0.11.3705
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:40158
+- url: http://local-unit-test-server.lusid.com:36718
 security:
 - {}
 tags:
@@ -14411,10 +14411,7 @@ paths:
         required: false
         schema:
           description: The requested version of the Excel plugin
-          maxLength: 30
-          minLength: 1
           nullable: true
-          pattern: ^\d+\.\d+\.\d+(-[a-zA-Z0-9\.-]{1,30})?$
           type: string
         style: form
       responses:
@@ -19297,9 +19294,6 @@ paths:
         required: true
         schema:
           description: Key of the metadata entry to retrieve
-          maxLength: 100
-          minLength: 1
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The effective date to delete at, if this is not supplied, it
@@ -49074,12 +49068,8 @@ components:
         value: value
       properties:
         value:
-          maxLength: 2048
-          minLength: 0
           type: string
         provider:
-          maxLength: 50
-          minLength: 0
           nullable: true
           type: string
       required:
@@ -50485,8 +50475,6 @@ components:
           description: "Three letter ISO currency string indicating what currency\
             \ to report in for ReportCurrency denominated queries.\r\nIf not present,\
             \ then the currency of the relevant portfolio will be used in its place."
-          maxLength: 3
-          minLength: 0
           nullable: true
           type: string
         asAt:
@@ -50801,8 +50789,6 @@ components:
         rollFrequency:
           description: The frequency at which the reference bonds are updated, this
             defaults to 6M, but can be 3M, exp for historically issued products
-          maxLength: 16
-          minLength: 0
           nullable: true
           type: string
         currency:
@@ -50813,8 +50799,6 @@ components:
             \ the flow is not given but the start date is,\r\nthe tenor is the time-step\
             \ from the anchor-date to the nominal maturity of the flow prior to any\
             \ adjustment."
-          maxLength: 16
-          minLength: 0
           type: string
         dayCountConvention:
           description: "when calculating the fraction of a year between two dates,\
@@ -50825,8 +50809,6 @@ components:
             \ ActActIsma, ActActIcma, OneOne, Act364, Act365F, Act365L, Act365_25,\
             \ Act252, Bus252, NL360, NL365, ActActAFB, Act365Cad, ThirtyActIsda, Thirty365Isda,\
             \ ThirtyEActIsda, ThirtyE360Isda, ThirtyE365Isda, ThirtyU360EOM]."
-          maxLength: 16
-          minLength: 0
           type: string
         rollConvention:
           description: "When generating a set of dates, what convention should be\
@@ -50834,8 +50816,6 @@ components:
             Supported string (enumeration) values are: [NoAdjustment, None, Previous,\
             \ P, Following, F, ModifiedPrevious, MP, ModifiedFollowing, MF, EndOfMonth,\
             \ EOM, EndOfMonthPrevious, EOMP, EndOfMonthFollowing, EOMF]."
-          maxLength: 16
-          minLength: 0
           type: string
         paymentCalendars:
           description: An array of strings denoting holiday calendars that apply to
@@ -50861,17 +50841,11 @@ components:
           type: integer
         scope:
           description: The scope used when updating or inserting the convention.
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         code:
           description: The code of the convention.
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
       required:
       - currency
@@ -51307,20 +51281,14 @@ components:
         provider:
           description: The platform or vendor that provided the complex market data,
             e.g. 'DataScope', 'LUSID', 'ISDA' etc.
-          maxLength: 32
-          minLength: 0
           type: string
         priceSource:
           description: The source or originator of the complex market data, e.g. a
             bank or financial institution.
-          maxLength: 256
-          minLength: 0
           nullable: true
           type: string
         lineage:
           description: Description of the complex market data's lineage e.g. 'FundAccountant_GreenQuality'.
-          maxLength: 1024
-          minLength: 0
           nullable: true
           type: string
         effectiveAt:
@@ -51331,8 +51299,6 @@ components:
           type: string
         marketAsset:
           description: The name of the market entity that the document represents
-          maxLength: 32
-          minLength: 0
           nullable: true
           type: string
       required:
@@ -52054,8 +52020,6 @@ components:
           description: A user-defined field to capture the type of agreement this
             represents. Examples might be "ISDA 2002 Master Agreement" or "ISDA 1992
             Master Agreement".
-          maxLength: 256
-          minLength: 0
           type: string
         counterpartySignatory:
           $ref: '#/components/schemas/CounterpartySignatory'
@@ -53431,22 +53395,16 @@ components:
           description: "The transactions will take place with reference to a particular\
             \ ISDA master agreement. This\r\nwill likely be either the ISDA 1992 or\
             \ ISDA 2002 agremeents or ISDA close-out 2009."
-          maxLength: 128
-          minLength: 0
           type: string
         marginCallFrequency:
           description: "The tenor, e.g. daily (1D) or biweekly (2W), at which frequency\
             \ a margin call will be made, calculations\r\nmade and money transferred\
             \ to readjust. The calculation might also require a specific time for\
             \ valuation and notification."
-          maxLength: 32
-          minLength: 0
           type: string
         valuationAgent:
           description: Are the calculations performed by the institutions's counterparty
             or the institution trading with them.
-          maxLength: 256
-          minLength: 0
           type: string
         thresholdAmount:
           description: "At what level of exposure does collateral need to be posted.\
@@ -53893,17 +53851,12 @@ components:
           type: string
         name:
           description: The name of the data item. This is the name that will appear
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         dataType:
           description: "A member of the set of possible data types, that all data\
             \ passed under that key is expected to be of.\r\nCurrently limited to\
             \ one of [string, integer, decimal]."
-          maxLength: 128
-          minLength: 0
           nullable: true
           type: string
         keyType:
@@ -53911,8 +53864,6 @@ components:
             \ it identify a unique index or conceptual 'row' within the list of dictionaries,\r\
             \nor a partial key or is it simply a data item within that dictionary.\
             \ Must be one of [Unique,PartOfUnique,Leaf]"
-          maxLength: 128
-          minLength: 0
           nullable: true
           type: string
       type: object
@@ -53926,17 +53877,11 @@ components:
           description: "The version of the mappings. It is possible that a client\
             \ will wish to update mappings over time. The version identifies the MAJOR.MINOR.PATCH\
             \ version\r\nof the mappings that the client assigns it."
-          maxLength: 32
-          minLength: 0
           nullable: true
-          pattern: ^\d+\.\d+\.\d+(-[a-zA-Z0-9\.-]{1,30})?$
           type: string
         code:
           description: A unique name to semantically identify the mapping set.
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
       type: object
     DataMapping:
@@ -55209,8 +55154,6 @@ components:
             \ the flow is not given but the start date is,\r\nthe tenor is the time-step\
             \ from the anchor-date to the nominal maturity of the flow prior to any\
             \ adjustment."
-          maxLength: 16
-          minLength: 0
           type: string
         dayCountConvention:
           description: "when calculating the fraction of a year between two dates,\
@@ -55221,8 +55164,6 @@ components:
             \ ActActIsma, ActActIcma, OneOne, Act364, Act365F, Act365L, Act365_25,\
             \ Act252, Bus252, NL360, NL365, ActActAFB, Act365Cad, ThirtyActIsda, Thirty365Isda,\
             \ ThirtyEActIsda, ThirtyE360Isda, ThirtyE365Isda, ThirtyU360EOM]."
-          maxLength: 16
-          minLength: 0
           type: string
         rollConvention:
           description: "When generating a set of dates, what convention should be\
@@ -55230,8 +55171,6 @@ components:
             Supported string (enumeration) values are: [NoAdjustment, None, Previous,\
             \ P, Following, F, ModifiedPrevious, MP, ModifiedFollowing, MF, EndOfMonth,\
             \ EOM, EndOfMonthPrevious, EOMP, EndOfMonthFollowing, EOMF]."
-          maxLength: 16
-          minLength: 0
           type: string
         paymentCalendars:
           description: An array of strings denoting holiday calendars that apply to
@@ -55257,17 +55196,11 @@ components:
           type: integer
         scope:
           description: The scope used when updating or inserting the convention.
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         code:
           description: The code of the convention.
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
       required:
       - currency
@@ -56698,8 +56631,6 @@ components:
       properties:
         fixingReference:
           description: The reference rate name for fixings
-          maxLength: 64
-          minLength: 0
           type: string
         publicationDayLag:
           description: Number of days between spot and publication of the rate.
@@ -56709,8 +56640,6 @@ components:
           description: The tenor of the payment. For an OIS index this is always 1
             day. For other indices, e.g. LIBOR it will have a variable tenor typically
             between 1 day and 1 year.
-          maxLength: 32
-          minLength: 0
           type: string
         dayCountConvention:
           description: "when calculating the fraction of a year between two dates,\
@@ -56720,25 +56649,17 @@ components:
             \ ThirtyU360, Bond, ThirtyE360, EuroBond, ActualActual, ActAct, ActActIsda,\
             \ ActActIsma, ActActIcma, OneOne, Act364, Act365F, Act365L, Act365_25,\
             \ Act252, Bus252, NL360, NL365]."
-          maxLength: 32
-          minLength: 0
           type: string
         currency:
           description: Currency of the index convention.
           type: string
         scope:
           description: The scope used when updating or inserting the convention.
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         code:
           description: The code of the convention.
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
       required:
       - currency
@@ -56874,8 +56795,6 @@ components:
           description: "Three letter ISO currency string indicating what currency\
             \ to report in for ReportCurrency denominated queries.\r\nIf not present,\
             \ then the currency of the relevant portfolio will be used in its place."
-          maxLength: 3
-          minLength: 0
           nullable: true
           type: string
         equipWithSubtotals:
@@ -58347,20 +58266,13 @@ components:
         key:
           description: The market data key pattern which this is a rule for. A dot
             separated string (A.B.C.D.*)
-          maxLength: 128
-          minLength: 0
           type: string
         supplier:
           description: The market data supplier (where the data comes from)
-          maxLength: 32
-          minLength: 0
           type: string
         dataScope:
           description: The scope in which the data should be found when using this
             rule.
-          maxLength: 256
-          minLength: 1
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         quoteType:
           description: 'The available values are: Price, Spread, Rate, LogNormalVol,
@@ -58379,8 +58291,6 @@ components:
           description: "The conceptual qualification for the field, such as bid, mid,\
             \ or ask.\r\nThe field must be one of a defined set for the given supplier,\
             \ in the same way as it\r\nis for the Finbourne.WebApi.Interface.Dto.Quotes.QuoteSeriesId"
-          maxLength: 32
-          minLength: 0
           type: string
         quoteInterval:
           description: "Shorthand for the time interval used to select market data.\
@@ -58388,8 +58298,6 @@ components:
             \ and end date, for example '5D.0D' to look back 5 days from today (0\
             \ days ago). The syntax\r\n            is <i>int</i><i>char</i>.<i>int</i><i>char</i>,\
             \ where <i>char</i> is one of D(ay), W(eek), M(onth) or Y(ear)."
-          maxLength: 16
-          minLength: 0
           nullable: true
           type: string
         asAt:
@@ -58401,10 +58309,7 @@ components:
           description: The source of the quote. For a given provider/supplier of market
             data there may be an additional qualifier, e.g. the exchange or bank that
             provided the quote
-          maxLength: 256
-          minLength: 0
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         mask:
           description: "Allows for partial or complete override of the market asset\
@@ -58413,8 +58318,6 @@ components:
             \ resolve MarketAsset 'GBP/12M', 'GBP/3M' with the EUR equivalent, if\
             \ there\r\nare no wildcards in the mask, the mask is taken as the MarketAsset\
             \ for any dependency matching the rule."
-          maxLength: 256
-          minLength: 0
           nullable: true
           type: string
       required:
@@ -58479,24 +58382,17 @@ components:
           description: The default supplier of data. This controls which 'dialect'
             is used to find particular market data. e.g. one supplier might address
             data by RIC, another by PermId
-          maxLength: 32
-          minLength: 0
           nullable: true
           type: string
         defaultInstrumentCodeType:
           description: When instrument quotes are searched for, what identifier should
             be used by default
-          maxLength: 32
-          minLength: 0
           nullable: true
           type: string
         defaultScope:
           description: For default rules, which scope should data be searched for
             in
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         attemptToInferMissingFx:
           description: if true will calculate a missing Fx pair (e.g. THBJPY) from
@@ -58505,17 +58401,11 @@ components:
           type: boolean
         calendarScope:
           description: The scope in which holiday calendars stored
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         conventionScope:
           description: The scope in which holiday calendars stored
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
       type: object
     MarketQuote:
@@ -63549,23 +63439,15 @@ components:
       properties:
         scope:
           description: The scope within which the portfolio or portfolio group lives.
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         code:
           description: Portfolio name or code.
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         portfolioEntityType:
           description: String identifier for portfolio e.g. "SinglePortfolio" and
             "GroupPortfolio". If not specified, it is assumed to be a single portfolio.
-          maxLength: 128
-          minLength: 0
           nullable: true
           type: string
       type: object
@@ -65085,46 +64967,32 @@ components:
         provider:
           description: The platform or vendor that provided the quote, e.g. 'DataScope',
             'LUSID' etc.
-          maxLength: 100
-          minLength: 0
           nullable: true
           type: string
         priceSource:
           description: The source or originator of the quote, e.g. a bank or financial
             institution.
-          maxLength: 256
-          minLength: 0
           nullable: true
           type: string
         instrumentId:
           description: The value of the instrument identifier that uniquely identifies
             the instrument that the quote is for, e.g. 'BBG00JX0P539'.
-          maxLength: 256
-          minLength: 0
           nullable: true
           type: string
         instrumentIdType:
           description: The type of instrument identifier used to uniquely identify
             the instrument that the quote is for, e.g. 'Figi'.
-          maxLength: 50
-          minLength: 0
           nullable: true
-          pattern: ^[a-zA-Z]*$
           type: string
         quoteType:
           description: The type of the quote. This allows for quotes other than prices
             e.g. rates or spreads to be used.
-          maxLength: 50
-          minLength: 0
           nullable: true
-          pattern: ^[a-zA-Z]*$
           type: string
         field:
           description: The field of the quote e.g. bid, mid, ask etc. This should
             be consistent across a time series of quotes. The allowed values are dependant
             on the specified Provider.
-          maxLength: 2048
-          minLength: 0
           nullable: true
           type: string
       type: object
@@ -70905,32 +70773,21 @@ components:
         resourceKey:
           description: The result data key that identifies the address pattern that
             this is a rule for
-          maxLength: 256
-          minLength: 0
           type: string
         supplier:
           description: the result resource supplier (where the data comes from)
-          maxLength: 32
-          minLength: 0
           type: string
         dataScope:
           description: which is the scope in which the data should be found
-          maxLength: 256
-          minLength: 1
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         documentCode:
           description: document code that defines which document is desired
-          maxLength: 256
-          minLength: 1
           type: string
         quoteInterval:
           description: "Shorthand for the time interval used to select result data.\
             \ This must be a dot-separated string\r\n            specifying a start\
             \ and end date, for example '5D.0D' to look back 5 days from today (0\
             \ days ago)."
-          maxLength: 16
-          minLength: 0
           nullable: true
           type: string
         asAt:
@@ -71464,28 +71321,18 @@ components:
       properties:
         documentFormat:
           description: The format of the accompanying document.
-          maxLength: 128
-          minLength: 0
           type: string
         version:
           description: The semantic version of the document format; MAJOR.MINOR.PATCH
-          maxLength: 64
-          minLength: 1
           nullable: true
-          pattern: ^\d+\.\d+\.\d+(-[a-zA-Z0-9\.-]{1,30})?$
           type: string
         name:
           description: The name or description for the document
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         document:
           description: The document that will be stored (or retrieved) and which describes
             a unit result data entity such as a set of prices or yields
-          maxLength: 256000
-          minLength: 0
           type: string
         dataMapKey:
           $ref: '#/components/schemas/DataMapKey'
@@ -71508,17 +71355,11 @@ components:
           description: The platform or vendor that provided the structured result
             data, e.g. 'client'. This is primarily of interest when data could have
             been sourced from multiple sources
-          maxLength: 256
-          minLength: 1
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         code:
           description: The identifier for the entity that this id describes. It could
             be an index, instrument or other form of structured data
-          maxLength: 256
-          minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         effectiveAt:
           description: The effectiveAt or cut label that this item of structured result
@@ -74760,8 +74601,6 @@ components:
           description: "Three letter ISO currency string indicating what currency\
             \ to report in for ReportCurrency denominated queries.\r\nIf not present,\
             \ then the currency of the relevant portfolio will be used in its place."
-          maxLength: 3
-          minLength: 0
           nullable: true
           type: string
         equipWithSubtotals:
@@ -74812,8 +74651,6 @@ components:
         tenor:
           description: Tenor, e.g "1D", "1M" to be used in generating the date schedule
             when effectiveFrom and effectiveAt are both given and are not the same.
-          maxLength: 16
-          minLength: 0
           nullable: true
           type: string
         rollConvention:
@@ -74821,8 +74658,6 @@ components:
             \ be cases where \"date + tenor\" land on non-business days around month\
             \ end.\r\nIn that case, the RollConvention, e.g. modified following \"\
             MF\" would be applied to determine the next GBD."
-          maxLength: 16
-          minLength: 0
           nullable: true
           type: string
         holidayCalendars:
@@ -75046,13 +74881,9 @@ components:
           type: string
         modelName:
           description: The vendor library model name
-          maxLength: 128
-          minLength: 0
           type: string
         instrumentType:
           description: The vendor library instrument type
-          maxLength: 32
-          minLength: 0
           type: string
         parameters:
           description: "THIS FIELD IS DEPRECATED - use ModelOptions\r\nThe set of\
@@ -75061,8 +74892,6 @@ components:
             \ to object.\r\nNote that this is not intended as the final form of this\
             \ object. It will be replaced with a more structured object as the set\
             \ of parameters that are possible is\r\nbetter understood."
-          maxLength: 64
-          minLength: 0
           nullable: true
           type: string
         modelOptions:
@@ -76370,8 +76199,6 @@ components:
             \ inlined aggregation request if this is wanted to identify a line item,\
             \ it can be specified in the set of aggregation keys given on the aggregation\r\
             \nrequest that accompanies the set of weighted instruments."
-          maxLength: 256
-          minLength: 0
           nullable: true
           type: string
         instrument:
