@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3727
+  version: 0.11.3728
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:49236
+- url: http://local-unit-test-server.lusid.com:41371
 security:
 - {}
 tags:
@@ -10607,7 +10607,10 @@ paths:
             \ out inactive instruments\r\n             (that is, those that have been\
             \ deleted). For more information about filtering results,\r\n        \
             \     see https://support.lusid.com/knowledgebase/article/KA-01914."
+          maxLength: 16384
+          minLength: 0
           nullable: true
+          pattern: ^[\s\S]*$
           type: string
         style: form
       - description: "A list of property keys from the 'Instrument' domain to decorate\
@@ -13891,6 +13894,8 @@ paths:
         required: true
         schema:
           description: Scope of the legal entity identifier type.
+          maxLength: 64
+          minLength: 1
           nullable: true
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
@@ -13902,6 +13907,8 @@ paths:
         required: true
         schema:
           description: Code of the legal entity identifier type.
+          maxLength: 64
+          minLength: 1
           nullable: true
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
@@ -13917,6 +13924,8 @@ paths:
           description: Code of the legal entity under specified identifier type's
             scope and code. This together with stated identifier type uniquely identifies
             the legal entity.
+          maxLength: 64
+          minLength: 1
           nullable: true
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
@@ -14597,6 +14606,8 @@ paths:
         required: false
         schema:
           description: The Provider of the rule
+          maxLength: 256
+          minLength: 0
           nullable: true
           type: string
         style: form
@@ -14740,6 +14751,8 @@ paths:
         required: false
         schema:
           description: The Provider of the rule
+          maxLength: 256
+          minLength: 0
           nullable: true
           type: string
         style: form
@@ -19424,7 +19437,7 @@ paths:
         required: true
         schema:
           description: Key of the metadata entry to retrieve
-          maxLength: 100
+          maxLength: 256
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
@@ -23500,6 +23513,8 @@ paths:
         required: true
         schema:
           description: Key of the Access Metadata entry to delete
+          maxLength: 256
+          minLength: 1
           type: string
         style: simple
       - description: The effective date to delete at, if this is not supplied, it
@@ -23592,6 +23607,8 @@ paths:
         required: true
         schema:
           description: Key of the metadata entry to retrieve
+          maxLength: 256
+          minLength: 1
           type: string
         style: simple
       - description: The effectiveAt datetime at which to retrieve the access metadata
@@ -23705,6 +23722,8 @@ paths:
         required: true
         schema:
           description: Key of the access metadata entry to upsert
+          maxLength: 256
+          minLength: 1
           type: string
         style: simple
       - description: The date this rule will be effective from
@@ -28550,6 +28569,8 @@ paths:
         required: true
         schema:
           description: The metadataKey identifying the access metadata entry to delete
+          maxLength: 256
+          minLength: 1
           type: string
         style: simple
       - description: The effective date to delete at, if this is not supplied, it
@@ -28642,6 +28663,8 @@ paths:
         required: true
         schema:
           description: Key of the metadata to retrieve
+          maxLength: 256
+          minLength: 1
           type: string
         style: simple
       - description: The effective date of the rule
@@ -28758,6 +28781,8 @@ paths:
         required: true
         schema:
           description: Key of the access metadata to upsert
+          maxLength: 256
+          minLength: 1
           type: string
         style: simple
       - description: The date this rule will effective from
@@ -30038,7 +30063,10 @@ paths:
         required: true
         schema:
           description: The scope of the Portfolio.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The code of the  Portfolio.
@@ -30048,7 +30076,10 @@ paths:
         required: true
         schema:
           description: The code of the  Portfolio.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The scope of the Returns.
@@ -30058,7 +30089,10 @@ paths:
         required: true
         schema:
           description: The scope of the Returns.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The code of the Returns.
@@ -30068,7 +30102,10 @@ paths:
         required: true
         schema:
           description: The code of the Returns.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The start date from which to get the Returns.
@@ -30167,7 +30204,10 @@ paths:
         required: true
         schema:
           description: The scope of the Portfolio.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The code of the  Portfolio.
@@ -30177,7 +30217,10 @@ paths:
         required: true
         schema:
           description: The code of the  Portfolio.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The scope of the Returns.
@@ -30187,7 +30230,10 @@ paths:
         required: true
         schema:
           description: The scope of the Returns.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The code of the Returns.
@@ -30197,7 +30243,10 @@ paths:
         required: true
         schema:
           description: The code of the Returns.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       requestBody:
@@ -30324,7 +30373,10 @@ paths:
         required: true
         schema:
           description: The scope of the Portfolio.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The code of the  Portfolio.
@@ -30334,7 +30386,10 @@ paths:
         required: true
         schema:
           description: The code of the  Portfolio.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The scope of the Returns.
@@ -30344,7 +30399,10 @@ paths:
         required: true
         schema:
           description: The scope of the Returns.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The code of the Returns.
@@ -30354,7 +30412,10 @@ paths:
         required: true
         schema:
           description: The code of the Returns.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The start date from which to calculate the Returns.
@@ -30520,7 +30581,10 @@ paths:
         required: true
         schema:
           description: The scope of the Portfolio.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The code of the  Portfolio.
@@ -30530,7 +30594,10 @@ paths:
         required: true
         schema:
           description: The code of the  Portfolio.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The scope of the Returns.
@@ -30540,7 +30607,10 @@ paths:
         required: true
         schema:
           description: The scope of the Returns.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The code of the Returns.
@@ -30550,7 +30620,10 @@ paths:
         required: true
         schema:
           description: The code of the Returns.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The start date from which to delete the Returns.
@@ -30635,7 +30708,10 @@ paths:
         required: true
         schema:
           description: The scope of the Portfolio.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The code of the  Portfolio.
@@ -30645,7 +30721,10 @@ paths:
         required: true
         schema:
           description: The code of the  Portfolio.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The scope of the Returns.
@@ -30655,7 +30734,10 @@ paths:
         required: true
         schema:
           description: The scope of the Returns.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The code of the Returns.
@@ -30665,7 +30747,10 @@ paths:
         required: true
         schema:
           description: The code of the Returns.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The Recipe Scope for getting the fx rates
@@ -30675,7 +30760,10 @@ paths:
         required: false
         schema:
           description: The Recipe Scope for getting the fx rates
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: form
       - description: The Recipe Code for getting the fx rates
@@ -30685,7 +30773,10 @@ paths:
         required: false
         schema:
           description: The Recipe Code for getting the fx rates
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: form
       - description: The start date from which to calculate the Returns.
@@ -33253,7 +33344,10 @@ paths:
         required: true
         schema:
           description: The scope in which to create the reference portfolio.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       requestBody:
@@ -37761,7 +37855,10 @@ paths:
         required: true
         schema:
           description: The scope in which to create the transaction portfolio.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       requestBody:
@@ -37944,7 +38041,10 @@ paths:
         schema:
           description: "The code of the transaction portfolio. Together with the scope\
             \ this uniquely identifies\r\n            the transaction portfolio."
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The instrument identifier type.
@@ -45899,7 +45999,10 @@ paths:
         required: true
         schema:
           description: The scope of the transaction portfolio.
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: "The code of the transaction portfolio. Together with the scope\
@@ -46853,7 +46956,10 @@ paths:
         schema:
           description: "The code of the transaction portfolio. Together with the scope\
             \ this uniquely identifies\r\n            the transaction portfolio."
+          maxLength: 64
+          minLength: 1
           nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: "The asAt datetime at which to build the transactions. Defaults\
