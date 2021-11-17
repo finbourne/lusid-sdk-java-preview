@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3730
+  version: 0.11.3731
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:50898
+- url: http://local-unit-test-server.lusid.com:53421
 security:
 - {}
 tags:
@@ -54768,6 +54768,12 @@ components:
       - $ref: '#/components/schemas/ComplexMarketData'
       - $ref: '#/components/schemas/DiscountFactorCurveData_allOf'
       description: A curve containing discount factors and dates to which they apply
+    DiscountingMethod:
+      enum:
+      - Standard
+      - ConstantTimeValueOfMoney
+      - Invalid
+      type: string
     EmptyModelOptions:
       allOf:
       - $ref: '#/components/schemas/ModelOptions'
@@ -55800,6 +55806,10 @@ components:
       - $ref: '#/components/schemas/FxForwardCurveData_allOf'
       description: Contains data (i.e. dates and rates + metadata) for building fx
         forward curves
+    FxForwardModelOptions:
+      allOf:
+      - $ref: '#/components/schemas/ModelOptions'
+      - $ref: '#/components/schemas/FxForwardModelOptions_allOf'
     FxForwardPipsCurveData:
       allOf:
       - $ref: '#/components/schemas/ComplexMarketData'
@@ -58868,6 +58878,14 @@ components:
       - BBGId
       - ICECode
       type: string
+    MarketObservableType:
+      enum:
+      - ForwardPoints
+      - ForwardRate
+      - RatesCurve
+      - FxForwardCurve
+      - Invalid
+      type: string
     MarketOptions:
       additionalProperties: false
       description: "The set of options that control miscellaneous and default market\
@@ -58984,12 +59002,13 @@ components:
       properties:
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions'
+            IndexModelOptions, FxForwardModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
           - EmptyModelOptions
           - IndexModelOptions
+          - FxForwardModelOptions
           type: string
       required:
       - modelOptionsType
@@ -59000,6 +59019,7 @@ components:
       - OpaqueModelOptions
       - EmptyModelOptions
       - IndexModelOptions
+      - FxForwardModelOptions
       type: string
     ModelSelection:
       additionalProperties: false
@@ -77514,12 +77534,13 @@ components:
       properties:
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions'
+            IndexModelOptions, FxForwardModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
           - EmptyModelOptions
           - IndexModelOptions
+          - FxForwardModelOptions
           type: string
       required:
       - modelOptionsType
@@ -78544,6 +78565,47 @@ components:
       - marketDataType
       - rates
       type: object
+    FxForwardModelOptions_allOf:
+      properties:
+        forwardRateObservableType:
+          description: 'The available values are: ForwardPoints, ForwardRate, RatesCurve,
+            FxForwardCurve, Invalid'
+          enum:
+          - ForwardPoints
+          - ForwardRate
+          - RatesCurve
+          - FxForwardCurve
+          - Invalid
+          type: string
+        discountingMethod:
+          description: 'The available values are: Standard, ConstantTimeValueOfMoney,
+            Invalid'
+          enum:
+          - Standard
+          - ConstantTimeValueOfMoney
+          - Invalid
+          type: string
+        convertToReportCcy:
+          description: "Convert all FX flows to the report currency\r\nBy setting\
+            \ this all FX forwards will be priced using Forward Curves that have Report\
+            \ Currency as the base."
+          type: boolean
+        modelOptionsType:
+          description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
+            IndexModelOptions, FxForwardModelOptions'
+          enum:
+          - Invalid
+          - OpaqueModelOptions
+          - EmptyModelOptions
+          - IndexModelOptions
+          - FxForwardModelOptions
+          type: string
+      required:
+      - convertToReportCcy
+      - discountingMethod
+      - forwardRateObservableType
+      - modelOptionsType
+      type: object
     FxForwardPipsCurveData_allOf:
       properties:
         baseDate:
@@ -78849,12 +78911,13 @@ components:
           type: string
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions'
+            IndexModelOptions, FxForwardModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
           - EmptyModelOptions
           - IndexModelOptions
+          - FxForwardModelOptions
           type: string
       required:
       - modelOptionsType
@@ -79144,12 +79207,13 @@ components:
           type: object
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions'
+            IndexModelOptions, FxForwardModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
           - EmptyModelOptions
           - IndexModelOptions
+          - FxForwardModelOptions
           type: string
       required:
       - data

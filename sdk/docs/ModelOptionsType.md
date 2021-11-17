@@ -13,5 +13,7 @@
 
 * `INDEXMODELOPTIONS` (value: `"IndexModelOptions"`)
 
+* `FXFORWARDMODELOPTIONS` (value: `"FxForwardModelOptions"`)
+
 
 
