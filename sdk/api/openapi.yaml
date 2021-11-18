@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3739
+  version: 0.11.3740
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:32026
+- url: http://local-unit-test-server.lusid.com:44467
 security:
 - {}
 tags:
@@ -55728,19 +55728,19 @@ components:
     FuturesContractDetails:
       additionalProperties: false
       description: "Most, if not all, information about contracts is standardized.\
-        \ See, e.g. https://www.cmegroup.com/ for\r\n            common codes and\
-        \ similar data. This appears to be in common use by well known market information\
-        \ providers, e.g. Bloomberg and Refinitiv."
+        \ See, e.g. https://www.cmegroup.com/ for\r\ncommon codes and similar data.\
+        \ This appears to be in common use by well known market information providers,\
+        \ e.g. Bloomberg and Refinitiv."
       properties:
         domCcy:
-          description: currency in which the contract is paid.
+          description: Currency in which the contract is paid.
           type: string
         contractCode:
-          description: The two letter contract code abbreviation. e.g. CL => Crude
-            Oil.
+          description: The contract code used by the exchange, e.g. “CL” for Crude
+            Oil, “ES” for E-mini SP 500, “FGBL” for Bund Futures, etc.
           type: string
         contractMonth:
-          description: "which month does the contract trade for.\r\nSupported string\
+          description: "Which month does the contract trade for.\r\nSupported string\
             \ (enumeration) values are: [F, G, H, J, K, M, N, Q, U, V, X, Z]."
           type: string
         contractSize:
@@ -55750,13 +55750,13 @@ components:
           type: number
         convention:
           description: If appropriate, the day count convention method used in pricing
-            (rates futures)
+            (rates futures).
           type: string
         country:
           description: Country (code) for the exchange.
           type: string
         description:
-          description: Description of contract
+          description: Description of contract.
           type: string
         exchangeCode:
           description: "Exchange code for contract\r\nSupported string (enumeration)\
@@ -55764,15 +55764,15 @@ components:
             \ NYBOT, KCBT, MGE, MATIF, SFE, NYFE, NYM, LIFFE, EUREX, ICE, MSE]."
           type: string
         exchangeName:
-          description: Exchange name (for when code is not automatically recognized)
+          description: Exchange name (for when code is not automatically recognized).
           type: string
         tickerStep:
-          description: Minimal step size change in ticker
+          description: Minimal step size change in ticker.
           format: double
           type: number
         unitValue:
           description: The value in the currency of a 1 unit change in the contract
-            price
+            price.
           format: double
           type: number
       required:
@@ -76927,7 +76927,8 @@ components:
       properties:
         startDate:
           description: The start date of the instrument. This is normally synonymous
-            with the trade-date.
+            with the trade-date. If settle days = 0 then this is the initial accrual
+            date of the bond.
           format: date-time
           type: string
         maturityDate:
@@ -76967,8 +76968,9 @@ components:
           nullable: true
           type: integer
         initialCouponDate:
-          description: The initial coupon date which specifies the accrual start period
-            for a fixed coupon bond with ex dividend schedule
+          description: The initial coupon date is in fact the previous coupon pay
+            date in the bond schedule. This date specifies the start of the coupon
+            period in which the ex-dividend date lies.
           format: date-time
           nullable: true
           type: string
@@ -76983,8 +76985,13 @@ components:
         calculationType:
           description: "The calculation type applied to the bond coupon amount. This\
             \ is required for bonds that have a particular type of computing the period\
-            \ coupon, such as simple compounding,\r\nirregular coupons etc.\r\nSupported\
-            \ string (enumeration) values are: [Standard, NoCalculationFloater, BrazilFixedCoupon]."
+            \ coupon, such as simple compounding,\r\nirregular coupons etc.\r\nThe\
+            \ default CalculationType is `Standard`, which returns a coupon amount\
+            \ equal to Principal * Coupon Rate / Coupon Frequency. Coupon Frequency\
+            \ is 12M / Payment Frequency.\r\nPayment Frequency can be 1M, 3M, 6M,\
+            \ 12M etc. So Coupon Frequency can be 12, 4, 2, 1 respectively.\r\nSupported\
+            \ string (enumeration) values are: [Standard, DayCountCoupon, NoCalculationFloater,\
+            \ BrazilFixedCoupon]."
           nullable: true
           type: string
         instrumentType:
@@ -78293,21 +78300,21 @@ components:
         maturityDate:
           description: "The final maturity date of the instrument. This means the\
             \ last date on which the instruments makes a payment of any amount.\r\n\
-            \            For the avoidance of doubt, that is not necessarily prior\
-            \ to its last sensitivity date for the purposes of risk; e.g. instruments\
-            \ such as\r\n            Constant Maturity Swaps (CMS) often have sensitivities\
-            \ to rates beyond their last payment date"
+            For the avoidance of doubt, that is not necessarily prior to its last\
+            \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
+            \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
+            \ their last payment date."
           format: date-time
           type: string
         identifiers:
           additionalProperties:
             type: string
-          description: external market codes and identifiers for the bond, e.g. ISIN.
+          description: External market codes and identifiers for the bond, e.g. ISIN.
           type: object
         contractDetails:
           $ref: '#/components/schemas/FuturesContractDetails'
         contracts:
-          description: The number of contracts held
+          description: The number of contracts held.
           format: double
           type: number
         refSpotPrice:
