@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3758
+  version: 0.11.3759
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:40290
+- url: http://local-unit-test-server.lusid.com:50701
 security:
 - {}
 tags:
@@ -32492,6 +32492,7 @@ paths:
                         windowValuationOnInstrumentStartEnd: false
                         removeContingentCashflowsInPaymentDiary: false
                         useChildSubHoldingKeysForPortfolioExpansion: false
+                        validateDomesticAndQuoteCurrenciesAreConsistent: false
                       resultDataRules: []
                     aggregation:
                       options:
@@ -32535,6 +32536,7 @@ paths:
                         windowValuationOnInstrumentStartEnd: false
                         removeContingentCashflowsInPaymentDiary: false
                         useChildSubHoldingKeysForPortfolioExpansion: false
+                        validateDomesticAndQuoteCurrenciesAreConsistent: false
                       resultDataRules: []
                     aggregation:
                       options:
@@ -32597,6 +32599,7 @@ paths:
                         windowValuationOnInstrumentStartEnd: false
                         removeContingentCashflowsInPaymentDiary: false
                         useChildSubHoldingKeysForPortfolioExpansion: false
+                        validateDomesticAndQuoteCurrenciesAreConsistent: false
                       resultDataRules: []
                     aggregation:
                       options:
@@ -32640,6 +32643,7 @@ paths:
                         windowValuationOnInstrumentStartEnd: false
                         removeContingentCashflowsInPaymentDiary: false
                         useChildSubHoldingKeysForPortfolioExpansion: false
+                        validateDomesticAndQuoteCurrenciesAreConsistent: false
                       resultDataRules: []
                     aggregation:
                       options:
@@ -32702,6 +32706,7 @@ paths:
                         windowValuationOnInstrumentStartEnd: false
                         removeContingentCashflowsInPaymentDiary: false
                         useChildSubHoldingKeysForPortfolioExpansion: false
+                        validateDomesticAndQuoteCurrenciesAreConsistent: false
                       resultDataRules: []
                     aggregation:
                       options:
@@ -32745,6 +32750,7 @@ paths:
                         windowValuationOnInstrumentStartEnd: false
                         removeContingentCashflowsInPaymentDiary: false
                         useChildSubHoldingKeysForPortfolioExpansion: false
+                        validateDomesticAndQuoteCurrenciesAreConsistent: false
                       resultDataRules: []
                     aggregation:
                       options:
@@ -32835,6 +32841,7 @@ paths:
                     windowValuationOnInstrumentStartEnd: false
                     removeContingentCashflowsInPaymentDiary: false
                     useChildSubHoldingKeysForPortfolioExpansion: false
+                    validateDomesticAndQuoteCurrenciesAreConsistent: false
                   resultDataRules: []
                 aggregation:
                   options:
@@ -32882,6 +32889,7 @@ paths:
                     windowValuationOnInstrumentStartEnd: false
                     removeContingentCashflowsInPaymentDiary: false
                     useChildSubHoldingKeysForPortfolioExpansion: false
+                    validateDomesticAndQuoteCurrenciesAreConsistent: false
                   resultDataRules: []
                 aggregation:
                   options:
@@ -32929,6 +32937,7 @@ paths:
                     windowValuationOnInstrumentStartEnd: false
                     removeContingentCashflowsInPaymentDiary: false
                     useChildSubHoldingKeysForPortfolioExpansion: false
+                    validateDomesticAndQuoteCurrenciesAreConsistent: false
                   resultDataRules: []
                 aggregation:
                   options:
@@ -32976,6 +32985,7 @@ paths:
                     windowValuationOnInstrumentStartEnd: false
                     removeContingentCashflowsInPaymentDiary: false
                     useChildSubHoldingKeysForPortfolioExpansion: false
+                    validateDomesticAndQuoteCurrenciesAreConsistent: false
                   resultDataRules: []
                 aggregation:
                   options:
@@ -33191,6 +33201,7 @@ paths:
                       windowValuationOnInstrumentStartEnd: false
                       removeContingentCashflowsInPaymentDiary: false
                       useChildSubHoldingKeysForPortfolioExpansion: false
+                      validateDomesticAndQuoteCurrenciesAreConsistent: false
                     resultDataRules: []
                   aggregation:
                     options:
@@ -33245,6 +33256,7 @@ paths:
                       windowValuationOnInstrumentStartEnd: false
                       removeContingentCashflowsInPaymentDiary: false
                       useChildSubHoldingKeysForPortfolioExpansion: false
+                      validateDomesticAndQuoteCurrenciesAreConsistent: false
                     resultDataRules: []
                   aggregation:
                     options:
@@ -33299,6 +33311,7 @@ paths:
                       windowValuationOnInstrumentStartEnd: false
                       removeContingentCashflowsInPaymentDiary: false
                       useChildSubHoldingKeysForPortfolioExpansion: false
+                      validateDomesticAndQuoteCurrenciesAreConsistent: false
                     resultDataRules: []
                   aggregation:
                     options:
@@ -51957,6 +51970,7 @@ components:
             enableUseOfCachedUnitResults: true
             windowValuationOnInstrumentStartEnd: true
             useInstrumentTypeToDeterminePricer: true
+            validateDomesticAndQuoteCurrenciesAreConsistent: true
             modelSelection:
               library: Lusid
               model: SimpleStatic
@@ -52066,6 +52080,7 @@ components:
           enableUseOfCachedUnitResults: true
           windowValuationOnInstrumentStartEnd: true
           useInstrumentTypeToDeterminePricer: true
+          validateDomesticAndQuoteCurrenciesAreConsistent: true
           modelSelection:
             library: Lusid
             model: SimpleStatic
@@ -52171,6 +52186,7 @@ components:
               enableUseOfCachedUnitResults: true
               windowValuationOnInstrumentStartEnd: true
               useInstrumentTypeToDeterminePricer: true
+              validateDomesticAndQuoteCurrenciesAreConsistent: true
               modelSelection:
                 library: Lusid
                 model: SimpleStatic
@@ -53383,6 +53399,7 @@ components:
               enableUseOfCachedUnitResults: true
               windowValuationOnInstrumentStartEnd: true
               useInstrumentTypeToDeterminePricer: true
+              validateDomesticAndQuoteCurrenciesAreConsistent: true
               modelSelection:
                 library: Lusid
                 model: SimpleStatic
@@ -56617,6 +56634,7 @@ components:
               enableUseOfCachedUnitResults: true
               windowValuationOnInstrumentStartEnd: true
               useInstrumentTypeToDeterminePricer: true
+              validateDomesticAndQuoteCurrenciesAreConsistent: true
               modelSelection:
                 library: Lusid
                 model: SimpleStatic
@@ -64881,6 +64899,7 @@ components:
           enableUseOfCachedUnitResults: true
           windowValuationOnInstrumentStartEnd: true
           useInstrumentTypeToDeterminePricer: true
+          validateDomesticAndQuoteCurrenciesAreConsistent: true
           modelSelection:
             library: Lusid
             model: SimpleStatic
@@ -64963,6 +64982,7 @@ components:
         enableUseOfCachedUnitResults: true
         windowValuationOnInstrumentStartEnd: true
         useInstrumentTypeToDeterminePricer: true
+        validateDomesticAndQuoteCurrenciesAreConsistent: true
         modelSelection:
           library: Lusid
           model: SimpleStatic
@@ -65015,6 +65035,10 @@ components:
         useChildSubHoldingKeysForPortfolioExpansion:
           description: Should fund constituents inherit subholding keys from the parent
             subholding keyb
+          type: boolean
+        validateDomesticAndQuoteCurrenciesAreConsistent:
+          description: Do we validate that the instrument domestic currency matches
+            the quote currency (unless unknown/zzz) when using lookup pricing.
           type: boolean
       type: object
     ProcessedCommand:
@@ -68911,6 +68935,7 @@ components:
                 enableUseOfCachedUnitResults: true
                 windowValuationOnInstrumentStartEnd: true
                 useInstrumentTypeToDeterminePricer: true
+                validateDomesticAndQuoteCurrenciesAreConsistent: true
                 modelSelection:
                   library: Lusid
                   model: SimpleStatic
@@ -69014,6 +69039,7 @@ components:
                 enableUseOfCachedUnitResults: true
                 windowValuationOnInstrumentStartEnd: true
                 useInstrumentTypeToDeterminePricer: true
+                validateDomesticAndQuoteCurrenciesAreConsistent: true
                 modelSelection:
                   library: Lusid
                   model: SimpleStatic
@@ -74782,6 +74808,7 @@ components:
               enableUseOfCachedUnitResults: true
               windowValuationOnInstrumentStartEnd: true
               useInstrumentTypeToDeterminePricer: true
+              validateDomesticAndQuoteCurrenciesAreConsistent: true
               modelSelection:
                 library: Lusid
                 model: SimpleStatic
@@ -74814,6 +74841,7 @@ components:
             enableUseOfCachedUnitResults: true
             windowValuationOnInstrumentStartEnd: true
             useInstrumentTypeToDeterminePricer: true
+            validateDomesticAndQuoteCurrenciesAreConsistent: true
             modelSelection:
               library: Lusid
               model: SimpleStatic
@@ -74919,6 +74947,7 @@ components:
                 enableUseOfCachedUnitResults: true
                 windowValuationOnInstrumentStartEnd: true
                 useInstrumentTypeToDeterminePricer: true
+                validateDomesticAndQuoteCurrenciesAreConsistent: true
                 modelSelection:
                   library: Lusid
                   model: SimpleStatic
