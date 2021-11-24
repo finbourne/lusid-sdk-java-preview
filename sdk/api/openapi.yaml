@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3755
+  version: 0.11.3754
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:47213
+- url: https://fbn-prd.lusid.com/api
 security:
 - {}
 tags:
@@ -36148,97 +36148,6 @@ paths:
       - Search
       x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
-  /api/sequences:
-    get:
-      description: List sequences which satisfies filtering criteria.
-      operationId: ListSequences
-      parameters:
-      - description: "The pagination token to use to continue listing sequences from\
-          \ a previous call to list sequences. This\r\nvalue is returned from the\
-          \ previous call."
-        explode: true
-        in: query
-        name: page
-        required: false
-        schema:
-          description: "The pagination token to use to continue listing sequences\
-            \ from a previous call to list sequences. This\r\nvalue is returned from\
-            \ the previous call."
-          maxLength: 500
-          minLength: 1
-          nullable: true
-          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
-          type: string
-        style: form
-      - description: When paginating, limit the number of returned results to this
-          many. Defaults to 500 if not specified.
-        explode: true
-        in: query
-        name: limit
-        required: false
-        schema:
-          description: When paginating, limit the number of returned results to this
-            many. Defaults to 500 if not specified.
-          format: int32
-          maximum: 5000
-          minimum: 1
-          nullable: true
-          type: integer
-        style: form
-        x-nullable: true
-      - description: "Expression to filter the result set. \r\n            Read more\
-          \ about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid."
-        explode: true
-        in: query
-        name: filter
-        required: false
-        schema:
-          description: "Expression to filter the result set. \r\n            Read\
-            \ more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid."
-          maxLength: 16384
-          minLength: 0
-          nullable: true
-          pattern: ^[\s\S]*$
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/PagedResourceListOfSequenceDefinition'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PagedResourceListOfSequenceDefinition'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/PagedResourceListOfSequenceDefinition'
-          description: The sequences matching filtering criteria
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] ListSequences: List Sequences'
-      tags:
-      - Sequences
-      x-fbn-apistatus: Experimental
-      x-accepts: application/json
   /api/sequences/{scope}:
     post:
       description: Create a new sequence
@@ -63090,89 +62999,6 @@ components:
       required:
       - values
       type: object
-    PagedResourceListOfSequenceDefinition:
-      additionalProperties: false
-      description: A paginated list of resource that can be returned from a request.
-      example:
-        previousPage: previousPage
-        nextPage: nextPage
-        values:
-        - minValue: 6
-          maxValue: 1
-          start: 5
-          pattern: pattern
-          increment: 0
-          links:
-          - method: method
-            description: description
-            href: https://openapi-generator.tech
-            relation: relation
-          - method: method
-            description: description
-            href: https://openapi-generator.tech
-            relation: relation
-          id:
-            code: code
-            scope: scope
-          value: 5
-          cycle: true
-        - minValue: 6
-          maxValue: 1
-          start: 5
-          pattern: pattern
-          increment: 0
-          links:
-          - method: method
-            description: description
-            href: https://openapi-generator.tech
-            relation: relation
-          - method: method
-            description: description
-            href: https://openapi-generator.tech
-            relation: relation
-          id:
-            code: code
-            scope: scope
-          value: 5
-          cycle: true
-        links:
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        href: https://openapi-generator.tech
-      properties:
-        nextPage:
-          description: The next page of results.
-          nullable: true
-          type: string
-        previousPage:
-          description: The previous page of results.
-          nullable: true
-          type: string
-        values:
-          description: The resources to list.
-          items:
-            $ref: '#/components/schemas/SequenceDefinition'
-          type: array
-        href:
-          description: The URI of the resource list.
-          format: uri
-          nullable: true
-          type: string
-        links:
-          description: Collection of links.
-          items:
-            $ref: '#/components/schemas/Link'
-          nullable: true
-          type: array
-      required:
-      - values
-      type: object
     Participation:
       additionalProperties: false
       description: The record an order's participation in a specific placement.
@@ -79876,7 +79702,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:
