@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3760
+  version: 0.11.3757
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:40801
+- url: https://fbn-prd.lusid.com/api
 security:
 - {}
 tags:
@@ -32492,7 +32492,6 @@ paths:
                         windowValuationOnInstrumentStartEnd: false
                         removeContingentCashflowsInPaymentDiary: false
                         useChildSubHoldingKeysForPortfolioExpansion: false
-                        validateDomesticAndQuoteCurrenciesAreConsistent: false
                       resultDataRules: []
                     aggregation:
                       options:
@@ -32536,7 +32535,6 @@ paths:
                         windowValuationOnInstrumentStartEnd: false
                         removeContingentCashflowsInPaymentDiary: false
                         useChildSubHoldingKeysForPortfolioExpansion: false
-                        validateDomesticAndQuoteCurrenciesAreConsistent: false
                       resultDataRules: []
                     aggregation:
                       options:
@@ -32599,7 +32597,6 @@ paths:
                         windowValuationOnInstrumentStartEnd: false
                         removeContingentCashflowsInPaymentDiary: false
                         useChildSubHoldingKeysForPortfolioExpansion: false
-                        validateDomesticAndQuoteCurrenciesAreConsistent: false
                       resultDataRules: []
                     aggregation:
                       options:
@@ -32643,7 +32640,6 @@ paths:
                         windowValuationOnInstrumentStartEnd: false
                         removeContingentCashflowsInPaymentDiary: false
                         useChildSubHoldingKeysForPortfolioExpansion: false
-                        validateDomesticAndQuoteCurrenciesAreConsistent: false
                       resultDataRules: []
                     aggregation:
                       options:
@@ -32706,7 +32702,6 @@ paths:
                         windowValuationOnInstrumentStartEnd: false
                         removeContingentCashflowsInPaymentDiary: false
                         useChildSubHoldingKeysForPortfolioExpansion: false
-                        validateDomesticAndQuoteCurrenciesAreConsistent: false
                       resultDataRules: []
                     aggregation:
                       options:
@@ -32750,7 +32745,6 @@ paths:
                         windowValuationOnInstrumentStartEnd: false
                         removeContingentCashflowsInPaymentDiary: false
                         useChildSubHoldingKeysForPortfolioExpansion: false
-                        validateDomesticAndQuoteCurrenciesAreConsistent: false
                       resultDataRules: []
                     aggregation:
                       options:
@@ -32841,7 +32835,6 @@ paths:
                     windowValuationOnInstrumentStartEnd: false
                     removeContingentCashflowsInPaymentDiary: false
                     useChildSubHoldingKeysForPortfolioExpansion: false
-                    validateDomesticAndQuoteCurrenciesAreConsistent: false
                   resultDataRules: []
                 aggregation:
                   options:
@@ -32889,7 +32882,6 @@ paths:
                     windowValuationOnInstrumentStartEnd: false
                     removeContingentCashflowsInPaymentDiary: false
                     useChildSubHoldingKeysForPortfolioExpansion: false
-                    validateDomesticAndQuoteCurrenciesAreConsistent: false
                   resultDataRules: []
                 aggregation:
                   options:
@@ -32937,7 +32929,6 @@ paths:
                     windowValuationOnInstrumentStartEnd: false
                     removeContingentCashflowsInPaymentDiary: false
                     useChildSubHoldingKeysForPortfolioExpansion: false
-                    validateDomesticAndQuoteCurrenciesAreConsistent: false
                   resultDataRules: []
                 aggregation:
                   options:
@@ -32985,7 +32976,6 @@ paths:
                     windowValuationOnInstrumentStartEnd: false
                     removeContingentCashflowsInPaymentDiary: false
                     useChildSubHoldingKeysForPortfolioExpansion: false
-                    validateDomesticAndQuoteCurrenciesAreConsistent: false
                   resultDataRules: []
                 aggregation:
                   options:
@@ -33201,7 +33191,6 @@ paths:
                       windowValuationOnInstrumentStartEnd: false
                       removeContingentCashflowsInPaymentDiary: false
                       useChildSubHoldingKeysForPortfolioExpansion: false
-                      validateDomesticAndQuoteCurrenciesAreConsistent: false
                     resultDataRules: []
                   aggregation:
                     options:
@@ -33256,7 +33245,6 @@ paths:
                       windowValuationOnInstrumentStartEnd: false
                       removeContingentCashflowsInPaymentDiary: false
                       useChildSubHoldingKeysForPortfolioExpansion: false
-                      validateDomesticAndQuoteCurrenciesAreConsistent: false
                     resultDataRules: []
                   aggregation:
                     options:
@@ -33311,7 +33299,6 @@ paths:
                       windowValuationOnInstrumentStartEnd: false
                       removeContingentCashflowsInPaymentDiary: false
                       useChildSubHoldingKeysForPortfolioExpansion: false
-                      validateDomesticAndQuoteCurrenciesAreConsistent: false
                     resultDataRules: []
                   aggregation:
                     options:
@@ -51970,7 +51957,6 @@ components:
             enableUseOfCachedUnitResults: true
             windowValuationOnInstrumentStartEnd: true
             useInstrumentTypeToDeterminePricer: true
-            validateDomesticAndQuoteCurrenciesAreConsistent: true
             modelSelection:
               library: Lusid
               model: SimpleStatic
@@ -52080,7 +52066,6 @@ components:
           enableUseOfCachedUnitResults: true
           windowValuationOnInstrumentStartEnd: true
           useInstrumentTypeToDeterminePricer: true
-          validateDomesticAndQuoteCurrenciesAreConsistent: true
           modelSelection:
             library: Lusid
             model: SimpleStatic
@@ -52186,7 +52171,6 @@ components:
               enableUseOfCachedUnitResults: true
               windowValuationOnInstrumentStartEnd: true
               useInstrumentTypeToDeterminePricer: true
-              validateDomesticAndQuoteCurrenciesAreConsistent: true
               modelSelection:
                 library: Lusid
                 model: SimpleStatic
@@ -53399,7 +53383,6 @@ components:
               enableUseOfCachedUnitResults: true
               windowValuationOnInstrumentStartEnd: true
               useInstrumentTypeToDeterminePricer: true
-              validateDomesticAndQuoteCurrenciesAreConsistent: true
               modelSelection:
                 library: Lusid
                 model: SimpleStatic
@@ -56634,7 +56617,6 @@ components:
               enableUseOfCachedUnitResults: true
               windowValuationOnInstrumentStartEnd: true
               useInstrumentTypeToDeterminePricer: true
-              validateDomesticAndQuoteCurrenciesAreConsistent: true
               modelSelection:
                 library: Lusid
                 model: SimpleStatic
@@ -58184,11 +58166,12 @@ components:
       - $ref: '#/components/schemas/LusidInstrument'
       - $ref: '#/components/schemas/InterestRateSwap_allOf'
       description: "IL Swap Instrument; Lusid-ibor internal representation of a swap\
-        \ instrument\r\nA swap is the exchange of two sets of cashflows, occurring\
-        \ at one or more dates in one or more currencies.\r\nThese may include a notional\
-        \ exchange at the start and, or, maturity of the trade. Depending upon the\
-        \ choice of\r\npayment currency, payment frequency and so on they can be used\
-        \ to match sets of future obligations"
+        \ instrument\r\n            \r\n             A swap is the exchange of two\
+        \ sets of cashflows, occurring at one or more dates in one or more currencies.\r\
+        \n             These may include a notional exchange at the start and, or,\
+        \ maturity of the trade. Depending upon the choice of\r\n             payment\
+        \ currency, payment frequency and so on they can be used to match sets of\
+        \ future obligations"
     InterestRateSwaption:
       allOf:
       - $ref: '#/components/schemas/LusidInstrument'
@@ -64899,7 +64882,6 @@ components:
           enableUseOfCachedUnitResults: true
           windowValuationOnInstrumentStartEnd: true
           useInstrumentTypeToDeterminePricer: true
-          validateDomesticAndQuoteCurrenciesAreConsistent: true
           modelSelection:
             library: Lusid
             model: SimpleStatic
@@ -64982,7 +64964,6 @@ components:
         enableUseOfCachedUnitResults: true
         windowValuationOnInstrumentStartEnd: true
         useInstrumentTypeToDeterminePricer: true
-        validateDomesticAndQuoteCurrenciesAreConsistent: true
         modelSelection:
           library: Lusid
           model: SimpleStatic
@@ -65035,10 +65016,6 @@ components:
         useChildSubHoldingKeysForPortfolioExpansion:
           description: Should fund constituents inherit subholding keys from the parent
             subholding keyb
-          type: boolean
-        validateDomesticAndQuoteCurrenciesAreConsistent:
-          description: Do we validate that the instrument domestic currency matches
-            the quote currency (unless unknown/zzz) when using lookup pricing.
           type: boolean
       type: object
     ProcessedCommand:
@@ -68935,7 +68912,6 @@ components:
                 enableUseOfCachedUnitResults: true
                 windowValuationOnInstrumentStartEnd: true
                 useInstrumentTypeToDeterminePricer: true
-                validateDomesticAndQuoteCurrenciesAreConsistent: true
                 modelSelection:
                   library: Lusid
                   model: SimpleStatic
@@ -69039,7 +69015,6 @@ components:
                 enableUseOfCachedUnitResults: true
                 windowValuationOnInstrumentStartEnd: true
                 useInstrumentTypeToDeterminePricer: true
-                validateDomesticAndQuoteCurrenciesAreConsistent: true
                 modelSelection:
                   library: Lusid
                   model: SimpleStatic
@@ -74808,7 +74783,6 @@ components:
               enableUseOfCachedUnitResults: true
               windowValuationOnInstrumentStartEnd: true
               useInstrumentTypeToDeterminePricer: true
-              validateDomesticAndQuoteCurrenciesAreConsistent: true
               modelSelection:
                 library: Lusid
                 model: SimpleStatic
@@ -74841,7 +74815,6 @@ components:
             enableUseOfCachedUnitResults: true
             windowValuationOnInstrumentStartEnd: true
             useInstrumentTypeToDeterminePricer: true
-            validateDomesticAndQuoteCurrenciesAreConsistent: true
             modelSelection:
               library: Lusid
               model: SimpleStatic
@@ -74947,7 +74920,6 @@ components:
                 enableUseOfCachedUnitResults: true
                 windowValuationOnInstrumentStartEnd: true
                 useInstrumentTypeToDeterminePricer: true
-                validateDomesticAndQuoteCurrenciesAreConsistent: true
                 modelSelection:
                   library: Lusid
                   model: SimpleStatic
@@ -79202,26 +79174,17 @@ components:
         maturityDate:
           description: "The final maturity date of the instrument. This means the\
             \ last date on which the instruments makes a payment of any amount.\r\n\
-            For the avoidance of doubt, that is not necessarily prior to its last\
-            \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
-            \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date"
+            \            For the avoidance of doubt, that is not necessarily prior\
+            \ to its last sensitivity date for the purposes of risk; e.g. instruments\
+            \ such as\r\n            Constant Maturity Swaps (CMS) often have sensitivities\
+            \ to rates beyond their last payment date"
           format: date-time
           type: string
-        isNonDeliverable:
-          description: "Is the contract an IRS of \"Non-Deliverable\" type, meaning\
-            \ a single payment in the settlement currency based on the difference\
-            \ between\r\nthe fixed and floating rates."
-          type: boolean
         legs:
           description: The set of instrument legs that define the swap instrument.
           items:
             $ref: '#/components/schemas/InstrumentLeg'
           type: array
-        settlementCcy:
-          description: Settlement currency if IRS is non-deliverable
-          nullable: true
-          type: string
         instrumentType:
           description: 'The available values are: QuotedSecurity, InterestRateSwap,
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
@@ -79913,7 +79876,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:
