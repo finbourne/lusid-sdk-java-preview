@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **windowValuationOnInstrumentStartEnd** | **Boolean** | If true, when valuing an instrument outside the period where it is &#39;alive&#39; (the start-maturity window) it will return a valuation of zero |  [optional]
 **removeContingentCashflowsInPaymentDiary** | **Boolean** | When creating a payment diary, should contingent cash payments (e.g. from exercise of a swaption into a swap) be included or not.  i.e. Is exercise or default being assumed to happen or not. |  [optional]
 **useChildSubHoldingKeysForPortfolioExpansion** | **Boolean** | Should fund constituents inherit subholding keys from the parent subholding keyb |  [optional]
+**validateDomesticAndQuoteCurrenciesAreConsistent** | **Boolean** | Do we validate that the instrument domestic currency matches the quote currency (unless unknown/zzz) when using lookup pricing. |  [optional]
 
 
 
