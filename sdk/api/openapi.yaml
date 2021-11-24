@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3755
+  version: 0.11.3758
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:40290
 security:
 - {}
 tags:
@@ -58166,12 +58166,11 @@ components:
       - $ref: '#/components/schemas/LusidInstrument'
       - $ref: '#/components/schemas/InterestRateSwap_allOf'
       description: "IL Swap Instrument; Lusid-ibor internal representation of a swap\
-        \ instrument\r\n            \r\n             A swap is the exchange of two\
-        \ sets of cashflows, occurring at one or more dates in one or more currencies.\r\
-        \n             These may include a notional exchange at the start and, or,\
-        \ maturity of the trade. Depending upon the choice of\r\n             payment\
-        \ currency, payment frequency and so on they can be used to match sets of\
-        \ future obligations"
+        \ instrument\r\nA swap is the exchange of two sets of cashflows, occurring\
+        \ at one or more dates in one or more currencies.\r\nThese may include a notional\
+        \ exchange at the start and, or, maturity of the trade. Depending upon the\
+        \ choice of\r\npayment currency, payment frequency and so on they can be used\
+        \ to match sets of future obligations"
     InterestRateSwaption:
       allOf:
       - $ref: '#/components/schemas/LusidInstrument'
@@ -79174,17 +79173,26 @@ components:
         maturityDate:
           description: "The final maturity date of the instrument. This means the\
             \ last date on which the instruments makes a payment of any amount.\r\n\
-            \            For the avoidance of doubt, that is not necessarily prior\
-            \ to its last sensitivity date for the purposes of risk; e.g. instruments\
-            \ such as\r\n            Constant Maturity Swaps (CMS) often have sensitivities\
-            \ to rates beyond their last payment date"
+            For the avoidance of doubt, that is not necessarily prior to its last\
+            \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
+            \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
+            \ their last payment date"
           format: date-time
           type: string
+        isNonDeliverable:
+          description: "Is the contract an IRS of \"Non-Deliverable\" type, meaning\
+            \ a single payment in the settlement currency based on the difference\
+            \ between\r\nthe fixed and floating rates."
+          type: boolean
         legs:
           description: The set of instrument legs that define the swap instrument.
           items:
             $ref: '#/components/schemas/InstrumentLeg'
           type: array
+        settlementCcy:
+          description: Settlement currency if IRS is non-deliverable
+          nullable: true
+          type: string
         instrumentType:
           description: 'The available values are: QuotedSecurity, InterestRateSwap,
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
@@ -79876,7 +79884,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
