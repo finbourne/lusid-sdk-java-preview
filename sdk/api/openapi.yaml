@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3760
+  version: 0.11.3761
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:49300
 security:
 - {}
 tags:
@@ -8893,6 +8893,141 @@ paths:
       security:
       - oauth2: []
       summary: '[EXPERIMENTAL] UpdateDataType: Update data type definition'
+      tags:
+      - Data Types
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/datatypes/{scope}/{code}/referencedatavalues:
+    put:
+      description: Replaces the whole set of reference values
+      operationId: UpdateReferenceValues
+      parameters:
+      - description: The scope of the data type
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the data type
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The code of the data type
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The code of the data type
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+            - value: FRA
+              fields:
+                english_short_name: France
+                continent: Europe
+            - value: DEU
+              fields:
+                english_short_name: Germany
+                continent: Europe
+            schema:
+              description: The updated reference values
+              items:
+                $ref: '#/components/schemas/FieldValue'
+              type: array
+          application/json:
+            example:
+            - value: FRA
+              fields:
+                english_short_name: France
+                continent: Europe
+            - value: DEU
+              fields:
+                english_short_name: Germany
+                continent: Europe
+            schema:
+              description: The updated reference values
+              items:
+                $ref: '#/components/schemas/FieldValue'
+              type: array
+          text/json:
+            example:
+            - value: FRA
+              fields:
+                english_short_name: France
+                continent: Europe
+            - value: DEU
+              fields:
+                english_short_name: Germany
+                continent: Europe
+            schema:
+              description: The updated reference values
+              items:
+                $ref: '#/components/schemas/FieldValue'
+              type: array
+          application/*+json:
+            example:
+            - value: FRA
+              fields:
+                english_short_name: France
+                continent: Europe
+            - value: DEU
+              fields:
+                english_short_name: Germany
+                continent: Europe
+            schema:
+              description: The updated reference values
+              items:
+                $ref: '#/components/schemas/FieldValue'
+              type: array
+        description: The updated reference values
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DataType'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataType'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DataType'
+          description: Success
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] UpdateReferenceValues: Update reference data on a data
+        type'
       tags:
       - Data Types
       x-fbn-apistatus: Experimental
@@ -79913,7 +80048,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

@@ -1,6 +1,6 @@
 # DataTypesApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://local-unit-test-server.lusid.com:49300*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getUnitsFromDataType**](DataTypesApi.md#getUnitsFromDataType) | **GET** /api/datatypes/{scope}/{code}/units | [EARLY ACCESS] GetUnitsFromDataType: Get units from data type
 [**listDataTypes**](DataTypesApi.md#listDataTypes) | **GET** /api/datatypes/{scope} | [EARLY ACCESS] ListDataTypes: List data types
 [**updateDataType**](DataTypesApi.md#updateDataType) | **PUT** /api/datatypes/{scope}/{code} | [EXPERIMENTAL] UpdateDataType: Update data type definition
+[**updateReferenceValues**](DataTypesApi.md#updateReferenceValues) | **PUT** /api/datatypes/{scope}/{code}/referencedatavalues | [EXPERIMENTAL] UpdateReferenceValues: Update reference data on a data type
 
 
 <a name="createDataType"></a>
@@ -32,7 +33,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:49300");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -101,7 +102,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:49300");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -174,7 +175,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:49300");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -251,7 +252,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:49300");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -332,7 +333,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:49300");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -363,6 +364,79 @@ Name | Type | Description  | Notes
  **scope** | **String**| The scope of the data type |
  **code** | **String**| The code of the data type |
  **updateDataTypeRequest** | [**UpdateDataTypeRequest**](UpdateDataTypeRequest.md)| The updated definition of the data type |
+
+### Return type
+
+[**DataType**](DataType.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="updateReferenceValues"></a>
+# **updateReferenceValues**
+> DataType updateReferenceValues(scope, code, fieldValue)
+
+[EXPERIMENTAL] UpdateReferenceValues: Update reference data on a data type
+
+Replaces the whole set of reference values
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.DataTypesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:49300");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    DataTypesApi apiInstance = new DataTypesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the data type
+    String code = "code_example"; // String | The code of the data type
+    List<FieldValue> fieldValue = Arrays.asList(); // List<FieldValue> | The updated reference values
+    try {
+      DataType result = apiInstance.updateReferenceValues(scope, code, fieldValue);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DataTypesApi#updateReferenceValues");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope of the data type |
+ **code** | **String**| The code of the data type |
+ **fieldValue** | [**List&lt;FieldValue&gt;**](FieldValue.md)| The updated reference values |
 
 ### Return type
 
