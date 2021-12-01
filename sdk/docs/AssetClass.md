@@ -17,6 +17,8 @@
 
 * `COMMODITIES` (value: `"Commodities"`)
 
+* `MONEY` (value: `"Money"`)
+
 * `UNKNOWN` (value: `"Unknown"`)
 
 

@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3784
+  version: 0.11.3785
   x-logo:
     url: https://content.finbourne.com/LUSID-header.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:33951
 security:
 - {}
 tags:
@@ -50741,6 +50741,7 @@ components:
       - Equities
       - Credit
       - Commodities
+      - Money
       - Unknown
       type: string
     Basket:
@@ -51927,7 +51928,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -51940,6 +51941,7 @@ components:
           - FxForwardTenorCurveData
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
+          - CreditSpreadCurveData
           type: string
       required:
       - marketDataType
@@ -54051,6 +54053,11 @@ components:
       - rating
       - ratingSource
       type: object
+    CreditSpreadCurveData:
+      allOf:
+      - $ref: '#/components/schemas/ComplexMarketData'
+      - $ref: '#/components/schemas/CreditSpreadCurveData_allOf'
+      description: A credit spread curve matching tenors against par spread quotes
     CreditSupportAnnex:
       additionalProperties: false
       description: "Entity to capture the calculable and queryable methods and practices\
@@ -55992,6 +55999,12 @@ components:
         domCcy:
           description: Currency in which the contract is paid.
           type: string
+        assetClass:
+          description: "The asset class of the underlying. Optional and will default\
+            \ to Unknown if not set.\r\nSupported string (enumeration) values are:\
+            \ [InterestRates, FX, Inflation, Equities, Credit, Commodities, Money]."
+          nullable: true
+          type: string
         contractCode:
           description: The contract code used by the exchange, e.g. “CL” for Crude
             Oil, “ES” for E-mini SP 500, “FGBL” for Bund Futures, etc.
@@ -56018,10 +56031,11 @@ components:
         exchangeCode:
           description: "Exchange code for contract\r\nSupported string (enumeration)\
             \ values are: [ASX, CBOT, CBF, CME, CMX, EOP, HKG, KFE, MFM, OSE, SGX,\
-            \ NYBOT, KCBT, MGE, MATIF, SFE, NYFE, NYM, LIFFE, EUREX, ICE, MSE]."
+            \ NYBOT, KCBT, MGE, MATIF, SFE, NYFE, NYM, LIFFE, EUREX, ICE, MSE, NASDAQ,\
+            \ EEX, LME]."
           type: string
         exchangeName:
-          description: Exchange name (for when code is not automatically recognized).
+          description: Exchange name (for when code is not automatically recognised).
           type: string
         tickerStep:
           description: Minimal step size change in ticker.
@@ -57816,7 +57830,8 @@ components:
         assetClass:
           description: 'The nominal asset class of the instrument, e.g. InterestRates,
             FX, Inflation, Equities, Credit, Commodities, etc. The available values
-            are: InterestRates, FX, Inflation, Equities, Credit, Commodities, Unknown'
+            are: InterestRates, FX, Inflation, Equities, Credit, Commodities, Money,
+            Unknown'
           enum:
           - InterestRates
           - FX
@@ -57824,6 +57839,7 @@ components:
           - Equities
           - Credit
           - Commodities
+          - Money
           - Unknown
           type: string
         domCcy:
@@ -59120,6 +59136,7 @@ components:
       - FxForwardTenorCurveData
       - FxForwardTenorPipsCurveData
       - FxForwardCurveByQuoteReference
+      - CreditSpreadCurveData
       type: string
     MarketIdentifier:
       enum:
@@ -77781,6 +77798,57 @@ components:
       - startDate
       - ticker
       type: object
+    CreditSpreadCurveData_allOf:
+      properties:
+        baseDate:
+          description: EffectiveAt date of the quoted rates
+          format: date-time
+          type: string
+        domCcy:
+          description: Domestic currency of the curve
+          type: string
+        recoveryRate:
+          description: The recovery rate in default.
+          format: double
+          type: number
+        spreads:
+          description: Par spread quotes corresponding to the tenors.
+          items:
+            format: double
+            type: number
+          type: array
+        tenors:
+          description: The tenors for which the rates apply
+          items:
+            type: string
+          type: array
+        marketDataType:
+          description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
+            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
+            FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
+          enum:
+          - DiscountFactorCurveData
+          - EquityVolSurfaceData
+          - FxVolSurfaceData
+          - IrVolCubeData
+          - OpaqueMarketData
+          - YieldCurveData
+          - FxForwardCurveData
+          - FxForwardPipsCurveData
+          - FxForwardTenorCurveData
+          - FxForwardTenorPipsCurveData
+          - FxForwardCurveByQuoteReference
+          - CreditSpreadCurveData
+          type: string
+      required:
+      - baseDate
+      - domCcy
+      - marketDataType
+      - recoveryRate
+      - spreads
+      - tenors
+      type: object
     CrossCurrencySwap_allOf:
       properties:
         startDate:
@@ -77870,7 +77938,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -77883,6 +77951,7 @@ components:
           - FxForwardTenorCurveData
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
+          - CreditSpreadCurveData
           type: string
       required:
       - baseDate
@@ -78216,7 +78285,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -78229,6 +78298,7 @@ components:
           - FxForwardTenorCurveData
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
+          - CreditSpreadCurveData
           type: string
       required:
       - baseDate
@@ -78853,7 +78923,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -78866,6 +78936,7 @@ components:
           - FxForwardTenorCurveData
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
+          - CreditSpreadCurveData
           type: string
       required:
       - domCcy
@@ -78903,7 +78974,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -78916,6 +78987,7 @@ components:
           - FxForwardTenorCurveData
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
+          - CreditSpreadCurveData
           type: string
       required:
       - baseDate
@@ -78995,7 +79067,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -79008,6 +79080,7 @@ components:
           - FxForwardTenorCurveData
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
+          - CreditSpreadCurveData
           type: string
       required:
       - baseDate
@@ -79045,7 +79118,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -79058,6 +79131,7 @@ components:
           - FxForwardTenorCurveData
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
+          - CreditSpreadCurveData
           type: string
       required:
       - baseDate
@@ -79095,7 +79169,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -79108,6 +79182,7 @@ components:
           - FxForwardTenorCurveData
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
+          - CreditSpreadCurveData
           type: string
       required:
       - baseDate
@@ -79487,7 +79562,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -79500,6 +79575,7 @@ components:
           - FxForwardTenorCurveData
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
+          - CreditSpreadCurveData
           type: string
       required:
       - baseDate
@@ -79547,7 +79623,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -79560,6 +79636,7 @@ components:
           - FxForwardTenorCurveData
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
+          - CreditSpreadCurveData
           type: string
       required:
       - document
@@ -79848,7 +79925,7 @@ components:
           type: string
         assetClass:
           description: 'The available values are: InterestRates, FX, Inflation, Equities,
-            Credit, Commodities, Unknown'
+            Credit, Commodities, Money, Unknown'
           enum:
           - InterestRates
           - FX
@@ -79856,6 +79933,7 @@ components:
           - Equities
           - Credit
           - Commodities
+          - Money
           - Unknown
           type: string
         fgnCcys:
@@ -80023,7 +80101,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -80036,6 +80114,7 @@ components:
           - FxForwardTenorCurveData
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
+          - CreditSpreadCurveData
           type: string
       required:
       - baseDate
@@ -80048,7 +80127,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

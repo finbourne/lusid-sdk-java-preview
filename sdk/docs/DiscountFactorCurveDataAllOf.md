@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **baseDate** | **OffsetDateTime** | BaseDate for the Curve | 
 **dates** | **List&lt;OffsetDateTime&gt;** | Dates for which the discount factors apply | 
 **discountFactors** | **List&lt;Double&gt;** | Discount factors to be applied to cashflow on the specified dates | 
-**marketDataType** | [**MarketDataTypeEnum**](#MarketDataTypeEnum) | The available values are: DiscountFactorCurveData, EquityVolSurfaceData, FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData, FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData, FxForwardCurveByQuoteReference | 
+**marketDataType** | [**MarketDataTypeEnum**](#MarketDataTypeEnum) | The available values are: DiscountFactorCurveData, EquityVolSurfaceData, FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData, FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData, FxForwardCurveByQuoteReference, CreditSpreadCurveData | 
 
 
 
@@ -29,6 +29,7 @@ FXFORWARDPIPSCURVEDATA | &quot;FxForwardPipsCurveData&quot;
 FXFORWARDTENORCURVEDATA | &quot;FxForwardTenorCurveData&quot;
 FXFORWARDTENORPIPSCURVEDATA | &quot;FxForwardTenorPipsCurveData&quot;
 FXFORWARDCURVEBYQUOTEREFERENCE | &quot;FxForwardCurveByQuoteReference&quot;
+CREDITSPREADCURVEDATA | &quot;CreditSpreadCurveData&quot;
 
 
 

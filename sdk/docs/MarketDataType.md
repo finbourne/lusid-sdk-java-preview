@@ -27,5 +27,7 @@
 
 * `FXFORWARDCURVEBYQUOTEREFERENCE` (value: `"FxForwardCurveByQuoteReference"`)
 
+* `CREDITSPREADCURVEDATA` (value: `"CreditSpreadCurveData"`)
+
 
 

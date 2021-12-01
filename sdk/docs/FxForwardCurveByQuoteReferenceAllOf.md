@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **fgnCcy** | **String** | Foreign currency of the fx forward | 
 **tenors** | **List&lt;String&gt;** | Tenors for which the forward rates apply | 
 **quoteReferences** | **List&lt;Map&lt;String, String&gt;&gt;** | For each tenor, a list of identifiers. These will be looked up in the quotes store to resolve the actual rates. | 
-**marketDataType** | [**MarketDataTypeEnum**](#MarketDataTypeEnum) | The available values are: DiscountFactorCurveData, EquityVolSurfaceData, FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData, FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData, FxForwardCurveByQuoteReference | 
+**marketDataType** | [**MarketDataTypeEnum**](#MarketDataTypeEnum) | The available values are: DiscountFactorCurveData, EquityVolSurfaceData, FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData, FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData, FxForwardCurveByQuoteReference, CreditSpreadCurveData | 
 
 
 
@@ -30,6 +30,7 @@ FXFORWARDPIPSCURVEDATA | &quot;FxForwardPipsCurveData&quot;
 FXFORWARDTENORCURVEDATA | &quot;FxForwardTenorCurveData&quot;
 FXFORWARDTENORPIPSCURVEDATA | &quot;FxForwardTenorPipsCurveData&quot;
 FXFORWARDCURVEBYQUOTEREFERENCE | &quot;FxForwardCurveByQuoteReference&quot;
+CREDITSPREADCURVEDATA | &quot;CreditSpreadCurveData&quot;
 
 
 
