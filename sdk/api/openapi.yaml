@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3790
+  version: 0.11.3791
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:45209
+- url: http://local-unit-test-server.lusid.com:59595
 security:
 - {}
 tags:
@@ -55102,7 +55102,7 @@ components:
         \ a number of fields here"
       properties:
         domCcy:
-          description: currency in which the contract is paid.
+          description: Currency in which the contract is paid.
           type: string
         strike:
           description: The option strike, this can be negative for some options.
@@ -55118,7 +55118,7 @@ components:
           type: string
         deliveryType:
           description: "The delivery type, cash or physical. An option on a future\
-            \ is physically settled if upon exerciseing the\r\nholder receives a future.\r\
+            \ is physically settled if upon exercising the\r\nholder receives a future.\r\
             \nSupported string (enumeration) values are: [Cash, Physical]."
           type: string
         description:
@@ -55128,7 +55128,7 @@ components:
           description: "Exchange code for contract\r\nSupported string (enumeration)\
             \ values are: [ASX, CBOT, CBF, CME, CMX, EOP, HKG, KFE, MFM, OSE, SGX,\
             \ NYBOT, KCBT, MGE, MATIF, SFE, NYFE, NYM, LIFFE, EUREX, ICE, MSE, NASDAQ,\
-            \ EEX]."
+            \ EEX, LME]."
           type: string
         exerciseDate:
           description: Exercise Date
