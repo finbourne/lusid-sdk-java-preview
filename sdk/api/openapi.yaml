@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3792
+  version: 0.11.3793
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:48588
+- url: http://local-unit-test-server.lusid.com:34947
 security:
 - {}
 tags:
@@ -2756,7 +2756,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] ListCalendars: List Calenders'
+      summary: '[BETA] ListCalendars: List Calendars'
       tags:
       - Calendars
       x-fbn-apistatus: Beta
@@ -8368,6 +8368,150 @@ paths:
       x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/datatypes:
+    get:
+      description: List all data type summaries
+      operationId: ListDataTypeSummaries
+      parameters:
+      - description: "The asAt datetime at which to list the data type summaries.\
+          \ Defaults to returning the latest version\r\n             of each summary\
+          \ if not specified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to list the data type summaries.\
+            \ Defaults to returning the latest version\r\n             of each summary\
+            \ if not specified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: "The pagination token to use to continue listing data type summaries.\
+          \ This\r\nvalue is returned from the previous call. If a pagination token\
+          \ is provided, the filter, effectiveAt\r\nand asAt fields must not have\
+          \ changed since the original request. Also, if set, a start value cannot\
+          \ be provided."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          description: "The pagination token to use to continue listing data type\
+            \ summaries. This\r\nvalue is returned from the previous call. If a pagination\
+            \ token is provided, the filter, effectiveAt\r\nand asAt fields must not\
+            \ have changed since the original request. Also, if set, a start value\
+            \ cannot be provided."
+          maxLength: 500
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
+          type: string
+        style: form
+      - description: When paginating, skip this number of results.
+        explode: true
+        in: query
+        name: start
+        required: false
+        schema:
+          description: When paginating, skip this number of results.
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: When paginating, limit the results to this number. Defaults to
+          100 if not specified.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: When paginating, limit the results to this number. Defaults
+            to 100 if not specified.
+          format: int32
+          maximum: 5000
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: "Optional. Expression to filter the result set. \r\n        \
+          \     For example, to filter on the Scope, use \"id.scope eq 'myscope'\"\
+          , to filter on Schema, use \"schema eq 'string'\",\r\n             to filter\
+          \ on AcceptableValues use \"acceptableValues any (~ eq 'value')\"\r\n  \
+          \           Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid."
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          description: "Optional. Expression to filter the result set. \r\n      \
+            \       For example, to filter on the Scope, use \"id.scope eq 'myscope'\"\
+            , to filter on Schema, use \"schema eq 'string'\",\r\n             to\
+            \ filter on AcceptableValues use \"acceptableValues any (~ eq 'value')\"\
+            \r\n             Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid."
+          maxLength: 16384
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        style: form
+      - description: Sort the results by these fields. Use use the '-' sign to denote
+          descending allocation e.g. -MyFieldName.
+        explode: true
+        in: query
+        name: sortBy
+        required: false
+        schema:
+          description: Sort the results by these fields. Use use the '-' sign to denote
+            descending allocation e.g. -MyFieldName.
+          items:
+            type: string
+          nullable: true
+          type: array
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfDataTypeSummary'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfDataTypeSummary'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfDataTypeSummary'
+          description: Success
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListDataTypeSummaries: List all data type summaries,
+        without the reference data'
+      tags:
+      - Data Types
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
     post:
       description: "Create a new data type definition\r\n\r\nData types cannot be\
         \ created in either the \"default\" or \"system\" scopes."
@@ -54763,6 +54907,100 @@ components:
       - typeValueRange
       - valueType
       type: object
+    DataTypeSummary:
+      additionalProperties: false
+      example:
+        acceptableValues:
+        - acceptableValues
+        - acceptableValues
+        acceptableUnits:
+        - schema: NoUnits
+          code: code
+          displayName: displayName
+          description: description
+        - schema: NoUnits
+          code: code
+          displayName: displayName
+          description: description
+        displayName: displayName
+        valueType: String
+        description: description
+        unitSchema: NoUnits
+        typeValueRange: Open
+        id:
+          code: code
+          scope: scope
+      properties:
+        typeValueRange:
+          description: 'Indicates the range of data acceptable by a data type. The
+            available values are: Open, Closed'
+          enum:
+          - Open
+          - Closed
+          type: string
+        id:
+          $ref: '#/components/schemas/ResourceId'
+        displayName:
+          description: The display name of the data type.
+          type: string
+        description:
+          description: The description of the data type.
+          type: string
+        valueType:
+          description: 'The expected type of the values. The available values are:
+            String, Int, Decimal, DateTime, Boolean, Map, List, PropertyArray, Percentage,
+            Code, Id, Uri, CurrencyAndAmount, TradePrice, Currency, MetricValue, ResourceId,
+            ResultValue, CutLocalTime, DateOrCutLabel'
+          enum:
+          - String
+          - Int
+          - Decimal
+          - DateTime
+          - Boolean
+          - Map
+          - List
+          - PropertyArray
+          - Percentage
+          - Code
+          - Id
+          - Uri
+          - CurrencyAndAmount
+          - TradePrice
+          - Currency
+          - MetricValue
+          - ResourceId
+          - ResultValue
+          - CutLocalTime
+          - DateOrCutLabel
+          type: string
+        acceptableValues:
+          description: The acceptable set of values for this data type. Only applies
+            to 'open' value type range.
+          items:
+            type: string
+          nullable: true
+          type: array
+        unitSchema:
+          description: 'The schema of the data type''s units. The available values
+            are: NoUnits, Basic, Iso4217Currency'
+          enum:
+          - NoUnits
+          - Basic
+          - Iso4217Currency
+          type: string
+        acceptableUnits:
+          description: The definitions of the acceptable units.
+          items:
+            $ref: '#/components/schemas/IUnitDefinitionDto'
+          nullable: true
+          type: array
+      required:
+      - description
+      - displayName
+      - id
+      - typeValueRange
+      - valueType
+      type: object
     DataTypeValueRange:
       description: This class indicates what the range of data acceptable by a data
         type
@@ -61344,6 +61582,91 @@ components:
           description: The resources to list.
           items:
             $ref: '#/components/schemas/CutLabelDefinition'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - values
+      type: object
+    PagedResourceListOfDataTypeSummary:
+      additionalProperties: false
+      description: A paginated list of resource that can be returned from a request.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - acceptableValues:
+          - acceptableValues
+          - acceptableValues
+          acceptableUnits:
+          - schema: NoUnits
+            code: code
+            displayName: displayName
+            description: description
+          - schema: NoUnits
+            code: code
+            displayName: displayName
+            description: description
+          displayName: displayName
+          valueType: String
+          description: description
+          unitSchema: NoUnits
+          typeValueRange: Open
+          id:
+            code: code
+            scope: scope
+        - acceptableValues:
+          - acceptableValues
+          - acceptableValues
+          acceptableUnits:
+          - schema: NoUnits
+            code: code
+            displayName: displayName
+            description: description
+          - schema: NoUnits
+            code: code
+            displayName: displayName
+            description: description
+          displayName: displayName
+          valueType: String
+          description: description
+          unitSchema: NoUnits
+          typeValueRange: Open
+          id:
+            code: code
+            scope: scope
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/DataTypeSummary'
           type: array
         href:
           description: The URI of the resource list.
