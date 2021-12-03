@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3796
+  version: 0.11.3797
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:47490
+- url: http://local-unit-test-server.lusid.com:30100
 security:
 - {}
 tags:
@@ -78130,21 +78130,21 @@ components:
         domCcy:
           description: Domestic currency of the curve
           type: string
-        recoveryRate:
-          description: The recovery rate in default.
-          format: double
-          type: number
+        tenors:
+          description: The tenors for which the rates apply
+          items:
+            type: string
+          type: array
         spreads:
           description: Par spread quotes corresponding to the tenors.
           items:
             format: double
             type: number
           type: array
-        tenors:
-          description: The tenors for which the rates apply
-          items:
-            type: string
-          type: array
+        recoveryRate:
+          description: The recovery rate in default.
+          format: double
+          type: number
         marketDataType:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
