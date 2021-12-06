@@ -275,12 +275,12 @@ info:
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3802
+  version: 0.11.3804
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:34946
+- url: http://local-unit-test-server.lusid.com:50729
 security:
 - {}
 tags:
@@ -4332,11 +4332,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertComplexMarketData: Upsert a set of complex market
+      summary: '[EARLY ACCESS] UpsertComplexMarketData: Upsert a set of complex market
         data items. This creates or updates the data in Lusid.'
       tags:
       - Complex Market Data
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/complexmarketdata/{scope}/$delete:
@@ -4485,11 +4485,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteComplexMarketData: Delete one or more items of
+      summary: '[EARLY ACCESS] DeleteComplexMarketData: Delete one or more items of
         complex market data, assuming they are present.'
       tags:
       - Complex Market Data
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/complexmarketdata/{scope}/$get:
@@ -4703,10 +4703,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetComplexMarketData: Get complex market data'
+      summary: '[EARLY ACCESS] GetComplexMarketData: Get complex market data'
       tags:
       - Complex Market Data
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/compliance:
@@ -52201,28 +52201,6 @@ components:
       - asAt
       - runId
       type: object
-    Compounding:
-      additionalProperties: false
-      description: The compounding settings used on interest rate.
-      properties:
-        compoundingMethod:
-          description: "If the interest rate is simple or compounded.\r\nSupported\
-            \ string (enumeration) values are: [Average, Compounded, None]."
-          type: string
-        resetFrequency:
-          description: The interest payment frequency.
-          type: string
-        spreadCompoundingMethod:
-          description: "Defines how the computed leg spread is applied to compounded\
-            \ rate.\r\nIt applies only when CompoundingMethod = ‘Compounded‘.\r\n\
-            Supported string (enumeration) values are: [IsdaCompounding, NoCompounding,\
-            \ IsdaFlatCompounding, None]."
-          type: string
-      required:
-      - compoundingMethod
-      - resetFrequency
-      - spreadCompoundingMethod
-      type: object
     ConfigurationRecipe:
       additionalProperties: false
       description: "The Configuration or Calculation Recipe controls how LUSID processes\
@@ -58822,13 +58800,9 @@ components:
         stubType:
           description: "If a stub is required should it be at the front or back of\
             \ the leg.\r\nSupported string (enumeration) values are: [None, ShortFront,\
-            \ ShortBack, LongBack, LongFront, Both]."
+            \ ShortBack, LongBack, LongFront]."
           type: string
-        compounding:
-          $ref: '#/components/schemas/Compounding'
       required:
-      - compounding
-      - indexConventionName
       - notionalExchangeType
       - payReceive
       - rateOrSpread
