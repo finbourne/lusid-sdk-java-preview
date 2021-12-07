@@ -273,14 +273,16 @@ info:
     | <a name="752">752</a>|Luminesce process returned an error.|  |
     | <a name="753">753</a>|File name or content incompatible with operation.|  |
     | <a name="755">755</a>|Schema of response from Drive is not as expected.|  |
+    | <a name="757">757</a>|Schema of response from Luminesce is not as expected.|  |
+    | <a name="758">758</a>|Luminesce timed out.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3807
+  version: 0.11.3811
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:48989
 security:
 - {}
 tags:
@@ -52201,6 +52203,28 @@ components:
       - asAt
       - runId
       type: object
+    Compounding:
+      additionalProperties: false
+      description: The compounding settings used on interest rate.
+      properties:
+        compoundingMethod:
+          description: "If the interest rate is simple or compounded.\r\nSupported\
+            \ string (enumeration) values are: [Average, Compounded, None]."
+          type: string
+        resetFrequency:
+          description: The interest payment frequency.
+          type: string
+        spreadCompoundingMethod:
+          description: "Defines how the computed leg spread is applied to compounded\
+            \ rate.\r\nIt applies only when CompoundingMethod = ‘Compounded‘.\r\n\
+            Supported string (enumeration) values are: [IsdaCompounding, NoCompounding,\
+            \ IsdaFlatCompounding, None]."
+          type: string
+      required:
+      - compoundingMethod
+      - resetFrequency
+      - spreadCompoundingMethod
+      type: object
     ConfigurationRecipe:
       additionalProperties: false
       description: "The Configuration or Calculation Recipe controls how LUSID processes\
@@ -58800,8 +58824,10 @@ components:
         stubType:
           description: "If a stub is required should it be at the front or back of\
             \ the leg.\r\nSupported string (enumeration) values are: [None, ShortFront,\
-            \ ShortBack, LongBack, LongFront]."
+            \ ShortBack, LongBack, LongFront, Both]."
           type: string
+        compounding:
+          $ref: '#/components/schemas/Compounding'
       required:
       - notionalExchangeType
       - payReceive
@@ -80462,7 +80488,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
