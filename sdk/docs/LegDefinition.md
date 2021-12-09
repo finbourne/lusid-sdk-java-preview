@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **resetConvention** | **String** | Control how resets are generated relative to swap payment convention(s).  Supported string (enumeration) values are: [InAdvance, InArrears]. |  [optional]
 **stubType** | **String** | If a stub is required should it be at the front or back of the leg.  Supported string (enumeration) values are: [None, ShortFront, ShortBack, LongBack, LongFront, Both]. | 
 **compounding** | [**Compounding**](Compounding.md) |  |  [optional]
+**amortisation** | [**StepSchedule**](StepSchedule.md) |  |  [optional]
 
 
 

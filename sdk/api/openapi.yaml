@@ -277,12 +277,12 @@ info:
     | <a name="758">758</a>|Luminesce timed out.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3820
+  version: 0.11.3821
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:45920
+- url: http://local-unit-test-server.lusid.com:45408
 security:
 - {}
 tags:
@@ -58828,11 +58828,30 @@ components:
           type: string
         compounding:
           $ref: '#/components/schemas/Compounding'
+        amortisation:
+          $ref: '#/components/schemas/StepSchedule'
       required:
       - notionalExchangeType
       - payReceive
       - rateOrSpread
       - stubType
+      type: object
+    LevelStep:
+      additionalProperties: false
+      description: Item which is stepped in level/quantity.
+      properties:
+        date:
+          description: The date from which the level should apply.
+          format: date-time
+          type: string
+        quantity:
+          description: The quantity which is applied. This might be an absolute, percentage,
+            fractional or other value.
+          format: double
+          type: number
+      required:
+      - date
+      - quantity
       type: object
     Link:
       additionalProperties: false
@@ -72585,6 +72604,37 @@ components:
       - Ascending
       - Descending
       type: string
+    StepSchedule:
+      additionalProperties: false
+      description: "Schedule that steps at known dated points in time.\r\nUsed in\
+        \ representation of a sinking bond, also called amortisation, steps in coupons\
+        \ for fixed bonds and spreads for floating bonds."
+      properties:
+        levelType:
+          description: "The type of shift or adjustment that the quantity represents\r\
+            \nSupported string (enumeration) values are: [Absolute, AbsoluteShift,\
+            \ Percentage, AbsolutePercentage]."
+          type: string
+        scheduleType:
+          description: "What type of schedule does this represent.\r\nSupported string\
+            \ (enumeration) values are: [Fixed, Float, Optionality, Step, Payment,\
+            \ Accrual]."
+          type: string
+        stepScheduleType:
+          description: "The type of step that this schedule is for.\r\nSupported string\
+            \ (enumeration) values are: [Coupon, Notional, Spread]."
+          type: string
+        steps:
+          description: The level steps which are applied.
+          items:
+            $ref: '#/components/schemas/LevelStep'
+          type: array
+      required:
+      - levelType
+      - scheduleType
+      - stepScheduleType
+      - steps
+      type: object
     Stream:
       additionalProperties: false
       example:
