@@ -14,6 +14,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static com.finbourne.lusid.utilities.TestDataUtilities.DefaultScope;
 import static com.finbourne.lusid.utilities.TestDataUtilities.TutorialScope;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -133,7 +134,8 @@ public class Instruments {
                             }
                         })}
 
-        }).collect(Collectors.toMap(data -> (String)data[0], data -> (InstrumentDefinition)data[1])));
+            }).collect(Collectors.toMap(data -> (String)data[0], data -> (InstrumentDefinition)data[1])),
+            DefaultScope);
 
         assertThat(upsertInstrumentsResponse.getValues().size(), is(equalTo(5)));
     }
@@ -149,7 +151,7 @@ public class Instruments {
          */
 
         GetInstrumentsResponse lookedUpInstruments = instrumentsApi.getInstruments(FIGI_SCHEME, Arrays.asList("BBG000C6K6G9"),
-                null, null, Arrays.asList(ISIN_PROPERTY_KEY, SEDOL_PROPERTY_KEY));
+                null, null, Arrays.asList(ISIN_PROPERTY_KEY, SEDOL_PROPERTY_KEY), DefaultScope);
 
         assertThat(lookedUpInstruments.getValues(), hasKey("BBG000C6K6G9"));
 
@@ -189,7 +191,7 @@ public class Instruments {
         final int pageSize = 5;
 
         //    List the instruments restricting, the number that are returned
-        PagedResourceListOfInstrument instruments = instrumentsApi.listInstruments(null, null, null, null, null, pageSize, null, null);
+        PagedResourceListOfInstrument instruments = instrumentsApi.listInstruments(null, null, null, null, null, pageSize, null, null, DefaultScope);
 
         assertThat(instruments.getValues().size(), is(equalTo(pageSize)));
     }
@@ -201,7 +203,7 @@ public class Instruments {
         List<String>    figis = Arrays.asList("BBG000C6K6G9", "BBG000C04D57", "BBG000FV67Q4");
 
         //  Get a set of instruments querying by FIGIs
-        GetInstrumentsResponse instruments = instrumentsApi.getInstruments("Figi", figis, null, null, null);
+        GetInstrumentsResponse instruments = instrumentsApi.getInstruments("Figi", figis, null, null, null, DefaultScope);
 
         for (String figi : figis) {
             assertThat(instruments.getValues(), hasKey(figi));
@@ -220,13 +222,15 @@ public class Instruments {
         instrumentsApi.upsertInstrumentsProperties(Collections.singletonList(new UpsertInstrumentPropertyRequest()
                 .identifierType(FIGI_SCHEME)
                 .identifier(figi)
-                .properties(Collections.singletonList(new Property().key(propertyKey).value(propertyValue)))));
+                .properties(Collections.singletonList(new Property().key(propertyKey).value(propertyValue)))),
+                DefaultScope);
 
         Instrument instrument = instrumentsApi.getInstrument(
                 FIGI_SCHEME,
                 figi,
                 null, null,
-                Collections.singletonList(propertyKey)
+                Collections.singletonList(propertyKey),
+                DefaultScope
         );
 
         assertThat(instrument.getProperties(), hasSize(greaterThanOrEqualTo(1)));
