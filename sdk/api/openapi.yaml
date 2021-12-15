@@ -277,12 +277,12 @@ info:
     | <a name="758">758</a>|Luminesce timed out.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3834
+  version: 0.11.3835
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:41839
+- url: http://local-unit-test-server.lusid.com:53249
 security:
 - {}
 tags:
@@ -4976,6 +4976,9 @@ paths:
                     scope: MyScope
                     code: MyPortfolioCode
                   passed: true
+                  resultValue: 0
+                  ruleLowerLimit: 0
+                  ruleUpperLimit: 0
                 href: https://myco.lusid.com/api/api/compliance/some-run-id
                 links: []
               schema:
@@ -4988,6 +4991,9 @@ paths:
                     scope: MyScope
                     code: MyPortfolioCode
                   passed: true
+                  resultValue: 0
+                  ruleLowerLimit: 0
+                  ruleUpperLimit: 0
                 href: https://myco.lusid.com/api/api/compliance/some-run-id
                 links: []
               schema:
@@ -5000,6 +5006,9 @@ paths:
                     scope: MyScope
                     code: MyPortfolioCode
                   passed: true
+                  resultValue: 0
+                  ruleLowerLimit: 0
+                  ruleUpperLimit: 0
                 href: https://myco.lusid.com/api/api/compliance/some-run-id
                 links: []
               schema:
@@ -52290,24 +52299,62 @@ components:
     ComplianceRuleResult:
       additionalProperties: false
       example:
+        resultValue: 0.8008281904610115
+        ruleUpperLimit: 1
+        ruleLowerLimit: 6
         portfolio:
           code: code
           scope: scope
+        ruleInformationKey: ruleInformationKey
+        ruleName: ruleName
+        ruleInformationMatch: ruleInformationMatch
         passed: true
         ruleId: ruleId
+        ruleDescription: ruleDescription
       properties:
         ruleId:
           description: The unique identifierof a compliance rule
+          type: string
+        ruleName:
+          description: The User-given name of the rule
+          type: string
+        ruleDescription:
+          description: The User-given description of the rule
           type: string
         portfolio:
           $ref: '#/components/schemas/ResourceId'
         passed:
           description: The result of an individual compliance run, true if passed
           type: boolean
+        resultValue:
+          description: The calculation result that was used to confirm a pass/fail
+          format: double
+          type: number
+        ruleInformationMatch:
+          description: The value matched by the rule
+          type: string
+        ruleInformationKey:
+          description: The property key matched by the rule
+          type: string
+        ruleLowerLimit:
+          description: The lower limit of the rule
+          format: int32
+          type: integer
+        ruleUpperLimit:
+          description: The upper limit of the rule
+          format: int32
+          type: integer
       required:
       - passed
       - portfolio
+      - resultValue
+      - ruleDescription
       - ruleId
+      - ruleInformationKey
+      - ruleInformationMatch
+      - ruleLowerLimit
+      - ruleName
+      - ruleUpperLimit
       type: object
     ComplianceRun:
       additionalProperties: false
@@ -61387,16 +61434,30 @@ components:
         previousPage: previousPage
         nextPage: nextPage
         values:
-        - portfolio:
+        - resultValue: 0.8008281904610115
+          ruleUpperLimit: 1
+          ruleLowerLimit: 6
+          portfolio:
             code: code
             scope: scope
+          ruleInformationKey: ruleInformationKey
+          ruleName: ruleName
+          ruleInformationMatch: ruleInformationMatch
           passed: true
           ruleId: ruleId
-        - portfolio:
+          ruleDescription: ruleDescription
+        - resultValue: 0.8008281904610115
+          ruleUpperLimit: 1
+          ruleLowerLimit: 6
+          portfolio:
             code: code
             scope: scope
+          ruleInformationKey: ruleInformationKey
+          ruleName: ruleName
+          ruleInformationMatch: ruleInformationMatch
           passed: true
           ruleId: ruleId
+          ruleDescription: ruleDescription
         links:
         - method: method
           description: description
