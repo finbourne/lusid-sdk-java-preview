@@ -277,12 +277,12 @@ info:
     | <a name="758">758</a>|Luminesce timed out.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3839
+  version: 0.11.3838
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:57804
+- url: https://fbn-prd.lusid.com/api
 security:
 - {}
 tags:
@@ -51409,7 +51409,7 @@ components:
         Most commonly required with a CDS Index or similarly defined instrument.
       properties:
         index:
-          description: Index set, e.g. iTraxx or CDX.
+          description: Index set, e.g. iTraxx or CDX
           type: string
         name:
           description: The index name within the set, e.g. "MAIN" or "Crossover".
@@ -52137,7 +52137,7 @@ components:
             \ used for adjusting dates that coincide with a non-business day.\r\n\
             Supported string (enumeration) values are: [NoAdjustment, None, Previous,\
             \ P, Following, F, ModifiedPrevious, MP, ModifiedFollowing, MF, EndOfMonth,\
-            \ EOM, EndOfMonthPrevious, EOMP, EndOfMonthFollowing, EOMF, HalfMonthModifiedFollowing]."
+            \ EOM, EndOfMonthPrevious, EOMP, EndOfMonthFollowing, EOMF]."
           maxLength: 50
           minLength: 0
           type: string
@@ -52199,7 +52199,7 @@ components:
       description: "CDSs generally conform to fairly standard definitions, but can\
         \ be tweaked in a number of different ways.\r\nThis class gathers a number\
         \ of common features which may deviate. These will default to the market standard\
-        \ when\r\nno overrides are provided."
+        \ when\r\nno overrides are provided"
       properties:
         seniority:
           description: 'The available values are: Unknown, SNR, SUB, JRSUBUT2, PREFT1,
@@ -52225,11 +52225,11 @@ components:
           type: string
         protectStartDay:
           description: Does the protection leg pay out in the case of default on the
-            start date.
+            start date
           type: boolean
         payAccruedInterestOnDefault:
           description: Should accrued interest on the premium leg be paid if a credit
-            event occurs.
+            event occurs
           type: boolean
       required:
       - payAccruedInterestOnDefault
@@ -52735,7 +52735,7 @@ components:
           description: "Defines how the computed leg spread is applied to compounded\
             \ rate.\r\nIt applies only when CompoundingMethod = ‘Compounded‘.\r\n\
             Supported string (enumeration) values are: [IsdaCompounding, NoCompounding,\
-            \ IsdaFlatCompounding]."
+            \ IsdaFlatCompounding, None]."
           type: string
       required:
       - compoundingMethod
@@ -56029,12 +56029,12 @@ components:
             \ EEX, LME]."
           type: string
         exerciseDate:
-          description: Exercise Date.
+          description: Exercise Date
           format: date-time
           type: string
         exerciseType:
-          description: "The exercise type, European, American or Bermudan.\r\nSupported\
-            \ string (enumeration) values are: [European, Bermudan, American]."
+          description: "The exercise type, European, American or Bermudan\r\nSupported\
+            \ string (enumeration) values are: [None, European, Bermudan, American]."
           type: string
         optionCode:
           description: Option Contract Code, typically one or two letters, e.g. OG
@@ -56042,13 +56042,13 @@ components:
           type: string
         optionType:
           description: "The option type, Call or Put.\r\nSupported string (enumeration)\
-            \ values are: [Call, Put]."
+            \ values are: [None, Call, Put]."
           type: string
         underlying:
           $ref: '#/components/schemas/LusidInstrument'
         underlyingCode:
           description: Code of the underlying, for an option on futures this should
-            be the futures code.
+            be the futures code
           type: string
       required:
       - contractSize
@@ -56374,10 +56374,10 @@ components:
       - $ref: '#/components/schemas/ExoticInstrument_allOf'
       description: "Class modeling an instrument which is not fully described, in\
         \ the sense of being able to obtain a price or other analytic result,\r\n\
-        by a simple SecurityUid. This would include non-exchange traded instruments\
-        \ such as an interest-rate-swap (IRS) and obviously 3rd generation exotics\r\
-        \nlike FX-TARNs or FX-Chooser-Redeemers and Credit instruments like CDS or\
-        \ Tranches."
+        \            by a simple SecurityUid. This would include non-exchange traded\
+        \ instruments such as an interest-rate-swap (IRS) and obviously 3rd generation\
+        \ exotics\r\n            like FX-TARNs or FX-Chooser-Redeemers and Credit\
+        \ instruments like CDS or Tranches."
     ExpandedGroup:
       additionalProperties: false
       example:
@@ -56720,17 +56720,17 @@ components:
       allOf:
       - $ref: '#/components/schemas/InstrumentLeg'
       - $ref: '#/components/schemas/FixedLeg_allOf'
-      description: Lusid-ibor internal representation of a fixed rates leg.
+      description: representation of a fixed rates leg
     FloatingLeg:
       allOf:
       - $ref: '#/components/schemas/InstrumentLeg'
       - $ref: '#/components/schemas/FloatingLeg_allOf'
-      description: Lusid-ibor internal representation of a floating rates leg.
+      description: representation of a floating rates leg
     FlowConventionName:
       additionalProperties: false
       description: Representation of an abstract definition of a flow convention set
         consisting of currency, tenor and an index name (arbitrary string but likely
-        something like "IBOR").
+        something like "IBOR")
       properties:
         currency:
           description: Currency of the flow convention name.
@@ -56741,7 +56741,7 @@ components:
           nullable: true
           type: string
         tenor:
-          description: Tenor for the convention name.
+          description: Tenor for the convention name
           type: string
       required:
       - currency
@@ -56798,9 +56798,9 @@ components:
         rollConvention:
           description: "When generating a set of dates, what convention should be\
             \ used for adjusting dates that coincide with a non-business day.\r\n\
-            Supported string (enumeration) values are: [NoAdjustment, Previous, P,\
-            \ Following, F, ModifiedPrevious, MP, ModifiedFollowing, MF, EndOfMonth,\
-            \ EOM, EndOfMonthPrevious, EOMP, EndOfMonthFollowing, EOMF, HalfMonthModifiedFollowing]."
+            Supported string (enumeration) values are: [NoAdjustment, None, Previous,\
+            \ P, Following, F, ModifiedPrevious, MP, ModifiedFollowing, MF, EndOfMonth,\
+            \ EOM, EndOfMonthPrevious, EOMP, EndOfMonthFollowing, EOMF]."
           maxLength: 50
           minLength: 0
           type: string
@@ -56863,7 +56863,7 @@ components:
       allOf:
       - $ref: '#/components/schemas/LusidInstrument'
       - $ref: '#/components/schemas/ForwardRateAgreement_allOf'
-      description: Lusid-ibor internal representation of a Forward Rate Agreement
+      description: Forward Rate Agreement
     FundingLeg:
       allOf:
       - $ref: '#/components/schemas/InstrumentLeg'
@@ -56883,10 +56883,10 @@ components:
       - $ref: '#/components/schemas/LusidInstrument'
       - $ref: '#/components/schemas/Future_allOf'
       description: "IL Fx-Forward Instrument; Lusid-ibor internal representation of\
-        \ a Fx Forward instrument\r\n            \r\nA future contract, entered into\
-        \ on the start date at an initial reference spot price has zero initial value.\
-        \ It is a commitment to buy a certain number of\r\ncontracts of a certain\
-        \ size at a date in the future."
+        \ a Fx Forward instrument\r\n            \r\n             A future contract,\
+        \ entered into on the start date at an initial reference spot price has zero\
+        \ initial value. It is a committment to buy a certain number of\r\n      \
+        \       contracts of a certain size at a date in the future."
     FuturesContractDetails:
       additionalProperties: false
       description: "Most, if not all, information about contracts is standardized.\
@@ -56962,7 +56962,7 @@ components:
       - $ref: '#/components/schemas/LusidInstrument'
       - $ref: '#/components/schemas/FxForward_allOf'
       description: IL Fx-Forward Instrument; Lusid-ibor internal representation of
-        a Fx Forward instrument.
+        a Fx Forward instrument
     FxForwardCurveByQuoteReference:
       allOf:
       - $ref: '#/components/schemas/ComplexMarketData'
@@ -57008,7 +57008,7 @@ components:
       - $ref: '#/components/schemas/LusidInstrument'
       - $ref: '#/components/schemas/FxSwap_allOf'
       description: IL FX Swap Instrument; Lusid-ibor internal representation of an
-        FX Swap instrument.
+        FX Swap instrument
     FxVolSurfaceData:
       allOf:
       - $ref: '#/components/schemas/ComplexMarketData'
@@ -58301,7 +58301,7 @@ components:
         currency: currency
       properties:
         fixingReference:
-          description: The reference rate name for fixings.
+          description: The reference rate name for fixings
           maxLength: 64
           minLength: 0
           type: string
@@ -58319,8 +58319,8 @@ components:
         dayCountConvention:
           description: "when calculating the fraction of a year between two dates,\
             \ what convention is used to represent the number of days in a year\r\n\
-            and difference between them.\r\nSupported string (enumeration) values\
-            \ are: [Actual360, Act360, MoneyMarket, Actual365, Act365, Thirty360,\
+            \            and difference between them.\r\nSupported string (enumeration)\
+            \ values are: [Actual360, Act360, MoneyMarket, Actual365, Act365, Thirty360,\
             \ ThirtyU360, Bond, ThirtyE360, EuroBond, ActualActual, ActAct, ActActIsda,\
             \ ActActIsma, ActActIcma, OneOne, Act364, Act365F, Act365L, Act365_25,\
             \ Act252, Bus252, NL360, NL365]."
@@ -58980,8 +58980,8 @@ components:
       allOf:
       - $ref: '#/components/schemas/LusidInstrument'
       - $ref: '#/components/schemas/InstrumentLeg_allOf'
-      description: "Representation of a rates leg.\r\nA set of cashflows that are\
-        \ paid at a set of points in time according to some set of conventions."
+      description: "Representation of a rates leg.\r\n            A set of cashflows\
+        \ that are paid at a set of points in time according to some set of conventions."
       discriminator:
         propertyName: instrumentType
     InstrumentMatch:
@@ -59255,11 +59255,11 @@ components:
       - $ref: '#/components/schemas/LusidInstrument'
       - $ref: '#/components/schemas/InterestRateSwap_allOf'
       description: "IL Swap Instrument; Lusid-ibor internal representation of a swap\
-        \ instrument.\r\nA swap is the exchange of two sets of cashflows, occurring\
+        \ instrument\r\nA swap is the exchange of two sets of cashflows, occurring\
         \ at one or more dates in one or more currencies.\r\nThese may include a notional\
         \ exchange at the start and, or, maturity of the trade. Depending upon the\
         \ choice of\r\npayment currency, payment frequency and so on they can be used\
-        \ to match sets of future obligations."
+        \ to match sets of future obligations"
     InterestRateSwaption:
       allOf:
       - $ref: '#/components/schemas/LusidInstrument'
@@ -66070,14 +66070,14 @@ components:
       description: A class containing information for a given premium payment.
       properties:
         amount:
-          description: Premium amount.
+          description: Premium amount
           format: double
           type: number
         currency:
-          description: Premium currency.
+          description: Premium currency
           type: string
         date:
-          description: Date when premium paid.
+          description: Date when premium paid
           format: date-time
           type: string
       required:
@@ -73325,7 +73325,7 @@ components:
       - $ref: '#/components/schemas/LusidInstrument'
       - $ref: '#/components/schemas/SimpleInstrument_allOf'
       description: IL SimpleInstrument Instrument; Lusid-ibor internal representation
-        of a SimpleInstrument instrument.
+        of a SimpleInstrument instrument
     SortOrder:
       enum:
       - Ascending
@@ -73338,7 +73338,7 @@ components:
         \ for fixed bonds and spreads for floating bonds."
       properties:
         levelType:
-          description: "The type of shift or adjustment that the quantity represents.\r\
+          description: "The type of shift or adjustment that the quantity represents\r\
             \nSupported string (enumeration) values are: [Absolute, AbsoluteShift,\
             \ Percentage, AbsolutePercentage]."
           type: string
@@ -73586,7 +73586,7 @@ components:
       allOf:
       - $ref: '#/components/schemas/LusidInstrument'
       - $ref: '#/components/schemas/TermDeposit_allOf'
-      description: Lusid internal representation of a term deposit.
+      description: Lusid internal representation of a term deposit
     Tolerance:
       additionalProperties: false
       example:
@@ -78487,7 +78487,7 @@ components:
             For the avoidance of doubt, that is not necessarily prior to its last\
             \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
             \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date."
+            \ their last payment date"
           format: date-time
           type: string
         domCcy:
@@ -78735,7 +78735,7 @@ components:
             For the avoidance of doubt, that is not necessarily prior to its last\
             \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
             \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date."
+            \ their last payment date"
           format: date-time
           type: string
         flowConventions:
@@ -78759,7 +78759,7 @@ components:
           $ref: '#/components/schemas/FlowConventionName'
         notional:
           description: The notional quantity that applies to both the premium and
-            protection legs.
+            protection legs
           format: double
           type: number
         instrumentType:
@@ -78906,7 +78906,7 @@ components:
       properties:
         ticker:
           description: A ticker to uniquely specify then entity against which the
-            cds is written.
+            cds is written
           type: string
         startDate:
           description: The start date of the instrument. This is normally synonymous
@@ -78916,10 +78916,10 @@ components:
         maturityDate:
           description: "The final maturity date of the instrument. This means the\
             \ last date on which the instruments makes a payment of any amount.\r\n\
-            For the avoidance of doubt, that is not necessarily prior to its last\
-            \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
-            \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date."
+            \            For the avoidance of doubt, that is not necessarily prior\
+            \ to its last sensitivity date for the purposes of risk; e.g. instruments\
+            \ such as\r\n            Constant Maturity Swaps (CMS) often have sensitivities\
+            \ to rates beyond their last payment date"
           format: date-time
           type: string
         flowConventions:
@@ -78927,8 +78927,8 @@ components:
         couponRate:
           description: "The coupon rate paid on each payment date of the premium leg\
             \ as a fraction of 100 percent, e.g. \"0.05\" meaning 500 basis points\
-            \ or 5%.\r\nFor a standard corporate CDS (North American) this must be\
-            \ either 100bps or 500bps."
+            \ or 5%.\r\n            For a standard corporate CDS (North American)\
+            \ this must be either 100bps or 500bps."
           format: double
           type: number
         conventionName:
@@ -79046,7 +79046,7 @@ components:
             For the avoidance of doubt, that is not necessarily prior to its last\
             \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
             \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date."
+            \ their last payment date"
           format: date-time
           type: string
         legs:
@@ -79197,7 +79197,7 @@ components:
             For the avoidance of doubt, that is not necessarily prior to its last\
             \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
             \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date."
+            \ their last payment date"
           format: date-time
           type: string
         identifiers:
@@ -79359,7 +79359,7 @@ components:
     EquitySwap_allOf:
       properties:
         startDate:
-          description: The start date of the EquitySwap.
+          description: The start date of the EquitySwap
           format: date-time
           type: string
         maturityDate:
@@ -79384,7 +79384,7 @@ components:
         notionalReset:
           description: "Notional reset flag, if true the notional of the funding leg\
             \ is reset at the start of every\r\ncoupon to match the value of the equity\
-            \ leg (equity price at start of coupon times quantity)."
+            \ leg (equity price at start of coupon times quantity)"
           type: boolean
         quantity:
           description: The quantity or number of shares in the Equity Swap.
@@ -79500,7 +79500,7 @@ components:
         contractDetails:
           $ref: '#/components/schemas/ExchangeTradedOptionContractDetails'
         contracts:
-          description: The number of contracts held.
+          description: The number of contracts held
           format: double
           type: number
         refSpotPrice:
@@ -79561,10 +79561,10 @@ components:
         content:
           description: "The original document received into the system. This format\
             \ could potentially be anything though is most likely to be either Json\
-            \ or Xml. In the case where no other\r\ninterface is supported it is possible\
-            \ to fall back onto this.\r\nFor example, a trade from an external client\
-            \ system. This may be recognized internally by Lusid or simply passed\
-            \ through to another vendor system."
+            \ or Xml. In the case where no other\r\n            interface is supported\
+            \ it is possible to fall back onto this.\r\n            For example, a\
+            \ trade from an external client system. This may be recognized internally\
+            \ by Lusid or simply passed through to another vendor system."
           type: string
         instrumentType:
           description: 'The available values are: QuotedSecurity, InterestRateSwap,
@@ -79612,8 +79612,9 @@ components:
       type: object
     FixedLeg_allOf_overrides:
       description: "Any overriding data for notionals, spreads or rates that would\
-        \ affect generation of a leg.\r\nThis supports the case where an amortization\
-        \ schedule is given but otherwise generation is allowed as usual."
+        \ affect generation of a leg.\r\n            This supports the case where\
+        \ an amortization schedule is given but otherwise generation is allowed as\
+        \ usual."
       nullable: true
       properties:
         Amortization:
@@ -79637,10 +79638,10 @@ components:
         maturityDate:
           description: "The final maturity date of the instrument. This means the\
             \ last date on which the instruments makes a payment of any amount.\r\n\
-            For the avoidance of doubt, that is not necessarily prior to its last\
-            \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
-            \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date."
+            \            For the avoidance of doubt, that is not necessarily prior\
+            \ to its last sensitivity date for the purposes of risk; e.g. instruments\
+            \ such as\r\n            Constant Maturity Swaps (CMS) often have sensitivities\
+            \ to rates beyond their last payment date"
           format: date-time
           type: string
         legDefinition:
@@ -79707,7 +79708,7 @@ components:
         legDefinition:
           $ref: '#/components/schemas/LegDefinition'
         notional:
-          description: Scaling factor to apply to leg quantities.
+          description: scaling factor to apply to leg quantities.
           format: double
           type: number
         overrides:
@@ -79771,7 +79772,7 @@ components:
             For the avoidance of doubt, that is not necessarily prior to its last\
             \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
             \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date."
+            \ their last payment date"
           format: date-time
           type: string
         domCcy:
@@ -79779,7 +79780,7 @@ components:
           type: string
         fixingDate:
           description: The date at which the rate to be paid, the reference rate,
-            is confirmed/observed.
+            is confirmed/observed
           format: date-time
           type: string
         fraRate:
@@ -79841,23 +79842,14 @@ components:
     FundingLeg_allOf:
       properties:
         startDate:
-          description: The start date of the instrument. This is normally synonymous
-            with the trade-date.
           format: date-time
           type: string
         maturityDate:
-          description: "The final maturity date of the instrument. This means the\
-            \ last date on which the instruments makes a payment of any amount.\r\n\
-            For the avoidance of doubt, that is not necessarily prior to its last\
-            \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
-            \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date."
           format: date-time
           type: string
         legDefinition:
           $ref: '#/components/schemas/LegDefinition'
         notional:
-          description: Scaling factor to apply to leg quantities.
           format: double
           type: number
         instrumentType:
@@ -79997,10 +79989,10 @@ components:
         maturityDate:
           description: "The final maturity date of the instrument. This means the\
             \ last date on which the instruments makes a payment of any amount.\r\n\
-            For the avoidance of doubt, that is not necessarily prior to its last\
-            \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
-            \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date."
+            \            For the avoidance of doubt, that is not necessarily prior\
+            \ to its last sensitivity date for the purposes of risk; e.g. instruments\
+            \ such as\r\n            Constant Maturity Swaps (CMS) often have sensitivities\
+            \ to rates beyond their last payment date"
           format: date-time
           type: string
         domAmount:
@@ -80013,13 +80005,14 @@ components:
           type: string
         fgnAmount:
           description: The amount that is to be paid in the foreign currency on the
-            maturity date.
+            maturity date
           format: double
           type: number
         fgnCcy:
           description: "The foreign (other) currency of the instrument. In the NDF\
-            \ case, only payments are made in the domestic currency.\r\nFor the outright\
-            \ forward, currencies are exchanged. By domestic is then that of the portfolio."
+            \ case, only payments are made in the domestic currency.\r\n         \
+            \   For the outright forward, currencies are exchanged. By domestic is\
+            \ then that of the portfolio."
           type: string
         refSpotRate:
           description: The reference Fx Spot rate for currency pair Foreign-Domestic
@@ -80029,7 +80022,7 @@ components:
         isNdf:
           description: "Is the contract an Fx-Forward of \"Non-Deliverable\" type,\
             \ meaning a single payment in the domestic currency based on the change\
-            \ in fx-rate vs\r\na reference rate is used."
+            \ in fx-rate vs\r\n            a reference rate is used."
           type: boolean
         fixingDate:
           description: The fixing date.
@@ -80606,7 +80599,7 @@ components:
             For the avoidance of doubt, that is not necessarily prior to its last\
             \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
             \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date."
+            \ their last payment date"
           format: date-time
           type: string
         isNonDeliverable:
@@ -80620,7 +80613,7 @@ components:
             $ref: '#/components/schemas/InstrumentLeg'
           type: array
         settlementCcy:
-          description: Settlement currency if IRS is non-deliverable.
+          description: Settlement currency if IRS is non-deliverable
           nullable: true
           type: string
         instrumentType:
@@ -80980,7 +80973,7 @@ components:
             For the avoidance of doubt, that is not necessarily prior to its last\
             \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
             \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date."
+            \ their last payment date"
           format: date-time
           type: string
         domCcy:
@@ -81108,11 +81101,11 @@ components:
             For the avoidance of doubt, that is not necessarily prior to its last\
             \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
             \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date."
+            \ their last payment date"
           format: date-time
           type: string
         domCcy:
-          description: The domestic currency.
+          description: The domestic currency
           type: string
         assetClass:
           description: 'The available values are: InterestRates, FX, Inflation, Equities,
@@ -81128,13 +81121,13 @@ components:
           - Unknown
           type: string
         fgnCcys:
-          description: The set of foreign currencies, if any (optional).
+          description: The set of foreign currencies, if any (optional)
           items:
             type: string
           nullable: true
           type: array
         simpleInstrumentType:
-          description: The Instrument type of the simple instrument.
+          description: The Instrument type of the simple instrument
           type: string
         instrumentType:
           description: 'The available values are: QuotedSecurity, InterestRateSwap,
@@ -81318,7 +81311,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:
