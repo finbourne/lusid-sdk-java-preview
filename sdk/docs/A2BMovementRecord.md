@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **portfolioId** | [**ResourceId**](ResourceId.md) |  |  [optional]
 **holdingType** | **String** | The type of the holding e.g. Position, Balance, CashCommitment, Receivable, ForwardFX etc. |  [optional]
+**instrumentScope** | **String** | The unique Lusid Instrument Id (LUID) of the instrument that the holding is in. |  [optional]
 **instrumentUid** | **String** | The unique Lusid Instrument Id (LUID) of the instrument that the holding is in. |  [optional]
 **subHoldingKeys** | [**Map&lt;String, PerpetualProperty&gt;**](PerpetualProperty.md) | The sub-holding properties which identify the holding. Each property will be from the &#39;Transaction&#39; domain. These are configured when a transaction portfolio is created. |  [optional]
 **currency** | **String** | The holding currency. |  [optional]

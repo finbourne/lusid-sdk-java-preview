@@ -1,6 +1,6 @@
 # SearchApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://local-unit-test-server.lusid.com:30343*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="instrumentsSearch"></a>
 # **instrumentsSearch**
-> List&lt;InstrumentMatch&gt; instrumentsSearch(instrumentSearchProperty, masteredEffectiveAt, masteredOnly)
+> List&lt;InstrumentMatch&gt; instrumentsSearch(instrumentSearchProperty, masteredEffectiveAt, masteredOnly, scope)
 
 [EXPERIMENTAL] InstrumentsSearch: Instruments search
 
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:30343");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -41,8 +41,9 @@ public class Example {
     List<InstrumentSearchProperty> instrumentSearchProperty = Arrays.asList(); // List<InstrumentSearchProperty> | A collection of instrument properties to search for. LUSID will return instruments for any matched              properties.
     String masteredEffectiveAt = "masteredEffectiveAt_example"; // String | The effective datetime or cut label to use when searching mastered instruments. This parameter has no effect on instruments that  have not been mastered within LUSID. Defaults to the current LUSID system datetime if not specified.
     Boolean masteredOnly = false; // Boolean | If set to true, only search over instruments that have been mastered within LUSID. Defaults to false.
+    String scope = "scope_example"; // String | The scope in which the instrument lies.
     try {
-      List<InstrumentMatch> result = apiInstance.instrumentsSearch(instrumentSearchProperty, masteredEffectiveAt, masteredOnly);
+      List<InstrumentMatch> result = apiInstance.instrumentsSearch(instrumentSearchProperty, masteredEffectiveAt, masteredOnly, scope);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SearchApi#instrumentsSearch");
@@ -62,6 +63,7 @@ Name | Type | Description  | Notes
  **instrumentSearchProperty** | [**List&lt;InstrumentSearchProperty&gt;**](InstrumentSearchProperty.md)| A collection of instrument properties to search for. LUSID will return instruments for any matched              properties. |
  **masteredEffectiveAt** | **String**| The effective datetime or cut label to use when searching mastered instruments. This parameter has no effect on instruments that  have not been mastered within LUSID. Defaults to the current LUSID system datetime if not specified. | [optional]
  **masteredOnly** | **Boolean**| If set to true, only search over instruments that have been mastered within LUSID. Defaults to false. | [optional] [default to false]
+ **scope** | **String**| The scope in which the instrument lies. | [optional]
 
 ### Return type
 
@@ -104,7 +106,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:30343");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -181,7 +183,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:30343");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -258,7 +260,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:30343");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
