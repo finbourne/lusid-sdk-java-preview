@@ -8,7 +8,7 @@ Descriptive information that describes a particular basket of instruments. Most 
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**index** | **String** | Index set, e.g. iTraxx or CDX | 
+**index** | **String** | Index set, e.g. iTraxx or CDX. | 
 **name** | **String** | The index name within the set, e.g. \&quot;MAIN\&quot; or \&quot;Crossover\&quot;. | 
 **region** | **String** | Applicable geographic country or region. Typically something like \&quot;Europe\&quot;, \&quot;Asia ex-Japan\&quot;, \&quot;Japan\&quot; or \&quot;Australia\&quot;. | 
 **seriesId** | **Integer** | The series identifier. | 
