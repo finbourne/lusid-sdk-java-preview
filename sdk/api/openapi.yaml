@@ -277,12 +277,12 @@ info:
     | <a name="758">758</a>|Luminesce timed out.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3848
+  version: 0.11.3849
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:64099
+- url: http://local-unit-test-server.lusid.com:41824
 security:
 - {}
 tags:
@@ -14178,11 +14178,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetAllLegalEntityAccessMetadata: Get Access Metadata
+      summary: '[EARLY ACCESS] GetAllLegalEntityAccessMetadata: Get Access Metadata
         rules for a Legal Entity'
       tags:
       - Legal Entities
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/legalentities/{idTypeScope}/{idTypeCode}/{code}/metadata/{metadataKey}:
     delete:
@@ -14287,11 +14287,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteLegalEntityAccessMetadata: Delete a Legal Entity
+      summary: '[EARLY ACCESS] DeleteLegalEntityAccessMetadata: Delete a Legal Entity
         Access Metadata entry'
       tags:
       - Legal Entities
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: "Get a specific Legal Entity Access Metadata by specifying the\
@@ -14413,11 +14413,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetLegalEntityAccessMetadataByKey: Get an entry identified
+      summary: '[EARLY ACCESS] GetLegalEntityAccessMetadataByKey: Get an entry identified
         by a metadataKey in the Access Metadata of a Legal Entity'
       tags:
       - Legal Entities
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     put:
       description: "Update or insert one Legal Entity Access Metadata entry in a single\
@@ -14556,12 +14556,12 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertLegalEntityAccessMetadata: Upsert a Legal Entity
+      summary: '[EARLY ACCESS] UpsertLegalEntityAccessMetadata: Upsert a Legal Entity
         Access Metadata entry associated with a specific metadataKey. This creates
         or updates the data in LUSID.'
       tags:
       - Legal Entities
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/legalentities/{idTypeScope}/{idTypeCode}/{code}/properties:
@@ -20196,11 +20196,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetAllPersonAccessMetadata: Get Access Metadata rules
+      summary: '[EARLY ACCESS] GetAllPersonAccessMetadata: Get Access Metadata rules
         for a Person'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/persons/{idTypeScope}/{idTypeCode}/{code}/metadata/{metadataKey}:
     delete:
@@ -20299,11 +20299,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeletePersonAccessMetadata: Delete a Person Access
+      summary: '[EARLY ACCESS] DeletePersonAccessMetadata: Delete a Person Access
         Metadata entry'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: "Get a specific Person Access Metadata by specifying the corresponding\
@@ -20417,11 +20417,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetPersonAccessMetadataByKey: Get an entry identified
+      summary: '[EARLY ACCESS] GetPersonAccessMetadataByKey: Get an entry identified
         by a metadataKey in the Access Metadata of a Person'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     put:
       description: "Update or insert one Person Access Metadata entry in a single\
@@ -20551,12 +20551,12 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertPersonAccessMetadata: Upsert a Person Access
+      summary: '[EARLY ACCESS] UpsertPersonAccessMetadata: Upsert a Person Access
         Metadata entry associated with a specific metadataKey. This creates or updates
         the data in LUSID.'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/persons/{idTypeScope}/{idTypeCode}/{code}/properties:
@@ -24310,11 +24310,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetPortfolioGroupMetadata: Get Access Metadata rules
+      summary: '[EARLY ACCESS] GetPortfolioGroupMetadata: Get Access Metadata rules
         for Portfolio Group'
       tags:
       - Portfolio Groups
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/portfoliogroups/{scope}/{code}/metadata/{metadataKey}:
     delete:
@@ -24404,11 +24404,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteKeyFromPortfolioGroupAccessMetadata: Delete a
+      summary: '[EARLY ACCESS] DeleteKeyFromPortfolioGroupAccessMetadata: Delete a
         Portfolio Group Access Metadata entry'
       tags:
       - Portfolio Groups
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: "Get a specific Portfolio Group access metadata by specifying the\
@@ -24515,11 +24515,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetPortfolioGroupAccessMetadataByKey: Get an entry
+      summary: '[EARLY ACCESS] GetPortfolioGroupAccessMetadataByKey: Get an entry
         identified by a metadataKey in the Access Metadata of a Portfolio Group'
       tags:
       - Portfolio Groups
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     put:
       description: "Update or insert one Portfolio Group Access Metadata Entry in\
@@ -24643,12 +24643,12 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertPortfolioGroupAccessMetadata: Upsert a Portfolio
+      summary: '[EARLY ACCESS] UpsertPortfolioGroupAccessMetadata: Upsert a Portfolio
         Group Access Metadata entry associated with a specific metadataKey. This creates
         or updates the data in LUSID.'
       tags:
       - Portfolio Groups
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/portfoliogroups/{scope}/{code}/portfolios:
@@ -29382,11 +29382,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetPortfolioMetadata: Get access metadata rules for
+      summary: '[EARLY ACCESS] GetPortfolioMetadata: Get access metadata rules for
         a portfolio'
       tags:
       - Portfolios
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/portfolios/{scope}/{code}/metadata/{metadataKey}:
     delete:
@@ -29475,11 +29475,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteKeyFromPortfolioAccessMetadata: Delete a Portfolio
+      summary: '[EARLY ACCESS] DeleteKeyFromPortfolioAccessMetadata: Delete a Portfolio
         Access Metadata Rule'
       tags:
       - Portfolios
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: "Get a specific portfolio access metadata rule by specifying the\
@@ -29587,11 +29587,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetPortfoliosAccessMetadataByKey: Get an entry identified
+      summary: '[EARLY ACCESS] GetPortfoliosAccessMetadataByKey: Get an entry identified
         by a metadataKey in the access metadata object'
       tags:
       - Portfolios
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     put:
       description: "Update or insert one Portfolio Access Metadata Rule in a single\
@@ -29717,12 +29717,12 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertPortfolioAccessMetadata: Upsert a Portfolio Access
+      summary: '[EARLY ACCESS] UpsertPortfolioAccessMetadata: Upsert a Portfolio Access
         Metadata Rule associated with specific metadataKey. This creates or updates
         the data in LUSID.'
       tags:
       - Portfolios
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/portfolios/{scope}/{code}/properties:
