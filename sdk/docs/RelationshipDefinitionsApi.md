@@ -1,11 +1,12 @@
 # RelationshipDefinitionsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:32063*
+All URIs are relative to *http://local-unit-test-server.lusid.com:51453*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createRelationshipDefinition**](RelationshipDefinitionsApi.md#createRelationshipDefinition) | **POST** /api/relationshipdefinitions | [EXPERIMENTAL] CreateRelationshipDefinition: Create Relationship Definition
 [**getRelationshipDefinition**](RelationshipDefinitionsApi.md#getRelationshipDefinition) | **GET** /api/relationshipdefinitions/{scope}/{code} | [EXPERIMENTAL] GetRelationshipDefinition: Get relationship definition
+[**listRelationshipDefinitions**](RelationshipDefinitionsApi.md#listRelationshipDefinitions) | **GET** /api/relationshipdefinitions | [EXPERIMENTAL] ListRelationshipDefinitions: List relationship definitions
 [**updateRelationshipDefinition**](RelationshipDefinitionsApi.md#updateRelationshipDefinition) | **PUT** /api/relationshipdefinitions/{scope}/{code} | [EXPERIMENTAL] UpdateRelationshipDefinition: Update Relationship Definition
 
 
@@ -30,7 +31,7 @@ import com.finbourne.lusid.api.RelationshipDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32063");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:51453");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -99,7 +100,7 @@ import com.finbourne.lusid.api.RelationshipDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32063");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:51453");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -151,6 +152,81 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="listRelationshipDefinitions"></a>
+# **listRelationshipDefinitions**
+> PagedResourceListOfRelationshipDefinition listRelationshipDefinitions(asAt, page, limit, filter)
+
+[EXPERIMENTAL] ListRelationshipDefinitions: List relationship definitions
+
+Retrieve one or more specified relationship definitions.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.RelationshipDefinitionsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:51453");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    RelationshipDefinitionsApi apiInstance = new RelationshipDefinitionsApi(defaultClient);
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the relationship definitions. Defaults to return              the latest version of each definition if not specified.
+    String page = "page_example"; // String | The pagination token to use to continue listing relationship definitions from a previous call to list relationship definitions. This  value is returned from the previous call. If a pagination token is provided the filter, asAt field  must not have changed since the original request.
+    Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many. Defaults to 100 if not specified.
+    String filter = "filter_example"; // String | Expression to filter the result set.              For example, to filter on the Scope, use \"scope eq 'ExampleScope'\"              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
+    try {
+      PagedResourceListOfRelationshipDefinition result = apiInstance.listRelationshipDefinitions(asAt, page, limit, filter);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling RelationshipDefinitionsApi#listRelationshipDefinitions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the relationship definitions. Defaults to return              the latest version of each definition if not specified. | [optional]
+ **page** | **String**| The pagination token to use to continue listing relationship definitions from a previous call to list relationship definitions. This  value is returned from the previous call. If a pagination token is provided the filter, asAt field  must not have changed since the original request. | [optional]
+ **limit** | **Integer**| When paginating, limit the number of returned results to this many. Defaults to 100 if not specified. | [optional]
+ **filter** | **String**| Expression to filter the result set.              For example, to filter on the Scope, use \&quot;scope eq &#39;ExampleScope&#39;\&quot;              Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
+
+### Return type
+
+[**PagedResourceListOfRelationshipDefinition**](PagedResourceListOfRelationshipDefinition.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested relationship definitions |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="updateRelationshipDefinition"></a>
 # **updateRelationshipDefinition**
 > RelationshipDefinition updateRelationshipDefinition(scope, code, updateRelationshipDefinitionRequest)
@@ -172,7 +248,7 @@ import com.finbourne.lusid.api.RelationshipDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32063");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:51453");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

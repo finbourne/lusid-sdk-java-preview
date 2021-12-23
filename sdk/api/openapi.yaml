@@ -277,12 +277,12 @@ info:
     | <a name="758">758</a>|Luminesce timed out.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3863
+  version: 0.11.3864
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:32063
+- url: http://local-unit-test-server.lusid.com:51453
 security:
 - {}
 tags:
@@ -35236,6 +35236,114 @@ paths:
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/relationshipdefinitions:
+    get:
+      description: Retrieve one or more specified relationship definitions.
+      operationId: ListRelationshipDefinitions
+      parameters:
+      - description: "The asAt datetime at which to retrieve the relationship definitions.\
+          \ Defaults to return\r\n            the latest version of each definition\
+          \ if not specified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to retrieve the relationship definitions.\
+            \ Defaults to return\r\n            the latest version of each definition\
+            \ if not specified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: "The pagination token to use to continue listing relationship\
+          \ definitions from a previous call to list relationship definitions. This\r\
+          \nvalue is returned from the previous call. If a pagination token is provided\
+          \ the filter, asAt field\r\nmust not have changed since the original request."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          description: "The pagination token to use to continue listing relationship\
+            \ definitions from a previous call to list relationship definitions. This\r\
+            \nvalue is returned from the previous call. If a pagination token is provided\
+            \ the filter, asAt field\r\nmust not have changed since the original request."
+          maxLength: 500
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
+          type: string
+        style: form
+      - description: When paginating, limit the number of returned results to this
+          many. Defaults to 100 if not specified.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: When paginating, limit the number of returned results to this
+            many. Defaults to 100 if not specified.
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: "Expression to filter the result set.\r\n            For example,\
+          \ to filter on the Scope, use \"scope eq 'ExampleScope'\"\r\n          \
+          \  Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid."
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          description: "Expression to filter the result set.\r\n            For example,\
+            \ to filter on the Scope, use \"scope eq 'ExampleScope'\"\r\n        \
+            \    Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid."
+          maxLength: 16384
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfRelationshipDefinition'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfRelationshipDefinition'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfRelationshipDefinition'
+          description: The requested relationship definitions
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListRelationshipDefinitions: List relationship definitions'
+      tags:
+      - Relationship Definitions
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
     post:
       description: Create a new relationship definition to be used for creating relationships
         between entities.
@@ -64509,6 +64617,95 @@ components:
           description: The resources to list.
           items:
             $ref: '#/components/schemas/PropertyDefinitionSearchResult'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - values
+      type: object
+    PagedResourceListOfRelationshipDefinition:
+      additionalProperties: false
+      description: A paginated list of resource that can be returned from a request.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - sourceEntityType: sourceEntityType
+          outwardDescription: outwardDescription
+          targetEntityType: targetEntityType
+          displayName: displayName
+          inwardDescription: inwardDescription
+          relationshipCardinality: relationshipCardinality
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          lifeTime: lifeTime
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          relationshipDefinitionId:
+            code: code
+            scope: scope
+        - sourceEntityType: sourceEntityType
+          outwardDescription: outwardDescription
+          targetEntityType: targetEntityType
+          displayName: displayName
+          inwardDescription: inwardDescription
+          relationshipCardinality: relationshipCardinality
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          lifeTime: lifeTime
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          relationshipDefinitionId:
+            code: code
+            scope: scope
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/RelationshipDefinition'
           type: array
         href:
           description: The URI of the resource list.
