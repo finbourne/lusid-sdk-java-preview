@@ -277,12 +277,12 @@ info:
     | <a name="758">758</a>|Luminesce timed out.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3865
+  version: 0.11.3866
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:46099
+- url: http://local-unit-test-server.lusid.com:62489
 security:
 - {}
 tags:
@@ -45912,6 +45912,178 @@ paths:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
       x-accepts: application/json
+    patch:
+      description: "Create or update certain details for a particular transaction\
+        \ portfolio.\r\nThe behaviour is defined by the JSON Patch specification.\r\
+        \n            \r\nNote that not all elements of a transaction portfolio definition\
+        \ are\r\nmodifiable once it has been created due to the potential implications\
+        \ for data already stored.\r\nCurrently supported properties are: SubHoldingKeys"
+      operationId: PatchPortfolioDetails
+      parameters:
+      - description: The scope of the transaction portfolio.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the transaction portfolio.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The code of the transaction portfolio. Together with the\r\n\
+          \             scope this uniquely identifies the transaction portfolio."
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: "The code of the transaction portfolio. Together with the\r\
+            \n             scope this uniquely identifies the transaction portfolio."
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The effective datetime or cut label at which the updated or\
+          \ inserted details should become valid.\r\n             Defaults to the\
+          \ current LUSID system datetime if not specified.\r\n             Note that\
+          \ this will affect all bitemporal entities in the request, but will not\
+          \ be used for any perpetual entities."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which the updated or\
+            \ inserted details should become valid.\r\n             Defaults to the\
+            \ current LUSID system datetime if not specified.\r\n             Note\
+            \ that this will affect all bitemporal entities in the request, but will\
+            \ not be used for any perpetual entities."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+            - value:
+              - Transaction/Client/AccountType
+              path: /SubHoldingKeys
+              op: add
+            schema:
+              description: The patch document.
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          application/json:
+            example:
+            - value:
+              - Transaction/Client/AccountType
+              path: /SubHoldingKeys
+              op: add
+            schema:
+              description: The patch document.
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          text/json:
+            example:
+            - value:
+              - Transaction/Client/AccountType
+              path: /SubHoldingKeys
+              op: add
+            schema:
+              description: The patch document.
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          application/*+json:
+            example:
+            - value:
+              - Transaction/Client/AccountType
+              path: /SubHoldingKeys
+              op: add
+            schema:
+              description: The patch document.
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+        description: The patch document.
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                originPortfolioId:
+                  scope: Region
+                  code: UK
+                baseCurrency: GBP
+                corporateActionSourceId:
+                  scope: Sources
+                  code: Vendor1
+                subHoldingKeys:
+                - Portfolio/Client/AccountType
+              schema:
+                $ref: '#/components/schemas/PortfolioDetails'
+            application/json:
+              example:
+                originPortfolioId:
+                  scope: Region
+                  code: UK
+                baseCurrency: GBP
+                corporateActionSourceId:
+                  scope: Sources
+                  code: Vendor1
+                subHoldingKeys:
+                - Portfolio/Client/AccountType
+              schema:
+                $ref: '#/components/schemas/PortfolioDetails'
+            text/json:
+              example:
+                originPortfolioId:
+                  scope: Region
+                  code: UK
+                baseCurrency: GBP
+                corporateActionSourceId:
+                  scope: Sources
+                  code: Vendor1
+                subHoldingKeys:
+                - Portfolio/Client/AccountType
+              schema:
+                $ref: '#/components/schemas/PortfolioDetails'
+          description: The newly patched details
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] PatchPortfolioDetails: Patch portfolio details'
+      tags:
+      - Transaction Portfolios
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
     post:
       description: "Create or update certain details for a particular transaction\
         \ portfolio. The details are updated if they already exist, and inserted if\
@@ -60682,6 +60854,28 @@ components:
       - Absolute
       - Property
       type: string
+    Operation:
+      additionalProperties: false
+      example:
+        path: path
+        op: op
+        from: from
+        value: '{}'
+      properties:
+        value:
+          additionalProperties: false
+          nullable: true
+          type: object
+        path:
+          nullable: true
+          type: string
+        op:
+          nullable: true
+          type: string
+        from:
+          nullable: true
+          type: string
+      type: object
     Operator:
       enum:
       - Equals
