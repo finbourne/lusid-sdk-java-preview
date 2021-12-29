@@ -277,12 +277,12 @@ info:
     | <a name="758">758</a>|Luminesce timed out.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3867
+  version: 0.11.3868
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:58940
 security:
 - {}
 tags:
@@ -14065,6 +14065,254 @@ paths:
       tags:
       - Legal Entities
       x-fbn-apistatus: Experimental
+      x-accepts: application/json
+    post:
+      description: Set identifiers of the Legal Entity.
+      operationId: SetLegalEntityIdentifiers
+      parameters:
+      - description: Scope of the legal entity identifier type.
+        explode: false
+        in: path
+        name: idTypeScope
+        required: true
+        schema:
+          description: Scope of the legal entity identifier type.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: Code of the legal entity identifier type.
+        explode: false
+        in: path
+        name: idTypeCode
+        required: true
+        schema:
+          description: Code of the legal entity identifier type.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "Code of the legal entity under specified identifier type's scope\
+          \ and code. This together with stated identifier type uniquely\r\n     \
+          \       identifies the legal entity."
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: "Code of the legal entity under specified identifier type's\
+            \ scope and code. This together with stated identifier type uniquely\r\
+            \n            identifies the legal entity."
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              identifiers:
+                legalEntity/ExternalIdentifier/LEI:
+                  key: LegalEntity/ExternalIdentifier/LEI
+                  value:
+                    labelValue: LEI_12345678
+                legalEntity/InternalIdentifier/InternalLeiId:
+                  key: LegalEntity/InternalIdentifier/InternalLeiId
+                  value:
+                    labelValue: Internal_XHSP2038
+            schema:
+              $ref: '#/components/schemas/SetLegalEntityIdentifiersRequest'
+          application/json:
+            example:
+              identifiers:
+                legalEntity/ExternalIdentifier/LEI:
+                  key: LegalEntity/ExternalIdentifier/LEI
+                  value:
+                    labelValue: LEI_12345678
+                legalEntity/InternalIdentifier/InternalLeiId:
+                  key: LegalEntity/InternalIdentifier/InternalLeiId
+                  value:
+                    labelValue: Internal_XHSP2038
+            schema:
+              $ref: '#/components/schemas/SetLegalEntityIdentifiersRequest'
+          text/json:
+            example:
+              identifiers:
+                legalEntity/ExternalIdentifier/LEI:
+                  key: LegalEntity/ExternalIdentifier/LEI
+                  value:
+                    labelValue: LEI_12345678
+                legalEntity/InternalIdentifier/InternalLeiId:
+                  key: LegalEntity/InternalIdentifier/InternalLeiId
+                  value:
+                    labelValue: Internal_XHSP2038
+            schema:
+              $ref: '#/components/schemas/SetLegalEntityIdentifiersRequest'
+          application/*+json:
+            example:
+              identifiers:
+                legalEntity/ExternalIdentifier/LEI:
+                  key: LegalEntity/ExternalIdentifier/LEI
+                  value:
+                    labelValue: LEI_12345678
+                legalEntity/InternalIdentifier/InternalLeiId:
+                  key: LegalEntity/InternalIdentifier/InternalLeiId
+                  value:
+                    labelValue: Internal_XHSP2038
+            schema:
+              $ref: '#/components/schemas/SetLegalEntityIdentifiersRequest'
+        description: Request containing identifiers to set for the legal entity. Identifiers
+          not specified in request will not be changed.
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                displayName: LegalEntity1DisplayName
+                description: LegalEntity1Description
+                href: https://example.com
+                lusidLegalEntityId: UniqueLusidLegalEntityId1
+                identifiers:
+                  legalEntity/ExternalIdentifier/LEI:
+                    key: LegalEntity/ExternalIdentifier/LEI
+                    value:
+                      labelValue: LEI_12345678
+                  legalEntity/InternalIdentifier/InternalLeiId:
+                    key: LegalEntity/InternalIdentifier/InternalLeiId
+                    value:
+                      labelValue: Internal_XHSP2038
+                  legalEntity/Details/Name:
+                    key: LegalEntity/Details/Name
+                    value:
+                      labelValue: John Smith
+                properties:
+                  legalEntity/Details/Country:
+                    key: LegalEntity/Details/Country
+                    value:
+                      labelValue: United Kingdom
+                    effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                counterpartyRiskInformation:
+                  countryOfRisk: UnitedKingdom
+                  creditRatings:
+                  - ratingSource: StandardAndPoors
+                    rating: AA+
+                  industryClassifiers:
+                  - classificationSystemName: GICS2018
+                    classificationCode: "10101010"
+                version:
+                  effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  asAtDate: 2019-01-01T12:00:00.0100000+00:00
+              schema:
+                $ref: '#/components/schemas/LegalEntity'
+            application/json:
+              example:
+                displayName: LegalEntity1DisplayName
+                description: LegalEntity1Description
+                href: https://example.com
+                lusidLegalEntityId: UniqueLusidLegalEntityId1
+                identifiers:
+                  legalEntity/ExternalIdentifier/LEI:
+                    key: LegalEntity/ExternalIdentifier/LEI
+                    value:
+                      labelValue: LEI_12345678
+                  legalEntity/InternalIdentifier/InternalLeiId:
+                    key: LegalEntity/InternalIdentifier/InternalLeiId
+                    value:
+                      labelValue: Internal_XHSP2038
+                  legalEntity/Details/Name:
+                    key: LegalEntity/Details/Name
+                    value:
+                      labelValue: John Smith
+                properties:
+                  legalEntity/Details/Country:
+                    key: LegalEntity/Details/Country
+                    value:
+                      labelValue: United Kingdom
+                    effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                counterpartyRiskInformation:
+                  countryOfRisk: UnitedKingdom
+                  creditRatings:
+                  - ratingSource: StandardAndPoors
+                    rating: AA+
+                  industryClassifiers:
+                  - classificationSystemName: GICS2018
+                    classificationCode: "10101010"
+                version:
+                  effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  asAtDate: 2019-01-01T12:00:00.0100000+00:00
+              schema:
+                $ref: '#/components/schemas/LegalEntity'
+            text/json:
+              example:
+                displayName: LegalEntity1DisplayName
+                description: LegalEntity1Description
+                href: https://example.com
+                lusidLegalEntityId: UniqueLusidLegalEntityId1
+                identifiers:
+                  legalEntity/ExternalIdentifier/LEI:
+                    key: LegalEntity/ExternalIdentifier/LEI
+                    value:
+                      labelValue: LEI_12345678
+                  legalEntity/InternalIdentifier/InternalLeiId:
+                    key: LegalEntity/InternalIdentifier/InternalLeiId
+                    value:
+                      labelValue: Internal_XHSP2038
+                  legalEntity/Details/Name:
+                    key: LegalEntity/Details/Name
+                    value:
+                      labelValue: John Smith
+                properties:
+                  legalEntity/Details/Country:
+                    key: LegalEntity/Details/Country
+                    value:
+                      labelValue: United Kingdom
+                    effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                counterpartyRiskInformation:
+                  countryOfRisk: UnitedKingdom
+                  creditRatings:
+                  - ratingSource: StandardAndPoors
+                    rating: AA+
+                  industryClassifiers:
+                  - classificationSystemName: GICS2018
+                    classificationCode: "10101010"
+                version:
+                  effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  asAtDate: 2019-01-01T12:00:00.0100000+00:00
+              schema:
+                $ref: '#/components/schemas/LegalEntity'
+          description: The Legal Entity with updated identifiers
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] SetLegalEntityIdentifiers: Set Legal Entity Identifiers'
+      tags:
+      - Legal Entities
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/legalentities/{idTypeScope}/{idTypeCode}/{code}/metadata:
     get:
@@ -73642,6 +73890,32 @@ components:
       - minValue
       - start
       type: object
+    SetLegalEntityIdentifiersRequest:
+      additionalProperties: false
+      example:
+        identifiers:
+          key:
+            effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 6.027456183070403
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+      properties:
+        identifiers:
+          additionalProperties:
+            $ref: '#/components/schemas/Property'
+          description: Identifiers to set for a Legal Entity. Identifiers not included
+            in the request will not be amended.
+          nullable: true
+          type: object
+      type: object
     SetPersonIdentifiersRequest:
       additionalProperties: false
       example:
@@ -81921,7 +82195,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
