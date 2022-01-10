@@ -277,12 +277,12 @@ info:
     | <a name="758">758</a>|Luminesce timed out.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3874
+  version: 0.11.3875
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:56361
 security:
 - {}
 tags:
@@ -79815,6 +79815,11 @@ components:
           type: number
         conventionName:
           $ref: '#/components/schemas/FlowConventionName'
+        notional:
+          description: The notional protected by the Credit Default Swap
+          format: double
+          nullable: true
+          type: number
         protectionDetailSpecification:
           $ref: '#/components/schemas/CdsProtectionDetailSpecification'
         instrumentType:
@@ -82200,7 +82205,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
