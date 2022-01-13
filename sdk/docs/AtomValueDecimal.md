@@ -1,0 +1,15 @@
+
+
+# AtomValueDecimal
+
+Holder class for the decimal atom value
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**atomValueType** | **AtomValueType** |  | 
+**value** | **Double** | The value itself |  [optional]
+
+
+
