@@ -277,12 +277,12 @@ info:
     | <a name="758">758</a>|Luminesce timed out.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3890
+  version: 0.11.3891
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:64766
 security:
 - {}
 tags:
@@ -50043,6 +50043,146 @@ paths:
       x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
       x-accepts: application/json
+  /api/unitresults/virtualdocument/{scope}/$get:
+    post:
+      description: "Retrieve one or more virtual documents from a particular scope.\r\
+        \n            \r\nEach item can be identified by its time invariant structured\
+        \ result data identifier. For each ID, LUSID\r\nreturns the most recently\
+        \ matched item with respect to the provided effective datetime.\r\n      \
+        \      \r\nIn the request, each data item must be keyed by a unique correlation\
+        \ ID. This ID is ephemeral and not stored by LUSID.\r\nIt serves only to easily\
+        \ identify each data item in the response.\r\n            \r\nThe response\
+        \ returns two collections. The first contains successfully retrieved data\
+        \ items. The second contains those with a\r\nvalid identifier but that could\
+        \ not be found, or those that failed because LUSID could not construct a valid\
+        \ identifier from the request.\r\n            \r\nFor the IDs that failed\
+        \ to resolve or could not be found, a reason is provided.\r\n            \r\
+        \nIt is important to check the failed sets for any unsuccessful results."
+      operationId: GetVirtualDocument
+      parameters:
+      - description: The scope in which to construct the virtual documents.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope in which to construct the virtual documents.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The asAt datetime at which to retrieve the structured result
+          data. Defaults to returning the latest version if not specified.
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: The asAt datetime at which to retrieve the structured result
+            data. Defaults to returning the latest version if not specified.
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              someCorrelationId1:
+                source: MiddleOffice
+                code: MyUploadedRiskResults
+                effectiveAt: 2018-03-05T00:00:00.0000000+00:00
+                resultType: Risk
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/StructuredResultDataId'
+              description: The time invariant set of structured data identifiers to
+                retrieve, keyed by a unique, ephemeral correlation ID.
+              type: object
+          application/json:
+            example:
+              someCorrelationId1:
+                source: MiddleOffice
+                code: MyUploadedRiskResults
+                effectiveAt: 2018-03-05T00:00:00.0000000+00:00
+                resultType: Risk
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/StructuredResultDataId'
+              description: The time invariant set of structured data identifiers to
+                retrieve, keyed by a unique, ephemeral correlation ID.
+              type: object
+          text/json:
+            example:
+              someCorrelationId1:
+                source: MiddleOffice
+                code: MyUploadedRiskResults
+                effectiveAt: 2018-03-05T00:00:00.0000000+00:00
+                resultType: Risk
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/StructuredResultDataId'
+              description: The time invariant set of structured data identifiers to
+                retrieve, keyed by a unique, ephemeral correlation ID.
+              type: object
+          application/*+json:
+            example:
+              someCorrelationId1:
+                source: MiddleOffice
+                code: MyUploadedRiskResults
+                effectiveAt: 2018-03-05T00:00:00.0000000+00:00
+                resultType: Risk
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/StructuredResultDataId'
+              description: The time invariant set of structured data identifiers to
+                retrieve, keyed by a unique, ephemeral correlation ID.
+              type: object
+        description: The time invariant set of structured data identifiers to retrieve,
+          keyed by a unique, ephemeral correlation ID.
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetVirtualDocumentResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetVirtualDocumentResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetVirtualDocumentResponse'
+          description: The successfully retrieved virtual documents along with any
+            failures.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] GetVirtualDocument: Get Virtual Documents'
+      tags:
+      - Structured Result Data
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
   /api/unitresults/{scope}:
     post:
       description: "Create or update one or more structured result data items in a\
@@ -52135,6 +52275,58 @@ components:
       - Commodities
       - Money
       - Unknown
+      type: string
+    AtomValue:
+      additionalProperties: false
+      description: Top/Parent class of individual atom values
+      discriminator:
+        propertyName: atomValueType
+      example:
+        atomValueType: AtomValueInt
+      properties:
+        atomValueType:
+          description: 'The available values are: AtomValueInt, AtomValueDecimal,
+            AtomValueString, AtomValue0D, AtomValue'
+          enum:
+          - AtomValueInt
+          - AtomValueDecimal
+          - AtomValueString
+          - AtomValue0D
+          - AtomValue
+          type: string
+      required:
+      - atomValueType
+      type: object
+    AtomValue0D:
+      allOf:
+      - $ref: '#/components/schemas/AtomValue'
+      - $ref: '#/components/schemas/AtomValue0D_allOf'
+      description: Holder class for a point/0D atom value. Consists of a decimal and
+        a unit.
+    AtomValueDecimal:
+      allOf:
+      - $ref: '#/components/schemas/AtomValue'
+      - $ref: '#/components/schemas/AtomValueDecimal_allOf'
+      description: Holder class for the decimal atom value
+    AtomValueInt:
+      allOf:
+      - $ref: '#/components/schemas/AtomValue'
+      - $ref: '#/components/schemas/AtomValueInt_allOf'
+      description: Holder class for the integer atom values
+    AtomValueString:
+      allOf:
+      - $ref: '#/components/schemas/AtomValue'
+      - $ref: '#/components/schemas/AtomValueString_allOf'
+      description: Holder class for a string atom value
+    AtomValueType:
+      description: Enum of atom values types. Used to discriminate the individual
+        classes
+      enum:
+      - AtomValueInt
+      - AtomValueDecimal
+      - AtomValueString
+      - AtomValue0D
+      - AtomValue
       type: string
     Basket:
       allOf:
@@ -58032,13 +58224,14 @@ components:
         values:
           additionalProperties:
             $ref: '#/components/schemas/DataMapping'
-          description: TODO
+          description: The set of values that were successfully retrieved.
           nullable: true
           type: object
         failed:
           additionalProperties:
             $ref: '#/components/schemas/ErrorDetail'
-          description: TODO
+          description: The set of values that could not be retrieved along with a
+            reason for this, e.g. badly formed request.
           nullable: true
           type: object
         links:
@@ -58625,6 +58818,106 @@ components:
           description: Collection of links.
           items:
             $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      type: object
+    GetVirtualDocumentResponse:
+      additionalProperties: false
+      example:
+        values:
+          key:
+            data:
+            - rowData:
+                columns:
+                - columns
+                - columns
+                values:
+                - atomValueType: AtomValueInt
+                - atomValueType: AtomValueInt
+              rowId:
+                key: rowId
+            - rowData:
+                columns:
+                - columns
+                - columns
+                values:
+                - atomValueType: AtomValueInt
+                - atomValueType: AtomValueInt
+              rowId:
+                key: rowId
+            documentId:
+              code: code
+              effectiveAt: effectiveAt
+              source: source
+              resultType: resultType
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+        failed:
+          key:
+            id: id
+            detail: detail
+            type: type
+            errorDetails:
+            - key: errorDetails
+            - key: errorDetails
+      properties:
+        href:
+          description: The specific Uniform Resource Identifier (URI) for this resource
+            at the requested effective and asAt datetime.
+          format: uri
+          nullable: true
+          type: string
+        values:
+          additionalProperties:
+            $ref: '#/components/schemas/VirtualDocument'
+          description: The set of values that were successfully retrieved.
+          nullable: true
+          type: object
+        failed:
+          additionalProperties:
+            $ref: '#/components/schemas/ErrorDetail'
+          description: The set of calues that could not be retrieved along with a
+            reason for this, e.g. badly formed request.
+          nullable: true
+          type: object
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      type: object
+    GroupedResultOfAddressKey:
+      additionalProperties: false
+      description: Holder class for a group of results. It consists of a list of columns
+        and values for that column.
+      example:
+        columns:
+        - columns
+        - columns
+        values:
+        - atomValueType: AtomValueInt
+        - atomValueType: AtomValueInt
+      properties:
+        columns:
+          description: The columns, or keys, for a particular group of results
+          items:
+            description: The key that uniquely identifies a queryable address in Lusid.
+            type: string
+          nullable: true
+          type: array
+        values:
+          description: The values for the list of results
+          items:
+            $ref: '#/components/schemas/AtomValue'
           nullable: true
           type: array
       type: object
@@ -79214,6 +79507,71 @@ components:
           nullable: true
           type: array
       type: object
+    VirtualDocument:
+      additionalProperties: false
+      description: "Virtual document consists of (potentially several) upserted documents.\r\
+        \n            \r\nThe documents get parsed according to the provided data\
+        \ map on upsert, the collection of resulting values in\r\naggregated in a\
+        \ virtual document"
+      example:
+        data:
+        - rowData:
+            columns:
+            - columns
+            - columns
+            values:
+            - atomValueType: AtomValueInt
+            - atomValueType: AtomValueInt
+          rowId:
+            key: rowId
+        - rowData:
+            columns:
+            - columns
+            - columns
+            values:
+            - atomValueType: AtomValueInt
+            - atomValueType: AtomValueInt
+          rowId:
+            key: rowId
+        documentId:
+          code: code
+          effectiveAt: effectiveAt
+          source: source
+          resultType: resultType
+      properties:
+        documentId:
+          $ref: '#/components/schemas/StructuredResultDataId'
+        data:
+          description: The data inside the document
+          items:
+            $ref: '#/components/schemas/VirtualDocumentRow'
+          nullable: true
+          type: array
+      type: object
+    VirtualDocumentRow:
+      additionalProperties: false
+      description: Rows identified by the composite id, based on the data maps
+      example:
+        rowData:
+          columns:
+          - columns
+          - columns
+          values:
+          - atomValueType: AtomValueInt
+          - atomValueType: AtomValueInt
+        rowId:
+          key: rowId
+      properties:
+        rowId:
+          additionalProperties:
+            type: string
+          description: The identifier for the row. This is keyed by address keys,
+            and values obtained through applying the data map to the documents.
+          nullable: true
+          type: object
+        rowData:
+          $ref: '#/components/schemas/GroupedResultOfAddressKey'
+      type: object
     Warning:
       additionalProperties: false
       example:
@@ -79299,6 +79657,86 @@ components:
       - $ref: '#/components/schemas/YieldCurveData_allOf'
       description: Market data for a yield curve,  represented by a list of instruments
         and corresponding market quotes
+    AtomValue0D_allOf:
+      properties:
+        value:
+          description: The value
+          format: double
+          type: number
+        units:
+          description: The unit
+          nullable: true
+          type: string
+        atomValueType:
+          description: 'The available values are: AtomValueInt, AtomValueDecimal,
+            AtomValueString, AtomValue0D, AtomValue'
+          enum:
+          - AtomValueInt
+          - AtomValueDecimal
+          - AtomValueString
+          - AtomValue0D
+          - AtomValue
+          type: string
+      required:
+      - atomValueType
+      type: object
+    AtomValueDecimal_allOf:
+      properties:
+        value:
+          description: The value itself
+          format: double
+          type: number
+        atomValueType:
+          description: 'The available values are: AtomValueInt, AtomValueDecimal,
+            AtomValueString, AtomValue0D, AtomValue'
+          enum:
+          - AtomValueInt
+          - AtomValueDecimal
+          - AtomValueString
+          - AtomValue0D
+          - AtomValue
+          type: string
+      required:
+      - atomValueType
+      type: object
+    AtomValueInt_allOf:
+      properties:
+        value:
+          description: The value itself
+          format: int32
+          type: integer
+        atomValueType:
+          description: 'The available values are: AtomValueInt, AtomValueDecimal,
+            AtomValueString, AtomValue0D, AtomValue'
+          enum:
+          - AtomValueInt
+          - AtomValueDecimal
+          - AtomValueString
+          - AtomValue0D
+          - AtomValue
+          type: string
+      required:
+      - atomValueType
+      type: object
+    AtomValueString_allOf:
+      properties:
+        value:
+          description: The value itself
+          nullable: true
+          type: string
+        atomValueType:
+          description: 'The available values are: AtomValueInt, AtomValueDecimal,
+            AtomValueString, AtomValue0D, AtomValue'
+          enum:
+          - AtomValueInt
+          - AtomValueDecimal
+          - AtomValueString
+          - AtomValue0D
+          - AtomValue
+          type: string
+      required:
+      - atomValueType
+      type: object
     Basket_allOf:
       properties:
         basketName:
@@ -82223,7 +82661,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
