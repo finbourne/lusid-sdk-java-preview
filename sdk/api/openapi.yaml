@@ -277,12 +277,12 @@ info:
     | <a name="758">758</a>|Luminesce timed out.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3893
+  version: 0.11.3894
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:31871
+- url: http://local-unit-test-server.lusid.com:52679
 security:
 - {}
 tags:
@@ -4129,6 +4129,169 @@ paths:
       - Calendars
       x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/complexmarketdata:
+    get:
+      description: "List the set of ComplexMarketData at the specified date/time,\r\
+        \nalong with the scope the data was stored in and its identifier in that scope."
+      operationId: ListComplexMarketData
+      parameters:
+      - description: The asAt datetime at which to list the ComplexMarketData. Defaults
+          to latest if not specified.
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: The asAt datetime at which to list the ComplexMarketData. Defaults
+            to latest if not specified.
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                - scope: ExampleScope
+                  marketDataId:
+                    provider: DataScope
+                    priceSource: Some Bank Plc
+                    lineage: Swaps Desk Trader A
+                    effectiveAt: 2018-03-05T00:00:00.0000000+00:00
+                    marketAsset: USDOIS
+                  marketData:
+                    baseDate: 1970-01-01T00:00:00.0000000+00:00
+                    dates:
+                    - 1970-01-01T00:00:00.0000000+00:00
+                    discountFactors:
+                    - 1
+                    marketDataType: DiscountFactorCurveData
+                - scope: ExampleScope
+                  marketDataId:
+                    provider: DataScope
+                    priceSource: AN.Other Bank Plc
+                    lineage: Swaps Desk Trader B
+                    effectiveAt: 2018-03-05T00:00:00.0000000+00:00
+                    marketAsset: RBS
+                  marketData:
+                    document: '{ "some":"valid json"}'
+                    format: Json
+                    name: free text identifier of document 1
+                    marketDataType: OpaqueMarketData
+                href: https://lusid.com/api/
+                links:
+                - relation: RequestLogs
+                  href: http://example.com
+                  description: A link to the LUSID Insights website showing all logs
+                    related to this request
+                  method: GET
+              schema:
+                $ref: '#/components/schemas/ResourceListOfListComplexMarketDataWithMetaDataResponse'
+            application/json:
+              example:
+                values:
+                - scope: ExampleScope
+                  marketDataId:
+                    provider: DataScope
+                    priceSource: Some Bank Plc
+                    lineage: Swaps Desk Trader A
+                    effectiveAt: 2018-03-05T00:00:00.0000000+00:00
+                    marketAsset: USDOIS
+                  marketData:
+                    baseDate: 1970-01-01T00:00:00.0000000+00:00
+                    dates:
+                    - 1970-01-01T00:00:00.0000000+00:00
+                    discountFactors:
+                    - 1
+                    marketDataType: DiscountFactorCurveData
+                - scope: ExampleScope
+                  marketDataId:
+                    provider: DataScope
+                    priceSource: AN.Other Bank Plc
+                    lineage: Swaps Desk Trader B
+                    effectiveAt: 2018-03-05T00:00:00.0000000+00:00
+                    marketAsset: RBS
+                  marketData:
+                    document: '{ "some":"valid json"}'
+                    format: Json
+                    name: free text identifier of document 1
+                    marketDataType: OpaqueMarketData
+                href: https://lusid.com/api/
+                links:
+                - relation: RequestLogs
+                  href: http://example.com
+                  description: A link to the LUSID Insights website showing all logs
+                    related to this request
+                  method: GET
+              schema:
+                $ref: '#/components/schemas/ResourceListOfListComplexMarketDataWithMetaDataResponse'
+            text/json:
+              example:
+                values:
+                - scope: ExampleScope
+                  marketDataId:
+                    provider: DataScope
+                    priceSource: Some Bank Plc
+                    lineage: Swaps Desk Trader A
+                    effectiveAt: 2018-03-05T00:00:00.0000000+00:00
+                    marketAsset: USDOIS
+                  marketData:
+                    baseDate: 1970-01-01T00:00:00.0000000+00:00
+                    dates:
+                    - 1970-01-01T00:00:00.0000000+00:00
+                    discountFactors:
+                    - 1
+                    marketDataType: DiscountFactorCurveData
+                - scope: ExampleScope
+                  marketDataId:
+                    provider: DataScope
+                    priceSource: AN.Other Bank Plc
+                    lineage: Swaps Desk Trader B
+                    effectiveAt: 2018-03-05T00:00:00.0000000+00:00
+                    marketAsset: RBS
+                  marketData:
+                    document: '{ "some":"valid json"}'
+                    format: Json
+                    name: free text identifier of document 1
+                    marketDataType: OpaqueMarketData
+                href: https://lusid.com/api/
+                links:
+                - relation: RequestLogs
+                  href: http://example.com
+                  description: A link to the LUSID Insights website showing all logs
+                    related to this request
+                  method: GET
+              schema:
+                $ref: '#/components/schemas/ResourceListOfListComplexMarketDataWithMetaDataResponse'
+          description: The requested ComplexMarketData
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListComplexMarketData: List the set of ComplexMarketData'
+      tags:
+      - Complex Market Data
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/complexmarketdata/{scope}:
     post:
@@ -60785,6 +60948,33 @@ components:
           nullable: true
           type: array
       type: object
+    ListComplexMarketDataWithMetaDataResponse:
+      additionalProperties: false
+      description: "Wraps a Finbourne.WebApi.Interface.Dto.ComplexMarketData.ComplexMarketData\
+        \ object with information that was retrieved from storage with it.\r\nIn particular,\r\
+        \nthe scope that the data was stored in,\r\nand a <seealso cref=\"T:Finbourne.WebApi.Interface.Dto.ComplexMarketData.ComplexMarketDataId\"\
+        \ /> object identifying the market data in that scope."
+      example:
+        marketData:
+          marketDataType: DiscountFactorCurveData
+        scope: scope
+        marketDataId:
+          lineage: lineage
+          provider: provider
+          priceSource: priceSource
+          effectiveAt: effectiveAt
+          marketAsset: marketAsset
+      properties:
+        scope:
+          description: The scope that the listed ComplexMarketData entity is stored
+            in.
+          nullable: true
+          type: string
+        marketDataId:
+          $ref: '#/components/schemas/ComplexMarketDataId'
+        marketData:
+          $ref: '#/components/schemas/ComplexMarketData'
+      type: object
     LusidInstrument:
       additionalProperties: false
       description: "Base class in hierarchy for LUSID Instruments. Valuation would\
@@ -71730,6 +71920,69 @@ components:
           description: The resources to list.
           items:
             $ref: '#/components/schemas/IUnitDefinitionDto'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+      required:
+      - values
+      type: object
+    ResourceListOfListComplexMarketDataWithMetaDataResponse:
+      additionalProperties: false
+      description: A collection of resources that can be returned from requests.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - marketData:
+            marketDataType: DiscountFactorCurveData
+          scope: scope
+          marketDataId:
+            lineage: lineage
+            provider: provider
+            priceSource: priceSource
+            effectiveAt: effectiveAt
+            marketAsset: marketAsset
+        - marketData:
+            marketDataType: DiscountFactorCurveData
+          scope: scope
+          marketDataId:
+            lineage: lineage
+            provider: provider
+            priceSource: priceSource
+            effectiveAt: effectiveAt
+            marketAsset: marketAsset
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/ListComplexMarketDataWithMetaDataResponse'
           type: array
         href:
           description: The URI of the resource list.

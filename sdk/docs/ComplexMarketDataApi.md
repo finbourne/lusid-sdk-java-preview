@@ -1,11 +1,12 @@
 # ComplexMarketDataApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:31871*
+All URIs are relative to *http://local-unit-test-server.lusid.com:52679*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteComplexMarketData**](ComplexMarketDataApi.md#deleteComplexMarketData) | **POST** /api/complexmarketdata/{scope}/$delete | [EARLY ACCESS] DeleteComplexMarketData: Delete one or more items of complex market data, assuming they are present.
 [**getComplexMarketData**](ComplexMarketDataApi.md#getComplexMarketData) | **POST** /api/complexmarketdata/{scope}/$get | [EARLY ACCESS] GetComplexMarketData: Get complex market data
+[**listComplexMarketData**](ComplexMarketDataApi.md#listComplexMarketData) | **GET** /api/complexmarketdata | [EXPERIMENTAL] ListComplexMarketData: List the set of ComplexMarketData
 [**upsertComplexMarketData**](ComplexMarketDataApi.md#upsertComplexMarketData) | **POST** /api/complexmarketdata/{scope} | [EARLY ACCESS] UpsertComplexMarketData: Upsert a set of complex market data items. This creates or updates the data in Lusid.
 
 
@@ -30,7 +31,7 @@ import com.finbourne.lusid.api.ComplexMarketDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31871");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:52679");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -101,7 +102,7 @@ import com.finbourne.lusid.api.ComplexMarketDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31871");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:52679");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -157,6 +158,75 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="listComplexMarketData"></a>
+# **listComplexMarketData**
+> ResourceListOfListComplexMarketDataWithMetaDataResponse listComplexMarketData(asAt)
+
+[EXPERIMENTAL] ListComplexMarketData: List the set of ComplexMarketData
+
+List the set of ComplexMarketData at the specified date/time,  along with the scope the data was stored in and its identifier in that scope.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.ComplexMarketDataApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:52679");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    ComplexMarketDataApi apiInstance = new ComplexMarketDataApi(defaultClient);
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to list the ComplexMarketData. Defaults to latest if not specified.
+    try {
+      ResourceListOfListComplexMarketDataWithMetaDataResponse result = apiInstance.listComplexMarketData(asAt);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ComplexMarketDataApi#listComplexMarketData");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to list the ComplexMarketData. Defaults to latest if not specified. | [optional]
+
+### Return type
+
+[**ResourceListOfListComplexMarketDataWithMetaDataResponse**](ResourceListOfListComplexMarketDataWithMetaDataResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested ComplexMarketData |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="upsertComplexMarketData"></a>
 # **upsertComplexMarketData**
 > UpsertStructuredDataResponse upsertComplexMarketData(scope, requestBody)
@@ -178,7 +248,7 @@ import com.finbourne.lusid.api.ComplexMarketDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:31871");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:52679");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
