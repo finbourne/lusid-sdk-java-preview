@@ -277,12 +277,12 @@ info:
     | <a name="758">758</a>|Luminesce timed out.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3908
+  version: 0.11.3909
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:53947
 security:
 - {}
 tags:
@@ -80782,20 +80782,6 @@ components:
       type: object
     Equity_allOf:
       properties:
-        startDate:
-          description: The start date of the instrument. This is normally synonymous
-            with the trade-date.
-          format: date-time
-          type: string
-        maturityDate:
-          description: "The final maturity date of the instrument. This means the\
-            \ last date on which the instruments makes a payment of any amount.\r\n\
-            For the avoidance of doubt, that is not necessarily prior to its last\
-            \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
-            \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date."
-          format: date-time
-          type: string
         identifiers:
           $ref: '#/components/schemas/Equity_allOf_identifiers'
         domCcy:
@@ -80844,8 +80830,6 @@ components:
       - domCcy
       - identifiers
       - instrumentType
-      - maturityDate
-      - startDate
       type: object
     EquityOption_allOf:
       properties:
@@ -82914,7 +82898,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
