@@ -1,6 +1,6 @@
 # LegalEntitiesApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:64581*
+All URIs are relative to *http://local-unit-test-server.lusid.com:42071*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**getLegalEntityRelationships**](LegalEntitiesApi.md#getLegalEntityRelationships) | **GET** /api/legalentities/{idTypeScope}/{idTypeCode}/{code}/relationships | [EXPERIMENTAL] GetLegalEntityRelationships: Get Relationships for Legal Entity
 [**listLegalEntities**](LegalEntitiesApi.md#listLegalEntities) | **GET** /api/legalentities/{idTypeScope}/{idTypeCode} | [EARLY ACCESS] ListLegalEntities: List Legal Entities
 [**setLegalEntityIdentifiers**](LegalEntitiesApi.md#setLegalEntityIdentifiers) | **POST** /api/legalentities/{idTypeScope}/{idTypeCode}/{code}/identifiers | [EXPERIMENTAL] SetLegalEntityIdentifiers: Set Legal Entity Identifiers
+[**setLegalEntityProperties**](LegalEntitiesApi.md#setLegalEntityProperties) | **POST** /api/legalentities/{idTypeScope}/{idTypeCode}/{code}/properties | [EXPERIMENTAL] SetLegalEntityProperties: Set Legal Entity Properties
 [**upsertLegalEntity**](LegalEntitiesApi.md#upsertLegalEntity) | **POST** /api/legalentities | [EARLY ACCESS] UpsertLegalEntity: Upsert Legal Entity
 [**upsertLegalEntityAccessMetadata**](LegalEntitiesApi.md#upsertLegalEntityAccessMetadata) | **PUT** /api/legalentities/{idTypeScope}/{idTypeCode}/{code}/metadata/{metadataKey} | [EARLY ACCESS] UpsertLegalEntityAccessMetadata: Upsert a Legal Entity Access Metadata entry associated with a specific metadataKey. This creates or updates the data in LUSID.
 
@@ -41,7 +42,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64581");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -114,7 +115,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64581");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -191,7 +192,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64581");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -268,7 +269,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64581");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -345,7 +346,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64581");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -422,7 +423,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64581");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -501,7 +502,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64581");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -580,7 +581,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64581");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -663,7 +664,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64581");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -744,7 +745,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64581");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -825,7 +826,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64581");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -908,7 +909,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64581");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -962,6 +963,81 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="setLegalEntityProperties"></a>
+# **setLegalEntityProperties**
+> LegalEntity setLegalEntityProperties(idTypeScope, idTypeCode, code, setLegalEntityPropertiesRequest)
+
+[EXPERIMENTAL] SetLegalEntityProperties: Set Legal Entity Properties
+
+Set properties of the legal entity.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.LegalEntitiesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    LegalEntitiesApi apiInstance = new LegalEntitiesApi(defaultClient);
+    String idTypeScope = "idTypeScope_example"; // String | Scope of the legal entity identifier type.
+    String idTypeCode = "idTypeCode_example"; // String | Code of the legal entity identifier type.
+    String code = "code_example"; // String | Code of the legal entity under specified identifier type's scope and code. This together with stated identifier type uniquely              identifies the legal entity.
+    SetLegalEntityPropertiesRequest setLegalEntityPropertiesRequest = new SetLegalEntityPropertiesRequest(); // SetLegalEntityPropertiesRequest | Request containing properties to set for the legal entity. Properties not specified in request will not be changed.
+    try {
+      LegalEntity result = apiInstance.setLegalEntityProperties(idTypeScope, idTypeCode, code, setLegalEntityPropertiesRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling LegalEntitiesApi#setLegalEntityProperties");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **idTypeScope** | **String**| Scope of the legal entity identifier type. |
+ **idTypeCode** | **String**| Code of the legal entity identifier type. |
+ **code** | **String**| Code of the legal entity under specified identifier type&#39;s scope and code. This together with stated identifier type uniquely              identifies the legal entity. |
+ **setLegalEntityPropertiesRequest** | [**SetLegalEntityPropertiesRequest**](SetLegalEntityPropertiesRequest.md)| Request containing properties to set for the legal entity. Properties not specified in request will not be changed. |
+
+### Return type
+
+[**LegalEntity**](LegalEntity.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The Legal Entity with updated properties |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="upsertLegalEntity"></a>
 # **upsertLegalEntity**
 > LegalEntity upsertLegalEntity(upsertLegalEntityRequest)
@@ -983,7 +1059,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64581");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -1052,7 +1128,7 @@ import com.finbourne.lusid.api.LegalEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64581");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42071");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
