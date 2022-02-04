@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **payOrReceiveFixed** | **String** | True if on exercise the holder of the option enters the swap paying fixed, false if floating.  Supported string (enumeration) values are: [Pay, Receive]. | 
 **deliveryMethod** | **String** | How does the option settle  Supported string (enumeration) values are: [Cash, Physical]. | 
 **swap** | [**InterestRateSwap**](InterestRateSwap.md) |  | 
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption | 
 
 
 
@@ -42,7 +42,6 @@ CASHSETTLED | &quot;CashSettled&quot;
 CDSINDEX | &quot;CdsIndex&quot;
 BASKET | &quot;Basket&quot;
 FUNDINGLEG | &quot;FundingLeg&quot;
-CROSSCURRENCYSWAP | &quot;CrossCurrencySwap&quot;
 FXSWAP | &quot;FxSwap&quot;
 FORWARDRATEAGREEMENT | &quot;ForwardRateAgreement&quot;
 SIMPLEINSTRUMENT | &quot;SimpleInstrument&quot;

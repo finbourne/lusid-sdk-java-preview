@@ -51,8 +51,6 @@
 
 * `FUNDINGLEG` (value: `"FundingLeg"`)
 
-* `CROSSCURRENCYSWAP` (value: `"CrossCurrencySwap"`)
-
 * `FXSWAP` (value: `"FxSwap"`)
 
 * `FORWARDRATEAGREEMENT` (value: `"ForwardRateAgreement"`)

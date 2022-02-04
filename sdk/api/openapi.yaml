@@ -277,12 +277,12 @@ info:
     | <a name="758">758</a>|Luminesce timed out.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3929
+  version: 0.11.3931
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:33017
 security:
 - {}
 tags:
@@ -56320,16 +56320,6 @@ components:
       - thresholdAmount
       - valuationAgent
       type: object
-    CrossCurrencySwap:
-      allOf:
-      - $ref: '#/components/schemas/LusidInstrument'
-      - $ref: '#/components/schemas/CrossCurrencySwap_allOf'
-      description: "IL Cross Currency Swap Instrument; Lusid-ibor internal representation\
-        \ of a Cross Currency Swap instrument\r\nA Cross Currency Swap is the exchange\
-        \ of two sets of cashflows (of differing currencies) occurring at one or more\
-        \ dates.\r\nThese may include a notional exchange at the start and, or, maturity\
-        \ of the trade. Depending upon the choice of\r\npayment currency, payment\
-        \ frequency and so on they can be used to match sets of future obligations"
     CurrencyAndAmount:
       additionalProperties: false
       description: An amount of a specific currency, specifying a value and an associated
@@ -60719,7 +60709,6 @@ components:
       - CdsIndex
       - Basket
       - FundingLeg
-      - CrossCurrencySwap
       - FxSwap
       - ForwardRateAgreement
       - SimpleInstrument
@@ -61268,8 +61257,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -61294,7 +61283,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -80322,8 +80310,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -80348,7 +80336,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -80443,8 +80430,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -80469,7 +80456,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -80510,8 +80496,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -80536,7 +80522,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -80571,8 +80556,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -80597,7 +80582,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -80656,8 +80640,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -80682,7 +80666,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -80747,8 +80730,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -80773,7 +80756,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -80834,8 +80816,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -80860,7 +80842,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -80944,72 +80925,6 @@ components:
       - recoveryRate
       - spreads
       - tenors
-      type: object
-    CrossCurrencySwap_allOf:
-      properties:
-        startDate:
-          description: The start date of the instrument. This is normally synonymous
-            with the trade-date.
-          format: date-time
-          type: string
-        maturityDate:
-          description: "The final maturity date of the instrument. This means the\
-            \ last date on which the instruments makes a payment of any amount.\r\n\
-            For the avoidance of doubt, that is not necessarily prior to its last\
-            \ sensitivity date for the purposes of risk; e.g. instruments such as\r\
-            \nConstant Maturity Swaps (CMS) often have sensitivities to rates beyond\
-            \ their last payment date."
-          format: date-time
-          type: string
-        legs:
-          description: The set of instrument legs that define the swap instrument.
-          items:
-            $ref: '#/components/schemas/InstrumentLeg'
-          type: array
-        instrumentType:
-          description: 'The available values are: QuotedSecurity, InterestRateSwap,
-            FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
-            Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
-            TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
-          enum:
-          - QuotedSecurity
-          - InterestRateSwap
-          - FxForward
-          - Future
-          - ExoticInstrument
-          - FxOption
-          - CreditDefaultSwap
-          - InterestRateSwaption
-          - Bond
-          - EquityOption
-          - FixedLeg
-          - FloatingLeg
-          - BespokeCashFlowsLeg
-          - Unknown
-          - TermDeposit
-          - ContractForDifference
-          - EquitySwap
-          - CashPerpetual
-          - CapFloor
-          - CashSettled
-          - CdsIndex
-          - Basket
-          - FundingLeg
-          - CrossCurrencySwap
-          - FxSwap
-          - ForwardRateAgreement
-          - SimpleInstrument
-          - Repo
-          - Equity
-          - ExchangeTradedOption
-          type: string
-      required:
-      - instrumentType
-      - legs
-      - maturityDate
-      - startDate
       type: object
     DiscountFactorCurveData_allOf:
       properties:
@@ -81108,8 +81023,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -81134,7 +81049,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -81206,8 +81120,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -81232,7 +81146,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -81297,8 +81210,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -81323,7 +81236,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -81409,8 +81321,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -81435,7 +81347,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -81467,8 +81378,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -81493,7 +81404,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -81551,8 +81461,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -81577,7 +81487,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -81613,8 +81522,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -81639,7 +81548,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -81691,8 +81599,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -81717,7 +81625,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -81761,8 +81668,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -81787,7 +81694,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -81841,8 +81747,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -81867,7 +81773,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -81942,8 +81847,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -81968,7 +81873,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -82327,8 +82231,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -82353,7 +82257,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -82383,8 +82286,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -82409,7 +82312,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -82452,8 +82354,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -82478,7 +82380,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -82524,8 +82425,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -82550,7 +82451,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -82587,8 +82487,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -82613,7 +82513,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -82955,8 +82854,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -82981,7 +82880,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -83037,8 +82935,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -83063,7 +82961,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -83125,8 +83022,8 @@ components:
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
             Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown,
             TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor,
-            CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap,
-            ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption'
+            CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement,
+            SimpleInstrument, Repo, Equity, ExchangeTradedOption'
           enum:
           - QuotedSecurity
           - InterestRateSwap
@@ -83151,7 +83048,6 @@ components:
           - CdsIndex
           - Basket
           - FundingLeg
-          - CrossCurrencySwap
           - FxSwap
           - ForwardRateAgreement
           - SimpleInstrument
@@ -83214,7 +83110,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

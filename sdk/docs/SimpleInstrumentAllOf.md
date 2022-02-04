@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **assetClass** | [**AssetClassEnum**](#AssetClassEnum) | The available values are: InterestRates, FX, Inflation, Equities, Credit, Commodities, Money, Unknown | 
 **fgnCcys** | **List&lt;String&gt;** | The set of foreign currencies, if any (optional). |  [optional]
 **simpleInstrumentType** | **String** | The Instrument type of the simple instrument. | 
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, CrossCurrencySwap, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption | 
 
 
 
@@ -58,7 +58,6 @@ CASHSETTLED | &quot;CashSettled&quot;
 CDSINDEX | &quot;CdsIndex&quot;
 BASKET | &quot;Basket&quot;
 FUNDINGLEG | &quot;FundingLeg&quot;
-CROSSCURRENCYSWAP | &quot;CrossCurrencySwap&quot;
 FXSWAP | &quot;FxSwap&quot;
 FORWARDRATEAGREEMENT | &quot;ForwardRateAgreement&quot;
 SIMPLEINSTRUMENT | &quot;SimpleInstrument&quot;
