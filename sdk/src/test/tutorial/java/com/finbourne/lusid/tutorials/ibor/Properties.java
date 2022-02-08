@@ -35,7 +35,7 @@ public class Properties {
     }
 
     @Test
-    @LusidFeature("F14")
+    @LusidFeature("F1-5")
     public void create_portfolio_with_label_property() throws ApiException {
 
         String uuid = UUID.randomUUID().toString();
@@ -97,7 +97,7 @@ public class Properties {
     }
 
     @Test
-    @LusidFeature("F15")
+    @LusidFeature("F1-6")
     public void create_portfolio_with_metric_property() throws ApiException {
 
         String uuid = UUID.randomUUID().toString();

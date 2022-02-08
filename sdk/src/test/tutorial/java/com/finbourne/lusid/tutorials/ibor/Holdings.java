@@ -43,7 +43,7 @@ public class Holdings {
     }
 
     @Test
-    @LusidFeature("F2")
+    @LusidFeature("F15-3")
     public void get_holdings() throws ApiException {
 
         final String    currency = "GBP";
@@ -112,7 +112,7 @@ public class Holdings {
     }
 
     @Test
-    @LusidFeature("F3")
+    @LusidFeature("F15-1")
     public void set_target_holdings() throws ApiException {
 
         final String    currency = "GBP";
