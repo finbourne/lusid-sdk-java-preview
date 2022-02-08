@@ -60,7 +60,7 @@ public class Valuation {
     }
 
     @Test
-    @LusidFeature("F20")
+    @LusidFeature("F10-5")
     public void run_aggregation_with_buy() throws ApiException
     {
         run_aggregation(
@@ -89,7 +89,7 @@ public class Valuation {
     }
 
     @Test
-    @LusidFeature("F21")
+    @LusidFeature("F10-6")
     public void run_aggregation_on_multicurrency_portfolio_with_stock_in() throws ApiException {
         //  setup test environment scope
         String uuid = UUID.randomUUID().toString();

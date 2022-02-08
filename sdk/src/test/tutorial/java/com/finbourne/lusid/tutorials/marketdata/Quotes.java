@@ -33,7 +33,7 @@ public class Quotes {
     }
 
     @Test
-    @LusidFeature("F28")
+    @LusidFeature("F14-1")
     public void add_quote() throws ApiException {
         UpsertQuoteRequest  request = new UpsertQuoteRequest()
             .quoteId(new QuoteId()
@@ -60,7 +60,7 @@ public class Quotes {
     }
 
     @Test
-    @LusidFeature("F29")
+    @LusidFeature("F14-1")
     public void get_quote_for_instrument_for_single_day() throws ApiException {
 
         QuoteSeriesId quoteSeriesId = new QuoteSeriesId()
@@ -89,7 +89,7 @@ public class Quotes {
     }
 
     @Test
-    @LusidFeature("F30")
+    @LusidFeature("F14-4")
     public void get_timeseries_quote() throws ApiException {
 
         OffsetDateTime startDate = OffsetDateTime.of(2019, 4, 15, 0, 0, 0, 0, ZoneOffset.UTC);

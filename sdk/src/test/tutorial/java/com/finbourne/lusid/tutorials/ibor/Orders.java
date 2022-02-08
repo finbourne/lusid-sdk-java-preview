@@ -79,7 +79,7 @@ public class Orders
     // We want to make a request for a single order. The LUID will be mapped on upsert
     // from the instrument identifiers passed.
     @Test
-    @LusidFeature("F4")
+    @LusidFeature("F9-1")
     public void Upsert_Simple_Order() throws ApiException {
         String testScope = TutorialScopes.get("simple-upsert");
         String orderCode = "Order-" +  UUID.randomUUID().toString();
@@ -135,7 +135,7 @@ public class Orders
     // We want to make a request for a single order. The LUID will be mapped to an
     // "unknown" identifier on upsert as we're passing unregistered instrument identifiers.
     @Test
-    @LusidFeature("F5")
+    @LusidFeature("F9-7")
     public void Upsert_Simple_Order_With_Unknown_Instrument() throws ApiException {
         String testScope = TutorialScopes.get("unknown-instrument");
         String orderCode = "Order-" +  UUID.randomUUID().toString();
@@ -190,7 +190,7 @@ public class Orders
     // We want to make a request for a single order. The internal security id will be mapped on upsert
     // from the instrument identifiers passed.
     @Test
-    @LusidFeature("F6")
+    @LusidFeature("F9-8")
     public void Update_Simple_Order() throws ApiException {
         String testScope = TutorialScopes.get("simple-upsert");
         String orderCode = "Order-" +  UUID.randomUUID().toString();
@@ -269,7 +269,7 @@ public class Orders
     // from the instrument identifiers passed. We can filter on a number of parameters on query.
     @Ignore
     @Test
-    @LusidFeature("F7")
+    @LusidFeature("F9-9")
     public void Upsert_And_Retrieve_Simple_Orders() throws ApiException {
         String testScope = TutorialScopes.get("filtering");
         String orderCode1 = "Order-" +  UUID.randomUUID().toString();
