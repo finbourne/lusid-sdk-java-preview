@@ -7,7 +7,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**calculationDescription** | **String** | Description of what the calculation applies to eg. Fee, MinFee, MaxFee | 
 **calculationMethod** | [**CalculationMethodEnum**](#CalculationMethodEnum) | Method of calculating the fees or commission among: BasisPoints, Percentage, Rate, Flat etc. The available values are: Rate, BasisPoints, Percentage, Flat | 
 **multiplier** | [**MultiplierEnum**](#MultiplierEnum) | . The available values are: None, Quantity, Value | 
 **calculationAmount** | **Double** | Numerical fee amount | 

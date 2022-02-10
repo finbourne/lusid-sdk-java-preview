@@ -278,12 +278,12 @@ info:
     | <a name="763">763</a>|Invalid Lusid Entity Identifier Unit|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3952
+  version: 0.11.3953
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:44800
+- url: http://local-unit-test-server.lusid.com:63663
 security:
 - {}
 tags:
@@ -10772,12 +10772,10 @@ paths:
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
                   fee:
-                    calculationDescription: Fee
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
                   maxFee:
-                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
                     multiplier: None
                     calculationAmount: 5
@@ -10791,17 +10789,14 @@ paths:
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
                   fee:
-                    calculationDescription: Fee
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
                   maxFee:
-                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
                     multiplier: None
                     calculationAmount: 5
                   minFee:
-                    calculationDescription: The minimum fee chargeable
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 5
@@ -10822,12 +10817,10 @@ paths:
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
                   fee:
-                    calculationDescription: Fee
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
                   maxFee:
-                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
                     multiplier: None
                     calculationAmount: 5
@@ -10841,17 +10834,14 @@ paths:
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
                   fee:
-                    calculationDescription: Fee
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
                   maxFee:
-                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
                     multiplier: None
                     calculationAmount: 5
                   minFee:
-                    calculationDescription: The minimum fee chargeable
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 5
@@ -10872,12 +10862,10 @@ paths:
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
                   fee:
-                    calculationDescription: Fee
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
                   maxFee:
-                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
                     multiplier: None
                     calculationAmount: 5
@@ -10891,17 +10879,14 @@ paths:
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
                   fee:
-                    calculationDescription: Fee
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
                   maxFee:
-                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
                     multiplier: None
                     calculationAmount: 5
                   minFee:
-                    calculationDescription: The minimum fee chargeable
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 5
@@ -10946,10 +10931,10 @@ paths:
           \ that should be matched to reduce the list of rules returned. Eg. \"Instrument/default/Name=exampleValue\"\
           \ or \"AdditionalKey2=Value2\".\r\n            The minimum list of fields\
           \ available is as follows : \"RuleName\", \"Country\", \"FeeCalculationMethod\"\
-          , \"FeeMultiplier\", \"MinFeeCalculationMethod\", \r\n            \"MinFeeMultiplier\"\
-          , \"MaxFeeCalculationMethod\", \"MaxFeeMultiplier\", \"PropertyKey\", \r\
-          \n            \"TransactionType\", \"Counterparty\", \"SettlementCurrency\"\
-          , \"TransactionCurrency\", \"ExecutionBroker\", \r\n            \"Custodian\"\
+          , \"FeeMultiplier\", \"MinFeeCalculationMethod\",\r\n            \"MinFeeMultiplier\"\
+          , \"MaxFeeCalculationMethod\", \"MaxFeeMultiplier\", \"PropertyKey\",\r\n\
+          \            \"TransactionType\", \"Counterparty\", \"SettlementCurrency\"\
+          , \"TransactionCurrency\", \"ExecutionBroker\",\r\n            \"Custodian\"\
           , \"Exchange\""
         explode: true
         in: query
@@ -10961,10 +10946,10 @@ paths:
             \ Eg. \"Instrument/default/Name=exampleValue\" or \"AdditionalKey2=Value2\"\
             .\r\n            The minimum list of fields available is as follows :\
             \ \"RuleName\", \"Country\", \"FeeCalculationMethod\", \"FeeMultiplier\"\
-            , \"MinFeeCalculationMethod\", \r\n            \"MinFeeMultiplier\", \"\
-            MaxFeeCalculationMethod\", \"MaxFeeMultiplier\", \"PropertyKey\", \r\n\
+            , \"MinFeeCalculationMethod\",\r\n            \"MinFeeMultiplier\", \"\
+            MaxFeeCalculationMethod\", \"MaxFeeMultiplier\", \"PropertyKey\",\r\n\
             \            \"TransactionType\", \"Counterparty\", \"SettlementCurrency\"\
-            , \"TransactionCurrency\", \"ExecutionBroker\", \r\n            \"Custodian\"\
+            , \"TransactionCurrency\", \"ExecutionBroker\",\r\n            \"Custodian\"\
             , \"Exchange\""
           items:
             type: string
@@ -11007,12 +10992,10 @@ paths:
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
                   fee:
-                    calculationDescription: Fee
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
                   maxFee:
-                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
                     multiplier: None
                     calculationAmount: 5
@@ -11026,17 +11009,14 @@ paths:
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
                   fee:
-                    calculationDescription: Fee
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
                   maxFee:
-                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
                     multiplier: None
                     calculationAmount: 5
                   minFee:
-                    calculationDescription: The minimum fee chargeable
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 5
@@ -11057,12 +11037,10 @@ paths:
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
                   fee:
-                    calculationDescription: Fee
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
                   maxFee:
-                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
                     multiplier: None
                     calculationAmount: 5
@@ -11076,17 +11054,14 @@ paths:
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
                   fee:
-                    calculationDescription: Fee
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
                   maxFee:
-                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
                     multiplier: None
                     calculationAmount: 5
                   minFee:
-                    calculationDescription: The minimum fee chargeable
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 5
@@ -11107,12 +11082,10 @@ paths:
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
                   fee:
-                    calculationDescription: Fee
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
                   maxFee:
-                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
                     multiplier: None
                     calculationAmount: 5
@@ -11126,17 +11099,14 @@ paths:
                     otherColumnInfo: RowValue
                   propertyKey: Transaction/dummyPropertyScope/dummyPropertyCode
                   fee:
-                    calculationDescription: Fee
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 35
                   maxFee:
-                    calculationDescription: The maximum fee chargeable
                     calculationMethod: Flat
                     multiplier: None
                     calculationAmount: 5
                   minFee:
-                    calculationDescription: The minimum fee chargeable
                     calculationMethod: BasisPoints
                     multiplier: Quantity
                     calculationAmount: 5
@@ -11167,6 +11137,900 @@ paths:
       - oauth2: []
       summary: '[EXPERIMENTAL] ListAllFees: List the rules available for fees and
         commissions.'
+      tags:
+      - FeesAndCommissions
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+  /api/feesandcommissions/rules-dev:
+    get:
+      description: "For more information about filtering results,\r\nsee https://support.lusid.com/knowledgebase/article/KA-01914."
+      operationId: ListFeeRules
+      parameters:
+      - description: "The effective datetime or cut label at which to retrieve the\
+          \ rule definitions. Defaults to the current LUSID\r\nsystem datetime if\
+          \ not specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which to retrieve the\
+            \ rule definitions. Defaults to the current LUSID\r\nsystem datetime if\
+            \ not specified."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: "The asAt datetime at which to retrieve the rule definitions.\
+          \ Defaults to returning the latest version if not\r\nspecified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to retrieve the rule definitions.\
+            \ Defaults to returning the latest version if not\r\nspecified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: When paginating, limit the results to this number. Defaults to
+          100 if not specified.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: When paginating, limit the results to this number. Defaults
+            to 100 if not specified.
+          format: int32
+          maximum: 5000
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: Expression to filter the results.
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          description: Expression to filter the results.
+          maxLength: 16384
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        style: form
+      - description: "The pagination token to use to continue listing entities; this\
+          \ value is returned from the previous call. If\r\na pagination token is\
+          \ provided, the filter, effectiveAt and asAt fields must not have changed\
+          \ since the\r\noriginal request."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          description: "The pagination token to use to continue listing entities;\
+            \ this value is returned from the previous call. If\r\na pagination token\
+            \ is provided, the filter, effectiveAt and asAt fields must not have changed\
+            \ since the\r\noriginal request."
+          maxLength: 500
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                - code: FEE_1
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule to be updated.
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                - code: FEE_2
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  minFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 5
+                  maxFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 25
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule with minimum/maximum to be created
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfFeeRule'
+            application/json:
+              example:
+                values:
+                - code: FEE_1
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule to be updated.
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                - code: FEE_2
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  minFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 5
+                  maxFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 25
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule with minimum/maximum to be created
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfFeeRule'
+            text/json:
+              example:
+                values:
+                - code: FEE_1
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule to be updated.
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                - code: FEE_2
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  minFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 5
+                  maxFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 25
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule with minimum/maximum to be created
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfFeeRule'
+          description: A filtered list of fee rules available.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListFeeRules: List fee rules, with optional filtering.'
+      tags:
+      - FeesAndCommissions
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+    post:
+      description: "To upsert a new rule, the code field must be left empty, a code\
+        \ will then be assigned and returned as part\r\nof the response. To update\
+        \ an existing rule, include the fee code. It is possible to both create and\
+        \ update\r\nfee rules in the same request.\r\n            \r\nThe upsert is\
+        \ transactional - either all create/update operations will succeed or none\
+        \ of them will."
+      operationId: UpsertFeeRules
+      parameters:
+      - description: "The effective datetime or cut label for rule to begin to be\
+          \ effective from. Defaults to the current LUSID\r\nsystem datetime if not\
+          \ specified. In the case of updates, the update rule will be valid from\
+          \ this time until\r\nthe next upserted effective from time. For example,\
+          \ if a rule is due to change from the first of the next\r\nmonth, values\
+          \ upserted effective from the current time will only be valid until the\
+          \ end of the month, after\r\nwhich the scheduled changes will take over,\
+          \ as they were due to before this latest upsert."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label for rule to begin to be\
+            \ effective from. Defaults to the current LUSID\r\nsystem datetime if\
+            \ not specified. In the case of updates, the update rule will be valid\
+            \ from this time until\r\nthe next upserted effective from time. For example,\
+            \ if a rule is due to change from the first of the next\r\nmonth, values\
+            \ upserted effective from the current time will only be valid until the\
+            \ end of the month, after\r\nwhich the scheduled changes will take over,\
+            \ as they were due to before this latest upsert."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              update:
+                code: Fee_1
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                additionalKeys:
+                  office: London
+                description: Basic fee rule to be updated.
+              create:
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                minFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 5
+                maxFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 25
+                additionalKeys:
+                  office: London
+                description: Basic fee rule with minimum/maximum to be created
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/FeeRuleUpsertRequest'
+              description: "A dictionary of upsert request identifiers to rule upsert\
+                \ requests. The request\r\n             identifiers are valid for\
+                \ the request only and can be used to link the upserted fee rule to\
+                \ the code of a\r\n             created fee rule."
+              type: object
+          application/json:
+            example:
+              update:
+                code: Fee_1
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                additionalKeys:
+                  office: London
+                description: Basic fee rule to be updated.
+              create:
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                minFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 5
+                maxFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 25
+                additionalKeys:
+                  office: London
+                description: Basic fee rule with minimum/maximum to be created
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/FeeRuleUpsertRequest'
+              description: "A dictionary of upsert request identifiers to rule upsert\
+                \ requests. The request\r\n             identifiers are valid for\
+                \ the request only and can be used to link the upserted fee rule to\
+                \ the code of a\r\n             created fee rule."
+              type: object
+          text/json:
+            example:
+              update:
+                code: Fee_1
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                additionalKeys:
+                  office: London
+                description: Basic fee rule to be updated.
+              create:
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                minFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 5
+                maxFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 25
+                additionalKeys:
+                  office: London
+                description: Basic fee rule with minimum/maximum to be created
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/FeeRuleUpsertRequest'
+              description: "A dictionary of upsert request identifiers to rule upsert\
+                \ requests. The request\r\n             identifiers are valid for\
+                \ the request only and can be used to link the upserted fee rule to\
+                \ the code of a\r\n             created fee rule."
+              type: object
+          application/*+json:
+            example:
+              update:
+                code: Fee_1
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                additionalKeys:
+                  office: London
+                description: Basic fee rule to be updated.
+              create:
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                minFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 5
+                maxFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 25
+                additionalKeys:
+                  office: London
+                description: Basic fee rule with minimum/maximum to be created
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/FeeRuleUpsertRequest'
+              description: "A dictionary of upsert request identifiers to rule upsert\
+                \ requests. The request\r\n             identifiers are valid for\
+                \ the request only and can be used to link the upserted fee rule to\
+                \ the code of a\r\n             created fee rule."
+              type: object
+        description: "A dictionary of upsert request identifiers to rule upsert requests.\
+          \ The request\r\n             identifiers are valid for the request only\
+          \ and can be used to link the upserted fee rule to the code of a\r\n   \
+          \          created fee rule."
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                  update:
+                    code: FEE_1
+                    transactionPropertyKey: Transaction/default/fee
+                    transactionType: '*'
+                    country: UK
+                    counterparty: '*'
+                    transactionCurrency: '*'
+                    settlementCurrency: '*'
+                    executionBroker: '*'
+                    custodian: '*'
+                    exchange: My Exchange
+                    fee:
+                      calculationMethod: BasisPoints
+                      multiplier: Value
+                      calculationAmount: 10
+                    additionalKeys:
+                      office: London
+                    description: Basic fee rule to be updated.
+                    version:
+                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                  create:
+                    code: FEE_2
+                    transactionPropertyKey: Transaction/default/fee
+                    transactionType: '*'
+                    country: UK
+                    counterparty: '*'
+                    transactionCurrency: '*'
+                    settlementCurrency: '*'
+                    executionBroker: '*'
+                    custodian: '*'
+                    exchange: My Exchange
+                    fee:
+                      calculationMethod: BasisPoints
+                      multiplier: Value
+                      calculationAmount: 10
+                    minFee:
+                      calculationMethod: Flat
+                      multiplier: Value
+                      calculationAmount: 5
+                    maxFee:
+                      calculationMethod: Flat
+                      multiplier: Value
+                      calculationAmount: 25
+                    additionalKeys:
+                      office: London
+                    description: Basic fee rule with minimum/maximum to be created
+                    version:
+                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/FeeRuleUpsertResponse'
+            application/json:
+              example:
+                values:
+                  update:
+                    code: FEE_1
+                    transactionPropertyKey: Transaction/default/fee
+                    transactionType: '*'
+                    country: UK
+                    counterparty: '*'
+                    transactionCurrency: '*'
+                    settlementCurrency: '*'
+                    executionBroker: '*'
+                    custodian: '*'
+                    exchange: My Exchange
+                    fee:
+                      calculationMethod: BasisPoints
+                      multiplier: Value
+                      calculationAmount: 10
+                    additionalKeys:
+                      office: London
+                    description: Basic fee rule to be updated.
+                    version:
+                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                  create:
+                    code: FEE_2
+                    transactionPropertyKey: Transaction/default/fee
+                    transactionType: '*'
+                    country: UK
+                    counterparty: '*'
+                    transactionCurrency: '*'
+                    settlementCurrency: '*'
+                    executionBroker: '*'
+                    custodian: '*'
+                    exchange: My Exchange
+                    fee:
+                      calculationMethod: BasisPoints
+                      multiplier: Value
+                      calculationAmount: 10
+                    minFee:
+                      calculationMethod: Flat
+                      multiplier: Value
+                      calculationAmount: 5
+                    maxFee:
+                      calculationMethod: Flat
+                      multiplier: Value
+                      calculationAmount: 25
+                    additionalKeys:
+                      office: London
+                    description: Basic fee rule with minimum/maximum to be created
+                    version:
+                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/FeeRuleUpsertResponse'
+            text/json:
+              example:
+                values:
+                  update:
+                    code: FEE_1
+                    transactionPropertyKey: Transaction/default/fee
+                    transactionType: '*'
+                    country: UK
+                    counterparty: '*'
+                    transactionCurrency: '*'
+                    settlementCurrency: '*'
+                    executionBroker: '*'
+                    custodian: '*'
+                    exchange: My Exchange
+                    fee:
+                      calculationMethod: BasisPoints
+                      multiplier: Value
+                      calculationAmount: 10
+                    additionalKeys:
+                      office: London
+                    description: Basic fee rule to be updated.
+                    version:
+                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                  create:
+                    code: FEE_2
+                    transactionPropertyKey: Transaction/default/fee
+                    transactionType: '*'
+                    country: UK
+                    counterparty: '*'
+                    transactionCurrency: '*'
+                    settlementCurrency: '*'
+                    executionBroker: '*'
+                    custodian: '*'
+                    exchange: My Exchange
+                    fee:
+                      calculationMethod: BasisPoints
+                      multiplier: Value
+                      calculationAmount: 10
+                    minFee:
+                      calculationMethod: Flat
+                      multiplier: Value
+                      calculationAmount: 5
+                    maxFee:
+                      calculationMethod: Flat
+                      multiplier: Value
+                      calculationAmount: 25
+                    additionalKeys:
+                      office: London
+                    description: Basic fee rule with minimum/maximum to be created
+                    version:
+                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/FeeRuleUpsertResponse'
+          description: Upsert fee rules. New fee rules must have an empty code field.
+            Where a code is given, this rule must already exist and will be updated.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] UpsertFeeRules: Upsert fee rules.'
+      tags:
+      - FeesAndCommissions
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/feesandcommissions/rules-dev/{code}:
+    get:
+      description: Retrieves the fee rule definition at the given effective and as
+        at times.
+      operationId: GetFeeRule
+      parameters:
+      - description: The fee rule code.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The fee rule code.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The effective datetime or cut label at which to retrieve the\
+          \ rule definition. Defaults to the current LUSID\r\nsystem datetime if not\
+          \ specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which to retrieve the\
+            \ rule definition. Defaults to the current LUSID\r\nsystem datetime if\
+            \ not specified."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: "The asAt datetime at which to retrieve the rule definition.\
+          \ Defaults to returning the latest version if not\r\nspecified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to retrieve the rule definition.\
+            \ Defaults to returning the latest version if not\r\nspecified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                code: FEE_2
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                minFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 5
+                maxFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 25
+                additionalKeys:
+                  office: London
+                description: Basic fee rule with minimum/maximum to be created
+                version:
+                  effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                  asAtDate: 2020-01-01T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/FeeRule'
+            application/json:
+              example:
+                code: FEE_2
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                minFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 5
+                maxFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 25
+                additionalKeys:
+                  office: London
+                description: Basic fee rule with minimum/maximum to be created
+                version:
+                  effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                  asAtDate: 2020-01-01T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/FeeRule'
+            text/json:
+              example:
+                code: FEE_2
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                minFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 5
+                maxFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 25
+                additionalKeys:
+                  office: London
+                description: Basic fee rule with minimum/maximum to be created
+                version:
+                  effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                  asAtDate: 2020-01-01T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/FeeRule'
+          description: Details of one fee rule.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] GetFeeRule: Retrieve the definition of single fee rule.'
       tags:
       - FeesAndCommissions
       x-fbn-apistatus: Experimental
@@ -53288,13 +54152,8 @@ components:
       example:
         calculationMethod: Rate
         multiplier: None
-        calculationDescription: calculationDescription
         calculationAmount: 0.8008281904610115
       properties:
-        calculationDescription:
-          description: Description of what the calculation applies to eg. Fee, MinFee,
-            MaxFee
-          type: string
         calculationMethod:
           description: 'Method of calculating the fees or commission among: BasisPoints,
             Percentage, Rate, Flat etc. The available values are: Rate, BasisPoints,
@@ -53318,7 +54177,6 @@ components:
           type: number
       required:
       - calculationAmount
-      - calculationDescription
       - calculationMethod
       - multiplier
       type: object
@@ -57968,17 +58826,14 @@ components:
         fee:
           calculationMethod: Rate
           multiplier: None
-          calculationDescription: calculationDescription
           calculationAmount: 0.8008281904610115
         maxFee:
           calculationMethod: Rate
           multiplier: None
-          calculationDescription: calculationDescription
           calculationAmount: 0.8008281904610115
         minFee:
           calculationMethod: Rate
           multiplier: None
-          calculationDescription: calculationDescription
           calculationAmount: 0.8008281904610115
         ruleInformation: ruleInformation
       properties:
@@ -58009,6 +58864,265 @@ components:
       - propertyKey
       - ruleInformation
       - ruleType
+      type: object
+    FeeRule:
+      additionalProperties: false
+      example:
+        country: country
+        transactionCurrency: transactionCurrency
+        code: code
+        custodian: custodian
+        transactionPropertyKey: transactionPropertyKey
+        executionBroker: executionBroker
+        fee:
+          calculationMethod: Rate
+          multiplier: None
+          calculationAmount: 0.8008281904610115
+        description: description
+        maxFee:
+          calculationMethod: Rate
+          multiplier: None
+          calculationAmount: 0.8008281904610115
+        version:
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          asAtDate: 2000-01-23T04:56:07.000+00:00
+        minFee:
+          calculationMethod: Rate
+          multiplier: None
+          calculationAmount: 0.8008281904610115
+        transactionType: transactionType
+        settlementCurrency: settlementCurrency
+        additionalKeys:
+          key: additionalKeys
+        counterparty: counterparty
+        exchange: exchange
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+      properties:
+        code:
+          type: string
+        transactionPropertyKey:
+          type: string
+        transactionType:
+          type: string
+        country:
+          type: string
+        counterparty:
+          type: string
+        transactionCurrency:
+          type: string
+        settlementCurrency:
+          type: string
+        executionBroker:
+          type: string
+        custodian:
+          type: string
+        exchange:
+          type: string
+        fee:
+          $ref: '#/components/schemas/CalculationInfo'
+        minFee:
+          $ref: '#/components/schemas/CalculationInfo'
+        maxFee:
+          $ref: '#/components/schemas/CalculationInfo'
+        additionalKeys:
+          additionalProperties:
+            type: string
+          nullable: true
+          type: object
+        description:
+          nullable: true
+          type: string
+        version:
+          $ref: '#/components/schemas/Version'
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - code
+      - counterparty
+      - country
+      - custodian
+      - exchange
+      - executionBroker
+      - fee
+      - settlementCurrency
+      - transactionCurrency
+      - transactionPropertyKey
+      - transactionType
+      type: object
+    FeeRuleUpsertRequest:
+      additionalProperties: false
+      example:
+        country: country
+        transactionCurrency: transactionCurrency
+        code: code
+        custodian: custodian
+        transactionPropertyKey: transactionPropertyKey
+        executionBroker: executionBroker
+        fee:
+          calculationMethod: Rate
+          multiplier: None
+          calculationAmount: 0.8008281904610115
+        description: description
+        maxFee:
+          calculationMethod: Rate
+          multiplier: None
+          calculationAmount: 0.8008281904610115
+        minFee:
+          calculationMethod: Rate
+          multiplier: None
+          calculationAmount: 0.8008281904610115
+        transactionType: transactionType
+        settlementCurrency: settlementCurrency
+        additionalKeys:
+          key: additionalKeys
+        counterparty: counterparty
+        exchange: exchange
+      properties:
+        code:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        transactionPropertyKey:
+          type: string
+        transactionType:
+          maxLength: 64
+          minLength: 1
+          type: string
+        country:
+          maxLength: 64
+          minLength: 1
+          type: string
+        counterparty:
+          maxLength: 64
+          minLength: 1
+          type: string
+        transactionCurrency:
+          maxLength: 64
+          minLength: 1
+          type: string
+        settlementCurrency:
+          maxLength: 64
+          minLength: 1
+          type: string
+        executionBroker:
+          maxLength: 64
+          minLength: 1
+          type: string
+        custodian:
+          maxLength: 64
+          minLength: 1
+          type: string
+        exchange:
+          maxLength: 64
+          minLength: 1
+          type: string
+        fee:
+          $ref: '#/components/schemas/CalculationInfo'
+        minFee:
+          $ref: '#/components/schemas/CalculationInfo'
+        maxFee:
+          $ref: '#/components/schemas/CalculationInfo'
+        additionalKeys:
+          additionalProperties:
+            type: string
+          nullable: true
+          type: object
+        description:
+          maxLength: 1024
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+      required:
+      - code
+      - counterparty
+      - country
+      - custodian
+      - exchange
+      - executionBroker
+      - fee
+      - settlementCurrency
+      - transactionCurrency
+      - transactionPropertyKey
+      - transactionType
+      type: object
+    FeeRuleUpsertResponse:
+      additionalProperties: false
+      example:
+        values:
+          key:
+            country: country
+            transactionCurrency: transactionCurrency
+            code: code
+            custodian: custodian
+            transactionPropertyKey: transactionPropertyKey
+            executionBroker: executionBroker
+            fee:
+              calculationMethod: Rate
+              multiplier: None
+              calculationAmount: 0.8008281904610115
+            description: description
+            maxFee:
+              calculationMethod: Rate
+              multiplier: None
+              calculationAmount: 0.8008281904610115
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            minFee:
+              calculationMethod: Rate
+              multiplier: None
+              calculationAmount: 0.8008281904610115
+            transactionType: transactionType
+            settlementCurrency: settlementCurrency
+            additionalKeys:
+              key: additionalKeys
+            counterparty: counterparty
+            exchange: exchange
+            links:
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+      properties:
+        values:
+          additionalProperties:
+            $ref: '#/components/schemas/FeeRule'
+          type: object
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - values
       type: object
     FieldDefinition:
       additionalProperties: false
@@ -71165,17 +72279,14 @@ components:
           fee:
             calculationMethod: Rate
             multiplier: None
-            calculationDescription: calculationDescription
             calculationAmount: 0.8008281904610115
           maxFee:
             calculationMethod: Rate
             multiplier: None
-            calculationDescription: calculationDescription
             calculationAmount: 0.8008281904610115
           minFee:
             calculationMethod: Rate
             multiplier: None
-            calculationDescription: calculationDescription
             calculationAmount: 0.8008281904610115
           ruleInformation: ruleInformation
         - propertyKey: propertyKey
@@ -71185,17 +72296,14 @@ components:
           fee:
             calculationMethod: Rate
             multiplier: None
-            calculationDescription: calculationDescription
             calculationAmount: 0.8008281904610115
           maxFee:
             calculationMethod: Rate
             multiplier: None
-            calculationDescription: calculationDescription
             calculationAmount: 0.8008281904610115
           minFee:
             calculationMethod: Rate
             multiplier: None
-            calculationDescription: calculationDescription
             calculationAmount: 0.8008281904610115
           ruleInformation: ruleInformation
         links:
@@ -71213,6 +72321,125 @@ components:
           description: The resources to list.
           items:
             $ref: '#/components/schemas/FeeCalculationDetails'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+      required:
+      - values
+      type: object
+    ResourceListOfFeeRule:
+      additionalProperties: false
+      description: A collection of resources that can be returned from requests.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - country: country
+          transactionCurrency: transactionCurrency
+          code: code
+          custodian: custodian
+          transactionPropertyKey: transactionPropertyKey
+          executionBroker: executionBroker
+          fee:
+            calculationMethod: Rate
+            multiplier: None
+            calculationAmount: 0.8008281904610115
+          description: description
+          maxFee:
+            calculationMethod: Rate
+            multiplier: None
+            calculationAmount: 0.8008281904610115
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          minFee:
+            calculationMethod: Rate
+            multiplier: None
+            calculationAmount: 0.8008281904610115
+          transactionType: transactionType
+          settlementCurrency: settlementCurrency
+          additionalKeys:
+            key: additionalKeys
+          counterparty: counterparty
+          exchange: exchange
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+        - country: country
+          transactionCurrency: transactionCurrency
+          code: code
+          custodian: custodian
+          transactionPropertyKey: transactionPropertyKey
+          executionBroker: executionBroker
+          fee:
+            calculationMethod: Rate
+            multiplier: None
+            calculationAmount: 0.8008281904610115
+          description: description
+          maxFee:
+            calculationMethod: Rate
+            multiplier: None
+            calculationAmount: 0.8008281904610115
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          minFee:
+            calculationMethod: Rate
+            multiplier: None
+            calculationAmount: 0.8008281904610115
+          transactionType: transactionType
+          settlementCurrency: settlementCurrency
+          additionalKeys:
+            key: additionalKeys
+          counterparty: counterparty
+          exchange: exchange
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/FeeRule'
           type: array
         href:
           description: The URI of the resource list.
