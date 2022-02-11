@@ -60,7 +60,7 @@ public class Quotes {
     }
 
     @Test
-    @LusidFeature("F14-1")
+    @LusidFeature("F14-7")
     public void get_quote_for_instrument_for_single_day() throws ApiException {
 
         QuoteSeriesId quoteSeriesId = new QuoteSeriesId()
