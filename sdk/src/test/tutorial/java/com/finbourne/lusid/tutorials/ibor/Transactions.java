@@ -39,7 +39,7 @@ public class Transactions {
     }
 
     @Test
-    @LusidFeature("F13-1")
+    @LusidFeature("F13-9")
     public void load_listed_instrument_transaction() throws ApiException
     {
         String uuid = UUID.randomUUID().toString();
@@ -132,7 +132,7 @@ public class Transactions {
     }
 
     @Test
-    @LusidFeature("F13-4")
+    @LusidFeature("F13-6")
     public void cancel_transactions() throws ApiException {
         String uuid = UUID.randomUUID().toString();
         OffsetDateTime effectiveDate = OffsetDateTime.of(2018, 1, 1, 0, 0, 0, 0, ZoneOffset.UTC);
