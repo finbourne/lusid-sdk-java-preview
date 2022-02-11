@@ -276,14 +276,16 @@ info:
     | <a name="757">757</a>|Schema of response from Luminesce is not as expected.|  |
     | <a name="758">758</a>|Luminesce timed out.|  |
     | <a name="763">763</a>|Invalid Lusid Entity Identifier Unit|  |
+    | <a name="768">768</a>|Fee rule not found.|  |
+    | <a name="769">769</a>|Cannot update the base currency of a portfolio with transactions loaded|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3954
+  version: 0.11.3955
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:60547
 security:
 - {}
 tags:
@@ -47467,7 +47469,8 @@ paths:
         \ portfolio.\r\nThe behaviour is defined by the JSON Patch specification.\r\
         \n            \r\nNote that not all elements of a transaction portfolio definition\
         \ are\r\nmodifiable once it has been created due to the potential implications\
-        \ for data already stored.\r\nCurrently supported properties are: SubHoldingKeys"
+        \ for data already stored.\r\nCurrently supported properties are: SubHoldingKeys,\
+        \ BaseCurrency"
       operationId: PatchPortfolioDetails
       parameters:
       - description: The scope of the transaction portfolio.
@@ -47523,7 +47526,10 @@ paths:
             example:
             - value:
               - Transaction/Client/AccountType
-              path: /SubHoldingKeys
+              path: /subHoldingKeys
+              op: add
+            - value: GBP
+              path: /baseCurrency
               op: add
             schema:
               description: The patch document.
@@ -47534,7 +47540,10 @@ paths:
             example:
             - value:
               - Transaction/Client/AccountType
-              path: /SubHoldingKeys
+              path: /subHoldingKeys
+              op: add
+            - value: GBP
+              path: /baseCurrency
               op: add
             schema:
               description: The patch document.
@@ -47545,7 +47554,10 @@ paths:
             example:
             - value:
               - Transaction/Client/AccountType
-              path: /SubHoldingKeys
+              path: /subHoldingKeys
+              op: add
+            - value: GBP
+              path: /baseCurrency
               op: add
             schema:
               description: The patch document.
@@ -47556,7 +47568,10 @@ paths:
             example:
             - value:
               - Transaction/Client/AccountType
-              path: /SubHoldingKeys
+              path: /subHoldingKeys
+              op: add
+            - value: GBP
+              path: /baseCurrency
               op: add
             schema:
               description: The patch document.
@@ -84418,7 +84433,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
