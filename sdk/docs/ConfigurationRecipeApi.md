@@ -1,20 +1,20 @@
 # ConfigurationRecipeApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://local-unit-test-server.lusid.com:48293*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteConfigurationRecipe**](ConfigurationRecipeApi.md#deleteConfigurationRecipe) | **DELETE** /api/recipes/{scope}/{code} | [EXPERIMENTAL] DeleteConfigurationRecipe: Delete a Configuration Recipe, assuming that it is present.
-[**getConfigurationRecipe**](ConfigurationRecipeApi.md#getConfigurationRecipe) | **GET** /api/recipes/{scope}/{code} | [EXPERIMENTAL] GetConfigurationRecipe: Get Configuration Recipe
-[**listConfigurationRecipes**](ConfigurationRecipeApi.md#listConfigurationRecipes) | **GET** /api/recipes | [EXPERIMENTAL] ListConfigurationRecipes: List the set of Configuration Recipes
-[**upsertConfigurationRecipe**](ConfigurationRecipeApi.md#upsertConfigurationRecipe) | **POST** /api/recipes | [EXPERIMENTAL] UpsertConfigurationRecipe: Upsert a Configuration Recipe. This creates or updates the data in Lusid.
+[**deleteConfigurationRecipe**](ConfigurationRecipeApi.md#deleteConfigurationRecipe) | **DELETE** /api/recipes/{scope}/{code} | DeleteConfigurationRecipe: Delete a Configuration Recipe, assuming that it is present.
+[**getConfigurationRecipe**](ConfigurationRecipeApi.md#getConfigurationRecipe) | **GET** /api/recipes/{scope}/{code} | GetConfigurationRecipe: Get Configuration Recipe
+[**listConfigurationRecipes**](ConfigurationRecipeApi.md#listConfigurationRecipes) | **GET** /api/recipes | ListConfigurationRecipes: List the set of Configuration Recipes
+[**upsertConfigurationRecipe**](ConfigurationRecipeApi.md#upsertConfigurationRecipe) | **POST** /api/recipes | UpsertConfigurationRecipe: Upsert a Configuration Recipe. This creates or updates the data in Lusid.
 
 
 <a name="deleteConfigurationRecipe"></a>
 # **deleteConfigurationRecipe**
 > AnnulSingleStructuredDataResponse deleteConfigurationRecipe(scope, code)
 
-[EXPERIMENTAL] DeleteConfigurationRecipe: Delete a Configuration Recipe, assuming that it is present.
+DeleteConfigurationRecipe: Delete a Configuration Recipe, assuming that it is present.
 
 Delete the specified Configuration Recipe from a single scope.                The response will return either detail of the deleted item, or an explanation (failure) as to why this did not succeed.                It is important to always check for any unsuccessful response.
 
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:48293");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getConfigurationRecipe**
 > GetRecipeResponse getConfigurationRecipe(scope, code, asAt)
 
-[EXPERIMENTAL] GetConfigurationRecipe: Get Configuration Recipe
+GetConfigurationRecipe: Get Configuration Recipe
 
 Get a Configuration Recipe from a single scope.                The response will return either the recipe that has been stored, or a failure explaining why the request was unsuccessful.                It is important to always check for any unsuccessful requests (failures).
 
@@ -102,7 +102,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:48293");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 # **listConfigurationRecipes**
 > ResourceListOfGetRecipeResponse listConfigurationRecipes(asAt, filter)
 
-[EXPERIMENTAL] ListConfigurationRecipes: List the set of Configuration Recipes
+ListConfigurationRecipes: List the set of Configuration Recipes
 
 List the set of configuration recipes at the specified date/time and scope
 
@@ -175,7 +175,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:48293");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 # **upsertConfigurationRecipe**
 > UpsertSingleStructuredDataResponse upsertConfigurationRecipe(upsertRecipeRequest)
 
-[EXPERIMENTAL] UpsertConfigurationRecipe: Upsert a Configuration Recipe. This creates or updates the data in Lusid.
+UpsertConfigurationRecipe: Upsert a Configuration Recipe. This creates or updates the data in Lusid.
 
 Update or insert one Configuration Recipe in a single scope. An item will be updated if it already exists  and inserted if it does not.                The response will return the successfully updated or inserted Configuration Recipe or failure message if unsuccessful                It is important to always check to verify success (or failure).
 
@@ -246,7 +246,7 @@ import com.finbourne.lusid.api.ConfigurationRecipeApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:48293");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

@@ -280,12 +280,12 @@ info:
     | <a name="769">769</a>|Cannot update the base currency of a portfolio with transactions loaded|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3984
+  version: 0.11.3985
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:48293
 security:
 - {}
 tags:
@@ -616,11 +616,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] GetValuation: Perform valuation for a list of portfolios and/or
-        portfolio groups'
+      summary: 'GetValuation: Perform valuation for a list of portfolios and/or portfolio
+        groups'
       tags:
       - Aggregation
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: Stable
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/aggregation/$valuationinlined:
@@ -817,11 +817,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] GetValuationOfWeightedInstruments: Perform valuation for an
-        inlined portfolio'
+      summary: 'GetValuationOfWeightedInstruments: Perform valuation for an inlined
+        portfolio'
       tags:
       - Aggregation
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: Stable
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/aggregation/{scope}/{code}/$generateconfigurationrecipe:
@@ -35196,11 +35196,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListConfigurationRecipes: List the set of Configuration
-        Recipes'
+      summary: 'ListConfigurationRecipes: List the set of Configuration Recipes'
       tags:
       - Configuration Recipe
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: Stable
       x-accepts: application/json
     post:
       description: "Update or insert one Configuration Recipe in a single scope. An\
@@ -35438,11 +35437,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertConfigurationRecipe: Upsert a Configuration Recipe.
-        This creates or updates the data in Lusid.'
+      summary: 'UpsertConfigurationRecipe: Upsert a Configuration Recipe. This creates
+        or updates the data in Lusid.'
       tags:
       - Configuration Recipe
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: Stable
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/recipes/{scope}/{code}:
@@ -35510,11 +35509,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteConfigurationRecipe: Delete a Configuration Recipe,
-        assuming that it is present.'
+      summary: 'DeleteConfigurationRecipe: Delete a Configuration Recipe, assuming
+        that it is present.'
       tags:
       - Configuration Recipe
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: Stable
       x-accepts: application/json
     get:
       description: "Get a Configuration Recipe from a single scope.\r\n          \
@@ -35750,10 +35749,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetConfigurationRecipe: Get Configuration Recipe'
+      summary: 'GetConfigurationRecipe: Get Configuration Recipe'
       tags:
       - Configuration Recipe
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: Stable
       x-accepts: application/json
   /api/referenceportfolios/{scope}:
     post:
@@ -84438,7 +84437,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
