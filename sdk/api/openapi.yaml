@@ -280,7 +280,7 @@ info:
     | <a name="769">769</a>|Cannot update the base currency of a portfolio with transactions loaded|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.3990
+  version: 0.11.3991
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -36376,6 +36376,76 @@ paths:
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/relationdefinitions/{scope}/{code}:
+    delete:
+      description: Delete the definition of the specified relation.
+      operationId: DeleteRelationDefinition
+      parameters:
+      - description: The scope of the relation to be deleted.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the relation to be deleted.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The code of the relation to be deleted. Together with the domain\
+          \ and scope this uniquely\r\n            identifies the relation."
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: "The code of the relation to be deleted. Together with the\
+            \ domain and scope this uniquely\r\n            identifies the relation."
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+          description: The time that the relation definition was deleted
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] DeleteRelationDefinition: Delete relation definition'
+      tags:
+      - Relation Definitions
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
     get:
       description: Retrieve the definition of a specified relation.
       operationId: GetRelationDefinition
@@ -37040,6 +37110,76 @@ paths:
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/relationshipdefinitions/{scope}/{code}:
+    delete:
+      description: Delete the definition of the specified relationship.
+      operationId: DeleteRelationshipDefinition
+      parameters:
+      - description: The scope of the relationship to be deleted.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the relationship to be deleted.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The code of the relationship to be deleted. Together with the\
+          \ domain and scope this uniquely\r\n            identifies the relationship."
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: "The code of the relationship to be deleted. Together with\
+            \ the domain and scope this uniquely\r\n            identifies the relationship."
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+          description: The time that the relationship definition was deleted
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] DeleteRelationshipDefinition: Delete Relationship Definition'
+      tags:
+      - Relationship Definitions
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
     get:
       description: Retrieve the specified relationship definition
       operationId: GetRelationshipDefinition
