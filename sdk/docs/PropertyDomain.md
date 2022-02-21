@@ -55,8 +55,6 @@
 
 * `ORDERINSTRUCTION` (value: `"OrderInstruction"`)
 
-* `NEXTBESTACTION` (value: `"NextBestAction"`)
-
 * `CUSTOMENTITY` (value: `"CustomEntity"`)
 
 
