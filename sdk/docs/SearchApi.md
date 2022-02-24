@@ -1,13 +1,13 @@
 # SearchApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:59505*
+All URIs are relative to *http://local-unit-test-server.lusid.com:37514*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**instrumentsSearch**](SearchApi.md#instrumentsSearch) | **POST** /api/search/instruments | [EXPERIMENTAL] InstrumentsSearch: Instruments search
-[**searchPortfolioGroups**](SearchApi.md#searchPortfolioGroups) | **GET** /api/search/portfoliogroups | [EARLY ACCESS] SearchPortfolioGroups: Search Portfolio Groups
-[**searchPortfolios**](SearchApi.md#searchPortfolios) | **GET** /api/search/portfolios | [EARLY ACCESS] SearchPortfolios: Search Portfolios
-[**searchProperties**](SearchApi.md#searchProperties) | **GET** /api/search/propertydefinitions | [EARLY ACCESS] SearchProperties: Search Property Definitions
+[**searchPortfolioGroups**](SearchApi.md#searchPortfolioGroups) | **GET** /api/search/portfoliogroups | SearchPortfolioGroups: Search Portfolio Groups
+[**searchPortfolios**](SearchApi.md#searchPortfolios) | **GET** /api/search/portfolios | SearchPortfolios: Search Portfolios
+[**searchProperties**](SearchApi.md#searchProperties) | **GET** /api/search/propertydefinitions | SearchProperties: Search Property Definitions
 
 
 <a name="instrumentsSearch"></a>
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:59505");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37514");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 # **searchPortfolioGroups**
 > PagedResourceListOfPortfolioGroupSearchResult searchPortfolioGroups(search, filter, sortBy, limit, page)
 
-[EARLY ACCESS] SearchPortfolioGroups: Search Portfolio Groups
+SearchPortfolioGroups: Search Portfolio Groups
 
 Search through all portfolio groups
 
@@ -106,7 +106,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:59505");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37514");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 # **searchPortfolios**
 > PagedResourceListOfPortfolioSearchResult searchPortfolios(search, filter, sortBy, limit, page)
 
-[EARLY ACCESS] SearchPortfolios: Search Portfolios
+SearchPortfolios: Search Portfolios
 
 Search through all portfolios
 
@@ -183,7 +183,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:59505");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37514");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 # **searchProperties**
 > PagedResourceListOfPropertyDefinitionSearchResult searchProperties(search, filter, sortBy, limit, page)
 
-[EARLY ACCESS] SearchProperties: Search Property Definitions
+SearchProperties: Search Property Definitions
 
 Search through all Property Definitions
 
@@ -260,7 +260,7 @@ import com.finbourne.lusid.api.SearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:59505");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:37514");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
