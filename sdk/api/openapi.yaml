@@ -280,12 +280,12 @@ info:
     | <a name="769">769</a>|Cannot update the base currency of a portfolio with transactions loaded|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4013
+  version: 0.11.4014
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:34341
+- url: http://local-unit-test-server.lusid.com:55638
 security:
 - {}
 tags:
@@ -15452,6 +15452,172 @@ paths:
       - Legal Entities
       x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
+    patch:
+      description: "Patch Legal Entity Access Metadata Rules in a single scope.\r\n\
+        The behaviour is defined by the JSON Patch specification.\r\n            \r\
+        \nCurrently only 'add' is a supported operation on the patch document\r\n\
+        Currently only valid metadata keys are supported paths on the patch document\r\
+        \n            \r\nThe response will return any affected Legal Entity Access\
+        \ Metadata rules or a failure message if unsuccessful.\r\n            \r\n\
+        It is important to always check to verify success (or failure).\r\n      \
+        \      \r\nMultiple rules for a metadataKey can exist with different effective\
+        \ at dates, when resources are accessed the rule that is active for the current\
+        \ time will be fetched."
+      operationId: PatchLegalEntityAccessMetadata
+      parameters:
+      - description: Scope of the Legal Entity identifier.
+        explode: false
+        in: path
+        name: idTypeScope
+        required: true
+        schema:
+          description: Scope of the Legal Entity identifier.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: Code of the Legal Entity identifier.
+        explode: false
+        in: path
+        name: idTypeCode
+        required: true
+        schema:
+          description: Code of the Legal Entity identifier.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: Code of the Legal Entity under specified identifier type's scope
+          and code.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: Code of the Legal Entity under specified identifier type's
+            scope and code.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The effectiveAt datetime at which to upsert the Access Metadata
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: The effectiveAt datetime at which to upsert the Access Metadata
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json Patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          application/json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json Patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          text/json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json Patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          application/*+json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json Patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+        description: The Json Patch document
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/AccessMetadataValue'
+                  type: array
+                type: object
+            application/json:
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/AccessMetadataValue'
+                  type: array
+                type: object
+            text/json:
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/AccessMetadataValue'
+                  type: array
+                type: object
+          description: The successfully patched items.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] PatchLegalEntityAccessMetadata: Patch Access Metadata
+        rules for a Legal Entity.'
+      tags:
+      - Legal Entities
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
   /api/legalentities/{idTypeScope}/{idTypeCode}/{code}/metadata/{metadataKey}:
     delete:
       description: "Deletes the Legal Entity Access Metadata entry that exactly matches\
@@ -21726,6 +21892,166 @@ paths:
       - Persons
       x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
+    patch:
+      description: "Patch Person Access Metadata Rules in a single scope.\r\nThe behaviour\
+        \ is defined by the JSON Patch specification.\r\n            \r\nCurrently\
+        \ only 'add' is a supported operation on the patch document\r\nCurrently only\
+        \ valid metadata keys are supported paths on the patch document\r\n      \
+        \      \r\nThe response will return any affected Person Access Metadata rules\
+        \ or a failure message if unsuccessful.\r\n            \r\nIt is important\
+        \ to always check to verify success (or failure).\r\n            \r\nMultiple\
+        \ rules for a metadataKey can exist with different effective at dates, when\
+        \ resources are accessed the rule that is active for the current time will\
+        \ be fetched."
+      operationId: PatchPersonAccessMetadata
+      parameters:
+      - description: Scope of the person identifier.
+        explode: false
+        in: path
+        name: idTypeScope
+        required: true
+        schema:
+          description: Scope of the person identifier.
+          type: string
+        style: simple
+      - description: Code of the person identifier.
+        explode: false
+        in: path
+        name: idTypeCode
+        required: true
+        schema:
+          description: Code of the person identifier.
+          type: string
+        style: simple
+      - description: Code of the person under specified identifier type's scope and
+          code.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: Code of the person under specified identifier type's scope
+            and code.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The effectiveAt datetime at which to upsert the Access Metadata
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: The effectiveAt datetime at which to upsert the Access Metadata
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json Patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          application/json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json Patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          text/json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json Patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          application/*+json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json Patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+        description: The Json Patch document
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/AccessMetadataValue'
+                  type: array
+                type: object
+            application/json:
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/AccessMetadataValue'
+                  type: array
+                type: object
+            text/json:
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/AccessMetadataValue'
+                  type: array
+                type: object
+          description: The successfully patched items.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] PatchPersonAccessMetadata: Patch Access Metadata rules
+        for a Person.'
+      tags:
+      - Persons
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
   /api/persons/{idTypeScope}/{idTypeCode}/{code}/metadata/{metadataKey}:
     delete:
       description: "Deletes the Person Access Metadata entry that exactly matches\
@@ -25839,6 +26165,158 @@ paths:
       tags:
       - Portfolio Groups
       x-fbn-apistatus: EarlyAccess
+      x-accepts: application/json
+    patch:
+      description: "Patch Portfolio Group Access Metadata Rules in a single scope.\r\
+        \nThe behaviour is defined by the JSON Patch specification.\r\n          \
+        \  \r\nCurrently only 'add' is a supported operation on the patch document\r\
+        \nCurrently only valid metadata keys are supported paths on the patch document\r\
+        \n            \r\nThe response will return any affected Portfolio Group Access\
+        \ Metadata rules or a failure message if unsuccessful.\r\n            \r\n\
+        It is important to always check to verify success (or failure).\r\n      \
+        \      \r\nMultiple rules for a metadataKey can exist with different effective\
+        \ at dates, when resources are accessed the rule that is active for the current\
+        \ time will be fetched."
+      operationId: PatchPortfolioGroupAccessMetadata
+      parameters:
+      - description: The scope of the Portfolio Group
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the Portfolio Group
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The Portfolio Group code
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The Portfolio Group code
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The date this rule will be effective from
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: The date this rule will be effective from
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          application/json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          text/json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          application/*+json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+        description: The Json patch document
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/AccessMetadataValue'
+                  type: array
+                type: object
+            application/json:
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/AccessMetadataValue'
+                  type: array
+                type: object
+            text/json:
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/AccessMetadataValue'
+                  type: array
+                type: object
+          description: The successfully patched items.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] PatchPortfolioGroupAccessMetadata: Patch Access Metadata
+        rules for a Portfolio Group.'
+      tags:
+      - Portfolio Groups
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/portfoliogroups/{scope}/{code}/metadata/{metadataKey}:
     delete:
@@ -30920,6 +31398,157 @@ paths:
       tags:
       - Portfolios
       x-fbn-apistatus: EarlyAccess
+      x-accepts: application/json
+    patch:
+      description: "Patch Portfolio Access Metadata Rules in a single scope.\r\nThe\
+        \ behaviour is defined by the JSON Patch specification.\r\n            \r\n\
+        Currently only 'add' is a supported operation on the patch document\r\nCurrently\
+        \ only valid metadata keys are supported paths on the patch document\r\n\r\
+        \nThe response will return any affected Portfolio Access Metadata rules or\
+        \ a failure message if unsuccessful.\r\n\r\nIt is important to always check\
+        \ to verify success (or failure).\r\n            \r\nMultiple rules for a\
+        \ metadataKey can exist with different effective at dates, when resources\
+        \ are accessed the rule that is active for the current time will be fetched"
+      operationId: PatchPortfolioAccessMetadata
+      parameters:
+      - description: The scope of the Portfolio Access Metadata Rule.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the Portfolio Access Metadata Rule.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: Portfolio code
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: Portfolio code
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The date this rule will effective from
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: The date this rule will effective from
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json Patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          application/json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json Patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          text/json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json Patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          application/*+json:
+            example:
+            - value:
+              - value: SilverLicence
+                provider: TestDataProvider
+              path: /exampleMetadataKey
+              op: add
+            schema:
+              description: The Json Patch document
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+        description: The Json Patch document
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/AccessMetadataValue'
+                  type: array
+                type: object
+            application/json:
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/AccessMetadataValue'
+                  type: array
+                type: object
+            text/json:
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/AccessMetadataValue'
+                  type: array
+                type: object
+          description: The successfully patched items.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] PatchPortfolioAccessMetadata: Patch Access Metadata
+        rules for a Portfolio.'
+      tags:
+      - Portfolios
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/portfolios/{scope}/{code}/metadata/{metadataKey}:
     delete:
