@@ -1,6 +1,6 @@
 # RelationshipDefinitionsApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://local-unit-test-server.lusid.com:33435*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,7 +32,7 @@ import com.finbourne.lusid.api.RelationshipDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:33435");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -101,15 +101,15 @@ import com.finbourne.lusid.api.RelationshipDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:33435");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     RelationshipDefinitionsApi apiInstance = new RelationshipDefinitionsApi(defaultClient);
-    String scope = "scope_example"; // String | The scope of the relationship to be deleted.
-    String code = "code_example"; // String | The code of the relationship to be deleted. Together with the domain and scope this uniquely              identifies the relationship.
+    String scope = "scope_example"; // String | The scope of the relationship definition to be deleted.
+    String code = "code_example"; // String | The code of the relationship definition to be deleted. Together with the domain and scope this uniquely              identifies the relationship.
     try {
       DeletedEntityResponse result = apiInstance.deleteRelationshipDefinition(scope, code);
       System.out.println(result);
@@ -128,8 +128,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| The scope of the relationship to be deleted. |
- **code** | **String**| The code of the relationship to be deleted. Together with the domain and scope this uniquely              identifies the relationship. |
+ **scope** | **String**| The scope of the relationship definition to be deleted. |
+ **code** | **String**| The code of the relationship definition to be deleted. Together with the domain and scope this uniquely              identifies the relationship. |
 
 ### Return type
 
@@ -172,7 +172,7 @@ import com.finbourne.lusid.api.RelationshipDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:33435");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -245,7 +245,7 @@ import com.finbourne.lusid.api.RelationshipDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:33435");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -320,7 +320,7 @@ import com.finbourne.lusid.api.RelationshipDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:33435");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
