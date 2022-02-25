@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **String** |  |  [optional]
+**code** | **String** |  | 
 **transactionPropertyKey** | **String** |  | 
 **transactionType** | **String** |  | 
 **country** | **String** |  | 
