@@ -280,12 +280,12 @@ info:
     | <a name="769">769</a>|Cannot update the base currency of a portfolio with transactions loaded|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4012
+  version: 0.11.4013
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:33435
+- url: http://local-unit-test-server.lusid.com:34341
 security:
 - {}
 tags:
@@ -11202,7 +11202,7 @@ paths:
             text/plain:
               example:
                 values:
-                - code: FEE_1
+                - code: FeeRule_1
                   transactionPropertyKey: Transaction/default/fee
                   transactionType: '*'
                   country: UK
@@ -11222,7 +11222,7 @@ paths:
                   version:
                     effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
                     asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                - code: FEE_2
+                - code: FeeRule_2
                   transactionPropertyKey: Transaction/default/fee
                   transactionType: '*'
                   country: UK
@@ -11256,7 +11256,7 @@ paths:
             application/json:
               example:
                 values:
-                - code: FEE_1
+                - code: FeeRule_1
                   transactionPropertyKey: Transaction/default/fee
                   transactionType: '*'
                   country: UK
@@ -11276,7 +11276,7 @@ paths:
                   version:
                     effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
                     asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                - code: FEE_2
+                - code: FeeRule_2
                   transactionPropertyKey: Transaction/default/fee
                   transactionType: '*'
                   country: UK
@@ -11310,7 +11310,7 @@ paths:
             text/json:
               example:
                 values:
-                - code: FEE_1
+                - code: FeeRule_1
                   transactionPropertyKey: Transaction/default/fee
                   transactionType: '*'
                   country: UK
@@ -11330,7 +11330,7 @@ paths:
                   version:
                     effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
                     asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                - code: FEE_2
+                - code: FeeRule_2
                   transactionPropertyKey: Transaction/default/fee
                   transactionType: '*'
                   country: UK
@@ -11426,7 +11426,7 @@ paths:
           application/json-patch+json:
             example:
               update:
-                code: Fee_1
+                code: FeeRule_1
                 transactionPropertyKey: Transaction/default/fee
                 transactionType: '*'
                 country: UK
@@ -11479,7 +11479,7 @@ paths:
           application/json:
             example:
               update:
-                code: Fee_1
+                code: FeeRule_1
                 transactionPropertyKey: Transaction/default/fee
                 transactionType: '*'
                 country: UK
@@ -11532,7 +11532,7 @@ paths:
           text/json:
             example:
               update:
-                code: Fee_1
+                code: FeeRule_1
                 transactionPropertyKey: Transaction/default/fee
                 transactionType: '*'
                 country: UK
@@ -11585,7 +11585,7 @@ paths:
           application/*+json:
             example:
               update:
-                code: Fee_1
+                code: FeeRule_1
                 transactionPropertyKey: Transaction/default/fee
                 transactionType: '*'
                 country: UK
@@ -11647,7 +11647,7 @@ paths:
               example:
                 values:
                   update:
-                    code: FEE_1
+                    code: FeeRule_1
                     transactionPropertyKey: Transaction/default/fee
                     transactionType: '*'
                     country: UK
@@ -11668,7 +11668,7 @@ paths:
                       effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
                       asAtDate: 2020-01-01T00:00:00.0000000+00:00
                   create:
-                    code: FEE_2
+                    code: FeeRule_2
                     transactionPropertyKey: Transaction/default/fee
                     transactionType: '*'
                     country: UK
@@ -11702,7 +11702,7 @@ paths:
               example:
                 values:
                   update:
-                    code: FEE_1
+                    code: FeeRule_1
                     transactionPropertyKey: Transaction/default/fee
                     transactionType: '*'
                     country: UK
@@ -11723,7 +11723,7 @@ paths:
                       effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
                       asAtDate: 2020-01-01T00:00:00.0000000+00:00
                   create:
-                    code: FEE_2
+                    code: FeeRule_2
                     transactionPropertyKey: Transaction/default/fee
                     transactionType: '*'
                     country: UK
@@ -11757,7 +11757,7 @@ paths:
               example:
                 values:
                   update:
-                    code: FEE_1
+                    code: FeeRule_1
                     transactionPropertyKey: Transaction/default/fee
                     transactionType: '*'
                     country: UK
@@ -11778,7 +11778,7 @@ paths:
                       effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
                       asAtDate: 2020-01-01T00:00:00.0000000+00:00
                   create:
-                    code: FEE_2
+                    code: FeeRule_2
                     transactionPropertyKey: Transaction/default/fee
                     transactionType: '*'
                     country: UK
@@ -11888,7 +11888,7 @@ paths:
           content:
             text/plain:
               example:
-                code: FEE_2
+                code: FeeRule_2
                 transactionPropertyKey: Transaction/default/fee
                 transactionType: '*'
                 country: UK
@@ -11920,7 +11920,7 @@ paths:
                 $ref: '#/components/schemas/FeeRule'
             application/json:
               example:
-                code: FEE_2
+                code: FeeRule_2
                 transactionPropertyKey: Transaction/default/fee
                 transactionType: '*'
                 country: UK
@@ -11952,7 +11952,7 @@ paths:
                 $ref: '#/components/schemas/FeeRule'
             text/json:
               example:
-                code: FEE_2
+                code: FeeRule_2
                 transactionPropertyKey: Transaction/default/fee
                 transactionType: '*'
                 country: UK
@@ -54312,26 +54312,17 @@ components:
     CalculationInfo:
       additionalProperties: false
       example:
-        calculationMethod: Rate
-        multiplier: None
+        calculationMethod: calculationMethod
+        multiplier: multiplier
         calculationAmount: 0.8008281904610115
       properties:
         calculationMethod:
           description: 'Method of calculating the fees or commission among: BasisPoints,
-            Percentage, Rate, Flat etc. The available values are: Rate, BasisPoints,
-            Percentage, Flat'
-          enum:
-          - Rate
-          - BasisPoints
-          - Percentage
-          - Flat
+            Percentage, Rate, Flat etc.'
           type: string
         multiplier:
-          description: '. The available values are: None, Quantity, Value'
-          enum:
-          - None
-          - Quantity
-          - Value
+          description: 'Field by which to multiply the numerical amount. Eg: Quantity,
+            Value'
           type: string
         calculationAmount:
           description: Numerical fee amount
@@ -54342,13 +54333,6 @@ components:
       - calculationMethod
       - multiplier
       type: object
-    CalculationMethod:
-      enum:
-      - Rate
-      - BasisPoints
-      - Percentage
-      - Flat
-      type: string
     Calendar:
       additionalProperties: false
       example:
@@ -59076,16 +59060,16 @@ components:
           key: additionalInformation
         ruleType: ruleType
         fee:
-          calculationMethod: Rate
-          multiplier: None
+          calculationMethod: calculationMethod
+          multiplier: multiplier
           calculationAmount: 0.8008281904610115
         maxFee:
-          calculationMethod: Rate
-          multiplier: None
+          calculationMethod: calculationMethod
+          multiplier: multiplier
           calculationAmount: 0.8008281904610115
         minFee:
-          calculationMethod: Rate
-          multiplier: None
+          calculationMethod: calculationMethod
+          multiplier: multiplier
           calculationAmount: 0.8008281904610115
         ruleInformation: ruleInformation
       properties:
@@ -59127,20 +59111,20 @@ components:
         transactionPropertyKey: transactionPropertyKey
         executionBroker: executionBroker
         fee:
-          calculationMethod: Rate
-          multiplier: None
+          calculationMethod: calculationMethod
+          multiplier: multiplier
           calculationAmount: 0.8008281904610115
         description: description
         maxFee:
-          calculationMethod: Rate
-          multiplier: None
+          calculationMethod: calculationMethod
+          multiplier: multiplier
           calculationAmount: 0.8008281904610115
         version:
           effectiveFrom: 2000-01-23T04:56:07.000+00:00
           asAtDate: 2000-01-23T04:56:07.000+00:00
         minFee:
-          calculationMethod: Rate
-          multiplier: None
+          calculationMethod: calculationMethod
+          multiplier: multiplier
           calculationAmount: 0.8008281904610115
         transactionType: transactionType
         settlementCurrency: settlementCurrency
@@ -59223,17 +59207,17 @@ components:
         transactionPropertyKey: transactionPropertyKey
         executionBroker: executionBroker
         fee:
-          calculationMethod: Rate
-          multiplier: None
+          calculationMethod: calculationMethod
+          multiplier: multiplier
           calculationAmount: 0.8008281904610115
         description: description
         maxFee:
-          calculationMethod: Rate
-          multiplier: None
+          calculationMethod: calculationMethod
+          multiplier: multiplier
           calculationAmount: 0.8008281904610115
         minFee:
-          calculationMethod: Rate
-          multiplier: None
+          calculationMethod: calculationMethod
+          multiplier: multiplier
           calculationAmount: 0.8008281904610115
         transactionType: transactionType
         settlementCurrency: settlementCurrency
@@ -59245,6 +59229,7 @@ components:
         code:
           maxLength: 64
           minLength: 1
+          nullable: true
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         transactionPropertyKey:
@@ -59299,7 +59284,6 @@ components:
           pattern: ^[\s\S]*$
           type: string
       required:
-      - code
       - counterparty
       - country
       - custodian
@@ -59323,20 +59307,20 @@ components:
             transactionPropertyKey: transactionPropertyKey
             executionBroker: executionBroker
             fee:
-              calculationMethod: Rate
-              multiplier: None
+              calculationMethod: calculationMethod
+              multiplier: multiplier
               calculationAmount: 0.8008281904610115
             description: description
             maxFee:
-              calculationMethod: Rate
-              multiplier: None
+              calculationMethod: calculationMethod
+              multiplier: multiplier
               calculationAmount: 0.8008281904610115
             version:
               effectiveFrom: 2000-01-23T04:56:07.000+00:00
               asAtDate: 2000-01-23T04:56:07.000+00:00
             minFee:
-              calculationMethod: Rate
-              multiplier: None
+              calculationMethod: calculationMethod
+              multiplier: multiplier
               calculationAmount: 0.8008281904610115
             transactionType: transactionType
             settlementCurrency: settlementCurrency
@@ -63398,12 +63382,6 @@ components:
       - UnsettledCashTypes
       - Carry
       - CarryAsPnl
-      type: string
-    Multiplier:
-      enum:
-      - None
-      - Quantity
-      - Value
       type: string
     NextValueInSequenceResponse:
       additionalProperties: false
@@ -72687,16 +72665,16 @@ components:
             key: additionalInformation
           ruleType: ruleType
           fee:
-            calculationMethod: Rate
-            multiplier: None
+            calculationMethod: calculationMethod
+            multiplier: multiplier
             calculationAmount: 0.8008281904610115
           maxFee:
-            calculationMethod: Rate
-            multiplier: None
+            calculationMethod: calculationMethod
+            multiplier: multiplier
             calculationAmount: 0.8008281904610115
           minFee:
-            calculationMethod: Rate
-            multiplier: None
+            calculationMethod: calculationMethod
+            multiplier: multiplier
             calculationAmount: 0.8008281904610115
           ruleInformation: ruleInformation
         - propertyKey: propertyKey
@@ -72704,16 +72682,16 @@ components:
             key: additionalInformation
           ruleType: ruleType
           fee:
-            calculationMethod: Rate
-            multiplier: None
+            calculationMethod: calculationMethod
+            multiplier: multiplier
             calculationAmount: 0.8008281904610115
           maxFee:
-            calculationMethod: Rate
-            multiplier: None
+            calculationMethod: calculationMethod
+            multiplier: multiplier
             calculationAmount: 0.8008281904610115
           minFee:
-            calculationMethod: Rate
-            multiplier: None
+            calculationMethod: calculationMethod
+            multiplier: multiplier
             calculationAmount: 0.8008281904610115
           ruleInformation: ruleInformation
         links:
@@ -72768,20 +72746,20 @@ components:
           transactionPropertyKey: transactionPropertyKey
           executionBroker: executionBroker
           fee:
-            calculationMethod: Rate
-            multiplier: None
+            calculationMethod: calculationMethod
+            multiplier: multiplier
             calculationAmount: 0.8008281904610115
           description: description
           maxFee:
-            calculationMethod: Rate
-            multiplier: None
+            calculationMethod: calculationMethod
+            multiplier: multiplier
             calculationAmount: 0.8008281904610115
           version:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
           minFee:
-            calculationMethod: Rate
-            multiplier: None
+            calculationMethod: calculationMethod
+            multiplier: multiplier
             calculationAmount: 0.8008281904610115
           transactionType: transactionType
           settlementCurrency: settlementCurrency
@@ -72805,20 +72783,20 @@ components:
           transactionPropertyKey: transactionPropertyKey
           executionBroker: executionBroker
           fee:
-            calculationMethod: Rate
-            multiplier: None
+            calculationMethod: calculationMethod
+            multiplier: multiplier
             calculationAmount: 0.8008281904610115
           description: description
           maxFee:
-            calculationMethod: Rate
-            multiplier: None
+            calculationMethod: calculationMethod
+            multiplier: multiplier
             calculationAmount: 0.8008281904610115
           version:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
           minFee:
-            calculationMethod: Rate
-            multiplier: None
+            calculationMethod: calculationMethod
+            multiplier: multiplier
             calculationAmount: 0.8008281904610115
           transactionType: transactionType
           settlementCurrency: settlementCurrency
