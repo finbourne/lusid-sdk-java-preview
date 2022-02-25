@@ -1,6 +1,6 @@
 # CustomEntitiesApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:33599*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getCustomEntity"></a>
 # **getCustomEntity**
-> CustomEntityResponse getCustomEntity(entityType, identifierType, identifierValue, identifierScope, asAt, effectiveAt)
+> CustomEntityResponse getCustomEntity(entityType, identifierType, identifierValue, identifierScope, asAt)
 
 [EXPERIMENTAL] GetCustomEntity: Get CustomEntity
 
@@ -31,21 +31,20 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:33599");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CustomEntitiesApi apiInstance = new CustomEntitiesApi(defaultClient);
-    String entityType = "entityType_example"; // String | The type of entity to retrieve. An entityType can be created using the \"CreateCustomEntityDefinition\" endpoint for CustomEntityDefinitions.
+    String entityType = "entityType_example"; // String | The type of entity to retrieve. This is included in the response from M:Finbourne.WebApi.Controllers.CustomEntityDefinitionController.CreateCustomEntityDefinition(Finbourne.WebApi.Interface.Dto.CustomEntityDefinitions.CustomEntityDefinitionRequest).
     String identifierType = "identifierType_example"; // String | An identifier type attached to the CustomEntity.
     String identifierValue = "identifierValue_example"; // String | The identifier value.
     String identifierScope = "identifierScope_example"; // String | The identifier scope.
     OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The AsAt at which to retrieve the CustomEntity.
-    String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to get the CustomEntity. Defaults to the current LUSID system datetime if not specified.
     try {
-      CustomEntityResponse result = apiInstance.getCustomEntity(entityType, identifierType, identifierValue, identifierScope, asAt, effectiveAt);
+      CustomEntityResponse result = apiInstance.getCustomEntity(entityType, identifierType, identifierValue, identifierScope, asAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CustomEntitiesApi#getCustomEntity");
@@ -62,12 +61,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **entityType** | **String**| The type of entity to retrieve. An entityType can be created using the \&quot;CreateCustomEntityDefinition\&quot; endpoint for CustomEntityDefinitions. |
+ **entityType** | **String**| The type of entity to retrieve. This is included in the response from M:Finbourne.WebApi.Controllers.CustomEntityDefinitionController.CreateCustomEntityDefinition(Finbourne.WebApi.Interface.Dto.CustomEntityDefinitions.CustomEntityDefinitionRequest). |
  **identifierType** | **String**| An identifier type attached to the CustomEntity. |
  **identifierValue** | **String**| The identifier value. |
  **identifierScope** | **String**| The identifier scope. |
  **asAt** | **OffsetDateTime**| The AsAt at which to retrieve the CustomEntity. | [optional]
- **effectiveAt** | **String**| The effective datetime or cut label at which to get the CustomEntity. Defaults to the current LUSID system datetime if not specified. | [optional]
 
 ### Return type
 
@@ -110,7 +108,7 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:33599");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -193,7 +191,7 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:33599");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -272,14 +270,14 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:33599");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CustomEntitiesApi apiInstance = new CustomEntitiesApi(defaultClient);
-    String entityType = "entityType_example"; // String | The type of the CustomEntity to be created. An entityType can be created using the \"CreateCustomEntityDefinition\" endpoint for CustomEntityDefinitions.
+    String entityType = "entityType_example"; // String | The type of the CustomEntity to be created. An entityType can be created using the M:Finbourne.WebApi.Controllers.CustomEntityDefinitionController.GetDefinition(System.String,System.Nullable{System.DateTimeOffset}) endpoint.
     CustomEntityRequest customEntityRequest = new CustomEntityRequest(); // CustomEntityRequest | The CustomEntity to be created.
     try {
       CustomEntityResponse result = apiInstance.upsertCustomEntity(entityType, customEntityRequest);
@@ -299,7 +297,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **entityType** | **String**| The type of the CustomEntity to be created. An entityType can be created using the \&quot;CreateCustomEntityDefinition\&quot; endpoint for CustomEntityDefinitions. |
+ **entityType** | **String**| The type of the CustomEntity to be created. An entityType can be created using the M:Finbourne.WebApi.Controllers.CustomEntityDefinitionController.GetDefinition(System.String,System.Nullable{System.DateTimeOffset}) endpoint. |
  **customEntityRequest** | [**CustomEntityRequest**](CustomEntityRequest.md)| The CustomEntity to be created. |
 
 ### Return type

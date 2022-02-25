@@ -1,6 +1,6 @@
 # CustomEntityDefinitionsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:33599*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,7 +29,7 @@ import com.finbourne.lusid.api.CustomEntityDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:33599");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -98,14 +98,14 @@ import com.finbourne.lusid.api.CustomEntityDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:33599");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CustomEntityDefinitionsApi apiInstance = new CustomEntityDefinitionsApi(defaultClient);
-    String entityType = "entityType_example"; // String | The type of entity for which to retrieve the CustomEntityDefinition.
+    String entityType = "entityType_example"; // String | The type of entity for which to retrieve the CustomEntityDefinition. This is included in the response from M:Finbourne.WebApi.Controllers.CustomEntityDefinitionController.CreateCustomEntityDefinition(Finbourne.WebApi.Interface.Dto.CustomEntityDefinitions.CustomEntityDefinitionRequest).
     OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The AsAt at which to retrieve the CustomEntityDefinition.
     try {
       CustomEntityDefinition result = apiInstance.getDefinition(entityType, asAt);
@@ -125,7 +125,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **entityType** | **String**| The type of entity for which to retrieve the CustomEntityDefinition. |
+ **entityType** | **String**| The type of entity for which to retrieve the CustomEntityDefinition. This is included in the response from M:Finbourne.WebApi.Controllers.CustomEntityDefinitionController.CreateCustomEntityDefinition(Finbourne.WebApi.Interface.Dto.CustomEntityDefinitions.CustomEntityDefinitionRequest). |
  **asAt** | **OffsetDateTime**| The AsAt at which to retrieve the CustomEntityDefinition. | [optional]
 
 ### Return type
