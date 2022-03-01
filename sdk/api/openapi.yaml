@@ -280,12 +280,12 @@ info:
     | <a name="769">769</a>|Cannot update the base currency of a portfolio with transactions loaded|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4029
+  version: 0.11.4030
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:37607
+- url: http://local-unit-test-server.lusid.com:30778
 security:
 - {}
 tags:
@@ -55246,26 +55246,12 @@ components:
         \ when\r\nno overrides are provided."
       properties:
         seniority:
-          description: 'The available values are: Unknown, SNR, SUB, JRSUBUT2, PREFT1,
-            SECDOM, SNRFOR, SUBLT2'
-          enum:
-          - Unknown
-          - SNR
-          - SUB
-          - JRSUBUT2
-          - PREFT1
-          - SECDOM
-          - SNRFOR
-          - SUBLT2
+          description: "The seniority level of the CDS.\r\nSupported string (enumeration)\
+            \ values are: [SNR, SUB, JRSUBUT2, PREFT1, SECDOM, SNRFOR, SUBLT2]."
           type: string
         restructuringType:
-          description: 'The available values are: Unknown, CR, MR, MM, XR'
-          enum:
-          - Unknown
-          - CR
-          - MR
-          - MM
-          - XR
+          description: "The restructuring clause.\r\nSupported string (enumeration)\
+            \ values are: [CR, MR, MM, XR]."
           type: string
         protectStartDay:
           description: Does the protection leg pay out in the case of default on the
@@ -55281,25 +55267,6 @@ components:
       - restructuringType
       - seniority
       type: object
-    CdsRestructuringType:
-      enum:
-      - Unknown
-      - CR
-      - MR
-      - MM
-      - XR
-      type: string
-    CdsSeniority:
-      enum:
-      - Unknown
-      - SNR
-      - SUB
-      - JRSUBUT2
-      - PREFT1
-      - SECDOM
-      - SNRFOR
-      - SUBLT2
-      type: string
     Change:
       additionalProperties: false
       description: The time an entity was modified (amendment and/or historical correction).
@@ -59010,11 +58977,6 @@ components:
       - sourceEntityId
       - targetEntityId
       type: object
-    DeliveryType:
-      enum:
-      - Cash
-      - Physical
-      type: string
     DependencySourceFilter:
       additionalProperties: false
       description: "Encapsulates parts of a market data rule relating not to the nature\
@@ -63789,20 +63751,6 @@ components:
       - FxForwardCurveByQuoteReference
       - CreditSpreadCurveData
       type: string
-    MarketIdentifier:
-      enum:
-      - LusidInstrumentId
-      - Isin
-      - Sedol
-      - Cusip
-      - ClientInternal
-      - Figi
-      - RIC
-      - QuotePermId
-      - REDCode
-      - BBGId
-      - ICECode
-      type: string
     MarketObservableType:
       enum:
       - ForwardPoints
@@ -64097,12 +64045,6 @@ components:
       - LessThan
       - LessThanOrEqualTo
       - In
-      type: string
-    OptionType:
-      enum:
-      - None
-      - Call
-      - Put
       type: string
     Order:
       additionalProperties: false
@@ -83516,17 +83458,12 @@ components:
           format: date-time
           type: string
         deliveryType:
-          description: 'The available values are: Cash, Physical'
-          enum:
-          - Cash
-          - Physical
+          description: "is the option cash settled or physical delivery of option\r\
+            \nSupported string (enumeration) values are: [Cash, Physical]."
           type: string
         optionType:
-          description: 'The available values are: None, Call, Put'
-          enum:
-          - None
-          - Call
-          - Put
+          description: "Type of optionality for the option\r\nSupported string (enumeration)\
+            \ values are: [Call, Put]."
           type: string
         strike:
           description: The strike of the option.
@@ -83536,20 +83473,10 @@ components:
           description: The domestic currency of the instrument.
           type: string
         underlyingIdentifier:
-          description: 'The available values are: LusidInstrumentId, Isin, Sedol,
-            Cusip, ClientInternal, Figi, RIC, QuotePermId, REDCode, BBGId, ICECode'
-          enum:
-          - LusidInstrumentId
-          - Isin
-          - Sedol
-          - Cusip
-          - ClientInternal
-          - Figi
-          - RIC
-          - QuotePermId
-          - REDCode
-          - BBGId
-          - ICECode
+          description: "The market identifier type of the underlying code, e.g RIC.\r\
+            \nSupported string (enumeration) values are: [LusidInstrumentId, Isin,\
+            \ Sedol, Cusip, ClientInternal, Figi, RIC, QuotePermId, REDCode, BBGId,\
+            \ ICECode]."
           type: string
         code:
           description: The identifying code for the equity underlying, e.g. 'IBM.N'.
