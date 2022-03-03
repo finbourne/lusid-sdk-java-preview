@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **outwardDescription** | **String** | The description to relate source entity object and target entity object. | 
 **inwardDescription** | **String** | The description to relate target entity object and source entity object. | 
 **lifeTime** | **String** | Describes how the relationships can change over time. Allowed values are &#39;Perpetual&#39; and &#39;TimeVariant&#39;, defaults to &#39;Perpetual&#39; if not specified. |  [optional]
-**relationshipCardinality** | **String** | Describes the cardinality of the relationship with a specific source entity object and relationships under this definition. Allowed values are &#39;ManyToMany&#39; and &#39;OneToMany&#39;, defaults to &#39;ManyToMany&#39; if not specified. |  [optional]
+**relationshipCardinality** | **String** | Describes the cardinality of the relationship with a specific source entity object and relationships under this definition. Allowed values are &#39;ManyToMany&#39; and &#39;ManyToOne&#39;, defaults to &#39;ManyToMany&#39; if not specified. |  [optional]
 
 
 
