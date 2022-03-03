@@ -280,12 +280,12 @@ info:
     | <a name="769">769</a>|Cannot update the base currency of a portfolio with transactions loaded|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4044
+  version: 0.11.4045
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:55985
+- url: http://local-unit-test-server.lusid.com:31896
 security:
 - {}
 tags:
@@ -7565,15 +7565,15 @@ paths:
               fieldSchema:
               - name: Assigned
                 lifetime: TimeVariant
-                type: bool
+                type: boolean
                 required: true
               - name: Status
                 lifetime: TimeVariant
-                type: string
+                type: text
                 required: true
-              - name: Effort In Days
+              - name: EffortInDays
                 lifetime: Perpetual
-                type: number
+                type: decimal
                 required: false
               - name: DateCreated
                 lifetime: Perpetual
@@ -7589,15 +7589,15 @@ paths:
               fieldSchema:
               - name: Assigned
                 lifetime: TimeVariant
-                type: bool
+                type: boolean
                 required: true
               - name: Status
                 lifetime: TimeVariant
-                type: string
+                type: text
                 required: true
-              - name: Effort In Days
+              - name: EffortInDays
                 lifetime: Perpetual
-                type: number
+                type: decimal
                 required: false
               - name: DateCreated
                 lifetime: Perpetual
@@ -7613,15 +7613,15 @@ paths:
               fieldSchema:
               - name: Assigned
                 lifetime: TimeVariant
-                type: bool
+                type: boolean
                 required: true
               - name: Status
                 lifetime: TimeVariant
-                type: string
+                type: text
                 required: true
-              - name: Effort In Days
+              - name: EffortInDays
                 lifetime: Perpetual
-                type: number
+                type: decimal
                 required: false
               - name: DateCreated
                 lifetime: Perpetual
@@ -7637,15 +7637,15 @@ paths:
               fieldSchema:
               - name: Assigned
                 lifetime: TimeVariant
-                type: bool
+                type: boolean
                 required: true
               - name: Status
                 lifetime: TimeVariant
-                type: string
+                type: text
                 required: true
-              - name: Effort In Days
+              - name: EffortInDays
                 lifetime: Perpetual
-                type: number
+                type: decimal
                 required: false
               - name: DateCreated
                 lifetime: Perpetual
@@ -7654,12 +7654,13 @@ paths:
             schema:
               $ref: '#/components/schemas/CustomEntityDefinitionRequest'
         description: The CustomEntityDefinitionRequest
+        required: true
       responses:
         "200":
           content:
             text/plain:
               example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/issue
+                href: https://myco.lusid.com/api/customentities/entitytypes/~issue?asAt=2022-02-28T14:27:01.2728000+00:00
                 entityTypeName: issue
                 displayName: Issue
                 description: Represents an issue in the system
@@ -7667,15 +7668,15 @@ paths:
                 fieldSchema:
                 - name: Assigned
                   lifetime: TimeVariant
-                  type: bool
+                  type: boolean
                   required: true
                 - name: Status
                   lifetime: TimeVariant
-                  type: string
+                  type: text
                   required: true
-                - name: Effort In Days
+                - name: EffortInDays
                   lifetime: Perpetual
-                  type: number
+                  type: decimal
                   required: false
                 - name: DateCreated
                   lifetime: Perpetual
@@ -7685,7 +7686,7 @@ paths:
                 $ref: '#/components/schemas/CustomEntityDefinition'
             application/json:
               example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/issue
+                href: https://myco.lusid.com/api/customentities/entitytypes/~issue?asAt=2022-02-28T14:27:01.2728000+00:00
                 entityTypeName: issue
                 displayName: Issue
                 description: Represents an issue in the system
@@ -7693,15 +7694,15 @@ paths:
                 fieldSchema:
                 - name: Assigned
                   lifetime: TimeVariant
-                  type: bool
+                  type: boolean
                   required: true
                 - name: Status
                   lifetime: TimeVariant
-                  type: string
+                  type: text
                   required: true
-                - name: Effort In Days
+                - name: EffortInDays
                   lifetime: Perpetual
-                  type: number
+                  type: decimal
                   required: false
                 - name: DateCreated
                   lifetime: Perpetual
@@ -7711,7 +7712,7 @@ paths:
                 $ref: '#/components/schemas/CustomEntityDefinition'
             text/json:
               example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/issue
+                href: https://myco.lusid.com/api/customentities/entitytypes/~issue?asAt=2022-02-28T14:27:01.2728000+00:00
                 entityTypeName: issue
                 displayName: Issue
                 description: Represents an issue in the system
@@ -7719,15 +7720,15 @@ paths:
                 fieldSchema:
                 - name: Assigned
                   lifetime: TimeVariant
-                  type: bool
+                  type: boolean
                   required: true
                 - name: Status
                   lifetime: TimeVariant
-                  type: string
+                  type: text
                   required: true
-                - name: Effort In Days
+                - name: EffortInDays
                   lifetime: Perpetual
-                  type: number
+                  type: decimal
                   required: false
                 - name: DateCreated
                   lifetime: Perpetual
@@ -7796,7 +7797,7 @@ paths:
           content:
             text/plain:
               example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/issue
+                href: https://myco.lusid.com/api/customentities/entitytypes/~issue?asAt=2022-02-28T14:27:01.2728000+00:00
                 entityTypeName: issue
                 displayName: Issue
                 description: Represents an issue in the system
@@ -7804,15 +7805,15 @@ paths:
                 fieldSchema:
                 - name: Assigned
                   lifetime: TimeVariant
-                  type: bool
+                  type: boolean
                   required: true
                 - name: Status
                   lifetime: TimeVariant
-                  type: string
+                  type: text
                   required: true
-                - name: Effort In Days
+                - name: EffortInDays
                   lifetime: Perpetual
-                  type: number
+                  type: decimal
                   required: false
                 - name: DateCreated
                   lifetime: Perpetual
@@ -7822,7 +7823,7 @@ paths:
                 $ref: '#/components/schemas/CustomEntityDefinition'
             application/json:
               example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/issue
+                href: https://myco.lusid.com/api/customentities/entitytypes/~issue?asAt=2022-02-28T14:27:01.2728000+00:00
                 entityTypeName: issue
                 displayName: Issue
                 description: Represents an issue in the system
@@ -7830,15 +7831,15 @@ paths:
                 fieldSchema:
                 - name: Assigned
                   lifetime: TimeVariant
-                  type: bool
+                  type: boolean
                   required: true
                 - name: Status
                   lifetime: TimeVariant
-                  type: string
+                  type: text
                   required: true
-                - name: Effort In Days
+                - name: EffortInDays
                   lifetime: Perpetual
-                  type: number
+                  type: decimal
                   required: false
                 - name: DateCreated
                   lifetime: Perpetual
@@ -7848,7 +7849,7 @@ paths:
                 $ref: '#/components/schemas/CustomEntityDefinition'
             text/json:
               example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/issue
+                href: https://myco.lusid.com/api/customentities/entitytypes/~issue?asAt=2022-02-28T14:27:01.2728000+00:00
                 entityTypeName: issue
                 displayName: Issue
                 description: Represents an issue in the system
@@ -7856,15 +7857,15 @@ paths:
                 fieldSchema:
                 - name: Assigned
                   lifetime: TimeVariant
-                  type: bool
+                  type: boolean
                   required: true
                 - name: Status
                   lifetime: TimeVariant
-                  type: string
+                  type: text
                   required: true
-                - name: Effort In Days
+                - name: EffortInDays
                   lifetime: Perpetual
-                  type: number
+                  type: decimal
                   required: false
                 - name: DateCreated
                   lifetime: Perpetual
@@ -8058,7 +8059,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 188ce1eaecaf43efa6b33b680b75b40c
+                identifierValue: 139cab7ea74b4af7b00de6f5137b5207
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -8071,13 +8072,12 @@ paths:
                 effectiveFrom: 2022-07-23T12:00:00.0000000+00:00
               - name: StoryPointEstimate
                 value: 1
-                effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                effectiveFrom: 2021-07-24T12:00:00.0000000+00:00
               - name: Assigned
                 value: true
                 effectiveFrom: 2021-12-23T12:00:00.0000000+00:00
               - name: DateCreated
                 value: 2021-07-13T12:00:00.0000000+00:00
-                effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
             schema:
               $ref: '#/components/schemas/CustomEntityRequest'
           application/json:
@@ -8087,7 +8087,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 188ce1eaecaf43efa6b33b680b75b40c
+                identifierValue: 139cab7ea74b4af7b00de6f5137b5207
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -8100,13 +8100,12 @@ paths:
                 effectiveFrom: 2022-07-23T12:00:00.0000000+00:00
               - name: StoryPointEstimate
                 value: 1
-                effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                effectiveFrom: 2021-07-24T12:00:00.0000000+00:00
               - name: Assigned
                 value: true
                 effectiveFrom: 2021-12-23T12:00:00.0000000+00:00
               - name: DateCreated
                 value: 2021-07-13T12:00:00.0000000+00:00
-                effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
             schema:
               $ref: '#/components/schemas/CustomEntityRequest'
           text/json:
@@ -8116,7 +8115,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 188ce1eaecaf43efa6b33b680b75b40c
+                identifierValue: 139cab7ea74b4af7b00de6f5137b5207
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -8129,13 +8128,12 @@ paths:
                 effectiveFrom: 2022-07-23T12:00:00.0000000+00:00
               - name: StoryPointEstimate
                 value: 1
-                effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                effectiveFrom: 2021-07-24T12:00:00.0000000+00:00
               - name: Assigned
                 value: true
                 effectiveFrom: 2021-12-23T12:00:00.0000000+00:00
               - name: DateCreated
                 value: 2021-07-13T12:00:00.0000000+00:00
-                effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
             schema:
               $ref: '#/components/schemas/CustomEntityRequest'
           application/*+json:
@@ -8145,7 +8143,7 @@ paths:
               identifiers:
               - identifierScope: DataLoadingIssues
                 identifierType: InternalId
-                identifierValue: 188ce1eaecaf43efa6b33b680b75b40c
+                identifierValue: 139cab7ea74b4af7b00de6f5137b5207
               - identifierScope: DataLoadingIssues
                 identifierType: JiraID
                 identifierValue: PLAT-250
@@ -8158,13 +8156,12 @@ paths:
                 effectiveFrom: 2022-07-23T12:00:00.0000000+00:00
               - name: StoryPointEstimate
                 value: 1
-                effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                effectiveFrom: 2021-07-24T12:00:00.0000000+00:00
               - name: Assigned
                 value: true
                 effectiveFrom: 2021-12-23T12:00:00.0000000+00:00
               - name: DateCreated
                 value: 2021-07-13T12:00:00.0000000+00:00
-                effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
             schema:
               $ref: '#/components/schemas/CustomEntityRequest'
         description: The CustomEntity to be created.
@@ -8174,10 +8171,10 @@ paths:
           content:
             text/plain:
               example:
-                href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
+                href: https://myco.lusid.com/api/api/customentities/~issue
                 entityType: ~issue
                 version:
-                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   asAtDate: 0001-01-01T00:00:00.0000000+00:00
                 displayName: Issue
                 description: Issue with loading data
@@ -8185,11 +8182,13 @@ paths:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
                   identifierValue: 139cab7ea74b4af7b00de6f5137b5207
-                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - identifierScope: DataLoadingIssues
                   identifierType: JiraId
                   identifierValue: PLAT-250
-                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 fields:
                 - name: IssueName
                   value: InstrumentNotFound
@@ -8201,7 +8200,7 @@ paths:
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: StoryPointEstimate
                   value: 1
-                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveFrom: 2021-07-24T12:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: Assigned
                   value: true
@@ -8215,10 +8214,10 @@ paths:
                 $ref: '#/components/schemas/CustomEntityResponse'
             application/json:
               example:
-                href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
+                href: https://myco.lusid.com/api/api/customentities/~issue
                 entityType: ~issue
                 version:
-                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   asAtDate: 0001-01-01T00:00:00.0000000+00:00
                 displayName: Issue
                 description: Issue with loading data
@@ -8226,11 +8225,13 @@ paths:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
                   identifierValue: 139cab7ea74b4af7b00de6f5137b5207
-                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - identifierScope: DataLoadingIssues
                   identifierType: JiraId
                   identifierValue: PLAT-250
-                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 fields:
                 - name: IssueName
                   value: InstrumentNotFound
@@ -8242,7 +8243,7 @@ paths:
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: StoryPointEstimate
                   value: 1
-                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveFrom: 2021-07-24T12:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: Assigned
                   value: true
@@ -8256,10 +8257,10 @@ paths:
                 $ref: '#/components/schemas/CustomEntityResponse'
             text/json:
               example:
-                href: https://myco.lusid.com/api/api/customentities/~issue/JiraId/PLAT-250?identifierScope=DataLoadingIssues
+                href: https://myco.lusid.com/api/api/customentities/~issue
                 entityType: ~issue
                 version:
-                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   asAtDate: 0001-01-01T00:00:00.0000000+00:00
                 displayName: Issue
                 description: Issue with loading data
@@ -8267,11 +8268,13 @@ paths:
                 - identifierScope: DataLoadingIssues
                   identifierType: InternalId
                   identifierValue: 139cab7ea74b4af7b00de6f5137b5207
-                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - identifierScope: DataLoadingIssues
                   identifierType: JiraId
                   identifierValue: PLAT-250
-                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 fields:
                 - name: IssueName
                   value: InstrumentNotFound
@@ -8283,7 +8286,7 @@ paths:
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: StoryPointEstimate
                   value: 1
-                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveFrom: 2021-07-24T12:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: Assigned
                   value: true
@@ -8406,7 +8409,7 @@ paths:
           content:
             text/plain:
               example:
-                href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
+                href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket/?identifierScope=locations
                 entityType: ~branch
                 version:
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
@@ -8417,27 +8420,39 @@ paths:
                 - identifierScope: locations
                   identifierType: what3words
                   identifierValue: loaf.fires.basket
-                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - identifierScope: locations
                   identifierType: Coordinates
                   identifierValue: 51.52356,-0.08192
-                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 fields:
                 - name: Name of building
                   value: Frames Building
+                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: Town
                   value: Shoreditch
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: CurrentOffice
                   value: 1
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: Date Moved in
                   value: true
+                  effectiveFrom: 2021-01-23T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: Date Created
                   value: 2019-01-23T12:00:00.0000000+00:00
+                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
             application/json:
               example:
-                href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
+                href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket/?identifierScope=locations
                 entityType: ~branch
                 version:
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
@@ -8448,27 +8463,39 @@ paths:
                 - identifierScope: locations
                   identifierType: what3words
                   identifierValue: loaf.fires.basket
-                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - identifierScope: locations
                   identifierType: Coordinates
                   identifierValue: 51.52356,-0.08192
-                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 fields:
                 - name: Name of building
                   value: Frames Building
+                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: Town
                   value: Shoreditch
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: CurrentOffice
                   value: 1
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: Date Moved in
                   value: true
+                  effectiveFrom: 2021-01-23T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: Date Created
                   value: 2019-01-23T12:00:00.0000000+00:00
+                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
             text/json:
               example:
-                href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket
+                href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket/?identifierScope=locations
                 entityType: ~branch
                 version:
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
@@ -8479,22 +8506,34 @@ paths:
                 - identifierScope: locations
                   identifierType: what3words
                   identifierValue: loaf.fires.basket
-                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - identifierScope: locations
                   identifierType: Coordinates
                   identifierValue: 51.52356,-0.08192
-                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 fields:
                 - name: Name of building
                   value: Frames Building
+                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: Town
                   value: Shoreditch
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: CurrentOffice
                   value: 1
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: Date Moved in
                   value: true
+                  effectiveFrom: 2021-01-23T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - name: Date Created
                   value: 2019-01-23T12:00:00.0000000+00:00
+                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
           description: The requested Custom Entity
@@ -58247,6 +58286,8 @@ components:
           required: true
       properties:
         entityTypeName:
+          maxLength: 64
+          minLength: 1
           type: string
         displayName:
           pattern: ^[\s\S]*$
@@ -58321,10 +58362,19 @@ components:
         effectiveFrom: 2000-01-23T04:56:07.000+00:00
       properties:
         identifierScope:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         identifierType:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         identifierValue:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         effectiveFrom:
           format: date-time
