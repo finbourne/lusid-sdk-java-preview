@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **domCcy** | **String** | The domestic currency of the instrument. | 
 **underlyingIdentifier** | **String** | The market identifier type of the underlying code, e.g RIC.  Supported string (enumeration) values are: [LusidInstrumentId, Isin, Sedol, Cusip, ClientInternal, Figi, RIC, QuotePermId, REDCode, BBGId, ICECode]. | 
 **code** | **String** | The identifying code for the equity underlying, e.g. &#39;IBM.N&#39;. | 
-**equityOptionType** | **String** | Equity option types. E.g. Vanilla (default), RightsIssue, Warrant.  Supported string (enumeration) values are: [Vanilla, RightsIssue, Warrant]. |  [optional]
 **instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption | 
 
 
