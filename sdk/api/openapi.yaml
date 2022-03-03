@@ -280,12 +280,12 @@ info:
     | <a name="769">769</a>|Cannot update the base currency of a portfolio with transactions loaded|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4041
+  version: 0.11.4044
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:55985
 security:
 - {}
 tags:
@@ -52167,6 +52167,164 @@ paths:
       x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
       x-accepts: application/json
+  /api/unitresults/resultvalue/{scope}:
+    post:
+      description: "Create or update one or more Upsert one or more result values\
+        \ in a particular scope. An item is updated if it already exists\r\nand created\
+        \ if it does not.\r\n            \r\nIn the request, each data item must be\
+        \ keyed by a unique correlation ID. This ID is ephemeral and not stored by\
+        \ LUSID.\r\nIt serves only to easily identify each data item in the response.\r\
+        \n            \r\nThe response returns both the collection of successfully\
+        \ created or updated data items, as well as those that failed.\r\nFor each\
+        \ failure, a reason is provided.\r\n            \r\nIt is important to check\
+        \ the failed set for any unsuccessful results."
+      operationId: UpsertResultValue
+      parameters:
+      - description: The scope in which to construct the virtual documents.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope in which to construct the virtual documents.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              someCorrelationId1:
+                documentId:
+                  source: MiddleOffice
+                  code: MyUploadedRiskResults
+                  effectiveAt: 2018-03-05T00:00:00.0000000+00:00
+                  resultType: UnitResult/Analytic
+                key:
+                  unitResult/LusidInstrumentId: LUID_0000ABCD
+                dataAddress: UnitResult/Accrual
+                resultValue:
+                  units: USD
+                  value: 0.0102
+                  dimension: 0
+                  resultValueType: ResultValue0D
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/UpsertResultValuesDataRequest'
+              description: The time invariant set of structured data identifiers to
+                retrieve, keyed by a unique, ephemeral correlation ID.
+              type: object
+          application/json:
+            example:
+              someCorrelationId1:
+                documentId:
+                  source: MiddleOffice
+                  code: MyUploadedRiskResults
+                  effectiveAt: 2018-03-05T00:00:00.0000000+00:00
+                  resultType: UnitResult/Analytic
+                key:
+                  unitResult/LusidInstrumentId: LUID_0000ABCD
+                dataAddress: UnitResult/Accrual
+                resultValue:
+                  units: USD
+                  value: 0.0102
+                  dimension: 0
+                  resultValueType: ResultValue0D
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/UpsertResultValuesDataRequest'
+              description: The time invariant set of structured data identifiers to
+                retrieve, keyed by a unique, ephemeral correlation ID.
+              type: object
+          text/json:
+            example:
+              someCorrelationId1:
+                documentId:
+                  source: MiddleOffice
+                  code: MyUploadedRiskResults
+                  effectiveAt: 2018-03-05T00:00:00.0000000+00:00
+                  resultType: UnitResult/Analytic
+                key:
+                  unitResult/LusidInstrumentId: LUID_0000ABCD
+                dataAddress: UnitResult/Accrual
+                resultValue:
+                  units: USD
+                  value: 0.0102
+                  dimension: 0
+                  resultValueType: ResultValue0D
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/UpsertResultValuesDataRequest'
+              description: The time invariant set of structured data identifiers to
+                retrieve, keyed by a unique, ephemeral correlation ID.
+              type: object
+          application/*+json:
+            example:
+              someCorrelationId1:
+                documentId:
+                  source: MiddleOffice
+                  code: MyUploadedRiskResults
+                  effectiveAt: 2018-03-05T00:00:00.0000000+00:00
+                  resultType: UnitResult/Analytic
+                key:
+                  unitResult/LusidInstrumentId: LUID_0000ABCD
+                dataAddress: UnitResult/Accrual
+                resultValue:
+                  units: USD
+                  value: 0.0102
+                  dimension: 0
+                  resultValueType: ResultValue0D
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/UpsertResultValuesDataRequest'
+              description: The time invariant set of structured data identifiers to
+                retrieve, keyed by a unique, ephemeral correlation ID.
+              type: object
+        description: The time invariant set of structured data identifiers to retrieve,
+          keyed by a unique, ephemeral correlation ID.
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UpsertStructuredDataResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpsertStructuredDataResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UpsertStructuredDataResponse'
+          description: The successfully retrieved virtual documents along with any
+            failures.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] UpsertResultValue: Upsert result value'
+      tags:
+      - Structured Result Data
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
   /api/unitresults/virtualdocument/{scope}/$get:
     post:
       description: "Retrieve one or more virtual documents from a particular scope.\r\
@@ -54410,58 +54568,6 @@ components:
       - Money
       - Unknown
       type: string
-    AtomValue:
-      additionalProperties: false
-      description: Top/Parent class of individual atom values
-      discriminator:
-        propertyName: atomValueType
-      example:
-        atomValueType: AtomValueInt
-      properties:
-        atomValueType:
-          description: 'The available values are: AtomValueInt, AtomValueDecimal,
-            AtomValueString, AtomValue0D, AtomValue'
-          enum:
-          - AtomValueInt
-          - AtomValueDecimal
-          - AtomValueString
-          - AtomValue0D
-          - AtomValue
-          type: string
-      required:
-      - atomValueType
-      type: object
-    AtomValue0D:
-      allOf:
-      - $ref: '#/components/schemas/AtomValue'
-      - $ref: '#/components/schemas/AtomValue0D_allOf'
-      description: Holder class for a point/0D atom value. Consists of a decimal and
-        a unit.
-    AtomValueDecimal:
-      allOf:
-      - $ref: '#/components/schemas/AtomValue'
-      - $ref: '#/components/schemas/AtomValueDecimal_allOf'
-      description: Holder class for the decimal atom value
-    AtomValueInt:
-      allOf:
-      - $ref: '#/components/schemas/AtomValue'
-      - $ref: '#/components/schemas/AtomValueInt_allOf'
-      description: Holder class for the integer atom values
-    AtomValueString:
-      allOf:
-      - $ref: '#/components/schemas/AtomValue'
-      - $ref: '#/components/schemas/AtomValueString_allOf'
-      description: Holder class for a string atom value
-    AtomValueType:
-      description: Enum of atom values types. Used to discriminate the individual
-        classes
-      enum:
-      - AtomValueInt
-      - AtomValueDecimal
-      - AtomValueString
-      - AtomValue0D
-      - AtomValue
-      type: string
     Basket:
       allOf:
       - $ref: '#/components/schemas/LusidInstrument'
@@ -55094,6 +55200,20 @@ components:
         \nFloor Type: Buyer will receive payments at the end of each period when floating\
         \ rate is below the FloorStrike level.\r\nCollar Type: Strategy of buying\
         \ one Cap and selling one Floor where FloorStrike is less than CapStrike."
+    CashFlowLineage:
+      additionalProperties: false
+      description: Lineage for cash flow value
+      type: object
+    CashFlowValue:
+      allOf:
+      - $ref: '#/components/schemas/ResultValue'
+      - $ref: '#/components/schemas/CashFlowValue_allOf'
+      description: Result class for a cash flow value
+    CashFlowValueSet:
+      allOf:
+      - $ref: '#/components/schemas/ResultValue'
+      - $ref: '#/components/schemas/CashFlowValueSet_allOf'
+      description: Result value for a collection of cash flow values
     CashLadderRecord:
       additionalProperties: false
       example:
@@ -57693,7 +57813,7 @@ components:
         relationshipCardinality:
           description: Describes the cardinality of the relationship with a specific
             source entity object and relationships under this definition. Allowed
-            values are 'ManyToMany' and 'OneToMany', defaults to 'ManyToMany' if not
+            values are 'ManyToMany' and 'ManyToOne', defaults to 'ManyToMany' if not
             specified.
           nullable: true
           type: string
@@ -61282,8 +61402,8 @@ components:
                 - columns
                 - columns
                 values:
-                - atomValueType: AtomValueInt
-                - atomValueType: AtomValueInt
+                - resultValueType: ResultValue
+                - resultValueType: ResultValue
               rowId:
                 key: rowId
             - rowData:
@@ -61291,8 +61411,8 @@ components:
                 - columns
                 - columns
                 values:
-                - atomValueType: AtomValueInt
-                - atomValueType: AtomValueInt
+                - resultValueType: ResultValue
+                - resultValueType: ResultValue
               rowId:
                 key: rowId
             documentId:
@@ -61354,8 +61474,8 @@ components:
         - columns
         - columns
         values:
-        - atomValueType: AtomValueInt
-        - atomValueType: AtomValueInt
+        - resultValueType: ResultValue
+        - resultValueType: ResultValue
       properties:
         columns:
           description: The columns, or keys, for a particular group of results
@@ -61367,7 +61487,7 @@ components:
         values:
           description: The values for the list of results
           items:
-            $ref: '#/components/schemas/AtomValue'
+            $ref: '#/components/schemas/ResultValue'
           nullable: true
           type: array
       type: object
@@ -76906,6 +77026,71 @@ components:
           nullable: true
           type: object
       type: object
+    ResultValue:
+      additionalProperties: false
+      description: The base class of the result values
+      discriminator:
+        propertyName: resultValueType
+      example:
+        resultValueType: ResultValue
+      properties:
+        resultValueType:
+          description: 'The available values are: ResultValue, ResultValueDictionary,
+            ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
+            CashFlowValue, CashFlowValueSet'
+          enum:
+          - ResultValue
+          - ResultValueDictionary
+          - ResultValue0D
+          - ResultValueDecimal
+          - ResultValueInt
+          - ResultValueString
+          - CashFlowValue
+          - CashFlowValueSet
+          type: string
+      required:
+      - resultValueType
+      type: object
+    ResultValue0D:
+      allOf:
+      - $ref: '#/components/schemas/ResultValue'
+      - $ref: '#/components/schemas/ResultValue0D_allOf'
+      description: Result value representing a 0D result. These results can be equipped
+        with a unit
+    ResultValueDecimal:
+      allOf:
+      - $ref: '#/components/schemas/ResultValue'
+      - $ref: '#/components/schemas/ResultValueDecimal_allOf'
+      description: A simple result for a decimal value
+    ResultValueDictionary:
+      allOf:
+      - $ref: '#/components/schemas/ResultValue'
+      - $ref: '#/components/schemas/ResultValueDictionary_allOf'
+      description: Result value for a collection of key-value pairs. Used for diagnostics
+        associated to a cash flow, etc.
+    ResultValueInt:
+      allOf:
+      - $ref: '#/components/schemas/ResultValue'
+      - $ref: '#/components/schemas/ResultValueInt_allOf'
+      description: A simple result type which holds an integer
+    ResultValueString:
+      allOf:
+      - $ref: '#/components/schemas/ResultValue'
+      - $ref: '#/components/schemas/ResultValueString_allOf'
+      description: A simple result value holding a string
+    ResultValueType:
+      description: Enum of possible result value type. Used discriminate the result
+        values
+      enum:
+      - ResultValue
+      - ResultValueDictionary
+      - ResultValue0D
+      - ResultValueDecimal
+      - ResultValueInt
+      - ResultValueString
+      - CashFlowValue
+      - CashFlowValueSet
+      type: string
     ScalingMethodology:
       enum:
       - Sum
@@ -80521,6 +80706,37 @@ components:
           nullable: true
           type: array
       type: object
+    UpsertResultValuesDataRequest:
+      additionalProperties: false
+      example:
+        resultValue:
+          resultValueType: ResultValue
+        dataAddress: dataAddress
+        documentId:
+          code: code
+          effectiveAt: effectiveAt
+          source: source
+          resultType: resultType
+        key:
+          key: key
+      properties:
+        documentId:
+          $ref: '#/components/schemas/StructuredResultDataId'
+        key:
+          additionalProperties:
+            type: string
+          description: The structured unit result data key.
+          nullable: true
+          type: object
+        dataAddress:
+          description: The address of the piece of unit result data
+          nullable: true
+          type: string
+        resultValue:
+          $ref: '#/components/schemas/ResultValue'
+      required:
+      - documentId
+      type: object
     UpsertReturnsResponse:
       additionalProperties: false
       description: Response from upserting Returns
@@ -82458,8 +82674,8 @@ components:
             - columns
             - columns
             values:
-            - atomValueType: AtomValueInt
-            - atomValueType: AtomValueInt
+            - resultValueType: ResultValue
+            - resultValueType: ResultValue
           rowId:
             key: rowId
         - rowData:
@@ -82467,8 +82683,8 @@ components:
             - columns
             - columns
             values:
-            - atomValueType: AtomValueInt
-            - atomValueType: AtomValueInt
+            - resultValueType: ResultValue
+            - resultValueType: ResultValue
           rowId:
             key: rowId
         documentId:
@@ -82495,8 +82711,8 @@ components:
           - columns
           - columns
           values:
-          - atomValueType: AtomValueInt
-          - atomValueType: AtomValueInt
+          - resultValueType: ResultValue
+          - resultValueType: ResultValue
         rowId:
           key: rowId
       properties:
@@ -82595,86 +82811,6 @@ components:
       - $ref: '#/components/schemas/YieldCurveData_allOf'
       description: Market data for a yield curve,  represented by a list of instruments
         and corresponding market quotes
-    AtomValue0D_allOf:
-      properties:
-        value:
-          description: The value
-          format: double
-          type: number
-        units:
-          description: The unit
-          nullable: true
-          type: string
-        atomValueType:
-          description: 'The available values are: AtomValueInt, AtomValueDecimal,
-            AtomValueString, AtomValue0D, AtomValue'
-          enum:
-          - AtomValueInt
-          - AtomValueDecimal
-          - AtomValueString
-          - AtomValue0D
-          - AtomValue
-          type: string
-      required:
-      - atomValueType
-      type: object
-    AtomValueDecimal_allOf:
-      properties:
-        value:
-          description: The value itself
-          format: double
-          type: number
-        atomValueType:
-          description: 'The available values are: AtomValueInt, AtomValueDecimal,
-            AtomValueString, AtomValue0D, AtomValue'
-          enum:
-          - AtomValueInt
-          - AtomValueDecimal
-          - AtomValueString
-          - AtomValue0D
-          - AtomValue
-          type: string
-      required:
-      - atomValueType
-      type: object
-    AtomValueInt_allOf:
-      properties:
-        value:
-          description: The value itself
-          format: int32
-          type: integer
-        atomValueType:
-          description: 'The available values are: AtomValueInt, AtomValueDecimal,
-            AtomValueString, AtomValue0D, AtomValue'
-          enum:
-          - AtomValueInt
-          - AtomValueDecimal
-          - AtomValueString
-          - AtomValue0D
-          - AtomValue
-          type: string
-      required:
-      - atomValueType
-      type: object
-    AtomValueString_allOf:
-      properties:
-        value:
-          description: The value itself
-          nullable: true
-          type: string
-        atomValueType:
-          description: 'The available values are: AtomValueInt, AtomValueDecimal,
-            AtomValueString, AtomValue0D, AtomValue'
-          enum:
-          - AtomValueInt
-          - AtomValueDecimal
-          - AtomValueString
-          - AtomValue0D
-          - AtomValue
-          type: string
-      required:
-      - atomValueType
-      type: object
     Basket_allOf:
       properties:
         basketName:
@@ -82917,6 +83053,70 @@ components:
       - includeFirstCaplet
       - instrumentType
       - underlyingFloatingLeg
+      type: object
+    CashFlowValue_allOf:
+      properties:
+        paymentDate:
+          description: The payment date of the cash flow
+          format: date-time
+          type: string
+        diagnostics:
+          $ref: '#/components/schemas/ResultValueDictionary'
+        cashFlowLineage:
+          additionalProperties: false
+          description: Lineage for cash flow value
+          type: object
+        paymentAmount:
+          description: The amount paid or received
+          format: double
+          type: number
+        paymentCcy:
+          description: The currency of the transaction
+          type: string
+        resultValueType:
+          description: 'The available values are: ResultValue, ResultValueDictionary,
+            ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
+            CashFlowValue, CashFlowValueSet'
+          enum:
+          - ResultValue
+          - ResultValueDictionary
+          - ResultValue0D
+          - ResultValueDecimal
+          - ResultValueInt
+          - ResultValueString
+          - CashFlowValue
+          - CashFlowValueSet
+          type: string
+      required:
+      - paymentAmount
+      - paymentCcy
+      - paymentDate
+      - resultValueType
+      type: object
+    CashFlowValueSet_allOf:
+      properties:
+        cashflows:
+          description: The set of cash flows in the result
+          items:
+            $ref: '#/components/schemas/CashFlowValue'
+          nullable: true
+          type: array
+        resultValueType:
+          description: 'The available values are: ResultValue, ResultValueDictionary,
+            ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
+            CashFlowValue, CashFlowValueSet'
+          enum:
+          - ResultValue
+          - ResultValueDictionary
+          - ResultValue0D
+          - ResultValueDecimal
+          - ResultValueInt
+          - ResultValueString
+          - CashFlowValue
+          - CashFlowValueSet
+          type: string
+      required:
+      - resultValueType
       type: object
     CashPerpetual_allOf:
       properties:
@@ -83480,6 +83680,12 @@ components:
           type: string
         code:
           description: The identifying code for the equity underlying, e.g. 'IBM.N'.
+          type: string
+        equityOptionType:
+          description: "Equity option types. E.g. Vanilla (default), RightsIssue,\
+            \ Warrant.\r\nSupported string (enumeration) values are: [Vanilla, RightsIssue,\
+            \ Warrant]."
+          nullable: true
           type: string
         instrumentType:
           description: 'The available values are: QuotedSecurity, InterestRateSwap,
@@ -85263,6 +85469,148 @@ components:
       - maturityDate
       - startDate
       type: object
+    ResultValue0D_allOf:
+      properties:
+        units:
+          description: Unit of the result
+          nullable: true
+          type: string
+        value:
+          description: The value of the result
+          format: double
+          type: number
+        dimension:
+          description: "The dimension of the result. Can be null if there is no sensible\
+            \ way of defining the dimension. This field should not be\r\npopulate\
+            \ by the user on upsertion."
+          format: int32
+          nullable: true
+          type: integer
+        resultValueType:
+          description: 'The available values are: ResultValue, ResultValueDictionary,
+            ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
+            CashFlowValue, CashFlowValueSet'
+          enum:
+          - ResultValue
+          - ResultValueDictionary
+          - ResultValue0D
+          - ResultValueDecimal
+          - ResultValueInt
+          - ResultValueString
+          - CashFlowValue
+          - CashFlowValueSet
+          type: string
+      required:
+      - resultValueType
+      type: object
+    ResultValueDecimal_allOf:
+      properties:
+        value:
+          description: The value itself
+          format: double
+          type: number
+        dimension:
+          description: "The dimension of the result. Can be null if there is no sensible\
+            \ way of defining the dimension. This field should not be\r\npopulate\
+            \ by the user on upsertion."
+          format: int32
+          nullable: true
+          type: integer
+        resultValueType:
+          description: 'The available values are: ResultValue, ResultValueDictionary,
+            ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
+            CashFlowValue, CashFlowValueSet'
+          enum:
+          - ResultValue
+          - ResultValueDictionary
+          - ResultValue0D
+          - ResultValueDecimal
+          - ResultValueInt
+          - ResultValueString
+          - CashFlowValue
+          - CashFlowValueSet
+          type: string
+      required:
+      - resultValueType
+      type: object
+    ResultValueDictionary_allOf:
+      properties:
+        elements:
+          additionalProperties:
+            $ref: '#/components/schemas/ResultValue'
+          description: The dictionary elements
+          nullable: true
+          type: object
+        resultValueType:
+          description: 'The available values are: ResultValue, ResultValueDictionary,
+            ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
+            CashFlowValue, CashFlowValueSet'
+          enum:
+          - ResultValue
+          - ResultValueDictionary
+          - ResultValue0D
+          - ResultValueDecimal
+          - ResultValueInt
+          - ResultValueString
+          - CashFlowValue
+          - CashFlowValueSet
+          type: string
+      required:
+      - resultValueType
+      type: object
+    ResultValueInt_allOf:
+      properties:
+        value:
+          description: The value itself
+          format: int32
+          type: integer
+        dimension:
+          description: "The dimension of the result. Can be null if there is no sensible\
+            \ way of defining the dimension. This field should not be\r\npopulate\
+            \ by the user on upsertion."
+          format: int32
+          nullable: true
+          type: integer
+        resultValueType:
+          description: 'The available values are: ResultValue, ResultValueDictionary,
+            ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
+            CashFlowValue, CashFlowValueSet'
+          enum:
+          - ResultValue
+          - ResultValueDictionary
+          - ResultValue0D
+          - ResultValueDecimal
+          - ResultValueInt
+          - ResultValueString
+          - CashFlowValue
+          - CashFlowValueSet
+          type: string
+      required:
+      - resultValueType
+      type: object
+    ResultValueString_allOf:
+      properties:
+        value:
+          description: the value itself
+          nullable: true
+          type: string
+        resultValueType:
+          description: 'The available values are: ResultValue, ResultValueDictionary,
+            ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
+            CashFlowValue, CashFlowValueSet'
+          enum:
+          - ResultValue
+          - ResultValueDictionary
+          - ResultValue0D
+          - ResultValueDecimal
+          - ResultValueInt
+          - ResultValueString
+          - CashFlowValue
+          - CashFlowValueSet
+          type: string
+      required:
+      - resultValueType
+      type: object
     SimpleInstrument_allOf:
       properties:
         maturityDate:
@@ -85479,7 +85827,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

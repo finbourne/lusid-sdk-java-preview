@@ -1,14 +1,14 @@
 
 
-# AtomValueDecimal
+# ResultValueString
 
-Holder class for the decimal atom value
+A simple result value holding a string
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **Double** | The value itself |  [optional]
+**value** | **String** | the value itself |  [optional]
 
 
 

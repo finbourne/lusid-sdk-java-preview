@@ -1,6 +1,6 @@
 # StructuredResultDataApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://local-unit-test-server.lusid.com:55985*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getDataMap**](StructuredResultDataApi.md#getDataMap) | **POST** /api/unitresults/datamap/{scope}/$get | [EXPERIMENTAL] GetDataMap: Get data map
 [**getStructuredResultData**](StructuredResultDataApi.md#getStructuredResultData) | **POST** /api/unitresults/{scope}/$get | [EXPERIMENTAL] GetStructuredResultData: Get structured result data
 [**getVirtualDocument**](StructuredResultDataApi.md#getVirtualDocument) | **POST** /api/unitresults/virtualdocument/{scope}/$get | [EXPERIMENTAL] GetVirtualDocument: Get Virtual Documents
+[**upsertResultValue**](StructuredResultDataApi.md#upsertResultValue) | **POST** /api/unitresults/resultvalue/{scope} | [EXPERIMENTAL] UpsertResultValue: Upsert result value
 [**upsertStructuredResultData**](StructuredResultDataApi.md#upsertStructuredResultData) | **POST** /api/unitresults/{scope} | [BETA] UpsertStructuredResultData: Upsert structured result data
 
 
@@ -33,7 +34,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55985");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -104,7 +105,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55985");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -175,7 +176,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55985");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -246,7 +247,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55985");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -321,7 +322,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55985");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -373,6 +374,77 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="upsertResultValue"></a>
+# **upsertResultValue**
+> UpsertStructuredDataResponse upsertResultValue(scope, requestBody)
+
+[EXPERIMENTAL] UpsertResultValue: Upsert result value
+
+Create or update one or more Upsert one or more result values in a particular scope. An item is updated if it already exists  and created if it does not.                In the request, each data item must be keyed by a unique correlation ID. This ID is ephemeral and not stored by LUSID.  It serves only to easily identify each data item in the response.                The response returns both the collection of successfully created or updated data items, as well as those that failed.  For each failure, a reason is provided.                It is important to check the failed set for any unsuccessful results.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.StructuredResultDataApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55985");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    StructuredResultDataApi apiInstance = new StructuredResultDataApi(defaultClient);
+    String scope = "scope_example"; // String | The scope in which to construct the virtual documents.
+    Map<String, UpsertResultValuesDataRequest> requestBody = new HashMap(); // Map<String, UpsertResultValuesDataRequest> | The time invariant set of structured data identifiers to retrieve, keyed by a unique, ephemeral correlation ID.
+    try {
+      UpsertStructuredDataResponse result = apiInstance.upsertResultValue(scope, requestBody);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling StructuredResultDataApi#upsertResultValue");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope in which to construct the virtual documents. |
+ **requestBody** | [**Map&lt;String, UpsertResultValuesDataRequest&gt;**](UpsertResultValuesDataRequest.md)| The time invariant set of structured data identifiers to retrieve, keyed by a unique, ephemeral correlation ID. |
+
+### Return type
+
+[**UpsertStructuredDataResponse**](UpsertStructuredDataResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The successfully retrieved virtual documents along with any failures. |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="upsertStructuredResultData"></a>
 # **upsertStructuredResultData**
 > UpsertStructuredDataResponse upsertStructuredResultData(scope, requestBody)
@@ -394,7 +466,7 @@ import com.finbourne.lusid.api.StructuredResultDataApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:55985");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
