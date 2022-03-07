@@ -280,12 +280,12 @@ info:
     | <a name="769">769</a>|Cannot update the base currency of a portfolio with transactions loaded|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4063
+  version: 0.11.4064
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:32196
 security:
 - {}
 tags:
@@ -429,6 +429,9 @@ tags:
     a fundamental building block of LUSID, and care should be exercised when changing
     them. For more information, see https://support.lusid.com/knowledgebase/article/KA-01872/.
   name: System Configuration
+- description: Methods to retrieve applicable fees for a transaction, and manage the
+    rules that defined them
+  name: Transaction Fees
 - description: A transaction portfolio stores transactions and calculates instrument
     holdings and cash balances, enabling valuation, analytic, profit & loss, risk
     assessment and other operations to be performed. Note that a transaction portfolio
@@ -10788,346 +10791,6 @@ paths:
       - FeesAndCommissions
       x-fbn-apistatus: Experimental
       x-accepts: application/json
-  /api/feesandcommissions/$GetApplicableFees:
-    post:
-      description: Additionally, matching can be based on the instrument's properties,
-        its portfolio properties, and any additional property keys present in the
-        data file.
-      operationId: GetApplicableFeesNew
-      parameters:
-      - description: "The effective datetime or cut label at which to match rule definitions.\
-          \ Defaults to the current LUSID\r\nsystem datetime if not specified."
-        explode: true
-        in: query
-        name: effectiveAt
-        required: false
-        schema:
-          description: "The effective datetime or cut label at which to match rule\
-            \ definitions. Defaults to the current LUSID\r\nsystem datetime if not\
-            \ specified."
-          format: dateorcutlabel
-          nullable: true
-          type: string
-        style: form
-      - description: "The asAt datetime at which to match rule definitions. Defaults\
-          \ to returning the latest version if not\r\nspecified."
-        explode: true
-        in: query
-        name: asAt
-        required: false
-        schema:
-          description: "The asAt datetime at which to match rule definitions. Defaults\
-            \ to returning the latest version if not\r\nspecified."
-          format: date-time
-          nullable: true
-          type: string
-        style: form
-        x-nullable: true
-      - description: Optional. The unique identifier type to use, eg 'Figi' or 'LusidInstrumentId'.
-        explode: true
-        in: query
-        name: instrumentIdentifierType
-        required: false
-        schema:
-          description: Optional. The unique identifier type to use, eg 'Figi' or 'LusidInstrumentId'.
-          maxLength: 64
-          minLength: 1
-          nullable: true
-          type: string
-        style: form
-      - description: Optional. The Instrument Identifier to get properties for.
-        explode: true
-        in: query
-        name: instrumentIdentifier
-        required: false
-        schema:
-          description: Optional. The Instrument Identifier to get properties for.
-          maxLength: 64
-          minLength: 1
-          nullable: true
-          type: string
-        style: form
-      - description: Optional. The scope of the portfolio to fetch properties from.
-        explode: true
-        in: query
-        name: portfolioScope
-        required: false
-        schema:
-          description: Optional. The scope of the portfolio to fetch properties from.
-          maxLength: 64
-          minLength: 1
-          nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
-          type: string
-        style: form
-      - description: Optional. The code of the portfolio to fetch properties from.
-        explode: true
-        in: query
-        name: portfolioCode
-        required: false
-        schema:
-          description: Optional. The code of the portfolio to fetch properties from.
-          maxLength: 64
-          minLength: 1
-          nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
-          type: string
-        style: form
-      requestBody:
-        content:
-          application/json-patch+json:
-            example:
-              settlementCurrency: GBP
-              country: UK
-              office: London
-            schema:
-              additionalProperties:
-                type: string
-              description: "Any other property keys or fields, including the top-level\
-                \ fields of the\r\n            fee rule (e.g. \"ExecutionBroker\"\
-                \ and \"SettlementCurrency\" ) and those defined in AdditionalKeys,\
-                \ along with\r\n            their corresponding values that should\
-                \ be matched for fees. Eg. \"Instrument/default/Name=exampleValue\"\
-                \ or\r\n            \"AdditionalKey2=Value2\"."
-              nullable: true
-              type: object
-          application/json:
-            example:
-              settlementCurrency: GBP
-              country: UK
-              office: London
-            schema:
-              additionalProperties:
-                type: string
-              description: "Any other property keys or fields, including the top-level\
-                \ fields of the\r\n            fee rule (e.g. \"ExecutionBroker\"\
-                \ and \"SettlementCurrency\" ) and those defined in AdditionalKeys,\
-                \ along with\r\n            their corresponding values that should\
-                \ be matched for fees. Eg. \"Instrument/default/Name=exampleValue\"\
-                \ or\r\n            \"AdditionalKey2=Value2\"."
-              nullable: true
-              type: object
-          text/json:
-            example:
-              settlementCurrency: GBP
-              country: UK
-              office: London
-            schema:
-              additionalProperties:
-                type: string
-              description: "Any other property keys or fields, including the top-level\
-                \ fields of the\r\n            fee rule (e.g. \"ExecutionBroker\"\
-                \ and \"SettlementCurrency\" ) and those defined in AdditionalKeys,\
-                \ along with\r\n            their corresponding values that should\
-                \ be matched for fees. Eg. \"Instrument/default/Name=exampleValue\"\
-                \ or\r\n            \"AdditionalKey2=Value2\"."
-              nullable: true
-              type: object
-          application/*+json:
-            example:
-              settlementCurrency: GBP
-              country: UK
-              office: London
-            schema:
-              additionalProperties:
-                type: string
-              description: "Any other property keys or fields, including the top-level\
-                \ fields of the\r\n            fee rule (e.g. \"ExecutionBroker\"\
-                \ and \"SettlementCurrency\" ) and those defined in AdditionalKeys,\
-                \ along with\r\n            their corresponding values that should\
-                \ be matched for fees. Eg. \"Instrument/default/Name=exampleValue\"\
-                \ or\r\n            \"AdditionalKey2=Value2\"."
-              nullable: true
-              type: object
-        description: "Any other property keys or fields, including the top-level fields\
-          \ of the\r\n            fee rule (e.g. \"ExecutionBroker\" and \"SettlementCurrency\"\
-          \ ) and those defined in AdditionalKeys, along with\r\n            their\
-          \ corresponding values that should be matched for fees. Eg. \"Instrument/default/Name=exampleValue\"\
-          \ or\r\n            \"AdditionalKey2=Value2\"."
-      responses:
-        "200":
-          content:
-            text/plain:
-              example:
-                values:
-                - code: FeeRule_1
-                  transactionPropertyKey: Transaction/default/fee
-                  transactionType: '*'
-                  country: UK
-                  counterparty: '*'
-                  transactionCurrency: '*'
-                  settlementCurrency: '*'
-                  executionBroker: '*'
-                  custodian: '*'
-                  exchange: My Exchange
-                  fee:
-                    calculationMethod: BasisPoints
-                    multiplier: Value
-                    calculationAmount: 10
-                  additionalKeys:
-                    office: London
-                  description: Basic fee rule to be updated.
-                  version:
-                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                - code: FeeRule_5
-                  transactionPropertyKey: Transaction/default/commission
-                  transactionType: GBP
-                  country: UK
-                  counterparty: '*'
-                  transactionCurrency: '*'
-                  settlementCurrency: '*'
-                  executionBroker: '*'
-                  custodian: '*'
-                  exchange: My Exchange
-                  fee:
-                    calculationMethod: BasisPoints
-                    multiplier: Value
-                    calculationAmount: 10
-                  minFee:
-                    calculationMethod: Flat
-                    multiplier: Value
-                    calculationAmount: 5
-                  maxFee:
-                    calculationMethod: Flat
-                    multiplier: Value
-                    calculationAmount: 25
-                  additionalKeys:
-                    office: London
-                  description: Basic fee rule with minimum/maximum to be created
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfFeeRule'
-            application/json:
-              example:
-                values:
-                - code: FeeRule_1
-                  transactionPropertyKey: Transaction/default/fee
-                  transactionType: '*'
-                  country: UK
-                  counterparty: '*'
-                  transactionCurrency: '*'
-                  settlementCurrency: '*'
-                  executionBroker: '*'
-                  custodian: '*'
-                  exchange: My Exchange
-                  fee:
-                    calculationMethod: BasisPoints
-                    multiplier: Value
-                    calculationAmount: 10
-                  additionalKeys:
-                    office: London
-                  description: Basic fee rule to be updated.
-                  version:
-                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                - code: FeeRule_5
-                  transactionPropertyKey: Transaction/default/commission
-                  transactionType: GBP
-                  country: UK
-                  counterparty: '*'
-                  transactionCurrency: '*'
-                  settlementCurrency: '*'
-                  executionBroker: '*'
-                  custodian: '*'
-                  exchange: My Exchange
-                  fee:
-                    calculationMethod: BasisPoints
-                    multiplier: Value
-                    calculationAmount: 10
-                  minFee:
-                    calculationMethod: Flat
-                    multiplier: Value
-                    calculationAmount: 5
-                  maxFee:
-                    calculationMethod: Flat
-                    multiplier: Value
-                    calculationAmount: 25
-                  additionalKeys:
-                    office: London
-                  description: Basic fee rule with minimum/maximum to be created
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfFeeRule'
-            text/json:
-              example:
-                values:
-                - code: FeeRule_1
-                  transactionPropertyKey: Transaction/default/fee
-                  transactionType: '*'
-                  country: UK
-                  counterparty: '*'
-                  transactionCurrency: '*'
-                  settlementCurrency: '*'
-                  executionBroker: '*'
-                  custodian: '*'
-                  exchange: My Exchange
-                  fee:
-                    calculationMethod: BasisPoints
-                    multiplier: Value
-                    calculationAmount: 10
-                  additionalKeys:
-                    office: London
-                  description: Basic fee rule to be updated.
-                  version:
-                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                - code: FeeRule_5
-                  transactionPropertyKey: Transaction/default/commission
-                  transactionType: GBP
-                  country: UK
-                  counterparty: '*'
-                  transactionCurrency: '*'
-                  settlementCurrency: '*'
-                  executionBroker: '*'
-                  custodian: '*'
-                  exchange: My Exchange
-                  fee:
-                    calculationMethod: BasisPoints
-                    multiplier: Value
-                    calculationAmount: 10
-                  minFee:
-                    calculationMethod: Flat
-                    multiplier: Value
-                    calculationAmount: 5
-                  maxFee:
-                    calculationMethod: Flat
-                    multiplier: Value
-                    calculationAmount: 25
-                  additionalKeys:
-                    office: London
-                  description: Basic fee rule with minimum/maximum to be created
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfFeeRule'
-          description: The list of applicable fee rules.
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] GetApplicableFeesNew: Get the Fees and Commissions
-        that may be applicable to a transaction.'
-      tags:
-      - FeesAndCommissions
-      x-fbn-apistatus: Experimental
-      x-contentType: application/json-patch+json
-      x-accepts: application/json
   /api/feesandcommissions/rules:
     get:
       description: By default, will list ALL rules available. Additional keys and
@@ -11344,905 +11007,6 @@ paths:
       - oauth2: []
       summary: '[EXPERIMENTAL] ListAllFees: List the rules available for fees and
         commissions.'
-      tags:
-      - FeesAndCommissions
-      x-fbn-apistatus: Experimental
-      x-accepts: application/json
-  /api/feesandcommissions/rules-dev:
-    get:
-      description: "For more information about filtering results,\r\nsee https://support.lusid.com/knowledgebase/article/KA-01914."
-      operationId: ListFeeRules
-      parameters:
-      - description: "The effective datetime or cut label at which to retrieve the\
-          \ rule definitions. Defaults to the current LUSID\r\nsystem datetime if\
-          \ not specified."
-        explode: true
-        in: query
-        name: effectiveAt
-        required: false
-        schema:
-          description: "The effective datetime or cut label at which to retrieve the\
-            \ rule definitions. Defaults to the current LUSID\r\nsystem datetime if\
-            \ not specified."
-          format: dateorcutlabel
-          nullable: true
-          type: string
-        style: form
-      - description: "The asAt datetime at which to retrieve the rule definitions.\
-          \ Defaults to returning the latest version if not\r\nspecified."
-        explode: true
-        in: query
-        name: asAt
-        required: false
-        schema:
-          description: "The asAt datetime at which to retrieve the rule definitions.\
-            \ Defaults to returning the latest version if not\r\nspecified."
-          format: date-time
-          nullable: true
-          type: string
-        style: form
-        x-nullable: true
-      - description: When paginating, limit the results to this number. Defaults to
-          100 if not specified.
-        explode: true
-        in: query
-        name: limit
-        required: false
-        schema:
-          description: When paginating, limit the results to this number. Defaults
-            to 100 if not specified.
-          format: int32
-          maximum: 5000
-          minimum: 1
-          nullable: true
-          type: integer
-        style: form
-        x-nullable: true
-      - description: Expression to filter the results.
-        explode: true
-        in: query
-        name: filter
-        required: false
-        schema:
-          description: Expression to filter the results.
-          maxLength: 16384
-          minLength: 0
-          nullable: true
-          pattern: ^[\s\S]*$
-          type: string
-        style: form
-      - description: "The pagination token to use to continue listing entities; this\
-          \ value is returned from the previous call. If\r\na pagination token is\
-          \ provided, the filter, effectiveAt and asAt fields must not have changed\
-          \ since the\r\noriginal request."
-        explode: true
-        in: query
-        name: page
-        required: false
-        schema:
-          description: "The pagination token to use to continue listing entities;\
-            \ this value is returned from the previous call. If\r\na pagination token\
-            \ is provided, the filter, effectiveAt and asAt fields must not have changed\
-            \ since the\r\noriginal request."
-          maxLength: 500
-          minLength: 1
-          nullable: true
-          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            text/plain:
-              example:
-                values:
-                - code: FeeRule_1
-                  transactionPropertyKey: Transaction/default/fee
-                  transactionType: '*'
-                  country: UK
-                  counterparty: '*'
-                  transactionCurrency: '*'
-                  settlementCurrency: '*'
-                  executionBroker: '*'
-                  custodian: '*'
-                  exchange: My Exchange
-                  fee:
-                    calculationMethod: BasisPoints
-                    multiplier: Value
-                    calculationAmount: 10
-                  additionalKeys:
-                    office: London
-                  description: Basic fee rule to be updated.
-                  version:
-                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                - code: FeeRule_2
-                  transactionPropertyKey: Transaction/default/fee
-                  transactionType: '*'
-                  country: UK
-                  counterparty: '*'
-                  transactionCurrency: '*'
-                  settlementCurrency: '*'
-                  executionBroker: '*'
-                  custodian: '*'
-                  exchange: My Exchange
-                  fee:
-                    calculationMethod: BasisPoints
-                    multiplier: Value
-                    calculationAmount: 10
-                  minFee:
-                    calculationMethod: Flat
-                    multiplier: Value
-                    calculationAmount: 5
-                  maxFee:
-                    calculationMethod: Flat
-                    multiplier: Value
-                    calculationAmount: 25
-                  additionalKeys:
-                    office: London
-                  description: Basic fee rule with minimum/maximum to be created
-                  version:
-                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfFeeRule'
-            application/json:
-              example:
-                values:
-                - code: FeeRule_1
-                  transactionPropertyKey: Transaction/default/fee
-                  transactionType: '*'
-                  country: UK
-                  counterparty: '*'
-                  transactionCurrency: '*'
-                  settlementCurrency: '*'
-                  executionBroker: '*'
-                  custodian: '*'
-                  exchange: My Exchange
-                  fee:
-                    calculationMethod: BasisPoints
-                    multiplier: Value
-                    calculationAmount: 10
-                  additionalKeys:
-                    office: London
-                  description: Basic fee rule to be updated.
-                  version:
-                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                - code: FeeRule_2
-                  transactionPropertyKey: Transaction/default/fee
-                  transactionType: '*'
-                  country: UK
-                  counterparty: '*'
-                  transactionCurrency: '*'
-                  settlementCurrency: '*'
-                  executionBroker: '*'
-                  custodian: '*'
-                  exchange: My Exchange
-                  fee:
-                    calculationMethod: BasisPoints
-                    multiplier: Value
-                    calculationAmount: 10
-                  minFee:
-                    calculationMethod: Flat
-                    multiplier: Value
-                    calculationAmount: 5
-                  maxFee:
-                    calculationMethod: Flat
-                    multiplier: Value
-                    calculationAmount: 25
-                  additionalKeys:
-                    office: London
-                  description: Basic fee rule with minimum/maximum to be created
-                  version:
-                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfFeeRule'
-            text/json:
-              example:
-                values:
-                - code: FeeRule_1
-                  transactionPropertyKey: Transaction/default/fee
-                  transactionType: '*'
-                  country: UK
-                  counterparty: '*'
-                  transactionCurrency: '*'
-                  settlementCurrency: '*'
-                  executionBroker: '*'
-                  custodian: '*'
-                  exchange: My Exchange
-                  fee:
-                    calculationMethod: BasisPoints
-                    multiplier: Value
-                    calculationAmount: 10
-                  additionalKeys:
-                    office: London
-                  description: Basic fee rule to be updated.
-                  version:
-                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                - code: FeeRule_2
-                  transactionPropertyKey: Transaction/default/fee
-                  transactionType: '*'
-                  country: UK
-                  counterparty: '*'
-                  transactionCurrency: '*'
-                  settlementCurrency: '*'
-                  executionBroker: '*'
-                  custodian: '*'
-                  exchange: My Exchange
-                  fee:
-                    calculationMethod: BasisPoints
-                    multiplier: Value
-                    calculationAmount: 10
-                  minFee:
-                    calculationMethod: Flat
-                    multiplier: Value
-                    calculationAmount: 5
-                  maxFee:
-                    calculationMethod: Flat
-                    multiplier: Value
-                    calculationAmount: 25
-                  additionalKeys:
-                    office: London
-                  description: Basic fee rule with minimum/maximum to be created
-                  version:
-                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfFeeRule'
-          description: A filtered list of fee rules available.
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] ListFeeRules: List fee rules, with optional filtering.'
-      tags:
-      - FeesAndCommissions
-      x-fbn-apistatus: Experimental
-      x-accepts: application/json
-    post:
-      description: "To upsert a new rule, the code field must be left empty, a code\
-        \ will then be assigned and returned as part\r\nof the response. To update\
-        \ an existing rule, include the fee code. It is possible to both create and\
-        \ update\r\nfee rules in the same request.\r\n            \r\nThe upsert is\
-        \ transactional - either all create/update operations will succeed or none\
-        \ of them will."
-      operationId: UpsertFeeRules
-      parameters:
-      - description: "The effective datetime or cut label at which the rule will take\
-          \ effect. Defaults to the current LUSID\r\nsystem datetime if not specified.\
-          \ In the case of an update, the changes will take place from this effective\r\
-          \ntime until the next effective time that the rule as been upserted at.\
-          \ For example, consider a rule that\r\nalready exists, and has previously\
-          \ had an update applied so that the definition will change on the first\
-          \ day\r\nof the coming month. An upsert effective from the current day will\
-          \ only change the definition until the\r\nfirst day of the coming month.\
-          \ An additional upsert at the same time (first day of the month) is required\r\
-          \nif the newly-updated definition is to supersede the future definition."
-        explode: true
-        in: query
-        name: effectiveAt
-        required: false
-        schema:
-          description: "The effective datetime or cut label at which the rule will\
-            \ take effect. Defaults to the current LUSID\r\nsystem datetime if not\
-            \ specified. In the case of an update, the changes will take place from\
-            \ this effective\r\ntime until the next effective time that the rule as\
-            \ been upserted at. For example, consider a rule that\r\nalready exists,\
-            \ and has previously had an update applied so that the definition will\
-            \ change on the first day\r\nof the coming month. An upsert effective\
-            \ from the current day will only change the definition until the\r\nfirst\
-            \ day of the coming month. An additional upsert at the same time (first\
-            \ day of the month) is required\r\nif the newly-updated definition is\
-            \ to supersede the future definition."
-          format: dateorcutlabel
-          nullable: true
-          type: string
-        style: form
-      requestBody:
-        content:
-          application/json-patch+json:
-            example:
-              update:
-                code: FeeRule_1
-                transactionPropertyKey: Transaction/default/fee
-                transactionType: '*'
-                country: UK
-                counterparty: '*'
-                transactionCurrency: '*'
-                settlementCurrency: '*'
-                executionBroker: '*'
-                custodian: '*'
-                exchange: My Exchange
-                fee:
-                  calculationMethod: BasisPoints
-                  multiplier: Value
-                  calculationAmount: 10
-                additionalKeys:
-                  office: London
-                description: Basic fee rule to be updated.
-              create:
-                transactionPropertyKey: Transaction/default/fee
-                transactionType: '*'
-                country: UK
-                counterparty: '*'
-                transactionCurrency: '*'
-                settlementCurrency: '*'
-                executionBroker: '*'
-                custodian: '*'
-                exchange: My Exchange
-                fee:
-                  calculationMethod: BasisPoints
-                  multiplier: Value
-                  calculationAmount: 10
-                minFee:
-                  calculationMethod: Flat
-                  multiplier: Value
-                  calculationAmount: 5
-                maxFee:
-                  calculationMethod: Flat
-                  multiplier: Value
-                  calculationAmount: 25
-                additionalKeys:
-                  office: London
-                description: Basic fee rule with minimum/maximum to be created
-            schema:
-              additionalProperties:
-                $ref: '#/components/schemas/FeeRuleUpsertRequest'
-              description: "A dictionary of upsert request identifiers to rule upsert\
-                \ requests. The request\r\n             identifiers are valid for\
-                \ the request only and can be used to link the upserted fee rule to\
-                \ the code of a\r\n             created fee rule."
-              type: object
-          application/json:
-            example:
-              update:
-                code: FeeRule_1
-                transactionPropertyKey: Transaction/default/fee
-                transactionType: '*'
-                country: UK
-                counterparty: '*'
-                transactionCurrency: '*'
-                settlementCurrency: '*'
-                executionBroker: '*'
-                custodian: '*'
-                exchange: My Exchange
-                fee:
-                  calculationMethod: BasisPoints
-                  multiplier: Value
-                  calculationAmount: 10
-                additionalKeys:
-                  office: London
-                description: Basic fee rule to be updated.
-              create:
-                transactionPropertyKey: Transaction/default/fee
-                transactionType: '*'
-                country: UK
-                counterparty: '*'
-                transactionCurrency: '*'
-                settlementCurrency: '*'
-                executionBroker: '*'
-                custodian: '*'
-                exchange: My Exchange
-                fee:
-                  calculationMethod: BasisPoints
-                  multiplier: Value
-                  calculationAmount: 10
-                minFee:
-                  calculationMethod: Flat
-                  multiplier: Value
-                  calculationAmount: 5
-                maxFee:
-                  calculationMethod: Flat
-                  multiplier: Value
-                  calculationAmount: 25
-                additionalKeys:
-                  office: London
-                description: Basic fee rule with minimum/maximum to be created
-            schema:
-              additionalProperties:
-                $ref: '#/components/schemas/FeeRuleUpsertRequest'
-              description: "A dictionary of upsert request identifiers to rule upsert\
-                \ requests. The request\r\n             identifiers are valid for\
-                \ the request only and can be used to link the upserted fee rule to\
-                \ the code of a\r\n             created fee rule."
-              type: object
-          text/json:
-            example:
-              update:
-                code: FeeRule_1
-                transactionPropertyKey: Transaction/default/fee
-                transactionType: '*'
-                country: UK
-                counterparty: '*'
-                transactionCurrency: '*'
-                settlementCurrency: '*'
-                executionBroker: '*'
-                custodian: '*'
-                exchange: My Exchange
-                fee:
-                  calculationMethod: BasisPoints
-                  multiplier: Value
-                  calculationAmount: 10
-                additionalKeys:
-                  office: London
-                description: Basic fee rule to be updated.
-              create:
-                transactionPropertyKey: Transaction/default/fee
-                transactionType: '*'
-                country: UK
-                counterparty: '*'
-                transactionCurrency: '*'
-                settlementCurrency: '*'
-                executionBroker: '*'
-                custodian: '*'
-                exchange: My Exchange
-                fee:
-                  calculationMethod: BasisPoints
-                  multiplier: Value
-                  calculationAmount: 10
-                minFee:
-                  calculationMethod: Flat
-                  multiplier: Value
-                  calculationAmount: 5
-                maxFee:
-                  calculationMethod: Flat
-                  multiplier: Value
-                  calculationAmount: 25
-                additionalKeys:
-                  office: London
-                description: Basic fee rule with minimum/maximum to be created
-            schema:
-              additionalProperties:
-                $ref: '#/components/schemas/FeeRuleUpsertRequest'
-              description: "A dictionary of upsert request identifiers to rule upsert\
-                \ requests. The request\r\n             identifiers are valid for\
-                \ the request only and can be used to link the upserted fee rule to\
-                \ the code of a\r\n             created fee rule."
-              type: object
-          application/*+json:
-            example:
-              update:
-                code: FeeRule_1
-                transactionPropertyKey: Transaction/default/fee
-                transactionType: '*'
-                country: UK
-                counterparty: '*'
-                transactionCurrency: '*'
-                settlementCurrency: '*'
-                executionBroker: '*'
-                custodian: '*'
-                exchange: My Exchange
-                fee:
-                  calculationMethod: BasisPoints
-                  multiplier: Value
-                  calculationAmount: 10
-                additionalKeys:
-                  office: London
-                description: Basic fee rule to be updated.
-              create:
-                transactionPropertyKey: Transaction/default/fee
-                transactionType: '*'
-                country: UK
-                counterparty: '*'
-                transactionCurrency: '*'
-                settlementCurrency: '*'
-                executionBroker: '*'
-                custodian: '*'
-                exchange: My Exchange
-                fee:
-                  calculationMethod: BasisPoints
-                  multiplier: Value
-                  calculationAmount: 10
-                minFee:
-                  calculationMethod: Flat
-                  multiplier: Value
-                  calculationAmount: 5
-                maxFee:
-                  calculationMethod: Flat
-                  multiplier: Value
-                  calculationAmount: 25
-                additionalKeys:
-                  office: London
-                description: Basic fee rule with minimum/maximum to be created
-            schema:
-              additionalProperties:
-                $ref: '#/components/schemas/FeeRuleUpsertRequest'
-              description: "A dictionary of upsert request identifiers to rule upsert\
-                \ requests. The request\r\n             identifiers are valid for\
-                \ the request only and can be used to link the upserted fee rule to\
-                \ the code of a\r\n             created fee rule."
-              type: object
-        description: "A dictionary of upsert request identifiers to rule upsert requests.\
-          \ The request\r\n             identifiers are valid for the request only\
-          \ and can be used to link the upserted fee rule to the code of a\r\n   \
-          \          created fee rule."
-        required: true
-      responses:
-        "200":
-          content:
-            text/plain:
-              example:
-                values:
-                  update:
-                    code: FeeRule_1
-                    transactionPropertyKey: Transaction/default/fee
-                    transactionType: '*'
-                    country: UK
-                    counterparty: '*'
-                    transactionCurrency: '*'
-                    settlementCurrency: '*'
-                    executionBroker: '*'
-                    custodian: '*'
-                    exchange: My Exchange
-                    fee:
-                      calculationMethod: BasisPoints
-                      multiplier: Value
-                      calculationAmount: 10
-                    additionalKeys:
-                      office: London
-                    description: Basic fee rule to be updated.
-                    version:
-                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                  create:
-                    code: FeeRule_2
-                    transactionPropertyKey: Transaction/default/fee
-                    transactionType: '*'
-                    country: UK
-                    counterparty: '*'
-                    transactionCurrency: '*'
-                    settlementCurrency: '*'
-                    executionBroker: '*'
-                    custodian: '*'
-                    exchange: My Exchange
-                    fee:
-                      calculationMethod: BasisPoints
-                      multiplier: Value
-                      calculationAmount: 10
-                    minFee:
-                      calculationMethod: Flat
-                      multiplier: Value
-                      calculationAmount: 5
-                    maxFee:
-                      calculationMethod: Flat
-                      multiplier: Value
-                      calculationAmount: 25
-                    additionalKeys:
-                      office: London
-                    description: Basic fee rule with minimum/maximum to be created
-                    version:
-                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
-              schema:
-                $ref: '#/components/schemas/FeeRuleUpsertResponse'
-            application/json:
-              example:
-                values:
-                  update:
-                    code: FeeRule_1
-                    transactionPropertyKey: Transaction/default/fee
-                    transactionType: '*'
-                    country: UK
-                    counterparty: '*'
-                    transactionCurrency: '*'
-                    settlementCurrency: '*'
-                    executionBroker: '*'
-                    custodian: '*'
-                    exchange: My Exchange
-                    fee:
-                      calculationMethod: BasisPoints
-                      multiplier: Value
-                      calculationAmount: 10
-                    additionalKeys:
-                      office: London
-                    description: Basic fee rule to be updated.
-                    version:
-                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                  create:
-                    code: FeeRule_2
-                    transactionPropertyKey: Transaction/default/fee
-                    transactionType: '*'
-                    country: UK
-                    counterparty: '*'
-                    transactionCurrency: '*'
-                    settlementCurrency: '*'
-                    executionBroker: '*'
-                    custodian: '*'
-                    exchange: My Exchange
-                    fee:
-                      calculationMethod: BasisPoints
-                      multiplier: Value
-                      calculationAmount: 10
-                    minFee:
-                      calculationMethod: Flat
-                      multiplier: Value
-                      calculationAmount: 5
-                    maxFee:
-                      calculationMethod: Flat
-                      multiplier: Value
-                      calculationAmount: 25
-                    additionalKeys:
-                      office: London
-                    description: Basic fee rule with minimum/maximum to be created
-                    version:
-                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
-              schema:
-                $ref: '#/components/schemas/FeeRuleUpsertResponse'
-            text/json:
-              example:
-                values:
-                  update:
-                    code: FeeRule_1
-                    transactionPropertyKey: Transaction/default/fee
-                    transactionType: '*'
-                    country: UK
-                    counterparty: '*'
-                    transactionCurrency: '*'
-                    settlementCurrency: '*'
-                    executionBroker: '*'
-                    custodian: '*'
-                    exchange: My Exchange
-                    fee:
-                      calculationMethod: BasisPoints
-                      multiplier: Value
-                      calculationAmount: 10
-                    additionalKeys:
-                      office: London
-                    description: Basic fee rule to be updated.
-                    version:
-                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
-                  create:
-                    code: FeeRule_2
-                    transactionPropertyKey: Transaction/default/fee
-                    transactionType: '*'
-                    country: UK
-                    counterparty: '*'
-                    transactionCurrency: '*'
-                    settlementCurrency: '*'
-                    executionBroker: '*'
-                    custodian: '*'
-                    exchange: My Exchange
-                    fee:
-                      calculationMethod: BasisPoints
-                      multiplier: Value
-                      calculationAmount: 10
-                    minFee:
-                      calculationMethod: Flat
-                      multiplier: Value
-                      calculationAmount: 5
-                    maxFee:
-                      calculationMethod: Flat
-                      multiplier: Value
-                      calculationAmount: 25
-                    additionalKeys:
-                      office: London
-                    description: Basic fee rule with minimum/maximum to be created
-                    version:
-                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
-              schema:
-                $ref: '#/components/schemas/FeeRuleUpsertResponse'
-          description: Upsert fee rules. New fee rules must have an empty code field.
-            Where a code is given, this rule must already exist and will be updated.
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertFeeRules: Upsert fee rules.'
-      tags:
-      - FeesAndCommissions
-      x-fbn-apistatus: Experimental
-      x-contentType: application/json-patch+json
-      x-accepts: application/json
-  /api/feesandcommissions/rules-dev/{code}:
-    get:
-      description: Retrieves the fee rule definition at the given effective and as
-        at times.
-      operationId: GetFeeRule
-      parameters:
-      - description: The fee rule code.
-        explode: false
-        in: path
-        name: code
-        required: true
-        schema:
-          description: The fee rule code.
-          maxLength: 64
-          minLength: 1
-          pattern: ^[a-zA-Z0-9\-_]+$
-          type: string
-        style: simple
-      - description: "The effective datetime or cut label at which to retrieve the\
-          \ rule definition. Defaults to the current LUSID\r\nsystem datetime if not\
-          \ specified."
-        explode: true
-        in: query
-        name: effectiveAt
-        required: false
-        schema:
-          description: "The effective datetime or cut label at which to retrieve the\
-            \ rule definition. Defaults to the current LUSID\r\nsystem datetime if\
-            \ not specified."
-          format: dateorcutlabel
-          nullable: true
-          type: string
-        style: form
-      - description: "The asAt datetime at which to retrieve the rule definition.\
-          \ Defaults to returning the latest version if not\r\nspecified."
-        explode: true
-        in: query
-        name: asAt
-        required: false
-        schema:
-          description: "The asAt datetime at which to retrieve the rule definition.\
-            \ Defaults to returning the latest version if not\r\nspecified."
-          format: date-time
-          nullable: true
-          type: string
-        style: form
-        x-nullable: true
-      responses:
-        "200":
-          content:
-            text/plain:
-              example:
-                code: FeeRule_2
-                transactionPropertyKey: Transaction/default/fee
-                transactionType: '*'
-                country: UK
-                counterparty: '*'
-                transactionCurrency: '*'
-                settlementCurrency: '*'
-                executionBroker: '*'
-                custodian: '*'
-                exchange: My Exchange
-                fee:
-                  calculationMethod: BasisPoints
-                  multiplier: Value
-                  calculationAmount: 10
-                minFee:
-                  calculationMethod: Flat
-                  multiplier: Value
-                  calculationAmount: 5
-                maxFee:
-                  calculationMethod: Flat
-                  multiplier: Value
-                  calculationAmount: 25
-                additionalKeys:
-                  office: London
-                description: Basic fee rule with minimum/maximum to be created
-                version:
-                  effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                  asAtDate: 2020-01-01T00:00:00.0000000+00:00
-              schema:
-                $ref: '#/components/schemas/FeeRule'
-            application/json:
-              example:
-                code: FeeRule_2
-                transactionPropertyKey: Transaction/default/fee
-                transactionType: '*'
-                country: UK
-                counterparty: '*'
-                transactionCurrency: '*'
-                settlementCurrency: '*'
-                executionBroker: '*'
-                custodian: '*'
-                exchange: My Exchange
-                fee:
-                  calculationMethod: BasisPoints
-                  multiplier: Value
-                  calculationAmount: 10
-                minFee:
-                  calculationMethod: Flat
-                  multiplier: Value
-                  calculationAmount: 5
-                maxFee:
-                  calculationMethod: Flat
-                  multiplier: Value
-                  calculationAmount: 25
-                additionalKeys:
-                  office: London
-                description: Basic fee rule with minimum/maximum to be created
-                version:
-                  effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                  asAtDate: 2020-01-01T00:00:00.0000000+00:00
-              schema:
-                $ref: '#/components/schemas/FeeRule'
-            text/json:
-              example:
-                code: FeeRule_2
-                transactionPropertyKey: Transaction/default/fee
-                transactionType: '*'
-                country: UK
-                counterparty: '*'
-                transactionCurrency: '*'
-                settlementCurrency: '*'
-                executionBroker: '*'
-                custodian: '*'
-                exchange: My Exchange
-                fee:
-                  calculationMethod: BasisPoints
-                  multiplier: Value
-                  calculationAmount: 10
-                minFee:
-                  calculationMethod: Flat
-                  multiplier: Value
-                  calculationAmount: 5
-                maxFee:
-                  calculationMethod: Flat
-                  multiplier: Value
-                  calculationAmount: 25
-                additionalKeys:
-                  office: London
-                description: Basic fee rule with minimum/maximum to be created
-                version:
-                  effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
-                  asAtDate: 2020-01-01T00:00:00.0000000+00:00
-              schema:
-                $ref: '#/components/schemas/FeeRule'
-          description: Details of one fee rule.
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] GetFeeRule: Retrieve the definition of single fee rule.'
       tags:
       - FeesAndCommissions
       x-fbn-apistatus: Experimental
@@ -52050,6 +50814,1247 @@ paths:
       - Transaction Portfolios
       x-fbn-apistatus: Beta
       x-accepts: application/json
+  /api/transactions/fees/$GetApplicableFees:
+    post:
+      description: Additionally, matching can be based on the instrument's properties,
+        its portfolio properties, and any additional property keys present in the
+        data file.
+      operationId: GetApplicableTransactionFees
+      parameters:
+      - description: "The effective datetime or cut label at which to match rule definitions.\
+          \ Defaults to the current LUSID\r\nsystem datetime if not specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which to match rule\
+            \ definitions. Defaults to the current LUSID\r\nsystem datetime if not\
+            \ specified."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: "The asAt datetime at which to match rule definitions. Defaults\
+          \ to returning the latest version if not\r\nspecified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to match rule definitions. Defaults\
+            \ to returning the latest version if not\r\nspecified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: Optional. The unique identifier type to use, eg 'Figi' or 'LusidInstrumentId'.
+        explode: true
+        in: query
+        name: instrumentIdentifierType
+        required: false
+        schema:
+          description: Optional. The unique identifier type to use, eg 'Figi' or 'LusidInstrumentId'.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          type: string
+        style: form
+      - description: Optional. The Instrument Identifier to get properties for.
+        explode: true
+        in: query
+        name: instrumentIdentifier
+        required: false
+        schema:
+          description: Optional. The Instrument Identifier to get properties for.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          type: string
+        style: form
+      - description: Optional. The scope of the portfolio to fetch properties from.
+        explode: true
+        in: query
+        name: portfolioScope
+        required: false
+        schema:
+          description: Optional. The scope of the portfolio to fetch properties from.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: Optional. The code of the portfolio to fetch properties from.
+        explode: true
+        in: query
+        name: portfolioCode
+        required: false
+        schema:
+          description: Optional. The code of the portfolio to fetch properties from.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              settlementCurrency: GBP
+              country: UK
+              office: London
+            schema:
+              additionalProperties:
+                type: string
+              description: "Any other property keys or fields, including the top-level\
+                \ fields of the\r\n            fee rule (e.g. \"ExecutionBroker\"\
+                \ and \"SettlementCurrency\" ) and those defined in AdditionalKeys,\
+                \ along with\r\n            their corresponding values that should\
+                \ be matched for fees. Eg. \"Instrument/default/Name=exampleValue\"\
+                \ or\r\n            \"AdditionalKey2=Value2\"."
+              nullable: true
+              type: object
+          application/json:
+            example:
+              settlementCurrency: GBP
+              country: UK
+              office: London
+            schema:
+              additionalProperties:
+                type: string
+              description: "Any other property keys or fields, including the top-level\
+                \ fields of the\r\n            fee rule (e.g. \"ExecutionBroker\"\
+                \ and \"SettlementCurrency\" ) and those defined in AdditionalKeys,\
+                \ along with\r\n            their corresponding values that should\
+                \ be matched for fees. Eg. \"Instrument/default/Name=exampleValue\"\
+                \ or\r\n            \"AdditionalKey2=Value2\"."
+              nullable: true
+              type: object
+          text/json:
+            example:
+              settlementCurrency: GBP
+              country: UK
+              office: London
+            schema:
+              additionalProperties:
+                type: string
+              description: "Any other property keys or fields, including the top-level\
+                \ fields of the\r\n            fee rule (e.g. \"ExecutionBroker\"\
+                \ and \"SettlementCurrency\" ) and those defined in AdditionalKeys,\
+                \ along with\r\n            their corresponding values that should\
+                \ be matched for fees. Eg. \"Instrument/default/Name=exampleValue\"\
+                \ or\r\n            \"AdditionalKey2=Value2\"."
+              nullable: true
+              type: object
+          application/*+json:
+            example:
+              settlementCurrency: GBP
+              country: UK
+              office: London
+            schema:
+              additionalProperties:
+                type: string
+              description: "Any other property keys or fields, including the top-level\
+                \ fields of the\r\n            fee rule (e.g. \"ExecutionBroker\"\
+                \ and \"SettlementCurrency\" ) and those defined in AdditionalKeys,\
+                \ along with\r\n            their corresponding values that should\
+                \ be matched for fees. Eg. \"Instrument/default/Name=exampleValue\"\
+                \ or\r\n            \"AdditionalKey2=Value2\"."
+              nullable: true
+              type: object
+        description: "Any other property keys or fields, including the top-level fields\
+          \ of the\r\n            fee rule (e.g. \"ExecutionBroker\" and \"SettlementCurrency\"\
+          \ ) and those defined in AdditionalKeys, along with\r\n            their\
+          \ corresponding values that should be matched for fees. Eg. \"Instrument/default/Name=exampleValue\"\
+          \ or\r\n            \"AdditionalKey2=Value2\"."
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                - code: FeeRule_1
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule to be updated.
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                - code: FeeRule_5
+                  transactionPropertyKey: Transaction/default/commission
+                  transactionType: GBP
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  minFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 5
+                  maxFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 25
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule with minimum/maximum to be created
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfFeeRule'
+            application/json:
+              example:
+                values:
+                - code: FeeRule_1
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule to be updated.
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                - code: FeeRule_5
+                  transactionPropertyKey: Transaction/default/commission
+                  transactionType: GBP
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  minFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 5
+                  maxFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 25
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule with minimum/maximum to be created
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfFeeRule'
+            text/json:
+              example:
+                values:
+                - code: FeeRule_1
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule to be updated.
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                - code: FeeRule_5
+                  transactionPropertyKey: Transaction/default/commission
+                  transactionType: GBP
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  minFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 5
+                  maxFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 25
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule with minimum/maximum to be created
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfFeeRule'
+          description: The list of applicable fee rules.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] GetApplicableTransactionFees: Get the Fees and Commissions
+        that may be applicable to a transaction.'
+      tags:
+      - Transaction Fees
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/transactions/fees/rules:
+    get:
+      description: "For more information about filtering results,\r\nsee https://support.lusid.com/knowledgebase/article/KA-01914."
+      operationId: ListTransactionFeeRules
+      parameters:
+      - description: "The effective datetime or cut label at which to retrieve the\
+          \ rule definitions. Defaults to the current LUSID\r\nsystem datetime if\
+          \ not specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which to retrieve the\
+            \ rule definitions. Defaults to the current LUSID\r\nsystem datetime if\
+            \ not specified."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: "The asAt datetime at which to retrieve the rule definitions.\
+          \ Defaults to returning the latest version if not\r\nspecified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to retrieve the rule definitions.\
+            \ Defaults to returning the latest version if not\r\nspecified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: When paginating, limit the results to this number. Defaults to
+          100 if not specified.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: When paginating, limit the results to this number. Defaults
+            to 100 if not specified.
+          format: int32
+          maximum: 5000
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: Expression to filter the results.
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          description: Expression to filter the results.
+          maxLength: 16384
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        style: form
+      - description: "The pagination token to use to continue listing entities; this\
+          \ value is returned from the previous call. If\r\na pagination token is\
+          \ provided, the filter, effectiveAt and asAt fields must not have changed\
+          \ since the\r\noriginal request."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          description: "The pagination token to use to continue listing entities;\
+            \ this value is returned from the previous call. If\r\na pagination token\
+            \ is provided, the filter, effectiveAt and asAt fields must not have changed\
+            \ since the\r\noriginal request."
+          maxLength: 500
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                - code: FeeRule_1
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule to be updated.
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                - code: FeeRule_2
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  minFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 5
+                  maxFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 25
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule with minimum/maximum to be created
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfFeeRule'
+            application/json:
+              example:
+                values:
+                - code: FeeRule_1
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule to be updated.
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                - code: FeeRule_2
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  minFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 5
+                  maxFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 25
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule with minimum/maximum to be created
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfFeeRule'
+            text/json:
+              example:
+                values:
+                - code: FeeRule_1
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule to be updated.
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                - code: FeeRule_2
+                  transactionPropertyKey: Transaction/default/fee
+                  transactionType: '*'
+                  country: UK
+                  counterparty: '*'
+                  transactionCurrency: '*'
+                  settlementCurrency: '*'
+                  executionBroker: '*'
+                  custodian: '*'
+                  exchange: My Exchange
+                  fee:
+                    calculationMethod: BasisPoints
+                    multiplier: Value
+                    calculationAmount: 10
+                  minFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 5
+                  maxFee:
+                    calculationMethod: Flat
+                    multiplier: Value
+                    calculationAmount: 25
+                  additionalKeys:
+                    office: London
+                  description: Basic fee rule with minimum/maximum to be created
+                  version:
+                    effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                    asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfFeeRule'
+          description: A filtered list of fee rules available.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListTransactionFeeRules: List fee rules, with optional
+        filtering.'
+      tags:
+      - Transaction Fees
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+    post:
+      description: "To upsert a new rule, the code field must be left empty, a code\
+        \ will then be assigned and returned as part\r\nof the response. To update\
+        \ an existing rule, include the fee code. It is possible to both create and\
+        \ update\r\nfee rules in the same request.\r\n            \r\nThe upsert is\
+        \ transactional - either all create/update operations will succeed or none\
+        \ of them will."
+      operationId: UpsertTransactionFeeRules
+      parameters:
+      - description: "The effective datetime or cut label at which the rule will take\
+          \ effect. Defaults to the current LUSID\r\nsystem datetime if not specified.\
+          \ In the case of an update, the changes will take place from this effective\r\
+          \ntime until the next effective time that the rule as been upserted at.\
+          \ For example, consider a rule that\r\nalready exists, and has previously\
+          \ had an update applied so that the definition will change on the first\
+          \ day\r\nof the coming month. An upsert effective from the current day will\
+          \ only change the definition until the\r\nfirst day of the coming month.\
+          \ An additional upsert at the same time (first day of the month) is required\r\
+          \nif the newly-updated definition is to supersede the future definition."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which the rule will\
+            \ take effect. Defaults to the current LUSID\r\nsystem datetime if not\
+            \ specified. In the case of an update, the changes will take place from\
+            \ this effective\r\ntime until the next effective time that the rule as\
+            \ been upserted at. For example, consider a rule that\r\nalready exists,\
+            \ and has previously had an update applied so that the definition will\
+            \ change on the first day\r\nof the coming month. An upsert effective\
+            \ from the current day will only change the definition until the\r\nfirst\
+            \ day of the coming month. An additional upsert at the same time (first\
+            \ day of the month) is required\r\nif the newly-updated definition is\
+            \ to supersede the future definition."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              update:
+                code: FeeRule_1
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                additionalKeys:
+                  office: London
+                description: Basic fee rule to be updated.
+              create:
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                minFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 5
+                maxFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 25
+                additionalKeys:
+                  office: London
+                description: Basic fee rule with minimum/maximum to be created
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/FeeRuleUpsertRequest'
+              description: "A dictionary of upsert request identifiers to rule upsert\
+                \ requests. The request\r\n             identifiers are valid for\
+                \ the request only and can be used to link the upserted fee rule to\
+                \ the code of a\r\n             created fee rule."
+              type: object
+          application/json:
+            example:
+              update:
+                code: FeeRule_1
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                additionalKeys:
+                  office: London
+                description: Basic fee rule to be updated.
+              create:
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                minFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 5
+                maxFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 25
+                additionalKeys:
+                  office: London
+                description: Basic fee rule with minimum/maximum to be created
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/FeeRuleUpsertRequest'
+              description: "A dictionary of upsert request identifiers to rule upsert\
+                \ requests. The request\r\n             identifiers are valid for\
+                \ the request only and can be used to link the upserted fee rule to\
+                \ the code of a\r\n             created fee rule."
+              type: object
+          text/json:
+            example:
+              update:
+                code: FeeRule_1
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                additionalKeys:
+                  office: London
+                description: Basic fee rule to be updated.
+              create:
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                minFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 5
+                maxFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 25
+                additionalKeys:
+                  office: London
+                description: Basic fee rule with minimum/maximum to be created
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/FeeRuleUpsertRequest'
+              description: "A dictionary of upsert request identifiers to rule upsert\
+                \ requests. The request\r\n             identifiers are valid for\
+                \ the request only and can be used to link the upserted fee rule to\
+                \ the code of a\r\n             created fee rule."
+              type: object
+          application/*+json:
+            example:
+              update:
+                code: FeeRule_1
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                additionalKeys:
+                  office: London
+                description: Basic fee rule to be updated.
+              create:
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                minFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 5
+                maxFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 25
+                additionalKeys:
+                  office: London
+                description: Basic fee rule with minimum/maximum to be created
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/FeeRuleUpsertRequest'
+              description: "A dictionary of upsert request identifiers to rule upsert\
+                \ requests. The request\r\n             identifiers are valid for\
+                \ the request only and can be used to link the upserted fee rule to\
+                \ the code of a\r\n             created fee rule."
+              type: object
+        description: "A dictionary of upsert request identifiers to rule upsert requests.\
+          \ The request\r\n             identifiers are valid for the request only\
+          \ and can be used to link the upserted fee rule to the code of a\r\n   \
+          \          created fee rule."
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                  update:
+                    code: FeeRule_1
+                    transactionPropertyKey: Transaction/default/fee
+                    transactionType: '*'
+                    country: UK
+                    counterparty: '*'
+                    transactionCurrency: '*'
+                    settlementCurrency: '*'
+                    executionBroker: '*'
+                    custodian: '*'
+                    exchange: My Exchange
+                    fee:
+                      calculationMethod: BasisPoints
+                      multiplier: Value
+                      calculationAmount: 10
+                    additionalKeys:
+                      office: London
+                    description: Basic fee rule to be updated.
+                    version:
+                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                  create:
+                    code: FeeRule_2
+                    transactionPropertyKey: Transaction/default/fee
+                    transactionType: '*'
+                    country: UK
+                    counterparty: '*'
+                    transactionCurrency: '*'
+                    settlementCurrency: '*'
+                    executionBroker: '*'
+                    custodian: '*'
+                    exchange: My Exchange
+                    fee:
+                      calculationMethod: BasisPoints
+                      multiplier: Value
+                      calculationAmount: 10
+                    minFee:
+                      calculationMethod: Flat
+                      multiplier: Value
+                      calculationAmount: 5
+                    maxFee:
+                      calculationMethod: Flat
+                      multiplier: Value
+                      calculationAmount: 25
+                    additionalKeys:
+                      office: London
+                    description: Basic fee rule with minimum/maximum to be created
+                    version:
+                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/FeeRuleUpsertResponse'
+            application/json:
+              example:
+                values:
+                  update:
+                    code: FeeRule_1
+                    transactionPropertyKey: Transaction/default/fee
+                    transactionType: '*'
+                    country: UK
+                    counterparty: '*'
+                    transactionCurrency: '*'
+                    settlementCurrency: '*'
+                    executionBroker: '*'
+                    custodian: '*'
+                    exchange: My Exchange
+                    fee:
+                      calculationMethod: BasisPoints
+                      multiplier: Value
+                      calculationAmount: 10
+                    additionalKeys:
+                      office: London
+                    description: Basic fee rule to be updated.
+                    version:
+                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                  create:
+                    code: FeeRule_2
+                    transactionPropertyKey: Transaction/default/fee
+                    transactionType: '*'
+                    country: UK
+                    counterparty: '*'
+                    transactionCurrency: '*'
+                    settlementCurrency: '*'
+                    executionBroker: '*'
+                    custodian: '*'
+                    exchange: My Exchange
+                    fee:
+                      calculationMethod: BasisPoints
+                      multiplier: Value
+                      calculationAmount: 10
+                    minFee:
+                      calculationMethod: Flat
+                      multiplier: Value
+                      calculationAmount: 5
+                    maxFee:
+                      calculationMethod: Flat
+                      multiplier: Value
+                      calculationAmount: 25
+                    additionalKeys:
+                      office: London
+                    description: Basic fee rule with minimum/maximum to be created
+                    version:
+                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/FeeRuleUpsertResponse'
+            text/json:
+              example:
+                values:
+                  update:
+                    code: FeeRule_1
+                    transactionPropertyKey: Transaction/default/fee
+                    transactionType: '*'
+                    country: UK
+                    counterparty: '*'
+                    transactionCurrency: '*'
+                    settlementCurrency: '*'
+                    executionBroker: '*'
+                    custodian: '*'
+                    exchange: My Exchange
+                    fee:
+                      calculationMethod: BasisPoints
+                      multiplier: Value
+                      calculationAmount: 10
+                    additionalKeys:
+                      office: London
+                    description: Basic fee rule to be updated.
+                    version:
+                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
+                  create:
+                    code: FeeRule_2
+                    transactionPropertyKey: Transaction/default/fee
+                    transactionType: '*'
+                    country: UK
+                    counterparty: '*'
+                    transactionCurrency: '*'
+                    settlementCurrency: '*'
+                    executionBroker: '*'
+                    custodian: '*'
+                    exchange: My Exchange
+                    fee:
+                      calculationMethod: BasisPoints
+                      multiplier: Value
+                      calculationAmount: 10
+                    minFee:
+                      calculationMethod: Flat
+                      multiplier: Value
+                      calculationAmount: 5
+                    maxFee:
+                      calculationMethod: Flat
+                      multiplier: Value
+                      calculationAmount: 25
+                    additionalKeys:
+                      office: London
+                    description: Basic fee rule with minimum/maximum to be created
+                    version:
+                      effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                      asAtDate: 2020-01-01T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/FeeRuleUpsertResponse'
+          description: Upsert fee rules. New fee rules must have an empty code field.
+            Where a code is given, this rule must already exist and will be updated.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] UpsertTransactionFeeRules: Upsert fee rules.'
+      tags:
+      - Transaction Fees
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/transactions/fees/rules/{code}:
+    get:
+      description: Retrieves the fee rule definition at the given effective and as
+        at times.
+      operationId: GetTransactionFeeRule
+      parameters:
+      - description: The fee rule code.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The fee rule code.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The effective datetime or cut label at which to retrieve the\
+          \ rule definition. Defaults to the current LUSID\r\nsystem datetime if not\
+          \ specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which to retrieve the\
+            \ rule definition. Defaults to the current LUSID\r\nsystem datetime if\
+            \ not specified."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: "The asAt datetime at which to retrieve the rule definition.\
+          \ Defaults to returning the latest version if not\r\nspecified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to retrieve the rule definition.\
+            \ Defaults to returning the latest version if not\r\nspecified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                code: FeeRule_2
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                minFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 5
+                maxFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 25
+                additionalKeys:
+                  office: London
+                description: Basic fee rule with minimum/maximum to be created
+                version:
+                  effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                  asAtDate: 2020-01-01T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/FeeRule'
+            application/json:
+              example:
+                code: FeeRule_2
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                minFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 5
+                maxFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 25
+                additionalKeys:
+                  office: London
+                description: Basic fee rule with minimum/maximum to be created
+                version:
+                  effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                  asAtDate: 2020-01-01T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/FeeRule'
+            text/json:
+              example:
+                code: FeeRule_2
+                transactionPropertyKey: Transaction/default/fee
+                transactionType: '*'
+                country: UK
+                counterparty: '*'
+                transactionCurrency: '*'
+                settlementCurrency: '*'
+                executionBroker: '*'
+                custodian: '*'
+                exchange: My Exchange
+                fee:
+                  calculationMethod: BasisPoints
+                  multiplier: Value
+                  calculationAmount: 10
+                minFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 5
+                maxFee:
+                  calculationMethod: Flat
+                  multiplier: Value
+                  calculationAmount: 25
+                additionalKeys:
+                  office: London
+                description: Basic fee rule with minimum/maximum to be created
+                version:
+                  effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
+                  asAtDate: 2020-01-01T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/FeeRule'
+          description: Details of one fee rule.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] GetTransactionFeeRule: Retrieve the definition of single
+        fee rule.'
+      tags:
+      - Transaction Fees
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
   /api/translation/instrumentdefinitions:
     post:
       description: "Translates one or more instruments into the given target dialect.\r\
@@ -56096,7 +56101,7 @@ components:
       properties:
         compoundingMethod:
           description: "If the interest rate is simple or compounded.\r\nSupported\
-            \ string (enumeration) values are: [Average, Compounded, None]."
+            \ string (enumeration) values are: [Average, Compounded]."
           type: string
         resetFrequency:
           description: The interest payment frequency.
@@ -56104,8 +56109,8 @@ components:
         spreadCompoundingMethod:
           description: "Defines how the computed leg spread is applied to compounded\
             \ rate.\r\nIt applies only when CompoundingMethod = ‘Compounded‘.\r\n\
-            Supported string (enumeration) values are: [IsdaCompounding, NoCompounding,\
-            \ IsdaFlatCompounding]."
+            Supported string (enumeration) values are: [Straight, IsdaCompounding,\
+            \ NoCompounding, SpreadExclusive, IsdaFlatCompounding, Flat, None]."
           type: string
       required:
       - compoundingMethod
@@ -86075,7 +86080,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
@@ -86125,6 +86130,7 @@ x-tagGroups:
   - Sequences
   - Structured Result Data
   - System Configuration
+  - Transaction Fees
   - Transaction Portfolios
   - Translation
 
