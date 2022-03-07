@@ -1,20 +1,20 @@
 # CustomEntityDefinitionsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:32151*
+All URIs are relative to *http://local-unit-test-server.lusid.com:32267*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCustomEntityDefinition**](CustomEntityDefinitionsApi.md#createCustomEntityDefinition) | **POST** /api/customentities/entitytypes | [EXPERIMENTAL] CreateCustomEntityDefinition: Create a new CustomEntityDefinition
-[**getDefinition**](CustomEntityDefinitionsApi.md#getDefinition) | **GET** /api/customentities/entitytypes/{entityType} | [EXPERIMENTAL] GetDefinition: Get CustomEntityDefinition
+[**createCustomEntityDefinition**](CustomEntityDefinitionsApi.md#createCustomEntityDefinition) | **POST** /api/customentities/entitytypes | [EXPERIMENTAL] CreateCustomEntityDefinition: Define a new custom entityType.
+[**getDefinition**](CustomEntityDefinitionsApi.md#getDefinition) | **GET** /api/customentities/entitytypes/{entityType} | [EXPERIMENTAL] GetDefinition: Get a custom entityType definition.
 
 
 <a name="createCustomEntityDefinition"></a>
 # **createCustomEntityDefinition**
 > CustomEntityDefinition createCustomEntityDefinition(customEntityDefinitionRequest)
 
-[EXPERIMENTAL] CreateCustomEntityDefinition: Create a new CustomEntityDefinition
+[EXPERIMENTAL] CreateCustomEntityDefinition: Define a new custom entityType.
 
-Create a custom entity definition that does not already exist. Will return a Bad Request if the CustomEntityDefinition already exists
+The API will return a Bad Request if the custom entityType already exists.
 
 ### Example
 ```java
@@ -29,14 +29,14 @@ import com.finbourne.lusid.api.CustomEntityDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32151");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32267");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CustomEntityDefinitionsApi apiInstance = new CustomEntityDefinitionsApi(defaultClient);
-    CustomEntityDefinitionRequest customEntityDefinitionRequest = new CustomEntityDefinitionRequest(); // CustomEntityDefinitionRequest | The CustomEntityDefinitionRequest
+    CustomEntityDefinitionRequest customEntityDefinitionRequest = new CustomEntityDefinitionRequest(); // CustomEntityDefinitionRequest | The payload containing the description of the custom entityType.
     try {
       CustomEntityDefinition result = apiInstance.createCustomEntityDefinition(customEntityDefinitionRequest);
       System.out.println(result);
@@ -55,7 +55,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customEntityDefinitionRequest** | [**CustomEntityDefinitionRequest**](CustomEntityDefinitionRequest.md)| The CustomEntityDefinitionRequest |
+ **customEntityDefinitionRequest** | [**CustomEntityDefinitionRequest**](CustomEntityDefinitionRequest.md)| The payload containing the description of the custom entityType. |
 
 ### Return type
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The created custom entity definition |  -  |
+**200** | The created custom entityType. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 # **getDefinition**
 > CustomEntityDefinition getDefinition(entityType, asAt)
 
-[EXPERIMENTAL] GetDefinition: Get CustomEntityDefinition
+[EXPERIMENTAL] GetDefinition: Get a custom entityType definition.
 
 Retrieve a CustomEntityDefinition by a specific EntityType at a point in AsAt time
 
@@ -98,15 +98,15 @@ import com.finbourne.lusid.api.CustomEntityDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32151");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32267");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CustomEntityDefinitionsApi apiInstance = new CustomEntityDefinitionsApi(defaultClient);
-    String entityType = "entityType_example"; // String | The type of entity for which to retrieve the CustomEntityDefinition.
-    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The AsAt at which to retrieve the CustomEntityDefinition.
+    String entityType = "entityType_example"; // String | The identifier for the custom entity type, derived from the \"entityTypeName\" provided on creation.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The AsAt datetime at which to retrieve the definition.
     try {
       CustomEntityDefinition result = apiInstance.getDefinition(entityType, asAt);
       System.out.println(result);
@@ -125,8 +125,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **entityType** | **String**| The type of entity for which to retrieve the CustomEntityDefinition. |
- **asAt** | **OffsetDateTime**| The AsAt at which to retrieve the CustomEntityDefinition. | [optional]
+ **entityType** | **String**| The identifier for the custom entity type, derived from the \&quot;entityTypeName\&quot; provided on creation. |
+ **asAt** | **OffsetDateTime**| The AsAt datetime at which to retrieve the definition. | [optional]
 
 ### Return type
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The requested custom entity definition |  -  |
+**200** | The requested custom entity definition. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 

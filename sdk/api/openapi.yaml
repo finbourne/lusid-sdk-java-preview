@@ -280,12 +280,12 @@ info:
     | <a name="769">769</a>|Cannot update the base currency of a portfolio with transactions loaded|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4058
+  version: 0.11.4059
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:32151
+- url: http://local-unit-test-server.lusid.com:32267
 security:
 - {}
 tags:
@@ -7552,191 +7552,191 @@ paths:
       x-accepts: application/json
   /api/customentities/entitytypes:
     post:
-      description: Create a custom entity definition that does not already exist.
-        Will return a Bad Request if the CustomEntityDefinition already exists
+      description: The API will return a Bad Request if the custom entityType already
+        exists.
       operationId: CreateCustomEntityDefinition
       requestBody:
         content:
           application/json-patch+json:
             example:
-              entityTypeName: issue
-              displayName: Issue
-              description: Represents an issue in the system
+              entityTypeName: SupportTicket
+              displayName: Support Ticket
+              description: Support Ticket
               fieldSchema:
-              - name: Assigned
-                lifetime: TimeVariant
-                type: boolean
-                required: true
-              - name: Status
-                lifetime: TimeVariant
-                type: text
-                required: true
-              - name: EffortInDays
+              - name: clientId
                 lifetime: Perpetual
-                type: decimal
+                type: String
+                required: true
+              - name: issueDescription
+                lifetime: TimeVariant
+                type: String
+                required: true
+              - name: internalNotes
+                lifetime: TimeVariant
+                type: String
                 required: false
-              - name: DateCreated
-                lifetime: Perpetual
-                type: datetime
-                required: true
+              - name: isResolved
+                lifetime: TimeVariant
+                type: Boolean
+                required: false
             schema:
               $ref: '#/components/schemas/CustomEntityDefinitionRequest'
           application/json:
             example:
-              entityTypeName: issue
-              displayName: Issue
-              description: Represents an issue in the system
+              entityTypeName: SupportTicket
+              displayName: Support Ticket
+              description: Support Ticket
               fieldSchema:
-              - name: Assigned
-                lifetime: TimeVariant
-                type: boolean
-                required: true
-              - name: Status
-                lifetime: TimeVariant
-                type: text
-                required: true
-              - name: EffortInDays
+              - name: clientId
                 lifetime: Perpetual
-                type: decimal
+                type: String
+                required: true
+              - name: issueDescription
+                lifetime: TimeVariant
+                type: String
+                required: true
+              - name: internalNotes
+                lifetime: TimeVariant
+                type: String
                 required: false
-              - name: DateCreated
-                lifetime: Perpetual
-                type: datetime
-                required: true
+              - name: isResolved
+                lifetime: TimeVariant
+                type: Boolean
+                required: false
             schema:
               $ref: '#/components/schemas/CustomEntityDefinitionRequest'
           text/json:
             example:
-              entityTypeName: issue
-              displayName: Issue
-              description: Represents an issue in the system
+              entityTypeName: SupportTicket
+              displayName: Support Ticket
+              description: Support Ticket
               fieldSchema:
-              - name: Assigned
-                lifetime: TimeVariant
-                type: boolean
-                required: true
-              - name: Status
-                lifetime: TimeVariant
-                type: text
-                required: true
-              - name: EffortInDays
+              - name: clientId
                 lifetime: Perpetual
-                type: decimal
+                type: String
+                required: true
+              - name: issueDescription
+                lifetime: TimeVariant
+                type: String
+                required: true
+              - name: internalNotes
+                lifetime: TimeVariant
+                type: String
                 required: false
-              - name: DateCreated
-                lifetime: Perpetual
-                type: datetime
-                required: true
+              - name: isResolved
+                lifetime: TimeVariant
+                type: Boolean
+                required: false
             schema:
               $ref: '#/components/schemas/CustomEntityDefinitionRequest'
           application/*+json:
             example:
-              entityTypeName: issue
-              displayName: Issue
-              description: Represents an issue in the system
+              entityTypeName: SupportTicket
+              displayName: Support Ticket
+              description: Support Ticket
               fieldSchema:
-              - name: Assigned
-                lifetime: TimeVariant
-                type: boolean
-                required: true
-              - name: Status
-                lifetime: TimeVariant
-                type: text
-                required: true
-              - name: EffortInDays
+              - name: clientId
                 lifetime: Perpetual
-                type: decimal
+                type: String
+                required: true
+              - name: issueDescription
+                lifetime: TimeVariant
+                type: String
+                required: true
+              - name: internalNotes
+                lifetime: TimeVariant
+                type: String
                 required: false
-              - name: DateCreated
-                lifetime: Perpetual
-                type: datetime
-                required: true
+              - name: isResolved
+                lifetime: TimeVariant
+                type: Boolean
+                required: false
             schema:
               $ref: '#/components/schemas/CustomEntityDefinitionRequest'
-        description: The CustomEntityDefinitionRequest
+        description: The payload containing the description of the custom entityType.
         required: true
       responses:
         "200":
           content:
             text/plain:
               example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/~issue?asAt=2022-02-28T14:27:01.2728000+00:00
-                entityTypeName: issue
-                displayName: Issue
-                description: Represents an issue in the system
-                entityType: ~issue
+                href: https://myco.lusid.com/api/customentities/entitytypes/~SupportTicket?asAt=2022-02-28T14:27:01.2728000+00:00
+                entityTypeName: SupportTicket
+                displayName: Support Ticket
+                description: Support Ticket
+                entityType: ~SupportTicket
                 fieldSchema:
-                - name: Assigned
-                  lifetime: TimeVariant
-                  type: boolean
-                  required: true
-                - name: Status
-                  lifetime: TimeVariant
-                  type: text
-                  required: true
-                - name: EffortInDays
+                - name: clientId
                   lifetime: Perpetual
-                  type: decimal
+                  type: String
+                  required: true
+                - name: issueDescription
+                  lifetime: TimeVariant
+                  type: String
+                  required: true
+                - name: internalNotes
+                  lifetime: TimeVariant
+                  type: String
                   required: false
-                - name: DateCreated
-                  lifetime: Perpetual
-                  type: datetime
-                  required: true
+                - name: isResolved
+                  lifetime: TimeVariant
+                  type: Boolean
+                  required: false
               schema:
                 $ref: '#/components/schemas/CustomEntityDefinition'
             application/json:
               example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/~issue?asAt=2022-02-28T14:27:01.2728000+00:00
-                entityTypeName: issue
-                displayName: Issue
-                description: Represents an issue in the system
-                entityType: ~issue
+                href: https://myco.lusid.com/api/customentities/entitytypes/~SupportTicket?asAt=2022-02-28T14:27:01.2728000+00:00
+                entityTypeName: SupportTicket
+                displayName: Support Ticket
+                description: Support Ticket
+                entityType: ~SupportTicket
                 fieldSchema:
-                - name: Assigned
-                  lifetime: TimeVariant
-                  type: boolean
-                  required: true
-                - name: Status
-                  lifetime: TimeVariant
-                  type: text
-                  required: true
-                - name: EffortInDays
+                - name: clientId
                   lifetime: Perpetual
-                  type: decimal
+                  type: String
+                  required: true
+                - name: issueDescription
+                  lifetime: TimeVariant
+                  type: String
+                  required: true
+                - name: internalNotes
+                  lifetime: TimeVariant
+                  type: String
                   required: false
-                - name: DateCreated
-                  lifetime: Perpetual
-                  type: datetime
-                  required: true
+                - name: isResolved
+                  lifetime: TimeVariant
+                  type: Boolean
+                  required: false
               schema:
                 $ref: '#/components/schemas/CustomEntityDefinition'
             text/json:
               example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/~issue?asAt=2022-02-28T14:27:01.2728000+00:00
-                entityTypeName: issue
-                displayName: Issue
-                description: Represents an issue in the system
-                entityType: ~issue
+                href: https://myco.lusid.com/api/customentities/entitytypes/~SupportTicket?asAt=2022-02-28T14:27:01.2728000+00:00
+                entityTypeName: SupportTicket
+                displayName: Support Ticket
+                description: Support Ticket
+                entityType: ~SupportTicket
                 fieldSchema:
-                - name: Assigned
-                  lifetime: TimeVariant
-                  type: boolean
-                  required: true
-                - name: Status
-                  lifetime: TimeVariant
-                  type: text
-                  required: true
-                - name: EffortInDays
+                - name: clientId
                   lifetime: Perpetual
-                  type: decimal
+                  type: String
+                  required: true
+                - name: issueDescription
+                  lifetime: TimeVariant
+                  type: String
+                  required: true
+                - name: internalNotes
+                  lifetime: TimeVariant
+                  type: String
                   required: false
-                - name: DateCreated
-                  lifetime: Perpetual
-                  type: datetime
-                  required: true
+                - name: isResolved
+                  lifetime: TimeVariant
+                  type: Boolean
+                  required: false
               schema:
                 $ref: '#/components/schemas/CustomEntityDefinition'
-          description: The created custom entity definition
+          description: The created custom entityType.
         "400":
           content:
             text/plain:
@@ -7757,7 +7757,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] CreateCustomEntityDefinition: Create a new CustomEntityDefinition'
+      summary: '[EXPERIMENTAL] CreateCustomEntityDefinition: Define a new custom entityType.'
       tags:
       - CustomEntityDefinitions
       x-fbn-apistatus: Experimental
@@ -7769,24 +7769,26 @@ paths:
         point in AsAt time
       operationId: GetDefinition
       parameters:
-      - description: The type of entity for which to retrieve the CustomEntityDefinition.
+      - description: The identifier for the custom entity type, derived from the "entityTypeName"
+          provided on creation.
         explode: false
         in: path
         name: entityType
         required: true
         schema:
-          description: The type of entity for which to retrieve the CustomEntityDefinition.
+          description: The identifier for the custom entity type, derived from the
+            "entityTypeName" provided on creation.
           maxLength: 64
           minLength: 1
           type: string
         style: simple
-      - description: The AsAt at which to retrieve the CustomEntityDefinition.
+      - description: The AsAt datetime at which to retrieve the definition.
         explode: true
         in: query
         name: asAt
         required: false
         schema:
-          description: The AsAt at which to retrieve the CustomEntityDefinition.
+          description: The AsAt datetime at which to retrieve the definition.
           format: date-time
           nullable: true
           type: string
@@ -7797,83 +7799,83 @@ paths:
           content:
             text/plain:
               example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/~issue?asAt=2022-02-28T14:27:01.2728000+00:00
-                entityTypeName: issue
-                displayName: Issue
-                description: Represents an issue in the system
-                entityType: ~issue
+                href: https://myco.lusid.com/api/customentities/entitytypes/~SupportTicket?asAt=2022-02-28T14:27:01.2728000+00:00
+                entityTypeName: SupportTicket
+                displayName: Support Ticket
+                description: Support Ticket
+                entityType: ~SupportTicket
                 fieldSchema:
-                - name: Assigned
-                  lifetime: TimeVariant
-                  type: boolean
-                  required: true
-                - name: Status
-                  lifetime: TimeVariant
-                  type: text
-                  required: true
-                - name: EffortInDays
+                - name: clientId
                   lifetime: Perpetual
-                  type: decimal
+                  type: String
+                  required: true
+                - name: issueDescription
+                  lifetime: TimeVariant
+                  type: String
+                  required: true
+                - name: internalNotes
+                  lifetime: TimeVariant
+                  type: String
                   required: false
-                - name: DateCreated
-                  lifetime: Perpetual
-                  type: datetime
-                  required: true
+                - name: isResolved
+                  lifetime: TimeVariant
+                  type: Boolean
+                  required: false
               schema:
                 $ref: '#/components/schemas/CustomEntityDefinition'
             application/json:
               example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/~issue?asAt=2022-02-28T14:27:01.2728000+00:00
-                entityTypeName: issue
-                displayName: Issue
-                description: Represents an issue in the system
-                entityType: ~issue
+                href: https://myco.lusid.com/api/customentities/entitytypes/~SupportTicket?asAt=2022-02-28T14:27:01.2728000+00:00
+                entityTypeName: SupportTicket
+                displayName: Support Ticket
+                description: Support Ticket
+                entityType: ~SupportTicket
                 fieldSchema:
-                - name: Assigned
-                  lifetime: TimeVariant
-                  type: boolean
-                  required: true
-                - name: Status
-                  lifetime: TimeVariant
-                  type: text
-                  required: true
-                - name: EffortInDays
+                - name: clientId
                   lifetime: Perpetual
-                  type: decimal
+                  type: String
+                  required: true
+                - name: issueDescription
+                  lifetime: TimeVariant
+                  type: String
+                  required: true
+                - name: internalNotes
+                  lifetime: TimeVariant
+                  type: String
                   required: false
-                - name: DateCreated
-                  lifetime: Perpetual
-                  type: datetime
-                  required: true
+                - name: isResolved
+                  lifetime: TimeVariant
+                  type: Boolean
+                  required: false
               schema:
                 $ref: '#/components/schemas/CustomEntityDefinition'
             text/json:
               example:
-                href: https://myco.lusid.com/api/customentities/entitytypes/~issue?asAt=2022-02-28T14:27:01.2728000+00:00
-                entityTypeName: issue
-                displayName: Issue
-                description: Represents an issue in the system
-                entityType: ~issue
+                href: https://myco.lusid.com/api/customentities/entitytypes/~SupportTicket?asAt=2022-02-28T14:27:01.2728000+00:00
+                entityTypeName: SupportTicket
+                displayName: Support Ticket
+                description: Support Ticket
+                entityType: ~SupportTicket
                 fieldSchema:
-                - name: Assigned
-                  lifetime: TimeVariant
-                  type: boolean
-                  required: true
-                - name: Status
-                  lifetime: TimeVariant
-                  type: text
-                  required: true
-                - name: EffortInDays
+                - name: clientId
                   lifetime: Perpetual
-                  type: decimal
+                  type: String
+                  required: true
+                - name: issueDescription
+                  lifetime: TimeVariant
+                  type: String
+                  required: true
+                - name: internalNotes
+                  lifetime: TimeVariant
+                  type: String
                   required: false
-                - name: DateCreated
-                  lifetime: Perpetual
-                  type: datetime
-                  required: true
+                - name: isResolved
+                  lifetime: TimeVariant
+                  type: Boolean
+                  required: false
               schema:
                 $ref: '#/components/schemas/CustomEntityDefinition'
-          description: The requested custom entity definition
+          description: The requested custom entity definition.
         "400":
           content:
             text/plain:
@@ -7894,7 +7896,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetDefinition: Get CustomEntityDefinition'
+      summary: '[EXPERIMENTAL] GetDefinition: Get a custom entityType definition.'
       tags:
       - CustomEntityDefinitions
       x-fbn-apistatus: Experimental
@@ -7904,13 +7906,13 @@ paths:
       description: List all the Custom Entities matching particular criteria.
       operationId: ListCustomEntities
       parameters:
-      - description: The type of entity to list.
+      - description: The type of custom entity to list.
         explode: false
         in: path
         name: entityType
         required: true
         schema:
-          description: The type of entity to list.
+          description: The type of custom entity to list.
           maxLength: 64
           minLength: 1
           type: string
@@ -8006,7 +8008,7 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfCustomEntityResponse'
-          description: The requested custom entities
+          description: List custom entities of the specified entityType.
         "400":
           content:
             text/plain:
@@ -8027,7 +8029,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListCustomEntities: List Custom Entities'
+      summary: '[EXPERIMENTAL] ListCustomEntities: List custom entities of the specified
+        entityType.'
       tags:
       - CustomEntities
       x-fbn-apistatus: Experimental
@@ -8054,251 +8057,152 @@ paths:
         content:
           application/json-patch+json:
             example:
-              displayName: Issue
-              description: Issue with loading data
+              displayName: Portfolio Access Denied
+              description: User cannot access the portfolio
               identifiers:
-              - identifierScope: DataLoadingIssues
-                identifierType: InternalId
-                identifierValue: 139cab7ea74b4af7b00de6f5137b5207
-              - identifierScope: DataLoadingIssues
-                identifierType: JiraID
-                identifierValue: PLAT-250
+              - identifierScope: someScope
+                identifierType: supportTicketId
+                identifierValue: xyz123pqr
               fields:
-              - name: IssueName
-                value: InstrumentNotFound
-                effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
-              - name: Status
-                value: InProgress
-                effectiveFrom: 2022-07-23T12:00:00.0000000+00:00
-              - name: StoryPointEstimate
-                value: 1
-                effectiveFrom: 2021-07-24T12:00:00.0000000+00:00
-              - name: Assigned
-                value: true
-                effectiveFrom: 2021-12-23T12:00:00.0000000+00:00
-              - name: DateCreated
-                value: 2021-07-13T12:00:00.0000000+00:00
+              - name: clientId
+                value: AcmeLtd
+              - name: issueDescription
+                value: I can't access this portfolio
+                effectiveFrom: 2023-03-03T09:00:00.0000000+00:00
             schema:
               $ref: '#/components/schemas/CustomEntityRequest'
           application/json:
             example:
-              displayName: Issue
-              description: Issue with loading data
+              displayName: Portfolio Access Denied
+              description: User cannot access the portfolio
               identifiers:
-              - identifierScope: DataLoadingIssues
-                identifierType: InternalId
-                identifierValue: 139cab7ea74b4af7b00de6f5137b5207
-              - identifierScope: DataLoadingIssues
-                identifierType: JiraID
-                identifierValue: PLAT-250
+              - identifierScope: someScope
+                identifierType: supportTicketId
+                identifierValue: xyz123pqr
               fields:
-              - name: IssueName
-                value: InstrumentNotFound
-                effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
-              - name: Status
-                value: InProgress
-                effectiveFrom: 2022-07-23T12:00:00.0000000+00:00
-              - name: StoryPointEstimate
-                value: 1
-                effectiveFrom: 2021-07-24T12:00:00.0000000+00:00
-              - name: Assigned
-                value: true
-                effectiveFrom: 2021-12-23T12:00:00.0000000+00:00
-              - name: DateCreated
-                value: 2021-07-13T12:00:00.0000000+00:00
+              - name: clientId
+                value: AcmeLtd
+              - name: issueDescription
+                value: I can't access this portfolio
+                effectiveFrom: 2023-03-03T09:00:00.0000000+00:00
             schema:
               $ref: '#/components/schemas/CustomEntityRequest'
           text/json:
             example:
-              displayName: Issue
-              description: Issue with loading data
+              displayName: Portfolio Access Denied
+              description: User cannot access the portfolio
               identifiers:
-              - identifierScope: DataLoadingIssues
-                identifierType: InternalId
-                identifierValue: 139cab7ea74b4af7b00de6f5137b5207
-              - identifierScope: DataLoadingIssues
-                identifierType: JiraID
-                identifierValue: PLAT-250
+              - identifierScope: someScope
+                identifierType: supportTicketId
+                identifierValue: xyz123pqr
               fields:
-              - name: IssueName
-                value: InstrumentNotFound
-                effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
-              - name: Status
-                value: InProgress
-                effectiveFrom: 2022-07-23T12:00:00.0000000+00:00
-              - name: StoryPointEstimate
-                value: 1
-                effectiveFrom: 2021-07-24T12:00:00.0000000+00:00
-              - name: Assigned
-                value: true
-                effectiveFrom: 2021-12-23T12:00:00.0000000+00:00
-              - name: DateCreated
-                value: 2021-07-13T12:00:00.0000000+00:00
+              - name: clientId
+                value: AcmeLtd
+              - name: issueDescription
+                value: I can't access this portfolio
+                effectiveFrom: 2023-03-03T09:00:00.0000000+00:00
             schema:
               $ref: '#/components/schemas/CustomEntityRequest'
           application/*+json:
             example:
-              displayName: Issue
-              description: Issue with loading data
+              displayName: Portfolio Access Denied
+              description: User cannot access the portfolio
               identifiers:
-              - identifierScope: DataLoadingIssues
-                identifierType: InternalId
-                identifierValue: 139cab7ea74b4af7b00de6f5137b5207
-              - identifierScope: DataLoadingIssues
-                identifierType: JiraID
-                identifierValue: PLAT-250
+              - identifierScope: someScope
+                identifierType: supportTicketId
+                identifierValue: xyz123pqr
               fields:
-              - name: IssueName
-                value: InstrumentNotFound
-                effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
-              - name: Status
-                value: InProgress
-                effectiveFrom: 2022-07-23T12:00:00.0000000+00:00
-              - name: StoryPointEstimate
-                value: 1
-                effectiveFrom: 2021-07-24T12:00:00.0000000+00:00
-              - name: Assigned
-                value: true
-                effectiveFrom: 2021-12-23T12:00:00.0000000+00:00
-              - name: DateCreated
-                value: 2021-07-13T12:00:00.0000000+00:00
+              - name: clientId
+                value: AcmeLtd
+              - name: issueDescription
+                value: I can't access this portfolio
+                effectiveFrom: 2023-03-03T09:00:00.0000000+00:00
             schema:
               $ref: '#/components/schemas/CustomEntityRequest'
-        description: The CustomEntity to be created.
+        description: The payload describing the custom entity instance.
         required: true
       responses:
         "200":
           content:
             text/plain:
               example:
-                href: https://myco.lusid.com/api/api/customentities/~issue
-                entityType: ~issue
+                href: https://myco.lusid.com/api/api/customentities/~SupportTicket
+                entityType: ~SupportTicket
                 version:
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  asAtDate: 0001-01-01T00:00:00.0000000+00:00
-                displayName: Issue
-                description: Issue with loading data
+                  asAtDate: 2022-03-02T09:00:00.0000000+00:00
+                displayName: Portfolio Access Denied
+                description: User cannot access the portfolio
                 identifiers:
-                - identifierScope: DataLoadingIssues
-                  identifierType: InternalId
-                  identifierValue: 139cab7ea74b4af7b00de6f5137b5207
-                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - identifierScope: DataLoadingIssues
-                  identifierType: JiraId
-                  identifierValue: PLAT-250
+                - identifierScope: someScope
+                  identifierType: supportTicketId
+                  identifierValue: xyz123pqr
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 fields:
-                - name: IssueName
-                  value: InstrumentNotFound
-                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Status
-                  value: InProgress
-                  effectiveFrom: 2022-07-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: StoryPointEstimate
-                  value: 1
-                  effectiveFrom: 2021-07-24T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Assigned
-                  value: true
-                  effectiveFrom: 2021-12-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: DateCreated
-                  value: 2021-07-13T12:00:00.0000000+00:00
+                - name: clientId
+                  value: AcmeLtd
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                - name: issueDescription
+                  value: I can't access this portfolio
+                  effectiveFrom: 2022-03-03T09:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
             application/json:
               example:
-                href: https://myco.lusid.com/api/api/customentities/~issue
-                entityType: ~issue
+                href: https://myco.lusid.com/api/api/customentities/~SupportTicket
+                entityType: ~SupportTicket
                 version:
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  asAtDate: 0001-01-01T00:00:00.0000000+00:00
-                displayName: Issue
-                description: Issue with loading data
+                  asAtDate: 2022-03-02T09:00:00.0000000+00:00
+                displayName: Portfolio Access Denied
+                description: User cannot access the portfolio
                 identifiers:
-                - identifierScope: DataLoadingIssues
-                  identifierType: InternalId
-                  identifierValue: 139cab7ea74b4af7b00de6f5137b5207
-                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - identifierScope: DataLoadingIssues
-                  identifierType: JiraId
-                  identifierValue: PLAT-250
+                - identifierScope: someScope
+                  identifierType: supportTicketId
+                  identifierValue: xyz123pqr
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 fields:
-                - name: IssueName
-                  value: InstrumentNotFound
-                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Status
-                  value: InProgress
-                  effectiveFrom: 2022-07-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: StoryPointEstimate
-                  value: 1
-                  effectiveFrom: 2021-07-24T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Assigned
-                  value: true
-                  effectiveFrom: 2021-12-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: DateCreated
-                  value: 2021-07-13T12:00:00.0000000+00:00
+                - name: clientId
+                  value: AcmeLtd
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                - name: issueDescription
+                  value: I can't access this portfolio
+                  effectiveFrom: 2022-03-03T09:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
             text/json:
               example:
-                href: https://myco.lusid.com/api/api/customentities/~issue
-                entityType: ~issue
+                href: https://myco.lusid.com/api/api/customentities/~SupportTicket
+                entityType: ~SupportTicket
                 version:
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  asAtDate: 0001-01-01T00:00:00.0000000+00:00
-                displayName: Issue
-                description: Issue with loading data
+                  asAtDate: 2022-03-02T09:00:00.0000000+00:00
+                displayName: Portfolio Access Denied
+                description: User cannot access the portfolio
                 identifiers:
-                - identifierScope: DataLoadingIssues
-                  identifierType: InternalId
-                  identifierValue: 139cab7ea74b4af7b00de6f5137b5207
-                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - identifierScope: DataLoadingIssues
-                  identifierType: JiraId
-                  identifierValue: PLAT-250
+                - identifierScope: someScope
+                  identifierType: supportTicketId
+                  identifierValue: xyz123pqr
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 fields:
-                - name: IssueName
-                  value: InstrumentNotFound
-                  effectiveFrom: 2021-07-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Status
-                  value: InProgress
-                  effectiveFrom: 2022-07-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: StoryPointEstimate
-                  value: 1
-                  effectiveFrom: 2021-07-24T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Assigned
-                  value: true
-                  effectiveFrom: 2021-12-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: DateCreated
-                  value: 2021-07-13T12:00:00.0000000+00:00
+                - name: clientId
+                  value: AcmeLtd
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                - name: issueDescription
+                  value: I can't access this portfolio
+                  effectiveFrom: 2022-03-03T09:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
-          description: The upserted Custom Entity
+          description: The upserted custom entity instance
         "400":
           content:
             text/plain:
@@ -8319,7 +8223,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertCustomEntity: Upsert a new CustomEntity'
+      summary: '[EXPERIMENTAL] UpsertCustomEntity: Upsert a custom entity instance'
       tags:
       - CustomEntities
       x-fbn-apistatus: Experimental
@@ -8327,29 +8231,30 @@ paths:
       x-accepts: application/json
   /api/customentities/{entityType}/{identifierType}/{identifierValue}:
     get:
-      description: Retrieve a CustomEntity by a specific Id at a point in AsAt time.
+      description: Retrieve a custom entity instance by a specific entity type at
+        a point in AsAt time.
       operationId: GetCustomEntity
       parameters:
-      - description: The type of entity to retrieve. An entityType can be created
+      - description: The type of custom entity to retrieve. An entityType can be created
           using the "CreateCustomEntityDefinition" endpoint for CustomEntityDefinitions.
         explode: false
         in: path
         name: entityType
         required: true
         schema:
-          description: The type of entity to retrieve. An entityType can be created
-            using the "CreateCustomEntityDefinition" endpoint for CustomEntityDefinitions.
+          description: The type of custom entity to retrieve. An entityType can be
+            created using the "CreateCustomEntityDefinition" endpoint for CustomEntityDefinitions.
           maxLength: 64
           minLength: 1
           type: string
         style: simple
-      - description: An identifier type attached to the CustomEntity.
+      - description: An identifier type attached to the custom entity instance.
         explode: false
         in: path
         name: identifierType
         required: true
         schema:
-          description: An identifier type attached to the CustomEntity.
+          description: An identifier type attached to the custom entity instance.
           maxLength: 64
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
@@ -8379,27 +8284,28 @@ paths:
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: form
-      - description: The AsAt at which to retrieve the CustomEntity.
+      - description: The AsAt datetime at which to retrieve the custom entity instance.
         explode: true
         in: query
         name: asAt
         required: false
         schema:
-          description: The AsAt at which to retrieve the CustomEntity.
+          description: The AsAt datetime at which to retrieve the custom entity instance.
           format: date-time
           nullable: true
           type: string
         style: form
         x-nullable: true
-      - description: The effective datetime or cut label at which to get the CustomEntity.
-          Defaults to the current LUSID system datetime if not specified.
+      - description: The effective datetime or cut label at which to get the custom
+          entity instance. Defaults to the current LUSID system datetime if not specified.
         explode: true
         in: query
         name: effectiveAt
         required: false
         schema:
-          description: The effective datetime or cut label at which to get the CustomEntity.
-            Defaults to the current LUSID system datetime if not specified.
+          description: The effective datetime or cut label at which to get the custom
+            entity instance. Defaults to the current LUSID system datetime if not
+            specified.
           format: dateorcutlabel
           nullable: true
           type: string
@@ -8409,134 +8315,83 @@ paths:
           content:
             text/plain:
               example:
-                href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket/?identifierScope=locations
-                entityType: ~branch
+                href: https://myco.lusid.com/api/api/customentities/~SupportTicket
+                entityType: ~SupportTicket
                 version:
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  asAtDate: 2020-01-23T12:00:00.0000000+00:00
-                displayName: The Frames
-                description: Finbourne's London office in The Frames building
+                  asAtDate: 2022-03-02T09:00:00.0000000+00:00
+                displayName: Portfolio Access Denied
+                description: User cannot access the portfolio
                 identifiers:
-                - identifierScope: locations
-                  identifierType: what3words
-                  identifierValue: loaf.fires.basket
-                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - identifierScope: locations
-                  identifierType: Coordinates
-                  identifierValue: 51.52356,-0.08192
+                - identifierScope: someScope
+                  identifierType: supportTicketId
+                  identifierValue: xyz123pqr
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 fields:
-                - name: Name of building
-                  value: Frames Building
-                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Town
-                  value: Shoreditch
+                - name: clientId
+                  value: AcmeLtd
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: CurrentOffice
-                  value: 1
-                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Date Moved in
-                  value: true
-                  effectiveFrom: 2021-01-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Date Created
-                  value: 2019-01-23T12:00:00.0000000+00:00
-                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                - name: issueDescription
+                  value: I can't access this portfolio
+                  effectiveFrom: 2022-03-03T09:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
             application/json:
               example:
-                href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket/?identifierScope=locations
-                entityType: ~branch
+                href: https://myco.lusid.com/api/api/customentities/~SupportTicket
+                entityType: ~SupportTicket
                 version:
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  asAtDate: 2020-01-23T12:00:00.0000000+00:00
-                displayName: The Frames
-                description: Finbourne's London office in The Frames building
+                  asAtDate: 2022-03-02T09:00:00.0000000+00:00
+                displayName: Portfolio Access Denied
+                description: User cannot access the portfolio
                 identifiers:
-                - identifierScope: locations
-                  identifierType: what3words
-                  identifierValue: loaf.fires.basket
-                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - identifierScope: locations
-                  identifierType: Coordinates
-                  identifierValue: 51.52356,-0.08192
+                - identifierScope: someScope
+                  identifierType: supportTicketId
+                  identifierValue: xyz123pqr
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 fields:
-                - name: Name of building
-                  value: Frames Building
-                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Town
-                  value: Shoreditch
+                - name: clientId
+                  value: AcmeLtd
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: CurrentOffice
-                  value: 1
-                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Date Moved in
-                  value: true
-                  effectiveFrom: 2021-01-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Date Created
-                  value: 2019-01-23T12:00:00.0000000+00:00
-                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                - name: issueDescription
+                  value: I can't access this portfolio
+                  effectiveFrom: 2022-03-03T09:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
             text/json:
               example:
-                href: https://myco.lusid.com/api/api/customentities/~branch/what3words/loaf.fires.basket/?identifierScope=locations
-                entityType: ~branch
+                href: https://myco.lusid.com/api/api/customentities/~SupportTicket
+                entityType: ~SupportTicket
                 version:
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  asAtDate: 2020-01-23T12:00:00.0000000+00:00
-                displayName: The Frames
-                description: Finbourne's London office in The Frames building
+                  asAtDate: 2022-03-02T09:00:00.0000000+00:00
+                displayName: Portfolio Access Denied
+                description: User cannot access the portfolio
                 identifiers:
-                - identifierScope: locations
-                  identifierType: what3words
-                  identifierValue: loaf.fires.basket
-                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - identifierScope: locations
-                  identifierType: Coordinates
-                  identifierValue: 51.52356,-0.08192
+                - identifierScope: someScope
+                  identifierType: supportTicketId
+                  identifierValue: xyz123pqr
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 fields:
-                - name: Name of building
-                  value: Frames Building
-                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Town
-                  value: Shoreditch
+                - name: clientId
+                  value: AcmeLtd
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: CurrentOffice
-                  value: 1
-                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Date Moved in
-                  value: true
-                  effectiveFrom: 2021-01-23T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
-                - name: Date Created
-                  value: 2019-01-23T12:00:00.0000000+00:00
-                  effectiveFrom: 2020-01-23T12:00:00.0000000+00:00
+                - name: issueDescription
+                  value: I can't access this portfolio
+                  effectiveFrom: 2022-03-03T09:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
-          description: The requested Custom Entity
+          description: Get a custom entity instance.
         "400":
           content:
             text/plain:
@@ -8557,7 +8412,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetCustomEntity: Get CustomEntity'
+      summary: '[EXPERIMENTAL] GetCustomEntity: Get a custom entity instance.'
       tags:
       - CustomEntities
       x-fbn-apistatus: Experimental
@@ -58825,26 +58680,24 @@ components:
           nullable: true
           type: string
         entityType:
-          description: The EntityType to be used when relations are created to the
-            CustomEntity
+          description: The type of custom entity this is.
           type: string
         version:
           $ref: '#/components/schemas/Version'
         displayName:
-          description: The display name of the CustomEntity
+          description: A display label for the custom entity.
           type: string
         description:
-          description: The description of the CustomEntity
+          description: A description of the custom entity.
           nullable: true
           type: string
         identifiers:
-          description: A collection of CustomEntityIdentifiers that can identify the
-            CustomEntity
+          description: The identifiers the custom entity will be upserted with.
           items:
             $ref: '#/components/schemas/CustomEntityId'
           type: array
         fields:
-          description: A collection of CustomEntityFields that decorate the CustomEntity
+          description: The fields that decorate the custom entity.
           items:
             $ref: '#/components/schemas/CustomEntityField'
           type: array

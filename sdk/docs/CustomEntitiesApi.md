@@ -1,22 +1,22 @@
 # CustomEntitiesApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:32151*
+All URIs are relative to *http://local-unit-test-server.lusid.com:32267*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCustomEntity**](CustomEntitiesApi.md#getCustomEntity) | **GET** /api/customentities/{entityType}/{identifierType}/{identifierValue} | [EXPERIMENTAL] GetCustomEntity: Get CustomEntity
+[**getCustomEntity**](CustomEntitiesApi.md#getCustomEntity) | **GET** /api/customentities/{entityType}/{identifierType}/{identifierValue} | [EXPERIMENTAL] GetCustomEntity: Get a custom entity instance.
 [**getCustomEntityRelationships**](CustomEntitiesApi.md#getCustomEntityRelationships) | **GET** /api/customentities/{entityType}/{identifierType}/{identifierValue}/relationships | [EXPERIMENTAL] GetCustomEntityRelationships: Get Relationships for Custom Entity
-[**listCustomEntities**](CustomEntitiesApi.md#listCustomEntities) | **GET** /api/customentities/{entityType} | [EXPERIMENTAL] ListCustomEntities: List Custom Entities
-[**upsertCustomEntity**](CustomEntitiesApi.md#upsertCustomEntity) | **POST** /api/customentities/{entityType} | [EXPERIMENTAL] UpsertCustomEntity: Upsert a new CustomEntity
+[**listCustomEntities**](CustomEntitiesApi.md#listCustomEntities) | **GET** /api/customentities/{entityType} | [EXPERIMENTAL] ListCustomEntities: List custom entities of the specified entityType.
+[**upsertCustomEntity**](CustomEntitiesApi.md#upsertCustomEntity) | **POST** /api/customentities/{entityType} | [EXPERIMENTAL] UpsertCustomEntity: Upsert a custom entity instance
 
 
 <a name="getCustomEntity"></a>
 # **getCustomEntity**
 > CustomEntityResponse getCustomEntity(entityType, identifierType, identifierValue, identifierScope, asAt, effectiveAt)
 
-[EXPERIMENTAL] GetCustomEntity: Get CustomEntity
+[EXPERIMENTAL] GetCustomEntity: Get a custom entity instance.
 
-Retrieve a CustomEntity by a specific Id at a point in AsAt time.
+Retrieve a custom entity instance by a specific entity type at a point in AsAt time.
 
 ### Example
 ```java
@@ -31,19 +31,19 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32151");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32267");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CustomEntitiesApi apiInstance = new CustomEntitiesApi(defaultClient);
-    String entityType = "entityType_example"; // String | The type of entity to retrieve. An entityType can be created using the \"CreateCustomEntityDefinition\" endpoint for CustomEntityDefinitions.
-    String identifierType = "identifierType_example"; // String | An identifier type attached to the CustomEntity.
+    String entityType = "entityType_example"; // String | The type of custom entity to retrieve. An entityType can be created using the \"CreateCustomEntityDefinition\" endpoint for CustomEntityDefinitions.
+    String identifierType = "identifierType_example"; // String | An identifier type attached to the custom entity instance.
     String identifierValue = "identifierValue_example"; // String | The identifier value.
     String identifierScope = "identifierScope_example"; // String | The identifier scope.
-    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The AsAt at which to retrieve the CustomEntity.
-    String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to get the CustomEntity. Defaults to the current LUSID system datetime if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The AsAt datetime at which to retrieve the custom entity instance.
+    String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to get the custom entity instance. Defaults to the current LUSID system datetime if not specified.
     try {
       CustomEntityResponse result = apiInstance.getCustomEntity(entityType, identifierType, identifierValue, identifierScope, asAt, effectiveAt);
       System.out.println(result);
@@ -62,12 +62,12 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **entityType** | **String**| The type of entity to retrieve. An entityType can be created using the \&quot;CreateCustomEntityDefinition\&quot; endpoint for CustomEntityDefinitions. |
- **identifierType** | **String**| An identifier type attached to the CustomEntity. |
+ **entityType** | **String**| The type of custom entity to retrieve. An entityType can be created using the \&quot;CreateCustomEntityDefinition\&quot; endpoint for CustomEntityDefinitions. |
+ **identifierType** | **String**| An identifier type attached to the custom entity instance. |
  **identifierValue** | **String**| The identifier value. |
  **identifierScope** | **String**| The identifier scope. |
- **asAt** | **OffsetDateTime**| The AsAt at which to retrieve the CustomEntity. | [optional]
- **effectiveAt** | **String**| The effective datetime or cut label at which to get the CustomEntity. Defaults to the current LUSID system datetime if not specified. | [optional]
+ **asAt** | **OffsetDateTime**| The AsAt datetime at which to retrieve the custom entity instance. | [optional]
+ **effectiveAt** | **String**| The effective datetime or cut label at which to get the custom entity instance. Defaults to the current LUSID system datetime if not specified. | [optional]
 
 ### Return type
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The requested Custom Entity |  -  |
+**200** | Get a custom entity instance. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
@@ -110,7 +110,7 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32151");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32267");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 # **listCustomEntities**
 > PagedResourceListOfCustomEntityResponse listCustomEntities(entityType, effectiveAt, asAt, limit, filter, page)
 
-[EXPERIMENTAL] ListCustomEntities: List Custom Entities
+[EXPERIMENTAL] ListCustomEntities: List custom entities of the specified entityType.
 
 List all the Custom Entities matching particular criteria.
 
@@ -193,14 +193,14 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32151");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32267");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CustomEntitiesApi apiInstance = new CustomEntitiesApi(defaultClient);
-    String entityType = "entityType_example"; // String | The type of entity to list.
+    String entityType = "entityType_example"; // String | The type of custom entity to list.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to list the entities. Defaults to the current LUSID              system datetime if not specified.
     OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to list the entities. Defaults to returning the latest version              of each portfolio if not specified.
     Integer limit = 56; // Integer | When paginating, limit the results to this number. Defaults to 100 if not specified.
@@ -224,7 +224,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **entityType** | **String**| The type of entity to list. |
+ **entityType** | **String**| The type of custom entity to list. |
  **effectiveAt** | **String**| The effective datetime or cut label at which to list the entities. Defaults to the current LUSID              system datetime if not specified. | [optional]
  **asAt** | **OffsetDateTime**| The asAt datetime at which to list the entities. Defaults to returning the latest version              of each portfolio if not specified. | [optional]
  **limit** | **Integer**| When paginating, limit the results to this number. Defaults to 100 if not specified. | [optional]
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The requested custom entities |  -  |
+**200** | List custom entities of the specified entityType. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 # **upsertCustomEntity**
 > CustomEntityResponse upsertCustomEntity(entityType, customEntityRequest)
 
-[EXPERIMENTAL] UpsertCustomEntity: Upsert a new CustomEntity
+[EXPERIMENTAL] UpsertCustomEntity: Upsert a custom entity instance
 
 Insert the custom entity if it does not exist or update the custom entity with the supplied state if it does exist.
 
@@ -272,7 +272,7 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32151");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:32267");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -280,7 +280,7 @@ public class Example {
 
     CustomEntitiesApi apiInstance = new CustomEntitiesApi(defaultClient);
     String entityType = "entityType_example"; // String | The type of the CustomEntity to be created. An entityType can be created using the \"CreateCustomEntityDefinition\" endpoint for CustomEntityDefinitions.
-    CustomEntityRequest customEntityRequest = new CustomEntityRequest(); // CustomEntityRequest | The CustomEntity to be created.
+    CustomEntityRequest customEntityRequest = new CustomEntityRequest(); // CustomEntityRequest | The payload describing the custom entity instance.
     try {
       CustomEntityResponse result = apiInstance.upsertCustomEntity(entityType, customEntityRequest);
       System.out.println(result);
@@ -300,7 +300,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entityType** | **String**| The type of the CustomEntity to be created. An entityType can be created using the \&quot;CreateCustomEntityDefinition\&quot; endpoint for CustomEntityDefinitions. |
- **customEntityRequest** | [**CustomEntityRequest**](CustomEntityRequest.md)| The CustomEntity to be created. |
+ **customEntityRequest** | [**CustomEntityRequest**](CustomEntityRequest.md)| The payload describing the custom entity instance. |
 
 ### Return type
 
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The upserted Custom Entity |  -  |
+**200** | The upserted custom entity instance |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
