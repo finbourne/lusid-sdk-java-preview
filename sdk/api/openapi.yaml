@@ -280,12 +280,12 @@ info:
     | <a name="769">769</a>|Cannot update the base currency of a portfolio with transactions loaded|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4064
+  version: 0.11.4066
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:53933
 security:
 - {}
 tags:
@@ -60605,6 +60605,10 @@ components:
         \ can be updated\r\nexternally or in some circumstances automatically by LUSID.\r\
         \nThe main analytic calculated for this instrument is Accrual rather than\
         \ PV."
+    FundingLegOptions:
+      allOf:
+      - $ref: '#/components/schemas/ModelOptions'
+      - $ref: '#/components/schemas/FundingLegOptions_allOf'
     Future:
       allOf:
       - $ref: '#/components/schemas/LusidInstrument'
@@ -64248,13 +64252,14 @@ components:
       properties:
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions, FxForwardModelOptions'
+            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
           - EmptyModelOptions
           - IndexModelOptions
           - FxForwardModelOptions
+          - FundingLegModelOptions
           type: string
       required:
       - modelOptionsType
@@ -64266,6 +64271,7 @@ components:
       - EmptyModelOptions
       - IndexModelOptions
       - FxForwardModelOptions
+      - FundingLegModelOptions
       type: string
     ModelSelection:
       additionalProperties: false
@@ -83808,13 +83814,14 @@ components:
       properties:
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions, FxForwardModelOptions'
+            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
           - EmptyModelOptions
           - IndexModelOptions
           - FxForwardModelOptions
+          - FundingLegModelOptions
           type: string
       required:
       - modelOptionsType
@@ -84533,6 +84540,27 @@ components:
       - notional
       - startDate
       type: object
+    FundingLegOptions_allOf:
+      properties:
+        expectedFundingLegNotional:
+          description: Assumption made on future expected notional of the funding
+            leg.
+          type: string
+        modelOptionsType:
+          description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
+            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions'
+          enum:
+          - Invalid
+          - OpaqueModelOptions
+          - EmptyModelOptions
+          - IndexModelOptions
+          - FxForwardModelOptions
+          - FundingLegModelOptions
+          type: string
+      required:
+      - expectedFundingLegNotional
+      - modelOptionsType
+      type: object
     Future_allOf:
       properties:
         startDate:
@@ -84840,13 +84868,14 @@ components:
           type: boolean
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions, FxForwardModelOptions'
+            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
           - EmptyModelOptions
           - IndexModelOptions
           - FxForwardModelOptions
+          - FundingLegModelOptions
           type: string
       required:
       - convertToReportCcy
@@ -85160,13 +85189,14 @@ components:
           type: string
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions, FxForwardModelOptions'
+            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
           - EmptyModelOptions
           - IndexModelOptions
           - FxForwardModelOptions
+          - FundingLegModelOptions
           type: string
       required:
       - modelOptionsType
@@ -85467,13 +85497,14 @@ components:
           type: object
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions, FxForwardModelOptions'
+            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
           - EmptyModelOptions
           - IndexModelOptions
           - FxForwardModelOptions
+          - FundingLegModelOptions
           type: string
       required:
       - data
@@ -86080,7 +86111,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

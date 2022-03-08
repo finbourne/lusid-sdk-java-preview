@@ -15,5 +15,7 @@
 
 * `FXFORWARDMODELOPTIONS` (value: `"FxForwardModelOptions"`)
 
+* `FUNDINGLEGMODELOPTIONS` (value: `"FundingLegModelOptions"`)
+
 
 
