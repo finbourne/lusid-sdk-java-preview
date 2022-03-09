@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **contracts** | **Double** | The number of contracts held. |  [optional]
 **refSpotPrice** | **Double** | The reference spot price for the future at which the contract was entered into. |  [optional]
 **underlying** | [**LusidInstrument**](LusidInstrument.md) |  | 
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption, ReferenceInstrument | 
 
 
 
@@ -51,6 +51,7 @@ SIMPLEINSTRUMENT | &quot;SimpleInstrument&quot;
 REPO | &quot;Repo&quot;
 EQUITY | &quot;Equity&quot;
 EXCHANGETRADEDOPTION | &quot;ExchangeTradedOption&quot;
+REFERENCEINSTRUMENT | &quot;ReferenceInstrument&quot;
 
 
 

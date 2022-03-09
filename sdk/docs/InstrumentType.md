@@ -63,5 +63,7 @@
 
 * `EXCHANGETRADEDOPTION` (value: `"ExchangeTradedOption"`)
 
+* `REFERENCEINSTRUMENT` (value: `"ReferenceInstrument"`)
+
 
 
