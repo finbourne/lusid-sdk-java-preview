@@ -284,12 +284,12 @@ info:
     | <a name="775">775</a>|Fund accounting document cannot be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4098
+  version: 0.11.4099
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:62418
+- url: http://local-unit-test-server.lusid.com:30109
 security:
 - {}
 tags:
@@ -8569,6 +8569,10 @@ paths:
                       identifierValue: idValue
                     displayName: RelatedEntityDisplayName
                     properties: {}
+                    identifiers:
+                    - identifierScope: idScope
+                      identifierType: idType
+                      identifierValue: idValue
                   traversalDirection: Out
                   traversalDescription: Outward relationship description
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
@@ -8589,6 +8593,10 @@ paths:
                       identifierValue: idValue
                     displayName: RelatedEntityDisplayName
                     properties: {}
+                    identifiers:
+                    - identifierScope: idScope
+                      identifierType: idType
+                      identifierValue: idValue
                   traversalDirection: Out
                   traversalDescription: Outward relationship description
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
@@ -8609,6 +8617,10 @@ paths:
                       identifierValue: idValue
                     displayName: RelatedEntityDisplayName
                     properties: {}
+                    identifiers:
+                    - identifierScope: idScope
+                      identifierType: idType
+                      identifierValue: idValue
                   traversalDirection: Out
                   traversalDescription: Outward relationship description
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
@@ -15897,6 +15909,10 @@ paths:
                       code: XY10001111
                     displayName: James Smith
                     properties: {}
+                    identifiers:
+                    - identifierScope: HrSystem1
+                      identifierType: InternalId
+                      identifierValue: XY10001111
                   traversalDirection: Out
                   traversalDescription: is legal representative for
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -15918,6 +15934,10 @@ paths:
                       code: XY10001111
                     displayName: James Smith
                     properties: {}
+                    identifiers:
+                    - identifierScope: HrSystem1
+                      identifierType: InternalId
+                      identifierValue: XY10001111
                   traversalDirection: Out
                   traversalDescription: is legal representative for
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -15939,6 +15959,10 @@ paths:
                       code: XY10001111
                     displayName: James Smith
                     properties: {}
+                    identifiers:
+                    - identifierScope: HrSystem1
+                      identifierType: InternalId
+                      identifierValue: XY10001111
                   traversalDirection: Out
                   traversalDescription: is legal representative for
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -22232,6 +22256,10 @@ paths:
                       code: PortfolioId-148176
                     displayName: James Smith
                     properties: {}
+                    scope: UkPortfolio
+                    identifiers:
+                    - identifierType: code
+                      identifierValue: PortfolioId-148176
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -22251,6 +22279,10 @@ paths:
                       code: PortfolioId-148176
                     displayName: James Smith
                     properties: {}
+                    scope: UkPortfolio
+                    identifiers:
+                    - identifierType: code
+                      identifierValue: PortfolioId-148176
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -22270,6 +22302,10 @@ paths:
                       code: PortfolioId-148176
                     displayName: James Smith
                     properties: {}
+                    scope: UkPortfolio
+                    identifiers:
+                    - identifierType: code
+                      identifierValue: PortfolioId-148176
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -26830,6 +26866,10 @@ paths:
                       code: XY10001111
                     displayName: James Smith
                     properties: {}
+                    identifiers:
+                    - identifierScope: HrSystem1
+                      identifierType: InternalId
+                      identifierValue: XY10001111
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -26850,6 +26890,10 @@ paths:
                       code: XY10001111
                     displayName: James Smith
                     properties: {}
+                    identifiers:
+                    - identifierScope: HrSystem1
+                      identifierType: InternalId
+                      identifierValue: XY10001111
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -26870,6 +26914,10 @@ paths:
                       code: XY10001111
                     displayName: James Smith
                     properties: {}
+                    identifiers:
+                    - identifierScope: HrSystem1
+                      identifierType: InternalId
+                      identifierValue: XY10001111
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -31971,6 +32019,10 @@ paths:
                       code: XY10001111
                     displayName: James Smith
                     properties: {}
+                    identifiers:
+                    - identifierScope: HrSystem1
+                      identifierType: InternalId
+                      identifierValue: XY10001111
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -31984,6 +32036,10 @@ paths:
                       code: PortfolioGroupId-867312
                     displayName: UK Portfolios
                     properties: {}
+                    scope: PortfolioGroupEmea
+                    identifiers:
+                    - identifierType: code
+                      identifierValue: PortfolioGroupId-867312
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -32004,6 +32060,10 @@ paths:
                       code: XY10001111
                     displayName: James Smith
                     properties: {}
+                    identifiers:
+                    - identifierScope: HrSystem1
+                      identifierType: InternalId
+                      identifierValue: XY10001111
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -32017,6 +32077,10 @@ paths:
                       code: PortfolioGroupId-867312
                     displayName: UK Portfolios
                     properties: {}
+                    scope: PortfolioGroupEmea
+                    identifiers:
+                    - identifierType: code
+                      identifierValue: PortfolioGroupId-867312
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -32037,6 +32101,10 @@ paths:
                       code: XY10001111
                     displayName: James Smith
                     properties: {}
+                    identifiers:
+                    - identifierScope: HrSystem1
+                      identifierType: InternalId
+                      identifierValue: XY10001111
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -32050,6 +32118,10 @@ paths:
                       code: PortfolioGroupId-867312
                     displayName: UK Portfolios
                     properties: {}
+                    scope: PortfolioGroupEmea
+                    identifiers:
+                    - identifierType: code
+                      identifierValue: PortfolioGroupId-867312
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -37181,6 +37253,10 @@ paths:
                     code: PortfolioId-148176
                   displayName: UK Portfolios
                   properties: {}
+                  scope: UkPortfolio
+                  identifiers:
+                  - identifierType: code
+                    identifierValue: PortfolioId-148176
                 targetEntity:
                   entityType: Person
                   entityId:
@@ -37189,6 +37265,10 @@ paths:
                     code: XY10001111
                   displayName: James Smith
                   properties: {}
+                  identifiers:
+                  - identifierScope: HrSystem1
+                    identifierType: InternalId
+                    identifierValue: XY10001111
                 outwardDescription: can be traded by
                 inwardDescription: can trade with portfolio
                 effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -37206,6 +37286,10 @@ paths:
                     code: PortfolioId-148176
                   displayName: UK Portfolios
                   properties: {}
+                  scope: UkPortfolio
+                  identifiers:
+                  - identifierType: code
+                    identifierValue: PortfolioId-148176
                 targetEntity:
                   entityType: Person
                   entityId:
@@ -37214,6 +37298,10 @@ paths:
                     code: XY10001111
                   displayName: James Smith
                   properties: {}
+                  identifiers:
+                  - identifierScope: HrSystem1
+                    identifierType: InternalId
+                    identifierValue: XY10001111
                 outwardDescription: can be traded by
                 inwardDescription: can trade with portfolio
                 effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -37231,6 +37319,10 @@ paths:
                     code: PortfolioId-148176
                   displayName: UK Portfolios
                   properties: {}
+                  scope: UkPortfolio
+                  identifiers:
+                  - identifierType: code
+                    identifierValue: PortfolioId-148176
                 targetEntity:
                   entityType: Person
                   entityId:
@@ -37239,6 +37331,10 @@ paths:
                     code: XY10001111
                   displayName: James Smith
                   properties: {}
+                  identifiers:
+                  - identifierScope: HrSystem1
+                    identifierType: InternalId
+                    identifierValue: XY10001111
                 outwardDescription: can be traded by
                 inwardDescription: can trade with portfolio
                 effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
@@ -55961,8 +56057,17 @@ components:
         sourceEntity:
           entityType: entityType
           displayName: displayName
+          identifiers:
+          - identifierValue: identifierValue
+            identifierType: identifierType
+            identifierScope: identifierScope
+          - identifierValue: identifierValue
+            identifierType: identifierType
+            identifierScope: identifierScope
+          scope: scope
           entityId:
             key: entityId
+          href: https://openapi-generator.tech
           properties:
             key:
               effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -55980,8 +56085,17 @@ components:
         targetEntity:
           entityType: entityType
           displayName: displayName
+          identifiers:
+          - identifierValue: identifierValue
+            identifierType: identifierType
+            identifierScope: identifierScope
+          - identifierValue: identifierValue
+            identifierType: identifierType
+            identifierScope: identifierScope
+          scope: scope
           entityId:
             key: entityId
+          href: https://openapi-generator.tech
           properties:
             key:
               effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -59467,6 +59581,28 @@ components:
       allOf:
       - $ref: '#/components/schemas/ModelOptions'
       - $ref: '#/components/schemas/EmptyModelOptions_allOf'
+    EntityIdentifier:
+      additionalProperties: false
+      description: Dto to expose mapped keys to new standardised format
+      example:
+        identifierValue: identifierValue
+        identifierType: identifierType
+        identifierScope: identifierScope
+      properties:
+        identifierScope:
+          description: The scope of the identifier
+          nullable: true
+          type: string
+        identifierType:
+          description: The type of the identifier
+          type: string
+        identifierValue:
+          description: The value of the identifier
+          type: string
+      required:
+      - identifierType
+      - identifierValue
+      type: object
     Equity:
       allOf:
       - $ref: '#/components/schemas/LusidInstrument'
@@ -71937,8 +72073,17 @@ components:
       example:
         entityType: entityType
         displayName: displayName
+        identifiers:
+        - identifierValue: identifierValue
+          identifierType: identifierType
+          identifierScope: identifierScope
+        - identifierValue: identifierValue
+          identifierType: identifierType
+          identifierScope: identifierScope
+        scope: scope
         entityId:
           key: entityId
+        href: https://openapi-generator.tech
         properties:
           key:
             effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -71975,10 +72120,25 @@ components:
             notice.
           nullable: true
           type: object
+        scope:
+          description: The scope of the identifier
+          nullable: true
+          type: string
+        identifiers:
+          description: The identifiers of the related entity in the relationship.
+          items:
+            $ref: '#/components/schemas/EntityIdentifier'
+          type: array
+        href:
+          description: The link to the entity.
+          format: uri
+          nullable: true
+          type: string
       required:
       - displayName
       - entityId
       - entityType
+      - identifiers
       type: object
     Relation:
       additionalProperties: false
@@ -72098,8 +72258,17 @@ components:
         relatedEntity:
           entityType: entityType
           displayName: displayName
+          identifiers:
+          - identifierValue: identifierValue
+            identifierType: identifierType
+            identifierScope: identifierScope
+          - identifierValue: identifierValue
+            identifierType: identifierType
+            identifierScope: identifierScope
+          scope: scope
           entityId:
             key: entityId
+          href: https://openapi-generator.tech
           properties:
             key:
               effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -76897,8 +77066,17 @@ components:
           relatedEntity:
             entityType: entityType
             displayName: displayName
+            identifiers:
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            scope: scope
             entityId:
               key: entityId
+            href: https://openapi-generator.tech
             properties:
               key:
                 effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -76925,8 +77103,17 @@ components:
           relatedEntity:
             entityType: entityType
             displayName: displayName
+            identifiers:
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            scope: scope
             entityId:
               key: entityId
+            href: https://openapi-generator.tech
             properties:
               key:
                 effectiveUntil: 2000-01-23T04:56:07.000+00:00
