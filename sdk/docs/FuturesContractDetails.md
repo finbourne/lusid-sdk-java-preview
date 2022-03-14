@@ -9,6 +9,7 @@ Most, if not all, information about contracts is standardized. See, e.g. https:/
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **domCcy** | **String** | Currency in which the contract is paid. | 
+**fgnCcy** | **String** | Currency of the underlying, for use with FX Futures |  [optional]
 **assetClass** | **String** | The asset class of the underlying. Optional and will default to Unknown if not set.  Supported string (enumeration) values are: [InterestRates, FX, Inflation, Equities, Credit, Commodities, Money]. |  [optional]
 **contractCode** | **String** | The contract code used by the exchange, e.g. “CL” for Crude Oil, “ES” for E-mini SP 500, “FGBL” for Bund Futures, etc. | 
 **contractMonth** | **String** | Which month does the contract trade for.  Supported string (enumeration) values are: [F, G, H, J, K, M, N, Q, U, V, X, Z]. | 
