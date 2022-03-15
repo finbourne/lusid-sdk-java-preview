@@ -284,12 +284,12 @@ info:
     | <a name="775">775</a>|Fund accounting document cannot be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4104
+  version: 0.11.4107
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:45003
 security:
 - {}
 tags:
@@ -60728,8 +60728,7 @@ components:
           description: "When generating a set of dates, what convention should be\
             \ used for adjusting dates that coincide with a non-business day.\r\n\
             Supported string (enumeration) values are: [NoAdjustment, Previous, P,\
-            \ Following, F, ModifiedPrevious, MP, ModifiedFollowing, MF, EndOfMonth,\
-            \ EOM, EndOfMonthPrevious, EOMP, EndOfMonthFollowing, EOMF, HalfMonthModifiedFollowing]."
+            \ Following, F, ModifiedPrevious, MP, ModifiedFollowing, MF, HalfMonthModifiedFollowing]."
           maxLength: 50
           minLength: 0
           type: string
@@ -86741,7 +86740,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
