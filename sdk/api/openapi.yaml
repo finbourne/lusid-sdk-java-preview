@@ -284,12 +284,12 @@ info:
     | <a name="775">775</a>|Fund accounting document cannot be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4108
+  version: 0.11.4109
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:63618
+- url: http://local-unit-test-server.lusid.com:63112
 security:
 - {}
 tags:
@@ -39731,7 +39731,8 @@ paths:
                 - type: Simple-Sell
                   description: Sale
                   transactionClass: MyDefault
-                  transactionGroup: MyGroup
+                  transactionGroup: mysource
+                  source: mysource
                   transactionRoles: LongShorter
                   isDefault: false
                 movements:
@@ -39750,7 +39751,8 @@ paths:
                 - type: Sell-FIFO
                   description: Sale using FIFO logic
                   transactionClass: FIFO
-                  transactionGroup: MyGroup
+                  transactionGroup: mysource
+                  source: mysource
                   transactionRoles: LongShorter
                   isDefault: false
                 movements:
@@ -39795,7 +39797,8 @@ paths:
                 - type: Simple-Sell
                   description: Sale
                   transactionClass: MyDefault
-                  transactionGroup: MyGroup
+                  transactionGroup: mysource
+                  source: mysource
                   transactionRoles: LongShorter
                   isDefault: false
                 movements:
@@ -39814,7 +39817,8 @@ paths:
                 - type: Sell-FIFO
                   description: Sale using FIFO logic
                   transactionClass: FIFO
-                  transactionGroup: MyGroup
+                  transactionGroup: mysource
+                  source: mysource
                   transactionRoles: LongShorter
                   isDefault: false
                 movements:
@@ -39859,7 +39863,8 @@ paths:
                 - type: Simple-Sell
                   description: Sale
                   transactionClass: MyDefault
-                  transactionGroup: MyGroup
+                  transactionGroup: mysource
+                  source: mysource
                   transactionRoles: LongShorter
                   isDefault: false
                 movements:
@@ -39878,7 +39883,8 @@ paths:
                 - type: Sell-FIFO
                   description: Sale using FIFO logic
                   transactionClass: FIFO
-                  transactionGroup: MyGroup
+                  transactionGroup: mysource
+                  source: mysource
                   transactionRoles: LongShorter
                   isDefault: false
                 movements:
@@ -39923,7 +39929,8 @@ paths:
                 - type: Simple-Sell
                   description: Sale
                   transactionClass: MyDefault
-                  transactionGroup: MyGroup
+                  transactionGroup: mysource
+                  source: mysource
                   transactionRoles: LongShorter
                   isDefault: false
                 movements:
@@ -39942,7 +39949,8 @@ paths:
                 - type: Sell-FIFO
                   description: Sale using FIFO logic
                   transactionClass: FIFO
-                  transactionGroup: MyGroup
+                  transactionGroup: mysource
+                  source: mysource
                   transactionRoles: LongShorter
                   isDefault: false
                 movements:
@@ -40120,7 +40128,8 @@ paths:
               - type: Another-Sell
                 description: Sale
                 transactionClass: MyDefault
-                transactionGroup: MyGroup
+                transactionGroup: mysource
+                source: mysource
                 transactionRoles: LongShorter
                 isDefault: false
               movements:
@@ -40143,7 +40152,8 @@ paths:
               - type: Another-Sell
                 description: Sale
                 transactionClass: MyDefault
-                transactionGroup: MyGroup
+                transactionGroup: mysource
+                source: mysource
                 transactionRoles: LongShorter
                 isDefault: false
               movements:
@@ -40166,7 +40176,8 @@ paths:
               - type: Another-Sell
                 description: Sale
                 transactionClass: MyDefault
-                transactionGroup: MyGroup
+                transactionGroup: mysource
+                source: mysource
                 transactionRoles: LongShorter
                 isDefault: false
               movements:
@@ -40189,7 +40200,8 @@ paths:
               - type: Another-Sell
                 description: Sale
                 transactionClass: MyDefault
-                transactionGroup: MyGroup
+                transactionGroup: mysource
+                source: mysource
                 transactionRoles: LongShorter
                 isDefault: false
               movements:
@@ -40645,6 +40657,233 @@ paths:
       tags:
       - Transaction Configuration
       x-fbn-apistatus: Experimental
+      x-accepts: application/json
+    put:
+      description: "Set a transaction type for the given source and type. If the requested\
+        \ transaction type does not exist, it will be created\r\n\r\nWARNING! Changing\
+        \ existing transaction types has a material impact on how data, new and old,\
+        \ is processed and aggregated by LUSID, and will affect your whole organisation.\
+        \ Only call this API if you are fully aware of the implications of the change."
+      operationId: SetTransactionType
+      parameters:
+      - description: The source to set the transaction configuration for
+        explode: false
+        in: path
+        name: source
+        required: true
+        schema:
+          description: The source to set the transaction configuration for
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: One of the transaction configuration alias types to uniquely
+          identify the configuration
+        explode: false
+        in: path
+        name: type
+        required: true
+        schema:
+          description: One of the transaction configuration alias types to uniquely
+            identify the configuration
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              aliases:
+              - type: CustomBuy
+                description: A custom buy type
+                transactionClass: Buy
+                transactionRoles: Longer
+                isDefault: false
+              - type: BuyAlias
+                description: A similar buy type
+                transactionClass: Buy
+                transactionRoles: Longer
+                isDefault: false
+              movements:
+              - movementTypes: StockMovement
+                side: Side1
+                direction: -1
+                properties:
+                  transactionConfiguration/default/TaxLotSelectionMethod:
+                    key: TransactionConfiguration/default/TaxLotSelectionMethod
+                    value:
+                      labelValue: FirstInFirstOut
+                mappings: []
+              - movementTypes: CashCommitment
+                side: Side1
+                direction: 1
+                properties: {}
+                mappings:
+                - propertyKey: Transaction/scopeA/Strategy
+                  setTo: Cash
+              properties:
+                transactionConfiguration/default/TotalConsiderationPolicy:
+                  key: TransactionConfiguration/default/TotalConsiderationPolicy
+                  value:
+                    labelValue: Add
+            schema:
+              $ref: '#/components/schemas/TransactionTypeRequest'
+          application/json:
+            example:
+              aliases:
+              - type: CustomBuy
+                description: A custom buy type
+                transactionClass: Buy
+                transactionRoles: Longer
+                isDefault: false
+              - type: BuyAlias
+                description: A similar buy type
+                transactionClass: Buy
+                transactionRoles: Longer
+                isDefault: false
+              movements:
+              - movementTypes: StockMovement
+                side: Side1
+                direction: -1
+                properties:
+                  transactionConfiguration/default/TaxLotSelectionMethod:
+                    key: TransactionConfiguration/default/TaxLotSelectionMethod
+                    value:
+                      labelValue: FirstInFirstOut
+                mappings: []
+              - movementTypes: CashCommitment
+                side: Side1
+                direction: 1
+                properties: {}
+                mappings:
+                - propertyKey: Transaction/scopeA/Strategy
+                  setTo: Cash
+              properties:
+                transactionConfiguration/default/TotalConsiderationPolicy:
+                  key: TransactionConfiguration/default/TotalConsiderationPolicy
+                  value:
+                    labelValue: Add
+            schema:
+              $ref: '#/components/schemas/TransactionTypeRequest'
+          text/json:
+            example:
+              aliases:
+              - type: CustomBuy
+                description: A custom buy type
+                transactionClass: Buy
+                transactionRoles: Longer
+                isDefault: false
+              - type: BuyAlias
+                description: A similar buy type
+                transactionClass: Buy
+                transactionRoles: Longer
+                isDefault: false
+              movements:
+              - movementTypes: StockMovement
+                side: Side1
+                direction: -1
+                properties:
+                  transactionConfiguration/default/TaxLotSelectionMethod:
+                    key: TransactionConfiguration/default/TaxLotSelectionMethod
+                    value:
+                      labelValue: FirstInFirstOut
+                mappings: []
+              - movementTypes: CashCommitment
+                side: Side1
+                direction: 1
+                properties: {}
+                mappings:
+                - propertyKey: Transaction/scopeA/Strategy
+                  setTo: Cash
+              properties:
+                transactionConfiguration/default/TotalConsiderationPolicy:
+                  key: TransactionConfiguration/default/TotalConsiderationPolicy
+                  value:
+                    labelValue: Add
+            schema:
+              $ref: '#/components/schemas/TransactionTypeRequest'
+          application/*+json:
+            example:
+              aliases:
+              - type: CustomBuy
+                description: A custom buy type
+                transactionClass: Buy
+                transactionRoles: Longer
+                isDefault: false
+              - type: BuyAlias
+                description: A similar buy type
+                transactionClass: Buy
+                transactionRoles: Longer
+                isDefault: false
+              movements:
+              - movementTypes: StockMovement
+                side: Side1
+                direction: -1
+                properties:
+                  transactionConfiguration/default/TaxLotSelectionMethod:
+                    key: TransactionConfiguration/default/TaxLotSelectionMethod
+                    value:
+                      labelValue: FirstInFirstOut
+                mappings: []
+              - movementTypes: CashCommitment
+                side: Side1
+                direction: 1
+                properties: {}
+                mappings:
+                - propertyKey: Transaction/scopeA/Strategy
+                  setTo: Cash
+              properties:
+                transactionConfiguration/default/TotalConsiderationPolicy:
+                  key: TransactionConfiguration/default/TotalConsiderationPolicy
+                  value:
+                    labelValue: Add
+            schema:
+              $ref: '#/components/schemas/TransactionTypeRequest'
+        description: The transaction configuration to set
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TransactionType'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionType'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TransactionType'
+          description: Success
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] SetTransactionType: Set a specific transaction type'
+      tags:
+      - Transaction Configuration
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/transactionportfolios/{scope}:
     post:
@@ -79695,10 +79934,10 @@ components:
         - side: side
           mappings:
           - propertyKey: propertyKey
-            setTo: '{}'
+            setTo: setTo
             mapFrom: mapFrom
           - propertyKey: propertyKey
-            setTo: '{}'
+            setTo: setTo
             mapFrom: mapFrom
           name: name
           movementTypes: movementTypes
@@ -79718,10 +79957,10 @@ components:
         - side: side
           mappings:
           - propertyKey: propertyKey
-            setTo: '{}'
+            setTo: setTo
             mapFrom: mapFrom
           - propertyKey: propertyKey
-            setTo: '{}'
+            setTo: setTo
             mapFrom: mapFrom
           name: name
           movementTypes: movementTypes
@@ -79833,10 +80072,10 @@ components:
         side: side
         mappings:
         - propertyKey: propertyKey
-          setTo: '{}'
+          setTo: setTo
           mapFrom: mapFrom
         - propertyKey: propertyKey
-          setTo: '{}'
+          setTo: setTo
           mapFrom: mapFrom
         name: name
         movementTypes: movementTypes
@@ -79863,6 +80102,9 @@ components:
             are used to generate the Movement. Side1 means the 'security' side of
             the transaction, ie the Instrument and Units; Side2 means the 'cash' side,
             ie the Total Consideration
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         direction:
           description: ' A multiplier to apply to Transaction amounts; the values
@@ -79882,11 +80124,15 @@ components:
             on the underlying holding
           items:
             $ref: '#/components/schemas/TransactionTypePropertyMapping'
+          maxLength: 5000
           nullable: true
           type: array
         name:
           description: The movement name (optional)
+          maxLength: 512
+          minLength: 1
           nullable: true
+          pattern: ^[\s\S]*$
           type: string
       required:
       - direction
@@ -79897,7 +80143,7 @@ components:
       additionalProperties: false
       example:
         propertyKey: propertyKey
-        setTo: '{}'
+        setTo: setTo
         mapFrom: mapFrom
       properties:
         propertyKey:
@@ -79909,12 +80155,109 @@ components:
           nullable: true
           type: string
         setTo:
-          additionalProperties: false
           description: A pointer to the Property being mapped from
+          maxLength: 512
+          minLength: 1
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+      required:
+      - propertyKey
+      type: object
+    TransactionTypeRequest:
+      additionalProperties: false
+      example:
+        aliases:
+        - transactionRoles: transactionRoles
+          isDefault: true
+          transactionClass: transactionClass
+          description: description
+          type: type
+        - transactionRoles: transactionRoles
+          isDefault: true
+          transactionClass: transactionClass
+          description: description
+          type: type
+        movements:
+        - side: side
+          mappings:
+          - propertyKey: propertyKey
+            setTo: setTo
+            mapFrom: mapFrom
+          - propertyKey: propertyKey
+            setTo: setTo
+            mapFrom: mapFrom
+          name: name
+          movementTypes: movementTypes
+          properties:
+            key:
+              value:
+                metricValue:
+                  unit: unit
+                  value: 6.027456183070403
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              key: key
+          direction: 0
+        - side: side
+          mappings:
+          - propertyKey: propertyKey
+            setTo: setTo
+            mapFrom: mapFrom
+          - propertyKey: propertyKey
+            setTo: setTo
+            mapFrom: mapFrom
+          name: name
+          movementTypes: movementTypes
+          properties:
+            key:
+              value:
+                metricValue:
+                  unit: unit
+                  value: 6.027456183070403
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              key: key
+          direction: 0
+        properties:
+          key:
+            value:
+              metricValue:
+                unit: unit
+                value: 6.027456183070403
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            key: key
+      properties:
+        aliases:
+          description: List of transaction types that map to this specific transaction
+            configuration
+          items:
+            $ref: '#/components/schemas/TransactionTypeAlias'
+          type: array
+        movements:
+          description: Movement data for the transaction type
+          items:
+            $ref: '#/components/schemas/TransactionTypeMovement'
+          type: array
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/PerpetualProperty'
+          description: Properties attached to the transaction type
           nullable: true
           type: object
       required:
-      - propertyKey
+      - aliases
+      - movements
       type: object
     TranslateInstrumentDefinitionsRequest:
       additionalProperties: false
