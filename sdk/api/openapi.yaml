@@ -284,12 +284,12 @@ info:
     | <a name="775">775</a>|Fund accounting document cannot be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4107
+  version: 0.11.4108
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:63618
 security:
 - {}
 tags:
@@ -14539,6 +14539,22 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: The effective datetime until which the Access Metadata is valid.
+          If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+          datetime of the Access Metadata
+        explode: true
+        in: query
+        name: effectiveUntil
+        required: false
+        schema:
+          description: The effective datetime until which the Access Metadata is valid.
+            If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+            datetime of the Access Metadata
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
       requestBody:
         content:
           application/json-patch+json:
@@ -14713,6 +14729,22 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: The effective date until which the delete is valid. If not supplied
+          this will be valid indefinitely, or until the next 'effectiveAt' date of
+          the Access Metadata
+        explode: true
+        in: query
+        name: effectiveUntil
+        required: false
+        schema:
+          description: The effective date until which the delete is valid. If not
+            supplied this will be valid indefinitely, or until the next 'effectiveAt'
+            date of the Access Metadata
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
       responses:
         "200":
           content:
@@ -14950,6 +14982,22 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: The effective datetime until which the Access Metadata is valid.
+          If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+          datetime of the Access Metadata
+        explode: true
+        in: query
+        name: effectiveUntil
+        required: false
+        schema:
+          description: The effective datetime until which the Access Metadata is valid.
+            If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+            datetime of the Access Metadata
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
       requestBody:
         content:
           application/json-patch+json:
@@ -16501,6 +16549,22 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: The effective date until which the Access Metadata is valid.
+          If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+          date of the Access Metadata
+        explode: true
+        in: query
+        name: effectiveUntil
+        required: false
+        schema:
+          description: The effective date until which the Access Metadata is valid.
+            If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+            date of the Access Metadata
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
       requestBody:
         content:
           application/json-patch+json:
@@ -20985,6 +21049,22 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: The effective datetime until which the Access Metadata is valid.
+          If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+          datetime of the Access Metadata
+        explode: true
+        in: query
+        name: effectiveUntil
+        required: false
+        schema:
+          description: The effective datetime until which the Access Metadata is valid.
+            If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+            datetime of the Access Metadata
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
       requestBody:
         content:
           application/json-patch+json:
@@ -21153,6 +21233,22 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: The effective date until which the delete is valid. If not supplied
+          this will be valid indefinitely, or until the next 'effectiveAt' date of
+          the Access Metadata
+        explode: true
+        in: query
+        name: effectiveUntil
+        required: false
+        schema:
+          description: The effective date until which the delete is valid. If not
+            supplied this will be valid indefinitely, or until the next 'effectiveAt'
+            date of the Access Metadata
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
       responses:
         "200":
           content:
@@ -21373,6 +21469,22 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: The effective datetime until which the Access Metadata is valid.
+          If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+          datetime of the Access Metadata
+        explode: true
+        in: query
+        name: effectiveUntil
+        required: false
+        schema:
+          description: The effective datetime until which the Access Metadata is valid.
+            If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+            datetime of the Access Metadata
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
       requestBody:
         content:
           application/json-patch+json:
@@ -25263,6 +25375,22 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: The effective date until which the Access Metadata is valid.
+          If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+          date of the Access Metadata
+        explode: true
+        in: query
+        name: effectiveUntil
+        required: false
+        schema:
+          description: The effective date until which the Access Metadata is valid.
+            If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+            date of the Access Metadata
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
       requestBody:
         content:
           application/json-patch+json:
@@ -25422,6 +25550,22 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: The effective date until which the delete is valid. If not supplied
+          this will be valid indefinitely, or until the next 'effectiveAt' date of
+          the Access Metadata
+        explode: true
+        in: query
+        name: effectiveUntil
+        required: false
+        schema:
+          description: The effective date until which the delete is valid. If not
+            supplied this will be valid indefinitely, or until the next 'effectiveAt'
+            date of the Access Metadata
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
       responses:
         "200":
           content:
@@ -25629,6 +25773,22 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: The effective date until which the Access Metadata is valid.
+          If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+          date of the Access Metadata
+        explode: true
+        in: query
+        name: effectiveUntil
+        required: false
+        schema:
+          description: The effective date until which the Access Metadata is valid.
+            If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+            date of the Access Metadata
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
       requestBody:
         content:
           application/json-patch+json:
@@ -30507,6 +30667,22 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: The effective date until which the Access Metadata is valid.
+          If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+          date of the Access Metadata
+        explode: true
+        in: query
+        name: effectiveUntil
+        required: false
+        schema:
+          description: The effective date until which the Access Metadata is valid.
+            If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+            date of the Access Metadata
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
       requestBody:
         content:
           application/json-patch+json:
@@ -30665,6 +30841,22 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: The effective date until which the delete is valid. If not supplied
+          this will be valid indefinitely, or until the next 'effectiveAt' date of
+          the Access Metadata
+        explode: true
+        in: query
+        name: effectiveUntil
+        required: false
+        schema:
+          description: The effective date until which the delete is valid. If not
+            supplied this will be valid indefinitely, or until the next 'effectiveAt'
+            date of the Access Metadata
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
       responses:
         "200":
           content:
@@ -30875,6 +31067,22 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: The effective date until which the Access Metadata is valid.
+          If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+          date of the Access Metadata
+        explode: true
+        in: query
+        name: effectiveUntil
+        required: false
+        schema:
+          description: The effective date until which the Access Metadata is valid.
+            If not supplied this will be valid indefinitely, or until the next 'effectiveAt'
+            date of the Access Metadata
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
       requestBody:
         content:
           application/json-patch+json:
@@ -86740,7 +86948,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
