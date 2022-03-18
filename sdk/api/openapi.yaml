@@ -284,12 +284,12 @@ info:
     | <a name="775">775</a>|Fund accounting document cannot be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4120
+  version: 0.11.4121
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:42566
+- url: http://local-unit-test-server.lusid.com:39045
 security:
 - {}
 tags:
@@ -40572,6 +40572,104 @@ paths:
       x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
       x-accepts: application/json
+  /api/transactionconfiguration/sides/{side}:
+    put:
+      description: Set a new side definition for use in a transaction type. For more
+        information, see https://support.lusid.com/knowledgebase/article/KA-01875.
+      operationId: SetSideDefinition
+      parameters:
+      - description: The label to uniquely identify the side.
+        explode: false
+        in: path
+        name: side
+        required: true
+        schema:
+          description: The label to uniquely identify the side.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              security: Txn:LusidInstrumentId
+              currency: Txn:TradeCurrency
+              rate: Txn:Units
+              units: "1"
+              amount: Transaction/MyScope/TradeAmount
+            schema:
+              $ref: '#/components/schemas/SideDefinitionRequest'
+          application/json:
+            example:
+              security: Txn:LusidInstrumentId
+              currency: Txn:TradeCurrency
+              rate: Txn:Units
+              units: "1"
+              amount: Transaction/MyScope/TradeAmount
+            schema:
+              $ref: '#/components/schemas/SideDefinitionRequest'
+          text/json:
+            example:
+              security: Txn:LusidInstrumentId
+              currency: Txn:TradeCurrency
+              rate: Txn:Units
+              units: "1"
+              amount: Transaction/MyScope/TradeAmount
+            schema:
+              $ref: '#/components/schemas/SideDefinitionRequest'
+          application/*+json:
+            example:
+              security: Txn:LusidInstrumentId
+              currency: Txn:TradeCurrency
+              rate: Txn:Units
+              units: "1"
+              amount: Transaction/MyScope/TradeAmount
+            schema:
+              $ref: '#/components/schemas/SideDefinitionRequest'
+        description: The side definition to create or replace.
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SideDefinition'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SideDefinition'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SideDefinition'
+          description: Success
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] SetSideDefinition: Set a side definition'
+      tags:
+      - Transaction Configuration
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
   /api/transactionconfiguration/types/{source}/{type}:
     delete:
       description: "/// WARNING! Changing existing transaction types has a material\
@@ -78575,6 +78673,113 @@ components:
       - rate
       - security
       - side
+      - units
+      type: object
+    SideDefinition:
+      additionalProperties: false
+      example:
+        side: side
+        security: security
+        amount: amount
+        rate: rate
+        currency: currency
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        units: units
+      properties:
+        side:
+          description: A unique label identifying the side definition.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        security:
+          description: The field or property key defining the side's security, or
+            instrument.
+          maxLength: 64
+          minLength: 1
+          type: string
+        currency:
+          description: The field or property key defining the side's currency.
+          maxLength: 64
+          minLength: 1
+          type: string
+        rate:
+          description: The field or property key defining the side's rate.
+          maxLength: 64
+          minLength: 1
+          type: string
+        units:
+          description: The value, field or property key defining the side's units.
+          maxLength: 64
+          minLength: 1
+          type: string
+        amount:
+          description: The value, field or property key defining the side's amount
+          maxLength: 64
+          minLength: 1
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - amount
+      - currency
+      - rate
+      - security
+      - side
+      - units
+      type: object
+    SideDefinitionRequest:
+      additionalProperties: false
+      example:
+        security: security
+        amount: amount
+        rate: rate
+        currency: currency
+        units: units
+      properties:
+        security:
+          description: The field or property key defining the side's security, or
+            instrument.
+          maxLength: 64
+          minLength: 1
+          type: string
+        currency:
+          description: The field or property key defining the side's currency.
+          maxLength: 64
+          minLength: 1
+          type: string
+        rate:
+          description: The field or property key defining the side's rate.
+          maxLength: 64
+          minLength: 1
+          type: string
+        units:
+          description: The value, field or property key defining the side's units.
+          maxLength: 64
+          minLength: 1
+          type: string
+        amount:
+          description: The value, field or property key defining the side's amount
+          maxLength: 64
+          minLength: 1
+          type: string
+      required:
+      - amount
+      - currency
+      - rate
+      - security
       - units
       type: object
     SimpleInstrument:
