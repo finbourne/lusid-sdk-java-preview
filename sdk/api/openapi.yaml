@@ -284,12 +284,12 @@ info:
     | <a name="775">775</a>|Fund accounting document cannot be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4117
+  version: 0.11.4118
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:59783
+- url: http://local-unit-test-server.lusid.com:33645
 security:
 - {}
 tags:
@@ -87311,6 +87311,11 @@ components:
             e.g 0.03 is meant to be 3% interest
           format: double
           type: number
+        domCcy:
+          description: DomCcy of the TermDeposit. If provided, must match the currency
+            of FlowConvention.
+          nullable: true
+          type: string
         instrumentType:
           description: 'The available values are: QuotedSecurity, InterestRateSwap,
             FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption,
