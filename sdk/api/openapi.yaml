@@ -284,12 +284,12 @@ info:
     | <a name="775">775</a>|Fund accounting document cannot be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4114
+  version: 0.11.4116
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:43852
 security:
 - {}
 tags:
@@ -59079,19 +59079,29 @@ components:
         href: https://openapi-generator.tech
       properties:
         href:
+          description: The specific Uniform Resource Identifier (URI) for this resource
+            at the requested effective and asAt datetime.
           format: uri
           nullable: true
           type: string
         entityTypeName:
+          description: The name provided when the custom entity type was created.
+            This has been prefixed with “~” and returned as “entityType”, which is
+            the identifier for the custom entity type.
           type: string
         displayName:
+          description: A display label for the custom entity type.
           type: string
         description:
+          description: A description for the custom entity type.
           nullable: true
           type: string
         entityType:
+          description: The identifier for the custom entity type, derived from the
+            “entityTypeName” provided on creation.
           type: string
         fieldSchema:
+          description: The description of the fields on the custom entity type.
           items:
             $ref: '#/components/schemas/CustomEntityFieldDefinition'
           type: array
@@ -59118,17 +59128,23 @@ components:
           required: true
       properties:
         entityTypeName:
+          description: A name for the custom entity type. This will be prefixed with
+            “~” and returned as “entityType”, which is the identifier for the custom
+            entity type.
           maxLength: 64
           minLength: 1
           type: string
         displayName:
+          description: A display label for the custom entity type.
           pattern: ^[\s\S]*$
           type: string
         description:
+          description: A description for the custom entity type.
           nullable: true
           pattern: ^[\s\S]*$
           type: string
         fieldSchema:
+          description: The description of the fields on the custom entity type.
           items:
             $ref: '#/components/schemas/CustomEntityFieldDefinition'
           nullable: true
@@ -59146,15 +59162,22 @@ components:
         effectiveFrom: 2000-01-23T04:56:07.000+00:00
       properties:
         name:
+          description: The name of the field in the custom entity type definition.
           type: string
         value:
           additionalProperties: false
+          description: The value for the field.
           type: object
         effectiveFrom:
+          description: The effective datetime from which the field's value is valid.
+            For timeVariant fields, this defaults to the beginning of time.
           format: date-time
           nullable: true
           type: string
         effectiveUntil:
+          description: The effective datetime until which the field's value is valid.
+            If not supplied, the value will be valid indefinitely or until the next
+            “effectiveFrom” date of the field.
           format: date-time
           nullable: true
           type: string
@@ -59171,12 +59194,18 @@ components:
         required: true
       properties:
         name:
+          description: The name of the field.
           type: string
         lifetime:
+          description: 'Describes how the field’s values can change over time. The
+            available values are: “Perpetual”, “TimeVariant”.'
           type: string
         type:
+          description: 'The value type for the field. Available values are: “String”,
+            “Boolean”, “DateTime”, “Decimal”.'
           type: string
         required:
+          description: Whether the field is required or not.
           type: boolean
       required:
       - lifetime
@@ -59194,25 +59223,34 @@ components:
         effectiveFrom: 2000-01-23T04:56:07.000+00:00
       properties:
         identifierScope:
+          description: The scope the identifier resides in (the scope of the identifier
+            property definition).
           maxLength: 64
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         identifierType:
+          description: What the identifier represents (the code of the identifier
+            property definition).
           maxLength: 64
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         identifierValue:
+          description: The value of the identifier for this entity.
           maxLength: 64
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         effectiveFrom:
+          description: The effective datetime from which the identifier is valid.
           format: date-time
           nullable: true
           type: string
         effectiveUntil:
+          description: The effective datetime until which the identifier is valid.
+            If not supplied this will be valid indefinitely, or until the next 'effectiveFrom'
+            datetime of the identifier.
           format: date-time
           nullable: true
           type: string
@@ -59248,14 +59286,18 @@ components:
           effectiveFrom: 2000-01-23T04:56:07.000+00:00
       properties:
         displayName:
+          description: A display label for the custom entity.
           type: string
         description:
+          description: A description of the custom entity.
           type: string
         identifiers:
+          description: The identifiers the custom entity will be upserted with.
           items:
             $ref: '#/components/schemas/CustomEntityId'
           type: array
         fields:
+          description: The fields that decorate the custom entity.
           items:
             $ref: '#/components/schemas/CustomEntityField'
           nullable: true
@@ -87292,7 +87334,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
