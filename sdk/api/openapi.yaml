@@ -284,12 +284,12 @@ info:
     | <a name="775">775</a>|Fund accounting document cannot be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4116
+  version: 0.11.4117
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:43852
+- url: http://local-unit-test-server.lusid.com:59783
 security:
 - {}
 tags:
@@ -40573,6 +40573,77 @@ paths:
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/transactionconfiguration/types/{source}/{type}:
+    delete:
+      description: "/// WARNING! Changing existing transaction types has a material\
+        \ impact on how data, new and old,\r\nis processed and aggregated by LUSID,\
+        \ and will affect your whole organisation. Only call this API if you are fully\
+        \ aware of the implications of the change."
+      operationId: DeleteTransactionType
+      parameters:
+      - description: The source that the type is in
+        explode: false
+        in: path
+        name: source
+        required: true
+        schema:
+          description: The source that the type is in
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: One of the type's aliases
+        explode: false
+        in: path
+        name: type
+        required: true
+        schema:
+          description: One of the type's aliases
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+          description: Success
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] DeleteTransactionType: Delete a transaction type'
+      tags:
+      - Transaction Configuration
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
     get:
       description: Get a single transaction type. Returns failure if not found
       operationId: GetTransactionType
