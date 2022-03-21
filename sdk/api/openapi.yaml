@@ -284,7 +284,7 @@ info:
     | <a name="775">775</a>|Fund accounting document cannot be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4128
+  version: 0.11.4130
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -40600,6 +40600,7 @@ paths:
               rate: Txn:Units
               units: "1"
               amount: Transaction/MyScope/TradeAmount
+              notionalAmount: Transaction/default/NotionalAmount
             schema:
               $ref: '#/components/schemas/SideDefinitionRequest'
           application/json:
@@ -40609,6 +40610,7 @@ paths:
               rate: Txn:Units
               units: "1"
               amount: Transaction/MyScope/TradeAmount
+              notionalAmount: Transaction/default/NotionalAmount
             schema:
               $ref: '#/components/schemas/SideDefinitionRequest'
           text/json:
@@ -40618,6 +40620,7 @@ paths:
               rate: Txn:Units
               units: "1"
               amount: Transaction/MyScope/TradeAmount
+              notionalAmount: Transaction/default/NotionalAmount
             schema:
               $ref: '#/components/schemas/SideDefinitionRequest'
           application/*+json:
@@ -40627,6 +40630,7 @@ paths:
               rate: Txn:Units
               units: "1"
               amount: Transaction/MyScope/TradeAmount
+              notionalAmount: Transaction/default/NotionalAmount
             schema:
               $ref: '#/components/schemas/SideDefinitionRequest'
         description: The side definition to create or replace.
@@ -78999,6 +79003,7 @@ components:
         side: side
         security: security
         amount: amount
+        notionalAmount: notionalAmount
         rate: rate
         currency: currency
         links:
@@ -79044,6 +79049,13 @@ components:
           maxLength: 64
           minLength: 1
           type: string
+        notionalAmount:
+          description: The value, field or property key defining the side's notional
+            amount
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          type: string
         links:
           description: Collection of links.
           items:
@@ -79063,6 +79075,7 @@ components:
       example:
         security: security
         amount: amount
+        notionalAmount: notionalAmount
         rate: rate
         currency: currency
         units: units
@@ -79092,6 +79105,13 @@ components:
           description: The value, field or property key defining the side's amount
           maxLength: 64
           minLength: 1
+          type: string
+        notionalAmount:
+          description: The value, field or property key defining the side's notional
+            amount
+          maxLength: 64
+          minLength: 1
+          nullable: true
           type: string
       required:
       - amount
