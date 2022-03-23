@@ -284,12 +284,12 @@ info:
     | <a name="775">775</a>|Fund accounting document cannot be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4139
+  version: 0.11.4141
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:47114
 security:
 - {}
 tags:
@@ -45421,7 +45421,7 @@ paths:
         style: form
       - description: "The lower bound effective datetime or cut label (inclusive)\
           \ from which to retrieve the cashflows.\r\n             There is no lower\
-          \ bound if this is not specified."
+          \ bound if this is not specified. i.e. it is the minimum date."
         explode: true
         in: query
         name: windowStart
@@ -45429,14 +45429,14 @@ paths:
         schema:
           description: "The lower bound effective datetime or cut label (inclusive)\
             \ from which to retrieve the cashflows.\r\n             There is no lower\
-            \ bound if this is not specified."
+            \ bound if this is not specified. i.e. it is the minimum date."
           format: dateorcutlabel
           nullable: true
           type: string
         style: form
       - description: "The upper bound effective datetime or cut label (inclusive)\
           \ from which to retrieve the cashflows.\r\n             The upper bound\
-          \ defaults to 'today' if it is not specified"
+          \ defaults to 'max date' if it is not specified"
         explode: true
         in: query
         name: windowEnd
@@ -45444,7 +45444,7 @@ paths:
         schema:
           description: "The upper bound effective datetime or cut label (inclusive)\
             \ from which to retrieve the cashflows.\r\n             The upper bound\
-            \ defaults to 'today' if it is not specified"
+            \ defaults to 'max date' if it is not specified"
           format: dateorcutlabel
           nullable: true
           type: string
@@ -51930,7 +51930,7 @@ paths:
         style: form
       - description: "The lower bound effective datetime or cut label (inclusive)\
           \ from which to retrieve the cashflows.\r\n             There is no lower\
-          \ bound if this is not specified."
+          \ bound if this is not specified. i.e. uses minimum date-time"
         explode: true
         in: query
         name: windowStart
@@ -51938,14 +51938,14 @@ paths:
         schema:
           description: "The lower bound effective datetime or cut label (inclusive)\
             \ from which to retrieve the cashflows.\r\n             There is no lower\
-            \ bound if this is not specified."
+            \ bound if this is not specified. i.e. uses minimum date-time"
           format: dateorcutlabel
           nullable: true
           type: string
         style: form
       - description: "The upper bound effective datetime or cut label (inclusive)\
           \ from which to retrieve the cashflows.\r\n             The upper bound\
-          \ defaults to 'today' if it is not specified"
+          \ defaults to 'max date' if it is not specified"
         explode: true
         in: query
         name: windowEnd
@@ -51953,7 +51953,7 @@ paths:
         schema:
           description: "The upper bound effective datetime or cut label (inclusive)\
             \ from which to retrieve the cashflows.\r\n             The upper bound\
-            \ defaults to 'today' if it is not specified"
+            \ defaults to 'max date' if it is not specified"
           format: dateorcutlabel
           nullable: true
           type: string
@@ -88159,7 +88159,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
