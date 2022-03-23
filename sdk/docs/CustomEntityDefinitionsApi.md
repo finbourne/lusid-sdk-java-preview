@@ -1,20 +1,21 @@
 # CustomEntityDefinitionsApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:53406*
+All URIs are relative to *http://local-unit-test-server.lusid.com:59049*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCustomEntityDefinition**](CustomEntityDefinitionsApi.md#createCustomEntityDefinition) | **POST** /api/customentities/entitytypes | [EXPERIMENTAL] CreateCustomEntityDefinition: Define a new custom entityType.
-[**getDefinition**](CustomEntityDefinitionsApi.md#getDefinition) | **GET** /api/customentities/entitytypes/{entityType} | [EXPERIMENTAL] GetDefinition: Get a custom entityType definition.
+[**createCustomEntityDefinition**](CustomEntityDefinitionsApi.md#createCustomEntityDefinition) | **POST** /api/customentities/entitytypes | [EXPERIMENTAL] CreateCustomEntityDefinition: Define a new Custom Entity type.
+[**getDefinition**](CustomEntityDefinitionsApi.md#getDefinition) | **GET** /api/customentities/entitytypes/{entityType} | [EXPERIMENTAL] GetDefinition: Get a Custom Entity type definition.
+[**listCustomEntityDefinitions**](CustomEntityDefinitionsApi.md#listCustomEntityDefinitions) | **GET** /api/customentities/entitytypes | [EXPERIMENTAL] ListCustomEntityDefinitions: List the Custom Entity type definitions
 
 
 <a name="createCustomEntityDefinition"></a>
 # **createCustomEntityDefinition**
 > CustomEntityDefinition createCustomEntityDefinition(customEntityDefinitionRequest)
 
-[EXPERIMENTAL] CreateCustomEntityDefinition: Define a new custom entityType.
+[EXPERIMENTAL] CreateCustomEntityDefinition: Define a new Custom Entity type.
 
-The API will return a Bad Request if the custom entityType already exists.
+The API will return a Bad Request if the Custom Entity type already exists.
 
 ### Example
 ```java
@@ -29,14 +30,14 @@ import com.finbourne.lusid.api.CustomEntityDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53406");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:59049");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CustomEntityDefinitionsApi apiInstance = new CustomEntityDefinitionsApi(defaultClient);
-    CustomEntityDefinitionRequest customEntityDefinitionRequest = new CustomEntityDefinitionRequest(); // CustomEntityDefinitionRequest | The payload containing the description of the custom entityType.
+    CustomEntityDefinitionRequest customEntityDefinitionRequest = new CustomEntityDefinitionRequest(); // CustomEntityDefinitionRequest | The payload containing the description of the Custom Entity type.
     try {
       CustomEntityDefinition result = apiInstance.createCustomEntityDefinition(customEntityDefinitionRequest);
       System.out.println(result);
@@ -55,7 +56,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customEntityDefinitionRequest** | [**CustomEntityDefinitionRequest**](CustomEntityDefinitionRequest.md)| The payload containing the description of the custom entityType. |
+ **customEntityDefinitionRequest** | [**CustomEntityDefinitionRequest**](CustomEntityDefinitionRequest.md)| The payload containing the description of the Custom Entity type. |
 
 ### Return type
 
@@ -73,7 +74,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The created custom entityType. |  -  |
+**200** | The created Custom Entity type. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
@@ -81,9 +82,9 @@ Name | Type | Description  | Notes
 # **getDefinition**
 > CustomEntityDefinition getDefinition(entityType, asAt)
 
-[EXPERIMENTAL] GetDefinition: Get a custom entityType definition.
+[EXPERIMENTAL] GetDefinition: Get a Custom Entity type definition.
 
-Retrieve a CustomEntityDefinition by a specific EntityType at a point in AsAt time
+Retrieve a CustomEntityDefinition by a specific entityType at a point in AsAt time
 
 ### Example
 ```java
@@ -98,14 +99,14 @@ import com.finbourne.lusid.api.CustomEntityDefinitionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:53406");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:59049");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     CustomEntityDefinitionsApi apiInstance = new CustomEntityDefinitionsApi(defaultClient);
-    String entityType = "entityType_example"; // String | The identifier for the custom entity type, derived from the \"entityTypeName\" provided on creation.
+    String entityType = "entityType_example"; // String | The identifier for the Custom Entity type, derived from the \"entityTypeName\" provided on creation.
     OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The AsAt datetime at which to retrieve the definition.
     try {
       CustomEntityDefinition result = apiInstance.getDefinition(entityType, asAt);
@@ -125,7 +126,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **entityType** | **String**| The identifier for the custom entity type, derived from the \&quot;entityTypeName\&quot; provided on creation. |
+ **entityType** | **String**| The identifier for the Custom Entity type, derived from the \&quot;entityTypeName\&quot; provided on creation. |
  **asAt** | **OffsetDateTime**| The AsAt datetime at which to retrieve the definition. | [optional]
 
 ### Return type
@@ -144,7 +145,82 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The requested custom entity definition. |  -  |
+**200** | The requested Custom Entity definition. |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="listCustomEntityDefinitions"></a>
+# **listCustomEntityDefinitions**
+> PagedResourceListOfCustomEntityDefinition listCustomEntityDefinitions(asAt, limit, filter, page)
+
+[EXPERIMENTAL] ListCustomEntityDefinitions: List the Custom Entity type definitions
+
+List all Custom Entity type definitions matching particular criteria.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CustomEntityDefinitionsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:59049");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    CustomEntityDefinitionsApi apiInstance = new CustomEntityDefinitionsApi(defaultClient);
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to list the entities. Defaults to returning the latest version              of each portfolio if not specified.
+    Integer limit = 56; // Integer | When paginating, limit the results to this number. Defaults to 100 if not specified.
+    String filter = "filter_example"; // String | Expression to filter the results. For more information about filtering              results, see https://support.lusid.com/knowledgebase/article/KA-01914.
+    String page = "page_example"; // String | The pagination token to use to continue listing entities; this              value is returned from the previous call. If a pagination token is provided, the filter, limit              and asAt fields must not have changed since the original request.
+    try {
+      PagedResourceListOfCustomEntityDefinition result = apiInstance.listCustomEntityDefinitions(asAt, limit, filter, page);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CustomEntityDefinitionsApi#listCustomEntityDefinitions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to list the entities. Defaults to returning the latest version              of each portfolio if not specified. | [optional]
+ **limit** | **Integer**| When paginating, limit the results to this number. Defaults to 100 if not specified. | [optional]
+ **filter** | **String**| Expression to filter the results. For more information about filtering              results, see https://support.lusid.com/knowledgebase/article/KA-01914. | [optional]
+ **page** | **String**| The pagination token to use to continue listing entities; this              value is returned from the previous call. If a pagination token is provided, the filter, limit              and asAt fields must not have changed since the original request. | [optional]
+
+### Return type
+
+[**PagedResourceListOfCustomEntityDefinition**](PagedResourceListOfCustomEntityDefinition.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List Custom Entity type definitions. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 

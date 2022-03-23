@@ -284,12 +284,12 @@ info:
     | <a name="775">775</a>|Fund accounting document cannot be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4136
+  version: 0.11.4137
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:53406
+- url: http://local-unit-test-server.lusid.com:59049
 security:
 - {}
 tags:
@@ -7564,8 +7564,116 @@ paths:
       x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/customentities/entitytypes:
+    get:
+      description: List all Custom Entity type definitions matching particular criteria.
+      operationId: ListCustomEntityDefinitions
+      parameters:
+      - description: "The asAt datetime at which to list the entities. Defaults to\
+          \ returning the latest version\r\n            of each portfolio if not specified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to list the entities. Defaults\
+            \ to returning the latest version\r\n            of each portfolio if\
+            \ not specified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: When paginating, limit the results to this number. Defaults to
+          100 if not specified.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: When paginating, limit the results to this number. Defaults
+            to 100 if not specified.
+          format: int32
+          maximum: 5000
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: "Expression to filter the results. For more information about\
+          \ filtering\r\n            results, see https://support.lusid.com/knowledgebase/article/KA-01914."
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          description: "Expression to filter the results. For more information about\
+            \ filtering\r\n            results, see https://support.lusid.com/knowledgebase/article/KA-01914."
+          maxLength: 16384
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        style: form
+      - description: "The pagination token to use to continue listing entities; this\r\
+          \n            value is returned from the previous call. If a pagination\
+          \ token is provided, the filter, limit\r\n            and asAt fields must\
+          \ not have changed since the original request."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          description: "The pagination token to use to continue listing entities;\
+            \ this\r\n            value is returned from the previous call. If a pagination\
+            \ token is provided, the filter, limit\r\n            and asAt fields\
+            \ must not have changed since the original request."
+          maxLength: 500
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfCustomEntityDefinition'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfCustomEntityDefinition'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfCustomEntityDefinition'
+          description: List Custom Entity type definitions.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListCustomEntityDefinitions: List the Custom Entity
+        type definitions'
+      tags:
+      - CustomEntityDefinitions
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
     post:
-      description: The API will return a Bad Request if the custom entityType already
+      description: The API will return a Bad Request if the Custom Entity type already
         exists.
       operationId: CreateCustomEntityDefinition
       requestBody:
@@ -7666,7 +7774,7 @@ paths:
                 required: false
             schema:
               $ref: '#/components/schemas/CustomEntityDefinitionRequest'
-        description: The payload containing the description of the custom entityType.
+        description: The payload containing the description of the Custom Entity type.
         required: true
       responses:
         "200":
@@ -7749,7 +7857,7 @@ paths:
                   required: false
               schema:
                 $ref: '#/components/schemas/CustomEntityDefinition'
-          description: The created custom entityType.
+          description: The created Custom Entity type.
         "400":
           content:
             text/plain:
@@ -7770,7 +7878,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] CreateCustomEntityDefinition: Define a new custom entityType.'
+      summary: '[EXPERIMENTAL] CreateCustomEntityDefinition: Define a new Custom Entity
+        type.'
       tags:
       - CustomEntityDefinitions
       x-fbn-apistatus: Experimental
@@ -7778,18 +7887,18 @@ paths:
       x-accepts: application/json
   /api/customentities/entitytypes/{entityType}:
     get:
-      description: Retrieve a CustomEntityDefinition by a specific EntityType at a
+      description: Retrieve a CustomEntityDefinition by a specific entityType at a
         point in AsAt time
       operationId: GetDefinition
       parameters:
-      - description: The identifier for the custom entity type, derived from the "entityTypeName"
+      - description: The identifier for the Custom Entity type, derived from the "entityTypeName"
           provided on creation.
         explode: false
         in: path
         name: entityType
         required: true
         schema:
-          description: The identifier for the custom entity type, derived from the
+          description: The identifier for the Custom Entity type, derived from the
             "entityTypeName" provided on creation.
           maxLength: 64
           minLength: 1
@@ -7888,7 +7997,7 @@ paths:
                   required: false
               schema:
                 $ref: '#/components/schemas/CustomEntityDefinition'
-          description: The requested custom entity definition.
+          description: The requested Custom Entity definition.
         "400":
           content:
             text/plain:
@@ -7909,7 +8018,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetDefinition: Get a custom entityType definition.'
+      summary: '[EXPERIMENTAL] GetDefinition: Get a Custom Entity type definition.'
       tags:
       - CustomEntityDefinitions
       x-fbn-apistatus: Experimental
@@ -7919,13 +8028,13 @@ paths:
       description: List all the Custom Entities matching particular criteria.
       operationId: ListCustomEntities
       parameters:
-      - description: The type of custom entity to list.
+      - description: The type of Custom Entity to list.
         explode: false
         in: path
         name: entityType
         required: true
         schema:
-          description: The type of custom entity to list.
+          description: The type of Custom Entity to list.
           maxLength: 64
           minLength: 1
           type: string
@@ -8042,26 +8151,26 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListCustomEntities: List custom entities of the specified
+      summary: '[EXPERIMENTAL] ListCustomEntities: List Custom Entities of the specified
         entityType.'
       tags:
       - CustomEntities
       x-fbn-apistatus: Experimental
       x-accepts: application/json
     post:
-      description: Insert the custom entity if it does not exist or update the custom
-        entity with the supplied state if it does exist.
+      description: Insert the Custom Entity if it does not exist or update the Custom
+        Entity with the supplied state if it does exist.
       operationId: UpsertCustomEntity
       parameters:
-      - description: The type of the CustomEntity to be created. An entityType can
+      - description: The type of the Custom Entity to be created. An entityType can
           be created using the "CreateCustomEntityDefinition" endpoint for CustomEntityDefinitions.
         explode: false
         in: path
         name: entityType
         required: true
         schema:
-          description: The type of the CustomEntity to be created. An entityType can
-            be created using the "CreateCustomEntityDefinition" endpoint for CustomEntityDefinitions.
+          description: The type of the Custom Entity to be created. An entityType
+            can be created using the "CreateCustomEntityDefinition" endpoint for CustomEntityDefinitions.
           maxLength: 64
           minLength: 1
           type: string
@@ -8132,7 +8241,7 @@ paths:
                 effectiveFrom: 2023-03-03T09:00:00.0000000+00:00
             schema:
               $ref: '#/components/schemas/CustomEntityRequest'
-        description: The payload describing the custom entity instance.
+        description: The payload describing the Custom Entity instance.
         required: true
       responses:
         "200":
@@ -8236,7 +8345,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertCustomEntity: Upsert a custom entity instance'
+      summary: '[EXPERIMENTAL] UpsertCustomEntity: Upsert a Custom Entity instance'
       tags:
       - CustomEntities
       x-fbn-apistatus: Experimental
@@ -8244,30 +8353,30 @@ paths:
       x-accepts: application/json
   /api/customentities/{entityType}/{identifierType}/{identifierValue}:
     get:
-      description: Retrieve a custom entity instance by a specific entity type at
+      description: Retrieve a Custom Entity instance by a specific entity type at
         a point in AsAt time.
       operationId: GetCustomEntity
       parameters:
-      - description: The type of custom entity to retrieve. An entityType can be created
+      - description: The type of Custom Entity to retrieve. An entityType can be created
           using the "CreateCustomEntityDefinition" endpoint for CustomEntityDefinitions.
         explode: false
         in: path
         name: entityType
         required: true
         schema:
-          description: The type of custom entity to retrieve. An entityType can be
+          description: The type of Custom Entity to retrieve. An entityType can be
             created using the "CreateCustomEntityDefinition" endpoint for CustomEntityDefinitions.
           maxLength: 64
           minLength: 1
           type: string
         style: simple
-      - description: An identifier type attached to the custom entity instance.
+      - description: An identifier type attached to the Custom Entity instance.
         explode: false
         in: path
         name: identifierType
         required: true
         schema:
-          description: An identifier type attached to the custom entity instance.
+          description: An identifier type attached to the Custom Entity instance.
           maxLength: 64
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
@@ -8297,27 +8406,27 @@ paths:
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: form
-      - description: The AsAt datetime at which to retrieve the custom entity instance.
+      - description: The AsAt datetime at which to retrieve the Custom Entity instance.
         explode: true
         in: query
         name: asAt
         required: false
         schema:
-          description: The AsAt datetime at which to retrieve the custom entity instance.
+          description: The AsAt datetime at which to retrieve the Custom Entity instance.
           format: date-time
           nullable: true
           type: string
         style: form
         x-nullable: true
-      - description: The effective datetime or cut label at which to get the custom
-          entity instance. Defaults to the current LUSID system datetime if not specified.
+      - description: The effective datetime or cut label at which to get the Custom
+          Entity instance. Defaults to the current LUSID system datetime if not specified.
         explode: true
         in: query
         name: effectiveAt
         required: false
         schema:
-          description: The effective datetime or cut label at which to get the custom
-            entity instance. Defaults to the current LUSID system datetime if not
+          description: The effective datetime or cut label at which to get the Custom
+            Entity instance. Defaults to the current LUSID system datetime if not
             specified.
           format: dateorcutlabel
           nullable: true
@@ -8425,7 +8534,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetCustomEntity: Get a custom entity instance.'
+      summary: '[EXPERIMENTAL] GetCustomEntity: Get a Custom Entity instance.'
       tags:
       - CustomEntities
       x-fbn-apistatus: Experimental
@@ -8458,13 +8567,13 @@ paths:
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: form
-      - description: An identifier type attached to the CustomEntity.
+      - description: An identifier type attached to the Custom Entity.
         explode: false
         in: path
         name: identifierType
         required: true
         schema:
-          description: An identifier type attached to the CustomEntity.
+          description: An identifier type attached to the Custom Entity.
           maxLength: 64
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
@@ -67325,6 +67434,79 @@ components:
           description: The resources to list.
           items:
             $ref: '#/components/schemas/CorporateActionSource'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - values
+      type: object
+    PagedResourceListOfCustomEntityDefinition:
+      additionalProperties: false
+      description: A paginated list of resource that can be returned from a request.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - displayName: displayName
+          entityType: entityType
+          entityTypeName: entityTypeName
+          description: description
+          fieldSchema:
+          - name: name
+            lifetime: lifetime
+            type: type
+            required: true
+          - name: name
+            lifetime: lifetime
+            type: type
+            required: true
+          href: https://openapi-generator.tech
+        - displayName: displayName
+          entityType: entityType
+          entityTypeName: entityTypeName
+          description: description
+          fieldSchema:
+          - name: name
+            lifetime: lifetime
+            type: type
+            required: true
+          - name: name
+            lifetime: lifetime
+            type: type
+            required: true
+          href: https://openapi-generator.tech
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/CustomEntityDefinition'
           type: array
         href:
           description: The URI of the resource list.
