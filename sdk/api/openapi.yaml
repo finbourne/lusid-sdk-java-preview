@@ -284,12 +284,12 @@ info:
     | <a name="775">775</a>|Fund accounting document cannot be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4150
+  version: 0.11.4151
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:58189
+- url: http://local-unit-test-server.lusid.com:39968
 security:
 - {}
 tags:
@@ -32549,9 +32549,12 @@ paths:
                 annualised: false
                 withFee: true
                 alias: 1M
-              recipeId:
-                scope: TestScope
+              returnIds:
+              - scope: TestScope
                 code: default
+              recipeId:
+                scope: ReturnsScope
+                code: ReturnCode
               compositeMethod: Asset
               period: Daily
               outputFrequency: Daily
@@ -32567,9 +32570,12 @@ paths:
                 annualised: false
                 withFee: true
                 alias: 1M
-              recipeId:
-                scope: TestScope
+              returnIds:
+              - scope: TestScope
                 code: default
+              recipeId:
+                scope: ReturnsScope
+                code: ReturnCode
               compositeMethod: Asset
               period: Daily
               outputFrequency: Daily
@@ -32585,9 +32591,12 @@ paths:
                 annualised: false
                 withFee: true
                 alias: 1M
-              recipeId:
-                scope: TestScope
+              returnIds:
+              - scope: TestScope
                 code: default
+              recipeId:
+                scope: ReturnsScope
+                code: ReturnCode
               compositeMethod: Asset
               period: Daily
               outputFrequency: Daily
@@ -32603,9 +32612,12 @@ paths:
                 annualised: false
                 withFee: true
                 alias: 1M
-              recipeId:
-                scope: TestScope
+              returnIds:
+              - scope: TestScope
                 code: default
+              recipeId:
+                scope: ReturnsScope
+                code: ReturnCode
               compositeMethod: Asset
               period: Daily
               outputFrequency: Daily
