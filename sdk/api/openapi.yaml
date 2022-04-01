@@ -285,12 +285,12 @@ info:
     | <a name="778">778</a>|Unable to look up FX rate from trade ccy to portfolio ccy for some of the trades.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4176
+  version: 0.11.4177
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:63170
 security:
 - {}
 tags:
@@ -312,7 +312,7 @@ tags:
 - name: Calendars
 - description: Methods for the storage and retrieval of complex market data documents.
   name: Complex Market Data
-- description: Methods for storage and retrieval of Compliance runs
+- description: 'Methods for storage and retrieval of compliance data: rules and results.'
   name: Compliance
 - description: Methods for the storage and retrieval of Configuration Recipe documents.
     Read more about these in the LUSID Knowledge Base here https://support.lusid.com/what-is-a-lusid-recipe-and-how-is-it-used.
@@ -5001,6 +5001,728 @@ paths:
       security:
       - oauth2: []
       summary: '[EXPERIMENTAL] ListComplianceRuns: List historical compliance runs.'
+      tags:
+      - Compliance
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+  /api/compliance/rules:
+    get:
+      description: "For more information about filtering results,\r\nsee https://support.lusid.com/knowledgebase/article/KA-01914."
+      operationId: ListComplianceRules
+      parameters:
+      - description: "The effective datetime or cut label at which to retrieve the\
+          \ rule definitions. Defaults to the current LUSID\r\nsystem datetime if\
+          \ not specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which to retrieve the\
+            \ rule definitions. Defaults to the current LUSID\r\nsystem datetime if\
+            \ not specified."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: "The asAt datetime at which to retrieve the rule definitions.\
+          \ Defaults to returning the latest version if not\r\nspecified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to retrieve the rule definitions.\
+            \ Defaults to returning the latest version if not\r\nspecified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: When paginating, limit the results to this number. Defaults to
+          100 if not specified.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: When paginating, limit the results to this number. Defaults
+            to 100 if not specified.
+          format: int32
+          maximum: 5000
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: Expression to filter the results.
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          description: Expression to filter the results.
+          maxLength: 16384
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        style: form
+      - description: "The pagination token to use to continue listing entities; this\
+          \ value is returned from the previous call. If\r\na pagination token is\
+          \ provided, the filter, effectiveAt and asAt fields must not have changed\
+          \ since the\r\noriginal request."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          description: "The pagination token to use to continue listing entities;\
+            \ this value is returned from the previous call. If\r\na pagination token\
+            \ is provided, the filter, effectiveAt and asAt fields must not have changed\
+            \ since the\r\noriginal request."
+          maxLength: 500
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                - scope: CompanyPolicies
+                  displayName: Max 200 Securities
+                  type: RangeNumberSecurities
+                  lowerBound: 0
+                  upperBound: 200
+                  schedule: PreAndPostTrade
+                  hardRequirement: true
+                  targetPortfolioIds:
+                  - scope: CorePortfolios
+                    code: UK
+                  - scope: CorePortfolios
+                    code: World
+                  description: Portfolio must contain no more than 200 securities.
+                  version:
+                    effectiveFrom: 2022-04-01T14:59:45.0249997+00:00
+                    asAtDate: 2022-04-01T14:59:45.0250026+00:00
+                - scope: FundObjectives
+                  code: ComplianceRule_1
+                  displayName: 30 percent bonds
+                  type: RangePercentSecurityType
+                  value: Bond
+                  lowerBound: 25
+                  upperBound: 35
+                  schedule: PostTrade
+                  hardRequirement: false
+                  targetPortfolioIds:
+                  - scope: CorePortfolios
+                    code: Balanced
+                  description: Portfolio must contain 30% bonds by value.
+                  version:
+                    effectiveFrom: 2022-04-01T14:59:45.0261950+00:00
+                    asAtDate: 2022-04-01T14:59:45.0261966+00:00
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfComplianceRule'
+            application/json:
+              example:
+                values:
+                - scope: CompanyPolicies
+                  displayName: Max 200 Securities
+                  type: RangeNumberSecurities
+                  lowerBound: 0
+                  upperBound: 200
+                  schedule: PreAndPostTrade
+                  hardRequirement: true
+                  targetPortfolioIds:
+                  - scope: CorePortfolios
+                    code: UK
+                  - scope: CorePortfolios
+                    code: World
+                  description: Portfolio must contain no more than 200 securities.
+                  version:
+                    effectiveFrom: 2022-04-01T14:59:45.0249997+00:00
+                    asAtDate: 2022-04-01T14:59:45.0250026+00:00
+                - scope: FundObjectives
+                  code: ComplianceRule_1
+                  displayName: 30 percent bonds
+                  type: RangePercentSecurityType
+                  value: Bond
+                  lowerBound: 25
+                  upperBound: 35
+                  schedule: PostTrade
+                  hardRequirement: false
+                  targetPortfolioIds:
+                  - scope: CorePortfolios
+                    code: Balanced
+                  description: Portfolio must contain 30% bonds by value.
+                  version:
+                    effectiveFrom: 2022-04-01T14:59:45.0261950+00:00
+                    asAtDate: 2022-04-01T14:59:45.0261966+00:00
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfComplianceRule'
+            text/json:
+              example:
+                values:
+                - scope: CompanyPolicies
+                  displayName: Max 200 Securities
+                  type: RangeNumberSecurities
+                  lowerBound: 0
+                  upperBound: 200
+                  schedule: PreAndPostTrade
+                  hardRequirement: true
+                  targetPortfolioIds:
+                  - scope: CorePortfolios
+                    code: UK
+                  - scope: CorePortfolios
+                    code: World
+                  description: Portfolio must contain no more than 200 securities.
+                  version:
+                    effectiveFrom: 2022-04-01T14:59:45.0249997+00:00
+                    asAtDate: 2022-04-01T14:59:45.0250026+00:00
+                - scope: FundObjectives
+                  code: ComplianceRule_1
+                  displayName: 30 percent bonds
+                  type: RangePercentSecurityType
+                  value: Bond
+                  lowerBound: 25
+                  upperBound: 35
+                  schedule: PostTrade
+                  hardRequirement: false
+                  targetPortfolioIds:
+                  - scope: CorePortfolios
+                    code: Balanced
+                  description: Portfolio must contain 30% bonds by value.
+                  version:
+                    effectiveFrom: 2022-04-01T14:59:45.0261950+00:00
+                    asAtDate: 2022-04-01T14:59:45.0261966+00:00
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfComplianceRule'
+          description: A filtered list of compliance rules available.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListComplianceRules: List compliance rules, with optional
+        filtering.'
+      tags:
+      - Compliance
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+    post:
+      description: "To upsert a new rule, the code field must be left empty, a code\
+        \ will then be assigned and returned as part\r\nof the response. To update\
+        \ an existing rule, include the rule code. It is possible to both create and\
+        \ update\r\ncompliance rules in the same request.\r\n            \r\nThe upsert\
+        \ is transactional - either all create/update operations will succeed or none\
+        \ of them will."
+      operationId: UpsertComplianceRules
+      parameters:
+      - description: "The effective datetime or cut label at which the rule will take\
+          \ effect. Defaults to the current LUSID\r\nsystem datetime if not specified.\
+          \ In the case of an update, the changes will take place from this effective\r\
+          \ntime until the next effective time that the rule as been upserted at.\
+          \ For example, consider a rule that\r\nalready exists, and has previously\
+          \ had an update applied so that the definition will change on the first\
+          \ day\r\nof the coming month. An upsert effective from the current day will\
+          \ only change the definition until the\r\nfirst day of the coming month.\
+          \ An additional upsert at the same time (first day of the month) is required\r\
+          \nif the newly-updated definition is to supersede the future definition."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which the rule will\
+            \ take effect. Defaults to the current LUSID\r\nsystem datetime if not\
+            \ specified. In the case of an update, the changes will take place from\
+            \ this effective\r\ntime until the next effective time that the rule as\
+            \ been upserted at. For example, consider a rule that\r\nalready exists,\
+            \ and has previously had an update applied so that the definition will\
+            \ change on the first day\r\nof the coming month. An upsert effective\
+            \ from the current day will only change the definition until the\r\nfirst\
+            \ day of the coming month. An additional upsert at the same time (first\
+            \ day of the month) is required\r\nif the newly-updated definition is\
+            \ to supersede the future definition."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              create:
+                scope: CompanyPolicies
+                displayName: Max 200 Securities
+                type: RangeNumberSecurities
+                lowerBound: 0
+                upperBound: 200
+                schedule: PreAndPostTrade
+                hardRequirement: true
+                targetPortfolioIds:
+                - scope: CorePortfolios
+                  code: UK
+                - scope: CorePortfolios
+                  code: World
+                description: Portfolio must contain no more than 200 securities.
+              update:
+                scope: FundObjectives
+                code: ComplianceRule_1
+                displayName: 30 percent bonds
+                type: RangePercentSecurityType
+                value: Bond
+                lowerBound: 25
+                upperBound: 35
+                schedule: PostTrade
+                hardRequirement: false
+                targetPortfolioIds:
+                - scope: CorePortfolios
+                  code: Balanced
+                description: Portfolio must contain 30% bonds by value.
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/ComplianceRuleUpsertRequest'
+              description: "A dictionary of upsert request identifiers to rule upsert\
+                \ requests. The request\r\n             identifiers are valid for\
+                \ the request only and can be used to link the upserted compliance\
+                \ rule to the code\r\n             of a created compliance rule."
+              type: object
+          application/json:
+            example:
+              create:
+                scope: CompanyPolicies
+                displayName: Max 200 Securities
+                type: RangeNumberSecurities
+                lowerBound: 0
+                upperBound: 200
+                schedule: PreAndPostTrade
+                hardRequirement: true
+                targetPortfolioIds:
+                - scope: CorePortfolios
+                  code: UK
+                - scope: CorePortfolios
+                  code: World
+                description: Portfolio must contain no more than 200 securities.
+              update:
+                scope: FundObjectives
+                code: ComplianceRule_1
+                displayName: 30 percent bonds
+                type: RangePercentSecurityType
+                value: Bond
+                lowerBound: 25
+                upperBound: 35
+                schedule: PostTrade
+                hardRequirement: false
+                targetPortfolioIds:
+                - scope: CorePortfolios
+                  code: Balanced
+                description: Portfolio must contain 30% bonds by value.
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/ComplianceRuleUpsertRequest'
+              description: "A dictionary of upsert request identifiers to rule upsert\
+                \ requests. The request\r\n             identifiers are valid for\
+                \ the request only and can be used to link the upserted compliance\
+                \ rule to the code\r\n             of a created compliance rule."
+              type: object
+          text/json:
+            example:
+              create:
+                scope: CompanyPolicies
+                displayName: Max 200 Securities
+                type: RangeNumberSecurities
+                lowerBound: 0
+                upperBound: 200
+                schedule: PreAndPostTrade
+                hardRequirement: true
+                targetPortfolioIds:
+                - scope: CorePortfolios
+                  code: UK
+                - scope: CorePortfolios
+                  code: World
+                description: Portfolio must contain no more than 200 securities.
+              update:
+                scope: FundObjectives
+                code: ComplianceRule_1
+                displayName: 30 percent bonds
+                type: RangePercentSecurityType
+                value: Bond
+                lowerBound: 25
+                upperBound: 35
+                schedule: PostTrade
+                hardRequirement: false
+                targetPortfolioIds:
+                - scope: CorePortfolios
+                  code: Balanced
+                description: Portfolio must contain 30% bonds by value.
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/ComplianceRuleUpsertRequest'
+              description: "A dictionary of upsert request identifiers to rule upsert\
+                \ requests. The request\r\n             identifiers are valid for\
+                \ the request only and can be used to link the upserted compliance\
+                \ rule to the code\r\n             of a created compliance rule."
+              type: object
+          application/*+json:
+            example:
+              create:
+                scope: CompanyPolicies
+                displayName: Max 200 Securities
+                type: RangeNumberSecurities
+                lowerBound: 0
+                upperBound: 200
+                schedule: PreAndPostTrade
+                hardRequirement: true
+                targetPortfolioIds:
+                - scope: CorePortfolios
+                  code: UK
+                - scope: CorePortfolios
+                  code: World
+                description: Portfolio must contain no more than 200 securities.
+              update:
+                scope: FundObjectives
+                code: ComplianceRule_1
+                displayName: 30 percent bonds
+                type: RangePercentSecurityType
+                value: Bond
+                lowerBound: 25
+                upperBound: 35
+                schedule: PostTrade
+                hardRequirement: false
+                targetPortfolioIds:
+                - scope: CorePortfolios
+                  code: Balanced
+                description: Portfolio must contain 30% bonds by value.
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/ComplianceRuleUpsertRequest'
+              description: "A dictionary of upsert request identifiers to rule upsert\
+                \ requests. The request\r\n             identifiers are valid for\
+                \ the request only and can be used to link the upserted compliance\
+                \ rule to the code\r\n             of a created compliance rule."
+              type: object
+        description: "A dictionary of upsert request identifiers to rule upsert requests.\
+          \ The request\r\n             identifiers are valid for the request only\
+          \ and can be used to link the upserted compliance rule to the code\r\n \
+          \            of a created compliance rule."
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                  update:
+                    scope: CompanyPolicies
+                    displayName: Max 200 Securities
+                    type: RangeNumberSecurities
+                    lowerBound: 0
+                    upperBound: 200
+                    schedule: PreAndPostTrade
+                    hardRequirement: true
+                    targetPortfolioIds:
+                    - scope: CorePortfolios
+                      code: UK
+                    - scope: CorePortfolios
+                      code: World
+                    description: Portfolio must contain no more than 200 securities.
+                    version:
+                      effectiveFrom: 2022-04-01T14:59:45.0249997+00:00
+                      asAtDate: 2022-04-01T14:59:45.0250026+00:00
+                  create:
+                    scope: FundObjectives
+                    code: ComplianceRule_1
+                    displayName: 30 percent bonds
+                    type: RangePercentSecurityType
+                    value: Bond
+                    lowerBound: 25
+                    upperBound: 35
+                    schedule: PostTrade
+                    hardRequirement: false
+                    targetPortfolioIds:
+                    - scope: CorePortfolios
+                      code: Balanced
+                    description: Portfolio must contain 30% bonds by value.
+                    version:
+                      effectiveFrom: 2022-04-01T14:59:45.0261950+00:00
+                      asAtDate: 2022-04-01T14:59:45.0261966+00:00
+              schema:
+                $ref: '#/components/schemas/ComplianceRuleUpsertResponse'
+            application/json:
+              example:
+                values:
+                  update:
+                    scope: CompanyPolicies
+                    displayName: Max 200 Securities
+                    type: RangeNumberSecurities
+                    lowerBound: 0
+                    upperBound: 200
+                    schedule: PreAndPostTrade
+                    hardRequirement: true
+                    targetPortfolioIds:
+                    - scope: CorePortfolios
+                      code: UK
+                    - scope: CorePortfolios
+                      code: World
+                    description: Portfolio must contain no more than 200 securities.
+                    version:
+                      effectiveFrom: 2022-04-01T14:59:45.0249997+00:00
+                      asAtDate: 2022-04-01T14:59:45.0250026+00:00
+                  create:
+                    scope: FundObjectives
+                    code: ComplianceRule_1
+                    displayName: 30 percent bonds
+                    type: RangePercentSecurityType
+                    value: Bond
+                    lowerBound: 25
+                    upperBound: 35
+                    schedule: PostTrade
+                    hardRequirement: false
+                    targetPortfolioIds:
+                    - scope: CorePortfolios
+                      code: Balanced
+                    description: Portfolio must contain 30% bonds by value.
+                    version:
+                      effectiveFrom: 2022-04-01T14:59:45.0261950+00:00
+                      asAtDate: 2022-04-01T14:59:45.0261966+00:00
+              schema:
+                $ref: '#/components/schemas/ComplianceRuleUpsertResponse'
+            text/json:
+              example:
+                values:
+                  update:
+                    scope: CompanyPolicies
+                    displayName: Max 200 Securities
+                    type: RangeNumberSecurities
+                    lowerBound: 0
+                    upperBound: 200
+                    schedule: PreAndPostTrade
+                    hardRequirement: true
+                    targetPortfolioIds:
+                    - scope: CorePortfolios
+                      code: UK
+                    - scope: CorePortfolios
+                      code: World
+                    description: Portfolio must contain no more than 200 securities.
+                    version:
+                      effectiveFrom: 2022-04-01T14:59:45.0249997+00:00
+                      asAtDate: 2022-04-01T14:59:45.0250026+00:00
+                  create:
+                    scope: FundObjectives
+                    code: ComplianceRule_1
+                    displayName: 30 percent bonds
+                    type: RangePercentSecurityType
+                    value: Bond
+                    lowerBound: 25
+                    upperBound: 35
+                    schedule: PostTrade
+                    hardRequirement: false
+                    targetPortfolioIds:
+                    - scope: CorePortfolios
+                      code: Balanced
+                    description: Portfolio must contain 30% bonds by value.
+                    version:
+                      effectiveFrom: 2022-04-01T14:59:45.0261950+00:00
+                      asAtDate: 2022-04-01T14:59:45.0261966+00:00
+              schema:
+                $ref: '#/components/schemas/ComplianceRuleUpsertResponse'
+          description: Upsert compliance rules. New compliance rules must have an
+            empty code field. Where a codeis given, this rule must already exist and
+            will be updated.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] UpsertComplianceRules: Upsert compliance rules.'
+      tags:
+      - Compliance
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/compliance/rules/{scope}/{code}:
+    get:
+      description: Retrieves the compliance rule definition at the given effective
+        and as at times.
+      operationId: GetComplianceRule
+      parameters:
+      - description: The compliance rule scope.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The compliance rule scope.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The compliance rule code.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The compliance rule code.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The effective datetime or cut label at which to retrieve the\
+          \ rule definition. Defaults to the current LUSID\r\nsystem datetime if not\
+          \ specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which to retrieve the\
+            \ rule definition. Defaults to the current LUSID\r\nsystem datetime if\
+            \ not specified."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: "The asAt datetime at which to retrieve the rule definition.\
+          \ Defaults to returning the latest version if not\r\nspecified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to retrieve the rule definition.\
+            \ Defaults to returning the latest version if not\r\nspecified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                scope: CompanyPolicies
+                displayName: Max 200 Securities
+                type: RangeNumberSecurities
+                lowerBound: 0
+                upperBound: 200
+                schedule: PreAndPostTrade
+                hardRequirement: true
+                targetPortfolioIds:
+                - scope: CorePortfolios
+                  code: UK
+                - scope: CorePortfolios
+                  code: World
+                description: Portfolio must contain no more than 200 securities.
+                version:
+                  effectiveFrom: 2022-04-01T14:59:45.0249997+00:00
+                  asAtDate: 2022-04-01T14:59:45.0250026+00:00
+              schema:
+                $ref: '#/components/schemas/ComplianceRule'
+            application/json:
+              example:
+                scope: CompanyPolicies
+                displayName: Max 200 Securities
+                type: RangeNumberSecurities
+                lowerBound: 0
+                upperBound: 200
+                schedule: PreAndPostTrade
+                hardRequirement: true
+                targetPortfolioIds:
+                - scope: CorePortfolios
+                  code: UK
+                - scope: CorePortfolios
+                  code: World
+                description: Portfolio must contain no more than 200 securities.
+                version:
+                  effectiveFrom: 2022-04-01T14:59:45.0249997+00:00
+                  asAtDate: 2022-04-01T14:59:45.0250026+00:00
+              schema:
+                $ref: '#/components/schemas/ComplianceRule'
+            text/json:
+              example:
+                scope: CompanyPolicies
+                displayName: Max 200 Securities
+                type: RangeNumberSecurities
+                lowerBound: 0
+                upperBound: 200
+                schedule: PreAndPostTrade
+                hardRequirement: true
+                targetPortfolioIds:
+                - scope: CorePortfolios
+                  code: UK
+                - scope: CorePortfolios
+                  code: World
+                description: Portfolio must contain no more than 200 securities.
+                version:
+                  effectiveFrom: 2022-04-01T14:59:45.0249997+00:00
+                  asAtDate: 2022-04-01T14:59:45.0250026+00:00
+              schema:
+                $ref: '#/components/schemas/ComplianceRule'
+          description: Details of one compliance rule.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] GetComplianceRule: Retrieve the definition of single
+        compliance rule.'
       tags:
       - Compliance
       x-fbn-apistatus: Experimental
@@ -57587,6 +58309,76 @@ components:
       required:
       - provider
       type: object
+    ComplianceRule:
+      additionalProperties: false
+      example:
+        propertyKey: propertyKey
+        code: code
+        hardRequirement: true
+        upperBound: 6.027456183070403
+        displayName: displayName
+        targetPortfolioIds:
+        - code: code
+          scope: scope
+        - code: code
+          scope: scope
+        description: description
+        type: type
+        version:
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          asAtDate: 2000-01-23T04:56:07.000+00:00
+        schedule: schedule
+        scope: scope
+        lowerBound: 0.8008281904610115
+        value: value
+      properties:
+        scope:
+          type: string
+        code:
+          type: string
+        displayName:
+          type: string
+        type:
+          type: string
+        propertyKey:
+          nullable: true
+          type: string
+        value:
+          maxLength: 512
+          minLength: 1
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        lowerBound:
+          format: double
+          type: number
+        upperBound:
+          format: double
+          type: number
+        schedule:
+          type: string
+        hardRequirement:
+          type: boolean
+        targetPortfolioIds:
+          items:
+            $ref: '#/components/schemas/ResourceId'
+          type: array
+        description:
+          nullable: true
+          type: string
+        version:
+          $ref: '#/components/schemas/Version'
+      required:
+      - code
+      - displayName
+      - hardRequirement
+      - lowerBound
+      - schedule
+      - scope
+      - targetPortfolioIds
+      - type
+      - upperBound
+      type: object
     ComplianceRuleResult:
       additionalProperties: false
       example:
@@ -57646,6 +58438,115 @@ components:
       - ruleLowerLimit
       - ruleName
       - ruleUpperLimit
+      type: object
+    ComplianceRuleUpsertRequest:
+      additionalProperties: false
+      example:
+        propertyKey: propertyKey
+        schedule: schedule
+        code: code
+        hardRequirement: true
+        upperBound: 6.027456183070403
+        displayName: displayName
+        scope: scope
+        targetPortfolioIds:
+        - code: code
+          scope: scope
+        - code: code
+          scope: scope
+        description: description
+        lowerBound: 0.8008281904610115
+        type: type
+        value: value
+      properties:
+        scope:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        code:
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        displayName:
+          maxLength: 512
+          minLength: 1
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        type:
+          type: string
+        propertyKey:
+          nullable: true
+          type: string
+        value:
+          maxLength: 512
+          minLength: 1
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        lowerBound:
+          format: double
+          type: number
+        upperBound:
+          format: double
+          type: number
+        schedule:
+          type: string
+        hardRequirement:
+          type: boolean
+        targetPortfolioIds:
+          items:
+            $ref: '#/components/schemas/ResourceId'
+          type: array
+        description:
+          maxLength: 1024
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+      required:
+      - hardRequirement
+      - lowerBound
+      - schedule
+      - scope
+      - targetPortfolioIds
+      - type
+      - upperBound
+      type: object
+    ComplianceRuleUpsertResponse:
+      additionalProperties: false
+      example:
+        values:
+          key:
+            propertyKey: propertyKey
+            code: code
+            hardRequirement: true
+            upperBound: 6.027456183070403
+            displayName: displayName
+            targetPortfolioIds:
+            - code: code
+              scope: scope
+            - code: code
+              scope: scope
+            description: description
+            type: type
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            schedule: schedule
+            scope: scope
+            lowerBound: 0.8008281904610115
+            value: value
+      properties:
+        values:
+          additionalProperties:
+            $ref: '#/components/schemas/ComplianceRule'
+          type: object
+      required:
+      - values
       type: object
     ComplianceRun:
       additionalProperties: false
@@ -74846,6 +75747,89 @@ components:
       required:
       - values
       type: object
+    ResourceListOfComplianceRule:
+      additionalProperties: false
+      description: A collection of resources that can be returned from requests.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - propertyKey: propertyKey
+          code: code
+          hardRequirement: true
+          upperBound: 6.027456183070403
+          displayName: displayName
+          targetPortfolioIds:
+          - code: code
+            scope: scope
+          - code: code
+            scope: scope
+          description: description
+          type: type
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          schedule: schedule
+          scope: scope
+          lowerBound: 0.8008281904610115
+          value: value
+        - propertyKey: propertyKey
+          code: code
+          hardRequirement: true
+          upperBound: 6.027456183070403
+          displayName: displayName
+          targetPortfolioIds:
+          - code: code
+            scope: scope
+          - code: code
+            scope: scope
+          description: description
+          type: type
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          schedule: schedule
+          scope: scope
+          lowerBound: 0.8008281904610115
+          value: value
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/ComplianceRule'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+      required:
+      - values
+      type: object
     ResourceListOfConstituentsAdjustmentHeader:
       additionalProperties: false
       description: A collection of resources that can be returned from requests.
@@ -88523,7 +89507,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
