@@ -285,12 +285,12 @@ info:
     | <a name="778">778</a>|Unable to look up FX rate from trade ccy to portfolio ccy for some of the trades.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4179
+  version: 0.11.4180
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:45509
+- url: http://local-unit-test-server.lusid.com:55649
 security:
 - {}
 tags:
@@ -5107,8 +5107,8 @@ paths:
                     code: World
                   description: Portfolio must contain no more than 200 securities.
                   version:
-                    effectiveFrom: 2022-04-02T11:03:15.2246732+00:00
-                    asAtDate: 2022-04-02T11:03:15.2246763+00:00
+                    effectiveFrom: 2022-04-02T11:48:21.4492088+00:00
+                    asAtDate: 2022-04-02T11:48:21.4492122+00:00
                 - scope: FundObjectives
                   code: ComplianceRule_1
                   displayName: 30 percent bonds
@@ -5123,8 +5123,8 @@ paths:
                     code: Balanced
                   description: Portfolio must contain 30% bonds by value.
                   version:
-                    effectiveFrom: 2022-04-02T11:03:15.2257434+00:00
-                    asAtDate: 2022-04-02T11:03:15.2257452+00:00
+                    effectiveFrom: 2022-04-02T11:48:21.4498854+00:00
+                    asAtDate: 2022-04-02T11:48:21.4498870+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfComplianceRule'
@@ -5145,8 +5145,8 @@ paths:
                     code: World
                   description: Portfolio must contain no more than 200 securities.
                   version:
-                    effectiveFrom: 2022-04-02T11:03:15.2246732+00:00
-                    asAtDate: 2022-04-02T11:03:15.2246763+00:00
+                    effectiveFrom: 2022-04-02T11:48:21.4492088+00:00
+                    asAtDate: 2022-04-02T11:48:21.4492122+00:00
                 - scope: FundObjectives
                   code: ComplianceRule_1
                   displayName: 30 percent bonds
@@ -5161,8 +5161,8 @@ paths:
                     code: Balanced
                   description: Portfolio must contain 30% bonds by value.
                   version:
-                    effectiveFrom: 2022-04-02T11:03:15.2257434+00:00
-                    asAtDate: 2022-04-02T11:03:15.2257452+00:00
+                    effectiveFrom: 2022-04-02T11:48:21.4498854+00:00
+                    asAtDate: 2022-04-02T11:48:21.4498870+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfComplianceRule'
@@ -5183,8 +5183,8 @@ paths:
                     code: World
                   description: Portfolio must contain no more than 200 securities.
                   version:
-                    effectiveFrom: 2022-04-02T11:03:15.2246732+00:00
-                    asAtDate: 2022-04-02T11:03:15.2246763+00:00
+                    effectiveFrom: 2022-04-02T11:48:21.4492088+00:00
+                    asAtDate: 2022-04-02T11:48:21.4492122+00:00
                 - scope: FundObjectives
                   code: ComplianceRule_1
                   displayName: 30 percent bonds
@@ -5199,8 +5199,8 @@ paths:
                     code: Balanced
                   description: Portfolio must contain 30% bonds by value.
                   version:
-                    effectiveFrom: 2022-04-02T11:03:15.2257434+00:00
-                    asAtDate: 2022-04-02T11:03:15.2257452+00:00
+                    effectiveFrom: 2022-04-02T11:48:21.4498854+00:00
+                    asAtDate: 2022-04-02T11:48:21.4498870+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfComplianceRule'
@@ -5450,8 +5450,8 @@ paths:
                       code: World
                     description: Portfolio must contain no more than 200 securities.
                     version:
-                      effectiveFrom: 2022-04-02T11:03:15.2246732+00:00
-                      asAtDate: 2022-04-02T11:03:15.2246763+00:00
+                      effectiveFrom: 2022-04-02T11:48:21.4492088+00:00
+                      asAtDate: 2022-04-02T11:48:21.4492122+00:00
                   create:
                     scope: FundObjectives
                     code: ComplianceRule_1
@@ -5467,8 +5467,8 @@ paths:
                       code: Balanced
                     description: Portfolio must contain 30% bonds by value.
                     version:
-                      effectiveFrom: 2022-04-02T11:03:15.2257434+00:00
-                      asAtDate: 2022-04-02T11:03:15.2257452+00:00
+                      effectiveFrom: 2022-04-02T11:48:21.4498854+00:00
+                      asAtDate: 2022-04-02T11:48:21.4498870+00:00
               schema:
                 $ref: '#/components/schemas/ComplianceRuleUpsertResponse'
             application/json:
@@ -5489,8 +5489,8 @@ paths:
                       code: World
                     description: Portfolio must contain no more than 200 securities.
                     version:
-                      effectiveFrom: 2022-04-02T11:03:15.2246732+00:00
-                      asAtDate: 2022-04-02T11:03:15.2246763+00:00
+                      effectiveFrom: 2022-04-02T11:48:21.4492088+00:00
+                      asAtDate: 2022-04-02T11:48:21.4492122+00:00
                   create:
                     scope: FundObjectives
                     code: ComplianceRule_1
@@ -5506,8 +5506,8 @@ paths:
                       code: Balanced
                     description: Portfolio must contain 30% bonds by value.
                     version:
-                      effectiveFrom: 2022-04-02T11:03:15.2257434+00:00
-                      asAtDate: 2022-04-02T11:03:15.2257452+00:00
+                      effectiveFrom: 2022-04-02T11:48:21.4498854+00:00
+                      asAtDate: 2022-04-02T11:48:21.4498870+00:00
               schema:
                 $ref: '#/components/schemas/ComplianceRuleUpsertResponse'
             text/json:
@@ -5528,8 +5528,8 @@ paths:
                       code: World
                     description: Portfolio must contain no more than 200 securities.
                     version:
-                      effectiveFrom: 2022-04-02T11:03:15.2246732+00:00
-                      asAtDate: 2022-04-02T11:03:15.2246763+00:00
+                      effectiveFrom: 2022-04-02T11:48:21.4492088+00:00
+                      asAtDate: 2022-04-02T11:48:21.4492122+00:00
                   create:
                     scope: FundObjectives
                     code: ComplianceRule_1
@@ -5545,8 +5545,8 @@ paths:
                       code: Balanced
                     description: Portfolio must contain 30% bonds by value.
                     version:
-                      effectiveFrom: 2022-04-02T11:03:15.2257434+00:00
-                      asAtDate: 2022-04-02T11:03:15.2257452+00:00
+                      effectiveFrom: 2022-04-02T11:48:21.4498854+00:00
+                      asAtDate: 2022-04-02T11:48:21.4498870+00:00
               schema:
                 $ref: '#/components/schemas/ComplianceRuleUpsertResponse'
           description: Upsert compliance rules. New compliance rules must have an
@@ -5656,8 +5656,8 @@ paths:
                   code: World
                 description: Portfolio must contain no more than 200 securities.
                 version:
-                  effectiveFrom: 2022-04-02T11:03:15.2246732+00:00
-                  asAtDate: 2022-04-02T11:03:15.2246763+00:00
+                  effectiveFrom: 2022-04-02T11:48:21.4492088+00:00
+                  asAtDate: 2022-04-02T11:48:21.4492122+00:00
               schema:
                 $ref: '#/components/schemas/ComplianceRule'
             application/json:
@@ -5676,8 +5676,8 @@ paths:
                   code: World
                 description: Portfolio must contain no more than 200 securities.
                 version:
-                  effectiveFrom: 2022-04-02T11:03:15.2246732+00:00
-                  asAtDate: 2022-04-02T11:03:15.2246763+00:00
+                  effectiveFrom: 2022-04-02T11:48:21.4492088+00:00
+                  asAtDate: 2022-04-02T11:48:21.4492122+00:00
               schema:
                 $ref: '#/components/schemas/ComplianceRule'
             text/json:
@@ -5696,8 +5696,8 @@ paths:
                   code: World
                 description: Portfolio must contain no more than 200 securities.
                 version:
-                  effectiveFrom: 2022-04-02T11:03:15.2246732+00:00
-                  asAtDate: 2022-04-02T11:03:15.2246763+00:00
+                  effectiveFrom: 2022-04-02T11:48:21.4492088+00:00
+                  asAtDate: 2022-04-02T11:48:21.4492122+00:00
               schema:
                 $ref: '#/components/schemas/ComplianceRule'
           description: Details of one compliance rule.
