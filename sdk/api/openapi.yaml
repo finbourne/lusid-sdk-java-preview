@@ -285,7 +285,7 @@ info:
     | <a name="778">778</a>|Unable to look up FX rate from trade ccy to portfolio ccy for some of the trades.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4196
+  version: 0.11.4197
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -9075,6 +9075,95 @@ paths:
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/customentities/{entityType}/{identifierType}/{identifierValue}:
+    delete:
+      description: Delete a Custom Entity instance by a specific entity type.
+      operationId: DeleteCustomEntity
+      parameters:
+      - description: The type of Custom Entity to remove.
+        explode: false
+        in: path
+        name: entityType
+        required: true
+        schema:
+          description: The type of Custom Entity to remove.
+          maxLength: 64
+          minLength: 1
+          type: string
+        style: simple
+      - description: An identifier type attached to the Custom Entity instance.
+        explode: false
+        in: path
+        name: identifierType
+        required: true
+        schema:
+          description: An identifier type attached to the Custom Entity instance.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The identifier value.
+        explode: false
+        in: path
+        name: identifierValue
+        required: true
+        schema:
+          description: The identifier value.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The identifier scope.
+        explode: true
+        in: query
+        name: identifierScope
+        required: true
+        schema:
+          description: The identifier scope.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+          description: Delete a Custom Entity instance.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] DeleteCustomEntity: Delete a Custom Entity instance.'
+      tags:
+      - CustomEntities
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
     get:
       description: Retrieve a Custom Entity instance by a specific entity type at
         a point in AsAt time.
