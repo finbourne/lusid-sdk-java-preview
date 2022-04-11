@@ -1,14 +1,14 @@
 # DataTypesApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:44032*
+All URIs are relative to *http://local-unit-test-server.lusid.com:42036*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createDataType**](DataTypesApi.md#createDataType) | **POST** /api/datatypes | [BETA] CreateDataType: Create data type definition
-[**getDataType**](DataTypesApi.md#getDataType) | **GET** /api/datatypes/{scope}/{code} | [EARLY ACCESS] GetDataType: Get data type definition
+[**getDataType**](DataTypesApi.md#getDataType) | **GET** /api/datatypes/{scope}/{code} | GetDataType: Get data type definition
 [**getUnitsFromDataType**](DataTypesApi.md#getUnitsFromDataType) | **GET** /api/datatypes/{scope}/{code}/units | [EARLY ACCESS] GetUnitsFromDataType: Get units from data type
 [**listDataTypeSummaries**](DataTypesApi.md#listDataTypeSummaries) | **GET** /api/datatypes | [EXPERIMENTAL] ListDataTypeSummaries: List all data type summaries, without the reference data
-[**listDataTypes**](DataTypesApi.md#listDataTypes) | **GET** /api/datatypes/{scope} | [EARLY ACCESS] ListDataTypes: List data types
+[**listDataTypes**](DataTypesApi.md#listDataTypes) | **GET** /api/datatypes/{scope} | ListDataTypes: List data types
 [**updateDataType**](DataTypesApi.md#updateDataType) | **PUT** /api/datatypes/{scope}/{code} | [EXPERIMENTAL] UpdateDataType: Update data type definition
 [**updateReferenceValues**](DataTypesApi.md#updateReferenceValues) | **PUT** /api/datatypes/{scope}/{code}/referencedatavalues | [EXPERIMENTAL] UpdateReferenceValues: Update reference data on a data type
 
@@ -34,7 +34,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:44032");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42036");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 # **getDataType**
 > DataType getDataType(scope, code, asAt)
 
-[EARLY ACCESS] GetDataType: Get data type definition
+GetDataType: Get data type definition
 
 Get the definition of a specified data type
 
@@ -103,7 +103,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:44032");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42036");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -176,7 +176,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:44032");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42036");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -253,7 +253,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:44032");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42036");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 # **listDataTypes**
 > ResourceListOfDataType listDataTypes(scope, asAt, includeSystem, sortBy, start, limit, filter)
 
-[EARLY ACCESS] ListDataTypes: List data types
+ListDataTypes: List data types
 
 List all data types in a specified scope
 
@@ -332,7 +332,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:44032");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42036");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -413,7 +413,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:44032");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42036");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -486,7 +486,7 @@ import com.finbourne.lusid.api.DataTypesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:44032");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42036");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
