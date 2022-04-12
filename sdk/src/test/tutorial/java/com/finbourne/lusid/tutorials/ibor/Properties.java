@@ -10,6 +10,7 @@ import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.*;
@@ -125,7 +126,7 @@ public class Properties {
         PropertyDefinition metricPropertyDefinitionDto =
                 propertyDefinitionsApi.createPropertyDefinition(metricPropertyDefinition);
 
-        MetricValue metricValue = new MetricValue().value(1100000.0).unit("GBP");
+        MetricValue metricValue = new MetricValue().value(new BigDecimal(1100000.0)).unit("GBP");
         PropertyValue propertyValue = new PropertyValue().metricValue(metricValue);
 
         //  Create the property values

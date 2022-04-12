@@ -9,6 +9,7 @@ import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.*;
@@ -154,11 +155,11 @@ public class Portfolios {
                             { put(LUSID_INSTRUMENT_IDENTIFIER, instrumentIds.get(0)); }
                         }
                 )
-                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(1230.0))
+                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(new BigDecimal(1230.0)))
                 .transactionDate(effectiveDate.toString())
                 .settlementDate(effectiveDate.toString())
-                .units(100.0)
-                .transactionPrice(new TransactionPrice().price(12.3))
+                .units(new BigDecimal(100.0))
+                .transactionPrice(new TransactionPrice().price(new BigDecimal(12.3)))
                 .source("Broker");
 
         //    Add the transaction to the portfolio
@@ -226,11 +227,11 @@ public class Portfolios {
                             { put(LUSID_INSTRUMENT_IDENTIFIER, instrumentIds.get(0)); }
                         }
                  )
-                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(1230.0))
+                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(new BigDecimal(1230.0)))
                 .transactionDate(effectiveDate.toString())
                 .settlementDate(effectiveDate.toString())
-                .units(100.0)
-                .transactionPrice(new TransactionPrice().price(12.3))
+                .units(new BigDecimal(100.0))
+                .transactionPrice(new TransactionPrice().price(new BigDecimal(12.3)))
                 .source("Custodian")
                 .properties(properties);
 

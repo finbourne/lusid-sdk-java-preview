@@ -8,6 +8,7 @@ import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
@@ -20,6 +21,8 @@ import java.util.stream.Stream;
 import static com.finbourne.lusid.utilities.TestDataUtilities.TutorialScope;
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toMap;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.comparesEqualTo;
 import static org.junit.Assert.assertEquals;
 
 public class Valuation {
@@ -71,12 +74,12 @@ public class Valuation {
                     List<TransactionRequest>    requests = new ArrayList<>();
 
                     //  add the starting cash
-                    requests.add(testDataUtilities.buildCashFundsInTransactionRequest(30600.0, currency, EFFECTIVE_DATE));
+                    requests.add(testDataUtilities.buildCashFundsInTransactionRequest(new BigDecimal(30600.0), currency, EFFECTIVE_DATE));
 
                     // create the transaction requests
-                    requests.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(0), 100.0, 101.0, currency, EFFECTIVE_DATE, "Buy"));
-                    requests.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(1), 100.0, 102.0, currency, EFFECTIVE_DATE, "Buy"));
-                    requests.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(2), 100.0, 103.0, currency, EFFECTIVE_DATE, "Buy"));
+                    requests.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(0), new BigDecimal(100.0), new BigDecimal(101.0), currency, EFFECTIVE_DATE, "Buy"));
+                    requests.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(1), new BigDecimal(100.0), new BigDecimal(102.0), currency, EFFECTIVE_DATE, "Buy"));
+                    requests.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(2), new BigDecimal(100.0), new BigDecimal(103.0), currency, EFFECTIVE_DATE, "Buy"));
 
                     return requests;
                 },
@@ -104,23 +107,23 @@ public class Valuation {
 
         //  prepare transactions across GBP and USD, transactions are transfer in of cash and stock
         List<TransactionRequest> transactionRequests = new ArrayList<>();
-        transactionRequests.add(testDataUtilities.buildCashFundsInTransactionRequest(10000.0, "GBP", EFFECTIVE_DATE));
-        transactionRequests.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(0), 100.0, 100.0, "USD", EFFECTIVE_DATE, "StockIn"));
-        transactionRequests.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(1), 100.0, 100.0, "GBP", EFFECTIVE_DATE, "StockIn"));
-        transactionRequests.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(2), 100.0, 100.0, "GBP", EFFECTIVE_DATE, "StockIn"));
+        transactionRequests.add(testDataUtilities.buildCashFundsInTransactionRequest(new BigDecimal(10000.0), "GBP", EFFECTIVE_DATE));
+        transactionRequests.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(0), new BigDecimal(100.0), new BigDecimal(100.0), "USD", EFFECTIVE_DATE, "StockIn"));
+        transactionRequests.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(1), new BigDecimal(100.0), new BigDecimal(100.0), "GBP", EFFECTIVE_DATE, "StockIn"));
+        transactionRequests.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(2), new BigDecimal(100.0), new BigDecimal(100.0), "GBP", EFFECTIVE_DATE, "StockIn"));
 
         //  create and upload the instrument quotes in their respective currencies
         List<UpsertQuoteRequest> quotes = new ArrayList<>();
         // prepare market data quotes
         quotes.addAll(asList(
-                createMarketDataUpsertQuoteRequest(instrumentIds.get(0), "USD", 200.00),
-                createMarketDataUpsertQuoteRequest(instrumentIds.get(1), "GBP", 200.00),
-                createMarketDataUpsertQuoteRequest(instrumentIds.get(2), "GBP", 80.00)
+                createMarketDataUpsertQuoteRequest(instrumentIds.get(0), "USD", new BigDecimal(200.00)),
+                createMarketDataUpsertQuoteRequest(instrumentIds.get(1), "GBP", new BigDecimal(200.00)),
+                createMarketDataUpsertQuoteRequest(instrumentIds.get(2), "GBP", new BigDecimal(80.00))
         ));
         // prepare fx data quotes
         quotes.addAll(asList(
-                createFxUpsertQuoteRequest("GBP", "USD", 1.22),
-                createFxUpsertQuoteRequest("USD", "GBP", 0.68)
+                createFxUpsertQuoteRequest("GBP", "USD", new BigDecimal(1.22)),
+                createFxUpsertQuoteRequest("USD", "GBP", new BigDecimal(0.68))
         ));
         // package quotes by quote ids
         Map<String, UpsertQuoteRequest> quotesById = quotes.stream()
@@ -150,8 +153,11 @@ public class Valuation {
         // begin verification of aggregation results...
 
         // verify instruments aggregated in the base portfolio currency (GBP)
+
+        double  delta = 0.00001;
+
         assertEquals("ASTRAZENECA PLC should have increased in value and been converted to GBP for the aggregation",
-                13600.0, aggregationResultsByInstrument.get(0).get(AGGREGATION_RESULT_KEY));
+                13600.0, (double)aggregationResultsByInstrument.get(0).get(AGGREGATION_RESULT_KEY), delta);
         assertEquals("CENTRICA PLC should have increased in value base on market quote movement",
                 20000.0, aggregationResultsByInstrument.get(1).get(AGGREGATION_RESULT_KEY));
         assertEquals("DIAEGO PLC should have decreased in value base on market quote movement",
@@ -200,9 +206,9 @@ public class Valuation {
 
         //  create the quotes
         Map<String, UpsertQuoteRequest> quotes = Stream.of(
-                        new AbstractMap.SimpleImmutableEntry<>(instrumentIds.get(0), 100.0),
-                        new AbstractMap.SimpleImmutableEntry<>(instrumentIds.get(1), 200.0),
-                        new AbstractMap.SimpleImmutableEntry<>(instrumentIds.get(2), 300.0)
+                        new AbstractMap.SimpleImmutableEntry<>(instrumentIds.get(0), new BigDecimal(100.0)),
+                        new AbstractMap.SimpleImmutableEntry<>(instrumentIds.get(1), new BigDecimal(200.0)),
+                        new AbstractMap.SimpleImmutableEntry<>(instrumentIds.get(2), new BigDecimal(300.0))
                 )
                 .map(x -> new UpsertQuoteRequest()
                         .quoteId(new QuoteId()
@@ -373,7 +379,7 @@ public class Valuation {
      * @param value - value of the quote
      * @return
      */
-    private UpsertQuoteRequest createMarketDataUpsertQuoteRequest(String instrument, String currency, double value){
+    private UpsertQuoteRequest createMarketDataUpsertQuoteRequest(String instrument, String currency, BigDecimal value){
         return new UpsertQuoteRequest()
                 .quoteId(new QuoteId()
                         .quoteSeriesId(new QuoteSeriesId()
@@ -396,7 +402,7 @@ public class Valuation {
      * @param rate - the exchange rate
      * @return
      */
-    private UpsertQuoteRequest createFxUpsertQuoteRequest(String baseCcy, String foreignCcy, double rate){
+    private UpsertQuoteRequest createFxUpsertQuoteRequest(String baseCcy, String foreignCcy, BigDecimal rate){
         return new UpsertQuoteRequest()
                 .quoteId(new QuoteId()
                         .quoteSeriesId(new QuoteSeriesId()
