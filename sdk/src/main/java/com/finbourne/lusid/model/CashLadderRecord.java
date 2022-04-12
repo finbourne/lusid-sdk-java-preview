@@ -39,15 +39,15 @@ public class CashLadderRecord {
 
   public static final String SERIALIZED_NAME_OPEN = "open";
   @SerializedName(SERIALIZED_NAME_OPEN)
-  private Double open;
+  private java.math.BigDecimal open;
 
   public static final String SERIALIZED_NAME_ACTIVITIES = "activities";
   @SerializedName(SERIALIZED_NAME_ACTIVITIES)
-  private Map<String, Double> activities = new HashMap<>();
+  private Map<String, java.math.BigDecimal> activities = new HashMap<>();
 
   public static final String SERIALIZED_NAME_CLOSE = "close";
   @SerializedName(SERIALIZED_NAME_CLOSE)
-  private Double close;
+  private java.math.BigDecimal close;
 
 
   public CashLadderRecord effectiveDate(OffsetDateTime effectiveDate) {
@@ -69,7 +69,7 @@ public class CashLadderRecord {
   }
 
 
-  public CashLadderRecord open(Double open) {
+  public CashLadderRecord open(java.math.BigDecimal open) {
     this.open = open; 
     return this;
   }
@@ -79,21 +79,21 @@ public class CashLadderRecord {
    * @return open
   **/
   @ApiModelProperty(required = true, value = "")
-  public Double getOpen() {
+  public java.math.BigDecimal getOpen() {
     return open;
   }
 
-  public void setOpen(Double open) {
+  public void setOpen(java.math.BigDecimal open) {
     this.open = open;
   }
 
 
-  public CashLadderRecord activities(Map<String, Double> activities) {
+  public CashLadderRecord activities(Map<String, java.math.BigDecimal> activities) {
     this.activities = activities; 
     return this;
   }
 
-  public CashLadderRecord putActivitiesItem(String key, Double activitiesItem) {
+  public CashLadderRecord putActivitiesItem(String key, java.math.BigDecimal activitiesItem) {
     this.activities.put(key, activitiesItem);
     return this;
   }
@@ -103,16 +103,16 @@ public class CashLadderRecord {
    * @return activities
   **/
   @ApiModelProperty(required = true, value = "")
-  public Map<String, Double> getActivities() {
+  public Map<String, java.math.BigDecimal> getActivities() {
     return activities;
   }
 
-  public void setActivities(Map<String, Double> activities) {
+  public void setActivities(Map<String, java.math.BigDecimal> activities) {
     this.activities = activities;
   }
 
 
-  public CashLadderRecord close(Double close) {
+  public CashLadderRecord close(java.math.BigDecimal close) {
     this.close = close; 
     return this;
   }
@@ -122,11 +122,11 @@ public class CashLadderRecord {
    * @return close
   **/
   @ApiModelProperty(required = true, value = "")
-  public Double getClose() {
+  public java.math.BigDecimal getClose() {
     return close;
   }
 
-  public void setClose(Double close) {
+  public void setClose(java.math.BigDecimal close) {
     this.close = close;
   }
 

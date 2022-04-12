@@ -52,7 +52,7 @@ public class FuturesContractDetails {
 
   public static final String SERIALIZED_NAME_CONTRACT_SIZE = "contractSize";
   @SerializedName(SERIALIZED_NAME_CONTRACT_SIZE)
-  private Double contractSize;
+  private java.math.BigDecimal contractSize;
 
   public static final String SERIALIZED_NAME_CONVENTION = "convention";
   @SerializedName(SERIALIZED_NAME_CONVENTION)
@@ -76,11 +76,11 @@ public class FuturesContractDetails {
 
   public static final String SERIALIZED_NAME_TICKER_STEP = "tickerStep";
   @SerializedName(SERIALIZED_NAME_TICKER_STEP)
-  private Double tickerStep;
+  private java.math.BigDecimal tickerStep;
 
   public static final String SERIALIZED_NAME_UNIT_VALUE = "unitValue";
   @SerializedName(SERIALIZED_NAME_UNIT_VALUE)
-  private Double unitValue;
+  private java.math.BigDecimal unitValue;
 
 
   public FuturesContractDetails domCcy(String domCcy) {
@@ -178,7 +178,7 @@ public class FuturesContractDetails {
   }
 
 
-  public FuturesContractDetails contractSize(Double contractSize) {
+  public FuturesContractDetails contractSize(java.math.BigDecimal contractSize) {
     this.contractSize = contractSize; 
     return this;
   }
@@ -188,11 +188,11 @@ public class FuturesContractDetails {
    * @return contractSize
   **/
   @ApiModelProperty(required = true, value = "Size of a single contract. By default this should be set to 1000 if otherwise unknown and is defaulted to such.")
-  public Double getContractSize() {
+  public java.math.BigDecimal getContractSize() {
     return contractSize;
   }
 
-  public void setContractSize(Double contractSize) {
+  public void setContractSize(java.math.BigDecimal contractSize) {
     this.contractSize = contractSize;
   }
 
@@ -292,7 +292,7 @@ public class FuturesContractDetails {
   }
 
 
-  public FuturesContractDetails tickerStep(Double tickerStep) {
+  public FuturesContractDetails tickerStep(java.math.BigDecimal tickerStep) {
     this.tickerStep = tickerStep; 
     return this;
   }
@@ -302,16 +302,16 @@ public class FuturesContractDetails {
    * @return tickerStep
   **/
   @ApiModelProperty(required = true, value = "Minimal step size change in ticker.")
-  public Double getTickerStep() {
+  public java.math.BigDecimal getTickerStep() {
     return tickerStep;
   }
 
-  public void setTickerStep(Double tickerStep) {
+  public void setTickerStep(java.math.BigDecimal tickerStep) {
     this.tickerStep = tickerStep;
   }
 
 
-  public FuturesContractDetails unitValue(Double unitValue) {
+  public FuturesContractDetails unitValue(java.math.BigDecimal unitValue) {
     this.unitValue = unitValue; 
     return this;
   }
@@ -321,11 +321,11 @@ public class FuturesContractDetails {
    * @return unitValue
   **/
   @ApiModelProperty(required = true, value = "The value in the currency of a 1 unit change in the contract price.")
-  public Double getUnitValue() {
+  public java.math.BigDecimal getUnitValue() {
     return unitValue;
   }
 
-  public void setUnitValue(Double unitValue) {
+  public void setUnitValue(java.math.BigDecimal unitValue) {
     this.unitValue = unitValue;
   }
 

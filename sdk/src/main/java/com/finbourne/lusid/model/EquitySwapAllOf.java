@@ -58,7 +58,7 @@ public class EquitySwapAllOf {
 
   public static final String SERIALIZED_NAME_INITIAL_PRICE = "initialPrice";
   @SerializedName(SERIALIZED_NAME_INITIAL_PRICE)
-  private Double initialPrice;
+  private java.math.BigDecimal initialPrice;
 
   public static final String SERIALIZED_NAME_NOTIONAL_RESET = "notionalReset";
   @SerializedName(SERIALIZED_NAME_NOTIONAL_RESET)
@@ -66,7 +66,7 @@ public class EquitySwapAllOf {
 
   public static final String SERIALIZED_NAME_QUANTITY = "quantity";
   @SerializedName(SERIALIZED_NAME_QUANTITY)
-  private Double quantity;
+  private java.math.BigDecimal quantity;
 
   public static final String SERIALIZED_NAME_UNDERLYING_IDENTIFIER = "underlyingIdentifier";
   @SerializedName(SERIALIZED_NAME_UNDERLYING_IDENTIFIER)
@@ -294,7 +294,7 @@ public class EquitySwapAllOf {
   }
 
 
-  public EquitySwapAllOf initialPrice(Double initialPrice) {
+  public EquitySwapAllOf initialPrice(java.math.BigDecimal initialPrice) {
     this.initialPrice = initialPrice; 
     return this;
   }
@@ -304,11 +304,11 @@ public class EquitySwapAllOf {
    * @return initialPrice
   **/
   @ApiModelProperty(required = true, value = "The initial equity price of the Equity Swap.")
-  public Double getInitialPrice() {
+  public java.math.BigDecimal getInitialPrice() {
     return initialPrice;
   }
 
-  public void setInitialPrice(Double initialPrice) {
+  public void setInitialPrice(java.math.BigDecimal initialPrice) {
     this.initialPrice = initialPrice;
   }
 
@@ -332,7 +332,7 @@ public class EquitySwapAllOf {
   }
 
 
-  public EquitySwapAllOf quantity(Double quantity) {
+  public EquitySwapAllOf quantity(java.math.BigDecimal quantity) {
     this.quantity = quantity; 
     return this;
   }
@@ -342,11 +342,11 @@ public class EquitySwapAllOf {
    * @return quantity
   **/
   @ApiModelProperty(required = true, value = "The quantity or number of shares in the Equity Swap.")
-  public Double getQuantity() {
+  public java.math.BigDecimal getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(Double quantity) {
+  public void setQuantity(java.math.BigDecimal quantity) {
     this.quantity = quantity;
   }
 

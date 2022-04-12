@@ -42,7 +42,7 @@ public class DiscountFactorCurveDataAllOf {
 
   public static final String SERIALIZED_NAME_DISCOUNT_FACTORS = "discountFactors";
   @SerializedName(SERIALIZED_NAME_DISCOUNT_FACTORS)
-  private List<Double> discountFactors = new ArrayList<>();
+  private List<java.math.BigDecimal> discountFactors = new ArrayList<>();
 
   /**
    * The available values are: DiscountFactorCurveData, EquityVolSurfaceData, FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData, FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData, FxForwardCurveByQuoteReference, CreditSpreadCurveData
@@ -160,12 +160,12 @@ public class DiscountFactorCurveDataAllOf {
   }
 
 
-  public DiscountFactorCurveDataAllOf discountFactors(List<Double> discountFactors) {
+  public DiscountFactorCurveDataAllOf discountFactors(List<java.math.BigDecimal> discountFactors) {
     this.discountFactors = discountFactors; 
     return this;
   }
 
-  public DiscountFactorCurveDataAllOf addDiscountFactorsItem(Double discountFactorsItem) {
+  public DiscountFactorCurveDataAllOf addDiscountFactorsItem(java.math.BigDecimal discountFactorsItem) {
    
     this.discountFactors.add(discountFactorsItem);
     return this;
@@ -176,11 +176,11 @@ public class DiscountFactorCurveDataAllOf {
    * @return discountFactors
   **/
   @ApiModelProperty(required = true, value = "Discount factors to be applied to cashflow on the specified dates")
-  public List<Double> getDiscountFactors() {
+  public List<java.math.BigDecimal> getDiscountFactors() {
     return discountFactors;
   }
 
-  public void setDiscountFactors(List<Double> discountFactors) {
+  public void setDiscountFactors(List<java.math.BigDecimal> discountFactors) {
     this.discountFactors = discountFactors;
   }
 

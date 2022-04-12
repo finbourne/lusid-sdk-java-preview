@@ -35,7 +35,7 @@ import java.util.Map;
 public class A2BBreakdown {
   public static final String SERIALIZED_NAME_TOTAL = "total";
   @SerializedName(SERIALIZED_NAME_TOTAL)
-  private Double total;
+  private java.math.BigDecimal total;
 
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)
@@ -43,10 +43,10 @@ public class A2BBreakdown {
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  private Map<String, Double> components = null;
+  private Map<String, java.math.BigDecimal> components = null;
 
 
-  public A2BBreakdown total(Double total) {
+  public A2BBreakdown total(java.math.BigDecimal total) {
     this.total = total; 
     return this;
   }
@@ -56,11 +56,11 @@ public class A2BBreakdown {
    * @return total
   **/
   @ApiModelProperty(value = "The total value of all the components within this category.")
-  public Double getTotal() {
+  public java.math.BigDecimal getTotal() {
     return total;
   }
 
-  public void setTotal(Double total) {
+  public void setTotal(java.math.BigDecimal total) {
     this.total = total;
   }
 
@@ -84,12 +84,12 @@ public class A2BBreakdown {
   }
 
 
-  public A2BBreakdown components(Map<String, Double> components) {
+  public A2BBreakdown components(Map<String, java.math.BigDecimal> components) {
     this.components = components; 
     return this;
   }
 
-  public A2BBreakdown putComponentsItem(String key, Double componentsItem) {
+  public A2BBreakdown putComponentsItem(String key, java.math.BigDecimal componentsItem) {
     if (this.components == null) {
       this.components = new HashMap<>();
     }
@@ -102,11 +102,11 @@ public class A2BBreakdown {
    * @return components
   **/
   @ApiModelProperty(value = "The individual components that make up the category. For example, the Start category may have Cost, Unrealised gains and accrued interest components.")
-  public Map<String, Double> getComponents() {
+  public Map<String, java.math.BigDecimal> getComponents() {
     return components;
   }
 
-  public void setComponents(Map<String, Double> components) {
+  public void setComponents(Map<String, java.math.BigDecimal> components) {
     this.components = components;
   }
 

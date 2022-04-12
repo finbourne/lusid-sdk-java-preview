@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **domCcy** | **String** | Domestic currency of the fx forward | 
 **fgnCcy** | **String** | Foreign currency of the fx forward | 
 **dates** | **List&lt;OffsetDateTime&gt;** | Dates for which the forward rates apply | 
-**rates** | **List&lt;Double&gt;** | Rates provided for the fx forward (price in FgnCcy per unit of DomCcy) | 
+**rates** | **List&lt;java.math.BigDecimal&gt;** | Rates provided for the fx forward (price in FgnCcy per unit of DomCcy) | 
 **marketDataType** | [**MarketDataTypeEnum**](#MarketDataTypeEnum) | The available values are: DiscountFactorCurveData, EquityVolSurfaceData, FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData, FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData, FxForwardCurveByQuoteReference, CreditSpreadCurveData | 
 
 

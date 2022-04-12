@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**quantity** | **Double** | Total number of units. | 
+**quantity** | **java.math.BigDecimal** | Total number of units. | 
 
 
 

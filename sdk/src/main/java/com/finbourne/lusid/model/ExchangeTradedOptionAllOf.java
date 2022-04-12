@@ -41,11 +41,11 @@ public class ExchangeTradedOptionAllOf {
 
   public static final String SERIALIZED_NAME_CONTRACTS = "contracts";
   @SerializedName(SERIALIZED_NAME_CONTRACTS)
-  private Double contracts;
+  private java.math.BigDecimal contracts;
 
   public static final String SERIALIZED_NAME_REF_SPOT_PRICE = "refSpotPrice";
   @SerializedName(SERIALIZED_NAME_REF_SPOT_PRICE)
-  private Double refSpotPrice;
+  private java.math.BigDecimal refSpotPrice;
 
   /**
    * The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption, ReferenceInstrument
@@ -193,7 +193,7 @@ public class ExchangeTradedOptionAllOf {
   }
 
 
-  public ExchangeTradedOptionAllOf contracts(Double contracts) {
+  public ExchangeTradedOptionAllOf contracts(java.math.BigDecimal contracts) {
     this.contracts = contracts; 
     return this;
   }
@@ -203,16 +203,16 @@ public class ExchangeTradedOptionAllOf {
    * @return contracts
   **/
   @ApiModelProperty(required = true, value = "The number of contracts held.")
-  public Double getContracts() {
+  public java.math.BigDecimal getContracts() {
     return contracts;
   }
 
-  public void setContracts(Double contracts) {
+  public void setContracts(java.math.BigDecimal contracts) {
     this.contracts = contracts;
   }
 
 
-  public ExchangeTradedOptionAllOf refSpotPrice(Double refSpotPrice) {
+  public ExchangeTradedOptionAllOf refSpotPrice(java.math.BigDecimal refSpotPrice) {
     this.refSpotPrice = refSpotPrice; 
     return this;
   }
@@ -222,11 +222,11 @@ public class ExchangeTradedOptionAllOf {
    * @return refSpotPrice
   **/
   @ApiModelProperty(required = true, value = "The reference spot price for the option at which the contract was entered into.")
-  public Double getRefSpotPrice() {
+  public java.math.BigDecimal getRefSpotPrice() {
     return refSpotPrice;
   }
 
-  public void setRefSpotPrice(Double refSpotPrice) {
+  public void setRefSpotPrice(java.math.BigDecimal refSpotPrice) {
     this.refSpotPrice = refSpotPrice;
   }
 

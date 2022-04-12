@@ -49,7 +49,7 @@ public class FloatingLeg extends InstrumentLeg {
 
   public static final String SERIALIZED_NAME_NOTIONAL = "notional";
   @SerializedName(SERIALIZED_NAME_NOTIONAL)
-  private Double notional;
+  private java.math.BigDecimal notional;
 
   public static final String SERIALIZED_NAME_OVERRIDES = "overrides";
   @SerializedName(SERIALIZED_NAME_OVERRIDES)
@@ -116,7 +116,7 @@ public class FloatingLeg extends InstrumentLeg {
   }
 
 
-  public FloatingLeg notional(Double notional) {
+  public FloatingLeg notional(java.math.BigDecimal notional) {
     this.notional = notional; 
     return this;
   }
@@ -126,11 +126,11 @@ public class FloatingLeg extends InstrumentLeg {
    * @return notional
   **/
   @ApiModelProperty(required = true, value = "Scaling factor to apply to leg quantities.")
-  public Double getNotional() {
+  public java.math.BigDecimal getNotional() {
     return notional;
   }
 
-  public void setNotional(Double notional) {
+  public void setNotional(java.math.BigDecimal notional) {
     this.notional = notional;
   }
 

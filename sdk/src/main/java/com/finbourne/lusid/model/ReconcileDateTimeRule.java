@@ -86,7 +86,7 @@ public class ReconcileDateTimeRule extends ReconciliationRule {
 
   public static final String SERIALIZED_NAME_TOLERANCE = "tolerance";
   @SerializedName(SERIALIZED_NAME_TOLERANCE)
-  private Double tolerance;
+  private java.math.BigDecimal tolerance;
 
   public static final String SERIALIZED_NAME_APPLIES_TO = "appliesTo";
   @SerializedName(SERIALIZED_NAME_APPLIES_TO)
@@ -115,7 +115,7 @@ public class ReconcileDateTimeRule extends ReconciliationRule {
   }
 
 
-  public ReconcileDateTimeRule tolerance(Double tolerance) {
+  public ReconcileDateTimeRule tolerance(java.math.BigDecimal tolerance) {
     this.tolerance = tolerance; 
     return this;
   }
@@ -125,11 +125,11 @@ public class ReconcileDateTimeRule extends ReconciliationRule {
    * @return tolerance
   **/
   @ApiModelProperty(value = "For a numeric type only (i.e. decimal, integer, date or datetime offset possibly controversially), this is the quantity used in the comparison.  The units of the tolerance must be set appropriately for the item being compared.  For a number such as a currency or amount that will be a simple quantity, for a DateTime or DateTimeOffset it should be days. If fewer than a single day then this should be  passed as a fraction.")
-  public Double getTolerance() {
+  public java.math.BigDecimal getTolerance() {
     return tolerance;
   }
 
-  public void setTolerance(Double tolerance) {
+  public void setTolerance(java.math.BigDecimal tolerance) {
     this.tolerance = tolerance;
   }
 

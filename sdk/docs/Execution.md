@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **properties** | [**Map&lt;String, PerpetualProperty&gt;**](PerpetualProperty.md) | Client-defined properties associated with this execution. |  [optional]
 **instrumentIdentifiers** | **Map&lt;String, String&gt;** | The instrument ordered. | 
 **lusidInstrumentId** | **String** | The LUSID instrument id for the instrument execution. | 
-**quantity** | **Double** | The quantity of given instrument ordered. | 
+**quantity** | **java.math.BigDecimal** | The quantity of given instrument ordered. | 
 **state** | **String** | The state of this execution (typically a FIX state; Open, Filled, etc). | 
 **side** | **String** | The side (Buy, Sell, ...) of this execution. | 
 **type** | **String** | The type of this execution (Market, Limit, etc). | 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **settlementDate** | **OffsetDateTime** | The (optional) settlement date for this execution |  [optional]
 **price** | [**CurrencyAndAmount**](CurrencyAndAmount.md) |  | 
 **settlementCurrency** | **String** | The execution&#39;s settlement currency. | 
-**settlementCurrencyFxRate** | **Double** | The exectuion&#39;s settlement currency rate. | 
+**settlementCurrencyFxRate** | **java.math.BigDecimal** | The exectuion&#39;s settlement currency rate. | 
 **counterparty** | **String** | The market entity this placement is placed with. | 
 **version** | [**Version**](Version.md) |  |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]

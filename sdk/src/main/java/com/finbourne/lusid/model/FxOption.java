@@ -56,7 +56,7 @@ public class FxOption extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_STRIKE = "strike";
   @SerializedName(SERIALIZED_NAME_STRIKE)
-  private Double strike;
+  private java.math.BigDecimal strike;
 
   public static final String SERIALIZED_NAME_DOM_CCY = "domCcy";
   @SerializedName(SERIALIZED_NAME_DOM_CCY)
@@ -64,7 +64,7 @@ public class FxOption extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_DOM_AMOUNT = "domAmount";
   @SerializedName(SERIALIZED_NAME_DOM_AMOUNT)
-  private Double domAmount;
+  private java.math.BigDecimal domAmount;
 
   public static final String SERIALIZED_NAME_FGN_CCY = "fgnCcy";
   @SerializedName(SERIALIZED_NAME_FGN_CCY)
@@ -173,7 +173,7 @@ public class FxOption extends LusidInstrument {
   }
 
 
-  public FxOption strike(Double strike) {
+  public FxOption strike(java.math.BigDecimal strike) {
     this.strike = strike; 
     return this;
   }
@@ -183,11 +183,11 @@ public class FxOption extends LusidInstrument {
    * @return strike
   **/
   @ApiModelProperty(required = true, value = "The strike of the option.")
-  public Double getStrike() {
+  public java.math.BigDecimal getStrike() {
     return strike;
   }
 
-  public void setStrike(Double strike) {
+  public void setStrike(java.math.BigDecimal strike) {
     this.strike = strike;
   }
 
@@ -211,7 +211,7 @@ public class FxOption extends LusidInstrument {
   }
 
 
-  public FxOption domAmount(Double domAmount) {
+  public FxOption domAmount(java.math.BigDecimal domAmount) {
     this.domAmount = domAmount; 
     return this;
   }
@@ -221,11 +221,11 @@ public class FxOption extends LusidInstrument {
    * @return domAmount
   **/
   @ApiModelProperty(value = "The Amount of DomCcy that will be exchanged if the option is exercised.  This amount should be a positive number, with the Call/Put flag used to indicate direction.  The corresponding amount of FgnCcy that will be exchanged is this amount times the strike.  Note there is no rounding performed on this computed value.  This is an optional field, if not set the option ContractSize will default to 1.")
-  public Double getDomAmount() {
+  public java.math.BigDecimal getDomAmount() {
     return domAmount;
   }
 
-  public void setDomAmount(Double domAmount) {
+  public void setDomAmount(java.math.BigDecimal domAmount) {
     this.domAmount = domAmount;
   }
 

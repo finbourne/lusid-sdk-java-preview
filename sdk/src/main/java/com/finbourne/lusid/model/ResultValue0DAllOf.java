@@ -35,7 +35,7 @@ public class ResultValue0DAllOf {
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private Double value;
+  private java.math.BigDecimal value;
 
   public static final String SERIALIZED_NAME_DIMENSION = "dimension";
   @SerializedName(SERIALIZED_NAME_DIMENSION)
@@ -124,7 +124,7 @@ public class ResultValue0DAllOf {
   }
 
 
-  public ResultValue0DAllOf value(Double value) {
+  public ResultValue0DAllOf value(java.math.BigDecimal value) {
     this.value = value; 
     return this;
   }
@@ -134,11 +134,11 @@ public class ResultValue0DAllOf {
    * @return value
   **/
   @ApiModelProperty(value = "The value of the result")
-  public Double getValue() {
+  public java.math.BigDecimal getValue() {
     return value;
   }
 
-  public void setValue(Double value) {
+  public void setValue(java.math.BigDecimal value) {
     this.value = value;
   }
 

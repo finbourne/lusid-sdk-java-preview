@@ -49,7 +49,7 @@ public class CashFlowValue extends ResultValue {
 
   public static final String SERIALIZED_NAME_PAYMENT_AMOUNT = "paymentAmount";
   @SerializedName(SERIALIZED_NAME_PAYMENT_AMOUNT)
-  private Double paymentAmount;
+  private java.math.BigDecimal paymentAmount;
 
   public static final String SERIALIZED_NAME_PAYMENT_CCY = "paymentCcy";
   @SerializedName(SERIALIZED_NAME_PAYMENT_CCY)
@@ -116,7 +116,7 @@ public class CashFlowValue extends ResultValue {
   }
 
 
-  public CashFlowValue paymentAmount(Double paymentAmount) {
+  public CashFlowValue paymentAmount(java.math.BigDecimal paymentAmount) {
     this.paymentAmount = paymentAmount; 
     return this;
   }
@@ -126,11 +126,11 @@ public class CashFlowValue extends ResultValue {
    * @return paymentAmount
   **/
   @ApiModelProperty(required = true, value = "The amount paid or received")
-  public Double getPaymentAmount() {
+  public java.math.BigDecimal getPaymentAmount() {
     return paymentAmount;
   }
 
-  public void setPaymentAmount(Double paymentAmount) {
+  public void setPaymentAmount(java.math.BigDecimal paymentAmount) {
     this.paymentAmount = paymentAmount;
   }
 

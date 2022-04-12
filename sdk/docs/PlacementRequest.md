@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **blockIds** | [**List&lt;ResourceId&gt;**](ResourceId.md) | IDs of Blocks associated with this placement. | 
 **properties** | [**Map&lt;String, PerpetualProperty&gt;**](PerpetualProperty.md) | Client-defined properties associated with this order. |  [optional]
 **instrumentIdentifiers** | **Map&lt;String, String&gt;** | The instrument ordered. | 
-**quantity** | **Double** | The quantity of given instrument ordered. | 
+**quantity** | **java.math.BigDecimal** | The quantity of given instrument ordered. | 
 **state** | **String** | The state of this placement (typically a FIX state; Open, Filled, etc). | 
 **side** | **String** | The side (Buy, Sell, ...) of this placement. | 
 **timeInForce** | **String** | The time in force applicable to this placement (GTC, FOK, Day, etc) | 

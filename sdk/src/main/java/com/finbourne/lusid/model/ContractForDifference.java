@@ -47,7 +47,7 @@ public class ContractForDifference extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_CONTRACT_SIZE = "contractSize";
   @SerializedName(SERIALIZED_NAME_CONTRACT_SIZE)
-  private Double contractSize;
+  private java.math.BigDecimal contractSize;
 
   public static final String SERIALIZED_NAME_PAY_CCY = "payCcy";
   @SerializedName(SERIALIZED_NAME_PAY_CCY)
@@ -55,7 +55,7 @@ public class ContractForDifference extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_REFERENCE_RATE = "referenceRate";
   @SerializedName(SERIALIZED_NAME_REFERENCE_RATE)
-  private Double referenceRate;
+  private java.math.BigDecimal referenceRate;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -130,7 +130,7 @@ public class ContractForDifference extends LusidInstrument {
   }
 
 
-  public ContractForDifference contractSize(Double contractSize) {
+  public ContractForDifference contractSize(java.math.BigDecimal contractSize) {
     this.contractSize = contractSize; 
     return this;
   }
@@ -140,11 +140,11 @@ public class ContractForDifference extends LusidInstrument {
    * @return contractSize
   **/
   @ApiModelProperty(required = true, value = "The size of the CFD contract, this should represent the total number of stocks that the CFD represents.")
-  public Double getContractSize() {
+  public java.math.BigDecimal getContractSize() {
     return contractSize;
   }
 
-  public void setContractSize(Double contractSize) {
+  public void setContractSize(java.math.BigDecimal contractSize) {
     this.contractSize = contractSize;
   }
 
@@ -168,7 +168,7 @@ public class ContractForDifference extends LusidInstrument {
   }
 
 
-  public ContractForDifference referenceRate(Double referenceRate) {
+  public ContractForDifference referenceRate(java.math.BigDecimal referenceRate) {
     this.referenceRate = referenceRate; 
     return this;
   }
@@ -178,11 +178,11 @@ public class ContractForDifference extends LusidInstrument {
    * @return referenceRate
   **/
   @ApiModelProperty(value = "The reference rate of the CFD, this can be set to 0 but not negative values.  This field is optional, if not set it will default to 0.")
-  public Double getReferenceRate() {
+  public java.math.BigDecimal getReferenceRate() {
     return referenceRate;
   }
 
-  public void setReferenceRate(Double referenceRate) {
+  public void setReferenceRate(java.math.BigDecimal referenceRate) {
     this.referenceRate = referenceRate;
   }
 

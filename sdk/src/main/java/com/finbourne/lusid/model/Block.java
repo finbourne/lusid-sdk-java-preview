@@ -62,7 +62,7 @@ public class Block {
 
   public static final String SERIALIZED_NAME_QUANTITY = "quantity";
   @SerializedName(SERIALIZED_NAME_QUANTITY)
-  private Double quantity;
+  private java.math.BigDecimal quantity;
 
   public static final String SERIALIZED_NAME_SIDE = "side";
   @SerializedName(SERIALIZED_NAME_SIDE)
@@ -211,7 +211,7 @@ public class Block {
   }
 
 
-  public Block quantity(Double quantity) {
+  public Block quantity(java.math.BigDecimal quantity) {
     this.quantity = quantity; 
     return this;
   }
@@ -221,11 +221,11 @@ public class Block {
    * @return quantity
   **/
   @ApiModelProperty(required = true, value = "The total quantity of given instrument ordered.")
-  public Double getQuantity() {
+  public java.math.BigDecimal getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(Double quantity) {
+  public void setQuantity(java.math.BigDecimal quantity) {
     this.quantity = quantity;
   }
 

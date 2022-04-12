@@ -62,7 +62,7 @@ public class Execution {
 
   public static final String SERIALIZED_NAME_QUANTITY = "quantity";
   @SerializedName(SERIALIZED_NAME_QUANTITY)
-  private Double quantity;
+  private java.math.BigDecimal quantity;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
@@ -94,7 +94,7 @@ public class Execution {
 
   public static final String SERIALIZED_NAME_SETTLEMENT_CURRENCY_FX_RATE = "settlementCurrencyFxRate";
   @SerializedName(SERIALIZED_NAME_SETTLEMENT_CURRENCY_FX_RATE)
-  private Double settlementCurrencyFxRate;
+  private java.math.BigDecimal settlementCurrencyFxRate;
 
   public static final String SERIALIZED_NAME_COUNTERPARTY = "counterparty";
   @SerializedName(SERIALIZED_NAME_COUNTERPARTY)
@@ -217,7 +217,7 @@ public class Execution {
   }
 
 
-  public Execution quantity(Double quantity) {
+  public Execution quantity(java.math.BigDecimal quantity) {
     this.quantity = quantity; 
     return this;
   }
@@ -227,11 +227,11 @@ public class Execution {
    * @return quantity
   **/
   @ApiModelProperty(required = true, value = "The quantity of given instrument ordered.")
-  public Double getQuantity() {
+  public java.math.BigDecimal getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(Double quantity) {
+  public void setQuantity(java.math.BigDecimal quantity) {
     this.quantity = quantity;
   }
 
@@ -369,7 +369,7 @@ public class Execution {
   }
 
 
-  public Execution settlementCurrencyFxRate(Double settlementCurrencyFxRate) {
+  public Execution settlementCurrencyFxRate(java.math.BigDecimal settlementCurrencyFxRate) {
     this.settlementCurrencyFxRate = settlementCurrencyFxRate; 
     return this;
   }
@@ -379,11 +379,11 @@ public class Execution {
    * @return settlementCurrencyFxRate
   **/
   @ApiModelProperty(required = true, value = "The exectuion's settlement currency rate.")
-  public Double getSettlementCurrencyFxRate() {
+  public java.math.BigDecimal getSettlementCurrencyFxRate() {
     return settlementCurrencyFxRate;
   }
 
-  public void setSettlementCurrencyFxRate(Double settlementCurrencyFxRate) {
+  public void setSettlementCurrencyFxRate(java.math.BigDecimal settlementCurrencyFxRate) {
     this.settlementCurrencyFxRate = settlementCurrencyFxRate;
   }
 

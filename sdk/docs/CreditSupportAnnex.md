@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **isdaAgreementVersion** | **String** | The transactions will take place with reference to a particular ISDA master agreement. This  will likely be either the ISDA 1992 or ISDA 2002 agremeents or ISDA close-out 2009. | 
 **marginCallFrequency** | **String** | The tenor, e.g. daily (1D) or biweekly (2W), at which frequency a margin call will be made, calculations  made and money transferred to readjust. The calculation might also require a specific time for valuation and notification. | 
 **valuationAgent** | **String** | Are the calculations performed by the institutions&#39;s counterparty or the institution trading with them. | 
-**thresholdAmount** | **Double** | At what level of exposure does collateral need to be posted. Will typically be zero for banks.  Should be stated in reference currency | 
+**thresholdAmount** | **java.math.BigDecimal** | At what level of exposure does collateral need to be posted. Will typically be zero for banks.  Should be stated in reference currency | 
 **roundingDecimalPlaces** | **Integer** | Where a calculation needs to be rounded to a specific number of decimal places,  this states the number that that requires. | 
-**initialMarginAmount** | **Double** | The initial margin that is required. In the reference currency | 
-**minimumTransferAmount** | **Double** | The minimum amount, in the reference currency, that must be transferred when required. | 
+**initialMarginAmount** | **java.math.BigDecimal** | The initial margin that is required. In the reference currency | 
+**minimumTransferAmount** | **java.math.BigDecimal** | The minimum amount, in the reference currency, that must be transferred when required. | 
 **id** | [**ResourceId**](ResourceId.md) |  | 
 
 

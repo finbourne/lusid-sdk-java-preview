@@ -42,7 +42,7 @@ public class InstrumentCashFlow {
 
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private Double amount;
+  private java.math.BigDecimal amount;
 
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)
@@ -88,7 +88,7 @@ public class InstrumentCashFlow {
   }
 
 
-  public InstrumentCashFlow amount(Double amount) {
+  public InstrumentCashFlow amount(java.math.BigDecimal amount) {
     this.amount = amount; 
     return this;
   }
@@ -98,11 +98,11 @@ public class InstrumentCashFlow {
    * @return amount
   **/
   @ApiModelProperty(value = "The quantity (amount) that will be paid. Note that this can be empty if the payment is in the future and a model is used that cannot estimate it.")
-  public Double getAmount() {
+  public java.math.BigDecimal getAmount() {
     return amount;
   }
 
-  public void setAmount(Double amount) {
+  public void setAmount(java.math.BigDecimal amount) {
     this.amount = amount;
   }
 

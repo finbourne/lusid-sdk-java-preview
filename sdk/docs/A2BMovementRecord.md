@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **transactionId** | **String** | The unique identifier for the transaction. |  [optional]
 **movementName** | **String** | The name of the movement. |  [optional]
 **effectiveDate** | **OffsetDateTime** | The date of the movement. |  [optional]
-**units** | **Double** | The number of units of the instrument that are affected by the movement. |  [optional]
+**units** | **java.math.BigDecimal** | The number of units of the instrument that are affected by the movement. |  [optional]
 **start** | [**A2BCategory**](A2BCategory.md) |  |  [optional]
 **flows** | [**A2BCategory**](A2BCategory.md) |  |  [optional]
 **gains** | [**A2BCategory**](A2BCategory.md) |  |  [optional]

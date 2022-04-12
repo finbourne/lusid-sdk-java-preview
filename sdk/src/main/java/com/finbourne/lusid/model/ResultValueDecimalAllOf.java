@@ -31,7 +31,7 @@ import java.io.IOException;
 public class ResultValueDecimalAllOf {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private Double value;
+  private java.math.BigDecimal value;
 
   public static final String SERIALIZED_NAME_DIMENSION = "dimension";
   @SerializedName(SERIALIZED_NAME_DIMENSION)
@@ -101,7 +101,7 @@ public class ResultValueDecimalAllOf {
   private ResultValueTypeEnum resultValueType;
 
 
-  public ResultValueDecimalAllOf value(Double value) {
+  public ResultValueDecimalAllOf value(java.math.BigDecimal value) {
     this.value = value; 
     return this;
   }
@@ -111,11 +111,11 @@ public class ResultValueDecimalAllOf {
    * @return value
   **/
   @ApiModelProperty(value = "The value itself")
-  public Double getValue() {
+  public java.math.BigDecimal getValue() {
     return value;
   }
 
-  public void setValue(Double value) {
+  public void setValue(java.math.BigDecimal value) {
     this.value = value;
   }
 

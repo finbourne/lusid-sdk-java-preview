@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **equityFlowConventions** | [**FlowConventions**](FlowConventions.md) |  | 
 **fundingLeg** | [**InstrumentLeg**](InstrumentLeg.md) |  | 
 **includeDividends** | **Boolean** | Dividend inclusion flag, if true dividends are included in the equity leg (total return). | 
-**initialPrice** | **Double** | The initial equity price of the Equity Swap. | 
+**initialPrice** | **java.math.BigDecimal** | The initial equity price of the Equity Swap. | 
 **notionalReset** | **Boolean** | Notional reset flag, if true the notional of the funding leg is reset at the start of every  coupon to match the value of the equity leg (equity price at start of coupon times quantity). | 
-**quantity** | **Double** | The quantity or number of shares in the Equity Swap. | 
+**quantity** | **java.math.BigDecimal** | The quantity or number of shares in the Equity Swap. | 
 **underlyingIdentifier** | **String** | external market codes and identifiers for the EquitySwap, e.g. RIC.  Supported string (enumeration) values are: [LusidInstrumentId, Isin, Sedol, Cusip, ClientInternal, Figi, RIC, QuotePermId, REDCode, BBGId, ICECode]. | 
 **instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption, ReferenceInstrument | 
 

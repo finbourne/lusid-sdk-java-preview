@@ -39,7 +39,7 @@ public class CalculationInfo {
 
   public static final String SERIALIZED_NAME_CALCULATION_AMOUNT = "calculationAmount";
   @SerializedName(SERIALIZED_NAME_CALCULATION_AMOUNT)
-  private Double calculationAmount;
+  private java.math.BigDecimal calculationAmount;
 
 
   public CalculationInfo calculationMethod(String calculationMethod) {
@@ -80,7 +80,7 @@ public class CalculationInfo {
   }
 
 
-  public CalculationInfo calculationAmount(Double calculationAmount) {
+  public CalculationInfo calculationAmount(java.math.BigDecimal calculationAmount) {
     this.calculationAmount = calculationAmount; 
     return this;
   }
@@ -90,11 +90,11 @@ public class CalculationInfo {
    * @return calculationAmount
   **/
   @ApiModelProperty(required = true, value = "Numerical fee amount")
-  public Double getCalculationAmount() {
+  public java.math.BigDecimal getCalculationAmount() {
     return calculationAmount;
   }
 
-  public void setCalculationAmount(Double calculationAmount) {
+  public void setCalculationAmount(java.math.BigDecimal calculationAmount) {
     this.calculationAmount = calculationAmount;
   }
 

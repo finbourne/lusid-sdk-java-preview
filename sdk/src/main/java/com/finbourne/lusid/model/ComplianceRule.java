@@ -59,11 +59,11 @@ public class ComplianceRule {
 
   public static final String SERIALIZED_NAME_LOWER_BOUND = "lowerBound";
   @SerializedName(SERIALIZED_NAME_LOWER_BOUND)
-  private Double lowerBound;
+  private java.math.BigDecimal lowerBound;
 
   public static final String SERIALIZED_NAME_UPPER_BOUND = "upperBound";
   @SerializedName(SERIALIZED_NAME_UPPER_BOUND)
-  private Double upperBound;
+  private java.math.BigDecimal upperBound;
 
   public static final String SERIALIZED_NAME_SCHEDULE = "schedule";
   @SerializedName(SERIALIZED_NAME_SCHEDULE)
@@ -200,7 +200,7 @@ public class ComplianceRule {
   }
 
 
-  public ComplianceRule lowerBound(Double lowerBound) {
+  public ComplianceRule lowerBound(java.math.BigDecimal lowerBound) {
     this.lowerBound = lowerBound; 
     return this;
   }
@@ -210,16 +210,16 @@ public class ComplianceRule {
    * @return lowerBound
   **/
   @ApiModelProperty(required = true, value = "")
-  public Double getLowerBound() {
+  public java.math.BigDecimal getLowerBound() {
     return lowerBound;
   }
 
-  public void setLowerBound(Double lowerBound) {
+  public void setLowerBound(java.math.BigDecimal lowerBound) {
     this.lowerBound = lowerBound;
   }
 
 
-  public ComplianceRule upperBound(Double upperBound) {
+  public ComplianceRule upperBound(java.math.BigDecimal upperBound) {
     this.upperBound = upperBound; 
     return this;
   }
@@ -229,11 +229,11 @@ public class ComplianceRule {
    * @return upperBound
   **/
   @ApiModelProperty(required = true, value = "")
-  public Double getUpperBound() {
+  public java.math.BigDecimal getUpperBound() {
     return upperBound;
   }
 
-  public void setUpperBound(Double upperBound) {
+  public void setUpperBound(java.math.BigDecimal upperBound) {
     this.upperBound = upperBound;
   }
 

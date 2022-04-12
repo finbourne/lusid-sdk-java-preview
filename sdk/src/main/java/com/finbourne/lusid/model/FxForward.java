@@ -43,7 +43,7 @@ public class FxForward extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_DOM_AMOUNT = "domAmount";
   @SerializedName(SERIALIZED_NAME_DOM_AMOUNT)
-  private Double domAmount;
+  private java.math.BigDecimal domAmount;
 
   public static final String SERIALIZED_NAME_DOM_CCY = "domCcy";
   @SerializedName(SERIALIZED_NAME_DOM_CCY)
@@ -51,7 +51,7 @@ public class FxForward extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_FGN_AMOUNT = "fgnAmount";
   @SerializedName(SERIALIZED_NAME_FGN_AMOUNT)
-  private Double fgnAmount;
+  private java.math.BigDecimal fgnAmount;
 
   public static final String SERIALIZED_NAME_FGN_CCY = "fgnCcy";
   @SerializedName(SERIALIZED_NAME_FGN_CCY)
@@ -59,7 +59,7 @@ public class FxForward extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_REF_SPOT_RATE = "refSpotRate";
   @SerializedName(SERIALIZED_NAME_REF_SPOT_RATE)
-  private Double refSpotRate;
+  private java.math.BigDecimal refSpotRate;
 
   public static final String SERIALIZED_NAME_IS_NDF = "isNdf";
   @SerializedName(SERIALIZED_NAME_IS_NDF)
@@ -115,7 +115,7 @@ public class FxForward extends LusidInstrument {
   }
 
 
-  public FxForward domAmount(Double domAmount) {
+  public FxForward domAmount(java.math.BigDecimal domAmount) {
     this.domAmount = domAmount; 
     return this;
   }
@@ -125,11 +125,11 @@ public class FxForward extends LusidInstrument {
    * @return domAmount
   **/
   @ApiModelProperty(required = true, value = "The amount that is to be paid in the domestic currency on the maturity date.")
-  public Double getDomAmount() {
+  public java.math.BigDecimal getDomAmount() {
     return domAmount;
   }
 
-  public void setDomAmount(Double domAmount) {
+  public void setDomAmount(java.math.BigDecimal domAmount) {
     this.domAmount = domAmount;
   }
 
@@ -153,7 +153,7 @@ public class FxForward extends LusidInstrument {
   }
 
 
-  public FxForward fgnAmount(Double fgnAmount) {
+  public FxForward fgnAmount(java.math.BigDecimal fgnAmount) {
     this.fgnAmount = fgnAmount; 
     return this;
   }
@@ -163,11 +163,11 @@ public class FxForward extends LusidInstrument {
    * @return fgnAmount
   **/
   @ApiModelProperty(required = true, value = "The amount that is to be paid in the foreign currency on the maturity date.")
-  public Double getFgnAmount() {
+  public java.math.BigDecimal getFgnAmount() {
     return fgnAmount;
   }
 
-  public void setFgnAmount(Double fgnAmount) {
+  public void setFgnAmount(java.math.BigDecimal fgnAmount) {
     this.fgnAmount = fgnAmount;
   }
 
@@ -191,7 +191,7 @@ public class FxForward extends LusidInstrument {
   }
 
 
-  public FxForward refSpotRate(Double refSpotRate) {
+  public FxForward refSpotRate(java.math.BigDecimal refSpotRate) {
     this.refSpotRate = refSpotRate; 
     return this;
   }
@@ -201,11 +201,11 @@ public class FxForward extends LusidInstrument {
    * @return refSpotRate
   **/
   @ApiModelProperty(value = "The reference Fx Spot rate for currency pair Foreign-Domestic that was seen on the trade start date (time).")
-  public Double getRefSpotRate() {
+  public java.math.BigDecimal getRefSpotRate() {
     return refSpotRate;
   }
 
-  public void setRefSpotRate(Double refSpotRate) {
+  public void setRefSpotRate(java.math.BigDecimal refSpotRate) {
     this.refSpotRate = refSpotRate;
   }
 

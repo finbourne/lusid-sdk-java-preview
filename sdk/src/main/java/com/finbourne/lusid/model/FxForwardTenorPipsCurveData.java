@@ -53,7 +53,7 @@ public class FxForwardTenorPipsCurveData extends ComplexMarketData {
 
   public static final String SERIALIZED_NAME_PIP_RATES = "pipRates";
   @SerializedName(SERIALIZED_NAME_PIP_RATES)
-  private List<Double> pipRates = new ArrayList<>();
+  private List<java.math.BigDecimal> pipRates = new ArrayList<>();
 
   public FxForwardTenorPipsCurveData() {
     //this.marketDataType = this.getClass().getSimpleName();
@@ -141,12 +141,12 @@ public class FxForwardTenorPipsCurveData extends ComplexMarketData {
   }
 
 
-  public FxForwardTenorPipsCurveData pipRates(List<Double> pipRates) {
+  public FxForwardTenorPipsCurveData pipRates(List<java.math.BigDecimal> pipRates) {
     this.pipRates = pipRates; 
     return this;
   }
 
-  public FxForwardTenorPipsCurveData addPipRatesItem(Double pipRatesItem) {
+  public FxForwardTenorPipsCurveData addPipRatesItem(java.math.BigDecimal pipRatesItem) {
    
     this.pipRates.add(pipRatesItem);
     return this;
@@ -157,11 +157,11 @@ public class FxForwardTenorPipsCurveData extends ComplexMarketData {
    * @return pipRates
   **/
   @ApiModelProperty(required = true, value = "Rates provided for the fx forward (price in FgnCcy per unit of DomCcy), expressed in pips")
-  public List<Double> getPipRates() {
+  public List<java.math.BigDecimal> getPipRates() {
     return pipRates;
   }
 
-  public void setPipRates(List<Double> pipRates) {
+  public void setPipRates(List<java.math.BigDecimal> pipRates) {
     this.pipRates = pipRates;
   }
 

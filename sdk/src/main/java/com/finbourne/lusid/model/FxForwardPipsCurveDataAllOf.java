@@ -50,7 +50,7 @@ public class FxForwardPipsCurveDataAllOf {
 
   public static final String SERIALIZED_NAME_PIP_RATES = "pipRates";
   @SerializedName(SERIALIZED_NAME_PIP_RATES)
-  private List<Double> pipRates = new ArrayList<>();
+  private List<java.math.BigDecimal> pipRates = new ArrayList<>();
 
   /**
    * The available values are: DiscountFactorCurveData, EquityVolSurfaceData, FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData, FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData, FxForwardCurveByQuoteReference, CreditSpreadCurveData
@@ -206,12 +206,12 @@ public class FxForwardPipsCurveDataAllOf {
   }
 
 
-  public FxForwardPipsCurveDataAllOf pipRates(List<Double> pipRates) {
+  public FxForwardPipsCurveDataAllOf pipRates(List<java.math.BigDecimal> pipRates) {
     this.pipRates = pipRates; 
     return this;
   }
 
-  public FxForwardPipsCurveDataAllOf addPipRatesItem(Double pipRatesItem) {
+  public FxForwardPipsCurveDataAllOf addPipRatesItem(java.math.BigDecimal pipRatesItem) {
    
     this.pipRates.add(pipRatesItem);
     return this;
@@ -222,11 +222,11 @@ public class FxForwardPipsCurveDataAllOf {
    * @return pipRates
   **/
   @ApiModelProperty(required = true, value = "Rates provided for the fx forward (price in FgnCcy per unit of DomCcy), expressed in pips")
-  public List<Double> getPipRates() {
+  public List<java.math.BigDecimal> getPipRates() {
     return pipRates;
   }
 
-  public void setPipRates(List<Double> pipRates) {
+  public void setPipRates(List<java.math.BigDecimal> pipRates) {
     this.pipRates = pipRates;
   }
 

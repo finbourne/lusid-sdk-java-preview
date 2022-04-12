@@ -57,27 +57,27 @@ public class Repo extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_COLLATERAL_VALUE = "collateralValue";
   @SerializedName(SERIALIZED_NAME_COLLATERAL_VALUE)
-  private Double collateralValue;
+  private java.math.BigDecimal collateralValue;
 
   public static final String SERIALIZED_NAME_HAIRCUT = "haircut";
   @SerializedName(SERIALIZED_NAME_HAIRCUT)
-  private Double haircut;
+  private java.math.BigDecimal haircut;
 
   public static final String SERIALIZED_NAME_MARGIN = "margin";
   @SerializedName(SERIALIZED_NAME_MARGIN)
-  private Double margin;
+  private java.math.BigDecimal margin;
 
   public static final String SERIALIZED_NAME_PURCHASE_PRICE = "purchasePrice";
   @SerializedName(SERIALIZED_NAME_PURCHASE_PRICE)
-  private Double purchasePrice;
+  private java.math.BigDecimal purchasePrice;
 
   public static final String SERIALIZED_NAME_REPO_RATE = "repoRate";
   @SerializedName(SERIALIZED_NAME_REPO_RATE)
-  private Double repoRate;
+  private java.math.BigDecimal repoRate;
 
   public static final String SERIALIZED_NAME_REPURCHASE_PRICE = "repurchasePrice";
   @SerializedName(SERIALIZED_NAME_REPURCHASE_PRICE)
-  private Double repurchasePrice;
+  private java.math.BigDecimal repurchasePrice;
 
   public Repo() {
     //this.instrumentType = this.getClass().getSimpleName();
@@ -187,7 +187,7 @@ public class Repo extends LusidInstrument {
   }
 
 
-  public Repo collateralValue(Double collateralValue) {
+  public Repo collateralValue(java.math.BigDecimal collateralValue) {
     this.collateralValue = collateralValue; 
     return this;
   }
@@ -197,16 +197,16 @@ public class Repo extends LusidInstrument {
    * @return collateralValue
   **/
   @ApiModelProperty(value = "The full market value of the collateral in domestic currency, before any margin or haircut is applied.")
-  public Double getCollateralValue() {
+  public java.math.BigDecimal getCollateralValue() {
     return collateralValue;
   }
 
-  public void setCollateralValue(Double collateralValue) {
+  public void setCollateralValue(java.math.BigDecimal collateralValue) {
     this.collateralValue = collateralValue;
   }
 
 
-  public Repo haircut(Double haircut) {
+  public Repo haircut(java.math.BigDecimal haircut) {
     this.haircut = haircut; 
     return this;
   }
@@ -216,16 +216,16 @@ public class Repo extends LusidInstrument {
    * @return haircut
   **/
   @ApiModelProperty(value = "The haircut (or margin percentage) applied to the collateral, this should be a number between 0 and 1, i.e. for a 5% haircut this should be 0.05.  This is defined as (CollateralValue - PurchasePrice) / CollateralValue.  If this property is specified, so too must CollateralValue.  While this property is optional, one, and only one, of PurchasePrice, Margin and Haircut must be specified.")
-  public Double getHaircut() {
+  public java.math.BigDecimal getHaircut() {
     return haircut;
   }
 
-  public void setHaircut(Double haircut) {
+  public void setHaircut(java.math.BigDecimal haircut) {
     this.haircut = haircut;
   }
 
 
-  public Repo margin(Double margin) {
+  public Repo margin(java.math.BigDecimal margin) {
     this.margin = margin; 
     return this;
   }
@@ -235,16 +235,16 @@ public class Repo extends LusidInstrument {
    * @return margin
   **/
   @ApiModelProperty(value = "The initial margin (or margin ratio) applied to the collateral, this should be a number greater than or equal to 1.0,  i.e. for a 102% margin this should be 1.02. A value of 1.0 means no margin (100%).  This is defined as CollateralValue / PurchasePrice.  If this property is specified, so too must CollateralValue.  While this property is optional, one, and only one, of PurchasePrice, Margin and Haircut must be specified.")
-  public Double getMargin() {
+  public java.math.BigDecimal getMargin() {
     return margin;
   }
 
-  public void setMargin(Double margin) {
+  public void setMargin(java.math.BigDecimal margin) {
     this.margin = margin;
   }
 
 
-  public Repo purchasePrice(Double purchasePrice) {
+  public Repo purchasePrice(java.math.BigDecimal purchasePrice) {
     this.purchasePrice = purchasePrice; 
     return this;
   }
@@ -254,16 +254,16 @@ public class Repo extends LusidInstrument {
    * @return purchasePrice
   **/
   @ApiModelProperty(value = "The price the collateral is initially purchased for, this property can be used to explicitly set the purchase price and not require  collateral value and a margin or haircut.  While this property is optional, one, and only one, of PurchasePrice, Margin and Haircut must be specified.")
-  public Double getPurchasePrice() {
+  public java.math.BigDecimal getPurchasePrice() {
     return purchasePrice;
   }
 
-  public void setPurchasePrice(Double purchasePrice) {
+  public void setPurchasePrice(java.math.BigDecimal purchasePrice) {
     this.purchasePrice = purchasePrice;
   }
 
 
-  public Repo repoRate(Double repoRate) {
+  public Repo repoRate(java.math.BigDecimal repoRate) {
     this.repoRate = repoRate; 
     return this;
   }
@@ -273,16 +273,16 @@ public class Repo extends LusidInstrument {
    * @return repoRate
   **/
   @ApiModelProperty(value = "the rate at which interest is to be accrue and be paid upon redemption of the collateral at maturity.  This field is used to calculate the Repurchase price.  While this property is optional, one, and only one, of the RepoRate and RepurchasePrice must be specified.")
-  public Double getRepoRate() {
+  public java.math.BigDecimal getRepoRate() {
     return repoRate;
   }
 
-  public void setRepoRate(Double repoRate) {
+  public void setRepoRate(java.math.BigDecimal repoRate) {
     this.repoRate = repoRate;
   }
 
 
-  public Repo repurchasePrice(Double repurchasePrice) {
+  public Repo repurchasePrice(java.math.BigDecimal repurchasePrice) {
     this.repurchasePrice = repurchasePrice; 
     return this;
   }
@@ -292,11 +292,11 @@ public class Repo extends LusidInstrument {
    * @return repurchasePrice
   **/
   @ApiModelProperty(value = "The price at which the collateral is repurchased, this field is optional and can be explicitly set here or will be calculated  from the PurchasePrice and RepoRate.  One, and only one, of the RepoRate and RepurchasePrice must be specified.")
-  public Double getRepurchasePrice() {
+  public java.math.BigDecimal getRepurchasePrice() {
     return repurchasePrice;
   }
 
-  public void setRepurchasePrice(Double repurchasePrice) {
+  public void setRepurchasePrice(java.math.BigDecimal repurchasePrice) {
     this.repurchasePrice = repurchasePrice;
   }
 

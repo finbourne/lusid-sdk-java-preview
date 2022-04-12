@@ -56,7 +56,7 @@ public class BlockRequest {
 
   public static final String SERIALIZED_NAME_QUANTITY = "quantity";
   @SerializedName(SERIALIZED_NAME_QUANTITY)
-  private Double quantity;
+  private java.math.BigDecimal quantity;
 
   public static final String SERIALIZED_NAME_SIDE = "side";
   @SerializedName(SERIALIZED_NAME_SIDE)
@@ -178,7 +178,7 @@ public class BlockRequest {
   }
 
 
-  public BlockRequest quantity(Double quantity) {
+  public BlockRequest quantity(java.math.BigDecimal quantity) {
     this.quantity = quantity; 
     return this;
   }
@@ -188,11 +188,11 @@ public class BlockRequest {
    * @return quantity
   **/
   @ApiModelProperty(required = true, value = "The total quantity of given instrument ordered.")
-  public Double getQuantity() {
+  public java.math.BigDecimal getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(Double quantity) {
+  public void setQuantity(java.math.BigDecimal quantity) {
     this.quantity = quantity;
   }
 

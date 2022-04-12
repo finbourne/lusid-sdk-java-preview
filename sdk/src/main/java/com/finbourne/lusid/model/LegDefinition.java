@@ -61,7 +61,7 @@ public class LegDefinition {
 
   public static final String SERIALIZED_NAME_RATE_OR_SPREAD = "rateOrSpread";
   @SerializedName(SERIALIZED_NAME_RATE_OR_SPREAD)
-  private Double rateOrSpread;
+  private java.math.BigDecimal rateOrSpread;
 
   public static final String SERIALIZED_NAME_RESET_CONVENTION = "resetConvention";
   @SerializedName(SERIALIZED_NAME_RESET_CONVENTION)
@@ -194,7 +194,7 @@ public class LegDefinition {
   }
 
 
-  public LegDefinition rateOrSpread(Double rateOrSpread) {
+  public LegDefinition rateOrSpread(java.math.BigDecimal rateOrSpread) {
     this.rateOrSpread = rateOrSpread; 
     return this;
   }
@@ -204,11 +204,11 @@ public class LegDefinition {
    * @return rateOrSpread
   **/
   @ApiModelProperty(required = true, value = "Is there either a fixed rate (non-zero) or spread to be paid over the value of the leg.")
-  public Double getRateOrSpread() {
+  public java.math.BigDecimal getRateOrSpread() {
     return rateOrSpread;
   }
 
-  public void setRateOrSpread(Double rateOrSpread) {
+  public void setRateOrSpread(java.math.BigDecimal rateOrSpread) {
     this.rateOrSpread = rateOrSpread;
   }
 

@@ -31,10 +31,10 @@ import java.io.IOException;
 public class OrderGraphSynopsis {
   public static final String SERIALIZED_NAME_QUANTITY = "quantity";
   @SerializedName(SERIALIZED_NAME_QUANTITY)
-  private Double quantity;
+  private java.math.BigDecimal quantity;
 
 
-  public OrderGraphSynopsis quantity(Double quantity) {
+  public OrderGraphSynopsis quantity(java.math.BigDecimal quantity) {
     this.quantity = quantity; 
     return this;
   }
@@ -44,11 +44,11 @@ public class OrderGraphSynopsis {
    * @return quantity
   **/
   @ApiModelProperty(required = true, value = "Total number of units.")
-  public Double getQuantity() {
+  public java.math.BigDecimal getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(Double quantity) {
+  public void setQuantity(java.math.BigDecimal quantity) {
     this.quantity = quantity;
   }
 

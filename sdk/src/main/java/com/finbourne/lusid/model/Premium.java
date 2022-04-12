@@ -33,7 +33,7 @@ import java.time.OffsetDateTime;
 public class Premium {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private Double amount;
+  private java.math.BigDecimal amount;
 
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)
@@ -44,7 +44,7 @@ public class Premium {
   private OffsetDateTime date;
 
 
-  public Premium amount(Double amount) {
+  public Premium amount(java.math.BigDecimal amount) {
     this.amount = amount; 
     return this;
   }
@@ -54,11 +54,11 @@ public class Premium {
    * @return amount
   **/
   @ApiModelProperty(required = true, value = "Premium amount.")
-  public Double getAmount() {
+  public java.math.BigDecimal getAmount() {
     return amount;
   }
 
-  public void setAmount(Double amount) {
+  public void setAmount(java.math.BigDecimal amount) {
     this.amount = amount;
   }
 

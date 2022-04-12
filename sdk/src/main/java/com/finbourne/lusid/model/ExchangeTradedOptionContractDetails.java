@@ -38,11 +38,11 @@ public class ExchangeTradedOptionContractDetails {
 
   public static final String SERIALIZED_NAME_STRIKE = "strike";
   @SerializedName(SERIALIZED_NAME_STRIKE)
-  private Double strike;
+  private java.math.BigDecimal strike;
 
   public static final String SERIALIZED_NAME_CONTRACT_SIZE = "contractSize";
   @SerializedName(SERIALIZED_NAME_CONTRACT_SIZE)
-  private Double contractSize;
+  private java.math.BigDecimal contractSize;
 
   public static final String SERIALIZED_NAME_COUNTRY = "country";
   @SerializedName(SERIALIZED_NAME_COUNTRY)
@@ -104,7 +104,7 @@ public class ExchangeTradedOptionContractDetails {
   }
 
 
-  public ExchangeTradedOptionContractDetails strike(Double strike) {
+  public ExchangeTradedOptionContractDetails strike(java.math.BigDecimal strike) {
     this.strike = strike; 
     return this;
   }
@@ -114,16 +114,16 @@ public class ExchangeTradedOptionContractDetails {
    * @return strike
   **/
   @ApiModelProperty(required = true, value = "The option strike, this can be negative for some options.")
-  public Double getStrike() {
+  public java.math.BigDecimal getStrike() {
     return strike;
   }
 
-  public void setStrike(Double strike) {
+  public void setStrike(java.math.BigDecimal strike) {
     this.strike = strike;
   }
 
 
-  public ExchangeTradedOptionContractDetails contractSize(Double contractSize) {
+  public ExchangeTradedOptionContractDetails contractSize(java.math.BigDecimal contractSize) {
     this.contractSize = contractSize; 
     return this;
   }
@@ -133,11 +133,11 @@ public class ExchangeTradedOptionContractDetails {
    * @return contractSize
   **/
   @ApiModelProperty(required = true, value = "Size of a single contract. By default this should be set to 1000 if otherwise unknown and is defaulted to such.")
-  public Double getContractSize() {
+  public java.math.BigDecimal getContractSize() {
     return contractSize;
   }
 
-  public void setContractSize(Double contractSize) {
+  public void setContractSize(java.math.BigDecimal contractSize) {
     this.contractSize = contractSize;
   }
 

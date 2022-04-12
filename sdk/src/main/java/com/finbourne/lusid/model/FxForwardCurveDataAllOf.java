@@ -50,7 +50,7 @@ public class FxForwardCurveDataAllOf {
 
   public static final String SERIALIZED_NAME_RATES = "rates";
   @SerializedName(SERIALIZED_NAME_RATES)
-  private List<Double> rates = new ArrayList<>();
+  private List<java.math.BigDecimal> rates = new ArrayList<>();
 
   /**
    * The available values are: DiscountFactorCurveData, EquityVolSurfaceData, FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData, FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData, FxForwardCurveByQuoteReference, CreditSpreadCurveData
@@ -206,12 +206,12 @@ public class FxForwardCurveDataAllOf {
   }
 
 
-  public FxForwardCurveDataAllOf rates(List<Double> rates) {
+  public FxForwardCurveDataAllOf rates(List<java.math.BigDecimal> rates) {
     this.rates = rates; 
     return this;
   }
 
-  public FxForwardCurveDataAllOf addRatesItem(Double ratesItem) {
+  public FxForwardCurveDataAllOf addRatesItem(java.math.BigDecimal ratesItem) {
    
     this.rates.add(ratesItem);
     return this;
@@ -222,11 +222,11 @@ public class FxForwardCurveDataAllOf {
    * @return rates
   **/
   @ApiModelProperty(required = true, value = "Rates provided for the fx forward (price in FgnCcy per unit of DomCcy)")
-  public List<Double> getRates() {
+  public List<java.math.BigDecimal> getRates() {
     return rates;
   }
 
-  public void setRates(List<Double> rates) {
+  public void setRates(List<java.math.BigDecimal> rates) {
     this.rates = rates;
   }
 

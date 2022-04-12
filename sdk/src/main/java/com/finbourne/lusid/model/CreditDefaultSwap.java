@@ -54,7 +54,7 @@ public class CreditDefaultSwap extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_COUPON_RATE = "couponRate";
   @SerializedName(SERIALIZED_NAME_COUPON_RATE)
-  private Double couponRate;
+  private java.math.BigDecimal couponRate;
 
   public static final String SERIALIZED_NAME_CONVENTION_NAME = "conventionName";
   @SerializedName(SERIALIZED_NAME_CONVENTION_NAME)
@@ -62,7 +62,7 @@ public class CreditDefaultSwap extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_NOTIONAL = "notional";
   @SerializedName(SERIALIZED_NAME_NOTIONAL)
-  private Double notional;
+  private java.math.BigDecimal notional;
 
   public static final String SERIALIZED_NAME_PROTECTION_DETAIL_SPECIFICATION = "protectionDetailSpecification";
   @SerializedName(SERIALIZED_NAME_PROTECTION_DETAIL_SPECIFICATION)
@@ -148,7 +148,7 @@ public class CreditDefaultSwap extends LusidInstrument {
   }
 
 
-  public CreditDefaultSwap couponRate(Double couponRate) {
+  public CreditDefaultSwap couponRate(java.math.BigDecimal couponRate) {
     this.couponRate = couponRate; 
     return this;
   }
@@ -158,11 +158,11 @@ public class CreditDefaultSwap extends LusidInstrument {
    * @return couponRate
   **/
   @ApiModelProperty(required = true, value = "The coupon rate paid on each payment date of the premium leg as a fraction of 100 percent, e.g. \"0.05\" meaning 500 basis points or 5%.  For a standard corporate CDS (North American) this must be either 100bps or 500bps.")
-  public Double getCouponRate() {
+  public java.math.BigDecimal getCouponRate() {
     return couponRate;
   }
 
-  public void setCouponRate(Double couponRate) {
+  public void setCouponRate(java.math.BigDecimal couponRate) {
     this.couponRate = couponRate;
   }
 
@@ -186,7 +186,7 @@ public class CreditDefaultSwap extends LusidInstrument {
   }
 
 
-  public CreditDefaultSwap notional(Double notional) {
+  public CreditDefaultSwap notional(java.math.BigDecimal notional) {
     this.notional = notional; 
     return this;
   }
@@ -196,11 +196,11 @@ public class CreditDefaultSwap extends LusidInstrument {
    * @return notional
   **/
   @ApiModelProperty(value = "The notional protected by the Credit Default Swap")
-  public Double getNotional() {
+  public java.math.BigDecimal getNotional() {
     return notional;
   }
 
-  public void setNotional(Double notional) {
+  public void setNotional(java.math.BigDecimal notional) {
     this.notional = notional;
   }
 

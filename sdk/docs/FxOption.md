@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **optionSettlementDate** | **OffsetDateTime** | The settlement date of the option. | 
 **isDeliveryNotCash** | **Boolean** | True if the option is settled in cash, false if delivery. | 
 **isCallNotPut** | **Boolean** | True if the option is a call, false if the option is a put. | 
-**strike** | **Double** | The strike of the option. | 
+**strike** | **java.math.BigDecimal** | The strike of the option. | 
 **domCcy** | **String** | The domestic currency of the instrument. | 
-**domAmount** | **Double** | The Amount of DomCcy that will be exchanged if the option is exercised.  This amount should be a positive number, with the Call/Put flag used to indicate direction.  The corresponding amount of FgnCcy that will be exchanged is this amount times the strike.  Note there is no rounding performed on this computed value.  This is an optional field, if not set the option ContractSize will default to 1. |  [optional]
+**domAmount** | **java.math.BigDecimal** | The Amount of DomCcy that will be exchanged if the option is exercised.  This amount should be a positive number, with the Call/Put flag used to indicate direction.  The corresponding amount of FgnCcy that will be exchanged is this amount times the strike.  Note there is no rounding performed on this computed value.  This is an optional field, if not set the option ContractSize will default to 1. |  [optional]
 **fgnCcy** | **String** | The foreign currency of the FX. | 
 **premium** | [**Premium**](Premium.md) |  |  [optional]
 

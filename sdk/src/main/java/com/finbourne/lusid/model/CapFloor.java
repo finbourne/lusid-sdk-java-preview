@@ -39,11 +39,11 @@ public class CapFloor extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_CAP_STRIKE = "capStrike";
   @SerializedName(SERIALIZED_NAME_CAP_STRIKE)
-  private Double capStrike;
+  private java.math.BigDecimal capStrike;
 
   public static final String SERIALIZED_NAME_FLOOR_STRIKE = "floorStrike";
   @SerializedName(SERIALIZED_NAME_FLOOR_STRIKE)
-  private Double floorStrike;
+  private java.math.BigDecimal floorStrike;
 
   public static final String SERIALIZED_NAME_INCLUDE_FIRST_CAPLET = "includeFirstCaplet";
   @SerializedName(SERIALIZED_NAME_INCLUDE_FIRST_CAPLET)
@@ -76,7 +76,7 @@ public class CapFloor extends LusidInstrument {
   }
 
 
-  public CapFloor capStrike(Double capStrike) {
+  public CapFloor capStrike(java.math.BigDecimal capStrike) {
     this.capStrike = capStrike; 
     return this;
   }
@@ -86,16 +86,16 @@ public class CapFloor extends LusidInstrument {
    * @return capStrike
   **/
   @ApiModelProperty(required = true, value = "Strike rate of the Cap.")
-  public Double getCapStrike() {
+  public java.math.BigDecimal getCapStrike() {
     return capStrike;
   }
 
-  public void setCapStrike(Double capStrike) {
+  public void setCapStrike(java.math.BigDecimal capStrike) {
     this.capStrike = capStrike;
   }
 
 
-  public CapFloor floorStrike(Double floorStrike) {
+  public CapFloor floorStrike(java.math.BigDecimal floorStrike) {
     this.floorStrike = floorStrike; 
     return this;
   }
@@ -105,11 +105,11 @@ public class CapFloor extends LusidInstrument {
    * @return floorStrike
   **/
   @ApiModelProperty(required = true, value = "Strike rate of the Floor.")
-  public Double getFloorStrike() {
+  public java.math.BigDecimal getFloorStrike() {
     return floorStrike;
   }
 
-  public void setFloorStrike(Double floorStrike) {
+  public void setFloorStrike(java.math.BigDecimal floorStrike) {
     this.floorStrike = floorStrike;
   }
 

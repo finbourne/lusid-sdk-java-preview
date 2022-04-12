@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **properties** | [**Map&lt;String, PerpetualProperty&gt;**](PerpetualProperty.md) | Client-defined properties associated with this placement. |  [optional]
 **instrumentIdentifiers** | **Map&lt;String, String&gt;** | The instrument ordered. | 
 **lusidInstrumentId** | **String** | The LUSID instrument id for the instrument placement. | 
-**quantity** | **Double** | The quantity of given instrument ordered. | 
+**quantity** | **java.math.BigDecimal** | The quantity of given instrument ordered. | 
 **state** | **String** | The state of this placement (typically a FIX state; Open, Filled, etc). | 
 **side** | **String** | The side (Buy, Sell, ...) of this placement. | 
 **timeInForce** | **String** | The time in force applicable to this placement (GTC, FOK, Day, etc) | 

@@ -40,7 +40,7 @@ public class CashPerpetualAllOf {
 
   public static final String SERIALIZED_NAME_PRINCIPAL = "principal";
   @SerializedName(SERIALIZED_NAME_PRINCIPAL)
-  private Double principal;
+  private java.math.BigDecimal principal;
 
   /**
    * The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption, ReferenceInstrument
@@ -188,7 +188,7 @@ public class CashPerpetualAllOf {
   }
 
 
-  public CashPerpetualAllOf principal(Double principal) {
+  public CashPerpetualAllOf principal(java.math.BigDecimal principal) {
     this.principal = principal; 
     return this;
   }
@@ -198,11 +198,11 @@ public class CashPerpetualAllOf {
    * @return principal
   **/
   @ApiModelProperty(required = true, value = "The face-value or principal for the cash at outset.")
-  public Double getPrincipal() {
+  public java.math.BigDecimal getPrincipal() {
     return principal;
   }
 
-  public void setPrincipal(Double principal) {
+  public void setPrincipal(java.math.BigDecimal principal) {
     this.principal = principal;
   }
 

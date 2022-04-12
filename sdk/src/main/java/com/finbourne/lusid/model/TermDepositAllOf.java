@@ -41,7 +41,7 @@ public class TermDepositAllOf {
 
   public static final String SERIALIZED_NAME_CONTRACT_SIZE = "contractSize";
   @SerializedName(SERIALIZED_NAME_CONTRACT_SIZE)
-  private Double contractSize;
+  private java.math.BigDecimal contractSize;
 
   public static final String SERIALIZED_NAME_FLOW_CONVENTION = "flowConvention";
   @SerializedName(SERIALIZED_NAME_FLOW_CONVENTION)
@@ -49,7 +49,7 @@ public class TermDepositAllOf {
 
   public static final String SERIALIZED_NAME_RATE = "rate";
   @SerializedName(SERIALIZED_NAME_RATE)
-  private Double rate;
+  private java.math.BigDecimal rate;
 
   public static final String SERIALIZED_NAME_DOM_CCY = "domCcy";
   @SerializedName(SERIALIZED_NAME_DOM_CCY)
@@ -201,7 +201,7 @@ public class TermDepositAllOf {
   }
 
 
-  public TermDepositAllOf contractSize(Double contractSize) {
+  public TermDepositAllOf contractSize(java.math.BigDecimal contractSize) {
     this.contractSize = contractSize; 
     return this;
   }
@@ -211,11 +211,11 @@ public class TermDepositAllOf {
    * @return contractSize
   **/
   @ApiModelProperty(required = true, value = "With an OTC we have the problem of multiple ways of booking a quantity.              e.g.              If buying a swap do you have a holding of size 1 of 100,000,000 notional swap or a holding of 100,000,000 size of 1 notional swap, or any combination that multiplies to 10^8.              When you get for a price for a 'unit swap' what do you mean? The definition must be consistent across all quotes. This includes bonds which have a face value and              fx-forwards which often trade in standard contract sizes. When we look up a price, and there are no units, we are assuming it is a price for a contract size of 1.              The logical effect of this is that              instrument clean price = contract size * quoted unit price              holding clean price    = holding quantity * instrument clean price = holding quantity * contract size * quoted unit price              In calculating accrued interest the same should hold.              NB: The real problem is that people store \"prices\" without complete units. Everything should really be \"x ccy for n units\". Where the n is implicit the above has to hold.")
-  public Double getContractSize() {
+  public java.math.BigDecimal getContractSize() {
     return contractSize;
   }
 
-  public void setContractSize(Double contractSize) {
+  public void setContractSize(java.math.BigDecimal contractSize) {
     this.contractSize = contractSize;
   }
 
@@ -239,7 +239,7 @@ public class TermDepositAllOf {
   }
 
 
-  public TermDepositAllOf rate(Double rate) {
+  public TermDepositAllOf rate(java.math.BigDecimal rate) {
     this.rate = rate; 
     return this;
   }
@@ -249,11 +249,11 @@ public class TermDepositAllOf {
    * @return rate
   **/
   @ApiModelProperty(required = true, value = "The fixed rate for the term deposit. Specified as a decimal, e.g 0.03 is meant to be 3% interest")
-  public Double getRate() {
+  public java.math.BigDecimal getRate() {
     return rate;
   }
 
-  public void setRate(Double rate) {
+  public void setRate(java.math.BigDecimal rate) {
     this.rate = rate;
   }
 

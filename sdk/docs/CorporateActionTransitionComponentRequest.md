@@ -9,8 +9,8 @@ A single transition component request, when grouped with other transition compon
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **instrumentIdentifiers** | **Map&lt;String, String&gt;** | Unique instrument identifiers | 
-**unitsFactor** | **Double** | The factor to scale units by | 
-**costFactor** | **Double** | The factor to scale cost by | 
+**unitsFactor** | **java.math.BigDecimal** | The factor to scale units by | 
+**costFactor** | **java.math.BigDecimal** | The factor to scale cost by | 
 
 
 

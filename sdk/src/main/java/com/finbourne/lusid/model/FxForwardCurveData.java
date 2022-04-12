@@ -53,7 +53,7 @@ public class FxForwardCurveData extends ComplexMarketData {
 
   public static final String SERIALIZED_NAME_RATES = "rates";
   @SerializedName(SERIALIZED_NAME_RATES)
-  private List<Double> rates = new ArrayList<>();
+  private List<java.math.BigDecimal> rates = new ArrayList<>();
 
   public FxForwardCurveData() {
     //this.marketDataType = this.getClass().getSimpleName();
@@ -141,12 +141,12 @@ public class FxForwardCurveData extends ComplexMarketData {
   }
 
 
-  public FxForwardCurveData rates(List<Double> rates) {
+  public FxForwardCurveData rates(List<java.math.BigDecimal> rates) {
     this.rates = rates; 
     return this;
   }
 
-  public FxForwardCurveData addRatesItem(Double ratesItem) {
+  public FxForwardCurveData addRatesItem(java.math.BigDecimal ratesItem) {
    
     this.rates.add(ratesItem);
     return this;
@@ -157,11 +157,11 @@ public class FxForwardCurveData extends ComplexMarketData {
    * @return rates
   **/
   @ApiModelProperty(required = true, value = "Rates provided for the fx forward (price in FgnCcy per unit of DomCcy)")
-  public List<Double> getRates() {
+  public List<java.math.BigDecimal> getRates() {
     return rates;
   }
 
-  public void setRates(List<Double> rates) {
+  public void setRates(List<java.math.BigDecimal> rates) {
     this.rates = rates;
   }
 

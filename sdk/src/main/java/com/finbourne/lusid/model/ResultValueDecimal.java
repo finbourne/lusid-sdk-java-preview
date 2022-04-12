@@ -34,7 +34,7 @@ import java.io.IOException;
 public class ResultValueDecimal extends ResultValue {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private Double value;
+  private java.math.BigDecimal value;
 
   public static final String SERIALIZED_NAME_DIMENSION = "dimension";
   @SerializedName(SERIALIZED_NAME_DIMENSION)
@@ -44,7 +44,7 @@ public class ResultValueDecimal extends ResultValue {
     //this.resultValueType = this.getClass().getSimpleName();
   }
 
-  public ResultValueDecimal value(Double value) {
+  public ResultValueDecimal value(java.math.BigDecimal value) {
     this.value = value; 
     return this;
   }
@@ -54,11 +54,11 @@ public class ResultValueDecimal extends ResultValue {
    * @return value
   **/
   @ApiModelProperty(value = "The value itself")
-  public Double getValue() {
+  public java.math.BigDecimal getValue() {
     return value;
   }
 
-  public void setValue(Double value) {
+  public void setValue(java.math.BigDecimal value) {
     this.value = value;
   }
 

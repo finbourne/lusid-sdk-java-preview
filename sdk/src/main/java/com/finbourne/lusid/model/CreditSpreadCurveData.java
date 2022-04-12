@@ -49,11 +49,11 @@ public class CreditSpreadCurveData extends ComplexMarketData {
 
   public static final String SERIALIZED_NAME_SPREADS = "spreads";
   @SerializedName(SERIALIZED_NAME_SPREADS)
-  private List<Double> spreads = new ArrayList<>();
+  private List<java.math.BigDecimal> spreads = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_RECOVERY_RATE = "recoveryRate";
   @SerializedName(SERIALIZED_NAME_RECOVERY_RATE)
-  private Double recoveryRate;
+  private java.math.BigDecimal recoveryRate;
 
   public static final String SERIALIZED_NAME_REFERENCE_DATE = "referenceDate";
   @SerializedName(SERIALIZED_NAME_REFERENCE_DATE)
@@ -130,12 +130,12 @@ public class CreditSpreadCurveData extends ComplexMarketData {
   }
 
 
-  public CreditSpreadCurveData spreads(List<Double> spreads) {
+  public CreditSpreadCurveData spreads(List<java.math.BigDecimal> spreads) {
     this.spreads = spreads; 
     return this;
   }
 
-  public CreditSpreadCurveData addSpreadsItem(Double spreadsItem) {
+  public CreditSpreadCurveData addSpreadsItem(java.math.BigDecimal spreadsItem) {
    
     this.spreads.add(spreadsItem);
     return this;
@@ -146,16 +146,16 @@ public class CreditSpreadCurveData extends ComplexMarketData {
    * @return spreads
   **/
   @ApiModelProperty(required = true, value = "Par spread quotes corresponding to the tenors.")
-  public List<Double> getSpreads() {
+  public List<java.math.BigDecimal> getSpreads() {
     return spreads;
   }
 
-  public void setSpreads(List<Double> spreads) {
+  public void setSpreads(List<java.math.BigDecimal> spreads) {
     this.spreads = spreads;
   }
 
 
-  public CreditSpreadCurveData recoveryRate(Double recoveryRate) {
+  public CreditSpreadCurveData recoveryRate(java.math.BigDecimal recoveryRate) {
     this.recoveryRate = recoveryRate; 
     return this;
   }
@@ -165,11 +165,11 @@ public class CreditSpreadCurveData extends ComplexMarketData {
    * @return recoveryRate
   **/
   @ApiModelProperty(required = true, value = "The recovery rate in default.")
-  public Double getRecoveryRate() {
+  public java.math.BigDecimal getRecoveryRate() {
     return recoveryRate;
   }
 
-  public void setRecoveryRate(Double recoveryRate) {
+  public void setRecoveryRate(java.math.BigDecimal recoveryRate) {
     this.recoveryRate = recoveryRate;
   }
 

@@ -56,7 +56,7 @@ public class EquityOption extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_STRIKE = "strike";
   @SerializedName(SERIALIZED_NAME_STRIKE)
-  private Double strike;
+  private java.math.BigDecimal strike;
 
   public static final String SERIALIZED_NAME_DOM_CCY = "domCcy";
   @SerializedName(SERIALIZED_NAME_DOM_CCY)
@@ -76,7 +76,7 @@ public class EquityOption extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_NUMBER_OF_SHARES = "numberOfShares";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_SHARES)
-  private Double numberOfShares;
+  private java.math.BigDecimal numberOfShares;
 
   public static final String SERIALIZED_NAME_PREMIUM = "premium";
   @SerializedName(SERIALIZED_NAME_PREMIUM)
@@ -181,7 +181,7 @@ public class EquityOption extends LusidInstrument {
   }
 
 
-  public EquityOption strike(Double strike) {
+  public EquityOption strike(java.math.BigDecimal strike) {
     this.strike = strike; 
     return this;
   }
@@ -191,11 +191,11 @@ public class EquityOption extends LusidInstrument {
    * @return strike
   **/
   @ApiModelProperty(required = true, value = "The strike of the option.")
-  public Double getStrike() {
+  public java.math.BigDecimal getStrike() {
     return strike;
   }
 
-  public void setStrike(Double strike) {
+  public void setStrike(java.math.BigDecimal strike) {
     this.strike = strike;
   }
 
@@ -276,7 +276,7 @@ public class EquityOption extends LusidInstrument {
   }
 
 
-  public EquityOption numberOfShares(Double numberOfShares) {
+  public EquityOption numberOfShares(java.math.BigDecimal numberOfShares) {
     this.numberOfShares = numberOfShares; 
     return this;
   }
@@ -286,11 +286,11 @@ public class EquityOption extends LusidInstrument {
    * @return numberOfShares
   **/
   @ApiModelProperty(value = "The amount of shares to exchange if the option is exercised.")
-  public Double getNumberOfShares() {
+  public java.math.BigDecimal getNumberOfShares() {
     return numberOfShares;
   }
 
-  public void setNumberOfShares(Double numberOfShares) {
+  public void setNumberOfShares(java.math.BigDecimal numberOfShares) {
     this.numberOfShares = numberOfShares;
   }
 

@@ -37,7 +37,7 @@ public class LevelStep {
 
   public static final String SERIALIZED_NAME_QUANTITY = "quantity";
   @SerializedName(SERIALIZED_NAME_QUANTITY)
-  private Double quantity;
+  private java.math.BigDecimal quantity;
 
 
   public LevelStep date(OffsetDateTime date) {
@@ -59,7 +59,7 @@ public class LevelStep {
   }
 
 
-  public LevelStep quantity(Double quantity) {
+  public LevelStep quantity(java.math.BigDecimal quantity) {
     this.quantity = quantity; 
     return this;
   }
@@ -69,11 +69,11 @@ public class LevelStep {
    * @return quantity
   **/
   @ApiModelProperty(required = true, value = "The quantity which is applied. This might be an absolute, percentage, fractional or other value.")
-  public Double getQuantity() {
+  public java.math.BigDecimal getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(Double quantity) {
+  public void setQuantity(java.math.BigDecimal quantity) {
     this.quantity = quantity;
   }
 

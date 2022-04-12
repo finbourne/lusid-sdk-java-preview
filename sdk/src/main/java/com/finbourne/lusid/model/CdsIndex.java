@@ -53,7 +53,7 @@ public class CdsIndex extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_COUPON_RATE = "couponRate";
   @SerializedName(SERIALIZED_NAME_COUPON_RATE)
-  private Double couponRate;
+  private java.math.BigDecimal couponRate;
 
   public static final String SERIALIZED_NAME_IDENTIFIERS = "identifiers";
   @SerializedName(SERIALIZED_NAME_IDENTIFIERS)
@@ -69,7 +69,7 @@ public class CdsIndex extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_NOTIONAL = "notional";
   @SerializedName(SERIALIZED_NAME_NOTIONAL)
-  private Double notional;
+  private java.math.BigDecimal notional;
 
   public CdsIndex() {
     //this.instrumentType = this.getClass().getSimpleName();
@@ -132,7 +132,7 @@ public class CdsIndex extends LusidInstrument {
   }
 
 
-  public CdsIndex couponRate(Double couponRate) {
+  public CdsIndex couponRate(java.math.BigDecimal couponRate) {
     this.couponRate = couponRate; 
     return this;
   }
@@ -142,11 +142,11 @@ public class CdsIndex extends LusidInstrument {
    * @return couponRate
   **/
   @ApiModelProperty(required = true, value = "The coupon rate paid on each payment date of the premium leg as a fraction of 100 percent, e.g. \"0.05\" meaning 500 basis points or 5%.  For a standard corporate CDS (North American) this must be either 100bps or 500bps.")
-  public Double getCouponRate() {
+  public java.math.BigDecimal getCouponRate() {
     return couponRate;
   }
 
-  public void setCouponRate(Double couponRate) {
+  public void setCouponRate(java.math.BigDecimal couponRate) {
     this.couponRate = couponRate;
   }
 
@@ -213,7 +213,7 @@ public class CdsIndex extends LusidInstrument {
   }
 
 
-  public CdsIndex notional(Double notional) {
+  public CdsIndex notional(java.math.BigDecimal notional) {
     this.notional = notional; 
     return this;
   }
@@ -223,11 +223,11 @@ public class CdsIndex extends LusidInstrument {
    * @return notional
   **/
   @ApiModelProperty(required = true, value = "The notional quantity that applies to both the premium and protection legs.")
-  public Double getNotional() {
+  public java.math.BigDecimal getNotional() {
     return notional;
   }
 
-  public void setNotional(Double notional) {
+  public void setNotional(java.math.BigDecimal notional) {
     this.notional = notional;
   }
 

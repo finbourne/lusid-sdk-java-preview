@@ -55,7 +55,7 @@ public class CreditSupportAnnex {
 
   public static final String SERIALIZED_NAME_THRESHOLD_AMOUNT = "thresholdAmount";
   @SerializedName(SERIALIZED_NAME_THRESHOLD_AMOUNT)
-  private Double thresholdAmount;
+  private java.math.BigDecimal thresholdAmount;
 
   public static final String SERIALIZED_NAME_ROUNDING_DECIMAL_PLACES = "roundingDecimalPlaces";
   @SerializedName(SERIALIZED_NAME_ROUNDING_DECIMAL_PLACES)
@@ -63,11 +63,11 @@ public class CreditSupportAnnex {
 
   public static final String SERIALIZED_NAME_INITIAL_MARGIN_AMOUNT = "initialMarginAmount";
   @SerializedName(SERIALIZED_NAME_INITIAL_MARGIN_AMOUNT)
-  private Double initialMarginAmount;
+  private java.math.BigDecimal initialMarginAmount;
 
   public static final String SERIALIZED_NAME_MINIMUM_TRANSFER_AMOUNT = "minimumTransferAmount";
   @SerializedName(SERIALIZED_NAME_MINIMUM_TRANSFER_AMOUNT)
-  private Double minimumTransferAmount;
+  private java.math.BigDecimal minimumTransferAmount;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -175,7 +175,7 @@ public class CreditSupportAnnex {
   }
 
 
-  public CreditSupportAnnex thresholdAmount(Double thresholdAmount) {
+  public CreditSupportAnnex thresholdAmount(java.math.BigDecimal thresholdAmount) {
     this.thresholdAmount = thresholdAmount; 
     return this;
   }
@@ -185,11 +185,11 @@ public class CreditSupportAnnex {
    * @return thresholdAmount
   **/
   @ApiModelProperty(required = true, value = "At what level of exposure does collateral need to be posted. Will typically be zero for banks.  Should be stated in reference currency")
-  public Double getThresholdAmount() {
+  public java.math.BigDecimal getThresholdAmount() {
     return thresholdAmount;
   }
 
-  public void setThresholdAmount(Double thresholdAmount) {
+  public void setThresholdAmount(java.math.BigDecimal thresholdAmount) {
     this.thresholdAmount = thresholdAmount;
   }
 
@@ -213,7 +213,7 @@ public class CreditSupportAnnex {
   }
 
 
-  public CreditSupportAnnex initialMarginAmount(Double initialMarginAmount) {
+  public CreditSupportAnnex initialMarginAmount(java.math.BigDecimal initialMarginAmount) {
     this.initialMarginAmount = initialMarginAmount; 
     return this;
   }
@@ -223,16 +223,16 @@ public class CreditSupportAnnex {
    * @return initialMarginAmount
   **/
   @ApiModelProperty(required = true, value = "The initial margin that is required. In the reference currency")
-  public Double getInitialMarginAmount() {
+  public java.math.BigDecimal getInitialMarginAmount() {
     return initialMarginAmount;
   }
 
-  public void setInitialMarginAmount(Double initialMarginAmount) {
+  public void setInitialMarginAmount(java.math.BigDecimal initialMarginAmount) {
     this.initialMarginAmount = initialMarginAmount;
   }
 
 
-  public CreditSupportAnnex minimumTransferAmount(Double minimumTransferAmount) {
+  public CreditSupportAnnex minimumTransferAmount(java.math.BigDecimal minimumTransferAmount) {
     this.minimumTransferAmount = minimumTransferAmount; 
     return this;
   }
@@ -242,11 +242,11 @@ public class CreditSupportAnnex {
    * @return minimumTransferAmount
   **/
   @ApiModelProperty(required = true, value = "The minimum amount, in the reference currency, that must be transferred when required.")
-  public Double getMinimumTransferAmount() {
+  public java.math.BigDecimal getMinimumTransferAmount() {
     return minimumTransferAmount;
   }
 
-  public void setMinimumTransferAmount(Double minimumTransferAmount) {
+  public void setMinimumTransferAmount(java.math.BigDecimal minimumTransferAmount) {
     this.minimumTransferAmount = minimumTransferAmount;
   }
 

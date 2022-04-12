@@ -76,7 +76,7 @@ public class A2BMovementRecord {
 
   public static final String SERIALIZED_NAME_UNITS = "units";
   @SerializedName(SERIALIZED_NAME_UNITS)
-  private Double units;
+  private java.math.BigDecimal units;
 
   public static final String SERIALIZED_NAME_START = "start";
   @SerializedName(SERIALIZED_NAME_START)
@@ -286,7 +286,7 @@ public class A2BMovementRecord {
   }
 
 
-  public A2BMovementRecord units(Double units) {
+  public A2BMovementRecord units(java.math.BigDecimal units) {
     this.units = units; 
     return this;
   }
@@ -296,11 +296,11 @@ public class A2BMovementRecord {
    * @return units
   **/
   @ApiModelProperty(value = "The number of units of the instrument that are affected by the movement.")
-  public Double getUnits() {
+  public java.math.BigDecimal getUnits() {
     return units;
   }
 
-  public void setUnits(Double units) {
+  public void setUnits(java.math.BigDecimal units) {
     this.units = units;
   }
 

@@ -56,7 +56,7 @@ public class PlacementRequest {
 
   public static final String SERIALIZED_NAME_QUANTITY = "quantity";
   @SerializedName(SERIALIZED_NAME_QUANTITY)
-  private Double quantity;
+  private java.math.BigDecimal quantity;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
@@ -186,7 +186,7 @@ public class PlacementRequest {
   }
 
 
-  public PlacementRequest quantity(Double quantity) {
+  public PlacementRequest quantity(java.math.BigDecimal quantity) {
     this.quantity = quantity; 
     return this;
   }
@@ -196,11 +196,11 @@ public class PlacementRequest {
    * @return quantity
   **/
   @ApiModelProperty(required = true, value = "The quantity of given instrument ordered.")
-  public Double getQuantity() {
+  public java.math.BigDecimal getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(Double quantity) {
+  public void setQuantity(java.math.BigDecimal quantity) {
     this.quantity = quantity;
   }
 

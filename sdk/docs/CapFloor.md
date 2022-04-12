@@ -9,8 +9,8 @@ Interest rate Cap, Floor or Collar  Derivative instrument on an underlying inter
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **capFloorType** | **String** | Determine if it&#39;s CAP, FLOOR, or COLLAR.  Supported string (enumeration) values are: [Cap, Floor, Collar]. | 
-**capStrike** | **Double** | Strike rate of the Cap. | 
-**floorStrike** | **Double** | Strike rate of the Floor. | 
+**capStrike** | **java.math.BigDecimal** | Strike rate of the Cap. | 
+**floorStrike** | **java.math.BigDecimal** | Strike rate of the Floor. | 
 **includeFirstCaplet** | **Boolean** | Include first caplet flag. | 
 **underlyingFloatingLeg** | [**FloatingLeg**](FloatingLeg.md) |  | 
 

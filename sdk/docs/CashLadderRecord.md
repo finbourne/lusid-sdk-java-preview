@@ -8,9 +8,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **effectiveDate** | **OffsetDateTime** |  |  [optional]
-**open** | **Double** |  | 
-**activities** | **Map&lt;String, Double&gt;** |  | 
-**close** | **Double** |  | 
+**open** | **java.math.BigDecimal** |  | 
+**activities** | **Map&lt;String, java.math.BigDecimal&gt;** |  | 
+**close** | **java.math.BigDecimal** |  | 
 
 
 

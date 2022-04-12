@@ -45,7 +45,7 @@ public class FundingLegAllOf {
 
   public static final String SERIALIZED_NAME_NOTIONAL = "notional";
   @SerializedName(SERIALIZED_NAME_NOTIONAL)
-  private Double notional;
+  private java.math.BigDecimal notional;
 
   /**
    * The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption, ReferenceInstrument
@@ -212,7 +212,7 @@ public class FundingLegAllOf {
   }
 
 
-  public FundingLegAllOf notional(Double notional) {
+  public FundingLegAllOf notional(java.math.BigDecimal notional) {
     this.notional = notional; 
     return this;
   }
@@ -222,11 +222,11 @@ public class FundingLegAllOf {
    * @return notional
   **/
   @ApiModelProperty(required = true, value = "Scaling factor to apply to leg quantities.")
-  public Double getNotional() {
+  public java.math.BigDecimal getNotional() {
     return notional;
   }
 
-  public void setNotional(Double notional) {
+  public void setNotional(java.math.BigDecimal notional) {
     this.notional = notional;
   }
 

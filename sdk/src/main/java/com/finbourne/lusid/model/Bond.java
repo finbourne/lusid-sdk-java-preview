@@ -55,11 +55,11 @@ public class Bond extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_PRINCIPAL = "principal";
   @SerializedName(SERIALIZED_NAME_PRINCIPAL)
-  private Double principal;
+  private java.math.BigDecimal principal;
 
   public static final String SERIALIZED_NAME_COUPON_RATE = "couponRate";
   @SerializedName(SERIALIZED_NAME_COUPON_RATE)
-  private Double couponRate;
+  private java.math.BigDecimal couponRate;
 
   public static final String SERIALIZED_NAME_IDENTIFIERS = "identifiers";
   @SerializedName(SERIALIZED_NAME_IDENTIFIERS)
@@ -161,7 +161,7 @@ public class Bond extends LusidInstrument {
   }
 
 
-  public Bond principal(Double principal) {
+  public Bond principal(java.math.BigDecimal principal) {
     this.principal = principal; 
     return this;
   }
@@ -171,16 +171,16 @@ public class Bond extends LusidInstrument {
    * @return principal
   **/
   @ApiModelProperty(required = true, value = "The face-value or principal for the bond at outset.  This might be reduced through its lifetime in the event of amortization or similar.")
-  public Double getPrincipal() {
+  public java.math.BigDecimal getPrincipal() {
     return principal;
   }
 
-  public void setPrincipal(Double principal) {
+  public void setPrincipal(java.math.BigDecimal principal) {
     this.principal = principal;
   }
 
 
-  public Bond couponRate(Double couponRate) {
+  public Bond couponRate(java.math.BigDecimal couponRate) {
     this.couponRate = couponRate; 
     return this;
   }
@@ -190,11 +190,11 @@ public class Bond extends LusidInstrument {
    * @return couponRate
   **/
   @ApiModelProperty(required = true, value = "Simple coupon rate.")
-  public Double getCouponRate() {
+  public java.math.BigDecimal getCouponRate() {
     return couponRate;
   }
 
-  public void setCouponRate(Double couponRate) {
+  public void setCouponRate(java.math.BigDecimal couponRate) {
     this.couponRate = couponRate;
   }
 

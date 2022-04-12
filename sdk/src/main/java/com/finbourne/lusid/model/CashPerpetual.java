@@ -43,7 +43,7 @@ public class CashPerpetual extends LusidInstrument {
 
   public static final String SERIALIZED_NAME_PRINCIPAL = "principal";
   @SerializedName(SERIALIZED_NAME_PRINCIPAL)
-  private Double principal;
+  private java.math.BigDecimal principal;
 
   public CashPerpetual() {
     //this.instrumentType = this.getClass().getSimpleName();
@@ -87,7 +87,7 @@ public class CashPerpetual extends LusidInstrument {
   }
 
 
-  public CashPerpetual principal(Double principal) {
+  public CashPerpetual principal(java.math.BigDecimal principal) {
     this.principal = principal; 
     return this;
   }
@@ -97,11 +97,11 @@ public class CashPerpetual extends LusidInstrument {
    * @return principal
   **/
   @ApiModelProperty(required = true, value = "The face-value or principal for the cash at outset.")
-  public Double getPrincipal() {
+  public java.math.BigDecimal getPrincipal() {
     return principal;
   }
 
-  public void setPrincipal(Double principal) {
+  public void setPrincipal(java.math.BigDecimal principal) {
     this.principal = principal;
   }
 

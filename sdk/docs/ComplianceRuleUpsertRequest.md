@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **type** | **String** |  | 
 **propertyKey** | **String** |  |  [optional]
 **value** | **String** |  |  [optional]
-**lowerBound** | **Double** |  | 
-**upperBound** | **Double** |  | 
+**lowerBound** | **java.math.BigDecimal** |  | 
+**upperBound** | **java.math.BigDecimal** |  | 
 **schedule** | **String** |  | 
 **hardRequirement** | **Boolean** |  | 
 **targetPortfolioIds** | [**List&lt;ResourceId&gt;**](ResourceId.md) |  | 

@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **Double** | The numerical value of the property. |  [optional]
+**value** | **java.math.BigDecimal** | The numerical value of the property. |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) | The available values are: Absolute, Relative |  [optional]
 
 

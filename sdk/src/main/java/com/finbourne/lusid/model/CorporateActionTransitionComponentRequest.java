@@ -39,11 +39,11 @@ public class CorporateActionTransitionComponentRequest {
 
   public static final String SERIALIZED_NAME_UNITS_FACTOR = "unitsFactor";
   @SerializedName(SERIALIZED_NAME_UNITS_FACTOR)
-  private Double unitsFactor;
+  private java.math.BigDecimal unitsFactor;
 
   public static final String SERIALIZED_NAME_COST_FACTOR = "costFactor";
   @SerializedName(SERIALIZED_NAME_COST_FACTOR)
-  private Double costFactor;
+  private java.math.BigDecimal costFactor;
 
 
   public CorporateActionTransitionComponentRequest instrumentIdentifiers(Map<String, String> instrumentIdentifiers) {
@@ -70,7 +70,7 @@ public class CorporateActionTransitionComponentRequest {
   }
 
 
-  public CorporateActionTransitionComponentRequest unitsFactor(Double unitsFactor) {
+  public CorporateActionTransitionComponentRequest unitsFactor(java.math.BigDecimal unitsFactor) {
     this.unitsFactor = unitsFactor; 
     return this;
   }
@@ -80,16 +80,16 @@ public class CorporateActionTransitionComponentRequest {
    * @return unitsFactor
   **/
   @ApiModelProperty(required = true, value = "The factor to scale units by")
-  public Double getUnitsFactor() {
+  public java.math.BigDecimal getUnitsFactor() {
     return unitsFactor;
   }
 
-  public void setUnitsFactor(Double unitsFactor) {
+  public void setUnitsFactor(java.math.BigDecimal unitsFactor) {
     this.unitsFactor = unitsFactor;
   }
 
 
-  public CorporateActionTransitionComponentRequest costFactor(Double costFactor) {
+  public CorporateActionTransitionComponentRequest costFactor(java.math.BigDecimal costFactor) {
     this.costFactor = costFactor; 
     return this;
   }
@@ -99,11 +99,11 @@ public class CorporateActionTransitionComponentRequest {
    * @return costFactor
   **/
   @ApiModelProperty(required = true, value = "The factor to scale cost by")
-  public Double getCostFactor() {
+  public java.math.BigDecimal getCostFactor() {
     return costFactor;
   }
 
-  public void setCostFactor(Double costFactor) {
+  public void setCostFactor(java.math.BigDecimal costFactor) {
     this.costFactor = costFactor;
   }
 

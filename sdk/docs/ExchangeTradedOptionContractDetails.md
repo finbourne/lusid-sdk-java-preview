@@ -9,8 +9,8 @@ Most, if not all, information about contracts is standardised. See, e.g. https:/
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **domCcy** | **String** | Currency in which the contract is paid. | 
-**strike** | **Double** | The option strike, this can be negative for some options. | 
-**contractSize** | **Double** | Size of a single contract. By default this should be set to 1000 if otherwise unknown and is defaulted to such. | 
+**strike** | **java.math.BigDecimal** | The option strike, this can be negative for some options. | 
+**contractSize** | **java.math.BigDecimal** | Size of a single contract. By default this should be set to 1000 if otherwise unknown and is defaulted to such. | 
 **country** | **String** | Country (code) for the exchange. | 
 **deliveryType** | **String** | The delivery type, cash or physical. An option on a future is physically settled if upon exercising the  holder receives a future.  Supported string (enumeration) values are: [Cash, Physical]. | 
 **description** | **String** | Description of contract | 

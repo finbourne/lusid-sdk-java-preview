@@ -95,7 +95,7 @@ public class MarketQuote {
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private Double value;
+  private java.math.BigDecimal value;
 
 
   public MarketQuote quoteType(QuoteTypeEnum quoteType) {
@@ -117,7 +117,7 @@ public class MarketQuote {
   }
 
 
-  public MarketQuote value(Double value) {
+  public MarketQuote value(java.math.BigDecimal value) {
     this.value = value; 
     return this;
   }
@@ -127,11 +127,11 @@ public class MarketQuote {
    * @return value
   **/
   @ApiModelProperty(required = true, value = "Numeric value of the quote")
-  public Double getValue() {
+  public java.math.BigDecimal getValue() {
     return value;
   }
 
-  public void setValue(Double value) {
+  public void setValue(java.math.BigDecimal value) {
     this.value = value;
   }
 

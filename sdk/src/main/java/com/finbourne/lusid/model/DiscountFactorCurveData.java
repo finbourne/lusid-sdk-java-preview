@@ -45,7 +45,7 @@ public class DiscountFactorCurveData extends ComplexMarketData {
 
   public static final String SERIALIZED_NAME_DISCOUNT_FACTORS = "discountFactors";
   @SerializedName(SERIALIZED_NAME_DISCOUNT_FACTORS)
-  private List<Double> discountFactors = new ArrayList<>();
+  private List<java.math.BigDecimal> discountFactors = new ArrayList<>();
 
   public DiscountFactorCurveData() {
     //this.marketDataType = this.getClass().getSimpleName();
@@ -95,12 +95,12 @@ public class DiscountFactorCurveData extends ComplexMarketData {
   }
 
 
-  public DiscountFactorCurveData discountFactors(List<Double> discountFactors) {
+  public DiscountFactorCurveData discountFactors(List<java.math.BigDecimal> discountFactors) {
     this.discountFactors = discountFactors; 
     return this;
   }
 
-  public DiscountFactorCurveData addDiscountFactorsItem(Double discountFactorsItem) {
+  public DiscountFactorCurveData addDiscountFactorsItem(java.math.BigDecimal discountFactorsItem) {
    
     this.discountFactors.add(discountFactorsItem);
     return this;
@@ -111,11 +111,11 @@ public class DiscountFactorCurveData extends ComplexMarketData {
    * @return discountFactors
   **/
   @ApiModelProperty(required = true, value = "Discount factors to be applied to cashflow on the specified dates")
-  public List<Double> getDiscountFactors() {
+  public List<java.math.BigDecimal> getDiscountFactors() {
     return discountFactors;
   }
 
-  public void setDiscountFactors(List<Double> discountFactors) {
+  public void setDiscountFactors(List<java.math.BigDecimal> discountFactors) {
     this.discountFactors = discountFactors;
   }
 

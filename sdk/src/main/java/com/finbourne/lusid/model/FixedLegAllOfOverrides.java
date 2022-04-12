@@ -34,19 +34,19 @@ import java.util.List;
 public class FixedLegAllOfOverrides {
   public static final String SERIALIZED_NAME_AMORTIZATION = "Amortization";
   @SerializedName(SERIALIZED_NAME_AMORTIZATION)
-  private List<Double> amortization = null;
+  private List<java.math.BigDecimal> amortization = null;
 
   public static final String SERIALIZED_NAME_SPREADS = "Spreads";
   @SerializedName(SERIALIZED_NAME_SPREADS)
-  private List<Double> spreads = null;
+  private List<java.math.BigDecimal> spreads = null;
 
 
-  public FixedLegAllOfOverrides amortization(List<Double> amortization) {
+  public FixedLegAllOfOverrides amortization(List<java.math.BigDecimal> amortization) {
     this.amortization = amortization; 
     return this;
   }
 
-  public FixedLegAllOfOverrides addAmortizationItem(Double amortizationItem) {
+  public FixedLegAllOfOverrides addAmortizationItem(java.math.BigDecimal amortizationItem) {
    
     if (this.amortization == null) {
       this.amortization = new ArrayList<>();
@@ -60,21 +60,21 @@ public class FixedLegAllOfOverrides {
    * @return amortization
   **/
   @ApiModelProperty(value = "")
-  public List<Double> getAmortization() {
+  public List<java.math.BigDecimal> getAmortization() {
     return amortization;
   }
 
-  public void setAmortization(List<Double> amortization) {
+  public void setAmortization(List<java.math.BigDecimal> amortization) {
     this.amortization = amortization;
   }
 
 
-  public FixedLegAllOfOverrides spreads(List<Double> spreads) {
+  public FixedLegAllOfOverrides spreads(List<java.math.BigDecimal> spreads) {
     this.spreads = spreads; 
     return this;
   }
 
-  public FixedLegAllOfOverrides addSpreadsItem(Double spreadsItem) {
+  public FixedLegAllOfOverrides addSpreadsItem(java.math.BigDecimal spreadsItem) {
    
     if (this.spreads == null) {
       this.spreads = new ArrayList<>();
@@ -88,11 +88,11 @@ public class FixedLegAllOfOverrides {
    * @return spreads
   **/
   @ApiModelProperty(value = "")
-  public List<Double> getSpreads() {
+  public List<java.math.BigDecimal> getSpreads() {
     return spreads;
   }
 
-  public void setSpreads(List<Double> spreads) {
+  public void setSpreads(List<java.math.BigDecimal> spreads) {
     this.spreads = spreads;
   }
 

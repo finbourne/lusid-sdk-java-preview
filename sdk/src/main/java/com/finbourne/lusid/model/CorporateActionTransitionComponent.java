@@ -47,11 +47,11 @@ public class CorporateActionTransitionComponent {
 
   public static final String SERIALIZED_NAME_UNITS_FACTOR = "unitsFactor";
   @SerializedName(SERIALIZED_NAME_UNITS_FACTOR)
-  private Double unitsFactor;
+  private java.math.BigDecimal unitsFactor;
 
   public static final String SERIALIZED_NAME_COST_FACTOR = "costFactor";
   @SerializedName(SERIALIZED_NAME_COST_FACTOR)
-  private Double costFactor;
+  private java.math.BigDecimal costFactor;
 
 
   public CorporateActionTransitionComponent instrumentScope(String instrumentScope) {
@@ -116,7 +116,7 @@ public class CorporateActionTransitionComponent {
   }
 
 
-  public CorporateActionTransitionComponent unitsFactor(Double unitsFactor) {
+  public CorporateActionTransitionComponent unitsFactor(java.math.BigDecimal unitsFactor) {
     this.unitsFactor = unitsFactor; 
     return this;
   }
@@ -126,16 +126,16 @@ public class CorporateActionTransitionComponent {
    * @return unitsFactor
   **/
   @ApiModelProperty(required = true, value = "The factor to scale units by")
-  public Double getUnitsFactor() {
+  public java.math.BigDecimal getUnitsFactor() {
     return unitsFactor;
   }
 
-  public void setUnitsFactor(Double unitsFactor) {
+  public void setUnitsFactor(java.math.BigDecimal unitsFactor) {
     this.unitsFactor = unitsFactor;
   }
 
 
-  public CorporateActionTransitionComponent costFactor(Double costFactor) {
+  public CorporateActionTransitionComponent costFactor(java.math.BigDecimal costFactor) {
     this.costFactor = costFactor; 
     return this;
   }
@@ -145,11 +145,11 @@ public class CorporateActionTransitionComponent {
    * @return costFactor
   **/
   @ApiModelProperty(required = true, value = "The factor to scale cost by")
-  public Double getCostFactor() {
+  public java.math.BigDecimal getCostFactor() {
     return costFactor;
   }
 
-  public void setCostFactor(Double costFactor) {
+  public void setCostFactor(java.math.BigDecimal costFactor) {
     this.costFactor = costFactor;
   }
 

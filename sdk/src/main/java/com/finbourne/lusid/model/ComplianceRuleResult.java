@@ -52,7 +52,7 @@ public class ComplianceRuleResult {
 
   public static final String SERIALIZED_NAME_RESULT_VALUE = "resultValue";
   @SerializedName(SERIALIZED_NAME_RESULT_VALUE)
-  private Double resultValue;
+  private java.math.BigDecimal resultValue;
 
   public static final String SERIALIZED_NAME_RULE_INFORMATION_MATCH = "ruleInformationMatch";
   @SerializedName(SERIALIZED_NAME_RULE_INFORMATION_MATCH)
@@ -166,7 +166,7 @@ public class ComplianceRuleResult {
   }
 
 
-  public ComplianceRuleResult resultValue(Double resultValue) {
+  public ComplianceRuleResult resultValue(java.math.BigDecimal resultValue) {
     this.resultValue = resultValue; 
     return this;
   }
@@ -176,11 +176,11 @@ public class ComplianceRuleResult {
    * @return resultValue
   **/
   @ApiModelProperty(required = true, value = "The calculation result that was used to confirm a pass/fail")
-  public Double getResultValue() {
+  public java.math.BigDecimal getResultValue() {
     return resultValue;
   }
 
-  public void setResultValue(Double resultValue) {
+  public void setResultValue(java.math.BigDecimal resultValue) {
     this.resultValue = resultValue;
   }
 

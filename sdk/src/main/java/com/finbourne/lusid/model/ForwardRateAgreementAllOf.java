@@ -48,11 +48,11 @@ public class ForwardRateAgreementAllOf {
 
   public static final String SERIALIZED_NAME_FRA_RATE = "fraRate";
   @SerializedName(SERIALIZED_NAME_FRA_RATE)
-  private Double fraRate;
+  private java.math.BigDecimal fraRate;
 
   public static final String SERIALIZED_NAME_NOTIONAL = "notional";
   @SerializedName(SERIALIZED_NAME_NOTIONAL)
-  private Double notional;
+  private java.math.BigDecimal notional;
 
   /**
    * The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption, ReferenceInstrument
@@ -238,7 +238,7 @@ public class ForwardRateAgreementAllOf {
   }
 
 
-  public ForwardRateAgreementAllOf fraRate(Double fraRate) {
+  public ForwardRateAgreementAllOf fraRate(java.math.BigDecimal fraRate) {
     this.fraRate = fraRate; 
     return this;
   }
@@ -248,16 +248,16 @@ public class ForwardRateAgreementAllOf {
    * @return fraRate
   **/
   @ApiModelProperty(required = true, value = "The rate at which the FRA is traded.")
-  public Double getFraRate() {
+  public java.math.BigDecimal getFraRate() {
     return fraRate;
   }
 
-  public void setFraRate(Double fraRate) {
+  public void setFraRate(java.math.BigDecimal fraRate) {
     this.fraRate = fraRate;
   }
 
 
-  public ForwardRateAgreementAllOf notional(Double notional) {
+  public ForwardRateAgreementAllOf notional(java.math.BigDecimal notional) {
     this.notional = notional; 
     return this;
   }
@@ -267,11 +267,11 @@ public class ForwardRateAgreementAllOf {
    * @return notional
   **/
   @ApiModelProperty(required = true, value = "The amount for which the FRA is traded.")
-  public Double getNotional() {
+  public java.math.BigDecimal getNotional() {
     return notional;
   }
 
-  public void setNotional(Double notional) {
+  public void setNotional(java.math.BigDecimal notional) {
     this.notional = notional;
   }
 

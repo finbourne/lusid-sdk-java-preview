@@ -8,8 +8,8 @@ Any overriding data for notionals, spreads or rates that would affect generation
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amortization** | **List&lt;Double&gt;** |  |  [optional]
-**spreads** | **List&lt;Double&gt;** |  |  [optional]
+**amortization** | **List&lt;java.math.BigDecimal&gt;** |  |  [optional]
+**spreads** | **List&lt;java.math.BigDecimal&gt;** |  |  [optional]
 
 
 

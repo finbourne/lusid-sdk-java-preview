@@ -31,7 +31,7 @@ import java.io.IOException;
 public class Tolerance {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private Double value;
+  private java.math.BigDecimal value;
 
   /**
    * The available values are: Absolute, Relative
@@ -85,7 +85,7 @@ public class Tolerance {
   private TypeEnum type;
 
 
-  public Tolerance value(Double value) {
+  public Tolerance value(java.math.BigDecimal value) {
     this.value = value; 
     return this;
   }
@@ -95,11 +95,11 @@ public class Tolerance {
    * @return value
   **/
   @ApiModelProperty(value = "The numerical value of the property.")
-  public Double getValue() {
+  public java.math.BigDecimal getValue() {
     return value;
   }
 
-  public void setValue(Double value) {
+  public void setValue(java.math.BigDecimal value) {
     this.value = value;
   }
 

@@ -50,7 +50,7 @@ public class CdsIndexAllOf {
 
   public static final String SERIALIZED_NAME_COUPON_RATE = "couponRate";
   @SerializedName(SERIALIZED_NAME_COUPON_RATE)
-  private Double couponRate;
+  private java.math.BigDecimal couponRate;
 
   public static final String SERIALIZED_NAME_IDENTIFIERS = "identifiers";
   @SerializedName(SERIALIZED_NAME_IDENTIFIERS)
@@ -66,7 +66,7 @@ public class CdsIndexAllOf {
 
   public static final String SERIALIZED_NAME_NOTIONAL = "notional";
   @SerializedName(SERIALIZED_NAME_NOTIONAL)
-  private Double notional;
+  private java.math.BigDecimal notional;
 
   /**
    * The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption, ReferenceInstrument
@@ -233,7 +233,7 @@ public class CdsIndexAllOf {
   }
 
 
-  public CdsIndexAllOf couponRate(Double couponRate) {
+  public CdsIndexAllOf couponRate(java.math.BigDecimal couponRate) {
     this.couponRate = couponRate; 
     return this;
   }
@@ -243,11 +243,11 @@ public class CdsIndexAllOf {
    * @return couponRate
   **/
   @ApiModelProperty(required = true, value = "The coupon rate paid on each payment date of the premium leg as a fraction of 100 percent, e.g. \"0.05\" meaning 500 basis points or 5%.  For a standard corporate CDS (North American) this must be either 100bps or 500bps.")
-  public Double getCouponRate() {
+  public java.math.BigDecimal getCouponRate() {
     return couponRate;
   }
 
-  public void setCouponRate(Double couponRate) {
+  public void setCouponRate(java.math.BigDecimal couponRate) {
     this.couponRate = couponRate;
   }
 
@@ -314,7 +314,7 @@ public class CdsIndexAllOf {
   }
 
 
-  public CdsIndexAllOf notional(Double notional) {
+  public CdsIndexAllOf notional(java.math.BigDecimal notional) {
     this.notional = notional; 
     return this;
   }
@@ -324,11 +324,11 @@ public class CdsIndexAllOf {
    * @return notional
   **/
   @ApiModelProperty(required = true, value = "The notional quantity that applies to both the premium and protection legs.")
-  public Double getNotional() {
+  public java.math.BigDecimal getNotional() {
     return notional;
   }
 
-  public void setNotional(Double notional) {
+  public void setNotional(java.math.BigDecimal notional) {
     this.notional = notional;
   }
 
