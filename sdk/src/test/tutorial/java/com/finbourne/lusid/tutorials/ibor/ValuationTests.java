@@ -22,7 +22,7 @@ import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toMap;
 import static org.junit.Assert.assertEquals;
 
-public class Valuation {
+public class ValuationTests {
 
     private static final String AGGREGATION_KEY = "Holding/default/PV";
     private static final String AGGREGATION_RESULT_KEY = "Sum(Holding/default/PV)";
