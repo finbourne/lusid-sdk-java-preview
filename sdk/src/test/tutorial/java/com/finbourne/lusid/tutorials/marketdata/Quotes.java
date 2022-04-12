@@ -9,6 +9,7 @@ import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.Collections;
@@ -17,8 +18,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.fail;
 
 public class Quotes {
@@ -33,22 +33,28 @@ public class Quotes {
     }
 
     @Test
-    @LusidFeature("F14-1")
+    @LusidFeature("F14-1")  //F14-7
     public void add_quote() throws ApiException {
+
+        QuoteSeriesId   quoteSeriesId = new QuoteSeriesId()
+                .provider("DataScope")
+                .priceSource("BankA")
+                .instrumentId("BBG000B9XRY4")
+                .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.FIGI)
+                .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
+                .field("Mid");
+
+        String effectiveDate = OffsetDateTime.of(2019, 4, 15, 0, 0, 0, 0, ZoneOffset.UTC).toString();
+        BigDecimal  quoteValue = BigDecimal.valueOf(199.23);
+
+
         UpsertQuoteRequest  request = new UpsertQuoteRequest()
             .quoteId(new QuoteId()
-                    .quoteSeriesId(new QuoteSeriesId()
-                        .provider("DataScope")
-                        .priceSource("BankA")
-                        .instrumentId("BBG000B9XRY4")
-                        .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.FIGI)
-                        .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
-                        .field("Mid")
-                    )
-                    .effectiveAt(OffsetDateTime.of(2019, 4, 15, 0, 0, 0, 0, ZoneOffset.UTC).toString())
+                    .quoteSeriesId(quoteSeriesId)
+                    .effectiveAt(effectiveDate)
             )
             .metricValue(new MetricValue()
-                .value(199.23)
+                .value(quoteValue)
                 .unit("USD")
             )
             .lineage("InternalSystem");
@@ -57,35 +63,17 @@ public class Quotes {
 
         assertThat(result.getFailed().size(), equalTo(0));
         assertThat(result.getValues().size(), equalTo(1));
-    }
 
-    @Test
-    @LusidFeature("F14-7")
-    public void get_quote_for_instrument_for_single_day() throws ApiException {
-
-        QuoteSeriesId quoteSeriesId = new QuoteSeriesId()
-                .provider("DataScope")
-                .priceSource("BankA")
-                .instrumentId("BBG000B9XRY4")
-                .instrumentIdType(QuoteSeriesId.InstrumentIdTypeEnum.FIGI)
-                .quoteType(QuoteSeriesId.QuoteTypeEnum.PRICE)
-                .field("Mid");
-
-        OffsetDateTime effectiveDate = OffsetDateTime.of(2019, 4, 15, 0, 0, 0, 0, ZoneOffset.UTC);
-
-        //  Get the close quote for AAPL on 15-Apr-19
         GetQuotesResponse   quotesResponse = quotesApi.getQuotes(
-            TestDataUtilities.TutorialScope,
-            effectiveDate.toString(),
-            null, null,
-            Collections.singletonMap("correlationId1", quoteSeriesId)
+                TestDataUtilities.TutorialScope,
+                effectiveDate.toString(),
+                null, null,
+                Collections.singletonMap("correlationId1", quoteSeriesId)
         );
-
-        assertThat(quotesResponse.getValues().values(), hasSize(equalTo(1)));
 
         Quote   quote = quotesResponse.getValues().values().stream().findFirst().get();
 
-        assertThat(quote.getMetricValue().getValue(), equalTo(199.23));
+        assertThat(quote.getMetricValue().getValue(), comparesEqualTo(quoteValue));
     }
 
     @Test

@@ -10,6 +10,7 @@ import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.*;
@@ -67,11 +68,11 @@ public class Transactions {
 
                 //  instruments must already exist in LUSID and have a valid LUSID instrument id
                 .instrumentIdentifiers(new HashMap<String, String>() {{ put(LUSID_INSTRUMENT_IDENTIFIER, instrumentIds.get(0)); }})
-                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(1230.0))
+                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(new BigDecimal(1230.0)))
                 .transactionDate(effectiveDate.toString())
                 .settlementDate(effectiveDate.toString())
-                .units(100.0)
-                .transactionPrice(new TransactionPrice().price(12.3))
+                .units(new BigDecimal(100.0))
+                .transactionPrice(new TransactionPrice().price(new BigDecimal(12.3)))
                 .source("Custodian");
 
         //  add the trade
@@ -114,10 +115,10 @@ public class Transactions {
                 //  Cash instruments are identified using CCY_ followed by the ISO currency codes.
                 //  Cash instruments do not need to be created before use
                 .instrumentIdentifiers(new HashMap<String, String>() {{ put(LUSID_CASH_IDENTIFIER, "GBP"); }})
-                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(0.0))
+                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(new BigDecimal(0.0)))
                 .transactionDate(effectiveDate.toString())
                 .settlementDate(effectiveDate.toString())
-                .units(1000.0)
+                .units(new BigDecimal(1000.0))
                 .source("Custodian");
 
         //  add the trade
@@ -154,26 +155,26 @@ public class Transactions {
                 .transactionId(UUID.randomUUID().toString())
                 .type("StockIn")
                 .instrumentIdentifiers(new HashMap<String, String>() {{ put(LUSID_CASH_IDENTIFIER, "GBP"); }})
-                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(101.0))
+                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(new BigDecimal(101.0)))
                 .transactionDate(effectiveDate.toString())
                 .settlementDate(effectiveDate.toString())
-                .units(100.0);
+                .units(new BigDecimal(100.0));
         TransactionRequest tx2 = new TransactionRequest()
                 .transactionId(UUID.randomUUID().toString())
                 .type("StockIn")
                 .instrumentIdentifiers(new HashMap<String, String>() {{ put(LUSID_CASH_IDENTIFIER, "GBP"); }})
-                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(102.0))
+                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(new BigDecimal(102.0)))
                 .transactionDate(effectiveDate.toString())
                 .settlementDate(effectiveDate.toString())
-                .units(100.0);
+                .units(new BigDecimal(100.0));
         TransactionRequest tx3 = new TransactionRequest()
                 .transactionId(UUID.randomUUID().toString())
                 .type("StockIn")
                 .instrumentIdentifiers(new HashMap<String, String>() {{ put(LUSID_CASH_IDENTIFIER, "GBP"); }})
-                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(103.0))
+                .totalConsideration(new CurrencyAndAmount().currency("GBP").amount(new BigDecimal(103.0)))
                 .transactionDate(effectiveDate.toString())
                 .settlementDate(effectiveDate.toString())
-                .units(100.0);
+                .units(new BigDecimal(100.0));
 
         transactionPortfoliosApi.upsertTransactions(TutorialScope, portfolioId, Arrays.asList(tx1, tx2, tx3));
 

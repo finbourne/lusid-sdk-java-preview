@@ -12,6 +12,7 @@ import com.finbourne.lusid.utilities.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
@@ -62,9 +63,9 @@ public class Bitemporal {
                                 t.getTotalConsideration().getAmount())));
 
         List<TransactionRequest>    newTransactions = new ArrayList<>();
-        newTransactions.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(0), 100.0, 101.0, "GBP", OffsetDateTime.of(2018, 1, 1, 0, 0, 0, 0, ZoneOffset.UTC), "Buy"));
-        newTransactions.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(1), 100.0, 102.0, "GBP", OffsetDateTime.of(2018, 1, 2, 0, 0, 0, 0, ZoneOffset.UTC), "Buy"));
-        newTransactions.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(2), 100.0, 103.0, "GBP", OffsetDateTime.of(2018, 1, 3, 0, 0, 0, 0, ZoneOffset.UTC), "Buy"));
+        newTransactions.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(0), new BigDecimal(100.0), new BigDecimal(101.0), "GBP", OffsetDateTime.of(2018, 1, 1, 0, 0, 0, 0, ZoneOffset.UTC), "Buy"));
+        newTransactions.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(1), new BigDecimal(100.0), new BigDecimal(102.0), "GBP", OffsetDateTime.of(2018, 1, 2, 0, 0, 0, 0, ZoneOffset.UTC), "Buy"));
+        newTransactions.add(testDataUtilities.buildTransactionRequest(instrumentIds.get(2), new BigDecimal(100.0), new BigDecimal(103.0), "GBP", OffsetDateTime.of(2018, 1, 3, 0, 0, 0, 0, ZoneOffset.UTC), "Buy"));
 
         //  add initial batch of transactions
         final UpsertPortfolioTransactionsResponse  initialResult = transactionPortfoliosApi.upsertTransactions(TutorialScope, portfolioId, newTransactions);
@@ -72,14 +73,14 @@ public class Bitemporal {
         OffsetDateTime    asAtBatch1 = initialResult.getVersion().getAsAtDate();
 
         //  add another trade for 2018-1-8
-        TransactionRequest  newTrade = testDataUtilities.buildTransactionRequest(instrumentIds.get(3), 100.0, 104.0, "GBP", OffsetDateTime.of(2018, 1, 8, 0, 0, 0, 0, ZoneOffset.UTC), "Buy");
+        TransactionRequest  newTrade = testDataUtilities.buildTransactionRequest(instrumentIds.get(3), new BigDecimal(100.0), new BigDecimal(104.0), "GBP", OffsetDateTime.of(2018, 1, 8, 0, 0, 0, 0, ZoneOffset.UTC), "Buy");
         UpsertPortfolioTransactionsResponse addedResult = transactionPortfoliosApi.upsertTransactions(TutorialScope, portfolioId, Collections.singletonList(newTrade));
 
         OffsetDateTime    asAtBatch2 = addedResult.getVersion().getAsAtDate();
         Thread.sleep(500);
 
         //  add back-dated trade
-        TransactionRequest  backDatedTrade = testDataUtilities.buildTransactionRequest(instrumentIds.get(4), 100.0, 105.0, "GBP", OffsetDateTime.of(2018, 1, 5, 0, 0, 0, 0, ZoneOffset.UTC), "Buy");
+        TransactionRequest  backDatedTrade = testDataUtilities.buildTransactionRequest(instrumentIds.get(4), new BigDecimal(100.0), new BigDecimal(105.0), "GBP", OffsetDateTime.of(2018, 1, 5, 0, 0, 0, 0, ZoneOffset.UTC), "Buy");
         UpsertPortfolioTransactionsResponse backDatedResult = transactionPortfoliosApi.upsertTransactions(TutorialScope, portfolioId, Collections.singletonList(backDatedTrade));
 
         OffsetDateTime    asAtBatch3 = backDatedResult.getVersion().getAsAtDate();
