@@ -123,7 +123,7 @@ hs_err_pid*
 ### JetBrains Patch ###
 # Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
 
-# *.iml
+*.iml
 # modules.xml
 # .idea/misc.xml
 # *.ipr

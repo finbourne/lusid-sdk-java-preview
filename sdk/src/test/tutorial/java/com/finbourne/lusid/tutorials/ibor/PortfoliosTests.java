@@ -21,7 +21,7 @@ import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
-public class Portfolios {
+public class PortfoliosTests {
 
     private static List<String> instrumentIds;
 
@@ -90,7 +90,7 @@ public class Portfolios {
                 .scope(TutorialScope)
 
                 //  When the property value is set it will be valid forever and cannot be changed.
-                //  Properties whose values can change over time should be created with LifeTimeEnum.TIMEVARIANT
+                //  PropertiesTests whose values can change over time should be created with LifeTimeEnum.TIMEVARIANT
                 .lifeTime(CreatePropertyDefinitionRequest.LifeTimeEnum.PERPETUAL)
 
                 .code(propertyName)
@@ -191,7 +191,7 @@ public class Portfolios {
                 .scope(TutorialScope)
 
                 //  When the property value is set it will be valid forever and cannot be changed.
-                //  Properties whose values can change over time should be created with LifeTimeEnum.TIMEVARIANT
+                //  PropertiesTests whose values can change over time should be created with LifeTimeEnum.TIMEVARIANT
                 .lifeTime(CreatePropertyDefinitionRequest.LifeTimeEnum.PERPETUAL)
 
                 .code(propertyName)

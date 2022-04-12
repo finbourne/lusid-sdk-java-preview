@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 // Orders represent an instruction from an investor to buy or sell a quantity of a specific
 // security.
-public class Orders
+public class OrdersTests
 {
     private static OrdersApi ordersApi;
     private static List<String> instrumentIds;
@@ -373,7 +373,7 @@ public class Orders
         assertTrue(quantityFilter.stream().allMatch(order -> order.getQuantity() > 100));
 
         /*
-        List<Order> orderGroupFilter = ordersApi.listOrders(t, null, null, null, null,"Properties[" + testScope + "/OrderGroup] eq 'UK Test Orders 2'", null).getValues();
+        List<Order> orderGroupFilter = ordersApi.listOrders(t, null, null, null, null,"PropertiesTests[" + testScope + "/OrderGroup] eq 'UK Test Orders 2'", null).getValues();
         assertEquals(1, orderGroupFilter.size());
         assertTrue(orderGroupFilter.stream().allMatch(order -> order.getProperties().get("Order/" + testScope + "/OrderGroup").getValue().getLabelValue().equals("UK Test Orders 2")));
 

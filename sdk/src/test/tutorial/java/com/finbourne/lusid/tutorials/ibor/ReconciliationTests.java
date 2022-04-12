@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 import static com.finbourne.lusid.utilities.TestDataUtilities.TutorialScope;
 import static org.junit.Assert.assertEquals;
 
-public class Reconciliation {
+public class ReconciliationTests {
 
     private static List<String> instrumentIds;
 

@@ -21,7 +21,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.fail;
 
-public class Quotes {
+public class QuotesTests {
 
     private static QuotesApi quotesApi;
 

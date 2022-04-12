@@ -18,7 +18,7 @@ import java.util.*;
 import static com.finbourne.lusid.utilities.TestDataUtilities.TutorialScope;
 import static org.junit.Assert.assertEquals;
 
-public class Properties {
+public class PropertiesTests {
 
     private static TransactionPortfoliosApi transactionPortfoliosApi;
     private static PropertyDefinitionsApi propertyDefinitionsApi;
@@ -51,7 +51,7 @@ public class Properties {
                 .scope(TutorialScope)
 
                 //  When the property value is set it will be valid forever and cannot be changed.
-                //  Properties whose values can change over time should be created with LifeTimeEnum.TIMEVARIANT
+                //  PropertiesTests whose values can change over time should be created with LifeTimeEnum.TIMEVARIANT
                 .lifeTime(CreatePropertyDefinitionRequest.LifeTimeEnum.PERPETUAL)
 
                 .code(propertyName)
@@ -113,7 +113,7 @@ public class Properties {
                 .scope(TutorialScope)
 
                 //  When the property value is set it will be valid forever and cannot be changed.
-                //  Properties whose values can change over time should be created with LifeTimeEnum.TIMEVARIANT
+                //  PropertiesTests whose values can change over time should be created with LifeTimeEnum.TIMEVARIANT
                 .lifeTime(CreatePropertyDefinitionRequest.LifeTimeEnum.PERPETUAL)
 
                 .code(metricPropertyName)
