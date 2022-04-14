@@ -287,12 +287,12 @@ info:
     | <a name="783">783</a>|The Property definition domain is not supported for derived properties|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4223
+  version: 0.11.4224
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:52735
 security:
 - {}
 tags:
@@ -7042,10 +7042,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] ListCorporateActionSources: List corporate action sources'
+      summary: '[EARLY ACCESS] ListCorporateActionSources: List corporate action sources'
       tags:
       - Corporate Action Sources
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: Create a corporate action source.
@@ -7123,10 +7123,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] CreateCorporateActionSource: Create corporate action source'
+      summary: '[EARLY ACCESS] CreateCorporateActionSource: Create corporate action
+        source'
       tags:
       - Corporate Action Sources
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/corporateactionsources/{scope}/{code}:
@@ -7428,10 +7429,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] GetCorporateActions: Get corporate actions'
+      summary: '[EARLY ACCESS] GetCorporateActions: Get corporate actions'
       tags:
       - Corporate Action Sources
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: "Create or update one or more corporate actions in a particular\
@@ -7604,10 +7605,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] BatchUpsertCorporateActions: Upsert corporate actions'
+      summary: '[EARLY ACCESS] BatchUpsertCorporateActions: Upsert corporate actions'
       tags:
       - Corporate Action Sources
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/counterparties/counterpartyagreements:
@@ -89636,7 +89637,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
