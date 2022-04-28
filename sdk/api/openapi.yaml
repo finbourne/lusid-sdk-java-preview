@@ -285,14 +285,15 @@ info:
     | <a name="778">778</a>|Unable to look up FX rate from trade ccy to portfolio ccy for some of the trades.|  |
     | <a name="782">782</a>|The Property definition dataType is not matching the derivation formula dataType|  |
     | <a name="783">783</a>|The Property definition domain is not supported for derived properties|  |
+    | <a name="788">788</a>|Compliance run not found failure.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4268
+  version: 0.11.4269
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:55600
+- url: http://local-unit-test-server.lusid.com:63119
 security:
 - {}
 tags:
@@ -41825,6 +41826,172 @@ paths:
       - Transaction Configuration
       x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/transactionconfiguration/types:
+    get:
+      description: "Get the list of current transaction types. For information on\
+        \ the default transaction types provided with\r\nLUSID, see https://support.lusid.com/knowledgebase/article/KA-01873/."
+      operationId: ListTransactionTypes
+      parameters:
+      - description: "The asAt datetime at which to retrieve the transaction types.\
+          \ Defaults\r\n            to returning the latest versions if not specified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to retrieve the transaction types.\
+            \ Defaults\r\n            to returning the latest versions if not specified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                systemA:
+                - aliases:
+                  - type: SELL-FIFO
+                    description: Sale using FIFO logic
+                    transactionClass: FIFO
+                    transactionRoles: LongShorter
+                    isDefault: false
+                  movements:
+                  - movementTypes: Traded
+                    side: Side1
+                    direction: -1
+                    properties:
+                      transactionConfiguration/default/TaxLotSelectionMethod:
+                        key: TransactionConfiguration/default/TaxLotSelectionMethod
+                        value:
+                          labelValue: FirstInFirstOut
+                    mappings:
+                    - propertyKey: Transaction/examplescope/exampleCode
+                      setTo: examplevalue
+                    name: Movement name
+                  - movementTypes: CashSettlement
+                    side: Side2
+                    direction: 1
+                    properties: {}
+                    mappings: []
+                    name: Other movement name
+                  properties:
+                    transactionConfiguration/default/Example:
+                      key: TransactionConfiguration/default/Example
+                      value:
+                        labelValue: Value
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/TransactionType'
+                  type: array
+                type: object
+            application/json:
+              example:
+                systemA:
+                - aliases:
+                  - type: SELL-FIFO
+                    description: Sale using FIFO logic
+                    transactionClass: FIFO
+                    transactionRoles: LongShorter
+                    isDefault: false
+                  movements:
+                  - movementTypes: Traded
+                    side: Side1
+                    direction: -1
+                    properties:
+                      transactionConfiguration/default/TaxLotSelectionMethod:
+                        key: TransactionConfiguration/default/TaxLotSelectionMethod
+                        value:
+                          labelValue: FirstInFirstOut
+                    mappings:
+                    - propertyKey: Transaction/examplescope/exampleCode
+                      setTo: examplevalue
+                    name: Movement name
+                  - movementTypes: CashSettlement
+                    side: Side2
+                    direction: 1
+                    properties: {}
+                    mappings: []
+                    name: Other movement name
+                  properties:
+                    transactionConfiguration/default/Example:
+                      key: TransactionConfiguration/default/Example
+                      value:
+                        labelValue: Value
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/TransactionType'
+                  type: array
+                type: object
+            text/json:
+              example:
+                systemA:
+                - aliases:
+                  - type: SELL-FIFO
+                    description: Sale using FIFO logic
+                    transactionClass: FIFO
+                    transactionRoles: LongShorter
+                    isDefault: false
+                  movements:
+                  - movementTypes: Traded
+                    side: Side1
+                    direction: -1
+                    properties:
+                      transactionConfiguration/default/TaxLotSelectionMethod:
+                        key: TransactionConfiguration/default/TaxLotSelectionMethod
+                        value:
+                          labelValue: FirstInFirstOut
+                    mappings:
+                    - propertyKey: Transaction/examplescope/exampleCode
+                      setTo: examplevalue
+                    name: Movement name
+                  - movementTypes: CashSettlement
+                    side: Side2
+                    direction: 1
+                    properties: {}
+                    mappings: []
+                    name: Other movement name
+                  properties:
+                    transactionConfiguration/default/Example:
+                      key: TransactionConfiguration/default/Example
+                      value:
+                        labelValue: Value
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/TransactionType'
+                  type: array
+                type: object
+          description: Success
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListTransactionTypes: List transaction types'
+      tags:
+      - Transaction Configuration
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/transactionconfiguration/types/{source}/{type}:
     delete:
