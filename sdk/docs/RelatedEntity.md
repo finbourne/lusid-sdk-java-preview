@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **displayName** | **String** | The display name of the entity. | 
 **properties** | [**Map&lt;String, Property&gt;**](Property.md) | The properties of the entity. This field is empty until further notice. |  [optional]
 **scope** | **String** | The scope of the identifier |  [optional]
+**lusidUniqueId** | [**LusidUniqueId**](LusidUniqueId.md) |  |  [optional]
 **identifiers** | [**List&lt;EntityIdentifier&gt;**](EntityIdentifier.md) | The identifiers of the related entity in the relationship. | 
 **href** | **URI** | The link to the entity. |  [optional]
 

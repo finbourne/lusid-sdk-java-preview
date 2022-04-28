@@ -287,12 +287,12 @@ info:
     | <a name="783">783</a>|The Property definition domain is not supported for derived properties|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4266
+  version: 0.11.4267
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:37918
+- url: http://local-unit-test-server.lusid.com:58504
 security:
 - {}
 tags:
@@ -58278,6 +58278,9 @@ components:
           scope: scope
           entityId:
             key: entityId
+          lusidUniqueId:
+            type: type
+            value: value
           href: https://openapi-generator.tech
           properties:
             key:
@@ -58306,6 +58309,9 @@ components:
           scope: scope
           entityId:
             key: entityId
+          lusidUniqueId:
+            type: type
+            value: value
           href: https://openapi-generator.tech
           properties:
             key:
@@ -66402,6 +66408,23 @@ components:
       required:
       - code
       - name
+      type: object
+    LusidUniqueId:
+      additionalProperties: false
+      example:
+        type: type
+        value: value
+      properties:
+        type:
+          description: The type for the LUSID unique id, this will depend on the type
+            of entity found, for instance 'Instrument' would have a value of 'LusidInstrumentId'
+          type: string
+        value:
+          description: The value for the LUSID unique id
+          type: string
+      required:
+      - type
+      - value
       type: object
     LusidValidationProblemDetails:
       additionalProperties: false
@@ -74622,6 +74645,9 @@ components:
         scope: scope
         entityId:
           key: entityId
+        lusidUniqueId:
+          type: type
+          value: value
         href: https://openapi-generator.tech
         properties:
           key:
@@ -74663,6 +74689,8 @@ components:
           description: The scope of the identifier
           nullable: true
           type: string
+        lusidUniqueId:
+          $ref: '#/components/schemas/LusidUniqueId'
         identifiers:
           description: The identifiers of the related entity in the relationship.
           items:
@@ -74807,6 +74835,9 @@ components:
           scope: scope
           entityId:
             key: entityId
+          lusidUniqueId:
+            type: type
+            value: value
           href: https://openapi-generator.tech
           properties:
             key:
@@ -79704,6 +79735,9 @@ components:
             scope: scope
             entityId:
               key: entityId
+            lusidUniqueId:
+              type: type
+              value: value
             href: https://openapi-generator.tech
             properties:
               key:
@@ -79741,6 +79775,9 @@ components:
             scope: scope
             entityId:
               key: entityId
+            lusidUniqueId:
+              type: type
+              value: value
             href: https://openapi-generator.tech
             properties:
               key:
