@@ -288,12 +288,12 @@ info:
     | <a name="788">788</a>|Compliance run not found failure.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4298
+  version: 0.11.4299
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:30553
+- url: http://local-unit-test-server.lusid.com:59898
 security:
 - {}
 tags:
@@ -5589,6 +5589,75 @@ paths:
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/compliance/rules/{scope}/{code}:
+    delete:
+      description: "Deletes the rule for all effective time.\r\n            \r\nThe\
+        \ rule will remain viewable at previous as at times, and as part of the results\
+        \ of compliance runs, but it\r\nwill no longer be considered in new compliance\
+        \ runs.\r\n            \r\nThis cannot be undone."
+      operationId: DeleteComplianceRule
+      parameters:
+      - description: The compliance rule scope.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The compliance rule scope.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The compliance rule code.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The compliance rule code.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+          description: Success
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] DeleteComplianceRule: Deletes a compliance rule.'
+      tags:
+      - Compliance
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
     get:
       description: Retrieves the compliance rule definition at the given effective
         and as at times.
@@ -56958,6 +57027,7 @@ components:
         settlementDate:
           description: The settlement date for this allocation.
           format: date-time
+          nullable: true
           type: string
         date:
           description: The date of this allocation.
@@ -56972,6 +57042,7 @@ components:
         settlementCurrencyFxRate:
           description: The settlement currency to allocation currency FX rate.
           format: double
+          nullable: true
           type: number
         counterparty:
           description: The counterparty for this allocation.
