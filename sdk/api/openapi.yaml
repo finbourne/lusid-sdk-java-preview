@@ -288,12 +288,12 @@ info:
     | <a name="788">788</a>|Compliance run not found failure.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4301
+  version: 0.11.4302
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:37952
+- url: http://local-unit-test-server.lusid.com:47322
 security:
 - {}
 tags:
@@ -18057,6 +18057,7 @@ paths:
                   allocated:
                     quantity: 800
                   derivedState: Partially placed
+                  derivedComplianceState: Compliant
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphBlock'
@@ -18121,6 +18122,7 @@ paths:
                   allocated:
                     quantity: 800
                   derivedState: Partially placed
+                  derivedComplianceState: Compliant
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphBlock'
@@ -18185,6 +18187,7 @@ paths:
                   allocated:
                     quantity: 800
                   derivedState: Partially placed
+                  derivedComplianceState: Compliant
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphBlock'
@@ -67571,6 +67574,7 @@ components:
           scope: scope
         - code: code
           scope: scope
+        derivedComplianceState: derivedComplianceState
         allocated:
           quantity: 0.8008281904610115
       properties:
@@ -67608,10 +67612,15 @@ components:
         derivedState:
           description: A simple description of the overall state of a block.
           type: string
+        derivedComplianceState:
+          description: A simple description of the compliance state of a block. Possible
+            values are [Unchecked, Non-compliant, Compliant]
+          type: string
       required:
       - allocated
       - allocationIds
       - block
+      - derivedComplianceState
       - derivedState
       - executed
       - executionIds
@@ -70107,6 +70116,7 @@ components:
             scope: scope
           - code: code
             scope: scope
+          derivedComplianceState: derivedComplianceState
           allocated:
             quantity: 0.8008281904610115
         - ordered:
@@ -70183,6 +70193,7 @@ components:
             scope: scope
           - code: code
             scope: scope
+          derivedComplianceState: derivedComplianceState
           allocated:
             quantity: 0.8008281904610115
         links:

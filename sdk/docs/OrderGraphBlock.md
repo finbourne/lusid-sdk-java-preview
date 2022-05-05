@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **executed** | [**OrderGraphSynopsis**](OrderGraphSynopsis.md) |  | 
 **allocated** | [**OrderGraphSynopsis**](OrderGraphSynopsis.md) |  | 
 **derivedState** | **String** | A simple description of the overall state of a block. | 
+**derivedComplianceState** | **String** | A simple description of the compliance state of a block. Possible values are [Unchecked, Non-compliant, Compliant] | 
 
 
 
