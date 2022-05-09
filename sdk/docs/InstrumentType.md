@@ -65,5 +65,7 @@
 
 * `REFERENCEINSTRUMENT` (value: `"ReferenceInstrument"`)
 
+* `COMPLEXBOND` (value: `"ComplexBond"`)
+
 
 
