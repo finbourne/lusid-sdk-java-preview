@@ -8,10 +8,10 @@ In evaluating a left and right hand side holding or valuation set, two data reco
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**left** | [**IDataRecord**](IDataRecord.md) |  |  [optional]
-**right** | [**IDataRecord**](IDataRecord.md) |  |  [optional]
-**difference** | [**IDataRecord**](IDataRecord.md) |  |  [optional]
-**resultComparison** | [**IDataRecord**](IDataRecord.md) |  |  [optional]
+**left** | **Map&lt;String, Object&gt;** | Left hand side of the comparison |  [optional]
+**right** | **Map&lt;String, Object&gt;** | Right hand side of the comparison |  [optional]
+**difference** | **Map&lt;String, Object&gt;** | Difference between LHS and RHS of comparison |  [optional]
+**resultComparison** | **Map&lt;String, Object&gt;** | The logical or semantic description of the difference, e.g. \&quot;Matches\&quot; or \&quot;MatchesWithTolerance\&quot; or \&quot;Failed\&quot;. |  [optional]
 
 
 
