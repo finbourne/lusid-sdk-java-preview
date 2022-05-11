@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **resultValue** | **java.math.BigDecimal** | The calculation result that was used to confirm a pass/fail | 
 **ruleInformationMatch** | **String** | The value matched by the rule | 
 **ruleInformationKey** | **String** | The property key matched by the rule | 
-**ruleLowerLimit** | **Integer** | The lower limit of the rule | 
-**ruleUpperLimit** | **Integer** | The upper limit of the rule | 
+**ruleLowerLimit** | **java.math.BigDecimal** | The lower limit of the rule | 
+**ruleUpperLimit** | **java.math.BigDecimal** | The upper limit of the rule | 
 
 
 
