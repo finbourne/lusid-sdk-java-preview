@@ -288,12 +288,12 @@ info:
     | <a name="788">788</a>|Compliance run not found failure.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4335
+  version: 0.11.4339
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:31618
 security:
 - {}
 tags:
@@ -31610,6 +31610,123 @@ paths:
       - Portfolios
       x-fbn-apistatus: Stable
       x-accepts: application/json
+    patch:
+      description: "Create or update certain fields for a particular  portfolio.\r\
+        \nThe behaviour is defined by the JSON Patch specification.\r\n          \
+        \  \r\nCurrently supported are: CreationDate."
+      operationId: PatchPortfolio
+      parameters:
+      - description: The scope of the portfolio.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the portfolio.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The code of the portfolio. Together with the\r\n           \
+          \  scope this uniquely identifies the portfolio."
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: "The code of the portfolio. Together with the\r\n         \
+            \    scope this uniquely identifies the portfolio."
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+            - value: 2020-01-01
+              path: /creationDate
+              op: add
+            schema:
+              description: 'The json patch document. For more check: https://datatracker.ietf.org/doc/html/rfc6902.'
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          application/json:
+            example:
+            - value: 2020-01-01
+              path: /creationDate
+              op: add
+            schema:
+              description: 'The json patch document. For more check: https://datatracker.ietf.org/doc/html/rfc6902.'
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          text/json:
+            example:
+            - value: 2020-01-01
+              path: /creationDate
+              op: add
+            schema:
+              description: 'The json patch document. For more check: https://datatracker.ietf.org/doc/html/rfc6902.'
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+          application/*+json:
+            example:
+            - value: 2020-01-01
+              path: /creationDate
+              op: add
+            schema:
+              description: 'The json patch document. For more check: https://datatracker.ietf.org/doc/html/rfc6902.'
+              items:
+                $ref: '#/components/schemas/Operation'
+              type: array
+        description: 'The json patch document. For more check: https://datatracker.ietf.org/doc/html/rfc6902.'
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResultOfPortfolio'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResultOfPortfolio'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResultOfPortfolio'
+          description: The newly patched portfolio
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] PatchPortfolio: Patch portfolio.'
+      tags:
+      - Portfolios
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
     put:
       description: "Update the definition of a particular portfolio.\r\n         \
         \   \r\nNote that not all elements of a portfolio definition are\r\nmodifiable\
@@ -56556,6 +56673,63 @@ components:
       - activity
       - entity
       - scope
+      type: object
+    ActionResult:
+      additionalProperties: false
+      type: object
+    ActionResultOfPortfolio:
+      additionalProperties: false
+      example:
+        result: '{}'
+        value:
+          isDerived: true
+          displayName: displayName
+          created: 2000-01-23T04:56:07.000+00:00
+          instrumentScopes:
+          - instrumentScopes
+          - instrumentScopes
+          description: description
+          parentPortfolioId:
+            code: code
+            scope: scope
+          type: Transaction
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          baseCurrency: baseCurrency
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          href: https://openapi-generator.tech
+          id:
+            code: code
+            scope: scope
+          properties:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 6.027456183070403
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+      properties:
+        result:
+          additionalProperties: false
+          type: object
+        value:
+          $ref: '#/components/schemas/Portfolio'
       type: object
     AddBusinessDaysToDateRequest:
       additionalProperties: false
@@ -90562,7 +90736,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
