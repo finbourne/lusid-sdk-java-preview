@@ -35,9 +35,5 @@
 
 * `FORWARDFROMCURVEUNDISCOUNTED` (value: `"ForwardFromCurveUndiscounted"`)
 
-* `BLACKSCHOLESDIGITAL` (value: `"BlackScholesDigital"`)
-
-* `BJERKSUNDSTENSLAND1993` (value: `"BjerksundStensland1993"`)
-
 
 
