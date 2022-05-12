@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **limitPrice** | [**CurrencyAndAmount**](CurrencyAndAmount.md) |  |  [optional]
 **stopPrice** | [**CurrencyAndAmount**](CurrencyAndAmount.md) |  |  [optional]
 **counterparty** | **String** | The market entity this placement is placed with. | 
+**executionSystem** | **String** | Optionally specifies the execution system in use. |  [optional]
 **version** | [**Version**](Version.md) |  |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
 
