@@ -288,12 +288,12 @@ info:
     | <a name="788">788</a>|Compliance run not found failure.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4346
+  version: 0.11.4347
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:33694
+- url: http://local-unit-test-server.lusid.com:57515
 security:
 - {}
 tags:
@@ -21058,7 +21058,7 @@ paths:
                 displayName: Person1DisplayName
                 description: Person1Description
                 href: https://example.com
-                lusidPersonId: UniqueLusidPersonId1
+                lusidPersonId: LUID_00003D4V
                 identifiers:
                   person/HrSystem1/InternalId:
                     key: Person/HrSystem1/InternalId
@@ -21096,7 +21096,7 @@ paths:
                 displayName: Person1DisplayName
                 description: Person1Description
                 href: https://example.com
-                lusidPersonId: UniqueLusidPersonId1
+                lusidPersonId: LUID_00003D4V
                 identifiers:
                   person/HrSystem1/InternalId:
                     key: Person/HrSystem1/InternalId
@@ -21134,7 +21134,7 @@ paths:
                 displayName: Person1DisplayName
                 description: Person1Description
                 href: https://example.com
-                lusidPersonId: UniqueLusidPersonId1
+                lusidPersonId: LUID_00003D4V
                 identifiers:
                   person/HrSystem1/InternalId:
                     key: Person/HrSystem1/InternalId
@@ -21342,7 +21342,7 @@ paths:
                 - displayName: Person1DisplayName
                   description: Person1Description
                   href: https://example.com
-                  lusidPersonId: UniqueLusidPersonId1
+                  lusidPersonId: LUID_00003D4V
                   identifiers:
                     person/HrSystem1/InternalId:
                       key: Person/HrSystem1/InternalId
@@ -21376,7 +21376,7 @@ paths:
                 - displayName: Person2DisplayName
                   description: Person2Description
                   href: https://example.com
-                  lusidPersonId: UniqueLusidPersonId2
+                  lusidPersonId: LUID_00003D55
                   identifiers:
                     person/HrSystem1/InternalId:
                       key: Person/HrSystem1/InternalId
@@ -21417,7 +21417,7 @@ paths:
                 - displayName: Person1DisplayName
                   description: Person1Description
                   href: https://example.com
-                  lusidPersonId: UniqueLusidPersonId1
+                  lusidPersonId: LUID_00003D4V
                   identifiers:
                     person/HrSystem1/InternalId:
                       key: Person/HrSystem1/InternalId
@@ -21451,7 +21451,7 @@ paths:
                 - displayName: Person2DisplayName
                   description: Person2Description
                   href: https://example.com
-                  lusidPersonId: UniqueLusidPersonId2
+                  lusidPersonId: LUID_00003D55
                   identifiers:
                     person/HrSystem1/InternalId:
                       key: Person/HrSystem1/InternalId
@@ -21492,7 +21492,7 @@ paths:
                 - displayName: Person1DisplayName
                   description: Person1Description
                   href: https://example.com
-                  lusidPersonId: UniqueLusidPersonId1
+                  lusidPersonId: LUID_00003D4V
                   identifiers:
                     person/HrSystem1/InternalId:
                       key: Person/HrSystem1/InternalId
@@ -21526,7 +21526,7 @@ paths:
                 - displayName: Person2DisplayName
                   description: Person2Description
                   href: https://example.com
-                  lusidPersonId: UniqueLusidPersonId2
+                  lusidPersonId: LUID_00003D55
                   identifiers:
                     person/HrSystem1/InternalId:
                       key: Person/HrSystem1/InternalId
@@ -21767,7 +21767,7 @@ paths:
                 displayName: Person1DisplayName
                 description: Person1Description
                 href: https://example.com
-                lusidPersonId: UniqueLusidPersonId1
+                lusidPersonId: LUID_00003D4V
                 identifiers:
                   person/HrSystem1/InternalId:
                     key: Person/HrSystem1/InternalId
@@ -21805,7 +21805,7 @@ paths:
                 displayName: Person1DisplayName
                 description: Person1Description
                 href: https://example.com
-                lusidPersonId: UniqueLusidPersonId1
+                lusidPersonId: LUID_00003D4V
                 identifiers:
                   person/HrSystem1/InternalId:
                     key: Person/HrSystem1/InternalId
@@ -21843,7 +21843,7 @@ paths:
                 displayName: Person1DisplayName
                 description: Person1Description
                 href: https://example.com
-                lusidPersonId: UniqueLusidPersonId1
+                lusidPersonId: LUID_00003D4V
                 identifiers:
                   person/HrSystem1/InternalId:
                     key: Person/HrSystem1/InternalId
@@ -22115,7 +22115,7 @@ paths:
                 displayName: Person1DisplayName
                 description: Person1Description
                 href: https://example.com
-                lusidPersonId: UniqueLusidPersonId1
+                lusidPersonId: LUID_00003D4V
                 identifiers:
                   person/HrSystem1/InternalId:
                     key: Person/HrSystem1/InternalId
@@ -22145,7 +22145,7 @@ paths:
                 displayName: Person1DisplayName
                 description: Person1Description
                 href: https://example.com
-                lusidPersonId: UniqueLusidPersonId1
+                lusidPersonId: LUID_00003D4V
                 identifiers:
                   person/HrSystem1/InternalId:
                     key: Person/HrSystem1/InternalId
@@ -22175,7 +22175,7 @@ paths:
                 displayName: Person1DisplayName
                 description: Person1Description
                 href: https://example.com
-                lusidPersonId: UniqueLusidPersonId1
+                lusidPersonId: LUID_00003D4V
                 identifiers:
                   person/HrSystem1/InternalId:
                     key: Person/HrSystem1/InternalId
@@ -23126,7 +23126,7 @@ paths:
                 displayName: Person1Description
                 description: Person1DisplayName
                 href: https://example.com
-                lusidPersonId: UniqueLusidPersonId1
+                lusidPersonId: LUID_00003D4V
                 identifiers:
                   person/HrSystem1/InternalId:
                     key: Person/HrSystem1/InternalId
@@ -23156,7 +23156,7 @@ paths:
                 displayName: Person1Description
                 description: Person1DisplayName
                 href: https://example.com
-                lusidPersonId: UniqueLusidPersonId1
+                lusidPersonId: LUID_00003D4V
                 identifiers:
                   person/HrSystem1/InternalId:
                     key: Person/HrSystem1/InternalId
@@ -23186,7 +23186,7 @@ paths:
                 displayName: Person1Description
                 description: Person1DisplayName
                 href: https://example.com
-                lusidPersonId: UniqueLusidPersonId1
+                lusidPersonId: LUID_00003D4V
                 identifiers:
                   person/HrSystem1/InternalId:
                     key: Person/HrSystem1/InternalId
@@ -57521,7 +57521,6 @@ components:
         settlementDate:
           description: The settlement date for this allocation.
           format: date-time
-          nullable: true
           type: string
         date:
           description: The date of this allocation.
@@ -57536,7 +57535,6 @@ components:
         settlementCurrencyFxRate:
           description: The settlement currency to allocation currency FX rate.
           format: double
-          nullable: true
           type: number
         counterparty:
           description: The counterparty for this allocation.
@@ -72094,7 +72092,7 @@ components:
           nullable: true
           type: string
         lusidPersonId:
-          description: The unique LUSID Person Identifier (LUPID) of the Person.
+          description: The unique LUSID Person Identifier of the Person.
           nullable: true
           type: string
         identifiers:
