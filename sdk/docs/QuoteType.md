@@ -21,5 +21,11 @@
 
 * `UPFRONT` (value: `"Upfront"`)
 
+* `INDEX` (value: `"Index"`)
+
+* `RATIO` (value: `"Ratio"`)
+
+* `DELTA` (value: `"Delta"`)
+
 
 

@@ -288,12 +288,12 @@ info:
     | <a name="788">788</a>|Compliance run not found failure.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4345
+  version: 0.11.4346
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:54896
+- url: http://local-unit-test-server.lusid.com:33694
 security:
 - {}
 tags:
@@ -67247,7 +67247,7 @@ components:
           type: string
         quoteType:
           description: 'The available values are: Price, Spread, Rate, LogNormalVol,
-            NormalVol, ParSpread, IsdaSpread, Upfront'
+            NormalVol, ParSpread, IsdaSpread, Upfront, Index, Ratio, Delta'
           enum:
           - Price
           - Spread
@@ -67257,6 +67257,9 @@ components:
           - ParSpread
           - IsdaSpread
           - Upfront
+          - Index
+          - Ratio
+          - Delta
           type: string
         field:
           description: "The conceptual qualification for the field, such as bid, mid,\
@@ -67351,7 +67354,7 @@ components:
           type: string
         quoteType:
           description: 'The available values are: Price, Spread, Rate, LogNormalVol,
-            NormalVol, ParSpread, IsdaSpread, Upfront'
+            NormalVol, ParSpread, IsdaSpread, Upfront, Index, Ratio, Delta'
           enum:
           - Price
           - Spread
@@ -67361,6 +67364,9 @@ components:
           - ParSpread
           - IsdaSpread
           - Upfront
+          - Index
+          - Ratio
+          - Delta
           type: string
         field:
           description: "The conceptual qualification for the field, such as bid, mid,\
@@ -67514,7 +67520,7 @@ components:
       properties:
         quoteType:
           description: 'The available values are: Price, Spread, Rate, LogNormalVol,
-            NormalVol, ParSpread, IsdaSpread, Upfront'
+            NormalVol, ParSpread, IsdaSpread, Upfront, Index, Ratio, Delta'
           enum:
           - Price
           - Spread
@@ -67524,6 +67530,9 @@ components:
           - ParSpread
           - IsdaSpread
           - Upfront
+          - Index
+          - Ratio
+          - Delta
           type: string
         value:
           description: Numeric value of the quote
@@ -74517,7 +74526,8 @@ components:
         quoteType:
           description: 'The type of the quote. This allows for quotes other than prices
             e.g. rates or spreads to be used. The available values are: Price, Spread,
-            Rate, LogNormalVol, NormalVol, ParSpread, IsdaSpread, Upfront'
+            Rate, LogNormalVol, NormalVol, ParSpread, IsdaSpread, Upfront, Index,
+            Ratio, Delta'
           enum:
           - Price
           - Spread
@@ -74527,6 +74537,9 @@ components:
           - ParSpread
           - IsdaSpread
           - Upfront
+          - Index
+          - Ratio
+          - Delta
           nullable: true
           type: string
         field:
@@ -74551,6 +74564,9 @@ components:
       - ParSpread
       - IsdaSpread
       - Upfront
+      - Index
+      - Ratio
+      - Delta
       type: string
     RealisedGainLoss:
       additionalProperties: false

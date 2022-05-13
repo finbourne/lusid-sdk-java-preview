@@ -8,7 +8,7 @@ The market quote for an observable which will be used to calibrate the market da
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**quoteType** | [**QuoteTypeEnum**](#QuoteTypeEnum) | The available values are: Price, Spread, Rate, LogNormalVol, NormalVol, ParSpread, IsdaSpread, Upfront | 
+**quoteType** | [**QuoteTypeEnum**](#QuoteTypeEnum) | The available values are: Price, Spread, Rate, LogNormalVol, NormalVol, ParSpread, IsdaSpread, Upfront, Index, Ratio, Delta | 
 **value** | **java.math.BigDecimal** | Numeric value of the quote | 
 
 
@@ -25,6 +25,9 @@ NORMALVOL | &quot;NormalVol&quot;
 PARSPREAD | &quot;ParSpread&quot;
 ISDASPREAD | &quot;IsdaSpread&quot;
 UPFRONT | &quot;Upfront&quot;
+INDEX | &quot;Index&quot;
+RATIO | &quot;Ratio&quot;
+DELTA | &quot;Delta&quot;
 
 
 
