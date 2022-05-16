@@ -15,19 +15,23 @@ public class LusidApiFactoryBuilder {
             throw new ApiConfigurationException("Environment variables to configure LUSID API client have not been set. See " +
                     " see https://support.lusid.com/getting-started-with-apis-sdks for details.");
         }
-        return createLusidApiFactory("");
+        return createApiFactory("", 10, 10);
     }
 
     /**
      * Build a {@link LusidApiFactory} using the specified configuration file. For details on the format of the configuration file see https://support.lusid.com/getting-started-with-apis-sdks.
      */
     public static LusidApiFactory build(String configurationFile) throws ApiConfigurationException, LusidTokenException {
-        return createLusidApiFactory(configurationFile);
+        return build(configurationFile, 10, 10);
     }
 
-    private static LusidApiFactory createLusidApiFactory(String configurationFile) throws ApiConfigurationException, LusidTokenException {
+    public static LusidApiFactory build(String configurationFile, int readTimeout, int writeTimeout) throws ApiConfigurationException, LusidTokenException {
+        return createApiFactory(configurationFile, readTimeout, writeTimeout);
+    }
+
+    private static LusidApiFactory createApiFactory(String configurationFile, int readTimeout, int writeTimeout) throws ApiConfigurationException, LusidTokenException {
         ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(configurationFile);
-        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
+        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration, readTimeout, writeTimeout);
         return new LusidApiFactory(apiClient);
     }
 

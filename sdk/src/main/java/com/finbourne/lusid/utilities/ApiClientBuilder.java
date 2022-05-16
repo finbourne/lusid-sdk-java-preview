@@ -25,8 +25,27 @@ public class ApiClientBuilder {
      * @throws LusidTokenException on failing to authenticate and retrieve an initial {@link LusidToken}
      */
     public ApiClient build(ApiConfiguration apiConfiguration) throws LusidTokenException {
+
+        return this.build(apiConfiguration, 10, 10);
+    }
+
+    /**
+     * Builds an ApiClient implementation configured against a secrets file. Typically used
+     * for communicating with luminesce via the APIs
+     *
+     * ApiClient implementation enables use of REFRESH tokens (see https://support.finbourne.com/using-a-refresh-token)
+     * and automatically handles token refreshing on expiry.
+     *
+     * @param apiConfiguration configuration to connect to {{application_camel}} API
+     * @param readTimeout read timeout in seconds
+     * @param writeTimeout write timeout in seconds
+     * @return
+     *
+     * @throws LusidTokenException on failing to authenticate and retrieve an initial {@link LusidTokenException}
+     */
+    public ApiClient build(ApiConfiguration apiConfiguration, int readTimeout, int writeTimeout) throws LusidTokenException {
         // http client to use for api and auth calls
-        OkHttpClient httpClient = createHttpClient(apiConfiguration);
+        OkHttpClient httpClient = createHttpClient(apiConfiguration, readTimeout, writeTimeout);
 
         // token provider to keep client authenticated with automated token refreshing
         RefreshingTokenProvider refreshingTokenProvider = new RefreshingTokenProvider(new HttpLusidTokenProvider(apiConfiguration, httpClient));
@@ -40,9 +59,7 @@ public class ApiClientBuilder {
     ApiClient createDefaultApiClient(ApiConfiguration apiConfiguration, OkHttpClient httpClient, LusidToken lusidToken) throws LusidTokenException {
         ApiClient apiClient = createApiClient();
 
-        if (apiConfiguration.getProxyAddress() != null) {
-            apiClient.setHttpClient(httpClient);
-        }
+        apiClient.setHttpClient(httpClient);
 
         if (lusidToken.getAccessToken() == null) {
             throw new LusidTokenException("Cannot construct an API client with a null authorisation header. Ensure " +
@@ -59,8 +76,8 @@ public class ApiClientBuilder {
         return  apiClient;
     }
 
-    private OkHttpClient createHttpClient(ApiConfiguration apiConfiguration){
-        return new HttpClientFactory().build(apiConfiguration);
+    private OkHttpClient createHttpClient(ApiConfiguration apiConfiguration, int readTimeout, int writeTimeout){
+        return new HttpClientFactory().build(apiConfiguration, readTimeout, writeTimeout);
     }
 
     // allows us to mock out api client for testing purposes
