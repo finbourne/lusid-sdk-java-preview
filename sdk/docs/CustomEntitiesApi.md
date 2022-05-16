@@ -1,6 +1,6 @@
 # CustomEntitiesApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:45636*
+All URIs are relative to *http://local-unit-test-server.lusid.com:62885*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,7 +32,7 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45636");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62885");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -107,7 +107,7 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45636");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62885");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -186,7 +186,7 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45636");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62885");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -269,7 +269,7 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45636");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62885");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -348,7 +348,7 @@ import com.finbourne.lusid.api.CustomEntitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:45636");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:62885");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
