@@ -288,12 +288,12 @@ info:
     | <a name="788">788</a>|Compliance run not found failure.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4356
+  version: 0.11.4353
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:58613
+- url: https://fbn-prd.lusid.com/api
 security:
 - {}
 tags:
@@ -41070,10 +41070,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] ListSequences: List Sequences'
+      summary: '[EXPERIMENTAL] ListSequences: List Sequences'
       tags:
       - Sequences
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/sequences/{scope}:
     post:
@@ -41207,10 +41207,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] CreateSequence: Create a new sequence'
+      summary: '[EXPERIMENTAL] CreateSequence: Create a new sequence'
       tags:
       - Sequences
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/sequences/{scope}/{code}:
@@ -41312,10 +41312,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] GetSequence: Get a specified sequence'
+      summary: '[EXPERIMENTAL] GetSequence: Get a specified sequence'
       tags:
       - Sequences
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/sequences/{scope}/{code}/next:
     get:
@@ -41415,10 +41415,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] Next: Get next values from sequence'
+      summary: '[EXPERIMENTAL] Next: Get next values from sequence'
       tags:
       - Sequences
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/systemconfiguration/cutlabels:
     get:
@@ -62077,12 +62077,13 @@ components:
           nullable: true
           type: integer
         cycle:
-          description: Set to true to start the sequence over again when it reaches
-            the end. Defaults to false if not provided.
+          description: Indicates if the sequence would start from minimun value once
+            it reaches maximum value. If set to false, a failure would return if the
+            sequence reaches maximum value. Default to false.
           type: boolean
         pattern:
           description: The pattern to be used to generate next values in the sequence.
-            Defaults to null if not provided.
+            Default to null. Please provide a null value until further notice.
           maxLength: 44
           minLength: 1
           nullable: true
@@ -91774,7 +91775,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:

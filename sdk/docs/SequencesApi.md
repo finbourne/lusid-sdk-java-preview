@@ -1,20 +1,20 @@
 # SequencesApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:58613*
+All URIs are relative to *https://fbn-prd.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSequence**](SequencesApi.md#createSequence) | **POST** /api/sequences/{scope} | [EARLY ACCESS] CreateSequence: Create a new sequence
-[**getSequence**](SequencesApi.md#getSequence) | **GET** /api/sequences/{scope}/{code} | [EARLY ACCESS] GetSequence: Get a specified sequence
-[**listSequences**](SequencesApi.md#listSequences) | **GET** /api/sequences | [EARLY ACCESS] ListSequences: List Sequences
-[**next**](SequencesApi.md#next) | **GET** /api/sequences/{scope}/{code}/next | [EARLY ACCESS] Next: Get next values from sequence
+[**createSequence**](SequencesApi.md#createSequence) | **POST** /api/sequences/{scope} | [EXPERIMENTAL] CreateSequence: Create a new sequence
+[**getSequence**](SequencesApi.md#getSequence) | **GET** /api/sequences/{scope}/{code} | [EXPERIMENTAL] GetSequence: Get a specified sequence
+[**listSequences**](SequencesApi.md#listSequences) | **GET** /api/sequences | [EXPERIMENTAL] ListSequences: List Sequences
+[**next**](SequencesApi.md#next) | **GET** /api/sequences/{scope}/{code}/next | [EXPERIMENTAL] Next: Get next values from sequence
 
 
 <a name="createSequence"></a>
 # **createSequence**
 > SequenceDefinition createSequence(scope, createSequenceRequest)
 
-[EARLY ACCESS] CreateSequence: Create a new sequence
+[EXPERIMENTAL] CreateSequence: Create a new sequence
 
 Create a new sequence
 
@@ -31,7 +31,7 @@ import com.finbourne.lusid.api.SequencesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58613");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getSequence**
 > SequenceDefinition getSequence(scope, code)
 
-[EARLY ACCESS] GetSequence: Get a specified sequence
+[EXPERIMENTAL] GetSequence: Get a specified sequence
 
 Return the details of a specified sequence
 
@@ -102,7 +102,7 @@ import com.finbourne.lusid.api.SequencesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58613");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 # **listSequences**
 > PagedResourceListOfSequenceDefinition listSequences(page, limit, filter)
 
-[EARLY ACCESS] ListSequences: List Sequences
+[EXPERIMENTAL] ListSequences: List Sequences
 
 List sequences which satisfies filtering criteria.
 
@@ -173,7 +173,7 @@ import com.finbourne.lusid.api.SequencesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58613");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 # **next**
 > NextValueInSequenceResponse next(scope, code, batch)
 
-[EARLY ACCESS] Next: Get next values from sequence
+[EXPERIMENTAL] Next: Get next values from sequence
 
 Get the next set of values from a specified sequence
 
@@ -246,7 +246,7 @@ import com.finbourne.lusid.api.SequencesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:58613");
+    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
