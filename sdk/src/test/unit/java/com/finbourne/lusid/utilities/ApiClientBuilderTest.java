@@ -47,13 +47,6 @@ public class ApiClientBuilderTest {
     }
 
     @Test
-    public void createApiClient_OnProxyAddress_ShouldNotSetAndOverrideDefaultHttpClient() throws LusidTokenException {
-        doReturn(null).when(apiConfiguration).getProxyAddress();
-        apiClientBuilder.createDefaultApiClient(apiConfiguration, httpClient, lusidToken);
-        verify(apiClient, times(0)).setHttpClient(httpClient);
-    }
-
-    @Test
     public void createApiClient_OnNoApplicationName_ShouldNotSetApplicationHeader() throws LusidTokenException {
         doReturn(null).when(apiConfiguration).getApplicationName();
         apiClientBuilder.createDefaultApiClient(apiConfiguration, httpClient, lusidToken);
