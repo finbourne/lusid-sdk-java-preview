@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **minValue** | **Long** | The minimum value of the sequence |  [optional]
 **maxValue** | **Long** | The maximum value of the sequence |  [optional]
 **start** | **Long** | The start value of the sequence |  [optional]
-**cycle** | **Boolean** | Indicates if the sequence would start from minimun value once it reaches maximum value. If set to false, a failure would return if the sequence reaches maximum value. Default to false. |  [optional]
-**pattern** | **String** | The pattern to be used to generate next values in the sequence. Default to null. Please provide a null value until further notice. |  [optional]
+**cycle** | **Boolean** | Set to true to start the sequence over again when it reaches the end. Defaults to false if not provided. |  [optional]
+**pattern** | **String** | The pattern to be used to generate next values in the sequence. Defaults to null if not provided. |  [optional]
 
 
 

@@ -1,6 +1,6 @@
 # ComplianceApi
 
-All URIs are relative to *https://fbn-prd.lusid.com/api*
+All URIs are relative to *http://local-unit-test-server.lusid.com:57999*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**listComplianceRules**](ComplianceApi.md#listComplianceRules) | **GET** /api/compliance/rules | [EXPERIMENTAL] ListComplianceRules: List compliance rules, with optional filtering.
 [**listComplianceRuns**](ComplianceApi.md#listComplianceRuns) | **GET** /api/compliance | [EXPERIMENTAL] ListComplianceRuns: List historical compliance runs. -- DEPRECATING - POST TRADE ONLY
 [**runComplianceCheck**](ComplianceApi.md#runComplianceCheck) | **POST** /api/compliance/run | [EXPERIMENTAL] RunComplianceCheck: Kick off the compliance check process -- DEPRECATING - POST TRADE ONLY
+[**runPreTradeComplianceCheck**](ComplianceApi.md#runPreTradeComplianceCheck) | **POST** /api/compliance/pretraderun | [EXPERIMENTAL] RunPreTradeComplianceCheck: Kick off the pre-trade compliance check process
 [**upsertComplianceRules**](ComplianceApi.md#upsertComplianceRules) | **POST** /api/compliance/rules | [EXPERIMENTAL] UpsertComplianceRules: Upsert compliance rules.
 
 
@@ -35,7 +36,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:57999");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -106,7 +107,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:57999");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -181,7 +182,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:57999");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -256,7 +257,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:57999");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -329,7 +330,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:57999");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -406,7 +407,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:57999");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -479,7 +480,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:57999");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -527,6 +528,79 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="runPreTradeComplianceCheck"></a>
+# **runPreTradeComplianceCheck**
+> ComplianceRun runPreTradeComplianceCheck(recipeScope, recipeCode, byTaxlots)
+
+[EXPERIMENTAL] RunPreTradeComplianceCheck: Kick off the pre-trade compliance check process
+
+Use this endpoint to run a pre-trade compliance check, using all existing pre-trade applicable compliance rules
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.ComplianceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:57999");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    ComplianceApi apiInstance = new ComplianceApi(defaultClient);
+    String recipeScope = "recipeScope_example"; // String | Scope of recipe to be used - required
+    String recipeCode = "recipeCode_example"; // String | Code of recipe to be used - if not provided, default recipe code will be used
+    Boolean byTaxlots = true; // Boolean | calculate by taxlots or not - Default: False
+    try {
+      ComplianceRun result = apiInstance.runPreTradeComplianceCheck(recipeScope, recipeCode, byTaxlots);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ComplianceApi#runPreTradeComplianceCheck");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **recipeScope** | **String**| Scope of recipe to be used - required |
+ **recipeCode** | **String**| Code of recipe to be used - if not provided, default recipe code will be used | [optional]
+ **byTaxlots** | **Boolean**| calculate by taxlots or not - Default: False | [optional]
+
+### Return type
+
+[**ComplianceRun**](ComplianceRun.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The identifying information of a compliance run |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="upsertComplianceRules"></a>
 # **upsertComplianceRules**
 > ComplianceRuleUpsertResponse upsertComplianceRules(requestBody, effectiveAt)
@@ -548,7 +622,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://fbn-prd.lusid.com/api");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:57999");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
