@@ -288,12 +288,12 @@ info:
     | <a name="788">788</a>|Compliance run not found failure.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4359
+  version: 0.11.4360
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:52461
 security:
 - {}
 tags:
@@ -55095,12 +55095,13 @@ paths:
       x-fbn-apistatus: Experimental
       x-accepts: application/json
     post:
-      description: "To upsert a new rule, the code field must be left empty, a code\
-        \ will then be assigned and returned as part\r\nof the response. To update\
-        \ an existing rule, include the fee code. It is possible to both create and\
-        \ update\r\nfee rules in the same request.\r\n            \r\nThe upsert is\
-        \ transactional - either all create/update operations will succeed or none\
-        \ of them will."
+      description: "<br>\r\n            To upsert a new rule, the code field must\
+        \ be left empty, a code will then be assigned and returned as part\r\n   \
+        \         of the response. To update an existing rule, include the fee code.\
+        \ It is possible to both create and update\r\n            fee rules in the\
+        \ same request.\r\n            \r\n<br>\r\n            The upsert is transactional\
+        \ - either all create/update operations will succeed or none of them will.\r\
+        \n            "
       operationId: UpsertTransactionFeeRules
       parameters:
       - description: "The effective datetime or cut label at which the rule will take\
@@ -55184,9 +55185,9 @@ paths:
               additionalProperties:
                 $ref: '#/components/schemas/FeeRuleUpsertRequest'
               description: "A dictionary of upsert request identifiers to rule upsert\
-                \ requests. The request\r\n             identifiers are valid for\
-                \ the request only and can be used to link the upserted fee rule to\
-                \ the code of a\r\n             created fee rule."
+                \ requests. The request\r\n            identifiers are valid for the\
+                \ request only and can be used to link the upserted fee rule to the\
+                \ code of a\r\n            created fee rule."
               type: object
           application/json:
             example:
@@ -55237,9 +55238,9 @@ paths:
               additionalProperties:
                 $ref: '#/components/schemas/FeeRuleUpsertRequest'
               description: "A dictionary of upsert request identifiers to rule upsert\
-                \ requests. The request\r\n             identifiers are valid for\
-                \ the request only and can be used to link the upserted fee rule to\
-                \ the code of a\r\n             created fee rule."
+                \ requests. The request\r\n            identifiers are valid for the\
+                \ request only and can be used to link the upserted fee rule to the\
+                \ code of a\r\n            created fee rule."
               type: object
           text/json:
             example:
@@ -55290,9 +55291,9 @@ paths:
               additionalProperties:
                 $ref: '#/components/schemas/FeeRuleUpsertRequest'
               description: "A dictionary of upsert request identifiers to rule upsert\
-                \ requests. The request\r\n             identifiers are valid for\
-                \ the request only and can be used to link the upserted fee rule to\
-                \ the code of a\r\n             created fee rule."
+                \ requests. The request\r\n            identifiers are valid for the\
+                \ request only and can be used to link the upserted fee rule to the\
+                \ code of a\r\n            created fee rule."
               type: object
           application/*+json:
             example:
@@ -55343,14 +55344,14 @@ paths:
               additionalProperties:
                 $ref: '#/components/schemas/FeeRuleUpsertRequest'
               description: "A dictionary of upsert request identifiers to rule upsert\
-                \ requests. The request\r\n             identifiers are valid for\
-                \ the request only and can be used to link the upserted fee rule to\
-                \ the code of a\r\n             created fee rule."
+                \ requests. The request\r\n            identifiers are valid for the\
+                \ request only and can be used to link the upserted fee rule to the\
+                \ code of a\r\n            created fee rule."
               type: object
         description: "A dictionary of upsert request identifiers to rule upsert requests.\
-          \ The request\r\n             identifiers are valid for the request only\
+          \ The request\r\n            identifiers are valid for the request only\
           \ and can be used to link the upserted fee rule to the code of a\r\n   \
-          \          created fee rule."
+          \         created fee rule."
         required: true
       responses:
         "200":
@@ -55549,6 +55550,64 @@ paths:
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/transactions/fees/rules/{code}:
+    delete:
+      description: "<br>\r\n            Deletes the rule for all effective time.\r\
+        \n            \r\n<br>\r\n            The rule will remain viewable at previous\
+        \ as at times, but it will no longer be considered by\r\n            GetApplicableFees.\r\
+        \n            \r\n<br>\r\n            This cannot be undone.\r\n         \
+        \   "
+      operationId: DeleteFeeRule
+      parameters:
+      - description: The fee rule code.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The fee rule code.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+          description: Success
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] DeleteFeeRule: Deletes a fee rule.'
+      tags:
+      - Transaction Fees
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
     get:
       description: Retrieves the fee rule definition at the given effective and as
         at times.
@@ -91866,7 +91925,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
