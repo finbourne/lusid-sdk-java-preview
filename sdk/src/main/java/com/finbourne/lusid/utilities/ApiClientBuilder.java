@@ -31,7 +31,7 @@ public class ApiClientBuilder {
 
     /**
      * Builds an ApiClient implementation configured against a secrets file. Typically used
-     * for communicating with luminesce via the APIs
+     * for communicating with LUSID via the APIs
      *
      * ApiClient implementation enables use of REFRESH tokens (see https://support.finbourne.com/using-a-refresh-token)
      * and automatically handles token refreshing on expiry.
