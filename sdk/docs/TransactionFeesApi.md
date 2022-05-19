@@ -1,21 +1,21 @@
 # TransactionFeesApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:64501*
+All URIs are relative to *http://local-unit-test-server.lusid.com:50655*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteFeeRule**](TransactionFeesApi.md#deleteFeeRule) | **DELETE** /api/transactions/fees/rules/{code} | [EXPERIMENTAL] DeleteFeeRule: Deletes a fee rule.
+[**deleteTransactionFeeRule**](TransactionFeesApi.md#deleteTransactionFeeRule) | **DELETE** /api/transactions/fees/rules/{code} | [EXPERIMENTAL] DeleteTransactionFeeRule: Deletes a fee rule.
 [**getApplicableTransactionFees**](TransactionFeesApi.md#getApplicableTransactionFees) | **POST** /api/transactions/fees/$GetApplicableFees | [EXPERIMENTAL] GetApplicableTransactionFees: Get the Fees and Commissions that may be applicable to a transaction.
 [**getTransactionFeeRule**](TransactionFeesApi.md#getTransactionFeeRule) | **GET** /api/transactions/fees/rules/{code} | [EXPERIMENTAL] GetTransactionFeeRule: Retrieve the definition of single fee rule.
 [**listTransactionFeeRules**](TransactionFeesApi.md#listTransactionFeeRules) | **GET** /api/transactions/fees/rules | [EXPERIMENTAL] ListTransactionFeeRules: List fee rules, with optional filtering.
 [**upsertTransactionFeeRules**](TransactionFeesApi.md#upsertTransactionFeeRules) | **POST** /api/transactions/fees/rules | [EXPERIMENTAL] UpsertTransactionFeeRules: Upsert fee rules.
 
 
-<a name="deleteFeeRule"></a>
-# **deleteFeeRule**
-> DeletedEntityResponse deleteFeeRule(code)
+<a name="deleteTransactionFeeRule"></a>
+# **deleteTransactionFeeRule**
+> DeletedEntityResponse deleteTransactionFeeRule(code)
 
-[EXPERIMENTAL] DeleteFeeRule: Deletes a fee rule.
+[EXPERIMENTAL] DeleteTransactionFeeRule: Deletes a fee rule.
 
 &lt;br&gt;              Deletes the rule for all effective time.                &lt;br&gt;              The rule will remain viewable at previous as at times, but it will no longer be considered by              GetApplicableFees.                &lt;br&gt;              This cannot be undone.              
 
@@ -32,7 +32,7 @@ import com.finbourne.lusid.api.TransactionFeesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64501");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:50655");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -41,10 +41,10 @@ public class Example {
     TransactionFeesApi apiInstance = new TransactionFeesApi(defaultClient);
     String code = "code_example"; // String | The fee rule code.
     try {
-      DeletedEntityResponse result = apiInstance.deleteFeeRule(code);
+      DeletedEntityResponse result = apiInstance.deleteTransactionFeeRule(code);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TransactionFeesApi#deleteFeeRule");
+      System.err.println("Exception when calling TransactionFeesApi#deleteTransactionFeeRule");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -101,7 +101,7 @@ import com.finbourne.lusid.api.TransactionFeesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64501");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:50655");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -182,7 +182,7 @@ import com.finbourne.lusid.api.TransactionFeesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64501");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:50655");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -255,7 +255,7 @@ import com.finbourne.lusid.api.TransactionFeesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64501");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:50655");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -332,7 +332,7 @@ import com.finbourne.lusid.api.TransactionFeesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:64501");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:50655");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
