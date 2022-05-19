@@ -286,15 +286,14 @@ info:
     | <a name="782">782</a>|The Property definition dataType is not matching the derivation formula dataType|  |
     | <a name="783">783</a>|The Property definition domain is not supported for derived properties|  |
     | <a name="788">788</a>|Compliance run not found failure.|  |
-    | <a name="790">790</a>|Custom Entity has missing or invalid identifiers|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4379
+  version: 0.11.4370
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:35606
+- url: https://fbn-prd.lusid.com/api
 security:
 - {}
 tags:
@@ -53838,21 +53837,6 @@ paths:
           type: integer
         style: form
         x-nullable: true
-      - description: The scope containing the quotes with the FX rates used for currency
-          conversion.
-        explode: true
-        in: query
-        name: quotesScope
-        required: false
-        schema:
-          description: The scope containing the quotes with the FX rates used for
-            currency conversion.
-          maxLength: 64
-          minLength: 1
-          nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
-          type: string
-        style: form
       responses:
         "200":
           content:
@@ -55572,7 +55556,7 @@ paths:
         \ as at times, but it will no longer be considered by\r\n            GetApplicableFees.\r\
         \n            \r\n<br>\r\n            This cannot be undone.\r\n         \
         \   "
-      operationId: DeleteTransactionFeeRule
+      operationId: DeleteFeeRule
       parameters:
       - description: The fee rule code.
         explode: false
@@ -55619,7 +55603,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteTransactionFeeRule: Deletes a fee rule.'
+      summary: '[EXPERIMENTAL] DeleteFeeRule: Deletes a fee rule.'
       tags:
       - Transaction Fees
       x-fbn-apistatus: Experimental
@@ -58415,7 +58399,6 @@ components:
         settlementDate:
           description: The settlement date for this allocation.
           format: date-time
-          nullable: true
           type: string
         date:
           description: The date of this allocation.
@@ -58430,7 +58413,6 @@ components:
         settlementCurrencyFxRate:
           description: The settlement currency to allocation currency FX rate.
           format: double
-          nullable: true
           type: number
         counterparty:
           description: The counterparty for this allocation.
@@ -91944,7 +91926,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:
