@@ -289,12 +289,12 @@ info:
     | <a name="790">790</a>|Custom Entity has missing or invalid identifiers|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4382
+  version: 0.11.4383
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:35495
 security:
 - {}
 tags:
@@ -68927,6 +68927,7 @@ components:
         placed:
           quantity: 0.8008281904610115
         derivedState: derivedState
+        calculatedAveragePrice: 6.027456183070403
         allocationIds:
         - code: code
           scope: scope
@@ -69020,6 +69021,11 @@ components:
         derivedState:
           description: A simple description of the overall state of a placement.
           type: string
+        calculatedAveragePrice:
+          description: Average price realised on executions for a given placement
+          format: double
+          nullable: true
+          type: number
       required:
       - allocated
       - allocationIds
@@ -71419,6 +71425,7 @@ components:
           placed:
             quantity: 0.8008281904610115
           derivedState: derivedState
+          calculatedAveragePrice: 6.027456183070403
           allocationIds:
           - code: code
             scope: scope
@@ -71494,6 +71501,7 @@ components:
           placed:
             quantity: 0.8008281904610115
           derivedState: derivedState
+          calculatedAveragePrice: 6.027456183070403
           allocationIds:
           - code: code
             scope: scope
@@ -91944,7 +91952,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

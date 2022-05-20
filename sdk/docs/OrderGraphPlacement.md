@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **executed** | [**OrderGraphSynopsis**](OrderGraphSynopsis.md) |  | 
 **allocated** | [**OrderGraphSynopsis**](OrderGraphSynopsis.md) |  | 
 **derivedState** | **String** | A simple description of the overall state of a placement. | 
+**calculatedAveragePrice** | **java.math.BigDecimal** | Average price realised on executions for a given placement |  [optional]
 
 
 
