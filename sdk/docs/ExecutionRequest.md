@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **settlementCurrency** | **String** | The execution&#39;s settlement currency. | 
 **settlementCurrencyFxRate** | **java.math.BigDecimal** | The exectuion&#39;s settlement currency rate. | 
 **counterparty** | **String** | The market entity this placement is placed with. | 
+**averagePrice** | **java.math.BigDecimal** | The latest average price of all executions for a given placement |  [optional]
 
 
 

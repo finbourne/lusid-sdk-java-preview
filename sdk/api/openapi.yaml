@@ -289,12 +289,12 @@ info:
     | <a name="790">790</a>|Custom Entity has missing or invalid identifiers|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4390
+  version: 0.11.4391
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: https://fbn-prd.lusid.com/api
+- url: http://local-unit-test-server.lusid.com:54507
 security:
 - {}
 tags:
@@ -11289,6 +11289,7 @@ paths:
                 settlementCurrency: GBP
                 settlementCurrencyFxRate: 0.67
                 counterparty: SomeCounterparty
+                averagePrice: 12419.2
             schema:
               $ref: '#/components/schemas/ExecutionSetRequest'
           application/json:
@@ -11319,6 +11320,7 @@ paths:
                 settlementCurrency: GBP
                 settlementCurrencyFxRate: 0.67
                 counterparty: SomeCounterparty
+                averagePrice: 12419.2
             schema:
               $ref: '#/components/schemas/ExecutionSetRequest'
           text/json:
@@ -11349,6 +11351,7 @@ paths:
                 settlementCurrency: GBP
                 settlementCurrencyFxRate: 0.67
                 counterparty: SomeCounterparty
+                averagePrice: 12419.2
             schema:
               $ref: '#/components/schemas/ExecutionSetRequest'
           application/*+json:
@@ -11379,6 +11382,7 @@ paths:
                 settlementCurrency: GBP
                 settlementCurrencyFxRate: 0.67
                 counterparty: SomeCounterparty
+                averagePrice: 12419.2
             schema:
               $ref: '#/components/schemas/ExecutionSetRequest'
         description: The collection of execution requests.
@@ -11413,6 +11417,7 @@ paths:
                   settlementCurrency: GBP
                   settlementCurrencyFxRate: 0.67
                   counterparty: SomeCounterparty
+                  averagePrice: 12419.2
                   version:
                     effectiveFrom: 2018-03-05T10:10:10.0000000+00:00
                     asAtDate: 2018-03-05T10:10:10.0000000+00:00
@@ -11447,6 +11452,7 @@ paths:
                   settlementCurrency: GBP
                   settlementCurrencyFxRate: 0.67
                   counterparty: SomeCounterparty
+                  averagePrice: 12419.2
                   version:
                     effectiveFrom: 2018-03-05T10:10:10.0000000+00:00
                     asAtDate: 2018-03-05T10:10:10.0000000+00:00
@@ -11481,6 +11487,7 @@ paths:
                   settlementCurrency: GBP
                   settlementCurrencyFxRate: 0.67
                   counterparty: SomeCounterparty
+                  averagePrice: 12419.2
                   version:
                     effectiveFrom: 2018-03-05T10:10:10.0000000+00:00
                     asAtDate: 2018-03-05T10:10:10.0000000+00:00
@@ -11678,6 +11685,7 @@ paths:
                 settlementCurrency: GBP
                 settlementCurrencyFxRate: 0.67
                 counterparty: SomeCounterparty
+                averagePrice: 12419.2
                 version:
                   effectiveFrom: 2018-03-05T10:10:10.0000000+00:00
                   asAtDate: 2018-03-05T10:10:10.0000000+00:00
@@ -11710,6 +11718,7 @@ paths:
                 settlementCurrency: GBP
                 settlementCurrencyFxRate: 0.67
                 counterparty: SomeCounterparty
+                averagePrice: 12419.2
                 version:
                   effectiveFrom: 2018-03-05T10:10:10.0000000+00:00
                   asAtDate: 2018-03-05T10:10:10.0000000+00:00
@@ -11742,6 +11751,7 @@ paths:
                 settlementCurrency: GBP
                 settlementCurrencyFxRate: 0.67
                 counterparty: SomeCounterparty
+                averagePrice: 12419.2
                 version:
                   effectiveFrom: 2018-03-05T10:10:10.0000000+00:00
                   asAtDate: 2018-03-05T10:10:10.0000000+00:00
@@ -18965,6 +18975,7 @@ paths:
                   allocated:
                     quantity: 800
                   derivedState: In progress
+                  calculatedAveragePrice: 94.4
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphPlacement'
@@ -19026,6 +19037,7 @@ paths:
                   allocated:
                     quantity: 800
                   derivedState: In progress
+                  calculatedAveragePrice: 94.4
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphPlacement'
@@ -19087,6 +19099,7 @@ paths:
                   allocated:
                     quantity: 800
                   derivedState: In progress
+                  calculatedAveragePrice: 94.4
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphPlacement'
@@ -63743,6 +63756,7 @@ components:
           code: code
           scope: scope
         state: state
+        averagePrice: 1.4658129805029452
         lusidInstrumentId: lusidInstrumentId
         properties:
           key:
@@ -63810,6 +63824,11 @@ components:
         counterparty:
           description: The market entity this placement is placed with.
           type: string
+        averagePrice:
+          description: The latest average price of all executions for a given placement
+          format: double
+          nullable: true
+          type: number
         version:
           $ref: '#/components/schemas/Version'
         links:
@@ -63857,6 +63876,7 @@ components:
           code: code
           scope: scope
         state: state
+        averagePrice: 1.4658129805029452
         properties:
           key:
             value:
@@ -63920,6 +63940,11 @@ components:
         counterparty:
           description: The market entity this placement is placed with.
           type: string
+        averagePrice:
+          description: The latest average price of all executions for a given placement
+          format: double
+          nullable: true
+          type: number
       required:
       - counterparty
       - createdDate
@@ -63959,6 +63984,7 @@ components:
             code: code
             scope: scope
           state: state
+          averagePrice: 1.4658129805029452
           properties:
             key:
               value:
@@ -63991,6 +64017,7 @@ components:
             code: code
             scope: scope
           state: state
+          averagePrice: 1.4658129805029452
           properties:
             key:
               value:
@@ -70659,6 +70686,7 @@ components:
             code: code
             scope: scope
           state: state
+          averagePrice: 1.4658129805029452
           lusidInstrumentId: lusidInstrumentId
           properties:
             key:
@@ -70704,6 +70732,7 @@ components:
             code: code
             scope: scope
           state: state
+          averagePrice: 1.4658129805029452
           lusidInstrumentId: lusidInstrumentId
           properties:
             key:
@@ -77985,6 +78014,7 @@ components:
             code: code
             scope: scope
           state: state
+          averagePrice: 1.4658129805029452
           lusidInstrumentId: lusidInstrumentId
           properties:
             key:
@@ -78030,6 +78060,7 @@ components:
             code: code
             scope: scope
           state: state
+          averagePrice: 1.4658129805029452
           lusidInstrumentId: lusidInstrumentId
           properties:
             key:
@@ -91952,7 +91983,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
