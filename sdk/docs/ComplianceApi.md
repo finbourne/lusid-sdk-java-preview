@@ -1,17 +1,16 @@
 # ComplianceApi
 
-All URIs are relative to *http://local-unit-test-server.lusid.com:36130*
+All URIs are relative to *http://local-unit-test-server.lusid.com:42062*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteComplianceRule**](ComplianceApi.md#deleteComplianceRule) | **DELETE** /api/compliance/rules/{scope}/{code} | [EXPERIMENTAL] DeleteComplianceRule: Deletes a compliance rule.
 [**getComplianceRule**](ComplianceApi.md#getComplianceRule) | **GET** /api/compliance/rules/{scope}/{code} | [EXPERIMENTAL] GetComplianceRule: Retrieve the definition of single compliance rule.
-[**getComplianceRun**](ComplianceApi.md#getComplianceRun) | **GET** /api/compliance/{runId} | [EXPERIMENTAL] GetComplianceRun: Get the details of a single compliance run. -- DEPRECATING - POST TRADE ONLY
-[**getComplianceRunResults**](ComplianceApi.md#getComplianceRunResults) | **GET** /api/compliance/results/{runId} | [EXPERIMENTAL] GetComplianceRunResults: Get the details of a single compliance run.
+[**getComplianceRunResults**](ComplianceApi.md#getComplianceRunResults) | **GET** /api/compliance/runs/{runId} | [EXPERIMENTAL] GetComplianceRunResults: Get the details of a single compliance run.
 [**listComplianceRules**](ComplianceApi.md#listComplianceRules) | **GET** /api/compliance/rules | [EXPERIMENTAL] ListComplianceRules: List compliance rules, with optional filtering.
-[**listComplianceRuns**](ComplianceApi.md#listComplianceRuns) | **GET** /api/compliance | [EXPERIMENTAL] ListComplianceRuns: List historical compliance runs. -- DEPRECATING - POST TRADE ONLY
+[**listComplianceRuns**](ComplianceApi.md#listComplianceRuns) | **GET** /api/compliance | [EXPERIMENTAL] ListComplianceRuns: List historical compliance runs.
+[**runCompliance**](ComplianceApi.md#runCompliance) | **POST** /api/compliance/runs | [EXPERIMENTAL] RunCompliance: Kick off the compliance check process
 [**runComplianceCheck**](ComplianceApi.md#runComplianceCheck) | **POST** /api/compliance/run | [EXPERIMENTAL] RunComplianceCheck: Kick off the compliance check process -- DEPRECATING - POST TRADE ONLY
-[**runPreTradeComplianceCheck**](ComplianceApi.md#runPreTradeComplianceCheck) | **POST** /api/compliance/pretraderun | [EXPERIMENTAL] RunPreTradeComplianceCheck: Kick off the pre-trade compliance check process
 [**upsertComplianceRules**](ComplianceApi.md#upsertComplianceRules) | **POST** /api/compliance/rules | [EXPERIMENTAL] UpsertComplianceRules: Upsert compliance rules.
 
 
@@ -36,7 +35,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36130");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42062");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -107,7 +106,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36130");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42062");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -161,81 +160,6 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
-<a name="getComplianceRun"></a>
-# **getComplianceRun**
-> ResourceListOfComplianceRuleResult getComplianceRun(runId, page, limit, filter)
-
-[EXPERIMENTAL] GetComplianceRun: Get the details of a single compliance run. -- DEPRECATING - POST TRADE ONLY
-
-Use this endpoint to fetch the detail associated with a specific compliance run, including a breakdown  of the passing state of each rule, portfolio combination.
-
-### Example
-```java
-// Import classes:
-import com.finbourne.lusid.ApiClient;
-import com.finbourne.lusid.ApiException;
-import com.finbourne.lusid.Configuration;
-import com.finbourne.lusid.auth.*;
-import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.ComplianceApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36130");
-    
-    // Configure OAuth2 access token for authorization: oauth2
-    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-    oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-    ComplianceApi apiInstance = new ComplianceApi(defaultClient);
-    String runId = "runId_example"; // String | The unique identifier of the compliance run requested.
-    String page = "page_example"; // String | The pagination token to use to continue listing compliance rule results from a previous call to list compliance rule result.              This value is returned from the previous call. If a pagination token is provided the sortBy, filter, and asAt fields              must not have changed since the original request. Also, if set, a start value cannot be provided.
-    Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many.
-    String filter = "filter_example"; // String | Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
-    try {
-      ResourceListOfComplianceRuleResult result = apiInstance.getComplianceRun(runId, page, limit, filter);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling ComplianceApi#getComplianceRun");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **runId** | **String**| The unique identifier of the compliance run requested. |
- **page** | **String**| The pagination token to use to continue listing compliance rule results from a previous call to list compliance rule result.              This value is returned from the previous call. If a pagination token is provided the sortBy, filter, and asAt fields              must not have changed since the original request. Also, if set, a start value cannot be provided. | [optional]
- **limit** | **Integer**| When paginating, limit the number of returned results to this many. | [optional]
- **filter** | **String**| Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
-
-### Return type
-
-[**ResourceListOfComplianceRuleResult**](ResourceListOfComplianceRuleResult.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The details of a specific compliance run |  -  |
-**400** | The details of the input related failure |  -  |
-**0** | Error response |  -  |
-
 <a name="getComplianceRunResults"></a>
 # **getComplianceRunResults**
 > ResourceListOfComplianceRuleResult getComplianceRunResults(runId, page, limit)
@@ -257,7 +181,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36130");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42062");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -330,7 +254,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36130");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42062");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -390,9 +314,9 @@ Name | Type | Description  | Notes
 # **listComplianceRuns**
 > ResourceListOfComplianceRun listComplianceRuns(page, limit, filter)
 
-[EXPERIMENTAL] ListComplianceRuns: List historical compliance runs. -- DEPRECATING - POST TRADE ONLY
+[EXPERIMENTAL] ListComplianceRuns: List historical compliance runs.
 
-Use this endpoint to fetch a list of all historical compliance runs.
+!! CURRENTLY RETURNS DUMMY DATA !! Use this endpoint to fetch a list of all historical compliance runs.
 
 ### Example
 ```java
@@ -407,7 +331,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36130");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42062");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -459,6 +383,81 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="runCompliance"></a>
+# **runCompliance**
+> ComplianceRun runCompliance(isPreTrade, recipeIdScope, recipeIdCode, byTaxlots)
+
+[EXPERIMENTAL] RunCompliance: Kick off the compliance check process
+
+Use this endpoint to fetch the start a compliance run, based on a pre-set mapping file.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.ComplianceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42062");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    ComplianceApi apiInstance = new ComplianceApi(defaultClient);
+    Boolean isPreTrade = true; // Boolean | Required: Boolean flag indicating if a run should be PreTrade (Including orders). For post-trade only, set to false
+    String recipeIdScope = "recipeIdScope_example"; // String | Required: the scope of the recipe to be used
+    String recipeIdCode = "recipeIdCode_example"; // String | Optional: The code of the recipe to be used. If left blank, the default recipe will be used.
+    Boolean byTaxlots = true; // Boolean | Optional.
+    try {
+      ComplianceRun result = apiInstance.runCompliance(isPreTrade, recipeIdScope, recipeIdCode, byTaxlots);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ComplianceApi#runCompliance");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isPreTrade** | **Boolean**| Required: Boolean flag indicating if a run should be PreTrade (Including orders). For post-trade only, set to false |
+ **recipeIdScope** | **String**| Required: the scope of the recipe to be used |
+ **recipeIdCode** | **String**| Optional: The code of the recipe to be used. If left blank, the default recipe will be used. | [optional]
+ **byTaxlots** | **Boolean**| Optional. | [optional]
+
+### Return type
+
+[**ComplianceRun**](ComplianceRun.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The identifying information of a compliance run |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="runComplianceCheck"></a>
 # **runComplianceCheck**
 > ComplianceRun runComplianceCheck(fileName)
@@ -480,7 +479,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36130");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42062");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
@@ -528,79 +527,6 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
-<a name="runPreTradeComplianceCheck"></a>
-# **runPreTradeComplianceCheck**
-> ComplianceRun runPreTradeComplianceCheck(recipeScope, recipeCode, byTaxlots)
-
-[EXPERIMENTAL] RunPreTradeComplianceCheck: Kick off the pre-trade compliance check process
-
-Use this endpoint to run a pre-trade compliance check, using all existing pre-trade applicable compliance rules
-
-### Example
-```java
-// Import classes:
-import com.finbourne.lusid.ApiClient;
-import com.finbourne.lusid.ApiException;
-import com.finbourne.lusid.Configuration;
-import com.finbourne.lusid.auth.*;
-import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.ComplianceApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36130");
-    
-    // Configure OAuth2 access token for authorization: oauth2
-    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-    oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-    ComplianceApi apiInstance = new ComplianceApi(defaultClient);
-    String recipeScope = "recipeScope_example"; // String | Scope of recipe to be used - required
-    String recipeCode = "recipeCode_example"; // String | Code of recipe to be used - if not provided, default recipe code will be used
-    Boolean byTaxlots = true; // Boolean | calculate by taxlots or not - Default: False
-    try {
-      ComplianceRun result = apiInstance.runPreTradeComplianceCheck(recipeScope, recipeCode, byTaxlots);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling ComplianceApi#runPreTradeComplianceCheck");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recipeScope** | **String**| Scope of recipe to be used - required |
- **recipeCode** | **String**| Code of recipe to be used - if not provided, default recipe code will be used | [optional]
- **byTaxlots** | **Boolean**| calculate by taxlots or not - Default: False | [optional]
-
-### Return type
-
-[**ComplianceRun**](ComplianceRun.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The identifying information of a compliance run |  -  |
-**400** | The details of the input related failure |  -  |
-**0** | Error response |  -  |
-
 <a name="upsertComplianceRules"></a>
 # **upsertComplianceRules**
 > ComplianceRuleUpsertResponse upsertComplianceRules(requestBody, effectiveAt)
@@ -622,7 +548,7 @@ import com.finbourne.lusid.api.ComplianceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:36130");
+    defaultClient.setBasePath("http://local-unit-test-server.lusid.com:42062");
     
     // Configure OAuth2 access token for authorization: oauth2
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");

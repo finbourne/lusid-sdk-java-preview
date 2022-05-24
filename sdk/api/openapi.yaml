@@ -289,12 +289,12 @@ info:
     | <a name="790">790</a>|Custom Entity has missing or invalid identifiers|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4394
+  version: 0.11.4396
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
 servers:
-- url: http://local-unit-test-server.lusid.com:36130
+- url: http://local-unit-test-server.lusid.com:42062
 security:
 - {}
 tags:
@@ -4902,8 +4902,8 @@ paths:
       x-accepts: application/json
   /api/compliance:
     get:
-      description: Use this endpoint to fetch a list of all historical compliance
-        runs.
+      description: '!! CURRENTLY RETURNS DUMMY DATA !! Use this endpoint to fetch
+        a list of all historical compliance runs.'
       operationId: ListComplianceRuns
       parameters:
       - description: "The pagination token to use to continue listing compliance runs\
@@ -5009,233 +5009,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListComplianceRuns: List historical compliance runs.
-        -- DEPRECATING - POST TRADE ONLY'
-      tags:
-      - Compliance
-      x-fbn-apistatus: Experimental
-      x-accepts: application/json
-  /api/compliance/pretraderun:
-    post:
-      description: Use this endpoint to run a pre-trade compliance check, using all
-        existing pre-trade applicable compliance rules
-      operationId: RunPreTradeComplianceCheck
-      parameters:
-      - description: Scope of recipe to be used - required
-        explode: true
-        in: query
-        name: recipeScope
-        required: true
-        schema:
-          description: Scope of recipe to be used - required
-          maxLength: 64
-          minLength: 1
-          pattern: ^[a-zA-Z0-9\-_]+$
-          type: string
-        style: form
-      - description: Code of recipe to be used - if not provided, default recipe code
-          will be used
-        explode: true
-        in: query
-        name: recipeCode
-        required: false
-        schema:
-          description: Code of recipe to be used - if not provided, default recipe
-            code will be used
-          maxLength: 64
-          minLength: 1
-          nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
-          type: string
-        style: form
-      - description: 'calculate by taxlots or not - Default: False'
-        explode: true
-        in: query
-        name: byTaxlots
-        required: false
-        schema:
-          description: 'calculate by taxlots or not - Default: False'
-          nullable: true
-          type: boolean
-        style: form
-        x-nullable: true
-      responses:
-        "200":
-          content:
-            text/plain:
-              example:
-                runId: 1234-5678-9101
-                asAt: 2020-01-05T00:00:00.0000000+00:00
-              schema:
-                $ref: '#/components/schemas/ComplianceRun'
-            application/json:
-              example:
-                runId: 1234-5678-9101
-                asAt: 2020-01-05T00:00:00.0000000+00:00
-              schema:
-                $ref: '#/components/schemas/ComplianceRun'
-            text/json:
-              example:
-                runId: 1234-5678-9101
-                asAt: 2020-01-05T00:00:00.0000000+00:00
-              schema:
-                $ref: '#/components/schemas/ComplianceRun'
-          description: The identifying information of a compliance run
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] RunPreTradeComplianceCheck: Kick off the pre-trade
-        compliance check process'
-      tags:
-      - Compliance
-      x-fbn-apistatus: Experimental
-      x-accepts: application/json
-  /api/compliance/results/{runId}:
-    get:
-      description: "Use this endpoint to fetch the detail associated with a specific\
-        \ compliance run, including a breakdown\r\nof the passing state of each rule,\
-        \ portfolio combination."
-      operationId: GetComplianceRunResults
-      parameters:
-      - description: The unique identifier of the compliance run requested.
-        explode: false
-        in: path
-        name: runId
-        required: true
-        schema:
-          description: The unique identifier of the compliance run requested.
-          maxLength: 64
-          minLength: 1
-          pattern: ^[a-zA-Z0-9\-_]+$
-          type: string
-        style: simple
-      - description: "The pagination token to use to continue listing compliance rule\
-          \ results from a previous call to list compliance rule result.\r\n     \
-          \       This value is returned from the previous call. If a pagination token\
-          \ is provided the sortBy, filter, and asAt fields\r\n            must not\
-          \ have changed since the original request. Also, if set, a start value cannot\
-          \ be provided."
-        explode: true
-        in: query
-        name: page
-        required: false
-        schema:
-          description: "The pagination token to use to continue listing compliance\
-            \ rule results from a previous call to list compliance rule result.\r\n\
-            \            This value is returned from the previous call. If a pagination\
-            \ token is provided the sortBy, filter, and asAt fields\r\n          \
-            \  must not have changed since the original request. Also, if set, a start\
-            \ value cannot be provided."
-          maxLength: 500
-          minLength: 1
-          nullable: true
-          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
-          type: string
-        style: form
-      - description: When paginating, limit the number of returned results to this
-          many.
-        explode: true
-        in: query
-        name: limit
-        required: false
-        schema:
-          description: When paginating, limit the number of returned results to this
-            many.
-          format: int32
-          maximum: 5000
-          minimum: 1
-          nullable: true
-          type: integer
-        style: form
-        x-nullable: true
-      responses:
-        "200":
-          content:
-            text/plain:
-              example:
-                values:
-                - ruleId: 0897-6574-1324
-                  portfolio:
-                    scope: MyScope
-                    code: MyPortfolioCode
-                  passed: true
-                  resultValue: 0
-                  ruleLowerLimit: 0
-                  ruleUpperLimit: 0
-                href: https://myco.lusid.com/api/api/compliance/some-run-id
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfComplianceRuleResult'
-            application/json:
-              example:
-                values:
-                - ruleId: 0897-6574-1324
-                  portfolio:
-                    scope: MyScope
-                    code: MyPortfolioCode
-                  passed: true
-                  resultValue: 0
-                  ruleLowerLimit: 0
-                  ruleUpperLimit: 0
-                href: https://myco.lusid.com/api/api/compliance/some-run-id
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfComplianceRuleResult'
-            text/json:
-              example:
-                values:
-                - ruleId: 0897-6574-1324
-                  portfolio:
-                    scope: MyScope
-                    code: MyPortfolioCode
-                  passed: true
-                  resultValue: 0
-                  ruleLowerLimit: 0
-                  ruleUpperLimit: 0
-                href: https://myco.lusid.com/api/api/compliance/some-run-id
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfComplianceRuleResult'
-          description: The rule results of a specific compliance run
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] GetComplianceRunResults: Get the details of a single
-        compliance run.'
+      summary: '[EXPERIMENTAL] ListComplianceRuns: List historical compliance runs.'
       tags:
       - Compliance
       x-fbn-apistatus: Experimental
@@ -6099,12 +5873,114 @@ paths:
       - Compliance
       x-fbn-apistatus: Experimental
       x-accepts: application/json
-  /api/compliance/{runId}:
+  /api/compliance/runs:
+    post:
+      description: Use this endpoint to fetch the start a compliance run, based on
+        a pre-set mapping file.
+      operationId: RunCompliance
+      parameters:
+      - description: 'Required: Boolean flag indicating if a run should be PreTrade
+          (Including orders). For post-trade only, set to false'
+        explode: true
+        in: query
+        name: isPreTrade
+        required: true
+        schema:
+          description: 'Required: Boolean flag indicating if a run should be PreTrade
+            (Including orders). For post-trade only, set to false'
+          type: boolean
+        style: form
+      - description: 'Required: the scope of the recipe to be used'
+        explode: true
+        in: query
+        name: recipeIdScope
+        required: true
+        schema:
+          description: 'Required: the scope of the recipe to be used'
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: 'Optional: The code of the recipe to be used. If left blank,
+          the default recipe will be used.'
+        explode: true
+        in: query
+        name: recipeIdCode
+        required: false
+        schema:
+          description: 'Optional: The code of the recipe to be used. If left blank,
+            the default recipe will be used.'
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: Optional.
+        explode: true
+        in: query
+        name: byTaxlots
+        required: false
+        schema:
+          description: Optional.
+          nullable: true
+          type: boolean
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                runId: 1234-5678-9101
+                asAt: 2020-01-05T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/ComplianceRun'
+            application/json:
+              example:
+                runId: 1234-5678-9101
+                asAt: 2020-01-05T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/ComplianceRun'
+            text/json:
+              example:
+                runId: 1234-5678-9101
+                asAt: 2020-01-05T00:00:00.0000000+00:00
+              schema:
+                $ref: '#/components/schemas/ComplianceRun'
+          description: The identifying information of a compliance run
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] RunCompliance: Kick off the compliance check process'
+      tags:
+      - Compliance
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+  /api/compliance/runs/{runId}:
     get:
       description: "Use this endpoint to fetch the detail associated with a specific\
         \ compliance run, including a breakdown\r\nof the passing state of each rule,\
         \ portfolio combination."
-      operationId: GetComplianceRun
+      operationId: GetComplianceRunResults
       parameters:
       - description: The unique identifier of the compliance run requested.
         explode: false
@@ -6157,21 +6033,6 @@ paths:
           type: integer
         style: form
         x-nullable: true
-      - description: Expression to filter the result set. Read more about filtering
-          results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
-        explode: true
-        in: query
-        name: filter
-        required: false
-        schema:
-          description: Expression to filter the result set. Read more about filtering
-            results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
-          maxLength: 16384
-          minLength: 0
-          nullable: true
-          pattern: ^[\s\S]*$
-          type: string
-        style: form
       responses:
         "200":
           content:
@@ -6220,7 +6081,7 @@ paths:
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfComplianceRuleResult'
-          description: The details of a specific compliance run
+          description: The rule results of a specific compliance run
         "400":
           content:
             text/plain:
@@ -6241,8 +6102,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetComplianceRun: Get the details of a single compliance
-        run. -- DEPRECATING - POST TRADE ONLY'
+      summary: '[EXPERIMENTAL] GetComplianceRunResults: Get the details of a single
+        compliance run.'
       tags:
       - Compliance
       x-fbn-apistatus: Experimental
@@ -68574,6 +68435,7 @@ components:
       - UnsettledCashTypes
       - Carry
       - CarryAsPnl
+      - VariationMargin
       type: string
     NextValueInSequenceResponse:
       additionalProperties: false
@@ -83428,7 +83290,7 @@ components:
           description: '. The available values are: Settlement, Traded, StockMovement,
             FutureCash, Commitment, Receivable, CashSettlement, CashForward, CashCommitment,
             CashReceivable, Accrual, CashAccrual, ForwardFx, CashFxForward, UnsettledCashTypes,
-            Carry, CarryAsPnl'
+            Carry, CarryAsPnl, VariationMargin'
           enum:
           - Settlement
           - Traded
@@ -83447,6 +83309,7 @@ components:
           - UnsettledCashTypes
           - Carry
           - CarryAsPnl
+          - VariationMargin
           type: string
         side:
           description: The Side determines which of the fields from our transaction
@@ -83514,7 +83377,7 @@ components:
           description: '. The available values are: Settlement, Traded, StockMovement,
             FutureCash, Commitment, Receivable, CashSettlement, CashForward, CashCommitment,
             CashReceivable, Accrual, CashAccrual, ForwardFx, CashFxForward, UnsettledCashTypes,
-            Carry, CarryAsPnl'
+            Carry, CarryAsPnl, VariationMargin'
           enum:
           - Settlement
           - Traded
@@ -83533,6 +83396,7 @@ components:
           - UnsettledCashTypes
           - Carry
           - CarryAsPnl
+          - VariationMargin
           type: string
         side:
           description: The movement side

@@ -39,5 +39,7 @@
 
 * `CARRYASPNL` (value: `"CarryAsPnl"`)
 
+* `VARIATIONMARGIN` (value: `"VariationMargin"`)
+
 
 
