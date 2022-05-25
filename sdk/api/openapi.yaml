@@ -289,7 +289,7 @@ info:
     | <a name="790">790</a>|Custom Entity has missing or invalid identifiers|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4401
+  version: 0.11.4402
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -46862,10 +46862,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetA2BData: Get A2B data'
+      summary: 'GetA2BData: Get A2B data'
       tags:
       - Transaction Portfolios
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: Stable
       x-accepts: application/json
   /api/transactionportfolios/{scope}/{code}/a2bmovements:
     get:
@@ -47461,11 +47461,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetA2BMovements: Get an A2B report at the movement
-        level for the given portfolio.'
+      summary: 'GetA2BMovements: Get an A2B report at the movement level for the given
+        portfolio.'
       tags:
       - Transaction Portfolios
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: Stable
       x-accepts: application/json
   /api/transactionportfolios/{scope}/{code}/bucketedCashFlows:
     post:
@@ -48176,10 +48176,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetPortfolioCashLadder: Get portfolio cash ladder'
+      summary: 'GetPortfolioCashLadder: Get portfolio cash ladder'
       tags:
       - Transaction Portfolios
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: Stable
       x-accepts: application/json
   /api/transactionportfolios/{scope}/{code}/cashstatement:
     get:
@@ -50292,10 +50292,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] GetPortfolioCashStatement: Get portfolio cash statement'
+      summary: 'GetPortfolioCashStatement: Get portfolio cash statement'
       tags:
       - Transaction Portfolios
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Stable
       x-accepts: application/json
   /api/transactionportfolios/{scope}/{code}/details:
     get:
