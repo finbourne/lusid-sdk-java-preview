@@ -289,7 +289,7 @@ info:
     | <a name="790">790</a>|Custom Entity has missing or invalid identifiers|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4409
+  version: 0.11.4410
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -19825,7 +19825,7 @@ paths:
                   type: Limit
                   timeInForce: GoodTilCancel
                   date: 1999-06-05T00:00:00.0000000+00:00
-                  price:
+                  stopPrice:
                     amount: 534
                     currency: USD
                   orderInstructionId:
@@ -19865,7 +19865,7 @@ paths:
                   type: Limit
                   timeInForce: GoodTilCancel
                   date: 1999-06-05T00:00:00.0000000+00:00
-                  price:
+                  stopPrice:
                     amount: 534
                     currency: USD
                   orderInstructionId:
@@ -19905,7 +19905,7 @@ paths:
                   type: Limit
                   timeInForce: GoodTilCancel
                   date: 1999-06-05T00:00:00.0000000+00:00
-                  price:
+                  stopPrice:
                     amount: 534
                     currency: USD
                   orderInstructionId:
@@ -20108,7 +20108,7 @@ paths:
                 type: Limit
                 timeInForce: GoodTilCancel
                 date: 1999-06-05T00:00:00.0000000+00:00
-                price:
+                limitPrice:
                   amount: 534
                   currency: USD
                 orderInstructionId:
@@ -20146,7 +20146,7 @@ paths:
                 type: Limit
                 timeInForce: GoodTilCancel
                 date: 1999-06-05T00:00:00.0000000+00:00
-                price:
+                limitPrice:
                   amount: 534
                   currency: USD
                 orderInstructionId:
@@ -20184,7 +20184,7 @@ paths:
                 type: Limit
                 timeInForce: GoodTilCancel
                 date: 1999-06-05T00:00:00.0000000+00:00
-                price:
+                limitPrice:
                   amount: 534
                   currency: USD
                 orderInstructionId:
@@ -36194,10 +36194,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] ListQuotesForScope: List quotes for scope'
+      summary: 'ListQuotesForScope: List quotes for scope'
       tags:
       - Quotes
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Stable
       x-accepts: application/json
     post:
       description: "Update or insert one or more quotes in a single scope. A quote\
@@ -36408,10 +36408,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] UpsertQuotes: Upsert quotes'
+      summary: 'UpsertQuotes: Upsert quotes'
       tags:
       - Quotes
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Stable
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/quotes/{scope}/$delete:
@@ -36546,10 +36546,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] DeleteQuotes: Delete quotes'
+      summary: 'DeleteQuotes: Delete quotes'
       tags:
       - Quotes
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Stable
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/quotes/{scope}/$deprecated:
@@ -68530,6 +68530,9 @@ components:
         date: 2000-01-23T04:56:07.000+00:00
         side: side
         quantity: 0
+        limitPrice:
+          amount: 1.4658129805029452
+          currency: currency
         instrumentScope: instrumentScope
         packageId:
           code: code
@@ -68540,6 +68543,9 @@ components:
         version:
           effectiveFrom: 2000-01-23T04:56:07.000+00:00
           asAtDate: 2000-01-23T04:56:07.000+00:00
+        stopPrice:
+          amount: 1.4658129805029452
+          currency: currency
         portfolioId:
           code: code
           scope: scope
@@ -68632,6 +68638,10 @@ components:
           format: date-time
           type: string
         price:
+          $ref: '#/components/schemas/CurrencyAndAmount'
+        limitPrice:
+          $ref: '#/components/schemas/CurrencyAndAmount'
+        stopPrice:
           $ref: '#/components/schemas/CurrencyAndAmount'
         orderInstructionId:
           $ref: '#/components/schemas/ResourceId'
@@ -69073,12 +69083,18 @@ components:
         package:
           code: code
           scope: scope
+        limitPrice:
+          amount: 1.4658129805029452
+          currency: currency
         orderInstruction:
           code: code
           scope: scope
         instrumentIdentifiers:
           key: instrumentIdentifiers
         type: type
+        stopPrice:
+          amount: 1.4658129805029452
+          currency: currency
         portfolioId:
           code: code
           scope: scope
@@ -69150,6 +69166,10 @@ components:
           type: string
         price:
           $ref: '#/components/schemas/CurrencyAndAmount'
+        limitPrice:
+          $ref: '#/components/schemas/CurrencyAndAmount'
+        stopPrice:
+          $ref: '#/components/schemas/CurrencyAndAmount'
         orderInstruction:
           $ref: '#/components/schemas/ResourceId'
         package:
@@ -69172,12 +69192,18 @@ components:
           package:
             code: code
             scope: scope
+          limitPrice:
+            amount: 1.4658129805029452
+            currency: currency
           orderInstruction:
             code: code
             scope: scope
           instrumentIdentifiers:
             key: instrumentIdentifiers
           type: type
+          stopPrice:
+            amount: 1.4658129805029452
+            currency: currency
           portfolioId:
             code: code
             scope: scope
@@ -69210,12 +69236,18 @@ components:
           package:
             code: code
             scope: scope
+          limitPrice:
+            amount: 1.4658129805029452
+            currency: currency
           orderInstruction:
             code: code
             scope: scope
           instrumentIdentifiers:
             key: instrumentIdentifiers
           type: type
+          stopPrice:
+            amount: 1.4658129805029452
+            currency: currency
           portfolioId:
             code: code
             scope: scope
@@ -70960,6 +70992,9 @@ components:
         - date: 2000-01-23T04:56:07.000+00:00
           side: side
           quantity: 0
+          limitPrice:
+            amount: 1.4658129805029452
+            currency: currency
           instrumentScope: instrumentScope
           packageId:
             code: code
@@ -70970,6 +71005,9 @@ components:
           version:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
+          stopPrice:
+            amount: 1.4658129805029452
+            currency: currency
           portfolioId:
             code: code
             scope: scope
@@ -71012,6 +71050,9 @@ components:
         - date: 2000-01-23T04:56:07.000+00:00
           side: side
           quantity: 0
+          limitPrice:
+            amount: 1.4658129805029452
+            currency: currency
           instrumentScope: instrumentScope
           packageId:
             code: code
@@ -71022,6 +71063,9 @@ components:
           version:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
+          stopPrice:
+            amount: 1.4658129805029452
+            currency: currency
           portfolioId:
             code: code
             scope: scope
@@ -79496,6 +79540,9 @@ components:
         - date: 2000-01-23T04:56:07.000+00:00
           side: side
           quantity: 0
+          limitPrice:
+            amount: 1.4658129805029452
+            currency: currency
           instrumentScope: instrumentScope
           packageId:
             code: code
@@ -79506,6 +79553,9 @@ components:
           version:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
+          stopPrice:
+            amount: 1.4658129805029452
+            currency: currency
           portfolioId:
             code: code
             scope: scope
@@ -79548,6 +79598,9 @@ components:
         - date: 2000-01-23T04:56:07.000+00:00
           side: side
           quantity: 0
+          limitPrice:
+            amount: 1.4658129805029452
+            currency: currency
           instrumentScope: instrumentScope
           packageId:
             code: code
@@ -79558,6 +79611,9 @@ components:
           version:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
+          stopPrice:
+            amount: 1.4658129805029452
+            currency: currency
           portfolioId:
             code: code
             scope: scope
