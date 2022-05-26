@@ -289,7 +289,7 @@ info:
     | <a name="790">790</a>|Custom Entity has missing or invalid identifiers|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4410
+  version: 0.11.4411
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -18836,7 +18836,7 @@ paths:
                   allocated:
                     quantity: 800
                   derivedState: In progress
-                  calculatedAveragePrice: 12401.26
+                  calculatedAveragePrice: 94.4
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphPlacement'
@@ -18898,7 +18898,7 @@ paths:
                   allocated:
                     quantity: 800
                   derivedState: In progress
-                  calculatedAveragePrice: 12401.26
+                  calculatedAveragePrice: 94.4
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphPlacement'
@@ -18960,7 +18960,7 @@ paths:
                   allocated:
                     quantity: 800
                   derivedState: In progress
-                  calculatedAveragePrice: 12401.26
+                  calculatedAveragePrice: 94.4
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphPlacement'
@@ -19825,7 +19825,7 @@ paths:
                   type: Limit
                   timeInForce: GoodTilCancel
                   date: 1999-06-05T00:00:00.0000000+00:00
-                  stopPrice:
+                  price:
                     amount: 534
                     currency: USD
                   orderInstructionId:
@@ -19865,7 +19865,7 @@ paths:
                   type: Limit
                   timeInForce: GoodTilCancel
                   date: 1999-06-05T00:00:00.0000000+00:00
-                  stopPrice:
+                  price:
                     amount: 534
                     currency: USD
                   orderInstructionId:
@@ -19905,7 +19905,7 @@ paths:
                   type: Limit
                   timeInForce: GoodTilCancel
                   date: 1999-06-05T00:00:00.0000000+00:00
-                  stopPrice:
+                  price:
                     amount: 534
                     currency: USD
                   orderInstructionId:
@@ -20108,7 +20108,7 @@ paths:
                 type: Limit
                 timeInForce: GoodTilCancel
                 date: 1999-06-05T00:00:00.0000000+00:00
-                limitPrice:
+                price:
                   amount: 534
                   currency: USD
                 orderInstructionId:
@@ -20146,7 +20146,7 @@ paths:
                 type: Limit
                 timeInForce: GoodTilCancel
                 date: 1999-06-05T00:00:00.0000000+00:00
-                limitPrice:
+                price:
                   amount: 534
                   currency: USD
                 orderInstructionId:
@@ -20184,7 +20184,7 @@ paths:
                 type: Limit
                 timeInForce: GoodTilCancel
                 date: 1999-06-05T00:00:00.0000000+00:00
-                limitPrice:
+                price:
                   amount: 534
                   currency: USD
                 orderInstructionId:
@@ -36194,10 +36194,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: 'ListQuotesForScope: List quotes for scope'
+      summary: '[EARLY ACCESS] ListQuotesForScope: List quotes for scope'
       tags:
       - Quotes
-      x-fbn-apistatus: Stable
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: "Update or insert one or more quotes in a single scope. A quote\
@@ -36408,10 +36408,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: 'UpsertQuotes: Upsert quotes'
+      summary: '[EARLY ACCESS] UpsertQuotes: Upsert quotes'
       tags:
       - Quotes
-      x-fbn-apistatus: Stable
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/quotes/{scope}/$delete:
@@ -36546,10 +36546,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: 'DeleteQuotes: Delete quotes'
+      summary: '[EARLY ACCESS] DeleteQuotes: Delete quotes'
       tags:
       - Quotes
-      x-fbn-apistatus: Stable
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/quotes/{scope}/$deprecated:
@@ -46862,10 +46862,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: 'GetA2BData: Get A2B data'
+      summary: '[EXPERIMENTAL] GetA2BData: Get A2B data'
       tags:
       - Transaction Portfolios
-      x-fbn-apistatus: Stable
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/transactionportfolios/{scope}/{code}/a2bmovements:
     get:
@@ -47461,11 +47461,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: 'GetA2BMovements: Get an A2B report at the movement level for the given
-        portfolio.'
+      summary: '[EXPERIMENTAL] GetA2BMovements: Get an A2B report at the movement
+        level for the given portfolio.'
       tags:
       - Transaction Portfolios
-      x-fbn-apistatus: Stable
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/transactionportfolios/{scope}/{code}/bucketedCashFlows:
     post:
@@ -48176,10 +48176,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: 'GetPortfolioCashLadder: Get portfolio cash ladder'
+      summary: '[EXPERIMENTAL] GetPortfolioCashLadder: Get portfolio cash ladder'
       tags:
       - Transaction Portfolios
-      x-fbn-apistatus: Stable
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/transactionportfolios/{scope}/{code}/cashstatement:
     get:
@@ -50292,10 +50292,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: 'GetPortfolioCashStatement: Get portfolio cash statement'
+      summary: '[EARLY ACCESS] GetPortfolioCashStatement: Get portfolio cash statement'
       tags:
       - Transaction Portfolios
-      x-fbn-apistatus: Stable
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/transactionportfolios/{scope}/{code}/details:
     get:
@@ -68530,9 +68530,6 @@ components:
         date: 2000-01-23T04:56:07.000+00:00
         side: side
         quantity: 0
-        limitPrice:
-          amount: 1.4658129805029452
-          currency: currency
         instrumentScope: instrumentScope
         packageId:
           code: code
@@ -68543,9 +68540,6 @@ components:
         version:
           effectiveFrom: 2000-01-23T04:56:07.000+00:00
           asAtDate: 2000-01-23T04:56:07.000+00:00
-        stopPrice:
-          amount: 1.4658129805029452
-          currency: currency
         portfolioId:
           code: code
           scope: scope
@@ -68638,10 +68632,6 @@ components:
           format: date-time
           type: string
         price:
-          $ref: '#/components/schemas/CurrencyAndAmount'
-        limitPrice:
-          $ref: '#/components/schemas/CurrencyAndAmount'
-        stopPrice:
           $ref: '#/components/schemas/CurrencyAndAmount'
         orderInstructionId:
           $ref: '#/components/schemas/ResourceId'
@@ -69083,18 +69073,12 @@ components:
         package:
           code: code
           scope: scope
-        limitPrice:
-          amount: 1.4658129805029452
-          currency: currency
         orderInstruction:
           code: code
           scope: scope
         instrumentIdentifiers:
           key: instrumentIdentifiers
         type: type
-        stopPrice:
-          amount: 1.4658129805029452
-          currency: currency
         portfolioId:
           code: code
           scope: scope
@@ -69166,10 +69150,6 @@ components:
           type: string
         price:
           $ref: '#/components/schemas/CurrencyAndAmount'
-        limitPrice:
-          $ref: '#/components/schemas/CurrencyAndAmount'
-        stopPrice:
-          $ref: '#/components/schemas/CurrencyAndAmount'
         orderInstruction:
           $ref: '#/components/schemas/ResourceId'
         package:
@@ -69192,18 +69172,12 @@ components:
           package:
             code: code
             scope: scope
-          limitPrice:
-            amount: 1.4658129805029452
-            currency: currency
           orderInstruction:
             code: code
             scope: scope
           instrumentIdentifiers:
             key: instrumentIdentifiers
           type: type
-          stopPrice:
-            amount: 1.4658129805029452
-            currency: currency
           portfolioId:
             code: code
             scope: scope
@@ -69236,18 +69210,12 @@ components:
           package:
             code: code
             scope: scope
-          limitPrice:
-            amount: 1.4658129805029452
-            currency: currency
           orderInstruction:
             code: code
             scope: scope
           instrumentIdentifiers:
             key: instrumentIdentifiers
           type: type
-          stopPrice:
-            amount: 1.4658129805029452
-            currency: currency
           portfolioId:
             code: code
             scope: scope
@@ -70992,9 +70960,6 @@ components:
         - date: 2000-01-23T04:56:07.000+00:00
           side: side
           quantity: 0
-          limitPrice:
-            amount: 1.4658129805029452
-            currency: currency
           instrumentScope: instrumentScope
           packageId:
             code: code
@@ -71005,9 +70970,6 @@ components:
           version:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
-          stopPrice:
-            amount: 1.4658129805029452
-            currency: currency
           portfolioId:
             code: code
             scope: scope
@@ -71050,9 +71012,6 @@ components:
         - date: 2000-01-23T04:56:07.000+00:00
           side: side
           quantity: 0
-          limitPrice:
-            amount: 1.4658129805029452
-            currency: currency
           instrumentScope: instrumentScope
           packageId:
             code: code
@@ -71063,9 +71022,6 @@ components:
           version:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
-          stopPrice:
-            amount: 1.4658129805029452
-            currency: currency
           portfolioId:
             code: code
             scope: scope
@@ -79540,9 +79496,6 @@ components:
         - date: 2000-01-23T04:56:07.000+00:00
           side: side
           quantity: 0
-          limitPrice:
-            amount: 1.4658129805029452
-            currency: currency
           instrumentScope: instrumentScope
           packageId:
             code: code
@@ -79553,9 +79506,6 @@ components:
           version:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
-          stopPrice:
-            amount: 1.4658129805029452
-            currency: currency
           portfolioId:
             code: code
             scope: scope
@@ -79598,9 +79548,6 @@ components:
         - date: 2000-01-23T04:56:07.000+00:00
           side: side
           quantity: 0
-          limitPrice:
-            amount: 1.4658129805029452
-            currency: currency
           instrumentScope: instrumentScope
           packageId:
             code: code
@@ -79611,9 +79558,6 @@ components:
           version:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
-          stopPrice:
-            amount: 1.4658129805029452
-            currency: currency
           portfolioId:
             code: code
             scope: scope
