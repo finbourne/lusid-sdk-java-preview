@@ -289,7 +289,7 @@ info:
     | <a name="790">790</a>|Custom Entity has missing or invalid identifiers|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4410
+  version: 0.11.4414
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -18514,14 +18514,44 @@ paths:
                     code: EXEC0000456
                   ordered:
                     quantity: 1500
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: ORD00000123
+                      complianceState: Passed
+                    - id:
+                        scope: MyScope
+                        code: ORD00000456
+                      complianceState: Failed
                   placed:
                     quantity: 1250
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: PLAC00000123
+                    - id:
+                        scope: MyScope
+                        code: PLAC00000456
                   executed:
                     quantity: 1100
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: EXEC0000123
+                    - id:
+                        scope: MyScope
+                        code: EXEC0000456
                   allocated:
                     quantity: 800
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: ALLOC00000123
+                    - id:
+                        scope: MyScope
+                        code: ALLOC00000456
                   derivedState: Partially placed
-                  derivedComplianceState: Compliant
+                  derivedComplianceState: Failed
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphBlock'
@@ -18579,14 +18609,44 @@ paths:
                     code: EXEC0000456
                   ordered:
                     quantity: 1500
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: ORD00000123
+                      complianceState: Passed
+                    - id:
+                        scope: MyScope
+                        code: ORD00000456
+                      complianceState: Failed
                   placed:
                     quantity: 1250
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: PLAC00000123
+                    - id:
+                        scope: MyScope
+                        code: PLAC00000456
                   executed:
                     quantity: 1100
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: EXEC0000123
+                    - id:
+                        scope: MyScope
+                        code: EXEC0000456
                   allocated:
                     quantity: 800
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: ALLOC00000123
+                    - id:
+                        scope: MyScope
+                        code: ALLOC00000456
                   derivedState: Partially placed
-                  derivedComplianceState: Compliant
+                  derivedComplianceState: Failed
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphBlock'
@@ -18644,14 +18704,44 @@ paths:
                     code: EXEC0000456
                   ordered:
                     quantity: 1500
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: ORD00000123
+                      complianceState: Passed
+                    - id:
+                        scope: MyScope
+                        code: ORD00000456
+                      complianceState: Failed
                   placed:
                     quantity: 1250
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: PLAC00000123
+                    - id:
+                        scope: MyScope
+                        code: PLAC00000456
                   executed:
                     quantity: 1100
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: EXEC0000123
+                    - id:
+                        scope: MyScope
+                        code: EXEC0000456
                   allocated:
                     quantity: 800
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: ALLOC00000123
+                    - id:
+                        scope: MyScope
+                        code: ALLOC00000456
                   derivedState: Partially placed
-                  derivedComplianceState: Compliant
+                  derivedComplianceState: Failed
                 links: []
               schema:
                 $ref: '#/components/schemas/PagedResourceListOfOrderGraphBlock'
@@ -18829,12 +18919,34 @@ paths:
                     code: EXEC0000123
                   - scope: MyScope
                     code: EXEC0000456
+                  ordered:
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: ORD00000123
+                    - id:
+                        scope: MyScope
+                        code: ORD00000456
                   placed:
                     quantity: 1250
                   executed:
                     quantity: 1100
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: EXEC0000123
+                    - id:
+                        scope: MyScope
+                        code: EXEC0000456
                   allocated:
                     quantity: 800
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: ALLOC00000123
+                    - id:
+                        scope: MyScope
+                        code: ALLOC00000456
                   derivedState: In progress
                   calculatedAveragePrice: 12401.26
                 links: []
@@ -18891,12 +19003,34 @@ paths:
                     code: EXEC0000123
                   - scope: MyScope
                     code: EXEC0000456
+                  ordered:
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: ORD00000123
+                    - id:
+                        scope: MyScope
+                        code: ORD00000456
                   placed:
                     quantity: 1250
                   executed:
                     quantity: 1100
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: EXEC0000123
+                    - id:
+                        scope: MyScope
+                        code: EXEC0000456
                   allocated:
                     quantity: 800
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: ALLOC00000123
+                    - id:
+                        scope: MyScope
+                        code: ALLOC00000456
                   derivedState: In progress
                   calculatedAveragePrice: 12401.26
                 links: []
@@ -18953,12 +19087,34 @@ paths:
                     code: EXEC0000123
                   - scope: MyScope
                     code: EXEC0000456
+                  ordered:
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: ORD00000123
+                    - id:
+                        scope: MyScope
+                        code: ORD00000456
                   placed:
                     quantity: 1250
                   executed:
                     quantity: 1100
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: EXEC0000123
+                    - id:
+                        scope: MyScope
+                        code: EXEC0000456
                   allocated:
                     quantity: 800
+                    details:
+                    - id:
+                        scope: MyScope
+                        code: ALLOC00000123
+                    - id:
+                        scope: MyScope
+                        code: ALLOC00000456
                   derivedState: In progress
                   calculatedAveragePrice: 12401.26
                 links: []
@@ -68685,13 +68841,29 @@ components:
       example:
         ordered:
           quantity: 0.8008281904610115
+          details:
+          - id:
+              code: code
+              scope: scope
+            complianceState: complianceState
+          - id:
+              code: code
+              scope: scope
+            complianceState: complianceState
         executionIds:
         - code: code
           scope: scope
         - code: code
           scope: scope
         placed:
-          quantity: 0.8008281904610115
+          quantity: 6.027456183070403
+          details:
+          - id:
+              code: code
+              scope: scope
+          - id:
+              code: code
+              scope: scope
         derivedState: derivedState
         block:
           side: side
@@ -68751,7 +68923,14 @@ components:
         - code: code
           scope: scope
         executed:
-          quantity: 0.8008281904610115
+          quantity: 1.4658129805029452
+          details:
+          - id:
+              code: code
+              scope: scope
+          - id:
+              code: code
+              scope: scope
         orderIds:
         - code: code
           scope: scope
@@ -68759,45 +68938,55 @@ components:
           scope: scope
         derivedComplianceState: derivedComplianceState
         allocated:
-          quantity: 0.8008281904610115
+          quantity: 5.962133916683182
+          details:
+          - id:
+              code: code
+              scope: scope
+          - id:
+              code: code
+              scope: scope
       properties:
         block:
           $ref: '#/components/schemas/Block'
         orderIds:
-          description: Identifiers for all the orders in this block.
+          description: 'Identifiers for all the orders in this block - DEPRECATED:
+            see Ordered.'
           items:
             $ref: '#/components/schemas/ResourceId'
           type: array
         placementIds:
-          description: Identifiers of all placements for the block.
+          description: 'Identifiers of all placements for the block - DEPRECATED:
+            see Placed.'
           items:
             $ref: '#/components/schemas/ResourceId'
           type: array
         allocationIds:
-          description: Identifiers for all allocations of placements to orders in
-            the block.
+          description: 'Identifiers for all allocations of placements to orders in
+            the block - DEPRECATED: see Allocated.'
           items:
             $ref: '#/components/schemas/ResourceId'
           type: array
         executionIds:
-          description: Identifiers of all executions against placements in the block.
+          description: 'Identifiers of all executions against placements in the block
+            - DEPRECATED: see Executed.'
           items:
             $ref: '#/components/schemas/ResourceId'
           type: array
         ordered:
-          $ref: '#/components/schemas/OrderGraphSynopsis'
+          $ref: '#/components/schemas/OrderGraphBlockOrderSynopsis'
         placed:
-          $ref: '#/components/schemas/OrderGraphSynopsis'
+          $ref: '#/components/schemas/OrderGraphBlockPlacementSynopsis'
         executed:
-          $ref: '#/components/schemas/OrderGraphSynopsis'
+          $ref: '#/components/schemas/OrderGraphBlockExecutionSynopsis'
         allocated:
-          $ref: '#/components/schemas/OrderGraphSynopsis'
+          $ref: '#/components/schemas/OrderGraphBlockAllocationSynopsis'
         derivedState:
           description: A simple description of the overall state of a block.
           type: string
         derivedComplianceState:
-          description: A simple description of the compliance state of a block. Possible
-            values are [Unchecked, Non-compliant, Compliant]
+          description: The overall compliance state of a block, derived from the block's
+            orders. Possible values are Pending, Failed, and Passed.
           type: string
       required:
       - allocated
@@ -68812,28 +69001,198 @@ components:
       - placed
       - placementIds
       type: object
+    OrderGraphBlockAllocationDetail:
+      additionalProperties: false
+      example:
+        id:
+          code: code
+          scope: scope
+      properties:
+        id:
+          $ref: '#/components/schemas/ResourceId'
+      required:
+      - id
+      type: object
+    OrderGraphBlockAllocationSynopsis:
+      additionalProperties: false
+      example:
+        quantity: 5.962133916683182
+        details:
+        - id:
+            code: code
+            scope: scope
+        - id:
+            code: code
+            scope: scope
+      properties:
+        quantity:
+          description: Total number of units allocated.
+          format: double
+          type: number
+        details:
+          description: Identifiers for each allocation in this block.
+          items:
+            $ref: '#/components/schemas/OrderGraphBlockAllocationDetail'
+          type: array
+      required:
+      - details
+      - quantity
+      type: object
+    OrderGraphBlockExecutionDetail:
+      additionalProperties: false
+      example:
+        id:
+          code: code
+          scope: scope
+      properties:
+        id:
+          $ref: '#/components/schemas/ResourceId'
+      required:
+      - id
+      type: object
+    OrderGraphBlockExecutionSynopsis:
+      additionalProperties: false
+      example:
+        quantity: 1.4658129805029452
+        details:
+        - id:
+            code: code
+            scope: scope
+        - id:
+            code: code
+            scope: scope
+      properties:
+        quantity:
+          description: Total number of units executed.
+          format: double
+          type: number
+        details:
+          description: Identifiers for each execution in this block.
+          items:
+            $ref: '#/components/schemas/OrderGraphBlockExecutionDetail'
+          type: array
+      required:
+      - details
+      - quantity
+      type: object
+    OrderGraphBlockOrderDetail:
+      additionalProperties: false
+      example:
+        id:
+          code: code
+          scope: scope
+        complianceState: complianceState
+      properties:
+        id:
+          $ref: '#/components/schemas/ResourceId'
+        complianceState:
+          description: The compliance state of this order.
+          type: string
+      required:
+      - complianceState
+      - id
+      type: object
+    OrderGraphBlockOrderSynopsis:
+      additionalProperties: false
+      example:
+        quantity: 0.8008281904610115
+        details:
+        - id:
+            code: code
+            scope: scope
+          complianceState: complianceState
+        - id:
+            code: code
+            scope: scope
+          complianceState: complianceState
+      properties:
+        quantity:
+          description: Total number of units ordered.
+          format: double
+          type: number
+        details:
+          description: Identifiers and other info for each order in this block.
+          items:
+            $ref: '#/components/schemas/OrderGraphBlockOrderDetail'
+          type: array
+      required:
+      - details
+      - quantity
+      type: object
+    OrderGraphBlockPlacementDetail:
+      additionalProperties: false
+      example:
+        id:
+          code: code
+          scope: scope
+      properties:
+        id:
+          $ref: '#/components/schemas/ResourceId'
+      required:
+      - id
+      type: object
+    OrderGraphBlockPlacementSynopsis:
+      additionalProperties: false
+      example:
+        quantity: 6.027456183070403
+        details:
+        - id:
+            code: code
+            scope: scope
+        - id:
+            code: code
+            scope: scope
+      properties:
+        quantity:
+          description: Total number of units placed.
+          format: double
+          type: number
+        details:
+          description: Identifiers for each placement in this block.
+          items:
+            $ref: '#/components/schemas/OrderGraphBlockPlacementDetail'
+          type: array
+      required:
+      - details
+      - quantity
+      type: object
     OrderGraphPlacement:
       additionalProperties: false
       example:
         blockId:
           code: code
           scope: scope
+        ordered:
+          details:
+          - id:
+              code: code
+              scope: scope
+          - id:
+              code: code
+              scope: scope
         executionIds:
         - code: code
           scope: scope
         - code: code
           scope: scope
         placed:
-          quantity: 0.8008281904610115
+          quantity: 6.027456183070403
         derivedState: derivedState
-        calculatedAveragePrice: 6.027456183070403
+        calculatedAveragePrice: 5.637376656633329
         allocationIds:
         - code: code
           scope: scope
         - code: code
           scope: scope
         executed:
-          quantity: 0.8008281904610115
+          quantity: 1.4658129805029452
+          details:
+          - id:
+              code: code
+              scope: scope
+          - id:
+              code: code
+              scope: scope
         placement:
           side: side
           quantity: 0.8008281904610115
@@ -68890,33 +69249,45 @@ components:
         - code: code
           scope: scope
         allocated:
-          quantity: 0.8008281904610115
+          quantity: 5.962133916683182
+          details:
+          - id:
+              code: code
+              scope: scope
+          - id:
+              code: code
+              scope: scope
       properties:
         placement:
           $ref: '#/components/schemas/Placement'
         blockId:
           $ref: '#/components/schemas/ResourceId'
         orderIds:
-          description: Identifiers for all orders in the block.
+          description: 'Identifiers for all orders in the block - DEPRECATED: see
+            Ordered.'
           items:
             $ref: '#/components/schemas/ResourceId'
           type: array
         allocationIds:
-          description: Identifiers for all allocations relating to this placement.
+          description: 'Identifiers for all allocations relating to this placement
+            - DEPRECATED: see Allocated.'
           items:
             $ref: '#/components/schemas/ResourceId'
           type: array
         executionIds:
-          description: Identifiers of all executions against this placement.
+          description: 'Identifiers of all executions against this placement - DEPRECATED:
+            see Executed.'
           items:
             $ref: '#/components/schemas/ResourceId'
           type: array
+        ordered:
+          $ref: '#/components/schemas/OrderGraphPlacementOrderSynopsis'
         placed:
-          $ref: '#/components/schemas/OrderGraphSynopsis'
+          $ref: '#/components/schemas/OrderGraphPlacementPlacementSynopsis'
         executed:
-          $ref: '#/components/schemas/OrderGraphSynopsis'
+          $ref: '#/components/schemas/OrderGraphPlacementExecutionSynopsis'
         allocated:
-          $ref: '#/components/schemas/OrderGraphSynopsis'
+          $ref: '#/components/schemas/OrderGraphPlacementAllocationSynopsis'
         derivedState:
           description: A simple description of the overall state of a placement.
           type: string
@@ -68933,16 +69304,122 @@ components:
       - executed
       - executionIds
       - orderIds
+      - ordered
       - placed
       - placement
       type: object
-    OrderGraphSynopsis:
+    OrderGraphPlacementAllocationDetail:
       additionalProperties: false
       example:
-        quantity: 0.8008281904610115
+        id:
+          code: code
+          scope: scope
+      properties:
+        id:
+          $ref: '#/components/schemas/ResourceId'
+      required:
+      - id
+      type: object
+    OrderGraphPlacementAllocationSynopsis:
+      additionalProperties: false
+      example:
+        quantity: 5.962133916683182
+        details:
+        - id:
+            code: code
+            scope: scope
+        - id:
+            code: code
+            scope: scope
       properties:
         quantity:
-          description: Total number of units.
+          description: Total number of units allocated.
+          format: double
+          type: number
+        details:
+          description: Identifiers for each allocation in this placement.
+          items:
+            $ref: '#/components/schemas/OrderGraphPlacementAllocationDetail'
+          type: array
+      required:
+      - details
+      - quantity
+      type: object
+    OrderGraphPlacementExecutionDetail:
+      additionalProperties: false
+      example:
+        id:
+          code: code
+          scope: scope
+      properties:
+        id:
+          $ref: '#/components/schemas/ResourceId'
+      required:
+      - id
+      type: object
+    OrderGraphPlacementExecutionSynopsis:
+      additionalProperties: false
+      example:
+        quantity: 1.4658129805029452
+        details:
+        - id:
+            code: code
+            scope: scope
+        - id:
+            code: code
+            scope: scope
+      properties:
+        quantity:
+          description: Total number of units executed.
+          format: double
+          type: number
+        details:
+          description: Identifiers info for each execution against this placement.
+          items:
+            $ref: '#/components/schemas/OrderGraphPlacementExecutionDetail'
+          type: array
+      required:
+      - details
+      - quantity
+      type: object
+    OrderGraphPlacementOrderDetail:
+      additionalProperties: false
+      example:
+        id:
+          code: code
+          scope: scope
+      properties:
+        id:
+          $ref: '#/components/schemas/ResourceId'
+      required:
+      - id
+      type: object
+    OrderGraphPlacementOrderSynopsis:
+      additionalProperties: false
+      example:
+        details:
+        - id:
+            code: code
+            scope: scope
+        - id:
+            code: code
+            scope: scope
+      properties:
+        details:
+          description: Identifiers for each order in the block.
+          items:
+            $ref: '#/components/schemas/OrderGraphPlacementOrderDetail'
+          type: array
+      required:
+      - details
+      type: object
+    OrderGraphPlacementPlacementSynopsis:
+      additionalProperties: false
+      example:
+        quantity: 6.027456183070403
+      properties:
+        quantity:
+          description: Total number of units placed.
           format: double
           type: number
       required:
@@ -71152,13 +71629,29 @@ components:
         values:
         - ordered:
             quantity: 0.8008281904610115
+            details:
+            - id:
+                code: code
+                scope: scope
+              complianceState: complianceState
+            - id:
+                code: code
+                scope: scope
+              complianceState: complianceState
           executionIds:
           - code: code
             scope: scope
           - code: code
             scope: scope
           placed:
-            quantity: 0.8008281904610115
+            quantity: 6.027456183070403
+            details:
+            - id:
+                code: code
+                scope: scope
+            - id:
+                code: code
+                scope: scope
           derivedState: derivedState
           block:
             side: side
@@ -71218,7 +71711,14 @@ components:
           - code: code
             scope: scope
           executed:
-            quantity: 0.8008281904610115
+            quantity: 1.4658129805029452
+            details:
+            - id:
+                code: code
+                scope: scope
+            - id:
+                code: code
+                scope: scope
           orderIds:
           - code: code
             scope: scope
@@ -71226,16 +71726,39 @@ components:
             scope: scope
           derivedComplianceState: derivedComplianceState
           allocated:
-            quantity: 0.8008281904610115
+            quantity: 5.962133916683182
+            details:
+            - id:
+                code: code
+                scope: scope
+            - id:
+                code: code
+                scope: scope
         - ordered:
             quantity: 0.8008281904610115
+            details:
+            - id:
+                code: code
+                scope: scope
+              complianceState: complianceState
+            - id:
+                code: code
+                scope: scope
+              complianceState: complianceState
           executionIds:
           - code: code
             scope: scope
           - code: code
             scope: scope
           placed:
-            quantity: 0.8008281904610115
+            quantity: 6.027456183070403
+            details:
+            - id:
+                code: code
+                scope: scope
+            - id:
+                code: code
+                scope: scope
           derivedState: derivedState
           block:
             side: side
@@ -71295,7 +71818,14 @@ components:
           - code: code
             scope: scope
           executed:
-            quantity: 0.8008281904610115
+            quantity: 1.4658129805029452
+            details:
+            - id:
+                code: code
+                scope: scope
+            - id:
+                code: code
+                scope: scope
           orderIds:
           - code: code
             scope: scope
@@ -71303,7 +71833,14 @@ components:
             scope: scope
           derivedComplianceState: derivedComplianceState
           allocated:
-            quantity: 0.8008281904610115
+            quantity: 5.962133916683182
+            details:
+            - id:
+                code: code
+                scope: scope
+            - id:
+                code: code
+                scope: scope
         links:
         - method: method
           description: description
@@ -71352,22 +71889,37 @@ components:
         - blockId:
             code: code
             scope: scope
+          ordered:
+            details:
+            - id:
+                code: code
+                scope: scope
+            - id:
+                code: code
+                scope: scope
           executionIds:
           - code: code
             scope: scope
           - code: code
             scope: scope
           placed:
-            quantity: 0.8008281904610115
+            quantity: 6.027456183070403
           derivedState: derivedState
-          calculatedAveragePrice: 6.027456183070403
+          calculatedAveragePrice: 5.637376656633329
           allocationIds:
           - code: code
             scope: scope
           - code: code
             scope: scope
           executed:
-            quantity: 0.8008281904610115
+            quantity: 1.4658129805029452
+            details:
+            - id:
+                code: code
+                scope: scope
+            - id:
+                code: code
+                scope: scope
           placement:
             side: side
             quantity: 0.8008281904610115
@@ -71424,26 +71976,48 @@ components:
           - code: code
             scope: scope
           allocated:
-            quantity: 0.8008281904610115
+            quantity: 5.962133916683182
+            details:
+            - id:
+                code: code
+                scope: scope
+            - id:
+                code: code
+                scope: scope
         - blockId:
             code: code
             scope: scope
+          ordered:
+            details:
+            - id:
+                code: code
+                scope: scope
+            - id:
+                code: code
+                scope: scope
           executionIds:
           - code: code
             scope: scope
           - code: code
             scope: scope
           placed:
-            quantity: 0.8008281904610115
+            quantity: 6.027456183070403
           derivedState: derivedState
-          calculatedAveragePrice: 6.027456183070403
+          calculatedAveragePrice: 5.637376656633329
           allocationIds:
           - code: code
             scope: scope
           - code: code
             scope: scope
           executed:
-            quantity: 0.8008281904610115
+            quantity: 1.4658129805029452
+            details:
+            - id:
+                code: code
+                scope: scope
+            - id:
+                code: code
+                scope: scope
           placement:
             side: side
             quantity: 0.8008281904610115
@@ -71500,7 +72074,14 @@ components:
           - code: code
             scope: scope
           allocated:
-            quantity: 0.8008281904610115
+            quantity: 5.962133916683182
+            details:
+            - id:
+                code: code
+                scope: scope
+            - id:
+                code: code
+                scope: scope
         links:
         - method: method
           description: description
