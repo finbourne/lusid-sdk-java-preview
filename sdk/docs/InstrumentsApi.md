@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**deleteInstrumentProperties**](InstrumentsApi.md#deleteInstrumentProperties) | **POST** /api/instruments/{identifierType}/{identifier}/properties/$delete | [EXPERIMENTAL] DeleteInstrumentProperties: Delete instrument properties
 [**getInstrument**](InstrumentsApi.md#getInstrument) | **GET** /api/instruments/{identifierType}/{identifier} | GetInstrument: Get instrument
 [**getInstrumentIdentifierTypes**](InstrumentsApi.md#getInstrumentIdentifierTypes) | **GET** /api/instruments/identifierTypes | GetInstrumentIdentifierTypes: Get instrument identifier types
-[**getInstrumentPaymentDiary**](InstrumentsApi.md#getInstrumentPaymentDiary) | **GET** /api/instruments/{identifierType}/{identifier}/paymentdiary | [EXPERIMENTAL] GetInstrumentPaymentDiary: Get instrument payment diary
 [**getInstrumentProperties**](InstrumentsApi.md#getInstrumentProperties) | **GET** /api/instruments/{identifierType}/{identifier}/properties | [EXPERIMENTAL] GetInstrumentProperties: Get instrument properties
 [**getInstrumentPropertyTimeSeries**](InstrumentsApi.md#getInstrumentPropertyTimeSeries) | **GET** /api/instruments/{identifierType}/{identifier}/properties/time-series | [EARLY ACCESS] GetInstrumentPropertyTimeSeries: Get instrument property time series
 [**getInstrumentRelationships**](InstrumentsApi.md#getInstrumentRelationships) | **GET** /api/instruments/{identifierType}/{identifier}/relationships | [EXPERIMENTAL] GetInstrumentRelationships: Get Instrument relationships
@@ -311,87 +310,6 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of valid instrument identifier types. |  -  |
-**0** | Error response |  -  |
-
-<a name="getInstrumentPaymentDiary"></a>
-# **getInstrumentPaymentDiary**
-> InstrumentPaymentDiary getInstrumentPaymentDiary(identifierType, identifier, recipeScope, recipeCode, effectiveAt, asAt, scope)
-
-[EXPERIMENTAL] GetInstrumentPaymentDiary: Get instrument payment diary
-
-Get the payment diary of a single instrument.
-
-### Example
-```java
-// Import classes:
-import com.finbourne.lusid.ApiClient;
-import com.finbourne.lusid.ApiException;
-import com.finbourne.lusid.Configuration;
-import com.finbourne.lusid.auth.*;
-import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.InstrumentsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://www.lusid.com/api");
-    
-    // Configure OAuth2 access token for authorization: oauth2
-    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-    oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-    InstrumentsApi apiInstance = new InstrumentsApi(defaultClient);
-    String identifierType = "identifierType_example"; // String | The identifier being supplied e.g. \"Figi\".
-    String identifier = "identifier_example"; // String | The value of the identifier for the requested instrument.
-    String recipeScope = "recipeScope_example"; // String | The scope of the valuation recipe being used to generate the payment diary
-    String recipeCode = "recipeCode_example"; // String | The code of the valuation recipe being used to generate the payment diary
-    String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to list the instrument's properties. Defaults to the current LUSID system datetime if not specified.
-    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to list the instrument's properties. Defaults to return the latest version of each property if not specified.
-    String scope = "default"; // String | The scope in which the instrument lies. When not supplied the scope is 'default'.
-    try {
-      InstrumentPaymentDiary result = apiInstance.getInstrumentPaymentDiary(identifierType, identifier, recipeScope, recipeCode, effectiveAt, asAt, scope);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling InstrumentsApi#getInstrumentPaymentDiary");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identifierType** | **String**| The identifier being supplied e.g. \&quot;Figi\&quot;. |
- **identifier** | **String**| The value of the identifier for the requested instrument. |
- **recipeScope** | **String**| The scope of the valuation recipe being used to generate the payment diary | [optional]
- **recipeCode** | **String**| The code of the valuation recipe being used to generate the payment diary | [optional]
- **effectiveAt** | **String**| The effective datetime or cut label at which to list the instrument&#39;s properties. Defaults to the current LUSID system datetime if not specified. | [optional]
- **asAt** | **OffsetDateTime**| The asAt datetime at which to list the instrument&#39;s properties. Defaults to return the latest version of each property if not specified. | [optional]
- **scope** | **String**| The scope in which the instrument lies. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
-
-### Return type
-
-[**InstrumentPaymentDiary**](InstrumentPaymentDiary.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The payment diary of the specified instrument |  -  |
-**400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
 <a name="getInstrumentProperties"></a>
