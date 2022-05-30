@@ -289,7 +289,7 @@ info:
     | <a name="790">790</a>|Custom Entity has missing or invalid identifiers|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4418
+  version: 0.11.4421
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -4902,8 +4902,8 @@ paths:
       x-accepts: application/json
   /api/compliance:
     get:
-      description: '!! CURRENTLY RETURNS DUMMY DATA !! Use this endpoint to fetch
-        a list of all historical compliance runs.'
+      description: Use this endpoint to fetch a list of all historical compliance
+        runs.
       operationId: ListComplianceRuns
       parameters:
       - description: "The pagination token to use to continue listing compliance runs\
@@ -5009,7 +5009,8 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListComplianceRuns: List historical compliance runs.'
+      summary: '[EXPERIMENTAL] ListComplianceRuns: List historical compliance runs.
+        -- DEPRECATING IN FAVOUR OF NEW ENDPOINT'
       tags:
       - Compliance
       x-fbn-apistatus: Experimental
@@ -5874,6 +5875,133 @@ paths:
       x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/compliance/runs:
+    get:
+      description: Use this endpoint to fetch a list of all historical compliance
+        runs.
+      operationId: ListComplianceRunInfo
+      parameters:
+      - description: 'Optional. The time at which to get results from. Default : latest'
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: 'Optional. The time at which to get results from. Default :
+            latest'
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: "The pagination token to use to continue listing compliance runs\
+          \ from a previous call to list compliance runs.\r\n            This value\
+          \ is returned from the previous call. If a pagination token is provided\
+          \ the sortBy, filter, and asAt fields\r\n            must not have changed\
+          \ since the original request. Also, if set, a start value cannot be provided."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          description: "The pagination token to use to continue listing compliance\
+            \ runs from a previous call to list compliance runs.\r\n            This\
+            \ value is returned from the previous call. If a pagination token is provided\
+            \ the sortBy, filter, and asAt fields\r\n            must not have changed\
+            \ since the original request. Also, if set, a start value cannot be provided."
+          maxLength: 500
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
+          type: string
+        style: form
+      - description: When paginating, limit the number of returned results to this
+          many.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: When paginating, limit the number of returned results to this
+            many.
+          format: int32
+          maximum: 5000
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: Expression to filter the result set. Read more about filtering
+          results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          description: Expression to filter the result set. Read more about filtering
+            results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
+          maxLength: 16384
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                - runId: 1234-5678-9101
+                  asAt: 2020-01-05T00:00:00.0000000+00:00
+                href: https://myco.lusid.com/api/api/compliance
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfComplianceRun'
+            application/json:
+              example:
+                values:
+                - runId: 1234-5678-9101
+                  asAt: 2020-01-05T00:00:00.0000000+00:00
+                href: https://myco.lusid.com/api/api/compliance
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfComplianceRun'
+            text/json:
+              example:
+                values:
+                - runId: 1234-5678-9101
+                  asAt: 2020-01-05T00:00:00.0000000+00:00
+                href: https://myco.lusid.com/api/api/compliance
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfComplianceRun'
+          description: The List of IDs for all compliance runs completed
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListComplianceRunInfo: List historical compliance run
+        ids.'
+      tags:
+      - Compliance
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
     post:
       description: Use this endpoint to fetch the start a compliance run, based on
         a pre-set mapping file.
@@ -13341,6 +13469,202 @@ paths:
       - Instruments
       x-fbn-apistatus: Stable
       x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/instruments/{identifierType}/{identifier}/paymentdiary:
+    get:
+      description: Get the payment diary of a single instrument.
+      operationId: GetInstrumentPaymentDiary
+      parameters:
+      - description: The identifier being supplied e.g. "Figi".
+        explode: false
+        in: path
+        name: identifierType
+        required: true
+        schema:
+          description: The identifier being supplied e.g. "Figi".
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The value of the identifier for the requested instrument.
+        explode: false
+        in: path
+        name: identifier
+        required: true
+        schema:
+          description: The value of the identifier for the requested instrument.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The scope of the valuation recipe being used to generate the
+          payment diary
+        explode: true
+        in: query
+        name: recipeScope
+        required: false
+        schema:
+          description: The scope of the valuation recipe being used to generate the
+            payment diary
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: The code of the valuation recipe being used to generate the payment
+          diary
+        explode: true
+        in: query
+        name: recipeCode
+        required: false
+        schema:
+          description: The code of the valuation recipe being used to generate the
+            payment diary
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: The effective datetime or cut label at which to list the instrument's
+          properties. Defaults to the current LUSID system datetime if not specified.
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: The effective datetime or cut label at which to list the instrument's
+            properties. Defaults to the current LUSID system datetime if not specified.
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: The asAt datetime at which to list the instrument's properties.
+          Defaults to return the latest version of each property if not specified.
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: The asAt datetime at which to list the instrument's properties.
+            Defaults to return the latest version of each property if not specified.
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: The scope in which the instrument lies. When not supplied the
+          scope is 'default'.
+        explode: true
+        in: query
+        name: scope
+        required: false
+        schema:
+          default: default
+          description: The scope in which the instrument lies. When not supplied the
+            scope is 'default'.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                instrumentIdType: ClientInternal
+                instrumentId: An-Identifier
+                instrumentScope: default
+                legs:
+                - legId: Recieve
+                  rows:
+                  - quantity: 1000
+                    currency: GBP
+                    paymentDate: 2022-06-01T00:00:00.0000000+00:00
+                    payOrReceive: Receive
+                    accrualStart: 2022-05-01T00:00:00.0000000+00:00
+                    accrualEnd: 2022-05-31T00:00:00.0000000+00:00
+                    cashFlowType: Coupon
+                    isCashFlowDetermined: true
+                    isCashFlowHistoric: false
+                    discountFactor: 1
+                    discountedExpectedCashFlowAmount: 1000
+              schema:
+                $ref: '#/components/schemas/InstrumentPaymentDiary'
+            application/json:
+              example:
+                instrumentIdType: ClientInternal
+                instrumentId: An-Identifier
+                instrumentScope: default
+                legs:
+                - legId: Recieve
+                  rows:
+                  - quantity: 1000
+                    currency: GBP
+                    paymentDate: 2022-06-01T00:00:00.0000000+00:00
+                    payOrReceive: Receive
+                    accrualStart: 2022-05-01T00:00:00.0000000+00:00
+                    accrualEnd: 2022-05-31T00:00:00.0000000+00:00
+                    cashFlowType: Coupon
+                    isCashFlowDetermined: true
+                    isCashFlowHistoric: false
+                    discountFactor: 1
+                    discountedExpectedCashFlowAmount: 1000
+              schema:
+                $ref: '#/components/schemas/InstrumentPaymentDiary'
+            text/json:
+              example:
+                instrumentIdType: ClientInternal
+                instrumentId: An-Identifier
+                instrumentScope: default
+                legs:
+                - legId: Recieve
+                  rows:
+                  - quantity: 1000
+                    currency: GBP
+                    paymentDate: 2022-06-01T00:00:00.0000000+00:00
+                    payOrReceive: Receive
+                    accrualStart: 2022-05-01T00:00:00.0000000+00:00
+                    accrualEnd: 2022-05-31T00:00:00.0000000+00:00
+                    cashFlowType: Coupon
+                    isCashFlowDetermined: true
+                    isCashFlowHistoric: false
+                    discountFactor: 1
+                    discountedExpectedCashFlowAmount: 1000
+              schema:
+                $ref: '#/components/schemas/InstrumentPaymentDiary'
+          description: The payment diary of the specified instrument
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] GetInstrumentPaymentDiary: Get instrument payment diary'
+      tags:
+      - Instruments
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/instruments/{identifierType}/{identifier}/properties:
     get:
@@ -62746,7 +63070,7 @@ components:
           type: string
         identifierValue:
           description: The value of the identifier for this entity.
-          maxLength: 64
+          maxLength: 1024
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
@@ -67228,6 +67552,262 @@ components:
             $ref: '#/components/schemas/InstrumentDefinition'
           nullable: true
           type: array
+      type: object
+    InstrumentPaymentDiary:
+      additionalProperties: false
+      description: A payment diary containing all the cashflows on a single instrument.
+      example:
+        instrumentScope: instrumentScope
+        instrumentId: instrumentId
+        legs:
+        - legId: legId
+          rows:
+          - quantity: 0.8008281904610115
+            isCashFlowDetermined: true
+            accrualStart: 2000-01-23T04:56:07.000+00:00
+            cashFlowType: cashFlowType
+            forwardRate: 5.637376656633329
+            payOrReceive: payOrReceive
+            spread: 7.061401241503109
+            resetRate: 2.3021358869347655
+            isCashFlowHistoric: true
+            discountedExpectedCashFlowAmount: 1.4658129805029452
+            dayCountFraction: 5.962133916683182
+            accrualEnd: 2000-01-23T04:56:07.000+00:00
+            currency: currency
+            discountFactor: 6.027456183070403
+            paymentDate: 2000-01-23T04:56:07.000+00:00
+          - quantity: 0.8008281904610115
+            isCashFlowDetermined: true
+            accrualStart: 2000-01-23T04:56:07.000+00:00
+            cashFlowType: cashFlowType
+            forwardRate: 5.637376656633329
+            payOrReceive: payOrReceive
+            spread: 7.061401241503109
+            resetRate: 2.3021358869347655
+            isCashFlowHistoric: true
+            discountedExpectedCashFlowAmount: 1.4658129805029452
+            dayCountFraction: 5.962133916683182
+            accrualEnd: 2000-01-23T04:56:07.000+00:00
+            currency: currency
+            discountFactor: 6.027456183070403
+            paymentDate: 2000-01-23T04:56:07.000+00:00
+        - legId: legId
+          rows:
+          - quantity: 0.8008281904610115
+            isCashFlowDetermined: true
+            accrualStart: 2000-01-23T04:56:07.000+00:00
+            cashFlowType: cashFlowType
+            forwardRate: 5.637376656633329
+            payOrReceive: payOrReceive
+            spread: 7.061401241503109
+            resetRate: 2.3021358869347655
+            isCashFlowHistoric: true
+            discountedExpectedCashFlowAmount: 1.4658129805029452
+            dayCountFraction: 5.962133916683182
+            accrualEnd: 2000-01-23T04:56:07.000+00:00
+            currency: currency
+            discountFactor: 6.027456183070403
+            paymentDate: 2000-01-23T04:56:07.000+00:00
+          - quantity: 0.8008281904610115
+            isCashFlowDetermined: true
+            accrualStart: 2000-01-23T04:56:07.000+00:00
+            cashFlowType: cashFlowType
+            forwardRate: 5.637376656633329
+            payOrReceive: payOrReceive
+            spread: 7.061401241503109
+            resetRate: 2.3021358869347655
+            isCashFlowHistoric: true
+            discountedExpectedCashFlowAmount: 1.4658129805029452
+            dayCountFraction: 5.962133916683182
+            accrualEnd: 2000-01-23T04:56:07.000+00:00
+            currency: currency
+            discountFactor: 6.027456183070403
+            paymentDate: 2000-01-23T04:56:07.000+00:00
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+        instrumentIdType: instrumentIdType
+        version:
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          asAtDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        instrumentIdType:
+          description: The identifier type of the instrument.
+          nullable: true
+          type: string
+        instrumentId:
+          description: The identifier for the instrument.
+          nullable: true
+          type: string
+        instrumentScope:
+          description: The scope of the instrument.
+          nullable: true
+          type: string
+        version:
+          $ref: '#/components/schemas/Version'
+        legs:
+          description: Aggregated sets of Cashflows.
+          items:
+            $ref: '#/components/schemas/InstrumentPaymentDiaryLeg'
+          nullable: true
+          type: array
+        href:
+          description: The specific Uniform Resource Identifier (URI) for this resource
+            at the requested effective and asAt datetime.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      type: object
+    InstrumentPaymentDiaryLeg:
+      additionalProperties: false
+      description: A leg containing a set of cashflows.
+      example:
+        legId: legId
+        rows:
+        - quantity: 0.8008281904610115
+          isCashFlowDetermined: true
+          accrualStart: 2000-01-23T04:56:07.000+00:00
+          cashFlowType: cashFlowType
+          forwardRate: 5.637376656633329
+          payOrReceive: payOrReceive
+          spread: 7.061401241503109
+          resetRate: 2.3021358869347655
+          isCashFlowHistoric: true
+          discountedExpectedCashFlowAmount: 1.4658129805029452
+          dayCountFraction: 5.962133916683182
+          accrualEnd: 2000-01-23T04:56:07.000+00:00
+          currency: currency
+          discountFactor: 6.027456183070403
+          paymentDate: 2000-01-23T04:56:07.000+00:00
+        - quantity: 0.8008281904610115
+          isCashFlowDetermined: true
+          accrualStart: 2000-01-23T04:56:07.000+00:00
+          cashFlowType: cashFlowType
+          forwardRate: 5.637376656633329
+          payOrReceive: payOrReceive
+          spread: 7.061401241503109
+          resetRate: 2.3021358869347655
+          isCashFlowHistoric: true
+          discountedExpectedCashFlowAmount: 1.4658129805029452
+          dayCountFraction: 5.962133916683182
+          accrualEnd: 2000-01-23T04:56:07.000+00:00
+          currency: currency
+          discountFactor: 6.027456183070403
+          paymentDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        legId:
+          description: Identifier for the leg of a payment diary.
+          nullable: true
+          type: string
+        rows:
+          description: List of individual cashflows within the payment diary.
+          items:
+            $ref: '#/components/schemas/InstrumentPaymentDiaryRow'
+          nullable: true
+          type: array
+      type: object
+    InstrumentPaymentDiaryRow:
+      additionalProperties: false
+      description: An individual row containing details of a single cashflow in the
+        diary.
+      example:
+        quantity: 0.8008281904610115
+        isCashFlowDetermined: true
+        accrualStart: 2000-01-23T04:56:07.000+00:00
+        cashFlowType: cashFlowType
+        forwardRate: 5.637376656633329
+        payOrReceive: payOrReceive
+        spread: 7.061401241503109
+        resetRate: 2.3021358869347655
+        isCashFlowHistoric: true
+        discountedExpectedCashFlowAmount: 1.4658129805029452
+        dayCountFraction: 5.962133916683182
+        accrualEnd: 2000-01-23T04:56:07.000+00:00
+        currency: currency
+        discountFactor: 6.027456183070403
+        paymentDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        quantity:
+          description: The quantity (amount) that will be paid. Note that this can
+            be empty if the payment is in the future and a model is used that cannot
+            estimate it.
+          format: double
+          type: number
+        currency:
+          description: The payment currency of the cash flow.
+          nullable: true
+          type: string
+        paymentDate:
+          description: The date at which the given cash flow is due to be paid.
+          format: date-time
+          type: string
+        payOrReceive:
+          description: Does the cash flow belong to the Pay or Receive leg.
+          nullable: true
+          type: string
+        accrualStart:
+          description: The date on which accruals start for this cashflow.
+          format: date-time
+          type: string
+        accrualEnd:
+          description: The date on which accruals end for this cashflow.
+          format: date-time
+          type: string
+        cashFlowType:
+          description: The type of cashflow.
+          nullable: true
+          type: string
+        isCashFlowDetermined:
+          description: Is the cashflow determined as of the effective date time.
+          type: boolean
+        isCashFlowHistoric:
+          description: Has the cashflow been paid, i.e. has it become a historic cashflow,
+            as of the date and time pointed to be effectiveAt.
+          type: boolean
+        discountFactor:
+          description: Weighting factor to discount cashflow to the present value.
+          format: double
+          type: number
+        discountedExpectedCashFlowAmount:
+          description: The expected cashflow amount taking into account the discount
+            factor.
+          format: double
+          type: number
+        dayCountFraction:
+          description: The day count fraction, if appropriate.
+          format: double
+          nullable: true
+          type: number
+        forwardRate:
+          description: Forward rate for cash flow if appropriate. (as in for a rates
+            fixed or floating leg)
+          format: double
+          nullable: true
+          type: number
+        resetRate:
+          description: The value of the reset, if any.
+          format: double
+          nullable: true
+          type: number
+        spread:
+          description: The spread that exists on the payoff.
+          format: double
+          nullable: true
+          type: number
       type: object
     InstrumentProperties:
       additionalProperties: false
@@ -92483,7 +93063,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
