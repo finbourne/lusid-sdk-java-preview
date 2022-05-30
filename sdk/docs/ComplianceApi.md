@@ -8,8 +8,7 @@ Method | HTTP request | Description
 [**getComplianceRule**](ComplianceApi.md#getComplianceRule) | **GET** /api/compliance/rules/{scope}/{code} | [EXPERIMENTAL] GetComplianceRule: Retrieve the definition of single compliance rule.
 [**getComplianceRunResults**](ComplianceApi.md#getComplianceRunResults) | **GET** /api/compliance/runs/{runId} | [EXPERIMENTAL] GetComplianceRunResults: Get the details of a single compliance run.
 [**listComplianceRules**](ComplianceApi.md#listComplianceRules) | **GET** /api/compliance/rules | [EXPERIMENTAL] ListComplianceRules: List compliance rules, with optional filtering.
-[**listComplianceRunInfo**](ComplianceApi.md#listComplianceRunInfo) | **GET** /api/compliance/runs | [EXPERIMENTAL] ListComplianceRunInfo: List historical compliance run ids.
-[**listComplianceRuns**](ComplianceApi.md#listComplianceRuns) | **GET** /api/compliance | [EXPERIMENTAL] ListComplianceRuns: List historical compliance runs. -- DEPRECATING IN FAVOUR OF NEW ENDPOINT
+[**listComplianceRuns**](ComplianceApi.md#listComplianceRuns) | **GET** /api/compliance | [EXPERIMENTAL] ListComplianceRuns: List historical compliance runs.
 [**runCompliance**](ComplianceApi.md#runCompliance) | **POST** /api/compliance/runs | [EXPERIMENTAL] RunCompliance: Kick off the compliance check process
 [**runComplianceCheck**](ComplianceApi.md#runComplianceCheck) | **POST** /api/compliance/run | [EXPERIMENTAL] RunComplianceCheck: Kick off the compliance check process -- DEPRECATING - POST TRADE ONLY
 [**upsertComplianceRules**](ComplianceApi.md#upsertComplianceRules) | **POST** /api/compliance/rules | [EXPERIMENTAL] UpsertComplianceRules: Upsert compliance rules.
@@ -311,88 +310,13 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
-<a name="listComplianceRunInfo"></a>
-# **listComplianceRunInfo**
-> ResourceListOfComplianceRun listComplianceRunInfo(asAt, page, limit, filter)
-
-[EXPERIMENTAL] ListComplianceRunInfo: List historical compliance run ids.
-
-Use this endpoint to fetch a list of all historical compliance runs.
-
-### Example
-```java
-// Import classes:
-import com.finbourne.lusid.ApiClient;
-import com.finbourne.lusid.ApiException;
-import com.finbourne.lusid.Configuration;
-import com.finbourne.lusid.auth.*;
-import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.ComplianceApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://www.lusid.com/api");
-    
-    // Configure OAuth2 access token for authorization: oauth2
-    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-    oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-    ComplianceApi apiInstance = new ComplianceApi(defaultClient);
-    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | Optional. The time at which to get results from. Default : latest
-    String page = "page_example"; // String | The pagination token to use to continue listing compliance runs from a previous call to list compliance runs.              This value is returned from the previous call. If a pagination token is provided the sortBy, filter, and asAt fields              must not have changed since the original request. Also, if set, a start value cannot be provided.
-    Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many.
-    String filter = "filter_example"; // String | Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
-    try {
-      ResourceListOfComplianceRun result = apiInstance.listComplianceRunInfo(asAt, page, limit, filter);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling ComplianceApi#listComplianceRunInfo");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **asAt** | **OffsetDateTime**| Optional. The time at which to get results from. Default : latest | [optional]
- **page** | **String**| The pagination token to use to continue listing compliance runs from a previous call to list compliance runs.              This value is returned from the previous call. If a pagination token is provided the sortBy, filter, and asAt fields              must not have changed since the original request. Also, if set, a start value cannot be provided. | [optional]
- **limit** | **Integer**| When paginating, limit the number of returned results to this many. | [optional]
- **filter** | **String**| Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
-
-### Return type
-
-[**ResourceListOfComplianceRun**](ResourceListOfComplianceRun.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The List of IDs for all compliance runs completed |  -  |
-**400** | The details of the input related failure |  -  |
-**0** | Error response |  -  |
-
 <a name="listComplianceRuns"></a>
 # **listComplianceRuns**
 > ResourceListOfComplianceRun listComplianceRuns(page, limit, filter)
 
-[EXPERIMENTAL] ListComplianceRuns: List historical compliance runs. -- DEPRECATING IN FAVOUR OF NEW ENDPOINT
+[EXPERIMENTAL] ListComplianceRuns: List historical compliance runs.
 
-Use this endpoint to fetch a list of all historical compliance runs.
+!! CURRENTLY RETURNS DUMMY DATA !! Use this endpoint to fetch a list of all historical compliance runs.
 
 ### Example
 ```java

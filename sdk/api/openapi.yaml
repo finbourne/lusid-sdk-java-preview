@@ -289,7 +289,7 @@ info:
     | <a name="790">790</a>|Custom Entity has missing or invalid identifiers|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4420
+  version: 0.11.4418
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -4902,8 +4902,8 @@ paths:
       x-accepts: application/json
   /api/compliance:
     get:
-      description: Use this endpoint to fetch a list of all historical compliance
-        runs.
+      description: '!! CURRENTLY RETURNS DUMMY DATA !! Use this endpoint to fetch
+        a list of all historical compliance runs.'
       operationId: ListComplianceRuns
       parameters:
       - description: "The pagination token to use to continue listing compliance runs\
@@ -5009,8 +5009,7 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListComplianceRuns: List historical compliance runs.
-        -- DEPRECATING IN FAVOUR OF NEW ENDPOINT'
+      summary: '[EXPERIMENTAL] ListComplianceRuns: List historical compliance runs.'
       tags:
       - Compliance
       x-fbn-apistatus: Experimental
@@ -5875,133 +5874,6 @@ paths:
       x-fbn-apistatus: Experimental
       x-accepts: application/json
   /api/compliance/runs:
-    get:
-      description: Use this endpoint to fetch a list of all historical compliance
-        runs.
-      operationId: ListComplianceRunInfo
-      parameters:
-      - description: 'Optional. The time at which to get results from. Default : latest'
-        explode: true
-        in: query
-        name: asAt
-        required: false
-        schema:
-          description: 'Optional. The time at which to get results from. Default :
-            latest'
-          format: date-time
-          nullable: true
-          type: string
-        style: form
-        x-nullable: true
-      - description: "The pagination token to use to continue listing compliance runs\
-          \ from a previous call to list compliance runs.\r\n            This value\
-          \ is returned from the previous call. If a pagination token is provided\
-          \ the sortBy, filter, and asAt fields\r\n            must not have changed\
-          \ since the original request. Also, if set, a start value cannot be provided."
-        explode: true
-        in: query
-        name: page
-        required: false
-        schema:
-          description: "The pagination token to use to continue listing compliance\
-            \ runs from a previous call to list compliance runs.\r\n            This\
-            \ value is returned from the previous call. If a pagination token is provided\
-            \ the sortBy, filter, and asAt fields\r\n            must not have changed\
-            \ since the original request. Also, if set, a start value cannot be provided."
-          maxLength: 500
-          minLength: 1
-          nullable: true
-          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
-          type: string
-        style: form
-      - description: When paginating, limit the number of returned results to this
-          many.
-        explode: true
-        in: query
-        name: limit
-        required: false
-        schema:
-          description: When paginating, limit the number of returned results to this
-            many.
-          format: int32
-          maximum: 5000
-          minimum: 1
-          nullable: true
-          type: integer
-        style: form
-        x-nullable: true
-      - description: Expression to filter the result set. Read more about filtering
-          results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
-        explode: true
-        in: query
-        name: filter
-        required: false
-        schema:
-          description: Expression to filter the result set. Read more about filtering
-            results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
-          maxLength: 16384
-          minLength: 0
-          nullable: true
-          pattern: ^[\s\S]*$
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            text/plain:
-              example:
-                values:
-                - runId: 1234-5678-9101
-                  asAt: 2020-01-05T00:00:00.0000000+00:00
-                href: https://myco.lusid.com/api/api/compliance
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfComplianceRun'
-            application/json:
-              example:
-                values:
-                - runId: 1234-5678-9101
-                  asAt: 2020-01-05T00:00:00.0000000+00:00
-                href: https://myco.lusid.com/api/api/compliance
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfComplianceRun'
-            text/json:
-              example:
-                values:
-                - runId: 1234-5678-9101
-                  asAt: 2020-01-05T00:00:00.0000000+00:00
-                href: https://myco.lusid.com/api/api/compliance
-                links: []
-              schema:
-                $ref: '#/components/schemas/ResourceListOfComplianceRun'
-          description: The List of IDs for all compliance runs completed
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] ListComplianceRunInfo: List historical compliance run
-        ids.'
-      tags:
-      - Compliance
-      x-fbn-apistatus: Experimental
-      x-accepts: application/json
     post:
       description: Use this endpoint to fetch the start a compliance run, based on
         a pre-set mapping file.
@@ -62874,7 +62746,7 @@ components:
           type: string
         identifierValue:
           description: The value of the identifier for this entity.
-          maxLength: 1024
+          maxLength: 64
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
@@ -92611,7 +92483,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:
