@@ -289,7 +289,7 @@ info:
     | <a name="790">790</a>|Custom Entity has missing or invalid identifiers|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4424
+  version: 0.11.4425
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -54949,7 +54949,7 @@ paths:
             example:
               settlementCurrency: GBP
               country: UK
-              office: London
+              instrument/default/HeadOffice: London
             schema:
               additionalProperties:
                 type: string
@@ -54965,7 +54965,7 @@ paths:
             example:
               settlementCurrency: GBP
               country: UK
-              office: London
+              instrument/default/HeadOffice: London
             schema:
               additionalProperties:
                 type: string
@@ -54981,7 +54981,7 @@ paths:
             example:
               settlementCurrency: GBP
               country: UK
-              office: London
+              instrument/default/HeadOffice: London
             schema:
               additionalProperties:
                 type: string
@@ -54997,7 +54997,7 @@ paths:
             example:
               settlementCurrency: GBP
               country: UK
-              office: London
+              instrument/default/HeadOffice: London
             schema:
               additionalProperties:
                 type: string
@@ -55035,7 +55035,7 @@ paths:
                     multiplier: Value
                     calculationAmount: 10
                   additionalKeys:
-                    office: London
+                    instrument/default/HeadOffice: London
                   description: Basic fee rule to be updated.
                   version:
                     effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -55063,7 +55063,7 @@ paths:
                     multiplier: Value
                     calculationAmount: 25
                   additionalKeys:
-                    office: London
+                    instrument/default/HeadOffice: London
                   description: Basic fee rule with minimum/maximum to be created
                 links: []
               schema:
@@ -55086,7 +55086,7 @@ paths:
                     multiplier: Value
                     calculationAmount: 10
                   additionalKeys:
-                    office: London
+                    instrument/default/HeadOffice: London
                   description: Basic fee rule to be updated.
                   version:
                     effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -55114,7 +55114,7 @@ paths:
                     multiplier: Value
                     calculationAmount: 25
                   additionalKeys:
-                    office: London
+                    instrument/default/HeadOffice: London
                   description: Basic fee rule with minimum/maximum to be created
                 links: []
               schema:
@@ -55137,7 +55137,7 @@ paths:
                     multiplier: Value
                     calculationAmount: 10
                   additionalKeys:
-                    office: London
+                    instrument/default/HeadOffice: London
                   description: Basic fee rule to be updated.
                   version:
                     effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -55165,7 +55165,7 @@ paths:
                     multiplier: Value
                     calculationAmount: 25
                   additionalKeys:
-                    office: London
+                    instrument/default/HeadOffice: London
                   description: Basic fee rule with minimum/maximum to be created
                 links: []
               schema:
@@ -55301,7 +55301,7 @@ paths:
                     multiplier: Value
                     calculationAmount: 10
                   additionalKeys:
-                    office: London
+                    instrument/default/HeadOffice: London
                   description: Basic fee rule to be updated.
                   version:
                     effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -55329,7 +55329,7 @@ paths:
                     multiplier: Value
                     calculationAmount: 25
                   additionalKeys:
-                    office: London
+                    instrument/default/HeadOffice: London
                   description: Basic fee rule with minimum/maximum to be created
                   version:
                     effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -55355,7 +55355,7 @@ paths:
                     multiplier: Value
                     calculationAmount: 10
                   additionalKeys:
-                    office: London
+                    instrument/default/HeadOffice: London
                   description: Basic fee rule to be updated.
                   version:
                     effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -55383,7 +55383,7 @@ paths:
                     multiplier: Value
                     calculationAmount: 25
                   additionalKeys:
-                    office: London
+                    instrument/default/HeadOffice: London
                   description: Basic fee rule with minimum/maximum to be created
                   version:
                     effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -55409,7 +55409,7 @@ paths:
                     multiplier: Value
                     calculationAmount: 10
                   additionalKeys:
-                    office: London
+                    instrument/default/HeadOffice: London
                   description: Basic fee rule to be updated.
                   version:
                     effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -55437,7 +55437,7 @@ paths:
                     multiplier: Value
                     calculationAmount: 25
                   additionalKeys:
-                    office: London
+                    instrument/default/HeadOffice: London
                   description: Basic fee rule with minimum/maximum to be created
                   version:
                     effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -55532,7 +55532,7 @@ paths:
                   multiplier: Value
                   calculationAmount: 10
                 additionalKeys:
-                  office: London
+                  instrument/default/HeadOffice: London
                 description: Basic fee rule to be updated.
               create:
                 transactionPropertyKey: Transaction/default/fee
@@ -55557,7 +55557,7 @@ paths:
                   multiplier: Value
                   calculationAmount: 25
                 additionalKeys:
-                  office: London
+                  instrument/default/HeadOffice: London
                 description: Basic fee rule with minimum/maximum to be created
             schema:
               additionalProperties:
@@ -55585,7 +55585,7 @@ paths:
                   multiplier: Value
                   calculationAmount: 10
                 additionalKeys:
-                  office: London
+                  instrument/default/HeadOffice: London
                 description: Basic fee rule to be updated.
               create:
                 transactionPropertyKey: Transaction/default/fee
@@ -55610,7 +55610,7 @@ paths:
                   multiplier: Value
                   calculationAmount: 25
                 additionalKeys:
-                  office: London
+                  instrument/default/HeadOffice: London
                 description: Basic fee rule with minimum/maximum to be created
             schema:
               additionalProperties:
@@ -55638,7 +55638,7 @@ paths:
                   multiplier: Value
                   calculationAmount: 10
                 additionalKeys:
-                  office: London
+                  instrument/default/HeadOffice: London
                 description: Basic fee rule to be updated.
               create:
                 transactionPropertyKey: Transaction/default/fee
@@ -55663,7 +55663,7 @@ paths:
                   multiplier: Value
                   calculationAmount: 25
                 additionalKeys:
-                  office: London
+                  instrument/default/HeadOffice: London
                 description: Basic fee rule with minimum/maximum to be created
             schema:
               additionalProperties:
@@ -55691,7 +55691,7 @@ paths:
                   multiplier: Value
                   calculationAmount: 10
                 additionalKeys:
-                  office: London
+                  instrument/default/HeadOffice: London
                 description: Basic fee rule to be updated.
               create:
                 transactionPropertyKey: Transaction/default/fee
@@ -55716,7 +55716,7 @@ paths:
                   multiplier: Value
                   calculationAmount: 25
                 additionalKeys:
-                  office: London
+                  instrument/default/HeadOffice: London
                 description: Basic fee rule with minimum/maximum to be created
             schema:
               additionalProperties:
@@ -55753,7 +55753,7 @@ paths:
                       multiplier: Value
                       calculationAmount: 10
                     additionalKeys:
-                      office: London
+                      instrument/default/HeadOffice: London
                     description: Basic fee rule to be updated.
                     version:
                       effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -55782,7 +55782,7 @@ paths:
                       multiplier: Value
                       calculationAmount: 25
                     additionalKeys:
-                      office: London
+                      instrument/default/HeadOffice: London
                     description: Basic fee rule with minimum/maximum to be created
                     version:
                       effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -55808,7 +55808,7 @@ paths:
                       multiplier: Value
                       calculationAmount: 10
                     additionalKeys:
-                      office: London
+                      instrument/default/HeadOffice: London
                     description: Basic fee rule to be updated.
                     version:
                       effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -55837,7 +55837,7 @@ paths:
                       multiplier: Value
                       calculationAmount: 25
                     additionalKeys:
-                      office: London
+                      instrument/default/HeadOffice: London
                     description: Basic fee rule with minimum/maximum to be created
                     version:
                       effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -55863,7 +55863,7 @@ paths:
                       multiplier: Value
                       calculationAmount: 10
                     additionalKeys:
-                      office: London
+                      instrument/default/HeadOffice: London
                     description: Basic fee rule to be updated.
                     version:
                       effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -55892,7 +55892,7 @@ paths:
                       multiplier: Value
                       calculationAmount: 25
                     additionalKeys:
-                      office: London
+                      instrument/default/HeadOffice: London
                     description: Basic fee rule with minimum/maximum to be created
                     version:
                       effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -56060,7 +56060,7 @@ paths:
                   multiplier: Value
                   calculationAmount: 25
                 additionalKeys:
-                  office: London
+                  instrument/default/HeadOffice: London
                 description: Basic fee rule with minimum/maximum to be created
                 version:
                   effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -56092,7 +56092,7 @@ paths:
                   multiplier: Value
                   calculationAmount: 25
                 additionalKeys:
-                  office: London
+                  instrument/default/HeadOffice: London
                 description: Basic fee rule with minimum/maximum to be created
                 version:
                   effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
@@ -56124,7 +56124,7 @@ paths:
                   multiplier: Value
                   calculationAmount: 25
                 additionalKeys:
-                  office: London
+                  instrument/default/HeadOffice: London
                 description: Basic fee rule with minimum/maximum to be created
                 version:
                   effectiveFrom: 2000-01-01T00:00:00.0000000+00:00
