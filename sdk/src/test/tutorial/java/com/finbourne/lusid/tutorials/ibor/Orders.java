@@ -12,6 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.*;
 
@@ -241,7 +242,7 @@ public class Orders
         assertEquals(1, upsertResult.stream().count());
         assertTrue(upsertResult.stream().allMatch(order -> order.getId().getCode().equals(orderCode)));
         assertTrue(upsertResult.stream().allMatch(order -> order.getLusidInstrumentId().equals(instrumentIds.get(0))));
-        assertTrue(upsertResult.stream().allMatch(order -> order.getQuantity().equals(100)));
+        assertTrue(upsertResult.stream().allMatch(order -> order.getQuantity().equals(BigDecimal.valueOf(100))));
         assertTrue(upsertResult.stream().allMatch(order -> order.getProperties().size() == 5));
 
         // We can update that Order with a new Quantity, and some extra parameters
@@ -262,7 +263,7 @@ public class Orders
         // The return gives us a list of orders upserted, and the lusidinstrument for each has been mapped from the
         // instrument identifiers passed. We can see that the quantity has been udpated, and properties added
         assertEquals(1, updateResult.stream().count());
-        assertTrue(updateResult.stream().allMatch(order -> order.getQuantity().equals(500)));
+        assertTrue(updateResult.stream().allMatch(order -> order.getQuantity().equals(BigDecimal.valueOf(500))));
     }
 
     // We want to make a request for a single order. The internal security id will be mapped on upsert
@@ -370,7 +371,7 @@ public class Orders
                 null)
                 .getValues();
         assertEquals(2, quantityFilter.size());
-        assertTrue(quantityFilter.stream().allMatch(order -> order.getQuantity() > 100));
+        assertTrue(quantityFilter.stream().allMatch(order -> order.getQuantity().compareTo(BigDecimal.valueOf(100)) > 0));
 
         /*
         List<Order> orderGroupFilter = ordersApi.listOrders(t, null, null, null, null,"Properties[" + testScope + "/OrderGroup] eq 'UK Test Orders 2'", null).getValues();
