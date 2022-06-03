@@ -21,11 +21,11 @@ If you are unable to find your issue then please raise an issue using the provid
 If you have a change that you would like to contribute, please find or open an issue about it first as there may be somebody already working on it, or there may be particular issues that you should know about before implementing the change.
 
 1. Fork the repository to your own GitHub account, this [GitHub guide](https://help.github.com/en/articles/fork-a-repo) describes how to do this.
-1. Clone the project to your local machine
+1. Clone the project to your local machine.
 1. Make your changes and ensure that all the tests successfully pass.
 1. Update your local repository and rebase your changes on top of the latest `develop` branch. We prefer that your changes are squashed into a single commit.
-1. Push you changes to your fork
-1. Submit a [pull request](https://help.github.com/en/articles/about-pull-requests) to the main repository
+1. Push you changes to your fork.
+1. Submit a [pull request](https://help.github.com/en/articles/about-pull-requests) to the main repository.
 
 ## Code review process
 
@@ -34,4 +34,4 @@ The Core Team reviews pull requests on a regular basis and will give feedback on
 
 # Getting in touch
 
-Please don't use the issue tracker for support questions, for help on using LUSID please contact support@lusid.com
+Please don't use the issue tracker for support questions, for help on using LUSID please contact support@lusid.com 
