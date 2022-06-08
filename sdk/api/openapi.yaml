@@ -290,7 +290,7 @@ info:
     | <a name="791">791</a>|Custom Entity definition already exists|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4448
+  version: 0.11.4449
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -9405,7 +9405,7 @@ paths:
         required: true
         schema:
           description: The identifier value.
-          maxLength: 64
+          maxLength: 1024
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
@@ -9497,7 +9497,7 @@ paths:
         required: true
         schema:
           description: The identifier value.
-          maxLength: 64
+          maxLength: 1024
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
@@ -9694,7 +9694,7 @@ paths:
         required: true
         schema:
           description: The identifier value.
-          maxLength: 64
+          maxLength: 1024
           minLength: 1
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
