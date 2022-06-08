@@ -290,7 +290,7 @@ info:
     | <a name="791">791</a>|Custom Entity definition already exists|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4446
+  version: 0.11.4447
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -32212,209 +32212,6 @@ paths:
       tags:
       - Reconciliations
       x-fbn-apistatus: Beta
-      x-contentType: application/json-patch+json
-      x-accepts: application/json
-  /api/portfolios/preview/$reconcileholdings:
-    post:
-      description: Reconcile the holdings of two portfolios.
-      operationId: ReconcileHoldingsPreview
-      parameters:
-      - description: Optional. Order the results by these fields. Use use the '-'
-          sign to denote descending order e.g. -MyFieldName
-        explode: true
-        in: query
-        name: sortBy
-        required: false
-        schema:
-          description: Optional. Order the results by these fields. Use use the '-'
-            sign to denote descending order e.g. -MyFieldName
-          items:
-            type: string
-          nullable: true
-          type: array
-        style: form
-        x-nullable: true
-      - description: Optional. When paginating, skip this number of results
-        explode: true
-        in: query
-        name: start
-        required: false
-        schema:
-          description: Optional. When paginating, skip this number of results
-          format: int32
-          nullable: true
-          type: integer
-        style: form
-        x-nullable: true
-      - description: Optional. When paginating, limit the number of returned results
-          to this many.
-        explode: true
-        in: query
-        name: limit
-        required: false
-        schema:
-          description: Optional. When paginating, limit the number of returned results
-            to this many.
-          format: int32
-          nullable: true
-          type: integer
-        style: form
-        x-nullable: true
-      - description: Optional. Expression to filter the result set
-        explode: true
-        in: query
-        name: filter
-        required: false
-        schema:
-          description: Optional. Expression to filter the result set
-          maxLength: 16384
-          minLength: 0
-          nullable: true
-          pattern: ^[\s\S]*$
-          type: string
-        style: form
-      requestBody:
-        content:
-          application/json-patch+json:
-            example:
-              tolerance:
-                /Holding/Units:
-                  value: 0
-                  type: Absolute
-                /Holding/Cost:
-                  value: 0
-                  type: Relative
-              left:
-                portfolioId:
-                  scope: MySourceScope
-                  code: MySourcePortfolioCode
-                effectiveAt: 2018-03-05T00:00:00.0000000+00:00
-                asAt: 2018-03-05T00:00:00.0000000+00:00
-              right:
-                portfolioId:
-                  scope: MyTargetScope
-                  code: MyTargetPortfolioCode
-                effectiveAt: 2018-03-05T00:00:00.0000000+00:00
-                asAt: 2018-03-05T00:00:00.0000000+00:00
-              instrumentPropertyKeys:
-              - Instrument/default/Name
-            schema:
-              $ref: '#/components/schemas/PortfoliosReconciliationRequestPreview'
-          application/json:
-            example:
-              tolerance:
-                /Holding/Units:
-                  value: 0
-                  type: Absolute
-                /Holding/Cost:
-                  value: 0
-                  type: Relative
-              left:
-                portfolioId:
-                  scope: MySourceScope
-                  code: MySourcePortfolioCode
-                effectiveAt: 2018-03-05T00:00:00.0000000+00:00
-                asAt: 2018-03-05T00:00:00.0000000+00:00
-              right:
-                portfolioId:
-                  scope: MyTargetScope
-                  code: MyTargetPortfolioCode
-                effectiveAt: 2018-03-05T00:00:00.0000000+00:00
-                asAt: 2018-03-05T00:00:00.0000000+00:00
-              instrumentPropertyKeys:
-              - Instrument/default/Name
-            schema:
-              $ref: '#/components/schemas/PortfoliosReconciliationRequestPreview'
-          text/json:
-            example:
-              tolerance:
-                /Holding/Units:
-                  value: 0
-                  type: Absolute
-                /Holding/Cost:
-                  value: 0
-                  type: Relative
-              left:
-                portfolioId:
-                  scope: MySourceScope
-                  code: MySourcePortfolioCode
-                effectiveAt: 2018-03-05T00:00:00.0000000+00:00
-                asAt: 2018-03-05T00:00:00.0000000+00:00
-              right:
-                portfolioId:
-                  scope: MyTargetScope
-                  code: MyTargetPortfolioCode
-                effectiveAt: 2018-03-05T00:00:00.0000000+00:00
-                asAt: 2018-03-05T00:00:00.0000000+00:00
-              instrumentPropertyKeys:
-              - Instrument/default/Name
-            schema:
-              $ref: '#/components/schemas/PortfoliosReconciliationRequestPreview'
-          application/*+json:
-            example:
-              tolerance:
-                /Holding/Units:
-                  value: 0
-                  type: Absolute
-                /Holding/Cost:
-                  value: 0
-                  type: Relative
-              left:
-                portfolioId:
-                  scope: MySourceScope
-                  code: MySourcePortfolioCode
-                effectiveAt: 2018-03-05T00:00:00.0000000+00:00
-                asAt: 2018-03-05T00:00:00.0000000+00:00
-              right:
-                portfolioId:
-                  scope: MyTargetScope
-                  code: MyTargetPortfolioCode
-                effectiveAt: 2018-03-05T00:00:00.0000000+00:00
-                asAt: 2018-03-05T00:00:00.0000000+00:00
-              instrumentPropertyKeys:
-              - Instrument/default/Name
-            schema:
-              $ref: '#/components/schemas/PortfoliosReconciliationRequestPreview'
-        description: The specifications of the inputs to the reconciliation. This
-          request can take tolerance for units and cost.
-      responses:
-        "200":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ResourceListOfReconciliationBreak'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceListOfReconciliationBreak'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ResourceListOfReconciliationBreak'
-          description: The requested reconciliation
-        "400":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/LusidValidationProblemDetails'
-          description: The details of the input related failure
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LusidProblemDetails'
-          description: Error response
-      security:
-      - oauth2: []
-      summary: '[EXPERIMENTAL] ReconcileHoldingsPreview: Reconcile portfolio holdings
-        with given tolerance'
-      tags:
-      - Reconciliations
-      x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/portfolios/{scope}:
@@ -75476,52 +75273,6 @@ components:
       - left
       - right
       type: object
-    PortfoliosReconciliationRequestPreview:
-      additionalProperties: false
-      example:
-        left:
-          portfolioId:
-            code: code
-            scope: scope
-          effectiveAt: effectiveAt
-          asAt: 2000-01-23T04:56:07.000+00:00
-        right:
-          portfolioId:
-            code: code
-            scope: scope
-          effectiveAt: effectiveAt
-          asAt: 2000-01-23T04:56:07.000+00:00
-        instrumentPropertyKeys:
-        - instrumentPropertyKeys
-        - instrumentPropertyKeys
-        tolerance:
-          key:
-            type: Absolute
-            value: 0.8008281904610115
-      properties:
-        tolerance:
-          additionalProperties:
-            $ref: '#/components/schemas/Tolerance'
-          description: Tolerance to be included for the units and cost.
-          nullable: true
-          type: object
-        left:
-          $ref: '#/components/schemas/PortfolioReconciliationRequest'
-        right:
-          $ref: '#/components/schemas/PortfolioReconciliationRequest'
-        instrumentPropertyKeys:
-          description: Instrument properties to be included with any identified breaks.
-            These properties will be in the effective and AsAt dates of the left portfolio
-          items:
-            description: The key that uniquely identifies the property. It has the
-              format {domain}/{scope}/{code}.
-            type: string
-          type: array
-      required:
-      - instrumentPropertyKeys
-      - left
-      - right
-      type: object
     PortfolioType:
       enum:
       - Transaction
@@ -84152,28 +83903,6 @@ components:
       - $ref: '#/components/schemas/LusidInstrument'
       - $ref: '#/components/schemas/TermDeposit_allOf'
       description: Lusid internal representation of a term deposit.
-    Tolerance:
-      additionalProperties: false
-      example:
-        type: Absolute
-        value: 0.8008281904610115
-      properties:
-        value:
-          description: The numerical value of the property.
-          format: double
-          type: number
-        type:
-          description: 'The available values are: Absolute, Relative'
-          enum:
-          - Absolute
-          - Relative
-          type: string
-      type: object
-    ToleranceEnum:
-      enum:
-      - Absolute
-      - Relative
-      type: string
     Transaction:
       additionalProperties: false
       description: A list of transactions.
@@ -93100,7 +92829,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
