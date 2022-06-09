@@ -81,6 +81,8 @@ fabric.properties
 
 # Package Files #
 *.jar
+#no need to download maven wrapper every time#
+!sdk/.mvn/wrapper/maven-wrapper.jar
 *.war
 *.ear
 *.zip
