@@ -292,7 +292,7 @@ info:
     | <a name="793">793</a>|Compliance Criteria Value for matching is missing.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4466
+  version: 0.11.4469
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -57614,7 +57614,7 @@ components:
       additionalProperties: false
       example:
         path: path
-        op: Add
+        op: add
         from: from
         value:
         - provider: provider
@@ -57632,9 +57632,9 @@ components:
           pattern: ^/.+
           type: string
         op:
-          description: 'The available values are: Add'
+          description: 'The available values are: add'
           enum:
-          - Add
+          - add
           type: string
         from:
           nullable: true
@@ -59586,12 +59586,12 @@ components:
           description: "when calculating the fraction of a year between two dates,\
             \ what convention is used to represent the number of days in a year\r\n\
             and difference between them.\r\nFor more information on day counts, see\
-            \ https://support.lusid.com/knowledgebase/article/KA-01798\r\n       \
-            \     \r\nSupported string (enumeration) values are: [Actual360, Act360,\
-            \ MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360,\
-            \ EuroBond, ActualActual, ActAct, ActActIsda, ActActIsma, ActActIcma,\
-            \ OneOne, Act364, Act365F, Act365L, Act365_25, Act252, Bus252, NL360,\
-            \ NL365, ActActAFB, Act365Cad, ThirtyActIsda, Thirty365Isda, ThirtyEActIsda,\
+            \ [knowledge base article KA-01798](https://support.lusid.com/knowledgebase/article/KA-01798)\r\
+            \n            \r\nSupported string (enumeration) values are: [Actual360,\
+            \ Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond,\
+            \ ThirtyE360, EuroBond, ActualActual, ActAct, ActActIsda, ActActIsma,\
+            \ ActActIcma, OneOne, Act364, Act365F, Act365L, Act365_25, Act252, Bus252,\
+            \ NL360, NL365, ActActAFB, Act365Cad, ThirtyActIsda, Thirty365Isda, ThirtyEActIsda,\
             \ ThirtyE360Isda, ThirtyE365Isda, ThirtyU360EOM]."
           maxLength: 50
           minLength: 0
@@ -64875,12 +64875,12 @@ components:
           description: "when calculating the fraction of a year between two dates,\
             \ what convention is used to represent the number of days in a year\r\n\
             and difference between them.\r\nFor more information on day counts, see\
-            \ https://support.lusid.com/knowledgebase/article/KA-01798\r\n       \
-            \     \r\nSupported string (enumeration) values are: [Actual360, Act360,\
-            \ MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360,\
-            \ EuroBond, ActualActual, ActAct, ActActIsda, ActActIsma, ActActIcma,\
-            \ OneOne, Act364, Act365F, Act365L, Act365_25, Act252, Bus252, NL360,\
-            \ NL365, ActActAFB, Act365Cad, ThirtyActIsda, Thirty365Isda, ThirtyEActIsda,\
+            \ [knowledge base article KA-01798](https://support.lusid.com/knowledgebase/article/KA-01798)\r\
+            \n            \r\nSupported string (enumeration) values are: [Actual360,\
+            \ Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond,\
+            \ ThirtyE360, EuroBond, ActualActual, ActAct, ActActIsda, ActActIsma,\
+            \ ActActIcma, OneOne, Act364, Act365F, Act365L, Act365_25, Act252, Bus252,\
+            \ NL360, NL365, ActActAFB, Act365Cad, ThirtyActIsda, Thirty365Isda, ThirtyEActIsda,\
             \ ThirtyE360Isda, ThirtyE365Isda, ThirtyU360EOM]."
           maxLength: 50
           minLength: 0
@@ -65015,7 +65015,8 @@ components:
           type: number
         convention:
           description: "If appropriate, the day count convention method used in pricing\
-            \ (rates futures).\r\nFor more information on day counts, see https://support.lusid.com/knowledgebase/article/KA-01798\r\
+            \ (rates futures).\r\nFor more information on day counts, see [knowledge\
+            \ base article KA-01798](https://support.lusid.com/knowledgebase/article/KA-01798)\r\
             \n            \r\nSupported string (enumeration) values are: [Actual360,\
             \ Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond,\
             \ ThirtyE360, EuroBond, ActualActual, ActAct, ActActIsda, ActActIsma,\
@@ -66534,12 +66535,12 @@ components:
           description: "when calculating the fraction of a year between two dates,\
             \ what convention is used to represent the number of days in a year\r\n\
             and difference between them.\r\nFor more information on day counts, see\
-            \ https://support.lusid.com/knowledgebase/article/KA-01798\r\n       \
-            \     \r\nSupported string (enumeration) values are: [Actual360, Act360,\
-            \ MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360,\
-            \ EuroBond, ActualActual, ActAct, ActActIsda, ActActIsma, ActActIcma,\
-            \ OneOne, Act364, Act365F, Act365L, Act365_25, Act252, Bus252, NL360,\
-            \ NL365]."
+            \ [knowledge base article KA-01798](https://support.lusid.com/knowledgebase/article/KA-01798)\r\
+            \n            \r\nSupported string (enumeration) values are: [Actual360,\
+            \ Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond,\
+            \ ThirtyE360, EuroBond, ActualActual, ActAct, ActActIsda, ActActIsma,\
+            \ ActActIcma, OneOne, Act364, Act365F, Act365L, Act365_25, Act252, Bus252,\
+            \ NL360, NL365]."
           maxLength: 32
           minLength: 0
           type: string
@@ -92836,7 +92837,7 @@ components:
           type: string
         accrualBasis:
           description: "For calculation of interest, the accrual basis to be used.\r\
-            \nFor more information on day counts, see https://support.lusid.com/knowledgebase/article/KA-01798\r\
+            \nFor more information on day counts, see [knowledge base article KA-01798](https://support.lusid.com/knowledgebase/article/KA-01798)\r\
             \n            \r\nSupported string (enumeration) values are: [Actual360,\
             \ Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond,\
             \ ThirtyE360, EuroBond, ActualActual, ActAct, ActActIsda, ActActIsma,\
@@ -93420,7 +93421,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

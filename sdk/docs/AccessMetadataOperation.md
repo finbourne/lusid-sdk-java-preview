@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **value** | [**List&lt;AccessMetadataValue&gt;**](AccessMetadataValue.md) |  | 
 **path** | **String** |  | 
-**op** | [**OpEnum**](#OpEnum) | The available values are: Add | 
+**op** | [**OpEnum**](#OpEnum) | The available values are: add | 
 **from** | **String** |  |  [optional]
 
 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 Name | Value
 ---- | -----
-ADD | &quot;Add&quot;
+ADD | &quot;add&quot;
 
 
 
