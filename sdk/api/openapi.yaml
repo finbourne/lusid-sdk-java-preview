@@ -292,7 +292,7 @@ info:
     | <a name="793">793</a>|Compliance Criteria Value for matching is missing.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4467
+  version: 0.11.4468
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -57614,7 +57614,7 @@ components:
       additionalProperties: false
       example:
         path: path
-        op: Add
+        op: add
         from: from
         value:
         - provider: provider
@@ -57632,9 +57632,9 @@ components:
           pattern: ^/.+
           type: string
         op:
-          description: 'The available values are: Add'
+          description: 'The available values are: add'
           enum:
-          - Add
+          - add
           type: string
         from:
           nullable: true
