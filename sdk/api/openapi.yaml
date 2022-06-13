@@ -292,7 +292,7 @@ info:
     | <a name="793">793</a>|Compliance Criteria Value for matching is missing.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4463
+  version: 0.11.4464
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -59585,19 +59585,21 @@ components:
         dayCountConvention:
           description: "when calculating the fraction of a year between two dates,\
             \ what convention is used to represent the number of days in a year\r\n\
-            and difference between them.\r\nSupported string (enumeration) values\
-            \ are: [Actual360, Act360, MoneyMarket, Actual365, Act365, Thirty360,\
-            \ ThirtyU360, Bond, ThirtyE360, EuroBond, ActualActual, ActAct, ActActIsda,\
-            \ ActActIsma, ActActIcma, OneOne, Act364, Act365F, Act365L, Act365_25,\
-            \ Act252, Bus252, NL360, NL365, ActActAFB, Act365Cad, ThirtyActIsda, Thirty365Isda,\
-            \ ThirtyEActIsda, ThirtyE360Isda, ThirtyE365Isda, ThirtyU360EOM]."
+            and difference between them.\r\nFor more information on day counts, see\
+            \ https://support.lusid.com/knowledgebase/article/KA-01798\r\n       \
+            \     \r\nSupported string (enumeration) values are: [Actual360, Act360,\
+            \ MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360,\
+            \ EuroBond, ActualActual, ActAct, ActActIsda, ActActIsma, ActActIcma,\
+            \ OneOne, Act364, Act365F, Act365L, Act365_25, Act252, Bus252, NL360,\
+            \ NL365, ActActAFB, Act365Cad, ThirtyActIsda, Thirty365Isda, ThirtyEActIsda,\
+            \ ThirtyE360Isda, ThirtyE365Isda, ThirtyU360EOM]."
           maxLength: 50
           minLength: 0
           type: string
         rollConvention:
           description: "When generating a set of dates, what convention should be\
-            \ used for adjusting dates that coincide with a non-business day.\r\n\
-            Supported string (enumeration) values are: [NoAdjustment, None, Previous,\
+            \ used for adjusting dates that coincide with a non-business day.\r\n\r\
+            \nSupported string (enumeration) values are: [NoAdjustment, None, Previous,\
             \ P, Following, F, ModifiedPrevious, MP, ModifiedFollowing, MF, EndOfMonth,\
             \ EOM, EndOfMonthPrevious, EOMP, EndOfMonthFollowing, EOMF, HalfMonthModifiedFollowing]."
           maxLength: 50
@@ -59664,7 +59666,7 @@ components:
         \ when\r\nno overrides are provided."
       properties:
         seniority:
-          description: "The seniority level of the CDS.\r\nSupported string (enumeration)\
+          description: "The seniority level of the CDS.\r\n\r\nSupported string (enumeration)\
             \ values are: [SNR, SUB, JRSUBUT2, PREFT1, SECDOM, SNRFOR, SUBLT2]."
           type: string
         restructuringType:
@@ -60374,12 +60376,12 @@ components:
       properties:
         calculationShiftMethod:
           description: "Defines which resets and day counts are used for the rate\
-            \ calculation\r\nSupported string (enumeration) values are: [Lookback,\
+            \ calculation\r\n\r\nSupported string (enumeration) values are: [Lookback,\
             \ NoShift, ObservationPeriodShift, Lockout]."
           nullable: true
           type: string
         compoundingMethod:
-          description: "If the interest rate is simple or compounded.\r\nSupported\
+          description: "If the interest rate is simple or compounded.\r\n\r\nSupported\
             \ string (enumeration) values are: [Average, Compounded]."
           type: string
         resetFrequency:
@@ -60392,8 +60394,8 @@ components:
           type: integer
         spreadCompoundingMethod:
           description: "Defines how the computed leg spread is applied to compounded\
-            \ rate.\r\nIt applies only when CompoundingMethod = ‘Compounded‘.\r\n\
-            Supported string (enumeration) values are: [Straight, IsdaCompounding,\
+            \ rate.\r\nIt applies only when CompoundingMethod = ‘Compounded‘.\r\n\r\
+            \nSupported string (enumeration) values are: [Straight, IsdaCompounding,\
             \ NoCompounding, SpreadExclusive, IsdaFlatCompounding, Flat, None]."
           type: string
       required:
@@ -63816,13 +63818,13 @@ components:
         deliveryType:
           description: "The delivery type, cash or physical. An option on a future\
             \ is physically settled if upon exercising the\r\nholder receives a future.\r\
-            \nSupported string (enumeration) values are: [Cash, Physical]."
+            \n\r\nSupported string (enumeration) values are: [Cash, Physical]."
           type: string
         description:
           description: Description of contract
           type: string
         exchangeCode:
-          description: "Exchange code for contract\r\nSupported string (enumeration)\
+          description: "Exchange code for contract\r\n\r\nSupported string (enumeration)\
             \ values are: [ASX, CBOT, CBF, CME, CMX, EOP, HKG, KFE, MFM, OSE, SGX,\
             \ NYBOT, KCBT, MGE, MATIF, SFE, NYFE, NYM, LIFFE, EUREX, ICE, MSE, NASDAQ,\
             \ EEX, LME, MIL, MEXDER]."
@@ -63832,15 +63834,15 @@ components:
           format: date-time
           type: string
         exerciseType:
-          description: "The exercise type, European, American or Bermudan.\r\nSupported\
-            \ string (enumeration) values are: [European, Bermudan, American]."
+          description: "The exercise type, European, American or Bermudan.\r\n\r\n\
+            Supported string (enumeration) values are: [European, Bermudan, American]."
           type: string
         optionCode:
           description: Option Contract Code, typically one or two letters, e.g. OG
             => Option on Gold.
           type: string
         optionType:
-          description: "The option type, Call or Put.\r\nSupported string (enumeration)\
+          description: "The option type, Call or Put.\r\n\r\nSupported string (enumeration)\
             \ values are: [Call, Put]."
           type: string
         underlying:
@@ -64872,20 +64874,22 @@ components:
         dayCountConvention:
           description: "when calculating the fraction of a year between two dates,\
             \ what convention is used to represent the number of days in a year\r\n\
-            and difference between them.\r\nSupported string (enumeration) values\
-            \ are: [Actual360, Act360, MoneyMarket, Actual365, Act365, Thirty360,\
-            \ ThirtyU360, Bond, ThirtyE360, EuroBond, ActualActual, ActAct, ActActIsda,\
-            \ ActActIsma, ActActIcma, OneOne, Act364, Act365F, Act365L, Act365_25,\
-            \ Act252, Bus252, NL360, NL365, ActActAFB, Act365Cad, ThirtyActIsda, Thirty365Isda,\
-            \ ThirtyEActIsda, ThirtyE360Isda, ThirtyE365Isda, ThirtyU360EOM]."
+            and difference between them.\r\nFor more information on day counts, see\
+            \ https://support.lusid.com/knowledgebase/article/KA-01798\r\n       \
+            \     \r\nSupported string (enumeration) values are: [Actual360, Act360,\
+            \ MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360,\
+            \ EuroBond, ActualActual, ActAct, ActActIsda, ActActIsma, ActActIcma,\
+            \ OneOne, Act364, Act365F, Act365L, Act365_25, Act252, Bus252, NL360,\
+            \ NL365, ActActAFB, Act365Cad, ThirtyActIsda, Thirty365Isda, ThirtyEActIsda,\
+            \ ThirtyE360Isda, ThirtyE365Isda, ThirtyU360EOM]."
           maxLength: 50
           minLength: 0
           type: string
         rollConvention:
           description: "When generating a set of dates, what convention should be\
-            \ used for adjusting dates that coincide with a non-business day.\r\n\
-            Supported string (enumeration) values are: [NoAdjustment, Previous, P,\
-            \ Following, F, ModifiedPrevious, MP, ModifiedFollowing, MF, HalfMonthModifiedFollowing]."
+            \ used for adjusting dates that coincide with a non-business day.\r\n\r\
+            \nSupported string (enumeration) values are: [NoAdjustment, Previous,\
+            \ P, Following, F, ModifiedPrevious, MP, ModifiedFollowing, MF, HalfMonthModifiedFollowing]."
           maxLength: 50
           minLength: 0
           type: string
@@ -64992,8 +64996,8 @@ components:
           type: string
         assetClass:
           description: "The asset class of the underlying. Optional and will default\
-            \ to Unknown if not set.\r\nSupported string (enumeration) values are:\
-            \ [InterestRates, FX, Inflation, Equities, Credit, Commodities, Money]."
+            \ to Unknown if not set.\r\n\r\nSupported string (enumeration) values\
+            \ are: [InterestRates, FX, Inflation, Equities, Credit, Commodities, Money]."
           nullable: true
           type: string
         contractCode:
@@ -65001,8 +65005,8 @@ components:
             Oil, “ES” for E-mini SP 500, “FGBL” for Bund Futures, etc.
           type: string
         contractMonth:
-          description: "Which month does the contract trade for.\r\nSupported string\
-            \ (enumeration) values are: [F, G, H, J, K, M, N, Q, U, V, X, Z]."
+          description: "Which month does the contract trade for.\r\n\r\nSupported\
+            \ string (enumeration) values are: [F, G, H, J, K, M, N, Q, U, V, X, Z]."
           type: string
         contractSize:
           description: Size of a single contract. By default this should be set to
@@ -65011,7 +65015,8 @@ components:
           type: number
         convention:
           description: "If appropriate, the day count convention method used in pricing\
-            \ (rates futures).\r\nSupported string (enumeration) values are: [Actual360,\
+            \ (rates futures).\r\nFor more information on day counts, see https://support.lusid.com/knowledgebase/article/KA-01798\r\
+            \n            \r\nSupported string (enumeration) values are: [Actual360,\
             \ Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond,\
             \ ThirtyE360, EuroBond, ActualActual, ActAct, ActActIsda, ActActIsma,\
             \ ActActIcma, OneOne, Act364, Act365F, Act365L, Act365_25, Act252, Bus252,\
@@ -65025,7 +65030,7 @@ components:
           description: Description of contract.
           type: string
         exchangeCode:
-          description: "Exchange code for contract\r\nSupported string (enumeration)\
+          description: "Exchange code for contract\r\n\r\nSupported string (enumeration)\
             \ values are: [ASX, CBOT, CBF, CME, CMX, EOP, HKG, KFE, MFM, OSE, SGX,\
             \ NYBOT, KCBT, MGE, MATIF, SFE, NYFE, NYM, LIFFE, EUREX, ICE, MSE, NASDAQ,\
             \ EEX, LME, MIL, MEXDER]."
@@ -66528,11 +66533,13 @@ components:
         dayCountConvention:
           description: "when calculating the fraction of a year between two dates,\
             \ what convention is used to represent the number of days in a year\r\n\
-            and difference between them.\r\nSupported string (enumeration) values\
-            \ are: [Actual360, Act360, MoneyMarket, Actual365, Act365, Thirty360,\
-            \ ThirtyU360, Bond, ThirtyE360, EuroBond, ActualActual, ActAct, ActActIsda,\
-            \ ActActIsma, ActActIcma, OneOne, Act364, Act365F, Act365L, Act365_25,\
-            \ Act252, Bus252, NL360, NL365]."
+            and difference between them.\r\nFor more information on day counts, see\
+            \ https://support.lusid.com/knowledgebase/article/KA-01798\r\n       \
+            \     \r\nSupported string (enumeration) values are: [Actual360, Act360,\
+            \ MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360,\
+            \ EuroBond, ActualActual, ActAct, ActActIsda, ActActIsma, ActActIcma,\
+            \ OneOne, Act364, Act365F, Act365L, Act365_25, Act252, Bus252, NL360,\
+            \ NL365]."
           maxLength: 32
           minLength: 0
           type: string
@@ -68058,12 +68065,12 @@ components:
         indexConventionName:
           $ref: '#/components/schemas/FlowConventionName'
         notionalExchangeType:
-          description: "what type of notional exchange does the leg have\r\nSupported\
+          description: "what type of notional exchange does the leg have\r\n\r\nSupported\
             \ string (enumeration) values are: [None, Initial, Final, Both]."
           type: string
         payReceive:
-          description: "Is the leg to be paid or received\r\nSupported string (enumeration)\
-            \ values are: [Pay, Receive]."
+          description: "Is the leg to be paid or received\r\n\r\nSupported string\
+            \ (enumeration) values are: [Pay, Receive]."
           type: string
         rateOrSpread:
           description: Is there either a fixed rate (non-zero) or spread to be paid
@@ -68072,13 +68079,13 @@ components:
           type: number
         resetConvention:
           description: "Control how resets are generated relative to swap payment\
-            \ convention(s).\r\nSupported string (enumeration) values are: [InAdvance,\
+            \ convention(s).\r\n\r\nSupported string (enumeration) values are: [InAdvance,\
             \ InArrears]."
           nullable: true
           type: string
         stubType:
           description: "If a stub is required should it be at the front or back of\
-            \ the leg.\r\nSupported string (enumeration) values are: [None, ShortFront,\
+            \ the leg.\r\n\r\nSupported string (enumeration) values are: [None, ShortFront,\
             \ ShortBack, LongBack, LongFront, Both]."
           type: string
         compounding:
@@ -84095,7 +84102,7 @@ components:
       properties:
         levelType:
           description: "The type of shift or adjustment that the quantity represents.\r\
-            \nSupported string (enumeration) values are: [Absolute, AbsoluteShift,\
+            \n\r\nSupported string (enumeration) values are: [Absolute, AbsoluteShift,\
             \ Percentage, AbsolutePercentage]."
           type: string
         scheduleType:
@@ -89703,7 +89710,7 @@ components:
           $ref: '#/components/schemas/BasketIdentifier'
         basketType:
           description: "What contents does the basket have. The validation will check\
-            \ that the instrument types contained match those expected.\r\nSupported\
+            \ that the instrument types contained match those expected.\r\n\r\nSupported\
             \ string (enumeration) values are: [Bonds, Credits, Equities, EquitySwap]."
           type: string
         weightedInstruments:
@@ -89826,9 +89833,9 @@ components:
             \ default CalculationType is `Standard`, which returns a coupon amount\
             \ equal to Principal * Coupon Rate / Coupon Frequency. Coupon Frequency\
             \ is 12M / Payment Frequency.\r\nPayment Frequency can be 1M, 3M, 6M,\
-            \ 12M etc. So Coupon Frequency can be 12, 4, 2, 1 respectively.\r\nSupported\
-            \ string (enumeration) values are: [Standard, DayCountCoupon, NoCalculationFloater,\
-            \ BrazilFixedCoupon]."
+            \ 12M etc. So Coupon Frequency can be 12, 4, 2, 1 respectively.\r\n\r\n\
+            Supported string (enumeration) values are: [Standard, DayCountCoupon,\
+            \ NoCalculationFloater, BrazilFixedCoupon]."
           nullable: true
           type: string
         instrumentType:
@@ -89884,8 +89891,8 @@ components:
     CapFloor_allOf:
       properties:
         capFloorType:
-          description: "Determine if it's CAP, FLOOR, or COLLAR.\r\nSupported string\
-            \ (enumeration) values are: [Cap, Floor, Collar]."
+          description: "Determine if it's CAP, FLOOR, or COLLAR.\r\n\r\nSupported\
+            \ string (enumeration) values are: [Cap, Floor, Collar]."
           type: string
         capStrike:
           description: Strike rate of the Cap.
@@ -90197,9 +90204,9 @@ components:
             \ default CalculationType is `Standard`, which returns a coupon amount\
             \ equal to Principal * Coupon Rate / Coupon Frequency. Coupon Frequency\
             \ is 12M / Payment Frequency.\r\nPayment Frequency can be 1M, 3M, 6M,\
-            \ 12M etc. So Coupon Frequency can be 12, 4, 2, 1 respectively.\r\nSupported\
-            \ string (enumeration) values are: [Standard, DayCountCoupon, NoCalculationFloater,\
-            \ BrazilFixedCoupon]."
+            \ 12M etc. So Coupon Frequency can be 12, 4, 2, 1 respectively.\r\n\r\n\
+            Supported string (enumeration) values are: [Standard, DayCountCoupon,\
+            \ NoCalculationFloater, BrazilFixedCoupon]."
           nullable: true
           type: string
         schedules:
@@ -90283,7 +90290,7 @@ components:
           format: double
           type: number
         type:
-          description: "The type of CFD.\r\nSupported string (enumeration) values\
+          description: "The type of CFD.\r\n\r\nSupported string (enumeration) values\
             \ are: [Cash, Futures]."
           type: string
         underlyingCcy:
@@ -90291,7 +90298,7 @@ components:
           type: string
         underlyingIdentifier:
           description: "external market codes and identifiers for the CFD, e.g. RIC.\r\
-            \nSupported string (enumeration) values are: [LusidInstrumentId, Isin,\
+            \n\r\nSupported string (enumeration) values are: [LusidInstrumentId, Isin,\
             \ Sedol, Cusip, ClientInternal, Figi, RIC, QuotePermId, REDCode, BBGId,\
             \ ICECode]."
           type: string
@@ -90690,11 +90697,11 @@ components:
           type: string
         deliveryType:
           description: "is the option cash settled or physical delivery of option\r\
-            \nSupported string (enumeration) values are: [Cash, Physical]."
+            \n\r\nSupported string (enumeration) values are: [Cash, Physical]."
           type: string
         optionType:
-          description: "Type of optionality for the option\r\nSupported string (enumeration)\
-            \ values are: [Call, Put]."
+          description: "Type of optionality for the option\r\n\r\nSupported string\
+            \ (enumeration) values are: [Call, Put]."
           type: string
         strike:
           description: The strike of the option.
@@ -90705,7 +90712,7 @@ components:
           type: string
         underlyingIdentifier:
           description: "The market identifier type of the underlying code, e.g RIC.\r\
-            \nSupported string (enumeration) values are: [LusidInstrumentId, Isin,\
+            \n\r\nSupported string (enumeration) values are: [LusidInstrumentId, Isin,\
             \ Sedol, Cusip, ClientInternal, Figi, RIC, QuotePermId, REDCode, BBGId,\
             \ ICECode]."
           type: string
@@ -90714,8 +90721,8 @@ components:
           type: string
         equityOptionType:
           description: "Equity option types. E.g. Vanilla (default), RightsIssue,\
-            \ Warrant.\r\nSupported string (enumeration) values are: [Vanilla, RightsIssue,\
-            \ Warrant]."
+            \ Warrant.\r\n\r\nSupported string (enumeration) values are: [Vanilla,\
+            \ RightsIssue, Warrant]."
           nullable: true
           type: string
         numberOfShares:
@@ -90820,7 +90827,7 @@ components:
           type: number
         underlyingIdentifier:
           description: "external market codes and identifiers for the EquitySwap,\
-            \ e.g. RIC.\r\nSupported string (enumeration) values are: [LusidInstrumentId,\
+            \ e.g. RIC.\r\n\r\nSupported string (enumeration) values are: [LusidInstrumentId,\
             \ Isin, Sedol, Cusip, ClientInternal, Figi, RIC, QuotePermId, REDCode,\
             \ BBGId, ICECode]."
           type: string
@@ -92051,7 +92058,8 @@ components:
           type: number
         exerciseType:
           description: "Type of optionality that is present; European, Bermudan, American.\r\
-            \nSupported string (enumeration) values are: [European, Bermudan, American]."
+            \n\r\nSupported string (enumeration) values are: [European, Bermudan,\
+            \ American]."
           nullable: true
           type: string
         isPayoffDigital:
@@ -92321,13 +92329,13 @@ components:
           type: string
         payOrReceiveFixed:
           description: "True if on exercise the holder of the option enters the swap\
-            \ paying fixed, false if floating.\r\nSupported string (enumeration) values\
-            \ are: [Pay, Receive]."
+            \ paying fixed, false if floating.\r\n\r\nSupported string (enumeration)\
+            \ values are: [Pay, Receive]."
           type: string
         premium:
           $ref: '#/components/schemas/Premium'
         deliveryMethod:
-          description: "How does the option settle\r\nSupported string (enumeration)\
+          description: "How does the option settle\r\n\r\nSupported string (enumeration)\
             \ values are: [Cash, Physical]."
           type: string
         swap:
@@ -92828,12 +92836,13 @@ components:
           type: string
         accrualBasis:
           description: "For calculation of interest, the accrual basis to be used.\r\
-            \nSupported string (enumeration) values are: [Actual360, Act360, MoneyMarket,\
-            \ Actual365, Act365, Thirty360, ThirtyU360, Bond, ThirtyE360, EuroBond,\
-            \ ActualActual, ActAct, ActActIsda, ActActIsma, ActActIcma, OneOne, Act364,\
-            \ Act365F, Act365L, Act365_25, Act252, Bus252, NL360, NL365, ActActAFB,\
-            \ Act365Cad, ThirtyActIsda, Thirty365Isda, ThirtyEActIsda, ThirtyE360Isda,\
-            \ ThirtyE365Isda, ThirtyU360EOM]."
+            \nFor more information on day counts, see https://support.lusid.com/knowledgebase/article/KA-01798\r\
+            \n            \r\nSupported string (enumeration) values are: [Actual360,\
+            \ Act360, MoneyMarket, Actual365, Act365, Thirty360, ThirtyU360, Bond,\
+            \ ThirtyE360, EuroBond, ActualActual, ActAct, ActActIsda, ActActIsma,\
+            \ ActActIcma, OneOne, Act364, Act365F, Act365L, Act365_25, Act252, Bus252,\
+            \ NL360, NL365, ActActAFB, Act365Cad, ThirtyActIsda, Thirty365Isda, ThirtyEActIsda,\
+            \ ThirtyE360Isda, ThirtyE365Isda, ThirtyU360EOM]."
           type: string
         collateral:
           description: "The actual collateral in the Repo.\r\nThis property is for\
@@ -93411,7 +93420,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
