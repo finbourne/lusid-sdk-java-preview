@@ -292,7 +292,7 @@ info:
     | <a name="793">793</a>|Compliance Criteria Value for matching is missing.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4469
+  version: 0.11.4470
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -11829,7 +11829,7 @@ paths:
               recipeId:
                 scope: default
                 code: default
-              filterInstrumentEvents: {}
+              filterInstrumentEvents: ""
             schema:
               $ref: '#/components/schemas/QueryInstrumentEventsRequest'
           application/json:
@@ -11844,7 +11844,7 @@ paths:
               recipeId:
                 scope: default
                 code: default
-              filterInstrumentEvents: {}
+              filterInstrumentEvents: ""
             schema:
               $ref: '#/components/schemas/QueryInstrumentEventsRequest'
           text/json:
@@ -11859,7 +11859,7 @@ paths:
               recipeId:
                 scope: default
                 code: default
-              filterInstrumentEvents: {}
+              filterInstrumentEvents: ""
             schema:
               $ref: '#/components/schemas/QueryInstrumentEventsRequest'
           application/*+json:
@@ -11874,7 +11874,7 @@ paths:
               recipeId:
                 scope: default
                 code: default
-              filterInstrumentEvents: {}
+              filterInstrumentEvents: ""
             schema:
               $ref: '#/components/schemas/QueryInstrumentEventsRequest'
         description: The filter parameters used to retrieve instrument events.
@@ -64740,60 +64740,6 @@ components:
           nullable: true
           type: string
       type: object
-    FilterInstrumentEvents:
-      additionalProperties: false
-      description: "Instrument event query structure. The fields in the body act in\
-        \ and AND-wise fashion\r\nfor any instrument event query endpoint."
-      example:
-        corporateActionSourceIds:
-        - code: code
-          scope: scope
-        - code: code
-          scope: scope
-        instrumentScopes:
-        - instrumentScopes
-        - instrumentScopes
-        instrumentEventTypes:
-        - instrumentEventTypes
-        - instrumentEventTypes
-        instrumentEventIds:
-        - instrumentEventIds
-        - instrumentEventIds
-        lusidInstrumentIds:
-        - lusidInstrumentIds
-        - lusidInstrumentIds
-      properties:
-        instrumentEventIds:
-          description: The set of instrument events ids.
-          items:
-            type: string
-          nullable: true
-          type: array
-        corporateActionSourceIds:
-          description: The corporate action sources in which to search for events.
-          items:
-            $ref: '#/components/schemas/ResourceId'
-          nullable: true
-          type: array
-        lusidInstrumentIds:
-          description: The lusid identifers for instruments on which the events apply.
-          items:
-            type: string
-          nullable: true
-          type: array
-        instrumentScopes:
-          description: The set of scopes in which the instruments of interest belong.
-          items:
-            type: string
-          nullable: true
-          type: array
-        instrumentEventTypes:
-          description: The subset of instrument event types.
-          items:
-            type: string
-          nullable: true
-          type: array
-      type: object
     FixedLeg:
       allOf:
       - $ref: '#/components/schemas/InstrumentLeg'
@@ -76371,7 +76317,7 @@ components:
           scope: scope
       properties:
         asAt:
-          description: The time of the system at which to query for bucketed cashflows.
+          description: The time of the system at which to query for cashflows.
           format: date-time
           nullable: true
           type: string
@@ -76406,24 +76352,7 @@ components:
       additionalProperties: false
       description: Instrument event query.
       example:
-        filterInstrumentEvents:
-          corporateActionSourceIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
-          instrumentScopes:
-          - instrumentScopes
-          - instrumentScopes
-          instrumentEventTypes:
-          - instrumentEventTypes
-          - instrumentEventTypes
-          instrumentEventIds:
-          - instrumentEventIds
-          - instrumentEventIds
-          lusidInstrumentIds:
-          - lusidInstrumentIds
-          - lusidInstrumentIds
+        filterInstrumentEvents: filterInstrumentEvents
         portfolioEntityIds:
         - code: code
           scope: scope
@@ -76464,7 +76393,12 @@ components:
         recipeId:
           $ref: '#/components/schemas/ResourceId'
         filterInstrumentEvents:
-          $ref: '#/components/schemas/FilterInstrumentEvents'
+          description: Expression to filter the result set.
+          maxLength: 16384
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
       required:
       - asAt
       - effectiveAt

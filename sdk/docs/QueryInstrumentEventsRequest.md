@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **portfolioEntityIds** | [**List&lt;PortfolioEntityId&gt;**](PortfolioEntityId.md) | The set of portfolios and portfolio groups to which the instrument events must belong. | 
 **effectiveAt** | **OffsetDateTime** | The Effective date used in the valuation of the cashflows. | 
 **recipeId** | [**ResourceId**](ResourceId.md) |  | 
-**filterInstrumentEvents** | [**FilterInstrumentEvents**](FilterInstrumentEvents.md) |  |  [optional]
+**filterInstrumentEvents** | **String** | Expression to filter the result set. |  [optional]
 
 
 
