@@ -975,11 +975,11 @@ Name | Type | Description  | Notes
 
 <a name="patchPersonAccessMetadata"></a>
 # **patchPersonAccessMetadata**
-> Map&lt;String, List&lt;AccessMetadataValue&gt;&gt; patchPersonAccessMetadata(idTypeScope, idTypeCode, code, accessMetadataOperation, effectiveAt, effectiveUntil)
+> Map&lt;String, List&lt;AccessMetadataValue&gt;&gt; patchPersonAccessMetadata(idTypeScope, idTypeCode, code, operation, effectiveAt, effectiveUntil)
 
 [EXPERIMENTAL] PatchPersonAccessMetadata: Patch Access Metadata rules for a Person.
 
-Patch Person Access Metadata Rules in a single scope.  The behaviour is defined by the JSON Patch specification.                Currently only &#39;add&#39; is a supported operation on the patch document.    Currently only valid metadata keys are supported paths on the patch document.                The response will return any affected Person Access Metadata rules or a failure message if unsuccessful.                It is important to always check to verify success (or failure).                Multiple rules for a metadataKey can exist with different effective at dates, when resources are accessed the rule that is active for the current time will be fetched.
+Patch Person Access Metadata Rules in a single scope.  The behaviour is defined by the JSON Patch specification.                Currently only &#39;add&#39; is a supported operation on the patch document  Currently only valid metadata keys are supported paths on the patch document                The response will return any affected Person Access Metadata rules or a failure message if unsuccessful.                It is important to always check to verify success (or failure).                Multiple rules for a metadataKey can exist with different effective at dates, when resources are accessed the rule that is active for the current time will be fetched.
 
 ### Example
 ```java
@@ -1004,11 +1004,11 @@ public class Example {
     String idTypeScope = "idTypeScope_example"; // String | Scope of the person identifier.
     String idTypeCode = "idTypeCode_example"; // String | Code of the person identifier.
     String code = "code_example"; // String | Code of the person under specified identifier type's scope and code.
-    List<AccessMetadataOperation> accessMetadataOperation = Arrays.asList(); // List<AccessMetadataOperation> | The Json Patch document
+    List<Operation> operation = Arrays.asList(); // List<Operation> | The Json Patch document
     String effectiveAt = "effectiveAt_example"; // String | The effectiveAt datetime at which to upsert the Access Metadata
     OffsetDateTime effectiveUntil = OffsetDateTime.now(); // OffsetDateTime | The effective datetime until which the Access Metadata is valid. If not supplied this will be valid indefinitely, or until the next 'effectiveAt' datetime of the Access Metadata
     try {
-      Map<String, List<AccessMetadataValue>> result = apiInstance.patchPersonAccessMetadata(idTypeScope, idTypeCode, code, accessMetadataOperation, effectiveAt, effectiveUntil);
+      Map<String, List<AccessMetadataValue>> result = apiInstance.patchPersonAccessMetadata(idTypeScope, idTypeCode, code, operation, effectiveAt, effectiveUntil);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PersonsApi#patchPersonAccessMetadata");
@@ -1028,7 +1028,7 @@ Name | Type | Description  | Notes
  **idTypeScope** | **String**| Scope of the person identifier. |
  **idTypeCode** | **String**| Code of the person identifier. |
  **code** | **String**| Code of the person under specified identifier type&#39;s scope and code. |
- **accessMetadataOperation** | [**List&lt;AccessMetadataOperation&gt;**](AccessMetadataOperation.md)| The Json Patch document |
+ **operation** | [**List&lt;Operation&gt;**](Operation.md)| The Json Patch document |
  **effectiveAt** | **String**| The effectiveAt datetime at which to upsert the Access Metadata | [optional]
  **effectiveUntil** | **OffsetDateTime**| The effective datetime until which the Access Metadata is valid. If not supplied this will be valid indefinitely, or until the next &#39;effectiveAt&#39; datetime of the Access Metadata | [optional]
 
