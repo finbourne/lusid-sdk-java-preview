@@ -15,5 +15,7 @@
 
 * `ISDACDS` (value: `"IsdaCds"`)
 
+* `YIELDBOOK` (value: `"YieldBook"`)
+
 
 
