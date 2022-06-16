@@ -292,7 +292,7 @@ info:
     | <a name="793">793</a>|Compliance Criteria Value for matching is missing.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4480
+  version: 0.11.4481
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -53987,8 +53987,8 @@ paths:
                       key: Transaction/default/SourcePortfolioScope
                       value:
                         labelValue: DEMO-SCOPE
-                    transaction/default/FundLineage:
-                      key: Transaction/default/FundLineage
+                    transaction/default/InvestmentFundLineage:
+                      key: Transaction/default/InvestmentFundLineage
                       value:
                         labelValue: FeederFund/Master:core:R
                   source: ""
@@ -54033,8 +54033,8 @@ paths:
                       key: Transaction/default/SourcePortfolioScope
                       value:
                         labelValue: DEMO-SCOPE
-                    transaction/default/FundLineage:
-                      key: Transaction/default/FundLineage
+                    transaction/default/InvestmentFundLineage:
+                      key: Transaction/default/InvestmentFundLineage
                       value:
                         labelValue: FeederFund/Master:core:R
                   source: ""
@@ -54079,8 +54079,8 @@ paths:
                       key: Transaction/default/SourcePortfolioScope
                       value:
                         labelValue: DEMO-SCOPE
-                    transaction/default/FundLineage:
-                      key: Transaction/default/FundLineage
+                    transaction/default/InvestmentFundLineage:
+                      key: Transaction/default/InvestmentFundLineage
                       value:
                         labelValue: FeederFund/Master:core:R
                   source: ""
@@ -93320,7 +93320,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
