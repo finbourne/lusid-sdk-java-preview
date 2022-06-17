@@ -59,5 +59,7 @@
 
 * `CUSTOMENTITY` (value: `"CustomEntity"`)
 
+* `INSTRUMENTEVENT` (value: `"InstrumentEvent"`)
+
 
 
