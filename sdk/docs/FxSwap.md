@@ -2,7 +2,7 @@
 
 # FxSwap
 
-IL FX Swap Instrument; Lusid-ibor internal representation of an FX Swap instrument.
+LUSID representation of an FX Swap. Composed of two FX Forwards.
 
 ## Properties
 

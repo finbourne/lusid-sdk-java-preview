@@ -2,7 +2,7 @@
 
 # FxOption
 
-Lusid-ibor internal representation of a plain vanilla FX Option instrument.
+LUSID representation of an FX Option.  Including Vanilla, American, European, and Digital (Binary) options.
 
 ## Properties
 

@@ -2,7 +2,7 @@
 
 # Equity
 
-An equity instrument.
+LUSID representation of an Equity.
 
 ## Properties
 
