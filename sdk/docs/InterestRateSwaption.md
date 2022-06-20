@@ -2,7 +2,7 @@
 
 # InterestRateSwaption
 
-A swaption, an option to enter into an interest rate swap.
+LUSID representation of an Interest Rate Swaption.
 
 ## Properties
 

@@ -2,7 +2,7 @@
 
 # EquityOption
 
-Lusid-ibor internal representation of a plain vanilla equity option instrument.
+LUSID representation of a plain vanilla OTC Equity Option.
 
 ## Properties
 

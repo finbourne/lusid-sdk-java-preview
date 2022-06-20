@@ -2,7 +2,7 @@
 
 # Bond
 
-IL Bond Instrument; Lusid-ibor internal representation of a Bond instrument
+LUSID representation of a Vanilla Fixed Rate Bond.
 
 ## Properties
 

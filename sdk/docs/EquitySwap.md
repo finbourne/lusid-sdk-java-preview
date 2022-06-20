@@ -2,7 +2,7 @@
 
 # EquitySwap
 
-Lusid-ibor internal representation of an Equity Swap instrument.
+LUSID representation of an Equity Swap.
 
 ## Properties
 
