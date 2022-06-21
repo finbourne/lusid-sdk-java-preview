@@ -2,14 +2,14 @@
   "openapi": "3.0.1",
   "info": {
     "title": "LUSID API",
-    "description": "# Introduction\n\nThis page documents the [LUSID APIs](https://www.lusid.com/api/swagger), which allows authorised clients to query and update their data within the LUSID platform.\n\nSDKs to interact with the LUSID APIs are available in the following languages and frameworks:\n\n* [C#](https://github.com/finbourne/lusid-sdk-csharp)\n* [Java](https://github.com/finbourne/lusid-sdk-java)\n* [JavaScript](https://github.com/finbourne/lusid-sdk-js)\n* [Python](https://github.com/finbourne/lusid-sdk-python)\n* [Angular](https://github.com/finbourne/lusid-sdk-angular)\n\nThe LUSID platform is made up of a number of sub-applications. You can find the API / swagger documentation by following the links in the table below.\n\n\n| Application | Description | API / Swagger Documentation |\n| ----- | ----- | ---- |\n| LUSID | Open, API-first, developer-friendly investment data platform. | [Swagger](https://www.lusid.com/api/swagger/index.html) |\n| Web app | User-facing front end for LUSID. | [Swagger](https://www.lusid.com/app/swagger/index.html) |\n| Scheduler | Automated job scheduler. | [Swagger](https://www.lusid.com/scheduler2/swagger/index.html) |\n| Insights |Monitoring and troubleshooting service. | [Swagger](https://www.lusid.com/insights/swagger/index.html) |\n| Identity | Identity management for LUSID (in conjuction with Access) | [Swagger](https://www.lusid.com/identity/swagger/index.html) |\n| Access | Access control for LUSID (in conjunction with Identity) | [Swagger](https://www.lusid.com/access/swagger/index.html) |\n| Drive | Secure file repository and manager for collaboration. | [Swagger](https://www.lusid.com/drive/swagger/index.html) |\n| Luminesce | Data virtualisation service (query data from multiple providers, including LUSID) | [Swagger](https://www.lusid.com/honeycomb/swagger/index.html) |\n| Notification | Notification service. | [Swagger](https://www.lusid.com/notifications/swagger/index.html) |\n| Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |\n\n\n# Error Codes\n\n| Code|Name|Description |\n| ---|---|--- |\n| <a name=\"-10\">-10</a>|Server Configuration Error|  |\n| <a name=\"-1\">-1</a>|Unknown error|An unexpected error was encountered on our side. |\n| <a name=\"102\">102</a>|Version Not Found|  |\n| <a name=\"103\">103</a>|Api Rate Limit Violation|  |\n| <a name=\"104\">104</a>|Instrument Not Found|  |\n| <a name=\"105\">105</a>|Property Not Found|  |\n| <a name=\"106\">106</a>|Portfolio Recursion Depth|  |\n| <a name=\"108\">108</a>|Group Not Found|  |\n| <a name=\"109\">109</a>|Portfolio Not Found|  |\n| <a name=\"110\">110</a>|Property Schema Not Found|  |\n| <a name=\"111\">111</a>|Portfolio Ancestry Not Found|  |\n| <a name=\"112\">112</a>|Portfolio With Id Already Exists|  |\n| <a name=\"113\">113</a>|Orphaned Portfolio|  |\n| <a name=\"119\">119</a>|Missing Base Claims|  |\n| <a name=\"121\">121</a>|Property Not Defined|  |\n| <a name=\"122\">122</a>|Cannot Delete System Property|  |\n| <a name=\"123\">123</a>|Cannot Modify Immutable Property Field|  |\n| <a name=\"124\">124</a>|Property Already Exists|  |\n| <a name=\"125\">125</a>|Invalid Property Life Time|  |\n| <a name=\"126\">126</a>|Property Constraint Style Excludes Properties|  |\n| <a name=\"127\">127</a>|Cannot Modify Default Data Type|  |\n| <a name=\"128\">128</a>|Group Already Exists|  |\n| <a name=\"129\">129</a>|No Such Data Type|  |\n| <a name=\"130\">130</a>|Undefined Value For Data Type|  |\n| <a name=\"131\">131</a>|Unsupported Value Type Defined On Data Type|  |\n| <a name=\"132\">132</a>|Validation Error|  |\n| <a name=\"133\">133</a>|Loop Detected In Group Hierarchy|  |\n| <a name=\"134\">134</a>|Undefined Acceptable Values|  |\n| <a name=\"135\">135</a>|Sub Group Already Exists|  |\n| <a name=\"138\">138</a>|Price Source Not Found|  |\n| <a name=\"139\">139</a>|Analytic Store Not Found|  |\n| <a name=\"141\">141</a>|Analytic Store Already Exists|  |\n| <a name=\"143\">143</a>|Client Instrument Already Exists|  |\n| <a name=\"144\">144</a>|Duplicate In Parameter Set|  |\n| <a name=\"147\">147</a>|Results Not Found|  |\n| <a name=\"148\">148</a>|Order Field Not In Result Set|  |\n| <a name=\"149\">149</a>|Operation Failed|  |\n| <a name=\"150\">150</a>|Elastic Search Error|  |\n| <a name=\"151\">151</a>|Invalid Parameter Value|  |\n| <a name=\"153\">153</a>|Command Processing Failure|  |\n| <a name=\"154\">154</a>|Entity State Construction Failure|  |\n| <a name=\"155\">155</a>|Entity Timeline Does Not Exist|  |\n| <a name=\"156\">156</a>|Concurrency Conflict Failure|  |\n| <a name=\"157\">157</a>|Invalid Request|  |\n| <a name=\"158\">158</a>|Event Publish Unknown|  |\n| <a name=\"159\">159</a>|Event Query Failure|  |\n| <a name=\"160\">160</a>|Blob Did Not Exist|  |\n| <a name=\"162\">162</a>|Sub System Request Failure|  |\n| <a name=\"163\">163</a>|Sub System Configuration Failure|  |\n| <a name=\"165\">165</a>|Failed To Delete|  |\n| <a name=\"166\">166</a>|Upsert Client Instrument Failure|  |\n| <a name=\"167\">167</a>|Illegal As At Interval|  |\n| <a name=\"168\">168</a>|Illegal Bitemporal Query|  |\n| <a name=\"169\">169</a>|Invalid Alternate Id|  |\n| <a name=\"170\">170</a>|Cannot Add Source Portfolio Property Explicitly|  |\n| <a name=\"171\">171</a>|Entity Already Exists In Group|  |\n| <a name=\"173\">173</a>|Entity With Id Already Exists|  |\n| <a name=\"174\">174</a>|Derived Portfolio Details Do Not Exist|  |\n| <a name=\"175\">175</a>|Entity Not In Group|  |\n| <a name=\"176\">176</a>|Portfolio With Name Already Exists|  |\n| <a name=\"177\">177</a>|Invalid Transactions|  |\n| <a name=\"178\">178</a>|Reference Portfolio Not Found|  |\n| <a name=\"179\">179</a>|Duplicate Id|  |\n| <a name=\"180\">180</a>|Command Retrieval Failure|  |\n| <a name=\"181\">181</a>|Data Filter Application Failure|  |\n| <a name=\"182\">182</a>|Search Failed|  |\n| <a name=\"183\">183</a>|Movements Engine Configuration Key Failure|  |\n| <a name=\"184\">184</a>|Fx Rate Source Not Found|  |\n| <a name=\"185\">185</a>|Accrual Source Not Found|  |\n| <a name=\"186\">186</a>|Access Denied|  |\n| <a name=\"187\">187</a>|Invalid Identity Token|  |\n| <a name=\"188\">188</a>|Invalid Request Headers|  |\n| <a name=\"189\">189</a>|Price Not Found|  |\n| <a name=\"190\">190</a>|Invalid Sub Holding Keys Provided|  |\n| <a name=\"191\">191</a>|Duplicate Sub Holding Keys Provided|  |\n| <a name=\"192\">192</a>|Cut Definition Not Found|  |\n| <a name=\"193\">193</a>|Cut Definition Invalid|  |\n| <a name=\"194\">194</a>|Time Variant Property Deletion Date Unspecified|  |\n| <a name=\"195\">195</a>|Perpetual Property Deletion Date Specified|  |\n| <a name=\"196\">196</a>|Time Variant Property Upsert Date Unspecified|  |\n| <a name=\"197\">197</a>|Perpetual Property Upsert Date Specified|  |\n| <a name=\"200\">200</a>|Invalid Unit For Data Type|  |\n| <a name=\"201\">201</a>|Invalid Type For Data Type|  |\n| <a name=\"202\">202</a>|Invalid Value For Data Type|  |\n| <a name=\"203\">203</a>|Unit Not Defined For Data Type|  |\n| <a name=\"204\">204</a>|Units Not Supported On Data Type|  |\n| <a name=\"205\">205</a>|Cannot Specify Units On Data Type|  |\n| <a name=\"206\">206</a>|Unit Schema Inconsistent With Data Type|  |\n| <a name=\"207\">207</a>|Unit Definition Not Specified|  |\n| <a name=\"208\">208</a>|Duplicate Unit Definitions Specified|  |\n| <a name=\"209\">209</a>|Invalid Units Definition|  |\n| <a name=\"210\">210</a>|Invalid Instrument Identifier Unit|  |\n| <a name=\"211\">211</a>|Holdings Adjustment Does Not Exist|  |\n| <a name=\"212\">212</a>|Could Not Build Excel Url|  |\n| <a name=\"213\">213</a>|Could Not Get Excel Version|  |\n| <a name=\"214\">214</a>|Instrument By Code Not Found|  |\n| <a name=\"215\">215</a>|Entity Schema Does Not Exist|  |\n| <a name=\"216\">216</a>|Feature Not Supported On Portfolio Type|  |\n| <a name=\"217\">217</a>|Quote Not Found|  |\n| <a name=\"218\">218</a>|Invalid Quote Identifier|  |\n| <a name=\"219\">219</a>|Invalid Metric For Data Type|  |\n| <a name=\"220\">220</a>|Invalid Instrument Definition|  |\n| <a name=\"221\">221</a>|Instrument Upsert Failure|  |\n| <a name=\"222\">222</a>|Reference Portfolio Request Not Supported|  |\n| <a name=\"223\">223</a>|Transaction Portfolio Request Not Supported|  |\n| <a name=\"224\">224</a>|Invalid Property Value Assignment|  |\n| <a name=\"230\">230</a>|Transaction Type Not Found|  |\n| <a name=\"231\">231</a>|Transaction Type Duplication|  |\n| <a name=\"232\">232</a>|Portfolio Does Not Exist At Given Date|  |\n| <a name=\"233\">233</a>|Query Parser Failure|  |\n| <a name=\"234\">234</a>|Duplicate Constituent|  |\n| <a name=\"235\">235</a>|Unresolved Instrument Constituent|  |\n| <a name=\"236\">236</a>|Unresolved Instrument In Transition|  |\n| <a name=\"237\">237</a>|Missing Side Definitions|  |\n| <a name=\"299\">299</a>|Invalid Recipe|  |\n| <a name=\"300\">300</a>|Missing Recipe|  |\n| <a name=\"301\">301</a>|Dependencies|  |\n| <a name=\"304\">304</a>|Portfolio Preprocess Failure|  |\n| <a name=\"310\">310</a>|Valuation Engine Failure|  |\n| <a name=\"311\">311</a>|Task Factory Failure|  |\n| <a name=\"312\">312</a>|Task Evaluation Failure|  |\n| <a name=\"313\">313</a>|Task Generation Failure|  |\n| <a name=\"314\">314</a>|Engine Configuration Failure|  |\n| <a name=\"315\">315</a>|Model Specification Failure|  |\n| <a name=\"320\">320</a>|Market Data Key Failure|  |\n| <a name=\"321\">321</a>|Market Resolver Failure|  |\n| <a name=\"322\">322</a>|Market Data Failure|  |\n| <a name=\"330\">330</a>|Curve Failure|  |\n| <a name=\"331\">331</a>|Volatility Surface Failure|  |\n| <a name=\"332\">332</a>|Volatility Cube Failure|  |\n| <a name=\"350\">350</a>|Instrument Failure|  |\n| <a name=\"351\">351</a>|Cash Flows Failure|  |\n| <a name=\"352\">352</a>|Reference Data Failure|  |\n| <a name=\"360\">360</a>|Aggregation Failure|  |\n| <a name=\"361\">361</a>|Aggregation Measure Failure|  |\n| <a name=\"370\">370</a>|Result Retrieval Failure|  |\n| <a name=\"371\">371</a>|Result Processing Failure|  |\n| <a name=\"372\">372</a>|Vendor Result Processing Failure|  |\n| <a name=\"373\">373</a>|Vendor Result Mapping Failure|  |\n| <a name=\"374\">374</a>|Vendor Library Unauthorised|  |\n| <a name=\"375\">375</a>|Vendor Connectivity Error|  |\n| <a name=\"376\">376</a>|Vendor Interface Error|  |\n| <a name=\"377\">377</a>|Vendor Pricing Failure|  |\n| <a name=\"378\">378</a>|Vendor Translation Failure|  |\n| <a name=\"379\">379</a>|Vendor Key Mapping Failure|  |\n| <a name=\"380\">380</a>|Vendor Reflection Failure|  |\n| <a name=\"381\">381</a>|Vendor Process Failure|  |\n| <a name=\"382\">382</a>|Vendor System Failure|  |\n| <a name=\"390\">390</a>|Attempt To Upsert Duplicate Quotes|  |\n| <a name=\"391\">391</a>|Corporate Action Source Does Not Exist|  |\n| <a name=\"392\">392</a>|Corporate Action Source Already Exists|  |\n| <a name=\"393\">393</a>|Instrument Identifier Already In Use|  |\n| <a name=\"394\">394</a>|Properties Not Found|  |\n| <a name=\"395\">395</a>|Batch Operation Aborted|  |\n| <a name=\"400\">400</a>|Invalid Iso4217 Currency Code|  |\n| <a name=\"401\">401</a>|Cannot Assign Instrument Identifier To Currency|  |\n| <a name=\"402\">402</a>|Cannot Assign Currency Identifier To Non Currency|  |\n| <a name=\"403\">403</a>|Currency Instrument Cannot Be Deleted|  |\n| <a name=\"404\">404</a>|Currency Instrument Cannot Have Economic Definition|  |\n| <a name=\"405\">405</a>|Currency Instrument Cannot Have Lookthrough Portfolio|  |\n| <a name=\"406\">406</a>|Cannot Create Currency Instrument With Multiple Identifiers|  |\n| <a name=\"407\">407</a>|Specified Currency Is Undefined|  |\n| <a name=\"410\">410</a>|Index Does Not Exist|  |\n| <a name=\"411\">411</a>|Sort Field Does Not Exist|  |\n| <a name=\"413\">413</a>|Negative Pagination Parameters|  |\n| <a name=\"414\">414</a>|Invalid Search Syntax|  |\n| <a name=\"415\">415</a>|Filter Execution Timeout|  |\n| <a name=\"420\">420</a>|Side Definition Inconsistent|  |\n| <a name=\"450\">450</a>|Invalid Quote Access Metadata Rule|  |\n| <a name=\"451\">451</a>|Access Metadata Not Found|  |\n| <a name=\"452\">452</a>|Invalid Access Metadata Identifier|  |\n| <a name=\"460\">460</a>|Standard Resource Not Found|  |\n| <a name=\"461\">461</a>|Standard Resource Conflict|  |\n| <a name=\"462\">462</a>|Calendar Not Found|  |\n| <a name=\"463\">463</a>|Date In A Calendar Not Found|  |\n| <a name=\"464\">464</a>|Invalid Date Source Data|  |\n| <a name=\"465\">465</a>|Invalid Timezone|  |\n| <a name=\"601\">601</a>|Person Identifier Already In Use|  |\n| <a name=\"602\">602</a>|Person Not Found|  |\n| <a name=\"603\">603</a>|Cannot Set Identifier|  |\n| <a name=\"617\">617</a>|Invalid Recipe Specification In Request|  |\n| <a name=\"618\">618</a>|Inline Recipe Deserialisation Failure|  |\n| <a name=\"619\">619</a>|Identifier Types Not Set For Entity|  |\n| <a name=\"620\">620</a>|Cannot Delete All Client Defined Identifiers|  |\n| <a name=\"650\">650</a>|The Order requested was not found.|  |\n| <a name=\"654\">654</a>|The Allocation requested was not found.|  |\n| <a name=\"655\">655</a>|Cannot build the fx forward target with the given holdings.|  |\n| <a name=\"656\">656</a>|Group does not contain expected entities.|  |\n| <a name=\"665\">665</a>|Destination directory not found|  |\n| <a name=\"667\">667</a>|Relation definition already exists|  |\n| <a name=\"672\">672</a>|Could not retrieve file contents|  |\n| <a name=\"673\">673</a>|Missing entitlements for entities in Group|  |\n| <a name=\"674\">674</a>|Next Best Action not found|  |\n| <a name=\"676\">676</a>|Relation definition not defined|  |\n| <a name=\"677\">677</a>|Invalid entity identifier for relation|  |\n| <a name=\"681\">681</a>|Sorting by specified field not supported|One or more of the provided fields to order by were either invalid or not supported. |\n| <a name=\"682\">682</a>|Too many fields to sort by|The number of fields to sort the data by exceeds the number allowed by the endpoint |\n| <a name=\"684\">684</a>|Sequence Not Found|  |\n| <a name=\"685\">685</a>|Sequence Already Exists|  |\n| <a name=\"686\">686</a>|Non-cycling sequence has been exhausted|  |\n| <a name=\"687\">687</a>|Legal Entity Identifier Already In Use|  |\n| <a name=\"688\">688</a>|Legal Entity Not Found|  |\n| <a name=\"689\">689</a>|The supplied pagination token is invalid|  |\n| <a name=\"690\">690</a>|Property Type Is Not Supported|  |\n| <a name=\"691\">691</a>|Multiple Tax-lots For Currency Type Is Not Supported|  |\n| <a name=\"692\">692</a>|This endpoint does not support impersonation|  |\n| <a name=\"693\">693</a>|Entity type is not supported for Relationship|  |\n| <a name=\"694\">694</a>|Relationship Validation Failure|  |\n| <a name=\"695\">695</a>|Relationship Not Found|  |\n| <a name=\"697\">697</a>|Derived Property Formula No Longer Valid|  |\n| <a name=\"698\">698</a>|Story is not available|  |\n| <a name=\"703\">703</a>|Corporate Action Does Not Exist|  |\n| <a name=\"720\">720</a>|The provided sort and filter combination is not valid|  |\n| <a name=\"721\">721</a>|A2B generation failed|  |\n| <a name=\"722\">722</a>|Aggregated Return Calculation Failure|  |\n| <a name=\"723\">723</a>|Custom Entity Definition Identifier Already In Use|  |\n| <a name=\"724\">724</a>|Custom Entity Definition Not Found|  |\n| <a name=\"725\">725</a>|The Placement requested was not found.|  |\n| <a name=\"726\">726</a>|The Execution requested was not found.|  |\n| <a name=\"727\">727</a>|The Block requested was not found.|  |\n| <a name=\"728\">728</a>|The Participation requested was not found.|  |\n| <a name=\"729\">729</a>|The Package requested was not found.|  |\n| <a name=\"730\">730</a>|The OrderInstruction requested was not found.|  |\n| <a name=\"732\">732</a>|Custom Entity not found.|  |\n| <a name=\"733\">733</a>|Custom Entity Identifier already in use.|  |\n| <a name=\"735\">735</a>|Calculation Failed.|  |\n| <a name=\"736\">736</a>|An expected key on HttpResponse is missing.|  |\n| <a name=\"737\">737</a>|A required fee detail is missing.|  |\n| <a name=\"738\">738</a>|Zero rows were returned from Luminesce|  |\n| <a name=\"739\">739</a>|Provided Weekend Mask was invalid|  |\n| <a name=\"742\">742</a>|Custom Entity fields do not match the definition|  |\n| <a name=\"746\">746</a>|The provided sequence is not valid.|  |\n| <a name=\"751\">751</a>|The type of the Custom Entity is different than the type provided in the definition.|  |\n| <a name=\"752\">752</a>|Luminesce process returned an error.|  |\n| <a name=\"753\">753</a>|File name or content incompatible with operation.|  |\n| <a name=\"755\">755</a>|Schema of response from Drive is not as expected.|  |\n| <a name=\"757\">757</a>|Schema of response from Luminesce is not as expected.|  |\n| <a name=\"758\">758</a>|Luminesce timed out.|  |\n| <a name=\"763\">763</a>|Invalid Lusid Entity Identifier Unit|  |\n| <a name=\"768\">768</a>|Fee rule not found.|  |\n| <a name=\"769\">769</a>|Cannot update the base currency of a portfolio with transactions loaded|  |\n| <a name=\"771\">771</a>|Transaction configuration source not found|  |\n| <a name=\"774\">774</a>|Compliance rule not found.|  |\n| <a name=\"775\">775</a>|Fund accounting document cannot be processed.|  |\n| <a name=\"778\">778</a>|Unable to look up FX rate from trade ccy to portfolio ccy for some of the trades.|  |\n| <a name=\"782\">782</a>|The Property definition dataType is not matching the derivation formula dataType|  |\n| <a name=\"783\">783</a>|The Property definition domain is not supported for derived properties|  |\n| <a name=\"788\">788</a>|Compliance run not found failure.|  |\n| <a name=\"790\">790</a>|Custom Entity has missing or invalid identifiers|  |\n| <a name=\"791\">791</a>|Custom Entity definition already exists|  |\n| <a name=\"792\">792</a>|Compliance PropertyKey is missing.|  |\n| <a name=\"793\">793</a>|Compliance Criteria Value for matching is missing.|  |\n",
+    "description": "# Introduction\n\nThis page documents the [LUSID APIs](https://www.lusid.com/api/swagger), which allows authorised clients to query and update their data within the LUSID platform.\n\nSDKs to interact with the LUSID APIs are available in the following languages and frameworks:\n\n* [C#](https://github.com/finbourne/lusid-sdk-csharp)\n* [Java](https://github.com/finbourne/lusid-sdk-java)\n* [JavaScript](https://github.com/finbourne/lusid-sdk-js)\n* [Python](https://github.com/finbourne/lusid-sdk-python)\n* [Angular](https://github.com/finbourne/lusid-sdk-angular)\n\nThe LUSID platform is made up of a number of sub-applications. You can find the API / swagger documentation by following the links in the table below.\n\n\n| Application | Description | API / Swagger Documentation |\n| ----- | ----- | ---- |\n| LUSID | Open, API-first, developer-friendly investment data platform. | [Swagger](https://www.lusid.com/api/swagger/index.html) |\n| Web app | User-facing front end for LUSID. | [Swagger](https://www.lusid.com/app/swagger/index.html) |\n| Scheduler | Automated job scheduler. | [Swagger](https://www.lusid.com/scheduler2/swagger/index.html) |\n| Insights |Monitoring and troubleshooting service. | [Swagger](https://www.lusid.com/insights/swagger/index.html) |\n| Identity | Identity management for LUSID (in conjuction with Access) | [Swagger](https://www.lusid.com/identity/swagger/index.html) |\n| Access | Access control for LUSID (in conjunction with Identity) | [Swagger](https://www.lusid.com/access/swagger/index.html) |\n| Drive | Secure file repository and manager for collaboration. | [Swagger](https://www.lusid.com/drive/swagger/index.html) |\n| Luminesce | Data virtualisation service (query data from multiple providers, including LUSID) | [Swagger](https://www.lusid.com/honeycomb/swagger/index.html) |\n| Notification | Notification service. | [Swagger](https://www.lusid.com/notifications/swagger/index.html) |\n| Configuration | File store for secrets and other sensitive information. | [Swagger](https://www.lusid.com/configuration/swagger/index.html) |\n\n\n# Error Codes\n\n| Code|Name|Description |\n| ---|---|--- |\n| <a name=\"-10\">-10</a>|Server Configuration Error|  |\n| <a name=\"-1\">-1</a>|Unknown error|An unexpected error was encountered on our side. |\n| <a name=\"102\">102</a>|Version Not Found|  |\n| <a name=\"103\">103</a>|Api Rate Limit Violation|  |\n| <a name=\"104\">104</a>|Instrument Not Found|  |\n| <a name=\"105\">105</a>|Property Not Found|  |\n| <a name=\"106\">106</a>|Portfolio Recursion Depth|  |\n| <a name=\"108\">108</a>|Group Not Found|  |\n| <a name=\"109\">109</a>|Portfolio Not Found|  |\n| <a name=\"110\">110</a>|Property Schema Not Found|  |\n| <a name=\"111\">111</a>|Portfolio Ancestry Not Found|  |\n| <a name=\"112\">112</a>|Portfolio With Id Already Exists|  |\n| <a name=\"113\">113</a>|Orphaned Portfolio|  |\n| <a name=\"119\">119</a>|Missing Base Claims|  |\n| <a name=\"121\">121</a>|Property Not Defined|  |\n| <a name=\"122\">122</a>|Cannot Delete System Property|  |\n| <a name=\"123\">123</a>|Cannot Modify Immutable Property Field|  |\n| <a name=\"124\">124</a>|Property Already Exists|  |\n| <a name=\"125\">125</a>|Invalid Property Life Time|  |\n| <a name=\"126\">126</a>|Property Constraint Style Excludes Properties|  |\n| <a name=\"127\">127</a>|Cannot Modify Default Data Type|  |\n| <a name=\"128\">128</a>|Group Already Exists|  |\n| <a name=\"129\">129</a>|No Such Data Type|  |\n| <a name=\"130\">130</a>|Undefined Value For Data Type|  |\n| <a name=\"131\">131</a>|Unsupported Value Type Defined On Data Type|  |\n| <a name=\"132\">132</a>|Validation Error|  |\n| <a name=\"133\">133</a>|Loop Detected In Group Hierarchy|  |\n| <a name=\"134\">134</a>|Undefined Acceptable Values|  |\n| <a name=\"135\">135</a>|Sub Group Already Exists|  |\n| <a name=\"138\">138</a>|Price Source Not Found|  |\n| <a name=\"139\">139</a>|Analytic Store Not Found|  |\n| <a name=\"141\">141</a>|Analytic Store Already Exists|  |\n| <a name=\"143\">143</a>|Client Instrument Already Exists|  |\n| <a name=\"144\">144</a>|Duplicate In Parameter Set|  |\n| <a name=\"147\">147</a>|Results Not Found|  |\n| <a name=\"148\">148</a>|Order Field Not In Result Set|  |\n| <a name=\"149\">149</a>|Operation Failed|  |\n| <a name=\"150\">150</a>|Elastic Search Error|  |\n| <a name=\"151\">151</a>|Invalid Parameter Value|  |\n| <a name=\"153\">153</a>|Command Processing Failure|  |\n| <a name=\"154\">154</a>|Entity State Construction Failure|  |\n| <a name=\"155\">155</a>|Entity Timeline Does Not Exist|  |\n| <a name=\"156\">156</a>|Concurrency Conflict Failure|  |\n| <a name=\"157\">157</a>|Invalid Request|  |\n| <a name=\"158\">158</a>|Event Publish Unknown|  |\n| <a name=\"159\">159</a>|Event Query Failure|  |\n| <a name=\"160\">160</a>|Blob Did Not Exist|  |\n| <a name=\"162\">162</a>|Sub System Request Failure|  |\n| <a name=\"163\">163</a>|Sub System Configuration Failure|  |\n| <a name=\"165\">165</a>|Failed To Delete|  |\n| <a name=\"166\">166</a>|Upsert Client Instrument Failure|  |\n| <a name=\"167\">167</a>|Illegal As At Interval|  |\n| <a name=\"168\">168</a>|Illegal Bitemporal Query|  |\n| <a name=\"169\">169</a>|Invalid Alternate Id|  |\n| <a name=\"170\">170</a>|Cannot Add Source Portfolio Property Explicitly|  |\n| <a name=\"171\">171</a>|Entity Already Exists In Group|  |\n| <a name=\"173\">173</a>|Entity With Id Already Exists|  |\n| <a name=\"174\">174</a>|Derived Portfolio Details Do Not Exist|  |\n| <a name=\"175\">175</a>|Entity Not In Group|  |\n| <a name=\"176\">176</a>|Portfolio With Name Already Exists|  |\n| <a name=\"177\">177</a>|Invalid Transactions|  |\n| <a name=\"178\">178</a>|Reference Portfolio Not Found|  |\n| <a name=\"179\">179</a>|Duplicate Id|  |\n| <a name=\"180\">180</a>|Command Retrieval Failure|  |\n| <a name=\"181\">181</a>|Data Filter Application Failure|  |\n| <a name=\"182\">182</a>|Search Failed|  |\n| <a name=\"183\">183</a>|Movements Engine Configuration Key Failure|  |\n| <a name=\"184\">184</a>|Fx Rate Source Not Found|  |\n| <a name=\"185\">185</a>|Accrual Source Not Found|  |\n| <a name=\"186\">186</a>|Access Denied|  |\n| <a name=\"187\">187</a>|Invalid Identity Token|  |\n| <a name=\"188\">188</a>|Invalid Request Headers|  |\n| <a name=\"189\">189</a>|Price Not Found|  |\n| <a name=\"190\">190</a>|Invalid Sub Holding Keys Provided|  |\n| <a name=\"191\">191</a>|Duplicate Sub Holding Keys Provided|  |\n| <a name=\"192\">192</a>|Cut Definition Not Found|  |\n| <a name=\"193\">193</a>|Cut Definition Invalid|  |\n| <a name=\"194\">194</a>|Time Variant Property Deletion Date Unspecified|  |\n| <a name=\"195\">195</a>|Perpetual Property Deletion Date Specified|  |\n| <a name=\"196\">196</a>|Time Variant Property Upsert Date Unspecified|  |\n| <a name=\"197\">197</a>|Perpetual Property Upsert Date Specified|  |\n| <a name=\"200\">200</a>|Invalid Unit For Data Type|  |\n| <a name=\"201\">201</a>|Invalid Type For Data Type|  |\n| <a name=\"202\">202</a>|Invalid Value For Data Type|  |\n| <a name=\"203\">203</a>|Unit Not Defined For Data Type|  |\n| <a name=\"204\">204</a>|Units Not Supported On Data Type|  |\n| <a name=\"205\">205</a>|Cannot Specify Units On Data Type|  |\n| <a name=\"206\">206</a>|Unit Schema Inconsistent With Data Type|  |\n| <a name=\"207\">207</a>|Unit Definition Not Specified|  |\n| <a name=\"208\">208</a>|Duplicate Unit Definitions Specified|  |\n| <a name=\"209\">209</a>|Invalid Units Definition|  |\n| <a name=\"210\">210</a>|Invalid Instrument Identifier Unit|  |\n| <a name=\"211\">211</a>|Holdings Adjustment Does Not Exist|  |\n| <a name=\"212\">212</a>|Could Not Build Excel Url|  |\n| <a name=\"213\">213</a>|Could Not Get Excel Version|  |\n| <a name=\"214\">214</a>|Instrument By Code Not Found|  |\n| <a name=\"215\">215</a>|Entity Schema Does Not Exist|  |\n| <a name=\"216\">216</a>|Feature Not Supported On Portfolio Type|  |\n| <a name=\"217\">217</a>|Quote Not Found|  |\n| <a name=\"218\">218</a>|Invalid Quote Identifier|  |\n| <a name=\"219\">219</a>|Invalid Metric For Data Type|  |\n| <a name=\"220\">220</a>|Invalid Instrument Definition|  |\n| <a name=\"221\">221</a>|Instrument Upsert Failure|  |\n| <a name=\"222\">222</a>|Reference Portfolio Request Not Supported|  |\n| <a name=\"223\">223</a>|Transaction Portfolio Request Not Supported|  |\n| <a name=\"224\">224</a>|Invalid Property Value Assignment|  |\n| <a name=\"230\">230</a>|Transaction Type Not Found|  |\n| <a name=\"231\">231</a>|Transaction Type Duplication|  |\n| <a name=\"232\">232</a>|Portfolio Does Not Exist At Given Date|  |\n| <a name=\"233\">233</a>|Query Parser Failure|  |\n| <a name=\"234\">234</a>|Duplicate Constituent|  |\n| <a name=\"235\">235</a>|Unresolved Instrument Constituent|  |\n| <a name=\"236\">236</a>|Unresolved Instrument In Transition|  |\n| <a name=\"237\">237</a>|Missing Side Definitions|  |\n| <a name=\"299\">299</a>|Invalid Recipe|  |\n| <a name=\"300\">300</a>|Missing Recipe|  |\n| <a name=\"301\">301</a>|Dependencies|  |\n| <a name=\"304\">304</a>|Portfolio Preprocess Failure|  |\n| <a name=\"310\">310</a>|Valuation Engine Failure|  |\n| <a name=\"311\">311</a>|Task Factory Failure|  |\n| <a name=\"312\">312</a>|Task Evaluation Failure|  |\n| <a name=\"313\">313</a>|Task Generation Failure|  |\n| <a name=\"314\">314</a>|Engine Configuration Failure|  |\n| <a name=\"315\">315</a>|Model Specification Failure|  |\n| <a name=\"320\">320</a>|Market Data Key Failure|  |\n| <a name=\"321\">321</a>|Market Resolver Failure|  |\n| <a name=\"322\">322</a>|Market Data Failure|  |\n| <a name=\"330\">330</a>|Curve Failure|  |\n| <a name=\"331\">331</a>|Volatility Surface Failure|  |\n| <a name=\"332\">332</a>|Volatility Cube Failure|  |\n| <a name=\"350\">350</a>|Instrument Failure|  |\n| <a name=\"351\">351</a>|Cash Flows Failure|  |\n| <a name=\"352\">352</a>|Reference Data Failure|  |\n| <a name=\"360\">360</a>|Aggregation Failure|  |\n| <a name=\"361\">361</a>|Aggregation Measure Failure|  |\n| <a name=\"370\">370</a>|Result Retrieval Failure|  |\n| <a name=\"371\">371</a>|Result Processing Failure|  |\n| <a name=\"372\">372</a>|Vendor Result Processing Failure|  |\n| <a name=\"373\">373</a>|Vendor Result Mapping Failure|  |\n| <a name=\"374\">374</a>|Vendor Library Unauthorised|  |\n| <a name=\"375\">375</a>|Vendor Connectivity Error|  |\n| <a name=\"376\">376</a>|Vendor Interface Error|  |\n| <a name=\"377\">377</a>|Vendor Pricing Failure|  |\n| <a name=\"378\">378</a>|Vendor Translation Failure|  |\n| <a name=\"379\">379</a>|Vendor Key Mapping Failure|  |\n| <a name=\"380\">380</a>|Vendor Reflection Failure|  |\n| <a name=\"381\">381</a>|Vendor Process Failure|  |\n| <a name=\"382\">382</a>|Vendor System Failure|  |\n| <a name=\"390\">390</a>|Attempt To Upsert Duplicate Quotes|  |\n| <a name=\"391\">391</a>|Corporate Action Source Does Not Exist|  |\n| <a name=\"392\">392</a>|Corporate Action Source Already Exists|  |\n| <a name=\"393\">393</a>|Instrument Identifier Already In Use|  |\n| <a name=\"394\">394</a>|Properties Not Found|  |\n| <a name=\"395\">395</a>|Batch Operation Aborted|  |\n| <a name=\"400\">400</a>|Invalid Iso4217 Currency Code|  |\n| <a name=\"401\">401</a>|Cannot Assign Instrument Identifier To Currency|  |\n| <a name=\"402\">402</a>|Cannot Assign Currency Identifier To Non Currency|  |\n| <a name=\"403\">403</a>|Currency Instrument Cannot Be Deleted|  |\n| <a name=\"404\">404</a>|Currency Instrument Cannot Have Economic Definition|  |\n| <a name=\"405\">405</a>|Currency Instrument Cannot Have Lookthrough Portfolio|  |\n| <a name=\"406\">406</a>|Cannot Create Currency Instrument With Multiple Identifiers|  |\n| <a name=\"407\">407</a>|Specified Currency Is Undefined|  |\n| <a name=\"410\">410</a>|Index Does Not Exist|  |\n| <a name=\"411\">411</a>|Sort Field Does Not Exist|  |\n| <a name=\"413\">413</a>|Negative Pagination Parameters|  |\n| <a name=\"414\">414</a>|Invalid Search Syntax|  |\n| <a name=\"415\">415</a>|Filter Execution Timeout|  |\n| <a name=\"420\">420</a>|Side Definition Inconsistent|  |\n| <a name=\"450\">450</a>|Invalid Quote Access Metadata Rule|  |\n| <a name=\"451\">451</a>|Access Metadata Not Found|  |\n| <a name=\"452\">452</a>|Invalid Access Metadata Identifier|  |\n| <a name=\"460\">460</a>|Standard Resource Not Found|  |\n| <a name=\"461\">461</a>|Standard Resource Conflict|  |\n| <a name=\"462\">462</a>|Calendar Not Found|  |\n| <a name=\"463\">463</a>|Date In A Calendar Not Found|  |\n| <a name=\"464\">464</a>|Invalid Date Source Data|  |\n| <a name=\"465\">465</a>|Invalid Timezone|  |\n| <a name=\"601\">601</a>|Person Identifier Already In Use|  |\n| <a name=\"602\">602</a>|Person Not Found|  |\n| <a name=\"603\">603</a>|Cannot Set Identifier|  |\n| <a name=\"617\">617</a>|Invalid Recipe Specification In Request|  |\n| <a name=\"618\">618</a>|Inline Recipe Deserialisation Failure|  |\n| <a name=\"619\">619</a>|Identifier Types Not Set For Entity|  |\n| <a name=\"620\">620</a>|Cannot Delete All Client Defined Identifiers|  |\n| <a name=\"650\">650</a>|The Order requested was not found.|  |\n| <a name=\"654\">654</a>|The Allocation requested was not found.|  |\n| <a name=\"655\">655</a>|Cannot build the fx forward target with the given holdings.|  |\n| <a name=\"656\">656</a>|Group does not contain expected entities.|  |\n| <a name=\"665\">665</a>|Destination directory not found|  |\n| <a name=\"667\">667</a>|Relation definition already exists|  |\n| <a name=\"672\">672</a>|Could not retrieve file contents|  |\n| <a name=\"673\">673</a>|Missing entitlements for entities in Group|  |\n| <a name=\"674\">674</a>|Next Best Action not found|  |\n| <a name=\"676\">676</a>|Relation definition not defined|  |\n| <a name=\"677\">677</a>|Invalid entity identifier for relation|  |\n| <a name=\"681\">681</a>|Sorting by specified field not supported|One or more of the provided fields to order by were either invalid or not supported. |\n| <a name=\"682\">682</a>|Too many fields to sort by|The number of fields to sort the data by exceeds the number allowed by the endpoint |\n| <a name=\"684\">684</a>|Sequence Not Found|  |\n| <a name=\"685\">685</a>|Sequence Already Exists|  |\n| <a name=\"686\">686</a>|Non-cycling sequence has been exhausted|  |\n| <a name=\"687\">687</a>|Legal Entity Identifier Already In Use|  |\n| <a name=\"688\">688</a>|Legal Entity Not Found|  |\n| <a name=\"689\">689</a>|The supplied pagination token is invalid|  |\n| <a name=\"690\">690</a>|Property Type Is Not Supported|  |\n| <a name=\"691\">691</a>|Multiple Tax-lots For Currency Type Is Not Supported|  |\n| <a name=\"692\">692</a>|This endpoint does not support impersonation|  |\n| <a name=\"693\">693</a>|Entity type is not supported for Relationship|  |\n| <a name=\"694\">694</a>|Relationship Validation Failure|  |\n| <a name=\"695\">695</a>|Relationship Not Found|  |\n| <a name=\"697\">697</a>|Derived Property Formula No Longer Valid|  |\n| <a name=\"698\">698</a>|Story is not available|  |\n| <a name=\"703\">703</a>|Corporate Action Does Not Exist|  |\n| <a name=\"720\">720</a>|The provided sort and filter combination is not valid|  |\n| <a name=\"721\">721</a>|A2B generation failed|  |\n| <a name=\"722\">722</a>|Aggregated Return Calculation Failure|  |\n| <a name=\"723\">723</a>|Custom Entity Definition Identifier Already In Use|  |\n| <a name=\"724\">724</a>|Custom Entity Definition Not Found|  |\n| <a name=\"725\">725</a>|The Placement requested was not found.|  |\n| <a name=\"726\">726</a>|The Execution requested was not found.|  |\n| <a name=\"727\">727</a>|The Block requested was not found.|  |\n| <a name=\"728\">728</a>|The Participation requested was not found.|  |\n| <a name=\"729\">729</a>|The Package requested was not found.|  |\n| <a name=\"730\">730</a>|The OrderInstruction requested was not found.|  |\n| <a name=\"732\">732</a>|Custom Entity not found.|  |\n| <a name=\"733\">733</a>|Custom Entity Identifier already in use.|  |\n| <a name=\"735\">735</a>|Calculation Failed.|  |\n| <a name=\"736\">736</a>|An expected key on HttpResponse is missing.|  |\n| <a name=\"737\">737</a>|A required fee detail is missing.|  |\n| <a name=\"738\">738</a>|Zero rows were returned from Luminesce|  |\n| <a name=\"739\">739</a>|Provided Weekend Mask was invalid|  |\n| <a name=\"742\">742</a>|Custom Entity fields do not match the definition|  |\n| <a name=\"746\">746</a>|The provided sequence is not valid.|  |\n| <a name=\"751\">751</a>|The type of the Custom Entity is different than the type provided in the definition.|  |\n| <a name=\"752\">752</a>|Luminesce process returned an error.|  |\n| <a name=\"753\">753</a>|File name or content incompatible with operation.|  |\n| <a name=\"755\">755</a>|Schema of response from Drive is not as expected.|  |\n| <a name=\"757\">757</a>|Schema of response from Luminesce is not as expected.|  |\n| <a name=\"758\">758</a>|Luminesce timed out.|  |\n| <a name=\"763\">763</a>|Invalid Lusid Entity Identifier Unit|  |\n| <a name=\"768\">768</a>|Fee rule not found.|  |\n| <a name=\"769\">769</a>|Cannot update the base currency of a portfolio with transactions loaded|  |\n| <a name=\"771\">771</a>|Transaction configuration source not found|  |\n| <a name=\"774\">774</a>|Compliance rule not found.|  |\n| <a name=\"775\">775</a>|Fund accounting document cannot be processed.|  |\n| <a name=\"778\">778</a>|Unable to look up FX rate from trade ccy to portfolio ccy for some of the trades.|  |\n| <a name=\"782\">782</a>|The Property definition dataType is not matching the derivation formula dataType|  |\n| <a name=\"783\">783</a>|The Property definition domain is not supported for derived properties|  |\n| <a name=\"788\">788</a>|Compliance run not found failure.|  |\n| <a name=\"790\">790</a>|Custom Entity has missing or invalid identifiers|  |\n| <a name=\"791\">791</a>|Custom Entity definition already exists|  |\n| <a name=\"792\">792</a>|Compliance PropertyKey is missing.|  |\n| <a name=\"793\">793</a>|Compliance Criteria Value for matching is missing.|  |\n| <a name=\"800\">800</a>|Can not upsert an instrument event of this type.|  |\n| <a name=\"801\">801</a>|The instrument event does not exist.|  |\n| <a name=\"802\">802</a>|The Instrument event is missing salient information.|  |\n| <a name=\"803\">803</a>|The Instrument event could not be processed.|  |\n",
     "termsOfService": "https://www.finbourne.com/legal/terms-conditions",
     "contact": {
       "name": "FINBOURNE Technology",
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "0.11.4500",
+    "version": "0.11.4501",
     "x-logo": {
       "url": "https://www.lusid.com/app/assets/logo_white.png",
       "backgroundColor": "#415464"
@@ -9236,7 +9236,7 @@
         "tags": [
           "Corporate Action Sources"
         ],
-        "summary": "[BETA] DeleteCorporateActionSource: Delete a corporate action source",
+        "summary": "[BETA] DeleteCorporateActionSource: Delete corporate actions (instrument transition events) from the corporate action source.",
         "description": "Deletes a single corporate action source",
         "operationId": "DeleteCorporateActionSource",
         "parameters": [
@@ -9334,7 +9334,7 @@
         "tags": [
           "Corporate Action Sources"
         ],
-        "summary": "[EARLY ACCESS] BatchUpsertCorporateActions: Upsert corporate actions",
+        "summary": "[EARLY ACCESS] BatchUpsertCorporateActions: Batch upsert corporate actions (instrument transition events) to corporate action source.",
         "description": "Create or update one or more corporate actions in a particular corporate action source. Failures are identified in the body of the response.\r\n            \r\nIf a corporate action is upserted at exactly the same effective datetime as a transaction for the same instrument, the corporate action takes precedence. Depending on the nature of the corporate action, this may mean it affects the transaction.",
         "operationId": "BatchUpsertCorporateActions",
         "parameters": [
@@ -9595,7 +9595,7 @@
         "tags": [
           "Corporate Action Sources"
         ],
-        "summary": "[EARLY ACCESS] GetCorporateActions: Get corporate actions",
+        "summary": "[EARLY ACCESS] GetCorporateActions: List corporate actions (instrument transition events) from the corporate action source.",
         "description": "Get corporate actions from a particular corporate action source.",
         "operationId": "GetCorporateActions",
         "parameters": [
@@ -9819,6 +9819,525 @@
         "responses": {
           "200": {
             "description": "Corporate Actions Deleted",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeletedEntityResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeletedEntityResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeletedEntityResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The details of the input related failure",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidValidationProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ],
+        "x-fbn-apistatus": "Experimental"
+      }
+    },
+    "/api/corporateactionsources/{scope}/{code}/instrumentevents": {
+      "post": {
+        "tags": [
+          "Corporate Action Sources"
+        ],
+        "summary": "[EXPERIMENTAL] UpsertInstrumentEvents: Upsert instrument events to the provided corporate actions source.",
+        "description": "Batch upsert instrument events to corporate action sources.",
+        "operationId": "UpsertInstrumentEvents",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "description": "The scope of the corporate action source.",
+            "required": true,
+            "schema": {
+              "maxLength": 64,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9\\-_]+$",
+              "type": "string",
+              "description": "The scope of the corporate action source.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "code",
+            "in": "path",
+            "description": "The code of the corporate action source.",
+            "required": true,
+            "schema": {
+              "maxLength": 64,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9\\-_]+$",
+              "type": "string",
+              "description": "The code of the corporate action source.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The instrument event definitions.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UpsertInstrumentEventRequest"
+                },
+                "description": "The instrument event definitions.",
+                "nullable": true
+              },
+              "example": [
+                {
+                  "instrumentEventId": "MyStockSplitId",
+                  "instrumentIdentifiers": {
+                    "instrument/default/Figi": "BBG001S6PJ31"
+                  },
+                  "description": "2-for-1 stock split of instrument BBG001S6PJ31",
+                  "eventDetail": {
+                    "announcementDate": "2018-03-01T00:00:00.0000000+00:00",
+                    "exDate": "2018-06-01T00:00:00.0000000+00:00",
+                    "recordDate": "2018-06-02T00:00:00.0000000+00:00",
+                    "paymentDate": "2018-08-02T00:00:00.0000000+00:00",
+                    "inputTransition": {
+                      "unitsFactor": 1,
+                      "costFactor": 1
+                    },
+                    "outputTransitions": [
+                      {
+                        "instrumentIdentifiers": {
+                          "instrument/default/Figi": "BBG001S6PJ31"
+                        },
+                        "unitsFactor": 2,
+                        "costFactor": 1
+                      }
+                    ],
+                    "instrumentEventType": "TransitionEvent"
+                  },
+                  "properties": []
+                }
+              ]
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UpsertInstrumentEventRequest"
+                },
+                "description": "The instrument event definitions.",
+                "nullable": true
+              },
+              "example": [
+                {
+                  "instrumentEventId": "MyStockSplitId",
+                  "instrumentIdentifiers": {
+                    "instrument/default/Figi": "BBG001S6PJ31"
+                  },
+                  "description": "2-for-1 stock split of instrument BBG001S6PJ31",
+                  "eventDetail": {
+                    "announcementDate": "2018-03-01T00:00:00.0000000+00:00",
+                    "exDate": "2018-06-01T00:00:00.0000000+00:00",
+                    "recordDate": "2018-06-02T00:00:00.0000000+00:00",
+                    "paymentDate": "2018-08-02T00:00:00.0000000+00:00",
+                    "inputTransition": {
+                      "unitsFactor": 1,
+                      "costFactor": 1
+                    },
+                    "outputTransitions": [
+                      {
+                        "instrumentIdentifiers": {
+                          "instrument/default/Figi": "BBG001S6PJ31"
+                        },
+                        "unitsFactor": 2,
+                        "costFactor": 1
+                      }
+                    ],
+                    "instrumentEventType": "TransitionEvent"
+                  },
+                  "properties": []
+                }
+              ]
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UpsertInstrumentEventRequest"
+                },
+                "description": "The instrument event definitions.",
+                "nullable": true
+              },
+              "example": [
+                {
+                  "instrumentEventId": "MyStockSplitId",
+                  "instrumentIdentifiers": {
+                    "instrument/default/Figi": "BBG001S6PJ31"
+                  },
+                  "description": "2-for-1 stock split of instrument BBG001S6PJ31",
+                  "eventDetail": {
+                    "announcementDate": "2018-03-01T00:00:00.0000000+00:00",
+                    "exDate": "2018-06-01T00:00:00.0000000+00:00",
+                    "recordDate": "2018-06-02T00:00:00.0000000+00:00",
+                    "paymentDate": "2018-08-02T00:00:00.0000000+00:00",
+                    "inputTransition": {
+                      "unitsFactor": 1,
+                      "costFactor": 1
+                    },
+                    "outputTransitions": [
+                      {
+                        "instrumentIdentifiers": {
+                          "instrument/default/Figi": "BBG001S6PJ31"
+                        },
+                        "unitsFactor": 2,
+                        "costFactor": 1
+                      }
+                    ],
+                    "instrumentEventType": "TransitionEvent"
+                  },
+                  "properties": []
+                }
+              ]
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UpsertInstrumentEventRequest"
+                },
+                "description": "The instrument event definitions.",
+                "nullable": true
+              },
+              "example": [
+                {
+                  "instrumentEventId": "MyStockSplitId",
+                  "instrumentIdentifiers": {
+                    "instrument/default/Figi": "BBG001S6PJ31"
+                  },
+                  "description": "2-for-1 stock split of instrument BBG001S6PJ31",
+                  "eventDetail": {
+                    "announcementDate": "2018-03-01T00:00:00.0000000+00:00",
+                    "exDate": "2018-06-01T00:00:00.0000000+00:00",
+                    "recordDate": "2018-06-02T00:00:00.0000000+00:00",
+                    "paymentDate": "2018-08-02T00:00:00.0000000+00:00",
+                    "inputTransition": {
+                      "unitsFactor": 1,
+                      "costFactor": 1
+                    },
+                    "outputTransitions": [
+                      {
+                        "instrumentIdentifiers": {
+                          "instrument/default/Figi": "BBG001S6PJ31"
+                        },
+                        "unitsFactor": 2,
+                        "costFactor": 1
+                      }
+                    ],
+                    "instrumentEventType": "TransitionEvent"
+                  },
+                  "properties": []
+                }
+              ]
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Instrument Events Upserted",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpsertInstrumentEventsResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpsertInstrumentEventsResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpsertInstrumentEventsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The details of the input related failure",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidValidationProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ],
+        "x-fbn-apistatus": "Experimental"
+      },
+      "get": {
+        "tags": [
+          "Corporate Action Sources"
+        ],
+        "summary": "[EXPERIMENTAL] GetInstrumentEvents: Get extrinsic instrument events out of a given corporate actions source.",
+        "description": "Retrieves extrinsic corporate actions out of a corporate actions source",
+        "operationId": "GetInstrumentEvents",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "description": "The scope of the portfolio.",
+            "required": true,
+            "schema": {
+              "maxLength": 64,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9\\-_]+$",
+              "type": "string",
+              "description": "The scope of the portfolio.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "code",
+            "in": "path",
+            "description": "The code of the portfolio.",
+            "required": true,
+            "schema": {
+              "maxLength": 64,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9\\-_]+$",
+              "type": "string",
+              "description": "The code of the portfolio.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "asAt",
+            "in": "query",
+            "description": "Optional. The AsAt date of the data.",
+            "schema": {
+              "type": "string",
+              "description": "Optional. The AsAt date of the data.",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-nullable": true
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Optional. When paginating, limit the number of returned results to this many. If not specified, a default\r\nof 1000 is used.",
+            "schema": {
+              "type": "integer",
+              "description": "Optional. When paginating, limit the number of returned results to this many. If not specified, a default\r\nof 1000 is used.",
+              "format": "int32",
+              "default": 1000,
+              "nullable": true
+            },
+            "x-nullable": true
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Optional. The pagination token to use to continue listing items from a previous call. Page values are\r\nreturn from list calls, and must be supplied exactly as returned. Additionally, when specifying this\r\nvalue, asAt, filter and limit must not\r\nbe modified.",
+            "schema": {
+              "maxLength": 500,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9\\+/]*={0,3}$",
+              "type": "string",
+              "description": "Optional. The pagination token to use to continue listing items from a previous call. Page values are\r\nreturn from list calls, and must be supplied exactly as returned. Additionally, when specifying this\r\nvalue, asAt, filter and limit must not\r\nbe modified.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Optional. Expression to filter the result set.",
+            "schema": {
+              "maxLength": 16384,
+              "minLength": 0,
+              "pattern": "^[\\s\\S]*$",
+              "type": "string",
+              "description": "Optional. Expression to filter the result set.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Instrument Events",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceListOfInstrumentEventHolder"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceListOfInstrumentEventHolder"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceListOfInstrumentEventHolder"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The details of the input related failure",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidValidationProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ],
+        "x-fbn-apistatus": "Experimental"
+      },
+      "delete": {
+        "tags": [
+          "Corporate Action Sources"
+        ],
+        "summary": "[EXPERIMENTAL] DeleteInstrumentEvents: Delete corporate actions (instrument transition events) from the corporate action source.",
+        "description": "Delete one or more corporate actions from a particular corporate action source.",
+        "operationId": "DeleteInstrumentEvents",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "description": "The scope of the corporate action source",
+            "required": true,
+            "schema": {
+              "maxLength": 64,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9\\-_]+$",
+              "type": "string",
+              "description": "The scope of the corporate action source",
+              "nullable": true
+            }
+          },
+          {
+            "name": "code",
+            "in": "path",
+            "description": "The code of the corporate action source",
+            "required": true,
+            "schema": {
+              "maxLength": 64,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9\\-_]+$",
+              "type": "string",
+              "description": "The code of the corporate action source",
+              "nullable": true
+            }
+          },
+          {
+            "name": "instrumentEventIds",
+            "in": "query",
+            "description": "The IDs of the instrument events to delete",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "The IDs of the instrument events to delete"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Instrument Events Deleted",
             "content": {
               "text/plain": {
                 "schema": {
@@ -14993,8 +15512,8 @@
         "tags": [
           "Instrument Events"
         ],
-        "summary": "[EXPERIMENTAL] QueryInstrumentEvents: Returns a list of intrinsic and user-upserted instrument events that match the specified query.",
-        "description": "Returns a list of intrinsic and user-upserted instrument events that match the specified query.",
+        "summary": "[EXPERIMENTAL] QueryInstrumentEvents: Returns a list of instrument events based on the holdings of the portfolios and date range specified in the query.",
+        "description": "Returns a list of instrument events based on the holdings of the portfolios and date range specified in the query.",
         "operationId": "QueryInstrumentEvents",
         "parameters": [
           {
@@ -15032,6 +15551,7 @@
                 "$ref": "#/components/schemas/QueryInstrumentEventsRequest"
               },
               "example": {
+                "asAt": "2022-06-01T01:01:00.0000000+00:00",
                 "windowStart": "2015-01-01T00:00:00.0000000+00:00",
                 "windowEnd": "2030-01-01T00:00:00.0000000+00:00",
                 "portfolioEntityIds": [
@@ -15054,6 +15574,7 @@
                 "$ref": "#/components/schemas/QueryInstrumentEventsRequest"
               },
               "example": {
+                "asAt": "2022-06-01T01:01:00.0000000+00:00",
                 "windowStart": "2015-01-01T00:00:00.0000000+00:00",
                 "windowEnd": "2030-01-01T00:00:00.0000000+00:00",
                 "portfolioEntityIds": [
@@ -15076,6 +15597,7 @@
                 "$ref": "#/components/schemas/QueryInstrumentEventsRequest"
               },
               "example": {
+                "asAt": "2022-06-01T01:01:00.0000000+00:00",
                 "windowStart": "2015-01-01T00:00:00.0000000+00:00",
                 "windowEnd": "2030-01-01T00:00:00.0000000+00:00",
                 "portfolioEntityIds": [
@@ -15098,6 +15620,7 @@
                 "$ref": "#/components/schemas/QueryInstrumentEventsRequest"
               },
               "example": {
+                "asAt": "2022-06-01T01:01:00.0000000+00:00",
                 "windowStart": "2015-01-01T00:00:00.0000000+00:00",
                 "windowEnd": "2030-01-01T00:00:00.0000000+00:00",
                 "portfolioEntityIds": [
@@ -15182,8 +15705,8 @@
         "tags": [
           "Instrument Events"
         ],
-        "summary": "[EXPERIMENTAL] QueryBucketedCashFlows: Returns a list of instrument events that match the specified query, presented as bucketed cashflows.",
-        "description": "Returns a list of instrument events that match the specified query, presented as bucketed cashflows.",
+        "summary": "[EXPERIMENTAL] QueryBucketedCashFlows: Returns bucketed cashflows based on the holdings of the portfolios and date range specified in the query.",
+        "description": "Returns bucketed cashflows based on the holdings of the portfolios and date range specified in the query.",
         "operationId": "QueryBucketedCashFlows",
         "requestBody": {
           "description": "The Query Information.",
@@ -15371,8 +15894,8 @@
         "tags": [
           "Instrument Events"
         ],
-        "summary": "[EXPERIMENTAL] QueryCashFlows: Returns a list of instrument events that match the specified query, presented as Instrument cashflows.",
-        "description": "Returns a list of instrument events that match the specified query, presented as Instrument cashflows",
+        "summary": "[EXPERIMENTAL] QueryCashFlows: Returns a list of cashflows based on the holdings of the portfolios and date range specified in the query.",
+        "description": "Returns a list of cashflows based on the holdings of the portfolios and date range specified in the query.",
         "operationId": "QueryCashFlows",
         "parameters": [
           {
@@ -82983,6 +83506,27 @@
         "additionalProperties": false,
         "description": "Specification for the reconciliation request. Left and Right hand sides are constructed. Each consists of a valuation of a inline set of instruments\r\nusing an inline aggregation request. The results of this can then be compared to each other. The difference, which is effectively a risk based\r\ndifference allows comparison of the effects of changing a recipe, valuation date, or (though it may or may not make logical sense) a set of instruments."
       },
+      "InputTransition": {
+        "required": [
+          "costFactor",
+          "unitsFactor"
+        ],
+        "type": "object",
+        "properties": {
+          "unitsFactor": {
+            "type": "number",
+            "description": "The factor to scale units by",
+            "format": "double"
+          },
+          "costFactor": {
+            "type": "number",
+            "description": "The factor to scale cost by",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The input 'transition' within a corporate action, representing the singular input position"
+      },
       "Instrument": {
         "required": [
           "identifiers",
@@ -83214,7 +83758,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The event specific details. A different schema exists for each possible value of InstrumentEventType.",
+        "description": "The event specific details. A different schema exists for each possible value of InstrumentEventType. Not all InstrumentEventTypes can be upserted",
         "discriminator": {
           "propertyName": "instrumentEventType"
         }
@@ -83231,6 +83775,16 @@
         ],
         "type": "object",
         "properties": {
+          "instrumentEventId": {
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9\\-_]+$",
+            "type": "string",
+            "description": "The unique identifier of this corporate action."
+          },
+          "corporateActionSourceId": {
+            "$ref": "#/components/schemas/ResourceId"
+          },
           "instrumentIdentifiers": {
             "type": "object",
             "additionalProperties": {
@@ -83238,8 +83792,20 @@
             },
             "description": "The set of identifiers which determine the instrument this event relates to."
           },
-          "corporateActionSourceId": {
-            "$ref": "#/components/schemas/ResourceId"
+          "lusidInstrumentId": {
+            "type": "string",
+            "description": "The LUID for the instrument."
+          },
+          "instrumentScope": {
+            "type": "string",
+            "description": "The scope of the instrument."
+          },
+          "description": {
+            "maxLength": 1024,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]*$",
+            "type": "string",
+            "description": "The description of the instrument event."
           },
           "instrumentEvent": {
             "$ref": "#/components/schemas/InstrumentEvent"
@@ -83251,33 +83817,6 @@
             },
             "description": "The properties attached to this instrument event.",
             "nullable": true
-          },
-          "anchorDate": {
-            "type": "string",
-            "description": "The date the event is determined to have occured.",
-            "format": "date-time"
-          },
-          "lusidInstrumentId": {
-            "type": "string",
-            "description": "The LUID for the instrument."
-          },
-          "instrumentScope": {
-            "type": "string",
-            "description": "The scope of the instrument."
-          },
-          "instrumentEventId": {
-            "maxLength": 64,
-            "minLength": 1,
-            "pattern": "^[a-zA-Z0-9\\-_]+$",
-            "type": "string",
-            "description": "The unique identifier of this corporate action."
-          },
-          "description": {
-            "maxLength": 1024,
-            "minLength": 0,
-            "pattern": "^[\\s\\S]*$",
-            "type": "string",
-            "description": "The description of the instrument event."
           }
         },
         "additionalProperties": false,
@@ -85918,6 +86457,47 @@
         },
         "additionalProperties": false,
         "description": "A list of output transactions."
+      },
+      "OutputTransition": {
+        "required": [
+          "costFactor",
+          "instrumentIdentifiers",
+          "instrumentScope",
+          "lusidInstrumentId",
+          "unitsFactor"
+        ],
+        "type": "object",
+        "properties": {
+          "instrumentIdentifiers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Unique instrument identifiers"
+          },
+          "unitsFactor": {
+            "type": "number",
+            "description": "The factor to scale units by",
+            "format": "double"
+          },
+          "costFactor": {
+            "type": "number",
+            "description": "The factor to scale cost by",
+            "format": "double"
+          },
+          "lusidInstrumentId": {
+            "type": "string",
+            "description": "LUSID's internal unique instrument identifier, resolved from the instrument identifiers",
+            "readOnly": true
+          },
+          "instrumentScope": {
+            "type": "string",
+            "description": "The scope in which the instrument lies.",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A 'transition' within a corporate action, representing an output transition."
       },
       "Package": {
         "required": [
@@ -88884,7 +89464,6 @@
       },
       "QueryBucketedCashFlowsRequest": {
         "required": [
-          "asAt",
           "effectiveAt",
           "portfolioEntityIds",
           "recipeId",
@@ -88898,7 +89477,8 @@
           "asAt": {
             "type": "string",
             "description": "The time of the system at which to query for bucketed cashflows.",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "windowStart": {
             "type": "string",
@@ -89012,7 +89592,6 @@
       },
       "QueryInstrumentEventsRequest": {
         "required": [
-          "asAt",
           "effectiveAt",
           "portfolioEntityIds",
           "recipeId",
@@ -89024,7 +89603,8 @@
           "asAt": {
             "type": "string",
             "description": "The time of the system at which to query for bucketed cashflows.",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "windowStart": {
             "type": "string",
@@ -94582,12 +95162,15 @@
                 "description": "The payment date of the corporate action",
                 "format": "date-time"
               },
-              "transitions": {
+              "inputTransition": {
+                "$ref": "#/components/schemas/InputTransition"
+              },
+              "outputTransitions": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/CorporateActionTransitionRequest"
+                  "$ref": "#/components/schemas/OutputTransition"
                 },
-                "description": "The transitions that result from this corporate action",
+                "description": "The resulting transitions from this event",
                 "nullable": true
               },
               "instrumentEventType": {
@@ -94604,7 +95187,7 @@
             }
           }
         ],
-        "description": "A generic event with event consequences modeled as transitions."
+        "description": "A 'transition' within a corporate action, representing a set of output movements paired to a single input position"
       },
       "TranslateInstrumentDefinitionsRequest": {
         "required": [
@@ -95107,6 +95690,86 @@
         },
         "additionalProperties": false,
         "description": "Index convention that is to be stored in the convention data store.\r\nOnly one of these must be present."
+      },
+      "UpsertInstrumentEventRequest": {
+        "required": [
+          "eventDetail",
+          "instrumentEventId",
+          "instrumentIdentifiers"
+        ],
+        "type": "object",
+        "properties": {
+          "instrumentEventId": {
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9\\-_]+$",
+            "type": "string",
+            "description": "Free string that uniquely identifies the event within the corporate action source"
+          },
+          "instrumentIdentifiers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "The set of identifiers which determine the instrument this event relates to."
+          },
+          "description": {
+            "maxLength": 1024,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]*$",
+            "type": "string",
+            "description": "The description of the instrument event.",
+            "nullable": true
+          },
+          "eventDetail": {
+            "$ref": "#/components/schemas/InstrumentEvent"
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Property"
+            },
+            "description": "The properties attached to this instrument event.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpsertInstrumentEventsResponse": {
+        "type": "object",
+        "properties": {
+          "href": {
+            "type": "string",
+            "description": "The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime.",
+            "format": "uri",
+            "nullable": true
+          },
+          "values": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/InstrumentEventHolder"
+            },
+            "description": "The corporate actions which have been successfully updated or inserted.",
+            "nullable": true
+          },
+          "failed": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ErrorDetail"
+            },
+            "description": "The corporate actions that could not be updated or inserted along with a reason for their failure.",
+            "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "description": "Collection of links.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "UpsertInstrumentPropertiesResponse": {
         "required": [

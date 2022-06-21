@@ -8,7 +8,7 @@ Query for bucketed cashflows from one or more portfolios.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**asAt** | **OffsetDateTime** | The time of the system at which to query for bucketed cashflows. | 
+**asAt** | **OffsetDateTime** | The time of the system at which to query for bucketed cashflows. |  [optional]
 **windowStart** | **OffsetDateTime** | The start date of the window. | 
 **windowEnd** | **OffsetDateTime** | The end date of the window. | 
 **portfolioEntityIds** | [**List&lt;PortfolioEntityId&gt;**](PortfolioEntityId.md) | The set of portfolios and portfolio groups to which the instrument events must belong. | 

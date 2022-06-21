@@ -4,18 +4,18 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**queryBucketedCashFlows**](InstrumentEventsApi.md#queryBucketedCashFlows) | **POST** /api/instrumentevents/$queryBucketedCashFlows | [EXPERIMENTAL] QueryBucketedCashFlows: Returns a list of instrument events that match the specified query, presented as bucketed cashflows.
-[**queryCashFlows**](InstrumentEventsApi.md#queryCashFlows) | **POST** /api/instrumentevents/$queryCashFlows | [EXPERIMENTAL] QueryCashFlows: Returns a list of instrument events that match the specified query, presented as Instrument cashflows.
-[**queryInstrumentEvents**](InstrumentEventsApi.md#queryInstrumentEvents) | **POST** /api/instrumentevents/$query | [EXPERIMENTAL] QueryInstrumentEvents: Returns a list of intrinsic and user-upserted instrument events that match the specified query.
+[**queryBucketedCashFlows**](InstrumentEventsApi.md#queryBucketedCashFlows) | **POST** /api/instrumentevents/$queryBucketedCashFlows | [EXPERIMENTAL] QueryBucketedCashFlows: Returns bucketed cashflows based on the holdings of the portfolios and date range specified in the query.
+[**queryCashFlows**](InstrumentEventsApi.md#queryCashFlows) | **POST** /api/instrumentevents/$queryCashFlows | [EXPERIMENTAL] QueryCashFlows: Returns a list of cashflows based on the holdings of the portfolios and date range specified in the query.
+[**queryInstrumentEvents**](InstrumentEventsApi.md#queryInstrumentEvents) | **POST** /api/instrumentevents/$query | [EXPERIMENTAL] QueryInstrumentEvents: Returns a list of instrument events based on the holdings of the portfolios and date range specified in the query.
 
 
 <a name="queryBucketedCashFlows"></a>
 # **queryBucketedCashFlows**
 > BucketedCashFlowResponse queryBucketedCashFlows(queryBucketedCashFlowsRequest)
 
-[EXPERIMENTAL] QueryBucketedCashFlows: Returns a list of instrument events that match the specified query, presented as bucketed cashflows.
+[EXPERIMENTAL] QueryBucketedCashFlows: Returns bucketed cashflows based on the holdings of the portfolios and date range specified in the query.
 
-Returns a list of instrument events that match the specified query, presented as bucketed cashflows.
+Returns bucketed cashflows based on the holdings of the portfolios and date range specified in the query.
 
 ### Example
 ```java
@@ -82,9 +82,9 @@ Name | Type | Description  | Notes
 # **queryCashFlows**
 > ResourceListOfInstrumentCashFlow queryCashFlows(limit, page, queryCashFlowsRequest)
 
-[EXPERIMENTAL] QueryCashFlows: Returns a list of instrument events that match the specified query, presented as Instrument cashflows.
+[EXPERIMENTAL] QueryCashFlows: Returns a list of cashflows based on the holdings of the portfolios and date range specified in the query.
 
-Returns a list of instrument events that match the specified query, presented as Instrument cashflows
+Returns a list of cashflows based on the holdings of the portfolios and date range specified in the query.
 
 ### Example
 ```java
@@ -155,9 +155,9 @@ Name | Type | Description  | Notes
 # **queryInstrumentEvents**
 > ResourceListOfInstrumentEventHolder queryInstrumentEvents(limit, page, queryInstrumentEventsRequest)
 
-[EXPERIMENTAL] QueryInstrumentEvents: Returns a list of intrinsic and user-upserted instrument events that match the specified query.
+[EXPERIMENTAL] QueryInstrumentEvents: Returns a list of instrument events based on the holdings of the portfolios and date range specified in the query.
 
-Returns a list of intrinsic and user-upserted instrument events that match the specified query.
+Returns a list of instrument events based on the holdings of the portfolios and date range specified in the query.
 
 ### Example
 ```java

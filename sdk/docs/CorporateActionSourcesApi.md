@@ -4,19 +4,22 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**batchUpsertCorporateActions**](CorporateActionSourcesApi.md#batchUpsertCorporateActions) | **POST** /api/corporateactionsources/{scope}/{code}/corporateactions | [EARLY ACCESS] BatchUpsertCorporateActions: Upsert corporate actions
+[**batchUpsertCorporateActions**](CorporateActionSourcesApi.md#batchUpsertCorporateActions) | **POST** /api/corporateactionsources/{scope}/{code}/corporateactions | [EARLY ACCESS] BatchUpsertCorporateActions: Batch upsert corporate actions (instrument transition events) to corporate action source.
 [**createCorporateActionSource**](CorporateActionSourcesApi.md#createCorporateActionSource) | **POST** /api/corporateactionsources | [EARLY ACCESS] CreateCorporateActionSource: Create corporate action source
-[**deleteCorporateActionSource**](CorporateActionSourcesApi.md#deleteCorporateActionSource) | **DELETE** /api/corporateactionsources/{scope}/{code} | [BETA] DeleteCorporateActionSource: Delete a corporate action source
+[**deleteCorporateActionSource**](CorporateActionSourcesApi.md#deleteCorporateActionSource) | **DELETE** /api/corporateactionsources/{scope}/{code} | [BETA] DeleteCorporateActionSource: Delete corporate actions (instrument transition events) from the corporate action source.
 [**deleteCorporateActions**](CorporateActionSourcesApi.md#deleteCorporateActions) | **DELETE** /api/corporateactionsources/{scope}/{code}/corporateactions | [EXPERIMENTAL] DeleteCorporateActions: Delete corporate actions
-[**getCorporateActions**](CorporateActionSourcesApi.md#getCorporateActions) | **GET** /api/corporateactionsources/{scope}/{code}/corporateactions | [EARLY ACCESS] GetCorporateActions: Get corporate actions
+[**deleteInstrumentEvents**](CorporateActionSourcesApi.md#deleteInstrumentEvents) | **DELETE** /api/corporateactionsources/{scope}/{code}/instrumentevents | [EXPERIMENTAL] DeleteInstrumentEvents: Delete corporate actions (instrument transition events) from the corporate action source.
+[**getCorporateActions**](CorporateActionSourcesApi.md#getCorporateActions) | **GET** /api/corporateactionsources/{scope}/{code}/corporateactions | [EARLY ACCESS] GetCorporateActions: List corporate actions (instrument transition events) from the corporate action source.
+[**getInstrumentEvents**](CorporateActionSourcesApi.md#getInstrumentEvents) | **GET** /api/corporateactionsources/{scope}/{code}/instrumentevents | [EXPERIMENTAL] GetInstrumentEvents: Get extrinsic instrument events out of a given corporate actions source.
 [**listCorporateActionSources**](CorporateActionSourcesApi.md#listCorporateActionSources) | **GET** /api/corporateactionsources | [EARLY ACCESS] ListCorporateActionSources: List corporate action sources
+[**upsertInstrumentEvents**](CorporateActionSourcesApi.md#upsertInstrumentEvents) | **POST** /api/corporateactionsources/{scope}/{code}/instrumentevents | [EXPERIMENTAL] UpsertInstrumentEvents: Upsert instrument events to the provided corporate actions source.
 
 
 <a name="batchUpsertCorporateActions"></a>
 # **batchUpsertCorporateActions**
 > UpsertCorporateActionsResponse batchUpsertCorporateActions(scope, code, upsertCorporateActionRequest)
 
-[EARLY ACCESS] BatchUpsertCorporateActions: Upsert corporate actions
+[EARLY ACCESS] BatchUpsertCorporateActions: Batch upsert corporate actions (instrument transition events) to corporate action source.
 
 Create or update one or more corporate actions in a particular corporate action source. Failures are identified in the body of the response.                If a corporate action is upserted at exactly the same effective datetime as a transaction for the same instrument, the corporate action takes precedence. Depending on the nature of the corporate action, this may mean it affects the transaction.
 
@@ -158,7 +161,7 @@ Name | Type | Description  | Notes
 # **deleteCorporateActionSource**
 > DeletedEntityResponse deleteCorporateActionSource(scope, code)
 
-[BETA] DeleteCorporateActionSource: Delete a corporate action source
+[BETA] DeleteCorporateActionSource: Delete corporate actions (instrument transition events) from the corporate action source.
 
 Deletes a single corporate action source
 
@@ -298,11 +301,84 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="deleteInstrumentEvents"></a>
+# **deleteInstrumentEvents**
+> DeletedEntityResponse deleteInstrumentEvents(scope, code, instrumentEventIds)
+
+[EXPERIMENTAL] DeleteInstrumentEvents: Delete corporate actions (instrument transition events) from the corporate action source.
+
+Delete one or more corporate actions from a particular corporate action source.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CorporateActionSourcesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the corporate action source
+    String code = "code_example"; // String | The code of the corporate action source
+    List<String> instrumentEventIds = Arrays.asList(); // List<String> | The IDs of the instrument events to delete
+    try {
+      DeletedEntityResponse result = apiInstance.deleteInstrumentEvents(scope, code, instrumentEventIds);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CorporateActionSourcesApi#deleteInstrumentEvents");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope of the corporate action source |
+ **code** | **String**| The code of the corporate action source |
+ **instrumentEventIds** | [**List&lt;String&gt;**](String.md)| The IDs of the instrument events to delete |
+
+### Return type
+
+[**DeletedEntityResponse**](DeletedEntityResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Instrument Events Deleted |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="getCorporateActions"></a>
 # **getCorporateActions**
 > ResourceListOfCorporateAction getCorporateActions(scope, code, fromEffectiveAt, toEffectiveAt, asAt, sortBy, limit, filter)
 
-[EARLY ACCESS] GetCorporateActions: Get corporate actions
+[EARLY ACCESS] GetCorporateActions: List corporate actions (instrument transition events) from the corporate action source.
 
 Get corporate actions from a particular corporate action source.
 
@@ -381,6 +457,85 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="getInstrumentEvents"></a>
+# **getInstrumentEvents**
+> ResourceListOfInstrumentEventHolder getInstrumentEvents(scope, code, asAt, limit, page, filter)
+
+[EXPERIMENTAL] GetInstrumentEvents: Get extrinsic instrument events out of a given corporate actions source.
+
+Retrieves extrinsic corporate actions out of a corporate actions source
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CorporateActionSourcesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the portfolio.
+    String code = "code_example"; // String | The code of the portfolio.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | Optional. The AsAt date of the data.
+    Integer limit = 1000; // Integer | Optional. When paginating, limit the number of returned results to this many. If not specified, a default  of 1000 is used.
+    String page = "page_example"; // String | Optional. The pagination token to use to continue listing items from a previous call. Page values are  return from list calls, and must be supplied exactly as returned. Additionally, when specifying this  value, asAt, filter and limit must not  be modified.
+    String filter = "filter_example"; // String | Optional. Expression to filter the result set.
+    try {
+      ResourceListOfInstrumentEventHolder result = apiInstance.getInstrumentEvents(scope, code, asAt, limit, page, filter);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CorporateActionSourcesApi#getInstrumentEvents");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope of the portfolio. |
+ **code** | **String**| The code of the portfolio. |
+ **asAt** | **OffsetDateTime**| Optional. The AsAt date of the data. | [optional]
+ **limit** | **Integer**| Optional. When paginating, limit the number of returned results to this many. If not specified, a default  of 1000 is used. | [optional] [default to 1000]
+ **page** | **String**| Optional. The pagination token to use to continue listing items from a previous call. Page values are  return from list calls, and must be supplied exactly as returned. Additionally, when specifying this  value, asAt, filter and limit must not  be modified. | [optional]
+ **filter** | **String**| Optional. Expression to filter the result set. | [optional]
+
+### Return type
+
+[**ResourceListOfInstrumentEventHolder**](ResourceListOfInstrumentEventHolder.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Instrument Events |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="listCorporateActionSources"></a>
 # **listCorporateActionSources**
 > PagedResourceListOfCorporateActionSource listCorporateActionSources(asAt, sortBy, limit, filter, page)
@@ -455,6 +610,79 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | All Existing Corporate Action Sources |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="upsertInstrumentEvents"></a>
+# **upsertInstrumentEvents**
+> UpsertInstrumentEventsResponse upsertInstrumentEvents(scope, code, upsertInstrumentEventRequest)
+
+[EXPERIMENTAL] UpsertInstrumentEvents: Upsert instrument events to the provided corporate actions source.
+
+Batch upsert instrument events to corporate action sources.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CorporateActionSourcesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    CorporateActionSourcesApi apiInstance = new CorporateActionSourcesApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the corporate action source.
+    String code = "code_example"; // String | The code of the corporate action source.
+    List<UpsertInstrumentEventRequest> upsertInstrumentEventRequest = Arrays.asList(); // List<UpsertInstrumentEventRequest> | The instrument event definitions.
+    try {
+      UpsertInstrumentEventsResponse result = apiInstance.upsertInstrumentEvents(scope, code, upsertInstrumentEventRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CorporateActionSourcesApi#upsertInstrumentEvents");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope of the corporate action source. |
+ **code** | **String**| The code of the corporate action source. |
+ **upsertInstrumentEventRequest** | [**List&lt;UpsertInstrumentEventRequest&gt;**](UpsertInstrumentEventRequest.md)| The instrument event definitions. | [optional]
+
+### Return type
+
+[**UpsertInstrumentEventsResponse**](UpsertInstrumentEventsResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Instrument Events Upserted |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
