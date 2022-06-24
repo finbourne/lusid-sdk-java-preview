@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4517
+  version: 0.11.4521
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -52227,6 +52227,279 @@ paths:
       x-fbn-apistatus: Stable
       x-contentType: application/json-patch+json
       x-accepts: application/json
+  /api/transactionportfolios/{scope}/{code}/holdings/$lookthrough:
+    get:
+      description: Calculate holdings for a transaction portfolio with lookthrough
+      operationId: LookThroughHoldings
+      parameters:
+      - description: The scope of the transaction portfolio.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the transaction portfolio.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The code of the transaction portfolio. Together with the scope\
+          \ this uniquely identifies\r\n            the transaction portfolio."
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: "The code of the transaction portfolio. Together with the scope\
+            \ this uniquely identifies\r\n            the transaction portfolio."
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The effective datetime or cut label at which to retrieve the\
+          \ holdings of the transaction\r\n            portfolio. Defaults to the\
+          \ current LUSID system datetime if not specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which to retrieve the\
+            \ holdings of the transaction\r\n            portfolio. Defaults to the\
+            \ current LUSID system datetime if not specified."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: "The asAt datetime at which to retrieve the holdings of the transaction\
+          \ portfolio. Defaults\r\n            to return the latest version if not\
+          \ specified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to retrieve the holdings of the\
+            \ transaction portfolio. Defaults\r\n            to return the latest\
+            \ version if not specified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: "Expression to filter the result set.\r\n            For example,\
+          \ to filter on the Holding Type, use \"holdingType eq 'p'\".\r\n       \
+          \     For more information about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914."
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          description: "Expression to filter the result set.\r\n            For example,\
+            \ to filter on the Holding Type, use \"holdingType eq 'p'\".\r\n     \
+            \       For more information about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914."
+          maxLength: 16384
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        style: form
+      - description: "A list of property keys from the \"Instrument\" or \"Holding\"\
+          \ domain to decorate onto\r\n            holdings. These must have the format\
+          \ {domain}/{scope}/{code}, for example \"Instrument/system/Name\" or \"\
+          Holding/system/Cost\"."
+        explode: true
+        in: query
+        name: propertyKeys
+        required: false
+        schema:
+          description: "A list of property keys from the \"Instrument\" or \"Holding\"\
+            \ domain to decorate onto\r\n            holdings. These must have the\
+            \ format {domain}/{scope}/{code}, for example \"Instrument/system/Name\"\
+            \ or \"Holding/system/Cost\"."
+          items:
+            description: The key that uniquely identifies the property. It has the
+              format {domain}/{scope}/{code}.
+            type: string
+          nullable: true
+          type: array
+        style: form
+        x-nullable: true
+      - description: The scope containing the quotes with the FX rates used for currency
+          conversion.
+        explode: true
+        in: query
+        name: quotesScope
+        required: false
+        schema:
+          description: The scope containing the quotes with the FX rates used for
+            currency conversion.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                version:
+                  effectiveFrom: 2019-03-05T12:00:00.0000000+00:00
+                  asAtDate: 2019-03-05T12:00:00.0000000+00:00
+                values:
+                - instrumentScope: default
+                  instrumentUid: LUID_XH4GNUEX
+                  subHoldingKeys:
+                    transaction/Algo/Name:
+                      key: Transaction/Algo/Name
+                      value:
+                        labelValue: Algo1
+                  properties:
+                    transaction/default/SourcePortfolioId:
+                      key: Transaction/default/SourcePortfolioId
+                      value:
+                        labelValue: DEMO-PORTFOLIO-ID
+                      effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                    transaction/default/SourcePortfolioScope:
+                      key: Transaction/default/SourcePortfolioScope
+                      value:
+                        labelValue: DEMO-SCOPE
+                      effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                    holding/default/InvestmentFundLineage:
+                      key: Holding/default/InvestmentFundLineage
+                      value:
+                        labelValue: FeederFund/Master:core:R
+                      effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  holdingType: P
+                  units: 10
+                  settledUnits: 10
+                  cost:
+                    amount: 2.5
+                    currency: GBP
+                  costPortfolioCcy:
+                    amount: 2.5
+                    currency: GBP
+                  currency: ZZZ
+                links: []
+              schema:
+                $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
+            application/json:
+              example:
+                version:
+                  effectiveFrom: 2019-03-05T12:00:00.0000000+00:00
+                  asAtDate: 2019-03-05T12:00:00.0000000+00:00
+                values:
+                - instrumentScope: default
+                  instrumentUid: LUID_XH4GNUEX
+                  subHoldingKeys:
+                    transaction/Algo/Name:
+                      key: Transaction/Algo/Name
+                      value:
+                        labelValue: Algo1
+                  properties:
+                    transaction/default/SourcePortfolioId:
+                      key: Transaction/default/SourcePortfolioId
+                      value:
+                        labelValue: DEMO-PORTFOLIO-ID
+                      effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                    transaction/default/SourcePortfolioScope:
+                      key: Transaction/default/SourcePortfolioScope
+                      value:
+                        labelValue: DEMO-SCOPE
+                      effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                    holding/default/InvestmentFundLineage:
+                      key: Holding/default/InvestmentFundLineage
+                      value:
+                        labelValue: FeederFund/Master:core:R
+                      effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  holdingType: P
+                  units: 10
+                  settledUnits: 10
+                  cost:
+                    amount: 2.5
+                    currency: GBP
+                  costPortfolioCcy:
+                    amount: 2.5
+                    currency: GBP
+                  currency: ZZZ
+                links: []
+              schema:
+                $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
+            text/json:
+              example:
+                version:
+                  effectiveFrom: 2019-03-05T12:00:00.0000000+00:00
+                  asAtDate: 2019-03-05T12:00:00.0000000+00:00
+                values:
+                - instrumentScope: default
+                  instrumentUid: LUID_XH4GNUEX
+                  subHoldingKeys:
+                    transaction/Algo/Name:
+                      key: Transaction/Algo/Name
+                      value:
+                        labelValue: Algo1
+                  properties:
+                    transaction/default/SourcePortfolioId:
+                      key: Transaction/default/SourcePortfolioId
+                      value:
+                        labelValue: DEMO-PORTFOLIO-ID
+                      effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                    transaction/default/SourcePortfolioScope:
+                      key: Transaction/default/SourcePortfolioScope
+                      value:
+                        labelValue: DEMO-SCOPE
+                      effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                    holding/default/InvestmentFundLineage:
+                      key: Holding/default/InvestmentFundLineage
+                      value:
+                        labelValue: FeederFund/Master:core:R
+                      effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  holdingType: P
+                  units: 10
+                  settledUnits: 10
+                  cost:
+                    amount: 2.5
+                    currency: GBP
+                  costPortfolioCcy:
+                    amount: 2.5
+                    currency: GBP
+                  currency: ZZZ
+                links: []
+              schema:
+                $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
+          description: The holdings and version of the specified transaction portfolio
+            with lookthrough
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] LookThroughHoldings: Get LookThrough Holdings'
+      tags:
+      - Transaction Portfolios
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
   /api/transactionportfolios/{scope}/{code}/holdingsadjustments:
     get:
       description: List the holdings adjustments made to the specified transaction
@@ -94034,7 +94307,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
