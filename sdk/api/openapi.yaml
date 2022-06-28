@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4536
+  version: 0.11.4537
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -6106,6 +6106,159 @@ paths:
       security:
       - oauth2: []
       summary: '[EXPERIMENTAL] RunCompliance: Kick off the compliance check process'
+      tags:
+      - Compliance
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+  /api/compliance/runs/breached/{runId}:
+    get:
+      description: Use this endpoint to get a list or breached orders and the set
+        of rules that may have caused the breach.
+      operationId: GetBreachedOrdersInfo
+      parameters:
+      - description: The RunId that the results should be checked for
+        explode: false
+        in: path
+        name: runId
+        required: true
+        schema:
+          description: The RunId that the results should be checked for
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: Optional. Find rules related to a specific order by providing
+          an Order Scope/Code combination
+        explode: true
+        in: query
+        name: orderScope
+        required: false
+        schema:
+          description: Optional. Find rules related to a specific order by providing
+            an Order Scope/Code combination
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: Optional. Find rules related to a specific order by providing
+          an Order Scope/Code combination
+        explode: true
+        in: query
+        name: orderCode
+        required: false
+        schema:
+          description: Optional. Find rules related to a specific order by providing
+            an Order Scope/Code combination
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: When paginating, limit the number of returned results to this
+          many.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: When paginating, limit the number of returned results to this
+            many.
+          format: int32
+          maximum: 5000
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                - orderId:
+                    scope: MyScope
+                    code: MyPortfolioCode
+                  listRuleResult:
+                  - ruleId: 0897-6574-1324
+                    portfolio:
+                      scope: MyScope
+                      code: MyPortfolioCode
+                    passed: false
+                    resultValue: 0
+                    ruleLowerLimit: 0
+                    ruleUpperLimit: 0
+                href: https://myco.lusid.com/api/api/compliance/breached/some-run-id
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfComplianceBreachedOrderInfo'
+            application/json:
+              example:
+                values:
+                - orderId:
+                    scope: MyScope
+                    code: MyPortfolioCode
+                  listRuleResult:
+                  - ruleId: 0897-6574-1324
+                    portfolio:
+                      scope: MyScope
+                      code: MyPortfolioCode
+                    passed: false
+                    resultValue: 0
+                    ruleLowerLimit: 0
+                    ruleUpperLimit: 0
+                href: https://myco.lusid.com/api/api/compliance/breached/some-run-id
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfComplianceBreachedOrderInfo'
+            text/json:
+              example:
+                values:
+                - orderId:
+                    scope: MyScope
+                    code: MyPortfolioCode
+                  listRuleResult:
+                  - ruleId: 0897-6574-1324
+                    portfolio:
+                      scope: MyScope
+                      code: MyPortfolioCode
+                    passed: false
+                    resultValue: 0
+                    ruleLowerLimit: 0
+                    ruleUpperLimit: 0
+                href: https://myco.lusid.com/api/api/compliance/breached/some-run-id
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfComplianceBreachedOrderInfo'
+          description: The potentially breached orders and their rules from a specific
+            compliance run
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] GetBreachedOrdersInfo: Get the Ids of Breached orders
+        in a given compliance run and the corresponding list of rules that could have
+        caused it.'
       tags:
       - Compliance
       x-fbn-apistatus: Experimental
@@ -59190,7 +59343,7 @@ components:
       example:
         date: 2000-01-23T04:56:07.000+00:00
         side: side
-        quantity: 0
+        quantity: 0.8008281904610115
         settlementCurrencyFxRate: 6.027456183070403
         instrumentIdentifiers:
           key: instrumentIdentifiers
@@ -59242,8 +59395,8 @@ components:
           type: object
         quantity:
           description: The quantity of given instrument allocated.
-          format: int32
-          type: integer
+          format: double
+          type: number
         portfolioId:
           $ref: '#/components/schemas/ResourceId'
         allocatedOrderId:
@@ -59308,7 +59461,7 @@ components:
         allocationRequests:
         - date: 2000-01-23T04:56:07.000+00:00
           side: side
-          quantity: 0
+          quantity: 0.8008281904610115
           settlementCurrencyFxRate: 6.027456183070403
           instrumentIdentifiers:
             key: instrumentIdentifiers
@@ -59348,7 +59501,7 @@ components:
               key: key
         - date: 2000-01-23T04:56:07.000+00:00
           side: side
-          quantity: 0
+          quantity: 0.8008281904610115
           settlementCurrencyFxRate: 6.027456183070403
           instrumentIdentifiers:
             key: instrumentIdentifiers
@@ -60828,6 +60981,50 @@ components:
           type: string
       required:
       - provider
+      type: object
+    ComplianceBreachedOrderInfo:
+      additionalProperties: false
+      example:
+        orderId:
+          code: code
+          scope: scope
+        listRuleResult:
+        - resultValue: 0.8008281904610115
+          ruleUpperLimit: 1.4658129805029452
+          ruleLowerLimit: 6.027456183070403
+          portfolio:
+            code: code
+            scope: scope
+          ruleInformationKey: ruleInformationKey
+          ruleName: ruleName
+          ruleInformationMatch: ruleInformationMatch
+          passed: true
+          ruleId: ruleId
+          ruleDescription: ruleDescription
+        - resultValue: 0.8008281904610115
+          ruleUpperLimit: 1.4658129805029452
+          ruleLowerLimit: 6.027456183070403
+          portfolio:
+            code: code
+            scope: scope
+          ruleInformationKey: ruleInformationKey
+          ruleName: ruleName
+          ruleInformationMatch: ruleInformationMatch
+          passed: true
+          ruleId: ruleId
+          ruleDescription: ruleDescription
+      properties:
+        orderId:
+          $ref: '#/components/schemas/ResourceId'
+        listRuleResult:
+          description: The related list of rule results that may be applicable to
+            this order (applied to portfolio that the order belongs to)
+          items:
+            $ref: '#/components/schemas/ComplianceRuleResult'
+          type: array
+      required:
+      - listRuleResult
+      - orderId
       type: object
     ComplianceRule:
       additionalProperties: false
@@ -70754,7 +70951,7 @@ components:
       example:
         date: 2000-01-23T04:56:07.000+00:00
         side: side
-        quantity: 0
+        quantity: 0.8008281904610115
         package:
           code: code
           scope: scope
@@ -70810,8 +71007,8 @@ components:
           type: object
         quantity:
           description: The quantity of given instrument ordered.
-          format: int32
-          type: integer
+          format: double
+          type: number
         side:
           description: The client's representation of the order's side (buy, sell,
             short, etc)
@@ -70863,7 +71060,7 @@ components:
         orderRequests:
         - date: 2000-01-23T04:56:07.000+00:00
           side: side
-          quantity: 0
+          quantity: 0.8008281904610115
           package:
             code: code
             scope: scope
@@ -70907,7 +71104,7 @@ components:
               key: key
         - date: 2000-01-23T04:56:07.000+00:00
           side: side
-          quantity: 0
+          quantity: 0.8008281904610115
           package:
             code: code
             scope: scope
@@ -79320,6 +79517,107 @@ components:
           description: The resources to list.
           items:
             $ref: '#/components/schemas/Change'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+      required:
+      - values
+      type: object
+    ResourceListOfComplianceBreachedOrderInfo:
+      additionalProperties: false
+      description: A collection of resources that can be returned from requests.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - orderId:
+            code: code
+            scope: scope
+          listRuleResult:
+          - resultValue: 0.8008281904610115
+            ruleUpperLimit: 1.4658129805029452
+            ruleLowerLimit: 6.027456183070403
+            portfolio:
+              code: code
+              scope: scope
+            ruleInformationKey: ruleInformationKey
+            ruleName: ruleName
+            ruleInformationMatch: ruleInformationMatch
+            passed: true
+            ruleId: ruleId
+            ruleDescription: ruleDescription
+          - resultValue: 0.8008281904610115
+            ruleUpperLimit: 1.4658129805029452
+            ruleLowerLimit: 6.027456183070403
+            portfolio:
+              code: code
+              scope: scope
+            ruleInformationKey: ruleInformationKey
+            ruleName: ruleName
+            ruleInformationMatch: ruleInformationMatch
+            passed: true
+            ruleId: ruleId
+            ruleDescription: ruleDescription
+        - orderId:
+            code: code
+            scope: scope
+          listRuleResult:
+          - resultValue: 0.8008281904610115
+            ruleUpperLimit: 1.4658129805029452
+            ruleLowerLimit: 6.027456183070403
+            portfolio:
+              code: code
+              scope: scope
+            ruleInformationKey: ruleInformationKey
+            ruleName: ruleName
+            ruleInformationMatch: ruleInformationMatch
+            passed: true
+            ruleId: ruleId
+            ruleDescription: ruleDescription
+          - resultValue: 0.8008281904610115
+            ruleUpperLimit: 1.4658129805029452
+            ruleLowerLimit: 6.027456183070403
+            portfolio:
+              code: code
+              scope: scope
+            ruleInformationKey: ruleInformationKey
+            ruleName: ruleName
+            ruleInformationMatch: ruleInformationMatch
+            passed: true
+            ruleId: ruleId
+            ruleDescription: ruleDescription
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/ComplianceBreachedOrderInfo'
           type: array
         href:
           description: The URI of the resource list.

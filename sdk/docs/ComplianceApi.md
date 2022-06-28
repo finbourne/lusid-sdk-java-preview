@@ -5,6 +5,7 @@ All URIs are relative to *https://www.lusid.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteComplianceRule**](ComplianceApi.md#deleteComplianceRule) | **DELETE** /api/compliance/rules/{scope}/{code} | [EXPERIMENTAL] DeleteComplianceRule: Deletes a compliance rule.
+[**getBreachedOrdersInfo**](ComplianceApi.md#getBreachedOrdersInfo) | **GET** /api/compliance/runs/breached/{runId} | [EXPERIMENTAL] GetBreachedOrdersInfo: Get the Ids of Breached orders in a given compliance run and the corresponding list of rules that could have caused it.
 [**getComplianceRule**](ComplianceApi.md#getComplianceRule) | **GET** /api/compliance/rules/{scope}/{code} | [EXPERIMENTAL] GetComplianceRule: Retrieve the definition of single compliance rule.
 [**getComplianceRunResults**](ComplianceApi.md#getComplianceRunResults) | **GET** /api/compliance/runs/{runId} | [EXPERIMENTAL] GetComplianceRunResults: Get the details of a single compliance run.
 [**listComplianceRules**](ComplianceApi.md#listComplianceRules) | **GET** /api/compliance/rules | [EXPERIMENTAL] ListComplianceRules: List compliance rules, with optional filtering.
@@ -83,6 +84,81 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="getBreachedOrdersInfo"></a>
+# **getBreachedOrdersInfo**
+> ResourceListOfComplianceBreachedOrderInfo getBreachedOrdersInfo(runId, orderScope, orderCode, limit)
+
+[EXPERIMENTAL] GetBreachedOrdersInfo: Get the Ids of Breached orders in a given compliance run and the corresponding list of rules that could have caused it.
+
+Use this endpoint to get a list or breached orders and the set of rules that may have caused the breach.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.ComplianceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    ComplianceApi apiInstance = new ComplianceApi(defaultClient);
+    String runId = "runId_example"; // String | The RunId that the results should be checked for
+    String orderScope = "orderScope_example"; // String | Optional. Find rules related to a specific order by providing an Order Scope/Code combination
+    String orderCode = "orderCode_example"; // String | Optional. Find rules related to a specific order by providing an Order Scope/Code combination
+    Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many.
+    try {
+      ResourceListOfComplianceBreachedOrderInfo result = apiInstance.getBreachedOrdersInfo(runId, orderScope, orderCode, limit);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ComplianceApi#getBreachedOrdersInfo");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **runId** | **String**| The RunId that the results should be checked for |
+ **orderScope** | **String**| Optional. Find rules related to a specific order by providing an Order Scope/Code combination | [optional]
+ **orderCode** | **String**| Optional. Find rules related to a specific order by providing an Order Scope/Code combination | [optional]
+ **limit** | **Integer**| When paginating, limit the number of returned results to this many. | [optional]
+
+### Return type
+
+[**ResourceListOfComplianceBreachedOrderInfo**](ResourceListOfComplianceBreachedOrderInfo.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The potentially breached orders and their rules from a specific compliance run |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
