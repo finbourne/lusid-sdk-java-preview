@@ -9,5 +9,7 @@
 
 * `INACTIVE` (value: `"Inactive"`)
 
+* `DELETED` (value: `"Deleted"`)
+
 
 
