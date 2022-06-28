@@ -114,7 +114,7 @@ public class Orders
 
         OrderRequest request = new OrderRequest()
                 .id(orderId)
-                .quantity(100)
+                .quantity(BigDecimal.valueOf(100))
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
@@ -170,7 +170,7 @@ public class Orders
 
         OrderRequest request = new OrderRequest()
                 .id(orderId)
-                .quantity(100)
+                .quantity(BigDecimal.valueOf(100))
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
@@ -225,7 +225,7 @@ public class Orders
 
         OrderRequest request = new OrderRequest()
                 .id(orderId)
-                .quantity(100)
+                .quantity(BigDecimal.valueOf(100))
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
@@ -242,13 +242,13 @@ public class Orders
         assertEquals(1, upsertResult.stream().count());
         assertTrue(upsertResult.stream().allMatch(order -> order.getId().getCode().equals(orderCode)));
         assertTrue(upsertResult.stream().allMatch(order -> order.getLusidInstrumentId().equals(instrumentIds.get(0))));
-        assertTrue(upsertResult.stream().allMatch(order -> order.getQuantity().equals(BigDecimal.valueOf(100))));
+        assertTrue(upsertResult.stream().allMatch(order -> order.getQuantity().equals(BigDecimal.valueOf(100.0))));
         assertTrue(upsertResult.stream().allMatch(order -> order.getProperties().size() == 5));
 
         // We can update that Order with a new Quantity, and some extra parameters
         OrderRequest updateRequest = new OrderRequest()
                 .id(orderId)
-                .quantity(500)
+                .quantity(BigDecimal.valueOf(500))
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
@@ -263,7 +263,7 @@ public class Orders
         // The return gives us a list of orders upserted, and the lusidinstrument for each has been mapped from the
         // instrument identifiers passed. We can see that the quantity has been udpated, and properties added
         assertEquals(1, updateResult.stream().count());
-        assertTrue(updateResult.stream().allMatch(order -> order.getQuantity().equals(BigDecimal.valueOf(500))));
+        assertTrue(updateResult.stream().allMatch(order -> order.getQuantity().equals(BigDecimal.valueOf(500.0))));
     }
 
     // We want to make a request for a single order. The internal security id will be mapped on upsert
@@ -322,7 +322,7 @@ public class Orders
 
         OrderRequest request1 = new OrderRequest()
                 .id(orderId1)
-                .quantity(100)
+                .quantity(BigDecimal.valueOf(100))
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
@@ -330,7 +330,7 @@ public class Orders
 
         OrderRequest request2 = new OrderRequest()
             .id(orderId2)
-            .quantity(200)
+            .quantity(BigDecimal.valueOf(200))
             .portfolioId(portfolio)
             .properties(properties)
             .instrumentIdentifiers(instruments)
@@ -338,7 +338,7 @@ public class Orders
 
         OrderRequest request3 = new OrderRequest()
                 .id(orderId3)
-                .quantity(300)
+                .quantity(BigDecimal.valueOf(300))
                 .portfolioId(portfolio)
                 .properties(altProperties)
                 .instrumentIdentifiers(altInstruments)
