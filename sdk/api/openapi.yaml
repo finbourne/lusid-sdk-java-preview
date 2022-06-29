@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4542
+  version: 0.11.4543
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -13231,6 +13231,131 @@ paths:
       tags:
       - Instruments
       x-fbn-apistatus: Stable
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/instruments/$delete:
+    post:
+      description: "Deletes a number of specified instruments (limited to 2000), as\
+        \ identified by LusidInstrumentId identifiers.\r\n            \r\nFor soft\
+        \ deletion, once deleted, an instrument is marked as inactive and can no longer\
+        \ be referenced when creating or updating\r\ntransactions or holdings. You\
+        \ can still query existing transactions and holdings related to the\r\ndeleted\
+        \ instrument.\r\n            \r\nFor Hard delete; with the same behaviour\
+        \ as above, in addition:\r\n    (i)     all identifiers are removed\r\n  \
+        \  (ii)    the instrument is marked with a state of 'Deleted',\r\n    (iii)\
+        \   the instrument name is pre-pended with 'DELETED '\r\n    (iv)    the instrument\
+        \ will not be returned by ListInstruments\n\nThe maximum number of instruments\
+        \ that this method can delete per request is 2,000."
+      operationId: DeleteInstruments
+      parameters:
+      - description: The delete mode to use, currently only 'soft' is supported, if
+          left unspecified, this argument is optional.
+        explode: true
+        in: query
+        name: deleteMode
+        required: false
+        schema:
+          description: 'The available values are: Soft, Hard'
+          enum:
+          - Soft
+          - Hard
+          type: string
+        style: form
+        x-nullable: true
+      - description: The scope in which the instrument lies. When not supplied the
+          scope is 'default'.
+        explode: true
+        in: query
+        name: scope
+        required: false
+        schema:
+          default: default
+          description: The scope in which the instrument lies. When not supplied the
+            scope is 'default'.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+            - LUID_12345678
+            - LUID_87654321
+            schema:
+              description: The list of lusidInstrumentId's to delete.
+              items:
+                type: string
+              type: array
+          application/json:
+            example:
+            - LUID_12345678
+            - LUID_87654321
+            schema:
+              description: The list of lusidInstrumentId's to delete.
+              items:
+                type: string
+              type: array
+          text/json:
+            example:
+            - LUID_12345678
+            - LUID_87654321
+            schema:
+              description: The list of lusidInstrumentId's to delete.
+              items:
+                type: string
+              type: array
+          application/*+json:
+            example:
+            - LUID_12345678
+            - LUID_87654321
+            schema:
+              description: The list of lusidInstrumentId's to delete.
+              items:
+                type: string
+              type: array
+        description: The list of lusidInstrumentId's to delete.
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeleteInstrumentsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteInstrumentsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeleteInstrumentsResponse'
+          description: The datetime that the instruments were deleted
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] DeleteInstruments: Deletes multiple instruments from
+        a set of specified LusidInstrumentId strings'
+      tags:
+      - Instruments
+      x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/instruments/$get:
@@ -64516,6 +64641,40 @@ components:
       required:
       - asAt
       type: object
+    DeleteInstrumentsResponse:
+      additionalProperties: false
+      example:
+        asAt: 2000-01-23T04:56:07.000+00:00
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        href:
+          description: The specific Uniform Resource Identifier (URI) for this resource
+            at the requested effective and asAt datetime.
+          format: uri
+          nullable: true
+          type: string
+        asAt:
+          description: The as-at datetime at which the instrument was deleted.
+          format: date-time
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - asAt
+      type: object
     DeleteRelationRequest:
       additionalProperties: false
       example:
@@ -68037,6 +68196,11 @@ components:
       - vendor
       - version
       type: object
+    InstrumentDeleteModes:
+      enum:
+      - soft
+      - hard
+      type: string
     InstrumentEvent:
       additionalProperties: false
       description: The event specific details. A different schema exists for each
