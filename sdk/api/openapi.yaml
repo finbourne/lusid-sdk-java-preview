@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4540
+  version: 0.11.4541
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -57199,7 +57199,7 @@ paths:
                   resultType: UnitResult/Analytic
                 key:
                   unitResult/LusidInstrumentId: LUID_0000ABCD
-                dataAddress: UnitResult/Accrual
+                dataAddress: UnitResult/Valuation/InstrumentAccrued
                 resultValue:
                   units: USD
                   value: 0.0102
@@ -57221,7 +57221,7 @@ paths:
                   resultType: UnitResult/Analytic
                 key:
                   unitResult/LusidInstrumentId: LUID_0000ABCD
-                dataAddress: UnitResult/Accrual
+                dataAddress: UnitResult/Valuation/InstrumentAccrued
                 resultValue:
                   units: USD
                   value: 0.0102
@@ -57243,7 +57243,7 @@ paths:
                   resultType: UnitResult/Analytic
                 key:
                   unitResult/LusidInstrumentId: LUID_0000ABCD
-                dataAddress: UnitResult/Accrual
+                dataAddress: UnitResult/Valuation/InstrumentAccrued
                 resultValue:
                   units: USD
                   value: 0.0102
@@ -57265,7 +57265,7 @@ paths:
                   resultType: UnitResult/Analytic
                 key:
                   unitResult/LusidInstrumentId: LUID_0000ABCD
-                dataAddress: UnitResult/Accrual
+                dataAddress: UnitResult/Valuation/InstrumentAccrued
                 resultValue:
                   units: USD
                   value: 0.0102
@@ -94607,7 +94607,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
