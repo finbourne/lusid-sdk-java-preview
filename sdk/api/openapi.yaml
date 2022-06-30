@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4550
+  version: 0.11.4552
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -17097,8 +17097,8 @@ paths:
     patch:
       description: "Patch Legal Entity Access Metadata Rules in a single scope.\r\n\
         The behaviour is defined by the JSON Patch specification.\r\n            \r\
-        \nCurrently only 'add' is a supported operation on the patch document\r\n\
-        Currently only valid metadata keys are supported paths on the patch document\r\
+        \nCurrently only 'add' is a supported operation on the patch document\r\n\r\
+        \nCurrently only valid metadata keys are supported paths on the patch document\r\
         \n            \r\nThe response will return any affected Legal Entity Access\
         \ Metadata rules or a failure message if unsuccessful.\r\n            \r\n\
         It is important to always check to verify success (or failure).\r\n      \
@@ -17184,7 +17184,7 @@ paths:
             schema:
               description: The Json Patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
           application/json:
             example:
@@ -17196,7 +17196,7 @@ paths:
             schema:
               description: The Json Patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
           text/json:
             example:
@@ -17208,7 +17208,7 @@ paths:
             schema:
               description: The Json Patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
           application/*+json:
             example:
@@ -17220,7 +17220,7 @@ paths:
             schema:
               description: The Json Patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
         description: The Json Patch document
         required: true
@@ -24128,10 +24128,10 @@ paths:
     patch:
       description: "Patch Person Access Metadata Rules in a single scope.\r\nThe behaviour\
         \ is defined by the JSON Patch specification.\r\n            \r\nCurrently\
-        \ only 'add' is a supported operation on the patch document\r\nCurrently only\
-        \ valid metadata keys are supported paths on the patch document\r\n      \
-        \      \r\nThe response will return any affected Person Access Metadata rules\
-        \ or a failure message if unsuccessful.\r\n            \r\nIt is important\
+        \ only 'add' is a supported operation on the patch document.\r\n\r\nCurrently\
+        \ only valid metadata keys are supported paths on the patch document.\r\n\
+        \            \r\nThe response will return any affected Person Access Metadata\
+        \ rules or a failure message if unsuccessful.\r\n            \r\nIt is important\
         \ to always check to verify success (or failure).\r\n            \r\nMultiple\
         \ rules for a metadataKey can exist with different effective at dates, when\
         \ resources are accessed the rule that is active for the current time will\
@@ -24209,7 +24209,7 @@ paths:
             schema:
               description: The Json Patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
           application/json:
             example:
@@ -24221,7 +24221,7 @@ paths:
             schema:
               description: The Json Patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
           text/json:
             example:
@@ -24233,7 +24233,7 @@ paths:
             schema:
               description: The Json Patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
           application/*+json:
             example:
@@ -24245,7 +24245,7 @@ paths:
             schema:
               description: The Json Patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
         description: The Json Patch document
         required: true
@@ -28459,14 +28459,14 @@ paths:
     patch:
       description: "Patch Portfolio Group Access Metadata Rules in a single scope.\r\
         \nThe behaviour is defined by the JSON Patch specification.\r\n          \
-        \  \r\nCurrently only 'add' is a supported operation on the patch document\r\
-        \nCurrently only valid metadata keys are supported paths on the patch document\r\
-        \n            \r\nThe response will return any affected Portfolio Group Access\
-        \ Metadata rules or a failure message if unsuccessful.\r\n            \r\n\
-        It is important to always check to verify success (or failure).\r\n      \
-        \      \r\nMultiple rules for a metadataKey can exist with different effective\
-        \ at dates, when resources are accessed the rule that is active for the current\
-        \ time will be fetched."
+        \  \r\nCurrently only 'add' is a supported operation on the patch document.\r\
+        \n\r\nCurrently only valid metadata keys are supported paths on the patch\
+        \ document.\r\n            \r\nThe response will return any affected Portfolio\
+        \ Group Access Metadata rules or a failure message if unsuccessful.\r\n  \
+        \          \r\nIt is important to always check to verify success (or failure).\r\
+        \n            \r\nMultiple rules for a metadataKey can exist with different\
+        \ effective at dates, when resources are accessed the rule that is active\
+        \ for the current time will be fetched."
       operationId: PatchPortfolioGroupAccessMetadata
       parameters:
       - description: The scope of the Portfolio Group
@@ -28532,7 +28532,7 @@ paths:
             schema:
               description: The Json patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
           application/json:
             example:
@@ -28544,7 +28544,7 @@ paths:
             schema:
               description: The Json patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
           text/json:
             example:
@@ -28556,7 +28556,7 @@ paths:
             schema:
               description: The Json patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
           application/*+json:
             example:
@@ -28568,7 +28568,7 @@ paths:
             schema:
               description: The Json patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
         description: The Json patch document
         required: true
@@ -33682,13 +33682,13 @@ paths:
     patch:
       description: "Patch Portfolio Access Metadata Rules in a single scope.\r\nThe\
         \ behaviour is defined by the JSON Patch specification.\r\n            \r\n\
-        Currently only 'add' is a supported operation on the patch document\r\nCurrently\
-        \ only valid metadata keys are supported paths on the patch document\r\n\r\
-        \nThe response will return any affected Portfolio Access Metadata rules or\
-        \ a failure message if unsuccessful.\r\n\r\nIt is important to always check\
+        Currently only 'add' is a supported operation on the patch document.\r\n\r\
+        \nCurrently only valid metadata keys are supported paths on the patch document.\r\
+        \n\r\nThe response will return any affected Portfolio Access Metadata rules\
+        \ or a failure message if unsuccessful.\r\n\r\nIt is important to always check\
         \ to verify success (or failure).\r\n            \r\nMultiple rules for a\
         \ metadataKey can exist with different effective at dates, when resources\
-        \ are accessed the rule that is active for the current time will be fetched"
+        \ are accessed the rule that is active for the current time will be fetched."
       operationId: PatchPortfolioAccessMetadata
       parameters:
       - description: The scope of the Portfolio Access Metadata Rule.
@@ -33754,7 +33754,7 @@ paths:
             schema:
               description: The Json Patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
           application/json:
             example:
@@ -33766,7 +33766,7 @@ paths:
             schema:
               description: The Json Patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
           text/json:
             example:
@@ -33778,7 +33778,7 @@ paths:
             schema:
               description: The Json Patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
           application/*+json:
             example:
@@ -33790,7 +33790,7 @@ paths:
             schema:
               description: The Json Patch document
               items:
-                $ref: '#/components/schemas/Operation'
+                $ref: '#/components/schemas/AccessMetadataOperation'
               type: array
         description: The Json Patch document
         required: true
@@ -58649,6 +58649,40 @@ components:
       - actions
       - description
       type: object
+    AccessMetadataOperation:
+      additionalProperties: false
+      example:
+        path: path
+        op: add
+        from: from
+        value:
+        - provider: provider
+          value: value
+        - provider: provider
+          value: value
+      properties:
+        value:
+          items:
+            $ref: '#/components/schemas/AccessMetadataValue'
+          minLength: 1
+          type: array
+        path:
+          maxLength: 1025
+          pattern: ^/.+
+          type: string
+        op:
+          description: 'The available values are: add'
+          enum:
+          - add
+          type: string
+        from:
+          nullable: true
+          type: string
+      required:
+      - op
+      - path
+      - value
+      type: object
     AccessMetadataValue:
       additionalProperties: false
       description: "An access control value. Provider should only be used if you are\
@@ -70228,6 +70262,10 @@ components:
           nullable: true
           type: string
       type: object
+    OperationType:
+      enum:
+      - add
+      type: string
     Operator:
       enum:
       - Equals
