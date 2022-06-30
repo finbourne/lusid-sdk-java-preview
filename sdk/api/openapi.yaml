@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4548
+  version: 0.11.4549
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -8315,7 +8315,7 @@ paths:
               instrumentIdentifiers:
                 instrument/default/Figi: BBG001S6PJ31
               description: 2-for-1 stock split of instrument BBG001S6PJ31
-              eventDetail:
+              instrumentEvent:
                 announcementDate: 2018-03-01T00:00:00.0000000+00:00
                 exDate: 2018-06-01T00:00:00.0000000+00:00
                 recordDate: 2018-06-02T00:00:00.0000000+00:00
@@ -8342,7 +8342,7 @@ paths:
               instrumentIdentifiers:
                 instrument/default/Figi: BBG001S6PJ31
               description: 2-for-1 stock split of instrument BBG001S6PJ31
-              eventDetail:
+              instrumentEvent:
                 announcementDate: 2018-03-01T00:00:00.0000000+00:00
                 exDate: 2018-06-01T00:00:00.0000000+00:00
                 recordDate: 2018-06-02T00:00:00.0000000+00:00
@@ -8369,7 +8369,7 @@ paths:
               instrumentIdentifiers:
                 instrument/default/Figi: BBG001S6PJ31
               description: 2-for-1 stock split of instrument BBG001S6PJ31
-              eventDetail:
+              instrumentEvent:
                 announcementDate: 2018-03-01T00:00:00.0000000+00:00
                 exDate: 2018-06-01T00:00:00.0000000+00:00
                 recordDate: 2018-06-02T00:00:00.0000000+00:00
@@ -8396,7 +8396,7 @@ paths:
               instrumentIdentifiers:
                 instrument/default/Figi: BBG001S6PJ31
               description: 2-for-1 stock split of instrument BBG001S6PJ31
-              eventDetail:
+              instrumentEvent:
                 announcementDate: 2018-03-01T00:00:00.0000000+00:00
                 exDate: 2018-06-01T00:00:00.0000000+00:00
                 recordDate: 2018-06-02T00:00:00.0000000+00:00
@@ -87772,11 +87772,11 @@ components:
       additionalProperties: false
       example:
         instrumentEventId: instrumentEventId
+        instrumentEvent:
+          instrumentEventType: TransitionEvent
         description: description
         instrumentIdentifiers:
           key: instrumentIdentifiers
-        eventDetail:
-          instrumentEventType: TransitionEvent
         properties:
         - effectiveUntil: 2000-01-23T04:56:07.000+00:00
           value:
@@ -87823,7 +87823,7 @@ components:
           nullable: true
           pattern: ^[\s\S]*$
           type: string
-        eventDetail:
+        instrumentEvent:
           $ref: '#/components/schemas/InstrumentEvent'
         properties:
           description: The properties attached to this instrument event.
@@ -87832,7 +87832,7 @@ components:
           nullable: true
           type: array
       required:
-      - eventDetail
+      - instrumentEvent
       - instrumentEventId
       - instrumentIdentifiers
       type: object
