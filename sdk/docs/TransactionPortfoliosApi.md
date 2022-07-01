@@ -1550,7 +1550,7 @@ Name | Type | Description  | Notes
 
 <a name="lookThroughHoldings"></a>
 # **lookThroughHoldings**
-> VersionedResourceListOfPortfolioHolding lookThroughHoldings(scope, code, effectiveAt, asAt, filter, propertyKeys, quotesScope)
+> VersionedResourceListOfPortfolioHolding lookThroughHoldings(scope, code, effectiveAt, asAt, filter, propertyKeys, quotesScope, slice, shareClass)
 
 [EXPERIMENTAL] LookThroughHoldings: Get LookThrough Holdings
 
@@ -1583,8 +1583,10 @@ public class Example {
     String filter = "filter_example"; // String | Expression to filter the result set.              For example, to filter on the Holding Type, use \"holdingType eq 'p'\".              For more information about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914.
     List<String> propertyKeys = Arrays.asList(); // List<String> | A list of property keys from the \"Instrument\" or \"Holding\" domain to decorate onto              holdings. These must have the format {domain}/{scope}/{code}, for example \"Instrument/system/Name\" or \"Holding/system/Cost\".
     String quotesScope = "quotesScope_example"; // String | The scope containing the quotes with the FX rates used for currency conversion.
+    String slice = "slice_example"; // String | When running LookThrough, define this slice as the root slice in the portfolio to look through from.
+    String shareClass = "shareClass_example"; // String | When running LookThrough, use this along with the slice parameter to specify              the root share class in the slice in the portfolio to look through from. The slice parameter is a prerequisite              for this parameter to be valid.
     try {
-      VersionedResourceListOfPortfolioHolding result = apiInstance.lookThroughHoldings(scope, code, effectiveAt, asAt, filter, propertyKeys, quotesScope);
+      VersionedResourceListOfPortfolioHolding result = apiInstance.lookThroughHoldings(scope, code, effectiveAt, asAt, filter, propertyKeys, quotesScope, slice, shareClass);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#lookThroughHoldings");
@@ -1608,6 +1610,8 @@ Name | Type | Description  | Notes
  **filter** | **String**| Expression to filter the result set.              For example, to filter on the Holding Type, use \&quot;holdingType eq &#39;p&#39;\&quot;.              For more information about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914. | [optional]
  **propertyKeys** | [**List&lt;String&gt;**](String.md)| A list of property keys from the \&quot;Instrument\&quot; or \&quot;Holding\&quot; domain to decorate onto              holdings. These must have the format {domain}/{scope}/{code}, for example \&quot;Instrument/system/Name\&quot; or \&quot;Holding/system/Cost\&quot;. | [optional]
  **quotesScope** | **String**| The scope containing the quotes with the FX rates used for currency conversion. | [optional]
+ **slice** | **String**| When running LookThrough, define this slice as the root slice in the portfolio to look through from. | [optional]
+ **shareClass** | **String**| When running LookThrough, use this along with the slice parameter to specify              the root share class in the slice in the portfolio to look through from. The slice parameter is a prerequisite              for this parameter to be valid. | [optional]
 
 ### Return type
 
@@ -1631,11 +1635,11 @@ Name | Type | Description  | Notes
 
 <a name="lookThroughTransactions"></a>
 # **lookThroughTransactions**
-> VersionedResourceListOfTransaction lookThroughTransactions(scope, code, fromTransactionDate, toTransactionDate, asAt, filter, propertyKeys, page, limit, quotesScope)
+> VersionedResourceListOfTransaction lookThroughTransactions(scope, code, fromTransactionDate, toTransactionDate, asAt, filter, propertyKeys, page, limit, quotesScope, slice, shareClass)
 
 [EXPERIMENTAL] LookThroughTransactions: Look through transactions
 
-Retrieve all the transactions that occurred during a particular time interval.                If the portfolio is part of a fund as defined in Fund Accounting documents, the transactions returned are the  union set of all transactions in portfolios of the same type, in any funds invested in by the portfolio&#39;s fund  (and any funds invested in from that fund, etc.).  The transactions will be scaled according to the ratio of the value of the investment in the fund to the NAV of the fund itself.
+Retrieve all the transactions that occurred during a particular time interval.    If the portfolio is part of a fund as defined in Fund Accounting documents, the transactions returned are the  union set of all transactions in portfolios of the same type, in any funds invested in by the portfolio&#39;s fund  (and any funds invested in from that fund, etc.).  The transactions will be scaled according to the ratio of the value of the investment in the fund to the NAV of the fund itself.
 
 ### Example
 ```java
@@ -1658,17 +1662,19 @@ public class Example {
 
     TransactionPortfoliosApi apiInstance = new TransactionPortfoliosApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the transaction portfolio.
-    String code = "code_example"; // String | The code of the transaction portfolio. Together with the scope this uniquely identifies               the transaction portfolio.
-    String fromTransactionDate = "fromTransactionDate_example"; // String | The lower bound effective datetime or cut label (inclusive) from which to retrieve transactions.               There is no lower bound if this is not specified.
-    String toTransactionDate = "toTransactionDate_example"; // String | The upper bound effective datetime or cut label (inclusive) from which to retrieve transactions.               There is no upper bound if this is not specified.
-    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve transactions. Defaults to returning the latest version               of each transaction if not specified.
-    String filter = "filter_example"; // String | Expression with which to filter the result set.               For example, to return only transactions with a transaction type of 'Buy', specify \"type eq 'Buy'\"               For more information about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914.
-    List<String> propertyKeys = Arrays.asList(); // List<String> | A list of property keys from the 'Instrument' or 'Transaction' domain to decorate onto               transactions. These must have the format {domain}/{scope}/{code}, for example 'Instrument/system/Name' or               'Transaction/strategy/quantsignal'.
+    String code = "code_example"; // String | The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio.
+    String fromTransactionDate = "fromTransactionDate_example"; // String | The lower bound effective datetime or cut label (inclusive) from which to retrieve transactions.              There is no lower bound if this is not specified.
+    String toTransactionDate = "toTransactionDate_example"; // String | The upper bound effective datetime or cut label (inclusive) from which to retrieve transactions.              There is no upper bound if this is not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve transactions. Defaults to returning the latest version              of each transaction if not specified.
+    String filter = "filter_example"; // String | Expression with which to filter the result set.              For example, to return only transactions with a transaction type of 'Buy', specify \"type eq 'Buy'\"              For more information about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914.
+    List<String> propertyKeys = Arrays.asList(); // List<String> | A list of property keys from the 'Instrument' or 'Transaction' domain to decorate onto              transactions. These must have the format {domain}/{scope}/{code}, for example 'Instrument/system/Name' or              'Transaction/strategy/quantsignal'.
     String page = "page_example"; // String | The pagination token to use to continue listing transactions from a previous call to LookThroughTransactions.
     Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many. This will default to 1000 if not specified.
     String quotesScope = "quotesScope_example"; // String | The scope containing the quotes with the FX rates used for currency conversion.
+    String slice = "slice_example"; // String | When running LookThrough, define this slice as the root slice in the portfolio to look through from.
+    String shareClass = "shareClass_example"; // String | When running LookThrough, use this along with the slice parameter to specify              the root share class in the slice in the portfolio to look through from. The slice parameter is a prerequisite              for this parameter to be valid.
     try {
-      VersionedResourceListOfTransaction result = apiInstance.lookThroughTransactions(scope, code, fromTransactionDate, toTransactionDate, asAt, filter, propertyKeys, page, limit, quotesScope);
+      VersionedResourceListOfTransaction result = apiInstance.lookThroughTransactions(scope, code, fromTransactionDate, toTransactionDate, asAt, filter, propertyKeys, page, limit, quotesScope, slice, shareClass);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#lookThroughTransactions");
@@ -1686,15 +1692,17 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the transaction portfolio. |
- **code** | **String**| The code of the transaction portfolio. Together with the scope this uniquely identifies               the transaction portfolio. |
- **fromTransactionDate** | **String**| The lower bound effective datetime or cut label (inclusive) from which to retrieve transactions.               There is no lower bound if this is not specified. | [optional]
- **toTransactionDate** | **String**| The upper bound effective datetime or cut label (inclusive) from which to retrieve transactions.               There is no upper bound if this is not specified. | [optional]
- **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve transactions. Defaults to returning the latest version               of each transaction if not specified. | [optional]
- **filter** | **String**| Expression with which to filter the result set.               For example, to return only transactions with a transaction type of &#39;Buy&#39;, specify \&quot;type eq &#39;Buy&#39;\&quot;               For more information about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914. | [optional]
- **propertyKeys** | [**List&lt;String&gt;**](String.md)| A list of property keys from the &#39;Instrument&#39; or &#39;Transaction&#39; domain to decorate onto               transactions. These must have the format {domain}/{scope}/{code}, for example &#39;Instrument/system/Name&#39; or               &#39;Transaction/strategy/quantsignal&#39;. | [optional]
+ **code** | **String**| The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio. |
+ **fromTransactionDate** | **String**| The lower bound effective datetime or cut label (inclusive) from which to retrieve transactions.              There is no lower bound if this is not specified. | [optional]
+ **toTransactionDate** | **String**| The upper bound effective datetime or cut label (inclusive) from which to retrieve transactions.              There is no upper bound if this is not specified. | [optional]
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve transactions. Defaults to returning the latest version              of each transaction if not specified. | [optional]
+ **filter** | **String**| Expression with which to filter the result set.              For example, to return only transactions with a transaction type of &#39;Buy&#39;, specify \&quot;type eq &#39;Buy&#39;\&quot;              For more information about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914. | [optional]
+ **propertyKeys** | [**List&lt;String&gt;**](String.md)| A list of property keys from the &#39;Instrument&#39; or &#39;Transaction&#39; domain to decorate onto              transactions. These must have the format {domain}/{scope}/{code}, for example &#39;Instrument/system/Name&#39; or              &#39;Transaction/strategy/quantsignal&#39;. | [optional]
  **page** | **String**| The pagination token to use to continue listing transactions from a previous call to LookThroughTransactions. | [optional]
  **limit** | **Integer**| When paginating, limit the number of returned results to this many. This will default to 1000 if not specified. | [optional]
  **quotesScope** | **String**| The scope containing the quotes with the FX rates used for currency conversion. | [optional]
+ **slice** | **String**| When running LookThrough, define this slice as the root slice in the portfolio to look through from. | [optional]
+ **shareClass** | **String**| When running LookThrough, use this along with the slice parameter to specify              the root share class in the slice in the portfolio to look through from. The slice parameter is a prerequisite              for this parameter to be valid. | [optional]
 
 ### Return type
 

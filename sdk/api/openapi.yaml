@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4556
+  version: 0.11.4557
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -52622,6 +52622,40 @@ paths:
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: form
+      - description: When running LookThrough, define this slice as the root slice
+          in the portfolio to look through from.
+        explode: true
+        in: query
+        name: slice
+        required: false
+        schema:
+          description: When running LookThrough, define this slice as the root slice
+            in the portfolio to look through from.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: "When running LookThrough, use this along with the slice parameter\
+          \ to specify\r\n            the root share class in the slice in the portfolio\
+          \ to look through from. The slice parameter is a prerequisite\r\n      \
+          \      for this parameter to be valid."
+        explode: true
+        in: query
+        name: shareClass
+        required: false
+        schema:
+          description: "When running LookThrough, use this along with the slice parameter\
+            \ to specify\r\n            the root share class in the slice in the portfolio\
+            \ to look through from. The slice parameter is a prerequisite\r\n    \
+            \        for this parameter to be valid."
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -54822,12 +54856,12 @@ paths:
   /api/transactionportfolios/{scope}/{code}/transactions/$lookthrough:
     get:
       description: "Retrieve all the transactions that occurred during a particular\
-        \ time interval.\r\n            \r\nIf the portfolio is part of a fund as\
-        \ defined in Fund Accounting documents, the transactions returned are the\r\
-        \nunion set of all transactions in portfolios of the same type, in any funds\
-        \ invested in by the portfolio's fund\r\n(and any funds invested in from that\
-        \ fund, etc.).\r\nThe transactions will be scaled according to the ratio of\
-        \ the value of the investment in the fund to the NAV of the fund itself."
+        \ time interval.\r\n\r\nIf the portfolio is part of a fund as defined in Fund\
+        \ Accounting documents, the transactions returned are the\r\nunion set of\
+        \ all transactions in portfolios of the same type, in any funds invested in\
+        \ by the portfolio's fund\r\n(and any funds invested in from that fund, etc.).\r\
+        \nThe transactions will be scaled according to the ratio of the value of the\
+        \ investment in the fund to the NAV of the fund itself."
       operationId: LookThroughTransactions
       parameters:
       - description: The scope of the transaction portfolio.
@@ -54844,14 +54878,14 @@ paths:
           type: string
         style: simple
       - description: "The code of the transaction portfolio. Together with the scope\
-          \ this uniquely identifies\r\n             the transaction portfolio."
+          \ this uniquely identifies\r\n            the transaction portfolio."
         explode: false
         in: path
         name: code
         required: true
         schema:
           description: "The code of the transaction portfolio. Together with the scope\
-            \ this uniquely identifies\r\n             the transaction portfolio."
+            \ this uniquely identifies\r\n            the transaction portfolio."
           maxLength: 64
           minLength: 1
           nullable: true
@@ -54859,7 +54893,7 @@ paths:
           type: string
         style: simple
       - description: "The lower bound effective datetime or cut label (inclusive)\
-          \ from which to retrieve transactions.\r\n             There is no lower\
+          \ from which to retrieve transactions.\r\n            There is no lower\
           \ bound if this is not specified."
         explode: true
         in: query
@@ -54867,14 +54901,14 @@ paths:
         required: false
         schema:
           description: "The lower bound effective datetime or cut label (inclusive)\
-            \ from which to retrieve transactions.\r\n             There is no lower\
+            \ from which to retrieve transactions.\r\n            There is no lower\
             \ bound if this is not specified."
           format: dateorcutlabel
           nullable: true
           type: string
         style: form
       - description: "The upper bound effective datetime or cut label (inclusive)\
-          \ from which to retrieve transactions.\r\n             There is no upper\
+          \ from which to retrieve transactions.\r\n            There is no upper\
           \ bound if this is not specified."
         explode: true
         in: query
@@ -54882,14 +54916,14 @@ paths:
         required: false
         schema:
           description: "The upper bound effective datetime or cut label (inclusive)\
-            \ from which to retrieve transactions.\r\n             There is no upper\
+            \ from which to retrieve transactions.\r\n            There is no upper\
             \ bound if this is not specified."
           format: dateorcutlabel
           nullable: true
           type: string
         style: form
       - description: "The asAt datetime at which to retrieve transactions. Defaults\
-          \ to returning the latest version\r\n             of each transaction if\
+          \ to returning the latest version\r\n            of each transaction if\
           \ not specified."
         explode: true
         in: query
@@ -54897,25 +54931,25 @@ paths:
         required: false
         schema:
           description: "The asAt datetime at which to retrieve transactions. Defaults\
-            \ to returning the latest version\r\n             of each transaction\
-            \ if not specified."
+            \ to returning the latest version\r\n            of each transaction if\
+            \ not specified."
           format: date-time
           nullable: true
           type: string
         style: form
         x-nullable: true
       - description: "Expression with which to filter the result set.\r\n        \
-          \     For example, to return only transactions with a transaction type of\
-          \ 'Buy', specify \"type eq 'Buy'\"\r\n             For more information\
-          \ about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914."
+          \    For example, to return only transactions with a transaction type of\
+          \ 'Buy', specify \"type eq 'Buy'\"\r\n            For more information about\
+          \ filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914."
         explode: true
         in: query
         name: filter
         required: false
         schema:
           description: "Expression with which to filter the result set.\r\n      \
-            \       For example, to return only transactions with a transaction type\
-            \ of 'Buy', specify \"type eq 'Buy'\"\r\n             For more information\
+            \      For example, to return only transactions with a transaction type\
+            \ of 'Buy', specify \"type eq 'Buy'\"\r\n            For more information\
             \ about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914."
           maxLength: 16384
           minLength: 0
@@ -54924,18 +54958,18 @@ paths:
           type: string
         style: form
       - description: "A list of property keys from the 'Instrument' or 'Transaction'\
-          \ domain to decorate onto\r\n             transactions. These must have\
-          \ the format {domain}/{scope}/{code}, for example 'Instrument/system/Name'\
-          \ or\r\n             'Transaction/strategy/quantsignal'."
+          \ domain to decorate onto\r\n            transactions. These must have the\
+          \ format {domain}/{scope}/{code}, for example 'Instrument/system/Name' or\r\
+          \n            'Transaction/strategy/quantsignal'."
         explode: true
         in: query
         name: propertyKeys
         required: false
         schema:
           description: "A list of property keys from the 'Instrument' or 'Transaction'\
-            \ domain to decorate onto\r\n             transactions. These must have\
+            \ domain to decorate onto\r\n            transactions. These must have\
             \ the format {domain}/{scope}/{code}, for example 'Instrument/system/Name'\
-            \ or\r\n             'Transaction/strategy/quantsignal'."
+            \ or\r\n            'Transaction/strategy/quantsignal'."
           items:
             description: The key that uniquely identifies the property. It has the
               format {domain}/{scope}/{code}.
@@ -54982,6 +55016,40 @@ paths:
         schema:
           description: The scope containing the quotes with the FX rates used for
             currency conversion.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: When running LookThrough, define this slice as the root slice
+          in the portfolio to look through from.
+        explode: true
+        in: query
+        name: slice
+        required: false
+        schema:
+          description: When running LookThrough, define this slice as the root slice
+            in the portfolio to look through from.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: "When running LookThrough, use this along with the slice parameter\
+          \ to specify\r\n            the root share class in the slice in the portfolio\
+          \ to look through from. The slice parameter is a prerequisite\r\n      \
+          \      for this parameter to be valid."
+        explode: true
+        in: query
+        name: shareClass
+        required: false
+        schema:
+          description: "When running LookThrough, use this along with the slice parameter\
+            \ to specify\r\n            the root share class in the slice in the portfolio\
+            \ to look through from. The slice parameter is a prerequisite\r\n    \
+            \        for this parameter to be valid."
           maxLength: 64
           minLength: 1
           nullable: true
