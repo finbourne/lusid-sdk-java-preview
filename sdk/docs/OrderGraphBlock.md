@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **executed** | [**OrderGraphBlockExecutionSynopsis**](OrderGraphBlockExecutionSynopsis.md) |  | 
 **allocated** | [**OrderGraphBlockAllocationSynopsis**](OrderGraphBlockAllocationSynopsis.md) |  | 
 **derivedState** | **String** | A simple description of the overall state of a block. | 
-**derivedComplianceState** | **String** | The overall compliance state of a block, derived from the block&#39;s orders. Possible values are Pending, Failed, and Passed. | 
+**derivedComplianceState** | **String** | The overall compliance state of a block, derived from the block&#39;s orders. Possible values are Pending, Failed, &#39;Manually approved&#39; and Passed. | 
 
 
 
