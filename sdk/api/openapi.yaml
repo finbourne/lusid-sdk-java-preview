@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4562
+  version: 0.11.4563
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -62543,10 +62543,14 @@ components:
           - address: address
             dataType: dataType
             name: name
+            allowMissing: true
+            allowNull: true
             keyType: keyType
           - address: address
             dataType: dataType
             name: name
+            allowMissing: true
+            allowNull: true
             keyType: keyType
         id:
           code: code
@@ -64242,6 +64246,8 @@ components:
         address: address
         dataType: dataType
         name: name
+        allowMissing: true
+        allowNull: true
         keyType: keyType
       properties:
         address:
@@ -64273,6 +64279,14 @@ components:
           minLength: 0
           nullable: true
           type: string
+        allowNull:
+          description: The path to the field must exist (unless AllowMissing is true)
+            but the actual value is allowed to be null.
+          type: boolean
+        allowMissing:
+          description: The path (or column) is allowed to be missing but if it is
+            present it is not allowed to be null unless AllowNull is true.
+          type: boolean
       type: object
     DataMapKey:
       additionalProperties: false
@@ -64316,10 +64330,14 @@ components:
         - address: address
           dataType: dataType
           name: name
+          allowMissing: true
+          allowNull: true
           keyType: keyType
         - address: address
           dataType: dataType
           name: name
+          allowMissing: true
+          allowNull: true
           keyType: keyType
       properties:
         dataDefinitions:
@@ -66470,10 +66488,14 @@ components:
             - address: address
               dataType: dataType
               name: name
+              allowMissing: true
+              allowNull: true
               keyType: keyType
             - address: address
               dataType: dataType
               name: name
+              allowMissing: true
+              allowNull: true
               keyType: keyType
         links:
         - method: method
