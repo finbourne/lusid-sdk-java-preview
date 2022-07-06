@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4569
+  version: 0.11.4570
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -87127,7 +87127,7 @@ components:
         setTo:
           description: A pointer to the Property being mapped from
           maxLength: 512
-          minLength: 1
+          minLength: 0
           nullable: true
           pattern: ^[\s\S]*$
           type: string
