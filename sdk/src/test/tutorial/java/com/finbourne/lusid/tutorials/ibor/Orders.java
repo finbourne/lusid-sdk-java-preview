@@ -13,6 +13,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.*;
 
@@ -118,7 +119,10 @@ public class Orders
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
-                .side("Buy");
+                .side("Buy")
+                .type("Limit")
+                .state("New")
+                .date(OffsetDateTime.parse("2022-07-05T10:15:30+00:00"));
 
         OrderSetRequest requestSet = new OrderSetRequest()
                 .addOrderRequestsItem(request);
@@ -174,7 +178,10 @@ public class Orders
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
-                .side("Buy");
+                .side("Buy")
+                .type("Limit")
+                .state("New")
+                .date(OffsetDateTime.parse("2022-07-05T10:15:30+00:00"));
 
         OrderSetRequest requestSet = new OrderSetRequest()
                 .addOrderRequestsItem(request);
@@ -229,7 +236,10 @@ public class Orders
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
-                .side("Buy");
+                .side("Buy")
+                .type("Limit")
+                .state("New")
+                .date(OffsetDateTime.parse("2022-07-05T10:15:30+00:00"));
 
         OrderSetRequest requestSet = new OrderSetRequest()
                 .addOrderRequestsItem(request);
@@ -252,7 +262,10 @@ public class Orders
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
-                .side("Buy");
+                .side("Buy")
+                .type("Limit")
+                .state("New")
+                .date(OffsetDateTime.parse("2022-07-05T10:15:30+00:00"));
 
         OrderSetRequest updateRequestSet = new OrderSetRequest()
                 .addOrderRequestsItem(updateRequest);
@@ -326,7 +339,10 @@ public class Orders
                 .portfolioId(portfolio)
                 .properties(properties)
                 .instrumentIdentifiers(instruments)
-                .side("Sell");
+                .side("Buy")
+                .type("Limit")
+                .state("New")
+                .date(OffsetDateTime.parse("2022-07-05T10:15:30+00:00"));
 
         OrderRequest request2 = new OrderRequest()
             .id(orderId2)
@@ -334,7 +350,10 @@ public class Orders
             .portfolioId(portfolio)
             .properties(properties)
             .instrumentIdentifiers(instruments)
-                .side("Buy");
+                .side("Buy")
+                .type("Limit")
+                .state("New")
+                .date(OffsetDateTime.parse("2022-07-05T10:15:30+00:00"));
 
         OrderRequest request3 = new OrderRequest()
                 .id(orderId3)
@@ -342,7 +361,10 @@ public class Orders
                 .portfolioId(portfolio)
                 .properties(altProperties)
                 .instrumentIdentifiers(altInstruments)
-                .side("Buy");
+                .side("Buy")
+                .type("Limit")
+                .state("New")
+                .date(OffsetDateTime.parse("2022-07-05T10:15:30+00:00"));
 
         OrderSetRequest request = new OrderSetRequest()
                 .addOrderRequestsItem(request1)
