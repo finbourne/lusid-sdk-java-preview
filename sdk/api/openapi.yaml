@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4578
+  version: 0.11.4580
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -10347,6 +10347,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: Outward relationship description
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -10371,6 +10372,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: Outward relationship description
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -10395,6 +10397,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: Outward relationship description
                   effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -15089,6 +15092,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: issued by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -15113,6 +15117,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: issued by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -15137,6 +15142,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: issued by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -18579,6 +18585,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: is legal representative for
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 href: https://example.com
                 links: []
               schema:
@@ -18604,6 +18611,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: is legal representative for
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 href: https://example.com
                 links: []
               schema:
@@ -18629,6 +18637,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: is legal representative for
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 href: https://example.com
                 links: []
               schema:
@@ -25505,6 +25514,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -25528,6 +25538,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -25551,6 +25562,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -30160,6 +30172,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -30184,6 +30197,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -30208,6 +30222,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -35291,6 +35306,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - relationshipDefinitionId:
                     scope: PortfolioManagementTeam
                     code: Traders
@@ -35308,6 +35324,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -35332,6 +35349,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - relationshipDefinitionId:
                     scope: PortfolioManagementTeam
                     code: Traders
@@ -35349,6 +35367,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -35373,6 +35392,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 - relationshipDefinitionId:
                     scope: PortfolioManagementTeam
                     code: Traders
@@ -35390,6 +35410,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -78765,6 +78786,7 @@ components:
       description: Representation of a Relationship between a requested entity with
         the stated entity as RelatedEntityId
       example:
+        effectiveUntil: 2000-01-23T04:56:07.000+00:00
         traversalDirection: traversalDirection
         relatedEntity:
           entityType: entityType
@@ -78826,6 +78848,13 @@ components:
           type: string
         effectiveFrom:
           description: The effective datetime from which the relationship is valid.
+          format: date-time
+          type: string
+        effectiveUntil:
+          description: The effective datetime until which the relationship is valid.
+            If no future deletions are present or an effective until has not been
+            set for the relationship, this will be indefinite and represented by the
+            maximum date.
           format: date-time
           type: string
       required:
@@ -84252,7 +84281,8 @@ components:
         previousPage: previousPage
         nextPage: nextPage
         values:
-        - traversalDirection: traversalDirection
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          traversalDirection: traversalDirection
           relatedEntity:
             entityType: entityType
             displayName: displayName
@@ -84292,7 +84322,8 @@ components:
             code: code
             scope: scope
           traversalDescription: traversalDescription
-        - traversalDirection: traversalDirection
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          traversalDirection: traversalDirection
           relatedEntity:
             entityType: entityType
             displayName: displayName
