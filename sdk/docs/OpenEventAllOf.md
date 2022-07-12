@@ -8,7 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **anchorDate** | **OffsetDateTime** | The date on the which the instrument was opened. |  [optional]
-**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InternalEvent, CouponEvent, OpenEvent, CloseEvent | 
+**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InternalEvent, CouponEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent | 
 
 
 
@@ -21,6 +21,9 @@ INTERNALEVENT | &quot;InternalEvent&quot;
 COUPONEVENT | &quot;CouponEvent&quot;
 OPENEVENT | &quot;OpenEvent&quot;
 CLOSEEVENT | &quot;CloseEvent&quot;
+STOCKSPLITEVENT | &quot;StockSplitEvent&quot;
+BONDDEFAULTEVENT | &quot;BondDefaultEvent&quot;
+CASHDIVIDENDEVENT | &quot;CashDividendEvent&quot;
 
 
 

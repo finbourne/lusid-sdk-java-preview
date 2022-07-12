@@ -15,5 +15,11 @@
 
 * `CLOSEEVENT` (value: `"CloseEvent"`)
 
+* `STOCKSPLITEVENT` (value: `"StockSplitEvent"`)
+
+* `BONDDEFAULTEVENT` (value: `"BondDefaultEvent"`)
+
+* `CASHDIVIDENDEVENT` (value: `"CashDividendEvent"`)
+
 
 

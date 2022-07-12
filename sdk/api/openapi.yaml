@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4583
+  version: 0.11.4584
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -60290,6 +60290,12 @@ components:
       - $ref: '#/components/schemas/LusidInstrument'
       - $ref: '#/components/schemas/Bond_allOf'
       description: LUSID representation of a Vanilla Fixed Rate Bond.
+    BondDefaultEvent:
+      allOf:
+      - $ref: '#/components/schemas/InstrumentEvent'
+      - $ref: '#/components/schemas/BondDefaultEvent_allOf'
+      description: Indicates when an issuer has defaulted on an obligation due to
+        technical default, missed payments, or bankruptcy filing.
     BucketedCashFlowRequest:
       additionalProperties: false
       description: Specification class consisting of parameters for BucketedCashFlow
@@ -60612,6 +60618,11 @@ components:
       - $ref: '#/components/schemas/LusidInstrument'
       - $ref: '#/components/schemas/CapFloor_allOf'
       description: LUSID representation of Cap, Floor, or Collar.
+    CashDividendEvent:
+      allOf:
+      - $ref: '#/components/schemas/InstrumentEvent'
+      - $ref: '#/components/schemas/CashDividendEvent_allOf'
+      description: A cash distribution paid out to shareholders.
     CashFlowLineage:
       additionalProperties: false
       description: Lineage for cash flow value
@@ -68383,13 +68394,17 @@ components:
       properties:
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
-            InternalEvent, CouponEvent, OpenEvent, CloseEvent'
+            InternalEvent, CouponEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
+            CashDividendEvent'
           enum:
           - TransitionEvent
           - InternalEvent
           - CouponEvent
           - OpenEvent
           - CloseEvent
+          - StockSplitEvent
+          - BondDefaultEvent
+          - CashDividendEvent
           type: string
       required:
       - instrumentEventType
@@ -68486,6 +68501,9 @@ components:
       - CouponEvent
       - OpenEvent
       - CloseEvent
+      - StockSplitEvent
+      - BondDefaultEvent
+      - CashDividendEvent
       type: string
     InstrumentIdTypeDescriptor:
       additionalProperties: false
@@ -85478,6 +85496,12 @@ components:
       - stepScheduleType
       - steps
       type: object
+    StockSplitEvent:
+      allOf:
+      - $ref: '#/components/schemas/InstrumentEvent'
+      - $ref: '#/components/schemas/StockSplitEvent_allOf'
+      description: A split in the company's shares. Shareholders are given additional
+        company shares based on the terms of the stock split.
     Stream:
       additionalProperties: false
       example:
@@ -91469,6 +91493,57 @@ components:
       - principal
       - startDate
       type: object
+    BondDefaultEvent_allOf:
+      properties:
+        amount:
+          description: Percentage or amount of each share held to be given to shareholders.
+          format: double
+          type: number
+        couponPaidDate:
+          description: Date that the missed coupon is paid if payment is made within
+            grace period.
+          format: date-time
+          type: string
+        defaultStatus:
+          description: "The status of the bond default (i.e., technical or default)\r\
+            \n\r\nSupported string (enumeration) values are: [Technical, Default]."
+          type: string
+        defaultType:
+          description: "The type of the default. (coupon payment, principal payment,\
+            \ covenant ...)\r\n\r\nSupported string (enumeration) values are: [CouponPayment,\
+            \ CouponAndPrincipalPayment, PrincipalPayment, Covenant, Bankruptcy, BuyBackOption]."
+          type: string
+        graceEndDate:
+          description: Date the grace period for making coupon payment ends.
+          format: date-time
+          type: string
+        paymentDate:
+          description: The date the coupon payment was missed.
+          format: date-time
+          type: string
+        instrumentEventType:
+          description: 'The Type of Event. The available values are: TransitionEvent,
+            InternalEvent, CouponEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
+            CashDividendEvent'
+          enum:
+          - TransitionEvent
+          - InternalEvent
+          - CouponEvent
+          - OpenEvent
+          - CloseEvent
+          - StockSplitEvent
+          - BondDefaultEvent
+          - CashDividendEvent
+          type: string
+      required:
+      - amount
+      - couponPaidDate
+      - defaultStatus
+      - defaultType
+      - graceEndDate
+      - instrumentEventType
+      - paymentDate
+      type: object
     CapFloor_allOf:
       properties:
         capFloorType:
@@ -91536,6 +91611,42 @@ components:
       - includeFirstCaplet
       - instrumentType
       - underlyingFloatingLeg
+      type: object
+    CashDividendEvent_allOf:
+      properties:
+        grossAmount:
+          description: The before tax amount for each share held being paid out to
+            shareholders.
+          format: double
+          type: number
+        paymentDate:
+          description: The date the company pays out dividends to shareholders.
+          format: date-time
+          type: string
+        recordDate:
+          description: Date you have to be the holder of record in order to participate
+            in the tender.
+          format: date-time
+          type: string
+        instrumentEventType:
+          description: 'The Type of Event. The available values are: TransitionEvent,
+            InternalEvent, CouponEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
+            CashDividendEvent'
+          enum:
+          - TransitionEvent
+          - InternalEvent
+          - CouponEvent
+          - OpenEvent
+          - CloseEvent
+          - StockSplitEvent
+          - BondDefaultEvent
+          - CashDividendEvent
+          type: string
+      required:
+      - grossAmount
+      - instrumentEventType
+      - paymentDate
+      - recordDate
       type: object
     CashFlowValue_allOf:
       properties:
@@ -91759,13 +91870,17 @@ components:
           type: string
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
-            InternalEvent, CouponEvent, OpenEvent, CloseEvent'
+            InternalEvent, CouponEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
+            CashDividendEvent'
           enum:
           - TransitionEvent
           - InternalEvent
           - CouponEvent
           - OpenEvent
           - CloseEvent
+          - StockSplitEvent
+          - BondDefaultEvent
+          - CashDividendEvent
           type: string
       required:
       - instrumentEventType
@@ -91942,13 +92057,17 @@ components:
           type: string
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
-            InternalEvent, CouponEvent, OpenEvent, CloseEvent'
+            InternalEvent, CouponEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
+            CashDividendEvent'
           enum:
           - TransitionEvent
           - InternalEvent
           - CouponEvent
           - OpenEvent
           - CloseEvent
+          - StockSplitEvent
+          - BondDefaultEvent
+          - CashDividendEvent
           type: string
       required:
       - instrumentEventType
@@ -94025,13 +94144,17 @@ components:
           type: string
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
-            InternalEvent, CouponEvent, OpenEvent, CloseEvent'
+            InternalEvent, CouponEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
+            CashDividendEvent'
           enum:
           - TransitionEvent
           - InternalEvent
           - CouponEvent
           - OpenEvent
           - CloseEvent
+          - StockSplitEvent
+          - BondDefaultEvent
+          - CashDividendEvent
           type: string
       required:
       - instrumentEventType
@@ -94182,13 +94305,17 @@ components:
           type: string
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
-            InternalEvent, CouponEvent, OpenEvent, CloseEvent'
+            InternalEvent, CouponEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
+            CashDividendEvent'
           enum:
           - TransitionEvent
           - InternalEvent
           - CouponEvent
           - OpenEvent
           - CloseEvent
+          - StockSplitEvent
+          - BondDefaultEvent
+          - CashDividendEvent
           type: string
       required:
       - instrumentEventType
@@ -94837,6 +94964,43 @@ components:
       - instrumentType
       - simpleInstrumentType
       type: object
+    StockSplitEvent_allOf:
+      properties:
+        equitySplitRatio:
+          description: This number describes the rate at which the company will be
+            dividing their current shares outstanding. It is displayed as new shares
+            per old.
+          format: double
+          type: number
+        paymentDate:
+          description: Date on which the stock-split takes effect.
+          format: date-time
+          type: string
+        recordDate:
+          description: Date you have to be the holder of record in order to participate
+            in the tender.
+          format: date-time
+          type: string
+        instrumentEventType:
+          description: 'The Type of Event. The available values are: TransitionEvent,
+            InternalEvent, CouponEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
+            CashDividendEvent'
+          enum:
+          - TransitionEvent
+          - InternalEvent
+          - CouponEvent
+          - OpenEvent
+          - CloseEvent
+          - StockSplitEvent
+          - BondDefaultEvent
+          - CashDividendEvent
+          type: string
+      required:
+      - equitySplitRatio
+      - instrumentEventType
+      - paymentDate
+      - recordDate
+      type: object
     TermDeposit_allOf:
       properties:
         startDate:
@@ -94963,13 +95127,17 @@ components:
           type: array
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
-            InternalEvent, CouponEvent, OpenEvent, CloseEvent'
+            InternalEvent, CouponEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
+            CashDividendEvent'
           enum:
           - TransitionEvent
           - InternalEvent
           - CouponEvent
           - OpenEvent
           - CloseEvent
+          - StockSplitEvent
+          - BondDefaultEvent
+          - CashDividendEvent
           type: string
       required:
       - instrumentEventType
