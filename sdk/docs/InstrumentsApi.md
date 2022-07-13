@@ -442,8 +442,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifierType** | **String**| The identifier being supplied e.g. \&quot;Figi\&quot;. |
  **identifier** | **String**| The value of the identifier for the requested instrument. |
- **recipeScope** | **String**| The scope of the valuation recipe being used to generate the payment diary | [optional]
- **recipeCode** | **String**| The code of the valuation recipe being used to generate the payment diary | [optional]
+ **recipeScope** | **String**| The scope of the valuation recipe being used to generate the payment diary |
+ **recipeCode** | **String**| The code of the valuation recipe being used to generate the payment diary |
  **effectiveAt** | **String**| The effective datetime or cut label at which to list the instrument&#39;s properties. Defaults to the current LUSID system datetime if not specified. | [optional]
  **asAt** | **OffsetDateTime**| The asAt datetime at which to list the instrument&#39;s properties. Defaults to return the latest version of each property if not specified. | [optional]
  **scope** | **String**| The scope in which the instrument lies. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]

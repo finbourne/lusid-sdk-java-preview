@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4591
+  version: 0.11.4592
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -14122,13 +14122,12 @@ paths:
         explode: true
         in: query
         name: recipeScope
-        required: false
+        required: true
         schema:
           description: The scope of the valuation recipe being used to generate the
             payment diary
           maxLength: 64
           minLength: 1
-          nullable: true
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: form
@@ -14137,13 +14136,12 @@ paths:
         explode: true
         in: query
         name: recipeCode
-        required: false
+        required: true
         schema:
           description: The code of the valuation recipe being used to generate the
             payment diary
           maxLength: 64
           minLength: 1
-          nullable: true
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: form
