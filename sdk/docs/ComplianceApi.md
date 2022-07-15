@@ -10,7 +10,9 @@ Method | HTTP request | Description
 [**getComplianceRunResults**](ComplianceApi.md#getComplianceRunResults) | **GET** /api/compliance/runs/{runId} | [EXPERIMENTAL] GetComplianceRunResults: Get the details of a single compliance run.
 [**listComplianceRules**](ComplianceApi.md#listComplianceRules) | **GET** /api/compliance/rules | [EXPERIMENTAL] ListComplianceRules: List compliance rules, with optional filtering.
 [**listComplianceRunInfo**](ComplianceApi.md#listComplianceRunInfo) | **GET** /api/compliance/runs | [EXPERIMENTAL] ListComplianceRunInfo: List historical compliance run ids.
+[**listComplianceRuns**](ComplianceApi.md#listComplianceRuns) | **GET** /api/compliance | [EXPERIMENTAL] ListComplianceRuns: List historical compliance runs. -- DEPRECATING IN FAVOUR OF NEW ENDPOINT
 [**runCompliance**](ComplianceApi.md#runCompliance) | **POST** /api/compliance/runs | [EXPERIMENTAL] RunCompliance: Kick off the compliance check process
+[**runComplianceCheck**](ComplianceApi.md#runComplianceCheck) | **POST** /api/compliance/run | [EXPERIMENTAL] RunComplianceCheck: Kick off the compliance check process -- DEPRECATING - POST TRADE ONLY
 [**upsertComplianceRules**](ComplianceApi.md#upsertComplianceRules) | **POST** /api/compliance/rules | [EXPERIMENTAL] UpsertComplianceRules: Upsert compliance rules.
 
 
@@ -387,7 +389,7 @@ Name | Type | Description  | Notes
 
 <a name="listComplianceRunInfo"></a>
 # **listComplianceRunInfo**
-> ResourceListOfComplianceRunInfo listComplianceRunInfo(asAt, page, limit, filter)
+> ResourceListOfComplianceRun listComplianceRunInfo(asAt, page, limit, filter)
 
 [EXPERIMENTAL] ListComplianceRunInfo: List historical compliance run ids.
 
@@ -418,7 +420,7 @@ public class Example {
     Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many.
     String filter = "filter_example"; // String | Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
     try {
-      ResourceListOfComplianceRunInfo result = apiInstance.listComplianceRunInfo(asAt, page, limit, filter);
+      ResourceListOfComplianceRun result = apiInstance.listComplianceRunInfo(asAt, page, limit, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ComplianceApi#listComplianceRunInfo");
@@ -442,7 +444,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceListOfComplianceRunInfo**](ResourceListOfComplianceRunInfo.md)
+[**ResourceListOfComplianceRun**](ResourceListOfComplianceRun.md)
 
 ### Authorization
 
@@ -460,9 +462,82 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="listComplianceRuns"></a>
+# **listComplianceRuns**
+> ResourceListOfComplianceRun listComplianceRuns(page, limit, filter)
+
+[EXPERIMENTAL] ListComplianceRuns: List historical compliance runs. -- DEPRECATING IN FAVOUR OF NEW ENDPOINT
+
+Use this endpoint to fetch a list of all historical compliance runs.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.ComplianceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    ComplianceApi apiInstance = new ComplianceApi(defaultClient);
+    String page = "page_example"; // String | The pagination token to use to continue listing compliance runs from a previous call to list compliance runs.              This value is returned from the previous call. If a pagination token is provided the sortBy, filter, and asAt fields              must not have changed since the original request. Also, if set, a start value cannot be provided.
+    Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many.
+    String filter = "filter_example"; // String | Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
+    try {
+      ResourceListOfComplianceRun result = apiInstance.listComplianceRuns(page, limit, filter);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ComplianceApi#listComplianceRuns");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **String**| The pagination token to use to continue listing compliance runs from a previous call to list compliance runs.              This value is returned from the previous call. If a pagination token is provided the sortBy, filter, and asAt fields              must not have changed since the original request. Also, if set, a start value cannot be provided. | [optional]
+ **limit** | **Integer**| When paginating, limit the number of returned results to this many. | [optional]
+ **filter** | **String**| Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
+
+### Return type
+
+[**ResourceListOfComplianceRun**](ResourceListOfComplianceRun.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The List of all compliance runs completed |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="runCompliance"></a>
 # **runCompliance**
-> ComplianceRunInfo runCompliance(isPreTrade, recipeIdScope, recipeIdCode, byTaxlots)
+> ComplianceRun runCompliance(isPreTrade, recipeIdScope, recipeIdCode, byTaxlots)
 
 [EXPERIMENTAL] RunCompliance: Kick off the compliance check process
 
@@ -493,7 +568,7 @@ public class Example {
     String recipeIdCode = "recipeIdCode_example"; // String | Optional: The code of the recipe to be used. If left blank, the default recipe will be used.
     Boolean byTaxlots = true; // Boolean | Optional.
     try {
-      ComplianceRunInfo result = apiInstance.runCompliance(isPreTrade, recipeIdScope, recipeIdCode, byTaxlots);
+      ComplianceRun result = apiInstance.runCompliance(isPreTrade, recipeIdScope, recipeIdCode, byTaxlots);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ComplianceApi#runCompliance");
@@ -517,7 +592,76 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComplianceRunInfo**](ComplianceRunInfo.md)
+[**ComplianceRun**](ComplianceRun.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The identifying information of a compliance run |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="runComplianceCheck"></a>
+# **runComplianceCheck**
+> ComplianceRun runComplianceCheck(fileName)
+
+[EXPERIMENTAL] RunComplianceCheck: Kick off the compliance check process -- DEPRECATING - POST TRADE ONLY
+
+Use this endpoint to fetch the start a compliance run, based on a pre-set mapping file.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.ComplianceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    ComplianceApi apiInstance = new ComplianceApi(defaultClient);
+    String fileName = "fileName_example"; // String | The name of compliance mappings file to use. Has to exist in drive ComplianceRules folder
+    try {
+      ComplianceRun result = apiInstance.runComplianceCheck(fileName);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ComplianceApi#runComplianceCheck");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fileName** | **String**| The name of compliance mappings file to use. Has to exist in drive ComplianceRules folder |
+
+### Return type
+
+[**ComplianceRun**](ComplianceRun.md)
 
 ### Authorization
 
