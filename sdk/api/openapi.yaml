@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4619
+  version: 0.11.4620
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -15006,10 +15006,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetInstrumentRelationships: Get Instrument relationships'
+      summary: '[EARLY ACCESS] GetInstrumentRelationships: Get Instrument relationships'
       tags:
       - Instruments
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/legalentities:
     get:
@@ -18502,11 +18502,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetLegalEntityRelationships: Get Relationships for
+      summary: '[EARLY ACCESS] GetLegalEntityRelationships: Get Relationships for
         Legal Entity'
       tags:
       - Legal Entities
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/metadata/access/resources:
     get:
@@ -25426,10 +25426,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetPersonRelationships: Get Relationships for Person'
+      summary: '[EARLY ACCESS] GetPersonRelationships: Get Relationships for Person'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/placements:
     get:
@@ -30086,11 +30086,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetPortfolioGroupRelationships: Get Relationships for
+      summary: '[EARLY ACCESS] GetPortfolioGroupRelationships: Get Relationships for
         Portfolio Group'
       tags:
       - Portfolio Groups
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/portfoliogroups/{scope}/{code}/subgroups:
     post:
@@ -35274,10 +35274,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetPortfolioRelationships: Get portfolio relationships'
+      summary: '[EARLY ACCESS] GetPortfolioRelationships: Get portfolio relationships'
       tags:
       - Portfolios
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/portfolios/{scope}/{code}/returns/$aggregated:
     post:
@@ -95070,7 +95070,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
