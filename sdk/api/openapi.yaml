@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4621
+  version: 0.11.4622
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -14931,7 +14931,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: issued by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -14956,7 +14956,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: issued by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -14981,7 +14981,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: issued by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -18424,7 +18424,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: is legal representative for
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 href: https://example.com
                 links: []
               schema:
@@ -18450,7 +18450,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: is legal representative for
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 href: https://example.com
                 links: []
               schema:
@@ -18476,7 +18476,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: is legal representative for
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 href: https://example.com
                 links: []
               schema:
@@ -25353,7 +25353,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -25377,7 +25377,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -25401,7 +25401,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -30011,7 +30011,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -30036,7 +30036,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -30061,7 +30061,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -35145,7 +35145,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 - relationshipDefinitionId:
                     scope: PortfolioManagementTeam
                     code: Traders
@@ -35163,7 +35163,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -35188,7 +35188,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 - relationshipDefinitionId:
                     scope: PortfolioManagementTeam
                     code: Traders
@@ -35206,7 +35206,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -35231,7 +35231,7 @@ paths:
                   traversalDirection: Out
                   traversalDescription: can be traded by
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 - relationshipDefinitionId:
                     scope: PortfolioManagementTeam
                     code: Traders
@@ -35249,7 +35249,7 @@ paths:
                   traversalDirection: In
                   traversalDescription: can trade with portfolio
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
-                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                  effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfRelationship'
@@ -40416,6 +40416,7 @@ paths:
                 outwardDescription: can be traded by
                 inwardDescription: can trade with portfolio
                 effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
               schema:
                 $ref: '#/components/schemas/CompleteRelationship'
             application/json:
@@ -40449,6 +40450,7 @@ paths:
                 outwardDescription: can be traded by
                 inwardDescription: can trade with portfolio
                 effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
               schema:
                 $ref: '#/components/schemas/CompleteRelationship'
             text/json:
@@ -40482,6 +40484,7 @@ paths:
                 outwardDescription: can be traded by
                 inwardDescription: can trade with portfolio
                 effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                effectiveUntil: 2022-01-01T12:00:00.0000000+00:00
               schema:
                 $ref: '#/components/schemas/CompleteRelationship'
           description: The newly created relationship.
@@ -60915,6 +60918,7 @@ components:
       description: Representation of a relationship containing details of source and
         target entities, and both outward and inward descriptions.
       example:
+        effectiveUntil: 2000-01-23T04:56:07.000+00:00
         outwardDescription: outwardDescription
         sourceEntity:
           entityType: entityType
@@ -61012,6 +61016,10 @@ components:
           type: string
         effectiveFrom:
           description: The effective datetime from which the relationship is valid.
+          format: date-time
+          type: string
+        effectiveUntil:
+          description: The effective datetime to which the relationship is valid until.
           format: date-time
           type: string
       required:
@@ -63410,6 +63418,7 @@ components:
       example:
         targetEntityId:
           key: targetEntityId
+        effectiveUntil: effectiveUntil
         sourceEntityId:
           key: sourceEntityId
         effectiveFrom: effectiveFrom
@@ -63426,6 +63435,15 @@ components:
           type: object
         effectiveFrom:
           description: The effective date of the relationship to be created
+          format: dateorcutlabel
+          maxLength: 256
+          minLength: 0
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_\+:\.]+$
+          type: string
+        effectiveUntil:
+          description: The effective datetime until which the relationship is valid.
+            If not supplied this will be valid indefinitely.
           format: dateorcutlabel
           maxLength: 256
           minLength: 0
