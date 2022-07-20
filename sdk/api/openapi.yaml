@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4628
+  version: 0.11.4627
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -39805,10 +39805,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] ListRelationshipDefinitions: List relationship definitions'
+      summary: '[EXPERIMENTAL] ListRelationshipDefinitions: List relationship definitions'
       tags:
       - Relationship Definitions
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
     post:
       description: Create a new relationship definition to be used for creating relationships
@@ -39945,10 +39945,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] CreateRelationshipDefinition: Create Relationship Definition'
+      summary: '[EXPERIMENTAL] CreateRelationshipDefinition: Create Relationship Definition'
       tags:
       - Relationship Definitions
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/relationshipdefinitions/{scope}/{code}:
@@ -40019,10 +40019,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] DeleteRelationshipDefinition: Delete Relationship Definition'
+      summary: '[EXPERIMENTAL] DeleteRelationshipDefinition: Delete Relationship Definition'
       tags:
       - Relationship Definitions
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
     get:
       description: Retrieve the specified relationship definition
@@ -40149,10 +40149,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] GetRelationshipDefinition: Get relationship definition'
+      summary: '[EXPERIMENTAL] GetRelationshipDefinition: Get relationship definition'
       tags:
       - Relationship Definitions
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Experimental
       x-accepts: application/json
     put:
       description: "Update the definition of a specified existing relationship. Not\
@@ -40297,10 +40297,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] UpdateRelationshipDefinition: Update Relationship Definition'
+      summary: '[EXPERIMENTAL] UpdateRelationshipDefinition: Update Relationship Definition'
       tags:
       - Relationship Definitions
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/relationshipdefinitions/{scope}/{code}/relationships:
@@ -40508,10 +40508,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] CreateRelationship: Create Relationship'
+      summary: '[EXPERIMENTAL] CreateRelationship: Create Relationship'
       tags:
       - Relationships
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/relationshipdefinitions/{scope}/{code}/relationships/$delete:
@@ -40631,10 +40631,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EARLY ACCESS] DeleteRelationship: Delete Relationship'
+      summary: '[EXPERIMENTAL] DeleteRelationship: Delete Relationship'
       tags:
       - Relationships
-      x-fbn-apistatus: EarlyAccess
+      x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/results/queryable/keys:
@@ -95088,7 +95088,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:

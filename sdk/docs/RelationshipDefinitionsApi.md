@@ -4,18 +4,18 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createRelationshipDefinition**](RelationshipDefinitionsApi.md#createRelationshipDefinition) | **POST** /api/relationshipdefinitions | [EARLY ACCESS] CreateRelationshipDefinition: Create Relationship Definition
-[**deleteRelationshipDefinition**](RelationshipDefinitionsApi.md#deleteRelationshipDefinition) | **DELETE** /api/relationshipdefinitions/{scope}/{code} | [EARLY ACCESS] DeleteRelationshipDefinition: Delete Relationship Definition
-[**getRelationshipDefinition**](RelationshipDefinitionsApi.md#getRelationshipDefinition) | **GET** /api/relationshipdefinitions/{scope}/{code} | [EARLY ACCESS] GetRelationshipDefinition: Get relationship definition
-[**listRelationshipDefinitions**](RelationshipDefinitionsApi.md#listRelationshipDefinitions) | **GET** /api/relationshipdefinitions | [EARLY ACCESS] ListRelationshipDefinitions: List relationship definitions
-[**updateRelationshipDefinition**](RelationshipDefinitionsApi.md#updateRelationshipDefinition) | **PUT** /api/relationshipdefinitions/{scope}/{code} | [EARLY ACCESS] UpdateRelationshipDefinition: Update Relationship Definition
+[**createRelationshipDefinition**](RelationshipDefinitionsApi.md#createRelationshipDefinition) | **POST** /api/relationshipdefinitions | [EXPERIMENTAL] CreateRelationshipDefinition: Create Relationship Definition
+[**deleteRelationshipDefinition**](RelationshipDefinitionsApi.md#deleteRelationshipDefinition) | **DELETE** /api/relationshipdefinitions/{scope}/{code} | [EXPERIMENTAL] DeleteRelationshipDefinition: Delete Relationship Definition
+[**getRelationshipDefinition**](RelationshipDefinitionsApi.md#getRelationshipDefinition) | **GET** /api/relationshipdefinitions/{scope}/{code} | [EXPERIMENTAL] GetRelationshipDefinition: Get relationship definition
+[**listRelationshipDefinitions**](RelationshipDefinitionsApi.md#listRelationshipDefinitions) | **GET** /api/relationshipdefinitions | [EXPERIMENTAL] ListRelationshipDefinitions: List relationship definitions
+[**updateRelationshipDefinition**](RelationshipDefinitionsApi.md#updateRelationshipDefinition) | **PUT** /api/relationshipdefinitions/{scope}/{code} | [EXPERIMENTAL] UpdateRelationshipDefinition: Update Relationship Definition
 
 
 <a name="createRelationshipDefinition"></a>
 # **createRelationshipDefinition**
 > RelationshipDefinition createRelationshipDefinition(createRelationshipDefinitionRequest)
 
-[EARLY ACCESS] CreateRelationshipDefinition: Create Relationship Definition
+[EXPERIMENTAL] CreateRelationshipDefinition: Create Relationship Definition
 
 Create a new relationship definition to be used for creating relationships between entities.
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 # **deleteRelationshipDefinition**
 > DeletedEntityResponse deleteRelationshipDefinition(scope, code)
 
-[EARLY ACCESS] DeleteRelationshipDefinition: Delete Relationship Definition
+[EXPERIMENTAL] DeleteRelationshipDefinition: Delete Relationship Definition
 
 Delete the definition of the specified relationship.
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 # **getRelationshipDefinition**
 > RelationshipDefinition getRelationshipDefinition(scope, code, asAt)
 
-[EARLY ACCESS] GetRelationshipDefinition: Get relationship definition
+[EXPERIMENTAL] GetRelationshipDefinition: Get relationship definition
 
 Retrieve the specified relationship definition
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 # **listRelationshipDefinitions**
 > PagedResourceListOfRelationshipDefinition listRelationshipDefinitions(asAt, page, limit, filter)
 
-[EARLY ACCESS] ListRelationshipDefinitions: List relationship definitions
+[EXPERIMENTAL] ListRelationshipDefinitions: List relationship definitions
 
 Retrieve one or more specified relationship definitions.
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 # **updateRelationshipDefinition**
 > RelationshipDefinition updateRelationshipDefinition(scope, code, updateRelationshipDefinitionRequest)
 
-[EARLY ACCESS] UpdateRelationshipDefinition: Update Relationship Definition
+[EXPERIMENTAL] UpdateRelationshipDefinition: Update Relationship Definition
 
 Update the definition of a specified existing relationship. Not all elements within a relationship definition  are modifiable due to the potential implications for values already stored against the relationship.
 

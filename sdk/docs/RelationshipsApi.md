@@ -4,15 +4,15 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createRelationship**](RelationshipsApi.md#createRelationship) | **POST** /api/relationshipdefinitions/{scope}/{code}/relationships | [EARLY ACCESS] CreateRelationship: Create Relationship
-[**deleteRelationship**](RelationshipsApi.md#deleteRelationship) | **POST** /api/relationshipdefinitions/{scope}/{code}/relationships/$delete | [EARLY ACCESS] DeleteRelationship: Delete Relationship
+[**createRelationship**](RelationshipsApi.md#createRelationship) | **POST** /api/relationshipdefinitions/{scope}/{code}/relationships | [EXPERIMENTAL] CreateRelationship: Create Relationship
+[**deleteRelationship**](RelationshipsApi.md#deleteRelationship) | **POST** /api/relationshipdefinitions/{scope}/{code}/relationships/$delete | [EXPERIMENTAL] DeleteRelationship: Delete Relationship
 
 
 <a name="createRelationship"></a>
 # **createRelationship**
 > CompleteRelationship createRelationship(scope, code, createRelationshipRequest)
 
-[EARLY ACCESS] CreateRelationship: Create Relationship
+[EXPERIMENTAL] CreateRelationship: Create Relationship
 
 Create a relationship between two entity objects by their identifiers
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **deleteRelationship**
 > DeletedEntityResponse deleteRelationship(scope, code, deleteRelationshipRequest)
 
-[EARLY ACCESS] DeleteRelationship: Delete Relationship
+[EXPERIMENTAL] DeleteRelationship: Delete Relationship
 
 Delete a relationship between two entity objects represented by their identifiers
 
