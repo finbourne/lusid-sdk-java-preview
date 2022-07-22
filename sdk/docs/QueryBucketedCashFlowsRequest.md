@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **bucketingTenors** | **List&lt;String&gt;** | A list of tenors to perform cashflow bucketing upon. If this is provided, the list of dates for bucketing should be empty. |  [optional]
 **reportCurrency** | **String** | Three letter ISO currency string indicating what currency to report in for ReportCurrency denominated queries. | 
 **groupBy** | **List&lt;String&gt;** | The set of address keys to use to group the bucketed cash flows. |  [optional]
+**addresses** | **List&lt;String&gt;** | The set of items that the user wishes to see in the results. If empty, will be defaulted to standard ones. |  [optional]
+**equipWithSubtotals** | **Boolean** | Flag directing the Valuation call to populate the results with subtotals of aggregates. |  [optional]
 
 
 

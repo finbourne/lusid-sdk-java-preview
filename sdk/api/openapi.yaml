@@ -296,7 +296,7 @@ info:
     | <a name="803">803</a>|The Instrument event could not be processed.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4630
+  version: 0.11.4631
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -12345,6 +12345,7 @@ paths:
               - 2021-01-01T00:00:00.0000000+00:00
               - 2021-07-01T00:00:00.0000000+00:00
               reportCurrency: USD
+              equipWithSubtotals: false
             schema:
               $ref: '#/components/schemas/QueryBucketedCashFlowsRequest'
           application/json:
@@ -12366,6 +12367,7 @@ paths:
               - 2021-01-01T00:00:00.0000000+00:00
               - 2021-07-01T00:00:00.0000000+00:00
               reportCurrency: USD
+              equipWithSubtotals: false
             schema:
               $ref: '#/components/schemas/QueryBucketedCashFlowsRequest'
           text/json:
@@ -12387,6 +12389,7 @@ paths:
               - 2021-01-01T00:00:00.0000000+00:00
               - 2021-07-01T00:00:00.0000000+00:00
               reportCurrency: USD
+              equipWithSubtotals: false
             schema:
               $ref: '#/components/schemas/QueryBucketedCashFlowsRequest'
           application/*+json:
@@ -12408,6 +12411,7 @@ paths:
               - 2021-01-01T00:00:00.0000000+00:00
               - 2021-07-01T00:00:00.0000000+00:00
               reportCurrency: USD
+              equipWithSubtotals: false
             schema:
               $ref: '#/components/schemas/QueryBucketedCashFlowsRequest'
         description: The Query Information.
@@ -48312,6 +48316,7 @@ paths:
               - 2020-07-01T00:00:00.0000000+00:00
               - 2021-01-01T00:00:00.0000000+00:00
               - 2021-07-01T00:00:00.0000000+00:00
+              equipWithSubtotals: false
             schema:
               $ref: '#/components/schemas/BucketedCashFlowRequest'
           application/json:
@@ -48322,6 +48327,7 @@ paths:
               - 2020-07-01T00:00:00.0000000+00:00
               - 2021-01-01T00:00:00.0000000+00:00
               - 2021-07-01T00:00:00.0000000+00:00
+              equipWithSubtotals: false
             schema:
               $ref: '#/components/schemas/BucketedCashFlowRequest'
           text/json:
@@ -48332,6 +48338,7 @@ paths:
               - 2020-07-01T00:00:00.0000000+00:00
               - 2021-01-01T00:00:00.0000000+00:00
               - 2021-07-01T00:00:00.0000000+00:00
+              equipWithSubtotals: false
             schema:
               $ref: '#/components/schemas/BucketedCashFlowRequest'
           application/*+json:
@@ -48342,6 +48349,7 @@ paths:
               - 2020-07-01T00:00:00.0000000+00:00
               - 2021-01-01T00:00:00.0000000+00:00
               - 2021-07-01T00:00:00.0000000+00:00
+              equipWithSubtotals: false
             schema:
               $ref: '#/components/schemas/BucketedCashFlowRequest'
         description: Request specifying the bucketing of cashflows
@@ -60144,6 +60152,9 @@ components:
         endpoint.
       example:
         reportCurrency: reportCurrency
+        addresses:
+        - addresses
+        - addresses
         windowStart: windowStart
         bucketTenors:
         - bucketTenors
@@ -60154,10 +60165,14 @@ components:
         - 2000-01-23T04:56:07.000+00:00
         - 2000-01-23T04:56:07.000+00:00
         windowEnd: windowEnd
+        groupBy:
+        - groupBy
+        - groupBy
         roundingMethod: roundingMethod
         recipeId:
           code: code
           scope: scope
+        equipWithSubtotals: true
       properties:
         roundingMethod:
           description: "When bucketing, there is not a unique way to allocate the\
@@ -60214,6 +60229,28 @@ components:
           minLength: 0
           nullable: true
           type: string
+        groupBy:
+          description: "The set of items by which to perform grouping. This primarily\
+            \ matters when one or more of the metric operators is a mapping\r\nthat\
+            \ reduces set size, e.g. sum or proportion. The group-by statement determines\
+            \ the set of keys by which to break the results out."
+          items:
+            description: The key that uniquely identifies a queryable address in Lusid.
+            type: string
+          nullable: true
+          type: array
+        addresses:
+          description: The set of items that the user wishes to see in the results.
+            If empty, will be defaulted to standard ones.
+          items:
+            description: The key that uniquely identifies a queryable address in Lusid.
+            type: string
+          nullable: true
+          type: array
+        equipWithSubtotals:
+          description: Flag directing the Valuation call to populate the results with
+            subtotals of aggregates.
+          type: boolean
         asAt:
           description: The asAt date to use
           format: date-time
@@ -77394,7 +77431,9 @@ components:
       additionalProperties: false
       description: Query for bucketed cashflows from one or more portfolios.
       example:
-        reportCurrency: reportCurrency
+        addresses:
+        - addresses
+        - addresses
         portfolioEntityIds:
         - code: code
           scope: scope
@@ -77405,20 +77444,22 @@ components:
         windowStart: 2000-01-23T04:56:07.000+00:00
         asAt: 2000-01-23T04:56:07.000+00:00
         effectiveAt: 2000-01-23T04:56:07.000+00:00
-        windowEnd: 2000-01-23T04:56:07.000+00:00
         bucketingDates:
         - 2000-01-23T04:56:07.000+00:00
         - 2000-01-23T04:56:07.000+00:00
         groupBy:
         - groupBy
         - groupBy
-        bucketingTenors:
-        - bucketingTenors
-        - bucketingTenors
         roundingMethod: roundingMethod
         recipeId:
           code: code
           scope: scope
+        equipWithSubtotals: true
+        reportCurrency: reportCurrency
+        windowEnd: 2000-01-23T04:56:07.000+00:00
+        bucketingTenors:
+        - bucketingTenors
+        - bucketingTenors
       properties:
         asAt:
           description: The time of the system at which to query for bucketed cashflows.
@@ -77479,6 +77520,18 @@ components:
             type: string
           nullable: true
           type: array
+        addresses:
+          description: The set of items that the user wishes to see in the results.
+            If empty, will be defaulted to standard ones.
+          items:
+            description: The key that uniquely identifies a queryable address in Lusid.
+            type: string
+          nullable: true
+          type: array
+        equipWithSubtotals:
+          description: Flag directing the Valuation call to populate the results with
+            subtotals of aggregates.
+          type: boolean
       required:
       - effectiveAt
       - portfolioEntityIds
@@ -95088,7 +95141,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
