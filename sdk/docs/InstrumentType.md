@@ -67,5 +67,7 @@
 
 * `COMPLEXBOND` (value: `"ComplexBond"`)
 
+* `INFLATIONLINKEDBOND` (value: `"InflationLinkedBond"`)
+
 
 
