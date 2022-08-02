@@ -297,7 +297,7 @@ info:
     | <a name="804">804</a>|Some data requested does not follow the order graph assumptions.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4662
+  version: 0.11.4663
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -5781,6 +5781,7 @@ paths:
                   completedAt: 2020-01-05T00:00:01.0000000+00:00
                   schedule: PostTrade
                   allRulesPassed: true
+                  hasResults: true
                   asAt: 2020-01-05T00:00:00.0000000+00:00
                 href: https://myco.lusid.com/api/api/compliance
                 links: []
@@ -5794,6 +5795,7 @@ paths:
                   completedAt: 2020-01-05T00:00:01.0000000+00:00
                   schedule: PostTrade
                   allRulesPassed: true
+                  hasResults: true
                   asAt: 2020-01-05T00:00:00.0000000+00:00
                 href: https://myco.lusid.com/api/api/compliance
                 links: []
@@ -5807,12 +5809,13 @@ paths:
                   completedAt: 2020-01-05T00:00:01.0000000+00:00
                   schedule: PostTrade
                   allRulesPassed: true
+                  hasResults: true
                   asAt: 2020-01-05T00:00:00.0000000+00:00
                 href: https://myco.lusid.com/api/api/compliance
                 links: []
               schema:
                 $ref: '#/components/schemas/ResourceListOfComplianceRunInfo'
-          description: The List of IDs for all compliance runs completed
+          description: The List of IDs and information for all compliance runs completed
         "400":
           content:
             text/plain:
@@ -5903,6 +5906,7 @@ paths:
                 completedAt: 2020-01-05T00:00:01.0000000+00:00
                 schedule: PostTrade
                 allRulesPassed: true
+                hasResults: true
                 asAt: 2020-01-05T00:00:00.0000000+00:00
               schema:
                 $ref: '#/components/schemas/ComplianceRunInfo'
@@ -5913,6 +5917,7 @@ paths:
                 completedAt: 2020-01-05T00:00:01.0000000+00:00
                 schedule: PostTrade
                 allRulesPassed: true
+                hasResults: true
                 asAt: 2020-01-05T00:00:00.0000000+00:00
               schema:
                 $ref: '#/components/schemas/ComplianceRunInfo'
@@ -5923,6 +5928,7 @@ paths:
                 completedAt: 2020-01-05T00:00:01.0000000+00:00
                 schedule: PostTrade
                 allRulesPassed: true
+                hasResults: true
                 asAt: 2020-01-05T00:00:00.0000000+00:00
               schema:
                 $ref: '#/components/schemas/ComplianceRunInfo'
@@ -61448,6 +61454,7 @@ components:
         allRulesPassed: true
         schedule: schedule
         completedAt: 2000-01-23T04:56:07.000+00:00
+        hasResults: true
         asAt: 2000-01-23T04:56:07.000+00:00
         runId: runId
         instigatedAt: 2000-01-23T04:56:07.000+00:00
@@ -61474,6 +61481,10 @@ components:
           description: True if all rules passed, for all the portfolios they were
             assigned to
           type: boolean
+        hasResults:
+          description: False when no results have been returned eg. when no rules
+            exist
+          type: boolean
         asAt:
           description: Legacy AsAt time for backwards compatibility
           format: date-time
@@ -61482,6 +61493,7 @@ components:
       - allRulesPassed
       - asAt
       - completedAt
+      - hasResults
       - instigatedAt
       - runId
       - schedule
@@ -80132,12 +80144,14 @@ components:
         - allRulesPassed: true
           schedule: schedule
           completedAt: 2000-01-23T04:56:07.000+00:00
+          hasResults: true
           asAt: 2000-01-23T04:56:07.000+00:00
           runId: runId
           instigatedAt: 2000-01-23T04:56:07.000+00:00
         - allRulesPassed: true
           schedule: schedule
           completedAt: 2000-01-23T04:56:07.000+00:00
+          hasResults: true
           asAt: 2000-01-23T04:56:07.000+00:00
           runId: runId
           instigatedAt: 2000-01-23T04:56:07.000+00:00
@@ -95374,7 +95388,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
