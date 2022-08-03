@@ -297,7 +297,7 @@ info:
     | <a name="804">804</a>|Some data requested does not follow the order graph assumptions.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4670
+  version: 0.11.4671
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -28104,7 +28104,6 @@ paths:
                         labelValue: Example Instrument 1
                       effectiveFrom: 2010-01-01T00:00:00.0000000+00:00
                   holdingType: P
-                  holdingTypeName: Position
                   units: 10
                   settledUnits: 10
                   cost:
@@ -28137,7 +28136,6 @@ paths:
                         labelValue: Example Instrument 1
                       effectiveFrom: 2010-01-01T00:00:00.0000000+00:00
                   holdingType: P
-                  holdingTypeName: Position
                   units: 10
                   settledUnits: 10
                   cost:
@@ -28170,7 +28168,6 @@ paths:
                         labelValue: Example Instrument 1
                       effectiveFrom: 2010-01-01T00:00:00.0000000+00:00
                   holdingType: P
-                  holdingTypeName: Position
                   units: 10
                   settledUnits: 10
                   cost:
@@ -51821,7 +51818,6 @@ paths:
                         labelValue: Example Instrument 1
                       effectiveFrom: 2010-01-01T00:00:00.0000000+00:00
                   holdingType: P
-                  holdingTypeName: Position
                   units: 10
                   settledUnits: 10
                   cost:
@@ -51854,7 +51850,6 @@ paths:
                         labelValue: Example Instrument 1
                       effectiveFrom: 2010-01-01T00:00:00.0000000+00:00
                   holdingType: P
-                  holdingTypeName: Position
                   units: 10
                   settledUnits: 10
                   cost:
@@ -51887,7 +51882,6 @@ paths:
                         labelValue: Example Instrument 1
                       effectiveFrom: 2010-01-01T00:00:00.0000000+00:00
                   holdingType: P
-                  holdingTypeName: Position
                   units: 10
                   settledUnits: 10
                   cost:
@@ -52575,7 +52569,6 @@ paths:
                         labelValue: FeederFund/Master:core:R
                       effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   holdingType: P
-                  holdingTypeName: Position
                   units: 10
                   settledUnits: 10
                   cost:
@@ -52618,7 +52611,6 @@ paths:
                         labelValue: FeederFund/Master:core:R
                       effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   holdingType: P
-                  holdingTypeName: Position
                   units: 10
                   settledUnits: 10
                   cost:
@@ -52661,7 +52653,6 @@ paths:
                         labelValue: FeederFund/Master:core:R
                       effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
                   holdingType: P
-                  holdingTypeName: Position
                   units: 10
                   settledUnits: 10
                   cost:
@@ -53199,7 +53190,6 @@ paths:
                         labelValue: Example Instrument 1
                       effectiveFrom: 2010-01-01T00:00:00.0000000+00:00
                   holdingType: P
-                  holdingTypeName: Position
                   units: 10
                   settledUnits: 10
                   cost:
@@ -53223,7 +53213,6 @@ paths:
                         labelValue: Example Instrument 1
                       effectiveFrom: 2010-01-01T00:00:00.0000000+00:00
                   holdingType: O
-                  holdingTypeName: Order
                   units: 100
                   settledUnits: 0
                   cost:
@@ -53236,7 +53225,6 @@ paths:
                 - instrumentScope: default
                   instrumentUid: GBP
                   holdingType: OC
-                  holdingTypeName: OrderContra
                   units: -250
                   settledUnits: 0
                   cost:
@@ -53269,7 +53257,6 @@ paths:
                         labelValue: Example Instrument 1
                       effectiveFrom: 2010-01-01T00:00:00.0000000+00:00
                   holdingType: P
-                  holdingTypeName: Position
                   units: 10
                   settledUnits: 10
                   cost:
@@ -53293,7 +53280,6 @@ paths:
                         labelValue: Example Instrument 1
                       effectiveFrom: 2010-01-01T00:00:00.0000000+00:00
                   holdingType: O
-                  holdingTypeName: Order
                   units: 100
                   settledUnits: 0
                   cost:
@@ -53306,7 +53292,6 @@ paths:
                 - instrumentScope: default
                   instrumentUid: GBP
                   holdingType: OC
-                  holdingTypeName: OrderContra
                   units: -250
                   settledUnits: 0
                   cost:
@@ -53339,7 +53324,6 @@ paths:
                         labelValue: Example Instrument 1
                       effectiveFrom: 2010-01-01T00:00:00.0000000+00:00
                   holdingType: P
-                  holdingTypeName: Position
                   units: 10
                   settledUnits: 10
                   cost:
@@ -53363,7 +53347,6 @@ paths:
                         labelValue: Example Instrument 1
                       effectiveFrom: 2010-01-01T00:00:00.0000000+00:00
                   holdingType: O
-                  holdingTypeName: Order
                   units: 100
                   settledUnits: 0
                   cost:
@@ -53376,7 +53359,6 @@ paths:
                 - instrumentScope: default
                   instrumentUid: GBP
                   holdingType: OC
-                  holdingTypeName: OrderContra
                   units: -250
                   settledUnits: 0
                   cost:
@@ -58174,7 +58156,8 @@ components:
         portfolioId:
           $ref: '#/components/schemas/ResourceId'
         holdingType:
-          description: The code for the type of the holding e.g. P, B, C, R, F etc.
+          description: The type of the holding e.g. Position, Balance, CashCommitment,
+            Receivable, ForwardFX etc.
           nullable: true
           type: string
         instrumentScope:
@@ -58329,7 +58312,8 @@ components:
         portfolioId:
           $ref: '#/components/schemas/ResourceId'
         holdingType:
-          description: The code for the type of the holding e.g. P, B, C, R, F etc.
+          description: The type of the holding e.g. Position, Balance, CashCommitment,
+            Receivable, ForwardFX etc.
           nullable: true
           type: string
         instrumentScope:
@@ -76317,7 +76301,6 @@ components:
         costPortfolioCcy:
           amount: 1.4658129805029452
           currency: currency
-        holdingTypeName: holdingTypeName
         settledUnits: 6.027456183070403
         properties:
           key:
@@ -76397,10 +76380,7 @@ components:
           nullable: true
           type: object
         holdingType:
-          description: The code for the type of the holding e.g. P, B, C, R, F etc.
-          type: string
-        holdingTypeName:
-          description: The decoded type of the holding e.g. Position, Balance, CashCommitment,
+          description: The type of the holding e.g. Position, Balance, CashCommitment,
             Receivable, ForwardFX etc.
           type: string
         units:
@@ -76425,7 +76405,6 @@ components:
       - cost
       - costPortfolioCcy
       - holdingType
-      - holdingTypeName
       - instrumentUid
       - settledUnits
       - units
@@ -90605,7 +90584,6 @@ components:
           costPortfolioCcy:
             amount: 1.4658129805029452
             currency: currency
-          holdingTypeName: holdingTypeName
           settledUnits: 6.027456183070403
           properties:
             key:
@@ -90683,7 +90661,6 @@ components:
           costPortfolioCcy:
             amount: 1.4658129805029452
             currency: currency
-          holdingTypeName: holdingTypeName
           settledUnits: 6.027456183070403
           properties:
             key:
@@ -90937,7 +90914,6 @@ components:
           costPortfolioCcy:
             amount: 1.4658129805029452
             currency: currency
-          holdingTypeName: holdingTypeName
           settledUnits: 6.027456183070403
           properties:
             key:
@@ -91015,7 +90991,6 @@ components:
           costPortfolioCcy:
             amount: 1.4658129805029452
             currency: currency
-          holdingTypeName: holdingTypeName
           settledUnits: 6.027456183070403
           properties:
             key:
