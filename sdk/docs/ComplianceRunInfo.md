@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **completedAt** | **OffsetDateTime** | The time the compliance run calculation was completed | 
 **schedule** | **String** | Whether the compliance run was pre or post trade | 
 **allRulesPassed** | **Boolean** | True if all rules passed, for all the portfolios they were assigned to | 
+**hasResults** | **Boolean** | False when no results have been returned eg. when no rules exist | 
 **asAt** | **OffsetDateTime** | Legacy AsAt time for backwards compatibility | 
 
 
