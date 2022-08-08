@@ -297,7 +297,7 @@ info:
     | <a name="804">804</a>|Some data requested does not follow the order graph assumptions.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4681
+  version: 0.11.4682
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -28113,6 +28113,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Position
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
@@ -28145,6 +28146,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Position
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
@@ -28177,6 +28179,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Position
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
@@ -51827,6 +51830,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Position
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
@@ -51859,6 +51863,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Position
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
@@ -51891,6 +51896,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Position
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
@@ -52578,6 +52584,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Position
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
@@ -52620,6 +52627,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Position
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
@@ -52662,6 +52670,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Position
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfPortfolioHolding'
@@ -53199,6 +53208,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Position
                 - instrumentScope: default
                   instrumentUid: LUID_XH4GNUEX
                   subHoldingKeys:
@@ -53222,6 +53232,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Order
                 - instrumentScope: default
                   instrumentUid: GBP
                   holdingType: OC
@@ -53234,6 +53245,7 @@ paths:
                     amount: 1
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: OrderContra
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListWithWarningsOfPortfolioHolding'
@@ -53266,6 +53278,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Position
                 - instrumentScope: default
                   instrumentUid: LUID_XH4GNUEX
                   subHoldingKeys:
@@ -53289,6 +53302,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Order
                 - instrumentScope: default
                   instrumentUid: GBP
                   holdingType: OC
@@ -53301,6 +53315,7 @@ paths:
                     amount: 1
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: OrderContra
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListWithWarningsOfPortfolioHolding'
@@ -53333,6 +53348,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Position
                 - instrumentScope: default
                   instrumentUid: LUID_XH4GNUEX
                   subHoldingKeys:
@@ -53356,6 +53372,7 @@ paths:
                     amount: 2.5
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: Order
                 - instrumentScope: default
                   instrumentUid: GBP
                   holdingType: OC
@@ -53368,6 +53385,7 @@ paths:
                     amount: 1
                     currency: GBP
                   currency: ZZZ
+                  holdingTypeName: OrderContra
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListWithWarningsOfPortfolioHolding'
@@ -58156,8 +58174,7 @@ components:
         portfolioId:
           $ref: '#/components/schemas/ResourceId'
         holdingType:
-          description: The type of the holding e.g. Position, Balance, CashCommitment,
-            Receivable, ForwardFX etc.
+          description: The code for the type of the holding e.g. P, B, C, R, F etc.
           nullable: true
           type: string
         instrumentScope:
@@ -58312,8 +58329,7 @@ components:
         portfolioId:
           $ref: '#/components/schemas/ResourceId'
         holdingType:
-          description: The type of the holding e.g. Position, Balance, CashCommitment,
-            Receivable, ForwardFX etc.
+          description: The code for the type of the holding e.g. P, B, C, R, F etc.
           nullable: true
           type: string
         instrumentScope:
@@ -76302,6 +76318,7 @@ components:
           amount: 1.4658129805029452
           currency: currency
         settledUnits: 6.027456183070403
+        holdingTypeName: holdingTypeName
         properties:
           key:
             effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -76380,8 +76397,7 @@ components:
           nullable: true
           type: object
         holdingType:
-          description: The type of the holding e.g. Position, Balance, CashCommitment,
-            Receivable, ForwardFX etc.
+          description: The code for the type of the holding e.g. P, B, C, R, F etc.
           type: string
         units:
           description: The total number of units of the holding.
@@ -76401,10 +76417,15 @@ components:
           description: The holding currency.
           nullable: true
           type: string
+        holdingTypeName:
+          description: The decoded type of the holding e.g. Position, Balance, CashCommitment,
+            Receivable, ForwardFX etc.
+          type: string
       required:
       - cost
       - costPortfolioCcy
       - holdingType
+      - holdingTypeName
       - instrumentUid
       - settledUnits
       - units
@@ -90585,6 +90606,7 @@ components:
             amount: 1.4658129805029452
             currency: currency
           settledUnits: 6.027456183070403
+          holdingTypeName: holdingTypeName
           properties:
             key:
               effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -90662,6 +90684,7 @@ components:
             amount: 1.4658129805029452
             currency: currency
           settledUnits: 6.027456183070403
+          holdingTypeName: holdingTypeName
           properties:
             key:
               effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -90915,6 +90938,7 @@ components:
             amount: 1.4658129805029452
             currency: currency
           settledUnits: 6.027456183070403
+          holdingTypeName: holdingTypeName
           properties:
             key:
               effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -90992,6 +91016,7 @@ components:
             amount: 1.4658129805029452
             currency: currency
           settledUnits: 6.027456183070403
+          holdingTypeName: holdingTypeName
           properties:
             key:
               effectiveUntil: 2000-01-23T04:56:07.000+00:00
