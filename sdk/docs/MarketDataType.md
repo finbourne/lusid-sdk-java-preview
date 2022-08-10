@@ -29,5 +29,7 @@
 
 * `CREDITSPREADCURVEDATA` (value: `"CreditSpreadCurveData"`)
 
+* `EQUITYCURVEBYPRICESDATA` (value: `"EquityCurveByPricesData"`)
+
 
 

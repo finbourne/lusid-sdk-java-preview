@@ -297,7 +297,7 @@ info:
     | <a name="804">804</a>|Some data requested does not follow the order graph assumptions.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4693
+  version: 0.11.4694
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -61105,7 +61105,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData, EquityCurveByPricesData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -61119,6 +61119,7 @@ components:
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
           - CreditSpreadCurveData
+          - EquityCurveByPricesData
           type: string
       required:
       - marketDataType
@@ -64935,6 +64936,17 @@ components:
       - $ref: '#/components/schemas/LusidInstrument'
       - $ref: '#/components/schemas/Equity_allOf'
       description: LUSID representation of an Equity.
+    EquityCurveByPricesData:
+      allOf:
+      - $ref: '#/components/schemas/ComplexMarketData'
+      - $ref: '#/components/schemas/EquityCurveByPricesData_allOf'
+      description: Contains data (i.e. dates and prices + metadata) for building Equity
+        curves
+    EquityModelOptions:
+      allOf:
+      - $ref: '#/components/schemas/ModelOptions'
+      - $ref: '#/components/schemas/EquityModelOptions_allOf'
+      description: Model options for equity related pricing.
     EquityOption:
       allOf:
       - $ref: '#/components/schemas/LusidInstrument'
@@ -70072,6 +70084,7 @@ components:
       - FxForwardTenorPipsCurveData
       - FxForwardCurveByQuoteReference
       - CreditSpreadCurveData
+      - EquityCurveByPricesData
       type: string
     MarketObservableType:
       enum:
@@ -70200,7 +70213,7 @@ components:
       properties:
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions'
+            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions, EquityModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
@@ -70208,6 +70221,7 @@ components:
           - IndexModelOptions
           - FxForwardModelOptions
           - FundingLegModelOptions
+          - EquityModelOptions
           type: string
       required:
       - modelOptionsType
@@ -70220,6 +70234,7 @@ components:
       - IndexModelOptions
       - FxForwardModelOptions
       - FundingLegModelOptions
+      - EquityModelOptions
       type: string
     ModelSelection:
       additionalProperties: false
@@ -92211,7 +92226,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData, EquityCurveByPricesData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -92225,6 +92240,7 @@ components:
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
           - CreditSpreadCurveData
+          - EquityCurveByPricesData
           type: string
       required:
       - baseDate
@@ -92263,7 +92279,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData, EquityCurveByPricesData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -92277,6 +92293,7 @@ components:
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
           - CreditSpreadCurveData
+          - EquityCurveByPricesData
           type: string
       required:
       - baseDate
@@ -92288,7 +92305,7 @@ components:
       properties:
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions'
+            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions, EquityModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
@@ -92296,6 +92313,7 @@ components:
           - IndexModelOptions
           - FxForwardModelOptions
           - FundingLegModelOptions
+          - EquityModelOptions
           type: string
       required:
       - modelOptionsType
@@ -92379,6 +92397,82 @@ components:
       required:
       - domCcy
       - instrumentType
+      type: object
+    EquityCurveByPricesData_allOf:
+      properties:
+        baseDate:
+          description: EffectiveAt date of the provided prices
+          format: date-time
+          type: string
+        dates:
+          description: "Dates provided for the forward price of the Equity at the\
+            \ corresponding price in Prices.\r\nThese dates should be in the future\
+            \ with respect to the BaseDate."
+          items:
+            format: date-time
+            type: string
+          type: array
+        lineage:
+          description: Description of the complex market data's lineage e.g. 'FundAccountant_GreenQuality'.
+          maxLength: 1024
+          minLength: 0
+          nullable: true
+          type: string
+        prices:
+          description: Prices provided for the forward price of the Equity at the
+            corresponding date in Dates.
+          items:
+            format: double
+            type: number
+          type: array
+        marketDataType:
+          description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
+            FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
+            FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData, EquityCurveByPricesData'
+          enum:
+          - DiscountFactorCurveData
+          - EquityVolSurfaceData
+          - FxVolSurfaceData
+          - IrVolCubeData
+          - OpaqueMarketData
+          - YieldCurveData
+          - FxForwardCurveData
+          - FxForwardPipsCurveData
+          - FxForwardTenorCurveData
+          - FxForwardTenorPipsCurveData
+          - FxForwardCurveByQuoteReference
+          - CreditSpreadCurveData
+          - EquityCurveByPricesData
+          type: string
+      required:
+      - baseDate
+      - dates
+      - marketDataType
+      - prices
+      type: object
+    EquityModelOptions_allOf:
+      properties:
+        equityForwardProjectionType:
+          description: "Determines how forward equity prices should be projected.\r\
+            \n            \r\nSupported string (enumeration) values are: [FlatForwardCurveFromSpot,\
+            \ EquityCurveByPrices, ForwardProjectedFromRatesCurve]."
+          type: string
+        modelOptionsType:
+          description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
+            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions, EquityModelOptions'
+          enum:
+          - Invalid
+          - OpaqueModelOptions
+          - EmptyModelOptions
+          - IndexModelOptions
+          - FxForwardModelOptions
+          - FundingLegModelOptions
+          - EquityModelOptions
+          type: string
+      required:
+      - equityForwardProjectionType
+      - modelOptionsType
       type: object
     EquityOption_allOf:
       properties:
@@ -92621,7 +92715,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData, EquityCurveByPricesData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -92635,6 +92729,7 @@ components:
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
           - CreditSpreadCurveData
+          - EquityCurveByPricesData
           type: string
       required:
       - baseDate
@@ -93193,7 +93288,7 @@ components:
           type: string
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions'
+            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions, EquityModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
@@ -93201,6 +93296,7 @@ components:
           - IndexModelOptions
           - FxForwardModelOptions
           - FundingLegModelOptions
+          - EquityModelOptions
           type: string
       required:
       - expectedFundingLegNotional
@@ -93427,7 +93523,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData, EquityCurveByPricesData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -93441,6 +93537,7 @@ components:
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
           - CreditSpreadCurveData
+          - EquityCurveByPricesData
           type: string
       required:
       - domCcy
@@ -93484,7 +93581,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData, EquityCurveByPricesData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -93498,6 +93595,7 @@ components:
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
           - CreditSpreadCurveData
+          - EquityCurveByPricesData
           type: string
       required:
       - baseDate
@@ -93534,7 +93632,7 @@ components:
           type: boolean
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions'
+            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions, EquityModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
@@ -93542,6 +93640,7 @@ components:
           - IndexModelOptions
           - FxForwardModelOptions
           - FundingLegModelOptions
+          - EquityModelOptions
           type: string
       required:
       - convertToReportCcy
@@ -93584,7 +93683,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData, EquityCurveByPricesData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -93598,6 +93697,7 @@ components:
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
           - CreditSpreadCurveData
+          - EquityCurveByPricesData
           type: string
       required:
       - baseDate
@@ -93641,7 +93741,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData, EquityCurveByPricesData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -93655,6 +93755,7 @@ components:
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
           - CreditSpreadCurveData
+          - EquityCurveByPricesData
           type: string
       required:
       - baseDate
@@ -93698,7 +93799,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData, EquityCurveByPricesData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -93712,6 +93813,7 @@ components:
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
           - CreditSpreadCurveData
+          - EquityCurveByPricesData
           type: string
       required:
       - baseDate
@@ -93935,7 +94037,7 @@ components:
           type: string
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions'
+            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions, EquityModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
@@ -93943,6 +94045,7 @@ components:
           - IndexModelOptions
           - FxForwardModelOptions
           - FundingLegModelOptions
+          - EquityModelOptions
           type: string
       required:
       - modelOptionsType
@@ -94380,7 +94483,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData, EquityCurveByPricesData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -94394,6 +94497,7 @@ components:
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
           - CreditSpreadCurveData
+          - EquityCurveByPricesData
           type: string
       required:
       - baseDate
@@ -94448,7 +94552,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData, EquityCurveByPricesData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -94462,6 +94566,7 @@ components:
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
           - CreditSpreadCurveData
+          - EquityCurveByPricesData
           type: string
       required:
       - document
@@ -94478,7 +94583,7 @@ components:
           type: object
         modelOptionsType:
           description: 'The available values are: Invalid, OpaqueModelOptions, EmptyModelOptions,
-            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions'
+            IndexModelOptions, FxForwardModelOptions, FundingLegModelOptions, EquityModelOptions'
           enum:
           - Invalid
           - OpaqueModelOptions
@@ -94486,6 +94591,7 @@ components:
           - IndexModelOptions
           - FxForwardModelOptions
           - FundingLegModelOptions
+          - EquityModelOptions
           type: string
       required:
       - data
@@ -95367,7 +95473,7 @@ components:
           description: 'The available values are: DiscountFactorCurveData, EquityVolSurfaceData,
             FxVolSurfaceData, IrVolCubeData, OpaqueMarketData, YieldCurveData, FxForwardCurveData,
             FxForwardPipsCurveData, FxForwardTenorCurveData, FxForwardTenorPipsCurveData,
-            FxForwardCurveByQuoteReference, CreditSpreadCurveData'
+            FxForwardCurveByQuoteReference, CreditSpreadCurveData, EquityCurveByPricesData'
           enum:
           - DiscountFactorCurveData
           - EquityVolSurfaceData
@@ -95381,6 +95487,7 @@ components:
           - FxForwardTenorPipsCurveData
           - FxForwardCurveByQuoteReference
           - CreditSpreadCurveData
+          - EquityCurveByPricesData
           type: string
       required:
       - baseDate

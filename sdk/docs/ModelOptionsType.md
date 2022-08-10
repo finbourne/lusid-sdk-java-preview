@@ -17,5 +17,7 @@
 
 * `FUNDINGLEGMODELOPTIONS` (value: `"FundingLegModelOptions"`)
 
+* `EQUITYMODELOPTIONS` (value: `"EquityModelOptions"`)
+
 
 
