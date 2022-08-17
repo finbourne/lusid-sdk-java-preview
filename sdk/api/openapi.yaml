@@ -297,7 +297,7 @@ info:
     | <a name="804">804</a>|Some data requested does not follow the order graph assumptions.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4706
+  version: 0.11.4707
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -26832,6 +26832,7 @@ paths:
                       value:
                         labelValue: EUR
                   groupId: Grp1
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -26876,6 +26877,7 @@ paths:
                       value:
                         labelValue: GBP
                   groupId: Grp2
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -26927,6 +26929,7 @@ paths:
                       value:
                         labelValue: USD
                   groupId: Grp3
+                  errors: []
                 - portfolioId:
                     scope: AnotherExample
                     code: AnotherPortfolio
@@ -26981,6 +26984,7 @@ paths:
                       value:
                         labelValue: ZAR
                   groupId: Grp4
+                  errors: []
                 - portfolioId:
                     scope: AnotherExample
                     code: AnotherPortfolio
@@ -27070,6 +27074,7 @@ paths:
                       value:
                         labelValue: SAMPLE03
                   groupId: Grp5
+                  errors: []
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfA2BDataRecord'
@@ -27145,6 +27150,7 @@ paths:
                       value:
                         labelValue: EUR
                   groupId: Grp1
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -27189,6 +27195,7 @@ paths:
                       value:
                         labelValue: GBP
                   groupId: Grp2
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -27240,6 +27247,7 @@ paths:
                       value:
                         labelValue: USD
                   groupId: Grp3
+                  errors: []
                 - portfolioId:
                     scope: AnotherExample
                     code: AnotherPortfolio
@@ -27294,6 +27302,7 @@ paths:
                       value:
                         labelValue: ZAR
                   groupId: Grp4
+                  errors: []
                 - portfolioId:
                     scope: AnotherExample
                     code: AnotherPortfolio
@@ -27383,6 +27392,7 @@ paths:
                       value:
                         labelValue: SAMPLE03
                   groupId: Grp5
+                  errors: []
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfA2BDataRecord'
@@ -27458,6 +27468,7 @@ paths:
                       value:
                         labelValue: EUR
                   groupId: Grp1
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -27502,6 +27513,7 @@ paths:
                       value:
                         labelValue: GBP
                   groupId: Grp2
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -27553,6 +27565,7 @@ paths:
                       value:
                         labelValue: USD
                   groupId: Grp3
+                  errors: []
                 - portfolioId:
                     scope: AnotherExample
                     code: AnotherPortfolio
@@ -27607,6 +27620,7 @@ paths:
                       value:
                         labelValue: ZAR
                   groupId: Grp4
+                  errors: []
                 - portfolioId:
                     scope: AnotherExample
                     code: AnotherPortfolio
@@ -27696,6 +27710,7 @@ paths:
                       value:
                         labelValue: SAMPLE03
                   groupId: Grp5
+                  errors: []
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfA2BDataRecord'
@@ -44770,6 +44785,7 @@ paths:
                       value:
                         labelValue: EUR
                   groupId: Grp1
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -44814,6 +44830,7 @@ paths:
                       value:
                         labelValue: GBP
                   groupId: Grp2
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -44865,6 +44882,7 @@ paths:
                       value:
                         labelValue: USD
                   groupId: Grp3
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -44919,6 +44937,7 @@ paths:
                       value:
                         labelValue: ZAR
                   groupId: Grp4
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -45008,6 +45027,7 @@ paths:
                       value:
                         labelValue: SAMPLE03
                   groupId: Grp5
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -45079,6 +45099,7 @@ paths:
                       value:
                         labelValue: SAMPLE05
                   groupId: Grp6
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -45168,6 +45189,7 @@ paths:
                       value:
                         labelValue: SAMPLE01
                   groupId: Grp7
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -45252,6 +45274,7 @@ paths:
                       value:
                         labelValue: SAMPLE10
                   groupId: Grp8
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -45314,6 +45337,7 @@ paths:
                       value:
                         labelValue: SAMPLE09
                   groupId: Grp9
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -45390,6 +45414,7 @@ paths:
                       value:
                         labelValue: SAMPLE04
                   groupId: Grp10
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -45479,6 +45504,7 @@ paths:
                       value:
                         labelValue: SAMPLE02
                   groupId: Grp11
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -45541,6 +45567,7 @@ paths:
                       value:
                         labelValue: SAMPLE07
                   groupId: Grp12
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -45617,6 +45644,7 @@ paths:
                       value:
                         labelValue: SAMPLE06
                   groupId: Grp13
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -45679,6 +45707,7 @@ paths:
                       value:
                         labelValue: SAMPLE08
                   groupId: Grp14
+                  errors: []
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfA2BDataRecord'
@@ -45754,6 +45783,7 @@ paths:
                       value:
                         labelValue: EUR
                   groupId: Grp1
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -45798,6 +45828,7 @@ paths:
                       value:
                         labelValue: GBP
                   groupId: Grp2
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -45849,6 +45880,7 @@ paths:
                       value:
                         labelValue: USD
                   groupId: Grp3
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -45903,6 +45935,7 @@ paths:
                       value:
                         labelValue: ZAR
                   groupId: Grp4
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -45992,6 +46025,7 @@ paths:
                       value:
                         labelValue: SAMPLE03
                   groupId: Grp5
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -46063,6 +46097,7 @@ paths:
                       value:
                         labelValue: SAMPLE05
                   groupId: Grp6
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -46152,6 +46187,7 @@ paths:
                       value:
                         labelValue: SAMPLE01
                   groupId: Grp7
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -46236,6 +46272,7 @@ paths:
                       value:
                         labelValue: SAMPLE10
                   groupId: Grp8
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -46298,6 +46335,7 @@ paths:
                       value:
                         labelValue: SAMPLE09
                   groupId: Grp9
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -46374,6 +46412,7 @@ paths:
                       value:
                         labelValue: SAMPLE04
                   groupId: Grp10
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -46463,6 +46502,7 @@ paths:
                       value:
                         labelValue: SAMPLE02
                   groupId: Grp11
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -46525,6 +46565,7 @@ paths:
                       value:
                         labelValue: SAMPLE07
                   groupId: Grp12
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -46601,6 +46642,7 @@ paths:
                       value:
                         labelValue: SAMPLE06
                   groupId: Grp13
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -46663,6 +46705,7 @@ paths:
                       value:
                         labelValue: SAMPLE08
                   groupId: Grp14
+                  errors: []
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfA2BDataRecord'
@@ -46738,6 +46781,7 @@ paths:
                       value:
                         labelValue: EUR
                   groupId: Grp1
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -46782,6 +46826,7 @@ paths:
                       value:
                         labelValue: GBP
                   groupId: Grp2
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -46833,6 +46878,7 @@ paths:
                       value:
                         labelValue: USD
                   groupId: Grp3
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -46887,6 +46933,7 @@ paths:
                       value:
                         labelValue: ZAR
                   groupId: Grp4
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -46976,6 +47023,7 @@ paths:
                       value:
                         labelValue: SAMPLE03
                   groupId: Grp5
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -47047,6 +47095,7 @@ paths:
                       value:
                         labelValue: SAMPLE05
                   groupId: Grp6
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -47136,6 +47185,7 @@ paths:
                       value:
                         labelValue: SAMPLE01
                   groupId: Grp7
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -47220,6 +47270,7 @@ paths:
                       value:
                         labelValue: SAMPLE10
                   groupId: Grp8
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -47282,6 +47333,7 @@ paths:
                       value:
                         labelValue: SAMPLE09
                   groupId: Grp9
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -47358,6 +47410,7 @@ paths:
                       value:
                         labelValue: SAMPLE04
                   groupId: Grp10
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -47447,6 +47500,7 @@ paths:
                       value:
                         labelValue: SAMPLE02
                   groupId: Grp11
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -47509,6 +47563,7 @@ paths:
                       value:
                         labelValue: SAMPLE07
                   groupId: Grp12
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -47585,6 +47640,7 @@ paths:
                       value:
                         labelValue: SAMPLE06
                   groupId: Grp13
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -47647,6 +47703,7 @@ paths:
                       value:
                         labelValue: SAMPLE08
                   groupId: Grp14
+                  errors: []
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfA2BDataRecord'
@@ -47858,6 +47915,7 @@ paths:
                       value:
                         labelValue: SAMPLE10
                   groupId: g1
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -47906,6 +47964,7 @@ paths:
                       value:
                         labelValue: SAMPLE10
                   groupId: g1
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -47956,6 +48015,7 @@ paths:
                       value:
                         labelValue: SAMPLE10
                   groupId: g1
+                  errors: []
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfA2BMovementRecord'
@@ -48003,6 +48063,7 @@ paths:
                       value:
                         labelValue: SAMPLE10
                   groupId: g1
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -48051,6 +48112,7 @@ paths:
                       value:
                         labelValue: SAMPLE10
                   groupId: g1
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -48101,6 +48163,7 @@ paths:
                       value:
                         labelValue: SAMPLE10
                   groupId: g1
+                  errors: []
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfA2BMovementRecord'
@@ -48148,6 +48211,7 @@ paths:
                       value:
                         labelValue: SAMPLE10
                   groupId: g1
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -48196,6 +48260,7 @@ paths:
                       value:
                         labelValue: SAMPLE10
                   groupId: g1
+                  errors: []
                 - portfolioId:
                     scope: Example
                     code: Portfolio
@@ -48246,6 +48311,7 @@ paths:
                       value:
                         labelValue: SAMPLE10
                   groupId: g1
+                  errors: []
                 links: []
               schema:
                 $ref: '#/components/schemas/VersionedResourceListOfA2BMovementRecord'
@@ -57046,6 +57112,197 @@ paths:
       x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
       x-accepts: application/json
+  /api/translation/tradeticket:
+    post:
+      description: "Translates one or more trade tickets into the given target dialect.\r\
+        \n            \r\nIn the request each trade ticket definition should be keyed\
+        \ by a unique correlation id. This id is ephemeral\r\nand is not stored by\
+        \ LUSID. It serves only as a way to easily identify each trade ticket in the\
+        \ response.\r\n            \r\nThe response will return both the collection\
+        \ of successfully translated trade tickets in the target dialect,\r\nas well\
+        \ as those that failed.\r\nFor the failures a reason will be provided explaining\
+        \ why the trade ticket could not be updated or inserted."
+      operationId: TranslateTradeTickets
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              tickets:
+                myTicket:
+                  transactionId: TradeTicket-1111111
+                  type: OpenTradeTicket
+                  source: default
+                  transactionDate: 2020-01-01T09:00:00.00Z
+                  settlementDate: 2020-01-01T09:00:00.00Z
+                  totalConsideration:
+                    amount: 1020000
+                    currency: GBP
+                  units: 1000000
+                  instrumentIdentifiers:
+                    instrument/default/ClientInternal: my-bond
+                  instrumentScope: myScope
+                  instrumentName: my_bond
+                  instrumentDefinition:
+                    startDate: 2018-01-01T00:00:00.0000000+00:00
+                    maturityDate: 2019-01-01T00:00:00.0000000+00:00
+                    domAmount: 1
+                    domCcy: GBP
+                    fgnAmount: -1.5
+                    fgnCcy: USD
+                    refSpotRate: 1.5
+                    isNdf: false
+                    fixingDate: 0001-01-01T00:00:00.0000000+00:00
+                    instrumentType: FxForward
+                  counterpartyAgreementId:
+                    scope: demoScope
+                    code: myCounterparty
+              dialect: targetDialect
+            schema:
+              $ref: '#/components/schemas/TranslateTradeTicketRequest'
+          application/json:
+            example:
+              tickets:
+                myTicket:
+                  transactionId: TradeTicket-1111111
+                  type: OpenTradeTicket
+                  source: default
+                  transactionDate: 2020-01-01T09:00:00.00Z
+                  settlementDate: 2020-01-01T09:00:00.00Z
+                  totalConsideration:
+                    amount: 1020000
+                    currency: GBP
+                  units: 1000000
+                  instrumentIdentifiers:
+                    instrument/default/ClientInternal: my-bond
+                  instrumentScope: myScope
+                  instrumentName: my_bond
+                  instrumentDefinition:
+                    startDate: 2018-01-01T00:00:00.0000000+00:00
+                    maturityDate: 2019-01-01T00:00:00.0000000+00:00
+                    domAmount: 1
+                    domCcy: GBP
+                    fgnAmount: -1.5
+                    fgnCcy: USD
+                    refSpotRate: 1.5
+                    isNdf: false
+                    fixingDate: 0001-01-01T00:00:00.0000000+00:00
+                    instrumentType: FxForward
+                  counterpartyAgreementId:
+                    scope: demoScope
+                    code: myCounterparty
+              dialect: targetDialect
+            schema:
+              $ref: '#/components/schemas/TranslateTradeTicketRequest'
+          text/json:
+            example:
+              tickets:
+                myTicket:
+                  transactionId: TradeTicket-1111111
+                  type: OpenTradeTicket
+                  source: default
+                  transactionDate: 2020-01-01T09:00:00.00Z
+                  settlementDate: 2020-01-01T09:00:00.00Z
+                  totalConsideration:
+                    amount: 1020000
+                    currency: GBP
+                  units: 1000000
+                  instrumentIdentifiers:
+                    instrument/default/ClientInternal: my-bond
+                  instrumentScope: myScope
+                  instrumentName: my_bond
+                  instrumentDefinition:
+                    startDate: 2018-01-01T00:00:00.0000000+00:00
+                    maturityDate: 2019-01-01T00:00:00.0000000+00:00
+                    domAmount: 1
+                    domCcy: GBP
+                    fgnAmount: -1.5
+                    fgnCcy: USD
+                    refSpotRate: 1.5
+                    isNdf: false
+                    fixingDate: 0001-01-01T00:00:00.0000000+00:00
+                    instrumentType: FxForward
+                  counterpartyAgreementId:
+                    scope: demoScope
+                    code: myCounterparty
+              dialect: targetDialect
+            schema:
+              $ref: '#/components/schemas/TranslateTradeTicketRequest'
+          application/*+json:
+            example:
+              tickets:
+                myTicket:
+                  transactionId: TradeTicket-1111111
+                  type: OpenTradeTicket
+                  source: default
+                  transactionDate: 2020-01-01T09:00:00.00Z
+                  settlementDate: 2020-01-01T09:00:00.00Z
+                  totalConsideration:
+                    amount: 1020000
+                    currency: GBP
+                  units: 1000000
+                  instrumentIdentifiers:
+                    instrument/default/ClientInternal: my-bond
+                  instrumentScope: myScope
+                  instrumentName: my_bond
+                  instrumentDefinition:
+                    startDate: 2018-01-01T00:00:00.0000000+00:00
+                    maturityDate: 2019-01-01T00:00:00.0000000+00:00
+                    domAmount: 1
+                    domCcy: GBP
+                    fgnAmount: -1.5
+                    fgnCcy: USD
+                    refSpotRate: 1.5
+                    isNdf: false
+                    fixingDate: 0001-01-01T00:00:00.0000000+00:00
+                    instrumentType: FxForward
+                  counterpartyAgreementId:
+                    scope: demoScope
+                    code: myCounterparty
+              dialect: targetDialect
+            schema:
+              $ref: '#/components/schemas/TranslateTradeTicketRequest'
+        description: The definitions of the trade ticket to translate along with the
+          target dialect.
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TranslateTradeTicketsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TranslateTradeTicketsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TranslateTradeTicketsResponse'
+          description: The successfully translated trade ticket along with any failures
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] TranslateTradeTickets: Translate trade ticket'
+      tags:
+      - Translation
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
   /api/unitresults/datamap/{scope}:
     post:
       description: "Create or update one or more structured result store address definition\
@@ -58166,6 +58423,19 @@ components:
                 - values
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             key: key
+        errors:
+        - identifiers:
+          - identifiers
+          - identifiers
+          description: description
+          identifierType: identifierType
+          type: type
+        - identifiers:
+          - identifiers
+          - identifiers
+          description: description
+          identifierType: identifierType
+          type: type
       properties:
         portfolioId:
           $ref: '#/components/schemas/ResourceId'
@@ -58222,6 +58492,12 @@ components:
             purely as a token. The content should not be relied upon.
           nullable: true
           type: string
+        errors:
+          description: Any errors with the record are reported here.
+          items:
+            $ref: '#/components/schemas/ResponseMetaData'
+          nullable: true
+          type: array
       type: object
     A2BMovementRecord:
       additionalProperties: false
@@ -58321,6 +58597,19 @@ components:
                 - values
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             key: key
+        errors:
+        - identifiers:
+          - identifiers
+          - identifiers
+          description: description
+          identifierType: identifierType
+          type: type
+        - identifiers:
+          - identifiers
+          - identifiers
+          description: description
+          identifierType: identifierType
+          type: type
       properties:
         portfolioId:
           $ref: '#/components/schemas/ResourceId'
@@ -58390,6 +58679,12 @@ components:
             purely as a token. The content should not be relied upon.
           nullable: true
           type: string
+        errors:
+          description: Any errors with the record are reported here.
+          items:
+            $ref: '#/components/schemas/ResponseMetaData'
+          nullable: true
+          type: array
       type: object
     AccessControlledAction:
       additionalProperties: false
@@ -85776,6 +86071,95 @@ components:
       - level
       - type
       type: object
+    TradeTicket:
+      additionalProperties: false
+      description: A Trade Ticket comprising of an instrument, a transaction and a
+        counterparty.
+      example:
+        instrumentName: instrumentName
+        counterpartyAgreementId:
+          code: code
+          scope: scope
+        instrumentScope: instrumentScope
+        instrumentIdentifiers:
+          key: instrumentIdentifiers
+        source: source
+        settlementDate: settlementDate
+        units: 0.8008281904610115
+        type: type
+        transactionDate: transactionDate
+        totalConsideration:
+          amount: 1.4658129805029452
+          currency: currency
+        instrumentDefinition:
+          instrumentType: QuotedSecurity
+        transactionId: transactionId
+      properties:
+        transactionId:
+          description: The unique identifier of the transaction.
+          maxLength: 256
+          minLength: 0
+          type: string
+        type:
+          description: The type of the transaction, for example 'Buy' or 'Sell'. The
+            transaction type must have been pre-configured using the System Configuration
+            API. If not, this operation will succeed but you are not able to calculate
+            holdings for the portfolio that include this transaction.
+          maxLength: 256
+          minLength: 0
+          type: string
+        source:
+          description: The source of the transaction. This is used to look up the
+            appropriate transaction group set in the transaction type configuration.
+          maxLength: 256
+          minLength: 0
+          nullable: true
+          type: string
+        transactionDate:
+          description: The date of the transaction.
+          format: dateorcutlabel
+          type: string
+        settlementDate:
+          description: The settlement date of the transaction.
+          format: dateorcutlabel
+          type: string
+        totalConsideration:
+          $ref: '#/components/schemas/CurrencyAndAmount'
+        units:
+          description: The number of units of the transacted instrument.
+          format: double
+          type: number
+        instrumentIdentifiers:
+          additionalProperties:
+            type: string
+          description: The set of identifiers that can be used to identify the instrument.
+          type: object
+        instrumentScope:
+          description: The scope in which the instrument lies.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        instrumentName:
+          description: The name of the instrument.
+          maxLength: 256
+          minLength: 0
+          nullable: true
+          type: string
+        instrumentDefinition:
+          $ref: '#/components/schemas/LusidInstrument'
+        counterpartyAgreementId:
+          $ref: '#/components/schemas/ResourceId'
+      required:
+      - instrumentIdentifiers
+      - settlementDate
+      - totalConsideration
+      - transactionDate
+      - transactionId
+      - type
+      - units
+      type: object
     Transaction:
       additionalProperties: false
       description: A list of transactions.
@@ -87381,6 +87765,122 @@ components:
         values:
           additionalProperties:
             $ref: '#/components/schemas/LusidInstrument'
+          description: The instruments which have been successfully translated.
+          nullable: true
+          type: object
+        failed:
+          additionalProperties:
+            $ref: '#/components/schemas/ErrorDetail'
+          description: The instruments that could not be translated along with a reason
+            for their failure.
+          nullable: true
+          type: object
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      type: object
+    TranslateTradeTicketRequest:
+      additionalProperties: false
+      description: A collection of instruments to translate, along with the target
+        dialect to translate into.
+      example:
+        tickets:
+          key:
+            instrumentName: instrumentName
+            counterpartyAgreementId:
+              code: code
+              scope: scope
+            instrumentScope: instrumentScope
+            instrumentIdentifiers:
+              key: instrumentIdentifiers
+            source: source
+            settlementDate: settlementDate
+            units: 0.8008281904610115
+            type: type
+            transactionDate: transactionDate
+            totalConsideration:
+              amount: 1.4658129805029452
+              currency: currency
+            instrumentDefinition:
+              instrumentType: QuotedSecurity
+            transactionId: transactionId
+        dialect: dialect
+      properties:
+        tickets:
+          additionalProperties:
+            $ref: '#/components/schemas/TradeTicket'
+          description: "The collection of trade tickets to translate.\r\n        \
+            \    \r\nEach trade ticket should be keyed by a unique correlation id.\
+            \ This id is ephemeral\r\nand is not stored by LUSID. It serves only as\
+            \ a way to easily identify each instrument in the response."
+          type: object
+        dialect:
+          description: The target dialect that the given instruments should be translated
+            to.
+          maxLength: 256
+          minLength: 1
+          pattern: ^[a-zA-Z]*$
+          type: string
+      required:
+      - dialect
+      - tickets
+      type: object
+    TranslateTradeTicketsResponse:
+      additionalProperties: false
+      description: A response from a request to translate a collection of instruments
+        to a given target dialect.
+      example:
+        values:
+          key:
+            instrumentName: instrumentName
+            counterpartyAgreementId:
+              code: code
+              scope: scope
+            instrumentScope: instrumentScope
+            instrumentIdentifiers:
+              key: instrumentIdentifiers
+            source: source
+            settlementDate: settlementDate
+            units: 0.8008281904610115
+            type: type
+            transactionDate: transactionDate
+            totalConsideration:
+              amount: 1.4658129805029452
+              currency: currency
+            instrumentDefinition:
+              instrumentType: QuotedSecurity
+            transactionId: transactionId
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+        failed:
+          key:
+            id: id
+            detail: detail
+            type: type
+            errorDetails:
+            - key: errorDetails
+            - key: errorDetails
+      properties:
+        href:
+          description: The specific Uniform Resource Identifier (URI) for this resource
+            at the requested effective and asAt datetime.
+          format: uri
+          nullable: true
+          type: string
+        values:
+          additionalProperties:
+            $ref: '#/components/schemas/TradeTicket'
           description: The instruments which have been successfully translated.
           nullable: true
           type: object
@@ -90015,6 +90515,19 @@ components:
                   - values
               effectiveFrom: 2000-01-23T04:56:07.000+00:00
               key: key
+          errors:
+          - identifiers:
+            - identifiers
+            - identifiers
+            description: description
+            identifierType: identifierType
+            type: type
+          - identifiers:
+            - identifiers
+            - identifiers
+            description: description
+            identifierType: identifierType
+            type: type
         - subHoldingKeys:
             key:
               value:
@@ -90105,6 +90618,19 @@ components:
                   - values
               effectiveFrom: 2000-01-23T04:56:07.000+00:00
               key: key
+          errors:
+          - identifiers:
+            - identifiers
+            - identifiers
+            description: description
+            identifierType: identifierType
+            type: type
+          - identifiers:
+            - identifiers
+            - identifiers
+            description: description
+            identifierType: identifierType
+            type: type
         links:
         - method: method
           description: description
@@ -90248,6 +90774,19 @@ components:
                   - values
               effectiveFrom: 2000-01-23T04:56:07.000+00:00
               key: key
+          errors:
+          - identifiers:
+            - identifiers
+            - identifiers
+            description: description
+            identifierType: identifierType
+            type: type
+          - identifiers:
+            - identifiers
+            - identifiers
+            description: description
+            identifierType: identifierType
+            type: type
         - subHoldingKeys:
             key:
               value:
@@ -90341,6 +90880,19 @@ components:
                   - values
               effectiveFrom: 2000-01-23T04:56:07.000+00:00
               key: key
+          errors:
+          - identifiers:
+            - identifiers
+            - identifiers
+            description: description
+            identifierType: identifierType
+            type: type
+          - identifiers:
+            - identifiers
+            - identifiers
+            description: description
+            identifierType: identifierType
+            type: type
         links:
         - method: method
           description: description
@@ -95522,7 +96074,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
