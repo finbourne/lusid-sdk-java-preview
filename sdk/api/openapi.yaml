@@ -297,7 +297,7 @@ info:
     | <a name="804">804</a>|Some data requested does not follow the order graph assumptions.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4715
+  version: 0.11.4717
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -93173,6 +93173,12 @@ components:
             nominal bond or observation/reset currency.
           nullable: true
           type: string
+        stubType:
+          description: "StubType required of the schedule\r\n\r\nSupported string\
+            \ (enumeration) values are: [ShortFront, ShortBack, LongBack, LongFront,\
+            \ Both]."
+          nullable: true
+          type: string
         scheduleType:
           description: 'The available values are: Fixed, Float, Optionality, Step,
             Exercise, Invalid'
@@ -93295,6 +93301,12 @@ components:
           description: Spread over floating rate given as a fraction.
           format: double
           type: number
+        stubType:
+          description: "StubType required of the schedule\r\n\r\nSupported string\
+            \ (enumeration) values are: [ShortFront, ShortBack, LongBack, LongFront,\
+            \ Both]."
+          nullable: true
+          type: string
         scheduleType:
           description: 'The available values are: Fixed, Float, Optionality, Step,
             Exercise, Invalid'
@@ -95692,7 +95704,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
