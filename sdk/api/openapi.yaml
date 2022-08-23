@@ -297,7 +297,7 @@ info:
     | <a name="804">804</a>|Some data requested does not follow the order graph assumptions.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4718
+  version: 0.11.4719
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -2467,11 +2467,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] AddBusinessDaysToDate: Adds the requested number of
+      summary: '[EARLY ACCESS] AddBusinessDaysToDate: Adds the requested number of
         Business Days to the provided date.'
       tags:
       - Calendars
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/calendars/businessday/{scope}/{code}:
@@ -2575,11 +2575,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] IsBusinessDateTime: Check whether a DateTime is a "Business
+      summary: '[EARLY ACCESS] IsBusinessDateTime: Check whether a DateTime is a "Business
         DateTime"'
       tags:
       - Calendars
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/calendars/generic:
     get:
@@ -2785,10 +2785,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] ListCalendars: List Calendars'
+      summary: '[EARLY ACCESS] ListCalendars: List Calendars'
       tags:
       - Calendars
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: Create a calendar in a generic form which can be used to store
@@ -2951,10 +2951,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] CreateCalendar: Create a calendar in its generic form'
+      summary: '[EARLY ACCESS] CreateCalendar: Create a calendar in its generic form'
       tags:
       - Calendars
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/calendars/generic/{scope}:
@@ -3185,10 +3185,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] ListCalendarsInScope: List all calenders in a specified scope'
+      summary: '[EARLY ACCESS] ListCalendarsInScope: List all calenders in a specified
+        scope'
       tags:
       - Calendars
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/calendars/generic/{scope}/{code}:
     delete:
@@ -3300,10 +3301,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] DeleteCalendar: Delete a calendar'
+      summary: '[EARLY ACCESS] DeleteCalendar: Delete a calendar'
       tags:
       - Calendars
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: Retrieve a generic calendar by a specific ID at a point in AsAt
@@ -3427,10 +3428,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] GetCalendar: Get a calendar in its generic form'
+      summary: '[EARLY ACCESS] GetCalendar: Get a calendar in its generic form'
       tags:
       - Calendars
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: Update the calendars WeekendMask, SourceProvider or Properties
@@ -3601,10 +3602,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] UpdateCalendar: Update a calendar'
+      summary: '[EARLY ACCESS] UpdateCalendar: Update a calendar'
       tags:
       - Calendars
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/calendars/generic/{scope}/{code}/dates:
@@ -3761,10 +3762,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] GetDates: Get dates for a specific calendar'
+      summary: '[EARLY ACCESS] GetDates: Get dates for a specific calendar'
       tags:
       - Calendars
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     put:
       description: "Add an event to the calendar. These Events can be a maximum of\
@@ -3907,10 +3908,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] AddDateToCalendar: Add a date to a calendar'
+      summary: '[EARLY ACCESS] AddDateToCalendar: Add a date to a calendar'
       tags:
       - Calendars
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/calendars/generic/{scope}/{code}/dates/{dateId}:
@@ -4017,10 +4018,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] DeleteDateFromCalendar: Remove a date from a calendar'
+      summary: '[EARLY ACCESS] DeleteDateFromCalendar: Remove a date from a calendar'
       tags:
       - Calendars
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/calendars/schedule/{scope}:
     post:
@@ -4151,10 +4152,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GenerateSchedule: Generate an ordered schedule of dates.'
+      summary: '[EARLY ACCESS] GenerateSchedule: Generate an ordered schedule of dates.'
       tags:
       - Calendars
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/complexmarketdata:
@@ -95704,7 +95705,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

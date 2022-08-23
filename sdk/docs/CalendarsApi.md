@@ -4,25 +4,25 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addBusinessDaysToDate**](CalendarsApi.md#addBusinessDaysToDate) | **POST** /api/calendars/businessday/{scope}/add | [EXPERIMENTAL] AddBusinessDaysToDate: Adds the requested number of Business Days to the provided date.
-[**addDateToCalendar**](CalendarsApi.md#addDateToCalendar) | **PUT** /api/calendars/generic/{scope}/{code}/dates | [BETA] AddDateToCalendar: Add a date to a calendar
-[**createCalendar**](CalendarsApi.md#createCalendar) | **POST** /api/calendars/generic | [BETA] CreateCalendar: Create a calendar in its generic form
-[**deleteCalendar**](CalendarsApi.md#deleteCalendar) | **DELETE** /api/calendars/generic/{scope}/{code} | [BETA] DeleteCalendar: Delete a calendar
-[**deleteDateFromCalendar**](CalendarsApi.md#deleteDateFromCalendar) | **DELETE** /api/calendars/generic/{scope}/{code}/dates/{dateId} | [BETA] DeleteDateFromCalendar: Remove a date from a calendar
-[**generateSchedule**](CalendarsApi.md#generateSchedule) | **POST** /api/calendars/schedule/{scope} | [EXPERIMENTAL] GenerateSchedule: Generate an ordered schedule of dates.
-[**getCalendar**](CalendarsApi.md#getCalendar) | **GET** /api/calendars/generic/{scope}/{code} | [BETA] GetCalendar: Get a calendar in its generic form
-[**getDates**](CalendarsApi.md#getDates) | **GET** /api/calendars/generic/{scope}/{code}/dates | [BETA] GetDates: Get dates for a specific calendar
-[**isBusinessDateTime**](CalendarsApi.md#isBusinessDateTime) | **GET** /api/calendars/businessday/{scope}/{code} | [BETA] IsBusinessDateTime: Check whether a DateTime is a \&quot;Business DateTime\&quot;
-[**listCalendars**](CalendarsApi.md#listCalendars) | **GET** /api/calendars/generic | [BETA] ListCalendars: List Calendars
-[**listCalendarsInScope**](CalendarsApi.md#listCalendarsInScope) | **GET** /api/calendars/generic/{scope} | [BETA] ListCalendarsInScope: List all calenders in a specified scope
-[**updateCalendar**](CalendarsApi.md#updateCalendar) | **POST** /api/calendars/generic/{scope}/{code} | [BETA] UpdateCalendar: Update a calendar
+[**addBusinessDaysToDate**](CalendarsApi.md#addBusinessDaysToDate) | **POST** /api/calendars/businessday/{scope}/add | [EARLY ACCESS] AddBusinessDaysToDate: Adds the requested number of Business Days to the provided date.
+[**addDateToCalendar**](CalendarsApi.md#addDateToCalendar) | **PUT** /api/calendars/generic/{scope}/{code}/dates | [EARLY ACCESS] AddDateToCalendar: Add a date to a calendar
+[**createCalendar**](CalendarsApi.md#createCalendar) | **POST** /api/calendars/generic | [EARLY ACCESS] CreateCalendar: Create a calendar in its generic form
+[**deleteCalendar**](CalendarsApi.md#deleteCalendar) | **DELETE** /api/calendars/generic/{scope}/{code} | [EARLY ACCESS] DeleteCalendar: Delete a calendar
+[**deleteDateFromCalendar**](CalendarsApi.md#deleteDateFromCalendar) | **DELETE** /api/calendars/generic/{scope}/{code}/dates/{dateId} | [EARLY ACCESS] DeleteDateFromCalendar: Remove a date from a calendar
+[**generateSchedule**](CalendarsApi.md#generateSchedule) | **POST** /api/calendars/schedule/{scope} | [EARLY ACCESS] GenerateSchedule: Generate an ordered schedule of dates.
+[**getCalendar**](CalendarsApi.md#getCalendar) | **GET** /api/calendars/generic/{scope}/{code} | [EARLY ACCESS] GetCalendar: Get a calendar in its generic form
+[**getDates**](CalendarsApi.md#getDates) | **GET** /api/calendars/generic/{scope}/{code}/dates | [EARLY ACCESS] GetDates: Get dates for a specific calendar
+[**isBusinessDateTime**](CalendarsApi.md#isBusinessDateTime) | **GET** /api/calendars/businessday/{scope}/{code} | [EARLY ACCESS] IsBusinessDateTime: Check whether a DateTime is a \&quot;Business DateTime\&quot;
+[**listCalendars**](CalendarsApi.md#listCalendars) | **GET** /api/calendars/generic | [EARLY ACCESS] ListCalendars: List Calendars
+[**listCalendarsInScope**](CalendarsApi.md#listCalendarsInScope) | **GET** /api/calendars/generic/{scope} | [EARLY ACCESS] ListCalendarsInScope: List all calenders in a specified scope
+[**updateCalendar**](CalendarsApi.md#updateCalendar) | **POST** /api/calendars/generic/{scope}/{code} | [EARLY ACCESS] UpdateCalendar: Update a calendar
 
 
 <a name="addBusinessDaysToDate"></a>
 # **addBusinessDaysToDate**
 > AddBusinessDaysToDateResponse addBusinessDaysToDate(scope, addBusinessDaysToDateRequest)
 
-[EXPERIMENTAL] AddBusinessDaysToDate: Adds the requested number of Business Days to the provided date.
+[EARLY ACCESS] AddBusinessDaysToDate: Adds the requested number of Business Days to the provided date.
 
 A Business day is defined as a point in time that:      * Does not represent a day in the calendar&#39;s weekend      * Does not represent a day in the calendar&#39;s list of holidays (e.g. Christmas Day in the UK)                 All dates specified must be UTC and the upper bound of a calendar is not inclusive                 e.g. From: 2020-12-24-00-00-00:       Adding 3 business days returns 2020-12-30, assuming Saturday and Sunday are weekends, and the 25th and 28th are holidays.       Adding -2 business days returns 2020-12-22 under the same assumptions.                If the provided number of days to add is zero, returns a failure.
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 # **addDateToCalendar**
 > CalendarDate addDateToCalendar(scope, code, createDateRequest)
 
-[BETA] AddDateToCalendar: Add a date to a calendar
+[EARLY ACCESS] AddDateToCalendar: Add a date to a calendar
 
 Add an event to the calendar. These Events can be a maximum of 24 hours and must be specified in UTC.  A local date will be calculated by the system and applied to the calendar before processing.
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 # **createCalendar**
 > Calendar createCalendar(createCalendarRequest)
 
-[BETA] CreateCalendar: Create a calendar in its generic form
+[EARLY ACCESS] CreateCalendar: Create a calendar in its generic form
 
 Create a calendar in a generic form which can be used to store date events.
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 # **deleteCalendar**
 > Calendar deleteCalendar(scope, code)
 
-[BETA] DeleteCalendar: Delete a calendar
+[EARLY ACCESS] DeleteCalendar: Delete a calendar
 
 Delete a calendar and all of its respective dates
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 # **deleteDateFromCalendar**
 > CalendarDate deleteDateFromCalendar(scope, code, dateId)
 
-[BETA] DeleteDateFromCalendar: Remove a date from a calendar
+[EARLY ACCESS] DeleteDateFromCalendar: Remove a date from a calendar
 
 Remove a date from a calendar.
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 # **generateSchedule**
 > List&lt;OffsetDateTime&gt; generateSchedule(scope, valuationSchedule, asAt)
 
-[EXPERIMENTAL] GenerateSchedule: Generate an ordered schedule of dates.
+[EARLY ACCESS] GenerateSchedule: Generate an ordered schedule of dates.
 
 Returns an ordered array of dates. The dates will only fall on business  days as defined by the scope and calendar codes in the valuation schedule.                Valuations are made at a frequency defined by the valuation schedule&#39;s tenor, e.g. every day (\&quot;1D\&quot;),  every other week (\&quot;2W\&quot;) etc. These dates will be adjusted onto business days as defined by the schedule&#39;s  rollConvention.
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 # **getCalendar**
 > Calendar getCalendar(scope, code, asAt)
 
-[BETA] GetCalendar: Get a calendar in its generic form
+[EARLY ACCESS] GetCalendar: Get a calendar in its generic form
 
 Retrieve a generic calendar by a specific ID at a point in AsAt time
 
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 # **getDates**
 > ResourceListOfCalendarDate getDates(scope, code, fromEffectiveAt, toEffectiveAt, asAt, idFilter)
 
-[BETA] GetDates: Get dates for a specific calendar
+[EARLY ACCESS] GetDates: Get dates for a specific calendar
 
 Get dates from a specific calendar within a specific window of effective time, at a point in AsAt time.  Providing an id filter can further refine the results.
 
@@ -604,7 +604,7 @@ Name | Type | Description  | Notes
 # **isBusinessDateTime**
 > IsBusinessDayResponse isBusinessDateTime(dateTime, scope, code, asAt)
 
-[BETA] IsBusinessDateTime: Check whether a DateTime is a \&quot;Business DateTime\&quot;
+[EARLY ACCESS] IsBusinessDateTime: Check whether a DateTime is a \&quot;Business DateTime\&quot;
 
 A Business DateTime is defined as a point in time that:      * Does not represent a day that overlaps with the calendars WeekendMask      * If the calendar is a \&quot;Holiday Calendar\&quot; Does not overlap with any dates in the calendar      * If the calendar is a \&quot;TradingHours Calendar\&quot; Does overlap with a date in the calendar                All dates specified must be UTC and the upper bound of a calendar is not inclusive   e.g. From: 2020-12-25-00-00-00        To: 2020-12-26-00-00-00  IsBusinessDay(2020-12-26-00-00-00) &#x3D;&#x3D; false
 
@@ -679,7 +679,7 @@ Name | Type | Description  | Notes
 # **listCalendars**
 > PagedResourceListOfCalendar listCalendars(asAt, page, limit, filter)
 
-[BETA] ListCalendars: List Calendars
+[EARLY ACCESS] ListCalendars: List Calendars
 
 List calendars at a point in AsAt time.
 
@@ -754,7 +754,7 @@ Name | Type | Description  | Notes
 # **listCalendarsInScope**
 > PagedResourceListOfCalendar listCalendarsInScope(scope, asAt, page, start, limit, filter)
 
-[BETA] ListCalendarsInScope: List all calenders in a specified scope
+[EARLY ACCESS] ListCalendarsInScope: List all calenders in a specified scope
 
 List calendars at a point in AsAt time.
 
@@ -833,7 +833,7 @@ Name | Type | Description  | Notes
 # **updateCalendar**
 > Calendar updateCalendar(scope, code, updateCalendarRequest)
 
-[BETA] UpdateCalendar: Update a calendar
+[EARLY ACCESS] UpdateCalendar: Update a calendar
 
 Update the calendars WeekendMask, SourceProvider or Properties
 
