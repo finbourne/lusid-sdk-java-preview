@@ -297,7 +297,7 @@ info:
     | <a name="804">804</a>|Some data requested does not follow the order graph assumptions.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4724
+  version: 0.11.4726
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -10416,11 +10416,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListDataTypeSummaries: List all data type summaries,
+      summary: '[EARLY ACCESS] ListDataTypeSummaries: List all data type summaries,
         without the reference data'
       tags:
       - Data Types
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: "Create a new data type definition\r\n\r\nData types cannot be\
@@ -10614,10 +10614,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] CreateDataType: Create data type definition'
+      summary: '[EARLY ACCESS] CreateDataType: Create data type definition'
       tags:
       - Data Types
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/datatypes/{scope}:
@@ -10946,10 +10946,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpdateDataType: Update data type definition'
+      summary: '[EARLY ACCESS] UpdateDataType: Update data type definition'
       tags:
       - Data Types
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/datatypes/{scope}/{code}/referencedatavalues:
@@ -11080,11 +11080,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpdateReferenceValues: Update reference data on a data
+      summary: '[EARLY ACCESS] UpdateReferenceValues: Update reference data on a data
         type'
       tags:
       - Data Types
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/datatypes/{scope}/{code}/units:
@@ -95705,7 +95705,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

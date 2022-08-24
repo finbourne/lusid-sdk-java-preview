@@ -4,20 +4,20 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDataType**](DataTypesApi.md#createDataType) | **POST** /api/datatypes | [BETA] CreateDataType: Create data type definition
+[**createDataType**](DataTypesApi.md#createDataType) | **POST** /api/datatypes | [EARLY ACCESS] CreateDataType: Create data type definition
 [**getDataType**](DataTypesApi.md#getDataType) | **GET** /api/datatypes/{scope}/{code} | GetDataType: Get data type definition
 [**getUnitsFromDataType**](DataTypesApi.md#getUnitsFromDataType) | **GET** /api/datatypes/{scope}/{code}/units | [EARLY ACCESS] GetUnitsFromDataType: Get units from data type
-[**listDataTypeSummaries**](DataTypesApi.md#listDataTypeSummaries) | **GET** /api/datatypes | [EXPERIMENTAL] ListDataTypeSummaries: List all data type summaries, without the reference data
+[**listDataTypeSummaries**](DataTypesApi.md#listDataTypeSummaries) | **GET** /api/datatypes | [EARLY ACCESS] ListDataTypeSummaries: List all data type summaries, without the reference data
 [**listDataTypes**](DataTypesApi.md#listDataTypes) | **GET** /api/datatypes/{scope} | ListDataTypes: List data types
-[**updateDataType**](DataTypesApi.md#updateDataType) | **PUT** /api/datatypes/{scope}/{code} | [EXPERIMENTAL] UpdateDataType: Update data type definition
-[**updateReferenceValues**](DataTypesApi.md#updateReferenceValues) | **PUT** /api/datatypes/{scope}/{code}/referencedatavalues | [EXPERIMENTAL] UpdateReferenceValues: Update reference data on a data type
+[**updateDataType**](DataTypesApi.md#updateDataType) | **PUT** /api/datatypes/{scope}/{code} | [EARLY ACCESS] UpdateDataType: Update data type definition
+[**updateReferenceValues**](DataTypesApi.md#updateReferenceValues) | **PUT** /api/datatypes/{scope}/{code}/referencedatavalues | [EARLY ACCESS] UpdateReferenceValues: Update reference data on a data type
 
 
 <a name="createDataType"></a>
 # **createDataType**
 > DataType createDataType(createDataTypeRequest)
 
-[BETA] CreateDataType: Create data type definition
+[EARLY ACCESS] CreateDataType: Create data type definition
 
 Create a new data type definition    Data types cannot be created in either the \&quot;default\&quot; or \&quot;system\&quot; scopes.
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 # **listDataTypeSummaries**
 > PagedResourceListOfDataTypeSummary listDataTypeSummaries(asAt, page, start, limit, filter, sortBy)
 
-[EXPERIMENTAL] ListDataTypeSummaries: List all data type summaries, without the reference data
+[EARLY ACCESS] ListDataTypeSummaries: List all data type summaries, without the reference data
 
 List all data type summaries
 
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 # **updateDataType**
 > DataType updateDataType(scope, code, updateDataTypeRequest)
 
-[EXPERIMENTAL] UpdateDataType: Update data type definition
+[EARLY ACCESS] UpdateDataType: Update data type definition
 
 Update the definition of the specified existing data type    Not all elements within a data type definition are modifiable due to the potential implications for data  already stored against the types
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 # **updateReferenceValues**
 > DataType updateReferenceValues(scope, code, fieldValue)
 
-[EXPERIMENTAL] UpdateReferenceValues: Update reference data on a data type
+[EARLY ACCESS] UpdateReferenceValues: Update reference data on a data type
 
 Replaces the whole set of reference values
 
