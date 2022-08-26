@@ -297,7 +297,7 @@ info:
     | <a name="804">804</a>|Some data requested does not follow the order graph assumptions.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4734
+  version: 0.11.4735
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -11642,10 +11642,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListExecutions: List Executions'
+      summary: '[EARLY ACCESS] ListExecutions: List Executions'
       tags:
       - Executions
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: Upsert; update existing executions with given ids, or create new
@@ -11907,10 +11907,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertExecutions: Upsert Execution'
+      summary: '[EARLY ACCESS] UpsertExecutions: Upsert Execution'
       tags:
       - Executions
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/executions/{scope}/{code}:
@@ -11979,10 +11979,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteExecution: Delete execution'
+      summary: '[EARLY ACCESS] DeleteExecution: Delete execution'
       tags:
       - Executions
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: Fetch a Execution that matches the specified identifier
@@ -12170,10 +12170,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetExecution: Get Execution'
+      summary: '[EARLY ACCESS] GetExecution: Get Execution'
       tags:
       - Executions
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/instrumentevents/$query:
     post:
@@ -65509,7 +65509,8 @@ components:
           description: The market entity this placement is placed with.
           type: string
         averagePrice:
-          description: The latest average price of all executions for a given placement
+          description: The average price of all executions for a given placement at
+            the time of upsert
           format: double
           nullable: true
           type: number
@@ -65625,7 +65626,8 @@ components:
           description: The market entity this placement is placed with.
           type: string
         averagePrice:
-          description: The latest average price of all executions for a given placement
+          description: The average price of all executions for a given placement at
+            the time of upsert
           format: double
           nullable: true
           type: number
@@ -96002,7 +96004,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

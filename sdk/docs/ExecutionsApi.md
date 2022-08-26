@@ -4,17 +4,17 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteExecution**](ExecutionsApi.md#deleteExecution) | **DELETE** /api/executions/{scope}/{code} | [EXPERIMENTAL] DeleteExecution: Delete execution
-[**getExecution**](ExecutionsApi.md#getExecution) | **GET** /api/executions/{scope}/{code} | [EXPERIMENTAL] GetExecution: Get Execution
-[**listExecutions**](ExecutionsApi.md#listExecutions) | **GET** /api/executions | [EXPERIMENTAL] ListExecutions: List Executions
-[**upsertExecutions**](ExecutionsApi.md#upsertExecutions) | **POST** /api/executions | [EXPERIMENTAL] UpsertExecutions: Upsert Execution
+[**deleteExecution**](ExecutionsApi.md#deleteExecution) | **DELETE** /api/executions/{scope}/{code} | [EARLY ACCESS] DeleteExecution: Delete execution
+[**getExecution**](ExecutionsApi.md#getExecution) | **GET** /api/executions/{scope}/{code} | [EARLY ACCESS] GetExecution: Get Execution
+[**listExecutions**](ExecutionsApi.md#listExecutions) | **GET** /api/executions | [EARLY ACCESS] ListExecutions: List Executions
+[**upsertExecutions**](ExecutionsApi.md#upsertExecutions) | **POST** /api/executions | [EARLY ACCESS] UpsertExecutions: Upsert Execution
 
 
 <a name="deleteExecution"></a>
 # **deleteExecution**
 > DeletedEntityResponse deleteExecution(scope, code)
 
-[EXPERIMENTAL] DeleteExecution: Delete execution
+[EARLY ACCESS] DeleteExecution: Delete execution
 
 Delete an execution. Deletion will be valid from the execution&#39;s creation datetime.  This means that the execution will no longer exist at any effective datetime from the asAt datetime of deletion.
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getExecution**
 > Execution getExecution(scope, code, asAt, propertyKeys)
 
-[EXPERIMENTAL] GetExecution: Get Execution
+[EARLY ACCESS] GetExecution: Get Execution
 
 Fetch a Execution that matches the specified identifier
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **listExecutions**
 > PagedResourceListOfExecution listExecutions(asAt, page, sortBy, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] ListExecutions: List Executions
+[EARLY ACCESS] ListExecutions: List Executions
 
 Fetch the last pre-AsAt date version of each execution in scope (does not fetch the entire history).
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 # **upsertExecutions**
 > ResourceListOfExecution upsertExecutions(executionSetRequest)
 
-[EXPERIMENTAL] UpsertExecutions: Upsert Execution
+[EARLY ACCESS] UpsertExecutions: Upsert Execution
 
 Upsert; update existing executions with given ids, or create new executions otherwise.
 
