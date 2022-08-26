@@ -297,7 +297,7 @@ info:
     | <a name="804">804</a>|Some data requested does not follow the order graph assumptions.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4735
+  version: 0.11.4737
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -94613,9 +94613,17 @@ components:
           description: "The calculation type applied to the bond coupon and principal\
             \ amount.\r\nThe default CalculationType is `Standard` and currently this\
             \ is the only value supported.\r\n\r\nSupported string (enumeration) values\
-            \ are: [Standard, Quarterly]."
+            \ are: [Standard, Quarterly, Ratio]."
           nullable: true
           type: string
+        exDividendDays:
+          description: "Number of Good Business Days before the next coupon payment,\
+            \ in which the bond goes ex-dividend.\r\nThis is not common in inflation\
+            \ linked bonds but has been seen with (for example) bonds issued by\r\n\
+            the Bank of Thailand."
+          format: int32
+          nullable: true
+          type: integer
         indexPrecision:
           description: Number of decimal places used to round IndexRatio. This defaults
             to 5 if not set.
@@ -94640,7 +94648,9 @@ components:
         observationLag:
           description: "Observation lag. This is a Tenor that must have units of Month.\r\
             \nThis field is typically 3 or 4 months, but can vary, older bonds have\
-            \ 8 months lag."
+            \ 8 months lag.\r\nFor Bonds with a calculation type of Ratio, this property,\
+            \ if set, must be 0Invalid."
+          nullable: true
           type: string
         principal:
           description: The face-value or principal for the bond at outset.
@@ -94713,7 +94723,6 @@ components:
       - inflationIndexName
       - instrumentType
       - maturityDate
-      - observationLag
       - principal
       - startDate
       type: object
@@ -96004,7 +96013,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
