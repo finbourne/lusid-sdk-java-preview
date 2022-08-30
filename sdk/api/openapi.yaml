@@ -297,7 +297,7 @@ info:
     | <a name="804">804</a>|Some data requested does not follow the order graph assumptions.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4739
+  version: 0.11.4742
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -11237,7 +11237,6 @@ paths:
               subHoldingKeys:
               - Transaction/MyScope/Strategy
               - Transaction/MyScope/SubAccount
-              amortisationMethod: EffectiveYield
             schema:
               $ref: '#/components/schemas/CreateDerivedTransactionPortfolioRequest'
           application/json:
@@ -11255,7 +11254,6 @@ paths:
               subHoldingKeys:
               - Transaction/MyScope/Strategy
               - Transaction/MyScope/SubAccount
-              amortisationMethod: EffectiveYield
             schema:
               $ref: '#/components/schemas/CreateDerivedTransactionPortfolioRequest'
           text/json:
@@ -11273,7 +11271,6 @@ paths:
               subHoldingKeys:
               - Transaction/MyScope/Strategy
               - Transaction/MyScope/SubAccount
-              amortisationMethod: EffectiveYield
             schema:
               $ref: '#/components/schemas/CreateDerivedTransactionPortfolioRequest'
           application/*+json:
@@ -11291,7 +11288,6 @@ paths:
               subHoldingKeys:
               - Transaction/MyScope/Strategy
               - Transaction/MyScope/SubAccount
-              amortisationMethod: EffectiveYield
             schema:
               $ref: '#/components/schemas/CreateDerivedTransactionPortfolioRequest'
         description: The definition of the derived transaction portfolio.
@@ -44247,7 +44243,6 @@ paths:
                       unit: NoUnits
                   effectiveFrom: 2018-03-05T12:00:00.0000000+00:00
               instrumentScopes: []
-              amortisationMethod: NoAmortisation
             schema:
               $ref: '#/components/schemas/CreateTransactionPortfolioRequest'
           application/json:
@@ -44276,7 +44271,6 @@ paths:
                       unit: NoUnits
                   effectiveFrom: 2018-03-05T12:00:00.0000000+00:00
               instrumentScopes: []
-              amortisationMethod: NoAmortisation
             schema:
               $ref: '#/components/schemas/CreateTransactionPortfolioRequest'
           text/json:
@@ -44305,7 +44299,6 @@ paths:
                       unit: NoUnits
                   effectiveFrom: 2018-03-05T12:00:00.0000000+00:00
               instrumentScopes: []
-              amortisationMethod: NoAmortisation
             schema:
               $ref: '#/components/schemas/CreateTransactionPortfolioRequest'
           application/*+json:
@@ -44334,7 +44327,6 @@ paths:
                       unit: NoUnits
                   effectiveFrom: 2018-03-05T12:00:00.0000000+00:00
               instrumentScopes: []
-              amortisationMethod: NoAmortisation
             schema:
               $ref: '#/components/schemas/CreateTransactionPortfolioRequest'
         description: The definition of the transaction portfolio.
@@ -58936,7 +58928,6 @@ components:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
           baseCurrency: baseCurrency
-          amortisationMethod: amortisationMethod
           accountingMethod: Default
           links:
           - method: method
@@ -61536,8 +61527,7 @@ components:
         orderId:
           $ref: '#/components/schemas/ResourceId'
         listRuleResult:
-          description: The related list of rule results that may be applicable to
-            this order (applied to portfolio that the order belongs to)
+          description: The Rule Results for a particular compliance run
           items:
             $ref: '#/components/schemas/ComplianceRuleResult'
           type: array
@@ -63167,7 +63157,6 @@ components:
         - subHoldingKeys
         - subHoldingKeys
         code: code
-        amortisationMethod: amortisationMethod
         displayName: displayName
         created: 2000-01-23T04:56:07.000+00:00
         instrumentScopes:
@@ -63245,10 +63234,6 @@ components:
           maxLength: 1
           nullable: true
           type: array
-        amortisationMethod:
-          description: The amortisation method the portfolio is using in the calculation.
-          nullable: true
-          type: string
       required:
       - code
       - displayName
@@ -63910,7 +63895,6 @@ components:
         - subHoldingKeys
         - subHoldingKeys
         code: code
-        amortisationMethod: amortisationMethod
         displayName: displayName
         created: 2000-01-23T04:56:07.000+00:00
         instrumentScopes:
@@ -64003,10 +63987,6 @@ components:
           maxLength: 1
           nullable: true
           type: array
-        amortisationMethod:
-          description: The amortisation method the portfolio is using in the calculation.
-          nullable: true
-          type: string
       required:
       - baseCurrency
       - code
@@ -75986,7 +75966,6 @@ components:
           effectiveFrom: 2000-01-23T04:56:07.000+00:00
           asAtDate: 2000-01-23T04:56:07.000+00:00
         baseCurrency: baseCurrency
-        amortisationMethod: amortisationMethod
         accountingMethod: Default
         links:
         - method: method
@@ -76079,10 +76058,6 @@ components:
           - LastInFirstOut
           - HighestCostFirst
           - LowestCostFirst
-          type: string
-        amortisationMethod:
-          description: The amortisation method the portfolio is using in the calculation.
-          nullable: true
           type: string
         links:
           description: Collection of links.
@@ -76340,7 +76315,6 @@ components:
         subHoldingKeys:
         - subHoldingKeys
         - subHoldingKeys
-        amortisationMethod: amortisationMethod
         instrumentScopes:
         - instrumentScopes
         - instrumentScopes
@@ -76405,10 +76379,6 @@ components:
           - LastInFirstOut
           - HighestCostFirst
           - LowestCostFirst
-          type: string
-        amortisationMethod:
-          description: The amortisation method the portfolio is using in the calculation.
-          nullable: true
           type: string
         links:
           description: Collection of links.
@@ -83534,7 +83504,6 @@ components:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
           baseCurrency: baseCurrency
-          amortisationMethod: amortisationMethod
           accountingMethod: Default
           links:
           - method: method
@@ -83578,7 +83547,6 @@ components:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
           baseCurrency: baseCurrency
-          amortisationMethod: amortisationMethod
           accountingMethod: Default
           links:
           - method: method
@@ -96044,7 +96012,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
