@@ -4,7 +4,7 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**instrumentsSearch**](SearchApi.md#instrumentsSearch) | **POST** /api/search/instruments | [EARLY ACCESS] InstrumentsSearch: Instruments search
+[**instrumentsSearch**](SearchApi.md#instrumentsSearch) | **POST** /api/search/instruments | [EXPERIMENTAL] InstrumentsSearch: Instruments search
 [**searchPortfolioGroups**](SearchApi.md#searchPortfolioGroups) | **GET** /api/search/portfoliogroups | SearchPortfolioGroups: Search Portfolio Groups
 [**searchPortfolios**](SearchApi.md#searchPortfolios) | **GET** /api/search/portfolios | SearchPortfolios: Search Portfolios
 [**searchProperties**](SearchApi.md#searchProperties) | **GET** /api/search/propertydefinitions | SearchProperties: Search Property Definitions
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 # **instrumentsSearch**
 > List&lt;InstrumentMatch&gt; instrumentsSearch(instrumentSearchProperty, masteredEffectiveAt, masteredOnly, scope)
 
-[EARLY ACCESS] InstrumentsSearch: Instruments search
+[EXPERIMENTAL] InstrumentsSearch: Instruments search
 
 Search across all instruments that have been mastered in LUSID. Optionally augment the results with instruments from an external symbology service,  currently OpenFIGI.
 
