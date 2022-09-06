@@ -297,7 +297,7 @@ info:
     | <a name="804">804</a>|Some data requested does not follow the order graph assumptions.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4758
+  version: 0.11.4759
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -27746,11 +27746,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetA2BDataForPortfolioGroup: Get A2B data for a Portfolio
+      summary: '[EARLY ACCESS] GetA2BDataForPortfolioGroup: Get A2B data for a Portfolio
         Group'
       tags:
       - Portfolio Groups
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/portfoliogroups/{scope}/{code}/commands:
     get:
@@ -33188,10 +33188,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] PatchPortfolio: Patch portfolio.'
+      summary: '[EARLY ACCESS] PatchPortfolio: Patch portfolio.'
       tags:
       - Portfolios
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
     put:
@@ -34679,10 +34679,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListPortfolioProperties: Get portfolio properties'
+      summary: '[EARLY ACCESS] ListPortfolioProperties: Get portfolio properties'
       tags:
       - Portfolios
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/portfolios/{scope}/{code}/properties/time-series:
     get:
@@ -96439,7 +96439,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

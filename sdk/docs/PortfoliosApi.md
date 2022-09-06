@@ -19,10 +19,10 @@ Method | HTTP request | Description
 [**getPortfolioRelationships**](PortfoliosApi.md#getPortfolioRelationships) | **GET** /api/portfolios/{scope}/{code}/relationships | [EARLY ACCESS] GetPortfolioRelationships: Get portfolio relationships
 [**getPortfolioReturns**](PortfoliosApi.md#getPortfolioReturns) | **GET** /api/portfolios/{scope}/{code}/returns/{returnScope}/{returnCode} | [EARLY ACCESS] GetPortfolioReturns: Get Returns
 [**getPortfoliosAccessMetadataByKey**](PortfoliosApi.md#getPortfoliosAccessMetadataByKey) | **GET** /api/portfolios/{scope}/{code}/metadata/{metadataKey} | [EARLY ACCESS] GetPortfoliosAccessMetadataByKey: Get an entry identified by a metadataKey in the access metadata object
-[**listPortfolioProperties**](PortfoliosApi.md#listPortfolioProperties) | **GET** /api/portfolios/{scope}/{code}/properties/list | [EXPERIMENTAL] ListPortfolioProperties: Get portfolio properties
+[**listPortfolioProperties**](PortfoliosApi.md#listPortfolioProperties) | **GET** /api/portfolios/{scope}/{code}/properties/list | [EARLY ACCESS] ListPortfolioProperties: Get portfolio properties
 [**listPortfolios**](PortfoliosApi.md#listPortfolios) | **GET** /api/portfolios | ListPortfolios: List portfolios
 [**listPortfoliosForScope**](PortfoliosApi.md#listPortfoliosForScope) | **GET** /api/portfolios/{scope} | ListPortfoliosForScope: List portfolios for scope
-[**patchPortfolio**](PortfoliosApi.md#patchPortfolio) | **PATCH** /api/portfolios/{scope}/{code} | [EXPERIMENTAL] PatchPortfolio: Patch portfolio.
+[**patchPortfolio**](PortfoliosApi.md#patchPortfolio) | **PATCH** /api/portfolios/{scope}/{code} | [EARLY ACCESS] PatchPortfolio: Patch portfolio.
 [**patchPortfolioAccessMetadata**](PortfoliosApi.md#patchPortfolioAccessMetadata) | **PATCH** /api/portfolios/{scope}/{code}/metadata | [EXPERIMENTAL] PatchPortfolioAccessMetadata: Patch Access Metadata rules for a Portfolio.
 [**updatePortfolio**](PortfoliosApi.md#updatePortfolio) | **PUT** /api/portfolios/{scope}/{code} | UpdatePortfolio: Update portfolio
 [**upsertPortfolioAccessMetadata**](PortfoliosApi.md#upsertPortfolioAccessMetadata) | **PUT** /api/portfolios/{scope}/{code}/metadata/{metadataKey} | [EARLY ACCESS] UpsertPortfolioAccessMetadata: Upsert a Portfolio Access Metadata Rule associated with specific metadataKey. This creates or updates the data in LUSID.
@@ -1221,7 +1221,7 @@ Name | Type | Description  | Notes
 # **listPortfolioProperties**
 > ResourceListOfProperty listPortfolioProperties(scope, code, effectiveAt, asAt, page, limit)
 
-[EXPERIMENTAL] ListPortfolioProperties: Get portfolio properties
+[EARLY ACCESS] ListPortfolioProperties: Get portfolio properties
 
 List all the properties of a particular portfolio.
 
@@ -1466,7 +1466,7 @@ Name | Type | Description  | Notes
 # **patchPortfolio**
 > ActionResultOfPortfolio patchPortfolio(scope, code, operation)
 
-[EXPERIMENTAL] PatchPortfolio: Patch portfolio.
+[EARLY ACCESS] PatchPortfolio: Patch portfolio.
 
 Create or update certain fields for a particular  portfolio.  The behaviour is defined by the JSON Patch specification.                Currently supported are: CreationDate.
 
