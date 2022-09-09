@@ -5,7 +5,7 @@ All URIs are relative to *https://www.lusid.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**translateInstrumentDefinitions**](TranslationApi.md#translateInstrumentDefinitions) | **POST** /api/translation/instrumentdefinitions | [EXPERIMENTAL] TranslateInstrumentDefinitions: Translate instruments
-[**translateTradeTickets**](TranslationApi.md#translateTradeTickets) | **POST** /api/translation/tradeticket | [EXPERIMENTAL] TranslateTradeTickets: Translate trade ticket
+[**translateTradeTickets**](TranslationApi.md#translateTradeTickets) | **POST** /api/translation/tradetickets | [EXPERIMENTAL] TranslateTradeTickets: Translate trade ticket
 
 
 <a name="translateInstrumentDefinitions"></a>

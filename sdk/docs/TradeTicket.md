@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **instrumentName** | **String** | The name of the instrument. |  [optional]
 **instrumentDefinition** | [**LusidInstrument**](LusidInstrument.md) |  |  [optional]
 **counterpartyAgreementId** | [**ResourceId**](ResourceId.md) |  |  [optional]
+**instrumentProperties** | [**List&lt;Property&gt;**](Property.md) | The set of instrument properties wanted on the instrument from the trade ticket. |  [optional]
+**transactionProperties** | [**List&lt;Property&gt;**](Property.md) | The set of transaction properties wanted on the transaction from the trade ticket. |  [optional]
 
 
 
