@@ -61,5 +61,9 @@
 
 * `INSTRUMENTEVENT` (value: `"InstrumentEvent"`)
 
+* `ACCOUNT` (value: `"Account"`)
+
+* `CHARTOFACCOUNTS` (value: `"ChartOfAccounts"`)
+
 
 
