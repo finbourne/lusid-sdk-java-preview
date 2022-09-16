@@ -302,7 +302,7 @@ info:
     | <a name="812">812</a>|A price could not be found for an allocation.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4795
+  version: 0.11.4796
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -8097,13 +8097,13 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/ResourceListOfInstrumentEventHolder'
+                $ref: '#/components/schemas/PagedResourceListOfInstrumentEventHolder'
             application/json:
               schema:
-                $ref: '#/components/schemas/ResourceListOfInstrumentEventHolder'
+                $ref: '#/components/schemas/PagedResourceListOfInstrumentEventHolder'
             text/json:
               schema:
-                $ref: '#/components/schemas/ResourceListOfInstrumentEventHolder'
+                $ref: '#/components/schemas/PagedResourceListOfInstrumentEventHolder'
           description: Instrument Events
         "400":
           content:
@@ -74371,6 +74371,123 @@ components:
       required:
       - values
       type: object
+    PagedResourceListOfInstrumentEventHolder:
+      additionalProperties: false
+      description: A paginated list of resource that can be returned from a request.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - instrumentScope: instrumentScope
+          instrumentEventId: instrumentEventId
+          instrumentEvent:
+            instrumentEventType: TransitionEvent
+          description: description
+          corporateActionSourceId:
+            code: code
+            scope: scope
+          instrumentIdentifiers:
+            key: instrumentIdentifiers
+          lusidInstrumentId: lusidInstrumentId
+          properties:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+        - instrumentScope: instrumentScope
+          instrumentEventId: instrumentEventId
+          instrumentEvent:
+            instrumentEventType: TransitionEvent
+          description: description
+          corporateActionSourceId:
+            code: code
+            scope: scope
+          instrumentIdentifiers:
+            key: instrumentIdentifiers
+          lusidInstrumentId: lusidInstrumentId
+          properties:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/InstrumentEventHolder'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - values
+      type: object
     PagedResourceListOfLegalEntity:
       additionalProperties: false
       description: A paginated list of resource that can be returned from a request.
@@ -90103,8 +90220,7 @@ components:
         instrumentIdentifiers:
           key: instrumentIdentifiers
         properties:
-        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-          value:
+        - value:
             metricValue:
               unit: unit
               value: 0.8008281904610115
@@ -90113,10 +90229,8 @@ components:
               values:
               - values
               - values
-          effectiveFrom: 2000-01-23T04:56:07.000+00:00
           key: key
-        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-          value:
+        - value:
             metricValue:
               unit: unit
               value: 0.8008281904610115
@@ -90125,7 +90239,6 @@ components:
               values:
               - values
               - values
-          effectiveFrom: 2000-01-23T04:56:07.000+00:00
           key: key
       properties:
         instrumentEventId:
@@ -90153,7 +90266,7 @@ components:
         properties:
           description: The properties attached to this instrument event.
           items:
-            $ref: '#/components/schemas/Property'
+            $ref: '#/components/schemas/PerpetualProperty'
           nullable: true
           type: array
       required:

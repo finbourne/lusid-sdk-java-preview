@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstrumentEvents"></a>
 # **getInstrumentEvents**
-> ResourceListOfInstrumentEventHolder getInstrumentEvents(scope, code, asAt, limit, page, filter)
+> PagedResourceListOfInstrumentEventHolder getInstrumentEvents(scope, code, asAt, limit, page, filter)
 
 [EXPERIMENTAL] GetInstrumentEvents: Get extrinsic instrument events out of a given corporate actions source.
 
@@ -492,7 +492,7 @@ public class Example {
     String page = "page_example"; // String | Optional. The pagination token to use to continue listing items from a previous call. Page values are  return from list calls, and must be supplied exactly as returned. Additionally, when specifying this  value, asAt, filter and limit must not  be modified.
     String filter = "filter_example"; // String | Optional. Expression to filter the result set.
     try {
-      ResourceListOfInstrumentEventHolder result = apiInstance.getInstrumentEvents(scope, code, asAt, limit, page, filter);
+      PagedResourceListOfInstrumentEventHolder result = apiInstance.getInstrumentEvents(scope, code, asAt, limit, page, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CorporateActionSourcesApi#getInstrumentEvents");
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceListOfInstrumentEventHolder**](ResourceListOfInstrumentEventHolder.md)
+[**PagedResourceListOfInstrumentEventHolder**](PagedResourceListOfInstrumentEventHolder.md)
 
 ### Authorization
 
