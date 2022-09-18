@@ -302,7 +302,7 @@ info:
     | <a name="812">812</a>|A price could not be found for an allocation.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4797
+  version: 0.11.4798
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -12714,13 +12714,13 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/ResourceListOfTradeTicket'
+                $ref: '#/components/schemas/ResourceListOfPortfolioTradeTicket'
             application/json:
               schema:
-                $ref: '#/components/schemas/ResourceListOfTradeTicket'
+                $ref: '#/components/schemas/ResourceListOfPortfolioTradeTicket'
             text/json:
               schema:
-                $ref: '#/components/schemas/ResourceListOfTradeTicket'
+                $ref: '#/components/schemas/ResourceListOfPortfolioTradeTicket'
           description: Instrument Events as Upsertable TradeTickets.
         "400":
           content:
@@ -44788,7 +44788,7 @@ paths:
           application/json-patch+json:
             example:
               transactionId: TradeTicket-1111111
-              type: OpenTradeTicket
+              transactionType: OpenTradeTicket
               source: default
               transactionDate: 2020-01-01T09:00:00.00Z
               settlementDate: 2020-01-01T09:00:00.00Z
@@ -44814,12 +44814,13 @@ paths:
               counterpartyAgreementId:
                 scope: demoScope
                 code: myCounterparty
+              tradeTicketType: LusidTradeTicket
             schema:
-              $ref: '#/components/schemas/TradeTicket'
+              $ref: '#/components/schemas/LusidTradeTicket'
           application/json:
             example:
               transactionId: TradeTicket-1111111
-              type: OpenTradeTicket
+              transactionType: OpenTradeTicket
               source: default
               transactionDate: 2020-01-01T09:00:00.00Z
               settlementDate: 2020-01-01T09:00:00.00Z
@@ -44845,12 +44846,13 @@ paths:
               counterpartyAgreementId:
                 scope: demoScope
                 code: myCounterparty
+              tradeTicketType: LusidTradeTicket
             schema:
-              $ref: '#/components/schemas/TradeTicket'
+              $ref: '#/components/schemas/LusidTradeTicket'
           text/json:
             example:
               transactionId: TradeTicket-1111111
-              type: OpenTradeTicket
+              transactionType: OpenTradeTicket
               source: default
               transactionDate: 2020-01-01T09:00:00.00Z
               settlementDate: 2020-01-01T09:00:00.00Z
@@ -44876,12 +44878,13 @@ paths:
               counterpartyAgreementId:
                 scope: demoScope
                 code: myCounterparty
+              tradeTicketType: LusidTradeTicket
             schema:
-              $ref: '#/components/schemas/TradeTicket'
+              $ref: '#/components/schemas/LusidTradeTicket'
           application/*+json:
             example:
               transactionId: TradeTicket-1111111
-              type: OpenTradeTicket
+              transactionType: OpenTradeTicket
               source: default
               transactionDate: 2020-01-01T09:00:00.00Z
               settlementDate: 2020-01-01T09:00:00.00Z
@@ -44907,8 +44910,9 @@ paths:
               counterpartyAgreementId:
                 scope: demoScope
                 code: myCounterparty
+              tradeTicketType: LusidTradeTicket
             schema:
-              $ref: '#/components/schemas/TradeTicket'
+              $ref: '#/components/schemas/LusidTradeTicket'
         description: the trade ticket to upsert
       responses:
         "200":
@@ -44916,7 +44920,7 @@ paths:
             text/plain:
               example:
                 transactionId: TradeTicket-1111111
-                type: OpenTradeTicket
+                transactionType: OpenTradeTicket
                 source: default
                 transactionDate: 2020-01-01T09:00:00.00Z
                 settlementDate: 2020-01-01T09:00:00.00Z
@@ -44942,12 +44946,13 @@ paths:
                 counterpartyAgreementId:
                   scope: demoScope
                   code: myCounterparty
+                tradeTicketType: LusidTradeTicket
               schema:
-                $ref: '#/components/schemas/TradeTicket'
+                $ref: '#/components/schemas/LusidTradeTicket'
             application/json:
               example:
                 transactionId: TradeTicket-1111111
-                type: OpenTradeTicket
+                transactionType: OpenTradeTicket
                 source: default
                 transactionDate: 2020-01-01T09:00:00.00Z
                 settlementDate: 2020-01-01T09:00:00.00Z
@@ -44973,12 +44978,13 @@ paths:
                 counterpartyAgreementId:
                   scope: demoScope
                   code: myCounterparty
+                tradeTicketType: LusidTradeTicket
               schema:
-                $ref: '#/components/schemas/TradeTicket'
+                $ref: '#/components/schemas/LusidTradeTicket'
             text/json:
               example:
                 transactionId: TradeTicket-1111111
-                type: OpenTradeTicket
+                transactionType: OpenTradeTicket
                 source: default
                 transactionDate: 2020-01-01T09:00:00.00Z
                 settlementDate: 2020-01-01T09:00:00.00Z
@@ -45004,8 +45010,9 @@ paths:
                 counterpartyAgreementId:
                   scope: demoScope
                   code: myCounterparty
+                tradeTicketType: LusidTradeTicket
               schema:
-                $ref: '#/components/schemas/TradeTicket'
+                $ref: '#/components/schemas/LusidTradeTicket'
           description: The created trade ticket, possibly populated with created LUID
             and identifiers if missing on the request.
         "400":
@@ -57683,7 +57690,7 @@ paths:
               tickets:
                 myTicket:
                   transactionId: TradeTicket-1111111
-                  type: OpenTradeTicket
+                  transactionType: OpenTradeTicket
                   source: default
                   transactionDate: 2020-01-01T09:00:00.00Z
                   settlementDate: 2020-01-01T09:00:00.00Z
@@ -57709,6 +57716,7 @@ paths:
                   counterpartyAgreementId:
                     scope: demoScope
                     code: myCounterparty
+                  tradeTicketType: LusidTradeTicket
               dialect: targetDialect
             schema:
               $ref: '#/components/schemas/TranslateTradeTicketRequest'
@@ -57717,7 +57725,7 @@ paths:
               tickets:
                 myTicket:
                   transactionId: TradeTicket-1111111
-                  type: OpenTradeTicket
+                  transactionType: OpenTradeTicket
                   source: default
                   transactionDate: 2020-01-01T09:00:00.00Z
                   settlementDate: 2020-01-01T09:00:00.00Z
@@ -57743,6 +57751,7 @@ paths:
                   counterpartyAgreementId:
                     scope: demoScope
                     code: myCounterparty
+                  tradeTicketType: LusidTradeTicket
               dialect: targetDialect
             schema:
               $ref: '#/components/schemas/TranslateTradeTicketRequest'
@@ -57751,7 +57760,7 @@ paths:
               tickets:
                 myTicket:
                   transactionId: TradeTicket-1111111
-                  type: OpenTradeTicket
+                  transactionType: OpenTradeTicket
                   source: default
                   transactionDate: 2020-01-01T09:00:00.00Z
                   settlementDate: 2020-01-01T09:00:00.00Z
@@ -57777,6 +57786,7 @@ paths:
                   counterpartyAgreementId:
                     scope: demoScope
                     code: myCounterparty
+                  tradeTicketType: LusidTradeTicket
               dialect: targetDialect
             schema:
               $ref: '#/components/schemas/TranslateTradeTicketRequest'
@@ -57785,7 +57795,7 @@ paths:
               tickets:
                 myTicket:
                   transactionId: TradeTicket-1111111
-                  type: OpenTradeTicket
+                  transactionType: OpenTradeTicket
                   source: default
                   transactionDate: 2020-01-01T09:00:00.00Z
                   settlementDate: 2020-01-01T09:00:00.00Z
@@ -57811,6 +57821,7 @@ paths:
                   counterpartyAgreementId:
                     scope: demoScope
                     code: myCounterparty
+                  tradeTicketType: LusidTradeTicket
               dialect: targetDialect
             schema:
               $ref: '#/components/schemas/TranslateTradeTicketRequest'
@@ -70933,6 +70944,148 @@ components:
       - code
       - name
       type: object
+    LusidTradeTicket:
+      additionalProperties: false
+      description: A LUSID Trade Ticket comprising an instrument, a transaction, and
+        a counterparty.
+      example:
+        counterpartyAgreementId:
+          code: code
+          scope: scope
+        instrumentScope: instrumentScope
+        transactionProperties:
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          value:
+            metricValue:
+              unit: unit
+              value: 0.8008281904610115
+            labelValue: labelValue
+            labelValueSet:
+              values:
+              - values
+              - values
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          key: key
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          value:
+            metricValue:
+              unit: unit
+              value: 0.8008281904610115
+            labelValue: labelValue
+            labelValueSet:
+              values:
+              - values
+              - values
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          key: key
+        instrumentIdentifiers:
+          key: instrumentIdentifiers
+        source: source
+        settlementDate: settlementDate
+        units: 0.8008281904610115
+        transactionDate: transactionDate
+        totalConsideration:
+          amount: 6.027456183070403
+          currency: currency
+        transactionId: transactionId
+        transactionType: transactionType
+        instrumentProperties:
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          value:
+            metricValue:
+              unit: unit
+              value: 0.8008281904610115
+            labelValue: labelValue
+            labelValueSet:
+              values:
+              - values
+              - values
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          key: key
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          value:
+            metricValue:
+              unit: unit
+              value: 0.8008281904610115
+            labelValue: labelValue
+            labelValueSet:
+              values:
+              - values
+              - values
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          key: key
+        instrumentName: instrumentName
+        tradeTicketType: LusidTradeTicket
+        instrumentDefinition:
+          instrumentType: QuotedSecurity
+      properties:
+        transactionId:
+          maxLength: 256
+          minLength: 0
+          type: string
+        transactionType:
+          maxLength: 256
+          minLength: 0
+          type: string
+        source:
+          maxLength: 256
+          minLength: 0
+          nullable: true
+          type: string
+        transactionDate:
+          type: string
+        settlementDate:
+          type: string
+        totalConsideration:
+          $ref: '#/components/schemas/CurrencyAndAmount'
+        units:
+          format: double
+          type: number
+        instrumentIdentifiers:
+          additionalProperties:
+            type: string
+          type: object
+        instrumentScope:
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        instrumentName:
+          maxLength: 256
+          minLength: 0
+          nullable: true
+          type: string
+        instrumentDefinition:
+          $ref: '#/components/schemas/LusidInstrument'
+        counterpartyAgreementId:
+          $ref: '#/components/schemas/ResourceId'
+        instrumentProperties:
+          items:
+            $ref: '#/components/schemas/Property'
+          nullable: true
+          type: array
+        transactionProperties:
+          items:
+            $ref: '#/components/schemas/Property'
+          nullable: true
+          type: array
+        tradeTicketType:
+          description: 'The available values are: LusidTradeTicket, ExternalTradeTicket'
+          enum:
+          - LusidTradeTicket
+          - ExternalTradeTicket
+          type: string
+      required:
+      - instrumentIdentifiers
+      - settlementDate
+      - totalConsideration
+      - tradeTicketType
+      - transactionDate
+      - transactionId
+      - transactionType
+      - units
+      type: object
     LusidUniqueId:
       additionalProperties: false
       example:
@@ -78102,6 +78255,89 @@ components:
       - instrumentPropertyKeys
       - left
       - right
+      type: object
+    PortfolioTradeTicket:
+      additionalProperties: false
+      description: Response for querying trade tickets
+      example:
+        tradeTicket:
+          counterpartyAgreementId:
+            code: code
+            scope: scope
+          instrumentScope: instrumentScope
+          transactionProperties:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+          instrumentIdentifiers:
+            key: instrumentIdentifiers
+          source: source
+          settlementDate: settlementDate
+          units: 0.8008281904610115
+          transactionDate: transactionDate
+          totalConsideration:
+            amount: 6.027456183070403
+            currency: currency
+          transactionId: transactionId
+          transactionType: transactionType
+          instrumentProperties:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+          instrumentName: instrumentName
+          tradeTicketType: LusidTradeTicket
+          instrumentDefinition:
+            instrumentType: QuotedSecurity
+        sourcePortfolioId:
+          code: code
+          scope: scope
+      properties:
+        sourcePortfolioId:
+          $ref: '#/components/schemas/ResourceId'
+        tradeTicket:
+          $ref: '#/components/schemas/LusidTradeTicket'
       type: object
     PortfolioType:
       enum:
@@ -85279,6 +85515,197 @@ components:
       required:
       - values
       type: object
+    ResourceListOfPortfolioTradeTicket:
+      additionalProperties: false
+      description: A collection of resources that can be returned from requests.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - tradeTicket:
+            counterpartyAgreementId:
+              code: code
+              scope: scope
+            instrumentScope: instrumentScope
+            transactionProperties:
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+            instrumentIdentifiers:
+              key: instrumentIdentifiers
+            source: source
+            settlementDate: settlementDate
+            units: 0.8008281904610115
+            transactionDate: transactionDate
+            totalConsideration:
+              amount: 6.027456183070403
+              currency: currency
+            transactionId: transactionId
+            transactionType: transactionType
+            instrumentProperties:
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+            instrumentName: instrumentName
+            tradeTicketType: LusidTradeTicket
+            instrumentDefinition:
+              instrumentType: QuotedSecurity
+          sourcePortfolioId:
+            code: code
+            scope: scope
+        - tradeTicket:
+            counterpartyAgreementId:
+              code: code
+              scope: scope
+            instrumentScope: instrumentScope
+            transactionProperties:
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+            instrumentIdentifiers:
+              key: instrumentIdentifiers
+            source: source
+            settlementDate: settlementDate
+            units: 0.8008281904610115
+            transactionDate: transactionDate
+            totalConsideration:
+              amount: 6.027456183070403
+              currency: currency
+            transactionId: transactionId
+            transactionType: transactionType
+            instrumentProperties:
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+            instrumentName: instrumentName
+            tradeTicketType: LusidTradeTicket
+            instrumentDefinition:
+              instrumentType: QuotedSecurity
+          sourcePortfolioId:
+            code: code
+            scope: scope
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/PortfolioTradeTicket'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+      required:
+      - values
+      type: object
     ResourceListOfProcessedCommand:
       additionalProperties: false
       description: A collection of resources that can be returned from requests.
@@ -86141,187 +86568,6 @@ components:
           description: The resources to list.
           items:
             type: string
-          type: array
-        href:
-          description: The URI of the resource list.
-          format: uri
-          nullable: true
-          type: string
-        links:
-          description: Collection of links.
-          items:
-            $ref: '#/components/schemas/Link'
-          nullable: true
-          type: array
-        nextPage:
-          description: The next page of results.
-          nullable: true
-          type: string
-        previousPage:
-          description: The previous page of results.
-          nullable: true
-          type: string
-      required:
-      - values
-      type: object
-    ResourceListOfTradeTicket:
-      additionalProperties: false
-      description: A collection of resources that can be returned from requests.
-      example:
-        previousPage: previousPage
-        nextPage: nextPage
-        values:
-        - counterpartyAgreementId:
-            code: code
-            scope: scope
-          instrumentScope: instrumentScope
-          transactionProperties:
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
-              metricValue:
-                unit: unit
-                value: 0.8008281904610115
-              labelValue: labelValue
-              labelValueSet:
-                values:
-                - values
-                - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
-            key: key
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
-              metricValue:
-                unit: unit
-                value: 0.8008281904610115
-              labelValue: labelValue
-              labelValueSet:
-                values:
-                - values
-                - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
-            key: key
-          instrumentIdentifiers:
-            key: instrumentIdentifiers
-          source: source
-          settlementDate: settlementDate
-          units: 0.8008281904610115
-          type: type
-          transactionDate: transactionDate
-          totalConsideration:
-            amount: 6.027456183070403
-            currency: currency
-          transactionId: transactionId
-          instrumentProperties:
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
-              metricValue:
-                unit: unit
-                value: 0.8008281904610115
-              labelValue: labelValue
-              labelValueSet:
-                values:
-                - values
-                - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
-            key: key
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
-              metricValue:
-                unit: unit
-                value: 0.8008281904610115
-              labelValue: labelValue
-              labelValueSet:
-                values:
-                - values
-                - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
-            key: key
-          instrumentName: instrumentName
-          instrumentDefinition:
-            instrumentType: QuotedSecurity
-        - counterpartyAgreementId:
-            code: code
-            scope: scope
-          instrumentScope: instrumentScope
-          transactionProperties:
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
-              metricValue:
-                unit: unit
-                value: 0.8008281904610115
-              labelValue: labelValue
-              labelValueSet:
-                values:
-                - values
-                - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
-            key: key
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
-              metricValue:
-                unit: unit
-                value: 0.8008281904610115
-              labelValue: labelValue
-              labelValueSet:
-                values:
-                - values
-                - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
-            key: key
-          instrumentIdentifiers:
-            key: instrumentIdentifiers
-          source: source
-          settlementDate: settlementDate
-          units: 0.8008281904610115
-          type: type
-          transactionDate: transactionDate
-          totalConsideration:
-            amount: 6.027456183070403
-            currency: currency
-          transactionId: transactionId
-          instrumentProperties:
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
-              metricValue:
-                unit: unit
-                value: 0.8008281904610115
-              labelValue: labelValue
-              labelValueSet:
-                values:
-                - values
-                - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
-            key: key
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
-              metricValue:
-                unit: unit
-                value: 0.8008281904610115
-              labelValue: labelValue
-              labelValueSet:
-                values:
-                - values
-                - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
-            key: key
-          instrumentName: instrumentName
-          instrumentDefinition:
-            instrumentType: QuotedSecurity
-        links:
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        - method: method
-          description: description
-          href: https://openapi-generator.tech
-          relation: relation
-        href: https://openapi-generator.tech
-      properties:
-        values:
-          description: The resources to list.
-          items:
-            $ref: '#/components/schemas/TradeTicket'
           type: array
         href:
           description: The URI of the resource list.
@@ -87593,157 +87839,24 @@ components:
       type: object
     TradeTicket:
       additionalProperties: false
-      description: A Trade Ticket comprising of an instrument, a transaction and a
-        counterparty.
+      description: The base class for representing a Trade Ticket in LUSID.
       example:
-        counterpartyAgreementId:
-          code: code
-          scope: scope
-        instrumentScope: instrumentScope
-        transactionProperties:
-        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-          value:
-            metricValue:
-              unit: unit
-              value: 0.8008281904610115
-            labelValue: labelValue
-            labelValueSet:
-              values:
-              - values
-              - values
-          effectiveFrom: 2000-01-23T04:56:07.000+00:00
-          key: key
-        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-          value:
-            metricValue:
-              unit: unit
-              value: 0.8008281904610115
-            labelValue: labelValue
-            labelValueSet:
-              values:
-              - values
-              - values
-          effectiveFrom: 2000-01-23T04:56:07.000+00:00
-          key: key
-        instrumentIdentifiers:
-          key: instrumentIdentifiers
-        source: source
-        settlementDate: settlementDate
-        units: 0.8008281904610115
-        type: type
-        transactionDate: transactionDate
-        totalConsideration:
-          amount: 6.027456183070403
-          currency: currency
-        transactionId: transactionId
-        instrumentProperties:
-        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-          value:
-            metricValue:
-              unit: unit
-              value: 0.8008281904610115
-            labelValue: labelValue
-            labelValueSet:
-              values:
-              - values
-              - values
-          effectiveFrom: 2000-01-23T04:56:07.000+00:00
-          key: key
-        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-          value:
-            metricValue:
-              unit: unit
-              value: 0.8008281904610115
-            labelValue: labelValue
-            labelValueSet:
-              values:
-              - values
-              - values
-          effectiveFrom: 2000-01-23T04:56:07.000+00:00
-          key: key
-        instrumentName: instrumentName
-        instrumentDefinition:
-          instrumentType: QuotedSecurity
+        tradeTicketType: LusidTradeTicket
       properties:
-        transactionId:
-          description: The unique identifier of the transaction.
-          maxLength: 256
-          minLength: 0
+        tradeTicketType:
+          description: 'The available values are: LusidTradeTicket, ExternalTradeTicket'
+          enum:
+          - LusidTradeTicket
+          - ExternalTradeTicket
           type: string
-        type:
-          description: The type of the transaction, for example 'Buy' or 'Sell'. The
-            transaction type must have been pre-configured using the System Configuration
-            API. If not, this operation will succeed but you are not able to calculate
-            holdings for the portfolio that include this transaction.
-          maxLength: 256
-          minLength: 0
-          type: string
-        source:
-          description: The source of the transaction. This is used to look up the
-            appropriate transaction group set in the transaction type configuration.
-          maxLength: 256
-          minLength: 0
-          nullable: true
-          type: string
-        transactionDate:
-          description: The date of the transaction.
-          format: dateorcutlabel
-          type: string
-        settlementDate:
-          description: The settlement date of the transaction.
-          format: dateorcutlabel
-          type: string
-        totalConsideration:
-          $ref: '#/components/schemas/CurrencyAndAmount'
-        units:
-          description: The number of units of the transacted instrument.
-          format: double
-          type: number
-        instrumentIdentifiers:
-          additionalProperties:
-            type: string
-          description: The set of identifiers that can be used to identify the instrument.
-          type: object
-        instrumentScope:
-          description: The scope in which the instrument lies.
-          maxLength: 64
-          minLength: 1
-          nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
-          type: string
-        instrumentName:
-          description: The name of the instrument.
-          maxLength: 256
-          minLength: 0
-          nullable: true
-          type: string
-        instrumentDefinition:
-          $ref: '#/components/schemas/LusidInstrument'
-        counterpartyAgreementId:
-          $ref: '#/components/schemas/ResourceId'
-        instrumentProperties:
-          description: The set of instrument properties wanted on the instrument from
-            the trade ticket.
-          items:
-            $ref: '#/components/schemas/Property'
-          nullable: true
-          type: array
-        transactionProperties:
-          description: The set of transaction properties wanted on the transaction
-            from the trade ticket.
-          items:
-            $ref: '#/components/schemas/Property'
-          nullable: true
-          type: array
       required:
-      - instrumentIdentifiers
-      - settlementDate
-      - totalConsideration
-      - transactionDate
-      - transactionId
-      - type
-      - units
+      - tradeTicketType
       type: object
+    TradeTicketType:
+      enum:
+      - LusidTradeTicket
+      - ExternalTradeTicket
+      type: string
     Transaction:
       additionalProperties: false
       description: A list of transactions.
@@ -89373,74 +89486,7 @@ components:
       example:
         tickets:
           key:
-            counterpartyAgreementId:
-              code: code
-              scope: scope
-            instrumentScope: instrumentScope
-            transactionProperties:
-            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-              value:
-                metricValue:
-                  unit: unit
-                  value: 0.8008281904610115
-                labelValue: labelValue
-                labelValueSet:
-                  values:
-                  - values
-                  - values
-              effectiveFrom: 2000-01-23T04:56:07.000+00:00
-              key: key
-            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-              value:
-                metricValue:
-                  unit: unit
-                  value: 0.8008281904610115
-                labelValue: labelValue
-                labelValueSet:
-                  values:
-                  - values
-                  - values
-              effectiveFrom: 2000-01-23T04:56:07.000+00:00
-              key: key
-            instrumentIdentifiers:
-              key: instrumentIdentifiers
-            source: source
-            settlementDate: settlementDate
-            units: 0.8008281904610115
-            type: type
-            transactionDate: transactionDate
-            totalConsideration:
-              amount: 6.027456183070403
-              currency: currency
-            transactionId: transactionId
-            instrumentProperties:
-            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-              value:
-                metricValue:
-                  unit: unit
-                  value: 0.8008281904610115
-                labelValue: labelValue
-                labelValueSet:
-                  values:
-                  - values
-                  - values
-              effectiveFrom: 2000-01-23T04:56:07.000+00:00
-              key: key
-            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-              value:
-                metricValue:
-                  unit: unit
-                  value: 0.8008281904610115
-                labelValue: labelValue
-                labelValueSet:
-                  values:
-                  - values
-                  - values
-              effectiveFrom: 2000-01-23T04:56:07.000+00:00
-              key: key
-            instrumentName: instrumentName
-            instrumentDefinition:
-              instrumentType: QuotedSecurity
+            tradeTicketType: LusidTradeTicket
         dialect: dialect
       properties:
         tickets:
@@ -89469,74 +89515,7 @@ components:
       example:
         values:
           key:
-            counterpartyAgreementId:
-              code: code
-              scope: scope
-            instrumentScope: instrumentScope
-            transactionProperties:
-            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-              value:
-                metricValue:
-                  unit: unit
-                  value: 0.8008281904610115
-                labelValue: labelValue
-                labelValueSet:
-                  values:
-                  - values
-                  - values
-              effectiveFrom: 2000-01-23T04:56:07.000+00:00
-              key: key
-            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-              value:
-                metricValue:
-                  unit: unit
-                  value: 0.8008281904610115
-                labelValue: labelValue
-                labelValueSet:
-                  values:
-                  - values
-                  - values
-              effectiveFrom: 2000-01-23T04:56:07.000+00:00
-              key: key
-            instrumentIdentifiers:
-              key: instrumentIdentifiers
-            source: source
-            settlementDate: settlementDate
-            units: 0.8008281904610115
-            type: type
-            transactionDate: transactionDate
-            totalConsideration:
-              amount: 6.027456183070403
-              currency: currency
-            transactionId: transactionId
-            instrumentProperties:
-            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-              value:
-                metricValue:
-                  unit: unit
-                  value: 0.8008281904610115
-                labelValue: labelValue
-                labelValueSet:
-                  values:
-                  - values
-                  - values
-              effectiveFrom: 2000-01-23T04:56:07.000+00:00
-              key: key
-            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-              value:
-                metricValue:
-                  unit: unit
-                  value: 0.8008281904610115
-                labelValue: labelValue
-                labelValueSet:
-                  values:
-                  - values
-                  - values
-              effectiveFrom: 2000-01-23T04:56:07.000+00:00
-              key: key
-            instrumentName: instrumentName
-            instrumentDefinition:
-              instrumentType: QuotedSecurity
+            tradeTicketType: LusidTradeTicket
         links:
         - method: method
           description: description

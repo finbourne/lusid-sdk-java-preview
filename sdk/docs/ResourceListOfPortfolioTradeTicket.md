@@ -1,6 +1,6 @@
 
 
-# ResourceListOfTradeTicket
+# ResourceListOfPortfolioTradeTicket
 
 A collection of resources that can be returned from requests.
 
@@ -8,7 +8,7 @@ A collection of resources that can be returned from requests.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**values** | [**List&lt;TradeTicket&gt;**](TradeTicket.md) | The resources to list. | 
+**values** | [**List&lt;PortfolioTradeTicket&gt;**](PortfolioTradeTicket.md) | The resources to list. | 
 **href** | **URI** | The URI of the resource list. |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
 **nextPage** | **String** | The next page of results. |  [optional]

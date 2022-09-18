@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 <a name="queryTradeTickets"></a>
 # **queryTradeTickets**
-> ResourceListOfTradeTicket queryTradeTickets(limit, page, queryTradeTicketsRequest)
+> ResourceListOfPortfolioTradeTicket queryTradeTickets(limit, page, queryTradeTicketsRequest)
 
 [EXPERIMENTAL] QueryTradeTickets: Returns a list of trade tickets based on the holdings of the portfolios and date range specified in the query.
 
@@ -257,7 +257,7 @@ public class Example {
     String page = "page_example"; // String | Optional. The pagination token to use to continue listing items from a previous call. Page values are  return from list calls, and must be supplied exactly as returned. Additionally, when specifying this  value, queryBody, and limit must not  be modified.
     QueryTradeTicketsRequest queryTradeTicketsRequest = new QueryTradeTicketsRequest(); // QueryTradeTicketsRequest | The filter parameters used to retrieve instrument events.
     try {
-      ResourceListOfTradeTicket result = apiInstance.queryTradeTickets(limit, page, queryTradeTicketsRequest);
+      ResourceListOfPortfolioTradeTicket result = apiInstance.queryTradeTickets(limit, page, queryTradeTicketsRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstrumentEventsApi#queryTradeTickets");
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceListOfTradeTicket**](ResourceListOfTradeTicket.md)
+[**ResourceListOfPortfolioTradeTicket**](ResourceListOfPortfolioTradeTicket.md)
 
 ### Authorization
 

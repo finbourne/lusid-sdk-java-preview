@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 <a name="createTradeTicket"></a>
 # **createTradeTicket**
-> TradeTicket createTradeTicket(scope, code, tradeTicket)
+> LusidTradeTicket createTradeTicket(scope, code, lusidTradeTicket)
 
 [EXPERIMENTAL] CreateTradeTicket: Create Trade Ticket
 
@@ -442,9 +442,9 @@ public class Example {
     TransactionPortfoliosApi apiInstance = new TransactionPortfoliosApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the transaction portfolio.
     String code = "code_example"; // String | The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio.
-    TradeTicket tradeTicket = new TradeTicket(); // TradeTicket | the trade ticket to upsert
+    LusidTradeTicket lusidTradeTicket = new LusidTradeTicket(); // LusidTradeTicket | the trade ticket to upsert
     try {
-      TradeTicket result = apiInstance.createTradeTicket(scope, code, tradeTicket);
+      LusidTradeTicket result = apiInstance.createTradeTicket(scope, code, lusidTradeTicket);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#createTradeTicket");
@@ -463,11 +463,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the transaction portfolio. |
  **code** | **String**| The code of the transaction portfolio. Together with the scope this uniquely identifies              the transaction portfolio. |
- **tradeTicket** | [**TradeTicket**](TradeTicket.md)| the trade ticket to upsert | [optional]
+ **lusidTradeTicket** | [**LusidTradeTicket**](LusidTradeTicket.md)| the trade ticket to upsert | [optional]
 
 ### Return type
 
-[**TradeTicket**](TradeTicket.md)
+[**LusidTradeTicket**](LusidTradeTicket.md)
 
 ### Authorization
 
