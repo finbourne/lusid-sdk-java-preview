@@ -5,6 +5,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -135,6 +136,23 @@ public class RefreshingTokenProviderTest {
 
         thrown.expect(LusidTokenException.class);
         tokenProvider.get();
+    }
+
+    @Test
+    public void get_OnFailedRefreshAuthAttempt_ShouldReThrowLusidTokenExceptionWithCause() throws LusidTokenException {
+        LusidToken expiredToken = new LusidToken("access_01", "refresh_01", LocalDateTime.MIN);
+        doReturn(expiredToken).when(httpLusidTokenProvider).get(Optional.empty());
+
+        // get the first token (expired)
+        LusidToken currentToken = tokenProvider.get();
+
+        // mock unable to get the refresh token
+        IOException cause = new IOException("Bad connection");
+        doThrow(new LusidTokenException("Refresh token has expired", cause)).when(httpLusidTokenProvider).get(Optional.of(currentToken.getRefreshToken()));
+
+        tokenProvider.get();
+
+        //  details are in the log message
     }
 
 }
