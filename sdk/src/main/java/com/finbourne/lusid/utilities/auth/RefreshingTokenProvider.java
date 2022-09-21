@@ -46,8 +46,9 @@ public class RefreshingTokenProvider {
             try {
                 currentToken = httpLusidTokenProvider.get(Optional.of(currentToken.getRefreshToken()));
             } catch (LusidTokenException e){
+                Throwable cause = e.getCause();
                 logger.log(Level.WARNING, "Authentication call to refresh token has failed. Attempting to reauthenticate" +
-                        " fully with credentials. Refresh failure reason: " + e.getMessage());
+                        " fully with credentials. Refresh failure reason: " + e.getMessage() + (cause == null ? "" : ", " +  cause.getMessage()));
                 currentToken = httpLusidTokenProvider.get(Optional.empty());
             }
         }

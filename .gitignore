@@ -188,3 +188,4 @@ buildNumber.properties
 # Environments
 **/.env
 .idea/
+**/*.asc
