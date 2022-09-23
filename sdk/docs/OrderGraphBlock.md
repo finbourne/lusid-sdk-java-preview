@@ -8,10 +8,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **block** | [**Block**](Block.md) |  | 
-**orderIds** | [**List&lt;ResourceId&gt;**](ResourceId.md) | Identifiers for all the orders in this block - DEPRECATED: see Ordered. | 
-**placementIds** | [**List&lt;ResourceId&gt;**](ResourceId.md) | Identifiers of all placements for the block - DEPRECATED: see Placed. | 
-**allocationIds** | [**List&lt;ResourceId&gt;**](ResourceId.md) | Identifiers for all allocations of placements to orders in the block - DEPRECATED: see Allocated. | 
-**executionIds** | [**List&lt;ResourceId&gt;**](ResourceId.md) | Identifiers of all executions against placements in the block - DEPRECATED: see Executed. | 
 **ordered** | [**OrderGraphBlockOrderSynopsis**](OrderGraphBlockOrderSynopsis.md) |  | 
 **placed** | [**OrderGraphBlockPlacementSynopsis**](OrderGraphBlockPlacementSynopsis.md) |  | 
 **executed** | [**OrderGraphBlockExecutionSynopsis**](OrderGraphBlockExecutionSynopsis.md) |  | 

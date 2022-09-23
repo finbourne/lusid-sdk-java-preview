@@ -302,7 +302,7 @@ info:
     | <a name="812">812</a>|A price could not be found for an allocation.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4816
+  version: 0.11.4817
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -372,7 +372,7 @@ tags:
   name: Legal Entities
 - description: The order graph is a way of looking at orders with the various entities
     relating to the order, such as blocks, orders, placements, allocations and executions
-    in one place. It also contains some state information which can not be obtained
+    in one place. It also contains some state information which cannot be obtained
     any other way.
   name: OrderGraph
 - description: Methods for handling order instructions.
@@ -19435,26 +19435,6 @@ paths:
                     version:
                       effectiveFrom: 2018-03-05T10:10:10.0000000+00:00
                       asAtDate: 2018-03-05T10:10:10.0000000+00:00
-                  orderIds:
-                  - scope: MyScope
-                    code: ORD00000123
-                  - scope: MyScope
-                    code: ORD00000456
-                  placementIds:
-                  - scope: MyScope
-                    code: PLAC00000123
-                  - scope: MyScope
-                    code: PLAC00000456
-                  allocationIds:
-                  - scope: MyScope
-                    code: ALLOC00000123
-                  - scope: MyScope
-                    code: ALLOC00000456
-                  executionIds:
-                  - scope: MyScope
-                    code: EXEC0000123
-                  - scope: MyScope
-                    code: EXEC0000456
                   ordered:
                     quantity: 1500
                     details:
@@ -19530,26 +19510,6 @@ paths:
                     version:
                       effectiveFrom: 2018-03-05T10:10:10.0000000+00:00
                       asAtDate: 2018-03-05T10:10:10.0000000+00:00
-                  orderIds:
-                  - scope: MyScope
-                    code: ORD00000123
-                  - scope: MyScope
-                    code: ORD00000456
-                  placementIds:
-                  - scope: MyScope
-                    code: PLAC00000123
-                  - scope: MyScope
-                    code: PLAC00000456
-                  allocationIds:
-                  - scope: MyScope
-                    code: ALLOC00000123
-                  - scope: MyScope
-                    code: ALLOC00000456
-                  executionIds:
-                  - scope: MyScope
-                    code: EXEC0000123
-                  - scope: MyScope
-                    code: EXEC0000456
                   ordered:
                     quantity: 1500
                     details:
@@ -19625,26 +19585,6 @@ paths:
                     version:
                       effectiveFrom: 2018-03-05T10:10:10.0000000+00:00
                       asAtDate: 2018-03-05T10:10:10.0000000+00:00
-                  orderIds:
-                  - scope: MyScope
-                    code: ORD00000123
-                  - scope: MyScope
-                    code: ORD00000456
-                  placementIds:
-                  - scope: MyScope
-                    code: PLAC00000123
-                  - scope: MyScope
-                    code: PLAC00000456
-                  allocationIds:
-                  - scope: MyScope
-                    code: ALLOC00000123
-                  - scope: MyScope
-                    code: ALLOC00000456
-                  executionIds:
-                  - scope: MyScope
-                    code: EXEC0000123
-                  - scope: MyScope
-                    code: EXEC0000456
                   ordered:
                     quantity: 1500
                     details:
@@ -19847,21 +19787,6 @@ paths:
                   blockId:
                     scope: MyScope
                     code: BLOC00000123
-                  orderIds:
-                  - scope: MyScope
-                    code: ORD00000123
-                  - scope: MyScope
-                    code: ORD00000456
-                  allocationIds:
-                  - scope: MyScope
-                    code: ALLOC00000123
-                  - scope: MyScope
-                    code: ALLOC00000456
-                  executionIds:
-                  - scope: MyScope
-                    code: EXEC0000123
-                  - scope: MyScope
-                    code: EXEC0000456
                   ordered:
                     details:
                     - id:
@@ -19931,21 +19856,6 @@ paths:
                   blockId:
                     scope: MyScope
                     code: BLOC00000123
-                  orderIds:
-                  - scope: MyScope
-                    code: ORD00000123
-                  - scope: MyScope
-                    code: ORD00000456
-                  allocationIds:
-                  - scope: MyScope
-                    code: ALLOC00000123
-                  - scope: MyScope
-                    code: ALLOC00000456
-                  executionIds:
-                  - scope: MyScope
-                    code: EXEC0000123
-                  - scope: MyScope
-                    code: EXEC0000456
                   ordered:
                     details:
                     - id:
@@ -20015,21 +19925,6 @@ paths:
                   blockId:
                     scope: MyScope
                     code: BLOC00000123
-                  orderIds:
-                  - scope: MyScope
-                    code: ORD00000123
-                  - scope: MyScope
-                    code: ORD00000456
-                  allocationIds:
-                  - scope: MyScope
-                    code: ALLOC00000123
-                  - scope: MyScope
-                    code: ALLOC00000456
-                  executionIds:
-                  - scope: MyScope
-                    code: EXEC0000123
-                  - scope: MyScope
-                    code: EXEC0000456
                   ordered:
                     details:
                     - id:
@@ -72036,11 +71931,6 @@ components:
               code: code
               scope: scope
             complianceState: complianceState
-        executionIds:
-        - code: code
-          scope: scope
-        - code: code
-          scope: scope
         placed:
           quantity: 6.027456183070403
           details:
@@ -72098,16 +71988,6 @@ components:
                   - values
                   - values
               key: key
-        placementIds:
-        - code: code
-          scope: scope
-        - code: code
-          scope: scope
-        allocationIds:
-        - code: code
-          scope: scope
-        - code: code
-          scope: scope
         executed:
           quantity: 1.4658129805029452
           details:
@@ -72117,11 +71997,6 @@ components:
           - id:
               code: code
               scope: scope
-        orderIds:
-        - code: code
-          scope: scope
-        - code: code
-          scope: scope
         derivedComplianceState: derivedComplianceState
         allocated:
           quantity: 5.962133916683182
@@ -72135,30 +72010,6 @@ components:
       properties:
         block:
           $ref: '#/components/schemas/Block'
-        orderIds:
-          description: 'Identifiers for all the orders in this block - DEPRECATED:
-            see Ordered.'
-          items:
-            $ref: '#/components/schemas/ResourceId'
-          type: array
-        placementIds:
-          description: 'Identifiers of all placements for the block - DEPRECATED:
-            see Placed.'
-          items:
-            $ref: '#/components/schemas/ResourceId'
-          type: array
-        allocationIds:
-          description: 'Identifiers for all allocations of placements to orders in
-            the block - DEPRECATED: see Allocated.'
-          items:
-            $ref: '#/components/schemas/ResourceId'
-          type: array
-        executionIds:
-          description: 'Identifiers of all executions against placements in the block
-            - DEPRECATED: see Executed.'
-          items:
-            $ref: '#/components/schemas/ResourceId'
-          type: array
         ordered:
           $ref: '#/components/schemas/OrderGraphBlockOrderSynopsis'
         placed:
@@ -72177,16 +72028,12 @@ components:
           type: string
       required:
       - allocated
-      - allocationIds
       - block
       - derivedComplianceState
       - derivedState
       - executed
-      - executionIds
-      - orderIds
       - ordered
       - placed
-      - placementIds
       type: object
     OrderGraphBlockAllocationDetail:
       additionalProperties: false
@@ -72358,20 +72205,10 @@ components:
           - id:
               code: code
               scope: scope
-        executionIds:
-        - code: code
-          scope: scope
-        - code: code
-          scope: scope
         placed:
           quantity: 6.027456183070403
         derivedState: derivedState
         calculatedAveragePrice: 5.637376656633329
-        allocationIds:
-        - code: code
-          scope: scope
-        - code: code
-          scope: scope
         executed:
           quantity: 1.4658129805029452
           details:
@@ -72431,11 +72268,6 @@ components:
                   - values
                   - values
               key: key
-        orderIds:
-        - code: code
-          scope: scope
-        - code: code
-          scope: scope
         allocated:
           quantity: 5.962133916683182
           details:
@@ -72450,24 +72282,6 @@ components:
           $ref: '#/components/schemas/Placement'
         blockId:
           $ref: '#/components/schemas/ResourceId'
-        orderIds:
-          description: 'Identifiers for all orders in the block - DEPRECATED: see
-            Ordered.'
-          items:
-            $ref: '#/components/schemas/ResourceId'
-          type: array
-        allocationIds:
-          description: 'Identifiers for all allocations relating to this placement
-            - DEPRECATED: see Allocated.'
-          items:
-            $ref: '#/components/schemas/ResourceId'
-          type: array
-        executionIds:
-          description: 'Identifiers of all executions against this placement - DEPRECATED:
-            see Executed.'
-          items:
-            $ref: '#/components/schemas/ResourceId'
-          type: array
         ordered:
           $ref: '#/components/schemas/OrderGraphPlacementOrderSynopsis'
         placed:
@@ -72486,12 +72300,9 @@ components:
           type: number
       required:
       - allocated
-      - allocationIds
       - blockId
       - derivedState
       - executed
-      - executionIds
-      - orderIds
       - ordered
       - placed
       - placement
@@ -74977,11 +74788,6 @@ components:
                 code: code
                 scope: scope
               complianceState: complianceState
-          executionIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
           placed:
             quantity: 6.027456183070403
             details:
@@ -75039,16 +74845,6 @@ components:
                     - values
                     - values
                 key: key
-          placementIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
-          allocationIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
           executed:
             quantity: 1.4658129805029452
             details:
@@ -75058,11 +74854,6 @@ components:
             - id:
                 code: code
                 scope: scope
-          orderIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
           derivedComplianceState: derivedComplianceState
           allocated:
             quantity: 5.962133916683182
@@ -75084,11 +74875,6 @@ components:
                 code: code
                 scope: scope
               complianceState: complianceState
-          executionIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
           placed:
             quantity: 6.027456183070403
             details:
@@ -75146,16 +74932,6 @@ components:
                     - values
                     - values
                 key: key
-          placementIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
-          allocationIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
           executed:
             quantity: 1.4658129805029452
             details:
@@ -75165,11 +74941,6 @@ components:
             - id:
                 code: code
                 scope: scope
-          orderIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
           derivedComplianceState: derivedComplianceState
           allocated:
             quantity: 5.962133916683182
@@ -75236,20 +75007,10 @@ components:
             - id:
                 code: code
                 scope: scope
-          executionIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
           placed:
             quantity: 6.027456183070403
           derivedState: derivedState
           calculatedAveragePrice: 5.637376656633329
-          allocationIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
           executed:
             quantity: 1.4658129805029452
             details:
@@ -75309,11 +75070,6 @@ components:
                     - values
                     - values
                 key: key
-          orderIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
           allocated:
             quantity: 5.962133916683182
             details:
@@ -75334,20 +75090,10 @@ components:
             - id:
                 code: code
                 scope: scope
-          executionIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
           placed:
             quantity: 6.027456183070403
           derivedState: derivedState
           calculatedAveragePrice: 5.637376656633329
-          allocationIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
           executed:
             quantity: 1.4658129805029452
             details:
@@ -75407,11 +75153,6 @@ components:
                     - values
                     - values
                 key: key
-          orderIds:
-          - code: code
-            scope: scope
-          - code: code
-            scope: scope
           allocated:
             quantity: 5.962133916683182
             details:
