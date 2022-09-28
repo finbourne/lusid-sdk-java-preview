@@ -292,7 +292,8 @@ info:
     | <a name="793">793</a>|Compliance Criteria Value for matching is missing.|  |
     | <a name="795">795</a>|Cannot delete identifier definition|  |
     | <a name="796">796</a>|Tax rule set not found.|  |
-    | <a name="797">797</a>|Multiple rule sets for the same property key are applicable.|  |
+    | <a name="797">797</a>|A tax rule set with this id already exists.|  |
+    | <a name="798">798</a>|Multiple rule sets for the same property key are applicable.|  |
     | <a name="800">800</a>|Can not upsert an instrument event of this type.|  |
     | <a name="801">801</a>|The instrument event does not exist.|  |
     | <a name="802">802</a>|The Instrument event is missing salient information.|  |
@@ -302,7 +303,7 @@ info:
     | <a name="812">812</a>|A price could not be found for an allocation.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4830
+  version: 0.11.4831
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -69546,8 +69547,7 @@ components:
           key: instrumentIdentifiers
         lusidInstrumentId: lusidInstrumentId
         properties:
-        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-          value:
+        - value:
             metricValue:
               unit: unit
               value: 0.8008281904610115
@@ -69556,10 +69556,8 @@ components:
               values:
               - values
               - values
-          effectiveFrom: 2000-01-23T04:56:07.000+00:00
           key: key
-        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-          value:
+        - value:
             metricValue:
               unit: unit
               value: 0.8008281904610115
@@ -69568,7 +69566,6 @@ components:
               values:
               - values
               - values
-          effectiveFrom: 2000-01-23T04:56:07.000+00:00
           key: key
       properties:
         instrumentEventId:
@@ -69602,7 +69599,7 @@ components:
         properties:
           description: The properties attached to this instrument event.
           items:
-            $ref: '#/components/schemas/Property'
+            $ref: '#/components/schemas/PerpetualProperty'
           nullable: true
           type: array
       required:
@@ -74354,8 +74351,7 @@ components:
             key: instrumentIdentifiers
           lusidInstrumentId: lusidInstrumentId
           properties:
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
+          - value:
               metricValue:
                 unit: unit
                 value: 0.8008281904610115
@@ -74364,10 +74360,8 @@ components:
                 values:
                 - values
                 - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
             key: key
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
+          - value:
               metricValue:
                 unit: unit
                 value: 0.8008281904610115
@@ -74376,7 +74370,6 @@ components:
                 values:
                 - values
                 - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
             key: key
         - instrumentScope: instrumentScope
           instrumentEventId: instrumentEventId
@@ -74390,8 +74383,7 @@ components:
             key: instrumentIdentifiers
           lusidInstrumentId: lusidInstrumentId
           properties:
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
+          - value:
               metricValue:
                 unit: unit
                 value: 0.8008281904610115
@@ -74400,10 +74392,8 @@ components:
                 values:
                 - values
                 - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
             key: key
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
+          - value:
               metricValue:
                 unit: unit
                 value: 0.8008281904610115
@@ -74412,7 +74402,6 @@ components:
                 values:
                 - values
                 - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
             key: key
         links:
         - method: method
@@ -83449,8 +83438,7 @@ components:
             key: instrumentIdentifiers
           lusidInstrumentId: lusidInstrumentId
           properties:
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
+          - value:
               metricValue:
                 unit: unit
                 value: 0.8008281904610115
@@ -83459,10 +83447,8 @@ components:
                 values:
                 - values
                 - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
             key: key
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
+          - value:
               metricValue:
                 unit: unit
                 value: 0.8008281904610115
@@ -83471,7 +83457,6 @@ components:
                 values:
                 - values
                 - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
             key: key
         - instrumentScope: instrumentScope
           instrumentEventId: instrumentEventId
@@ -83485,8 +83470,7 @@ components:
             key: instrumentIdentifiers
           lusidInstrumentId: lusidInstrumentId
           properties:
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
+          - value:
               metricValue:
                 unit: unit
                 value: 0.8008281904610115
@@ -83495,10 +83479,8 @@ components:
                 values:
                 - values
                 - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
             key: key
-          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-            value:
+          - value:
               metricValue:
                 unit: unit
                 value: 0.8008281904610115
@@ -83507,7 +83489,6 @@ components:
                 values:
                 - values
                 - values
-            effectiveFrom: 2000-01-23T04:56:07.000+00:00
             key: key
         links:
         - method: method
@@ -90011,8 +89992,7 @@ components:
               key: instrumentIdentifiers
             lusidInstrumentId: lusidInstrumentId
             properties:
-            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-              value:
+            - value:
                 metricValue:
                   unit: unit
                   value: 0.8008281904610115
@@ -90021,10 +90001,8 @@ components:
                   values:
                   - values
                   - values
-              effectiveFrom: 2000-01-23T04:56:07.000+00:00
               key: key
-            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
-              value:
+            - value:
                 metricValue:
                   unit: unit
                   value: 0.8008281904610115
@@ -90033,7 +90011,6 @@ components:
                   values:
                   - values
                   - values
-              effectiveFrom: 2000-01-23T04:56:07.000+00:00
               key: key
         links:
         - method: method

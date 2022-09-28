@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **instrumentScope** | **String** | The scope of the instrument. | 
 **description** | **String** | The description of the instrument event. | 
 **instrumentEvent** | [**InstrumentEvent**](InstrumentEvent.md) |  | 
-**properties** | [**List&lt;Property&gt;**](Property.md) | The properties attached to this instrument event. |  [optional]
+**properties** | [**List&lt;PerpetualProperty&gt;**](PerpetualProperty.md) | The properties attached to this instrument event. |  [optional]
 
 
 
