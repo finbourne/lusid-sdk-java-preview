@@ -303,7 +303,7 @@ info:
     | <a name="812">812</a>|A price could not be found for an allocation.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4833
+  version: 0.11.4834
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -70912,38 +70912,52 @@ components:
           instrumentType: QuotedSecurity
       properties:
         transactionId:
+          description: Transaction ID. Must be unique.
           maxLength: 256
           minLength: 0
           type: string
         transactionType:
+          description: Type of transaction for processing. Referenced by Transaction
+            Configuration.
           maxLength: 256
           minLength: 0
           type: string
         source:
+          description: Transaction Source. Referenced by Transaction Configuration.
           maxLength: 256
           minLength: 0
           nullable: true
           type: string
         transactionDate:
+          description: Transaction Date. Date at which transaction is known.
           type: string
         settlementDate:
+          description: Transaction settlement. Date at which transaction is finalised
+            and realised into the system.
           type: string
         totalConsideration:
           $ref: '#/components/schemas/CurrencyAndAmount'
         units:
+          description: "Number of units in the transaction. For an OTC this is somewhat\
+            \ interchangeable with the quantity booked in the\r\ninstrument. As M\
+            \ x N or N x M are equivalent it is advised a client chooses one approach\
+            \ and sticks to it.\r\nArguably either the unit or holding is best unitised."
           format: double
           type: number
         instrumentIdentifiers:
           additionalProperties:
             type: string
+          description: Identifiers for the instrument.
           type: object
         instrumentScope:
+          description: Scope of instrument
           maxLength: 64
           minLength: 1
           nullable: true
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         instrumentName:
+          description: Name of instrument
           maxLength: 256
           minLength: 0
           nullable: true
@@ -70953,11 +70967,13 @@ components:
         counterpartyAgreementId:
           $ref: '#/components/schemas/ResourceId'
         instrumentProperties:
+          description: Set of instrument properties (as defined by client/user).
           items:
             $ref: '#/components/schemas/Property'
           nullable: true
           type: array
         transactionProperties:
+          description: Set of transaction properties (as defined by client/user).
           items:
             $ref: '#/components/schemas/Property'
           nullable: true
