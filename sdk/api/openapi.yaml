@@ -303,7 +303,7 @@ info:
     | <a name="812">812</a>|A price could not be found for an allocation.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4839
+  version: 0.11.4840
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -63815,6 +63815,7 @@ components:
           type: array
         amortisationMethod:
           description: The amortisation method the portfolio is using in the calculation.
+            This can be 'NoAmortisation', 'StraightLine' or 'EffectiveYield'.
           nullable: true
           type: string
       required:
@@ -64575,6 +64576,7 @@ components:
           type: array
         amortisationMethod:
           description: The amortisation method the portfolio is using in the calculation.
+            This can be 'NoAmortisation', 'StraightLine' or 'EffectiveYield'.
           nullable: true
           type: string
       required:
@@ -77063,6 +77065,7 @@ components:
           type: string
         amortisationMethod:
           description: The amortisation method the portfolio is using in the calculation.
+            This can be 'NoAmortisation', 'StraightLine' or 'EffectiveYield'.
           nullable: true
           type: string
         links:
@@ -77389,6 +77392,7 @@ components:
           type: string
         amortisationMethod:
           description: The amortisation method the portfolio is using in the calculation.
+            This can be 'NoAmortisation', 'StraightLine' or 'EffectiveYield'.
           nullable: true
           type: string
         links:
