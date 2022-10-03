@@ -303,7 +303,7 @@ info:
     | <a name="812">812</a>|A price could not be found for an allocation.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4837
+  version: 0.11.4838
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -67324,6 +67324,15 @@ components:
       - $ref: '#/components/schemas/FxOption_allOf'
       description: "LUSID representation of an FX Option.\r\nIncluding Vanilla, American,\
         \ European, and Digital (Binary) options."
+    FxRateSchedule:
+      allOf:
+      - $ref: '#/components/schemas/Schedule'
+      - $ref: '#/components/schemas/FxRateSchedule_allOf'
+      description: "Schedule to define fx conversion of cashflows on complex bonds.\
+        \ If an fx schedule is defined then\r\non payment schedule generation the\
+        \ coupon and principal payoffs will be wrapped in an fx rate payoff method.\r\
+        \nEither the fx rate is predefined (fixed) or relies on fx resets (floating).\r\
+        \nUsed in representation of dual currency bond."
     FxSwap:
       allOf:
       - $ref: '#/components/schemas/LusidInstrument'
@@ -86675,13 +86684,14 @@ components:
       properties:
         scheduleType:
           description: 'The available values are: Fixed, Float, Optionality, Step,
-            Exercise, Invalid'
+            Exercise, FxRate, Invalid'
           enum:
           - Fixed
           - Float
           - Optionality
           - Step
           - Exercise
+          - FxRate
           - Invalid
           type: string
       required:
@@ -86694,6 +86704,7 @@ components:
       - Optionality
       - Step
       - Exercise
+      - FxRate
       - Invalid
       type: string
     Schema:
@@ -95195,13 +95206,14 @@ components:
           type: string
         scheduleType:
           description: 'The available values are: Fixed, Float, Optionality, Step,
-            Exercise, Invalid'
+            Exercise, FxRate, Invalid'
           enum:
           - Fixed
           - Float
           - Optionality
           - Step
           - Exercise
+          - FxRate
           - Invalid
           type: string
       required:
@@ -95323,13 +95335,14 @@ components:
           type: string
         scheduleType:
           description: 'The available values are: Fixed, Float, Optionality, Step,
-            Exercise, Invalid'
+            Exercise, FxRate, Invalid'
           enum:
           - Fixed
           - Float
           - Optionality
           - Step
           - Exercise
+          - FxRate
           - Invalid
           type: string
       required:
@@ -96263,6 +96276,44 @@ components:
       - optionMaturityDate
       - optionSettlementDate
       - startDate
+      type: object
+    FxRateSchedule_allOf:
+      properties:
+        fixingLag:
+          description: If rate is not known upfront then will need a fixing rate.
+            Can be fixed x number of days before payment date.
+          format: int32
+          type: integer
+        fxConversionTypes:
+          description: List of flags to indicate if coupon payments, principal payments
+            or both are converted
+          items:
+            type: string
+          nullable: true
+          type: array
+        rate:
+          description: FxRate used to convert payments. Assumed to be in units of
+            the ToCurrency so conversion is paymentAmount x fxRate
+          format: double
+          type: number
+        toCurrency:
+          description: Currency that payments are converted to
+          nullable: true
+          type: string
+        scheduleType:
+          description: 'The available values are: Fixed, Float, Optionality, Step,
+            Exercise, FxRate, Invalid'
+          enum:
+          - Fixed
+          - Float
+          - Optionality
+          - Step
+          - Exercise
+          - FxRate
+          - Invalid
+          type: string
+      required:
+      - scheduleType
       type: object
     FxSwap_allOf:
       properties:

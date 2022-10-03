@@ -15,6 +15,8 @@
 
 * `EXERCISE` (value: `"Exercise"`)
 
+* `FXRATE` (value: `"FxRate"`)
+
 * `INVALID` (value: `"Invalid"`)
 
 
