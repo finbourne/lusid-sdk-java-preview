@@ -304,7 +304,7 @@ info:
     | <a name="813">813</a>|Chart of Accounts not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4860
+  version: 0.11.4861
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -496,6 +496,7 @@ paths:
                 sortOrder: Ascending
               reportCurrency: USD
               equipWithSubtotals: false
+              returnResultAsExpandedTypes: false
               portfolioEntityIds:
               - scope: PortfolioScope1
                 code: MyPortfolioAbC
@@ -530,6 +531,7 @@ paths:
                 sortOrder: Ascending
               reportCurrency: USD
               equipWithSubtotals: false
+              returnResultAsExpandedTypes: false
               portfolioEntityIds:
               - scope: PortfolioScope1
                 code: MyPortfolioAbC
@@ -564,6 +566,7 @@ paths:
                 sortOrder: Ascending
               reportCurrency: USD
               equipWithSubtotals: false
+              returnResultAsExpandedTypes: false
               portfolioEntityIds:
               - scope: PortfolioScope1
                 code: MyPortfolioAbC
@@ -598,6 +601,7 @@ paths:
                 sortOrder: Ascending
               reportCurrency: USD
               equipWithSubtotals: false
+              returnResultAsExpandedTypes: false
               portfolioEntityIds:
               - scope: PortfolioScope1
                 code: MyPortfolioAbC
@@ -678,6 +682,7 @@ paths:
               - Instrument/default/Name
               reportCurrency: USD
               equipWithSubtotals: false
+              returnResultAsExpandedTypes: false
               valuationSchedule:
                 effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
                 effectiveAt: 2018-03-05T00:00:00.0000000+00:00
@@ -716,6 +721,7 @@ paths:
               - Instrument/default/Name
               reportCurrency: USD
               equipWithSubtotals: false
+              returnResultAsExpandedTypes: false
               valuationSchedule:
                 effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
                 effectiveAt: 2018-03-05T00:00:00.0000000+00:00
@@ -754,6 +760,7 @@ paths:
               - Instrument/default/Name
               reportCurrency: USD
               equipWithSubtotals: false
+              returnResultAsExpandedTypes: false
               valuationSchedule:
                 effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
                 effectiveAt: 2018-03-05T00:00:00.0000000+00:00
@@ -792,6 +799,7 @@ paths:
               - Instrument/default/Name
               reportCurrency: USD
               equipWithSubtotals: false
+              returnResultAsExpandedTypes: false
               valuationSchedule:
                 effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
                 effectiveAt: 2018-03-05T00:00:00.0000000+00:00
@@ -31615,6 +31623,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -31644,6 +31653,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -31687,6 +31697,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -31716,6 +31727,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -31759,6 +31771,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -31788,6 +31801,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -31831,6 +31845,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -31860,6 +31875,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -32134,6 +32150,7 @@ paths:
                 - Instrument/default/Name
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 valuationSchedule:
                   effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
                   effectiveAt: 2018-03-05T00:00:00.0000000+00:00
@@ -32169,6 +32186,7 @@ paths:
                 - Instrument/default/Name
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 valuationSchedule:
                   effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
                   effectiveAt: 2018-03-05T00:00:00.0000000+00:00
@@ -32210,6 +32228,7 @@ paths:
                 - Instrument/default/Name
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 valuationSchedule:
                   effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
                   effectiveAt: 2018-03-05T00:00:00.0000000+00:00
@@ -32245,6 +32264,7 @@ paths:
                 - Instrument/default/Name
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 valuationSchedule:
                   effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
                   effectiveAt: 2018-03-05T00:00:00.0000000+00:00
@@ -32286,6 +32306,7 @@ paths:
                 - Instrument/default/Name
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 valuationSchedule:
                   effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
                   effectiveAt: 2018-03-05T00:00:00.0000000+00:00
@@ -32321,6 +32342,7 @@ paths:
                 - Instrument/default/Name
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 valuationSchedule:
                   effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
                   effectiveAt: 2018-03-05T00:00:00.0000000+00:00
@@ -32362,6 +32384,7 @@ paths:
                 - Instrument/default/Name
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 valuationSchedule:
                   effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
                   effectiveAt: 2018-03-05T00:00:00.0000000+00:00
@@ -32397,6 +32420,7 @@ paths:
                 - Instrument/default/Name
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 valuationSchedule:
                   effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
                   effectiveAt: 2018-03-05T00:00:00.0000000+00:00
@@ -32488,6 +32512,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -32517,6 +32542,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -32553,6 +32579,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -32582,6 +32609,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -32618,6 +32646,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -32647,6 +32676,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -32683,6 +32713,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -32712,6 +32743,7 @@ paths:
                 sort: []
                 reportCurrency: USD
                 equipWithSubtotals: false
+                returnResultAsExpandedTypes: false
                 portfolioEntityIds:
                 - scope: PortfolioScope1
                   code: MyPortfolioAbC
@@ -60079,7 +60111,7 @@ components:
           type: string
         type:
           description: 'The available values are: String, Int, Decimal, DateTime,
-            Boolean, ResultValue, Array, Map, Json'
+            Boolean, ResultValue, Result0D, Array, Map, Json'
           enum:
           - String
           - Int
@@ -60087,6 +60119,7 @@ components:
           - DateTime
           - Boolean
           - ResultValue
+          - Result0D
           - Array
           - Map
           - Json
@@ -60143,6 +60176,7 @@ components:
       - DateTime
       - Boolean
       - ResultValue
+      - Result0D
       - Array
       - Map
       - Json
@@ -68965,6 +68999,7 @@ components:
           key: key
         - sortOrder: Ascending
           key: key
+        returnResultAsExpandedTypes: true
         recipeId:
           code: code
           scope: scope
@@ -69047,6 +69082,11 @@ components:
           description: Flag directing the Valuation call to populate the results with
             subtotals of aggregates.
           type: boolean
+        returnResultAsExpandedTypes:
+          description: "For complex results or financially meaningful results,\r\n\
+            there is a need for a result to contain metadata about its currency and/or\
+            \ units\r\nor to have a more complicated 1D or 2D structure"
+          type: boolean
         valuationSchedule:
           $ref: '#/components/schemas/ValuationSchedule'
         instruments:
@@ -69124,6 +69164,7 @@ components:
             key: key
           - sortOrder: Ascending
             key: key
+          returnResultAsExpandedTypes: true
           recipeId:
             code: code
             scope: scope
@@ -69196,6 +69237,7 @@ components:
             key: key
           - sortOrder: Ascending
             key: key
+          returnResultAsExpandedTypes: true
           recipeId:
             code: code
             scope: scope
@@ -79863,6 +79905,7 @@ components:
             key: key
           - sortOrder: Ascending
             key: key
+          returnResultAsExpandedTypes: true
           recipeId:
             code: code
             scope: scope
@@ -79933,6 +79976,7 @@ components:
             key: key
           - sortOrder: Ascending
             key: key
+          returnResultAsExpandedTypes: true
           recipeId:
             code: code
             scope: scope
@@ -91546,6 +91590,7 @@ components:
           key: key
         - sortOrder: Ascending
           key: key
+        returnResultAsExpandedTypes: true
         recipeId:
           code: code
           scope: scope
@@ -91627,6 +91672,11 @@ components:
         equipWithSubtotals:
           description: Flag directing the Valuation call to populate the results with
             subtotals of aggregates.
+          type: boolean
+        returnResultAsExpandedTypes:
+          description: "For complex results or financially meaningful results,\r\n\
+            there is a need for a result to contain metadata about its currency and/or\
+            \ units\r\nor to have a more complicated 1D or 2D structure"
           type: boolean
         portfolioEntityIds:
           description: The set of portfolio or portfolio group identifier(s) that
@@ -91768,6 +91818,7 @@ components:
             key: key
           - sortOrder: Ascending
             key: key
+          returnResultAsExpandedTypes: true
           recipeId:
             code: code
             scope: scope
@@ -91838,6 +91889,7 @@ components:
             key: key
           - sortOrder: Ascending
             key: key
+          returnResultAsExpandedTypes: true
           recipeId:
             code: code
             scope: scope
@@ -98249,7 +98301,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
