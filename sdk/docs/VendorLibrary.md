@@ -17,5 +17,7 @@
 
 * `YIELDBOOK` (value: `"YieldBook"`)
 
+* `LUSIDCALC` (value: `"LusidCalc"`)
+
 
 
