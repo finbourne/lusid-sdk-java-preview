@@ -19,10 +19,6 @@
 
 * `RESULT0D` (value: `"Result0D"`)
 
-* `ARRAY` (value: `"Array"`)
-
-* `MAP` (value: `"Map"`)
-
 * `JSON` (value: `"Json"`)
 
 
