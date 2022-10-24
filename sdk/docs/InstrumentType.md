@@ -69,5 +69,7 @@
 
 * `INFLATIONLINKEDBOND` (value: `"InflationLinkedBond"`)
 
+* `INFLATIONSWAP` (value: `"InflationSwap"`)
+
 
 
