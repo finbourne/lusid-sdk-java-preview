@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createCustomEntityDefinition**](CustomEntityDefinitionsApi.md#createCustomEntityDefinition) | **POST** /api/customentities/entitytypes | [EXPERIMENTAL] CreateCustomEntityDefinition: Define a new Custom Entity type.
 [**getDefinition**](CustomEntityDefinitionsApi.md#getDefinition) | **GET** /api/customentities/entitytypes/{entityType} | [EXPERIMENTAL] GetDefinition: Get a Custom Entity type definition.
 [**listCustomEntityDefinitions**](CustomEntityDefinitionsApi.md#listCustomEntityDefinitions) | **GET** /api/customentities/entitytypes | [EXPERIMENTAL] ListCustomEntityDefinitions: List the Custom Entity type definitions
+[**updateCustomEntityDefinition**](CustomEntityDefinitionsApi.md#updateCustomEntityDefinition) | **PUT** /api/customentities/entitytypes/{entityType} | [EXPERIMENTAL] UpdateCustomEntityDefinition: Modify an existing Custom Entity type.
 
 
 <a name="createCustomEntityDefinition"></a>
@@ -221,6 +222,77 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List Custom Entity type definitions. |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="updateCustomEntityDefinition"></a>
+# **updateCustomEntityDefinition**
+> CustomEntityDefinition updateCustomEntityDefinition(entityType, updateCustomEntityDefinitionRequest)
+
+[EXPERIMENTAL] UpdateCustomEntityDefinition: Modify an existing Custom Entity type.
+
+The API will return a Bad Request if the Custom Entity type does not exist.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.CustomEntityDefinitionsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    CustomEntityDefinitionsApi apiInstance = new CustomEntityDefinitionsApi(defaultClient);
+    String entityType = "entityType_example"; // String | The identifier for the Custom Entity type, derived from the \"entityTypeName\" provided on creation.
+    UpdateCustomEntityDefinitionRequest updateCustomEntityDefinitionRequest = new UpdateCustomEntityDefinitionRequest(); // UpdateCustomEntityDefinitionRequest | The payload containing the description of the Custom Entity type.
+    try {
+      CustomEntityDefinition result = apiInstance.updateCustomEntityDefinition(entityType, updateCustomEntityDefinitionRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CustomEntityDefinitionsApi#updateCustomEntityDefinition");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entityType** | **String**| The identifier for the Custom Entity type, derived from the \&quot;entityTypeName\&quot; provided on creation. |
+ **updateCustomEntityDefinitionRequest** | [**UpdateCustomEntityDefinitionRequest**](UpdateCustomEntityDefinitionRequest.md)| The payload containing the description of the Custom Entity type. |
+
+### Return type
+
+[**CustomEntityDefinition**](CustomEntityDefinition.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The updated Custom Entity type. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
