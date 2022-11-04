@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4927
+  version: 0.11.4930
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -5055,6 +5055,25 @@ paths:
           type: string
         style: form
         x-nullable: true
+      - description: "The pagination token to use to continue listing entities; this\
+          \ value is returned from the previous call. If\r\na pagination token is\
+          \ provided, the filter, effectiveAt and asAt fields must not have changed\
+          \ since the\r\noriginal request."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          description: "The pagination token to use to continue listing entities;\
+            \ this value is returned from the previous call. If\r\na pagination token\
+            \ is provided, the filter, effectiveAt and asAt fields must not have changed\
+            \ since the\r\noriginal request."
+          maxLength: 500
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
+          type: string
+        style: form
       - description: When paginating, limit the results to this number. Defaults to
           100 if not specified.
         explode: true
@@ -5082,25 +5101,6 @@ paths:
           minLength: 0
           nullable: true
           pattern: ^[\s\S]*$
-          type: string
-        style: form
-      - description: "The pagination token to use to continue listing entities; this\
-          \ value is returned from the previous call. If\r\na pagination token is\
-          \ provided, the filter, effectiveAt and asAt fields must not have changed\
-          \ since the\r\noriginal request."
-        explode: true
-        in: query
-        name: page
-        required: false
-        schema:
-          description: "The pagination token to use to continue listing entities;\
-            \ this value is returned from the previous call. If\r\na pagination token\
-            \ is provided, the filter, effectiveAt and asAt fields must not have changed\
-            \ since the\r\noriginal request."
-          maxLength: 500
-          minLength: 1
-          nullable: true
-          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
           type: string
         style: form
       responses:
@@ -6282,6 +6282,21 @@ paths:
           type: integer
         style: form
         x-nullable: true
+      - description: Expression to filter the result set. Read more about filtering
+          results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          description: Expression to filter the result set. Read more about filtering
+            results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
+          maxLength: 16384
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -10027,6 +10042,7 @@ paths:
                   value: I can't access this portfolio
                   effectiveFrom: 2022-03-03T09:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                relationships: []
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
             application/json:
@@ -10053,6 +10069,7 @@ paths:
                   value: I can't access this portfolio
                   effectiveFrom: 2022-03-03T09:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                relationships: []
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
             text/json:
@@ -10079,6 +10096,7 @@ paths:
                   value: I can't access this portfolio
                   effectiveFrom: 2022-03-03T09:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                relationships: []
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
           description: The upserted custom entity instance
@@ -10305,6 +10323,7 @@ paths:
                   value: I can't access this portfolio
                   effectiveFrom: 2022-03-03T09:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                relationships: []
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
             application/json:
@@ -10331,6 +10350,7 @@ paths:
                   value: I can't access this portfolio
                   effectiveFrom: 2022-03-03T09:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                relationships: []
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
             text/json:
@@ -10357,6 +10377,7 @@ paths:
                   value: I can't access this portfolio
                   effectiveFrom: 2022-03-03T09:00:00.0000000+00:00
                   effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                relationships: []
               schema:
                 $ref: '#/components/schemas/CustomEntityResponse'
           description: Get a custom entity instance.
@@ -15643,6 +15664,7 @@ paths:
                       value:
                         labelValue: Active
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                  relationships: []
                   counterpartyRiskInformation:
                     countryOfRisk: UnitedKingdom
                     creditRatings:
@@ -15682,6 +15704,7 @@ paths:
                       value:
                         labelValue: Active
                       effectiveFrom: 2016-04-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -15720,6 +15743,7 @@ paths:
                       value:
                         labelValue: Active
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                  relationships: []
                   counterpartyRiskInformation:
                     countryOfRisk: UnitedKingdom
                     creditRatings:
@@ -15759,6 +15783,7 @@ paths:
                       value:
                         labelValue: Active
                       effectiveFrom: 2016-04-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -15797,6 +15822,7 @@ paths:
                       value:
                         labelValue: Active
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                  relationships: []
                   counterpartyRiskInformation:
                     countryOfRisk: UnitedKingdom
                     creditRatings:
@@ -15836,6 +15862,7 @@ paths:
                       value:
                         labelValue: Active
                       effectiveFrom: 2016-04-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -16061,6 +16088,7 @@ paths:
                     value:
                       labelValue: Active
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 counterpartyRiskInformation:
                   countryOfRisk: UnitedKingdom
                   creditRatings:
@@ -16104,6 +16132,7 @@ paths:
                     value:
                       labelValue: Active
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 counterpartyRiskInformation:
                   countryOfRisk: UnitedKingdom
                   creditRatings:
@@ -16147,6 +16176,7 @@ paths:
                     value:
                       labelValue: Active
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 counterpartyRiskInformation:
                   countryOfRisk: UnitedKingdom
                   creditRatings:
@@ -16357,6 +16387,7 @@ paths:
                       value:
                         labelValue: Active
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                  relationships: []
                   counterpartyRiskInformation:
                     countryOfRisk: UnitedKingdom
                     creditRatings:
@@ -16396,6 +16427,7 @@ paths:
                       value:
                         labelValue: Active
                       effectiveFrom: 2016-04-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -16434,6 +16466,7 @@ paths:
                       value:
                         labelValue: Active
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                  relationships: []
                   counterpartyRiskInformation:
                     countryOfRisk: UnitedKingdom
                     creditRatings:
@@ -16473,6 +16506,7 @@ paths:
                       value:
                         labelValue: Active
                       effectiveFrom: 2016-04-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -16511,6 +16545,7 @@ paths:
                       value:
                         labelValue: Active
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                  relationships: []
                   counterpartyRiskInformation:
                     countryOfRisk: UnitedKingdom
                     creditRatings:
@@ -16550,6 +16585,7 @@ paths:
                       value:
                         labelValue: Active
                       effectiveFrom: 2016-04-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -16799,6 +16835,7 @@ paths:
                     value:
                       labelValue: Active
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 counterpartyRiskInformation:
                   countryOfRisk: UnitedKingdom
                   creditRatings:
@@ -16842,6 +16879,7 @@ paths:
                     value:
                       labelValue: Active
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 counterpartyRiskInformation:
                   countryOfRisk: UnitedKingdom
                   creditRatings:
@@ -16885,6 +16923,7 @@ paths:
                     value:
                       labelValue: Active
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 counterpartyRiskInformation:
                   countryOfRisk: UnitedKingdom
                   creditRatings:
@@ -17184,6 +17223,7 @@ paths:
                     value:
                       labelValue: United Kingdom
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 counterpartyRiskInformation:
                   countryOfRisk: UnitedKingdom
                   creditRatings:
@@ -17227,6 +17267,7 @@ paths:
                     value:
                       labelValue: United Kingdom
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 counterpartyRiskInformation:
                   countryOfRisk: UnitedKingdom
                   creditRatings:
@@ -17270,6 +17311,7 @@ paths:
                     value:
                       labelValue: United Kingdom
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 counterpartyRiskInformation:
                   countryOfRisk: UnitedKingdom
                   creditRatings:
@@ -18291,6 +18333,7 @@ paths:
                     value:
                       labelValue: United Kingdom
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 counterpartyRiskInformation:
                   countryOfRisk: UnitedKingdom
                   creditRatings:
@@ -18329,6 +18372,7 @@ paths:
                     value:
                       labelValue: United Kingdom
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 counterpartyRiskInformation:
                   countryOfRisk: UnitedKingdom
                   creditRatings:
@@ -18367,6 +18411,7 @@ paths:
                     value:
                       labelValue: United Kingdom
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 counterpartyRiskInformation:
                   countryOfRisk: UnitedKingdom
                   creditRatings:
@@ -22712,6 +22757,7 @@ paths:
                       value:
                         labelValue: CustomerServiceRepresentative
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -22746,6 +22792,7 @@ paths:
                       value:
                         labelValue: Manager
                       effectiveFrom: 2018-04-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -22787,6 +22834,7 @@ paths:
                       value:
                         labelValue: CustomerServiceRepresentative
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -22821,6 +22869,7 @@ paths:
                       value:
                         labelValue: Manager
                       effectiveFrom: 2018-04-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -22862,6 +22911,7 @@ paths:
                       value:
                         labelValue: CustomerServiceRepresentative
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -22896,6 +22946,7 @@ paths:
                       value:
                         labelValue: Manager
                       effectiveFrom: 2018-04-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -23104,6 +23155,7 @@ paths:
                     value:
                       labelValue: CustomerServiceRepresentative
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -23142,6 +23194,7 @@ paths:
                     value:
                       labelValue: CustomerServiceRepresentative
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -23180,6 +23233,7 @@ paths:
                     value:
                       labelValue: CustomerServiceRepresentative
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -23388,6 +23442,7 @@ paths:
                       value:
                         labelValue: CustomerServiceRepresentative
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -23422,6 +23477,7 @@ paths:
                       value:
                         labelValue: Manager
                       effectiveFrom: 2018-04-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -23463,6 +23519,7 @@ paths:
                       value:
                         labelValue: CustomerServiceRepresentative
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -23497,6 +23554,7 @@ paths:
                       value:
                         labelValue: Manager
                       effectiveFrom: 2018-04-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -23538,6 +23596,7 @@ paths:
                       value:
                         labelValue: CustomerServiceRepresentative
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -23572,6 +23631,7 @@ paths:
                       value:
                         labelValue: Manager
                       effectiveFrom: 2018-04-01T00:00:00.0000000+00:00
+                  relationships: []
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -23813,6 +23873,7 @@ paths:
                     value:
                       labelValue: CustomerServiceRepresentative
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -23851,6 +23912,7 @@ paths:
                     value:
                       labelValue: CustomerServiceRepresentative
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -23889,6 +23951,7 @@ paths:
                     value:
                       labelValue: CustomerServiceRepresentative
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
+                relationships: []
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -24153,6 +24216,7 @@ paths:
                     value:
                       labelValue: "01156786789"
                     effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
+                relationships: []
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -24183,6 +24247,7 @@ paths:
                     value:
                       labelValue: "01156786789"
                     effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
+                relationships: []
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -24213,6 +24278,7 @@ paths:
                     value:
                       labelValue: "01156786789"
                     effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
+                relationships: []
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -25164,6 +25230,7 @@ paths:
                     value:
                       labelValue: "01156786789"
                     effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
+                relationships: []
                 version:
                   effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -25194,6 +25261,7 @@ paths:
                     value:
                       labelValue: "01156786789"
                     effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
+                relationships: []
                 version:
                   effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -25224,6 +25292,7 @@ paths:
                     value:
                       labelValue: "01156786789"
                     effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
+                relationships: []
                 version:
                   effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
@@ -59892,6 +59961,89 @@ components:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
           baseCurrency: baseCurrency
+          relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
           amortisationMethod: amortisationMethod
           accountingMethod: Default
           links:
@@ -65586,6 +65738,89 @@ components:
     CustomEntityResponse:
       additionalProperties: false
       example:
+        relationships:
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          traversalDirection: traversalDirection
+          relatedEntity:
+            entityType: entityType
+            displayName: displayName
+            identifiers:
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            scope: scope
+            entityId:
+              key: entityId
+            lusidUniqueId:
+              type: type
+              value: value
+            href: https://openapi-generator.tech
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          relationshipDefinitionId:
+            code: code
+            scope: scope
+          traversalDescription: traversalDescription
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          traversalDirection: traversalDirection
+          relatedEntity:
+            entityType: entityType
+            displayName: displayName
+            identifiers:
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            scope: scope
+            entityId:
+              key: entityId
+            lusidUniqueId:
+              type: type
+              value: value
+            href: https://openapi-generator.tech
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          relationshipDefinitionId:
+            code: code
+            scope: scope
+          traversalDescription: traversalDescription
         entityType: entityType
         displayName: displayName
         identifiers:
@@ -65651,6 +65886,11 @@ components:
           items:
             $ref: '#/components/schemas/CustomEntityField'
           type: array
+        relationships:
+          description: A set of relationships associated to the custom entity.
+          items:
+            $ref: '#/components/schemas/Relationship'
+          type: array
         links:
           description: Collection of links.
           items:
@@ -65662,6 +65902,7 @@ components:
       - entityType
       - fields
       - identifiers
+      - relationships
       - version
       type: object
     CutLabelDefinition:
@@ -68346,6 +68587,89 @@ components:
             version:
               effectiveFrom: 2000-01-23T04:56:07.000+00:00
               asAtDate: 2000-01-23T04:56:07.000+00:00
+            relationships:
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              traversalDirection: traversalDirection
+              relatedEntity:
+                entityType: entityType
+                displayName: displayName
+                identifiers:
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                scope: scope
+                entityId:
+                  key: entityId
+                lusidUniqueId:
+                  type: type
+                  value: value
+                href: https://openapi-generator.tech
+                properties:
+                  key:
+                    effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                    value:
+                      metricValue:
+                        unit: unit
+                        value: 0.8008281904610115
+                      labelValue: labelValue
+                      labelValueSet:
+                        values:
+                        - values
+                        - values
+                    effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                    key: key
+              version:
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                asAtDate: 2000-01-23T04:56:07.000+00:00
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              relationshipDefinitionId:
+                code: code
+                scope: scope
+              traversalDescription: traversalDescription
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              traversalDirection: traversalDirection
+              relatedEntity:
+                entityType: entityType
+                displayName: displayName
+                identifiers:
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                scope: scope
+                entityId:
+                  key: entityId
+                lusidUniqueId:
+                  type: type
+                  value: value
+                href: https://openapi-generator.tech
+                properties:
+                  key:
+                    effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                    value:
+                      metricValue:
+                        unit: unit
+                        value: 0.8008281904610115
+                      labelValue: labelValue
+                      labelValueSet:
+                        values:
+                        - values
+                        - values
+                    effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                    key: key
+              version:
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                asAtDate: 2000-01-23T04:56:07.000+00:00
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              relationshipDefinitionId:
+                code: code
+                scope: scope
+              traversalDescription: traversalDescription
             lookthroughPortfolio:
               code: code
               scope: scope
@@ -69819,6 +70143,89 @@ components:
         version:
           effectiveFrom: 2000-01-23T04:56:07.000+00:00
           asAtDate: 2000-01-23T04:56:07.000+00:00
+        relationships:
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          traversalDirection: traversalDirection
+          relatedEntity:
+            entityType: entityType
+            displayName: displayName
+            identifiers:
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            scope: scope
+            entityId:
+              key: entityId
+            lusidUniqueId:
+              type: type
+              value: value
+            href: https://openapi-generator.tech
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          relationshipDefinitionId:
+            code: code
+            scope: scope
+          traversalDescription: traversalDescription
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          traversalDirection: traversalDirection
+          relatedEntity:
+            entityType: entityType
+            displayName: displayName
+            identifiers:
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            scope: scope
+            entityId:
+              key: entityId
+            lusidUniqueId:
+              type: type
+              value: value
+            href: https://openapi-generator.tech
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          relationshipDefinitionId:
+            code: code
+            scope: scope
+          traversalDescription: traversalDescription
         lookthroughPortfolio:
           code: code
           scope: scope
@@ -69928,6 +70335,12 @@ components:
             USD.
           nullable: true
           type: string
+        relationships:
+          description: A set of relationships associated to the instrument.
+          items:
+            $ref: '#/components/schemas/Relationship'
+          nullable: true
+          type: array
         links:
           description: Collection of links.
           items:
@@ -70906,6 +71319,89 @@ components:
       additionalProperties: false
       description: Representation of Legal Entity on LUSID API
       example:
+        relationships:
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          traversalDirection: traversalDirection
+          relatedEntity:
+            entityType: entityType
+            displayName: displayName
+            identifiers:
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            scope: scope
+            entityId:
+              key: entityId
+            lusidUniqueId:
+              type: type
+              value: value
+            href: https://openapi-generator.tech
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          relationshipDefinitionId:
+            code: code
+            scope: scope
+          traversalDescription: traversalDescription
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          traversalDirection: traversalDirection
+          relatedEntity:
+            entityType: entityType
+            displayName: displayName
+            identifiers:
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            scope: scope
+            entityId:
+              key: entityId
+            lusidUniqueId:
+              type: type
+              value: value
+            href: https://openapi-generator.tech
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          relationshipDefinitionId:
+            code: code
+            scope: scope
+          traversalDescription: traversalDescription
         lusidLegalEntityId: lusidLegalEntityId
         counterpartyRiskInformation:
           creditRatings:
@@ -70993,6 +71489,12 @@ components:
           description: A set of properties associated to the Legal Entity.
           nullable: true
           type: object
+        relationships:
+          description: A set of relationships associated to the Legal Entity.
+          items:
+            $ref: '#/components/schemas/Relationship'
+          nullable: true
+          type: array
         counterpartyRiskInformation:
           $ref: '#/components/schemas/CounterpartyRiskInformation'
         version:
@@ -74443,7 +74945,90 @@ components:
         previousPage: previousPage
         nextPage: nextPage
         values:
-        - entityType: entityType
+        - relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          entityType: entityType
           displayName: displayName
           identifiers:
           - effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -74479,7 +75064,90 @@ components:
           version:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
-        - entityType: entityType
+        - relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          entityType: entityType
           displayName: displayName
           identifiers:
           - effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -74868,6 +75536,89 @@ components:
           version:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
+          relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
           lookthroughPortfolio:
             code: code
             scope: scope
@@ -74919,6 +75670,89 @@ components:
           version:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
+          relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
           lookthroughPortfolio:
             code: code
             scope: scope
@@ -75117,7 +75951,90 @@ components:
         previousPage: previousPage
         nextPage: nextPage
         values:
-        - lusidLegalEntityId: lusidLegalEntityId
+        - relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          lusidLegalEntityId: lusidLegalEntityId
           counterpartyRiskInformation:
             creditRatings:
             - rating: rating
@@ -75173,7 +76090,90 @@ components:
                   - values
               effectiveFrom: 2000-01-23T04:56:07.000+00:00
               key: key
-        - lusidLegalEntityId: lusidLegalEntityId
+        - relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          lusidLegalEntityId: lusidLegalEntityId
           counterpartyRiskInformation:
             creditRatings:
             - rating: rating
@@ -76170,7 +77170,90 @@ components:
         previousPage: previousPage
         nextPage: nextPage
         values:
-        - displayName: displayName
+        - relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          displayName: displayName
           identifiers:
             key:
               effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -76217,7 +77300,90 @@ components:
                   - values
               effectiveFrom: 2000-01-23T04:56:07.000+00:00
               key: key
-        - displayName: displayName
+        - relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          displayName: displayName
           identifiers:
             key:
               effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -77187,6 +78353,89 @@ components:
     Person:
       additionalProperties: false
       example:
+        relationships:
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          traversalDirection: traversalDirection
+          relatedEntity:
+            entityType: entityType
+            displayName: displayName
+            identifiers:
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            scope: scope
+            entityId:
+              key: entityId
+            lusidUniqueId:
+              type: type
+              value: value
+            href: https://openapi-generator.tech
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          relationshipDefinitionId:
+            code: code
+            scope: scope
+          traversalDescription: traversalDescription
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          traversalDirection: traversalDirection
+          relatedEntity:
+            entityType: entityType
+            displayName: displayName
+            identifiers:
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            scope: scope
+            entityId:
+              key: entityId
+            lusidUniqueId:
+              type: type
+              value: value
+            href: https://openapi-generator.tech
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          relationshipDefinitionId:
+            code: code
+            scope: scope
+          traversalDescription: traversalDescription
         displayName: displayName
         identifiers:
           key:
@@ -77268,6 +78517,12 @@ components:
             multiple properties associated with a property key.
           nullable: true
           type: object
+        relationships:
+          description: A set of relationships associated to the Person.
+          items:
+            $ref: '#/components/schemas/Relationship'
+          nullable: true
+          type: array
         version:
           $ref: '#/components/schemas/Version'
       type: object
@@ -77611,6 +78866,89 @@ components:
           effectiveFrom: 2000-01-23T04:56:07.000+00:00
           asAtDate: 2000-01-23T04:56:07.000+00:00
         baseCurrency: baseCurrency
+        relationships:
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          traversalDirection: traversalDirection
+          relatedEntity:
+            entityType: entityType
+            displayName: displayName
+            identifiers:
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            scope: scope
+            entityId:
+              key: entityId
+            lusidUniqueId:
+              type: type
+              value: value
+            href: https://openapi-generator.tech
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          relationshipDefinitionId:
+            code: code
+            scope: scope
+          traversalDescription: traversalDescription
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          traversalDirection: traversalDirection
+          relatedEntity:
+            entityType: entityType
+            displayName: displayName
+            identifiers:
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            scope: scope
+            entityId:
+              key: entityId
+            lusidUniqueId:
+              type: type
+              value: value
+            href: https://openapi-generator.tech
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          relationshipDefinitionId:
+            code: code
+            scope: scope
+          traversalDescription: traversalDescription
         amortisationMethod: amortisationMethod
         accountingMethod: Default
         links:
@@ -77688,6 +79026,12 @@ components:
             'Portfolio' domain.
           nullable: true
           type: object
+        relationships:
+          description: A set of relationships associated to the portfolio.
+          items:
+            $ref: '#/components/schemas/Relationship'
+          nullable: true
+          type: array
         instrumentScopes:
           description: The instrument scope resolution strategy of this portfolio.
           items:
@@ -78088,6 +79432,89 @@ components:
     PortfolioGroup:
       additionalProperties: false
       example:
+        relationships:
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          traversalDirection: traversalDirection
+          relatedEntity:
+            entityType: entityType
+            displayName: displayName
+            identifiers:
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            scope: scope
+            entityId:
+              key: entityId
+            lusidUniqueId:
+              type: type
+              value: value
+            href: https://openapi-generator.tech
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          relationshipDefinitionId:
+            code: code
+            scope: scope
+          traversalDescription: traversalDescription
+        - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          traversalDirection: traversalDirection
+          relatedEntity:
+            entityType: entityType
+            displayName: displayName
+            identifiers:
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            - identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+            scope: scope
+            entityId:
+              key: entityId
+            lusidUniqueId:
+              type: type
+              value: value
+            href: https://openapi-generator.tech
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          relationshipDefinitionId:
+            code: code
+            scope: scope
+          traversalDescription: traversalDescription
         displayName: displayName
         created: 2000-01-23T04:56:07.000+00:00
         portfolios:
@@ -78150,6 +79577,12 @@ components:
             contained in the portfolio group as sub groups.
           items:
             $ref: '#/components/schemas/ResourceId'
+          nullable: true
+          type: array
+        relationships:
+          description: A set of relationships associated to the portfolio group.
+          items:
+            $ref: '#/components/schemas/Relationship'
           nullable: true
           type: array
         version:
@@ -84332,7 +85765,90 @@ components:
         previousPage: previousPage
         nextPage: nextPage
         values:
-        - lusidLegalEntityId: lusidLegalEntityId
+        - relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          lusidLegalEntityId: lusidLegalEntityId
           counterpartyRiskInformation:
             creditRatings:
             - rating: rating
@@ -84388,7 +85904,90 @@ components:
                   - values
               effectiveFrom: 2000-01-23T04:56:07.000+00:00
               key: key
-        - lusidLegalEntityId: lusidLegalEntityId
+        - relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          lusidLegalEntityId: lusidLegalEntityId
           counterpartyRiskInformation:
             creditRatings:
             - rating: rating
@@ -85073,7 +86672,90 @@ components:
         previousPage: previousPage
         nextPage: nextPage
         values:
-        - displayName: displayName
+        - relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          displayName: displayName
           identifiers:
             key:
               effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -85120,7 +86802,90 @@ components:
                   - values
               effectiveFrom: 2000-01-23T04:56:07.000+00:00
               key: key
-        - displayName: displayName
+        - relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          displayName: displayName
           identifiers:
             key:
               effectiveUntil: 2000-01-23T04:56:07.000+00:00
@@ -85370,6 +87135,89 @@ components:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
           baseCurrency: baseCurrency
+          relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
           amortisationMethod: amortisationMethod
           accountingMethod: Default
           links:
@@ -85414,6 +87262,89 @@ components:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
           baseCurrency: baseCurrency
+          relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
           amortisationMethod: amortisationMethod
           accountingMethod: Default
           links:
@@ -85846,7 +87777,90 @@ components:
         previousPage: previousPage
         nextPage: nextPage
         values:
-        - displayName: displayName
+        - relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          displayName: displayName
           created: 2000-01-23T04:56:07.000+00:00
           portfolios:
           - code: code
@@ -85875,7 +87889,90 @@ components:
           version:
             effectiveFrom: 2000-01-23T04:56:07.000+00:00
             asAtDate: 2000-01-23T04:56:07.000+00:00
-        - displayName: displayName
+        - relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          displayName: displayName
           created: 2000-01-23T04:56:07.000+00:00
           portfolios:
           - code: code
@@ -90993,6 +93090,89 @@ components:
             version:
               effectiveFrom: 2000-01-23T04:56:07.000+00:00
               asAtDate: 2000-01-23T04:56:07.000+00:00
+            relationships:
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              traversalDirection: traversalDirection
+              relatedEntity:
+                entityType: entityType
+                displayName: displayName
+                identifiers:
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                scope: scope
+                entityId:
+                  key: entityId
+                lusidUniqueId:
+                  type: type
+                  value: value
+                href: https://openapi-generator.tech
+                properties:
+                  key:
+                    effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                    value:
+                      metricValue:
+                        unit: unit
+                        value: 0.8008281904610115
+                      labelValue: labelValue
+                      labelValueSet:
+                        values:
+                        - values
+                        - values
+                    effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                    key: key
+              version:
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                asAtDate: 2000-01-23T04:56:07.000+00:00
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              relationshipDefinitionId:
+                code: code
+                scope: scope
+              traversalDescription: traversalDescription
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              traversalDirection: traversalDirection
+              relatedEntity:
+                entityType: entityType
+                displayName: displayName
+                identifiers:
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                scope: scope
+                entityId:
+                  key: entityId
+                lusidUniqueId:
+                  type: type
+                  value: value
+                href: https://openapi-generator.tech
+                properties:
+                  key:
+                    effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                    value:
+                      metricValue:
+                        unit: unit
+                        value: 0.8008281904610115
+                      labelValue: labelValue
+                      labelValueSet:
+                        values:
+                        - values
+                        - values
+                    effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                    key: key
+              version:
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                asAtDate: 2000-01-23T04:56:07.000+00:00
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              relationshipDefinitionId:
+                code: code
+                scope: scope
+              traversalDescription: traversalDescription
             lookthroughPortfolio:
               code: code
               scope: scope
@@ -99095,7 +101275,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

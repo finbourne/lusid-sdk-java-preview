@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 <a name="getComplianceRunResults"></a>
 # **getComplianceRunResults**
-> ResourceListOfComplianceRuleResult getComplianceRunResults(runId, page, limit)
+> ResourceListOfComplianceRuleResult getComplianceRunResults(runId, page, limit, filter)
 
 [EXPERIMENTAL] GetComplianceRunResults: Get the details of a single compliance run.
 
@@ -266,8 +266,9 @@ public class Example {
     String runId = "runId_example"; // String | The unique identifier of the compliance run requested.
     String page = "page_example"; // String | The pagination token to use to continue listing compliance rule results from a previous call to list compliance rule result.              This value is returned from the previous call. If a pagination token is provided the sortBy, filter, and asAt fields              must not have changed since the original request. Also, if set, a start value cannot be provided.
     Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many.
+    String filter = "filter_example"; // String | Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid.
     try {
-      ResourceListOfComplianceRuleResult result = apiInstance.getComplianceRunResults(runId, page, limit);
+      ResourceListOfComplianceRuleResult result = apiInstance.getComplianceRunResults(runId, page, limit, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ComplianceApi#getComplianceRunResults");
@@ -287,6 +288,7 @@ Name | Type | Description  | Notes
  **runId** | **String**| The unique identifier of the compliance run requested. |
  **page** | **String**| The pagination token to use to continue listing compliance rule results from a previous call to list compliance rule result.              This value is returned from the previous call. If a pagination token is provided the sortBy, filter, and asAt fields              must not have changed since the original request. Also, if set, a start value cannot be provided. | [optional]
  **limit** | **Integer**| When paginating, limit the number of returned results to this many. | [optional]
+ **filter** | **String**| Expression to filter the result set. Read more about filtering results from LUSID here https://support.lusid.com/filtering-results-from-lusid. | [optional]
 
 ### Return type
 
@@ -310,7 +312,7 @@ Name | Type | Description  | Notes
 
 <a name="listComplianceRules"></a>
 # **listComplianceRules**
-> ResourceListOfComplianceRule listComplianceRules(effectiveAt, asAt, limit, filter, page)
+> ResourceListOfComplianceRule listComplianceRules(effectiveAt, asAt, page, limit, filter)
 
 [EXPERIMENTAL] ListComplianceRules: List compliance rules, with optional filtering.
 
@@ -338,11 +340,11 @@ public class Example {
     ComplianceApi apiInstance = new ComplianceApi(defaultClient);
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to retrieve the rule definitions. Defaults to the current LUSID  system datetime if not specified.
     OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the rule definitions. Defaults to returning the latest version if not  specified.
+    String page = "page_example"; // String | The pagination token to use to continue listing entities; this value is returned from the previous call. If  a pagination token is provided, the filter, effectiveAt and asAt fields must not have changed since the  original request.
     Integer limit = 56; // Integer | When paginating, limit the results to this number. Defaults to 100 if not specified.
     String filter = "filter_example"; // String | Expression to filter the results.
-    String page = "page_example"; // String | The pagination token to use to continue listing entities; this value is returned from the previous call. If  a pagination token is provided, the filter, effectiveAt and asAt fields must not have changed since the  original request.
     try {
-      ResourceListOfComplianceRule result = apiInstance.listComplianceRules(effectiveAt, asAt, limit, filter, page);
+      ResourceListOfComplianceRule result = apiInstance.listComplianceRules(effectiveAt, asAt, page, limit, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ComplianceApi#listComplianceRules");
@@ -361,9 +363,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **effectiveAt** | **String**| The effective datetime or cut label at which to retrieve the rule definitions. Defaults to the current LUSID  system datetime if not specified. | [optional]
  **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the rule definitions. Defaults to returning the latest version if not  specified. | [optional]
+ **page** | **String**| The pagination token to use to continue listing entities; this value is returned from the previous call. If  a pagination token is provided, the filter, effectiveAt and asAt fields must not have changed since the  original request. | [optional]
  **limit** | **Integer**| When paginating, limit the results to this number. Defaults to 100 if not specified. | [optional]
  **filter** | **String**| Expression to filter the results. | [optional]
- **page** | **String**| The pagination token to use to continue listing entities; this value is returned from the previous call. If  a pagination token is provided, the filter, effectiveAt and asAt fields must not have changed since the  original request. | [optional]
 
 ### Return type
 
