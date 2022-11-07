@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4935
+  version: 0.11.4938
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -469,6 +469,9 @@ tags:
     is a type of portfolio, so endpoints in the Portfolios API can also be called.
     For more information, see https://support.lusid.com/knowledgebase/article/KA-01851.
   name: Transaction Portfolios
+- description: Methods to retrieve applicable rates for a transaction, and manage
+    the rules that defined them
+  name: Transaction Tax Rules
 - description: Methods for translating between dialects.
   name: Translation
 paths:
@@ -10328,8 +10331,8 @@ paths:
                   customEntity1:
                     entityType: Issue
                     version:
-                      effectiveFrom: 2022-11-07T12:11:59.4499987+00:00
-                      asAtDate: 2022-11-07T12:11:59.4499989+00:00
+                      effectiveFrom: 2022-11-07T12:59:11.8442873+00:00
+                      asAtDate: 2022-11-07T12:59:11.8442875+00:00
                     displayName: CustomEntity1
                     description: MyFirstCustomEntity
                     identifiers:
@@ -10359,8 +10362,8 @@ paths:
                   customEntity1:
                     entityType: Issue
                     version:
-                      effectiveFrom: 2022-11-07T12:11:59.4499987+00:00
-                      asAtDate: 2022-11-07T12:11:59.4499989+00:00
+                      effectiveFrom: 2022-11-07T12:59:11.8442873+00:00
+                      asAtDate: 2022-11-07T12:59:11.8442875+00:00
                     displayName: CustomEntity1
                     description: MyFirstCustomEntity
                     identifiers:
@@ -10390,8 +10393,8 @@ paths:
                   customEntity1:
                     entityType: Issue
                     version:
-                      effectiveFrom: 2022-11-07T12:11:59.4499987+00:00
-                      asAtDate: 2022-11-07T12:11:59.4499989+00:00
+                      effectiveFrom: 2022-11-07T12:59:11.8442873+00:00
+                      asAtDate: 2022-11-07T12:59:11.8442875+00:00
                     displayName: CustomEntity1
                     description: MyFirstCustomEntity
                     identifiers:
@@ -58218,6 +58221,871 @@ paths:
       - Transaction Fees
       x-fbn-apistatus: Experimental
       x-accepts: application/json
+  /api/transactions/taxrules:
+    get:
+      description: Retrieves all tax rule set definitions at the given effective and
+        as at times
+      operationId: ListTaxRuleSets
+      parameters:
+      - description: "The effective datetime or cut label at which to retrieve the\
+          \ rule definitions. Defaults to the current LUSID\r\nsystem datetime if\
+          \ not specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which to retrieve the\
+            \ rule definitions. Defaults to the current LUSID\r\nsystem datetime if\
+            \ not specified."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: "The asAt datetime at which to retrieve the rule definitions.\
+          \ Defaults to returning the latest version if not\r\nspecified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to retrieve the rule definitions.\
+            \ Defaults to returning the latest version if not\r\nspecified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                - id:
+                    scope: myScope
+                    code: RuleSetName
+                  displayName: Rule set display name
+                  description: Rule set description
+                  outputPropertyKey: Transaction/default/TaxRate
+                  rules:
+                  - name: UKTaxRule
+                    description: Rule for the UK tax rate
+                    rate: 30
+                    criteria:
+                    - key: Instrument/myScope/market
+                      value: GB
+                      op: Equals
+                    - key: Portfolio/myScope/taxDomicile
+                      value: GB
+                      op: Equals
+                  version:
+                    effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                    asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfTaxRuleSet'
+            application/json:
+              example:
+                values:
+                - id:
+                    scope: myScope
+                    code: RuleSetName
+                  displayName: Rule set display name
+                  description: Rule set description
+                  outputPropertyKey: Transaction/default/TaxRate
+                  rules:
+                  - name: UKTaxRule
+                    description: Rule for the UK tax rate
+                    rate: 30
+                    criteria:
+                    - key: Instrument/myScope/market
+                      value: GB
+                      op: Equals
+                    - key: Portfolio/myScope/taxDomicile
+                      value: GB
+                      op: Equals
+                  version:
+                    effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                    asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfTaxRuleSet'
+            text/json:
+              example:
+                values:
+                - id:
+                    scope: myScope
+                    code: RuleSetName
+                  displayName: Rule set display name
+                  description: Rule set description
+                  outputPropertyKey: Transaction/default/TaxRate
+                  rules:
+                  - name: UKTaxRule
+                    description: Rule for the UK tax rate
+                    rate: 30
+                    criteria:
+                    - key: Instrument/myScope/market
+                      value: GB
+                      op: Equals
+                    - key: Portfolio/myScope/taxDomicile
+                      value: GB
+                      op: Equals
+                  version:
+                    effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                    asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                links: []
+              schema:
+                $ref: '#/components/schemas/ResourceListOfTaxRuleSet'
+          description: A list of rule sets available.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListTaxRuleSets: List tax rules.'
+      tags:
+      - Transaction Tax Rules
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+    post:
+      description: "Creates a tax rule set definition at the given effective time.\r\
+        \nThe user must be entitled to read any properties specified in each rule."
+      operationId: CreateTaxRuleSet
+      parameters:
+      - description: "The effective datetime or cut label at which the rule set will\
+          \ take effect.\r\nDefaults to the current LUSID system datetime if not specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which the rule set\
+            \ will take effect.\r\nDefaults to the current LUSID system datetime if\
+            \ not specified."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              id:
+                scope: myScope
+                code: RuleSetName
+              displayName: Rule set display name
+              description: Rule set description
+              outputPropertyKey: Transaction/default/TaxRate
+              rules:
+              - name: UKTaxRule
+                description: Rule for the UK tax rate
+                rate: 30
+                criteria:
+                - key: Instrument/myScope/market
+                  value: GB
+                  op: Equals
+                - key: Portfolio/myScope/taxDomicile
+                  value: GB
+                  op: Equals
+            schema:
+              $ref: '#/components/schemas/CreateTaxRuleSetRequest'
+          application/json:
+            example:
+              id:
+                scope: myScope
+                code: RuleSetName
+              displayName: Rule set display name
+              description: Rule set description
+              outputPropertyKey: Transaction/default/TaxRate
+              rules:
+              - name: UKTaxRule
+                description: Rule for the UK tax rate
+                rate: 30
+                criteria:
+                - key: Instrument/myScope/market
+                  value: GB
+                  op: Equals
+                - key: Portfolio/myScope/taxDomicile
+                  value: GB
+                  op: Equals
+            schema:
+              $ref: '#/components/schemas/CreateTaxRuleSetRequest'
+          text/json:
+            example:
+              id:
+                scope: myScope
+                code: RuleSetName
+              displayName: Rule set display name
+              description: Rule set description
+              outputPropertyKey: Transaction/default/TaxRate
+              rules:
+              - name: UKTaxRule
+                description: Rule for the UK tax rate
+                rate: 30
+                criteria:
+                - key: Instrument/myScope/market
+                  value: GB
+                  op: Equals
+                - key: Portfolio/myScope/taxDomicile
+                  value: GB
+                  op: Equals
+            schema:
+              $ref: '#/components/schemas/CreateTaxRuleSetRequest'
+          application/*+json:
+            example:
+              id:
+                scope: myScope
+                code: RuleSetName
+              displayName: Rule set display name
+              description: Rule set description
+              outputPropertyKey: Transaction/default/TaxRate
+              rules:
+              - name: UKTaxRule
+                description: Rule for the UK tax rate
+                rate: 30
+                criteria:
+                - key: Instrument/myScope/market
+                  value: GB
+                  op: Equals
+                - key: Portfolio/myScope/taxDomicile
+                  value: GB
+                  op: Equals
+            schema:
+              $ref: '#/components/schemas/CreateTaxRuleSetRequest'
+        description: The contents of the rule set.
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                id:
+                  scope: myScope
+                  code: RuleSetName
+                displayName: Rule set display name
+                description: Rule set description
+                outputPropertyKey: Transaction/default/TaxRate
+                rules:
+                - name: UKTaxRule
+                  description: Rule for the UK tax rate
+                  rate: 30
+                  criteria:
+                  - key: Instrument/myScope/market
+                    value: GB
+                    op: Equals
+                  - key: Portfolio/myScope/taxDomicile
+                    value: GB
+                    op: Equals
+                version:
+                  effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  asAtDate: 2019-01-01T12:00:00.0100000+00:00
+              schema:
+                $ref: '#/components/schemas/TaxRuleSet'
+            application/json:
+              example:
+                id:
+                  scope: myScope
+                  code: RuleSetName
+                displayName: Rule set display name
+                description: Rule set description
+                outputPropertyKey: Transaction/default/TaxRate
+                rules:
+                - name: UKTaxRule
+                  description: Rule for the UK tax rate
+                  rate: 30
+                  criteria:
+                  - key: Instrument/myScope/market
+                    value: GB
+                    op: Equals
+                  - key: Portfolio/myScope/taxDomicile
+                    value: GB
+                    op: Equals
+                version:
+                  effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  asAtDate: 2019-01-01T12:00:00.0100000+00:00
+              schema:
+                $ref: '#/components/schemas/TaxRuleSet'
+            text/json:
+              example:
+                id:
+                  scope: myScope
+                  code: RuleSetName
+                displayName: Rule set display name
+                description: Rule set description
+                outputPropertyKey: Transaction/default/TaxRate
+                rules:
+                - name: UKTaxRule
+                  description: Rule for the UK tax rate
+                  rate: 30
+                  criteria:
+                  - key: Instrument/myScope/market
+                    value: GB
+                    op: Equals
+                  - key: Portfolio/myScope/taxDomicile
+                    value: GB
+                    op: Equals
+                version:
+                  effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  asAtDate: 2019-01-01T12:00:00.0100000+00:00
+              schema:
+                $ref: '#/components/schemas/TaxRuleSet'
+          description: Create a rule set for tax calculations.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] CreateTaxRuleSet: Create a tax rule set.'
+      tags:
+      - Transaction Tax Rules
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/transactions/taxrules/{scope}/{code}:
+    delete:
+      description: "<br>\r\n            Deletes the rule for all effective time.\r\
+        \n            \r\n<br>\r\n            The rule will remain viewable at previous\
+        \ as at times, but it will no longer be considered applicable.\r\n       \
+        \     \r\n<br>\r\n            This cannot be undone.\r\n            "
+      operationId: DeleteTaxRuleSet
+      parameters:
+      - description: The rule set scope.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The rule set scope.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The rule set code.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The rule set code.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+          description: Success
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] DeleteTaxRuleSet: Deletes a tax rule.'
+      tags:
+      - Transaction Tax Rules
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+    get:
+      description: Retrieves the tax rule set definition at the given effective and
+        as at times.
+      operationId: GetTaxRuleSet
+      parameters:
+      - description: The rule set scope.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The rule set scope.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The rule set code.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The rule set code.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The effective datetime or cut label at which to retrieve the\
+          \ rule definition. Defaults to the current LUSID\r\nsystem datetime if not\
+          \ specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which to retrieve the\
+            \ rule definition. Defaults to the current LUSID\r\nsystem datetime if\
+            \ not specified."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: "The asAt datetime at which to retrieve the rule definition.\
+          \ Defaults to returning the latest version if not\r\nspecified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to retrieve the rule definition.\
+            \ Defaults to returning the latest version if not\r\nspecified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                id:
+                  scope: myScope
+                  code: RuleSetName
+                displayName: Rule set display name
+                description: Rule set description
+                outputPropertyKey: Transaction/default/TaxRate
+                rules:
+                - name: UKTaxRule
+                  description: Rule for the UK tax rate
+                  rate: 30
+                  criteria:
+                  - key: Instrument/myScope/market
+                    value: GB
+                    op: Equals
+                  - key: Portfolio/myScope/taxDomicile
+                    value: GB
+                    op: Equals
+                version:
+                  effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  asAtDate: 2019-01-01T12:00:00.0100000+00:00
+              schema:
+                $ref: '#/components/schemas/TaxRuleSet'
+            application/json:
+              example:
+                id:
+                  scope: myScope
+                  code: RuleSetName
+                displayName: Rule set display name
+                description: Rule set description
+                outputPropertyKey: Transaction/default/TaxRate
+                rules:
+                - name: UKTaxRule
+                  description: Rule for the UK tax rate
+                  rate: 30
+                  criteria:
+                  - key: Instrument/myScope/market
+                    value: GB
+                    op: Equals
+                  - key: Portfolio/myScope/taxDomicile
+                    value: GB
+                    op: Equals
+                version:
+                  effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  asAtDate: 2019-01-01T12:00:00.0100000+00:00
+              schema:
+                $ref: '#/components/schemas/TaxRuleSet'
+            text/json:
+              example:
+                id:
+                  scope: myScope
+                  code: RuleSetName
+                displayName: Rule set display name
+                description: Rule set description
+                outputPropertyKey: Transaction/default/TaxRate
+                rules:
+                - name: UKTaxRule
+                  description: Rule for the UK tax rate
+                  rate: 30
+                  criteria:
+                  - key: Instrument/myScope/market
+                    value: GB
+                    op: Equals
+                  - key: Portfolio/myScope/taxDomicile
+                    value: GB
+                    op: Equals
+                version:
+                  effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  asAtDate: 2019-01-01T12:00:00.0100000+00:00
+              schema:
+                $ref: '#/components/schemas/TaxRuleSet'
+          description: Details of one rule set.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] GetTaxRuleSet: Retrieve the definition of single tax
+        rule set.'
+      tags:
+      - Transaction Tax Rules
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+    put:
+      description: "Updates the tax rule set definition at the given effective time.\r\
+        \nThe user must be entitled to read any properties specified in each rule."
+      operationId: UpdateTaxRuleSet
+      parameters:
+      - description: The rule set scope.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The rule set scope.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The rule set code.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The rule set code.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The effective datetime or cut label at which the rule set will\
+          \ take effect.\r\nDefaults to the current LUSID system datetime if not specified.\r\
+          \nThe changes will take place from this effective time until the next effective\
+          \ time that the rule has been updated at.\r\nFor example, consider a rule\
+          \ that has been created or updated effective at the first day of the coming\
+          \ month.\r\nAn upsert effective from the current day will only change the\
+          \ definition until that day.\r\nAn additional upsert at the same time (first\
+          \ day of the month) is required if the newly-updated definition is to supersede\
+          \ the future definition."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which the rule set\
+            \ will take effect.\r\nDefaults to the current LUSID system datetime if\
+            \ not specified.\r\nThe changes will take place from this effective time\
+            \ until the next effective time that the rule has been updated at.\r\n\
+            For example, consider a rule that has been created or updated effective\
+            \ at the first day of the coming month.\r\nAn upsert effective from the\
+            \ current day will only change the definition until that day.\r\nAn additional\
+            \ upsert at the same time (first day of the month) is required if the\
+            \ newly-updated definition is to supersede the future definition."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              displayName: Rule set display name
+              description: Rule set description
+              outputPropertyKey: Transaction/default/TaxRate
+              rules:
+              - name: UKTaxRule
+                description: Rule for the UK tax rate
+                rate: 30
+                criteria:
+                - key: Instrument/myScope/market
+                  value: GB
+                  op: Equals
+                - key: Portfolio/myScope/taxDomicile
+                  value: GB
+                  op: Equals
+              - name: EUReclaimRate
+                description: Rule for applying the reclaim rate to instruments in
+                  the European market
+                rate: -10
+                criteria:
+                - key: Instrument/myScope/Market
+                  value:
+                  - FR
+                  - NL
+                  - DE
+                  op: In
+            schema:
+              $ref: '#/components/schemas/UpdateTaxRuleSetRequest'
+          application/json:
+            example:
+              displayName: Rule set display name
+              description: Rule set description
+              outputPropertyKey: Transaction/default/TaxRate
+              rules:
+              - name: UKTaxRule
+                description: Rule for the UK tax rate
+                rate: 30
+                criteria:
+                - key: Instrument/myScope/market
+                  value: GB
+                  op: Equals
+                - key: Portfolio/myScope/taxDomicile
+                  value: GB
+                  op: Equals
+              - name: EUReclaimRate
+                description: Rule for applying the reclaim rate to instruments in
+                  the European market
+                rate: -10
+                criteria:
+                - key: Instrument/myScope/Market
+                  value:
+                  - FR
+                  - NL
+                  - DE
+                  op: In
+            schema:
+              $ref: '#/components/schemas/UpdateTaxRuleSetRequest'
+          text/json:
+            example:
+              displayName: Rule set display name
+              description: Rule set description
+              outputPropertyKey: Transaction/default/TaxRate
+              rules:
+              - name: UKTaxRule
+                description: Rule for the UK tax rate
+                rate: 30
+                criteria:
+                - key: Instrument/myScope/market
+                  value: GB
+                  op: Equals
+                - key: Portfolio/myScope/taxDomicile
+                  value: GB
+                  op: Equals
+              - name: EUReclaimRate
+                description: Rule for applying the reclaim rate to instruments in
+                  the European market
+                rate: -10
+                criteria:
+                - key: Instrument/myScope/Market
+                  value:
+                  - FR
+                  - NL
+                  - DE
+                  op: In
+            schema:
+              $ref: '#/components/schemas/UpdateTaxRuleSetRequest'
+          application/*+json:
+            example:
+              displayName: Rule set display name
+              description: Rule set description
+              outputPropertyKey: Transaction/default/TaxRate
+              rules:
+              - name: UKTaxRule
+                description: Rule for the UK tax rate
+                rate: 30
+                criteria:
+                - key: Instrument/myScope/market
+                  value: GB
+                  op: Equals
+                - key: Portfolio/myScope/taxDomicile
+                  value: GB
+                  op: Equals
+              - name: EUReclaimRate
+                description: Rule for applying the reclaim rate to instruments in
+                  the European market
+                rate: -10
+                criteria:
+                - key: Instrument/myScope/Market
+                  value:
+                  - FR
+                  - NL
+                  - DE
+                  op: In
+            schema:
+              $ref: '#/components/schemas/UpdateTaxRuleSetRequest'
+        description: The contents of the rule set.
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                id:
+                  scope: myScope
+                  code: RuleSetName
+                displayName: Rule set display name
+                description: Rule set description
+                outputPropertyKey: Transaction/default/TaxRate
+                rules:
+                - name: UKTaxRule
+                  description: Rule for the UK tax rate
+                  rate: 30
+                  criteria:
+                  - key: Instrument/myScope/market
+                    value: GB
+                    op: Equals
+                  - key: Portfolio/myScope/taxDomicile
+                    value: GB
+                    op: Equals
+                version:
+                  effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  asAtDate: 2019-01-01T12:00:00.0100000+00:00
+              schema:
+                $ref: '#/components/schemas/TaxRuleSet'
+            application/json:
+              example:
+                id:
+                  scope: myScope
+                  code: RuleSetName
+                displayName: Rule set display name
+                description: Rule set description
+                outputPropertyKey: Transaction/default/TaxRate
+                rules:
+                - name: UKTaxRule
+                  description: Rule for the UK tax rate
+                  rate: 30
+                  criteria:
+                  - key: Instrument/myScope/market
+                    value: GB
+                    op: Equals
+                  - key: Portfolio/myScope/taxDomicile
+                    value: GB
+                    op: Equals
+                version:
+                  effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  asAtDate: 2019-01-01T12:00:00.0100000+00:00
+              schema:
+                $ref: '#/components/schemas/TaxRuleSet'
+            text/json:
+              example:
+                id:
+                  scope: myScope
+                  code: RuleSetName
+                displayName: Rule set display name
+                description: Rule set description
+                outputPropertyKey: Transaction/default/TaxRate
+                rules:
+                - name: UKTaxRule
+                  description: Rule for the UK tax rate
+                  rate: 30
+                  criteria:
+                  - key: Instrument/myScope/market
+                    value: GB
+                    op: Equals
+                  - key: Portfolio/myScope/taxDomicile
+                    value: GB
+                    op: Equals
+                version:
+                  effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
+                  asAtDate: 2019-01-01T12:00:00.0100000+00:00
+              schema:
+                $ref: '#/components/schemas/TaxRuleSet'
+          description: Update rules for tax calculations.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] UpdateTaxRuleSet: Update a tax rule set.'
+      tags:
+      - Transaction Tax Rules
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
   /api/translation/instrumentdefinitions:
     post:
       description: "Translates one or more instruments into the given target dialect.\r\
@@ -65521,6 +66389,73 @@ components:
       required:
       - code
       type: object
+    CreateTaxRuleSetRequest:
+      additionalProperties: false
+      example:
+        outputPropertyKey: outputPropertyKey
+        displayName: displayName
+        description: description
+        rules:
+        - rate: 0.8008281904610115
+          criteria:
+          - op: Equals
+          - op: Equals
+          name: name
+          description: description
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+        - rate: 0.8008281904610115
+          criteria:
+          - op: Equals
+          - op: Equals
+          name: name
+          description: description
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+        id:
+          code: code
+          scope: scope
+      properties:
+        id:
+          $ref: '#/components/schemas/ResourceId'
+        displayName:
+          maxLength: 1024
+          minLength: 0
+          pattern: ^[\s\S]*$
+          type: string
+        description:
+          maxLength: 1024
+          minLength: 0
+          pattern: ^[\s\S]*$
+          type: string
+        outputPropertyKey:
+          type: string
+        rules:
+          items:
+            $ref: '#/components/schemas/TaxRule'
+          maxLength: 100
+          nullable: true
+          type: array
+      required:
+      - description
+      - displayName
+      - id
+      - outputPropertyKey
+      type: object
     CreateTransactionPortfolioRequest:
       additionalProperties: false
       example:
@@ -65789,6 +66724,12 @@ components:
       - thresholdAmount
       - valuationAgent
       type: object
+    CriterionOp:
+      description: Discriminator for PropertyCriterion.
+      enum:
+      - Equals
+      - In
+      type: string
     CurrencyAndAmount:
       additionalProperties: false
       description: An amount of a specific currency, specifying a value and an associated
@@ -80774,6 +81715,22 @@ components:
       required:
       - key
       type: object
+    PropertyCriterion:
+      additionalProperties: false
+      discriminator:
+        propertyName: criterionOp
+      example:
+        op: Equals
+      properties:
+        op:
+          description: 'The available values are: Equals, In'
+          enum:
+          - Equals
+          - In
+          type: string
+      required:
+      - op
+      type: object
     PropertyDefinition:
       additionalProperties: false
       description: A list of property definitions.
@@ -89432,6 +90389,149 @@ components:
       required:
       - values
       type: object
+    ResourceListOfTaxRuleSet:
+      additionalProperties: false
+      description: A collection of resources that can be returned from requests.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - outputPropertyKey: outputPropertyKey
+          displayName: displayName
+          description: description
+          rules:
+          - rate: 0.8008281904610115
+            criteria:
+            - op: Equals
+            - op: Equals
+            name: name
+            description: description
+            links:
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+          - rate: 0.8008281904610115
+            criteria:
+            - op: Equals
+            - op: Equals
+            name: name
+            description: description
+            links:
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          id:
+            code: code
+            scope: scope
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+        - outputPropertyKey: outputPropertyKey
+          displayName: displayName
+          description: description
+          rules:
+          - rate: 0.8008281904610115
+            criteria:
+            - op: Equals
+            - op: Equals
+            name: name
+            description: description
+            links:
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+          - rate: 0.8008281904610115
+            criteria:
+            - op: Equals
+            - op: Equals
+            name: name
+            description: description
+            links:
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          id:
+            code: code
+            scope: scope
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/TaxRuleSet'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+      required:
+      - values
+      type: object
     ResourceListOfTransaction:
       additionalProperties: false
       description: A collection of resources that can be returned from requests.
@@ -90509,6 +91609,14 @@ components:
       - ContainsAnyCase
       - IsOneOf
       type: string
+    StringEqualsCriterion:
+      allOf:
+      - $ref: '#/components/schemas/PropertyCriterion'
+      - $ref: '#/components/schemas/StringEqualsCriterion_allOf'
+    StringInCriterion:
+      allOf:
+      - $ref: '#/components/schemas/PropertyCriterion'
+      - $ref: '#/components/schemas/StringInCriterion_allOf'
     StructuredResultData:
       additionalProperties: false
       description: "An item of structured result data that is to be inserted into\
@@ -90721,6 +91829,151 @@ components:
           type: string
       required:
       - units
+      type: object
+    TaxRule:
+      additionalProperties: false
+      example:
+        rate: 0.8008281904610115
+        criteria:
+        - op: Equals
+        - op: Equals
+        name: name
+        description: description
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+      properties:
+        name:
+          description: A user-friendly name
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        description:
+          description: A description for this rule
+          maxLength: 1024
+          minLength: 0
+          pattern: ^[\s\S]*$
+          type: string
+        rate:
+          description: The rate to be applied if all conditions are met
+          format: double
+          type: number
+        criteria:
+          description: A set of conditions to be met for this rule to be applied
+          items:
+            $ref: '#/components/schemas/PropertyCriterion'
+          maxLength: 20
+          type: array
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - criteria
+      - description
+      - name
+      - rate
+      type: object
+    TaxRuleSet:
+      additionalProperties: false
+      example:
+        outputPropertyKey: outputPropertyKey
+        displayName: displayName
+        description: description
+        rules:
+        - rate: 0.8008281904610115
+          criteria:
+          - op: Equals
+          - op: Equals
+          name: name
+          description: description
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+        - rate: 0.8008281904610115
+          criteria:
+          - op: Equals
+          - op: Equals
+          name: name
+          description: description
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        id:
+          code: code
+          scope: scope
+        version:
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          asAtDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        id:
+          $ref: '#/components/schemas/ResourceId'
+        displayName:
+          description: A user-friendly name
+          maxLength: 1024
+          minLength: 0
+          pattern: ^[\s\S]*$
+          type: string
+        description:
+          description: A description of what this rule set is for
+          maxLength: 1024
+          minLength: 0
+          pattern: ^[\s\S]*$
+          type: string
+        outputPropertyKey:
+          description: The property key that this rule set will write to
+          type: string
+        rules:
+          description: The rules of this rule set, which stipulate what rate to apply
+            (i.e. write to the OutputPropertyKey) under certain conditions
+          items:
+            $ref: '#/components/schemas/TaxRule'
+          maxLength: 100
+          nullable: true
+          type: array
+        version:
+          $ref: '#/components/schemas/Version'
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - description
+      - displayName
+      - id
+      - outputPropertyKey
       type: object
     TermDeposit:
       allOf:
@@ -92811,6 +94064,67 @@ components:
       - displayName
       - inwardDescription
       - outwardDescription
+      type: object
+    UpdateTaxRuleSetRequest:
+      additionalProperties: false
+      example:
+        outputPropertyKey: outputPropertyKey
+        displayName: displayName
+        description: description
+        rules:
+        - rate: 0.8008281904610115
+          criteria:
+          - op: Equals
+          - op: Equals
+          name: name
+          description: description
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+        - rate: 0.8008281904610115
+          criteria:
+          - op: Equals
+          - op: Equals
+          name: name
+          description: description
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+      properties:
+        displayName:
+          maxLength: 1024
+          minLength: 0
+          pattern: ^[\s\S]*$
+          type: string
+        description:
+          maxLength: 1024
+          minLength: 0
+          pattern: ^[\s\S]*$
+          type: string
+        outputPropertyKey:
+          type: string
+        rules:
+          items:
+            $ref: '#/components/schemas/TaxRule'
+          maxLength: 100
+          nullable: true
+          type: array
+      required:
+      - description
+      - displayName
+      - outputPropertyKey
       type: object
     UpdateUnitRequest:
       additionalProperties: false
@@ -101528,6 +102842,48 @@ components:
       - paymentDate
       - recordDate
       type: object
+    StringEqualsCriterion_allOf:
+      properties:
+        key:
+          description: The property key whose value will form the left-hand side of
+            the operation
+          type: string
+        value:
+          description: The value to be compared against
+          type: string
+        op:
+          description: 'The available values are: Equals, In'
+          enum:
+          - Equals
+          - In
+          type: string
+      required:
+      - key
+      - op
+      - value
+      type: object
+    StringInCriterion_allOf:
+      properties:
+        key:
+          description: The property key whose value will form the left-hand side of
+            the operation
+          type: string
+        value:
+          description: The value to be compared against
+          items:
+            type: string
+          type: array
+        op:
+          description: 'The available values are: Equals, In'
+          enum:
+          - Equals
+          - In
+          type: string
+      required:
+      - key
+      - op
+      - value
+      type: object
     TermDeposit_allOf:
       properties:
         startDate:
@@ -101762,7 +103118,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
@@ -101815,5 +103171,6 @@ x-tagGroups:
   - Transaction Configuration
   - Transaction Fees
   - Transaction Portfolios
+  - Transaction Tax Rules
   - Translation
 
