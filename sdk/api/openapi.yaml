@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4934
+  version: 0.11.4935
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -10121,6 +10121,323 @@ paths:
       security:
       - oauth2: []
       summary: '[EXPERIMENTAL] UpsertCustomEntity: Upsert a Custom Entity instance'
+      tags:
+      - CustomEntities
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/customentities/{entityType}/$batchUpsert:
+    post:
+      description: 'Note: If using partial failure modes, then it is important to
+        check the response body for failures as any failures will still return a 200
+        status code'
+      operationId: UpsertCustomEntities
+      parameters:
+      - description: The type of the Custom Entity to be created. An entityType can
+          be created using the "CreateCustomEntityDefinition" endpoint for CustomEntityDefinitions.
+        explode: false
+        in: path
+        name: entityType
+        required: true
+        schema:
+          description: The type of the Custom Entity to be created. An entityType
+            can be created using the "CreateCustomEntityDefinition" endpoint for CustomEntityDefinitions.
+          maxLength: 64
+          minLength: 1
+          type: string
+        style: simple
+      - description: 'Whether the batch request should fail Atomically or in a Partial
+          fashion - Allowed Values: Atomic, Partial'
+        explode: true
+        in: query
+        name: successMode
+        required: true
+        schema:
+          description: 'Whether the batch request should fail Atomically or in a Partial
+            fashion - Allowed Values: Atomic, Partial'
+          maxLength: 64
+          minLength: 1
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              customEntity1:
+                displayName: CustomEntity1
+                description: MyFirstCustomEntity
+                identifiers:
+                - identifierScope: scope1
+                  identifierType: supportTicketId
+                  identifierValue: xyz123pqr
+                fields:
+                - name: clientId
+                  value: AcmeLtd
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                - name: issueDescription
+                  value: I can't access this portfolio
+                  effectiveFrom: 2020-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+              customEntity2:
+                displayName: CustomEntity2
+                description: MyFirstCustomEntity
+                identifiers:
+                - identifierScope: scope1
+                  identifierType: supportTicketId
+                  identifierValue: yazr1531
+                fields:
+                - name: clientId
+                  value: AcmeLtd
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                - name: issueDescription
+                  value: Having trouble adding identifiers
+                  effectiveFrom: 2020-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/CustomEntityRequest'
+              description: The payload describing the Custom Entity instances
+              type: object
+          application/json:
+            example:
+              customEntity1:
+                displayName: CustomEntity1
+                description: MyFirstCustomEntity
+                identifiers:
+                - identifierScope: scope1
+                  identifierType: supportTicketId
+                  identifierValue: xyz123pqr
+                fields:
+                - name: clientId
+                  value: AcmeLtd
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                - name: issueDescription
+                  value: I can't access this portfolio
+                  effectiveFrom: 2020-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+              customEntity2:
+                displayName: CustomEntity2
+                description: MyFirstCustomEntity
+                identifiers:
+                - identifierScope: scope1
+                  identifierType: supportTicketId
+                  identifierValue: yazr1531
+                fields:
+                - name: clientId
+                  value: AcmeLtd
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                - name: issueDescription
+                  value: Having trouble adding identifiers
+                  effectiveFrom: 2020-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/CustomEntityRequest'
+              description: The payload describing the Custom Entity instances
+              type: object
+          text/json:
+            example:
+              customEntity1:
+                displayName: CustomEntity1
+                description: MyFirstCustomEntity
+                identifiers:
+                - identifierScope: scope1
+                  identifierType: supportTicketId
+                  identifierValue: xyz123pqr
+                fields:
+                - name: clientId
+                  value: AcmeLtd
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                - name: issueDescription
+                  value: I can't access this portfolio
+                  effectiveFrom: 2020-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+              customEntity2:
+                displayName: CustomEntity2
+                description: MyFirstCustomEntity
+                identifiers:
+                - identifierScope: scope1
+                  identifierType: supportTicketId
+                  identifierValue: yazr1531
+                fields:
+                - name: clientId
+                  value: AcmeLtd
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                - name: issueDescription
+                  value: Having trouble adding identifiers
+                  effectiveFrom: 2020-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/CustomEntityRequest'
+              description: The payload describing the Custom Entity instances
+              type: object
+          application/*+json:
+            example:
+              customEntity1:
+                displayName: CustomEntity1
+                description: MyFirstCustomEntity
+                identifiers:
+                - identifierScope: scope1
+                  identifierType: supportTicketId
+                  identifierValue: xyz123pqr
+                fields:
+                - name: clientId
+                  value: AcmeLtd
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                - name: issueDescription
+                  value: I can't access this portfolio
+                  effectiveFrom: 2020-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+              customEntity2:
+                displayName: CustomEntity2
+                description: MyFirstCustomEntity
+                identifiers:
+                - identifierScope: scope1
+                  identifierType: supportTicketId
+                  identifierValue: yazr1531
+                fields:
+                - name: clientId
+                  value: AcmeLtd
+                  effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                - name: issueDescription
+                  value: Having trouble adding identifiers
+                  effectiveFrom: 2020-01-01T12:00:00.0000000+00:00
+                  effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/CustomEntityRequest'
+              description: The payload describing the Custom Entity instances
+              type: object
+        description: The payload describing the Custom Entity instances
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              example:
+                values:
+                  customEntity1:
+                    entityType: Issue
+                    version:
+                      effectiveFrom: 2022-11-07T09:22:11.6473542+00:00
+                      asAtDate: 2022-11-07T09:22:11.6473545+00:00
+                    displayName: CustomEntity1
+                    description: MyFirstCustomEntity
+                    identifiers:
+                    - identifierScope: scope1
+                      identifierType: supportTicketId
+                      identifierValue: xyz123pqr
+                    fields:
+                    - name: clientId
+                      value: AcmeLtd
+                      effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                      effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                    - name: issueDescription
+                      value: I can't access this portfolio
+                      effectiveFrom: 2020-01-01T12:00:00.0000000+00:00
+                      effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                    relationships: []
+                failed:
+                  customEntity2:
+                    id: Error1
+                    type: IdentifiersNotValidFailure
+                    detail: One or more of the supplied identifiers was invalid
+              schema:
+                $ref: '#/components/schemas/UpsertCustomEntitiesResponse'
+            application/json:
+              example:
+                values:
+                  customEntity1:
+                    entityType: Issue
+                    version:
+                      effectiveFrom: 2022-11-07T09:22:11.6473542+00:00
+                      asAtDate: 2022-11-07T09:22:11.6473545+00:00
+                    displayName: CustomEntity1
+                    description: MyFirstCustomEntity
+                    identifiers:
+                    - identifierScope: scope1
+                      identifierType: supportTicketId
+                      identifierValue: xyz123pqr
+                    fields:
+                    - name: clientId
+                      value: AcmeLtd
+                      effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                      effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                    - name: issueDescription
+                      value: I can't access this portfolio
+                      effectiveFrom: 2020-01-01T12:00:00.0000000+00:00
+                      effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                    relationships: []
+                failed:
+                  customEntity2:
+                    id: Error1
+                    type: IdentifiersNotValidFailure
+                    detail: One or more of the supplied identifiers was invalid
+              schema:
+                $ref: '#/components/schemas/UpsertCustomEntitiesResponse'
+            text/json:
+              example:
+                values:
+                  customEntity1:
+                    entityType: Issue
+                    version:
+                      effectiveFrom: 2022-11-07T09:22:11.6473542+00:00
+                      asAtDate: 2022-11-07T09:22:11.6473545+00:00
+                    displayName: CustomEntity1
+                    description: MyFirstCustomEntity
+                    identifiers:
+                    - identifierScope: scope1
+                      identifierType: supportTicketId
+                      identifierValue: xyz123pqr
+                    fields:
+                    - name: clientId
+                      value: AcmeLtd
+                      effectiveFrom: 0001-01-01T00:00:00.0000000+00:00
+                      effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                    - name: issueDescription
+                      value: I can't access this portfolio
+                      effectiveFrom: 2020-01-01T12:00:00.0000000+00:00
+                      effectiveUntil: 9999-12-31T23:59:59.9999999+00:00
+                    relationships: []
+                failed:
+                  customEntity2:
+                    id: Error1
+                    type: IdentifiersNotValidFailure
+                    detail: One or more of the supplied identifiers was invalid
+              schema:
+                $ref: '#/components/schemas/UpsertCustomEntitiesResponse'
+          description: The upserted custom entity instance
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] UpsertCustomEntities: Batch upsert instances of Custom
+        Entities'
       tags:
       - CustomEntities
       x-fbn-apistatus: Experimental
@@ -92797,6 +93114,176 @@ components:
         creditSupportAnnex:
           $ref: '#/components/schemas/CreditSupportAnnex'
       type: object
+    UpsertCustomEntitiesResponse:
+      additionalProperties: false
+      example:
+        values:
+          key:
+            relationships:
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              traversalDirection: traversalDirection
+              relatedEntity:
+                entityType: entityType
+                displayName: displayName
+                identifiers:
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                scope: scope
+                entityId:
+                  key: entityId
+                lusidUniqueId:
+                  type: type
+                  value: value
+                href: https://openapi-generator.tech
+                properties:
+                  key:
+                    effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                    value:
+                      metricValue:
+                        unit: unit
+                        value: 0.8008281904610115
+                      labelValue: labelValue
+                      labelValueSet:
+                        values:
+                        - values
+                        - values
+                    effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                    key: key
+              version:
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                asAtDate: 2000-01-23T04:56:07.000+00:00
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              relationshipDefinitionId:
+                code: code
+                scope: scope
+              traversalDescription: traversalDescription
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              traversalDirection: traversalDirection
+              relatedEntity:
+                entityType: entityType
+                displayName: displayName
+                identifiers:
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                scope: scope
+                entityId:
+                  key: entityId
+                lusidUniqueId:
+                  type: type
+                  value: value
+                href: https://openapi-generator.tech
+                properties:
+                  key:
+                    effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                    value:
+                      metricValue:
+                        unit: unit
+                        value: 0.8008281904610115
+                      labelValue: labelValue
+                      labelValueSet:
+                        values:
+                        - values
+                        - values
+                    effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                    key: key
+              version:
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                asAtDate: 2000-01-23T04:56:07.000+00:00
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              relationshipDefinitionId:
+                code: code
+                scope: scope
+              traversalDescription: traversalDescription
+            entityType: entityType
+            displayName: displayName
+            identifiers:
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              identifierValue: identifierValue
+              identifierType: identifierType
+              identifierScope: identifierScope
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            description: description
+            links:
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            href: https://openapi-generator.tech
+            fields:
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              name: name
+              value: '{}'
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              name: name
+              value: '{}'
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            version:
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+        failed:
+          key:
+            id: id
+            detail: detail
+            type: type
+            errorDetails:
+            - key: errorDetails
+            - key: errorDetails
+      properties:
+        href:
+          description: The specific Uniform Resource Identifier (URI) for this resource
+            at the requested effective and asAt datetime.
+          format: uri
+          nullable: true
+          type: string
+        values:
+          additionalProperties:
+            $ref: '#/components/schemas/CustomEntityResponse'
+          description: The custom-entities which have been successfully updated or
+            created.
+          nullable: true
+          type: object
+        failed:
+          additionalProperties:
+            $ref: '#/components/schemas/ErrorDetail'
+          description: The custom-entities that could not be updated or created or
+            were left unchanged without error along with a reason for their failure.
+          nullable: true
+          type: object
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      type: object
     UpsertFlowConventionsRequest:
       additionalProperties: false
       description: "Flow conventions that is to be stored in the convention data store.\r\
@@ -101275,7 +101762,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
