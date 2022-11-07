@@ -1,0 +1,19 @@
+
+
+# TaxRuleSet
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | [**ResourceId**](ResourceId.md) |  | 
+**displayName** | **String** | A user-friendly name | 
+**description** | **String** | A description of what this rule set is for | 
+**outputPropertyKey** | **String** | The property key that this rule set will write to | 
+**rules** | [**List&lt;TaxRule&gt;**](TaxRule.md) | The rules of this rule set, which stipulate what rate to apply (i.e. write to the OutputPropertyKey) under certain conditions |  [optional]
+**version** | [**Version**](Version.md) |  |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
+
+
+
