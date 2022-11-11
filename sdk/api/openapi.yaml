@@ -10331,8 +10331,8 @@ paths:
                   customEntity1:
                     entityType: Issue
                     version:
-                      effectiveFrom: 2022-11-11T11:26:13.6693858+00:00
-                      asAtDate: 2022-11-11T11:26:13.6693862+00:00
+                      effectiveFrom: 2022-11-11T13:19:19.0354363+00:00
+                      asAtDate: 2022-11-11T13:19:19.0354375+00:00
                     displayName: CustomEntity1
                     description: MyFirstCustomEntity
                     identifiers:
@@ -10362,8 +10362,8 @@ paths:
                   customEntity1:
                     entityType: Issue
                     version:
-                      effectiveFrom: 2022-11-11T11:26:13.6693858+00:00
-                      asAtDate: 2022-11-11T11:26:13.6693862+00:00
+                      effectiveFrom: 2022-11-11T13:19:19.0354363+00:00
+                      asAtDate: 2022-11-11T13:19:19.0354375+00:00
                     displayName: CustomEntity1
                     description: MyFirstCustomEntity
                     identifiers:
@@ -10393,8 +10393,8 @@ paths:
                   customEntity1:
                     entityType: Issue
                     version:
-                      effectiveFrom: 2022-11-11T11:26:13.6693858+00:00
-                      asAtDate: 2022-11-11T11:26:13.6693862+00:00
+                      effectiveFrom: 2022-11-11T13:19:19.0354363+00:00
+                      asAtDate: 2022-11-11T13:19:19.0354375+00:00
                     displayName: CustomEntity1
                     description: MyFirstCustomEntity
                     identifiers:
@@ -103138,7 +103138,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:
