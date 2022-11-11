@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4956
+  version: 0.11.4957
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -10331,8 +10331,8 @@ paths:
                   customEntity1:
                     entityType: Issue
                     version:
-                      effectiveFrom: 2022-11-11T13:19:19.0354363+00:00
-                      asAtDate: 2022-11-11T13:19:19.0354375+00:00
+                      effectiveFrom: 2022-11-11T15:29:53.6220686+00:00
+                      asAtDate: 2022-11-11T15:29:53.6220737+00:00
                     displayName: CustomEntity1
                     description: MyFirstCustomEntity
                     identifiers:
@@ -10362,8 +10362,8 @@ paths:
                   customEntity1:
                     entityType: Issue
                     version:
-                      effectiveFrom: 2022-11-11T13:19:19.0354363+00:00
-                      asAtDate: 2022-11-11T13:19:19.0354375+00:00
+                      effectiveFrom: 2022-11-11T15:29:53.6220686+00:00
+                      asAtDate: 2022-11-11T15:29:53.6220737+00:00
                     displayName: CustomEntity1
                     description: MyFirstCustomEntity
                     identifiers:
@@ -10393,8 +10393,8 @@ paths:
                   customEntity1:
                     entityType: Issue
                     version:
-                      effectiveFrom: 2022-11-11T13:19:19.0354363+00:00
-                      asAtDate: 2022-11-11T13:19:19.0354375+00:00
+                      effectiveFrom: 2022-11-11T15:29:53.6220686+00:00
+                      asAtDate: 2022-11-11T15:29:53.6220737+00:00
                     displayName: CustomEntity1
                     description: MyFirstCustomEntity
                     identifiers:
@@ -32665,15 +32665,15 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: "[EXPERIMENTAL] ReconcileGeneric: Reconcile either holdings or valuations\
-        \ performed on one or two sets of holdings using one or two configuration\
-        \ recipes.\r\n            \r\nThe output is configurable for various types\
-        \ of comparisons, to allow tolerances on numerical and date-time data or case-insensitivity\
+      summary: "ReconcileGeneric: Reconcile either holdings or valuations performed\
+        \ on one or two sets of holdings using one or two configuration recipes.\r\
+        \n            \r\nThe output is configurable for various types of comparisons,\
+        \ to allow tolerances on numerical and date-time data or case-insensitivity\
         \ on strings,\r\nand elision of resulting differences where they are 'empty'\
         \ or null or zero."
       tags:
       - Reconciliations
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: Stable
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/portfolios/$reconcileholdings:
@@ -33209,11 +33209,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] ReconcileInline: Reconcile valuations performed on one or two
-        sets of inline instruments using one or two configuration recipes.'
+      summary: 'ReconcileInline: Reconcile valuations performed on one or two sets
+        of inline instruments using one or two configuration recipes.'
       tags:
       - Reconciliations
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: Stable
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/portfolios/$reconcileValuation:
@@ -33526,11 +33526,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[BETA] ReconcileValuation: Reconcile valuations performed on one or
-        two sets of holdings using one or two configuration recipes.'
+      summary: 'ReconcileValuation: Reconcile valuations performed on one or two sets
+        of holdings using one or two configuration recipes.'
       tags:
       - Reconciliations
-      x-fbn-apistatus: Beta
+      x-fbn-apistatus: Stable
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/portfolios/{scope}:
@@ -103138,7 +103138,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
