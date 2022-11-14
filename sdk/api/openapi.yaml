@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4963
+  version: 0.11.4964
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -10331,8 +10331,8 @@ paths:
                   customEntity1:
                     entityType: Issue
                     version:
-                      effectiveFrom: 2022-11-14T12:20:42.9840172+00:00
-                      asAtDate: 2022-11-14T12:20:42.9840204+00:00
+                      effectiveFrom: 2018-12-08T13:30:00.0000000+00:00
+                      asAtDate: 2018-12-08T13:30:01.0000000+00:00
                     displayName: CustomEntity1
                     description: MyFirstCustomEntity
                     identifiers:
@@ -10362,8 +10362,8 @@ paths:
                   customEntity1:
                     entityType: Issue
                     version:
-                      effectiveFrom: 2022-11-14T12:20:42.9840172+00:00
-                      asAtDate: 2022-11-14T12:20:42.9840204+00:00
+                      effectiveFrom: 2018-12-08T13:30:00.0000000+00:00
+                      asAtDate: 2018-12-08T13:30:01.0000000+00:00
                     displayName: CustomEntity1
                     description: MyFirstCustomEntity
                     identifiers:
@@ -10393,8 +10393,8 @@ paths:
                   customEntity1:
                     entityType: Issue
                     version:
-                      effectiveFrom: 2022-11-14T12:20:42.9840172+00:00
-                      asAtDate: 2022-11-14T12:20:42.9840204+00:00
+                      effectiveFrom: 2018-12-08T13:30:00.0000000+00:00
+                      asAtDate: 2018-12-08T13:30:01.0000000+00:00
                     displayName: CustomEntity1
                     description: MyFirstCustomEntity
                     identifiers:
@@ -16983,7 +16983,6 @@ paths:
             \ type uniquely identifies the legal entity to delete."
           maxLength: 64
           minLength: 1
-          pattern: ^[a-zA-Z0-9\-_.]*$
           type: string
         style: simple
       responses:
@@ -17068,7 +17067,6 @@ paths:
           maxLength: 64
           minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: "A list of property keys or identifier types (as property keys)\
@@ -17329,7 +17327,6 @@ paths:
           maxLength: 64
           minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: "The property keys of the identifiers to delete. These take the\
@@ -17450,7 +17447,6 @@ paths:
           maxLength: 64
           minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       requestBody:
@@ -18430,7 +18426,6 @@ paths:
           maxLength: 64
           minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: "The property keys of the legal entities properties to delete.\
@@ -18557,7 +18552,6 @@ paths:
           maxLength: 64
           minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       requestBody:
@@ -18817,7 +18811,6 @@ paths:
           maxLength: 64
           minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: "The property key of the property that will have its history\
@@ -18982,7 +18975,6 @@ paths:
           maxLength: 64
           minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The effective datetime or cut label at which to get relations.
@@ -19183,7 +19175,6 @@ paths:
           maxLength: 64
           minLength: 1
           nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The effective datetime or cut label at which to get relationships.
