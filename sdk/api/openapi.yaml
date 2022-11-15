@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4969
+  version: 0.11.4970
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -44520,12 +44520,14 @@ paths:
                     - propertyKey: Transaction/examplescope/exampleCode
                       setTo: examplevalue
                     name: Movement name
+                    movementOptions: []
                   - movementTypes: CashSettlement
                     side: Side2
                     direction: 1
                     properties: {}
                     mappings: []
                     name: Other movement name
+                    movementOptions: []
                   properties:
                     transactionConfiguration/default/Example:
                       key: TransactionConfiguration/default/Example
@@ -44559,12 +44561,14 @@ paths:
                     - propertyKey: Transaction/examplescope/exampleCode
                       setTo: examplevalue
                     name: Movement name
+                    movementOptions: []
                   - movementTypes: CashSettlement
                     side: Side2
                     direction: 1
                     properties: {}
                     mappings: []
                     name: Other movement name
+                    movementOptions: []
                   properties:
                     transactionConfiguration/default/Example:
                       key: TransactionConfiguration/default/Example
@@ -44598,12 +44602,14 @@ paths:
                     - propertyKey: Transaction/examplescope/exampleCode
                       setTo: examplevalue
                     name: Movement name
+                    movementOptions: []
                   - movementTypes: CashSettlement
                     side: Side2
                     direction: 1
                     properties: {}
                     mappings: []
                     name: Other movement name
+                    movementOptions: []
                   properties:
                     transactionConfiguration/default/Example:
                       key: TransactionConfiguration/default/Example
@@ -44859,6 +44865,7 @@ paths:
                     value:
                       labelValue: FirstInFirstOut
                 mappings: []
+                movementOptions: []
               - movementTypes: CashCommitment
                 side: Side1
                 direction: 1
@@ -44866,6 +44873,7 @@ paths:
                 mappings:
                 - propertyKey: Transaction/scopeA/Strategy
                   setTo: Cash
+                movementOptions: []
               properties:
                 transactionConfiguration/default/TotalConsiderationPolicy:
                   key: TransactionConfiguration/default/TotalConsiderationPolicy
@@ -44896,6 +44904,7 @@ paths:
                     value:
                       labelValue: FirstInFirstOut
                 mappings: []
+                movementOptions: []
               - movementTypes: CashCommitment
                 side: Side1
                 direction: 1
@@ -44903,6 +44912,7 @@ paths:
                 mappings:
                 - propertyKey: Transaction/scopeA/Strategy
                   setTo: Cash
+                movementOptions: []
               properties:
                 transactionConfiguration/default/TotalConsiderationPolicy:
                   key: TransactionConfiguration/default/TotalConsiderationPolicy
@@ -44933,6 +44943,7 @@ paths:
                     value:
                       labelValue: FirstInFirstOut
                 mappings: []
+                movementOptions: []
               - movementTypes: CashCommitment
                 side: Side1
                 direction: 1
@@ -44940,6 +44951,7 @@ paths:
                 mappings:
                 - propertyKey: Transaction/scopeA/Strategy
                   setTo: Cash
+                movementOptions: []
               properties:
                 transactionConfiguration/default/TotalConsiderationPolicy:
                   key: TransactionConfiguration/default/TotalConsiderationPolicy
@@ -44970,6 +44982,7 @@ paths:
                     value:
                       labelValue: FirstInFirstOut
                 mappings: []
+                movementOptions: []
               - movementTypes: CashCommitment
                 side: Side1
                 direction: 1
@@ -44977,6 +44990,7 @@ paths:
                 mappings:
                 - propertyKey: Transaction/scopeA/Strategy
                   setTo: Cash
+                movementOptions: []
               properties:
                 transactionConfiguration/default/TotalConsiderationPolicy:
                   key: TransactionConfiguration/default/TotalConsiderationPolicy
@@ -93268,6 +93282,9 @@ components:
           - propertyKey: propertyKey
             setTo: setTo
             mapFrom: mapFrom
+          movementOptions:
+          - movementOptions
+          - movementOptions
           name: name
           movementTypes: movementTypes
           properties:
@@ -93291,6 +93308,9 @@ components:
           - propertyKey: propertyKey
             setTo: setTo
             mapFrom: mapFrom
+          movementOptions:
+          - movementOptions
+          - movementOptions
           name: name
           movementTypes: movementTypes
           properties:
@@ -93406,6 +93426,9 @@ components:
         - propertyKey: propertyKey
           setTo: setTo
           mapFrom: mapFrom
+        movementOptions:
+        - movementOptions
+        - movementOptions
         name: name
         movementTypes: movementTypes
         properties:
@@ -93463,6 +93486,16 @@ components:
           nullable: true
           pattern: ^[\s\S]*$
           type: string
+        movementOptions:
+          description: Allows extra specifications for the movement. The only option
+            currently available is 'DirectAdjustment'. A movement type of 'StockMovement'
+            with an option of 'DirectAdjusment' will allow you to adjust the unitsof
+            a holding without affecting its cost base. You will, therefore, be able
+            to reflect the impact of a stock split by loading a Transaction.
+          items:
+            type: string
+          nullable: true
+          type: array
       required:
       - direction
       - movementTypes
@@ -93516,6 +93549,9 @@ components:
           - propertyKey: propertyKey
             setTo: setTo
             mapFrom: mapFrom
+          movementOptions:
+          - movementOptions
+          - movementOptions
           name: name
           movementTypes: movementTypes
           properties:
@@ -93539,6 +93575,9 @@ components:
           - propertyKey: propertyKey
             setTo: setTo
             mapFrom: mapFrom
+          movementOptions:
+          - movementOptions
+          - movementOptions
           name: name
           movementTypes: movementTypes
           properties:
