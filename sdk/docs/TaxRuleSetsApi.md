@@ -1,14 +1,14 @@
-# TransactionTaxRulesApi
+# TaxRuleSetsApi
 
 All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createTaxRuleSet**](TransactionTaxRulesApi.md#createTaxRuleSet) | **POST** /api/transactions/taxrules | [EXPERIMENTAL] CreateTaxRuleSet: Create a tax rule set.
-[**deleteTaxRuleSet**](TransactionTaxRulesApi.md#deleteTaxRuleSet) | **DELETE** /api/transactions/taxrules/{scope}/{code} | [EXPERIMENTAL] DeleteTaxRuleSet: Deletes a tax rule.
-[**getTaxRuleSet**](TransactionTaxRulesApi.md#getTaxRuleSet) | **GET** /api/transactions/taxrules/{scope}/{code} | [EXPERIMENTAL] GetTaxRuleSet: Retrieve the definition of single tax rule set.
-[**listTaxRuleSets**](TransactionTaxRulesApi.md#listTaxRuleSets) | **GET** /api/transactions/taxrules | [EXPERIMENTAL] ListTaxRuleSets: List tax rules.
-[**updateTaxRuleSet**](TransactionTaxRulesApi.md#updateTaxRuleSet) | **PUT** /api/transactions/taxrules/{scope}/{code} | [EXPERIMENTAL] UpdateTaxRuleSet: Update a tax rule set.
+[**createTaxRuleSet**](TaxRuleSetsApi.md#createTaxRuleSet) | **POST** /api/tax/rulesets | [EXPERIMENTAL] CreateTaxRuleSet: Create a tax rule set.
+[**deleteTaxRuleSet**](TaxRuleSetsApi.md#deleteTaxRuleSet) | **DELETE** /api/tax/rulesets/{scope}/{code} | [EXPERIMENTAL] DeleteTaxRuleSet: Delete a tax rule set.
+[**getTaxRuleSet**](TaxRuleSetsApi.md#getTaxRuleSet) | **GET** /api/tax/rulesets/{scope}/{code} | [EXPERIMENTAL] GetTaxRuleSet: Retrieve the definition of single tax rule set.
+[**listTaxRuleSets**](TaxRuleSetsApi.md#listTaxRuleSets) | **GET** /api/tax/rulesets | [EXPERIMENTAL] ListTaxRuleSets: List tax rule sets.
+[**updateTaxRuleSet**](TaxRuleSetsApi.md#updateTaxRuleSet) | **PUT** /api/tax/rulesets/{scope}/{code} | [EXPERIMENTAL] UpdateTaxRuleSet: Update a tax rule set.
 
 
 <a name="createTaxRuleSet"></a>
@@ -27,7 +27,7 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
 import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.TransactionTaxRulesApi;
+import com.finbourne.lusid.api.TaxRuleSetsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -38,14 +38,14 @@ public class Example {
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    TransactionTaxRulesApi apiInstance = new TransactionTaxRulesApi(defaultClient);
+    TaxRuleSetsApi apiInstance = new TaxRuleSetsApi(defaultClient);
     CreateTaxRuleSetRequest createTaxRuleSetRequest = new CreateTaxRuleSetRequest(); // CreateTaxRuleSetRequest | The contents of the rule set.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which the rule set will take effect.  Defaults to the current LUSID system datetime if not specified.
     try {
       TaxRuleSet result = apiInstance.createTaxRuleSet(createTaxRuleSetRequest, effectiveAt);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TransactionTaxRulesApi#createTaxRuleSet");
+      System.err.println("Exception when calling TaxRuleSetsApi#createTaxRuleSet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -86,9 +86,9 @@ Name | Type | Description  | Notes
 # **deleteTaxRuleSet**
 > DeletedEntityResponse deleteTaxRuleSet(scope, code)
 
-[EXPERIMENTAL] DeleteTaxRuleSet: Deletes a tax rule.
+[EXPERIMENTAL] DeleteTaxRuleSet: Delete a tax rule set.
 
-&lt;br&gt;              Deletes the rule for all effective time.                &lt;br&gt;              The rule will remain viewable at previous as at times, but it will no longer be considered applicable.                &lt;br&gt;              This cannot be undone.              
+&lt;br&gt;              Deletes the rule set for all effective time.                &lt;br&gt;              The rule set will remain viewable at previous as at times, but it will no longer be considered applicable.                &lt;br&gt;              This cannot be undone.              
 
 ### Example
 ```java
@@ -98,7 +98,7 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
 import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.TransactionTaxRulesApi;
+import com.finbourne.lusid.api.TaxRuleSetsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -109,14 +109,14 @@ public class Example {
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    TransactionTaxRulesApi apiInstance = new TransactionTaxRulesApi(defaultClient);
+    TaxRuleSetsApi apiInstance = new TaxRuleSetsApi(defaultClient);
     String scope = "scope_example"; // String | The rule set scope.
     String code = "code_example"; // String | The rule set code.
     try {
       DeletedEntityResponse result = apiInstance.deleteTaxRuleSet(scope, code);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TransactionTaxRulesApi#deleteTaxRuleSet");
+      System.err.println("Exception when calling TaxRuleSetsApi#deleteTaxRuleSet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -169,7 +169,7 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
 import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.TransactionTaxRulesApi;
+import com.finbourne.lusid.api.TaxRuleSetsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -180,7 +180,7 @@ public class Example {
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    TransactionTaxRulesApi apiInstance = new TransactionTaxRulesApi(defaultClient);
+    TaxRuleSetsApi apiInstance = new TaxRuleSetsApi(defaultClient);
     String scope = "scope_example"; // String | The rule set scope.
     String code = "code_example"; // String | The rule set code.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to retrieve the rule definition. Defaults to the current LUSID  system datetime if not specified.
@@ -189,7 +189,7 @@ public class Example {
       TaxRuleSet result = apiInstance.getTaxRuleSet(scope, code, effectiveAt, asAt);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TransactionTaxRulesApi#getTaxRuleSet");
+      System.err.println("Exception when calling TaxRuleSetsApi#getTaxRuleSet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 # **listTaxRuleSets**
 > ResourceListOfTaxRuleSet listTaxRuleSets(effectiveAt, asAt)
 
-[EXPERIMENTAL] ListTaxRuleSets: List tax rules.
+[EXPERIMENTAL] ListTaxRuleSets: List tax rule sets.
 
 Retrieves all tax rule set definitions at the given effective and as at times
 
@@ -244,7 +244,7 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
 import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.TransactionTaxRulesApi;
+import com.finbourne.lusid.api.TaxRuleSetsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -255,14 +255,14 @@ public class Example {
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    TransactionTaxRulesApi apiInstance = new TransactionTaxRulesApi(defaultClient);
+    TaxRuleSetsApi apiInstance = new TaxRuleSetsApi(defaultClient);
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to retrieve the rule definitions. Defaults to the current LUSID  system datetime if not specified.
     OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the rule definitions. Defaults to returning the latest version if not  specified.
     try {
       ResourceListOfTaxRuleSet result = apiInstance.listTaxRuleSets(effectiveAt, asAt);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TransactionTaxRulesApi#listTaxRuleSets");
+      System.err.println("Exception when calling TaxRuleSetsApi#listTaxRuleSets");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -315,7 +315,7 @@ import com.finbourne.lusid.ApiException;
 import com.finbourne.lusid.Configuration;
 import com.finbourne.lusid.auth.*;
 import com.finbourne.lusid.models.*;
-import com.finbourne.lusid.api.TransactionTaxRulesApi;
+import com.finbourne.lusid.api.TaxRuleSetsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -326,7 +326,7 @@ public class Example {
     OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    TransactionTaxRulesApi apiInstance = new TransactionTaxRulesApi(defaultClient);
+    TaxRuleSetsApi apiInstance = new TaxRuleSetsApi(defaultClient);
     String scope = "scope_example"; // String | The rule set scope.
     String code = "code_example"; // String | The rule set code.
     UpdateTaxRuleSetRequest updateTaxRuleSetRequest = new UpdateTaxRuleSetRequest(); // UpdateTaxRuleSetRequest | The contents of the rule set.
@@ -335,7 +335,7 @@ public class Example {
       TaxRuleSet result = apiInstance.updateTaxRuleSet(scope, code, updateTaxRuleSetRequest, effectiveAt);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TransactionTaxRulesApi#updateTaxRuleSet");
+      System.err.println("Exception when calling TaxRuleSetsApi#updateTaxRuleSet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
