@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4977
+  version: 0.11.4978
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -8488,11 +8488,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListCounterpartyAgreements: List the set of Counterparty
+      summary: '[EARLY ACCESS] ListCounterpartyAgreements: List the set of Counterparty
         Agreements'
       tags:
       - Counterparties
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: "Update or insert Counterparty Agreement in a single scope. An\
@@ -8619,10 +8619,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertCounterpartyAgreement: Upsert Counterparty Agreement'
+      summary: '[EARLY ACCESS] UpsertCounterpartyAgreement: Upsert Counterparty Agreement'
       tags:
       - Counterparties
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/counterparties/counterpartyagreements/{scope}/{code}:
@@ -8690,11 +8690,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteCounterpartyAgreement: Delete the Counterparty
+      summary: '[EARLY ACCESS] DeleteCounterpartyAgreement: Delete the Counterparty
         Agreement of given scope and code'
       tags:
       - Counterparties
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: "Get a Counterparty Agreement from a single scope.\r\nThe response\
@@ -8775,10 +8775,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetCounterpartyAgreement: Get Counterparty Agreement'
+      summary: '[EARLY ACCESS] GetCounterpartyAgreement: Get Counterparty Agreement'
       tags:
       - Counterparties
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/counterparties/creditsupportannexes:
     get:
@@ -8832,11 +8832,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListCreditSupportAnnexes: List the set of Credit Support
+      summary: '[EARLY ACCESS] ListCreditSupportAnnexes: List the set of Credit Support
         Annexes'
       tags:
       - Counterparties
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: "Update or insert Credit Support Annex in a single scope. An item\
@@ -8954,10 +8954,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertCreditSupportAnnex: Upsert Credit Support Annex'
+      summary: '[EARLY ACCESS] UpsertCreditSupportAnnex: Upsert Credit Support Annex'
       tags:
       - Counterparties
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/counterparties/creditsupportannexes/{scope}/{code}:
@@ -9025,11 +9025,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteCreditSupportAnnex: Delete the Credit Support
+      summary: '[EARLY ACCESS] DeleteCreditSupportAnnex: Delete the Credit Support
         Annex of given scope and code'
       tags:
       - Counterparties
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: "Get a Credit Support Annex from a single scope.\r\nThe response\
@@ -9109,10 +9109,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetCreditSupportAnnex: Get Credit Support Annex'
+      summary: '[EARLY ACCESS] GetCreditSupportAnnex: Get Credit Support Annex'
       tags:
       - Counterparties
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/customentities/entitytypes:
     get:
