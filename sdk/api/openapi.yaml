@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4978
+  version: 0.11.4979
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -82782,6 +82782,8 @@ components:
       - Isin
       - CurrencyPair
       - ClientInternal
+      - Sedol
+      - Cusip
       type: string
     QuoteSeriesId:
       additionalProperties: false
@@ -82812,7 +82814,8 @@ components:
         instrumentIdType:
           description: 'The type of instrument identifier used to uniquely identify
             the instrument that the quote is for, e.g. ''Figi''. The available values
-            are: LusidInstrumentId, Figi, RIC, QuotePermId, Isin, CurrencyPair, ClientInternal'
+            are: LusidInstrumentId, Figi, RIC, QuotePermId, Isin, CurrencyPair, ClientInternal,
+            Sedol, Cusip'
           enum:
           - LusidInstrumentId
           - Figi
@@ -82821,6 +82824,8 @@ components:
           - Isin
           - CurrencyPair
           - ClientInternal
+          - Sedol
+          - Cusip
           nullable: true
           type: string
         quoteType:
