@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4984
+  version: 0.11.4985
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -43927,11 +43927,13 @@ paths:
                   direction: -1
                   properties: {}
                   mappings: []
+                  movementOptions: []
                 - movementTypes: CashCommitment
                   side: Side2
                   direction: 1
                   properties: {}
                   mappings: []
+                  movementOptions: []
                 properties: {}
               - aliases:
                 - type: Sell-FIFO
@@ -43951,11 +43953,13 @@ paths:
                       value:
                         labelValue: FirstInFirstOut
                   mappings: []
+                  movementOptions: []
                 - movementTypes: CashCommitment
                   side: Side2
                   direction: 1
                   properties: {}
                   mappings: []
+                  movementOptions: []
                 properties:
                   transactionConfiguration/default/Example:
                     key: TransactionConfiguration/default/Example
@@ -43993,11 +43997,13 @@ paths:
                   direction: -1
                   properties: {}
                   mappings: []
+                  movementOptions: []
                 - movementTypes: CashCommitment
                   side: Side2
                   direction: 1
                   properties: {}
                   mappings: []
+                  movementOptions: []
                 properties: {}
               - aliases:
                 - type: Sell-FIFO
@@ -44017,11 +44023,13 @@ paths:
                       value:
                         labelValue: FirstInFirstOut
                   mappings: []
+                  movementOptions: []
                 - movementTypes: CashCommitment
                   side: Side2
                   direction: 1
                   properties: {}
                   mappings: []
+                  movementOptions: []
                 properties:
                   transactionConfiguration/default/Example:
                     key: TransactionConfiguration/default/Example
@@ -44059,11 +44067,13 @@ paths:
                   direction: -1
                   properties: {}
                   mappings: []
+                  movementOptions: []
                 - movementTypes: CashCommitment
                   side: Side2
                   direction: 1
                   properties: {}
                   mappings: []
+                  movementOptions: []
                 properties: {}
               - aliases:
                 - type: Sell-FIFO
@@ -44083,11 +44093,13 @@ paths:
                       value:
                         labelValue: FirstInFirstOut
                   mappings: []
+                  movementOptions: []
                 - movementTypes: CashCommitment
                   side: Side2
                   direction: 1
                   properties: {}
                   mappings: []
+                  movementOptions: []
                 properties:
                   transactionConfiguration/default/Example:
                     key: TransactionConfiguration/default/Example
@@ -44125,11 +44137,13 @@ paths:
                   direction: -1
                   properties: {}
                   mappings: []
+                  movementOptions: []
                 - movementTypes: CashCommitment
                   side: Side2
                   direction: 1
                   properties: {}
                   mappings: []
+                  movementOptions: []
                 properties: {}
               - aliases:
                 - type: Sell-FIFO
@@ -44149,11 +44163,13 @@ paths:
                       value:
                         labelValue: FirstInFirstOut
                   mappings: []
+                  movementOptions: []
                 - movementTypes: CashCommitment
                   side: Side2
                   direction: 1
                   properties: {}
                   mappings: []
+                  movementOptions: []
                 properties:
                   transactionConfiguration/default/Example:
                     key: TransactionConfiguration/default/Example
@@ -44324,11 +44340,13 @@ paths:
                 direction: -1
                 properties: {}
                 mappings: []
+                movementOptions: []
               - movementTypes: CashCommitment
                 side: Side2
                 direction: 1
                 properties: {}
                 mappings: []
+                movementOptions: []
               properties: {}
             schema:
               $ref: '#/components/schemas/TransactionConfigurationDataRequest'
@@ -44348,11 +44366,13 @@ paths:
                 direction: -1
                 properties: {}
                 mappings: []
+                movementOptions: []
               - movementTypes: CashCommitment
                 side: Side2
                 direction: 1
                 properties: {}
                 mappings: []
+                movementOptions: []
               properties: {}
             schema:
               $ref: '#/components/schemas/TransactionConfigurationDataRequest'
@@ -44372,11 +44392,13 @@ paths:
                 direction: -1
                 properties: {}
                 mappings: []
+                movementOptions: []
               - movementTypes: CashCommitment
                 side: Side2
                 direction: 1
                 properties: {}
                 mappings: []
+                movementOptions: []
               properties: {}
             schema:
               $ref: '#/components/schemas/TransactionConfigurationDataRequest'
@@ -44396,11 +44418,13 @@ paths:
                 direction: -1
                 properties: {}
                 mappings: []
+                movementOptions: []
               - movementTypes: CashCommitment
                 side: Side2
                 direction: 1
                 properties: {}
                 mappings: []
+                movementOptions: []
               properties: {}
             schema:
               $ref: '#/components/schemas/TransactionConfigurationDataRequest'
@@ -44614,11 +44638,13 @@ paths:
                 direction: -1
                 properties: {}
                 mappings: []
+                movementOptions: []
               - movementTypes: CashCommitment
                 side: Side2
                 direction: 1
                 properties: {}
                 mappings: []
+                movementOptions: []
               properties:
                 transactionConfiguration/default/Example:
                   key: TransactionConfiguration/default/Example
@@ -44643,11 +44669,13 @@ paths:
                 direction: -1
                 properties: {}
                 mappings: []
+                movementOptions: []
               - movementTypes: CashCommitment
                 side: Side2
                 direction: 1
                 properties: {}
                 mappings: []
+                movementOptions: []
               properties:
                 transactionConfiguration/default/Example:
                   key: TransactionConfiguration/default/Example
@@ -44672,11 +44700,13 @@ paths:
                 direction: -1
                 properties: {}
                 mappings: []
+                movementOptions: []
               - movementTypes: CashCommitment
                 side: Side2
                 direction: 1
                 properties: {}
                 mappings: []
+                movementOptions: []
               properties:
                 transactionConfiguration/default/Example:
                   key: TransactionConfiguration/default/Example
@@ -44701,11 +44731,13 @@ paths:
                 direction: -1
                 properties: {}
                 mappings: []
+                movementOptions: []
               - movementTypes: CashCommitment
                 side: Side2
                 direction: 1
                 properties: {}
                 mappings: []
+                movementOptions: []
               properties:
                 transactionConfiguration/default/Example:
                   key: TransactionConfiguration/default/Example
@@ -91660,6 +91692,9 @@ components:
           - propertyKey: propertyKey
             setTo: '{}'
             mapFrom: mapFrom
+          movementOptions:
+          - movementOptions
+          - movementOptions
           name: name
           movementTypes: Settlement
           properties:
@@ -91683,6 +91718,9 @@ components:
           - propertyKey: propertyKey
             setTo: '{}'
             mapFrom: mapFrom
+          movementOptions:
+          - movementOptions
+          - movementOptions
           name: name
           movementTypes: Settlement
           properties:
@@ -92624,6 +92662,9 @@ components:
           - propertyKey: propertyKey
             setTo: '{}'
             mapFrom: mapFrom
+          movementOptions:
+          - movementOptions
+          - movementOptions
           name: name
           movementTypes: Settlement
           properties:
@@ -92647,6 +92688,9 @@ components:
           - propertyKey: propertyKey
             setTo: '{}'
             mapFrom: mapFrom
+          movementOptions:
+          - movementOptions
+          - movementOptions
           name: name
           movementTypes: Settlement
           properties:
@@ -92723,6 +92767,9 @@ components:
           - propertyKey: propertyKey
             setTo: '{}'
             mapFrom: mapFrom
+          movementOptions:
+          - movementOptions
+          - movementOptions
           name: name
           movementTypes: Settlement
           properties:
@@ -92746,6 +92793,9 @@ components:
           - propertyKey: propertyKey
             setTo: '{}'
             mapFrom: mapFrom
+          movementOptions:
+          - movementOptions
+          - movementOptions
           name: name
           movementTypes: Settlement
           properties:
@@ -92806,6 +92856,9 @@ components:
         - propertyKey: propertyKey
           setTo: '{}'
           mapFrom: mapFrom
+        movementOptions:
+        - movementOptions
+        - movementOptions
         name: name
         movementTypes: Settlement
         properties:
@@ -92877,6 +92930,16 @@ components:
           description: The movement name (optional)
           nullable: true
           type: string
+        movementOptions:
+          description: Allows extra specifications for the movement. The only option
+            currently available is 'DirectAdjustment'. A movement type of 'StockMovement'
+            with an option of 'DirectAdjusment' will allow you to adjust the unitsof
+            a holding without affecting its cost base. You will, therefore, be able
+            to reflect the impact of a stock split by loading a Transaction.
+          items:
+            type: string
+          nullable: true
+          type: array
       required:
       - direction
       - movementTypes
@@ -92893,6 +92956,9 @@ components:
         - propertyKey: propertyKey
           setTo: '{}'
           mapFrom: mapFrom
+        movementOptions:
+        - movementOptions
+        - movementOptions
         name: name
         movementTypes: Settlement
         properties:
@@ -92958,6 +93024,16 @@ components:
           description: The movement name (optional)
           nullable: true
           type: string
+        movementOptions:
+          description: Allows extra specifications for the movement. The only option
+            currently available is 'DirectAdjustment'. A movement type of 'StockMovement'
+            with an option of 'DirectAdjusment' will allow you to adjust the unitsof
+            a holding without affecting its cost base. You will, therefore, be able
+            to reflect the impact of a stock split by loading a Transaction.
+          items:
+            type: string
+          nullable: true
+          type: array
       required:
       - direction
       - movementTypes
@@ -93324,6 +93400,9 @@ components:
             - propertyKey: propertyKey
               setTo: '{}'
               mapFrom: mapFrom
+            movementOptions:
+            - movementOptions
+            - movementOptions
             name: name
             movementTypes: Settlement
             properties:
@@ -93347,6 +93426,9 @@ components:
             - propertyKey: propertyKey
               setTo: '{}'
               mapFrom: mapFrom
+            movementOptions:
+            - movementOptions
+            - movementOptions
             name: name
             movementTypes: Settlement
             properties:
@@ -93398,6 +93480,9 @@ components:
             - propertyKey: propertyKey
               setTo: '{}'
               mapFrom: mapFrom
+            movementOptions:
+            - movementOptions
+            - movementOptions
             name: name
             movementTypes: Settlement
             properties:
@@ -93421,6 +93506,9 @@ components:
             - propertyKey: propertyKey
               setTo: '{}'
               mapFrom: mapFrom
+            movementOptions:
+            - movementOptions
+            - movementOptions
             name: name
             movementTypes: Settlement
             properties:
@@ -93498,6 +93586,9 @@ components:
             - propertyKey: propertyKey
               setTo: '{}'
               mapFrom: mapFrom
+            movementOptions:
+            - movementOptions
+            - movementOptions
             name: name
             movementTypes: Settlement
             properties:
@@ -93521,6 +93612,9 @@ components:
             - propertyKey: propertyKey
               setTo: '{}'
               mapFrom: mapFrom
+            movementOptions:
+            - movementOptions
+            - movementOptions
             name: name
             movementTypes: Settlement
             properties:
@@ -93572,6 +93666,9 @@ components:
             - propertyKey: propertyKey
               setTo: '{}'
               mapFrom: mapFrom
+            movementOptions:
+            - movementOptions
+            - movementOptions
             name: name
             movementTypes: Settlement
             properties:
@@ -93595,6 +93692,9 @@ components:
             - propertyKey: propertyKey
               setTo: '{}'
               mapFrom: mapFrom
+            movementOptions:
+            - movementOptions
+            - movementOptions
             name: name
             movementTypes: Settlement
             properties:
