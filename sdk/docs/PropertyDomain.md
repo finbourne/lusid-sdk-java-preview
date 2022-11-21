@@ -65,5 +65,7 @@
 
 * `CHARTOFACCOUNTS` (value: `"ChartOfAccounts"`)
 
+* `CUSTODIANACCOUNT` (value: `"CustodianAccount"`)
+
 
 
