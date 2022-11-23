@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.4996
+  version: 0.11.4997
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -9239,12 +9239,10 @@ paths:
                 lifetime: Perpetual
                 type: String
                 required: true
-                description: Client's Id
               - name: issueDescription
                 lifetime: TimeVariant
                 type: String
                 required: true
-                description: Description of Issue
               - name: internalNotes
                 lifetime: TimeVariant
                 type: String
@@ -9265,12 +9263,10 @@ paths:
                 lifetime: Perpetual
                 type: String
                 required: true
-                description: Client's Id
               - name: issueDescription
                 lifetime: TimeVariant
                 type: String
                 required: true
-                description: Description of Issue
               - name: internalNotes
                 lifetime: TimeVariant
                 type: String
@@ -9291,12 +9287,10 @@ paths:
                 lifetime: Perpetual
                 type: String
                 required: true
-                description: Client's Id
               - name: issueDescription
                 lifetime: TimeVariant
                 type: String
                 required: true
-                description: Description of Issue
               - name: internalNotes
                 lifetime: TimeVariant
                 type: String
@@ -9317,12 +9311,10 @@ paths:
                 lifetime: Perpetual
                 type: String
                 required: true
-                description: Client's Id
               - name: issueDescription
                 lifetime: TimeVariant
                 type: String
                 required: true
-                description: Description of Issue
               - name: internalNotes
                 lifetime: TimeVariant
                 type: String
@@ -9350,12 +9342,10 @@ paths:
                   lifetime: Perpetual
                   type: String
                   required: true
-                  description: Client's Id
                 - name: issueDescription
                   lifetime: TimeVariant
                   type: String
                   required: true
-                  description: Description of Issue
                 - name: internalNotes
                   lifetime: TimeVariant
                   type: String
@@ -9378,12 +9368,10 @@ paths:
                   lifetime: Perpetual
                   type: String
                   required: true
-                  description: Client's Id
                 - name: issueDescription
                   lifetime: TimeVariant
                   type: String
                   required: true
-                  description: Description of Issue
                 - name: internalNotes
                   lifetime: TimeVariant
                   type: String
@@ -9406,12 +9394,10 @@ paths:
                   lifetime: Perpetual
                   type: String
                   required: true
-                  description: Client's Id
                 - name: issueDescription
                   lifetime: TimeVariant
                   type: String
                   required: true
-                  description: Description of Issue
                 - name: internalNotes
                   lifetime: TimeVariant
                   type: String
@@ -9496,12 +9482,10 @@ paths:
                   lifetime: Perpetual
                   type: String
                   required: true
-                  description: Client's Id
                 - name: issueDescription
                   lifetime: TimeVariant
                   type: String
                   required: true
-                  description: Description of Issue
                 - name: internalNotes
                   lifetime: TimeVariant
                   type: String
@@ -9524,12 +9508,10 @@ paths:
                   lifetime: Perpetual
                   type: String
                   required: true
-                  description: Client's Id
                 - name: issueDescription
                   lifetime: TimeVariant
                   type: String
                   required: true
-                  description: Description of Issue
                 - name: internalNotes
                   lifetime: TimeVariant
                   type: String
@@ -9552,12 +9534,10 @@ paths:
                   lifetime: Perpetual
                   type: String
                   required: true
-                  description: Client's Id
                 - name: issueDescription
                   lifetime: TimeVariant
                   type: String
                   required: true
-                  description: Description of Issue
                 - name: internalNotes
                   lifetime: TimeVariant
                   type: String
@@ -9623,12 +9603,10 @@ paths:
                 lifetime: Perpetual
                 type: String
                 required: true
-                description: Client's Id
               - name: issueDescription
                 lifetime: TimeVariant
                 type: String
                 required: true
-                description: Description of Issue
               - name: internalNotes
                 lifetime: TimeVariant
                 type: String
@@ -9648,12 +9626,10 @@ paths:
                 lifetime: Perpetual
                 type: String
                 required: true
-                description: Client's Id
               - name: issueDescription
                 lifetime: TimeVariant
                 type: String
                 required: true
-                description: Description of Issue
               - name: internalNotes
                 lifetime: TimeVariant
                 type: String
@@ -9673,12 +9649,10 @@ paths:
                 lifetime: Perpetual
                 type: String
                 required: true
-                description: Client's Id
               - name: issueDescription
                 lifetime: TimeVariant
                 type: String
                 required: true
-                description: Description of Issue
               - name: internalNotes
                 lifetime: TimeVariant
                 type: String
@@ -9698,12 +9672,10 @@ paths:
                 lifetime: Perpetual
                 type: String
                 required: true
-                description: Client's Id
               - name: issueDescription
                 lifetime: TimeVariant
                 type: String
                 required: true
-                description: Description of Issue
               - name: internalNotes
                 lifetime: TimeVariant
                 type: String
@@ -9731,12 +9703,10 @@ paths:
                   lifetime: Perpetual
                   type: String
                   required: true
-                  description: Client's Id
                 - name: issueDescription
                   lifetime: TimeVariant
                   type: String
                   required: true
-                  description: Description of Issue
                 - name: internalNotes
                   lifetime: TimeVariant
                   type: String
@@ -9759,12 +9729,10 @@ paths:
                   lifetime: Perpetual
                   type: String
                   required: true
-                  description: Client's Id
                 - name: issueDescription
                   lifetime: TimeVariant
                   type: String
                   required: true
-                  description: Description of Issue
                 - name: internalNotes
                   lifetime: TimeVariant
                   type: String
@@ -9787,12 +9755,10 @@ paths:
                   lifetime: Perpetual
                   type: String
                   required: true
-                  description: Client's Id
                 - name: issueDescription
                   lifetime: TimeVariant
                   type: String
                   required: true
-                  description: Description of Issue
                 - name: internalNotes
                   lifetime: TimeVariant
                   type: String
@@ -67788,12 +67754,10 @@ components:
         fieldSchema:
         - name: name
           lifetime: lifetime
-          description: description
           type: type
           required: true
         - name: name
           lifetime: lifetime
-          description: description
           type: type
           required: true
         href: https://openapi-generator.tech
@@ -67840,12 +67804,10 @@ components:
         fieldSchema:
         - name: name
           lifetime: lifetime
-          description: description
           type: type
           required: true
         - name: name
           lifetime: lifetime
-          description: description
           type: type
           required: true
       properties:
@@ -67912,7 +67874,6 @@ components:
       example:
         name: name
         lifetime: lifetime
-        description: description
         type: type
         required: true
       properties:
@@ -67930,12 +67891,6 @@ components:
         required:
           description: Whether the field is required or not.
           type: boolean
-        description:
-          description: An optional description for the field.
-          maxLength: 512
-          minLength: 1
-          nullable: true
-          type: string
       required:
       - lifetime
       - name
@@ -68288,7 +68243,6 @@ components:
         address:
           description: The internal address (LUSID native) of the unit in the provided
             data itself and corresponds to the external name of the data item
-          nullable: true
           type: string
         name:
           description: The name of the data item. This is the name that will appear
@@ -68322,6 +68276,8 @@ components:
           description: The path (or column) is allowed to be missing but if it is
             present it is not allowed to be null unless AllowNull is true.
           type: boolean
+      required:
+      - address
       type: object
     DataMapKey:
       additionalProperties: false
@@ -77298,12 +77254,10 @@ components:
           fieldSchema:
           - name: name
             lifetime: lifetime
-            description: description
             type: type
             required: true
           - name: name
             lifetime: lifetime
-            description: description
             type: type
             required: true
           href: https://openapi-generator.tech
@@ -77314,12 +77268,10 @@ components:
           fieldSchema:
           - name: name
             lifetime: lifetime
-            description: description
             type: type
             required: true
           - name: name
             lifetime: lifetime
-            description: description
             type: type
             required: true
           href: https://openapi-generator.tech
@@ -95118,12 +95070,10 @@ components:
         fieldSchema:
         - name: name
           lifetime: lifetime
-          description: description
           type: type
           required: true
         - name: name
           lifetime: lifetime
-          description: description
           type: type
           required: true
       properties:
