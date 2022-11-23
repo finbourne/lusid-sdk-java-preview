@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**deleteInstrumentProperties**](InstrumentsApi.md#deleteInstrumentProperties) | **POST** /api/instruments/{identifierType}/{identifier}/properties/$delete | [EXPERIMENTAL] DeleteInstrumentProperties: Delete instrument properties
 [**deleteInstruments**](InstrumentsApi.md#deleteInstruments) | **POST** /api/instruments/$delete | [EXPERIMENTAL] DeleteInstruments: Soft or hard delete multiple instruments
 [**getInstrument**](InstrumentsApi.md#getInstrument) | **GET** /api/instruments/{identifierType}/{identifier} | GetInstrument: Get instrument
+[**getInstrumentCapabilities**](InstrumentsApi.md#getInstrumentCapabilities) | **GET** /api/instruments/{identifier}/capabilities | [EXPERIMENTAL] GetInstrumentCapabilities: Given an lusid instrument id provides instrument capabilities, outlining features, and, given the model, the capabilities also include supported addresses as well as economic dependencies.
 [**getInstrumentIdentifierTypes**](InstrumentsApi.md#getInstrumentIdentifierTypes) | **GET** /api/instruments/identifierTypes | GetInstrumentIdentifierTypes: Get instrument identifier types
 [**getInstrumentPaymentDiary**](InstrumentsApi.md#getInstrumentPaymentDiary) | **GET** /api/instruments/{identifierType}/{identifier}/paymentdiary | [EXPERIMENTAL] GetInstrumentPaymentDiary: Get instrument payment diary
 [**getInstrumentProperties**](InstrumentsApi.md#getInstrumentProperties) | **GET** /api/instruments/{identifierType}/{identifier}/properties | [EXPERIMENTAL] GetInstrumentProperties: Get instrument properties
@@ -16,6 +17,7 @@ Method | HTTP request | Description
 [**getInstruments**](InstrumentsApi.md#getInstruments) | **POST** /api/instruments/$get | GetInstruments: Get instruments
 [**listInstrumentProperties**](InstrumentsApi.md#listInstrumentProperties) | **GET** /api/instruments/{identifierType}/{identifier}/properties/list | [EXPERIMENTAL] ListInstrumentProperties: Get instrument properties (with Pagination)
 [**listInstruments**](InstrumentsApi.md#listInstruments) | **GET** /api/instruments | ListInstruments: List instruments
+[**postInstrumentCapabilities**](InstrumentsApi.md#postInstrumentCapabilities) | **POST** /api/instruments/capabilities | [EXPERIMENTAL] PostInstrumentCapabilities: Given an example instrument provides instrument capabilities, outlining features, and, given the model, the capabilities also include supported addresses as well as economic dependencies.
 [**updateInstrumentIdentifier**](InstrumentsApi.md#updateInstrumentIdentifier) | **POST** /api/instruments/{identifierType}/{identifier} | UpdateInstrumentIdentifier: Update instrument identifier
 [**upsertInstruments**](InstrumentsApi.md#upsertInstruments) | **POST** /api/instruments | UpsertInstruments: Upsert instruments
 [**upsertInstrumentsProperties**](InstrumentsApi.md#upsertInstrumentsProperties) | **POST** /api/instruments/$upsertproperties | UpsertInstrumentsProperties: Upsert instruments properties
@@ -322,6 +324,83 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The requested instrument. |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="getInstrumentCapabilities"></a>
+# **getInstrumentCapabilities**
+> InstrumentCapabilities getInstrumentCapabilities(identifier, model, effectiveAt, asAt, scope)
+
+[EXPERIMENTAL] GetInstrumentCapabilities: Given an lusid instrument id provides instrument capabilities, outlining features, and, given the model, the capabilities also include supported addresses as well as economic dependencies.
+
+Returns instrument capabilities containing useful information about the instrument and the model. This includes  - features corresponding to the instrument e.g. Optionality:American, Other:InflationLinked  - supported addresses (if model provided) e.g. Valuation/Pv, Valuation/DirtyPriceKey, Valuation/Accrued  - economic dependencies (if model provided) e.g. Cash:USD, Fx:GBP.USD, Rates:GBP.GBPOIS
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.InstrumentsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    InstrumentsApi apiInstance = new InstrumentsApi(defaultClient);
+    String identifier = "identifier_example"; // String | A lusid instrument id identifying the instrument.
+    String model = "model_example"; // String | A pricing model for the instrument. Defaults to Unknown if not specified. If not specified the SupportedAddresses and EconomicDependencies are not provided.
+    String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to retrieve the instrument.              Defaults to the current LUSID system datetime if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the instrument. Defaults to              returning the latest version if not specified.
+    String scope = "default"; // String | The scope in which the instrument lies. When not supplied the scope is 'default'.
+    try {
+      InstrumentCapabilities result = apiInstance.getInstrumentCapabilities(identifier, model, effectiveAt, asAt, scope);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InstrumentsApi#getInstrumentCapabilities");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | **String**| A lusid instrument id identifying the instrument. |
+ **model** | **String**| A pricing model for the instrument. Defaults to Unknown if not specified. If not specified the SupportedAddresses and EconomicDependencies are not provided. | [optional]
+ **effectiveAt** | **String**| The effective datetime or cut label at which to retrieve the instrument.              Defaults to the current LUSID system datetime if not specified. | [optional]
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the instrument. Defaults to              returning the latest version if not specified. | [optional]
+ **scope** | **String**| The scope in which the instrument lies. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
+
+### Return type
+
+[**InstrumentCapabilities**](InstrumentCapabilities.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Capabilities for a given instrument, with more details should the model be provided. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
@@ -959,6 +1038,83 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The requested instruments |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="postInstrumentCapabilities"></a>
+# **postInstrumentCapabilities**
+> InstrumentCapabilities postInstrumentCapabilities(lusidInstrument, model, effectiveAt, asAt, scope)
+
+[EXPERIMENTAL] PostInstrumentCapabilities: Given an example instrument provides instrument capabilities, outlining features, and, given the model, the capabilities also include supported addresses as well as economic dependencies.
+
+Returns instrument capabilities containing useful information about the instrument and the model. This includes  - features corresponding to the instrument e.g. Optionality:American, Other:InflationLinked  - supported addresses (if model provided) e.g. Valuation/Pv, Valuation/DirtyPriceKey, Valuation/Accrued  - economic dependencies (if model provided) e.g. Cash:USD, Fx:GBP.USD, Rates:GBP.GBPOIS
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.InstrumentsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    InstrumentsApi apiInstance = new InstrumentsApi(defaultClient);
+    LusidInstrument lusidInstrument = new LusidInstrument(); // LusidInstrument | The definition of the instrument.
+    String model = "model_example"; // String | A pricing model for the instrument. Defaults to Unknown if not specified. If not specified the SupportedAddresses and EconomicDependencies are not provided.
+    String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to retrieve the instrument.              Defaults to the current LUSID system datetime if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the instrument. Defaults to              returning the latest version if not specified.
+    String scope = "default"; // String | The scope in which the instrument lies. When not supplied the scope is 'default'.
+    try {
+      InstrumentCapabilities result = apiInstance.postInstrumentCapabilities(lusidInstrument, model, effectiveAt, asAt, scope);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InstrumentsApi#postInstrumentCapabilities");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **lusidInstrument** | [**LusidInstrument**](LusidInstrument.md)| The definition of the instrument. |
+ **model** | **String**| A pricing model for the instrument. Defaults to Unknown if not specified. If not specified the SupportedAddresses and EconomicDependencies are not provided. | [optional]
+ **effectiveAt** | **String**| The effective datetime or cut label at which to retrieve the instrument.              Defaults to the current LUSID system datetime if not specified. | [optional]
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the instrument. Defaults to              returning the latest version if not specified. | [optional]
+ **scope** | **String**| The scope in which the instrument lies. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
+
+### Return type
+
+[**InstrumentCapabilities**](InstrumentCapabilities.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Capabilities for a given instrument, with more details should the model be provided. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
