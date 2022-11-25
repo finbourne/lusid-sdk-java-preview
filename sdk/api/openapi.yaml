@@ -14576,7 +14576,7 @@ paths:
         content:
           application/json-patch+json:
             example:
-              startDate: 2022-11-24T15:01:44.4536594+00:00
+              startDate: 2022-11-25T08:59:04.7724878+00:00
               domCcy: GBP
               domAmount: 1
               fgnCcy: USD
@@ -14586,8 +14586,8 @@ paths:
               isCallNotPut: true
               isDeliveryNotCash: true
               isPayoffDigital: false
-              optionMaturityDate: 2023-11-24T15:01:44.4536594+00:00
-              optionSettlementDate: 2023-11-26T15:01:44.4536607+00:00
+              optionMaturityDate: 2023-11-25T08:59:04.7724879+00:00
+              optionSettlementDate: 2023-11-27T08:59:04.7724922+00:00
               payoutStyle: None
               touches: []
               instrumentType: FxOption
@@ -14595,7 +14595,7 @@ paths:
               $ref: '#/components/schemas/LusidInstrument'
           application/json:
             example:
-              startDate: 2022-11-24T15:01:44.4536594+00:00
+              startDate: 2022-11-25T08:59:04.7724878+00:00
               domCcy: GBP
               domAmount: 1
               fgnCcy: USD
@@ -14605,8 +14605,8 @@ paths:
               isCallNotPut: true
               isDeliveryNotCash: true
               isPayoffDigital: false
-              optionMaturityDate: 2023-11-24T15:01:44.4536594+00:00
-              optionSettlementDate: 2023-11-26T15:01:44.4536607+00:00
+              optionMaturityDate: 2023-11-25T08:59:04.7724879+00:00
+              optionSettlementDate: 2023-11-27T08:59:04.7724922+00:00
               payoutStyle: None
               touches: []
               instrumentType: FxOption
@@ -14614,7 +14614,7 @@ paths:
               $ref: '#/components/schemas/LusidInstrument'
           text/json:
             example:
-              startDate: 2022-11-24T15:01:44.4536594+00:00
+              startDate: 2022-11-25T08:59:04.7724878+00:00
               domCcy: GBP
               domAmount: 1
               fgnCcy: USD
@@ -14624,8 +14624,8 @@ paths:
               isCallNotPut: true
               isDeliveryNotCash: true
               isPayoffDigital: false
-              optionMaturityDate: 2023-11-24T15:01:44.4536594+00:00
-              optionSettlementDate: 2023-11-26T15:01:44.4536607+00:00
+              optionMaturityDate: 2023-11-25T08:59:04.7724879+00:00
+              optionSettlementDate: 2023-11-27T08:59:04.7724922+00:00
               payoutStyle: None
               touches: []
               instrumentType: FxOption
@@ -14633,7 +14633,7 @@ paths:
               $ref: '#/components/schemas/LusidInstrument'
           application/*+json:
             example:
-              startDate: 2022-11-24T15:01:44.4536594+00:00
+              startDate: 2022-11-25T08:59:04.7724878+00:00
               domCcy: GBP
               domAmount: 1
               fgnCcy: USD
@@ -14643,8 +14643,8 @@ paths:
               isCallNotPut: true
               isDeliveryNotCash: true
               isPayoffDigital: false
-              optionMaturityDate: 2023-11-24T15:01:44.4536594+00:00
-              optionSettlementDate: 2023-11-26T15:01:44.4536607+00:00
+              optionMaturityDate: 2023-11-25T08:59:04.7724879+00:00
+              optionSettlementDate: 2023-11-27T08:59:04.7724922+00:00
               payoutStyle: None
               touches: []
               instrumentType: FxOption
@@ -14673,10 +14673,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-24T15:01:44.4650890+00:00
+                  date: 2022-11-25T08:59:04.7847261+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-24T15:01:44.4650905+00:00
+                  date: 2022-11-25T08:59:04.7847274+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -14698,10 +14698,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-24T15:01:44.4650890+00:00
+                  date: 2022-11-25T08:59:04.7847261+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-24T15:01:44.4650905+00:00
+                  date: 2022-11-25T08:59:04.7847274+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -14723,10 +14723,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-24T15:01:44.4650890+00:00
+                  date: 2022-11-25T08:59:04.7847261+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-24T15:01:44.4650905+00:00
+                  date: 2022-11-25T08:59:04.7847274+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16338,10 +16338,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-24T15:01:43.8905286+00:00
+                  date: 2022-11-25T08:59:04.3691337+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-24T15:01:43.8905385+00:00
+                  date: 2022-11-25T08:59:04.3694412+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16363,10 +16363,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-24T15:01:43.8905286+00:00
+                  date: 2022-11-25T08:59:04.3691337+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-24T15:01:43.8905385+00:00
+                  date: 2022-11-25T08:59:04.3694412+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16388,10 +16388,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-24T15:01:43.8905286+00:00
+                  date: 2022-11-25T08:59:04.3691337+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-24T15:01:43.8905385+00:00
+                  date: 2022-11-25T08:59:04.3694412+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -104841,7 +104841,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:
