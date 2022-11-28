@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5007
+  version: 0.11.5008
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -1573,7 +1573,6 @@ paths:
             identifies the allocation to delete.
           maxLength: 64
           minLength: 1
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       responses:
@@ -1627,7 +1626,6 @@ paths:
           description: The scope to which the allocation belongs.
           maxLength: 64
           minLength: 1
-          nullable: true
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
@@ -1640,8 +1638,6 @@ paths:
           description: The allocation's unique identifier.
           maxLength: 64
           minLength: 1
-          nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The asAt datetime at which to retrieve the allocation. Defaults
@@ -14576,7 +14572,7 @@ paths:
         content:
           application/json-patch+json:
             example:
-              startDate: 2022-11-28T09:40:14.7420273+00:00
+              startDate: 2022-11-28T11:00:21.4698190+00:00
               domCcy: GBP
               domAmount: 1
               fgnCcy: USD
@@ -14586,8 +14582,8 @@ paths:
               isCallNotPut: true
               isDeliveryNotCash: true
               isPayoffDigital: false
-              optionMaturityDate: 2023-11-28T09:40:14.7420274+00:00
-              optionSettlementDate: 2023-11-30T09:40:14.7420285+00:00
+              optionMaturityDate: 2023-11-28T11:00:21.4698190+00:00
+              optionSettlementDate: 2023-11-30T11:00:21.4698215+00:00
               payoutStyle: None
               touches: []
               instrumentType: FxOption
@@ -14595,7 +14591,7 @@ paths:
               $ref: '#/components/schemas/LusidInstrument'
           application/json:
             example:
-              startDate: 2022-11-28T09:40:14.7420273+00:00
+              startDate: 2022-11-28T11:00:21.4698190+00:00
               domCcy: GBP
               domAmount: 1
               fgnCcy: USD
@@ -14605,8 +14601,8 @@ paths:
               isCallNotPut: true
               isDeliveryNotCash: true
               isPayoffDigital: false
-              optionMaturityDate: 2023-11-28T09:40:14.7420274+00:00
-              optionSettlementDate: 2023-11-30T09:40:14.7420285+00:00
+              optionMaturityDate: 2023-11-28T11:00:21.4698190+00:00
+              optionSettlementDate: 2023-11-30T11:00:21.4698215+00:00
               payoutStyle: None
               touches: []
               instrumentType: FxOption
@@ -14614,7 +14610,7 @@ paths:
               $ref: '#/components/schemas/LusidInstrument'
           text/json:
             example:
-              startDate: 2022-11-28T09:40:14.7420273+00:00
+              startDate: 2022-11-28T11:00:21.4698190+00:00
               domCcy: GBP
               domAmount: 1
               fgnCcy: USD
@@ -14624,8 +14620,8 @@ paths:
               isCallNotPut: true
               isDeliveryNotCash: true
               isPayoffDigital: false
-              optionMaturityDate: 2023-11-28T09:40:14.7420274+00:00
-              optionSettlementDate: 2023-11-30T09:40:14.7420285+00:00
+              optionMaturityDate: 2023-11-28T11:00:21.4698190+00:00
+              optionSettlementDate: 2023-11-30T11:00:21.4698215+00:00
               payoutStyle: None
               touches: []
               instrumentType: FxOption
@@ -14633,7 +14629,7 @@ paths:
               $ref: '#/components/schemas/LusidInstrument'
           application/*+json:
             example:
-              startDate: 2022-11-28T09:40:14.7420273+00:00
+              startDate: 2022-11-28T11:00:21.4698190+00:00
               domCcy: GBP
               domAmount: 1
               fgnCcy: USD
@@ -14643,8 +14639,8 @@ paths:
               isCallNotPut: true
               isDeliveryNotCash: true
               isPayoffDigital: false
-              optionMaturityDate: 2023-11-28T09:40:14.7420274+00:00
-              optionSettlementDate: 2023-11-30T09:40:14.7420285+00:00
+              optionMaturityDate: 2023-11-28T11:00:21.4698190+00:00
+              optionSettlementDate: 2023-11-30T11:00:21.4698215+00:00
               payoutStyle: None
               touches: []
               instrumentType: FxOption
@@ -14673,10 +14669,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-28T09:40:14.7526223+00:00
+                  date: 2022-11-28T11:00:21.4974325+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-28T09:40:14.7526247+00:00
+                  date: 2022-11-28T11:00:21.4974346+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -14698,10 +14694,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-28T09:40:14.7526223+00:00
+                  date: 2022-11-28T11:00:21.4974325+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-28T09:40:14.7526247+00:00
+                  date: 2022-11-28T11:00:21.4974346+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -14723,10 +14719,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-28T09:40:14.7526223+00:00
+                  date: 2022-11-28T11:00:21.4974325+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-28T09:40:14.7526247+00:00
+                  date: 2022-11-28T11:00:21.4974346+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16338,10 +16334,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-28T09:40:14.1780623+00:00
+                  date: 2022-11-28T11:00:20.6903415+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-28T09:40:14.1780710+00:00
+                  date: 2022-11-28T11:00:20.6903529+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16363,10 +16359,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-28T09:40:14.1780623+00:00
+                  date: 2022-11-28T11:00:20.6903415+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-28T09:40:14.1780710+00:00
+                  date: 2022-11-28T11:00:20.6903529+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16388,10 +16384,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-28T09:40:14.1780623+00:00
+                  date: 2022-11-28T11:00:20.6903415+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-28T09:40:14.1780710+00:00
+                  date: 2022-11-28T11:00:20.6903529+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -22297,7 +22293,6 @@ paths:
             the order to delete.
           maxLength: 64
           minLength: 1
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       responses:
@@ -22351,7 +22346,6 @@ paths:
           description: The scope to which the order belongs.
           maxLength: 64
           minLength: 1
-          nullable: true
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
@@ -22364,8 +22358,6 @@ paths:
           description: The order's unique identifier.
           maxLength: 64
           minLength: 1
-          nullable: true
-          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         style: simple
       - description: The asAt datetime at which to retrieve the order. Defaults to
