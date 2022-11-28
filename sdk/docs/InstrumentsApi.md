@@ -1043,7 +1043,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstrumentCapabilities"></a>
 # **postInstrumentCapabilities**
-> InstrumentCapabilities postInstrumentCapabilities(lusidInstrument, model, effectiveAt, asAt, scope)
+> InstrumentCapabilities postInstrumentCapabilities(lusidInstrument, model, effectiveAt)
 
 [EXPERIMENTAL] PostInstrumentCapabilities: Given an example instrument provides instrument capabilities, outlining features, and, given the model, the capabilities also include supported addresses as well as economic dependencies.
 
@@ -1072,10 +1072,8 @@ public class Example {
     LusidInstrument lusidInstrument = new LusidInstrument(); // LusidInstrument | The definition of the instrument.
     String model = "model_example"; // String | A pricing model for the instrument. Defaults to Unknown if not specified. If not specified the SupportedAddresses and EconomicDependencies are not provided.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to retrieve the instrument.              Defaults to the current LUSID system datetime if not specified.
-    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the instrument. Defaults to              returning the latest version if not specified.
-    String scope = "default"; // String | The scope in which the instrument lies. When not supplied the scope is 'default'.
     try {
-      InstrumentCapabilities result = apiInstance.postInstrumentCapabilities(lusidInstrument, model, effectiveAt, asAt, scope);
+      InstrumentCapabilities result = apiInstance.postInstrumentCapabilities(lusidInstrument, model, effectiveAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstrumentsApi#postInstrumentCapabilities");
@@ -1095,8 +1093,6 @@ Name | Type | Description  | Notes
  **lusidInstrument** | [**LusidInstrument**](LusidInstrument.md)| The definition of the instrument. |
  **model** | **String**| A pricing model for the instrument. Defaults to Unknown if not specified. If not specified the SupportedAddresses and EconomicDependencies are not provided. | [optional]
  **effectiveAt** | **String**| The effective datetime or cut label at which to retrieve the instrument.              Defaults to the current LUSID system datetime if not specified. | [optional]
- **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the instrument. Defaults to              returning the latest version if not specified. | [optional]
- **scope** | **String**| The scope in which the instrument lies. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
 
 ### Return type
 
