@@ -16304,10 +16304,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-29T17:27:38.3373707+00:00
+                  date: 2022-11-29T23:04:14.9767142+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-29T17:27:38.3373825+00:00
+                  date: 2022-11-29T23:04:14.9768837+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16329,10 +16329,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-29T17:27:38.3373707+00:00
+                  date: 2022-11-29T23:04:14.9767142+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-29T17:27:38.3373825+00:00
+                  date: 2022-11-29T23:04:14.9768837+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16354,10 +16354,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-29T17:27:38.3373707+00:00
+                  date: 2022-11-29T23:04:14.9767142+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-29T17:27:38.3373825+00:00
+                  date: 2022-11-29T23:04:14.9768837+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -104815,7 +104815,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:
