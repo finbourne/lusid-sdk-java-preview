@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5016
+  version: 0.11.5018
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -14538,6 +14538,37 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: The scope in which the recipe lies. When not supplied the scope
+          is 'default'.
+        explode: true
+        in: query
+        name: recipeScope
+        required: false
+        schema:
+          default: default
+          description: The scope in which the recipe lies. When not supplied the scope
+            is 'default'.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: A unique identifier for an entity, used to obtain configuration
+          recipe details. Default configuration recipe is used if not provided.
+        explode: true
+        in: query
+        name: recipeCode
+        required: false
+        schema:
+          description: A unique identifier for an entity, used to obtain configuration
+            recipe details. Default configuration recipe is used if not provided.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
       requestBody:
         content:
           application/json-patch+json:
@@ -16271,12 +16302,43 @@ paths:
           scope is 'default'.
         explode: true
         in: query
-        name: scope
+        name: instrumentScope
         required: false
         schema:
           default: default
           description: The scope in which the instrument lies. When not supplied the
             scope is 'default'.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: The scope in which the recipe lies. When not supplied the scope
+          is 'default'.
+        explode: true
+        in: query
+        name: recipeScope
+        required: false
+        schema:
+          default: default
+          description: The scope in which the recipe lies. When not supplied the scope
+            is 'default'.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: A unique identifier for an entity, used to obtain configuration
+          recipe details. Default configuration recipe is used if not provided.
+        explode: true
+        in: query
+        name: recipeCode
+        required: false
+        schema:
+          description: A unique identifier for an entity, used to obtain configuration
+            recipe details. Default configuration recipe is used if not provided.
           maxLength: 64
           minLength: 1
           nullable: true
@@ -16304,10 +16366,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-30T16:01:21.4893772+00:00
+                  date: 2022-11-30T16:06:58.6684415+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-30T16:01:21.4893871+00:00
+                  date: 2022-11-30T16:06:58.6684528+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16329,10 +16391,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-30T16:01:21.4893772+00:00
+                  date: 2022-11-30T16:06:58.6684415+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-30T16:01:21.4893871+00:00
+                  date: 2022-11-30T16:06:58.6684528+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16354,10 +16416,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-30T16:01:21.4893772+00:00
+                  date: 2022-11-30T16:06:58.6684415+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-30T16:01:21.4893871+00:00
+                  date: 2022-11-30T16:06:58.6684528+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -104765,7 +104827,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
