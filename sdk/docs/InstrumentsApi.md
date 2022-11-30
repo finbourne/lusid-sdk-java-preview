@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstrumentCapabilities"></a>
 # **getInstrumentCapabilities**
-> InstrumentCapabilities getInstrumentCapabilities(identifier, model, effectiveAt, asAt, scope)
+> InstrumentCapabilities getInstrumentCapabilities(identifier, model, effectiveAt, asAt, instrumentScope, recipeScope, recipeCode)
 
 [EXPERIMENTAL] GetInstrumentCapabilities: Given an lusid instrument id provides instrument capabilities, outlining features, and, given the model, the capabilities also include supported addresses as well as economic dependencies.
 
@@ -359,9 +359,11 @@ public class Example {
     String model = "model_example"; // String | A pricing model for the instrument. Defaults to Unknown if not specified. If not specified the SupportedAddresses and EconomicDependencies are not provided.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to retrieve the instrument.              Defaults to the current LUSID system datetime if not specified.
     OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the instrument. Defaults to              returning the latest version if not specified.
-    String scope = "default"; // String | The scope in which the instrument lies. When not supplied the scope is 'default'.
+    String instrumentScope = "default"; // String | The scope in which the instrument lies. When not supplied the scope is 'default'.
+    String recipeScope = "default"; // String | The scope in which the recipe lies. When not supplied the scope is 'default'.
+    String recipeCode = "recipeCode_example"; // String | A unique identifier for an entity, used to obtain configuration recipe details. Default configuration recipe is used if not provided.
     try {
-      InstrumentCapabilities result = apiInstance.getInstrumentCapabilities(identifier, model, effectiveAt, asAt, scope);
+      InstrumentCapabilities result = apiInstance.getInstrumentCapabilities(identifier, model, effectiveAt, asAt, instrumentScope, recipeScope, recipeCode);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstrumentsApi#getInstrumentCapabilities");
@@ -382,7 +384,9 @@ Name | Type | Description  | Notes
  **model** | **String**| A pricing model for the instrument. Defaults to Unknown if not specified. If not specified the SupportedAddresses and EconomicDependencies are not provided. | [optional]
  **effectiveAt** | **String**| The effective datetime or cut label at which to retrieve the instrument.              Defaults to the current LUSID system datetime if not specified. | [optional]
  **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the instrument. Defaults to              returning the latest version if not specified. | [optional]
- **scope** | **String**| The scope in which the instrument lies. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
+ **instrumentScope** | **String**| The scope in which the instrument lies. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
+ **recipeScope** | **String**| The scope in which the recipe lies. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
+ **recipeCode** | **String**| A unique identifier for an entity, used to obtain configuration recipe details. Default configuration recipe is used if not provided. | [optional]
 
 ### Return type
 
@@ -1043,7 +1047,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstrumentCapabilities"></a>
 # **postInstrumentCapabilities**
-> InstrumentCapabilities postInstrumentCapabilities(lusidInstrument, model, effectiveAt)
+> InstrumentCapabilities postInstrumentCapabilities(lusidInstrument, model, effectiveAt, recipeScope, recipeCode)
 
 [EXPERIMENTAL] PostInstrumentCapabilities: Given an example instrument provides instrument capabilities, outlining features, and, given the model, the capabilities also include supported addresses as well as economic dependencies.
 
@@ -1072,8 +1076,10 @@ public class Example {
     LusidInstrument lusidInstrument = new LusidInstrument(); // LusidInstrument | The definition of the instrument.
     String model = "model_example"; // String | A pricing model for the instrument. Defaults to Unknown if not specified. If not specified the SupportedAddresses and EconomicDependencies are not provided.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to retrieve the instrument.              Defaults to the current LUSID system datetime if not specified.
+    String recipeScope = "default"; // String | The scope in which the recipe lies. When not supplied the scope is 'default'.
+    String recipeCode = "recipeCode_example"; // String | A unique identifier for an entity, used to obtain configuration recipe details. Default configuration recipe is used if not provided.
     try {
-      InstrumentCapabilities result = apiInstance.postInstrumentCapabilities(lusidInstrument, model, effectiveAt);
+      InstrumentCapabilities result = apiInstance.postInstrumentCapabilities(lusidInstrument, model, effectiveAt, recipeScope, recipeCode);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstrumentsApi#postInstrumentCapabilities");
@@ -1093,6 +1099,8 @@ Name | Type | Description  | Notes
  **lusidInstrument** | [**LusidInstrument**](LusidInstrument.md)| The definition of the instrument. |
  **model** | **String**| A pricing model for the instrument. Defaults to Unknown if not specified. If not specified the SupportedAddresses and EconomicDependencies are not provided. | [optional]
  **effectiveAt** | **String**| The effective datetime or cut label at which to retrieve the instrument.              Defaults to the current LUSID system datetime if not specified. | [optional]
+ **recipeScope** | **String**| The scope in which the recipe lies. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
+ **recipeCode** | **String**| A unique identifier for an entity, used to obtain configuration recipe details. Default configuration recipe is used if not provided. | [optional]
 
 ### Return type
 
