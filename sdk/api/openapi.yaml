@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5019
+  version: 0.11.5018
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -16366,10 +16366,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-30T17:27:42.1189796+00:00
+                  date: 2022-11-30T19:38:37.4026776+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-30T17:27:42.1189992+00:00
+                  date: 2022-11-30T19:38:37.4028640+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16391,10 +16391,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-30T17:27:42.1189796+00:00
+                  date: 2022-11-30T19:38:37.4026776+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-30T17:27:42.1189992+00:00
+                  date: 2022-11-30T19:38:37.4028640+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16416,10 +16416,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-30T17:27:42.1189796+00:00
+                  date: 2022-11-30T19:38:37.4026776+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-30T17:27:42.1189992+00:00
+                  date: 2022-11-30T19:38:37.4028640+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -104827,7 +104827,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:
