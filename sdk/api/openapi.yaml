@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5013
+  version: 0.11.5014
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -16304,10 +16304,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-29T23:04:14.9767142+00:00
+                  date: 2022-11-30T11:11:17.4058224+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-29T23:04:14.9768837+00:00
+                  date: 2022-11-30T11:11:17.4058298+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16329,10 +16329,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-29T23:04:14.9767142+00:00
+                  date: 2022-11-30T11:11:17.4058224+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-29T23:04:14.9768837+00:00
+                  date: 2022-11-30T11:11:17.4058298+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16354,10 +16354,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-11-29T23:04:14.9767142+00:00
+                  date: 2022-11-30T11:11:17.4058224+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-11-29T23:04:14.9768837+00:00
+                  date: 2022-11-30T11:11:17.4058298+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -45212,7 +45212,7 @@ paths:
       operationId: ListTaxRuleSets
       parameters:
       - description: "The effective datetime or cut label at which to retrieve the\
-          \ rule definitions. Defaults to the current LUSID\r\nsystem datetime if\
+          \ rule definitions.\r\nDefaults to the current LUSID system datetime if\
           \ not specified."
         explode: true
         in: query
@@ -45220,7 +45220,7 @@ paths:
         required: false
         schema:
           description: "The effective datetime or cut label at which to retrieve the\
-            \ rule definitions. Defaults to the current LUSID\r\nsystem datetime if\
+            \ rule definitions.\r\nDefaults to the current LUSID system datetime if\
             \ not specified."
           format: dateorcutlabel
           nullable: true
@@ -45247,15 +45247,15 @@ paths:
               example:
                 values:
                 - id:
-                    scope: myScope
+                    scope: RuleSetScope
                     code: RuleSetName
                   displayName: Rule set display name
                   description: Rule set description
-                  outputPropertyKey: Transaction/default/TaxRate
+                  outputPropertyKey: Transaction/default/TaxAmount
                   rules:
                   - name: UKTaxRule
                     description: Rule for the UK tax rate
-                    rate: 30
+                    rate: 0.25
                     matchCriteria:
                     - propertyKey: Instrument/myScope/market
                       value: GB
@@ -45273,15 +45273,15 @@ paths:
               example:
                 values:
                 - id:
-                    scope: myScope
+                    scope: RuleSetScope
                     code: RuleSetName
                   displayName: Rule set display name
                   description: Rule set description
-                  outputPropertyKey: Transaction/default/TaxRate
+                  outputPropertyKey: Transaction/default/TaxAmount
                   rules:
                   - name: UKTaxRule
                     description: Rule for the UK tax rate
-                    rate: 30
+                    rate: 0.25
                     matchCriteria:
                     - propertyKey: Instrument/myScope/market
                       value: GB
@@ -45299,15 +45299,15 @@ paths:
               example:
                 values:
                 - id:
-                    scope: myScope
+                    scope: RuleSetScope
                     code: RuleSetName
                   displayName: Rule set display name
                   description: Rule set description
-                  outputPropertyKey: Transaction/default/TaxRate
+                  outputPropertyKey: Transaction/default/TaxAmount
                   rules:
                   - name: UKTaxRule
                     description: Rule for the UK tax rate
-                    rate: 30
+                    rate: 0.25
                     matchCriteria:
                     - propertyKey: Instrument/myScope/market
                       value: GB
@@ -45371,15 +45371,15 @@ paths:
           application/json-patch+json:
             example:
               id:
-                scope: myScope
+                scope: RuleSetScope
                 code: RuleSetName
               displayName: Rule set display name
               description: Rule set description
-              outputPropertyKey: Transaction/default/TaxRate
+              outputPropertyKey: Transaction/default/TaxAmount
               rules:
               - name: UKTaxRule
                 description: Rule for the UK tax rate
-                rate: 30
+                rate: 0.25
                 matchCriteria:
                 - propertyKey: Instrument/myScope/market
                   value: GB
@@ -45392,15 +45392,15 @@ paths:
           application/json:
             example:
               id:
-                scope: myScope
+                scope: RuleSetScope
                 code: RuleSetName
               displayName: Rule set display name
               description: Rule set description
-              outputPropertyKey: Transaction/default/TaxRate
+              outputPropertyKey: Transaction/default/TaxAmount
               rules:
               - name: UKTaxRule
                 description: Rule for the UK tax rate
-                rate: 30
+                rate: 0.25
                 matchCriteria:
                 - propertyKey: Instrument/myScope/market
                   value: GB
@@ -45413,15 +45413,15 @@ paths:
           text/json:
             example:
               id:
-                scope: myScope
+                scope: RuleSetScope
                 code: RuleSetName
               displayName: Rule set display name
               description: Rule set description
-              outputPropertyKey: Transaction/default/TaxRate
+              outputPropertyKey: Transaction/default/TaxAmount
               rules:
               - name: UKTaxRule
                 description: Rule for the UK tax rate
-                rate: 30
+                rate: 0.25
                 matchCriteria:
                 - propertyKey: Instrument/myScope/market
                   value: GB
@@ -45434,15 +45434,15 @@ paths:
           application/*+json:
             example:
               id:
-                scope: myScope
+                scope: RuleSetScope
                 code: RuleSetName
               displayName: Rule set display name
               description: Rule set description
-              outputPropertyKey: Transaction/default/TaxRate
+              outputPropertyKey: Transaction/default/TaxAmount
               rules:
               - name: UKTaxRule
                 description: Rule for the UK tax rate
-                rate: 30
+                rate: 0.25
                 matchCriteria:
                 - propertyKey: Instrument/myScope/market
                   value: GB
@@ -45460,15 +45460,15 @@ paths:
             text/plain:
               example:
                 id:
-                  scope: myScope
+                  scope: RuleSetScope
                   code: RuleSetName
                 displayName: Rule set display name
                 description: Rule set description
-                outputPropertyKey: Transaction/default/TaxRate
+                outputPropertyKey: Transaction/default/TaxAmount
                 rules:
                 - name: UKTaxRule
                   description: Rule for the UK tax rate
-                  rate: 30
+                  rate: 0.25
                   matchCriteria:
                   - propertyKey: Instrument/myScope/market
                     value: GB
@@ -45484,15 +45484,15 @@ paths:
             application/json:
               example:
                 id:
-                  scope: myScope
+                  scope: RuleSetScope
                   code: RuleSetName
                 displayName: Rule set display name
                 description: Rule set description
-                outputPropertyKey: Transaction/default/TaxRate
+                outputPropertyKey: Transaction/default/TaxAmount
                 rules:
                 - name: UKTaxRule
                   description: Rule for the UK tax rate
-                  rate: 30
+                  rate: 0.25
                   matchCriteria:
                   - propertyKey: Instrument/myScope/market
                     value: GB
@@ -45508,15 +45508,15 @@ paths:
             text/json:
               example:
                 id:
-                  scope: myScope
+                  scope: RuleSetScope
                   code: RuleSetName
                 displayName: Rule set display name
                 description: Rule set description
-                outputPropertyKey: Transaction/default/TaxRate
+                outputPropertyKey: Transaction/default/TaxAmount
                 rules:
                 - name: UKTaxRule
                   description: Rule for the UK tax rate
-                  rate: 30
+                  rate: 0.25
                   matchCriteria:
                   - propertyKey: Instrument/myScope/market
                     value: GB
@@ -45661,7 +45661,7 @@ paths:
           type: string
         style: simple
       - description: "The effective datetime or cut label at which to retrieve the\
-          \ rule definition. Defaults to the current LUSID\r\nsystem datetime if not\
+          \ rule definition.\r\nDefaults to the current LUSID system datetime if not\
           \ specified."
         explode: true
         in: query
@@ -45669,7 +45669,7 @@ paths:
         required: false
         schema:
           description: "The effective datetime or cut label at which to retrieve the\
-            \ rule definition. Defaults to the current LUSID\r\nsystem datetime if\
+            \ rule definition.\r\nDefaults to the current LUSID system datetime if\
             \ not specified."
           format: dateorcutlabel
           nullable: true
@@ -45695,15 +45695,15 @@ paths:
             text/plain:
               example:
                 id:
-                  scope: myScope
+                  scope: RuleSetScope
                   code: RuleSetName
                 displayName: Rule set display name
                 description: Rule set description
-                outputPropertyKey: Transaction/default/TaxRate
+                outputPropertyKey: Transaction/default/TaxAmount
                 rules:
                 - name: UKTaxRule
                   description: Rule for the UK tax rate
-                  rate: 30
+                  rate: 0.25
                   matchCriteria:
                   - propertyKey: Instrument/myScope/market
                     value: GB
@@ -45719,15 +45719,15 @@ paths:
             application/json:
               example:
                 id:
-                  scope: myScope
+                  scope: RuleSetScope
                   code: RuleSetName
                 displayName: Rule set display name
                 description: Rule set description
-                outputPropertyKey: Transaction/default/TaxRate
+                outputPropertyKey: Transaction/default/TaxAmount
                 rules:
                 - name: UKTaxRule
                   description: Rule for the UK tax rate
-                  rate: 30
+                  rate: 0.25
                   matchCriteria:
                   - propertyKey: Instrument/myScope/market
                     value: GB
@@ -45743,15 +45743,15 @@ paths:
             text/json:
               example:
                 id:
-                  scope: myScope
+                  scope: RuleSetScope
                   code: RuleSetName
                 displayName: Rule set display name
                 description: Rule set description
-                outputPropertyKey: Transaction/default/TaxRate
+                outputPropertyKey: Transaction/default/TaxAmount
                 rules:
                 - name: UKTaxRule
                   description: Rule for the UK tax rate
-                  rate: 30
+                  rate: 0.25
                   matchCriteria:
                   - propertyKey: Instrument/myScope/market
                     value: GB
@@ -45793,7 +45793,14 @@ paths:
       x-accepts: application/json
     put:
       description: "Updates the tax rule set definition at the given effective time.\r\
-        \nThe user must be entitled to read any properties specified in each rule."
+        \nThe changes will take place from this effective time until the next effective\
+        \ time that the rule has been updated at.\r\nFor example, consider a rule\
+        \ that has been created or updated effective at the first day of the coming\
+        \ month.\r\nAn upsert effective from the current day will only change the\
+        \ definition until that day.\r\nAn additional upsert at the same time (first\
+        \ day of the month) is required if the newly-updated definition is to supersede\
+        \ the future definition.\r\nThe user must be entitled to read any properties\
+        \ specified in each rule."
       operationId: UpdateTaxRuleSet
       parameters:
       - description: The rule set scope.
@@ -45823,14 +45830,7 @@ paths:
           type: string
         style: simple
       - description: "The effective datetime or cut label at which the rule set will\
-          \ take effect.\r\nDefaults to the current LUSID system datetime if not specified.\r\
-          \nThe changes will take place from this effective time until the next effective\
-          \ time that the rule has been updated at.\r\nFor example, consider a rule\
-          \ that has been created or updated effective at the first day of the coming\
-          \ month.\r\nAn upsert effective from the current day will only change the\
-          \ definition until that day.\r\nAn additional upsert at the same time (first\
-          \ day of the month) is required if the newly-updated definition is to supersede\
-          \ the future definition."
+          \ take effect.\r\nDefaults to the current LUSID system datetime if not specified."
         explode: true
         in: query
         name: effectiveAt
@@ -45838,13 +45838,7 @@ paths:
         schema:
           description: "The effective datetime or cut label at which the rule set\
             \ will take effect.\r\nDefaults to the current LUSID system datetime if\
-            \ not specified.\r\nThe changes will take place from this effective time\
-            \ until the next effective time that the rule has been updated at.\r\n\
-            For example, consider a rule that has been created or updated effective\
-            \ at the first day of the coming month.\r\nAn upsert effective from the\
-            \ current day will only change the definition until that day.\r\nAn additional\
-            \ upsert at the same time (first day of the month) is required if the\
-            \ newly-updated definition is to supersede the future definition."
+            \ not specified."
           format: dateorcutlabel
           nullable: true
           type: string
@@ -45855,11 +45849,11 @@ paths:
             example:
               displayName: Rule set display name
               description: Rule set description
-              outputPropertyKey: Transaction/default/TaxRate
+              outputPropertyKey: Transaction/default/TaxAmount
               rules:
               - name: UKTaxRule
                 description: Rule for the UK tax rate
-                rate: 30
+                rate: 0.25
                 matchCriteria:
                 - propertyKey: Instrument/myScope/market
                   value: GB
@@ -45867,28 +45861,17 @@ paths:
                 - propertyKey: Portfolio/myScope/taxDomicile
                   value: GB
                   criterionType: PropertyValueEquals
-              - name: EUReclaimRate
-                description: Rule for applying the reclaim rate to instruments in
-                  the European market
-                rate: -10
-                matchCriteria:
-                - propertyKey: Instrument/myScope/Market
-                  value:
-                  - FR
-                  - NL
-                  - DE
-                  criterionType: PropertyValueIn
             schema:
               $ref: '#/components/schemas/UpdateTaxRuleSetRequest'
           application/json:
             example:
               displayName: Rule set display name
               description: Rule set description
-              outputPropertyKey: Transaction/default/TaxRate
+              outputPropertyKey: Transaction/default/TaxAmount
               rules:
               - name: UKTaxRule
                 description: Rule for the UK tax rate
-                rate: 30
+                rate: 0.25
                 matchCriteria:
                 - propertyKey: Instrument/myScope/market
                   value: GB
@@ -45896,28 +45879,17 @@ paths:
                 - propertyKey: Portfolio/myScope/taxDomicile
                   value: GB
                   criterionType: PropertyValueEquals
-              - name: EUReclaimRate
-                description: Rule for applying the reclaim rate to instruments in
-                  the European market
-                rate: -10
-                matchCriteria:
-                - propertyKey: Instrument/myScope/Market
-                  value:
-                  - FR
-                  - NL
-                  - DE
-                  criterionType: PropertyValueIn
             schema:
               $ref: '#/components/schemas/UpdateTaxRuleSetRequest'
           text/json:
             example:
               displayName: Rule set display name
               description: Rule set description
-              outputPropertyKey: Transaction/default/TaxRate
+              outputPropertyKey: Transaction/default/TaxAmount
               rules:
               - name: UKTaxRule
                 description: Rule for the UK tax rate
-                rate: 30
+                rate: 0.25
                 matchCriteria:
                 - propertyKey: Instrument/myScope/market
                   value: GB
@@ -45925,28 +45897,17 @@ paths:
                 - propertyKey: Portfolio/myScope/taxDomicile
                   value: GB
                   criterionType: PropertyValueEquals
-              - name: EUReclaimRate
-                description: Rule for applying the reclaim rate to instruments in
-                  the European market
-                rate: -10
-                matchCriteria:
-                - propertyKey: Instrument/myScope/Market
-                  value:
-                  - FR
-                  - NL
-                  - DE
-                  criterionType: PropertyValueIn
             schema:
               $ref: '#/components/schemas/UpdateTaxRuleSetRequest'
           application/*+json:
             example:
               displayName: Rule set display name
               description: Rule set description
-              outputPropertyKey: Transaction/default/TaxRate
+              outputPropertyKey: Transaction/default/TaxAmount
               rules:
               - name: UKTaxRule
                 description: Rule for the UK tax rate
-                rate: 30
+                rate: 0.25
                 matchCriteria:
                 - propertyKey: Instrument/myScope/market
                   value: GB
@@ -45954,17 +45915,6 @@ paths:
                 - propertyKey: Portfolio/myScope/taxDomicile
                   value: GB
                   criterionType: PropertyValueEquals
-              - name: EUReclaimRate
-                description: Rule for applying the reclaim rate to instruments in
-                  the European market
-                rate: -10
-                matchCriteria:
-                - propertyKey: Instrument/myScope/Market
-                  value:
-                  - FR
-                  - NL
-                  - DE
-                  criterionType: PropertyValueIn
             schema:
               $ref: '#/components/schemas/UpdateTaxRuleSetRequest'
         description: The contents of the rule set.
@@ -45975,15 +45925,15 @@ paths:
             text/plain:
               example:
                 id:
-                  scope: myScope
+                  scope: RuleSetScope
                   code: RuleSetName
                 displayName: Rule set display name
                 description: Rule set description
-                outputPropertyKey: Transaction/default/TaxRate
+                outputPropertyKey: Transaction/default/TaxAmount
                 rules:
                 - name: UKTaxRule
                   description: Rule for the UK tax rate
-                  rate: 30
+                  rate: 0.25
                   matchCriteria:
                   - propertyKey: Instrument/myScope/market
                     value: GB
@@ -45999,15 +45949,15 @@ paths:
             application/json:
               example:
                 id:
-                  scope: myScope
+                  scope: RuleSetScope
                   code: RuleSetName
                 displayName: Rule set display name
                 description: Rule set description
-                outputPropertyKey: Transaction/default/TaxRate
+                outputPropertyKey: Transaction/default/TaxAmount
                 rules:
                 - name: UKTaxRule
                   description: Rule for the UK tax rate
-                  rate: 30
+                  rate: 0.25
                   matchCriteria:
                   - propertyKey: Instrument/myScope/market
                     value: GB
@@ -46023,15 +45973,15 @@ paths:
             text/json:
               example:
                 id:
-                  scope: myScope
+                  scope: RuleSetScope
                   code: RuleSetName
                 displayName: Rule set display name
                 description: Rule set description
-                outputPropertyKey: Transaction/default/TaxRate
+                outputPropertyKey: Transaction/default/TaxAmount
                 rules:
                 - name: UKTaxRule
                   description: Rule for the UK tax rate
-                  rate: 30
+                  rate: 0.25
                   matchCriteria:
                   - propertyKey: Instrument/myScope/market
                     value: GB
@@ -104815,7 +104765,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
