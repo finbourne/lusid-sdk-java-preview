@@ -8,7 +8,7 @@ Base class for representing instrument events in LUSID, such as dividends, stock
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InternalEvent, CouponEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent | 
+**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent | 
 
 
 
@@ -17,13 +17,16 @@ Name | Type | Description | Notes
 Name | Value
 ---- | -----
 TRANSITIONEVENT | &quot;TransitionEvent&quot;
-INTERNALEVENT | &quot;InternalEvent&quot;
-COUPONEVENT | &quot;CouponEvent&quot;
+INFORMATIONALEVENT | &quot;InformationalEvent&quot;
 OPENEVENT | &quot;OpenEvent&quot;
 CLOSEEVENT | &quot;CloseEvent&quot;
 STOCKSPLITEVENT | &quot;StockSplitEvent&quot;
 BONDDEFAULTEVENT | &quot;BondDefaultEvent&quot;
 CASHDIVIDENDEVENT | &quot;CashDividendEvent&quot;
+AMORTISATIONEVENT | &quot;AmortisationEvent&quot;
+CASHFLOWEVENT | &quot;CashFlowEvent&quot;
+EXERCISEEVENT | &quot;ExerciseEvent&quot;
+RESETEVENT | &quot;ResetEvent&quot;
 
 
 

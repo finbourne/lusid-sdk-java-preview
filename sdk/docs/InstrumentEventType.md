@@ -7,9 +7,7 @@
 
 * `TRANSITIONEVENT` (value: `"TransitionEvent"`)
 
-* `INTERNALEVENT` (value: `"InternalEvent"`)
-
-* `COUPONEVENT` (value: `"CouponEvent"`)
+* `INFORMATIONALEVENT` (value: `"InformationalEvent"`)
 
 * `OPENEVENT` (value: `"OpenEvent"`)
 
@@ -20,6 +18,14 @@
 * `BONDDEFAULTEVENT` (value: `"BondDefaultEvent"`)
 
 * `CASHDIVIDENDEVENT` (value: `"CashDividendEvent"`)
+
+* `AMORTISATIONEVENT` (value: `"AmortisationEvent"`)
+
+* `CASHFLOWEVENT` (value: `"CashFlowEvent"`)
+
+* `EXERCISEEVENT` (value: `"ExerciseEvent"`)
+
+* `RESETEVENT` (value: `"ResetEvent"`)
 
 
 
