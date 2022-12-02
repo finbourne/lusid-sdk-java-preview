@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5025
+  version: 0.11.5026
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -16370,10 +16370,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-02T12:05:50.4919392+00:00
+                  date: 2022-12-02T14:26:40.0331050+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-02T12:05:50.4919469+00:00
+                  date: 2022-12-02T14:26:40.0331157+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16395,10 +16395,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-02T12:05:50.4919392+00:00
+                  date: 2022-12-02T14:26:40.0331050+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-02T12:05:50.4919469+00:00
+                  date: 2022-12-02T14:26:40.0331157+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16420,10 +16420,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-02T12:05:50.4919392+00:00
+                  date: 2022-12-02T14:26:40.0331050+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-02T12:05:50.4919469+00:00
+                  date: 2022-12-02T14:26:40.0331157+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
