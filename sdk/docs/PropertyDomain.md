@@ -67,5 +67,9 @@
 
 * `CUSTODIANACCOUNT` (value: `"CustodianAccount"`)
 
+* `ABOR` (value: `"Abor"`)
+
+* `ABORCONFIGURATION` (value: `"AborConfiguration"`)
+
 
 

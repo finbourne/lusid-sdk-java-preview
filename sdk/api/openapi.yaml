@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5027
+  version: 0.11.5028
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -16370,10 +16370,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-02T18:29:38.3192660+00:00
+                  date: 2022-12-05T10:14:21.3716860+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-02T18:29:38.3194950+00:00
+                  date: 2022-12-05T10:14:21.3716938+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16395,10 +16395,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-02T18:29:38.3192660+00:00
+                  date: 2022-12-05T10:14:21.3716860+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-02T18:29:38.3194950+00:00
+                  date: 2022-12-05T10:14:21.3716938+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16420,10 +16420,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-02T18:29:38.3192660+00:00
+                  date: 2022-12-05T10:14:21.3716860+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-02T18:29:38.3194950+00:00
+                  date: 2022-12-05T10:14:21.3716938+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -38162,7 +38162,7 @@ paths:
             Analytic, PortfolioGroup, Person, AccessMetadata, Order, UnitResult, MarketData,
             ConfigurationRecipe, Allocation, Calendar, LegalEntity, Placement, Execution,
             Block, Participation, Package, OrderInstruction, NextBestAction, CustomEntity,
-            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount'
+            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount, Abor, AborConfiguration'
           enum:
           - NotDefined
           - Transaction
@@ -38195,6 +38195,8 @@ paths:
           - Account
           - ChartOfAccounts
           - CustodianAccount
+          - Abor
+          - AborConfiguration
           type: string
         style: simple
       - description: The scope of the property to be deleted.
@@ -38278,7 +38280,7 @@ paths:
             Analytic, PortfolioGroup, Person, AccessMetadata, Order, UnitResult, MarketData,
             ConfigurationRecipe, Allocation, Calendar, LegalEntity, Placement, Execution,
             Block, Participation, Package, OrderInstruction, NextBestAction, CustomEntity,
-            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount'
+            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount, Abor, AborConfiguration'
           enum:
           - NotDefined
           - Transaction
@@ -38311,6 +38313,8 @@ paths:
           - Account
           - ChartOfAccounts
           - CustodianAccount
+          - Abor
+          - AborConfiguration
           type: string
         style: simple
       - description: The scope of the specified property.
@@ -38412,7 +38416,7 @@ paths:
             Analytic, PortfolioGroup, Person, AccessMetadata, Order, UnitResult, MarketData,
             ConfigurationRecipe, Allocation, Calendar, LegalEntity, Placement, Execution,
             Block, Participation, Package, OrderInstruction, NextBestAction, CustomEntity,
-            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount'
+            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount, Abor, AborConfiguration'
           enum:
           - NotDefined
           - Transaction
@@ -38445,6 +38449,8 @@ paths:
           - Account
           - ChartOfAccounts
           - CustodianAccount
+          - Abor
+          - AborConfiguration
           type: string
         style: simple
       - description: The scope of the property being updated.
@@ -67020,7 +67026,7 @@ components:
             Analytic, PortfolioGroup, Person, AccessMetadata, Order, UnitResult, MarketData,
             ConfigurationRecipe, Allocation, Calendar, LegalEntity, Placement, Execution,
             Block, Participation, Package, OrderInstruction, NextBestAction, CustomEntity,
-            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount'
+            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount, Abor, AborConfiguration'
           enum:
           - NotDefined
           - Transaction
@@ -67053,6 +67059,8 @@ components:
           - Account
           - ChartOfAccounts
           - CustodianAccount
+          - Abor
+          - AborConfiguration
           type: string
         scope:
           description: The scope that the property exists in.
@@ -67285,7 +67293,7 @@ components:
             Order, UnitResult, MarketData, ConfigurationRecipe, Allocation, Calendar,
             LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction,
             NextBestAction, CustomEntity, InstrumentEvent, Account, ChartOfAccounts,
-            CustodianAccount'
+            CustodianAccount, Abor, AborConfiguration'
           enum:
           - NotDefined
           - Transaction
@@ -67318,6 +67326,8 @@ components:
           - Account
           - ChartOfAccounts
           - CustodianAccount
+          - Abor
+          - AborConfiguration
           type: string
         scope:
           description: The scope that the property exists in.
@@ -83455,7 +83465,7 @@ components:
             Order, UnitResult, MarketData, ConfigurationRecipe, Allocation, Calendar,
             LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction,
             NextBestAction, CustomEntity, InstrumentEvent, Account, ChartOfAccounts,
-            CustodianAccount'
+            CustodianAccount, Abor, AborConfiguration'
           enum:
           - NotDefined
           - Transaction
@@ -83488,6 +83498,8 @@ components:
           - Account
           - ChartOfAccounts
           - CustodianAccount
+          - Abor
+          - AborConfiguration
           type: string
         scope:
           description: The scope that the property exists in.
@@ -83639,7 +83651,7 @@ components:
             Order, UnitResult, MarketData, ConfigurationRecipe, Allocation, Calendar,
             LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction,
             NextBestAction, CustomEntity, InstrumentEvent, Account, ChartOfAccounts,
-            CustodianAccount'
+            CustodianAccount, Abor, AborConfiguration'
           enum:
           - NotDefined
           - Transaction
@@ -83672,6 +83684,8 @@ components:
           - Account
           - ChartOfAccounts
           - CustodianAccount
+          - Abor
+          - AborConfiguration
           type: string
         scope:
           description: The scope that the property exists in.
@@ -83763,6 +83777,8 @@ components:
       - Account
       - ChartOfAccounts
       - CustodianAccount
+      - Abor
+      - AborConfiguration
       type: string
     PropertyFilter:
       additionalProperties: false
@@ -105038,7 +105054,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
