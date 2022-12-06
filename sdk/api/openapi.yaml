@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5037
+  version: 0.11.5038
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -16370,10 +16370,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-06T14:32:21.0406820+00:00
+                  date: 2022-12-06T17:21:07.8064939+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-06T14:32:21.0406934+00:00
+                  date: 2022-12-06T17:21:07.8065040+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16395,10 +16395,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-06T14:32:21.0406820+00:00
+                  date: 2022-12-06T17:21:07.8064939+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-06T14:32:21.0406934+00:00
+                  date: 2022-12-06T17:21:07.8065040+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16420,10 +16420,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-06T14:32:21.0406820+00:00
+                  date: 2022-12-06T17:21:07.8064939+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-06T14:32:21.0406934+00:00
+                  date: 2022-12-06T17:21:07.8065040+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -39413,6 +39413,7 @@ paths:
                         quoteType: Price
                         field: Ask
                         priceSource: ""
+                        sourceSystem: Lusid
                       suppliers: {}
                       options:
                         defaultSupplier: Lusid
@@ -39466,6 +39467,7 @@ paths:
                         quoteType: Spread
                         field: Bid
                         priceSource: ""
+                        sourceSystem: Lusid
                       suppliers: {}
                       options:
                         defaultSupplier: Lusid
@@ -39524,6 +39526,7 @@ paths:
                         quoteType: Price
                         field: Ask
                         priceSource: ""
+                        sourceSystem: Lusid
                       suppliers: {}
                       options:
                         defaultSupplier: Lusid
@@ -39577,6 +39580,7 @@ paths:
                         quoteType: Spread
                         field: Bid
                         priceSource: ""
+                        sourceSystem: Lusid
                       suppliers: {}
                       options:
                         defaultSupplier: Lusid
@@ -39635,6 +39639,7 @@ paths:
                         quoteType: Price
                         field: Ask
                         priceSource: ""
+                        sourceSystem: Lusid
                       suppliers: {}
                       options:
                         defaultSupplier: Lusid
@@ -39688,6 +39693,7 @@ paths:
                         quoteType: Spread
                         field: Bid
                         priceSource: ""
+                        sourceSystem: Lusid
                       suppliers: {}
                       options:
                         defaultSupplier: Lusid
@@ -39780,6 +39786,7 @@ paths:
                     quoteType: Rate
                     field: Mid
                     priceSource: ""
+                    sourceSystem: Lusid
                   suppliers: {}
                   options:
                     defaultSupplier: Lusid
@@ -39830,6 +39837,7 @@ paths:
                     quoteType: Rate
                     field: Mid
                     priceSource: ""
+                    sourceSystem: Lusid
                   suppliers: {}
                   options:
                     defaultSupplier: Lusid
@@ -39880,6 +39888,7 @@ paths:
                     quoteType: Rate
                     field: Mid
                     priceSource: ""
+                    sourceSystem: Lusid
                   suppliers: {}
                   options:
                     defaultSupplier: Lusid
@@ -39930,6 +39939,7 @@ paths:
                     quoteType: Rate
                     field: Mid
                     priceSource: ""
+                    sourceSystem: Lusid
                   suppliers: {}
                   options:
                     defaultSupplier: Lusid
@@ -40141,6 +40151,7 @@ paths:
                       quoteType: Price
                       field: Ask
                       priceSource: ""
+                      sourceSystem: Lusid
                     suppliers: {}
                     options:
                       defaultSupplier: Lusid
@@ -40198,6 +40209,7 @@ paths:
                       quoteType: Price
                       field: Ask
                       priceSource: ""
+                      sourceSystem: Lusid
                     suppliers: {}
                     options:
                       defaultSupplier: Lusid
@@ -40255,6 +40267,7 @@ paths:
                       quoteType: Price
                       field: Ask
                       priceSource: ""
+                      sourceSystem: Lusid
                     suppliers: {}
                     options:
                       defaultSupplier: Lusid
@@ -45921,7 +45934,6 @@ paths:
             example:
               displayName: Rule set display name
               description: Rule set description
-              outputPropertyKey: Transaction/default/TaxAmount
               rules:
               - name: UKTaxRule
                 description: Rule for the UK tax rate
@@ -45939,7 +45951,6 @@ paths:
             example:
               displayName: Rule set display name
               description: Rule set description
-              outputPropertyKey: Transaction/default/TaxAmount
               rules:
               - name: UKTaxRule
                 description: Rule for the UK tax rate
@@ -45957,7 +45968,6 @@ paths:
             example:
               displayName: Rule set display name
               description: Rule set description
-              outputPropertyKey: Transaction/default/TaxAmount
               rules:
               - name: UKTaxRule
                 description: Rule for the UK tax rate
@@ -45975,7 +45985,6 @@ paths:
             example:
               displayName: Rule set display name
               description: Rule set description
-              outputPropertyKey: Transaction/default/TaxAmount
               rules:
               - name: UKTaxRule
                 description: Rule for the UK tax rate
@@ -65836,6 +65845,7 @@ components:
           specificRules:
           - quoteInterval: quoteInterval
             field: field
+            sourceSystem: sourceSystem
             supplier: supplier
             priceSource: priceSource
             asAt: 2000-01-23T04:56:07.000+00:00
@@ -65849,6 +65859,7 @@ components:
             mask: mask
           - quoteInterval: quoteInterval
             field: field
+            sourceSystem: sourceSystem
             supplier: supplier
             priceSource: priceSource
             asAt: 2000-01-23T04:56:07.000+00:00
@@ -65869,6 +65880,7 @@ components:
           marketRules:
           - quoteInterval: quoteInterval
             field: field
+            sourceSystem: sourceSystem
             supplier: supplier
             priceSource: priceSource
             asAt: 2000-01-23T04:56:07.000+00:00
@@ -65878,6 +65890,7 @@ components:
             mask: mask
           - quoteInterval: quoteInterval
             field: field
+            sourceSystem: sourceSystem
             supplier: supplier
             priceSource: priceSource
             asAt: 2000-01-23T04:56:07.000+00:00
@@ -66042,6 +66055,7 @@ components:
         marketRules:
         - quoteInterval: quoteInterval
           field: field
+          sourceSystem: sourceSystem
           supplier: supplier
           priceSource: priceSource
           asAt: 2000-01-23T04:56:07.000+00:00
@@ -66051,6 +66065,7 @@ components:
           mask: mask
         - quoteInterval: quoteInterval
           field: field
+          sourceSystem: sourceSystem
           supplier: supplier
           priceSource: priceSource
           asAt: 2000-01-23T04:56:07.000+00:00
@@ -66071,6 +66086,7 @@ components:
             specificRules:
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -66084,6 +66100,7 @@ components:
               mask: mask
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -66104,6 +66121,7 @@ components:
             marketRules:
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -66113,6 +66131,7 @@ components:
               mask: mask
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -67406,6 +67425,7 @@ components:
             specificRules:
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -67419,6 +67439,7 @@ components:
               mask: mask
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -67439,6 +67460,7 @@ components:
             marketRules:
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -67448,6 +67470,7 @@ components:
               mask: mask
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -71603,6 +71626,7 @@ components:
             specificRules:
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -71616,6 +71640,7 @@ components:
               mask: mask
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -71636,6 +71661,7 @@ components:
             marketRules:
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -71645,6 +71671,7 @@ components:
               mask: mask
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -75138,6 +75165,7 @@ components:
         specificRules:
         - quoteInterval: quoteInterval
           field: field
+          sourceSystem: sourceSystem
           supplier: supplier
           priceSource: priceSource
           asAt: 2000-01-23T04:56:07.000+00:00
@@ -75151,6 +75179,7 @@ components:
           mask: mask
         - quoteInterval: quoteInterval
           field: field
+          sourceSystem: sourceSystem
           supplier: supplier
           priceSource: priceSource
           asAt: 2000-01-23T04:56:07.000+00:00
@@ -75171,6 +75200,7 @@ components:
         marketRules:
         - quoteInterval: quoteInterval
           field: field
+          sourceSystem: sourceSystem
           supplier: supplier
           priceSource: priceSource
           asAt: 2000-01-23T04:56:07.000+00:00
@@ -75180,6 +75210,7 @@ components:
           mask: mask
         - quoteInterval: quoteInterval
           field: field
+          sourceSystem: sourceSystem
           supplier: supplier
           priceSource: priceSource
           asAt: 2000-01-23T04:56:07.000+00:00
@@ -75238,6 +75269,7 @@ components:
       example:
         quoteInterval: quoteInterval
         field: field
+        sourceSystem: sourceSystem
         supplier: supplier
         priceSource: priceSource
         asAt: 2000-01-23T04:56:07.000+00:00
@@ -75336,6 +75368,17 @@ components:
           minLength: 0
           nullable: true
           type: string
+        sourceSystem:
+          description: "Determines from where LUSID should attempt to find the data.\
+            \ Optional and, if omitted, will default to \"Lusid\".\r\nThis means that\
+            \ data will be retrieved from the Quote store and the ComplexMarketData\
+            \ store.\r\nThese can be populated using the Quotes and ComplexMarketData\
+            \ endpoints.\r\n            \r\nThis can be set to \"MarketDataOverrides\"\
+            \ if Supplier is set to \"Client\"."
+          maxLength: 256
+          minLength: 0
+          nullable: true
+          type: string
       required:
       - dataScope
       - field
@@ -75398,6 +75441,7 @@ components:
       example:
         quoteInterval: quoteInterval
         field: field
+        sourceSystem: sourceSystem
         supplier: supplier
         priceSource: priceSource
         asAt: 2000-01-23T04:56:07.000+00:00
@@ -75487,6 +75531,16 @@ components:
           type: string
         dependencySourceFilter:
           $ref: '#/components/schemas/DependencySourceFilter'
+        sourceSystem:
+          description: "Determines from where LUSID should attempt to find the data.\
+            \ Optional and, if omitted, will default to \"Lusid\".\r\nThis means that\
+            \ data will be retrieved from the Quotes store and the ComplexMarketData\
+            \ store.\r\nThese can be populated using the Quotes and ComplexMarketData\
+            \ endpoints."
+          maxLength: 256
+          minLength: 0
+          nullable: true
+          type: string
       required:
       - dataScope
       - dependencySourceFilter
@@ -88090,6 +88144,7 @@ components:
               specificRules:
               - quoteInterval: quoteInterval
                 field: field
+                sourceSystem: sourceSystem
                 supplier: supplier
                 priceSource: priceSource
                 asAt: 2000-01-23T04:56:07.000+00:00
@@ -88103,6 +88158,7 @@ components:
                 mask: mask
               - quoteInterval: quoteInterval
                 field: field
+                sourceSystem: sourceSystem
                 supplier: supplier
                 priceSource: priceSource
                 asAt: 2000-01-23T04:56:07.000+00:00
@@ -88123,6 +88179,7 @@ components:
               marketRules:
               - quoteInterval: quoteInterval
                 field: field
+                sourceSystem: sourceSystem
                 supplier: supplier
                 priceSource: priceSource
                 asAt: 2000-01-23T04:56:07.000+00:00
@@ -88132,6 +88189,7 @@ components:
                 mask: mask
               - quoteInterval: quoteInterval
                 field: field
+                sourceSystem: sourceSystem
                 supplier: supplier
                 priceSource: priceSource
                 asAt: 2000-01-23T04:56:07.000+00:00
@@ -88212,6 +88270,7 @@ components:
               specificRules:
               - quoteInterval: quoteInterval
                 field: field
+                sourceSystem: sourceSystem
                 supplier: supplier
                 priceSource: priceSource
                 asAt: 2000-01-23T04:56:07.000+00:00
@@ -88225,6 +88284,7 @@ components:
                 mask: mask
               - quoteInterval: quoteInterval
                 field: field
+                sourceSystem: sourceSystem
                 supplier: supplier
                 priceSource: priceSource
                 asAt: 2000-01-23T04:56:07.000+00:00
@@ -88245,6 +88305,7 @@ components:
               marketRules:
               - quoteInterval: quoteInterval
                 field: field
+                sourceSystem: sourceSystem
                 supplier: supplier
                 priceSource: priceSource
                 asAt: 2000-01-23T04:56:07.000+00:00
@@ -88254,6 +88315,7 @@ components:
                 mask: mask
               - quoteInterval: quoteInterval
                 field: field
+                sourceSystem: sourceSystem
                 supplier: supplier
                 priceSource: priceSource
                 asAt: 2000-01-23T04:56:07.000+00:00
@@ -95849,7 +95911,6 @@ components:
     UpdateTaxRuleSetRequest:
       additionalProperties: false
       example:
-        outputPropertyKey: outputPropertyKey
         displayName: displayName
         description: description
         rules:
@@ -95894,8 +95955,6 @@ components:
           minLength: 0
           pattern: ^[\s\S]*$
           type: string
-        outputPropertyKey:
-          type: string
         rules:
           items:
             $ref: '#/components/schemas/TaxRule'
@@ -95904,7 +95963,6 @@ components:
       required:
       - description
       - displayName
-      - outputPropertyKey
       - rules
       type: object
     UpdateUnitRequest:
@@ -97280,6 +97338,7 @@ components:
             specificRules:
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -97293,6 +97352,7 @@ components:
               mask: mask
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -97313,6 +97373,7 @@ components:
             marketRules:
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -97322,6 +97383,7 @@ components:
               mask: mask
             - quoteInterval: quoteInterval
               field: field
+              sourceSystem: sourceSystem
               supplier: supplier
               priceSource: priceSource
               asAt: 2000-01-23T04:56:07.000+00:00
@@ -97409,6 +97471,7 @@ components:
           marketRules:
           - quoteInterval: quoteInterval
             field: field
+            sourceSystem: sourceSystem
             supplier: supplier
             priceSource: priceSource
             asAt: 2000-01-23T04:56:07.000+00:00
@@ -97418,6 +97481,7 @@ components:
             mask: mask
           - quoteInterval: quoteInterval
             field: field
+            sourceSystem: sourceSystem
             supplier: supplier
             priceSource: priceSource
             asAt: 2000-01-23T04:56:07.000+00:00
@@ -97438,6 +97502,7 @@ components:
               specificRules:
               - quoteInterval: quoteInterval
                 field: field
+                sourceSystem: sourceSystem
                 supplier: supplier
                 priceSource: priceSource
                 asAt: 2000-01-23T04:56:07.000+00:00
@@ -97451,6 +97516,7 @@ components:
                 mask: mask
               - quoteInterval: quoteInterval
                 field: field
+                sourceSystem: sourceSystem
                 supplier: supplier
                 priceSource: priceSource
                 asAt: 2000-01-23T04:56:07.000+00:00
@@ -97471,6 +97537,7 @@ components:
               marketRules:
               - quoteInterval: quoteInterval
                 field: field
+                sourceSystem: sourceSystem
                 supplier: supplier
                 priceSource: priceSource
                 asAt: 2000-01-23T04:56:07.000+00:00
@@ -97480,6 +97547,7 @@ components:
                 mask: mask
               - quoteInterval: quoteInterval
                 field: field
+                sourceSystem: sourceSystem
                 supplier: supplier
                 priceSource: priceSource
                 asAt: 2000-01-23T04:56:07.000+00:00
