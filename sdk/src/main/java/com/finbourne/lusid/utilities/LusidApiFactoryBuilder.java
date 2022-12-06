@@ -17,7 +17,7 @@ public class LusidApiFactoryBuilder {
             throw new ApiConfigurationException("Environment variables to configure LUSID API client have not been set. See " +
                     " see https://support.lusid.com/getting-started-with-apis-sdks for details.");
         }
-        return createApiFactory("", DEFAULT_TIMEOUT_SECONDS, DEFAULT_TIMEOUT_SECONDS, DEFAULT_TIMEOUT_SECONDS);
+        return createApiFactory(null, DEFAULT_TIMEOUT_SECONDS, DEFAULT_TIMEOUT_SECONDS, DEFAULT_TIMEOUT_SECONDS);
     }
 
     /**
@@ -38,15 +38,17 @@ public class LusidApiFactoryBuilder {
     private static LusidApiFactory createApiFactory(String configurationFile, int readTimeout, int writeTimeout, int connectTimeout) throws ApiConfigurationException, LusidTokenException {
         ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(configurationFile);
         ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration, readTimeout, writeTimeout, connectTimeout);
-        return new LusidApiFactory(apiClient);
+        return new  LusidApiFactory(apiClient);
     }
 
     private static boolean areRequiredEnvironmentVariablesSet(){
-        return (System.getenv("FBN_TOKEN_URL") != null &&
+        return ((System.getenv("FBN_TOKEN_URL") != null &&
                 System.getenv("FBN_USERNAME") != null &&
                 System.getenv("FBN_PASSWORD") != null &&
                 System.getenv("FBN_CLIENT_ID") != null &&
                 System.getenv("FBN_CLIENT_SECRET") != null &&
-                System.getenv("FBN_LUSID_API_URL") != null);
+                System.getenv("FBN_LUSID_API_URL") != null) ||
+                (System.getenv("FBN_TOKEN_URL") != null &&
+                System.getenv("FBN_ACCESS_TOKEN") != null));
     }
 }

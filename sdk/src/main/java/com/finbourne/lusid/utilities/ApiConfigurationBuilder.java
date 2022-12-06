@@ -10,6 +10,17 @@ public class ApiConfigurationBuilder {
 
     /**
      * Build an {@link ApiConfiguration}. Attempts to build a valid configuration
+     * from system environment variables.
+     *
+     * @return a valid {@link ApiConfiguration}
+     * @throws ApiConfigurationException
+     */
+    public ApiConfiguration build() throws ApiConfigurationException {
+        return this.build(null);
+    }
+
+    /**
+     * Build an {@link ApiConfiguration}. Attempts to build a valid configuration
      * from system environment variables. Otherwise will attempt to load the configuration
      * from the provided secrets file.
      *
@@ -43,6 +54,7 @@ public class ApiConfigurationBuilder {
         String clientId = System.getenv("FBN_CLIENT_ID");
         String clientSecret = System.getenv("FBN_CLIENT_SECRET");
         String apiUrl = System.getenv("FBN_LUSID_API_URL");
+        String personalAccessToken = System.getenv("FBN_ACCESS_TOKEN");
 
         //  optional variables
         String applicationName = System.getenv("FBN_APP_NAME");
@@ -53,7 +65,8 @@ public class ApiConfigurationBuilder {
         String proxyUsername = System.getenv("FBN_PROXY_USERNAME");
         String proxyPassword = System.getenv("FBN_PROXY_PASSWORD");
 
-        return new ApiConfiguration(tokenUrl, username, password, clientId, clientSecret, apiUrl, applicationName, proxyAddress, proxyPort, proxyUsername, proxyPassword);
+        return new ApiConfiguration(tokenUrl, username, password, clientId, clientSecret, apiUrl, applicationName,
+                personalAccessToken, proxyAddress, proxyPort, proxyUsername, proxyPassword);
     }
 
     ApiConfiguration getApiConfigurationFromFile(String apiSecretsFilename) throws ApiConfigurationException {
@@ -72,6 +85,7 @@ public class ApiConfigurationBuilder {
             String clientSecret = (String) apiConfig.get("clientSecret");
             String apiUrl = (String) apiConfig.get("apiUrl");
             String applicationName = apiConfig.containsKey("applicationName") ? (String) apiConfig.get("applicationName") : null;
+            String personalAccessToken = (String)apiConfig.get("accessToken");
 
             String proxyAddress = null;
             Integer proxyPort = null;
@@ -87,14 +101,22 @@ public class ApiConfigurationBuilder {
                 proxyPassword = (String) proxyConfig.get("password");
             }
 
-            return new ApiConfiguration(tokenUrl, username, password, clientId, clientSecret, apiUrl, applicationName, proxyAddress, proxyPort, proxyUsername, proxyPassword);
+            return new ApiConfiguration(tokenUrl, username, password, clientId, clientSecret, apiUrl, applicationName,
+                    personalAccessToken, proxyAddress, proxyPort, proxyUsername, proxyPassword);
         } catch (IOException e){
             throw new ApiConfigurationException("Error when loading details from configuration file. See details : ", e);
         }
     }
 
-    private boolean isValidApiConfiguration(ApiConfiguration apiConfiguration) {
-        return !(apiConfiguration.getTokenUrl() == null || apiConfiguration.getUsername() == null || apiConfiguration.getPassword() == null || apiConfiguration.getClientId() == null || apiConfiguration.getClientSecret() == null || apiConfiguration.getApiUrl() == null);
+    public boolean isValidApiConfiguration(ApiConfiguration apiConfiguration) {
+        return (!(apiConfiguration.getTokenUrl() == null ||
+                apiConfiguration.getUsername() == null ||
+                apiConfiguration.getPassword() == null ||
+                apiConfiguration.getClientId() == null ||
+                apiConfiguration.getClientSecret() == null ||
+                apiConfiguration.getApiUrl() == null) ||
+                !(apiConfiguration.getApiUrl() == null ||
+                apiConfiguration.getPersonalAccessToken() == null));
     }
 
     // getter used for mocking in tests
