@@ -1863,7 +1863,7 @@ Name | Type | Description  | Notes
 
 <a name="lookThroughTransactions"></a>
 # **lookThroughTransactions**
-> VersionedResourceListOfTransaction lookThroughTransactions(scope, code, fromTransactionDate, toTransactionDate, asAt, filter, propertyKeys, page, limit, quotesScope, slice, shareClass)
+> VersionedResourceListOfTransaction lookThroughTransactions(scope, code, fromTransactionDate, toTransactionDate, asAt, filter, propertyKeys, page, limit, quotesScope, slice, shareClass, useAlternateScalingLogic, alternateEffectiveAt)
 
 [EXPERIMENTAL] LookThroughTransactions: Look through transactions
 
@@ -1901,8 +1901,10 @@ public class Example {
     String quotesScope = "quotesScope_example"; // String | The scope containing the quotes with the FX rates used for currency conversion.
     String slice = "slice_example"; // String | When running LookThrough, define this slice as the root slice in the portfolio to look through from.
     String shareClass = "shareClass_example"; // String | When running LookThrough, use this along with the slice parameter to specify              the root share class in the slice in the portfolio to look through from. The slice parameter is a prerequisite              for this parameter to be valid.
+    Boolean useAlternateScalingLogic = false; // Boolean | When running LookThrough, set this flag to use the same scaling logic as for LT Holdings
+    String alternateEffectiveAt = "alternateEffectiveAt_example"; // String | This effectiveAt field is required when using alternate scaling logic to determine which fund and currency data is used for scaling
     try {
-      VersionedResourceListOfTransaction result = apiInstance.lookThroughTransactions(scope, code, fromTransactionDate, toTransactionDate, asAt, filter, propertyKeys, page, limit, quotesScope, slice, shareClass);
+      VersionedResourceListOfTransaction result = apiInstance.lookThroughTransactions(scope, code, fromTransactionDate, toTransactionDate, asAt, filter, propertyKeys, page, limit, quotesScope, slice, shareClass, useAlternateScalingLogic, alternateEffectiveAt);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#lookThroughTransactions");
@@ -1931,6 +1933,8 @@ Name | Type | Description  | Notes
  **quotesScope** | **String**| The scope containing the quotes with the FX rates used for currency conversion. | [optional]
  **slice** | **String**| When running LookThrough, define this slice as the root slice in the portfolio to look through from. | [optional]
  **shareClass** | **String**| When running LookThrough, use this along with the slice parameter to specify              the root share class in the slice in the portfolio to look through from. The slice parameter is a prerequisite              for this parameter to be valid. | [optional]
+ **useAlternateScalingLogic** | **Boolean**| When running LookThrough, set this flag to use the same scaling logic as for LT Holdings | [optional] [default to false]
+ **alternateEffectiveAt** | **String**| This effectiveAt field is required when using alternate scaling logic to determine which fund and currency data is used for scaling | [optional]
 
 ### Return type
 

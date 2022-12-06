@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5035
+  version: 0.11.5036
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -16370,10 +16370,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-06T11:22:58.6662427+00:00
+                  date: 2022-12-06T12:44:14.0643871+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-06T11:22:58.6662544+00:00
+                  date: 2022-12-06T12:44:14.0644018+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16395,10 +16395,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-06T11:22:58.6662427+00:00
+                  date: 2022-12-06T12:44:14.0643871+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-06T11:22:58.6662544+00:00
+                  date: 2022-12-06T12:44:14.0644018+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16420,10 +16420,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-06T11:22:58.6662427+00:00
+                  date: 2022-12-06T12:44:14.0643871+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-06T11:22:58.6662544+00:00
+                  date: 2022-12-06T12:44:14.0644018+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -58268,6 +58268,32 @@ paths:
           minLength: 1
           nullable: true
           pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: form
+      - description: When running LookThrough, set this flag to use the same scaling
+          logic as for LT Holdings
+        explode: true
+        in: query
+        name: useAlternateScalingLogic
+        required: false
+        schema:
+          default: false
+          description: When running LookThrough, set this flag to use the same scaling
+            logic as for LT Holdings
+          type: boolean
+        style: form
+        x-nullable: true
+      - description: This effectiveAt field is required when using alternate scaling
+          logic to determine which fund and currency data is used for scaling
+        explode: true
+        in: query
+        name: alternateEffectiveAt
+        required: false
+        schema:
+          description: This effectiveAt field is required when using alternate scaling
+            logic to determine which fund and currency data is used for scaling
+          format: dateorcutlabel
+          nullable: true
           type: string
         style: form
       responses:
