@@ -305,7 +305,7 @@ info:
     | <a name="814">814</a>|Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5039
+  version: 0.11.5040
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -16370,10 +16370,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-07T11:30:49.1138335+00:00
+                  date: 2022-12-07T13:28:58.5977301+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-07T11:30:49.1138425+00:00
+                  date: 2022-12-07T13:28:58.5977413+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16395,10 +16395,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-07T11:30:49.1138335+00:00
+                  date: 2022-12-07T13:28:58.5977301+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-07T11:30:49.1138425+00:00
+                  date: 2022-12-07T13:28:58.5977413+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -16420,10 +16420,10 @@ paths:
                 - Valuation/EffectiveAt
                 economicDependencies:
                 - currency: GBP
-                  date: 2022-12-07T11:30:49.1138335+00:00
+                  date: 2022-12-07T13:28:58.5977301+00:00
                   dependencyType: Discounting
                 - currency: USD
-                  date: 2022-12-07T11:30:49.1138425+00:00
+                  date: 2022-12-07T13:28:58.5977413+00:00
                   dependencyType: Cash
               schema:
                 $ref: '#/components/schemas/InstrumentCapabilities'
@@ -68256,10 +68256,12 @@ components:
         fieldSchema:
         - name: name
           lifetime: lifetime
+          description: description
           type: type
           required: true
         - name: name
           lifetime: lifetime
+          description: description
           type: type
           required: true
         href: https://openapi-generator.tech
@@ -68306,10 +68308,12 @@ components:
         fieldSchema:
         - name: name
           lifetime: lifetime
+          description: description
           type: type
           required: true
         - name: name
           lifetime: lifetime
+          description: description
           type: type
           required: true
       properties:
@@ -68376,6 +68380,7 @@ components:
       example:
         name: name
         lifetime: lifetime
+        description: description
         type: type
         required: true
       properties:
@@ -68393,6 +68398,11 @@ components:
         required:
           description: Whether the field is required or not.
           type: boolean
+        description:
+          description: An optional description for the field.
+          maxLength: 512
+          nullable: true
+          type: string
       required:
       - lifetime
       - name
@@ -77866,10 +77876,12 @@ components:
           fieldSchema:
           - name: name
             lifetime: lifetime
+            description: description
             type: type
             required: true
           - name: name
             lifetime: lifetime
+            description: description
             type: type
             required: true
           href: https://openapi-generator.tech
@@ -77880,10 +77892,12 @@ components:
           fieldSchema:
           - name: name
             lifetime: lifetime
+            description: description
             type: type
             required: true
           - name: name
             lifetime: lifetime
+            description: description
             type: type
             required: true
           href: https://openapi-generator.tech
@@ -95705,10 +95719,12 @@ components:
         fieldSchema:
         - name: name
           lifetime: lifetime
+          description: description
           type: type
           required: true
         - name: name
           lifetime: lifetime
+          description: description
           type: type
           required: true
       properties:
