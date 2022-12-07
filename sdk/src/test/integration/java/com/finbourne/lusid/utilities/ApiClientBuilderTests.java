@@ -2,6 +2,8 @@ package com.finbourne.lusid.utilities;
 
 import com.finbourne.lusid.ApiClient;
 import com.finbourne.lusid.api.ScopesApi;
+import com.finbourne.lusid.auth.Authentication;
+import com.finbourne.lusid.auth.OAuth;
 import com.finbourne.lusid.model.ResourceListOfScopeDefinition;
 import com.finbourne.lusid.utilities.auth.LusidTokenException;
 import org.junit.Before;
@@ -30,12 +32,23 @@ public class ApiClientBuilderTests {
 
     @Test
     public void build_OnValidConfigurationFile_ShouldBuildKeepLiveApiClient() throws ApiConfigurationException, LusidTokenException {
-        // This test assumes default secrets file is valid. Same assertion as all other integration tests.
+        // This test assumes default secrets file is valid without a PAT. Same assertion as all other integration tests.
         ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build(CredentialsSource.credentialsFile);
         ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
         // running with no exceptions ensures client built correctly with no configuration or token creation exceptions
         assertThat("Unexpected extended implementation of ApiClient for default build." ,
                 apiClient, instanceOf(RefreshingTokenApiClient.class));
+    }
+
+    @Test
+    public void build_WithValidPAT_ShouldBuildKeepLiveApiClient() throws ApiConfigurationException, LusidTokenException {
+
+        ApiConfiguration apiConfiguration = new ApiConfigurationBuilder().build("secrets-pat.json");
+        ApiClient apiClient = new ApiClientBuilder().build(apiConfiguration);
+
+        OAuth auth = (OAuth)apiClient.getAuthentication("oauth2");
+
+        assertThat(auth.getAccessToken(), equalTo(apiConfiguration.getPersonalAccessToken()));
     }
 
     @Test
