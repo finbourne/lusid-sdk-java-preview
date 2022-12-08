@@ -307,7 +307,7 @@ info:
     | <a name="816">816</a>|Abor Configuration not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5048
+  version: 0.11.5049
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -39449,7 +39449,8 @@ paths:
             Analytic, PortfolioGroup, Person, AccessMetadata, Order, UnitResult, MarketData,
             ConfigurationRecipe, Allocation, Calendar, LegalEntity, Placement, Execution,
             Block, Participation, Package, OrderInstruction, NextBestAction, CustomEntity,
-            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount, Abor, AborConfiguration'
+            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount, Abor, AborConfiguration,
+            Reconciliation'
           enum:
           - NotDefined
           - Transaction
@@ -39484,6 +39485,7 @@ paths:
           - CustodianAccount
           - Abor
           - AborConfiguration
+          - Reconciliation
           type: string
         style: simple
       - description: The scope of the property to be deleted.
@@ -39567,7 +39569,8 @@ paths:
             Analytic, PortfolioGroup, Person, AccessMetadata, Order, UnitResult, MarketData,
             ConfigurationRecipe, Allocation, Calendar, LegalEntity, Placement, Execution,
             Block, Participation, Package, OrderInstruction, NextBestAction, CustomEntity,
-            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount, Abor, AborConfiguration'
+            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount, Abor, AborConfiguration,
+            Reconciliation'
           enum:
           - NotDefined
           - Transaction
@@ -39602,6 +39605,7 @@ paths:
           - CustodianAccount
           - Abor
           - AborConfiguration
+          - Reconciliation
           type: string
         style: simple
       - description: The scope of the specified property.
@@ -39703,7 +39707,8 @@ paths:
             Analytic, PortfolioGroup, Person, AccessMetadata, Order, UnitResult, MarketData,
             ConfigurationRecipe, Allocation, Calendar, LegalEntity, Placement, Execution,
             Block, Participation, Package, OrderInstruction, NextBestAction, CustomEntity,
-            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount, Abor, AborConfiguration'
+            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount, Abor, AborConfiguration,
+            Reconciliation'
           enum:
           - NotDefined
           - Transaction
@@ -39738,6 +39743,7 @@ paths:
           - CustodianAccount
           - Abor
           - AborConfiguration
+          - Reconciliation
           type: string
         style: simple
       - description: The scope of the property being updated.
@@ -68358,7 +68364,8 @@ components:
             Analytic, PortfolioGroup, Person, AccessMetadata, Order, UnitResult, MarketData,
             ConfigurationRecipe, Allocation, Calendar, LegalEntity, Placement, Execution,
             Block, Participation, Package, OrderInstruction, NextBestAction, CustomEntity,
-            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount, Abor, AborConfiguration'
+            InstrumentEvent, Account, ChartOfAccounts, CustodianAccount, Abor, AborConfiguration,
+            Reconciliation'
           enum:
           - NotDefined
           - Transaction
@@ -68393,6 +68400,7 @@ components:
           - CustodianAccount
           - Abor
           - AborConfiguration
+          - Reconciliation
           type: string
         scope:
           description: The scope that the property exists in.
@@ -68625,7 +68633,7 @@ components:
             Order, UnitResult, MarketData, ConfigurationRecipe, Allocation, Calendar,
             LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction,
             NextBestAction, CustomEntity, InstrumentEvent, Account, ChartOfAccounts,
-            CustodianAccount, Abor, AborConfiguration'
+            CustodianAccount, Abor, AborConfiguration, Reconciliation'
           enum:
           - NotDefined
           - Transaction
@@ -68660,6 +68668,7 @@ components:
           - CustodianAccount
           - Abor
           - AborConfiguration
+          - Reconciliation
           type: string
         scope:
           description: The scope that the property exists in.
@@ -84993,7 +85002,7 @@ components:
             Order, UnitResult, MarketData, ConfigurationRecipe, Allocation, Calendar,
             LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction,
             NextBestAction, CustomEntity, InstrumentEvent, Account, ChartOfAccounts,
-            CustodianAccount, Abor, AborConfiguration'
+            CustodianAccount, Abor, AborConfiguration, Reconciliation'
           enum:
           - NotDefined
           - Transaction
@@ -85028,6 +85037,7 @@ components:
           - CustodianAccount
           - Abor
           - AborConfiguration
+          - Reconciliation
           type: string
         scope:
           description: The scope that the property exists in.
@@ -85179,7 +85189,7 @@ components:
             Order, UnitResult, MarketData, ConfigurationRecipe, Allocation, Calendar,
             LegalEntity, Placement, Execution, Block, Participation, Package, OrderInstruction,
             NextBestAction, CustomEntity, InstrumentEvent, Account, ChartOfAccounts,
-            CustodianAccount, Abor, AborConfiguration'
+            CustodianAccount, Abor, AborConfiguration, Reconciliation'
           enum:
           - NotDefined
           - Transaction
@@ -85214,6 +85224,7 @@ components:
           - CustodianAccount
           - Abor
           - AborConfiguration
+          - Reconciliation
           type: string
         scope:
           description: The scope that the property exists in.
@@ -85307,6 +85318,7 @@ components:
       - CustodianAccount
       - Abor
       - AborConfiguration
+      - Reconciliation
       type: string
     PropertyFilter:
       additionalProperties: false
@@ -107121,7 +107133,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
