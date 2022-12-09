@@ -307,7 +307,7 @@ info:
     | <a name="816">816</a>|Abor Configuration not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5055
+  version: 0.11.5052
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -5308,7 +5308,6 @@ paths:
                 - scope: CorePortfolios
                   code: World
                 description: Portfolio must contain no more than 200 securities.
-                addressKey: Valuation/PvInPortfolioCcy
               update:
                 scope: FundObjectives
                 code: ComplianceRule_1
@@ -5323,7 +5322,6 @@ paths:
                 - scope: CorePortfolios
                   code: Balanced
                 description: Portfolio must contain 30% bonds by value.
-                addressKey: Valuation/ExposureInPortfolioCcy
             schema:
               additionalProperties:
                 $ref: '#/components/schemas/ComplianceRuleUpsertRequest'
@@ -5348,7 +5346,6 @@ paths:
                 - scope: CorePortfolios
                   code: World
                 description: Portfolio must contain no more than 200 securities.
-                addressKey: Valuation/PvInPortfolioCcy
               update:
                 scope: FundObjectives
                 code: ComplianceRule_1
@@ -5363,7 +5360,6 @@ paths:
                 - scope: CorePortfolios
                   code: Balanced
                 description: Portfolio must contain 30% bonds by value.
-                addressKey: Valuation/ExposureInPortfolioCcy
             schema:
               additionalProperties:
                 $ref: '#/components/schemas/ComplianceRuleUpsertRequest'
@@ -5388,7 +5384,6 @@ paths:
                 - scope: CorePortfolios
                   code: World
                 description: Portfolio must contain no more than 200 securities.
-                addressKey: Valuation/PvInPortfolioCcy
               update:
                 scope: FundObjectives
                 code: ComplianceRule_1
@@ -5403,7 +5398,6 @@ paths:
                 - scope: CorePortfolios
                   code: Balanced
                 description: Portfolio must contain 30% bonds by value.
-                addressKey: Valuation/ExposureInPortfolioCcy
             schema:
               additionalProperties:
                 $ref: '#/components/schemas/ComplianceRuleUpsertRequest'
@@ -5428,7 +5422,6 @@ paths:
                 - scope: CorePortfolios
                   code: World
                 description: Portfolio must contain no more than 200 securities.
-                addressKey: Valuation/PvInPortfolioCcy
               update:
                 scope: FundObjectives
                 code: ComplianceRule_1
@@ -5443,7 +5436,6 @@ paths:
                 - scope: CorePortfolios
                   code: Balanced
                 description: Portfolio must contain 30% bonds by value.
-                addressKey: Valuation/ExposureInPortfolioCcy
             schema:
               additionalProperties:
                 $ref: '#/components/schemas/ComplianceRuleUpsertRequest'
@@ -66818,7 +66810,6 @@ components:
         propertyKey: propertyKey
         code: code
         hardRequirement: true
-        addressKey: addressKey
         upperBound: 6.027456183070403
         displayName: displayName
         targetPortfolioIds:
@@ -66852,9 +66843,6 @@ components:
           minLength: 1
           nullable: true
           pattern: ^[\s\S]*$
-          type: string
-        addressKey:
-          nullable: true
           type: string
         lowerBound:
           format: double
@@ -66950,21 +66938,20 @@ components:
       additionalProperties: false
       example:
         propertyKey: propertyKey
+        schedule: schedule
         code: code
         hardRequirement: true
         upperBound: 6.027456183070403
-        addressKey: addressKey
         displayName: displayName
+        scope: scope
         targetPortfolioIds:
         - code: code
           scope: scope
         - code: code
           scope: scope
         description: description
-        type: type
-        schedule: schedule
-        scope: scope
         lowerBound: 0.8008281904610115
+        type: type
         value: value
       properties:
         scope:
@@ -67015,9 +67002,6 @@ components:
           nullable: true
           pattern: ^[\s\S]*$
           type: string
-        addressKey:
-          nullable: true
-          type: string
       required:
       - hardRequirement
       - lowerBound
@@ -67035,7 +67019,6 @@ components:
             propertyKey: propertyKey
             code: code
             hardRequirement: true
-            addressKey: addressKey
             upperBound: 6.027456183070403
             displayName: displayName
             targetPortfolioIds:
@@ -70747,7 +70730,7 @@ components:
         \n            \r\nFor deserialization purposes,\r\nthis class contains a discriminator\
         \ EconomicDependencyType to indicate the derived type."
       discriminator:
-        propertyName: dependencyType
+        propertyName: economicDependencyType
       example:
         dependencyType: Opaque
       properties:
@@ -88368,7 +88351,6 @@ components:
         - propertyKey: propertyKey
           code: code
           hardRequirement: true
-          addressKey: addressKey
           upperBound: 6.027456183070403
           displayName: displayName
           targetPortfolioIds:
@@ -88388,7 +88370,6 @@ components:
         - propertyKey: propertyKey
           code: code
           hardRequirement: true
-          addressKey: addressKey
           upperBound: 6.027456183070403
           displayName: displayName
           targetPortfolioIds:
@@ -107152,7 +107133,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://dummyurl.lusid.com/
+          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
           scopes: {}
       type: oauth2
 x-tagGroups:

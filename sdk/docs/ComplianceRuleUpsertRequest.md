@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **hardRequirement** | **Boolean** |  | 
 **targetPortfolioIds** | [**List&lt;ResourceId&gt;**](ResourceId.md) |  | 
 **description** | **String** |  |  [optional]
-**addressKey** | **String** |  |  [optional]
 
 
 
