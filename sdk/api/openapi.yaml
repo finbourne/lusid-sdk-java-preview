@@ -307,7 +307,7 @@ info:
     | <a name="816">816</a>|Abor Configuration not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5061
+  version: 0.11.5062
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -332,6 +332,8 @@ tags:
     of update, and it's not possible to make retroactive (or forward) changes.
   name: Blocks
 - name: Calendars
+- description: Methods to create and manage chart of accounts and accounts.
+  name: Chart Of Accounts
 - description: Methods for the storage and retrieval of complex market data documents.
   name: Complex Market Data
 - description: 'Methods for storage and retrieval of compliance data: rules and results.'
@@ -4268,6 +4270,1532 @@ paths:
       tags:
       - Calendars
       x-fbn-apistatus: EarlyAccess
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/chartofaccounts:
+    get:
+      description: List all the charts of accounts matching particular criteria.
+      operationId: ListChartsOfAccounts
+      parameters:
+      - description: "The effective datetime or cut label at which to list the TimeVariant\
+          \ properties for the Chart Of Accounts. Defaults to the current LUSID\r\n\
+          \            system datetime if not specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which to list the TimeVariant\
+            \ properties for the Chart Of Accounts. Defaults to the current LUSID\r\
+            \n            system datetime if not specified."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: "The asAt datetime at which to list the charts of accounts. Defaults\
+          \ to returning the latest version\r\n            of each chart of accounts\
+          \ if not specified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to list the charts of accounts.\
+            \ Defaults to returning the latest version\r\n            of each chart\
+            \ of accounts if not specified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: "The pagination token to use to continue listing charts of accounts;\
+          \ this\r\n            value is returned from the previous call. If a pagination\
+          \ token is provided, the filter, effectiveAt\r\n            and asAt fields\
+          \ must not have changed since the original request. Also, if set, a start\
+          \ value cannot be provided."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          description: "The pagination token to use to continue listing charts of\
+            \ accounts; this\r\n            value is returned from the previous call.\
+            \ If a pagination token is provided, the filter, effectiveAt\r\n     \
+            \       and asAt fields must not have changed since the original request.\
+            \ Also, if set, a start value cannot be provided."
+          maxLength: 500
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
+          type: string
+        style: form
+      - description: When paginating, skip this number of results.
+        explode: true
+        in: query
+        name: start
+        required: false
+        schema:
+          description: When paginating, skip this number of results.
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: When paginating, limit the results to this number. Defaults to
+          100 if not specified.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: When paginating, limit the results to this number. Defaults
+            to 100 if not specified.
+          format: int32
+          maximum: 5000
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: "Expression to filter the results.\r\n            For example,\
+          \ to filter on the ChartOfAccounts type, specify \"id.Code eq '001'\". For\
+          \ more information about filtering\r\n            results, see https://support.lusid.com/knowledgebase/article/KA-01914."
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          description: "Expression to filter the results.\r\n            For example,\
+            \ to filter on the ChartOfAccounts type, specify \"id.Code eq '001'\"\
+            . For more information about filtering\r\n            results, see https://support.lusid.com/knowledgebase/article/KA-01914."
+          maxLength: 16384
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        style: form
+      - description: "A list of property keys from the 'ChartOfAccounts' domain to\
+          \ decorate onto each chart of accounts.\r\n            These must take the\
+          \ format {domain}/{scope}/{code}, for example 'ChartOfAccounts/Manager/Id'."
+        explode: true
+        in: query
+        name: propertyKeys
+        required: false
+        schema:
+          description: "A list of property keys from the 'ChartOfAccounts' domain\
+            \ to decorate onto each chart of accounts.\r\n            These must take\
+            \ the format {domain}/{scope}/{code}, for example 'ChartOfAccounts/Manager/Id'."
+          items:
+            description: The key that uniquely identifies the property. It has the
+              format {domain}/{scope}/{code}.
+            type: string
+          nullable: true
+          type: array
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfChartOfAccounts'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfChartOfAccounts'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfChartOfAccounts'
+          description: The requested charts of accounts
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListChartsOfAccounts: List charts of accounts'
+      tags:
+      - Chart Of Accounts
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+  /api/chartofaccounts/{scope}:
+    post:
+      description: Create the given chart of accounts.
+      operationId: CreateChartOfAccounts
+      parameters:
+      - description: The scope of the Chart of Accounts.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the Chart of Accounts.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              code: ChartOfAccounts
+              name: ChartOfAccountsName
+              description: Standard COA
+              properties:
+                chartOfAccounts/MyScope/FundManagerName:
+                  key: ChartOfAccounts/MyScope/FundManagerName
+                  value:
+                    labelValue: Smith
+                  effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+            schema:
+              $ref: '#/components/schemas/ChartOfAccountsRequest'
+          application/json:
+            example:
+              code: ChartOfAccounts
+              name: ChartOfAccountsName
+              description: Standard COA
+              properties:
+                chartOfAccounts/MyScope/FundManagerName:
+                  key: ChartOfAccounts/MyScope/FundManagerName
+                  value:
+                    labelValue: Smith
+                  effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+            schema:
+              $ref: '#/components/schemas/ChartOfAccountsRequest'
+          text/json:
+            example:
+              code: ChartOfAccounts
+              name: ChartOfAccountsName
+              description: Standard COA
+              properties:
+                chartOfAccounts/MyScope/FundManagerName:
+                  key: ChartOfAccounts/MyScope/FundManagerName
+                  value:
+                    labelValue: Smith
+                  effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+            schema:
+              $ref: '#/components/schemas/ChartOfAccountsRequest'
+          application/*+json:
+            example:
+              code: ChartOfAccounts
+              name: ChartOfAccountsName
+              description: Standard COA
+              properties:
+                chartOfAccounts/MyScope/FundManagerName:
+                  key: ChartOfAccounts/MyScope/FundManagerName
+                  value:
+                    labelValue: Smith
+                  effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+            schema:
+              $ref: '#/components/schemas/ChartOfAccountsRequest'
+        description: The definition of the Chart of Accounts.
+        required: true
+      responses:
+        "201":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ChartOfAccounts'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChartOfAccounts'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ChartOfAccounts'
+          description: The newly created char of accounts.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] CreateChartOfAccounts: Create a Chart of Accounts'
+      tags:
+      - Chart Of Accounts
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/chartofaccounts/{scope}/{code}:
+    delete:
+      description: Delete the given chart of accounts.
+      operationId: DeleteChartOfAccounts
+      parameters:
+      - description: The scope of the Chart of Accounts to be deleted.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the Chart of Accounts to be deleted.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The code of the Chart of Accounts to be deleted.Together with
+          the scope this uniquely identifies the chart of accounts.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The code of the Chart of Accounts to be deleted.Together with
+            the scope this uniquely identifies the chart of accounts.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeletedEntityResponse'
+          description: The datetime that the chart of accounts was deleted
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] DeleteChartOfAccounts: Delete a Chart of Accounts'
+      tags:
+      - Chart Of Accounts
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+    get:
+      description: Retrieve the definition of a particular ChartOfAccounts.
+      operationId: GetChartOfAccounts
+      parameters:
+      - description: The scope of the ChartOfAccounts.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the ChartOfAccounts.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The code of the ChartOfAccounts. Together with the scope this
+          uniquely identifies the ChartOfAccounts.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The code of the ChartOfAccounts. Together with the scope this
+            uniquely identifies the ChartOfAccounts.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The effective datetime or cut label at which to retrieve the
+          ChartOfAccounts properties. Defaults to the current LUSID system datetime
+          if not specified.
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: The effective datetime or cut label at which to retrieve the
+            ChartOfAccounts properties. Defaults to the current LUSID system datetime
+            if not specified.
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: The asAt datetime at which to retrieve the ChartOfAccounts definition.
+          Defaults to returning the latest version of the ChartOfAccounts definition
+          if not specified.
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: The asAt datetime at which to retrieve the ChartOfAccounts
+            definition. Defaults to returning the latest version of the ChartOfAccounts
+            definition if not specified.
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: "A list of property keys from the 'ChartOfAccounts' domain to\
+          \ decorate onto the ChartOfAccounts.\r\n            These must take the\
+          \ format {domain}/{scope}/{code}, for example 'ChartOfAccounts/Manager/Id'.\
+          \ If not provided will return all the entitled properties for that ChartOfAccounts."
+        explode: true
+        in: query
+        name: propertyKeys
+        required: false
+        schema:
+          description: "A list of property keys from the 'ChartOfAccounts' domain\
+            \ to decorate onto the ChartOfAccounts.\r\n            These must take\
+            \ the format {domain}/{scope}/{code}, for example 'ChartOfAccounts/Manager/Id'.\
+            \ If not provided will return all the entitled properties for that ChartOfAccounts."
+          items:
+            description: The key that uniquely identifies the property. It has the
+              format {domain}/{scope}/{code}.
+            type: string
+          nullable: true
+          type: array
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ChartOfAccounts'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChartOfAccounts'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ChartOfAccounts'
+          description: The requested ChartOfAccounts definition
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] GetChartOfAccounts: Get ChartOfAccounts'
+      tags:
+      - Chart Of Accounts
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+  /api/chartofaccounts/{scope}/{code}/accounts:
+    get:
+      description: List the accounts in a chart of accounts
+      operationId: ListAccounts
+      parameters:
+      - description: The scope of the chart of account.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the chart of account.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The code of the chart of account. Together with the scope this\
+          \ uniquely identifies\r\n            the chart of accounts."
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: "The code of the chart of account. Together with the scope\
+            \ this uniquely identifies\r\n            the chart of accounts."
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The effective datetime or cut label at which to list the TimeVariant\
+          \ properties decorated on Accounts. Defaults to the current LUSID\r\n  \
+          \          system datetime if not specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: "The effective datetime or cut label at which to list the TimeVariant\
+            \ properties decorated on Accounts. Defaults to the current LUSID\r\n\
+            \            system datetime if not specified."
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: "The asAt datetime at which to retrieve the instrument. Defaults\
+          \ to\r\n            returning the latest version if not specified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: "The asAt datetime at which to retrieve the instrument. Defaults\
+            \ to\r\n            returning the latest version if not specified."
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: "The pagination token to use to continue listing charts of accounts;\
+          \ this\r\n            value is returned from the previous call. If a pagination\
+          \ token is provided, the filter, effectiveAt\r\n            and asAt fields\
+          \ must not have changed since the original request. Also, if set, a start\
+          \ value cannot be provided."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          description: "The pagination token to use to continue listing charts of\
+            \ accounts; this\r\n            value is returned from the previous call.\
+            \ If a pagination token is provided, the filter, effectiveAt\r\n     \
+            \       and asAt fields must not have changed since the original request.\
+            \ Also, if set, a start value cannot be provided."
+          maxLength: 500
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
+          type: string
+        style: form
+      - description: When paginating, skip this number of results.
+        explode: true
+        in: query
+        name: start
+        required: false
+        schema:
+          description: When paginating, skip this number of results.
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: When paginating, limit the results to this number. Defaults to
+          100 if not specified.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: When paginating, limit the results to this number. Defaults
+            to 100 if not specified.
+          format: int32
+          maximum: 5000
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
+        x-nullable: true
+      - description: "Expression to filter the results.\r\n            For example,\
+          \ to filter on the Account type, specify \"code eq '001'\". For more information\
+          \ about filtering\r\n            results, see https://support.lusid.com/knowledgebase/article/KA-01914."
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          description: "Expression to filter the results.\r\n            For example,\
+            \ to filter on the Account type, specify \"code eq '001'\". For more information\
+            \ about filtering\r\n            results, see https://support.lusid.com/knowledgebase/article/KA-01914."
+          maxLength: 16384
+          minLength: 0
+          nullable: true
+          pattern: ^[\s\S]*$
+          type: string
+        style: form
+      - description: "A list of property keys from the 'Account' domain to decorate\
+          \ onto the Account.\r\n            These must have the format {domain}/{scope}/{code},\
+          \ for example 'Account/system/Name'."
+        explode: true
+        in: query
+        name: propertyKeys
+        required: false
+        schema:
+          description: "A list of property keys from the 'Account' domain to decorate\
+            \ onto the Account.\r\n            These must have the format {domain}/{scope}/{code},\
+            \ for example 'Account/system/Name'."
+          items:
+            description: The key that uniquely identifies the property. It has the
+              format {domain}/{scope}/{code}.
+            type: string
+          nullable: true
+          type: array
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfAccount'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfAccount'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfAccount'
+          description: The accounts in the give chart of accounts.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListAccounts: List Accounts'
+      tags:
+      - Chart Of Accounts
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+    post:
+      description: "Create or update accounts in the chart of accounts. An account\
+        \ will be updated\r\nif it already exists and created if it does not.\n\n\
+        The maximum number of accounts that this method can upsert per request is\
+        \ 2,000."
+      operationId: UpsertAccounts
+      parameters:
+      - description: The scope of the chart of account.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the chart of account.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The code of the chart of account. Together with the scope this\
+          \ uniquely identifies\r\n            the chart of accounts."
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: "The code of the chart of account. Together with the scope\
+            \ this uniquely identifies\r\n            the chart of accounts."
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+            - code: "001456"
+              description: Cash
+              type: Asset
+              status: Active
+              control: Manual
+              properties: {}
+            - code: "123653"
+              description: Dividends
+              type: Revenue
+              status: Inactive
+              control: System
+              properties: {}
+            schema:
+              description: A list of accounts to be created or updated.
+              items:
+                $ref: '#/components/schemas/Account'
+              type: array
+          application/json:
+            example:
+            - code: "001456"
+              description: Cash
+              type: Asset
+              status: Active
+              control: Manual
+              properties: {}
+            - code: "123653"
+              description: Dividends
+              type: Revenue
+              status: Inactive
+              control: System
+              properties: {}
+            schema:
+              description: A list of accounts to be created or updated.
+              items:
+                $ref: '#/components/schemas/Account'
+              type: array
+          text/json:
+            example:
+            - code: "001456"
+              description: Cash
+              type: Asset
+              status: Active
+              control: Manual
+              properties: {}
+            - code: "123653"
+              description: Dividends
+              type: Revenue
+              status: Inactive
+              control: System
+              properties: {}
+            schema:
+              description: A list of accounts to be created or updated.
+              items:
+                $ref: '#/components/schemas/Account'
+              type: array
+          application/*+json:
+            example:
+            - code: "001456"
+              description: Cash
+              type: Asset
+              status: Active
+              control: Manual
+              properties: {}
+            - code: "123653"
+              description: Dividends
+              type: Revenue
+              status: Inactive
+              control: System
+              properties: {}
+            schema:
+              description: A list of accounts to be created or updated.
+              items:
+                $ref: '#/components/schemas/Account'
+              type: array
+        description: A list of accounts to be created or updated.
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AccountsUpsertResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountsUpsertResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AccountsUpsertResponse'
+          description: The newly upserted accounts.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] UpsertAccounts: Upsert Accounts'
+      tags:
+      - Chart Of Accounts
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/chartofaccounts/{scope}/{code}/accounts/$delete:
+    post:
+      description: "Delete one or more account from the chart of accounts. Soft deletion\
+        \ marks the account as inactive\r\nWhile the Hard deletion is deleting the\
+        \ account.\n\nThe maximum number of accounts that this method can delete per\
+        \ request is 2,000."
+      operationId: DeleteAccounts
+      parameters:
+      - description: The scope of the chart of accounts.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the chart of accounts.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The code of the chart of accounts. Together with the scope this\
+          \ uniquely identifies\r\n            the Chart of Accounts."
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: "The code of the chart of accounts. Together with the scope\
+            \ this uniquely identifies\r\n            the Chart of Accounts."
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The delete mode to use (defaults to 'Soft').
+        explode: true
+        in: query
+        name: deleteMode
+        required: false
+        schema:
+          description: 'The available values are: Soft, Hard'
+          enum:
+          - Soft
+          - Hard
+          type: string
+        style: form
+        x-nullable: true
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+            - AccountCode1
+            - AccountCode2
+            schema:
+              description: The codes of the accounts to delete.
+              items:
+                type: string
+              type: array
+          application/json:
+            example:
+            - AccountCode1
+            - AccountCode2
+            schema:
+              description: The codes of the accounts to delete.
+              items:
+                type: string
+              type: array
+          text/json:
+            example:
+            - AccountCode1
+            - AccountCode2
+            schema:
+              description: The codes of the accounts to delete.
+              items:
+                type: string
+              type: array
+          application/*+json:
+            example:
+            - AccountCode1
+            - AccountCode2
+            schema:
+              description: The codes of the accounts to delete.
+              items:
+                type: string
+              type: array
+        description: The codes of the accounts to delete.
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeleteAccountsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteAccountsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeleteAccountsResponse'
+          description: The datetime that the accounts were deleted.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] DeleteAccounts: Soft or hard delete multiple accounts'
+      tags:
+      - Chart Of Accounts
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/chartofaccounts/{scope}/{code}/accounts/{accountCode}:
+    get:
+      description: Retrieve the definition of a particular Account which is part of
+        a Chart of Accounts.
+      operationId: GetAccount
+      parameters:
+      - description: The scope of the ChartOfAccounts.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the ChartOfAccounts.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The code of the ChartOfAccounts. Together with the scope this
+          uniquely identifies the ChartOfAccounts.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The code of the ChartOfAccounts. Together with the scope this
+            uniquely identifies the ChartOfAccounts.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The code of the Account.
+        explode: false
+        in: path
+        name: accountCode
+        required: true
+        schema:
+          description: The code of the Account.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The effective datetime or cut label at which to retrieve the
+          Account properties. Defaults to the current LUSID system datetime if not
+          specified.
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          description: The effective datetime or cut label at which to retrieve the
+            Account properties. Defaults to the current LUSID system datetime if not
+            specified.
+          format: dateorcutlabel
+          nullable: true
+          type: string
+        style: form
+      - description: The asAt datetime at which to retrieve the Account definition.
+          Defaults to returning the latest version of the Account definition if not
+          specified.
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          description: The asAt datetime at which to retrieve the Account definition.
+            Defaults to returning the latest version of the Account definition if
+            not specified.
+          format: date-time
+          nullable: true
+          type: string
+        style: form
+        x-nullable: true
+      - description: "A list of property keys from the 'Account' domain to decorate\
+          \ onto the Account.\r\n            These must take the format {domain}/{scope}/{code},\
+          \ for example 'Account/Manager/Id'. If not provided will return all the\
+          \ entitled properties for that Account."
+        explode: true
+        in: query
+        name: propertyKeys
+        required: false
+        schema:
+          description: "A list of property keys from the 'Account' domain to decorate\
+            \ onto the Account.\r\n            These must take the format {domain}/{scope}/{code},\
+            \ for example 'Account/Manager/Id'. If not provided will return all the\
+            \ entitled properties for that Account."
+          items:
+            description: The key that uniquely identifies the property. It has the
+              format {domain}/{scope}/{code}.
+            type: string
+          nullable: true
+          type: array
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Account'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+          description: The requested Account definition
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] GetAccount: Get Account'
+      tags:
+      - Chart Of Accounts
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+  /api/chartofaccounts/{scope}/{code}/accounts/{accountCode}/properties/$upsert:
+    post:
+      description: "Update or insert one or more properties onto a single account.\
+        \ A property will be updated if it\r\nalready exists and inserted if it does\
+        \ not. All properties must be of the domain 'Account'.\r\n            \r\n\
+        Upserting a property that exists for a chart of accounts, with a null value,\
+        \ will delete the instance of the property for that group.\r\n           \
+        \ \r\nProperties have an <i>effectiveFrom</i> datetime for which the property\
+        \ is valid, and an <i>effectiveUntil</i>\r\ndatetime until which the property\
+        \ is valid. Not supplying an <i>effectiveUntil</i> datetime results in the\
+        \ property being\r\nvalid indefinitely, or until the next <i>effectiveFrom</i>\
+        \ datetime of the property."
+      operationId: UpsertAccountsProperties
+      parameters:
+      - description: The scope of the Chart of Accounts to update or insert the properties
+          onto.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the Chart of Accounts to update or insert the
+            properties onto.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The code of the Chart of Accounts to update or insert the properties
+          onto. Together with the scope this uniquely identifies the chart of accounts.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The code of the Chart of Accounts to update or insert the properties
+            onto. Together with the scope this uniquely identifies the chart of accounts.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The unique ID of the account to create or update properties for.
+        explode: false
+        in: path
+        name: accountCode
+        required: true
+        schema:
+          description: The unique ID of the account to create or update properties
+            for.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              account/MyScope/FundManagerName:
+                key: Account/MyScope/FundManagerName
+                value:
+                  labelValue: Smith
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+              account/MyScope/SomeProperty:
+                key: Account/MyScope/SomeProperty
+                value:
+                  labelValue: SomeValue
+                effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+              account/MyScope/AnotherProperty:
+                key: Account/MyScope/AnotherProperty
+                value:
+                  labelValue: AnotherValue
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+                effectiveUntil: 2020-01-01T00:00:00.0000000+00:00
+              account/MyScope/ReBalanceInterval:
+                key: Account/MyScope/ReBalanceInterval
+                value:
+                  metricValue:
+                    value: 30
+                    unit: Days
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/Property'
+              description: "The properties to be updated or inserted onto the chart\
+                \ of account. Each property in\r\n             the request must be\
+                \ keyed by its unique property key. This has the format {domain}/{scope}/{code}\
+                \ e.g. \"Account/Manager/Id\"."
+              nullable: true
+              type: object
+          application/json:
+            example:
+              account/MyScope/FundManagerName:
+                key: Account/MyScope/FundManagerName
+                value:
+                  labelValue: Smith
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+              account/MyScope/SomeProperty:
+                key: Account/MyScope/SomeProperty
+                value:
+                  labelValue: SomeValue
+                effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+              account/MyScope/AnotherProperty:
+                key: Account/MyScope/AnotherProperty
+                value:
+                  labelValue: AnotherValue
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+                effectiveUntil: 2020-01-01T00:00:00.0000000+00:00
+              account/MyScope/ReBalanceInterval:
+                key: Account/MyScope/ReBalanceInterval
+                value:
+                  metricValue:
+                    value: 30
+                    unit: Days
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/Property'
+              description: "The properties to be updated or inserted onto the chart\
+                \ of account. Each property in\r\n             the request must be\
+                \ keyed by its unique property key. This has the format {domain}/{scope}/{code}\
+                \ e.g. \"Account/Manager/Id\"."
+              nullable: true
+              type: object
+          text/json:
+            example:
+              account/MyScope/FundManagerName:
+                key: Account/MyScope/FundManagerName
+                value:
+                  labelValue: Smith
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+              account/MyScope/SomeProperty:
+                key: Account/MyScope/SomeProperty
+                value:
+                  labelValue: SomeValue
+                effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+              account/MyScope/AnotherProperty:
+                key: Account/MyScope/AnotherProperty
+                value:
+                  labelValue: AnotherValue
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+                effectiveUntil: 2020-01-01T00:00:00.0000000+00:00
+              account/MyScope/ReBalanceInterval:
+                key: Account/MyScope/ReBalanceInterval
+                value:
+                  metricValue:
+                    value: 30
+                    unit: Days
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/Property'
+              description: "The properties to be updated or inserted onto the chart\
+                \ of account. Each property in\r\n             the request must be\
+                \ keyed by its unique property key. This has the format {domain}/{scope}/{code}\
+                \ e.g. \"Account/Manager/Id\"."
+              nullable: true
+              type: object
+          application/*+json:
+            example:
+              account/MyScope/FundManagerName:
+                key: Account/MyScope/FundManagerName
+                value:
+                  labelValue: Smith
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+              account/MyScope/SomeProperty:
+                key: Account/MyScope/SomeProperty
+                value:
+                  labelValue: SomeValue
+                effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+              account/MyScope/AnotherProperty:
+                key: Account/MyScope/AnotherProperty
+                value:
+                  labelValue: AnotherValue
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+                effectiveUntil: 2020-01-01T00:00:00.0000000+00:00
+              account/MyScope/ReBalanceInterval:
+                key: Account/MyScope/ReBalanceInterval
+                value:
+                  metricValue:
+                    value: 30
+                    unit: Days
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/Property'
+              description: "The properties to be updated or inserted onto the chart\
+                \ of account. Each property in\r\n             the request must be\
+                \ keyed by its unique property key. This has the format {domain}/{scope}/{code}\
+                \ e.g. \"Account/Manager/Id\"."
+              nullable: true
+              type: object
+        description: "The properties to be updated or inserted onto the chart of account.\
+          \ Each property in\r\n             the request must be keyed by its unique\
+          \ property key. This has the format {domain}/{scope}/{code} e.g. \"Account/Manager/Id\"\
+          ."
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AccountProperties'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountProperties'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AccountProperties'
+          description: The updated or inserted properties
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] UpsertAccountsProperties: Upsert accounts properties'
+      tags:
+      - Chart Of Accounts
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/chartofaccounts/{scope}/{code}/properties/$upsert:
+    post:
+      description: "Update or insert one or more properties onto a single chart of\
+        \ accounts. A property will be updated if it\r\nalready exists and inserted\
+        \ if it does not. All properties must be of the domain 'ChartOfAccounts'.\r\
+        \n            \r\nUpserting a property that exists for a chart of accounts,\
+        \ with a null value, will delete the instance of the property for that group.\r\
+        \n            \r\nProperties have an <i>effectiveFrom</i> datetime for which\
+        \ the property is valid, and an <i>effectiveUntil</i>\r\ndatetime until which\
+        \ the property is valid. Not supplying an <i>effectiveUntil</i> datetime results\
+        \ in the property being\r\nvalid indefinitely, or until the next <i>effectiveFrom</i>\
+        \ datetime of the property."
+      operationId: UpsertChartOfAccountsProperties
+      parameters:
+      - description: The scope of the Chart of Accounts to update or insert the properties
+          onto.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          description: The scope of the Chart of Accounts to update or insert the
+            properties onto.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The code of the Chart of Accounts to update or insert the properties
+          onto. Together with the scope this uniquely identifies the chart of accounts.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          description: The code of the Chart of Accounts to update or insert the properties
+            onto. Together with the scope this uniquely identifies the chart of accounts.
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              chartOfAccounts/MyScope/FundManagerName:
+                key: ChartOfAccounts/MyScope/FundManagerName
+                value:
+                  labelValue: Smith
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+              chartOfAccounts/MyScope/SomeProperty:
+                key: ChartOfAccounts/MyScope/SomeProperty
+                value:
+                  labelValue: SomeValue
+                effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+              chartOfAccounts/MyScope/AnotherProperty:
+                key: ChartOfAccounts/MyScope/AnotherProperty
+                value:
+                  labelValue: AnotherValue
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+                effectiveUntil: 2020-01-01T00:00:00.0000000+00:00
+              chartOfAccounts/MyScope/ReBalanceInterval:
+                key: ChartOfAccounts/MyScope/ReBalanceInterval
+                value:
+                  metricValue:
+                    value: 30
+                    unit: Days
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/Property'
+              description: "The properties to be updated or inserted onto the chart\
+                \ of account. Each property in\r\n             the request must be\
+                \ keyed by its unique property key. This has the format {domain}/{scope}/{code}\
+                \ e.g. \"ChartOfAccounts/Manager/Id\"."
+              nullable: true
+              type: object
+          application/json:
+            example:
+              chartOfAccounts/MyScope/FundManagerName:
+                key: ChartOfAccounts/MyScope/FundManagerName
+                value:
+                  labelValue: Smith
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+              chartOfAccounts/MyScope/SomeProperty:
+                key: ChartOfAccounts/MyScope/SomeProperty
+                value:
+                  labelValue: SomeValue
+                effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+              chartOfAccounts/MyScope/AnotherProperty:
+                key: ChartOfAccounts/MyScope/AnotherProperty
+                value:
+                  labelValue: AnotherValue
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+                effectiveUntil: 2020-01-01T00:00:00.0000000+00:00
+              chartOfAccounts/MyScope/ReBalanceInterval:
+                key: ChartOfAccounts/MyScope/ReBalanceInterval
+                value:
+                  metricValue:
+                    value: 30
+                    unit: Days
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/Property'
+              description: "The properties to be updated or inserted onto the chart\
+                \ of account. Each property in\r\n             the request must be\
+                \ keyed by its unique property key. This has the format {domain}/{scope}/{code}\
+                \ e.g. \"ChartOfAccounts/Manager/Id\"."
+              nullable: true
+              type: object
+          text/json:
+            example:
+              chartOfAccounts/MyScope/FundManagerName:
+                key: ChartOfAccounts/MyScope/FundManagerName
+                value:
+                  labelValue: Smith
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+              chartOfAccounts/MyScope/SomeProperty:
+                key: ChartOfAccounts/MyScope/SomeProperty
+                value:
+                  labelValue: SomeValue
+                effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+              chartOfAccounts/MyScope/AnotherProperty:
+                key: ChartOfAccounts/MyScope/AnotherProperty
+                value:
+                  labelValue: AnotherValue
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+                effectiveUntil: 2020-01-01T00:00:00.0000000+00:00
+              chartOfAccounts/MyScope/ReBalanceInterval:
+                key: ChartOfAccounts/MyScope/ReBalanceInterval
+                value:
+                  metricValue:
+                    value: 30
+                    unit: Days
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/Property'
+              description: "The properties to be updated or inserted onto the chart\
+                \ of account. Each property in\r\n             the request must be\
+                \ keyed by its unique property key. This has the format {domain}/{scope}/{code}\
+                \ e.g. \"ChartOfAccounts/Manager/Id\"."
+              nullable: true
+              type: object
+          application/*+json:
+            example:
+              chartOfAccounts/MyScope/FundManagerName:
+                key: ChartOfAccounts/MyScope/FundManagerName
+                value:
+                  labelValue: Smith
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+              chartOfAccounts/MyScope/SomeProperty:
+                key: ChartOfAccounts/MyScope/SomeProperty
+                value:
+                  labelValue: SomeValue
+                effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+              chartOfAccounts/MyScope/AnotherProperty:
+                key: ChartOfAccounts/MyScope/AnotherProperty
+                value:
+                  labelValue: AnotherValue
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+                effectiveUntil: 2020-01-01T00:00:00.0000000+00:00
+              chartOfAccounts/MyScope/ReBalanceInterval:
+                key: ChartOfAccounts/MyScope/ReBalanceInterval
+                value:
+                  metricValue:
+                    value: 30
+                    unit: Days
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/Property'
+              description: "The properties to be updated or inserted onto the chart\
+                \ of account. Each property in\r\n             the request must be\
+                \ keyed by its unique property key. This has the format {domain}/{scope}/{code}\
+                \ e.g. \"ChartOfAccounts/Manager/Id\"."
+              nullable: true
+              type: object
+        description: "The properties to be updated or inserted onto the chart of account.\
+          \ Each property in\r\n             the request must be keyed by its unique\
+          \ property key. This has the format {domain}/{scope}/{code} e.g. \"ChartOfAccounts/Manager/Id\"\
+          ."
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ChartOfAccountsProperties'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChartOfAccountsProperties'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ChartOfAccountsProperties'
+          description: The updated or inserted properties
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] UpsertChartOfAccountsProperties: Upsert chart of accounts
+        properties'
+      tags:
+      - Chart Of Accounts
+      x-fbn-apistatus: Experimental
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/complexmarketdata:
@@ -63650,6 +65178,70 @@ components:
       required:
       - value
       type: object
+    Account:
+      additionalProperties: false
+      description: An account
+      example:
+        code: code
+        description: description
+        control: control
+        type: type
+        properties:
+          key:
+            effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+        status: Active
+      properties:
+        code:
+          description: The code given for the account.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        description:
+          description: The description for the account.
+          maxLength: 1024
+          minLength: 0
+          nullable: true
+          type: string
+        type:
+          description: 'The account type. Can have the values: Asset/Liabilities/Income/Expense/Capital/Revenue.'
+          type: string
+        status:
+          description: 'The account status. Can be Active, Inactive or Deleted. Defaults
+            to Active. The available values are: Active, Inactive, Deleted'
+          enum:
+          - Active
+          - Inactive
+          - Deleted
+          type: string
+        control:
+          description: 'This allows users to specify whether this a protected account
+            that prevents direct manual journal adjustment. Can have the values: System/ManualIt
+            will default to “Manual”.'
+          type: string
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/Property'
+          description: Account properties to add to the account.
+          nullable: true
+          type: object
+      required:
+      - code
+      - control
+      - status
+      - type
+      type: object
     AccountingMethod:
       enum:
       - Default
@@ -63659,6 +65251,136 @@ components:
       - HighestCostFirst
       - LowestCostFirst
       type: string
+    AccountProperties:
+      additionalProperties: false
+      example:
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+        version:
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          asAtDate: 2000-01-23T04:56:07.000+00:00
+        properties:
+          key:
+            effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+      properties:
+        href:
+          description: The specific Uniform Resource Identifier (URI) for this resource
+            at the requested effective and asAt datetime.
+          format: uri
+          nullable: true
+          type: string
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/Property'
+          description: The Account properties. These will be from the 'Account' domain.
+          nullable: true
+          type: object
+        version:
+          $ref: '#/components/schemas/Version'
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      type: object
+    AccountsUpsertResponse:
+      additionalProperties: false
+      description: The upsert accounts response
+      example:
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+        accounts:
+        - code: code
+          description: description
+          control: control
+          type: type
+          properties:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+          status: Active
+        - code: code
+          description: description
+          control: control
+          type: type
+          properties:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+          status: Active
+        version:
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          asAtDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        href:
+          description: The specific Uniform Resource Identifier (URI) for this resource
+            at the requested effective and asAt datetime.
+          format: uri
+          nullable: true
+          type: string
+        version:
+          $ref: '#/components/schemas/Version'
+        accounts:
+          description: The Accounts which have been upserted.
+          items:
+            $ref: '#/components/schemas/Account'
+          nullable: true
+          type: array
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      type: object
     ActionId:
       additionalProperties: false
       example:
@@ -66393,6 +68115,178 @@ components:
           type: string
       required:
       - fieldName
+      type: object
+    ChartOfAccounts:
+      additionalProperties: false
+      description: A chart of account.
+      example:
+        name: name
+        description: description
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+        id:
+          code: code
+          scope: scope
+        version:
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          asAtDate: 2000-01-23T04:56:07.000+00:00
+        properties:
+          key:
+            effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+      properties:
+        href:
+          description: The specific Uniform Resource Identifier (URI) for this resource
+            at the requested effective and asAt datetime.
+          format: uri
+          nullable: true
+          type: string
+        id:
+          $ref: '#/components/schemas/ResourceId'
+        name:
+          description: The given name for the chart of account.
+          nullable: true
+          type: string
+        description:
+          description: The description for the chart of account.
+          nullable: true
+          type: string
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/Property'
+          description: Chart of Accounts properties to add to the chart of account.
+          nullable: true
+          type: object
+        version:
+          $ref: '#/components/schemas/Version'
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - id
+      type: object
+    ChartOfAccountsProperties:
+      additionalProperties: false
+      example:
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+        version:
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          asAtDate: 2000-01-23T04:56:07.000+00:00
+        properties:
+          key:
+            effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+      properties:
+        href:
+          description: The specific Uniform Resource Identifier (URI) for this resource
+            at the requested effective and asAt datetime.
+          format: uri
+          nullable: true
+          type: string
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/Property'
+          description: The chart of accounts properties. These will be from the 'ChartOfAccounts'
+            domain.
+          nullable: true
+          type: object
+        version:
+          $ref: '#/components/schemas/Version'
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      type: object
+    ChartOfAccountsRequest:
+      additionalProperties: false
+      description: The request used to create a chart of account.
+      example:
+        code: code
+        name: name
+        description: description
+        properties:
+          key:
+            effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+      properties:
+        code:
+          description: The code given for the chart of account.
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        name:
+          description: The given name for the chart of account.
+          maxLength: 512
+          minLength: 1
+          nullable: true
+          type: string
+        description:
+          description: The description for the chart of account.
+          maxLength: 1024
+          minLength: 0
+          nullable: true
+          type: string
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/Property'
+          description: Chart of Accounts properties to add to the chart of account.
+          nullable: true
+          type: object
+      required:
+      - code
       type: object
     CloseEvent:
       allOf:
@@ -70475,6 +72369,41 @@ components:
       - Friday
       - Saturday
       type: string
+    DeleteAccountsResponse:
+      additionalProperties: false
+      description: The delete accounts response
+      example:
+        accountIds:
+        - accountIds
+        - accountIds
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        version:
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          asAtDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        version:
+          $ref: '#/components/schemas/Version'
+        accountIds:
+          description: The Accounts which have been soft/hard deleted.
+          items:
+            type: string
+          nullable: true
+          type: array
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      type: object
     DeletedEntityResponse:
       additionalProperties: false
       example:
@@ -70611,6 +72540,11 @@ components:
       required:
       - asAt
       type: object
+    DeleteModes:
+      enum:
+      - soft
+      - hard
+      type: string
     DeleteRelationRequest:
       additionalProperties: false
       example:
@@ -78865,6 +80799,89 @@ components:
           nullable: true
           type: array
       type: object
+    PagedResourceListOfAccount:
+      additionalProperties: false
+      description: A paginated list of resource that can be returned from a request.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - code: code
+          description: description
+          control: control
+          type: type
+          properties:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+          status: Active
+        - code: code
+          description: description
+          control: control
+          type: type
+          properties:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+          status: Active
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/Account'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - values
+      type: object
     PagedResourceListOfAllocation:
       additionalProperties: false
       description: A paginated list of resource that can be returned from a request.
@@ -79257,6 +81274,115 @@ components:
           description: The resources to list.
           items:
             $ref: '#/components/schemas/Calendar'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - values
+      type: object
+    PagedResourceListOfChartOfAccounts:
+      additionalProperties: false
+      description: A paginated list of resource that can be returned from a request.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - name: name
+          description: description
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          href: https://openapi-generator.tech
+          id:
+            code: code
+            scope: scope
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          properties:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+        - name: name
+          description: description
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          href: https://openapi-generator.tech
+          id:
+            code: code
+            scope: scope
+          version:
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          properties:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/ChartOfAccounts'
           type: array
         href:
           description: The URI of the resource list.
@@ -107405,6 +109531,7 @@ x-tagGroups:
   - Application Metadata
   - Blocks
   - Calendars
+  - Chart Of Accounts
   - Complex Market Data
   - Compliance
   - Configuration Recipe
