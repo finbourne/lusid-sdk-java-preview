@@ -8,7 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **anchorDate** | **OffsetDateTime** | The date on the which the instrument was opened. |  [optional]
-**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent | 
+**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, RawVendorEvent, InformationalErrorEvent | 
 
 
 
@@ -27,6 +27,8 @@ AMORTISATIONEVENT | &quot;AmortisationEvent&quot;
 CASHFLOWEVENT | &quot;CashFlowEvent&quot;
 EXERCISEEVENT | &quot;ExerciseEvent&quot;
 RESETEVENT | &quot;ResetEvent&quot;
+RAWVENDOREVENT | &quot;RawVendorEvent&quot;
+INFORMATIONALERROREVENT | &quot;InformationalErrorEvent&quot;
 
 
 

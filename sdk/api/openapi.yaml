@@ -307,7 +307,7 @@ info:
     | <a name="816">816</a>|Abor Configuration not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5054
+  version: 0.11.5058
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -72107,8 +72107,7 @@ components:
             \ string (enumeration) values are: [F, G, H, J, K, M, N, Q, U, V, X, Z]."
           type: string
         contractSize:
-          description: Size of a single contract. By default this should be set to
-            1000 if otherwise unknown and is defaulted to such.
+          description: Size of a single contract.
           format: double
           type: number
         convention:
@@ -72121,12 +72120,15 @@ components:
             \ ActActIcma, OneOne, Act364, Act365F, Act365L, Act365_25, Act252, Bus252,\
             \ NL360, NL365, ActActAFB, Act365Cad, ThirtyActIsda, Thirty365Isda, ThirtyEActIsda,\
             \ ThirtyE360Isda, ThirtyE365Isda, ThirtyU360EOM]."
+          nullable: true
           type: string
         country:
           description: Country (code) for the exchange.
+          nullable: true
           type: string
         description:
           description: Description of contract.
+          nullable: true
           type: string
         exchangeCode:
           description: Exchange code for contract. This can be any string to uniquely
@@ -72134,6 +72136,7 @@ components:
           type: string
         exchangeName:
           description: Exchange name (for when code is not automatically recognised).
+          nullable: true
           type: string
         tickerStep:
           description: Minimal step size change in ticker.
@@ -72148,14 +72151,8 @@ components:
       - contractCode
       - contractMonth
       - contractSize
-      - convention
-      - country
-      - description
       - domCcy
       - exchangeCode
-      - exchangeName
-      - tickerStep
-      - unitValue
       type: object
     FxDependency:
       allOf:
@@ -73965,6 +73962,11 @@ components:
         \ supports the following swap types:\r\n* Zero Coupon inflation swap, with\
         \ a single payment at maturity.\r\n* LPI Swap (capped and floored)\r\n* Year\
         \ on Year inflation swap"
+    InformationalErrorEvent:
+      allOf:
+      - $ref: '#/components/schemas/InstrumentEvent'
+      - $ref: '#/components/schemas/InformationalErrorEvent_allOf'
+      description: Event holder containing error information
     InformationalEvent:
       allOf:
       - $ref: '#/components/schemas/InstrumentEvent'
@@ -74807,7 +74809,8 @@ components:
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
-            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent'
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -74820,6 +74823,8 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
           type: string
       required:
       - instrumentEventType
@@ -74917,6 +74922,8 @@ components:
       - CashFlowEvent
       - ExerciseEvent
       - ResetEvent
+      - RawVendorEvent
+      - InformationalErrorEvent
       type: string
     InstrumentIdTypeDescriptor:
       additionalProperties: false
@@ -75835,6 +75842,36 @@ components:
       - date
       - quantity
       type: object
+    LifeCycleEventLineage:
+      additionalProperties: false
+      description: The lineage of the event value
+      properties:
+        eventType:
+          description: The type of the event
+          nullable: true
+          type: string
+        instrumentType:
+          description: The instrument type of the instrument for the event.
+          nullable: true
+          type: string
+        instrumentId:
+          description: The LUID of the instrument for the event.
+          nullable: true
+          type: string
+        legId:
+          description: Leg id for the event.
+          nullable: true
+          type: string
+        sourceTransactionId:
+          description: The source transaction of the instrument for the event.
+          nullable: true
+          type: string
+      type: object
+    LifeCycleEventValue:
+      allOf:
+      - $ref: '#/components/schemas/ResultValue'
+      - $ref: '#/components/schemas/LifeCycleEventValue_allOf'
+      description: The instrument life cycle event result value type
     Link:
       additionalProperties: false
       description: Link class.
@@ -86047,6 +86084,13 @@ components:
       - Ratio
       - Delta
       type: string
+    RawVendorEvent:
+      allOf:
+      - $ref: '#/components/schemas/InstrumentEvent'
+      - $ref: '#/components/schemas/RawVendorEvent_allOf'
+      description: "A generic event derived from the economic definition of an instrument.\
+        \ This should be considered purely\r\ninformational; any data provided by\
+        \ this event is not guaranteed to be processable by LUSID."
     RealisedGainLoss:
       additionalProperties: false
       example:
@@ -94312,7 +94356,7 @@ components:
         resultValueType:
           description: 'The available values are: ResultValue, ResultValueDictionary,
             ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
-            CashFlowValue, CashFlowValueSet'
+            CashFlowValue, CashFlowValueSet, ResultValueLifeCycleEventValue, ResultValueDateTimeOffset'
           enum:
           - ResultValue
           - ResultValueDictionary
@@ -94322,6 +94366,8 @@ components:
           - ResultValueString
           - CashFlowValue
           - CashFlowValueSet
+          - ResultValueLifeCycleEventValue
+          - ResultValueDateTimeOffset
           type: string
       required:
       - resultValueType
@@ -94332,6 +94378,11 @@ components:
       - $ref: '#/components/schemas/ResultValue0D_allOf'
       description: Result value representing a 0D result. These results can be equipped
         with a unit
+    ResultValueDateTimeOffset:
+      allOf:
+      - $ref: '#/components/schemas/ResultValue'
+      - $ref: '#/components/schemas/ResultValueDateTimeOffset_allOf'
+      description: A simple result for a date time value
     ResultValueDecimal:
       allOf:
       - $ref: '#/components/schemas/ResultValue'
@@ -94365,6 +94416,8 @@ components:
       - ResultValueString
       - CashFlowValue
       - CashFlowValueSet
+      - ResultValueLifeCycleEventValue
+      - ResultValueDateTimeOffset
       type: string
     ScalingMethodology:
       enum:
@@ -102080,7 +102133,8 @@ components:
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
-            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent'
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -102093,6 +102147,8 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
           type: string
       required:
       - amountReduced
@@ -102321,7 +102377,8 @@ components:
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
-            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent'
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -102334,6 +102391,8 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
           type: string
       required:
       - amount
@@ -102466,7 +102525,8 @@ components:
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
-            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent'
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -102479,6 +102539,8 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
           type: string
       required:
       - grossAmount
@@ -102514,7 +102576,8 @@ components:
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
-            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent'
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -102527,6 +102590,8 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
           type: string
       required:
       - currency
@@ -102555,7 +102620,7 @@ components:
         resultValueType:
           description: 'The available values are: ResultValue, ResultValueDictionary,
             ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
-            CashFlowValue, CashFlowValueSet'
+            CashFlowValue, CashFlowValueSet, ResultValueLifeCycleEventValue, ResultValueDateTimeOffset'
           enum:
           - ResultValue
           - ResultValueDictionary
@@ -102565,6 +102630,8 @@ components:
           - ResultValueString
           - CashFlowValue
           - CashFlowValueSet
+          - ResultValueLifeCycleEventValue
+          - ResultValueDateTimeOffset
           type: string
       required:
       - paymentAmount
@@ -102583,7 +102650,7 @@ components:
         resultValueType:
           description: 'The available values are: ResultValue, ResultValueDictionary,
             ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
-            CashFlowValue, CashFlowValueSet'
+            CashFlowValue, CashFlowValueSet, ResultValueLifeCycleEventValue, ResultValueDateTimeOffset'
           enum:
           - ResultValue
           - ResultValueDictionary
@@ -102593,6 +102660,8 @@ components:
           - ResultValueString
           - CashFlowValue
           - CashFlowValueSet
+          - ResultValueLifeCycleEventValue
+          - ResultValueDateTimeOffset
           type: string
       required:
       - resultValueType
@@ -102762,7 +102831,8 @@ components:
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
-            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent'
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -102775,6 +102845,8 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
           type: string
       required:
       - instrumentEventType
@@ -103822,7 +103894,8 @@ components:
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
-            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent'
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -103835,6 +103908,8 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
           type: string
       required:
       - anchorDate
@@ -105622,6 +105697,44 @@ components:
       - observationLag
       - startDate
       type: object
+    InformationalErrorEvent_allOf:
+      properties:
+        errorDetail:
+          description: The details of the error
+          type: string
+        errorReason:
+          description: The error reason
+          type: string
+        effectiveAt:
+          description: The effective date of the evaulation
+          format: date-time
+          type: string
+        instrumentEventType:
+          description: 'The Type of Event. The available values are: TransitionEvent,
+            InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            RawVendorEvent, InformationalErrorEvent'
+          enum:
+          - TransitionEvent
+          - InformationalEvent
+          - OpenEvent
+          - CloseEvent
+          - StockSplitEvent
+          - BondDefaultEvent
+          - CashDividendEvent
+          - AmortisationEvent
+          - CashFlowEvent
+          - ExerciseEvent
+          - ResetEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
+          type: string
+      required:
+      - effectiveAt
+      - errorDetail
+      - errorReason
+      - instrumentEventType
+      type: object
     InformationalEvent_allOf:
       properties:
         eventType:
@@ -105651,7 +105764,8 @@ components:
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
-            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent'
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -105664,6 +105778,8 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
           type: string
       required:
       - anchorDate
@@ -105959,6 +106075,35 @@ components:
       - dependencyType
       - volType
       type: object
+    LifeCycleEventValue_allOf:
+      properties:
+        effectiveDate:
+          description: The effective date of the event
+          format: date-time
+          type: string
+        eventValues:
+          $ref: '#/components/schemas/ResultValueDictionary'
+        eventLineage:
+          $ref: '#/components/schemas/LifeCycleEventLineage'
+        resultValueType:
+          description: 'The available values are: ResultValue, ResultValueDictionary,
+            ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
+            CashFlowValue, CashFlowValueSet, ResultValueLifeCycleEventValue, ResultValueDateTimeOffset'
+          enum:
+          - ResultValue
+          - ResultValueDictionary
+          - ResultValue0D
+          - ResultValueDecimal
+          - ResultValueInt
+          - ResultValueString
+          - CashFlowValue
+          - CashFlowValueSet
+          - ResultValueLifeCycleEventValue
+          - ResultValueDateTimeOffset
+          type: string
+      required:
+      - resultValueType
+      type: object
     MarketContext_suppliers:
       description: "It is possible to control which supplier is used for a given asset\
         \ class.\r\nThis field is deprecated in favour of market data rules, which\
@@ -106082,7 +106227,8 @@ components:
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
-            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent'
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -106095,6 +106241,8 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
           type: string
       required:
       - instrumentEventType
@@ -106235,6 +106383,49 @@ components:
       - date
       - dependencyType
       - marketIdentifier
+      type: object
+    RawVendorEvent_allOf:
+      properties:
+        effectiveAt:
+          description: The effective date of the event
+          format: date-time
+          type: string
+        eventValue:
+          $ref: '#/components/schemas/LifeCycleEventValue'
+        eventType:
+          description: What type of internal event does this represent; reset, exercise,
+            amortisation etc.
+          type: string
+        eventStatus:
+          description: What is the event status, is it a known (ie historic) or unknown
+            (ie projected) event?
+          type: string
+        instrumentEventType:
+          description: 'The Type of Event. The available values are: TransitionEvent,
+            InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            RawVendorEvent, InformationalErrorEvent'
+          enum:
+          - TransitionEvent
+          - InformationalEvent
+          - OpenEvent
+          - CloseEvent
+          - StockSplitEvent
+          - BondDefaultEvent
+          - CashDividendEvent
+          - AmortisationEvent
+          - CashFlowEvent
+          - ExerciseEvent
+          - ResetEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
+          type: string
+      required:
+      - effectiveAt
+      - eventStatus
+      - eventType
+      - eventValue
+      - instrumentEventType
       type: object
     ReconcileDateTimeRule_allOf:
       properties:
@@ -106572,7 +106763,8 @@ components:
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
-            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent'
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -106585,6 +106777,8 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
           type: string
       required:
       - eventStatus
@@ -106667,7 +106861,7 @@ components:
         resultValueType:
           description: 'The available values are: ResultValue, ResultValueDictionary,
             ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
-            CashFlowValue, CashFlowValueSet'
+            CashFlowValue, CashFlowValueSet, ResultValueLifeCycleEventValue, ResultValueDateTimeOffset'
           enum:
           - ResultValue
           - ResultValueDictionary
@@ -106677,6 +106871,40 @@ components:
           - ResultValueString
           - CashFlowValue
           - CashFlowValueSet
+          - ResultValueLifeCycleEventValue
+          - ResultValueDateTimeOffset
+          type: string
+      required:
+      - resultValueType
+      type: object
+    ResultValueDateTimeOffset_allOf:
+      properties:
+        value:
+          description: The value itself
+          format: date-time
+          type: string
+        dimension:
+          description: "The dimension of the result. Can be null if there is no sensible\
+            \ way of defining the dimension. This field should not be\r\npopulate\
+            \ by the user on upsertion."
+          format: int32
+          nullable: true
+          type: integer
+        resultValueType:
+          description: 'The available values are: ResultValue, ResultValueDictionary,
+            ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
+            CashFlowValue, CashFlowValueSet, ResultValueLifeCycleEventValue, ResultValueDateTimeOffset'
+          enum:
+          - ResultValue
+          - ResultValueDictionary
+          - ResultValue0D
+          - ResultValueDecimal
+          - ResultValueInt
+          - ResultValueString
+          - CashFlowValue
+          - CashFlowValueSet
+          - ResultValueLifeCycleEventValue
+          - ResultValueDateTimeOffset
           type: string
       required:
       - resultValueType
@@ -106697,7 +106925,7 @@ components:
         resultValueType:
           description: 'The available values are: ResultValue, ResultValueDictionary,
             ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
-            CashFlowValue, CashFlowValueSet'
+            CashFlowValue, CashFlowValueSet, ResultValueLifeCycleEventValue, ResultValueDateTimeOffset'
           enum:
           - ResultValue
           - ResultValueDictionary
@@ -106707,6 +106935,8 @@ components:
           - ResultValueString
           - CashFlowValue
           - CashFlowValueSet
+          - ResultValueLifeCycleEventValue
+          - ResultValueDateTimeOffset
           type: string
       required:
       - resultValueType
@@ -106722,7 +106952,7 @@ components:
         resultValueType:
           description: 'The available values are: ResultValue, ResultValueDictionary,
             ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
-            CashFlowValue, CashFlowValueSet'
+            CashFlowValue, CashFlowValueSet, ResultValueLifeCycleEventValue, ResultValueDateTimeOffset'
           enum:
           - ResultValue
           - ResultValueDictionary
@@ -106732,6 +106962,8 @@ components:
           - ResultValueString
           - CashFlowValue
           - CashFlowValueSet
+          - ResultValueLifeCycleEventValue
+          - ResultValueDateTimeOffset
           type: string
       required:
       - resultValueType
@@ -106752,7 +106984,7 @@ components:
         resultValueType:
           description: 'The available values are: ResultValue, ResultValueDictionary,
             ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
-            CashFlowValue, CashFlowValueSet'
+            CashFlowValue, CashFlowValueSet, ResultValueLifeCycleEventValue, ResultValueDateTimeOffset'
           enum:
           - ResultValue
           - ResultValueDictionary
@@ -106762,6 +106994,8 @@ components:
           - ResultValueString
           - CashFlowValue
           - CashFlowValueSet
+          - ResultValueLifeCycleEventValue
+          - ResultValueDateTimeOffset
           type: string
       required:
       - resultValueType
@@ -106775,7 +107009,7 @@ components:
         resultValueType:
           description: 'The available values are: ResultValue, ResultValueDictionary,
             ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString,
-            CashFlowValue, CashFlowValueSet'
+            CashFlowValue, CashFlowValueSet, ResultValueLifeCycleEventValue, ResultValueDateTimeOffset'
           enum:
           - ResultValue
           - ResultValueDictionary
@@ -106785,6 +107019,8 @@ components:
           - ResultValueString
           - CashFlowValue
           - CashFlowValueSet
+          - ResultValueLifeCycleEventValue
+          - ResultValueDateTimeOffset
           type: string
       required:
       - resultValueType
@@ -106895,7 +107131,8 @@ components:
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
-            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent'
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -106908,6 +107145,8 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
           type: string
       required:
       - equitySplitRatio
@@ -107044,7 +107283,8 @@ components:
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
-            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent'
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -107057,6 +107297,8 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
           type: string
       required:
       - instrumentEventType
@@ -107152,7 +107394,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

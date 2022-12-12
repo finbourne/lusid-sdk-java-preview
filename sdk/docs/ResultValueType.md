@@ -21,5 +21,9 @@
 
 * `CASHFLOWVALUESET` (value: `"CashFlowValueSet"`)
 
+* `RESULTVALUELIFECYCLEEVENTVALUE` (value: `"ResultValueLifeCycleEventValue"`)
+
+* `RESULTVALUEDATETIMEOFFSET` (value: `"ResultValueDateTimeOffset"`)
+
 
 

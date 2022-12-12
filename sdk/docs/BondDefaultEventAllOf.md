@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **defaultType** | **String** | The type of the default. (coupon payment, principal payment, covenant ...)    Supported string (enumeration) values are: [CouponPayment, CouponAndPrincipalPayment, PrincipalPayment, Covenant, Bankruptcy, BuyBackOption]. | 
 **graceEndDate** | **OffsetDateTime** | Date the grace period for making coupon payment ends. | 
 **paymentDate** | **OffsetDateTime** | The date the coupon payment was missed. | 
-**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent | 
+**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, RawVendorEvent, InformationalErrorEvent | 
 
 
 
@@ -32,6 +32,8 @@ AMORTISATIONEVENT | &quot;AmortisationEvent&quot;
 CASHFLOWEVENT | &quot;CashFlowEvent&quot;
 EXERCISEEVENT | &quot;ExerciseEvent&quot;
 RESETEVENT | &quot;ResetEvent&quot;
+RAWVENDOREVENT | &quot;RawVendorEvent&quot;
+INFORMATIONALERROREVENT | &quot;InformationalErrorEvent&quot;
 
 
 

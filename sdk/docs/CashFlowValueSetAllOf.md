@@ -8,7 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cashflows** | [**List&lt;CashFlowValue&gt;**](CashFlowValue.md) | The set of cash flows in the result |  [optional]
-**resultValueType** | [**ResultValueTypeEnum**](#ResultValueTypeEnum) | The available values are: ResultValue, ResultValueDictionary, ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString, CashFlowValue, CashFlowValueSet | 
+**resultValueType** | [**ResultValueTypeEnum**](#ResultValueTypeEnum) | The available values are: ResultValue, ResultValueDictionary, ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString, CashFlowValue, CashFlowValueSet, ResultValueLifeCycleEventValue, ResultValueDateTimeOffset | 
 
 
 
@@ -24,6 +24,8 @@ RESULTVALUEINT | &quot;ResultValueInt&quot;
 RESULTVALUESTRING | &quot;ResultValueString&quot;
 CASHFLOWVALUE | &quot;CashFlowValue&quot;
 CASHFLOWVALUESET | &quot;CashFlowValueSet&quot;
+RESULTVALUELIFECYCLEEVENTVALUE | &quot;ResultValueLifeCycleEventValue&quot;
+RESULTVALUEDATETIMEOFFSET | &quot;ResultValueDateTimeOffset&quot;
 
 
 
