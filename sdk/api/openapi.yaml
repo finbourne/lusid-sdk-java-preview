@@ -307,7 +307,7 @@ info:
     | <a name="816">816</a>|Abor Configuration not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5068
+  version: 0.11.5069
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -66290,6 +66290,7 @@ components:
     AggregationQuery:
       additionalProperties: false
       example:
+        flattenedType: String
         removalDate: 2000-01-23T04:56:07.000+00:00
         addressKey: addressKey
         displayName: displayName
@@ -66301,7 +66302,7 @@ components:
       properties:
         addressKey:
           description: The address that is the query to be made into the system. e.g.
-            a Valuation/Pv or Instrument/MaturityDate
+            a Valuation/PV or Instrument/MaturityDate
           type: string
         description:
           description: What does the information that is being queried by the address
@@ -66312,8 +66313,25 @@ components:
             returned information for visualisation in preference to the address.
           type: string
         type:
-          description: 'The available values are: String, Int, Decimal, DateTime,
-            Boolean, ResultValue, Result0D, Json'
+          description: |-
+            Financially meaningful results can be presented as either simple flat types or more complex expanded types. This field gives the type of the more complex representation.
+
+            For example, the present value (PV) of a holding could be represented either as a simple decimal (with currency implied) or as a decimal-currency pair. In this example, the type returned in this field would be "Result0D", the decimal-currency pair. The available values are: String, Int, Decimal, DateTime, Boolean, ResultValue, Result0D, Json
+          enum:
+          - String
+          - Int
+          - Decimal
+          - DateTime
+          - Boolean
+          - ResultValue
+          - Result0D
+          - Json
+          type: string
+        flattenedType:
+          description: |-
+            Financially meaningful results can be presented as either simple flat types or more complex expanded types. This field gives the type of the simpler representation.
+
+            For example, the present value (PV) of a holding could be represented either as a simple decimal (with currency implied) or as a decimal-currency pair. In this example, the type returned in this field would be "Decimal". The available values are: String, Int, Decimal, DateTime, Boolean, ResultValue, Result0D, Json
           enum:
           - String
           - Int
@@ -66325,30 +66343,30 @@ components:
           - Json
           type: string
         scalesWithHoldingQuantity:
-          description: "Is the data scaled when it is for, e.g. a holding in an instrument.\
-            \ A key example would be the difference between price and pv. The present\
-            \ value\r\nof an instrument would scale with the quantity held. The price\
-            \ would be that for a hypothetical unit of that instrument, typically\
-            \ associated with the\r\ncontract size."
+          description: Is the data scaled when it is for, e.g. a holding in an instrument.
+            A key example would be the difference between price and PV. The present
+            value of an instrument would scale with the quantity held. The price would
+            be that for a hypothetical unit of that instrument, typically associated
+            with the contract size.
           type: boolean
         supportedOperations:
-          description: "When performing an aggregation operation, what column type\
-            \ operations can be performed on the data. For example, it makes sense\
-            \ to sum decimals but\r\nnot strings. Either can be counted. With more\
-            \ complex types, e.g. ResultValues, operations may be linked to a semantic\
-            \ meaning such as the currency\r\nof the result. In such cases the operations\
-            \ may be supported but context specific. For example, it makes sense to\
-            \ sum PVs in a single currency but not\r\nwhen the currency is different.\
-            \ In such cases, an error would result (it being assumed that no fx rates\
-            \ for currency conversion were implicit in the context)."
+          description: When performing an aggregation operation, what column type
+            operations can be performed on the data. For example, it makes sense to
+            sum decimals but not strings. Either can be counted. With more complex
+            types, e.g. ResultValues, operations may be linked to a semantic meaning
+            such as the currency of the result. In such cases the operations may be
+            supported but context specific. For example, it makes sense to sum PVs
+            in a single currency but not when the currency is different. In such cases,
+            an error would result (it being assumed that no fx rates for currency
+            conversion were implicit in the context).
           type: string
         lifeCycleStatus:
-          description: "Within an API where an item can be accessed through an address\
-            \ or property, there is an associated status that determines\r\nwhether\
-            \ the item is stable or likely to change. This status is one of [Experimental,\
-            \ Beta, EAP, Prod,  Deprecated]. If the item is\r\ndeprecated it will\
-            \ be removed on or after the associated DateTime RemovalDate field. That\
-            \ field will not otherwise be set."
+          description: Within an API where an item can be accessed through an address
+            or property, there is an associated status that determines whether the
+            item is stable or likely to change. This status is one of [Experimental,
+            Beta, EAP, Prod,  Deprecated]. If the item is deprecated it will be removed
+            on or after the associated DateTime RemovalDate field. That field will
+            not otherwise be set.
           type: string
         removalDate:
           description: If the life cycle status is set to deprecated then this will
@@ -66360,6 +66378,7 @@ components:
       - addressKey
       - description
       - displayName
+      - flattenedType
       - lifeCycleStatus
       - removalDate
       - scalesWithHoldingQuantity
@@ -76052,9 +76071,13 @@ components:
             subtotals of aggregates.
           type: boolean
         returnResultAsExpandedTypes:
-          description: "For complex results or financially meaningful results,\r\n\
-            there is a need for a result to contain metadata about its currency and/or\
-            \ units\r\nor to have a more complicated 1D or 2D structure"
+          description: "Financially meaningful results can be presented as either\
+            \ simple flat types or more complex expanded types.\r\nFor example, the\
+            \ present value (PV) of a holding could be represented either as a simple\
+            \ decimal (with currency implied)\r\nor as a decimal-currency pair. This\
+            \ flag allows either representation to be returned. In the PV example,\r\
+            \nthe returned value would be the decimal-currency pair if this flag is\
+            \ true, or the decimal only if this flag is false."
           type: boolean
         valuationSchedule:
           $ref: '#/components/schemas/ValuationSchedule'
@@ -89840,7 +89863,8 @@ components:
         previousPage: previousPage
         nextPage: nextPage
         values:
-        - removalDate: 2000-01-23T04:56:07.000+00:00
+        - flattenedType: String
+          removalDate: 2000-01-23T04:56:07.000+00:00
           addressKey: addressKey
           displayName: displayName
           scalesWithHoldingQuantity: true
@@ -89848,7 +89872,8 @@ components:
           description: description
           type: String
           lifeCycleStatus: lifeCycleStatus
-        - removalDate: 2000-01-23T04:56:07.000+00:00
+        - flattenedType: String
+          removalDate: 2000-01-23T04:56:07.000+00:00
           addressKey: addressKey
           displayName: displayName
           scalesWithHoldingQuantity: true
@@ -102345,9 +102370,13 @@ components:
             subtotals of aggregates.
           type: boolean
         returnResultAsExpandedTypes:
-          description: "For complex results or financially meaningful results,\r\n\
-            there is a need for a result to contain metadata about its currency and/or\
-            \ units\r\nor to have a more complicated 1D or 2D structure"
+          description: "Financially meaningful results can be presented as either\
+            \ simple flat types or more complex expanded types.\r\nFor example, the\
+            \ present value (PV) of a holding could be represented either as a simple\
+            \ decimal (with currency implied)\r\nor as a decimal-currency pair. This\
+            \ flag allows either representation to be returned. In the PV example,\r\
+            \nthe returned value would be the decimal-currency pair if this flag is\
+            \ true, or the decimal only if this flag is false."
           type: boolean
         portfolioEntityIds:
           description: The set of portfolio or portfolio group identifier(s) that
