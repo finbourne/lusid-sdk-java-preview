@@ -307,7 +307,7 @@ info:
     | <a name="816">816</a>|Abor Configuration not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5064
+  version: 0.11.5065
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -71461,12 +71461,14 @@ components:
         entityTypeName: entityTypeName
         description: description
         fieldSchema:
-        - name: name
+        - collectionType: collectionType
+          name: name
           lifetime: lifetime
           description: description
           type: type
           required: true
-        - name: name
+        - collectionType: collectionType
+          name: name
           lifetime: lifetime
           description: description
           type: type
@@ -71513,12 +71515,14 @@ components:
         entityTypeName: entityTypeName
         description: description
         fieldSchema:
-        - name: name
+        - collectionType: collectionType
+          name: name
           lifetime: lifetime
           description: description
           type: type
           required: true
-        - name: name
+        - collectionType: collectionType
+          name: name
           lifetime: lifetime
           description: description
           type: type
@@ -71585,6 +71589,7 @@ components:
     CustomEntityFieldDefinition:
       additionalProperties: false
       example:
+        collectionType: collectionType
         name: name
         lifetime: lifetime
         description: description
@@ -71601,6 +71606,11 @@ components:
         type:
           description: 'The value type for the field. Available values are: “String”,
             “Boolean”, “DateTime”, “Decimal”.'
+          type: string
+        collectionType:
+          description: 'The collection type for the field. Available values are: “Single”,
+            “Array”. Null value defaults to “Single”'
+          nullable: true
           type: string
         required:
           description: Whether the field is required or not.
@@ -81497,12 +81507,14 @@ components:
           entityTypeName: entityTypeName
           description: description
           fieldSchema:
-          - name: name
+          - collectionType: collectionType
+            name: name
             lifetime: lifetime
             description: description
             type: type
             required: true
-          - name: name
+          - collectionType: collectionType
+            name: name
             lifetime: lifetime
             description: description
             type: type
@@ -81513,12 +81525,14 @@ components:
           entityTypeName: entityTypeName
           description: description
           fieldSchema:
-          - name: name
+          - collectionType: collectionType
+            name: name
             lifetime: lifetime
             description: description
             type: type
             required: true
-          - name: name
+          - collectionType: collectionType
+            name: name
             lifetime: lifetime
             description: description
             type: type
@@ -99884,12 +99898,14 @@ components:
         displayName: displayName
         description: description
         fieldSchema:
-        - name: name
+        - collectionType: collectionType
+          name: name
           lifetime: lifetime
           description: description
           type: type
           required: true
-        - name: name
+        - collectionType: collectionType
+          name: name
           lifetime: lifetime
           description: description
           type: type
@@ -109520,7 +109536,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
