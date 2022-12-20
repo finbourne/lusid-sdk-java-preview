@@ -307,7 +307,7 @@ info:
     | <a name="816">816</a>|Abor Configuration not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5075
+  version: 0.11.5076
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -76779,7 +76779,7 @@ components:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
             CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
-            RawVendorEvent, InformationalErrorEvent'
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -76792,6 +76792,7 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - TriggerEvent
           - RawVendorEvent
           - InformationalErrorEvent
           type: string
@@ -76891,6 +76892,7 @@ components:
       - CashFlowEvent
       - ExerciseEvent
       - ResetEvent
+      - TriggerEvent
       - RawVendorEvent
       - InformationalErrorEvent
       type: string
@@ -99814,6 +99816,13 @@ components:
           nullable: true
           type: array
       type: object
+    TriggerEvent:
+      allOf:
+      - $ref: '#/components/schemas/InstrumentEvent'
+      - $ref: '#/components/schemas/TriggerEvent_allOf'
+      description: "Definition of a trigger event.\r\nThis is an event that occurs\
+        \ on transformation of an option instrument being\r\ntriggered by a barrier/touch\
+        \ price level being hit by the underlying asset."
     TypedResourceId:
       additionalProperties: false
       description: "Represents the user-defined identifier for a Legal Entity or Person.\r\
@@ -104307,7 +104316,7 @@ components:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
             CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
-            RawVendorEvent, InformationalErrorEvent'
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -104320,6 +104329,7 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - TriggerEvent
           - RawVendorEvent
           - InformationalErrorEvent
           type: string
@@ -104551,7 +104561,7 @@ components:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
             CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
-            RawVendorEvent, InformationalErrorEvent'
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -104564,6 +104574,7 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - TriggerEvent
           - RawVendorEvent
           - InformationalErrorEvent
           type: string
@@ -104699,7 +104710,7 @@ components:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
             CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
-            RawVendorEvent, InformationalErrorEvent'
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -104712,6 +104723,7 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - TriggerEvent
           - RawVendorEvent
           - InformationalErrorEvent
           type: string
@@ -104750,7 +104762,7 @@ components:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
             CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
-            RawVendorEvent, InformationalErrorEvent'
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -104763,6 +104775,7 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - TriggerEvent
           - RawVendorEvent
           - InformationalErrorEvent
           type: string
@@ -105005,7 +105018,7 @@ components:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
             CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
-            RawVendorEvent, InformationalErrorEvent'
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -105018,6 +105031,7 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - TriggerEvent
           - RawVendorEvent
           - InformationalErrorEvent
           type: string
@@ -106068,7 +106082,7 @@ components:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
             CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
-            RawVendorEvent, InformationalErrorEvent'
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -106081,6 +106095,7 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - TriggerEvent
           - RawVendorEvent
           - InformationalErrorEvent
           type: string
@@ -107886,7 +107901,7 @@ components:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
             CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
-            RawVendorEvent, InformationalErrorEvent'
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -107899,6 +107914,7 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - TriggerEvent
           - RawVendorEvent
           - InformationalErrorEvent
           type: string
@@ -107938,7 +107954,7 @@ components:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
             CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
-            RawVendorEvent, InformationalErrorEvent'
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -107951,6 +107967,7 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - TriggerEvent
           - RawVendorEvent
           - InformationalErrorEvent
           type: string
@@ -108401,7 +108418,7 @@ components:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
             CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
-            RawVendorEvent, InformationalErrorEvent'
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -108414,6 +108431,7 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - TriggerEvent
           - RawVendorEvent
           - InformationalErrorEvent
           type: string
@@ -108577,7 +108595,7 @@ components:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
             CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
-            RawVendorEvent, InformationalErrorEvent'
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -108590,6 +108608,7 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - TriggerEvent
           - RawVendorEvent
           - InformationalErrorEvent
           type: string
@@ -108937,7 +108956,7 @@ components:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
             CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
-            RawVendorEvent, InformationalErrorEvent'
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -108950,6 +108969,7 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - TriggerEvent
           - RawVendorEvent
           - InformationalErrorEvent
           type: string
@@ -109305,7 +109325,7 @@ components:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
             CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
-            RawVendorEvent, InformationalErrorEvent'
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -109318,6 +109338,7 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - TriggerEvent
           - RawVendorEvent
           - InformationalErrorEvent
           type: string
@@ -109457,7 +109478,7 @@ components:
           description: 'The Type of Event. The available values are: TransitionEvent,
             InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
             CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
-            RawVendorEvent, InformationalErrorEvent'
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
           enum:
           - TransitionEvent
           - InformationalEvent
@@ -109470,11 +109491,62 @@ components:
           - CashFlowEvent
           - ExerciseEvent
           - ResetEvent
+          - TriggerEvent
           - RawVendorEvent
           - InformationalErrorEvent
           type: string
       required:
       - instrumentEventType
+      type: object
+    TriggerEvent_allOf:
+      properties:
+        level:
+          description: The underlying price level that triggers the event
+          format: double
+          type: number
+        triggerType:
+          description: The type of the trigger; valid options are Knock-In, Knock-Out,
+            Touch or No-Touch
+          type: string
+        triggerDirection:
+          description: The direction of the trigger; valid options are Up and Down
+          type: string
+        triggerDate:
+          description: The date the trigger happens at.
+          format: date-time
+          type: string
+        maturityDate:
+          description: The date the trigger takes effect.
+          format: date-time
+          type: string
+        instrumentEventType:
+          description: 'The Type of Event. The available values are: TransitionEvent,
+            InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent,
+            CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent,
+            TriggerEvent, RawVendorEvent, InformationalErrorEvent'
+          enum:
+          - TransitionEvent
+          - InformationalEvent
+          - OpenEvent
+          - CloseEvent
+          - StockSplitEvent
+          - BondDefaultEvent
+          - CashDividendEvent
+          - AmortisationEvent
+          - CashFlowEvent
+          - ExerciseEvent
+          - ResetEvent
+          - TriggerEvent
+          - RawVendorEvent
+          - InformationalErrorEvent
+          type: string
+      required:
+      - instrumentEventType
+      - level
+      - maturityDate
+      - triggerDate
+      - triggerDirection
+      - triggerType
       type: object
     VendorDependency_allOf:
       properties:
@@ -109567,7 +109639,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

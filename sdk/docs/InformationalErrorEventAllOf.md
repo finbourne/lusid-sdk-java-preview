@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **errorDetail** | **String** | The details of the error | 
 **errorReason** | **String** | The error reason | 
 **effectiveAt** | **OffsetDateTime** | The effective date of the evaulation | 
-**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, RawVendorEvent, InformationalErrorEvent | 
+**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent | 
 
 
 
@@ -29,6 +29,7 @@ AMORTISATIONEVENT | &quot;AmortisationEvent&quot;
 CASHFLOWEVENT | &quot;CashFlowEvent&quot;
 EXERCISEEVENT | &quot;ExerciseEvent&quot;
 RESETEVENT | &quot;ResetEvent&quot;
+TRIGGEREVENT | &quot;TriggerEvent&quot;
 RAWVENDOREVENT | &quot;RawVendorEvent&quot;
 INFORMATIONALERROREVENT | &quot;InformationalErrorEvent&quot;
 

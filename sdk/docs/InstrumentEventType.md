@@ -27,6 +27,8 @@
 
 * `RESETEVENT` (value: `"ResetEvent"`)
 
+* `TRIGGEREVENT` (value: `"TriggerEvent"`)
+
 * `RAWVENDOREVENT` (value: `"RawVendorEvent"`)
 
 * `INFORMATIONALERROREVENT` (value: `"InformationalErrorEvent"`)
