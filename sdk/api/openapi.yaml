@@ -307,7 +307,7 @@ info:
     | <a name="816">816</a>|Abor Configuration not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5096
+  version: 0.11.5097
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -25285,16 +25285,17 @@ paths:
                         labelValue: johnsmith001
                   properties:
                     person/PersonalDetails/Name:
-                      key: Person/PersonalDetails/Name
+                    - key: Person/PersonalDetails/Name
                       value:
                         labelValue: John Smith
                     person/CompanyDetails/Role:
-                      key: Person/CompanyDetails/Role
+                    - key: Person/CompanyDetails/Role
                       value:
-                        labelValueSet:
-                          values:
-                          - CustomerServiceRepresentative
-                          - SalesRepresentative
+                        labelValue: SalesRepresentative
+                      effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                    - key: Person/CompanyDetails/Role
+                      value:
+                        labelValue: CustomerServiceRepresentative
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
                   relationships: []
                   version:
@@ -25319,15 +25320,15 @@ paths:
                         labelValue: emilyevans002
                   properties:
                     person/PersonalDetails/Name:
-                      key: Person/PersonalDetails/Name
+                    - key: Person/PersonalDetails/Name
                       value:
                         labelValue: Emily Evans
                     person/ContactDetails/Phone:
-                      key: Person/ContactDetails/Phone
+                    - key: Person/ContactDetails/Phone
                       value:
                         labelValue: "01005675678"
                     person/CompanyDetails/Role:
-                      key: Person/CompanyDetails/Role
+                    - key: Person/CompanyDetails/Role
                       value:
                         labelValue: Manager
                       effectiveFrom: 2018-04-01T00:00:00.0000000+00:00
@@ -25361,16 +25362,17 @@ paths:
                         labelValue: johnsmith001
                   properties:
                     person/PersonalDetails/Name:
-                      key: Person/PersonalDetails/Name
+                    - key: Person/PersonalDetails/Name
                       value:
                         labelValue: John Smith
                     person/CompanyDetails/Role:
-                      key: Person/CompanyDetails/Role
+                    - key: Person/CompanyDetails/Role
                       value:
-                        labelValueSet:
-                          values:
-                          - CustomerServiceRepresentative
-                          - SalesRepresentative
+                        labelValue: SalesRepresentative
+                      effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                    - key: Person/CompanyDetails/Role
+                      value:
+                        labelValue: CustomerServiceRepresentative
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
                   relationships: []
                   version:
@@ -25395,15 +25397,15 @@ paths:
                         labelValue: emilyevans002
                   properties:
                     person/PersonalDetails/Name:
-                      key: Person/PersonalDetails/Name
+                    - key: Person/PersonalDetails/Name
                       value:
                         labelValue: Emily Evans
                     person/ContactDetails/Phone:
-                      key: Person/ContactDetails/Phone
+                    - key: Person/ContactDetails/Phone
                       value:
                         labelValue: "01005675678"
                     person/CompanyDetails/Role:
-                      key: Person/CompanyDetails/Role
+                    - key: Person/CompanyDetails/Role
                       value:
                         labelValue: Manager
                       effectiveFrom: 2018-04-01T00:00:00.0000000+00:00
@@ -25437,16 +25439,17 @@ paths:
                         labelValue: johnsmith001
                   properties:
                     person/PersonalDetails/Name:
-                      key: Person/PersonalDetails/Name
+                    - key: Person/PersonalDetails/Name
                       value:
                         labelValue: John Smith
                     person/CompanyDetails/Role:
-                      key: Person/CompanyDetails/Role
+                    - key: Person/CompanyDetails/Role
                       value:
-                        labelValueSet:
-                          values:
-                          - CustomerServiceRepresentative
-                          - SalesRepresentative
+                        labelValue: SalesRepresentative
+                      effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                    - key: Person/CompanyDetails/Role
+                      value:
+                        labelValue: CustomerServiceRepresentative
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
                   relationships: []
                   version:
@@ -25471,15 +25474,15 @@ paths:
                         labelValue: emilyevans002
                   properties:
                     person/PersonalDetails/Name:
-                      key: Person/PersonalDetails/Name
+                    - key: Person/PersonalDetails/Name
                       value:
                         labelValue: Emily Evans
                     person/ContactDetails/Phone:
-                      key: Person/ContactDetails/Phone
+                    - key: Person/ContactDetails/Phone
                       value:
                         labelValue: "01005675678"
                     person/CompanyDetails/Role:
-                      key: Person/CompanyDetails/Role
+                    - key: Person/CompanyDetails/Role
                       value:
                         labelValue: Manager
                       effectiveFrom: 2018-04-01T00:00:00.0000000+00:00
@@ -25539,16 +25542,17 @@ paths:
                     labelValue: johnsmith001
               properties:
                 person/PersonalDetails/Name:
-                  key: Person/PersonalDetails/Name
+                - key: Person/PersonalDetails/Name
                   value:
                     labelValue: John Smith
                 person/CompanyDetails/Role:
-                  key: Person/CompanyDetails/Role
+                - key: Person/CompanyDetails/Role
                   value:
-                    labelValueSet:
-                      values:
-                      - CustomerServiceRepresentative
-                      - SalesRepresentative
+                    labelValue: SalesRepresentative
+                  effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                - key: Person/CompanyDetails/Role
+                  value:
+                    labelValue: CustomerServiceRepresentative
                   effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
               displayName: Person1DisplayName
               description: Person1Description
@@ -25571,16 +25575,17 @@ paths:
                     labelValue: johnsmith001
               properties:
                 person/PersonalDetails/Name:
-                  key: Person/PersonalDetails/Name
+                - key: Person/PersonalDetails/Name
                   value:
                     labelValue: John Smith
                 person/CompanyDetails/Role:
-                  key: Person/CompanyDetails/Role
+                - key: Person/CompanyDetails/Role
                   value:
-                    labelValueSet:
-                      values:
-                      - CustomerServiceRepresentative
-                      - SalesRepresentative
+                    labelValue: SalesRepresentative
+                  effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                - key: Person/CompanyDetails/Role
+                  value:
+                    labelValue: CustomerServiceRepresentative
                   effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
               displayName: Person1DisplayName
               description: Person1Description
@@ -25603,16 +25608,17 @@ paths:
                     labelValue: johnsmith001
               properties:
                 person/PersonalDetails/Name:
-                  key: Person/PersonalDetails/Name
+                - key: Person/PersonalDetails/Name
                   value:
                     labelValue: John Smith
                 person/CompanyDetails/Role:
-                  key: Person/CompanyDetails/Role
+                - key: Person/CompanyDetails/Role
                   value:
-                    labelValueSet:
-                      values:
-                      - CustomerServiceRepresentative
-                      - SalesRepresentative
+                    labelValue: SalesRepresentative
+                  effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                - key: Person/CompanyDetails/Role
+                  value:
+                    labelValue: CustomerServiceRepresentative
                   effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
               displayName: Person1DisplayName
               description: Person1Description
@@ -25635,16 +25641,17 @@ paths:
                     labelValue: johnsmith001
               properties:
                 person/PersonalDetails/Name:
-                  key: Person/PersonalDetails/Name
+                - key: Person/PersonalDetails/Name
                   value:
                     labelValue: John Smith
                 person/CompanyDetails/Role:
-                  key: Person/CompanyDetails/Role
+                - key: Person/CompanyDetails/Role
                   value:
-                    labelValueSet:
-                      values:
-                      - CustomerServiceRepresentative
-                      - SalesRepresentative
+                    labelValue: SalesRepresentative
+                  effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                - key: Person/CompanyDetails/Role
+                  value:
+                    labelValue: CustomerServiceRepresentative
                   effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
               displayName: Person1DisplayName
               description: Person1Description
@@ -25676,16 +25683,17 @@ paths:
                       labelValue: johnsmith001
                 properties:
                   person/PersonalDetails/Name:
-                    key: Person/PersonalDetails/Name
+                  - key: Person/PersonalDetails/Name
                     value:
                       labelValue: John Smith
                   person/CompanyDetails/Role:
-                    key: Person/CompanyDetails/Role
+                  - key: Person/CompanyDetails/Role
                     value:
-                      labelValueSet:
-                        values:
-                        - CustomerServiceRepresentative
-                        - SalesRepresentative
+                      labelValue: SalesRepresentative
+                    effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                  - key: Person/CompanyDetails/Role
+                    value:
+                      labelValue: CustomerServiceRepresentative
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
                 relationships: []
                 version:
@@ -25714,16 +25722,17 @@ paths:
                       labelValue: johnsmith001
                 properties:
                   person/PersonalDetails/Name:
-                    key: Person/PersonalDetails/Name
+                  - key: Person/PersonalDetails/Name
                     value:
                       labelValue: John Smith
                   person/CompanyDetails/Role:
-                    key: Person/CompanyDetails/Role
+                  - key: Person/CompanyDetails/Role
                     value:
-                      labelValueSet:
-                        values:
-                        - CustomerServiceRepresentative
-                        - SalesRepresentative
+                      labelValue: SalesRepresentative
+                    effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                  - key: Person/CompanyDetails/Role
+                    value:
+                      labelValue: CustomerServiceRepresentative
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
                 relationships: []
                 version:
@@ -25752,16 +25761,17 @@ paths:
                       labelValue: johnsmith001
                 properties:
                   person/PersonalDetails/Name:
-                    key: Person/PersonalDetails/Name
+                  - key: Person/PersonalDetails/Name
                     value:
                       labelValue: John Smith
                   person/CompanyDetails/Role:
-                    key: Person/CompanyDetails/Role
+                  - key: Person/CompanyDetails/Role
                     value:
-                      labelValueSet:
-                        values:
-                        - CustomerServiceRepresentative
-                        - SalesRepresentative
+                      labelValue: SalesRepresentative
+                    effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                  - key: Person/CompanyDetails/Role
+                    value:
+                      labelValue: CustomerServiceRepresentative
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
                 relationships: []
                 version:
@@ -25980,16 +25990,17 @@ paths:
                         labelValue: johnsmith001
                   properties:
                     person/PersonalDetails/Name:
-                      key: Person/PersonalDetails/Name
+                    - key: Person/PersonalDetails/Name
                       value:
                         labelValue: John Smith
                     person/CompanyDetails/Role:
-                      key: Person/CompanyDetails/Role
+                    - key: Person/CompanyDetails/Role
                       value:
-                        labelValueSet:
-                          values:
-                          - CustomerServiceRepresentative
-                          - SalesRepresentative
+                        labelValue: SalesRepresentative
+                      effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                    - key: Person/CompanyDetails/Role
+                      value:
+                        labelValue: CustomerServiceRepresentative
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
                   relationships: []
                   version:
@@ -26014,15 +26025,15 @@ paths:
                         labelValue: emilyevans002
                   properties:
                     person/PersonalDetails/Name:
-                      key: Person/PersonalDetails/Name
+                    - key: Person/PersonalDetails/Name
                       value:
                         labelValue: Emily Evans
                     person/ContactDetails/Phone:
-                      key: Person/ContactDetails/Phone
+                    - key: Person/ContactDetails/Phone
                       value:
                         labelValue: "01005675678"
                     person/CompanyDetails/Role:
-                      key: Person/CompanyDetails/Role
+                    - key: Person/CompanyDetails/Role
                       value:
                         labelValue: Manager
                       effectiveFrom: 2018-04-01T00:00:00.0000000+00:00
@@ -26056,16 +26067,17 @@ paths:
                         labelValue: johnsmith001
                   properties:
                     person/PersonalDetails/Name:
-                      key: Person/PersonalDetails/Name
+                    - key: Person/PersonalDetails/Name
                       value:
                         labelValue: John Smith
                     person/CompanyDetails/Role:
-                      key: Person/CompanyDetails/Role
+                    - key: Person/CompanyDetails/Role
                       value:
-                        labelValueSet:
-                          values:
-                          - CustomerServiceRepresentative
-                          - SalesRepresentative
+                        labelValue: SalesRepresentative
+                      effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                    - key: Person/CompanyDetails/Role
+                      value:
+                        labelValue: CustomerServiceRepresentative
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
                   relationships: []
                   version:
@@ -26090,15 +26102,15 @@ paths:
                         labelValue: emilyevans002
                   properties:
                     person/PersonalDetails/Name:
-                      key: Person/PersonalDetails/Name
+                    - key: Person/PersonalDetails/Name
                       value:
                         labelValue: Emily Evans
                     person/ContactDetails/Phone:
-                      key: Person/ContactDetails/Phone
+                    - key: Person/ContactDetails/Phone
                       value:
                         labelValue: "01005675678"
                     person/CompanyDetails/Role:
-                      key: Person/CompanyDetails/Role
+                    - key: Person/CompanyDetails/Role
                       value:
                         labelValue: Manager
                       effectiveFrom: 2018-04-01T00:00:00.0000000+00:00
@@ -26132,16 +26144,17 @@ paths:
                         labelValue: johnsmith001
                   properties:
                     person/PersonalDetails/Name:
-                      key: Person/PersonalDetails/Name
+                    - key: Person/PersonalDetails/Name
                       value:
                         labelValue: John Smith
                     person/CompanyDetails/Role:
-                      key: Person/CompanyDetails/Role
+                    - key: Person/CompanyDetails/Role
                       value:
-                        labelValueSet:
-                          values:
-                          - CustomerServiceRepresentative
-                          - SalesRepresentative
+                        labelValue: SalesRepresentative
+                      effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                    - key: Person/CompanyDetails/Role
+                      value:
+                        labelValue: CustomerServiceRepresentative
                       effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
                   relationships: []
                   version:
@@ -26166,15 +26179,15 @@ paths:
                         labelValue: emilyevans002
                   properties:
                     person/PersonalDetails/Name:
-                      key: Person/PersonalDetails/Name
+                    - key: Person/PersonalDetails/Name
                       value:
                         labelValue: Emily Evans
                     person/ContactDetails/Phone:
-                      key: Person/ContactDetails/Phone
+                    - key: Person/ContactDetails/Phone
                       value:
                         labelValue: "01005675678"
                     person/CompanyDetails/Role:
-                      key: Person/CompanyDetails/Role
+                    - key: Person/CompanyDetails/Role
                       value:
                         labelValue: Manager
                       effectiveFrom: 2018-04-01T00:00:00.0000000+00:00
@@ -26426,16 +26439,17 @@ paths:
                       labelValue: johnsmith001
                 properties:
                   person/PersonalDetails/Name:
-                    key: Person/PersonalDetails/Name
+                  - key: Person/PersonalDetails/Name
                     value:
                       labelValue: John Smith
                   person/CompanyDetails/Role:
-                    key: Person/CompanyDetails/Role
+                  - key: Person/CompanyDetails/Role
                     value:
-                      labelValueSet:
-                        values:
-                        - CustomerServiceRepresentative
-                        - SalesRepresentative
+                      labelValue: SalesRepresentative
+                    effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                  - key: Person/CompanyDetails/Role
+                    value:
+                      labelValue: CustomerServiceRepresentative
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
                 relationships: []
                 version:
@@ -26464,16 +26478,17 @@ paths:
                       labelValue: johnsmith001
                 properties:
                   person/PersonalDetails/Name:
-                    key: Person/PersonalDetails/Name
+                  - key: Person/PersonalDetails/Name
                     value:
                       labelValue: John Smith
                   person/CompanyDetails/Role:
-                    key: Person/CompanyDetails/Role
+                  - key: Person/CompanyDetails/Role
                     value:
-                      labelValueSet:
-                        values:
-                        - CustomerServiceRepresentative
-                        - SalesRepresentative
+                      labelValue: SalesRepresentative
+                    effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                  - key: Person/CompanyDetails/Role
+                    value:
+                      labelValue: CustomerServiceRepresentative
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
                 relationships: []
                 version:
@@ -26502,16 +26517,17 @@ paths:
                       labelValue: johnsmith001
                 properties:
                   person/PersonalDetails/Name:
-                    key: Person/PersonalDetails/Name
+                  - key: Person/PersonalDetails/Name
                     value:
                       labelValue: John Smith
                   person/CompanyDetails/Role:
-                    key: Person/CompanyDetails/Role
+                  - key: Person/CompanyDetails/Role
                     value:
-                      labelValueSet:
-                        values:
-                        - CustomerServiceRepresentative
-                        - SalesRepresentative
+                      labelValue: SalesRepresentative
+                    effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+                  - key: Person/CompanyDetails/Role
+                    value:
+                      labelValue: CustomerServiceRepresentative
                     effectiveFrom: 2016-07-01T00:00:00.0000000+00:00
                 relationships: []
                 version:
@@ -26774,7 +26790,7 @@ paths:
                       labelValue: johnsmith001
                 properties:
                   person/ContactDetails/Phone:
-                    key: Person/ContactDetails/Phone
+                  - key: Person/ContactDetails/Phone
                     value:
                       labelValue: "01156786789"
                     effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
@@ -26805,7 +26821,7 @@ paths:
                       labelValue: johnsmith001
                 properties:
                   person/ContactDetails/Phone:
-                    key: Person/ContactDetails/Phone
+                  - key: Person/ContactDetails/Phone
                     value:
                       labelValue: "01156786789"
                     effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
@@ -26836,7 +26852,7 @@ paths:
                       labelValue: johnsmith001
                 properties:
                   person/ContactDetails/Phone:
-                    key: Person/ContactDetails/Phone
+                  - key: Person/ContactDetails/Phone
                     value:
                       labelValue: "01156786789"
                     effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
@@ -27725,7 +27741,7 @@ paths:
             example:
               properties:
                 person/ContactDetails/Phone:
-                  key: Person/ContactDetails/Phone
+                - key: Person/ContactDetails/Phone
                   value:
                     labelValue: "01156786789"
                   effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
@@ -27735,7 +27751,7 @@ paths:
             example:
               properties:
                 person/ContactDetails/Phone:
-                  key: Person/ContactDetails/Phone
+                - key: Person/ContactDetails/Phone
                   value:
                     labelValue: "01156786789"
                   effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
@@ -27745,7 +27761,7 @@ paths:
             example:
               properties:
                 person/ContactDetails/Phone:
-                  key: Person/ContactDetails/Phone
+                - key: Person/ContactDetails/Phone
                   value:
                     labelValue: "01156786789"
                   effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
@@ -27755,7 +27771,7 @@ paths:
             example:
               properties:
                 person/ContactDetails/Phone:
-                  key: Person/ContactDetails/Phone
+                - key: Person/ContactDetails/Phone
                   value:
                     labelValue: "01156786789"
                   effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
@@ -27788,7 +27804,7 @@ paths:
                       labelValue: johnsmith001
                 properties:
                   person/ContactDetails/Phone:
-                    key: Person/ContactDetails/Phone
+                  - key: Person/ContactDetails/Phone
                     value:
                       labelValue: "01156786789"
                     effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
@@ -27819,7 +27835,7 @@ paths:
                       labelValue: johnsmith001
                 properties:
                   person/ContactDetails/Phone:
-                    key: Person/ContactDetails/Phone
+                  - key: Person/ContactDetails/Phone
                     value:
                       labelValue: "01156786789"
                     effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
@@ -27850,7 +27866,7 @@ paths:
                       labelValue: johnsmith001
                 properties:
                   person/ContactDetails/Phone:
-                    key: Person/ContactDetails/Phone
+                  - key: Person/ContactDetails/Phone
                     value:
                       labelValue: "01156786789"
                     effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
@@ -83925,7 +83941,19 @@ components:
             asAtDate: 2000-01-23T04:56:07.000+00:00
           properties:
             key:
-              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
               value:
                 metricValue:
                   unit: unit
@@ -84043,7 +84071,19 @@ components:
             asAtDate: 2000-01-23T04:56:07.000+00:00
           properties:
             key:
-              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
               value:
                 metricValue:
                   unit: unit
@@ -85084,7 +85124,19 @@ components:
           asAtDate: 2000-01-23T04:56:07.000+00:00
         properties:
           key:
-            effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
             value:
               metricValue:
                 unit: unit
@@ -85123,7 +85175,9 @@ components:
           type: object
         properties:
           additionalProperties:
-            $ref: '#/components/schemas/Property'
+            items:
+              $ref: '#/components/schemas/Property'
+            type: array
           description: A set of properties associated to the Person. There can be
             multiple properties associated with a property key.
           nullable: true
@@ -93683,7 +93737,19 @@ components:
             asAtDate: 2000-01-23T04:56:07.000+00:00
           properties:
             key:
-              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
               value:
                 metricValue:
                   unit: unit
@@ -93801,7 +93867,19 @@ components:
             asAtDate: 2000-01-23T04:56:07.000+00:00
           properties:
             key:
-              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
               value:
                 metricValue:
                   unit: unit
@@ -96757,7 +96835,19 @@ components:
       example:
         properties:
           key:
-            effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
             value:
               metricValue:
                 unit: unit
@@ -96772,13 +96862,14 @@ components:
       properties:
         properties:
           additionalProperties:
-            $ref: '#/components/schemas/Property'
+            items:
+              $ref: '#/components/schemas/Property'
+            type: array
           description: Properties to set for a Person. All time-variant properties
             must have same EffectiveFrom date. Properties not included in the request
             will not be amended.
+          nullable: true
           type: object
-      required:
-      - properties
       type: object
     SetTransactionConfigurationAlias:
       additionalProperties: false
@@ -101187,7 +101278,19 @@ components:
         description: description
         properties:
           key:
-            effectiveUntil: 2000-01-23T04:56:07.000+00:00
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
             value:
               metricValue:
                 unit: unit
@@ -101208,7 +101311,9 @@ components:
           type: object
         properties:
           additionalProperties:
-            $ref: '#/components/schemas/Property'
+            items:
+              $ref: '#/components/schemas/Property'
+            type: array
           description: A set of properties associated to the Person. There can be
             multiple properties associated with a property key.
           nullable: true
