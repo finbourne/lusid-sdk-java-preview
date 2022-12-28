@@ -307,7 +307,7 @@ info:
     | <a name="816">816</a>|Abor Configuration not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5098
+  version: 0.11.5099
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -104735,15 +104735,8 @@ components:
       type: object
     CashFlowEvent_allOf:
       properties:
-        amount:
-          description: "The quantity (amount) that will be paid, if known. This value\
-            \ will be negative if it is paid, and positive\r\nif it is received."
-          format: double
-          nullable: true
-          type: number
-        currency:
-          description: The payment currency of the cash flow.
-          type: string
+        cashFlowValue:
+          $ref: '#/components/schemas/CashFlowValue'
         eventType:
           description: What type of internal event does this represent; coupon, principal,
             premium etc.
@@ -104752,11 +104745,6 @@ components:
         eventStatus:
           description: What is the event status, is it a known (ie historic) or unknown
             (ie projected) event?
-          type: string
-        paymentDate:
-          description: The date on which the cashflow is scheduled to be paid into
-            the recipient's bank account.
-          format: date-time
           type: string
         instrumentEventType:
           description: 'The Type of Event. The available values are: TransitionEvent,
@@ -104780,11 +104768,10 @@ components:
           - InformationalErrorEvent
           type: string
       required:
-      - currency
+      - cashFlowValue
       - eventStatus
       - eventType
       - instrumentEventType
-      - paymentDate
       type: object
     CashFlowValue_allOf:
       properties:
