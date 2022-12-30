@@ -307,7 +307,7 @@ info:
     | <a name="816">816</a>|Abor Configuration not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5102
+  version: 0.11.5103
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -88857,7 +88857,7 @@ components:
         \ should not be directly instantiated; each supported ReconciliationRuleType\
         \ has a corresponding inherited class."
       discriminator:
-        propertyName: reconciliationRuleType
+        propertyName: ruleType
       example:
         ruleType: ReconcileNumericRule
       properties:
@@ -109542,7 +109542,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
