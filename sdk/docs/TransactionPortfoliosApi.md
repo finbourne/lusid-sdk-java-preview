@@ -1277,7 +1277,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioCashFlows"></a>
 # **getPortfolioCashFlows**
-> ResourceListOfInstrumentCashFlow getPortfolioCashFlows(scope, code, effectiveAt, windowStart, windowEnd, asAt, filter, recipeIdScope, recipeIdCode)
+> ResourceListOfInstrumentCashFlow getPortfolioCashFlows(scope, code, effectiveAt, windowStart, windowEnd, asAt, filter, recipeIdScope, recipeIdCode, excludeUnsettledTrades)
 
 [BETA] GetPortfolioCashFlows: Get portfolio cash flows
 
@@ -1312,8 +1312,9 @@ public class Example {
     String filter = "filter_example"; // String | Expression to filter the result set.               For example, to return only transactions with a transaction type of 'Buy', specify \"type eq 'Buy'\".               For more information about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914.
     String recipeIdScope = "recipeIdScope_example"; // String | The scope of the given recipeId
     String recipeIdCode = "recipeIdCode_example"; // String | The code of the given recipeID
+    Boolean excludeUnsettledTrades = false; // Boolean | If absent or set to false, cashflows will returned based on trade date - more specifically, cashflows from any unsettled trades will be included in the results. If set to true, unsettled trades will be excluded from the result set.
     try {
-      ResourceListOfInstrumentCashFlow result = apiInstance.getPortfolioCashFlows(scope, code, effectiveAt, windowStart, windowEnd, asAt, filter, recipeIdScope, recipeIdCode);
+      ResourceListOfInstrumentCashFlow result = apiInstance.getPortfolioCashFlows(scope, code, effectiveAt, windowStart, windowEnd, asAt, filter, recipeIdScope, recipeIdCode, excludeUnsettledTrades);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#getPortfolioCashFlows");
@@ -1339,6 +1340,7 @@ Name | Type | Description  | Notes
  **filter** | **String**| Expression to filter the result set.               For example, to return only transactions with a transaction type of &#39;Buy&#39;, specify \&quot;type eq &#39;Buy&#39;\&quot;.               For more information about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914. | [optional]
  **recipeIdScope** | **String**| The scope of the given recipeId | [optional]
  **recipeIdCode** | **String**| The code of the given recipeID | [optional]
+ **excludeUnsettledTrades** | **Boolean**| If absent or set to false, cashflows will returned based on trade date - more specifically, cashflows from any unsettled trades will be included in the results. If set to true, unsettled trades will be excluded from the result set. | [optional] [default to false]
 
 ### Return type
 
@@ -1362,7 +1364,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioCashLadder"></a>
 # **getPortfolioCashLadder**
-> ResourceListOfPortfolioCashLadder getPortfolioCashLadder(scope, code, fromEffectiveAt, toEffectiveAt, effectiveAt, asAt, filter, recipeIdScope, recipeIdCode)
+> ResourceListOfPortfolioCashLadder getPortfolioCashLadder(scope, code, fromEffectiveAt, toEffectiveAt, effectiveAt, asAt, filter, recipeIdScope, recipeIdCode, excludeUnsettledTrades)
 
 GetPortfolioCashLadder: Get portfolio cash ladder
 
@@ -1397,8 +1399,9 @@ public class Example {
     String filter = "filter_example"; // String | Expression to filter the result set.              For example, to return only transactions with a transaction type of 'Buy', specify \"type eq 'Buy'\".              For more information about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914.
     String recipeIdScope = "recipeIdScope_example"; // String | The scope of the given recipeId
     String recipeIdCode = "recipeIdCode_example"; // String | The code of the given recipeID
+    Boolean excludeUnsettledTrades = false; // Boolean | If absent or set to false, cashflows will returned based on trade date - more specifically, cashflows from any unsettled trades will be included in the results. If set to true, unsettled trades will be excluded from the result set.
     try {
-      ResourceListOfPortfolioCashLadder result = apiInstance.getPortfolioCashLadder(scope, code, fromEffectiveAt, toEffectiveAt, effectiveAt, asAt, filter, recipeIdScope, recipeIdCode);
+      ResourceListOfPortfolioCashLadder result = apiInstance.getPortfolioCashLadder(scope, code, fromEffectiveAt, toEffectiveAt, effectiveAt, asAt, filter, recipeIdScope, recipeIdCode, excludeUnsettledTrades);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#getPortfolioCashLadder");
@@ -1424,6 +1427,7 @@ Name | Type | Description  | Notes
  **filter** | **String**| Expression to filter the result set.              For example, to return only transactions with a transaction type of &#39;Buy&#39;, specify \&quot;type eq &#39;Buy&#39;\&quot;.              For more information about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914. | [optional]
  **recipeIdScope** | **String**| The scope of the given recipeId | [optional]
  **recipeIdCode** | **String**| The code of the given recipeID | [optional]
+ **excludeUnsettledTrades** | **Boolean**| If absent or set to false, cashflows will returned based on trade date - more specifically, cashflows from any unsettled trades will be included in the results. If set to true, unsettled trades will be excluded from the result set. | [optional] [default to false]
 
 ### Return type
 
@@ -1692,7 +1696,7 @@ Name | Type | Description  | Notes
 
 <a name="getUpsertablePortfolioCashFlows"></a>
 # **getUpsertablePortfolioCashFlows**
-> ResourceListOfTransaction getUpsertablePortfolioCashFlows(scope, code, effectiveAt, windowStart, windowEnd, asAt, filter, recipeIdScope, recipeIdCode)
+> ResourceListOfTransaction getUpsertablePortfolioCashFlows(scope, code, effectiveAt, windowStart, windowEnd, asAt, filter, recipeIdScope, recipeIdCode, excludeUnsettledTrades)
 
 [BETA] GetUpsertablePortfolioCashFlows: Get upsertable portfolio cash flows.
 
@@ -1727,8 +1731,9 @@ public class Example {
     String filter = "filter_example"; // String | Expression to filter the result set.               For example, to return only transactions with a transaction type of 'Buy', specify \"type eq 'Buy'\".               For more information about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914.
     String recipeIdScope = "recipeIdScope_example"; // String | The scope of the given recipeId
     String recipeIdCode = "recipeIdCode_example"; // String | The code of the given recipeID
+    Boolean excludeUnsettledTrades = true; // Boolean | If absent or set to true, unsettled trades will be excluded from the result set. If set to false, cashflows will returned based on trade date - more specifically, cashflows from any unsettled trades will be included in the results.
     try {
-      ResourceListOfTransaction result = apiInstance.getUpsertablePortfolioCashFlows(scope, code, effectiveAt, windowStart, windowEnd, asAt, filter, recipeIdScope, recipeIdCode);
+      ResourceListOfTransaction result = apiInstance.getUpsertablePortfolioCashFlows(scope, code, effectiveAt, windowStart, windowEnd, asAt, filter, recipeIdScope, recipeIdCode, excludeUnsettledTrades);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionPortfoliosApi#getUpsertablePortfolioCashFlows");
@@ -1754,6 +1759,7 @@ Name | Type | Description  | Notes
  **filter** | **String**| Expression to filter the result set.               For example, to return only transactions with a transaction type of &#39;Buy&#39;, specify \&quot;type eq &#39;Buy&#39;\&quot;.               For more information about filtering LUSID results, see https://support.lusid.com/knowledgebase/article/KA-01914. | [optional]
  **recipeIdScope** | **String**| The scope of the given recipeId | [optional]
  **recipeIdCode** | **String**| The code of the given recipeID | [optional]
+ **excludeUnsettledTrades** | **Boolean**| If absent or set to true, unsettled trades will be excluded from the result set. If set to false, cashflows will returned based on trade date - more specifically, cashflows from any unsettled trades will be included in the results. | [optional] [default to true]
 
 ### Return type
 
