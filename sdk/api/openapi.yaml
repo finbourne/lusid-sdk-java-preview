@@ -305,9 +305,10 @@ info:
     | <a name="814">814</a>|Account not found.|  |
     | <a name="815">815</a>|Abor not found.|  |
     | <a name="816">816</a>|Abor Configuration not found.|  |
+    | <a name="817">817</a>|Reconciliation mapping not found|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5114
+  version: 0.11.5117
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -36881,15 +36882,14 @@ paths:
           content:
             text/plain:
               schema:
-                type: boolean
+                type: string
             application/json:
               schema:
-                type: boolean
+                type: string
             text/json:
               schema:
-                type: boolean
-          description: A flag that will be true if a mapping was deleted, false if
-            it didn't exist.
+                type: string
+          description: A string specifying the scope and code that were deleted
         "400":
           content:
             text/plain:
@@ -110108,7 +110108,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:

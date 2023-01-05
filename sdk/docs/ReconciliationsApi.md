@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="deleteReconciliationMapping"></a>
 # **deleteReconciliationMapping**
-> Boolean deleteReconciliationMapping(scope, code)
+> String deleteReconciliationMapping(scope, code)
 
 [EXPERIMENTAL] DeleteReconciliationMapping: Delete a mapping
 
@@ -46,7 +46,7 @@ public class Example {
     String scope = "scope_example"; // String | The scope of the mapping.
     String code = "code_example"; // String | The code fof the mapping.
     try {
-      Boolean result = apiInstance.deleteReconciliationMapping(scope, code);
+      String result = apiInstance.deleteReconciliationMapping(scope, code);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReconciliationsApi#deleteReconciliationMapping");
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Boolean**
+**String**
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | A flag that will be true if a mapping was deleted, false if it didn&#39;t exist. |  -  |
+**200** | A string specifying the scope and code that were deleted |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
