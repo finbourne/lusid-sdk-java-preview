@@ -4,19 +4,19 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteCustomEntity**](CustomEntitiesApi.md#deleteCustomEntity) | **DELETE** /api/customentities/{entityType}/{identifierType}/{identifierValue} | [EXPERIMENTAL] DeleteCustomEntity: Delete a Custom Entity instance.
-[**getCustomEntity**](CustomEntitiesApi.md#getCustomEntity) | **GET** /api/customentities/{entityType}/{identifierType}/{identifierValue} | [EXPERIMENTAL] GetCustomEntity: Get a Custom Entity instance.
-[**getCustomEntityRelationships**](CustomEntitiesApi.md#getCustomEntityRelationships) | **GET** /api/customentities/{entityType}/{identifierType}/{identifierValue}/relationships | [EXPERIMENTAL] GetCustomEntityRelationships: Get Relationships for Custom Entity
-[**listCustomEntities**](CustomEntitiesApi.md#listCustomEntities) | **GET** /api/customentities/{entityType} | [EXPERIMENTAL] ListCustomEntities: List Custom Entities of the specified entityType.
+[**deleteCustomEntity**](CustomEntitiesApi.md#deleteCustomEntity) | **DELETE** /api/customentities/{entityType}/{identifierType}/{identifierValue} | [EARLY ACCESS] DeleteCustomEntity: Delete a Custom Entity instance.
+[**getCustomEntity**](CustomEntitiesApi.md#getCustomEntity) | **GET** /api/customentities/{entityType}/{identifierType}/{identifierValue} | [EARLY ACCESS] GetCustomEntity: Get a Custom Entity instance.
+[**getCustomEntityRelationships**](CustomEntitiesApi.md#getCustomEntityRelationships) | **GET** /api/customentities/{entityType}/{identifierType}/{identifierValue}/relationships | [EARLY ACCESS] GetCustomEntityRelationships: Get Relationships for Custom Entity
+[**listCustomEntities**](CustomEntitiesApi.md#listCustomEntities) | **GET** /api/customentities/{entityType} | [EARLY ACCESS] ListCustomEntities: List Custom Entities of the specified entityType.
 [**upsertCustomEntities**](CustomEntitiesApi.md#upsertCustomEntities) | **POST** /api/customentities/{entityType}/$batchUpsert | [EXPERIMENTAL] UpsertCustomEntities: Batch upsert instances of Custom Entities
-[**upsertCustomEntity**](CustomEntitiesApi.md#upsertCustomEntity) | **POST** /api/customentities/{entityType} | [EXPERIMENTAL] UpsertCustomEntity: Upsert a Custom Entity instance
+[**upsertCustomEntity**](CustomEntitiesApi.md#upsertCustomEntity) | **POST** /api/customentities/{entityType} | [EARLY ACCESS] UpsertCustomEntity: Upsert a Custom Entity instance
 
 
 <a name="deleteCustomEntity"></a>
 # **deleteCustomEntity**
 > DeletedEntityResponse deleteCustomEntity(entityType, identifierType, identifierValue, identifierScope)
 
-[EXPERIMENTAL] DeleteCustomEntity: Delete a Custom Entity instance.
+[EARLY ACCESS] DeleteCustomEntity: Delete a Custom Entity instance.
 
 Delete a Custom Entity instance by a specific entity type.
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 # **getCustomEntity**
 > CustomEntityResponse getCustomEntity(entityType, identifierType, identifierValue, identifierScope, asAt, effectiveAt, relatedEntityPropertyKeys, relationshipDefinitionIds)
 
-[EXPERIMENTAL] GetCustomEntity: Get a Custom Entity instance.
+[EARLY ACCESS] GetCustomEntity: Get a Custom Entity instance.
 
 Retrieve a Custom Entity instance by a specific entity type at a point in AsAt time.
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 # **getCustomEntityRelationships**
 > ResourceListOfRelationship getCustomEntityRelationships(entityType, identifierScope, identifierType, identifierValue, effectiveAt, asAt, filter, identifierTypes)
 
-[EXPERIMENTAL] GetCustomEntityRelationships: Get Relationships for Custom Entity
+[EARLY ACCESS] GetCustomEntityRelationships: Get Relationships for Custom Entity
 
 Get relationships for the specified Custom Entity.
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 # **listCustomEntities**
 > PagedResourceListOfCustomEntityResponse listCustomEntities(entityType, effectiveAt, asAt, limit, filter, page, relatedEntityPropertyKeys, relationshipDefinitionIds)
 
-[EXPERIMENTAL] ListCustomEntities: List Custom Entities of the specified entityType.
+[EARLY ACCESS] ListCustomEntities: List Custom Entities of the specified entityType.
 
 List all the Custom Entities matching particular criteria.
 
@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 # **upsertCustomEntity**
 > CustomEntityResponse upsertCustomEntity(entityType, customEntityRequest)
 
-[EXPERIMENTAL] UpsertCustomEntity: Upsert a Custom Entity instance
+[EARLY ACCESS] UpsertCustomEntity: Upsert a Custom Entity instance
 
 Insert the Custom Entity if it does not exist or update the Custom Entity with the supplied state if it does exist.
 

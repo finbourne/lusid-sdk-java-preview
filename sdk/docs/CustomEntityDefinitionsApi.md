@@ -4,17 +4,17 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCustomEntityDefinition**](CustomEntityDefinitionsApi.md#createCustomEntityDefinition) | **POST** /api/customentities/entitytypes | [EXPERIMENTAL] CreateCustomEntityDefinition: Define a new Custom Entity type.
-[**getDefinition**](CustomEntityDefinitionsApi.md#getDefinition) | **GET** /api/customentities/entitytypes/{entityType} | [EXPERIMENTAL] GetDefinition: Get a Custom Entity type definition.
-[**listCustomEntityDefinitions**](CustomEntityDefinitionsApi.md#listCustomEntityDefinitions) | **GET** /api/customentities/entitytypes | [EXPERIMENTAL] ListCustomEntityDefinitions: List the Custom Entity type definitions
-[**updateCustomEntityDefinition**](CustomEntityDefinitionsApi.md#updateCustomEntityDefinition) | **PUT** /api/customentities/entitytypes/{entityType} | [EXPERIMENTAL] UpdateCustomEntityDefinition: Modify an existing Custom Entity type.
+[**createCustomEntityDefinition**](CustomEntityDefinitionsApi.md#createCustomEntityDefinition) | **POST** /api/customentities/entitytypes | [EARLY ACCESS] CreateCustomEntityDefinition: Define a new Custom Entity type.
+[**getDefinition**](CustomEntityDefinitionsApi.md#getDefinition) | **GET** /api/customentities/entitytypes/{entityType} | [EARLY ACCESS] GetDefinition: Get a Custom Entity type definition.
+[**listCustomEntityDefinitions**](CustomEntityDefinitionsApi.md#listCustomEntityDefinitions) | **GET** /api/customentities/entitytypes | [EARLY ACCESS] ListCustomEntityDefinitions: List the Custom Entity type definitions
+[**updateCustomEntityDefinition**](CustomEntityDefinitionsApi.md#updateCustomEntityDefinition) | **PUT** /api/customentities/entitytypes/{entityType} | [EARLY ACCESS] UpdateCustomEntityDefinition: Modify an existing Custom Entity type.
 
 
 <a name="createCustomEntityDefinition"></a>
 # **createCustomEntityDefinition**
 > CustomEntityDefinition createCustomEntityDefinition(customEntityDefinitionRequest)
 
-[EXPERIMENTAL] CreateCustomEntityDefinition: Define a new Custom Entity type.
+[EARLY ACCESS] CreateCustomEntityDefinition: Define a new Custom Entity type.
 
 The API will return a Bad Request if the Custom Entity type already exists.
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 # **getDefinition**
 > CustomEntityDefinition getDefinition(entityType, asAt)
 
-[EXPERIMENTAL] GetDefinition: Get a Custom Entity type definition.
+[EARLY ACCESS] GetDefinition: Get a Custom Entity type definition.
 
 Retrieve a CustomEntityDefinition by a specific entityType at a point in AsAt time
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 # **listCustomEntityDefinitions**
 > PagedResourceListOfCustomEntityDefinition listCustomEntityDefinitions(asAt, limit, filter, page)
 
-[EXPERIMENTAL] ListCustomEntityDefinitions: List the Custom Entity type definitions
+[EARLY ACCESS] ListCustomEntityDefinitions: List the Custom Entity type definitions
 
 List all Custom Entity type definitions matching particular criteria.
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 # **updateCustomEntityDefinition**
 > CustomEntityDefinition updateCustomEntityDefinition(entityType, updateCustomEntityDefinitionRequest)
 
-[EXPERIMENTAL] UpdateCustomEntityDefinition: Modify an existing Custom Entity type.
+[EARLY ACCESS] UpdateCustomEntityDefinition: Modify an existing Custom Entity type.
 
 The API will return a Bad Request if the Custom Entity type does not exist.
 

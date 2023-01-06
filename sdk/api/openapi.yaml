@@ -308,7 +308,7 @@ info:
     | <a name="817">817</a>|Reconciliation mapping not found|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5122
+  version: 0.11.5123
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -10756,11 +10756,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListCustomEntityDefinitions: List the Custom Entity
+      summary: '[EARLY ACCESS] ListCustomEntityDefinitions: List the Custom Entity
         type definitions'
       tags:
       - CustomEntityDefinitions
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: The API will return a Bad Request if the Custom Entity type already
@@ -10968,11 +10968,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] CreateCustomEntityDefinition: Define a new Custom Entity
+      summary: '[EARLY ACCESS] CreateCustomEntityDefinition: Define a new Custom Entity
         type.'
       tags:
       - CustomEntityDefinitions
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/customentities/entitytypes/{entityType}:
@@ -11108,10 +11108,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetDefinition: Get a Custom Entity type definition.'
+      summary: '[EARLY ACCESS] GetDefinition: Get a Custom Entity type definition.'
       tags:
       - CustomEntityDefinitions
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     put:
       description: The API will return a Bad Request if the Custom Entity type does
@@ -11329,11 +11329,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpdateCustomEntityDefinition: Modify an existing Custom
+      summary: '[EARLY ACCESS] UpdateCustomEntityDefinition: Modify an existing Custom
         Entity type.'
       tags:
       - CustomEntityDefinitions
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/customentities/{entityType}:
@@ -11501,11 +11501,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListCustomEntities: List Custom Entities of the specified
+      summary: '[EARLY ACCESS] ListCustomEntities: List Custom Entities of the specified
         entityType.'
       tags:
       - CustomEntities
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: Insert the Custom Entity if it does not exist or update the Custom
@@ -11698,10 +11698,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertCustomEntity: Upsert a Custom Entity instance'
+      summary: '[EARLY ACCESS] UpsertCustomEntity: Upsert a Custom Entity instance'
       tags:
       - CustomEntities
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/customentities/{entityType}/$batchUpsert:
@@ -12106,10 +12106,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteCustomEntity: Delete a Custom Entity instance.'
+      summary: '[EARLY ACCESS] DeleteCustomEntity: Delete a Custom Entity instance.'
       tags:
       - CustomEntities
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: Retrieve a Custom Entity instance by a specific entity type at
@@ -12333,10 +12333,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetCustomEntity: Get a Custom Entity instance.'
+      summary: '[EARLY ACCESS] GetCustomEntity: Get a Custom Entity instance.'
       tags:
       - CustomEntities
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/customentities/{entityType}/{identifierType}/{identifierValue}/relationships:
     get:
@@ -12559,11 +12559,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetCustomEntityRelationships: Get Relationships for
+      summary: '[EARLY ACCESS] GetCustomEntityRelationships: Get Relationships for
         Custom Entity'
       tags:
       - CustomEntities
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/datatypes:
     get:
@@ -110108,7 +110108,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
