@@ -4,17 +4,17 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteBlock**](BlocksApi.md#deleteBlock) | **DELETE** /api/blocks/{scope}/{code} | [EXPERIMENTAL] DeleteBlock: Delete block
-[**getBlock**](BlocksApi.md#getBlock) | **GET** /api/blocks/{scope}/{code} | [EXPERIMENTAL] GetBlock: Get Block
-[**listBlocks**](BlocksApi.md#listBlocks) | **GET** /api/blocks | [EXPERIMENTAL] ListBlocks: List Blocks
-[**upsertBlocks**](BlocksApi.md#upsertBlocks) | **POST** /api/blocks | [EXPERIMENTAL] UpsertBlocks: Upsert Block
+[**deleteBlock**](BlocksApi.md#deleteBlock) | **DELETE** /api/blocks/{scope}/{code} | [EARLY ACCESS] DeleteBlock: Delete block
+[**getBlock**](BlocksApi.md#getBlock) | **GET** /api/blocks/{scope}/{code} | [EARLY ACCESS] GetBlock: Get Block
+[**listBlocks**](BlocksApi.md#listBlocks) | **GET** /api/blocks | [EARLY ACCESS] ListBlocks: List Blocks
+[**upsertBlocks**](BlocksApi.md#upsertBlocks) | **POST** /api/blocks | [EARLY ACCESS] UpsertBlocks: Upsert Block
 
 
 <a name="deleteBlock"></a>
 # **deleteBlock**
 > DeletedEntityResponse deleteBlock(scope, code)
 
-[EXPERIMENTAL] DeleteBlock: Delete block
+[EARLY ACCESS] DeleteBlock: Delete block
 
 Delete an block. Deletion will be valid from the block&#39;s creation datetime.  This means that the block will no longer exist at any effective datetime from the asAt datetime of deletion.
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getBlock**
 > Block getBlock(scope, code, asAt, propertyKeys)
 
-[EXPERIMENTAL] GetBlock: Get Block
+[EARLY ACCESS] GetBlock: Get Block
 
 Fetch a Block that matches the specified identifier
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **listBlocks**
 > PagedResourceListOfBlock listBlocks(asAt, page, sortBy, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] ListBlocks: List Blocks
+[EARLY ACCESS] ListBlocks: List Blocks
 
 Fetch the last pre-AsAt date version of each block in scope (does not fetch the entire history).
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 # **upsertBlocks**
 > ResourceListOfBlock upsertBlocks(blockSetRequest)
 
-[EXPERIMENTAL] UpsertBlocks: Upsert Block
+[EARLY ACCESS] UpsertBlocks: Upsert Block
 
 Upsert; update existing blocks with given ids, or create new blocks otherwise.
 

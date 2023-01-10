@@ -4,22 +4,22 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deletePerson**](PersonsApi.md#deletePerson) | **DELETE** /api/persons/{idTypeScope}/{idTypeCode}/{code} | [EXPERIMENTAL] DeletePerson: Delete person
+[**deletePerson**](PersonsApi.md#deletePerson) | **DELETE** /api/persons/{idTypeScope}/{idTypeCode}/{code} | [EARLY ACCESS] DeletePerson: Delete person
 [**deletePersonAccessMetadata**](PersonsApi.md#deletePersonAccessMetadata) | **DELETE** /api/persons/{idTypeScope}/{idTypeCode}/{code}/metadata/{metadataKey} | [EARLY ACCESS] DeletePersonAccessMetadata: Delete a Person Access Metadata entry
-[**deletePersonIdentifiers**](PersonsApi.md#deletePersonIdentifiers) | **DELETE** /api/persons/{idTypeScope}/{idTypeCode}/{code}/identifiers | [EXPERIMENTAL] DeletePersonIdentifiers: Delete Person Identifiers
-[**deletePersonProperties**](PersonsApi.md#deletePersonProperties) | **DELETE** /api/persons/{idTypeScope}/{idTypeCode}/{code}/properties | [EXPERIMENTAL] DeletePersonProperties: Delete Person Properties
+[**deletePersonIdentifiers**](PersonsApi.md#deletePersonIdentifiers) | **DELETE** /api/persons/{idTypeScope}/{idTypeCode}/{code}/identifiers | [EARLY ACCESS] DeletePersonIdentifiers: Delete Person Identifiers
+[**deletePersonProperties**](PersonsApi.md#deletePersonProperties) | **DELETE** /api/persons/{idTypeScope}/{idTypeCode}/{code}/properties | [EARLY ACCESS] DeletePersonProperties: Delete Person Properties
 [**getAllPersonAccessMetadata**](PersonsApi.md#getAllPersonAccessMetadata) | **GET** /api/persons/{idTypeScope}/{idTypeCode}/{code}/metadata | [EARLY ACCESS] GetAllPersonAccessMetadata: Get Access Metadata rules for a Person
-[**getPerson**](PersonsApi.md#getPerson) | **GET** /api/persons/{idTypeScope}/{idTypeCode}/{code} | [EXPERIMENTAL] GetPerson: Get Person
+[**getPerson**](PersonsApi.md#getPerson) | **GET** /api/persons/{idTypeScope}/{idTypeCode}/{code} | [EARLY ACCESS] GetPerson: Get Person
 [**getPersonAccessMetadataByKey**](PersonsApi.md#getPersonAccessMetadataByKey) | **GET** /api/persons/{idTypeScope}/{idTypeCode}/{code}/metadata/{metadataKey} | [EARLY ACCESS] GetPersonAccessMetadataByKey: Get an entry identified by a metadataKey in the Access Metadata of a Person
-[**getPersonPropertyTimeSeries**](PersonsApi.md#getPersonPropertyTimeSeries) | **GET** /api/persons/{idTypeScope}/{idTypeCode}/{code}/properties/time-series | [EXPERIMENTAL] GetPersonPropertyTimeSeries: Get Person Property Time Series
-[**getPersonRelations**](PersonsApi.md#getPersonRelations) | **GET** /api/persons/{idTypeScope}/{idTypeCode}/{code}/relations | [EXPERIMENTAL] GetPersonRelations: Get Relations for Person
+[**getPersonPropertyTimeSeries**](PersonsApi.md#getPersonPropertyTimeSeries) | **GET** /api/persons/{idTypeScope}/{idTypeCode}/{code}/properties/time-series | [EARLY ACCESS] GetPersonPropertyTimeSeries: Get Person Property Time Series
+[**getPersonRelations**](PersonsApi.md#getPersonRelations) | **GET** /api/persons/{idTypeScope}/{idTypeCode}/{code}/relations | [EARLY ACCESS] GetPersonRelations: Get Relations for Person
 [**getPersonRelationships**](PersonsApi.md#getPersonRelationships) | **GET** /api/persons/{idTypeScope}/{idTypeCode}/{code}/relationships | [EARLY ACCESS] GetPersonRelationships: Get Relationships for Person
-[**listAllPersons**](PersonsApi.md#listAllPersons) | **GET** /api/persons | [EXPERIMENTAL] ListAllPersons: List All Persons
-[**listPersons**](PersonsApi.md#listPersons) | **GET** /api/persons/{idTypeScope}/{idTypeCode} | [EXPERIMENTAL] ListPersons: List Persons
-[**patchPersonAccessMetadata**](PersonsApi.md#patchPersonAccessMetadata) | **PATCH** /api/persons/{idTypeScope}/{idTypeCode}/{code}/metadata | [EXPERIMENTAL] PatchPersonAccessMetadata: Patch Access Metadata rules for a Person.
-[**setPersonIdentifiers**](PersonsApi.md#setPersonIdentifiers) | **POST** /api/persons/{idTypeScope}/{idTypeCode}/{code}/identifiers | [EXPERIMENTAL] SetPersonIdentifiers: Set Person Identifiers
-[**setPersonProperties**](PersonsApi.md#setPersonProperties) | **POST** /api/persons/{idTypeScope}/{idTypeCode}/{code}/properties | [EXPERIMENTAL] SetPersonProperties: Set Person Properties
-[**upsertPerson**](PersonsApi.md#upsertPerson) | **POST** /api/persons | [EXPERIMENTAL] UpsertPerson: Upsert Person
+[**listAllPersons**](PersonsApi.md#listAllPersons) | **GET** /api/persons | [EARLY ACCESS] ListAllPersons: List All Persons
+[**listPersons**](PersonsApi.md#listPersons) | **GET** /api/persons/{idTypeScope}/{idTypeCode} | [EARLY ACCESS] ListPersons: List Persons
+[**patchPersonAccessMetadata**](PersonsApi.md#patchPersonAccessMetadata) | **PATCH** /api/persons/{idTypeScope}/{idTypeCode}/{code}/metadata | [EARLY ACCESS] PatchPersonAccessMetadata: Patch Access Metadata rules for a Person.
+[**setPersonIdentifiers**](PersonsApi.md#setPersonIdentifiers) | **POST** /api/persons/{idTypeScope}/{idTypeCode}/{code}/identifiers | [EARLY ACCESS] SetPersonIdentifiers: Set Person Identifiers
+[**setPersonProperties**](PersonsApi.md#setPersonProperties) | **POST** /api/persons/{idTypeScope}/{idTypeCode}/{code}/properties | [EARLY ACCESS] SetPersonProperties: Set Person Properties
+[**upsertPerson**](PersonsApi.md#upsertPerson) | **POST** /api/persons | [EARLY ACCESS] UpsertPerson: Upsert Person
 [**upsertPersonAccessMetadata**](PersonsApi.md#upsertPersonAccessMetadata) | **PUT** /api/persons/{idTypeScope}/{idTypeCode}/{code}/metadata/{metadataKey} | [EARLY ACCESS] UpsertPersonAccessMetadata: Upsert a Person Access Metadata entry associated with a specific metadataKey. This creates or updates the data in LUSID.
 
 
@@ -27,7 +27,7 @@ Method | HTTP request | Description
 # **deletePerson**
 > DeletedEntityResponse deletePerson(idTypeScope, idTypeCode, code)
 
-[EXPERIMENTAL] DeletePerson: Delete person
+[EARLY ACCESS] DeletePerson: Delete person
 
 Delete a person. Deletion will be valid from the person&#39;s creation datetime.  This means that the person will no longer exist at any effective datetime from the asAt datetime of deletion.
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 # **deletePersonIdentifiers**
 > DeletedEntityResponse deletePersonIdentifiers(idTypeScope, idTypeCode, code, propertyKeys, effectiveAt)
 
-[EXPERIMENTAL] DeletePersonIdentifiers: Delete Person Identifiers
+[EARLY ACCESS] DeletePersonIdentifiers: Delete Person Identifiers
 
 Delete identifiers that belong to the given property keys of the person.
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 # **deletePersonProperties**
 > DeletedEntityResponse deletePersonProperties(idTypeScope, idTypeCode, code, propertyKeys, effectiveAt)
 
-[EXPERIMENTAL] DeletePersonProperties: Delete Person Properties
+[EARLY ACCESS] DeletePersonProperties: Delete Person Properties
 
 Delete all properties that belong to the given property keys of the person.
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 # **getPerson**
 > Person getPerson(idTypeScope, idTypeCode, code, propertyKeys, effectiveAt, asAt, relationshipDefinitionIds)
 
-[EXPERIMENTAL] GetPerson: Get Person
+[EARLY ACCESS] GetPerson: Get Person
 
 Retrieve the definition of a person.
 
@@ -570,7 +570,7 @@ Name | Type | Description  | Notes
 # **getPersonPropertyTimeSeries**
 > ResourceListOfPropertyInterval getPersonPropertyTimeSeries(idTypeScope, idTypeCode, code, propertyKey, asAt, filter, page, limit)
 
-[EXPERIMENTAL] GetPersonPropertyTimeSeries: Get Person Property Time Series
+[EARLY ACCESS] GetPersonPropertyTimeSeries: Get Person Property Time Series
 
 List the complete time series of a person property.
 
@@ -653,7 +653,7 @@ Name | Type | Description  | Notes
 # **getPersonRelations**
 > ResourceListOfRelation getPersonRelations(idTypeScope, idTypeCode, code, effectiveAt, asAt, filter, identifierTypes)
 
-[EXPERIMENTAL] GetPersonRelations: Get Relations for Person
+[EARLY ACCESS] GetPersonRelations: Get Relations for Person
 
 Get relations for the specified person.
 
@@ -815,7 +815,7 @@ Name | Type | Description  | Notes
 # **listAllPersons**
 > ResourceListOfPerson listAllPersons(effectiveAt, asAt, page, limit, filter, propertyKeys, relationshipDefinitionIds)
 
-[EXPERIMENTAL] ListAllPersons: List All Persons
+[EARLY ACCESS] ListAllPersons: List All Persons
 
 List all persons which the user is entitled to see.
 
@@ -896,7 +896,7 @@ Name | Type | Description  | Notes
 # **listPersons**
 > PagedResourceListOfPerson listPersons(idTypeScope, idTypeCode, effectiveAt, asAt, page, start, limit, filter, propertyKeys, relationshipDefinitionIds)
 
-[EXPERIMENTAL] ListPersons: List Persons
+[EARLY ACCESS] ListPersons: List Persons
 
 List persons which have identifiers of a specific identifier type&#39;s scope and code, and satisfies filter criteria.
 
@@ -983,7 +983,7 @@ Name | Type | Description  | Notes
 # **patchPersonAccessMetadata**
 > Map&lt;String, List&lt;AccessMetadataValue&gt;&gt; patchPersonAccessMetadata(idTypeScope, idTypeCode, code, accessMetadataOperation, effectiveAt, effectiveUntil)
 
-[EXPERIMENTAL] PatchPersonAccessMetadata: Patch Access Metadata rules for a Person.
+[EARLY ACCESS] PatchPersonAccessMetadata: Patch Access Metadata rules for a Person.
 
 Patch Person Access Metadata Rules in a single scope.  The behaviour is defined by the JSON Patch specification.                Currently only &#39;add&#39; is a supported operation on the patch document.    Currently only valid metadata keys are supported paths on the patch document.                The response will return any affected Person Access Metadata rules or a failure message if unsuccessful.                It is important to always check to verify success (or failure).                Multiple rules for a metadataKey can exist with different effective at dates, when resources are accessed the rule that is active for the current time will be fetched.
 
@@ -1062,7 +1062,7 @@ Name | Type | Description  | Notes
 # **setPersonIdentifiers**
 > Person setPersonIdentifiers(idTypeScope, idTypeCode, code, setPersonIdentifiersRequest)
 
-[EXPERIMENTAL] SetPersonIdentifiers: Set Person Identifiers
+[EARLY ACCESS] SetPersonIdentifiers: Set Person Identifiers
 
 Set identifiers of the person.
 
@@ -1137,7 +1137,7 @@ Name | Type | Description  | Notes
 # **setPersonProperties**
 > Person setPersonProperties(idTypeScope, idTypeCode, code, setPersonPropertiesRequest)
 
-[EXPERIMENTAL] SetPersonProperties: Set Person Properties
+[EARLY ACCESS] SetPersonProperties: Set Person Properties
 
 Set properties of the person.
 
@@ -1212,7 +1212,7 @@ Name | Type | Description  | Notes
 # **upsertPerson**
 > Person upsertPerson(upsertPersonRequest)
 
-[EXPERIMENTAL] UpsertPerson: Upsert Person
+[EARLY ACCESS] UpsertPerson: Upsert Person
 
 Create or update a new person under the specified scope.
 

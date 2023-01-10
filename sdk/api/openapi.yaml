@@ -309,7 +309,7 @@ info:
     | <a name="818">818</a>|Attribute type could not be deleted because it doesn't exist.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5125
+  version: 0.11.5126
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -320,11 +320,10 @@ security:
 tags:
 - description: Methods for accessing aggregated data
   name: Aggregation
-- description: Methods for interacting with Allocations. This is experimental functionality,
-    with limited documentation presently. An Allocation represents the redistribution
-    of market Executions against an originating Order. Allocations are treated monotemporally;
-    any updates are effective at the as-at time of update, and its not possible to
-    make retroactive (or forward) changes.
+- description: Methods for interacting with Allocations. An Allocation represents
+    the redistribution of market Executions against an originating Order. Allocations
+    are treated monotemporally; any updates are effective at the as-at time of update,
+    and its not possible to make retroactive (or forward) changes.
   name: Allocations
 - description: Methods for querying application metadata
   name: Application Metadata
@@ -365,11 +364,10 @@ tags:
   name: Derived Transaction Portfolios
 - description: Methods for querying data about entities
   name: Entities
-- description: Methods for interacting with Executions. This is experimental functionality,
-    with limited documentation presently. An Execution represents a market's fill
-    of a street order. Executions are treated monotemporally; any updates are effective
-    at the as-at time of update, and its not possible to make retroactive (or forward)
-    changes.
+- description: Methods for interacting with Executions. An Execution represents a
+    market's fill of a street order. Executions are treated monotemporally; any updates
+    are effective at the as-at time of update, and its not possible to make retroactive
+    (or forward) changes.
   name: Executions
 - description: Methods for querying for instrument events.
   name: Instrument Events
@@ -386,11 +384,10 @@ tags:
   name: OrderGraph
 - description: Methods for handling order instructions.
   name: OrderInstructions
-- description: Methods for interacting with Orders. This is experimental functionality,
-    with limited documentation presently. An Order represents an investor's instruction
-    to a broker or similar agent to but or sell a single security. Orders are treated
-    monotemporally; any updates are effective at the as-at time of update, and its
-    not possible to make retroactive (or forward) changes.
+- description: Methods for interacting with Orders. An Order represents an investor's
+    instruction to a broker or similar agent to but or sell a single security. Orders
+    are treated monotemporally; any updates are effective at the as-at time of update,
+    and its not possible to make retroactive (or forward) changes.
   name: Orders
 - description: A structure used to describe the structure of an order or orders that
     make up a non-trivial trade.
@@ -1961,10 +1958,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListBlocks: List Blocks'
+      summary: '[EARLY ACCESS] ListBlocks: List Blocks'
       tags:
       - Blocks
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: Upsert; update existing blocks with given ids, or create new blocks
@@ -2215,10 +2212,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertBlocks: Upsert Block'
+      summary: '[EARLY ACCESS] UpsertBlocks: Upsert Block'
       tags:
       - Blocks
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/blocks/{scope}/{code}:
@@ -2287,10 +2284,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteBlock: Delete block'
+      summary: '[EARLY ACCESS] DeleteBlock: Delete block'
       tags:
       - Blocks
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: Fetch a Block that matches the specified identifier
@@ -2475,10 +2472,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetBlock: Get Block'
+      summary: '[EARLY ACCESS] GetBlock: Get Block'
       tags:
       - Blocks
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/calendars/businessday/{scope}/add:
     post:
@@ -9246,10 +9243,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteCorporateActions: Delete corporate actions'
+      summary: '[EARLY ACCESS] DeleteCorporateActions: Delete corporate actions'
       tags:
       - Corporate Action Sources
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: Get corporate actions from a particular corporate action source.
@@ -9660,11 +9657,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteInstrumentEvents: Delete corporate actions (instrument
+      summary: '[EARLY ACCESS] DeleteInstrumentEvents: Delete corporate actions (instrument
         transition events) from the corporate action source.'
       tags:
       - Corporate Action Sources
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: Retrieves extrinsic corporate actions out of a corporate actions
@@ -9789,11 +9786,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetInstrumentEvents: Get extrinsic instrument events
+      summary: '[EARLY ACCESS] GetInstrumentEvents: Get extrinsic instrument events
         out of a given corporate actions source.'
       tags:
       - Corporate Action Sources
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: Batch upsert instrument events to corporate action sources.
@@ -9969,11 +9966,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertInstrumentEvents: Upsert instrument events to
+      summary: '[EARLY ACCESS] UpsertInstrumentEvents: Upsert instrument events to
         the provided corporate actions source.'
       tags:
       - Corporate Action Sources
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/counterparties/counterpartyagreements:
@@ -15659,10 +15656,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteInstruments: Soft or hard delete multiple instruments'
+      summary: '[EARLY ACCESS] DeleteInstruments: Soft or hard delete multiple instruments'
       tags:
       - Instruments
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/instruments/$get:
@@ -20176,11 +20173,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] PatchLegalEntityAccessMetadata: Patch Access Metadata
+      summary: '[EARLY ACCESS] PatchLegalEntityAccessMetadata: Patch Access Metadata
         rules for a Legal Entity.'
       tags:
       - Legal Entities
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/legalentities/{idTypeScope}/{idTypeCode}/{code}/metadata/{metadataKey}:
@@ -24773,10 +24770,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListParticipations: List Participations'
+      summary: '[EARLY ACCESS] ListParticipations: List Participations'
       tags:
       - Participations
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: Upsert; update existing participations with given ids, or create
@@ -24919,10 +24916,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertParticipations: Upsert Participation'
+      summary: '[EARLY ACCESS] UpsertParticipations: Upsert Participation'
       tags:
       - Participations
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/participations/{scope}/{code}:
@@ -24991,10 +24988,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteParticipation: Delete participation'
+      summary: '[EARLY ACCESS] DeleteParticipation: Delete participation'
       tags:
       - Participations
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: Fetch a Participation that matches the specified identifier
@@ -25131,10 +25128,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetParticipation: Get Participation'
+      summary: '[EARLY ACCESS] GetParticipation: Get Participation'
       tags:
       - Participations
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/persons:
     get:
@@ -25514,10 +25511,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListAllPersons: List All Persons'
+      summary: '[EARLY ACCESS] ListAllPersons: List All Persons'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: Create or update a new person under the specified scope.
@@ -25792,10 +25789,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertPerson: Upsert Person'
+      summary: '[EARLY ACCESS] UpsertPerson: Upsert Person'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/persons/{idTypeScope}/{idTypeCode}:
@@ -26209,10 +26206,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListPersons: List Persons'
+      summary: '[EARLY ACCESS] ListPersons: List Persons'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/persons/{idTypeScope}/{idTypeCode}/{code}:
     delete:
@@ -26294,10 +26291,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeletePerson: Delete person'
+      summary: '[EARLY ACCESS] DeletePerson: Delete person'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: Retrieve the definition of a person.
@@ -26542,10 +26539,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetPerson: Get Person'
+      summary: '[EARLY ACCESS] GetPerson: Get Person'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/persons/{idTypeScope}/{idTypeCode}/{code}/identifiers:
     delete:
@@ -26665,10 +26662,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeletePersonIdentifiers: Delete Person Identifiers'
+      summary: '[EARLY ACCESS] DeletePersonIdentifiers: Delete Person Identifiers'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: Set identifiers of the person.
@@ -26869,10 +26866,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] SetPersonIdentifiers: Set Person Identifiers'
+      summary: '[EARLY ACCESS] SetPersonIdentifiers: Set Person Identifiers'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/persons/{idTypeScope}/{idTypeCode}/{code}/metadata:
@@ -27156,11 +27153,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] PatchPersonAccessMetadata: Patch Access Metadata rules
+      summary: '[EARLY ACCESS] PatchPersonAccessMetadata: Patch Access Metadata rules
         for a Person.'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/persons/{idTypeScope}/{idTypeCode}/{code}/metadata/{metadataKey}:
@@ -27675,10 +27672,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeletePersonProperties: Delete Person Properties'
+      summary: '[EARLY ACCESS] DeletePersonProperties: Delete Person Properties'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: Set properties of the person.
@@ -27883,10 +27880,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] SetPersonProperties: Set Person Properties'
+      summary: '[EARLY ACCESS] SetPersonProperties: Set Person Properties'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/persons/{idTypeScope}/{idTypeCode}/{code}/properties/time-series:
@@ -28042,11 +28039,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetPersonPropertyTimeSeries: Get Person Property Time
+      summary: '[EARLY ACCESS] GetPersonPropertyTimeSeries: Get Person Property Time
         Series'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/persons/{idTypeScope}/{idTypeCode}/{code}/relations:
     get:
@@ -28226,10 +28223,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetPersonRelations: Get Relations for Person'
+      summary: '[EARLY ACCESS] GetPersonRelations: Get Relations for Person'
       tags:
       - Persons
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/persons/{idTypeScope}/{idTypeCode}/{code}/relationships:
     get:
@@ -31589,11 +31586,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] PatchPortfolioGroupAccessMetadata: Patch Access Metadata
+      summary: '[EARLY ACCESS] PatchPortfolioGroupAccessMetadata: Patch Access Metadata
         rules for a Portfolio Group.'
       tags:
       - Portfolio Groups
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/portfoliogroups/{scope}/{code}/metadata/{metadataKey}:
@@ -38208,11 +38205,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] PatchPortfolioAccessMetadata: Patch Access Metadata
+      summary: '[EARLY ACCESS] PatchPortfolioAccessMetadata: Patch Access Metadata
         rules for a Portfolio.'
       tags:
       - Portfolios
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/portfolios/{scope}/{code}/metadata/{metadataKey}:
@@ -45297,11 +45294,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetQueryableKeys: Query the set of supported "addresses"
+      summary: '[EARLY ACCESS] GetQueryableKeys: Query the set of supported "addresses"
         that can be queried from the aggregation endpoint.'
       tags:
       - Aggregation
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/schemas/entities:
     get:
@@ -110148,7 +110145,7 @@ components:
       description: OAuth2 Implicit Grant
       flows:
         implicit:
-          authorizationUrl: https://lusid.okta.com/oauth2/default/v1/authorize
+          authorizationUrl: https://dummyurl.lusid.com/
           scopes: {}
       type: oauth2
 x-tagGroups:
