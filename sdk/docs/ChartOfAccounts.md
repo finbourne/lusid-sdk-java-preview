@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **description** | **String** | The description for the chart of account. |  [optional]
 **properties** | [**Map&lt;String, Property&gt;**](Property.md) | Chart of Accounts properties to add to the chart of account. |  [optional]
 **version** | [**Version**](Version.md) |  |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
 
