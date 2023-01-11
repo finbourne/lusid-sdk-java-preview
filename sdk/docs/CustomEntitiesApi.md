@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**getCustomEntity**](CustomEntitiesApi.md#getCustomEntity) | **GET** /api/customentities/{entityType}/{identifierType}/{identifierValue} | [EARLY ACCESS] GetCustomEntity: Get a Custom Entity instance.
 [**getCustomEntityRelationships**](CustomEntitiesApi.md#getCustomEntityRelationships) | **GET** /api/customentities/{entityType}/{identifierType}/{identifierValue}/relationships | [EARLY ACCESS] GetCustomEntityRelationships: Get Relationships for Custom Entity
 [**listCustomEntities**](CustomEntitiesApi.md#listCustomEntities) | **GET** /api/customentities/{entityType} | [EARLY ACCESS] ListCustomEntities: List Custom Entities of the specified entityType.
-[**upsertCustomEntities**](CustomEntitiesApi.md#upsertCustomEntities) | **POST** /api/customentities/{entityType}/$batchUpsert | [EXPERIMENTAL] UpsertCustomEntities: Batch upsert instances of Custom Entities
+[**upsertCustomEntities**](CustomEntitiesApi.md#upsertCustomEntities) | **POST** /api/customentities/{entityType}/$batchUpsert | [EARLY ACCESS] UpsertCustomEntities: Batch upsert instances of Custom Entities
 [**upsertCustomEntity**](CustomEntitiesApi.md#upsertCustomEntity) | **POST** /api/customentities/{entityType} | [EARLY ACCESS] UpsertCustomEntity: Upsert a Custom Entity instance
 
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 # **upsertCustomEntities**
 > UpsertCustomEntitiesResponse upsertCustomEntities(entityType, successMode, requestBody)
 
-[EXPERIMENTAL] UpsertCustomEntities: Batch upsert instances of Custom Entities
+[EARLY ACCESS] UpsertCustomEntities: Batch upsert instances of Custom Entities
 
 Note: If using partial failure modes, then it is important to check the response body for failures as any failures will still return a 200 status code
 
