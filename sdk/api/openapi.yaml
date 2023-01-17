@@ -311,7 +311,7 @@ info:
     | <a name="820">820</a>|Custodian Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5149
+  version: 0.11.5150
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -16048,7 +16048,7 @@ paths:
         \ supported addresses (if model provided) e.g. Valuation/Pv, Valuation/DirtyPriceKey,\
         \ Valuation/Accrued\r\n- economic dependencies (if model provided) e.g. Cash:USD,\
         \ Fx:GBP.USD, Rates:GBP.GBPOIS"
-      operationId: PostInstrumentCapabilities
+      operationId: QueryInstrumentCapabilities
       parameters:
       - description: A pricing model for the instrument. Defaults to Unknown if not
           specified. If not specified the SupportedAddresses and EconomicDependencies
@@ -16292,9 +16292,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] PostInstrumentCapabilities: Given an example instrument
-        provides instrument capabilities, outlining features, and, given the model,
-        the capabilities also include supported addresses as well as economic dependencies.'
+      summary: '[EXPERIMENTAL] QueryInstrumentCapabilities: Query capabilities of
+        a particular instrument in advance of creating it. These include instrument
+        features, and if model is provided it also includes supported address keys
+        and economic dependencies.'
       tags:
       - Instruments
       x-fbn-apistatus: Experimental
@@ -17781,7 +17782,7 @@ paths:
         \ supported addresses (if model provided) e.g. Valuation/Pv, Valuation/DirtyPriceKey,\
         \ Valuation/Accrued\r\n- economic dependencies (if model provided) e.g. Cash:USD,\
         \ Fx:GBP.USD, Rates:GBP.GBPOIS"
-      operationId: GetInstrumentCapabilities
+      operationId: GetExistingInstrumentCapabilities
       parameters:
       - description: A lusid instrument id identifying the instrument.
         explode: false
@@ -17988,9 +17989,12 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetInstrumentCapabilities: Given an lusid instrument
-        id provides instrument capabilities, outlining features, and, given the model,
-        the capabilities also include supported addresses as well as economic dependencies.'
+      summary: "[EXPERIMENTAL] GetExistingInstrumentCapabilities: Retrieve capabilities\
+        \ of an existing instrument identified by LUID. These include instrument features,\
+        \ and if model is provided it also includes supported address keys and economic\
+        \ dependencies.\r\nGiven an lusid instrument id provides instrument capabilities,\
+        \ outlining features, and, given the model, the capabilities also include\
+        \ supported addresses as well as economic dependencies."
       tags:
       - Instruments
       x-fbn-apistatus: Experimental
