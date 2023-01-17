@@ -311,7 +311,7 @@ info:
     | <a name="820">820</a>|Custodian Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5148
+  version: 0.11.5149
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -36339,14 +36339,14 @@ paths:
       operationId: ListReconciliationMappings
       parameters:
       - description: "Optional parameter to specify which type of mappings should\
-          \ be returned.\r\n            Currently only supports Transaction types"
+          \ be returned.\r\nDefaults to Transaction if not provided."
         explode: true
         in: query
         name: reconciliationType
         required: false
         schema:
           description: "Optional parameter to specify which type of mappings should\
-            \ be returned.\r\n            Currently only supports Transaction types"
+            \ be returned.\r\nDefaults to Transaction if not provided."
           nullable: true
           type: string
         style: form

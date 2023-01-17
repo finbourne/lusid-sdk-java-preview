@@ -185,7 +185,7 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ReconciliationsApi apiInstance = new ReconciliationsApi(defaultClient);
-    String reconciliationType = "reconciliationType_example"; // String | Optional parameter to specify which type of mappings should be returned.              Currently only supports Transaction types
+    String reconciliationType = "reconciliationType_example"; // String | Optional parameter to specify which type of mappings should be returned.  Defaults to Transaction if not provided.
     try {
       ResourceListOfMapping result = apiInstance.listReconciliationMappings(reconciliationType);
       System.out.println(result);
@@ -204,7 +204,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reconciliationType** | **String**| Optional parameter to specify which type of mappings should be returned.              Currently only supports Transaction types | [optional]
+ **reconciliationType** | **String**| Optional parameter to specify which type of mappings should be returned.  Defaults to Transaction if not provided. | [optional]
 
 ### Return type
 
