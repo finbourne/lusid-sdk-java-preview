@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **comparisonValue** | **java.math.BigDecimal** | The (optional) value used with Finbourne.WebApi.Interface.Dto.Mappings.MappingRule.ComparisonType |  [optional]
 **weight** | **java.math.BigDecimal** | A factor used to influence the importance of this item. |  [optional]
 **mappedStrings** | [**List&lt;MappedString&gt;**](MappedString.md) | The (optional) value used to map string values. |  [optional]
-**isCaseSensitive** | **Boolean** | Should string comparisons take case into account, defaults to &#x60;false&#x60;. |  [optional]
+**isCaseSensitive** | **Boolean** | Should string comparisons take case into account, defaults to {false}. |  [optional]
 
 
 
