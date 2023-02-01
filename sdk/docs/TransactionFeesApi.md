@@ -114,7 +114,7 @@ public class Example {
     String instrumentIdentifier = "instrumentIdentifier_example"; // String | Optional. The Instrument Identifier to get properties for.
     String portfolioScope = "portfolioScope_example"; // String | Optional. The scope of the portfolio to fetch properties from.
     String portfolioCode = "portfolioCode_example"; // String | Optional. The code of the portfolio to fetch properties from.
-    Map<String, String> requestBody = {"SettlementCurrency":"GBP","Country":"UK","Instrument/default/HeadOffice":"London"}; // Map<String, String> | Any other property keys or fields, including the top-level fields of the              fee rule (e.g. \"ExecutionBroker\" and \"SettlementCurrency\" ) and those defined in AdditionalKeys, along with              their corresponding values that should be matched for fees. Eg. \"Instrument/default/Name=exampleValue\" or              \"AdditionalKey2=Value2\".
+    Map<String, String> requestBody = {"settlementCurrency":"GBP","country":"UK","instrument/default/HeadOffice":"London"}; // Map<String, String> | Any other property keys or fields, including the top-level fields of the              fee rule (e.g. \"ExecutionBroker\" and \"SettlementCurrency\" ) and those defined in AdditionalKeys, along with              their corresponding values that should be matched for fees. Eg. \"Instrument/default/Name=exampleValue\" or              \"AdditionalKey2=Value2\".
     try {
       ResourceListOfFeeRule result = apiInstance.getApplicableTransactionFees(effectiveAt, asAt, instrumentIdentifierType, instrumentIdentifier, portfolioScope, portfolioCode, requestBody);
       System.out.println(result);
