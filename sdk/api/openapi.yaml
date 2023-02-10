@@ -311,7 +311,7 @@ info:
     | <a name="820">820</a>|Custodian Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5223
+  version: 0.11.5224
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -23748,6 +23748,11 @@ paths:
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                    asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                    userIdCreated: UserId1
+                    asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                    userIdModified: UserId1
+                    asAtVersionNumber: 1
                 - displayName: Person2DisplayName
                   description: Person2Description
                   href: https://example.com
@@ -23783,6 +23788,11 @@ paths:
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                    asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                    userIdCreated: UserId1
+                    asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                    userIdModified: UserId1
+                    asAtVersionNumber: 1
                 href: http://example.com
                 links: []
               schema:
@@ -23824,6 +23834,11 @@ paths:
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                    asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                    userIdCreated: UserId1
+                    asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                    userIdModified: UserId1
+                    asAtVersionNumber: 1
                 - displayName: Person2DisplayName
                   description: Person2Description
                   href: https://example.com
@@ -23859,6 +23874,11 @@ paths:
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                    asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                    userIdCreated: UserId1
+                    asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                    userIdModified: UserId1
+                    asAtVersionNumber: 1
                 href: http://example.com
                 links: []
               schema:
@@ -23900,6 +23920,11 @@ paths:
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                    asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                    userIdCreated: UserId1
+                    asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                    userIdModified: UserId1
+                    asAtVersionNumber: 1
                 - displayName: Person2DisplayName
                   description: Person2Description
                   href: https://example.com
@@ -23935,6 +23960,11 @@ paths:
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                    asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                    userIdCreated: UserId1
+                    asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                    userIdModified: UserId1
+                    asAtVersionNumber: 1
                 href: http://example.com
                 links: []
               schema:
@@ -24139,6 +24169,11 @@ paths:
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                  asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                  userIdCreated: UserId1
+                  asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                  userIdModified: UserId1
+                  asAtVersionNumber: 1
               schema:
                 $ref: '#/components/schemas/Person'
             application/json:
@@ -24177,6 +24212,11 @@ paths:
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                  asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                  userIdCreated: UserId1
+                  asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                  userIdModified: UserId1
+                  asAtVersionNumber: 1
               schema:
                 $ref: '#/components/schemas/Person'
             text/json:
@@ -24215,6 +24255,11 @@ paths:
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                  asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                  userIdCreated: UserId1
+                  asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                  userIdModified: UserId1
+                  asAtVersionNumber: 1
               schema:
                 $ref: '#/components/schemas/Person'
           description: The newly created or updated person
@@ -24408,6 +24453,11 @@ paths:
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                    asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                    userIdCreated: UserId1
+                    asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                    userIdModified: UserId1
+                    asAtVersionNumber: 1
                 - displayName: Person2DisplayName
                   description: Person2Description
                   href: https://example.com
@@ -24443,6 +24493,11 @@ paths:
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                    asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                    userIdCreated: UserId1
+                    asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                    userIdModified: UserId1
+                    asAtVersionNumber: 1
                 href: http://example.com
                 links: []
               schema:
@@ -24484,6 +24539,11 @@ paths:
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                    asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                    userIdCreated: UserId1
+                    asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                    userIdModified: UserId1
+                    asAtVersionNumber: 1
                 - displayName: Person2DisplayName
                   description: Person2Description
                   href: https://example.com
@@ -24519,6 +24579,11 @@ paths:
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                    asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                    userIdCreated: UserId1
+                    asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                    userIdModified: UserId1
+                    asAtVersionNumber: 1
                 href: http://example.com
                 links: []
               schema:
@@ -24560,6 +24625,11 @@ paths:
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                    asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                    userIdCreated: UserId1
+                    asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                    userIdModified: UserId1
+                    asAtVersionNumber: 1
                 - displayName: Person2DisplayName
                   description: Person2Description
                   href: https://example.com
@@ -24595,6 +24665,11 @@ paths:
                   version:
                     effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                     asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                    asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                    userIdCreated: UserId1
+                    asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                    userIdModified: UserId1
+                    asAtVersionNumber: 1
                 href: http://example.com
                 links: []
               schema:
@@ -24827,6 +24902,11 @@ paths:
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                  asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                  userIdCreated: UserId1
+                  asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                  userIdModified: UserId1
+                  asAtVersionNumber: 1
               schema:
                 $ref: '#/components/schemas/Person'
             application/json:
@@ -24865,6 +24945,11 @@ paths:
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                  asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                  userIdCreated: UserId1
+                  asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                  userIdModified: UserId1
+                  asAtVersionNumber: 1
               schema:
                 $ref: '#/components/schemas/Person'
             text/json:
@@ -24903,6 +24988,11 @@ paths:
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                  asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                  userIdCreated: UserId1
+                  asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                  userIdModified: UserId1
+                  asAtVersionNumber: 1
               schema:
                 $ref: '#/components/schemas/Person'
           description: The requested person definition
@@ -25143,6 +25233,11 @@ paths:
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                  asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                  userIdCreated: UserId1
+                  asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                  userIdModified: UserId1
+                  asAtVersionNumber: 1
               schema:
                 $ref: '#/components/schemas/Person'
             application/json:
@@ -25174,6 +25269,11 @@ paths:
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                  asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                  userIdCreated: UserId1
+                  asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                  userIdModified: UserId1
+                  asAtVersionNumber: 1
               schema:
                 $ref: '#/components/schemas/Person'
             text/json:
@@ -25205,6 +25305,11 @@ paths:
                 version:
                   effectiveFrom: 2019-01-01T12:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                  asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                  userIdCreated: UserId1
+                  asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                  userIdModified: UserId1
+                  asAtVersionNumber: 1
               schema:
                 $ref: '#/components/schemas/Person'
           description: The Person with updated identifiers.
@@ -26076,6 +26181,11 @@ paths:
                 version:
                   effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                  asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                  userIdCreated: UserId1
+                  asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                  userIdModified: UserId1
+                  asAtVersionNumber: 1
               schema:
                 $ref: '#/components/schemas/Person'
             application/json:
@@ -26107,6 +26217,11 @@ paths:
                 version:
                   effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                  asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                  userIdCreated: UserId1
+                  asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                  userIdModified: UserId1
+                  asAtVersionNumber: 1
               schema:
                 $ref: '#/components/schemas/Person'
             text/json:
@@ -26138,6 +26253,11 @@ paths:
                 version:
                   effectiveFrom: 2019-07-01T00:00:00.0000000+00:00
                   asAtDate: 2019-01-01T12:00:00.0100000+00:00
+                  asAtCreated: 2019-01-01T12:00:00.0100000+00:00
+                  userIdCreated: UserId1
+                  asAtModified: 2019-01-01T12:00:00.0100000+00:00
+                  userIdModified: UserId1
+                  asAtVersionNumber: 1
               schema:
                 $ref: '#/components/schemas/Person'
           description: The Person with updated properties or identifiers.
