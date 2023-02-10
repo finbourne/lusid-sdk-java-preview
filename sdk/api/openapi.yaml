@@ -311,7 +311,7 @@ info:
     | <a name="820">820</a>|Custodian Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5225
+  version: 0.11.5226
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -33457,7 +33457,7 @@ paths:
                   scope: default
                   code: TransactionReconciliationMapping
                   name: Mapping Name
-                  for: Transaction
+                  reconciliationType: Transaction
                   rules:
                   - left: TransactionId
                     right: TransactionId
@@ -33579,7 +33579,7 @@ paths:
                   scope: default
                   code: TransactionReconciliationMapping
                   name: Mapping Name
-                  for: Transaction
+                  reconciliationType: Transaction
                   rules:
                   - left: TransactionId
                     right: TransactionId
@@ -33701,7 +33701,7 @@ paths:
                   scope: default
                   code: TransactionReconciliationMapping
                   name: Mapping Name
-                  for: Transaction
+                  reconciliationType: Transaction
                   rules:
                   - left: TransactionId
                     right: TransactionId
@@ -34225,7 +34225,7 @@ paths:
               scope: default
               code: TransactionReconciliationMapping
               name: Mapping Name
-              for: Transaction
+              reconciliationType: Transaction
               rules:
               - left: TransactionId
                 right: TransactionId
@@ -34285,7 +34285,7 @@ paths:
               scope: default
               code: TransactionReconciliationMapping
               name: Mapping Name
-              for: Transaction
+              reconciliationType: Transaction
               rules:
               - left: TransactionId
                 right: TransactionId
@@ -34345,7 +34345,7 @@ paths:
               scope: default
               code: TransactionReconciliationMapping
               name: Mapping Name
-              for: Transaction
+              reconciliationType: Transaction
               rules:
               - left: TransactionId
                 right: TransactionId
@@ -34405,7 +34405,7 @@ paths:
               scope: default
               code: TransactionReconciliationMapping
               name: Mapping Name
-              for: Transaction
+              reconciliationType: Transaction
               rules:
               - left: TransactionId
                 right: TransactionId
@@ -34469,7 +34469,7 @@ paths:
                 scope: default
                 code: TransactionReconciliationMapping
                 name: Mapping Name
-                for: Transaction
+                reconciliationType: Transaction
                 rules:
                 - left: TransactionId
                   right: TransactionId
@@ -34529,7 +34529,7 @@ paths:
                 scope: default
                 code: TransactionReconciliationMapping
                 name: Mapping Name
-                for: Transaction
+                reconciliationType: Transaction
                 rules:
                 - left: TransactionId
                   right: TransactionId
@@ -34589,7 +34589,7 @@ paths:
                 scope: default
                 code: TransactionReconciliationMapping
                 name: Mapping Name
-                for: Transaction
+                reconciliationType: Transaction
                 rules:
                 - left: TransactionId
                   right: TransactionId
@@ -34770,7 +34770,7 @@ paths:
                 scope: default
                 code: TransactionReconciliationMapping
                 name: Mapping Name
-                for: Transaction
+                reconciliationType: Transaction
                 rules:
                 - left: TransactionId
                   right: TransactionId
@@ -34830,7 +34830,7 @@ paths:
                 scope: default
                 code: TransactionReconciliationMapping
                 name: Mapping Name
-                for: Transaction
+                reconciliationType: Transaction
                 rules:
                 - left: TransactionId
                   right: TransactionId
@@ -34890,7 +34890,7 @@ paths:
                 scope: default
                 code: TransactionReconciliationMapping
                 name: Mapping Name
-                for: Transaction
+                reconciliationType: Transaction
                 rules:
                 - left: TransactionId
                   right: TransactionId
@@ -75674,9 +75674,9 @@ components:
         be considered as a match.
       example:
         code: code
+        reconciliationType: reconciliationType
         scope: scope
         name: name
-        for: for
         rules:
         - mappedStrings:
           - isCaseSensitive: true
@@ -75713,24 +75713,22 @@ components:
           description: The scope for this mapping.
           maxLength: 64
           minLength: 1
-          nullable: true
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         code:
           description: The code for this mapping.
           maxLength: 64
           minLength: 1
-          nullable: true
           pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         name:
           description: The mapping name
-          nullable: true
+          minLength: 1
           pattern: ^[\s\S]*$
           type: string
-        for:
+        reconciliationType:
           description: What type of reconciliation this mapping is for
-          nullable: true
+          minLength: 1
           type: string
         rules:
           description: The rules in this mapping, keyed by the left field/property
@@ -75739,6 +75737,11 @@ components:
             $ref: '#/components/schemas/MappingRule'
           nullable: true
           type: array
+      required:
+      - code
+      - name
+      - reconciliationType
+      - scope
       type: object
     MappingRule:
       additionalProperties: false
@@ -90699,9 +90702,9 @@ components:
         nextPage: nextPage
         values:
         - code: code
+          reconciliationType: reconciliationType
           scope: scope
           name: name
-          for: for
           rules:
           - mappedStrings:
             - isCaseSensitive: true
@@ -90734,9 +90737,9 @@ components:
             weight: 6.027456183070403
             right: right
         - code: code
+          reconciliationType: reconciliationType
           scope: scope
           name: name
-          for: for
           rules:
           - mappedStrings:
             - isCaseSensitive: true
@@ -97091,9 +97094,9 @@ components:
       example:
         mapping:
           code: code
+          reconciliationType: reconciliationType
           scope: scope
           name: name
-          for: for
           rules:
           - mappedStrings:
             - isCaseSensitive: true
