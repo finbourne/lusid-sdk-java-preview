@@ -311,7 +311,7 @@ info:
     | <a name="820">820</a>|Custodian Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5248
+  version: 0.11.5249
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -30038,10 +30038,10 @@ paths:
           pattern: ^[\s\S]*$
           type: string
         style: form
-      - description: "A list of property keys from the \"Instrument\" or \"Holding\"\
-          \ domain to decorate onto\r\n            the holdings. These take the format\
-          \ {domain}/{scope}/{code} e.g. \"Instrument/system/Name\" or \"Holding/system/Cost\"\
-          ."
+      - description: "A list of property keys from the \"Instrument\", \"Holding\"\
+          \ or \"Portfolio\" domain to decorate onto\r\n            the holdings.\
+          \ These take the format {domain}/{scope}/{code} e.g. \"Instrument/system/Name\"\
+          \ or \"Holding/system/Cost\"."
         explode: true
         in: query
         name: propertyKeys
@@ -54431,6 +54431,830 @@ paths:
       - Transaction Portfolios
       x-fbn-apistatus: Stable
       x-accepts: application/json
+  /api/transactionportfolios/{scope}/{code}/custodianaccounts:
+    get:
+      description: List the custodian accounts in a Transaction Portfolios
+      operationId: ListCustodianAccounts
+      parameters:
+      - description: The scope of the Transaction Portfolio.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The code of the Transaction Portfolio. Together with the scope\
+          \ this uniquely identifies\r\n            the Transaction Portfolios."
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The effective datetime or cut label at which to list the TimeVariant\
+          \ properties decorated on Custodian Accounts. Defaults to the current LUSID\r\
+          \n            system datetime if not specified."
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          format: dateorcutlabel
+          type: string
+        style: form
+      - description: "The asAt datetime at which to retrieve the instrument. Defaults\
+          \ to\r\n            returning the latest version if not specified."
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          format: date-time
+          type: string
+        style: form
+        x-nullable: true
+      - description: "The pagination token to use to continue listing custodian accounts;\
+          \ this\r\n            value is returned from the previous call. If a pagination\
+          \ token is provided, the filter, effectiveAt\r\n            and asAt fields\
+          \ must not have changed since the original request. Also, if set, a start\
+          \ value cannot be provided."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          maxLength: 500
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\+/]*={0,3}$
+          type: string
+        style: form
+      - description: When paginating, skip this number of results.
+        explode: true
+        in: query
+        name: start
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+        x-nullable: true
+      - description: When paginating, limit the results to this number. Defaults to
+          100 if not specified.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          format: int32
+          maximum: 5000
+          minimum: 1
+          type: integer
+        style: form
+        x-nullable: true
+      - description: "Expression to filter the results.\r\n            For example,\
+          \ to filter on the Custodian Account type, specify \"code eq '001'\". For\
+          \ more information about filtering\r\n            results, see https://support.lusid.com/knowledgebase/article/KA-01914."
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          maxLength: 16384
+          minLength: 0
+          pattern: ^[\s\S]*$
+          type: string
+        style: form
+      - description: "A list of property keys from the 'CustodianAccount' domain to\
+          \ decorate onto the Custodian Account.\r\n            These must have the\
+          \ format {domain}/{scope}/{code}, for example 'CustodianAccount/system/Name'."
+        explode: true
+        in: query
+        name: propertyKeys
+        required: false
+        schema:
+          items:
+            description: The key that uniquely identifies the property. It has the
+              format {domain}/{scope}/{code}.
+            type: string
+          type: array
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfCustodianAccount'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfCustodianAccount'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PagedResourceListOfCustodianAccount'
+          description: The custodian accounts in the give Transaction Portfolios.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] ListCustodianAccounts: List Custodian Accounts'
+      tags:
+      - Transaction Portfolios
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+    post:
+      description: "Create or update Custodian Accounts in the Transaction Portfolios.\
+        \ A Custodian Account will be updated\r\nif it already exists and created\
+        \ if it does not.\n\nThe batch limit per request is 2,000."
+      operationId: UpsertCustodianAccounts
+      parameters:
+      - description: The scope of the Transaction Portfolio.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The code of the Transaction Portfolio. Together with the scope\
+          \ this uniquely identifies\r\n            the Transaction Portfolios."
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+            - scope: ScopeA
+              code: Account1
+              status: Active
+              accountNumber: 10003786BGBP
+              accountName: Account1 Sterling
+              accountingMethod: FirstInFirstOut
+              currency: GBP
+              properties: {}
+              custodianIdentifier:
+                idTypeScope: ScopeA
+                idTypeCode: LegalEntityCode1
+                code: LegalEntityValue1
+            - scope: ScopeB
+              code: Account2
+              status: Active
+              accountNumber: 10003786BEUR
+              accountName: Account2 Euro
+              accountingMethod: FirstInFirstOut
+              currency: EUR
+              properties: {}
+              custodianIdentifier:
+                idTypeScope: ScopeA
+                idTypeCode: LegalEntityCode2
+                code: LegalEntityValue2
+            schema:
+              items:
+                $ref: '#/components/schemas/CustodianAccountRequest'
+              type: array
+          application/json:
+            example:
+            - scope: ScopeA
+              code: Account1
+              status: Active
+              accountNumber: 10003786BGBP
+              accountName: Account1 Sterling
+              accountingMethod: FirstInFirstOut
+              currency: GBP
+              properties: {}
+              custodianIdentifier:
+                idTypeScope: ScopeA
+                idTypeCode: LegalEntityCode1
+                code: LegalEntityValue1
+            - scope: ScopeB
+              code: Account2
+              status: Active
+              accountNumber: 10003786BEUR
+              accountName: Account2 Euro
+              accountingMethod: FirstInFirstOut
+              currency: EUR
+              properties: {}
+              custodianIdentifier:
+                idTypeScope: ScopeA
+                idTypeCode: LegalEntityCode2
+                code: LegalEntityValue2
+            schema:
+              items:
+                $ref: '#/components/schemas/CustodianAccountRequest'
+              type: array
+          text/json:
+            example:
+            - scope: ScopeA
+              code: Account1
+              status: Active
+              accountNumber: 10003786BGBP
+              accountName: Account1 Sterling
+              accountingMethod: FirstInFirstOut
+              currency: GBP
+              properties: {}
+              custodianIdentifier:
+                idTypeScope: ScopeA
+                idTypeCode: LegalEntityCode1
+                code: LegalEntityValue1
+            - scope: ScopeB
+              code: Account2
+              status: Active
+              accountNumber: 10003786BEUR
+              accountName: Account2 Euro
+              accountingMethod: FirstInFirstOut
+              currency: EUR
+              properties: {}
+              custodianIdentifier:
+                idTypeScope: ScopeA
+                idTypeCode: LegalEntityCode2
+                code: LegalEntityValue2
+            schema:
+              items:
+                $ref: '#/components/schemas/CustodianAccountRequest'
+              type: array
+          application/*+json:
+            example:
+            - scope: ScopeA
+              code: Account1
+              status: Active
+              accountNumber: 10003786BGBP
+              accountName: Account1 Sterling
+              accountingMethod: FirstInFirstOut
+              currency: GBP
+              properties: {}
+              custodianIdentifier:
+                idTypeScope: ScopeA
+                idTypeCode: LegalEntityCode1
+                code: LegalEntityValue1
+            - scope: ScopeB
+              code: Account2
+              status: Active
+              accountNumber: 10003786BEUR
+              accountName: Account2 Euro
+              accountingMethod: FirstInFirstOut
+              currency: EUR
+              properties: {}
+              custodianIdentifier:
+                idTypeScope: ScopeA
+                idTypeCode: LegalEntityCode2
+                code: LegalEntityValue2
+            schema:
+              items:
+                $ref: '#/components/schemas/CustodianAccountRequest'
+              type: array
+        description: A list of Custodian Accounts to be created or updated.
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CustodianAccountsUpsertResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustodianAccountsUpsertResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CustodianAccountsUpsertResponse'
+          description: The newly upserted custodian accounts.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] UpsertCustodianAccounts: Upsert Custodian Accounts'
+      tags:
+      - Transaction Portfolios
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/transactionportfolios/{scope}/{code}/custodianaccounts/$delete:
+    post:
+      description: "Delete one or more custodian accounts from the Transaction Portfolios.\
+        \ Soft deletion marks the custodian account as inactive\r\nWhile the Hard\
+        \ deletion is deleting the custodian account.\n\nThe batch limit per request\
+        \ is 2,000."
+      operationId: DeleteCustodianAccounts
+      parameters:
+      - description: The scope of the Transaction Portfolios.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: "The code of the Transaction Portfolios. Together with the scope\
+          \ this uniquely identifies\r\n            the Transaction Portfolios."
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The delete mode to use (defaults to 'Soft').
+        explode: true
+        in: query
+        name: deleteMode
+        required: false
+        schema:
+          description: 'The available values are: Soft, Hard'
+          enum:
+          - Soft
+          - Hard
+          type: string
+        style: form
+        x-nullable: true
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+            - scope: ScopeA
+              code: AccountCode1
+            - scope: ScopeB
+              code: AccountCode2
+            schema:
+              items:
+                $ref: '#/components/schemas/ResourceId'
+              type: array
+          application/json:
+            example:
+            - scope: ScopeA
+              code: AccountCode1
+            - scope: ScopeB
+              code: AccountCode2
+            schema:
+              items:
+                $ref: '#/components/schemas/ResourceId'
+              type: array
+          text/json:
+            example:
+            - scope: ScopeA
+              code: AccountCode1
+            - scope: ScopeB
+              code: AccountCode2
+            schema:
+              items:
+                $ref: '#/components/schemas/ResourceId'
+              type: array
+          application/*+json:
+            example:
+            - scope: ScopeA
+              code: AccountCode1
+            - scope: ScopeB
+              code: AccountCode2
+            schema:
+              items:
+                $ref: '#/components/schemas/ResourceId'
+              type: array
+        description: The scope and codes of the custodian accounts to delete.
+        required: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeleteCustodianAccountsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteCustodianAccountsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeleteCustodianAccountsResponse'
+          description: The datetime that the custodian accounts were deleted.
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] DeleteCustodianAccounts: Soft or hard delete multiple
+        custodian accounts'
+      tags:
+      - Transaction Portfolios
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/transactionportfolios/{scope}/{code}/custodianaccounts/{custodianAccountScope}/{custodianAccountCode}:
+    get:
+      description: Retrieve the definition of a particular Custodian Account which
+        is part of a Transaction Portfolios.
+      operationId: GetCustodianAccount
+      parameters:
+      - description: The scope of the Transaction Portfolio.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The code of the Transaction Portfolio. Together with the scope
+          this uniquely identifies the Transaction Portfolio.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The scope of the Custodian Account.
+        explode: false
+        in: path
+        name: custodianAccountScope
+        required: true
+        schema:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The code of the Custodian Account.
+        explode: false
+        in: path
+        name: custodianAccountCode
+        required: true
+        schema:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The effective datetime or cut label at which to retrieve the
+          Custodian Account properties. Defaults to the current LUSID system datetime
+          if not specified.
+        explode: true
+        in: query
+        name: effectiveAt
+        required: false
+        schema:
+          format: dateorcutlabel
+          type: string
+        style: form
+      - description: The asAt datetime at which to retrieve the Custodian Account
+          definition. Defaults to returning the latest version of the Custodian Account
+          definition if not specified.
+        explode: true
+        in: query
+        name: asAt
+        required: false
+        schema:
+          format: date-time
+          type: string
+        style: form
+        x-nullable: true
+      - description: "A list of property keys from the 'CustodianAccount' domain to\
+          \ decorate onto the Custodian Account.\r\n            These must take the\
+          \ format {domain}/{scope}/{code}, for example 'CustodianAccount/Manager/Id'.\
+          \ If not provided will return all the entitled properties for that Custodian\
+          \ Account."
+        explode: true
+        in: query
+        name: propertyKeys
+        required: false
+        schema:
+          items:
+            description: The key that uniquely identifies the property. It has the
+              format {domain}/{scope}/{code}.
+            type: string
+          type: array
+        style: form
+        x-nullable: true
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CustodianAccount'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustodianAccount'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CustodianAccount'
+          description: The requested Custodian Account definition
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] GetCustodianAccount: Get Custodian Account'
+      tags:
+      - Transaction Portfolios
+      x-fbn-apistatus: Experimental
+      x-accepts: application/json
+  /api/transactionportfolios/{scope}/{code}/custodianaccounts/{custodianAccountScope}/{custodianAccountCode}/properties/$upsert:
+    post:
+      description: "Update or insert one or more properties onto a single custodian\
+        \ account. A property will be updated if it\r\nalready exists and inserted\
+        \ if it does not. All properties must be of the domain 'CustodianAccount'.\r\
+        \n            \r\nUpserting a property that exists for a Transaction Portfolios,\
+        \ with a null value, will delete the instance of the property for that group.\r\
+        \n            \r\nProperties have an <i>effectiveFrom</i> datetime for which\
+        \ the property is valid, and an <i>effectiveUntil</i>\r\ndatetime until which\
+        \ the property is valid. Not supplying an <i>effectiveUntil</i> datetime results\
+        \ in the property being\r\nvalid indefinitely, or until the next <i>effectiveFrom</i>\
+        \ datetime of the property."
+      operationId: UpsertCustodianAccountsProperties
+      parameters:
+      - description: The scope of the Transaction Portfolios to update or insert the
+          properties onto.
+        explode: false
+        in: path
+        name: scope
+        required: true
+        schema:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The code of the Transaction Portfolios to update or insert the
+          properties onto. Together with the scope this uniquely identifies the Transaction
+          Portfolios.
+        explode: false
+        in: path
+        name: code
+        required: true
+        schema:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The scope of the Custodian Account to update or insert the properties
+          onto.
+        explode: false
+        in: path
+        name: custodianAccountScope
+        required: true
+        schema:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      - description: The unique ID of the custodian account to create or update properties
+          for.
+        explode: false
+        in: path
+        name: custodianAccountCode
+        required: true
+        schema:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            example:
+              CustodianAccount/MyScope/FundManagerName:
+                key: CustodianAccount/MyScope/FundManagerName
+                value:
+                  labelValue: Smith
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+              CustodianAccount/MyScope/SomeProperty:
+                key: CustodianAccount/MyScope/SomeProperty
+                value:
+                  labelValue: SomeValue
+                effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+              CustodianAccount/MyScope/AnotherProperty:
+                key: CustodianAccount/MyScope/AnotherProperty
+                value:
+                  labelValue: AnotherValue
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+                effectiveUntil: 2020-01-01T00:00:00.0000000+00:00
+              CustodianAccount/MyScope/ReBalanceInterval:
+                key: CustodianAccount/MyScope/ReBalanceInterval
+                value:
+                  metricValue:
+                    value: 30
+                    unit: Days
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/Property'
+              type: object
+          application/json:
+            example:
+              CustodianAccount/MyScope/FundManagerName:
+                key: CustodianAccount/MyScope/FundManagerName
+                value:
+                  labelValue: Smith
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+              CustodianAccount/MyScope/SomeProperty:
+                key: CustodianAccount/MyScope/SomeProperty
+                value:
+                  labelValue: SomeValue
+                effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+              CustodianAccount/MyScope/AnotherProperty:
+                key: CustodianAccount/MyScope/AnotherProperty
+                value:
+                  labelValue: AnotherValue
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+                effectiveUntil: 2020-01-01T00:00:00.0000000+00:00
+              CustodianAccount/MyScope/ReBalanceInterval:
+                key: CustodianAccount/MyScope/ReBalanceInterval
+                value:
+                  metricValue:
+                    value: 30
+                    unit: Days
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/Property'
+              type: object
+          text/json:
+            example:
+              CustodianAccount/MyScope/FundManagerName:
+                key: CustodianAccount/MyScope/FundManagerName
+                value:
+                  labelValue: Smith
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+              CustodianAccount/MyScope/SomeProperty:
+                key: CustodianAccount/MyScope/SomeProperty
+                value:
+                  labelValue: SomeValue
+                effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+              CustodianAccount/MyScope/AnotherProperty:
+                key: CustodianAccount/MyScope/AnotherProperty
+                value:
+                  labelValue: AnotherValue
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+                effectiveUntil: 2020-01-01T00:00:00.0000000+00:00
+              CustodianAccount/MyScope/ReBalanceInterval:
+                key: CustodianAccount/MyScope/ReBalanceInterval
+                value:
+                  metricValue:
+                    value: 30
+                    unit: Days
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/Property'
+              type: object
+          application/*+json:
+            example:
+              CustodianAccount/MyScope/FundManagerName:
+                key: CustodianAccount/MyScope/FundManagerName
+                value:
+                  labelValue: Smith
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+              CustodianAccount/MyScope/SomeProperty:
+                key: CustodianAccount/MyScope/SomeProperty
+                value:
+                  labelValue: SomeValue
+                effectiveFrom: 2016-01-01T00:00:00.0000000+00:00
+              CustodianAccount/MyScope/AnotherProperty:
+                key: CustodianAccount/MyScope/AnotherProperty
+                value:
+                  labelValue: AnotherValue
+                effectiveFrom: 2018-03-05T00:00:00.0000000+00:00
+                effectiveUntil: 2020-01-01T00:00:00.0000000+00:00
+              CustodianAccount/MyScope/ReBalanceInterval:
+                key: CustodianAccount/MyScope/ReBalanceInterval
+                value:
+                  metricValue:
+                    value: 30
+                    unit: Days
+            schema:
+              additionalProperties:
+                $ref: '#/components/schemas/Property'
+              type: object
+        description: "The properties to be updated or inserted onto the Transaction\
+          \ Portfolio. Each property in\r\n             the request must be keyed\
+          \ by its unique property key. This has the format {domain}/{scope}/{code}\
+          \ e.g. \"CustodianAccount/Manager/Id\"."
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CustodianAccountProperties'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustodianAccountProperties'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CustodianAccountProperties'
+          description: The updated or inserted properties
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LusidValidationProblemDetails'
+          description: The details of the input related failure
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LusidProblemDetails'
+          description: Error response
+      security:
+      - oauth2: []
+      summary: '[EXPERIMENTAL] UpsertCustodianAccountsProperties: Upsert custodian
+        accounts properties'
+      tags:
+      - Transaction Portfolios
+      x-fbn-apistatus: Experimental
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
   /api/transactionportfolios/{scope}/{code}/details:
     get:
       description: Get certain details associated with a transaction portfolio.
@@ -55014,10 +55838,10 @@ paths:
           pattern: ^[\s\S]*$
           type: string
         style: form
-      - description: "A list of property keys from the \"Instrument\" or \"Holding\"\
-          \ domain to decorate onto\r\n            holdings. These must have the format\
-          \ {domain}/{scope}/{code}, for example \"Instrument/system/Name\" or \"\
-          Holding/system/Cost\"."
+      - description: "A list of property keys from the \"Instrument\", \"Holding\"\
+          \ or \"Portfolio\" domain to decorate onto\r\n            holdings. These\
+          \ must have the format {domain}/{scope}/{code}, for example \"Instrument/system/Name\"\
+          \ or \"Holding/system/Cost\"."
         explode: true
         in: query
         name: propertyKeys
@@ -55989,10 +56813,10 @@ paths:
           pattern: ^[\s\S]*$
           type: string
         style: form
-      - description: "A list of property keys from the \"Instrument\" or \"Holding\"\
-          \ domain to decorate onto\r\n            holdings. These must have the format\
-          \ {domain}/{scope}/{code}, for example \"Instrument/system/Name\" or \"\
-          Holding/system/Cost\"."
+      - description: "A list of property keys from the \"Instrument\", \"Holding\"\
+          \ or \"Portfolio\" domain to decorate onto\r\n            holdings. These\
+          \ must have the format {domain}/{scope}/{code}, for example \"Instrument/system/Name\"\
+          \ or \"Holding/system/Cost\"."
         explode: true
         in: query
         name: propertyKeys
@@ -56572,10 +57396,10 @@ paths:
           pattern: ^[\s\S]*$
           type: string
         style: form
-      - description: "A list of property keys from the \"Instrument\" or \"Holding\"\
-          \ domain to decorate onto\r\n            the holdings. These take the format\
-          \ {domain}/{scope}/{code} e.g. \"Instrument/system/Name\" or \"Holding/system/Cost\"\
-          ."
+      - description: "A list of property keys from the \"Instrument\", \"Holding\"\
+          \ or \"Portfolio\" domain to decorate onto\r\n            the holdings.\
+          \ These take the format {domain}/{scope}/{code} e.g. \"Instrument/system/Name\"\
+          \ or \"Holding/system/Cost\"."
         explode: true
         in: query
         name: propertyKeys
@@ -69187,6 +70011,770 @@ components:
           nullable: true
           type: string
       type: object
+    CustodianAccount:
+      additionalProperties: false
+      example:
+        custodian:
+          relationships:
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              asAtModified: 2000-01-23T04:56:07.000+00:00
+              userIdModified: userIdModified
+              asAtVersionNumber: 6
+              asAtCreated: 2000-01-23T04:56:07.000+00:00
+              userIdCreated: userIdCreated
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            traversalDirection: traversalDirection
+            relatedEntity:
+              entityType: entityType
+              displayName: displayName
+              identifiers:
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              - identifierValue: identifierValue
+                identifierType: identifierType
+                identifierScope: identifierScope
+              scope: scope
+              entityId:
+                key: entityId
+              lusidUniqueId:
+                type: type
+                value: value
+              href: https://openapi-generator.tech
+              properties:
+                key:
+                  effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                  value:
+                    metricValue:
+                      unit: unit
+                      value: 0.8008281904610115
+                    labelValue: labelValue
+                    labelValueSet:
+                      values:
+                      - values
+                      - values
+                  effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                  key: key
+            version:
+              asAtModified: 2000-01-23T04:56:07.000+00:00
+              userIdModified: userIdModified
+              asAtVersionNumber: 6
+              asAtCreated: 2000-01-23T04:56:07.000+00:00
+              userIdCreated: userIdCreated
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            relationshipDefinitionId:
+              code: code
+              scope: scope
+            traversalDescription: traversalDescription
+          lusidLegalEntityId: lusidLegalEntityId
+          counterpartyRiskInformation:
+            creditRatings:
+            - rating: rating
+              ratingSource: ratingSource
+            - rating: rating
+              ratingSource: ratingSource
+            industryClassifiers:
+            - classificationCode: classificationCode
+              classificationSystemName: classificationSystemName
+            - classificationCode: classificationCode
+              classificationSystemName: classificationSystemName
+            countryOfRisk: countryOfRisk
+          displayName: displayName
+          identifiers:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+          description: description
+          links:
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          - method: method
+            description: description
+            href: https://openapi-generator.tech
+            relation: relation
+          href: https://openapi-generator.tech
+          version:
+            asAtModified: 2000-01-23T04:56:07.000+00:00
+            userIdModified: userIdModified
+            asAtVersionNumber: 6
+            asAtCreated: 2000-01-23T04:56:07.000+00:00
+            userIdCreated: userIdCreated
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            asAtDate: 2000-01-23T04:56:07.000+00:00
+          properties:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+        accountName: accountName
+        accountingMethod: accountingMethod
+        currency: currency
+        accountNumber: accountNumber
+        custodianAccountId:
+          code: code
+          scope: scope
+        properties:
+          key:
+            effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+        status: status
+      properties:
+        custodianAccountId:
+          $ref: '#/components/schemas/ResourceId'
+        status:
+          description: The account status. Can be Active, Inactive or Deleted. Defaults
+            to Active.
+          minLength: 1
+          type: string
+        accountNumber:
+          description: The Custodian Account Number
+          maxLength: 64
+          minLength: 1
+          type: string
+        accountName:
+          description: The identifiable name given to the Custodian Account
+          minLength: 1
+          type: string
+        accountingMethod:
+          description: The Accounting method to be used
+          minLength: 1
+          type: string
+        currency:
+          description: The Currency for the Account
+          type: string
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/Property'
+          description: Set of unique Custodian Account properties and associated values
+            to store with the Custodian Account. Each property must be from the 'CustodianAccount'
+            domain.
+          nullable: true
+          type: object
+        custodian:
+          $ref: '#/components/schemas/LegalEntity'
+      required:
+      - accountName
+      - accountNumber
+      - accountingMethod
+      - currency
+      - custodian
+      - custodianAccountId
+      - status
+      type: object
+    CustodianAccountProperties:
+      additionalProperties: false
+      example:
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+        version:
+          asAtModified: 2000-01-23T04:56:07.000+00:00
+          userIdModified: userIdModified
+          asAtVersionNumber: 6
+          asAtCreated: 2000-01-23T04:56:07.000+00:00
+          userIdCreated: userIdCreated
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          asAtDate: 2000-01-23T04:56:07.000+00:00
+        properties:
+          key:
+            effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+      properties:
+        href:
+          description: The specific Uniform Resource Identifier (URI) for this resource
+            at the requested effective and asAt datetime.
+          format: uri
+          nullable: true
+          type: string
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/Property'
+          description: The Custodian Account properties. These will be from the 'CustodianAccount'
+            domain.
+          nullable: true
+          type: object
+        version:
+          $ref: '#/components/schemas/Version'
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      type: object
+    CustodianAccountRequest:
+      additionalProperties: false
+      example:
+        code: code
+        accountName: accountName
+        scope: scope
+        accountingMethod: accountingMethod
+        currency: currency
+        accountNumber: accountNumber
+        properties:
+          key:
+            effectiveUntil: 2000-01-23T04:56:07.000+00:00
+            value:
+              metricValue:
+                unit: unit
+                value: 0.8008281904610115
+              labelValue: labelValue
+              labelValueSet:
+                values:
+                - values
+                - values
+            effectiveFrom: 2000-01-23T04:56:07.000+00:00
+            key: key
+        custodianIdentifier:
+          code: code
+          idTypeScope: idTypeScope
+          idTypeCode: idTypeCode
+        status: status
+      properties:
+        scope:
+          description: The Scope assigned to the Custodian Account, where left blank
+            the parent Portfolio Scope will be used
+          maxLength: 64
+          minLength: 1
+          nullable: true
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        code:
+          description: Unique Code representing the Custodian Account
+          maxLength: 64
+          minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
+          type: string
+        status:
+          description: The account status. Can be Active, Inactive or Deleted. Defaults
+            to Active.
+          nullable: true
+          type: string
+        accountNumber:
+          description: The Custodian Account Number
+          maxLength: 64
+          minLength: 1
+          type: string
+        accountName:
+          description: The identifiable name given to the Custodian Account
+          maxLength: 512
+          minLength: 1
+          pattern: ^[\s\S]*$
+          type: string
+        accountingMethod:
+          description: The Accounting method to be used
+          minLength: 1
+          type: string
+        currency:
+          description: The Currency for the Account
+          type: string
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/Property'
+          description: Set of unique Custodian Account properties and associated values
+            to store with the Custodian Account. Each property must be from the 'CustodianAccount'
+            domain.
+          nullable: true
+          type: object
+        custodianIdentifier:
+          $ref: '#/components/schemas/TypedResourceId'
+      required:
+      - accountName
+      - accountNumber
+      - accountingMethod
+      - code
+      - currency
+      - custodianIdentifier
+      type: object
+    CustodianAccountsUpsertResponse:
+      additionalProperties: false
+      description: The upsert accounts response
+      example:
+        custodianAccounts:
+        - custodian:
+            relationships:
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              traversalDirection: traversalDirection
+              relatedEntity:
+                entityType: entityType
+                displayName: displayName
+                identifiers:
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                scope: scope
+                entityId:
+                  key: entityId
+                lusidUniqueId:
+                  type: type
+                  value: value
+                href: https://openapi-generator.tech
+                properties:
+                  key:
+                    effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                    value:
+                      metricValue:
+                        unit: unit
+                        value: 0.8008281904610115
+                      labelValue: labelValue
+                      labelValueSet:
+                        values:
+                        - values
+                        - values
+                    effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                    key: key
+              version:
+                asAtModified: 2000-01-23T04:56:07.000+00:00
+                userIdModified: userIdModified
+                asAtVersionNumber: 6
+                asAtCreated: 2000-01-23T04:56:07.000+00:00
+                userIdCreated: userIdCreated
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                asAtDate: 2000-01-23T04:56:07.000+00:00
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              relationshipDefinitionId:
+                code: code
+                scope: scope
+              traversalDescription: traversalDescription
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              traversalDirection: traversalDirection
+              relatedEntity:
+                entityType: entityType
+                displayName: displayName
+                identifiers:
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                scope: scope
+                entityId:
+                  key: entityId
+                lusidUniqueId:
+                  type: type
+                  value: value
+                href: https://openapi-generator.tech
+                properties:
+                  key:
+                    effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                    value:
+                      metricValue:
+                        unit: unit
+                        value: 0.8008281904610115
+                      labelValue: labelValue
+                      labelValueSet:
+                        values:
+                        - values
+                        - values
+                    effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                    key: key
+              version:
+                asAtModified: 2000-01-23T04:56:07.000+00:00
+                userIdModified: userIdModified
+                asAtVersionNumber: 6
+                asAtCreated: 2000-01-23T04:56:07.000+00:00
+                userIdCreated: userIdCreated
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                asAtDate: 2000-01-23T04:56:07.000+00:00
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              relationshipDefinitionId:
+                code: code
+                scope: scope
+              traversalDescription: traversalDescription
+            lusidLegalEntityId: lusidLegalEntityId
+            counterpartyRiskInformation:
+              creditRatings:
+              - rating: rating
+                ratingSource: ratingSource
+              - rating: rating
+                ratingSource: ratingSource
+              industryClassifiers:
+              - classificationCode: classificationCode
+                classificationSystemName: classificationSystemName
+              - classificationCode: classificationCode
+                classificationSystemName: classificationSystemName
+              countryOfRisk: countryOfRisk
+            displayName: displayName
+            identifiers:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+            description: description
+            links:
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            href: https://openapi-generator.tech
+            version:
+              asAtModified: 2000-01-23T04:56:07.000+00:00
+              userIdModified: userIdModified
+              asAtVersionNumber: 6
+              asAtCreated: 2000-01-23T04:56:07.000+00:00
+              userIdCreated: userIdCreated
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          accountName: accountName
+          accountingMethod: accountingMethod
+          currency: currency
+          accountNumber: accountNumber
+          custodianAccountId:
+            code: code
+            scope: scope
+          properties:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+          status: status
+        - custodian:
+            relationships:
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              traversalDirection: traversalDirection
+              relatedEntity:
+                entityType: entityType
+                displayName: displayName
+                identifiers:
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                scope: scope
+                entityId:
+                  key: entityId
+                lusidUniqueId:
+                  type: type
+                  value: value
+                href: https://openapi-generator.tech
+                properties:
+                  key:
+                    effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                    value:
+                      metricValue:
+                        unit: unit
+                        value: 0.8008281904610115
+                      labelValue: labelValue
+                      labelValueSet:
+                        values:
+                        - values
+                        - values
+                    effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                    key: key
+              version:
+                asAtModified: 2000-01-23T04:56:07.000+00:00
+                userIdModified: userIdModified
+                asAtVersionNumber: 6
+                asAtCreated: 2000-01-23T04:56:07.000+00:00
+                userIdCreated: userIdCreated
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                asAtDate: 2000-01-23T04:56:07.000+00:00
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              relationshipDefinitionId:
+                code: code
+                scope: scope
+              traversalDescription: traversalDescription
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              traversalDirection: traversalDirection
+              relatedEntity:
+                entityType: entityType
+                displayName: displayName
+                identifiers:
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                scope: scope
+                entityId:
+                  key: entityId
+                lusidUniqueId:
+                  type: type
+                  value: value
+                href: https://openapi-generator.tech
+                properties:
+                  key:
+                    effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                    value:
+                      metricValue:
+                        unit: unit
+                        value: 0.8008281904610115
+                      labelValue: labelValue
+                      labelValueSet:
+                        values:
+                        - values
+                        - values
+                    effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                    key: key
+              version:
+                asAtModified: 2000-01-23T04:56:07.000+00:00
+                userIdModified: userIdModified
+                asAtVersionNumber: 6
+                asAtCreated: 2000-01-23T04:56:07.000+00:00
+                userIdCreated: userIdCreated
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                asAtDate: 2000-01-23T04:56:07.000+00:00
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              relationshipDefinitionId:
+                code: code
+                scope: scope
+              traversalDescription: traversalDescription
+            lusidLegalEntityId: lusidLegalEntityId
+            counterpartyRiskInformation:
+              creditRatings:
+              - rating: rating
+                ratingSource: ratingSource
+              - rating: rating
+                ratingSource: ratingSource
+              industryClassifiers:
+              - classificationCode: classificationCode
+                classificationSystemName: classificationSystemName
+              - classificationCode: classificationCode
+                classificationSystemName: classificationSystemName
+              countryOfRisk: countryOfRisk
+            displayName: displayName
+            identifiers:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+            description: description
+            links:
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            href: https://openapi-generator.tech
+            version:
+              asAtModified: 2000-01-23T04:56:07.000+00:00
+              userIdModified: userIdModified
+              asAtVersionNumber: 6
+              asAtCreated: 2000-01-23T04:56:07.000+00:00
+              userIdCreated: userIdCreated
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          accountName: accountName
+          accountingMethod: accountingMethod
+          currency: currency
+          accountNumber: accountNumber
+          custodianAccountId:
+            code: code
+            scope: scope
+          properties:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+          status: status
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+        version:
+          asAtModified: 2000-01-23T04:56:07.000+00:00
+          userIdModified: userIdModified
+          asAtVersionNumber: 6
+          asAtCreated: 2000-01-23T04:56:07.000+00:00
+          userIdCreated: userIdCreated
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          asAtDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        href:
+          description: The specific Uniform Resource Identifier (URI) for this resource
+            at the requested effective and asAt datetime.
+          format: uri
+          nullable: true
+          type: string
+        version:
+          $ref: '#/components/schemas/Version'
+        custodianAccounts:
+          description: The Custodian Accounts which have been upserted.
+          items:
+            $ref: '#/components/schemas/CustodianAccount'
+          nullable: true
+          type: array
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      type: object
     CustomEntityDefinition:
       additionalProperties: false
       description: Representation of Custom Entity Definition on LUSID API
@@ -70177,6 +71765,48 @@ components:
           description: The Accounts which have been soft/hard deleted.
           items:
             type: string
+          nullable: true
+          type: array
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      type: object
+    DeleteCustodianAccountsResponse:
+      additionalProperties: false
+      description: The delete custodian accounts response
+      example:
+        custodianAccountIds:
+        - code: code
+          scope: scope
+        - code: code
+          scope: scope
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        version:
+          asAtModified: 2000-01-23T04:56:07.000+00:00
+          userIdModified: userIdModified
+          asAtVersionNumber: 6
+          asAtCreated: 2000-01-23T04:56:07.000+00:00
+          userIdCreated: userIdCreated
+          effectiveFrom: 2000-01-23T04:56:07.000+00:00
+          asAtDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        version:
+          $ref: '#/components/schemas/Version'
+        custodianAccountIds:
+          description: The Custodian Accounts which have been soft/hard deleted.
+          items:
+            $ref: '#/components/schemas/ResourceId'
           nullable: true
           type: array
         links:
@@ -79517,6 +81147,405 @@ components:
           description: The resources to list.
           items:
             $ref: '#/components/schemas/CorporateActionSource'
+          type: array
+        href:
+          description: The URI of the resource list.
+          format: uri
+          nullable: true
+          type: string
+        links:
+          description: Collection of links.
+          items:
+            $ref: '#/components/schemas/Link'
+          nullable: true
+          type: array
+      required:
+      - values
+      type: object
+    PagedResourceListOfCustodianAccount:
+      additionalProperties: false
+      description: A paginated list of resource that can be returned from a request.
+      example:
+        previousPage: previousPage
+        nextPage: nextPage
+        values:
+        - custodian:
+            relationships:
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              traversalDirection: traversalDirection
+              relatedEntity:
+                entityType: entityType
+                displayName: displayName
+                identifiers:
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                scope: scope
+                entityId:
+                  key: entityId
+                lusidUniqueId:
+                  type: type
+                  value: value
+                href: https://openapi-generator.tech
+                properties:
+                  key:
+                    effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                    value:
+                      metricValue:
+                        unit: unit
+                        value: 0.8008281904610115
+                      labelValue: labelValue
+                      labelValueSet:
+                        values:
+                        - values
+                        - values
+                    effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                    key: key
+              version:
+                asAtModified: 2000-01-23T04:56:07.000+00:00
+                userIdModified: userIdModified
+                asAtVersionNumber: 6
+                asAtCreated: 2000-01-23T04:56:07.000+00:00
+                userIdCreated: userIdCreated
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                asAtDate: 2000-01-23T04:56:07.000+00:00
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              relationshipDefinitionId:
+                code: code
+                scope: scope
+              traversalDescription: traversalDescription
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              traversalDirection: traversalDirection
+              relatedEntity:
+                entityType: entityType
+                displayName: displayName
+                identifiers:
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                scope: scope
+                entityId:
+                  key: entityId
+                lusidUniqueId:
+                  type: type
+                  value: value
+                href: https://openapi-generator.tech
+                properties:
+                  key:
+                    effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                    value:
+                      metricValue:
+                        unit: unit
+                        value: 0.8008281904610115
+                      labelValue: labelValue
+                      labelValueSet:
+                        values:
+                        - values
+                        - values
+                    effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                    key: key
+              version:
+                asAtModified: 2000-01-23T04:56:07.000+00:00
+                userIdModified: userIdModified
+                asAtVersionNumber: 6
+                asAtCreated: 2000-01-23T04:56:07.000+00:00
+                userIdCreated: userIdCreated
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                asAtDate: 2000-01-23T04:56:07.000+00:00
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              relationshipDefinitionId:
+                code: code
+                scope: scope
+              traversalDescription: traversalDescription
+            lusidLegalEntityId: lusidLegalEntityId
+            counterpartyRiskInformation:
+              creditRatings:
+              - rating: rating
+                ratingSource: ratingSource
+              - rating: rating
+                ratingSource: ratingSource
+              industryClassifiers:
+              - classificationCode: classificationCode
+                classificationSystemName: classificationSystemName
+              - classificationCode: classificationCode
+                classificationSystemName: classificationSystemName
+              countryOfRisk: countryOfRisk
+            displayName: displayName
+            identifiers:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+            description: description
+            links:
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            href: https://openapi-generator.tech
+            version:
+              asAtModified: 2000-01-23T04:56:07.000+00:00
+              userIdModified: userIdModified
+              asAtVersionNumber: 6
+              asAtCreated: 2000-01-23T04:56:07.000+00:00
+              userIdCreated: userIdCreated
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          accountName: accountName
+          accountingMethod: accountingMethod
+          currency: currency
+          accountNumber: accountNumber
+          custodianAccountId:
+            code: code
+            scope: scope
+          properties:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+          status: status
+        - custodian:
+            relationships:
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              traversalDirection: traversalDirection
+              relatedEntity:
+                entityType: entityType
+                displayName: displayName
+                identifiers:
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                scope: scope
+                entityId:
+                  key: entityId
+                lusidUniqueId:
+                  type: type
+                  value: value
+                href: https://openapi-generator.tech
+                properties:
+                  key:
+                    effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                    value:
+                      metricValue:
+                        unit: unit
+                        value: 0.8008281904610115
+                      labelValue: labelValue
+                      labelValueSet:
+                        values:
+                        - values
+                        - values
+                    effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                    key: key
+              version:
+                asAtModified: 2000-01-23T04:56:07.000+00:00
+                userIdModified: userIdModified
+                asAtVersionNumber: 6
+                asAtCreated: 2000-01-23T04:56:07.000+00:00
+                userIdCreated: userIdCreated
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                asAtDate: 2000-01-23T04:56:07.000+00:00
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              relationshipDefinitionId:
+                code: code
+                scope: scope
+              traversalDescription: traversalDescription
+            - effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              traversalDirection: traversalDirection
+              relatedEntity:
+                entityType: entityType
+                displayName: displayName
+                identifiers:
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                - identifierValue: identifierValue
+                  identifierType: identifierType
+                  identifierScope: identifierScope
+                scope: scope
+                entityId:
+                  key: entityId
+                lusidUniqueId:
+                  type: type
+                  value: value
+                href: https://openapi-generator.tech
+                properties:
+                  key:
+                    effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                    value:
+                      metricValue:
+                        unit: unit
+                        value: 0.8008281904610115
+                      labelValue: labelValue
+                      labelValueSet:
+                        values:
+                        - values
+                        - values
+                    effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                    key: key
+              version:
+                asAtModified: 2000-01-23T04:56:07.000+00:00
+                userIdModified: userIdModified
+                asAtVersionNumber: 6
+                asAtCreated: 2000-01-23T04:56:07.000+00:00
+                userIdCreated: userIdCreated
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                asAtDate: 2000-01-23T04:56:07.000+00:00
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              relationshipDefinitionId:
+                code: code
+                scope: scope
+              traversalDescription: traversalDescription
+            lusidLegalEntityId: lusidLegalEntityId
+            counterpartyRiskInformation:
+              creditRatings:
+              - rating: rating
+                ratingSource: ratingSource
+              - rating: rating
+                ratingSource: ratingSource
+              industryClassifiers:
+              - classificationCode: classificationCode
+                classificationSystemName: classificationSystemName
+              - classificationCode: classificationCode
+                classificationSystemName: classificationSystemName
+              countryOfRisk: countryOfRisk
+            displayName: displayName
+            identifiers:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+            description: description
+            links:
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            - method: method
+              description: description
+              href: https://openapi-generator.tech
+              relation: relation
+            href: https://openapi-generator.tech
+            version:
+              asAtModified: 2000-01-23T04:56:07.000+00:00
+              userIdModified: userIdModified
+              asAtVersionNumber: 6
+              asAtCreated: 2000-01-23T04:56:07.000+00:00
+              userIdCreated: userIdCreated
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              asAtDate: 2000-01-23T04:56:07.000+00:00
+            properties:
+              key:
+                effectiveUntil: 2000-01-23T04:56:07.000+00:00
+                value:
+                  metricValue:
+                    unit: unit
+                    value: 0.8008281904610115
+                  labelValue: labelValue
+                  labelValueSet:
+                    values:
+                    - values
+                    - values
+                effectiveFrom: 2000-01-23T04:56:07.000+00:00
+                key: key
+          accountName: accountName
+          accountingMethod: accountingMethod
+          currency: currency
+          accountNumber: accountNumber
+          custodianAccountId:
+            code: code
+            scope: scope
+          properties:
+            key:
+              effectiveUntil: 2000-01-23T04:56:07.000+00:00
+              value:
+                metricValue:
+                  unit: unit
+                  value: 0.8008281904610115
+                labelValue: labelValue
+                labelValueSet:
+                  values:
+                  - values
+                  - values
+              effectiveFrom: 2000-01-23T04:56:07.000+00:00
+              key: key
+          status: status
+        links:
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        - method: method
+          description: description
+          href: https://openapi-generator.tech
+          relation: relation
+        href: https://openapi-generator.tech
+      properties:
+        nextPage:
+          description: The next page of results.
+          nullable: true
+          type: string
+        previousPage:
+          description: The previous page of results.
+          nullable: true
+          type: string
+        values:
+          description: The resources to list.
+          items:
+            $ref: '#/components/schemas/CustodianAccount'
           type: array
         href:
           description: The URI of the resource list.
