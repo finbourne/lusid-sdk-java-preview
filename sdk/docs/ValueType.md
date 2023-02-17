@@ -45,5 +45,7 @@
 
 * `DATEORCUTLABEL` (value: `"DateOrCutLabel"`)
 
+* `UNINDEXEDTEXT` (value: `"UnindexedText"`)
+
 
 

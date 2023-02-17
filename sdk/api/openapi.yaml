@@ -311,7 +311,7 @@ info:
     | <a name="820">820</a>|Custodian Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5245
+  version: 0.11.5246
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -67802,7 +67802,7 @@ components:
           description: 'The expected type of the values. The available values are:
             String, Int, Decimal, DateTime, Boolean, Map, List, PropertyArray, Percentage,
             Code, Id, Uri, CurrencyAndAmount, TradePrice, Currency, MetricValue, ResourceId,
-            ResultValue, CutLocalTime, DateOrCutLabel'
+            ResultValue, CutLocalTime, DateOrCutLabel, UnindexedText'
           enum:
           - String
           - Int
@@ -67824,6 +67824,7 @@ components:
           - ResultValue
           - CutLocalTime
           - DateOrCutLabel
+          - UnindexedText
           type: string
         acceptableValues:
           description: The acceptable set of values for this data type. Only applies
@@ -69900,7 +69901,7 @@ components:
           description: 'The available values are: String, Int, Decimal, DateTime,
             Boolean, Map, List, PropertyArray, Percentage, Code, Id, Uri, CurrencyAndAmount,
             TradePrice, Currency, MetricValue, ResourceId, ResultValue, CutLocalTime,
-            DateOrCutLabel'
+            DateOrCutLabel, UnindexedText'
           enum:
           - String
           - Int
@@ -69922,6 +69923,7 @@ components:
           - ResultValue
           - CutLocalTime
           - DateOrCutLabel
+          - UnindexedText
           type: string
         acceptableValues:
           items:
@@ -70000,7 +70002,7 @@ components:
           description: 'The expected type of the values. The available values are:
             String, Int, Decimal, DateTime, Boolean, Map, List, PropertyArray, Percentage,
             Code, Id, Uri, CurrencyAndAmount, TradePrice, Currency, MetricValue, ResourceId,
-            ResultValue, CutLocalTime, DateOrCutLabel'
+            ResultValue, CutLocalTime, DateOrCutLabel, UnindexedText'
           enum:
           - String
           - Int
@@ -70022,6 +70024,7 @@ components:
           - ResultValue
           - CutLocalTime
           - DateOrCutLabel
+          - UnindexedText
           type: string
         acceptableValues:
           description: The acceptable set of values for this data type. Only applies
@@ -71608,7 +71611,7 @@ components:
           description: 'The available values are: String, Int, Decimal, DateTime,
             Boolean, Map, List, PropertyArray, Percentage, Code, Id, Uri, CurrencyAndAmount,
             TradePrice, Currency, MetricValue, ResourceId, ResultValue, CutLocalTime,
-            DateOrCutLabel'
+            DateOrCutLabel, UnindexedText'
           enum:
           - String
           - Int
@@ -71630,6 +71633,7 @@ components:
           - ResultValue
           - CutLocalTime
           - DateOrCutLabel
+          - UnindexedText
           type: string
         displayOrder:
           format: int32
@@ -85491,7 +85495,7 @@ components:
             This is defined by the property''s data type. The available values are:
             String, Int, Decimal, DateTime, Boolean, Map, List, PropertyArray, Percentage,
             Code, Id, Uri, CurrencyAndAmount, TradePrice, Currency, MetricValue, ResourceId,
-            ResultValue, CutLocalTime, DateOrCutLabel'
+            ResultValue, CutLocalTime, DateOrCutLabel, UnindexedText'
           enum:
           - String
           - Int
@@ -85513,6 +85517,7 @@ components:
           - ResultValue
           - CutLocalTime
           - DateOrCutLabel
+          - UnindexedText
           type: string
         displayName:
           description: The display name of the property.
@@ -85678,7 +85683,7 @@ components:
             This is defined by the property''s data type. The available values are:
             String, Int, Decimal, DateTime, Boolean, Map, List, PropertyArray, Percentage,
             Code, Id, Uri, CurrencyAndAmount, TradePrice, Currency, MetricValue, ResourceId,
-            ResultValue, CutLocalTime, DateOrCutLabel'
+            ResultValue, CutLocalTime, DateOrCutLabel, UnindexedText'
           enum:
           - String
           - Int
@@ -85700,6 +85705,7 @@ components:
           - ResultValue
           - CutLocalTime
           - DateOrCutLabel
+          - UnindexedText
           type: string
         displayName:
           description: The display name of the property.
@@ -101703,6 +101709,7 @@ components:
       - ResultValue
       - CutLocalTime
       - DateOrCutLabel
+      - UnindexedText
       type: string
     VendorDependency:
       allOf:
