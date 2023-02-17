@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **description** | **String** | A description for this rule | 
 **rate** | **java.math.BigDecimal** | The rate to be applied if all criteria are met | 
 **matchCriteria** | [**List&lt;MatchCriterion&gt;**](MatchCriterion.md) | A set of criteria to be met for this rule to be applied | 
-**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
 
