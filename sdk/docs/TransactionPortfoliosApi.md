@@ -32,7 +32,7 @@ Method | HTTP request | Description
 [**listHoldingsAdjustments**](TransactionPortfoliosApi.md#listHoldingsAdjustments) | **GET** /api/transactionportfolios/{scope}/{code}/holdingsadjustments | ListHoldingsAdjustments: List holdings adjustments
 [**lookThroughHoldings**](TransactionPortfoliosApi.md#lookThroughHoldings) | **GET** /api/transactionportfolios/{scope}/{code}/holdings/$lookthrough | [EXPERIMENTAL] LookThroughHoldings: Get LookThrough Holdings
 [**lookThroughTransactions**](TransactionPortfoliosApi.md#lookThroughTransactions) | **GET** /api/transactionportfolios/{scope}/{code}/transactions/$lookthrough | [EXPERIMENTAL] LookThroughTransactions: Look through transactions
-[**patchPortfolioDetails**](TransactionPortfoliosApi.md#patchPortfolioDetails) | **PATCH** /api/transactionportfolios/{scope}/{code}/details | [EXPERIMENTAL] PatchPortfolioDetails: Patch portfolio details
+[**patchPortfolioDetails**](TransactionPortfoliosApi.md#patchPortfolioDetails) | **PATCH** /api/transactionportfolios/{scope}/{code}/details | [EARLY ACCESS] PatchPortfolioDetails: Patch portfolio details
 [**resolveInstrument**](TransactionPortfoliosApi.md#resolveInstrument) | **POST** /api/transactionportfolios/{scope}/{code}/$resolve | [EARLY ACCESS] ResolveInstrument: Resolve instrument
 [**setHoldings**](TransactionPortfoliosApi.md#setHoldings) | **PUT** /api/transactionportfolios/{scope}/{code}/holdings | SetHoldings: Set holdings
 [**upsertCustodianAccounts**](TransactionPortfoliosApi.md#upsertCustodianAccounts) | **POST** /api/transactionportfolios/{scope}/{code}/custodianaccounts | [EXPERIMENTAL] UpsertCustodianAccounts: Upsert Custodian Accounts
@@ -2288,7 +2288,7 @@ Name | Type | Description  | Notes
 # **patchPortfolioDetails**
 > PortfolioDetails patchPortfolioDetails(scope, code, operation, effectiveAt)
 
-[EXPERIMENTAL] PatchPortfolioDetails: Patch portfolio details
+[EARLY ACCESS] PatchPortfolioDetails: Patch portfolio details
 
 Create or update certain details for a particular transaction portfolio.  The behaviour is defined by the JSON Patch specification.                Note that not all elements of a transaction portfolio definition are  modifiable once it has been created due to the potential implications for data already stored.  Currently supported properties are: SubHoldingKeys, BaseCurrency, AmortisationMethod
 
