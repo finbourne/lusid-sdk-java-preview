@@ -72,7 +72,7 @@ public class Instruments {
         UpsertInstrumentsResponse upsertInstrumentsResponse = instrumentsApi.upsertInstruments(Stream.of(new Object[][] {
 
                 {"correlationId1", new InstrumentDefinition()
-                        .name("VODAFONE GROUP PLC")
+                        .name("Anglo American plc")
 
                         /*
                             Instruments are created with a set of identifiers
@@ -80,57 +80,57 @@ public class Instruments {
                          */
                         .identifiers(new HashMap<String, InstrumentIdValue>() {
                             {
-                                put(FIGI_SCHEME, new InstrumentIdValue().value("BBG000C6K6G9"));
-                                put(CUSTOM_INTERNAL_SCHEME, new InstrumentIdValue().value("INTERNAL_ID_1"));
-                                put(ISIN_SCHEME, new InstrumentIdValue().value("GB00BH4HKS39"));
-                                put(SEDOL_SCHEME, new InstrumentIdValue().value("BH4HKS3"));
+                                put(FIGI_SCHEME, new InstrumentIdValue().value("BBG000BBLDF4"));
+                                put(CUSTOM_INTERNAL_SCHEME, new InstrumentIdValue().value("SDK_ID_1"));
+                                put(ISIN_SCHEME, new InstrumentIdValue().value("GB00B1XZS820"));
+                                put(SEDOL_SCHEME, new InstrumentIdValue().value("B1XZS82"));
                             }
                         })},
 
 
                 {"correlationId2", new InstrumentDefinition()
-                        .name("BARCLAYS PLC")
+                        .name("Avast")
                         .identifiers(new HashMap<String, InstrumentIdValue>() {
                             {
-                                put(FIGI_SCHEME, new InstrumentIdValue().value("BBG000C04D57"));
-                                put(CUSTOM_INTERNAL_SCHEME, new InstrumentIdValue().value("INTERNAL_ID_2"));
-                                put(ISIN_SCHEME, new InstrumentIdValue().value("GB0031348658"));
-                                put(SEDOL_SCHEME, new InstrumentIdValue().value("3134865"));
+                                put(FIGI_SCHEME, new InstrumentIdValue().value("BBG00KW3SK62"));
+                                put(CUSTOM_INTERNAL_SCHEME, new InstrumentIdValue().value("SDK_ID_2"));
+                                put(ISIN_SCHEME, new InstrumentIdValue().value("GB00BDD85M81"));
+                                put(SEDOL_SCHEME, new InstrumentIdValue().value("BDD85M8"));
                             }
                         })},
 
 
                 {"correlationId3", new InstrumentDefinition()
-                        .name("NATIONAL GRID PLC")
+                        .name("Berkeley Group Holdings")
                         .identifiers(new HashMap<String, InstrumentIdValue>() {
                             {
-                                put(FIGI_SCHEME, new InstrumentIdValue().value("BBG000FV67Q4"));
-                                put(CUSTOM_INTERNAL_SCHEME, new InstrumentIdValue().value("INTERNAL_ID_3"));
-                                put(ISIN_SCHEME, new InstrumentIdValue().value("GB00BDR05C01"));
-                                put(SEDOL_SCHEME, new InstrumentIdValue().value("BDR05C0"));
+                                put(FIGI_SCHEME, new InstrumentIdValue().value("BBG000H6ZKT3"));
+                                put(CUSTOM_INTERNAL_SCHEME, new InstrumentIdValue().value("SDK_ID_3"));
+                                put(ISIN_SCHEME, new InstrumentIdValue().value("GB00B02L3W35"));
+                                put(SEDOL_SCHEME, new InstrumentIdValue().value("B02L3W3"));
                             }
                         })},
 
 
                 {"correlationId4", new InstrumentDefinition()
-                        .name("SAINSBURY (J) PLC")
+                        .name("Croda International")
                         .identifiers(new HashMap<String, InstrumentIdValue>() {
                             {
-                                put(FIGI_SCHEME, new InstrumentIdValue().value("BBG000BF0KW3"));
-                                put(CUSTOM_INTERNAL_SCHEME, new InstrumentIdValue().value("INTERNAL_ID_4"));
-                                put(ISIN_SCHEME, new InstrumentIdValue().value("GB00B019KW72"));
-                                put(SEDOL_SCHEME, new InstrumentIdValue().value("B019KW7"));
+                                put(FIGI_SCHEME, new InstrumentIdValue().value("BBG000BDCLS8"));
+                                put(CUSTOM_INTERNAL_SCHEME, new InstrumentIdValue().value("SDK_ID_4"));
+                                put(ISIN_SCHEME, new InstrumentIdValue().value("GB00BJFFLV09"));
+                                put(SEDOL_SCHEME, new InstrumentIdValue().value("BJFFLV0"));
                             }
                         })},
 
                 {"correlationId5", new InstrumentDefinition()
-                        .name("TAYLOR WIMPEY PLC")
+                        .name("Experian")
                         .identifiers(new HashMap<String, InstrumentIdValue>() {
                             {
-                                put(FIGI_SCHEME, new InstrumentIdValue().value("BBG000BF4KL1"));
-                                put(CUSTOM_INTERNAL_SCHEME, new InstrumentIdValue().value("INTERNAL_ID_5"));
-                                put(ISIN_SCHEME, new InstrumentIdValue().value("GB0008782301"));
-                                put(SEDOL_SCHEME, new InstrumentIdValue().value("0878230"));
+                                put(FIGI_SCHEME, new InstrumentIdValue().value("BBG000BKFZN3"));
+                                put(CUSTOM_INTERNAL_SCHEME, new InstrumentIdValue().value("SDK_ID_5"));
+                                put(ISIN_SCHEME, new InstrumentIdValue().value("GB00B19NLV48"));
+                                put(SEDOL_SCHEME, new InstrumentIdValue().value("B19NLV4"));
                             }
                         })}
 
