@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **counterparty** | **String** | The market entity this placement is placed with. | 
 **executionSystem** | **String** | Optionally specifies the execution system in use. |  [optional]
 **version** | [**Version**](Version.md) |  |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
 
