@@ -311,7 +311,7 @@ info:
     | <a name="820">820</a>|Custodian Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5274
+  version: 0.11.5275
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -495,10 +495,8 @@ paths:
               metrics:
               - key: Instrument/default/Name
                 op: Value
-                options: {}
               - key: Holding/default/PV
                 op: Value
-                options: {}
               groupBy:
               - Instrument/default/Name
               sort:
@@ -532,10 +530,8 @@ paths:
               metrics:
               - key: Instrument/default/Name
                 op: Value
-                options: {}
               - key: Holding/default/PV
                 op: Value
-                options: {}
               groupBy:
               - Instrument/default/Name
               sort:
@@ -569,10 +565,8 @@ paths:
               metrics:
               - key: Instrument/default/Name
                 op: Value
-                options: {}
               - key: Holding/default/PV
                 op: Value
-                options: {}
               groupBy:
               - Instrument/default/Name
               sort:
@@ -606,10 +600,8 @@ paths:
               metrics:
               - key: Instrument/default/Name
                 op: Value
-                options: {}
               - key: Holding/default/PV
                 op: Value
-                options: {}
               groupBy:
               - Instrument/default/Name
               sort:
@@ -692,10 +684,8 @@ paths:
               metrics:
               - key: Instrument/default/Name
                 op: Value
-                options: {}
               - key: Holding/default/PV
                 op: Value
-                options: {}
               groupBy:
               - Instrument/default/Name
               reportCurrency: USD
@@ -733,10 +723,8 @@ paths:
               metrics:
               - key: Instrument/default/Name
                 op: Value
-                options: {}
               - key: Holding/default/PV
                 op: Value
-                options: {}
               groupBy:
               - Instrument/default/Name
               reportCurrency: USD
@@ -774,10 +762,8 @@ paths:
               metrics:
               - key: Instrument/default/Name
                 op: Value
-                options: {}
               - key: Holding/default/PV
                 op: Value
-                options: {}
               groupBy:
               - Instrument/default/Name
               reportCurrency: USD
@@ -815,10 +801,8 @@ paths:
               metrics:
               - key: Instrument/default/Name
                 op: Value
-                options: {}
               - key: Holding/default/PV
                 op: Value
-                options: {}
               groupBy:
               - Instrument/default/Name
               reportCurrency: USD
@@ -33590,10 +33574,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -33622,10 +33604,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -33653,7 +33633,6 @@ paths:
                 appliesTo:
                   key: Holding/default/PV
                   op: Sum
-                  options: {}
                 ruleType: ReconcileNumericRule
               preserveKeys:
               - Instrument/default/Name
@@ -33669,10 +33648,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -33701,10 +33678,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -33732,7 +33707,6 @@ paths:
                 appliesTo:
                   key: Holding/default/PV
                   op: Sum
-                  options: {}
                 ruleType: ReconcileNumericRule
               preserveKeys:
               - Instrument/default/Name
@@ -33748,10 +33722,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -33780,10 +33752,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -33811,7 +33781,6 @@ paths:
                 appliesTo:
                   key: Holding/default/PV
                   op: Sum
-                  options: {}
                 ruleType: ReconcileNumericRule
               preserveKeys:
               - Instrument/default/Name
@@ -33827,10 +33796,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -33859,10 +33826,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -33890,7 +33855,6 @@ paths:
                 appliesTo:
                   key: Holding/default/PV
                   op: Sum
-                  options: {}
                 ruleType: ReconcileNumericRule
               preserveKeys:
               - Instrument/default/Name
@@ -34125,10 +34089,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Value
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 reportCurrency: USD
@@ -34163,10 +34125,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Value
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 reportCurrency: USD
@@ -34207,10 +34167,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Value
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 reportCurrency: USD
@@ -34245,10 +34203,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Value
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 reportCurrency: USD
@@ -34289,10 +34245,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Value
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 reportCurrency: USD
@@ -34327,10 +34281,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Value
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 reportCurrency: USD
@@ -34371,10 +34323,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Value
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 reportCurrency: USD
@@ -34409,10 +34359,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Value
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 reportCurrency: USD
@@ -34965,10 +34913,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -34997,10 +34943,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -35036,10 +34980,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -35068,10 +35010,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -35107,10 +35047,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -35139,10 +35077,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -35178,10 +35114,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -35210,10 +35144,8 @@ paths:
                 metrics:
                 - key: Instrument/default/Name
                   op: Value
-                  options: {}
                 - key: Holding/default/PV
                   op: Sum
-                  options: {}
                 groupBy:
                 - Instrument/default/Name
                 sort: []
@@ -64238,45 +64170,6 @@ components:
           nullable: true
           type: string
       type: object
-    AddressKeyOptionDefinition:
-      additionalProperties: false
-      description: The definition of an Address Key Option
-      example:
-        defaultValue: defaultValue
-        name: name
-        optional: true
-        allowedValueSet:
-        - allowedValueSet
-        - allowedValueSet
-        type: type
-      properties:
-        name:
-          description: The name of the option
-          minLength: 1
-          type: string
-        type:
-          description: The type of the option
-          minLength: 1
-          type: string
-        optional:
-          description: Is this option required or optional?
-          type: boolean
-        allowedValueSet:
-          description: If the option is a string or enum, the allowed set of values
-            it can take.
-          items:
-            type: string
-          nullable: true
-          type: array
-        defaultValue:
-          description: If the option is not required, what is the default value?
-          nullable: true
-          type: string
-      required:
-      - name
-      - optional
-      - type
-      type: object
     AdjustHolding:
       additionalProperties: false
       example:
@@ -64730,8 +64623,6 @@ components:
       additionalProperties: false
       example:
         op: Sum
-        options:
-          key: '{}'
         key: key
       properties:
         key:
@@ -64756,15 +64647,6 @@ components:
           - SumCumulativeInAdvance
           - SumCumulativeInArrears
           type: string
-        options:
-          additionalProperties:
-            additionalProperties: false
-            type: object
-          description: "Additional options to apply when performing computations.\
-            \ Options that do not apply to the Key will be\r\nignored. Option values\
-            \ can be boolean, numeric, string or date-time."
-          nullable: true
-          type: object
       required:
       - key
       - op
@@ -64953,15 +64835,6 @@ components:
         displayName: displayName
         scalesWithHoldingQuantity: true
         supportedOperations: supportedOperations
-        applicableOptions:
-          key:
-            defaultValue: defaultValue
-            name: name
-            optional: true
-            allowedValueSet:
-            - allowedValueSet
-            - allowedValueSet
-            type: type
         description: description
         type: String
         lifeCycleStatus: lifeCycleStatus
@@ -65046,13 +64919,6 @@ components:
           format: date-time
           nullable: true
           type: string
-        applicableOptions:
-          additionalProperties:
-            $ref: '#/components/schemas/AddressKeyOptionDefinition'
-          description: A mapping from option names to the definition that the corresponding
-            option value must match.
-          nullable: true
-          type: object
       required:
       - addressKey
       - description
@@ -76110,12 +75976,8 @@ components:
           rollConvention: rollConvention
         metrics:
         - op: Sum
-          options:
-            key: '{}'
           key: key
         - op: Sum
-          options:
-            key: '{}'
           key: key
         groupBy:
         - groupBy
@@ -76283,12 +76145,8 @@ components:
             rollConvention: rollConvention
           metrics:
           - op: Sum
-            options:
-              key: '{}'
             key: key
           - op: Sum
-            options:
-              key: '{}'
             key: key
           groupBy:
           - groupBy
@@ -76360,12 +76218,8 @@ components:
             rollConvention: rollConvention
           metrics:
           - op: Sum
-            options:
-              key: '{}'
             key: key
           - op: Sum
-            options:
-              key: '{}'
             key: key
           groupBy:
           - groupBy
@@ -90417,12 +90271,8 @@ components:
             rollConvention: rollConvention
           metrics:
           - op: Sum
-            options:
-              key: '{}'
             key: key
           - op: Sum
-            options:
-              key: '{}'
             key: key
           groupBy:
           - groupBy
@@ -90492,12 +90342,8 @@ components:
             rollConvention: rollConvention
           metrics:
           - op: Sum
-            options:
-              key: '{}'
             key: key
           - op: Sum
-            options:
-              key: '{}'
             key: key
           groupBy:
           - groupBy
@@ -91647,15 +91493,6 @@ components:
           displayName: displayName
           scalesWithHoldingQuantity: true
           supportedOperations: supportedOperations
-          applicableOptions:
-            key:
-              defaultValue: defaultValue
-              name: name
-              optional: true
-              allowedValueSet:
-              - allowedValueSet
-              - allowedValueSet
-              type: type
           description: description
           type: String
           lifeCycleStatus: lifeCycleStatus
@@ -91665,15 +91502,6 @@ components:
           displayName: displayName
           scalesWithHoldingQuantity: true
           supportedOperations: supportedOperations
-          applicableOptions:
-            key:
-              defaultValue: defaultValue
-              name: name
-              optional: true
-              allowedValueSet:
-              - allowedValueSet
-              - allowedValueSet
-              type: type
           description: description
           type: String
           lifeCycleStatus: lifeCycleStatus
@@ -106339,12 +106167,8 @@ components:
           rollConvention: rollConvention
         metrics:
         - op: Sum
-          options:
-            key: '{}'
           key: key
         - op: Sum
-          options:
-            key: '{}'
           key: key
         groupBy:
         - groupBy
@@ -106576,12 +106400,8 @@ components:
             rollConvention: rollConvention
           metrics:
           - op: Sum
-            options:
-              key: '{}'
             key: key
           - op: Sum
-            options:
-              key: '{}'
             key: key
           groupBy:
           - groupBy
@@ -106651,12 +106471,8 @@ components:
             rollConvention: rollConvention
           metrics:
           - op: Sum
-            options:
-              key: '{}'
             key: key
           - op: Sum
-            options:
-              key: '{}'
             key: key
           groupBy:
           - groupBy
