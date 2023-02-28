@@ -4,22 +4,22 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteReconciliationMapping**](ReconciliationsApi.md#deleteReconciliationMapping) | **DELETE** /api/portfolios/mapping/{scope}/{code} | [EXPERIMENTAL] DeleteReconciliationMapping: Delete a mapping
-[**getReconciliationMapping**](ReconciliationsApi.md#getReconciliationMapping) | **GET** /api/portfolios/mapping/{scope}/{code} | [EXPERIMENTAL] GetReconciliationMapping: Get a mapping
-[**listReconciliationMappings**](ReconciliationsApi.md#listReconciliationMappings) | **GET** /api/portfolios/mapping | [EXPERIMENTAL] ListReconciliationMappings: List the reconciliation mappings
+[**deleteReconciliationMapping**](ReconciliationsApi.md#deleteReconciliationMapping) | **DELETE** /api/portfolios/mapping/{scope}/{code} | [EARLY ACCESS] DeleteReconciliationMapping: Delete a mapping
+[**getReconciliationMapping**](ReconciliationsApi.md#getReconciliationMapping) | **GET** /api/portfolios/mapping/{scope}/{code} | [EARLY ACCESS] GetReconciliationMapping: Get a mapping
+[**listReconciliationMappings**](ReconciliationsApi.md#listReconciliationMappings) | **GET** /api/portfolios/mapping | [EARLY ACCESS] ListReconciliationMappings: List the reconciliation mappings
 [**reconcileGeneric**](ReconciliationsApi.md#reconcileGeneric) | **POST** /api/portfolios/$reconcileGeneric | ReconcileGeneric: Reconcile either holdings or valuations performed on one or two sets of holdings using one or two configuration recipes.                The output is configurable for various types of comparisons, to allow tolerances on numerical and date-time data or case-insensitivity on strings,  and elision of resulting differences where they are &#39;empty&#39; or null or zero.
 [**reconcileHoldings**](ReconciliationsApi.md#reconcileHoldings) | **POST** /api/portfolios/$reconcileholdings | [EARLY ACCESS] ReconcileHoldings: Reconcile portfolio holdings
 [**reconcileInline**](ReconciliationsApi.md#reconcileInline) | **POST** /api/portfolios/$reconcileInline | ReconcileInline: Reconcile valuations performed on one or two sets of inline instruments using one or two configuration recipes.
-[**reconcileTransactions**](ReconciliationsApi.md#reconcileTransactions) | **POST** /api/portfolios/$reconcileTransactions | [EXPERIMENTAL] ReconcileTransactions: Perform a Transactions Reconciliation.
+[**reconcileTransactions**](ReconciliationsApi.md#reconcileTransactions) | **POST** /api/portfolios/$reconcileTransactions | [EARLY ACCESS] ReconcileTransactions: Perform a Transactions Reconciliation.
 [**reconcileValuation**](ReconciliationsApi.md#reconcileValuation) | **POST** /api/portfolios/$reconcileValuation | ReconcileValuation: Reconcile valuations performed on one or two sets of holdings using one or two configuration recipes.
-[**upsertReconciliationMapping**](ReconciliationsApi.md#upsertReconciliationMapping) | **POST** /api/portfolios/mapping | [EXPERIMENTAL] UpsertReconciliationMapping: Create or update a mapping
+[**upsertReconciliationMapping**](ReconciliationsApi.md#upsertReconciliationMapping) | **POST** /api/portfolios/mapping | [EARLY ACCESS] UpsertReconciliationMapping: Create or update a mapping
 
 
 <a name="deleteReconciliationMapping"></a>
 # **deleteReconciliationMapping**
 > String deleteReconciliationMapping(scope, code)
 
-[EXPERIMENTAL] DeleteReconciliationMapping: Delete a mapping
+[EARLY ACCESS] DeleteReconciliationMapping: Delete a mapping
 
 Deletes the mapping identified by the scope and code
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 # **getReconciliationMapping**
 > Mapping getReconciliationMapping(scope, code)
 
-[EXPERIMENTAL] GetReconciliationMapping: Get a mapping
+[EARLY ACCESS] GetReconciliationMapping: Get a mapping
 
 Gets a mapping identified by the given scope and code
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 # **listReconciliationMappings**
 > ResourceListOfMapping listReconciliationMappings(reconciliationType)
 
-[EXPERIMENTAL] ListReconciliationMappings: List the reconciliation mappings
+[EARLY ACCESS] ListReconciliationMappings: List the reconciliation mappings
 
 Lists all mappings this user is entitled to see
 
@@ -445,7 +445,7 @@ Name | Type | Description  | Notes
 # **reconcileTransactions**
 > TransactionsReconciliationsResponse reconcileTransactions(transactionReconciliationRequest)
 
-[EXPERIMENTAL] ReconcileTransactions: Perform a Transactions Reconciliation.
+[EARLY ACCESS] ReconcileTransactions: Perform a Transactions Reconciliation.
 
 Evaluates two sets of transactions to determine which transactions from each set likely match  using the rules of a specified mapping.
 
@@ -583,7 +583,7 @@ Name | Type | Description  | Notes
 # **upsertReconciliationMapping**
 > Mapping upsertReconciliationMapping(mapping)
 
-[EXPERIMENTAL] UpsertReconciliationMapping: Create or update a mapping
+[EARLY ACCESS] UpsertReconciliationMapping: Create or update a mapping
 
 If no mapping exists with the specified scope and code will create a new one.  Else will update the existing mapping
 

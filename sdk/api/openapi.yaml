@@ -311,7 +311,7 @@ info:
     | <a name="820">820</a>|Custodian Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5282
+  version: 0.11.5283
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -34941,10 +34941,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ReconcileTransactions: Perform a Transactions Reconciliation.'
+      summary: '[EARLY ACCESS] ReconcileTransactions: Perform a Transactions Reconciliation.'
       tags:
       - Reconciliations
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/portfolios/$reconcileValuation:
@@ -35327,11 +35327,11 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] ListReconciliationMappings: List the reconciliation
+      summary: '[EARLY ACCESS] ListReconciliationMappings: List the reconciliation
         mappings'
       tags:
       - Reconciliations
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     post:
       description: "If no mapping exists with the specified scope and code will create\
@@ -35784,10 +35784,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] UpsertReconciliationMapping: Create or update a mapping'
+      summary: '[EARLY ACCESS] UpsertReconciliationMapping: Create or update a mapping'
       tags:
       - Reconciliations
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-contentType: application/json-patch+json
       x-accepts: application/json
   /api/portfolios/mapping/{scope}/{code}:
@@ -35850,10 +35850,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] DeleteReconciliationMapping: Delete a mapping'
+      summary: '[EARLY ACCESS] DeleteReconciliationMapping: Delete a mapping'
       tags:
       - Reconciliations
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
     get:
       description: Gets a mapping identified by the given scope and code
@@ -36085,10 +36085,10 @@ paths:
           description: Error response
       security:
       - oauth2: []
-      summary: '[EXPERIMENTAL] GetReconciliationMapping: Get a mapping'
+      summary: '[EARLY ACCESS] GetReconciliationMapping: Get a mapping'
       tags:
       - Reconciliations
-      x-fbn-apistatus: Experimental
+      x-fbn-apistatus: EarlyAccess
       x-accepts: application/json
   /api/portfolios/{scope}:
     get:
