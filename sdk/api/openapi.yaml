@@ -311,7 +311,7 @@ info:
     | <a name="820">820</a>|Custodian Account not found.|  |
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: LUSID API
-  version: 0.11.5284
+  version: 0.11.5285
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -54957,7 +54957,6 @@ paths:
               accountName: Account1 Sterling
               accountingMethod: FirstInFirstOut
               currency: GBP
-              accountType: Cash
               properties: {}
               custodianIdentifier:
                 idTypeScope: ScopeA
@@ -54970,7 +54969,6 @@ paths:
               accountName: Account2 Euro
               accountingMethod: FirstInFirstOut
               currency: EUR
-              accountType: Swap
               properties: {}
               custodianIdentifier:
                 idTypeScope: ScopeA
@@ -54989,7 +54987,6 @@ paths:
               accountName: Account1 Sterling
               accountingMethod: FirstInFirstOut
               currency: GBP
-              accountType: Cash
               properties: {}
               custodianIdentifier:
                 idTypeScope: ScopeA
@@ -55002,7 +54999,6 @@ paths:
               accountName: Account2 Euro
               accountingMethod: FirstInFirstOut
               currency: EUR
-              accountType: Swap
               properties: {}
               custodianIdentifier:
                 idTypeScope: ScopeA
@@ -55021,7 +55017,6 @@ paths:
               accountName: Account1 Sterling
               accountingMethod: FirstInFirstOut
               currency: GBP
-              accountType: Cash
               properties: {}
               custodianIdentifier:
                 idTypeScope: ScopeA
@@ -55034,7 +55029,6 @@ paths:
               accountName: Account2 Euro
               accountingMethod: FirstInFirstOut
               currency: EUR
-              accountType: Swap
               properties: {}
               custodianIdentifier:
                 idTypeScope: ScopeA
@@ -55053,7 +55047,6 @@ paths:
               accountName: Account1 Sterling
               accountingMethod: FirstInFirstOut
               currency: GBP
-              accountType: Cash
               properties: {}
               custodianIdentifier:
                 idTypeScope: ScopeA
@@ -55066,7 +55059,6 @@ paths:
               accountName: Account2 Euro
               accountingMethod: FirstInFirstOut
               currency: EUR
-              accountType: Swap
               properties: {}
               custodianIdentifier:
                 idTypeScope: ScopeA
@@ -65881,7 +65873,6 @@ components:
                     effectiveFrom: 2000-01-23T04:56:07.000+00:00
                     key: key
               accountName: accountName
-              accountType: accountType
               accountingMethod: accountingMethod
               currency: currency
               accountNumber: accountNumber
@@ -70695,7 +70686,6 @@ components:
               effectiveFrom: 2000-01-23T04:56:07.000+00:00
               key: key
         accountName: accountName
-        accountType: accountType
         accountingMethod: accountingMethod
         currency: currency
         accountNumber: accountNumber
@@ -70741,11 +70731,6 @@ components:
         currency:
           description: The Currency for the Account
           type: string
-        accountType:
-          description: The Type of the Custodian Account. Can be Margin, Cash or Swap.
-            Defaults to Margin.
-          minLength: 1
-          type: string
         properties:
           additionalProperties:
             $ref: '#/components/schemas/Property'
@@ -70759,7 +70744,6 @@ components:
       required:
       - accountName
       - accountNumber
-      - accountType
       - accountingMethod
       - currency
       - custodian
@@ -70830,7 +70814,6 @@ components:
         code: code
         accountName: accountName
         scope: scope
-        accountType: accountType
         accountingMethod: accountingMethod
         currency: currency
         accountNumber: accountNumber
@@ -70890,11 +70873,6 @@ components:
           type: string
         currency:
           description: The Currency for the Account
-          type: string
-        accountType:
-          description: The Type of the Custodian Account. Can be Margin, Cash or Swap.
-            Defaults to Margin.
-          nullable: true
           type: string
         properties:
           additionalProperties:
@@ -71075,7 +71053,6 @@ components:
                 effectiveFrom: 2000-01-23T04:56:07.000+00:00
                 key: key
           accountName: accountName
-          accountType: accountType
           accountingMethod: accountingMethod
           currency: currency
           accountNumber: accountNumber
@@ -71253,7 +71230,6 @@ components:
                 effectiveFrom: 2000-01-23T04:56:07.000+00:00
                 key: key
           accountName: accountName
-          accountType: accountType
           accountingMethod: accountingMethod
           currency: currency
           accountNumber: accountNumber
@@ -81865,7 +81841,6 @@ components:
                 effectiveFrom: 2000-01-23T04:56:07.000+00:00
                 key: key
           accountName: accountName
-          accountType: accountType
           accountingMethod: accountingMethod
           currency: currency
           accountNumber: accountNumber
@@ -82043,7 +82018,6 @@ components:
                 effectiveFrom: 2000-01-23T04:56:07.000+00:00
                 key: key
           accountName: accountName
-          accountType: accountType
           accountingMethod: accountingMethod
           currency: currency
           accountNumber: accountNumber
@@ -86809,7 +86783,6 @@ components:
                   effectiveFrom: 2000-01-23T04:56:07.000+00:00
                   key: key
             accountName: accountName
-            accountType: accountType
             accountingMethod: accountingMethod
             currency: currency
             accountNumber: accountNumber
@@ -87676,7 +87649,6 @@ components:
                   effectiveFrom: 2000-01-23T04:56:07.000+00:00
                   key: key
             accountName: accountName
-            accountType: accountType
             accountingMethod: accountingMethod
             currency: currency
             accountNumber: accountNumber
@@ -89803,7 +89775,6 @@ components:
                   effectiveFrom: 2000-01-23T04:56:07.000+00:00
                   key: key
             accountName: accountName
-            accountType: accountType
             accountingMethod: accountingMethod
             currency: currency
             accountNumber: accountNumber
@@ -90031,7 +90002,6 @@ components:
                   effectiveFrom: 2000-01-23T04:56:07.000+00:00
                   key: key
             accountName: accountName
-            accountType: accountType
             accountingMethod: accountingMethod
             currency: currency
             accountNumber: accountNumber
@@ -96472,7 +96442,6 @@ components:
                     effectiveFrom: 2000-01-23T04:56:07.000+00:00
                     key: key
               accountName: accountName
-              accountType: accountType
               accountingMethod: accountingMethod
               currency: currency
               accountNumber: accountNumber
@@ -96744,7 +96713,6 @@ components:
                     effectiveFrom: 2000-01-23T04:56:07.000+00:00
                     key: key
               accountName: accountName
-              accountType: accountType
               accountingMethod: accountingMethod
               currency: currency
               accountNumber: accountNumber
@@ -98807,7 +98775,6 @@ components:
                   effectiveFrom: 2000-01-23T04:56:07.000+00:00
                   key: key
             accountName: accountName
-            accountType: accountType
             accountingMethod: accountingMethod
             currency: currency
             accountNumber: accountNumber
@@ -99030,7 +98997,6 @@ components:
                   effectiveFrom: 2000-01-23T04:56:07.000+00:00
                   key: key
             accountName: accountName
-            accountType: accountType
             accountingMethod: accountingMethod
             currency: currency
             accountNumber: accountNumber
@@ -100752,7 +100718,6 @@ components:
                 effectiveFrom: 2000-01-23T04:56:07.000+00:00
                 key: key
           accountName: accountName
-          accountType: accountType
           accountingMethod: accountingMethod
           currency: currency
           accountNumber: accountNumber
@@ -102300,7 +102265,6 @@ components:
                     effectiveFrom: 2000-01-23T04:56:07.000+00:00
                     key: key
               accountName: accountName
-              accountType: accountType
               accountingMethod: accountingMethod
               currency: currency
               accountNumber: accountNumber
@@ -102528,7 +102492,6 @@ components:
                     effectiveFrom: 2000-01-23T04:56:07.000+00:00
                     key: key
               accountName: accountName
-              accountType: accountType
               accountingMethod: accountingMethod
               currency: currency
               accountNumber: accountNumber
@@ -102752,7 +102715,6 @@ components:
                     effectiveFrom: 2000-01-23T04:56:07.000+00:00
                     key: key
               accountName: accountName
-              accountType: accountType
               accountingMethod: accountingMethod
               currency: currency
               accountNumber: accountNumber
@@ -102980,7 +102942,6 @@ components:
                     effectiveFrom: 2000-01-23T04:56:07.000+00:00
                     key: key
               accountName: accountName
-              accountType: accountType
               accountingMethod: accountingMethod
               currency: currency
               accountNumber: accountNumber
@@ -107744,7 +107705,6 @@ components:
                     effectiveFrom: 2000-01-23T04:56:07.000+00:00
                     key: key
               accountName: accountName
-              accountType: accountType
               accountingMethod: accountingMethod
               currency: currency
               accountNumber: accountNumber
@@ -108007,7 +107967,6 @@ components:
                     effectiveFrom: 2000-01-23T04:56:07.000+00:00
                     key: key
               accountName: accountName
-              accountType: accountType
               accountingMethod: accountingMethod
               currency: currency
               accountNumber: accountNumber
@@ -108285,7 +108244,6 @@ components:
                   effectiveFrom: 2000-01-23T04:56:07.000+00:00
                   key: key
             accountName: accountName
-            accountType: accountType
             accountingMethod: accountingMethod
             currency: currency
             accountNumber: accountNumber
@@ -108508,7 +108466,6 @@ components:
                   effectiveFrom: 2000-01-23T04:56:07.000+00:00
                   key: key
             accountName: accountName
-            accountType: accountType
             accountingMethod: accountingMethod
             currency: currency
             accountNumber: accountNumber
@@ -108826,7 +108783,6 @@ components:
                     effectiveFrom: 2000-01-23T04:56:07.000+00:00
                     key: key
               accountName: accountName
-              accountType: accountType
               accountingMethod: accountingMethod
               currency: currency
               accountNumber: accountNumber
@@ -109089,7 +109045,6 @@ components:
                     effectiveFrom: 2000-01-23T04:56:07.000+00:00
                     key: key
               accountName: accountName
-              accountType: accountType
               accountingMethod: accountingMethod
               currency: currency
               accountNumber: accountNumber
