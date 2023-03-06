@@ -8,7 +8,7 @@ A condition to be evaluated.  Each supported CriterionType has a corresponding s
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**criterionType** | [**CriterionTypeEnum**](#CriterionTypeEnum) | The available values are: PropertyValueEquals, PropertyValueIn | 
+**criterionType** | [**CriterionTypeEnum**](#CriterionTypeEnum) | The available values are: PropertyValueEquals, PropertyValueIn, SubHoldingKeyValueEquals | 
 
 
 
@@ -18,6 +18,7 @@ Name | Value
 ---- | -----
 PROPERTYVALUEEQUALS | &quot;PropertyValueEquals&quot;
 PROPERTYVALUEIN | &quot;PropertyValueIn&quot;
+SUBHOLDINGKEYVALUEEQUALS | &quot;SubHoldingKeyValueEquals&quot;
 
 
 

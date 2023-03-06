@@ -9,5 +9,7 @@
 
 * `PROPERTYVALUEIN` (value: `"PropertyValueIn"`)
 
+* `SUBHOLDINGKEYVALUEEQUALS` (value: `"SubHoldingKeyValueEquals"`)
+
 
 
