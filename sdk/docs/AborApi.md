@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createAbor**](AborApi.md#createAbor) | **POST** /api/abor/{scope} | [EXPERIMENTAL] CreateAbor: Create an Abor.
 [**deleteAbor**](AborApi.md#deleteAbor) | **DELETE** /api/abor/{scope}/{code} | [EXPERIMENTAL] DeleteAbor: Delete an Abor.
 [**getAbor**](AborApi.md#getAbor) | **GET** /api/abor/{scope}/{code} | [EXPERIMENTAL] GetAbor: Get Abor.
+[**getJELines**](AborApi.md#getJELines) | **POST** /api/abor/{scope}/{code}/JELines/$query | [EXPERIMENTAL] GetJELines: Get the JELines for the given Abor.
 [**listAbors**](AborApi.md#listAbors) | **GET** /api/abor | [EXPERIMENTAL] ListAbors: List Abors.
 [**upsertAborProperties**](AborApi.md#upsertAborProperties) | **POST** /api/abor/{scope}/{code}/properties/$upsert | [EXPERIMENTAL] UpsertAborProperties: Upsert Abor properties
 
@@ -227,6 +228,85 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The requested Abor definition. |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="getJELines"></a>
+# **getJELines**
+> VersionedResourceListOfJELines getJELines(scope, code, jeLinesQueryParameters, asAt, limit, page)
+
+[EXPERIMENTAL] GetJELines: Get the JELines for the given Abor.
+
+Gets the JELines for the given Abor                The JE Lines have been generated from transactions and translated via posting rules
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.AborApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    AborApi apiInstance = new AborApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the Abor.
+    String code = "code_example"; // String | The code of the Abor. Together with the scope is creating the unique identifier for the given Abor.
+    JELinesQueryParameters jeLinesQueryParameters = new JELinesQueryParameters(); // JELinesQueryParameters | The query parameters used in running the generation of the JELines.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve JELines. Defaults to returning the latest version               of each transaction if not specified.
+    Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many. Defaults to 100 if not specified.
+    String page = "page_example"; // String | The pagination token to use to continue listing JELines from a previous call to GetJELines.
+    try {
+      VersionedResourceListOfJELines result = apiInstance.getJELines(scope, code, jeLinesQueryParameters, asAt, limit, page);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AborApi#getJELines");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope of the Abor. |
+ **code** | **String**| The code of the Abor. Together with the scope is creating the unique identifier for the given Abor. |
+ **jeLinesQueryParameters** | [**JELinesQueryParameters**](JELinesQueryParameters.md)| The query parameters used in running the generation of the JELines. |
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve JELines. Defaults to returning the latest version               of each transaction if not specified. | [optional]
+ **limit** | **Integer**| When paginating, limit the number of returned results to this many. Defaults to 100 if not specified. | [optional]
+ **page** | **String**| The pagination token to use to continue listing JELines from a previous call to GetJELines. | [optional]
+
+### Return type
+
+[**VersionedResourceListOfJELines**](VersionedResourceListOfJELines.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested JELines for the specified Abor. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
