@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **sourceType** | **String** | So far are 4 types: LusidTxn, LusidValuation, Manual and External. | 
 **sourceId** | **String** | For the Lusid Source Type this will be the txn Id. For the rest will be what the user populates. | 
 **properties** | [**Map&lt;String, Property&gt;**](Property.md) | Properties to add to the Abor. |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
 
