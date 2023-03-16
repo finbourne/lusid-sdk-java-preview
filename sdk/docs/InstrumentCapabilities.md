@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **instrumentId** | **String** | The Lusid insturment id for the instrument e.g. &#39;LUID_00003D4X&#39;. |  [optional]
 **model** | **String** | The pricing model e.g. &#39;Discounting&#39;. |  [optional]
 **features** | **Map&lt;String, String&gt;** | Features of the instrument describing its optionality, payoff type and more e.g. &#39;Instrument/Features/Exercise: American&#39;, &#39;Instrument/Features/Product: Option&#39; |  [optional]
-**supportedAddresses** | **List&lt;String&gt;** | Queryable addresses supported by the model, e.g. &#39;Valuation/Pv&#39;, &#39;Valuation/Accrued&#39;. |  [optional]
+**supportedAddresses** | [**List&lt;DescribedAddressKey&gt;**](DescribedAddressKey.md) | Queryable addresses supported by the model, e.g. &#39;Valuation/Pv&#39;, &#39;Valuation/Accrued&#39;. |  [optional]
 **economicDependencies** | [**List&lt;EconomicDependency&gt;**](EconomicDependency.md) | Economic dependencies for the model, e.g. &#39;Fx:GBP.USD&#39;, &#39;Cash:GBP&#39;, &#39;Rates:GBP.GBPOIS&#39;. |  [optional]
 **links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
 
