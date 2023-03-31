@@ -9,6 +9,7 @@ An JELines entity.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountingDate** | **OffsetDateTime** | The JELines accounting date. | 
+**activityDate** | **OffsetDateTime** | The actual date of the activity. Differs from the accounting date when creating journals that would occur in a closed period. | 
 **portfolioId** | [**ResourceId**](ResourceId.md) |  | 
 **instrumentId** | **String** | To indicate the instrument of the transaction that the JE line posted for, if applicable. | 
 **instrumentScope** | **String** | The scope in which the JELines instrument is in. | 
@@ -24,6 +25,8 @@ Name | Type | Description | Notes
 **sourceType** | **String** | So far are 4 types: LusidTxn, LusidValuation, Manual and External. | 
 **sourceId** | **String** | For the Lusid Source Type this will be the txn Id. For the rest will be what the user populates. | 
 **properties** | [**Map&lt;String, Property&gt;**](Property.md) | Properties to add to the Abor. |  [optional]
+**movementName** | **String** | The name of the movement. | 
+**holdingType** | **String** | Defines the broad category holding within the portfolio. | 
 **links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
 
 
