@@ -9,7 +9,8 @@ A request to create or update a Placement.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**ResourceId**](ResourceId.md) |  | 
-**blockIds** | [**List&lt;ResourceId&gt;**](ResourceId.md) | IDs of Blocks associated with this placement. | 
+**parentPlacementId** | [**ResourceId**](ResourceId.md) |  |  [optional]
+**blockIds** | [**List&lt;ResourceId&gt;**](ResourceId.md) | The IDs of the Blocks associated with this placement. | 
 **properties** | [**Map&lt;String, PerpetualProperty&gt;**](PerpetualProperty.md) | Client-defined properties associated with this order. |  [optional]
 **instrumentIdentifiers** | **Map&lt;String, String&gt;** | The instrument ordered. | 
 **quantity** | **java.math.BigDecimal** | The quantity of given instrument ordered. | 
@@ -20,8 +21,9 @@ Name | Type | Description | Notes
 **createdDate** | **OffsetDateTime** | The active date of this placement. | 
 **limitPrice** | [**CurrencyAndAmount**](CurrencyAndAmount.md) |  |  [optional]
 **stopPrice** | [**CurrencyAndAmount**](CurrencyAndAmount.md) |  |  [optional]
-**counterparty** | **String** | The market entity this placement is placed with. | 
+**counterparty** | **String** | Optionally specifies the market entity this placement is placed with. |  [optional]
 **executionSystem** | **String** | Optionally specifies the execution system in use. |  [optional]
+**entryType** | **String** | Optionally specifies the entry type of this placement. |  [optional]
 
 
 

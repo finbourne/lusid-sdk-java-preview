@@ -9,7 +9,8 @@ A street order for a quantity of a single instrument placed with a single market
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**ResourceId**](ResourceId.md) |  | 
-**blockIds** | [**List&lt;ResourceId&gt;**](ResourceId.md) | IDs of Blocks associated with this placement. | 
+**parentPlacementId** | [**ResourceId**](ResourceId.md) |  |  [optional]
+**blockIds** | [**List&lt;ResourceId&gt;**](ResourceId.md) | The IDs of the Blocks associated with this placement. | 
 **properties** | [**Map&lt;String, PerpetualProperty&gt;**](PerpetualProperty.md) | Client-defined properties associated with this placement. |  [optional]
 **instrumentIdentifiers** | **Map&lt;String, String&gt;** | The instrument ordered. | 
 **lusidInstrumentId** | **String** | The LUSID instrument id for the instrument placement. | 
@@ -21,10 +22,11 @@ Name | Type | Description | Notes
 **createdDate** | **OffsetDateTime** | The active date of this placement. | 
 **limitPrice** | [**CurrencyAndAmount**](CurrencyAndAmount.md) |  |  [optional]
 **stopPrice** | [**CurrencyAndAmount**](CurrencyAndAmount.md) |  |  [optional]
-**counterparty** | **String** | The market entity this placement is placed with. | 
+**counterparty** | **String** | Optionally specifies the market entity this placement is placed with. |  [optional]
 **executionSystem** | **String** | Optionally specifies the execution system in use. |  [optional]
+**entryType** | **String** | Optionally specifies the entry type of this placement. |  [optional]
 **version** | [**Version**](Version.md) |  |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
 
 
 
