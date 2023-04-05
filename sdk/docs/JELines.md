@@ -27,7 +27,8 @@ Name | Type | Description | Notes
 **properties** | [**Map&lt;String, Property&gt;**](Property.md) | Properties to add to the Abor. |  [optional]
 **movementName** | **String** | The name of the movement. | 
 **holdingType** | **String** | Defines the broad category holding within the portfolio. | 
-**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
+**economicBucket** | **String** | Raw JE Line details of the economic bucket for the JE Line. | 
+**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
 
 
 
