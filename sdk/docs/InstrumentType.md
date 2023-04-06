@@ -71,7 +71,5 @@
 
 * `INFLATIONSWAP` (value: `"InflationSwap"`)
 
-* `SIMPLECASHFLOWLOAN` (value: `"SimpleCashFlowLoan"`)
-
 
 

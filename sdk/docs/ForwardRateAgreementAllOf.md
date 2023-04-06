@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **fraRate** | **java.math.BigDecimal** | The rate at which the FRA is traded. | 
 **notional** | **java.math.BigDecimal** | The amount for which the FRA is traded. | 
 **indexConvention** | [**IndexConvention**](IndexConvention.md) |  |  [optional]
-**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption, ReferenceInstrument, ComplexBond, InflationLinkedBond, InflationSwap, SimpleCashFlowLoan | 
+**instrumentType** | [**InstrumentTypeEnum**](#InstrumentTypeEnum) | The available values are: QuotedSecurity, InterestRateSwap, FxForward, Future, ExoticInstrument, FxOption, CreditDefaultSwap, InterestRateSwaption, Bond, EquityOption, FixedLeg, FloatingLeg, BespokeCashFlowsLeg, Unknown, TermDeposit, ContractForDifference, EquitySwap, CashPerpetual, CapFloor, CashSettled, CdsIndex, Basket, FundingLeg, FxSwap, ForwardRateAgreement, SimpleInstrument, Repo, Equity, ExchangeTradedOption, ReferenceInstrument, ComplexBond, InflationLinkedBond, InflationSwap | 
 
 
 
@@ -55,7 +55,6 @@ REFERENCEINSTRUMENT | &quot;ReferenceInstrument&quot;
 COMPLEXBOND | &quot;ComplexBond&quot;
 INFLATIONLINKEDBOND | &quot;InflationLinkedBond&quot;
 INFLATIONSWAP | &quot;InflationSwap&quot;
-SIMPLECASHFLOWLOAN | &quot;SimpleCashFlowLoan&quot;
 
 
 
