@@ -1197,7 +1197,7 @@ Name | Type | Description  | Notes
 
 <a name="queryInstrumentCapabilities"></a>
 # **queryInstrumentCapabilities**
-> InstrumentCapabilities queryInstrumentCapabilities(lusidInstrument, model, effectiveAt, recipeScope, recipeCode)
+> InstrumentCapabilities queryInstrumentCapabilities(lusidInstrument, model)
 
 [EXPERIMENTAL] QueryInstrumentCapabilities: Query capabilities of a particular instrument in advance of creating it. These include instrument features, and if model is provided it also includes supported address keys and economic dependencies.
 
@@ -1225,11 +1225,8 @@ public class Example {
     InstrumentsApi apiInstance = new InstrumentsApi(defaultClient);
     LusidInstrument lusidInstrument = new LusidInstrument(); // LusidInstrument | The definition of the instrument.
     String model = "model_example"; // String | A pricing model for the instrument. Defaults to Unknown if not specified. If not specified the SupportedAddresses and EconomicDependencies are not provided.
-    String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to retrieve the instrument.              Defaults to the current LUSID system datetime if not specified.
-    String recipeScope = "default"; // String | The scope in which the recipe lies. When not supplied the scope is 'default'.
-    String recipeCode = "recipeCode_example"; // String | A unique identifier for an entity, used to obtain configuration recipe details. Default configuration recipe is used if not provided.
     try {
-      InstrumentCapabilities result = apiInstance.queryInstrumentCapabilities(lusidInstrument, model, effectiveAt, recipeScope, recipeCode);
+      InstrumentCapabilities result = apiInstance.queryInstrumentCapabilities(lusidInstrument, model);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstrumentsApi#queryInstrumentCapabilities");
@@ -1248,9 +1245,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lusidInstrument** | [**LusidInstrument**](LusidInstrument.md)| The definition of the instrument. |
  **model** | **String**| A pricing model for the instrument. Defaults to Unknown if not specified. If not specified the SupportedAddresses and EconomicDependencies are not provided. | [optional]
- **effectiveAt** | **String**| The effective datetime or cut label at which to retrieve the instrument.              Defaults to the current LUSID system datetime if not specified. | [optional]
- **recipeScope** | **String**| The scope in which the recipe lies. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
- **recipeCode** | **String**| A unique identifier for an entity, used to obtain configuration recipe details. Default configuration recipe is used if not provided. | [optional]
 
 ### Return type
 
