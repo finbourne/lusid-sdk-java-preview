@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **units** | **String** | The value, field or property key defining the side&#39;s units. | 
 **amount** | **String** | The value, field or property key defining the side&#39;s amount | 
 **notionalAmount** | **String** | The value, field or property key defining the side&#39;s notional amount |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
 
 
 
