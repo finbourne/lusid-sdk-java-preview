@@ -7,9 +7,12 @@ Method | HTTP request | Description
 [**createScheduledReconciliation**](ReconciliationsApi.md#createScheduledReconciliation) | **POST** /api/portfolios/$scheduledReconciliation/{scope} | [EXPERIMENTAL] CreateScheduledReconciliation: Create a scheduled reconciliation
 [**deleteReconciliation**](ReconciliationsApi.md#deleteReconciliation) | **DELETE** /api/portfolios/$scheduledReconciliation/{scope}/{code} | [EXPERIMENTAL] DeleteReconciliation: Delete scheduled reconciliation
 [**deleteReconciliationMapping**](ReconciliationsApi.md#deleteReconciliationMapping) | **DELETE** /api/portfolios/mapping/{scope}/{code} | [EARLY ACCESS] DeleteReconciliationMapping: Delete a mapping
+[**deleteReconciliationRun**](ReconciliationsApi.md#deleteReconciliationRun) | **DELETE** /api/portfolios/$scheduledReconciliation/run/{scope}/{code}/{runDate}/{version} | [EXPERIMENTAL] DeleteReconciliationRun: Delete reconciliation run
 [**getReconciliation**](ReconciliationsApi.md#getReconciliation) | **GET** /api/portfolios/$scheduledReconciliation/{scope}/{code} | [EXPERIMENTAL] GetReconciliation: Get scheduled reconciliation
 [**getReconciliationMapping**](ReconciliationsApi.md#getReconciliationMapping) | **GET** /api/portfolios/mapping/{scope}/{code} | [EARLY ACCESS] GetReconciliationMapping: Get a mapping
+[**getReconciliationRun**](ReconciliationsApi.md#getReconciliationRun) | **GET** /api/portfolios/$scheduledReconciliation/run/{scope}/{code}/{runDate}/{version} | [EXPERIMENTAL] GetReconciliationRun: Get a reconciliation run
 [**listReconciliationMappings**](ReconciliationsApi.md#listReconciliationMappings) | **GET** /api/portfolios/mapping | [EARLY ACCESS] ListReconciliationMappings: List the reconciliation mappings
+[**listReconciliationRuns**](ReconciliationsApi.md#listReconciliationRuns) | **GET** /api/portfolios/$scheduledReconciliation/run/{scope}/{code} | [EXPERIMENTAL] ListReconciliationRuns: List Reconciliation runs
 [**listReconciliations**](ReconciliationsApi.md#listReconciliations) | **GET** /api/portfolios/$scheduledReconciliation | [EXPERIMENTAL] ListReconciliations: List scheduled reconciliations
 [**reconcileGeneric**](ReconciliationsApi.md#reconcileGeneric) | **POST** /api/portfolios/$reconcileGeneric | ReconcileGeneric: Reconcile either holdings or valuations performed on one or two sets of holdings using one or two configuration recipes.                The output is configurable for various types of comparisons, to allow tolerances on numerical and date-time data or case-insensitivity on strings,  and elision of resulting differences where they are &#39;empty&#39; or null or zero.
 [**reconcileHoldings**](ReconciliationsApi.md#reconcileHoldings) | **POST** /api/portfolios/$reconcileholdings | [EARLY ACCESS] ReconcileHoldings: Reconcile portfolio holdings
@@ -18,6 +21,7 @@ Method | HTTP request | Description
 [**reconcileValuation**](ReconciliationsApi.md#reconcileValuation) | **POST** /api/portfolios/$reconcileValuation | ReconcileValuation: Reconcile valuations performed on one or two sets of holdings using one or two configuration recipes.
 [**updateReconciliation**](ReconciliationsApi.md#updateReconciliation) | **POST** /api/portfolios/$scheduledReconciliation/{scope}/{code} | [EXPERIMENTAL] UpdateReconciliation: Update scheduled reconciliation
 [**upsertReconciliationMapping**](ReconciliationsApi.md#upsertReconciliationMapping) | **POST** /api/portfolios/mapping | [EARLY ACCESS] UpsertReconciliationMapping: Create or update a mapping
+[**upsertReconciliationRun**](ReconciliationsApi.md#upsertReconciliationRun) | **POST** /api/portfolios/$scheduledReconciliation/run/{scope}/{code} | [EXPERIMENTAL] UpsertReconciliationRun: Update or Create a reconciliation run
 
 
 <a name="createScheduledReconciliation"></a>
@@ -233,6 +237,81 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="deleteReconciliationRun"></a>
+# **deleteReconciliationRun**
+> DeletedEntityResponse deleteReconciliationRun(scope, code, runDate, version)
+
+[EXPERIMENTAL] DeleteReconciliationRun: Delete reconciliation run
+
+Delete the given reconciliation run
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.ReconciliationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    ReconciliationsApi apiInstance = new ReconciliationsApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the reconciliation associated with the run
+    String code = "code_example"; // String | The code of the reconciliation associated with the run
+    OffsetDateTime runDate = OffsetDateTime.now(); // OffsetDateTime | The date of the reconciliation run
+    Integer version = 56; // Integer | The version number of the reconciliation run
+    try {
+      DeletedEntityResponse result = apiInstance.deleteReconciliationRun(scope, code, runDate, version);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ReconciliationsApi#deleteReconciliationRun");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope of the reconciliation associated with the run |
+ **code** | **String**| The code of the reconciliation associated with the run |
+ **runDate** | **OffsetDateTime**| The date of the reconciliation run |
+ **version** | **Integer**| The version number of the reconciliation run |
+
+### Return type
+
+[**DeletedEntityResponse**](DeletedEntityResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The datetime that the reconciliation run was deleted |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="getReconciliation"></a>
 # **getReconciliation**
 > Reconciliation getReconciliation(scope, code, effectiveAt, asAt, propertyKeys)
@@ -381,6 +460,85 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="getReconciliationRun"></a>
+# **getReconciliationRun**
+> ReconciliationRun getReconciliationRun(scope, code, runDate, version, effectiveAt, asAt)
+
+[EXPERIMENTAL] GetReconciliationRun: Get a reconciliation run
+
+Get the requested reconciliation run
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.ReconciliationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    ReconciliationsApi apiInstance = new ReconciliationsApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the reconciliation associated with the run
+    String code = "code_example"; // String | The code of the reconciliation associated with the run
+    OffsetDateTime runDate = OffsetDateTime.now(); // OffsetDateTime | The date of the run
+    Integer version = 56; // Integer | The version number of the run
+    String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to retrieve the reconciliation run. Defaults to the current LUSID system datetime if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the reconciliation run. Defaults to returning the latest version of the reconciliation run if not specified.
+    try {
+      ReconciliationRun result = apiInstance.getReconciliationRun(scope, code, runDate, version, effectiveAt, asAt);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ReconciliationsApi#getReconciliationRun");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope of the reconciliation associated with the run |
+ **code** | **String**| The code of the reconciliation associated with the run |
+ **runDate** | **OffsetDateTime**| The date of the run |
+ **version** | **Integer**| The version number of the run |
+ **effectiveAt** | **String**| The effective datetime or cut label at which to retrieve the reconciliation run. Defaults to the current LUSID system datetime if not specified. | [optional]
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the reconciliation run. Defaults to returning the latest version of the reconciliation run if not specified. | [optional]
+
+### Return type
+
+[**ReconciliationRun**](ReconciliationRun.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested reconciliation run |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="listReconciliationMappings"></a>
 # **listReconciliationMappings**
 > ResourceListOfMapping listReconciliationMappings(reconciliationType)
@@ -447,6 +605,89 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The mappings that the caller has access to. |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="listReconciliationRuns"></a>
+# **listReconciliationRuns**
+> PagedResourceListOfReconciliationRun listReconciliationRuns(scope, code, effectiveAt, asAt, page, start, limit, filter)
+
+[EXPERIMENTAL] ListReconciliationRuns: List Reconciliation runs
+
+List all runs for a given reconciliation
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.ReconciliationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    ReconciliationsApi apiInstance = new ReconciliationsApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the reconciliation
+    String code = "code_example"; // String | The code of the reconciliation
+    String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to list the reconciliation runs. Defaults to the current LUSID              system datetime if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to list the reconciliation runs. Defaults to returning the latest version              of each run if not specified.
+    String page = "page_example"; // String | The pagination token to use to continue listing reconciliation runs; this              value is returned from the previous call. If a pagination token is provided, the filter, effectiveAt              and asAt fields must not have changed since the original request. Also, if set, a start value cannot be provided.
+    Integer start = 56; // Integer | When paginating, skip this number of results.
+    Integer limit = 56; // Integer | When paginating, limit the results to this number. Defaults to 100 if not specified.
+    String filter = "filter_example"; // String | Expression to filter the results.              For example, to filter on the run date, specify \"Date eq 10/03/2018\". For more information about filtering              results, see https://support.lusid.com/knowledgebase/article/KA-01914.
+    try {
+      PagedResourceListOfReconciliationRun result = apiInstance.listReconciliationRuns(scope, code, effectiveAt, asAt, page, start, limit, filter);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ReconciliationsApi#listReconciliationRuns");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope of the reconciliation |
+ **code** | **String**| The code of the reconciliation |
+ **effectiveAt** | **String**| The effective datetime or cut label at which to list the reconciliation runs. Defaults to the current LUSID              system datetime if not specified. | [optional]
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to list the reconciliation runs. Defaults to returning the latest version              of each run if not specified. | [optional]
+ **page** | **String**| The pagination token to use to continue listing reconciliation runs; this              value is returned from the previous call. If a pagination token is provided, the filter, effectiveAt              and asAt fields must not have changed since the original request. Also, if set, a start value cannot be provided. | [optional]
+ **start** | **Integer**| When paginating, skip this number of results. | [optional]
+ **limit** | **Integer**| When paginating, limit the results to this number. Defaults to 100 if not specified. | [optional]
+ **filter** | **String**| Expression to filter the results.              For example, to filter on the run date, specify \&quot;Date eq 10/03/2018\&quot;. For more information about filtering              results, see https://support.lusid.com/knowledgebase/article/KA-01914. | [optional]
+
+### Return type
+
+[**PagedResourceListOfReconciliationRun**](PagedResourceListOfReconciliationRun.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested reconciliation runs |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
@@ -1023,6 +1264,79 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The created / updated mapping. |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="upsertReconciliationRun"></a>
+# **upsertReconciliationRun**
+> ReconciliationRun upsertReconciliationRun(scope, code, upsertReconciliationRunRequest)
+
+[EXPERIMENTAL] UpsertReconciliationRun: Update or Create a reconciliation run
+
+Existing reconciliations will be updated, non-existing ones will be created
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.ReconciliationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    ReconciliationsApi apiInstance = new ReconciliationsApi(defaultClient);
+    String scope = "scope_example"; // String | The scope of the reconciliation associated with the run
+    String code = "code_example"; // String | The code of the reconciliation associated with the run
+    UpsertReconciliationRunRequest upsertReconciliationRunRequest = new UpsertReconciliationRunRequest(); // UpsertReconciliationRunRequest | The definition of the reconciliation run
+    try {
+      ReconciliationRun result = apiInstance.upsertReconciliationRun(scope, code, upsertReconciliationRunRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ReconciliationsApi#upsertReconciliationRun");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **String**| The scope of the reconciliation associated with the run |
+ **code** | **String**| The code of the reconciliation associated with the run |
+ **upsertReconciliationRunRequest** | [**UpsertReconciliationRunRequest**](UpsertReconciliationRunRequest.md)| The definition of the reconciliation run | [optional]
+
+### Return type
+
+[**ReconciliationRun**](ReconciliationRun.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | The newly created reconciliation run |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
