@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **reportCurrency** | **String** | Three letter ISO currency string indicating what currency to report in for ReportCcy denominated queries.  If not present then the currency of the relevant portfolio will be used in its place where relevant. |  [optional]
 **dataSchema** | [**ResultDataSchema**](ResultDataSchema.md) |  |  [optional]
 **failed** | [**Map&lt;String, ErrorDetail&gt;**](ErrorDetail.md) | Information about where instruments have failed to return cashflows in so far as it is available.  e.g., failure to retrieve a market quote for a floating rate instrument. |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
 
