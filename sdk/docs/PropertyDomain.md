@@ -73,5 +73,7 @@
 
 * `RECONCILIATION` (value: `"Reconciliation"`)
 
+* `PROPERTYDEFINITION` (value: `"PropertyDefinition"`)
+
 
 
