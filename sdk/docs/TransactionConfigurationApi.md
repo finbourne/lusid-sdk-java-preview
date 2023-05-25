@@ -4,12 +4,89 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**deleteSideDefinition**](TransactionConfigurationApi.md#deleteSideDefinition) | **DELETE** /api/transactionconfiguration/sides/{side}/$delete | [EXPERIMENTAL] DeleteSideDefinition: Delete the given side definition
 [**deleteTransactionType**](TransactionConfigurationApi.md#deleteTransactionType) | **DELETE** /api/transactionconfiguration/types/{source}/{type} | [EXPERIMENTAL] DeleteTransactionType: Delete a transaction type
+[**deleteTransactionTypeSource**](TransactionConfigurationApi.md#deleteTransactionTypeSource) | **DELETE** /api/transactionconfiguration/types/{source}/$delete | [EXPERIMENTAL] DeleteTransactionTypeSource: Delete all transaction types for the given source and scope
+[**getSideDefinition**](TransactionConfigurationApi.md#getSideDefinition) | **GET** /api/transactionconfiguration/sides/{side} | [EXPERIMENTAL] GetSideDefinition: Get the side definition for a given side name( or label)
 [**getTransactionType**](TransactionConfigurationApi.md#getTransactionType) | **GET** /api/transactionconfiguration/types/{source}/{type} | [EXPERIMENTAL] GetTransactionType: Get a single transaction configuration type
+[**listSidesDefinition**](TransactionConfigurationApi.md#listSidesDefinition) | **GET** /api/transactionconfiguration/sides | [EXPERIMENTAL] ListSidesDefinition: List the side definitions
 [**listTransactionTypes**](TransactionConfigurationApi.md#listTransactionTypes) | **GET** /api/transactionconfiguration/types | [EXPERIMENTAL] ListTransactionTypes: List transaction types
 [**setSideDefinition**](TransactionConfigurationApi.md#setSideDefinition) | **PUT** /api/transactionconfiguration/sides/{side} | [EXPERIMENTAL] SetSideDefinition: Set a side definition
+[**setSideDefinitions**](TransactionConfigurationApi.md#setSideDefinitions) | **PUT** /api/transactionconfiguration/sides | [EXPERIMENTAL] SetSideDefinitions: Set the given side definitions
 [**setTransactionType**](TransactionConfigurationApi.md#setTransactionType) | **PUT** /api/transactionconfiguration/types/{source}/{type} | [EXPERIMENTAL] SetTransactionType: Set a specific transaction type
+[**setTransactionTypeSource**](TransactionConfigurationApi.md#setTransactionTypeSource) | **PUT** /api/transactionconfiguration/types/{source} | [EXPERIMENTAL] SetTransactionTypeSource: Set the transaction types for the given source and scope
 
+
+<a name="deleteSideDefinition"></a>
+# **deleteSideDefinition**
+> DeletedEntityResponse deleteSideDefinition(side, scope)
+
+[EXPERIMENTAL] DeleteSideDefinition: Delete the given side definition
+
+Delete the side which user specify in the request.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.TransactionConfigurationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    TransactionConfigurationApi apiInstance = new TransactionConfigurationApi(defaultClient);
+    String side = "side_example"; // String | The label to uniquely identify the side.
+    String scope = "default"; // String | The scope in which the side exists. When not supplied the scope is 'default'.
+    try {
+      DeletedEntityResponse result = apiInstance.deleteSideDefinition(side, scope);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TransactionConfigurationApi#deleteSideDefinition");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **side** | **String**| The label to uniquely identify the side. |
+ **scope** | **String**| The scope in which the side exists. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
+
+### Return type
+
+[**DeletedEntityResponse**](DeletedEntityResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
 
 <a name="deleteTransactionType"></a>
 # **deleteTransactionType**
@@ -67,6 +144,150 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DeletedEntityResponse**](DeletedEntityResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="deleteTransactionTypeSource"></a>
+# **deleteTransactionTypeSource**
+> DeletedEntityResponse deleteTransactionTypeSource(source, scope)
+
+[EXPERIMENTAL] DeleteTransactionTypeSource: Delete all transaction types for the given source and scope
+
+Delete all the types for the given source and scope.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.TransactionConfigurationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    TransactionConfigurationApi apiInstance = new TransactionConfigurationApi(defaultClient);
+    String source = "source_example"; // String | The source to set the transaction types for.
+    String scope = "default"; // String | The scope in which the transaction types exists. When not supplied the scope is 'default'.
+    try {
+      DeletedEntityResponse result = apiInstance.deleteTransactionTypeSource(source, scope);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TransactionConfigurationApi#deleteTransactionTypeSource");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | **String**| The source to set the transaction types for. |
+ **scope** | **String**| The scope in which the transaction types exists. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
+
+### Return type
+
+[**DeletedEntityResponse**](DeletedEntityResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="getSideDefinition"></a>
+# **getSideDefinition**
+> SideDefinition getSideDefinition(side, scope, asAt)
+
+[EXPERIMENTAL] GetSideDefinition: Get the side definition for a given side name( or label)
+
+Get the side definition user requested.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.TransactionConfigurationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    TransactionConfigurationApi apiInstance = new TransactionConfigurationApi(defaultClient);
+    String side = "side_example"; // String | The label to uniquely identify the side.
+    String scope = "default"; // String | The scope in which the side exists. When not supplied the scope is 'default'.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the transaction types. Defaults to returning the latest versions if not specified.
+    try {
+      SideDefinition result = apiInstance.getSideDefinition(side, scope, asAt);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TransactionConfigurationApi#getSideDefinition");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **side** | **String**| The label to uniquely identify the side. |
+ **scope** | **String**| The scope in which the side exists. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the transaction types. Defaults to returning the latest versions if not specified. | [optional]
+
+### Return type
+
+[**SideDefinition**](SideDefinition.md)
 
 ### Authorization
 
@@ -142,6 +363,77 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TransactionType**](TransactionType.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="listSidesDefinition"></a>
+# **listSidesDefinition**
+> ResourceListOfSideDefinition listSidesDefinition(asAt, scope)
+
+[EXPERIMENTAL] ListSidesDefinition: List the side definitions
+
+List all the side definitions in the given scope
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.TransactionConfigurationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    TransactionConfigurationApi apiInstance = new TransactionConfigurationApi(defaultClient);
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the transaction types. Defaults to returning the latest versions if not specified.
+    String scope = "default"; // String | The scope in which the side exists. When not supplied the scope is 'default'.
+    try {
+      ResourceListOfSideDefinition result = apiInstance.listSidesDefinition(asAt, scope);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TransactionConfigurationApi#listSidesDefinition");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the transaction types. Defaults to returning the latest versions if not specified. | [optional]
+ **scope** | **String**| The scope in which the side exists. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
+
+### Return type
+
+[**ResourceListOfSideDefinition**](ResourceListOfSideDefinition.md)
 
 ### Authorization
 
@@ -303,6 +595,77 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
+<a name="setSideDefinitions"></a>
+# **setSideDefinitions**
+> ResourceListOfSideDefinition setSideDefinitions(sidesDefinitionRequest, scope)
+
+[EXPERIMENTAL] SetSideDefinitions: Set the given side definitions
+
+Set a new side definition for use in a transaction type. For more information, see https://support.lusid.com/knowledgebase/article/KA-01875.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.TransactionConfigurationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    TransactionConfigurationApi apiInstance = new TransactionConfigurationApi(defaultClient);
+    List<SidesDefinitionRequest> sidesDefinitionRequest = Arrays.asList(); // List<SidesDefinitionRequest> | The list of side definitions to create, or replace.
+    String scope = "default"; // String | The scope in which the side exists. When not supplied the scope is 'default'.
+    try {
+      ResourceListOfSideDefinition result = apiInstance.setSideDefinitions(sidesDefinitionRequest, scope);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TransactionConfigurationApi#setSideDefinitions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sidesDefinitionRequest** | [**List&lt;SidesDefinitionRequest&gt;**](SidesDefinitionRequest.md)| The list of side definitions to create, or replace. |
+ **scope** | **String**| The scope in which the side exists. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
+
+### Return type
+
+[**ResourceListOfSideDefinition**](ResourceListOfSideDefinition.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
 <a name="setTransactionType"></a>
 # **setTransactionType**
 > TransactionType setTransactionType(source, type, transactionTypeRequest, scope)
@@ -361,6 +724,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TransactionType**](TransactionType.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | The details of the input related failure |  -  |
+**0** | Error response |  -  |
+
+<a name="setTransactionTypeSource"></a>
+# **setTransactionTypeSource**
+> ResourceListOfTransactionType setTransactionTypeSource(source, transactionTypeRequest, scope)
+
+[EXPERIMENTAL] SetTransactionTypeSource: Set the transaction types for the given source and scope
+
+The complete set of transaction types for the source.
+
+### Example
+```java
+// Import classes:
+import com.finbourne.lusid.ApiClient;
+import com.finbourne.lusid.ApiException;
+import com.finbourne.lusid.Configuration;
+import com.finbourne.lusid.auth.*;
+import com.finbourne.lusid.models.*;
+import com.finbourne.lusid.api.TransactionConfigurationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.lusid.com/api");
+    
+    // Configure OAuth2 access token for authorization: oauth2
+    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+    oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+    TransactionConfigurationApi apiInstance = new TransactionConfigurationApi(defaultClient);
+    String source = "source_example"; // String | The source to set the transaction types for.
+    List<TransactionTypeRequest> transactionTypeRequest = Arrays.asList(); // List<TransactionTypeRequest> | The set of transaction types.
+    String scope = "default"; // String | The scope in which the transaction types exists. When not supplied the scope is 'default'.
+    try {
+      ResourceListOfTransactionType result = apiInstance.setTransactionTypeSource(source, transactionTypeRequest, scope);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TransactionConfigurationApi#setTransactionTypeSource");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | **String**| The source to set the transaction types for. |
+ **transactionTypeRequest** | [**List&lt;TransactionTypeRequest&gt;**](TransactionTypeRequest.md)| The set of transaction types. |
+ **scope** | **String**| The scope in which the transaction types exists. When not supplied the scope is &#39;default&#39;. | [optional] [default to default]
+
+### Return type
+
+[**ResourceListOfTransactionType**](ResourceListOfTransactionType.md)
 
 ### Authorization
 
