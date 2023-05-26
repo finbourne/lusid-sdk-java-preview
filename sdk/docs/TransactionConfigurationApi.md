@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**deleteTransactionTypeSource**](TransactionConfigurationApi.md#deleteTransactionTypeSource) | **DELETE** /api/transactionconfiguration/types/{source}/$delete | [EXPERIMENTAL] DeleteTransactionTypeSource: Delete all transaction types for the given source and scope
 [**getSideDefinition**](TransactionConfigurationApi.md#getSideDefinition) | **GET** /api/transactionconfiguration/sides/{side} | [EXPERIMENTAL] GetSideDefinition: Get the side definition for a given side name( or label)
 [**getTransactionType**](TransactionConfigurationApi.md#getTransactionType) | **GET** /api/transactionconfiguration/types/{source}/{type} | [EXPERIMENTAL] GetTransactionType: Get a single transaction configuration type
-[**listSidesDefinition**](TransactionConfigurationApi.md#listSidesDefinition) | **GET** /api/transactionconfiguration/sides | [EXPERIMENTAL] ListSidesDefinition: List the side definitions
+[**listSideDefinitions**](TransactionConfigurationApi.md#listSideDefinitions) | **GET** /api/transactionconfiguration/sides | [EXPERIMENTAL] ListSideDefinitions: List the side definitions
 [**listTransactionTypes**](TransactionConfigurationApi.md#listTransactionTypes) | **GET** /api/transactionconfiguration/types | [EXPERIMENTAL] ListTransactionTypes: List transaction types
 [**setSideDefinition**](TransactionConfigurationApi.md#setSideDefinition) | **PUT** /api/transactionconfiguration/sides/{side} | [EXPERIMENTAL] SetSideDefinition: Set a side definition
 [**setSideDefinitions**](TransactionConfigurationApi.md#setSideDefinitions) | **PUT** /api/transactionconfiguration/sides | [EXPERIMENTAL] SetSideDefinitions: Set the given side definitions
@@ -380,11 +380,11 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
-<a name="listSidesDefinition"></a>
-# **listSidesDefinition**
-> ResourceListOfSideDefinition listSidesDefinition(asAt, scope)
+<a name="listSideDefinitions"></a>
+# **listSideDefinitions**
+> ResourceListOfSideDefinition listSideDefinitions(asAt, scope)
 
-[EXPERIMENTAL] ListSidesDefinition: List the side definitions
+[EXPERIMENTAL] ListSideDefinitions: List the side definitions
 
 List all the side definitions in the given scope
 
@@ -411,10 +411,10 @@ public class Example {
     OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the transaction types. Defaults to returning the latest versions if not specified.
     String scope = "default"; // String | The scope in which the side exists. When not supplied the scope is 'default'.
     try {
-      ResourceListOfSideDefinition result = apiInstance.listSidesDefinition(asAt, scope);
+      ResourceListOfSideDefinition result = apiInstance.listSideDefinitions(asAt, scope);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TransactionConfigurationApi#listSidesDefinition");
+      System.err.println("Exception when calling TransactionConfigurationApi#listSideDefinitions");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

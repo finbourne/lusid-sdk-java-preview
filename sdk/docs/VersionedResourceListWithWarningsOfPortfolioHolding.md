@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **nextPage** | **String** | The next page of results. |  [optional]
 **previousPage** | **String** | The previous page of results. |  [optional]
 **warnings** | [**List&lt;Warning&gt;**](Warning.md) |  |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
 
 
 
