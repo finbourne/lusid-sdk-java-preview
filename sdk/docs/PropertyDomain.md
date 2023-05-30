@@ -75,5 +75,7 @@
 
 * `PROPERTYDEFINITION` (value: `"PropertyDefinition"`)
 
+* `COMPLIANCE` (value: `"Compliance"`)
+
 
 
