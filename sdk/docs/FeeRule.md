@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **additionalKeys** | **Map&lt;String, String&gt;** |  |  [optional]
 **description** | **String** |  |  [optional]
 **version** | [**Version**](Version.md) |  |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
 
