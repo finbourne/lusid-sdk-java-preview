@@ -5,7 +5,7 @@
     <artifactId>lusid-sdk-preview</artifactId>
     <packaging>jar</packaging>
     <name>lusid-sdk-preview</name>
-    <version>1.0.257</version>
+    <version>1.0.258</version>
     <url>https://github.com/finbourne/lusid-sdk-java-preview</url>
     <description>LUSID Java SDK</description>
     <scm>
