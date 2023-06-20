@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="listOrderGraphBlocks"></a>
 # **listOrderGraphBlocks**
-> PagedResourceListOfOrderGraphBlock listOrderGraphBlocks(asAt, paginationToken, sortBy, limit, filter, propertyKeys)
+> PagedResourceListOfOrderGraphBlock listOrderGraphBlocks(asAt, paginationToken, sortBy, limit, filter, propertyKeys, useComplianceV2)
 
 [EXPERIMENTAL] ListOrderGraphBlocks: Lists blocks that pass the filter provided, and builds a summary picture of the state of their associated order entities.
 
@@ -42,8 +42,9 @@ public class Example {
     Integer limit = 56; // Integer | See https://support.lusid.com/knowledgebase/article/KA-01915/
     String filter = ""; // String | See https://support.lusid.com/knowledgebase/article/KA-01914/
     List<String> propertyKeys = Arrays.asList(); // List<String> | Must be block-level properties. See https://support.lusid.com/knowledgebase/article/KA-01855/
+    Boolean useComplianceV2 = false; // Boolean | Whether to use the V2 compliance engine when deriving compliance statuses for orders. (default: false)
     try {
-      PagedResourceListOfOrderGraphBlock result = apiInstance.listOrderGraphBlocks(asAt, paginationToken, sortBy, limit, filter, propertyKeys);
+      PagedResourceListOfOrderGraphBlock result = apiInstance.listOrderGraphBlocks(asAt, paginationToken, sortBy, limit, filter, propertyKeys, useComplianceV2);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrderGraphApi#listOrderGraphBlocks");
@@ -66,6 +67,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| See https://support.lusid.com/knowledgebase/article/KA-01915/ | [optional]
  **filter** | **String**| See https://support.lusid.com/knowledgebase/article/KA-01914/ | [optional] [default to ]
  **propertyKeys** | [**List&lt;String&gt;**](String.md)| Must be block-level properties. See https://support.lusid.com/knowledgebase/article/KA-01855/ | [optional]
+ **useComplianceV2** | **Boolean**| Whether to use the V2 compliance engine when deriving compliance statuses for orders. (default: false) | [optional] [default to false]
 
 ### Return type
 

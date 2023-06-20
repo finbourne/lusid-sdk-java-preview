@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**getAccount**](ChartOfAccountsApi.md#getAccount) | **GET** /api/chartofaccounts/{scope}/{code}/accounts/{accountCode} | [EXPERIMENTAL] GetAccount: Get Account
 [**getChartOfAccounts**](ChartOfAccountsApi.md#getChartOfAccounts) | **GET** /api/chartofaccounts/{scope}/{code} | [EXPERIMENTAL] GetChartOfAccounts: Get ChartOfAccounts
 [**listAccounts**](ChartOfAccountsApi.md#listAccounts) | **GET** /api/chartofaccounts/{scope}/{code}/accounts | [EXPERIMENTAL] ListAccounts: List Accounts
-[**listChartsOfAccounts**](ChartOfAccountsApi.md#listChartsOfAccounts) | **GET** /api/chartofaccounts | [EXPERIMENTAL] ListChartsOfAccounts: List charts of accounts
+[**listChartsOfAccounts**](ChartOfAccountsApi.md#listChartsOfAccounts) | **GET** /api/chartofaccounts | [EXPERIMENTAL] ListChartsOfAccounts: List chart of accounts
 [**upsertAccounts**](ChartOfAccountsApi.md#upsertAccounts) | **POST** /api/chartofaccounts/{scope}/{code}/accounts | [EXPERIMENTAL] UpsertAccounts: Upsert Accounts
 [**upsertAccountsProperties**](ChartOfAccountsApi.md#upsertAccountsProperties) | **POST** /api/chartofaccounts/{scope}/{code}/accounts/{accountCode}/properties/$upsert | [EXPERIMENTAL] UpsertAccountsProperties: Upsert accounts properties
 [**upsertChartOfAccountsProperties**](ChartOfAccountsApi.md#upsertChartOfAccountsProperties) | **POST** /api/chartofaccounts/{scope}/{code}/properties/$upsert | [EXPERIMENTAL] UpsertChartOfAccountsProperties: Upsert chart of accounts properties
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | The newly created char of accounts. |  -  |
+**201** | The newly created chart of accounts. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
@@ -420,7 +420,7 @@ public class Example {
     String scope = "scope_example"; // String | The scope of the chart of account.
     String code = "code_example"; // String | The code of the chart of account. Together with the scope this uniquely identifies              the chart of accounts.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to list the TimeVariant properties decorated on Accounts. Defaults to the current LUSID              system datetime if not specified.
-    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the instrument. Defaults to              returning the latest version if not specified.
+    OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the Accounts. Defaults to              returning the latest version if not specified.
     String page = "page_example"; // String | The pagination token to use to continue listing charts of accounts; this              value is returned from the previous call. If a pagination token is provided, the filter, effectiveAt              and asAt fields must not have changed since the original request. Also, if set, a start value cannot be provided.
     Integer start = 56; // Integer | When paginating, skip this number of results.
     Integer limit = 56; // Integer | When paginating, limit the results to this number. Defaults to 100 if not specified.
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
  **scope** | **String**| The scope of the chart of account. |
  **code** | **String**| The code of the chart of account. Together with the scope this uniquely identifies              the chart of accounts. |
  **effectiveAt** | **String**| The effective datetime or cut label at which to list the TimeVariant properties decorated on Accounts. Defaults to the current LUSID              system datetime if not specified. | [optional]
- **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the instrument. Defaults to              returning the latest version if not specified. | [optional]
+ **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the Accounts. Defaults to              returning the latest version if not specified. | [optional]
  **page** | **String**| The pagination token to use to continue listing charts of accounts; this              value is returned from the previous call. If a pagination token is provided, the filter, effectiveAt              and asAt fields must not have changed since the original request. Also, if set, a start value cannot be provided. | [optional]
  **start** | **Integer**| When paginating, skip this number of results. | [optional]
  **limit** | **Integer**| When paginating, limit the results to this number. Defaults to 100 if not specified. | [optional]
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The accounts in the give chart of accounts. |  -  |
+**200** | The accounts in the given chart of accounts. |  -  |
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
@@ -478,7 +478,7 @@ Name | Type | Description  | Notes
 # **listChartsOfAccounts**
 > PagedResourceListOfChartOfAccounts listChartsOfAccounts(effectiveAt, asAt, page, start, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] ListChartsOfAccounts: List charts of accounts
+[EXPERIMENTAL] ListChartsOfAccounts: List chart of accounts
 
 List all the charts of accounts matching particular criteria.
 
