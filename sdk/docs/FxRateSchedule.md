@@ -8,7 +8,7 @@ Schedule to define fx conversion of cashflows on complex bonds. If an fx schedul
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fixingLag** | **Integer** | If rate is not known upfront then will need a fixing rate. Can be fixed x number of days before payment date. |  [optional]
+**flowConventions** | [**FlowConventions**](FlowConventions.md) |  |  [optional]
 **fxConversionTypes** | **List&lt;String&gt;** | List of flags to indicate if coupon payments, principal payments or both are converted |  [optional]
 **rate** | **java.math.BigDecimal** | FxRate used to convert payments. Assumed to be in units of the ToCurrency so conversion is paymentAmount x fxRate |  [optional]
 **toCurrency** | **String** | Currency that payments are converted to |  [optional]
