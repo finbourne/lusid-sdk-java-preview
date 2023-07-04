@@ -417,8 +417,8 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ChartOfAccountsApi apiInstance = new ChartOfAccountsApi(defaultClient);
-    String scope = "scope_example"; // String | The scope of the chart of account.
-    String code = "code_example"; // String | The code of the chart of account. Together with the scope this uniquely identifies              the chart of accounts.
+    String scope = "scope_example"; // String | The scope of the chart of accounts.
+    String code = "code_example"; // String | The code of the chart of accounts. Together with the scope this uniquely identifies              the chart of accounts.
     String effectiveAt = "effectiveAt_example"; // String | The effective datetime or cut label at which to list the TimeVariant properties decorated on Accounts. Defaults to the current LUSID              system datetime if not specified.
     OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | The asAt datetime at which to retrieve the Accounts. Defaults to              returning the latest version if not specified.
     String page = "page_example"; // String | The pagination token to use to continue listing charts of accounts; this              value is returned from the previous call. If a pagination token is provided, the filter, effectiveAt              and asAt fields must not have changed since the original request. Also, if set, a start value cannot be provided.
@@ -444,8 +444,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| The scope of the chart of account. |
- **code** | **String**| The code of the chart of account. Together with the scope this uniquely identifies              the chart of accounts. |
+ **scope** | **String**| The scope of the chart of accounts. |
+ **code** | **String**| The code of the chart of accounts. Together with the scope this uniquely identifies              the chart of accounts. |
  **effectiveAt** | **String**| The effective datetime or cut label at which to list the TimeVariant properties decorated on Accounts. Defaults to the current LUSID              system datetime if not specified. | [optional]
  **asAt** | **OffsetDateTime**| The asAt datetime at which to retrieve the Accounts. Defaults to              returning the latest version if not specified. | [optional]
  **page** | **String**| The pagination token to use to continue listing charts of accounts; this              value is returned from the previous call. If a pagination token is provided, the filter, effectiveAt              and asAt fields must not have changed since the original request. Also, if set, a start value cannot be provided. | [optional]
@@ -583,8 +583,8 @@ public class Example {
     oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
     ChartOfAccountsApi apiInstance = new ChartOfAccountsApi(defaultClient);
-    String scope = "scope_example"; // String | The scope of the chart of account.
-    String code = "code_example"; // String | The code of the chart of account. Together with the scope this uniquely identifies              the chart of accounts.
+    String scope = "scope_example"; // String | The scope of the chart of accounts.
+    String code = "code_example"; // String | The code of the chart of accounts. Together with the scope this uniquely identifies              the chart of accounts.
     List<Account> account = Arrays.asList(); // List<Account> | A list of accounts to be created or updated.
     try {
       AccountsUpsertResponse result = apiInstance.upsertAccounts(scope, code, account);
@@ -604,8 +604,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope** | **String**| The scope of the chart of account. |
- **code** | **String**| The code of the chart of account. Together with the scope this uniquely identifies              the chart of accounts. |
+ **scope** | **String**| The scope of the chart of accounts. |
+ **code** | **String**| The code of the chart of accounts. Together with the scope this uniquely identifies              the chart of accounts. |
  **account** | [**List&lt;Account&gt;**](Account.md)| A list of accounts to be created or updated. |
 
 ### Return type
@@ -634,7 +634,7 @@ Name | Type | Description  | Notes
 
 [EXPERIMENTAL] UpsertAccountsProperties: Upsert accounts properties
 
-Update or insert one or more properties onto a single account. A property will be updated if it  already exists and inserted if it does not. All properties must be of the domain &#39;Account&#39;.                Upserting a property that exists for a chart of accounts, with a null value, will delete the instance of the property for that group.                Properties have an &lt;i&gt;effectiveFrom&lt;/i&gt; datetime for which the property is valid, and an &lt;i&gt;effectiveUntil&lt;/i&gt;  datetime until which the property is valid. Not supplying an &lt;i&gt;effectiveUntil&lt;/i&gt; datetime results in the property being  valid indefinitely, or until the next &lt;i&gt;effectiveFrom&lt;/i&gt; datetime of the property.
+Update or insert one or more properties onto a single account. A property will be updated if it  already exists and inserted if it does not. All properties must be of the domain &#39;Account&#39;.                Upserting a property that exists for an account, with a null value, will delete the instance of the property for that group.                Properties have an &lt;i&gt;effectiveFrom&lt;/i&gt; datetime for which the property is valid, and an &lt;i&gt;effectiveUntil&lt;/i&gt;  datetime until which the property is valid. Not supplying an &lt;i&gt;effectiveUntil&lt;/i&gt; datetime results in the property being  valid indefinitely, or until the next &lt;i&gt;effectiveFrom&lt;/i&gt; datetime of the property.
 
 ### Example
 ```java
