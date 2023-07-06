@@ -1,13 +1,13 @@
 
 
-# AllocationServiceRunResult
+# BookTransactionsResponse
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**values** | [**List&lt;ResourceId&gt;**](ResourceId.md) |  |  [optional]
+**values** | [**Map&lt;String, Transaction&gt;**](Transaction.md) |  |  [optional]
 **failed** | [**Map&lt;String, ErrorDetail&gt;**](ErrorDetail.md) |  |  [optional]
 
 
