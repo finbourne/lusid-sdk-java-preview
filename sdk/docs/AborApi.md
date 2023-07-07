@@ -421,7 +421,7 @@ public class Example {
     AborApi apiInstance = new AborApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the Abor to update or insert the properties onto.
     String code = "code_example"; // String | The code of the Abor to update or insert the properties onto. Together with the scope this uniquely identifies the Abor.
-    Map<String, Property> requestBody = new HashMap(); // Map<String, Property> | The properties to be updated or inserted onto the chart of account. Each property in               the request must be keyed by its unique property key. This has the format {domain}/{scope}/{code} e.g. \"Abor/Manager/Id\".
+    Map<String, Property> requestBody = new HashMap(); // Map<String, Property> | The properties to be updated or inserted onto the Abor. Each property in               the request must be keyed by its unique property key. This has the format {domain}/{scope}/{code} e.g. \"Abor/Manager/Id\".
     try {
       AborProperties result = apiInstance.upsertAborProperties(scope, code, requestBody);
       System.out.println(result);
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the Abor to update or insert the properties onto. |
  **code** | **String**| The code of the Abor to update or insert the properties onto. Together with the scope this uniquely identifies the Abor. |
- **requestBody** | [**Map&lt;String, Property&gt;**](Property.md)| The properties to be updated or inserted onto the chart of account. Each property in               the request must be keyed by its unique property key. This has the format {domain}/{scope}/{code} e.g. \&quot;Abor/Manager/Id\&quot;. | [optional]
+ **requestBody** | [**Map&lt;String, Property&gt;**](Property.md)| The properties to be updated or inserted onto the Abor. Each property in               the request must be keyed by its unique property key. This has the format {domain}/{scope}/{code} e.g. \&quot;Abor/Manager/Id\&quot;. | [optional]
 
 ### Return type
 
