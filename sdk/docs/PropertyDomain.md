@@ -77,5 +77,7 @@
 
 * `COMPLIANCE` (value: `"Compliance"`)
 
+* `DIARYENTRY` (value: `"DiaryEntry"`)
+
 
 
