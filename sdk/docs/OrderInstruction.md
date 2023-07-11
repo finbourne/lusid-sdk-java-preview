@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **instrumentScope** | **String** | The scope in which the instrument lies |  [optional]
 **lusidInstrumentId** | **String** | The LUSID instrument id for the instrument ordered. |  [optional]
 **version** | [**Version**](Version.md) |  |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
 
 
 
