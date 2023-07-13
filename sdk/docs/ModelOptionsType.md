@@ -19,5 +19,7 @@
 
 * `EQUITYMODELOPTIONS` (value: `"EquityModelOptions"`)
 
+* `LOOKUPPRICINGMODELOPTIONS` (value: `"LookUpPricingModelOptions"`)
+
 
 

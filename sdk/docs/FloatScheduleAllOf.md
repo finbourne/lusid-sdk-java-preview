@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **maturityDate** | **OffsetDateTime** | Date to generate to |  [optional]
 **flowConventions** | [**FlowConventions**](FlowConventions.md) |  |  [optional]
 **conventionName** | [**FlowConventionName**](FlowConventionName.md) |  |  [optional]
+**exDividendDays** | **Integer** | Optional. Number of calendar days in the ex-dividend period.  If the settlement date falls in the ex-dividend period then the coupon paid is zero and the accrued interest is negative.  If set, this must be a non-negative number.  If not set, or set to 0, then there is no ex-dividend period. |  [optional]
 **indexConventionName** | [**FlowConventionName**](FlowConventionName.md) |  |  [optional]
 **indexConventions** | [**IndexConvention**](IndexConvention.md) |  |  [optional]
 **notional** | **java.math.BigDecimal** | Scaling factor, the quantity outstanding on which the rate will be paid. |  [optional]

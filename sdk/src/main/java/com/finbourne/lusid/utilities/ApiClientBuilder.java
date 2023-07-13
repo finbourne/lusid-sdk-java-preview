@@ -65,16 +65,29 @@ public class ApiClientBuilder {
      * @throws LusidTokenException on failing to authenticate and retrieve an initial {@link LusidTokenException}
      */
     public ApiClient build(ApiConfiguration apiConfiguration, int readTimeout, int writeTimeout, int connectTimeout) throws LusidTokenException {
+
         // http client to use for api and auth calls
         OkHttpClient httpClient = createHttpClient(apiConfiguration, readTimeout, writeTimeout, connectTimeout);
 
-        // token provider to keep client authenticated with automated token refreshing
-        RefreshingTokenProvider refreshingTokenProvider = new RefreshingTokenProvider(new HttpLusidTokenProvider(apiConfiguration, httpClient));
-        LusidToken lusidToken = refreshingTokenProvider.get();
+        if (apiConfiguration.getPersonalAccessToken() != null && apiConfiguration.getApiUrl() != null) {
 
-        // setup api client that managed submissions with the latest token
-        ApiClient defaultApiClient = createDefaultApiClient(apiConfiguration, httpClient, lusidToken);
-        return new RefreshingTokenApiClient(defaultApiClient, refreshingTokenProvider);
+            //  use Personal Access Token
+            LusidToken lusidToken = new LusidToken(apiConfiguration.getPersonalAccessToken(), null, null);
+            ApiClient defaultApiClient = createDefaultApiClient(apiConfiguration, httpClient, lusidToken);
+
+            return defaultApiClient;
+
+        }
+        else {
+
+            // token provider to keep client authenticated with automated token refreshing
+            RefreshingTokenProvider refreshingTokenProvider = new RefreshingTokenProvider(new HttpLusidTokenProvider(apiConfiguration, httpClient));
+            LusidToken lusidToken = refreshingTokenProvider.get();
+
+            // setup api client that managed submissions with the latest token
+            ApiClient defaultApiClient = createDefaultApiClient(apiConfiguration, httpClient, lusidToken);
+            return new RefreshingTokenApiClient(defaultApiClient, refreshingTokenProvider);
+        }
     }
 
     ApiClient createDefaultApiClient(ApiConfiguration apiConfiguration, OkHttpClient httpClient, LusidToken lusidToken) throws LusidTokenException {
@@ -86,7 +99,7 @@ public class ApiClientBuilder {
             throw new LusidTokenException("Cannot construct an API client with a null authorisation header. Ensure " +
                     "lusid token generated is valid");
         } else {
-            apiClient.addDefaultHeader("Authorization", "Bearer " + lusidToken.getAccessToken());
+            apiClient.setAccessToken(lusidToken.getAccessToken());
         }
 
         if (apiConfiguration.getApplicationName() != null) {

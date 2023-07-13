@@ -4,17 +4,17 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deletePlacement**](PlacementsApi.md#deletePlacement) | **DELETE** /api/placements/{scope}/{code} | [EXPERIMENTAL] DeletePlacement: Delete placement
-[**getPlacement**](PlacementsApi.md#getPlacement) | **GET** /api/placements/{scope}/{code} | [EXPERIMENTAL] GetPlacement: Get Placement
-[**listPlacements**](PlacementsApi.md#listPlacements) | **GET** /api/placements | [EXPERIMENTAL] ListPlacements: List Placements
-[**upsertPlacements**](PlacementsApi.md#upsertPlacements) | **POST** /api/placements | [EXPERIMENTAL] UpsertPlacements: Upsert Placement
+[**deletePlacement**](PlacementsApi.md#deletePlacement) | **DELETE** /api/placements/{scope}/{code} | [EARLY ACCESS] DeletePlacement: Delete placement
+[**getPlacement**](PlacementsApi.md#getPlacement) | **GET** /api/placements/{scope}/{code} | [EARLY ACCESS] GetPlacement: Get Placement
+[**listPlacements**](PlacementsApi.md#listPlacements) | **GET** /api/placements | [EARLY ACCESS] ListPlacements: List Placements
+[**upsertPlacements**](PlacementsApi.md#upsertPlacements) | **POST** /api/placements | [EARLY ACCESS] UpsertPlacements: Upsert Placement
 
 
 <a name="deletePlacement"></a>
 # **deletePlacement**
 > DeletedEntityResponse deletePlacement(scope, code)
 
-[EXPERIMENTAL] DeletePlacement: Delete placement
+[EARLY ACCESS] DeletePlacement: Delete placement
 
 Delete an placement. Deletion will be valid from the placement&#39;s creation datetime.  This means that the placement will no longer exist at any effective datetime from the asAt datetime of deletion.
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getPlacement**
 > Placement getPlacement(scope, code, asAt, propertyKeys)
 
-[EXPERIMENTAL] GetPlacement: Get Placement
+[EARLY ACCESS] GetPlacement: Get Placement
 
 Fetch a Placement that matches the specified identifier
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **listPlacements**
 > PagedResourceListOfPlacement listPlacements(asAt, page, sortBy, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] ListPlacements: List Placements
+[EARLY ACCESS] ListPlacements: List Placements
 
 Fetch the last pre-AsAt date version of each placement in scope (does not fetch the entire history).
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 # **upsertPlacements**
 > ResourceListOfPlacement upsertPlacements(placementSetRequest)
 
-[EXPERIMENTAL] UpsertPlacements: Upsert Placement
+[EARLY ACCESS] UpsertPlacements: Upsert Placement
 
 Upsert; update existing placements with given ids, or create new placements otherwise.
 

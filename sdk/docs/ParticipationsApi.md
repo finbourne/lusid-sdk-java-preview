@@ -4,17 +4,17 @@ All URIs are relative to *https://www.lusid.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteParticipation**](ParticipationsApi.md#deleteParticipation) | **DELETE** /api/participations/{scope}/{code} | [EXPERIMENTAL] DeleteParticipation: Delete participation
-[**getParticipation**](ParticipationsApi.md#getParticipation) | **GET** /api/participations/{scope}/{code} | [EXPERIMENTAL] GetParticipation: Get Participation
-[**listParticipations**](ParticipationsApi.md#listParticipations) | **GET** /api/participations | [EXPERIMENTAL] ListParticipations: List Participations
-[**upsertParticipations**](ParticipationsApi.md#upsertParticipations) | **POST** /api/participations | [EXPERIMENTAL] UpsertParticipations: Upsert Participation
+[**deleteParticipation**](ParticipationsApi.md#deleteParticipation) | **DELETE** /api/participations/{scope}/{code} | [EARLY ACCESS] DeleteParticipation: Delete participation
+[**getParticipation**](ParticipationsApi.md#getParticipation) | **GET** /api/participations/{scope}/{code} | [EARLY ACCESS] GetParticipation: Get Participation
+[**listParticipations**](ParticipationsApi.md#listParticipations) | **GET** /api/participations | [EARLY ACCESS] ListParticipations: List Participations
+[**upsertParticipations**](ParticipationsApi.md#upsertParticipations) | **POST** /api/participations | [EARLY ACCESS] UpsertParticipations: Upsert Participation
 
 
 <a name="deleteParticipation"></a>
 # **deleteParticipation**
 > DeletedEntityResponse deleteParticipation(scope, code)
 
-[EXPERIMENTAL] DeleteParticipation: Delete participation
+[EARLY ACCESS] DeleteParticipation: Delete participation
 
 Delete an participation. Deletion will be valid from the participation&#39;s creation datetime.  This means that the participation will no longer exist at any effective datetime from the asAt datetime of deletion.
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 # **getParticipation**
 > Participation getParticipation(scope, code, asAt, propertyKeys)
 
-[EXPERIMENTAL] GetParticipation: Get Participation
+[EARLY ACCESS] GetParticipation: Get Participation
 
 Fetch a Participation that matches the specified identifier
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 # **listParticipations**
 > PagedResourceListOfParticipation listParticipations(asAt, page, sortBy, limit, filter, propertyKeys)
 
-[EXPERIMENTAL] ListParticipations: List Participations
+[EARLY ACCESS] ListParticipations: List Participations
 
 Fetch the last pre-AsAt date version of each Participation in scope (does not fetch the entire history).
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 # **upsertParticipations**
 > ResourceListOfParticipation upsertParticipations(participationSetRequest)
 
-[EXPERIMENTAL] UpsertParticipations: Upsert Participation
+[EARLY ACCESS] UpsertParticipations: Upsert Participation
 
 Upsert; update existing participations with given ids, or create new participations otherwise.
 

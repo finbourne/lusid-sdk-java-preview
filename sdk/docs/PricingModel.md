@@ -39,5 +39,7 @@
 
 * `BJERKSUNDSTENSLAND1993` (value: `"BjerksundStensland1993"`)
 
+* `LOOKUPPRICING` (value: `"LookUpPricing"`)
+
 
 

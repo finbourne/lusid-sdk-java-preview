@@ -8,7 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **value** | **String** | the value itself |  [optional]
-**resultValueType** | [**ResultValueTypeEnum**](#ResultValueTypeEnum) | The available values are: ResultValue, ResultValueDictionary, ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString, CashFlowValue, CashFlowValueSet | 
+**resultValueType** | [**ResultValueTypeEnum**](#ResultValueTypeEnum) | The available values are: ResultValue, ResultValueDictionary, ResultValue0D, ResultValueDecimal, ResultValueInt, ResultValueString, ResultValueBool, ResultValueCurrency, CashFlowValue, CashFlowValueSet, ResultValueLifeCycleEventValue, ResultValueDateTimeOffset | 
 
 
 
@@ -22,8 +22,12 @@ RESULTVALUE0D | &quot;ResultValue0D&quot;
 RESULTVALUEDECIMAL | &quot;ResultValueDecimal&quot;
 RESULTVALUEINT | &quot;ResultValueInt&quot;
 RESULTVALUESTRING | &quot;ResultValueString&quot;
+RESULTVALUEBOOL | &quot;ResultValueBool&quot;
+RESULTVALUECURRENCY | &quot;ResultValueCurrency&quot;
 CASHFLOWVALUE | &quot;CashFlowValue&quot;
 CASHFLOWVALUESET | &quot;CashFlowValueSet&quot;
+RESULTVALUELIFECYCLEEVENTVALUE | &quot;ResultValueLifeCycleEventValue&quot;
+RESULTVALUEDATETIMEOFFSET | &quot;ResultValueDateTimeOffset&quot;
 
 
 

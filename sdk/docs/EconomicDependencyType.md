@@ -5,27 +5,27 @@
 ## Enum
 
 
-* `OPAQUE` (value: `"Opaque"`)
+* `OPAQUEDEPENDENCY` (value: `"OpaqueDependency"`)
 
-* `CASH` (value: `"Cash"`)
+* `CASHDEPENDENCY` (value: `"CashDependency"`)
 
-* `DISCOUNTING` (value: `"Discounting"`)
+* `DISCOUNTINGDEPENDENCY` (value: `"DiscountingDependency"`)
 
-* `EQUITYCURVE` (value: `"EquityCurve"`)
+* `EQUITYCURVEDEPENDENCY` (value: `"EquityCurveDependency"`)
 
-* `EQUITYVOL` (value: `"EquityVol"`)
+* `EQUITYVOLDEPENDENCY` (value: `"EquityVolDependency"`)
 
-* `FX` (value: `"Fx"`)
+* `FXDEPENDENCY` (value: `"FxDependency"`)
 
-* `FXFORWARDS` (value: `"FxForwards"`)
+* `FXFORWARDSDEPENDENCY` (value: `"FxForwardsDependency"`)
 
-* `FXVOL` (value: `"FxVol"`)
+* `FXVOLDEPENDENCY` (value: `"FxVolDependency"`)
 
-* `INDEXPROJECTION` (value: `"IndexProjection"`)
+* `INDEXPROJECTIONDEPENDENCY` (value: `"IndexProjectionDependency"`)
 
-* `IRVOL` (value: `"IrVol"`)
+* `IRVOLDEPENDENCY` (value: `"IrVolDependency"`)
 
-* `QUOTE` (value: `"Quote"`)
+* `QUOTEDEPENDENCY` (value: `"QuoteDependency"`)
 
 * `VENDOR` (value: `"Vendor"`)
 

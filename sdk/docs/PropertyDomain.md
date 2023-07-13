@@ -65,5 +65,19 @@
 
 * `CHARTOFACCOUNTS` (value: `"ChartOfAccounts"`)
 
+* `CUSTODIANACCOUNT` (value: `"CustodianAccount"`)
+
+* `ABOR` (value: `"Abor"`)
+
+* `ABORCONFIGURATION` (value: `"AborConfiguration"`)
+
+* `RECONCILIATION` (value: `"Reconciliation"`)
+
+* `PROPERTYDEFINITION` (value: `"PropertyDefinition"`)
+
+* `COMPLIANCE` (value: `"Compliance"`)
+
+* `DIARYENTRY` (value: `"DiaryEntry"`)
+
 
 

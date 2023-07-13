@@ -27,5 +27,9 @@
 
 * `PROPORTIONOFABSOLUTEVALUES` (value: `"ProportionOfAbsoluteValues"`)
 
+* `SUMCUMULATIVEINADVANCE` (value: `"SumCumulativeInAdvance"`)
+
+* `SUMCUMULATIVEINARREARS` (value: `"SumCumulativeInArrears"`)
+
 
 

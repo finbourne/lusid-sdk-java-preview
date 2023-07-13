@@ -19,5 +19,9 @@
 
 * `CLIENTINTERNAL` (value: `"ClientInternal"`)
 
+* `SEDOL` (value: `"Sedol"`)
+
+* `CUSIP` (value: `"Cusip"`)
+
 
 

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **type** | **String** |  | 
 **propertyKey** | **String** |  |  [optional]
 **value** | **String** |  |  [optional]
+**addressKey** | **String** |  |  [optional]
 **lowerBound** | **java.math.BigDecimal** |  | 
 **upperBound** | **java.math.BigDecimal** |  | 
 **schedule** | **String** |  | 
