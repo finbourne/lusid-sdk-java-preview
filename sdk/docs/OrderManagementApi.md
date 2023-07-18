@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="bookTransactions"></a>
 # **bookTransactions**
-> BookTransactionsResponse bookTransactions(resourceId)
+> BookTransactionsResponse bookTransactions(resourceId, applyFeesAndCommission)
 
 [EXPERIMENTAL] BookTransactions: Books transactions using specific allocations as a source.
 
@@ -37,8 +37,9 @@ public class Example {
 
     OrderManagementApi apiInstance = new OrderManagementApi(defaultClient);
     List<ResourceId> resourceId = Arrays.asList(); // List<ResourceId> | The allocations to create transactions for
+    Boolean applyFeesAndCommission = true; // Boolean | Whether to apply fees and commissions to transactions (default: true)
     try {
-      BookTransactionsResponse result = apiInstance.bookTransactions(resourceId);
+      BookTransactionsResponse result = apiInstance.bookTransactions(resourceId, applyFeesAndCommission);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrderManagementApi#bookTransactions");
@@ -56,6 +57,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **resourceId** | [**List&lt;ResourceId&gt;**](ResourceId.md)| The allocations to create transactions for |
+ **applyFeesAndCommission** | **Boolean**| Whether to apply fees and commissions to transactions (default: true) | [optional] [default to true]
 
 ### Return type
 
