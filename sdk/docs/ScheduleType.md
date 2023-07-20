@@ -5,17 +5,17 @@
 ## Enum
 
 
-* `FIXEDSCHEDULE` (value: `"FixedSchedule"`)
+* `FIXED` (value: `"Fixed"`)
 
-* `FLOATSCHEDULE` (value: `"FloatSchedule"`)
+* `FLOAT` (value: `"Float"`)
 
-* `OPTIONALITYSCHEDULE` (value: `"OptionalitySchedule"`)
+* `OPTIONALITY` (value: `"Optionality"`)
 
-* `STEPSCHEDULE` (value: `"StepSchedule"`)
+* `STEP` (value: `"Step"`)
 
 * `EXERCISE` (value: `"Exercise"`)
 
-* `FXRATESCHEDULE` (value: `"FxRateSchedule"`)
+* `FXRATE` (value: `"FxRate"`)
 
 * `INVALID` (value: `"Invalid"`)
 
