@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **aborConfig** | [**ResourceId**](ResourceId.md) |  |  [optional]
 **properties** | [**Map&lt;String, Property&gt;**](Property.md) | Properties to add to the Abor. |  [optional]
 **version** | [**Version**](Version.md) |  |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
 
