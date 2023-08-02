@@ -27,5 +27,7 @@
 
 * `DELTA` (value: `"Delta"`)
 
+* `POOLFACTOR` (value: `"PoolFactor"`)
+
 
 
