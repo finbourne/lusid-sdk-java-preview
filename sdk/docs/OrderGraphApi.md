@@ -39,7 +39,7 @@ public class Example {
     OrderGraphApi apiInstance = new OrderGraphApi(defaultClient);
     OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | See https://support.lusid.com/knowledgebase/article/KA-01832/
     String paginationToken = "paginationToken_example"; // String | See https://support.lusid.com/knowledgebase/article/KA-01915/
-    List<String> sortBy = Arrays.asList(); // List<String> | Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName.
+    List<String> sortBy = Arrays.asList(); // List<String> | A list of field names or properties to sort by, each suffixed by \" ASC\" or \" DESC\"
     Integer limit = 56; // Integer | See https://support.lusid.com/knowledgebase/article/KA-01915/
     String filter = ""; // String | See https://support.lusid.com/knowledgebase/article/KA-01914/
     List<String> propertyKeys = Arrays.asList(); // List<String> | Must be block-level properties. See https://support.lusid.com/knowledgebase/article/KA-01855/
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asAt** | **OffsetDateTime**| See https://support.lusid.com/knowledgebase/article/KA-01832/ | [optional]
  **paginationToken** | **String**| See https://support.lusid.com/knowledgebase/article/KA-01915/ | [optional]
- **sortBy** | [**List&lt;String&gt;**](String.md)| Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName. | [optional]
+ **sortBy** | [**List&lt;String&gt;**](String.md)| A list of field names or properties to sort by, each suffixed by \&quot; ASC\&quot; or \&quot; DESC\&quot; | [optional]
  **limit** | **Integer**| See https://support.lusid.com/knowledgebase/article/KA-01915/ | [optional]
  **filter** | **String**| See https://support.lusid.com/knowledgebase/article/KA-01914/ | [optional] [default to ]
  **propertyKeys** | [**List&lt;String&gt;**](String.md)| Must be block-level properties. See https://support.lusid.com/knowledgebase/article/KA-01855/ | [optional]
@@ -201,7 +201,7 @@ public class Example {
     OrderGraphApi apiInstance = new OrderGraphApi(defaultClient);
     OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | See https://support.lusid.com/knowledgebase/article/KA-01832/
     String paginationToken = "paginationToken_example"; // String | See https://support.lusid.com/knowledgebase/article/KA-01915/
-    List<String> sortBy = Arrays.asList(); // List<String> | Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName.
+    List<String> sortBy = Arrays.asList(); // List<String> | A list of field names or properties to sort by, each suffixed by \" ASC\" or \" DESC\"
     Integer limit = 56; // Integer | See https://support.lusid.com/knowledgebase/article/KA-01915/
     String filter = ""; // String | See https://support.lusid.com/knowledgebase/article/KA-01914/
     List<String> propertyKeys = Arrays.asList(); // List<String> | Must be placement properties. See https://support.lusid.com/knowledgebase/article/KA-01855/
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asAt** | **OffsetDateTime**| See https://support.lusid.com/knowledgebase/article/KA-01832/ | [optional]
  **paginationToken** | **String**| See https://support.lusid.com/knowledgebase/article/KA-01915/ | [optional]
- **sortBy** | [**List&lt;String&gt;**](String.md)| Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName. | [optional]
+ **sortBy** | [**List&lt;String&gt;**](String.md)| A list of field names or properties to sort by, each suffixed by \&quot; ASC\&quot; or \&quot; DESC\&quot; | [optional]
  **limit** | **Integer**| See https://support.lusid.com/knowledgebase/article/KA-01915/ | [optional]
  **filter** | **String**| See https://support.lusid.com/knowledgebase/article/KA-01914/ | [optional] [default to ]
  **propertyKeys** | [**List&lt;String&gt;**](String.md)| Must be placement properties. See https://support.lusid.com/knowledgebase/article/KA-01855/ | [optional]
