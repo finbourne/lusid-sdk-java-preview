@@ -118,7 +118,7 @@ public class Example {
     String scope = "scope_example"; // String | The compliance rule's scope.
     String code = "code_example"; // String | The compliance rule's code.
     OffsetDateTime asAt = OffsetDateTime.now(); // OffsetDateTime | Optional. Asat time for query.
-    List<String> propertyKeys = Arrays.asList(); // List<String> | A list of property keys from the 'Compliance' domain to decorate onto the rule.              These must take the format {domain}/{scope}/{code}, for example 'Compliance/live/UCITS'. If not provided will return all the entitled properties for that rule.
+    List<String> propertyKeys = Arrays.asList(); // List<String> | A list of property keys from the 'Compliance' domain to decorate onto the rule.              These must take the format {domain}/{scope}/{code}, for example 'Compliance/live/UCITS'.
     try {
       ComplianceRuleResponse result = apiInstance.getComplianceRule(scope, code, asAt, propertyKeys);
       System.out.println(result);
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
  **scope** | **String**| The compliance rule&#39;s scope. |
  **code** | **String**| The compliance rule&#39;s code. |
  **asAt** | **OffsetDateTime**| Optional. Asat time for query. | [optional]
- **propertyKeys** | [**List&lt;String&gt;**](String.md)| A list of property keys from the &#39;Compliance&#39; domain to decorate onto the rule.              These must take the format {domain}/{scope}/{code}, for example &#39;Compliance/live/UCITS&#39;. If not provided will return all the entitled properties for that rule. | [optional]
+ **propertyKeys** | [**List&lt;String&gt;**](String.md)| A list of property keys from the &#39;Compliance&#39; domain to decorate onto the rule.              These must take the format {domain}/{scope}/{code}, for example &#39;Compliance/live/UCITS&#39;. | [optional]
 
 ### Return type
 

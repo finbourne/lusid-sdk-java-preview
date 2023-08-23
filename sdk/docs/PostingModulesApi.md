@@ -8,8 +8,8 @@ Method | HTTP request | Description
 [**deletePostingModule**](PostingModulesApi.md#deletePostingModule) | **DELETE** /api/postingmodule/{scope}/{code} | [EXPERIMENTAL] DeletePostingModule: Delete a PostingModule.
 [**listPostingModuleRules**](PostingModulesApi.md#listPostingModuleRules) | **GET** /api/postingmodule/{scope}/{code}/postingrules | [EXPERIMENTAL] ListPostingModuleRules: List Posting Module Rules
 [**listPostingModules**](PostingModulesApi.md#listPostingModules) | **GET** /api/postingmodule | [EXPERIMENTAL] ListPostingModules: List Posting Modules
-[**updatePostingModuleDetails**](PostingModulesApi.md#updatePostingModuleDetails) | **POST** /api/postingmodule/{scope}/{code} | [EXPERIMENTAL] UpdatePostingModuleDetails: Update a Posting Module details
-[**updatePostingModuleRules**](PostingModulesApi.md#updatePostingModuleRules) | **POST** /api/postingmodule/{scope}/{code}/postingrules | [EXPERIMENTAL] UpdatePostingModuleRules: Update a Posting Modules rules
+[**setPostingModuleDetails**](PostingModulesApi.md#setPostingModuleDetails) | **PUT** /api/postingmodule/{scope}/{code} | [EXPERIMENTAL] SetPostingModuleDetails: Set the details of a Posting Module
+[**setPostingModuleRules**](PostingModulesApi.md#setPostingModuleRules) | **PUT** /api/postingmodule/{scope}/{code}/postingrules | [EXPERIMENTAL] SetPostingModuleRules: Set the rules of a Posting Module
 
 
 <a name="createPostingModule"></a>
@@ -312,11 +312,11 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
-<a name="updatePostingModuleDetails"></a>
-# **updatePostingModuleDetails**
-> PostingModuleResponse updatePostingModuleDetails(scope, code, postingModuleDetails)
+<a name="setPostingModuleDetails"></a>
+# **setPostingModuleDetails**
+> PostingModuleResponse setPostingModuleDetails(scope, code, postingModuleDetails)
 
-[EXPERIMENTAL] UpdatePostingModuleDetails: Update a Posting Module details
+[EXPERIMENTAL] SetPostingModuleDetails: Set the details of a Posting Module
 
 Update the given Posting Module details.
 
@@ -342,12 +342,12 @@ public class Example {
     PostingModulesApi apiInstance = new PostingModulesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the Posting Module to be updated.
     String code = "code_example"; // String | The code of the Posting Module to be updated. Together with the scope this uniquely identifies the Posting Module.
-    PostingModuleDetails postingModuleDetails = new PostingModuleDetails(); // PostingModuleDetails | The details to be updated for the posting module.
+    PostingModuleDetails postingModuleDetails = new PostingModuleDetails(); // PostingModuleDetails | The new details for the Posting Module.
     try {
-      PostingModuleResponse result = apiInstance.updatePostingModuleDetails(scope, code, postingModuleDetails);
+      PostingModuleResponse result = apiInstance.setPostingModuleDetails(scope, code, postingModuleDetails);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PostingModulesApi#updatePostingModuleDetails");
+      System.err.println("Exception when calling PostingModulesApi#setPostingModuleDetails");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the Posting Module to be updated. |
  **code** | **String**| The code of the Posting Module to be updated. Together with the scope this uniquely identifies the Posting Module. |
- **postingModuleDetails** | [**PostingModuleDetails**](PostingModuleDetails.md)| The details to be updated for the posting module. |
+ **postingModuleDetails** | [**PostingModuleDetails**](PostingModuleDetails.md)| The new details for the Posting Module. |
 
 ### Return type
 
@@ -385,13 +385,13 @@ Name | Type | Description  | Notes
 **400** | The details of the input related failure |  -  |
 **0** | Error response |  -  |
 
-<a name="updatePostingModuleRules"></a>
-# **updatePostingModuleRules**
-> PostingModuleRulesUpdatedResponse updatePostingModuleRules(scope, code, postingModuleRule)
+<a name="setPostingModuleRules"></a>
+# **setPostingModuleRules**
+> PostingModuleRulesUpdatedResponse setPostingModuleRules(scope, code, postingModuleRule)
 
-[EXPERIMENTAL] UpdatePostingModuleRules: Update a Posting Modules rules
+[EXPERIMENTAL] SetPostingModuleRules: Set the rules of a Posting Module
 
-Update the given Posting Modules rules, this will replace the existing set of rules for the posting module.
+Set the given Posting Modules rules, this will replace the existing set of rules for the posting module.
 
 ### Example
 ```java
@@ -415,12 +415,12 @@ public class Example {
     PostingModulesApi apiInstance = new PostingModulesApi(defaultClient);
     String scope = "scope_example"; // String | The scope of the Posting Module to be updated.
     String code = "code_example"; // String | The code of the Posting Module to be updated. Together with the scope this uniquely identifies the Posting Module.
-    List<PostingModuleRule> postingModuleRule = Arrays.asList(); // List<PostingModuleRule> | The new rule set to be updated for the posting module.
+    List<PostingModuleRule> postingModuleRule = Arrays.asList(); // List<PostingModuleRule> | The new rule set for the Posting Module.
     try {
-      PostingModuleRulesUpdatedResponse result = apiInstance.updatePostingModuleRules(scope, code, postingModuleRule);
+      PostingModuleRulesUpdatedResponse result = apiInstance.setPostingModuleRules(scope, code, postingModuleRule);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PostingModulesApi#updatePostingModuleRules");
+      System.err.println("Exception when calling PostingModulesApi#setPostingModuleRules");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **String**| The scope of the Posting Module to be updated. |
  **code** | **String**| The code of the Posting Module to be updated. Together with the scope this uniquely identifies the Posting Module. |
- **postingModuleRule** | [**List&lt;PostingModuleRule&gt;**](PostingModuleRule.md)| The new rule set to be updated for the posting module. |
+ **postingModuleRule** | [**List&lt;PostingModuleRule&gt;**](PostingModuleRule.md)| The new rule set for the Posting Module. |
 
 ### Return type
 

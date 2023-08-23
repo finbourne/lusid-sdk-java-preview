@@ -2,16 +2,16 @@
 
 # PostingModuleRequest
 
-A posting Module request definition
+A Posting Module request definition
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **String** | The code given for the chart of account. | 
+**code** | **String** | The code of the Posting Module. | 
 **chartOfAccountsId** | [**ResourceId**](ResourceId.md) |  | 
 **name** | **String** | The name to identify the Posting Module by | 
-**description** | **String** | The description for the posting module |  [optional]
+**description** | **String** | The description for the Posting Module |  [optional]
 **rules** | [**List&lt;PostingModuleRule&gt;**](PostingModuleRule.md) | The posting rules that apply for the Posting Module |  [optional]
 
 
