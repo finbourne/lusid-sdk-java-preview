@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **previousEntryTime** | **OffsetDateTime** | The entry time of the previous diary entry. |  [optional]
 **properties** | [**Map&lt;String, Property&gt;**](Property.md) | Properties to add to the diary entry. |  [optional]
 **version** | [**Version**](Version.md) |  |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
 
