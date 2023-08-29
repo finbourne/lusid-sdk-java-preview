@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **status** | **String** | The Posting Module status. Can be Active, Inactive or Deleted. Defaults to Active. | 
 **version** | [**Version**](Version.md) |  |  [optional]
 **href** | **URI** | The specific Uniform Resource Identifier (URI) for this resource at the requested effective and asAt datetime. |  [optional]
-**links** | [**List&lt;Link&gt;**](Link.md) | Collection of links. |  [optional]
+**links** | [**List&lt;Link&gt;**](Link.md) |  |  [optional]
 
 
 
