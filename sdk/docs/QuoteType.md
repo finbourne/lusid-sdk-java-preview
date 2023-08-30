@@ -29,5 +29,7 @@
 
 * `POOLFACTOR` (value: `"PoolFactor"`)
 
+* `INFLATIONASSUMPTION` (value: `"InflationAssumption"`)
+
 
 
