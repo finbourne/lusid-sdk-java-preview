@@ -2,7 +2,7 @@
 
 # PostingModuleDetails
 
-A posting Module request definition
+A Posting Module request definition
 
 ## Properties
 
