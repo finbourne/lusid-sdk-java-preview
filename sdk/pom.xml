@@ -2,22 +2,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.finbourne</groupId>
-    <artifactId>lusid-sdk-preview</artifactId>
+    <artifactId>lusid-sdk</artifactId>
     <packaging>jar</packaging>
-    <name>lusid-sdk-preview</name>
-    <version>1.0.466</version>
-    <url>https://github.com/finbourne/lusid-sdk-java-preview</url>
+    <name>lusid-sdk</name>
+    <version>1.1.0</version>
+    <url>https://github.com/finbourne/lusid-sdk-java</url>
     <description>LUSID Java SDK</description>
     <scm>
         <connection></connection>
-        <developerConnection>scm:git:git@github.com:finbourne/lusid-sdk-java-preview.git</developerConnection>
-        <url>https://github.com/finbourne/lusid-sdk-java-preview</url>
+        <developerConnection>scm:git:git@github.com:finbourne/lusid-sdk-java.git</developerConnection>
+        <url>https://github.com/finbourne/lusid-sdk-java</url>
     </scm>
 
     <licenses>
         <license>
             <name>MIT</name>
-            <url>https://github.com/finbourne/lusid-sdk-java-preview/blob/master/LICENSE.md</url>
+            <url>https://github.com/finbourne/lusid-sdk-java/blob/master/LICENSE.md</url>
             <distribution>repo</distribution>
         </license>
     </licenses>

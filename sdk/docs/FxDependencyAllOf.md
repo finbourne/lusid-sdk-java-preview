@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **domesticCurrency** | **String** | DomesticCurrency is the first currency in a currency pair quote e.g. eur-gbp, eur is the domestic currency. | 
 **foreignCurrency** | **String** | ForeignCurrency is the second currency in a currency pair quote e.g. eur-gbp, gbp is the foreign currency. | 
 **date** | **OffsetDateTime** | The effectiveAt of the fx rate. | 
-**dependencyType** | [**DependencyTypeEnum**](#DependencyTypeEnum) | The available values are: OpaqueDependency, CashDependency, DiscountingDependency, EquityCurveDependency, EquityVolDependency, FxDependency, FxForwardsDependency, FxVolDependency, IndexProjectionDependency, IrVolDependency, QuoteDependency, Vendor | 
+**dependencyType** | [**DependencyTypeEnum**](#DependencyTypeEnum) | The available values are: OpaqueDependency, CashDependency, DiscountingDependency, EquityCurveDependency, EquityVolDependency, FxDependency, FxForwardsDependency, FxVolDependency, IndexProjectionDependency, IrVolDependency, QuoteDependency, Vendor, CalendarDependency, InflationFixingDependency | 
 
 
 
@@ -30,6 +30,8 @@ INDEXPROJECTIONDEPENDENCY | &quot;IndexProjectionDependency&quot;
 IRVOLDEPENDENCY | &quot;IrVolDependency&quot;
 QUOTEDEPENDENCY | &quot;QuoteDependency&quot;
 VENDOR | &quot;Vendor&quot;
+CALENDARDEPENDENCY | &quot;CalendarDependency&quot;
+INFLATIONFIXINGDEPENDENCY | &quot;InflationFixingDependency&quot;
 
 
 

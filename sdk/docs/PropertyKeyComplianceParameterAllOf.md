@@ -8,7 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **value** | **String** | The key that uniquely identifies the property. It has the format {domain}/{scope}/{code}. | 
-**complianceParameterType** | [**ComplianceParameterTypeEnum**](#ComplianceParameterTypeEnum) | The parameter type. The available values are: BoolComplianceParameter, StringComplianceParameter, DecimalComplianceParameter, DateTimeComplianceParameter, PropertyKeyComplianceParameter, AddressKeyComplianceParameter, PortfolioIdComplianceParameter, PortfolioGroupIdComplianceParameter, StringListComplianceParameter, BoolListComplianceParameter, DateTimeListComplianceParameter, DecimalListComplianceParameter, PropertyKeyListComplianceParameter, AddressKeyListComplianceParameter, PortfolioIdListComplianceParameter, PortfolioGroupIdListComplianceParameter | 
+**complianceParameterType** | [**ComplianceParameterTypeEnum**](#ComplianceParameterTypeEnum) | The parameter type. The available values are: BoolComplianceParameter, StringComplianceParameter, DecimalComplianceParameter, DateTimeComplianceParameter, PropertyKeyComplianceParameter, AddressKeyComplianceParameter, PortfolioIdComplianceParameter, PortfolioGroupIdComplianceParameter, StringListComplianceParameter, BoolListComplianceParameter, DateTimeListComplianceParameter, DecimalListComplianceParameter, PropertyKeyListComplianceParameter, AddressKeyListComplianceParameter, PortfolioIdListComplianceParameter, PortfolioGroupIdListComplianceParameter, InstrumentListComplianceParameter | 
 
 
 
@@ -32,6 +32,7 @@ PROPERTYKEYLISTCOMPLIANCEPARAMETER | &quot;PropertyKeyListComplianceParameter&qu
 ADDRESSKEYLISTCOMPLIANCEPARAMETER | &quot;AddressKeyListComplianceParameter&quot;
 PORTFOLIOIDLISTCOMPLIANCEPARAMETER | &quot;PortfolioIdListComplianceParameter&quot;
 PORTFOLIOGROUPIDLISTCOMPLIANCEPARAMETER | &quot;PortfolioGroupIdListComplianceParameter&quot;
+INSTRUMENTLISTCOMPLIANCEPARAMETER | &quot;InstrumentListComplianceParameter&quot;
 
 
 

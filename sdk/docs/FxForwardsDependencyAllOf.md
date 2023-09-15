@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **foreignCurrency** | **String** | ForeignCurrency is the second currency in a currency pair quote e.g. eur-gbp, gbp is the foreign currency. | 
 **curveType** | **String** | Used to describe the format in which the curve is expressed  e.g. FxFwdCurve (general term to describe any representation), TenorFxFwdCurve, PipsFxFwdCurve. | 
 **date** | **OffsetDateTime** | The effectiveDate of the entity that this is a dependency for.  Unless there is an obvious date this should be, like for a historic reset, then this is the valuation date. | 
-**dependencyType** | [**DependencyTypeEnum**](#DependencyTypeEnum) | The available values are: OpaqueDependency, CashDependency, DiscountingDependency, EquityCurveDependency, EquityVolDependency, FxDependency, FxForwardsDependency, FxVolDependency, IndexProjectionDependency, IrVolDependency, QuoteDependency, Vendor | 
+**dependencyType** | [**DependencyTypeEnum**](#DependencyTypeEnum) | The available values are: OpaqueDependency, CashDependency, DiscountingDependency, EquityCurveDependency, EquityVolDependency, FxDependency, FxForwardsDependency, FxVolDependency, IndexProjectionDependency, IrVolDependency, QuoteDependency, Vendor, CalendarDependency, InflationFixingDependency | 
 
 
 
@@ -31,6 +31,8 @@ INDEXPROJECTIONDEPENDENCY | &quot;IndexProjectionDependency&quot;
 IRVOLDEPENDENCY | &quot;IrVolDependency&quot;
 QUOTEDEPENDENCY | &quot;QuoteDependency&quot;
 VENDOR | &quot;Vendor&quot;
+CALENDARDEPENDENCY | &quot;CalendarDependency&quot;
+INFLATIONFIXINGDEPENDENCY | &quot;InflationFixingDependency&quot;
 
 
 

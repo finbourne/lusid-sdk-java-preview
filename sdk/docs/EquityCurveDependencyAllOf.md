@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **code** | **String** | The code identifying the corresponding equity, e.g. US0378331005 if the MarketIdentifier was set to ISIN | 
 **curveType** | **String** | The curve type of the EquityCurve required. E.g. EquityCurveByPrices | 
 **date** | **OffsetDateTime** | The effectiveDate of the entity that this is a dependency for.  Unless there is an obvious date this should be, like for a historic reset, then this is the valuation date. | 
-**dependencyType** | [**DependencyTypeEnum**](#DependencyTypeEnum) | The available values are: OpaqueDependency, CashDependency, DiscountingDependency, EquityCurveDependency, EquityVolDependency, FxDependency, FxForwardsDependency, FxVolDependency, IndexProjectionDependency, IrVolDependency, QuoteDependency, Vendor | 
+**dependencyType** | [**DependencyTypeEnum**](#DependencyTypeEnum) | The available values are: OpaqueDependency, CashDependency, DiscountingDependency, EquityCurveDependency, EquityVolDependency, FxDependency, FxForwardsDependency, FxVolDependency, IndexProjectionDependency, IrVolDependency, QuoteDependency, Vendor, CalendarDependency, InflationFixingDependency | 
 
 
 
@@ -31,6 +31,8 @@ INDEXPROJECTIONDEPENDENCY | &quot;IndexProjectionDependency&quot;
 IRVOLDEPENDENCY | &quot;IrVolDependency&quot;
 QUOTEDEPENDENCY | &quot;QuoteDependency&quot;
 VENDOR | &quot;Vendor&quot;
+CALENDARDEPENDENCY | &quot;CalendarDependency&quot;
+INFLATIONFIXINGDEPENDENCY | &quot;InflationFixingDependency&quot;
 
 
 

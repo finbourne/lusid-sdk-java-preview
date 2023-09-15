@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency** | **String** | The Currency that is depended upon. | 
 **date** | **OffsetDateTime** | The effectiveDate of the entity that this is a dependency for.  Unless there is an obvious date this should be, like for a historic reset, then this is the valuation date. | 
-**dependencyType** | [**DependencyTypeEnum**](#DependencyTypeEnum) | The available values are: OpaqueDependency, CashDependency, DiscountingDependency, EquityCurveDependency, EquityVolDependency, FxDependency, FxForwardsDependency, FxVolDependency, IndexProjectionDependency, IrVolDependency, QuoteDependency, Vendor | 
+**dependencyType** | [**DependencyTypeEnum**](#DependencyTypeEnum) | The available values are: OpaqueDependency, CashDependency, DiscountingDependency, EquityCurveDependency, EquityVolDependency, FxDependency, FxForwardsDependency, FxVolDependency, IndexProjectionDependency, IrVolDependency, QuoteDependency, Vendor, CalendarDependency, InflationFixingDependency | 
 
 
 
@@ -29,6 +29,8 @@ INDEXPROJECTIONDEPENDENCY | &quot;IndexProjectionDependency&quot;
 IRVOLDEPENDENCY | &quot;IrVolDependency&quot;
 QUOTEDEPENDENCY | &quot;QuoteDependency&quot;
 VENDOR | &quot;Vendor&quot;
+CALENDARDEPENDENCY | &quot;CalendarDependency&quot;
+INFLATIONFIXINGDEPENDENCY | &quot;InflationFixingDependency&quot;
 
 
 
