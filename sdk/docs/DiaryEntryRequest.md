@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **status** | **String** | The status of the diary entry. Defaults to &#39;Undefined&#39;. |  [optional]
 **effectiveAt** | **OffsetDateTime** | The effective time of the diary entry. | 
 **queryAsAt** | **OffsetDateTime** | The query time of the diary entry. Defaults to latest. |  [optional]
-**properties** | [**Map&lt;String, Property&gt;**](Property.md) | Properties to add to the diary entry. |  [optional]
+**properties** | [**Map&lt;String, Property&gt;**](Property.md) | A set of properties for the diary entry. |  [optional]
 
 
 
