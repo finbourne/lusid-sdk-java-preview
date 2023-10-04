@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **frequency** | **String** | Show the aggregated output returns on a Daily or Monthly period. |  [optional]
 **compositeMembers** | **Integer** | The number of members in the Composite on the given day. |  [optional]
 **compositeMembersWithoutReturn** | [**List&lt;ResourceId&gt;**](ResourceId.md) | List containing Composite members which post no return on the given day. |  [optional]
+**warnings** | **List&lt;String&gt;** | List of the warnings about the calculation of the aggregated return. |  [optional]
 
 
 
