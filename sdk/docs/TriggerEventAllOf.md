@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **triggerDirection** | **String** | The direction of the trigger; valid options are Up and Down | 
 **triggerDate** | **OffsetDateTime** | The date the trigger happens at. | 
 **maturityDate** | **OffsetDateTime** | The date the trigger takes effect. | 
-**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent | 
+**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent, BondCouponEvent | 
 
 
 
@@ -34,6 +34,7 @@ RESETEVENT | &quot;ResetEvent&quot;
 TRIGGEREVENT | &quot;TriggerEvent&quot;
 RAWVENDOREVENT | &quot;RawVendorEvent&quot;
 INFORMATIONALERROREVENT | &quot;InformationalErrorEvent&quot;
+BONDCOUPONEVENT | &quot;BondCouponEvent&quot;
 
 
 
