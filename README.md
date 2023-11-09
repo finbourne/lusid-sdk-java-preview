@@ -1,3 +1,10 @@
+# Deprecated
+
+Please note that this repository is deprecated and will be archived early 2024.
+
+All functionality is now contained, in the [lusid-sdk-java](https://github.com/finbourne/lusid-sdk-java) repository on the `main` branch.
+
+
 # LUSID<sup>®</sup> Java Preview SDK
 
 This is the Java Preview SDK for [LUSID by FINBOURNE](https://www.finbourne.com/lusid-technology), a bi-temporal investment management data platform with portfolio accounting capabilities. To use it you'll need a LUSID account. [Sign up for free at lusid.com](https://www.lusid.com/app/signup)
@@ -46,7 +53,4 @@ For further documentation on building the SDK, running the tutorials and using t
 
 ## Build Status
 
-| branch | status |
-| --- | --- |
-| `master` |  ![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/com.finbourne/lusid-sdk-preview?server=https%3A%2F%2Foss.sonatype.org) ![run-sdk-tests](https://github.com/finbourne/lusid-sdk-java-preview/workflows/run-sdk-tests/badge.svg?branch=master) |
-| `develop` | ![run-sdk-tests](https://github.com/finbourne/lusid-sdk-java-preview/workflows/run-sdk-tests/badge.svg?branch=develop) |
+![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/com.finbourne/lusid-sdk-preview?server=https%3A%2F%2Foss.sonatype.org) ![run-sdk-tests](https://github.com/finbourne/lusid-sdk-java-preview/workflows/run-sdk-tests/badge.svg?branch=lts)
