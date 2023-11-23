@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **paymentDate** | **OffsetDateTime** | The payment date of the corporate action |  [optional]
 **inputTransition** | [**InputTransition**](InputTransition.md) |  |  [optional]
 **outputTransitions** | [**List&lt;OutputTransition&gt;**](OutputTransition.md) | The resulting transitions from this event |  [optional]
-**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent, BondCouponEvent | 
+**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent, BondCouponEvent, DividendReinvestmentEvent | 
 
 
 
@@ -36,6 +36,7 @@ TRIGGEREVENT | &quot;TriggerEvent&quot;
 RAWVENDOREVENT | &quot;RawVendorEvent&quot;
 INFORMATIONALERROREVENT | &quot;InformationalErrorEvent&quot;
 BONDCOUPONEVENT | &quot;BondCouponEvent&quot;
+DIVIDENDREINVESTMENTEVENT | &quot;DividendReinvestmentEvent&quot;
 
 
 

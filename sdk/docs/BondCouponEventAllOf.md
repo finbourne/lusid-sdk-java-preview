@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **paymentDate** | **OffsetDateTime** | Payment date of the coupon payment | 
 **currency** | **String** | Currency of the coupon payment | 
 **couponPerUnit** | **java.math.BigDecimal** | CouponRate*Principal | 
-**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent, BondCouponEvent | 
+**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent, BondCouponEvent, DividendReinvestmentEvent | 
 
 
 
@@ -34,6 +34,7 @@ TRIGGEREVENT | &quot;TriggerEvent&quot;
 RAWVENDOREVENT | &quot;RawVendorEvent&quot;
 INFORMATIONALERROREVENT | &quot;InformationalErrorEvent&quot;
 BONDCOUPONEVENT | &quot;BondCouponEvent&quot;
+DIVIDENDREINVESTMENTEVENT | &quot;DividendReinvestmentEvent&quot;
 
 
 

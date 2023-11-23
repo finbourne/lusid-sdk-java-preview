@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **fixingSource** | **String** | Fixing identification source, if available. |  [optional]
 **eventStatus** | **String** | What is the event status, is it a known (ie historic) or unknown (ie projected) event? | 
 **fixingDate** | **OffsetDateTime** | The date the reset fixes, or is observed upon. | 
-**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent, BondCouponEvent | 
+**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent, BondCouponEvent, DividendReinvestmentEvent | 
 
 
 
@@ -35,6 +35,7 @@ TRIGGEREVENT | &quot;TriggerEvent&quot;
 RAWVENDOREVENT | &quot;RawVendorEvent&quot;
 INFORMATIONALERROREVENT | &quot;InformationalErrorEvent&quot;
 BONDCOUPONEVENT | &quot;BondCouponEvent&quot;
+DIVIDENDREINVESTMENTEVENT | &quot;DividendReinvestmentEvent&quot;
 
 
 

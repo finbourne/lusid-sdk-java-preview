@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **payReceive** | **String** | Is this event in relation to the Pay or Receive leg | 
 **eventStatus** | **String** | What is the event status, is it a known (ie historic) or unknown (ie projected) event? | 
 **paymentDate** | **OffsetDateTime** | The date the principal payment is to be made. | 
-**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent, BondCouponEvent | 
+**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent, BondCouponEvent, DividendReinvestmentEvent | 
 
 
 
@@ -35,6 +35,7 @@ TRIGGEREVENT | &quot;TriggerEvent&quot;
 RAWVENDOREVENT | &quot;RawVendorEvent&quot;
 INFORMATIONALERROREVENT | &quot;InformationalErrorEvent&quot;
 BONDCOUPONEVENT | &quot;BondCouponEvent&quot;
+DIVIDENDREINVESTMENTEVENT | &quot;DividendReinvestmentEvent&quot;
 
 
 
