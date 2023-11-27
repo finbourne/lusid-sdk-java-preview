@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **description** | **String** | The description of the instrument event. |  [optional]
 **instrumentEvent** | [**InstrumentEvent**](InstrumentEvent.md) |  | 
 **properties** | [**List&lt;PerpetualProperty&gt;**](PerpetualProperty.md) | The properties attached to this instrument event. |  [optional]
+**sequenceNumber** | **Integer** | The order of the instrument event relative others on the same date (0 being processed first). Must be non negative. |  [optional]
 
 
 
