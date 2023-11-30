@@ -388,7 +388,6 @@ public class Orders
                 null,
                 null,
                 null,
-                null,
                 "Quantity gt 100 and Scope eq '" + testScope + "' and Id in '" + order1Filter + "', '" + order2Filter + "', '" + order3Filter + "'",
                 null)
                 .getValues();
