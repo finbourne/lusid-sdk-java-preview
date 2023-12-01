@@ -80,7 +80,7 @@ public class Transactions {
 
         //  get the trade
         VersionedResourceListOfTransaction transactions = transactionPortfoliosApi.getTransactions(TutorialScope,
-                portfolioId, null, null, null, null, null, null, null, null);
+                portfolioId, null, null, null, null, null, null, null, null, null);
 
         assertEquals(1, transactions.getValues().size());
         assertEquals(transaction.getTransactionId(), transactions.getValues().get(0).getTransactionId());
@@ -126,7 +126,7 @@ public class Transactions {
 
         //  get the trade
         VersionedResourceListOfTransaction transactions = transactionPortfoliosApi.getTransactions(TutorialScope,
-                portfolioId, null, null, null, null, null, null, null, null);
+                portfolioId, null, null, null, null, null, null, null, null, null);
 
         assertEquals(1, transactions.getValues().size());
         assertEquals(transaction.getTransactionId(), transactions.getValues().get(0).getTransactionId());
@@ -179,14 +179,14 @@ public class Transactions {
         transactionPortfoliosApi.upsertTransactions(TutorialScope, portfolioId, Arrays.asList(tx1, tx2, tx3));
 
         List<Transaction> txsBeforeDeletion = transactionPortfoliosApi.getTransactions(TutorialScope, portfolioId,
-                null, null, null, null, null, null, null, null).getValues();
+                null, null, null, null, null, null, null, null, null).getValues();
         assertEquals(3, txsBeforeDeletion.size());
 
         List<String> txIdsToDelete = txsBeforeDeletion.stream().map(Transaction::getTransactionId).collect(Collectors.toList());
         transactionPortfoliosApi.cancelTransactions(TutorialScope, portfolioId, txIdsToDelete);
 
         List<Transaction> txsAfterDeletion = transactionPortfoliosApi.getTransactions(TutorialScope, portfolioId,
-                null, null, null, null, null, null, null, null).getValues();
+                null, null, null, null, null, null, null, null, null).getValues();
 
         assertEquals(0, txsAfterDeletion.size());
     }
