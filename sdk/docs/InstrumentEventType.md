@@ -37,5 +37,11 @@
 
 * `DIVIDENDREINVESTMENTEVENT` (value: `"DividendReinvestmentEvent"`)
 
+* `ACCUMULATIONEVENT` (value: `"AccumulationEvent"`)
+
+* `BONDPRINCIPALEVENT` (value: `"BondPrincipalEvent"`)
+
+* `DIVIDENDOPTIONEVENT` (value: `"DividendOptionEvent"`)
+
 
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **eventStatus** | **String** | What is the event status, is it a known (ie historic) or unknown (ie projected) event? | 
 **anchorDate** | **OffsetDateTime** | The date the exercise window starts, or point it takes effect on. | 
 **eventWindowEnd** | **OffsetDateTime** | The date the exercise window ends, or point it takes effect on. |  [optional] [readonly]
-**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent, BondCouponEvent, DividendReinvestmentEvent | 
+**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent, BondCouponEvent, DividendReinvestmentEvent, AccumulationEvent, BondPrincipalEvent, DividendOptionEvent | 
 
 
 
@@ -35,6 +35,9 @@ RAWVENDOREVENT | &quot;RawVendorEvent&quot;
 INFORMATIONALERROREVENT | &quot;InformationalErrorEvent&quot;
 BONDCOUPONEVENT | &quot;BondCouponEvent&quot;
 DIVIDENDREINVESTMENTEVENT | &quot;DividendReinvestmentEvent&quot;
+ACCUMULATIONEVENT | &quot;AccumulationEvent&quot;
+BONDPRINCIPALEVENT | &quot;BondPrincipalEvent&quot;
+DIVIDENDOPTIONEVENT | &quot;DividendOptionEvent&quot;
 
 
 

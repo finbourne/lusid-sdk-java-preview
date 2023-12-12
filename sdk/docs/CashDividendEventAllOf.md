@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **cashElections** | [**List&lt;CashElection&gt;**](CashElection.md) | Possible elections for this event, each keyed with a unique identifier. | 
 **announcementDate** | **OffsetDateTime** | Date on which the dividend is announced by the company. |  [optional]
 **recordDate** | **OffsetDateTime** | Date you have to be the holder of record in order to participate in the tender. |  [optional]
-**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent, BondCouponEvent, DividendReinvestmentEvent | 
+**instrumentEventType** | [**InstrumentEventTypeEnum**](#InstrumentEventTypeEnum) | The Type of Event. The available values are: TransitionEvent, InformationalEvent, OpenEvent, CloseEvent, StockSplitEvent, BondDefaultEvent, CashDividendEvent, AmortisationEvent, CashFlowEvent, ExerciseEvent, ResetEvent, TriggerEvent, RawVendorEvent, InformationalErrorEvent, BondCouponEvent, DividendReinvestmentEvent, AccumulationEvent, BondPrincipalEvent, DividendOptionEvent | 
 
 
 
@@ -36,6 +36,9 @@ RAWVENDOREVENT | &quot;RawVendorEvent&quot;
 INFORMATIONALERROREVENT | &quot;InformationalErrorEvent&quot;
 BONDCOUPONEVENT | &quot;BondCouponEvent&quot;
 DIVIDENDREINVESTMENTEVENT | &quot;DividendReinvestmentEvent&quot;
+ACCUMULATIONEVENT | &quot;AccumulationEvent&quot;
+BONDPRINCIPALEVENT | &quot;BondPrincipalEvent&quot;
+DIVIDENDOPTIONEVENT | &quot;DividendOptionEvent&quot;
 
 
 
